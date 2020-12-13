@@ -15,15 +15,15 @@ The wallpapers are based on the doodle live wallpapers of the Google Pixel 4.
 * System dependent night mode
 * Parallax effect
 * Various customization options
-• No permanent animations
-• Also suitable for less powerful smartphones
-• No ads and no analytics
-• Tiny download size
-• In-App auto dark mode
+* No permanent animations
+* Also suitable for less powerful smartphones
+* No ads and no analytics
+* Tiny download size
+* In-App auto dark mode
 
 ## How to set as background
-• Tap _SET_ in the top right corner, it should appear a preview
-• Now tap _SET WALLPAPER_
+* Tap _SET_ in the top right corner, it should appear a preview
+* Now tap _SET WALLPAPER_
 
 ## Compatibility
 

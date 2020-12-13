@@ -471,33 +471,6 @@
 
             </LinearLayout>
 
-            <LinearLayout style="@style/Theme.Doodle.ListItem.TwoLine">
-
-                <ImageView
-                    style="@style/Theme.Doodle.ListItem.Icon"
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
-                    android:layout_marginEnd="24dp"
-                    android:src="@drawable/ic_round_material_components"
-                    tools:ignore="ContentDescription" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        style="@style/Theme.Doodle.ListItem.Description"
-                        android:text="@string/info_material_components_built_with" />
-
-                    <TextView
-                        style="@style/Theme.Doodle.ListItem.Title"
-                        android:text="@string/info_material_components" />
-
-                </LinearLayout>
-
-            </LinearLayout>
-
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>

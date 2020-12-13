@@ -25,30 +25,6 @@
         <item name="android:fontFamily">@font/roboto_mono_regular</item>
     </style>
 
-    <!-- Bottom Sheet -->
-    <style name="Theme.Doodle.BottomSheetDialog" parent="Theme.MaterialComponents.BottomSheetDialog">
-        <item name="colorPrimary">@color/primary</item>
-        <item name="colorPrimaryDark">@color/primaryVariant</item>
-        <item name="colorOnPrimary">@color/onPrimary</item>
-
-        <item name="colorSecondary">@color/secondary</item>
-        <item name="colorOnSecondary">@color/on_secondary</item>
-
-        <item name="android:colorBackground">@color/surface</item>
-        <item name="colorOnBackground">@color/on_surface</item>
-        <item name="android:colorForeground">@color/on_surface</item>
-
-        <item name="colorSurface">@color/surface</item>
-        <item name="colorOnSurface">@color/on_surface</item>
-
-        <item name="android:colorEdgeEffect">@color/highlight</item>
-
-        <item name="android:statusBarColor">@android:color/transparent</item>
-        <item name="android:navigationBarColor">@color/black</item>
-        <item name="android:windowIsFloating">false</item>
-        <item name="bottomSheetStyle">@style/Shape.Doodle.BottomSheet</item>
-    </style>
-
     <!-- Divider -->
     <style name="Theme.Doodle.Divider">
         <item name="android:layout_width">match_parent</item>
@@ -180,12 +156,6 @@
         <item name="android:checkable">false</item>
         <item name="cardCornerRadius">@dimen/theme_selection_circle_corner_radius</item>
         <item name="android:layout_gravity">center</item>
-    </style>
-
-    <!-- SHAPES -->
-
-    <style name="Shape.Doodle.BottomSheet" parent="">
-        <item name="android:background">@drawable/shape_bottom_sheet_background</item>
     </style>
 
     <!-- TEXT APPEARANCES -->

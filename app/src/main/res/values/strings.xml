@@ -22,8 +22,6 @@
 
     <string name="info_description">Colorful live wallpaper with dark mode and parallax effect</string>
     <string name="info_description_wallpaper">A colorful collection of shapes</string>
-    <string name="info_material_components_built_with">Built with</string>
-    <string name="info_material_components">Material Components</string>
     <string name="info_version">Version</string>
     <string name="info_developer">Developer</string>
 

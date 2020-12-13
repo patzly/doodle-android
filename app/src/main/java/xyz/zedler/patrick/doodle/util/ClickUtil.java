@@ -6,16 +6,10 @@ import android.widget.CompoundButton;
 
 public class ClickUtil {
 
-    private long idle = 500;
     private long lastClick;
 
     public ClickUtil() {
         lastClick = 0;
-    }
-
-    public ClickUtil(long idle) {
-        lastClick = 0;
-        this.idle = idle;
     }
 
     public void update() {
@@ -23,7 +17,7 @@ public class ClickUtil {
     }
 
     public boolean isDisabled() {
-        if (SystemClock.elapsedRealtime() - lastClick < idle) return true;
+        if (SystemClock.elapsedRealtime() - lastClick < 500) return true;
         update();
         return false;
     }

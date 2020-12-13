@@ -82,11 +82,9 @@ public class SettingsActivity extends AppCompatActivity
 		binding.switchNightMode.setChecked(
 				sharedPrefs.getBoolean("night_mode", true)
 		);
-		binding.switchNightMode.setOnCheckedChangeListener(this);
 		binding.switchFollowSystem.setChecked(
 				sharedPrefs.getBoolean("follow_system", true)
 		);
-		binding.switchFollowSystem.setOnCheckedChangeListener(this);
 		binding.switchFollowSystem.setEnabled(binding.switchNightMode.isChecked());
 		boolean active = Objects.requireNonNull(
 				sharedPrefs.getString("theme", "doodle")
@@ -160,6 +158,12 @@ public class SettingsActivity extends AppCompatActivity
 				binding.linearFollowSystem,
 				binding.linearDeveloper,
 				binding.buttonSet
+		);
+
+		ClickUtil.setOnCheckedChangeListeners(
+				this,
+				binding.switchNightMode,
+				binding.switchFollowSystem
 		);
 	}
 
@@ -353,6 +357,7 @@ public class SettingsActivity extends AppCompatActivity
 		sharedPrefs.edit().putString("variant", selection).apply();
 	}
 
+	@SuppressWarnings("deprecation")
 	private boolean isWallpaperServiceRunning() {
 		ActivityManager manager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
 		if (manager != null) {

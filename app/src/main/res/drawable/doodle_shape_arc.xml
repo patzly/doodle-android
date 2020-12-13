@@ -1,0 +1,28 @@
+<vector
+    android:height="120dp"
+    android:viewportHeight="12"
+    android:viewportWidth="12"
+    android:width="120dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group
+        android:pivotX="9"
+        android:pivotY="10"
+        android:name="group_arc">
+
+        <path
+            android:fillColor="#00000000"
+            android:pathData="M 3.17,10.13 C 1.1,6.17 4.6,1.3 9,2"
+            android:strokeAlpha="1"
+            android:strokeColor="?attr/doodle_arc_bg"
+            android:strokeLineCap="round"
+            android:strokeLineJoin="miter"
+            android:strokeWidth="2.5"/>
+
+        <path
+            android:fillColor="?attr/doodle_arc_dot"
+            android:pathData="M 10,2 A 1,1 0 0 1 9,3 1,1 0 0 1 8,2 1,1 0 0 1 9,1 1,1 0 0 1 10,2 Z"/>
+
+    </group>
+
+</vector>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="doodle_arc_bg" format="color" />
+    <attr name="doodle_arc_dot" format="color" />
+    <attr name="doodle_dot" format="color" />
+    <attr name="doodle_u_bg" format="color" />
+    <attr name="doodle_u_dot" format="color" />
+    <attr name="doodle_rect_big" format="color" />
+    <attr name="doodle_rect_small" format="color" />
+    <attr name="doodle_ring" format="color" />
+    <attr name="doodle_moon_inner" format="color" />
+    <attr name="doodle_moon_outer" format="color" />
+    <attr name="doodle_poly_line" format="color" />
+    <attr name="doodle_poly_ring" format="color" />
+
+    <attr name="neon_circle_front" format="color" />
+    <attr name="neon_pill_front" format="color" />
+    <attr name="neon_pill_back" format="color" />
+    <attr name="neon_line_ends" format="color" />
+    <attr name="neon_line_middle" format="color" />
+    <attr name="neon_circle_back" format="color" />
+    <attr name="neon_dot" format="color" />
+
+    <attr name="geometric_rect" format="color" />
+    <attr name="geometric_line" format="color" />
+    <attr name="geometric_poly" format="color" />
+    <attr name="geometric_circle" format="color" />
+    <attr name="geometric_grid" format="color" />
+    <attr name="geometric_sheet" format="color" />
+
+</resources>

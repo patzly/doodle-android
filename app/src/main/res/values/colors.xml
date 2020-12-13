@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="white">#fff</color>
+    <color name="black">#000</color>
+    <color name="transparent">#00000000</color>
+
+    <color name="grey200">#e8eaed</color>
+    <color name="grey300">#dadce0</color>
+    <color name="grey400">#bdc1c6</color>
+    <color name="grey500">#9aa0a6</color>
+    <color name="grey600">#80868b</color>
+    <color name="grey800">#3c4043</color>
+
+    <!-- PRIMARY -->
+
+    <color name="primary">@color/white</color>
+    <color name="primaryVariant">@color/white</color>
+    <color name="onPrimary">#000</color>
+
+    <!-- SECONDARY -->
+
+    <color name="secondary">#789f8a</color>
+    <color name="secondary_disabled">#dddddd</color>
+    <color name="on_secondary">@color/white</color>
+    <color name="on_secondary_disabled">#888888</color>
+    <color name="highlight_on_secondary">#22ffffff</color>
+
+    <!-- BACKGROUND -->
+
+    <color name="background">@color/white</color>
+    <color name="onBackground">#dd000000</color>
+    <color name="onBackgroundSecondary">@color/grey600</color>
+
+    <!-- SURFACE -->
+
+    <color name="surface">@color/white</color>
+    <color name="on_surface">@color/black</color>
+
+    <!-- HIGHLIGHT -->
+
+    <color name="highlight">#11000000</color>
+
+    <!-- STROKES -->
+
+    <color name="stroke">@color/grey400</color>
+
+    <!-- ICONS -->
+
+    <color name="icon">@color/grey800</color>
+
+    <color name="mdc_square">#212121</color>
+    <color name="mdc_circle">#b2ff59</color>
+    <color name="mdc_overlay">#00e676</color>
+
+    <!-- WALLPAPER -->
+
+    <color name="wp_bg_doodle_black">#232323</color>
+    <color name="wp_bg_doodle_white">#e0dcd3</color>
+    <color name="wp_bg_doodle_orange">#f98a6b</color>
+    <color name="wp_bg_doodle_night">#272628</color>
+
+    <color name="wp_bg_nature">#fcf4e9</color>
+    <color name="wp_bg_nature_night">#32373a</color>
+
+    <color name="wp_bg_neon">#cbcbef</color>
+    <color name="wp_bg_neon_night">#0e032d</color>
+
+    <color name="wp_bg_geometric">#b9c1c7</color>
+    <color name="wp_bg_geometric_night">#212121</color>
+
+</resources>

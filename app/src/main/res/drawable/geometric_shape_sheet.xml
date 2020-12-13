@@ -1,0 +1,4 @@
+<vector android:height="330dp" android:viewportHeight="1200"
+    android:viewportWidth="1200" android:width="330dp" xmlns:android="http://schemas.android.com/apk/res/android">
+    <path android:fillColor="?attr/geometric_sheet" android:pathData="M0,1200L1109,0H0z"/>
+</vector>

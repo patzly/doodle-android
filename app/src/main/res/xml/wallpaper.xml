@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wallpaper
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:thumbnail="@raw/thumbnail"
+    android:description="@string/info_description_wallpaper"
+    android:settingsActivity="xyz.zedler.patrick.doodle.SettingsActivity" />

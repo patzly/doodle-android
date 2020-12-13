@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Doodle</string>
+
+    <string name="action_back">Zurück</string>
+    <string name="action_set">Festlegen</string>
+    <string name="action_help">Für Hilfe tippen</string>
+    <string name="action_send_feedback">Feedback senden</string>
+    <string name="action_send_feedback_description">Bei Fragen und Fehlern</string>
+    <string name="action_rate">In Google Play bewerten</string>
+    <string name="action_rate_description">Unterstütze die Entwicklung</string>
+
+    <string name="setting_night_mode">Nachtmodus</string>
+    <string name="setting_night_mode_description">Abgedunkelte Formen</string>
+    <string name="setting_follow_system">System folgen</string>
+    <string name="setting_follow_system_description">Nur unterstützte Geräte</string>
+    <string name="setting_parallax">Parallax-Stärke</string>
+    <string name="setting_parallax_description">Horizontaler Versatz beim Wischen</string>
+    <string name="setting_parallax_none">Aus</string>
+    <string name="setting_parallax_little">Wenig</string>
+    <string name="setting_parallax_much">Viel</string>
+    <string name="setting_size">Größe der Formen</string>
+    <string name="setting_size_description">Nützlich für große Displays</string>
+    <string name="setting_size_default">Normal</string>
+    <string name="setting_size_big">Groß</string>
+
+    <string name="info_description">Ein farbenfroher Live-Hintergrund mit Nachtmodus und Parallax-Effekt</string>
+    <string name="info_description_wallpaper">Eine nette Kollektion von Formen</string>
+    <string name="info_material_components_built_with">Entwickelt mit</string>
+    <string name="info_material_components">Material Components</string>
+    <string name="info_version">Version</string>
+    <string name="info_changelog">Änderungen</string>
+    <string name="info_changelog_description">Was gibt\'s neues?</string>
+    <string name="info_developer">Entwickler</string>
+
+    <string name="category_customisation">Anpassung</string>
+    <string name="category_info">Info</string>
+    <string name="category_help">Fragen &amp; Antworten</string>
+    <string name="category_feedback">Feedback</string>
+    <string name="category_licenses">Open-Source-Lizenzen</string>
+
+</resources>

@@ -37,7 +37,8 @@ import xyz.zedler.patrick.doodle.behavior.ScrollBehavior;
 import xyz.zedler.patrick.doodle.fragment.TextBottomSheetDialogFragment;
 import xyz.zedler.patrick.doodle.service.LiveWallpaperService;
 
-public class SettingsActivity extends AppCompatActivity implements View.OnClickListener, CompoundButton.OnCheckedChangeListener {
+public class SettingsActivity extends AppCompatActivity
+		implements View.OnClickListener, CompoundButton.OnCheckedChangeListener {
 
 	private final static boolean DEBUG = false;
 	private final static String TAG = "SettingsActivity";
@@ -67,7 +68,7 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
 			finish();
 		});
 
-		(new ScrollBehavior()).setUpScroll(
+		new ScrollBehavior().setUpScroll(
 				this,
 				R.id.app_bar,
 				R.id.linear_app_bar,
@@ -110,7 +111,7 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
 		).equals("doodle");
 		linearLayoutVariant = findViewById(R.id.linear_variant);
 		linearLayoutVariant.setAlpha(active ? 1 : 0.5f);
-		if(!active) {
+		if (!active) {
 			for (int i = 0; i < linearLayoutVariant.getChildCount(); i++) {
 				linearLayoutVariant.getChildAt(i).setEnabled(false);
 			}
@@ -201,7 +202,7 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
 	protected void onResume() {
 		super.onResume();
 
-		if(!isWallpaperServiceRunning()) {
+		if (!isWallpaperServiceRunning()) {
 			buttonSet.setEnabled(true);
 			buttonSet.setBackgroundColor(getResources().getColor(R.color.secondary));
 			buttonSet.setTextColor(getResources().getColor(R.color.on_secondary));
@@ -213,7 +214,7 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
 		if (requestCode == 1) {
-			if(resultCode == RESULT_OK) {
+			if (resultCode == RESULT_OK) {
 				buttonSet.setEnabled(false);
 				buttonSet.setBackgroundColor(getResources().getColor(R.color.secondary_disabled));
 				buttonSet.setTextColor(getResources().getColor(R.color.on_secondary_disabled));
@@ -236,7 +237,7 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
 	@Override
 	public void onClick(View v) {
 
-		if(SystemClock.elapsedRealtime() - lastClick < 400){
+		if (SystemClock.elapsedRealtime() - lastClick < 400){
 			return;
 		}
 		lastClick = SystemClock.elapsedRealtime();
@@ -279,7 +280,7 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
 				break;
 			case R.id.linear_follow_system:
 				startAnimatedIcon(R.id.image_follow_system);
-				if(switchNightMode.isChecked()) {
+				if (switchNightMode.isChecked()) {
 					switchFollowSystem.setChecked(!switchFollowSystem.isChecked());
 				}
 				break;
@@ -487,7 +488,7 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
 		Bundle bundle = new Bundle();
 		bundle.putString("title", getString(title));
 		bundle.putString("file", file);
-		if(link != 0) {
+		if (link != 0) {
 			bundle.putString("link", getString(link));
 		}
 		textBottomSheetDialogFragment.setArguments(bundle);
@@ -500,7 +501,7 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
 		try {
 			((Animatable) ((ImageView) findViewById(viewId)).getDrawable()).start();
 		} catch (ClassCastException e) {
-			if(DEBUG) Log.e(TAG, "startAnimatedIcon() requires AVD!");
+			if (DEBUG) Log.e(TAG, "startAnimatedIcon() requires AVD!");
 		}
 	}
 }

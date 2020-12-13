@@ -32,13 +32,49 @@ public class LiveWallpaperService extends WallpaperService {
 	private boolean nightMode, followSystem, isNight, isSizeBig;
 	private int colorBackground, parallax;
 
-	private VectorDrawableCompat doodleArc, doodleDot, doodleU, doodleRect, doodleRing, doodleMoon, doodlePoly;
-	private VectorDrawableCompat neonKidneyFront, neonCircleFront, neonPill, neonLine, neonKidneyBack, neonCircleBack, neonDot;
-	private VectorDrawableCompat geometricRect, geometricLine, geometricPoly, geometricCircle, geometricSheet;
+	private VectorDrawableCompat doodleArc;
+	private VectorDrawableCompat doodleDot;
+	private VectorDrawableCompat doodleU;
+	private VectorDrawableCompat doodleRect;
+	private VectorDrawableCompat doodleRing;
+	private VectorDrawableCompat doodleMoon;
+	private VectorDrawableCompat doodlePoly;
 
-	private float zDoodleArc, zDoodleDot, zDoodleU, zDoodleRect, zDoodleRing, zDoodleMoon, zDoodlePoly;
-	private float zNeonKidneyFront, zNeonCircleFront, zNeonPill, zNeonLine, zNeonKidneyBack, zNeonCircleBack, zNeonDot;
-	private float zGeometricRect, zGeometricLine, zGeometricPoly, zGeometricCircle, zGeometricSheet;
+	private VectorDrawableCompat neonKidneyFront;
+	private VectorDrawableCompat neonCircleFront;
+	private VectorDrawableCompat neonPill;
+	private VectorDrawableCompat neonLine;
+	private VectorDrawableCompat neonKidneyBack;
+	private VectorDrawableCompat neonCircleBack;
+	private VectorDrawableCompat neonDot;
+
+	private VectorDrawableCompat geometricRect;
+	private VectorDrawableCompat geometricLine;
+	private VectorDrawableCompat geometricPoly;
+	private VectorDrawableCompat geometricCircle;
+	private VectorDrawableCompat geometricSheet;
+
+	private float zDoodleArc;
+	private float zDoodleDot;
+	private float zDoodleU;
+	private float zDoodleRect;
+	private float zDoodleRing;
+	private float zDoodleMoon;
+	private float zDoodlePoly;
+
+	private float zNeonKidneyFront;
+	private float zNeonCircleFront;
+	private float zNeonPill;
+	private float zNeonLine;
+	private float zNeonKidneyBack;
+	private float zNeonCircleBack;
+	private float zNeonDot;
+
+	private float zGeometricRect;
+	private float zGeometricLine;
+	private float zGeometricPoly;
+	private float zGeometricCircle;
+	private float zGeometricSheet;
 
 	@Override
 	public Engine onCreateEngine() {
@@ -71,7 +107,7 @@ public class LiveWallpaperService extends WallpaperService {
 		@Override
 		public WallpaperColors onComputeColors() {
 			int background = 0xFF232323;
-			if(isNightMode()) {
+			if (isNightMode()) {
 				switch (theme) {
 					case "doodle":
 						background = 0xFF272628;
@@ -117,9 +153,11 @@ public class LiveWallpaperService extends WallpaperService {
 
 		@Override
 		public void onVisibilityChanged(boolean visible) {
-			if(visible) {
-				if(sharedPrefs == null) {
-					sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+			if (visible) {
+				if (sharedPrefs == null) {
+					sharedPrefs = PreferenceManager.getDefaultSharedPreferences(
+							getApplicationContext()
+					);
 				}
 				theme = sharedPrefs.getString("theme", "doodle");
 				variant = sharedPrefs.getString("variant", "black");
@@ -128,19 +166,21 @@ public class LiveWallpaperService extends WallpaperService {
 				parallax = sharedPrefs.getInt("parallax", 100);
 				isSizeBig = sharedPrefs.getBoolean("size_big", false);
 
-				if(!theme.equals(sharedPrefs.getString("theme", "doodle"))) {
+				if (!theme.equals(sharedPrefs.getString("theme", "doodle"))) {
 					theme = sharedPrefs.getString("theme", "doodle");
 					refreshTheme();
 					notifyColorsChanged();
-				} else if(isNight != isNightMode()){
+				} else if (isNight != isNightMode()){
 					isNight = isNightMode();
 					refreshTheme();
 					notifyColorsChanged();
-				} else if(!variant.equals(sharedPrefs.getString("variant", "black"))) {
+				} else if (!variant.equals(
+						sharedPrefs.getString("variant", "black")
+				)) {
 					variant = sharedPrefs.getString("variant", "black");
 					refreshTheme();
 					notifyColorsChanged();
-				} else if(sharedPrefs.getBoolean("should_refresh", true)) {
+				} else if (sharedPrefs.getBoolean("should_refresh", true)) {
 					sharedPrefs.edit().putBoolean("should_refresh", false).apply();
 					refreshTheme();
 					notifyColorsChanged();
@@ -149,13 +189,13 @@ public class LiveWallpaperService extends WallpaperService {
 				newRandomZ();
 				drawFrame(xOffset);
 
-				if(DEBUG) Log.i(TAG, "onVisibilityChanged: method call");
+				if (DEBUG) Log.i(TAG, "onVisibilityChanged: method call");
 			}
 		}
 
 		@Override
 		public void notifyColorsChanged() {
-			if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O_MR1) super.notifyColorsChanged();
+			if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O_MR1) super.notifyColorsChanged();
 		}
 
 		@Override
@@ -168,7 +208,7 @@ public class LiveWallpaperService extends WallpaperService {
 				int yPixels
 		) {
 			super.onOffsetsChanged(xOffset, yOffset,xStep, yStep, xPixels, yPixels);
-			if(parallax != 0) drawFrame(xOffset);
+			if (parallax != 0) drawFrame(xOffset);
 			this.xOffset = xOffset;
 		}
 
@@ -232,11 +272,17 @@ public class LiveWallpaperService extends WallpaperService {
 
 		private void drawOnCanvas(Canvas canvas, VectorDrawableCompat... vectors) {
 			for (VectorDrawableCompat vector : vectors) {
-				if(vector != null) vector.draw(canvas);
+				if (vector != null) vector.draw(canvas);
 			}
 		}
 
-		private void drawShape(VectorDrawableCompat vdc, double x, double y, double z, double xOffset) {
+		private void drawShape(
+				VectorDrawableCompat vdc,
+				double x,
+				double y,
+				double z,
+				double xOffset
+		) {
 			int xPos, yPos, offset;
 			Rect frame = getSurfaceHolder().getSurfaceFrame();
 			offset = (int) (xOffset * z * parallax);
@@ -256,7 +302,7 @@ public class LiveWallpaperService extends WallpaperService {
 	}
 
 	private void refreshTheme() {
-		if(isNightMode()) {
+		if (isNightMode()) {
 			switch (theme) {
 				case "doodle":
 					themeRes.applyStyle(R.style.Wallpaper_Doodle_Night, true);
@@ -373,7 +419,9 @@ public class LiveWallpaperService extends WallpaperService {
 	}
 
 	private boolean isNightMode() {
-		if(nightMode && !followSystem) return true;
-		return nightMode && (getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES;
+		if (nightMode && !followSystem) return true;
+		return nightMode
+				&& (getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK)
+				== Configuration.UI_MODE_NIGHT_YES;
 	}
 }

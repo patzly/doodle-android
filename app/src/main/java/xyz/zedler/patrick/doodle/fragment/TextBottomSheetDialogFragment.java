@@ -57,7 +57,7 @@ public class TextBottomSheetDialogFragment extends BottomSheetDialogFragment {
 
 		String file = bundle.getString("file") + ".txt";
 		String fileLocalized = bundle.getString("file") + "-" + Locale.getDefault().getLanguage() + ".txt";
-		if(readFromFile(context, fileLocalized) != null) file = fileLocalized;
+		if (readFromFile(context, fileLocalized) != null) file = fileLocalized;
 
 		Log.i(TAG, "onCreateView: " + fileLocalized);
 
@@ -94,10 +94,10 @@ public class TextBottomSheetDialogFragment extends BottomSheetDialogFragment {
 			text.deleteCharAt(text.length() - 1);
 			inputStream.close();
 		} catch (FileNotFoundException e) {
-			if(DEBUG) Log.e(TAG, "readFromFile: \"" + file + "\" not found!");
+			if (DEBUG) Log.e(TAG, "readFromFile: \"" + file + "\" not found!");
 			return null;
 		} catch (Exception e) {
-			if(DEBUG) Log.e(TAG, "readFromFile: " + e.toString());
+			if (DEBUG) Log.e(TAG, "readFromFile: " + e.toString());
 		}
 		return text.toString();
 	}

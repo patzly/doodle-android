@@ -8,7 +8,6 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.drawable.ColorDrawable;
-import android.os.Build;
 import android.preference.PreferenceManager;
 import android.service.wallpaper.WallpaperService;
 import android.util.Log;
@@ -112,9 +111,6 @@ public class LiveWallpaperService extends WallpaperService {
 					case "doodle":
 						background = 0xFF272628;
 						break;
-					case "nature":
-						background = 0xFF32373a;
-						break;
 					case "neon":
 						background = 0xFF0e032d;
 						break;
@@ -136,9 +132,6 @@ public class LiveWallpaperService extends WallpaperService {
 								background = 0xFFf98a6c;
 								break;
 						}
-						break;
-					case "nature":
-						background = 0xFFfcf4e9;
 						break;
 					case "neon":
 						background = 0xFFcbcbef;
@@ -195,7 +188,7 @@ public class LiveWallpaperService extends WallpaperService {
 
 		@Override
 		public void notifyColorsChanged() {
-			if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O_MR1) super.notifyColorsChanged();
+			super.notifyColorsChanged();
 		}
 
 		@Override
@@ -308,10 +301,6 @@ public class LiveWallpaperService extends WallpaperService {
 					themeRes.applyStyle(R.style.Wallpaper_Doodle_Night, true);
 					colorBackground = getResources().getColor(R.color.wp_bg_doodle_night);
 					break;
-				case "nature":
-					//themeRes.applyStyle(R.style.Wallpaper_Doodle_Night, true);
-					colorBackground = getResources().getColor(R.color.wp_bg_nature_night);
-					break;
 				case "neon":
 					themeRes.applyStyle(R.style.Wallpaper_Neon_Night, true);
 					colorBackground = getResources().getColor(R.color.wp_bg_neon_night);
@@ -339,10 +328,6 @@ public class LiveWallpaperService extends WallpaperService {
 							break;
 					}
 					break;
-				case "nature":
-					//themeRes.applyStyle(R.style.Wallpaper_Doodle_White, true);
-					colorBackground = getResources().getColor(R.color.wp_bg_nature);
-					break;
 				case "neon":
 					themeRes.applyStyle(R.style.Wallpaper_Neon, true);
 					colorBackground = getResources().getColor(R.color.wp_bg_neon);
@@ -363,8 +348,6 @@ public class LiveWallpaperService extends WallpaperService {
 				doodleRing = getVectorDrawable(R.drawable.doodle_shape_ring, themeRes);
 				doodleMoon = getVectorDrawable(R.drawable.doodle_shape_moon, themeRes);
 				doodlePoly = getVectorDrawable(R.drawable.doodle_shape_poly, themeRes);
-				break;
-			case "nature":
 				break;
 			case "neon":
 				neonKidneyFront = getVectorDrawable(R.drawable.neon_shape_kidney_front, null);
@@ -396,8 +379,6 @@ public class LiveWallpaperService extends WallpaperService {
 				zDoodleRing = random.nextFloat();
 				zDoodleMoon = random.nextFloat();
 				zDoodlePoly = random.nextFloat();
-				break;
-			case "nature":
 				break;
 			case "neon":
 				zNeonKidneyFront = random.nextFloat();

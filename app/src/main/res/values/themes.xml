@@ -1,9 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
 
     <style name="Theme.Doodle" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="colorPrimary">@color/primary</item>
-        <item name="colorPrimaryDark">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primaryVariant</item>
         <item name="colorOnPrimary">@color/onPrimary</item>
 
         <item name="colorSecondary">@color/secondary</item>
@@ -14,19 +13,19 @@
         <item name="android:colorForeground">@color/onBackground</item>
 
         <item name="colorSurface">@color/surface</item>
-        <item name="colorOnSurface">#ffffff</item>
+        <item name="colorOnSurface">@color/on_surface</item>
 
-        <item name="colorControlNormal">@color/onBackground</item>
+        <item name="android:colorControlNormal">@color/onBackground</item>
         <item name="android:colorControlActivated">@color/secondary</item>
-        <item name="colorControlHighlight">@color/highlight</item>
+        <item name="android:colorControlHighlight">@color/highlight</item>
         <item name="android:colorEdgeEffect">@color/highlight</item>
 
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar">true</item>
         <item name="android:navigationBarColor">@color/background</item>
-        <item name="android:statusBarColor">@color/background</item>
 
         <item name="android:fontFamily">@font/roboto_mono_regular</item>
-
-        <item name="elevationOverlayEnabled">true</item>
+        <item name="android:windowSplashscreenContent">@drawable/splash_content</item>
     </style>
 
 </resources>

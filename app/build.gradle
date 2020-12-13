@@ -11,8 +11,8 @@ android {
         applicationId "xyz.zedler.patrick.doodle"
         minSdkVersion 27
         targetSdkVersion 29
-        versionCode 11
-        versionName "2.1.0"
+        versionCode 12
+        versionName "2.1.1"
     }
 
     applicationVariants.all { variant ->

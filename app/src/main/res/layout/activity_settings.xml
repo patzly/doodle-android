@@ -78,7 +78,7 @@
 
             <LinearLayout
                 android:id="@+id/linear_help"
-                style="@style/Theme.Doodle.ListItem.TwoLine.Clickable">
+                style="@style/Theme.Doodle.ListItem.TwoLine">
 
                 <ImageView
                     android:id="@+id/image_help"
@@ -93,10 +93,6 @@
                         style="@style/Theme.Doodle.ListItem.Title"
                         android:text="@string/info_description"
                         android:textSize="15sp"/>
-
-                    <TextView
-                        style="@style/Theme.Doodle.ListItem.Description"
-                        android:text="@string/action_help" />
 
                 </LinearLayout>
 
@@ -471,30 +467,6 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/linear_changelog"
-                style="@style/Theme.Doodle.ListItem.TwoLine.Clickable">
-
-                <ImageView
-                    android:id="@+id/image_changelog"
-                    style="@style/Theme.Doodle.ListItem.Icon"
-                    android:src="@drawable/ic_round_history_anim"
-                    tools:ignore="ContentDescription" />
-
-                <LinearLayout style="@style/Theme.Doodle.ListItem.TextBox">
-
-                    <TextView
-                        style="@style/Theme.Doodle.ListItem.Title"
-                        android:text="@string/info_changelog" />
-
-                    <TextView
-                        style="@style/Theme.Doodle.ListItem.Description"
-                        android:text="@string/info_changelog_description" />
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
                 android:id="@+id/linear_developer"
                 style="@style/Theme.Doodle.ListItem.TwoLine.Clickable">
 
@@ -540,136 +512,6 @@
                     <TextView
                         style="@style/Theme.Doodle.ListItem.Title"
                         android:text="@string/info_material_components" />
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <TextView
-                style="@style/Theme.Doodle.Category"
-                android:text="@string/category_feedback" />
-
-            <LinearLayout
-                android:id="@+id/linear_rate"
-                style="@style/Theme.Doodle.ListItem.TwoLine.Clickable">
-
-                <ImageView
-                    android:id="@+id/image_rate"
-                    style="@style/Theme.Doodle.ListItem.Icon"
-                    android:src="@drawable/ic_round_star_anim"
-                    tools:ignore="ContentDescription" />
-
-                <LinearLayout
-                    style="@style/Theme.Doodle.ListItem.TextBox">
-
-                    <TextView
-                        style="@style/Theme.Doodle.ListItem.Title"
-                        android:text="@string/action_rate" />
-
-                    <TextView
-                        style="@style/Theme.Doodle.ListItem.Description"
-                        android:text="@string/action_rate_description" />
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/linear_feedback"
-                style="@style/Theme.Doodle.ListItem.TwoLine.Clickable">
-
-                <ImageView
-                    android:id="@+id/image_feedback"
-                    style="@style/Theme.Doodle.ListItem.Icon"
-                    android:src="@drawable/ic_round_feedback_anim"
-                    tools:ignore="ContentDescription" />
-
-                <LinearLayout
-                    style="@style/Theme.Doodle.ListItem.TextBox">
-
-                    <TextView
-                        style="@style/Theme.Doodle.ListItem.Title"
-                        android:text="@string/action_send_feedback" />
-
-                    <TextView
-                        style="@style/Theme.Doodle.ListItem.Description"
-                        android:text="@string/action_send_feedback_description" />
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <TextView
-                style="@style/Theme.Doodle.Category"
-                android:text="@string/category_licenses" />
-
-            <LinearLayout
-                android:id="@+id/linear_license_material_components"
-                style="@style/Theme.Doodle.ListItem.TwoLine.Clickable">
-
-                <ImageView
-                    android:id="@+id/image_license_material_components"
-                    style="@style/Theme.Doodle.ListItem.Icon"
-                    android:src="@drawable/ic_round_copyright_anim"
-                    tools:ignore="ContentDescription" />
-
-                <LinearLayout style="@style/Theme.Doodle.ListItem.TextBox">
-
-                    <TextView
-                        style="@style/Theme.Doodle.ListItem.Title"
-                        android:text="@string/license_material_components" />
-
-                    <TextView
-                        style="@style/Theme.Doodle.ListItem.Description"
-                        android:text="@string/license_author_google" />
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/linear_license_material_icons"
-                style="@style/Theme.Doodle.ListItem.TwoLine.Clickable">
-
-                <ImageView
-                    android:id="@+id/image_license_material_icons"
-                    style="@style/Theme.Doodle.ListItem.Icon"
-                    android:src="@drawable/ic_round_copyright_anim"
-                    tools:ignore="ContentDescription" />
-
-                <LinearLayout style="@style/Theme.Doodle.ListItem.TextBox">
-
-                    <TextView
-                        style="@style/Theme.Doodle.ListItem.Title"
-                        android:text="@string/license_material_icons" />
-
-                    <TextView
-                        style="@style/Theme.Doodle.ListItem.Description"
-                        android:text="@string/license_author_google" />
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/linear_license_roboto"
-                style="@style/Theme.Doodle.ListItem.TwoLine.Clickable">
-
-                <ImageView
-                    android:id="@+id/image_license_roboto"
-                    style="@style/Theme.Doodle.ListItem.Icon"
-                    android:src="@drawable/ic_round_copyright_anim"
-                    tools:ignore="ContentDescription" />
-
-                <LinearLayout style="@style/Theme.Doodle.ListItem.TextBox">
-
-                    <TextView
-                        style="@style/Theme.Doodle.ListItem.Title"
-                        android:text="@string/license_roboto" />
-
-                    <TextView
-                        style="@style/Theme.Doodle.ListItem.Description"
-                        android:text="@string/license_author_google" />
 
                 </LinearLayout>
 

@@ -2,7 +2,6 @@ package xyz.zedler.patrick.doodle;
 
 import android.app.ActivityManager;
 import android.app.WallpaperManager;
-import android.content.ActivityNotFoundException;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
@@ -22,10 +21,8 @@ import android.widget.RadioGroup;
 
 import androidx.annotation.IdRes;
 import androidx.annotation.Nullable;
-import androidx.annotation.StringRes;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
-import androidx.fragment.app.Fragment;
 
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.card.MaterialCardView;
@@ -34,7 +31,6 @@ import com.google.android.material.switchmaterial.SwitchMaterial;
 import java.util.Objects;
 
 import xyz.zedler.patrick.doodle.behavior.ScrollBehavior;
-import xyz.zedler.patrick.doodle.fragment.TextBottomSheetDialogFragment;
 import xyz.zedler.patrick.doodle.service.LiveWallpaperService;
 
 public class SettingsActivity extends AppCompatActivity
@@ -187,14 +183,8 @@ public class SettingsActivity extends AppCompatActivity
 				R.id.card_orange,
 				R.id.linear_night_mode,
 				R.id.linear_follow_system,
-				R.id.linear_changelog,
 				R.id.linear_developer,
-				R.id.linear_license_material_components,
-				R.id.linear_license_material_icons,
-				R.id.linear_license_roboto,
-				R.id.button_set,
-				R.id.linear_rate,
-				R.id.linear_feedback
+				R.id.button_set
 		);
 	}
 
@@ -243,10 +233,6 @@ public class SettingsActivity extends AppCompatActivity
 		lastClick = SystemClock.elapsedRealtime();
 
 		switch(v.getId()) {
-			case R.id.linear_help:
-				startAnimatedIcon(R.id.image_help);
-				showTextBottomSheet("help", R.string.category_help, 0);
-				break;
 			case R.id.card_doodle:
 				startAnimatedIcon(R.id.image_theme);
 				refreshSelectionTheme("doodle");
@@ -284,10 +270,6 @@ public class SettingsActivity extends AppCompatActivity
 					switchFollowSystem.setChecked(!switchFollowSystem.isChecked());
 				}
 				break;
-			case R.id.linear_changelog:
-				startAnimatedIcon(R.id.image_changelog);
-				showTextBottomSheet("changelog", R.string.info_changelog, 0);
-				break;
 			case R.id.linear_developer:
 				startAnimatedIcon(R.id.image_developer);
 				new Handler().postDelayed(
@@ -299,66 +281,6 @@ public class SettingsActivity extends AppCompatActivity
 										)
 								)
 						), 300
-				);
-				break;
-			case R.id.linear_feedback:
-				startAnimatedIcon(R.id.image_feedback);
-				startActivity(
-						Intent.createChooser(
-								new Intent(Intent.ACTION_SENDTO).setData(
-										Uri.parse(
-												"mailto:patrick@zedler.xyz" +
-														"?subject=" + Uri.encode("Feedback@Doodle") +
-														"&body=" + Uri.encode(
-														"\n\n" + System.getProperty("os.version") +
-																"$" + android.os.Build.VERSION.SDK_INT +
-																"\n" + android.os.Build.MODEL +
-																" (" + android.os.Build.DEVICE +
-																"), " + android.os.Build.MANUFACTURER
-												)
-										)
-								), "Send email"
-						)
-				);
-				break;
-			case R.id.linear_rate:
-				startAnimatedIcon(R.id.image_rate);
-				Uri uri = Uri.parse("market://details?id=" + getPackageName());
-				Intent goToMarket = new Intent(Intent.ACTION_VIEW, uri);
-				goToMarket.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY |
-						Intent.FLAG_ACTIVITY_NEW_DOCUMENT |
-						Intent.FLAG_ACTIVITY_MULTIPLE_TASK |
-						Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
-				try {
-					startActivity(goToMarket);
-				} catch (ActivityNotFoundException e) {
-					startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(
-							"http://play.google.com/store/apps/details?id=" + getPackageName()
-					)));
-				}
-				break;
-			case R.id.linear_license_material_components:
-				startAnimatedIcon(R.id.image_license_material_components);
-				showTextBottomSheet(
-						"apache",
-						R.string.license_material_components,
-						R.string.license_material_components_link
-				);
-				break;
-			case R.id.linear_license_material_icons:
-				startAnimatedIcon(R.id.image_license_material_icons);
-				showTextBottomSheet(
-						"apache",
-						R.string.license_material_icons,
-						R.string.license_material_icons_link
-				);
-				break;
-			case R.id.linear_license_roboto:
-				startAnimatedIcon(R.id.image_license_roboto);
-				showTextBottomSheet(
-						"apache",
-						R.string.license_roboto,
-						R.string.license_roboto_link
 				);
 				break;
 			case R.id.button_set:
@@ -481,20 +403,6 @@ public class SettingsActivity extends AppCompatActivity
 			}
 		}
 		return false;
-	}
-
-	private void showTextBottomSheet(String file, @StringRes int title, @StringRes int link) {
-		Fragment textBottomSheetDialogFragment = new TextBottomSheetDialogFragment();
-		Bundle bundle = new Bundle();
-		bundle.putString("title", getString(title));
-		bundle.putString("file", file);
-		if (link != 0) {
-			bundle.putString("link", getString(link));
-		}
-		textBottomSheetDialogFragment.setArguments(bundle);
-		getSupportFragmentManager().beginTransaction()
-				.add(textBottomSheetDialogFragment, "text")
-				.commit();
 	}
 
 	private void startAnimatedIcon(int viewId) {

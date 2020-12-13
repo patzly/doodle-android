@@ -5,11 +5,6 @@
 
     <string name="action_back">Back</string>
     <string name="action_set">Set</string>
-    <string name="action_help">Tap for help</string>
-    <string name="action_send_feedback">Send feedback</string>
-    <string name="action_send_feedback_description">Questions and bug reports</string>
-    <string name="action_rate">Rate on Google Play</string>
-    <string name="action_rate_description">Support the development</string>
 
     <string name="setting_night_mode">Night mode</string>
     <string name="setting_night_mode_description">Completely dark shapes</string>
@@ -30,22 +25,9 @@
     <string name="info_material_components_built_with">Built with</string>
     <string name="info_material_components">Material Components</string>
     <string name="info_version">Version</string>
-    <string name="info_changelog">Changelog</string>
-    <string name="info_changelog_description">What\'s new?</string>
     <string name="info_developer">Developer</string>
 
     <string name="category_customisation">Customisation</string>
     <string name="category_info">Info</string>
-    <string name="category_help">FAQ</string>
-    <string name="category_feedback">Feedback</string>
-    <string name="category_licenses">Open source licenses</string>
-
-    <string name="license_author_google" translatable="false">Google</string>
-    <string name="license_material_icons" translatable="false">Material Design Icons</string>
-    <string name="license_material_icons_link" translatable="false">https://github.com/google/material-design-icons</string>
-    <string name="license_material_components" translatable="false">Material Components Android</string>
-    <string name="license_material_components_link" translatable="false">https://github.com/material-components/material-components-android</string>
-    <string name="license_roboto" translatable="false">Roboto Typeface</string>
-    <string name="license_roboto_link" translatable="false">https://github.com/google/roboto</string>
 
 </resources>

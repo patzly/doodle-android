@@ -464,7 +464,7 @@
 
                     <TextView
                         style="@style/Theme.Doodle.ListItem.Description"
-                        android:text="@string/app_version" />
+                        android:text="@string/versionName" />
 
                 </LinearLayout>
 

@@ -2,8 +2,7 @@
 <manifest
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="xyz.zedler.patrick.doodle"
-    android:versionName="@string/app_version">
+    package="xyz.zedler.patrick.doodle">
 
     <uses-feature
         android:name="android.software.live_wallpaper"

@@ -22,8 +22,8 @@ import xyz.zedler.patrick.doodle.R;
 
 public class LiveWallpaperService extends WallpaperService {
 
-	private final static boolean DEBUG = false;
 	private final static String TAG = "LiveWallpaperService";
+	private final static boolean DEBUG = false;
 
 	private SharedPreferences sharedPrefs;
 	private Resources.Theme themeRes;
@@ -249,7 +249,7 @@ public class LiveWallpaperService extends WallpaperService {
 							drawShape(geometricLine, 0.5, 0.82, zGeometricLine, xOffset);
 							drawShape(geometricPoly, 0.8, 0.67, zGeometricPoly, xOffset);
 							drawShape(geometricCircle, 0.6, 0.2, zGeometricCircle, xOffset);
-							drawShape(geometricSheet, 0.4, 0.25, zGeometricSheet, xOffset);
+							drawShape(geometricSheet, 0.4, 0.21, zGeometricSheet, xOffset);
 							drawOnCanvas(
 									canvas,
 									geometricSheet, geometricCircle, geometricPoly,
@@ -299,15 +299,15 @@ public class LiveWallpaperService extends WallpaperService {
 			switch (theme) {
 				case "doodle":
 					themeRes.applyStyle(R.style.Wallpaper_Doodle_Night, true);
-					colorBackground = getResources().getColor(R.color.wp_bg_doodle_night);
+					colorBackground = getColor(R.color.wp_bg_doodle_night);
 					break;
 				case "neon":
 					themeRes.applyStyle(R.style.Wallpaper_Neon_Night, true);
-					colorBackground = getResources().getColor(R.color.wp_bg_neon_night);
+					colorBackground = getColor(R.color.wp_bg_neon_night);
 					break;
 				case "geometric":
 					themeRes.applyStyle(R.style.Wallpaper_Geometric_Night, true);
-					colorBackground = getResources().getColor(R.color.wp_bg_geometric_night);
+					colorBackground = getColor(R.color.wp_bg_geometric_night);
 					break;
 			}
 		} else {
@@ -316,25 +316,25 @@ public class LiveWallpaperService extends WallpaperService {
 					switch (variant) {
 						case "black":
 							themeRes.applyStyle(R.style.Wallpaper_Doodle_Black, true);
-							colorBackground = getResources().getColor(R.color.wp_bg_doodle_black);
+							colorBackground = getColor(R.color.wp_bg_doodle_black);
 							break;
 						case "white":
 							themeRes.applyStyle(R.style.Wallpaper_Doodle_White, true);
-							colorBackground = getResources().getColor(R.color.wp_bg_doodle_white);
+							colorBackground = getColor(R.color.wp_bg_doodle_white);
 							break;
 						case "orange":
 							themeRes.applyStyle(R.style.Wallpaper_Doodle_Orange, true);
-							colorBackground = getResources().getColor(R.color.wp_bg_doodle_orange);
+							colorBackground = getColor(R.color.wp_bg_doodle_orange);
 							break;
 					}
 					break;
 				case "neon":
 					themeRes.applyStyle(R.style.Wallpaper_Neon, true);
-					colorBackground = getResources().getColor(R.color.wp_bg_neon);
+					colorBackground = getColor(R.color.wp_bg_neon);
 					break;
 				case "geometric":
 					themeRes.applyStyle(R.style.Wallpaper_Geometric, true);
-					colorBackground = getResources().getColor(R.color.wp_bg_geometric);
+					colorBackground = getColor(R.color.wp_bg_geometric);
 					break;
 			}
 		}

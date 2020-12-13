@@ -147,25 +147,6 @@
                     </com.google.android.material.card.MaterialCardView>
 
                     <com.google.android.material.card.MaterialCardView
-                        android:id="@+id/card_nature"
-                        style="@style/Widget.Doodle.Card"
-                        android:layout_marginStart="4dp"
-                        android:layout_marginEnd="4dp"
-                        android:visibility="gone">
-
-                        <com.google.android.material.card.MaterialCardView
-                            style="@style/Widget.Doodle.Card.Circle">
-
-                            <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:src="@drawable/preview_nature" />
-
-                        </com.google.android.material.card.MaterialCardView>
-
-                    </com.google.android.material.card.MaterialCardView>
-
-                    <com.google.android.material.card.MaterialCardView
                         android:id="@+id/card_neon"
                         style="@style/Widget.Doodle.Card"
                         android:layout_marginStart="4dp"

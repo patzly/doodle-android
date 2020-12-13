@@ -13,7 +13,6 @@ import android.view.ViewTreeObserver;
 import android.widget.LinearLayout;
 
 import androidx.annotation.ColorRes;
-import androidx.annotation.IdRes;
 import androidx.core.content.ContextCompat;
 import androidx.core.widget.NestedScrollView;
 
@@ -47,16 +46,16 @@ public class ScrollBehavior {
 	 */
 	public void setUpScroll(
 			Activity targetActivity,
-			@IdRes int appBarLayoutId,
-			@IdRes int linearAppBarId,
-			@IdRes int nestedScrollViewId,
+			AppBarLayout appBarLayout,
+			LinearLayout linearAppBar,
+			NestedScrollView nestedScrollView,
 			boolean liftOnScroll
 	) {
 		this.liftOnScroll = liftOnScroll;
 		activity = targetActivity;
-		appBarLayout = activity.findViewById(appBarLayoutId);
-		linearAppBar = activity.findViewById(linearAppBarId);
-		nestedScrollView = activity.findViewById(nestedScrollViewId);
+		this.appBarLayout = appBarLayout;
+		this.linearAppBar = linearAppBar;
+		this.nestedScrollView = nestedScrollView;
 		currentState = STATE_SCROLLED_UP;
 		measureScrollView();
 		setLiftOnScroll(liftOnScroll);

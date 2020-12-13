@@ -5,7 +5,6 @@ import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.drawable.ColorDrawable;
@@ -113,15 +112,7 @@ public class LiveWallpaperService extends WallpaperService {
 						break;
 				}
 			}
-			if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O_MR1) {
-				return WallpaperColors.fromDrawable(new ColorDrawable(background));
-			} else {
-				return new WallpaperColors(
-						Color.valueOf(background),
-						null,
-						null
-				);
-			}
+			return WallpaperColors.fromDrawable(new ColorDrawable(background));
 		}
 
 		@Override

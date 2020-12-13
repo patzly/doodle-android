@@ -242,10 +242,7 @@ public class ScrollBehavior {
 	private void tintTopBars(@ColorRes int target) {
 		if(activity != null && linearAppBar != null) {
 			int appBarColor = ((ColorDrawable) linearAppBar.getBackground()).getColor();
-			int statusBarColor = 0;
-			if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-				statusBarColor = activity.getWindow().getStatusBarColor();
-			}
+			int statusBarColor = activity.getWindow().getStatusBarColor();
 			int targetColor = ContextCompat.getColor(activity, target);
 			if(appBarColor != targetColor || statusBarColor != targetColor) {
 				ValueAnimator valueAnimator = ValueAnimator.ofArgb(appBarColor, targetColor);
@@ -253,23 +250,14 @@ public class ScrollBehavior {
 					if(linearAppBar != null) {
 						linearAppBar.setBackgroundColor((int) valueAnimator.getAnimatedValue());
 					}
-					if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-						if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.M && appBarColor == ContextCompat.getColor(activity, R.color.white)) {
-							activity.getWindow().setStatusBarColor(ContextCompat.getColor(activity, R.color.grey400));
-						} else {
-							activity.getWindow().setStatusBarColor((int) valueAnimator.getAnimatedValue());
-						}
-					}
+					activity.getWindow().setStatusBarColor((int) valueAnimator.getAnimatedValue());
 				});
 				valueAnimator.setDuration(activity.getResources().getInteger(
 						R.integer.app_bar_elevation_anim_duration
 				)).start();
 				if(DEBUG) Log.i(TAG, "tintTopBars: appBarLinearLayout and status bar tinted");
-			} else {
-				if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M && appBarColor == ContextCompat.getColor(activity, R.color.white)) {
-					activity.getWindow().setStatusBarColor(ContextCompat.getColor(activity, R.color.grey400));
-				}
-				if(DEBUG) Log.i(TAG, "tintTopBars: current and target identical");
+			} else if(DEBUG) {
+				Log.i(TAG, "tintTopBars: current and target identical");
 			}
 		} else if(DEBUG) Log.e(TAG, "tintTopBars: activity or appBarLinearLayout is null!");
 	}

@@ -1,2 +1,2 @@
 include ':app'
-rootProject.name='Doodle'
+rootProject.name='Doodle Android'

@@ -10,7 +10,6 @@ import android.graphics.Rect;
 import android.graphics.drawable.ColorDrawable;
 import android.preference.PreferenceManager;
 import android.service.wallpaper.WallpaperService;
-import android.util.Log;
 import android.view.SurfaceHolder;
 
 import androidx.annotation.DrawableRes;
@@ -141,49 +140,45 @@ public class LiveWallpaperService extends WallpaperService {
 						break;
 				}
 			}
+
 			return WallpaperColors.fromDrawable(new ColorDrawable(background));
 		}
 
 		@Override
 		public void onVisibilityChanged(boolean visible) {
-			if (visible) {
-				if (sharedPrefs == null) {
-					sharedPrefs = PreferenceManager.getDefaultSharedPreferences(
-							getApplicationContext()
-					);
-				}
-				theme = sharedPrefs.getString("theme", "doodle");
-				variant = sharedPrefs.getString("variant", "black");
-				nightMode = sharedPrefs.getBoolean("night_mode", true);
-				followSystem = sharedPrefs.getBoolean("follow_system", true);
-				parallax = sharedPrefs.getInt("parallax", 100);
-				isSizeBig = sharedPrefs.getBoolean("size_big", false);
+			if(!visible) return;
 
-				if (!theme.equals(sharedPrefs.getString("theme", "doodle"))) {
-					theme = sharedPrefs.getString("theme", "doodle");
-					refreshTheme();
-					notifyColorsChanged();
-				} else if (isNight != isNightMode()){
-					isNight = isNightMode();
-					refreshTheme();
-					notifyColorsChanged();
-				} else if (!variant.equals(
-						sharedPrefs.getString("variant", "black")
-				)) {
-					variant = sharedPrefs.getString("variant", "black");
-					refreshTheme();
-					notifyColorsChanged();
-				} else if (sharedPrefs.getBoolean("should_refresh", true)) {
-					sharedPrefs.edit().putBoolean("should_refresh", false).apply();
-					refreshTheme();
-					notifyColorsChanged();
-				}
+			sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 
-				newRandomZ();
-				drawFrame(xOffset);
+			String themeNew = sharedPrefs.getString("theme", "doodle");
+			String variantNew = sharedPrefs.getString("variant", "black");
+			nightMode = sharedPrefs.getBoolean("night_mode", true);
+			followSystem = sharedPrefs.getBoolean("follow_system", true);
+			parallax = sharedPrefs.getInt("parallax", 100);
+			isSizeBig = sharedPrefs.getBoolean("size_big", false);
 
-				if (DEBUG) Log.i(TAG, "onVisibilityChanged: method call");
+			if (!theme.equals(themeNew)) {
+				theme = themeNew;
+				variant = variantNew;
+				refreshTheme();
+				notifyColorsChanged();
+			} else if (isNight != isNightMode()){
+				isNight = isNightMode();
+				refreshTheme();
+				notifyColorsChanged();
+			} else if (!variant.equals(variantNew)) {
+				variant = variantNew;
+				refreshTheme();
+				notifyColorsChanged();
 			}
+
+			newRandomZ();
+			drawFrame(xOffset);
+		}
+
+		@Override
+		public void notifyColorsChanged() {
+			super.notifyColorsChanged();
 		}
 
 		@Override
@@ -396,8 +391,7 @@ public class LiveWallpaperService extends WallpaperService {
 
 	private boolean isNightMode() {
 		if (nightMode && !followSystem) return true;
-		return nightMode
-				&& (getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK)
-				== Configuration.UI_MODE_NIGHT_YES;
+		int flags = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
+		return nightMode && flags == Configuration.UI_MODE_NIGHT_YES;
 	}
 }

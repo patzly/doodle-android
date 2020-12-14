@@ -186,8 +186,6 @@ public class SettingsActivity extends AppCompatActivity
 					ContextCompat.getColor(this, R.color.on_secondary)
 			);
 		}
-
-		sharedPrefs.edit().putBoolean("should_refresh", true).apply();
 	}
 
 	@Override
@@ -340,7 +338,7 @@ public class SettingsActivity extends AppCompatActivity
 			case "orange":
 				mcvSelected = binding.cardOrange;
 				mcv1 = binding.cardBlack;
-				mcv2 = binding.cardOrange;
+				mcv2 = binding.cardWhite;
 				break;
 			default:
 				mcvSelected = binding.cardBlack;

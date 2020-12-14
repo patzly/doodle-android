@@ -21,8 +21,6 @@ import androidx.core.content.ContextCompat;
 
 import com.google.android.material.card.MaterialCardView;
 
-import java.util.Objects;
-
 import xyz.zedler.patrick.doodle.behavior.ScrollBehavior;
 import xyz.zedler.patrick.doodle.databinding.ActivitySettingsBinding;
 import xyz.zedler.patrick.doodle.service.LiveWallpaperService;
@@ -80,15 +78,15 @@ public class SettingsActivity extends AppCompatActivity
 				)
 		);
 		binding.switchNightMode.setChecked(
-				sharedPrefs.getBoolean("night_mode", true)
+				sharedPrefs.getBoolean(Constants.PREF.NIGHT_MODE, true)
 		);
 		binding.switchFollowSystem.setChecked(
-				sharedPrefs.getBoolean("follow_system", true)
+				sharedPrefs.getBoolean(Constants.PREF.FOLLOW_SYSTEM, true)
 		);
 		binding.switchFollowSystem.setEnabled(binding.switchNightMode.isChecked());
-		boolean active = Objects.requireNonNull(
-				sharedPrefs.getString("theme", "doodle")
-		).equals("doodle");
+		boolean active = sharedPrefs.getString(
+				Constants.PREF.THEME, Constants.THEME.DOODLE
+		).equals(Constants.THEME.DOODLE);
 		binding.linearVariant.setAlpha(active ? 1 : 0.5f);
 		if (!active) {
 			for (int i = 0; i < binding.linearVariant.getChildCount(); i++) {
@@ -100,13 +98,13 @@ public class SettingsActivity extends AppCompatActivity
 				binding.switchNightMode.isChecked() ? 1 : 0.5f
 		);
 		binding.imageNightMode.setImageResource(
-				sharedPrefs.getBoolean("night_mode", true)
+				sharedPrefs.getBoolean(Constants.PREF.NIGHT_MODE, true)
 						? R.drawable.ic_round_night_mode_off_anim
 						: R.drawable.ic_round_night_mode_on_anim
 
 		);
 
-		switch (sharedPrefs.getInt("parallax", 100)) {
+		switch (sharedPrefs.getInt(Constants.PREF.PARALLAX, 100)) {
 			case 0:
 				binding.radioGroupParallax.check(R.id.radio_none);
 				break;
@@ -120,30 +118,32 @@ public class SettingsActivity extends AppCompatActivity
 		binding.radioGroupParallax.setOnCheckedChangeListener((RadioGroup group, int checkedId) -> {
 			IconUtil.start(binding.imageParallax);
 			if (checkedId == R.id.radio_none) {
-				sharedPrefs.edit().putInt("parallax", 0).apply();
+				sharedPrefs.edit().putInt(Constants.PREF.PARALLAX, 0).apply();
 			} else if (checkedId == R.id.radio_little) {
-				sharedPrefs.edit().putInt("parallax", 100).apply();
+				sharedPrefs.edit().putInt(Constants.PREF.PARALLAX, 100).apply();
 			} else if (checkedId == R.id.radio_much) {
-				sharedPrefs.edit().putInt("parallax", 200).apply();
+				sharedPrefs.edit().putInt(Constants.PREF.PARALLAX, 200).apply();
 			}
 		});
 
 		binding.radioGroupSize.check(
-				sharedPrefs.getBoolean("size_big", false)
+				sharedPrefs.getBoolean(Constants.PREF.SIZE_BIG, false)
 						? R.id.radio_big
 						: R.id.radio_default
 		);
 		binding.radioGroupSize.setOnCheckedChangeListener((RadioGroup group, int checkedId) -> {
 			IconUtil.start(binding.imageSize);
 			if (checkedId == R.id.radio_default) {
-				sharedPrefs.edit().putBoolean("size_big", false).apply();
+				sharedPrefs.edit().putBoolean(Constants.PREF.SIZE_BIG, false).apply();
 			} else if (checkedId == R.id.radio_big) {
-				sharedPrefs.edit().putBoolean("size_big", true).apply();
+				sharedPrefs.edit().putBoolean(Constants.PREF.SIZE_BIG, true).apply();
 			}
 		});
 
-		refreshSelectionTheme(sharedPrefs.getString("theme", "doodle"));
-		refreshSelectionVariant(sharedPrefs.getString("variant", "black"));
+		refreshSelectionTheme(sharedPrefs.getString(Constants.PREF.THEME, Constants.THEME.DOODLE));
+		refreshSelectionVariant(
+				sharedPrefs.getString(Constants.PREF.VARIANT, Constants.VARIANT.BLACK)
+		);
 
 		ClickUtil.setOnClickListeners(
 				this,
@@ -220,19 +220,19 @@ public class SettingsActivity extends AppCompatActivity
 		int id = v.getId();
 		if (id == R.id.card_doodle) {
 			IconUtil.start(binding.imageTheme);
-			refreshSelectionTheme("doodle");
+			refreshSelectionTheme(Constants.THEME.DOODLE);
 		} else if (id == R.id.card_neon) {
 			IconUtil.start(binding.imageTheme);
-			refreshSelectionTheme("neon");
+			refreshSelectionTheme(Constants.THEME.NEON);
 		} else if (id == R.id.card_geometric) {
 			IconUtil.start(binding.imageTheme);
-			refreshSelectionTheme("geometric");
+			refreshSelectionTheme(Constants.THEME.GEOMETRIC);
 		} else if (id == R.id.card_black) {
-			refreshSelectionVariant("black");
+			refreshSelectionVariant(Constants.VARIANT.BLACK);
 		} else if (id == R.id.card_white) {
-			refreshSelectionVariant("white");
+			refreshSelectionVariant(Constants.VARIANT.WHITE);
 		} else if (id == R.id.card_orange) {
-			refreshSelectionVariant("orange");
+			refreshSelectionVariant(Constants.VARIANT.ORANGE);
 		} else if (id == R.id.linear_night_mode) {
 			binding.switchNightMode.setChecked(!binding.switchNightMode.isChecked());
 		} else if (id == R.id.linear_follow_system) {
@@ -280,7 +280,7 @@ public class SettingsActivity extends AppCompatActivity
 					.alpha(isChecked ? 1 : 0.5f)
 					.setDuration(200)
 					.start();
-			sharedPrefs.edit().putBoolean("night_mode", isChecked).apply();
+			sharedPrefs.edit().putBoolean(Constants.PREF.NIGHT_MODE, isChecked).apply();
 			new Handler().postDelayed(() -> binding.imageNightMode.setImageResource(
 					isChecked
 							? R.drawable.ic_round_night_mode_off_anim
@@ -288,19 +288,19 @@ public class SettingsActivity extends AppCompatActivity
 
 			), 300);
 		} else if (id == R.id.switch_follow_system) {
-			sharedPrefs.edit().putBoolean("follow_system", isChecked).apply();
+			sharedPrefs.edit().putBoolean(Constants.PREF.FOLLOW_SYSTEM, isChecked).apply();
 		}
 	}
 
 	private void refreshSelectionTheme(String selection) {
 		MaterialCardView mcvSelected, mcv1, mcv2;
 		switch (selection) {
-			case "neon":
+			case Constants.THEME.NEON:
 				mcvSelected = binding.cardNeon;
 				mcv1 = binding.cardDoodle;
 				mcv2 = binding.cardGeometric;
 				break;
-			case "geometric":
+			case Constants.THEME.GEOMETRIC:
 				mcvSelected = binding.cardGeometric;
 				mcv1 = binding.cardDoodle;
 				mcv2 = binding.cardNeon;
@@ -318,24 +318,26 @@ public class SettingsActivity extends AppCompatActivity
 		mcv2.setStrokeColor(ContextCompat.getColor(this, R.color.stroke));
 		mcv2.setChecked(false);
 		binding.linearVariant.animate()
-				.alpha(selection.equals("doodle") ? 1 : 0.5f)
+				.alpha(selection.equals(Constants.THEME.DOODLE) ? 1 : 0.5f)
 				.setDuration(200)
 				.start();
 		for (int i = 0; i < binding.linearVariant.getChildCount(); i++) {
-			binding.linearVariant.getChildAt(i).setEnabled(selection.equals("doodle"));
+			binding.linearVariant.getChildAt(i).setEnabled(
+					selection.equals(Constants.THEME.DOODLE)
+			);
 		}
-		sharedPrefs.edit().putString("theme", selection).apply();
+		sharedPrefs.edit().putString(Constants.PREF.THEME, selection).apply();
 	}
 
 	private void refreshSelectionVariant(String selection) {
 		MaterialCardView mcvSelected, mcv1, mcv2;
 		switch (selection) {
-			case "white":
+			case Constants.VARIANT.WHITE:
 				mcvSelected = binding.cardWhite;
 				mcv1 = binding.cardBlack;
 				mcv2 = binding.cardOrange;
 				break;
-			case "orange":
+			case Constants.VARIANT.ORANGE:
 				mcvSelected = binding.cardOrange;
 				mcv1 = binding.cardBlack;
 				mcv2 = binding.cardWhite;
@@ -352,7 +354,7 @@ public class SettingsActivity extends AppCompatActivity
 		mcv1.setChecked(false);
 		mcv2.setStrokeColor(ContextCompat.getColor(this, R.color.stroke));
 		mcv2.setChecked(false);
-		sharedPrefs.edit().putString("variant", selection).apply();
+		sharedPrefs.edit().putString(Constants.PREF.VARIANT, selection).apply();
 	}
 
 	@SuppressWarnings("deprecation")

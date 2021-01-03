@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layer-list xmlns:tools="http://schemas.android.com/tools"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
         android:drawable="@color/background" />
 
     <item
         android:gravity="center"
-        android:width="250dp"
-        android:height="250dp"
-        android:drawable="@drawable/splash_logo"
-        tools:ignore="UnusedAttribute" />
+        android:width="100dp"
+        android:height="100dp"
+        android:drawable="@drawable/splash_logo" />
 
 </layer-list>

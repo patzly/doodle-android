@@ -15,7 +15,7 @@
     <!-- PRIMARY -->
 
     <color name="primary">@color/white</color>
-    <color name="primaryVariant">@color/white</color>
+    <color name="primary_variant">@color/white</color>
     <color name="onPrimary">#000</color>
 
     <!-- SECONDARY -->
@@ -29,8 +29,8 @@
     <!-- BACKGROUND -->
 
     <color name="background">@color/white</color>
-    <color name="onBackground">#dd000000</color>
-    <color name="onBackgroundSecondary">@color/grey600</color>
+    <color name="on_background">#dd000000</color>
+    <color name="on_background_scondary">@color/grey600</color>
 
     <!-- SURFACE -->
 

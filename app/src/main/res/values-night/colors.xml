@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <color name="retro_green_fg">@color/retro_green_bg_black</color>
+
     <!-- PRIMARY -->
 
     <color name="primary">#313235</color>
@@ -14,7 +16,7 @@
 
     <color name="background">#1e1f22</color>
     <color name="on_background">@color/grey200</color>
-    <color name="on_background_scondary">@color/grey600</color>
+    <color name="on_background_secondary">@color/grey600</color>
 
     <!-- SURFACE -->
 

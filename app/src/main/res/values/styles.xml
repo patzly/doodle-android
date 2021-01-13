@@ -12,7 +12,7 @@
     <!-- Buttons -->
     <style name="Theme.Doodle.Button.UnelevatedButton" parent="Widget.MaterialComponents.Button.UnelevatedButton">
         <item name="rippleColor">@color/highlight_on_secondary</item>
-        <item name="backgroundTint">@color/secondary</item>
+        <item name="backgroundTint">@color/retro_green_bg_white</item>
         <item name="android:textColor">@color/on_secondary</item>
         <item name="android:fontFamily">@font/roboto_mono_bold</item>
         <item name="cornerRadius">6dp</item>
@@ -172,7 +172,7 @@
 
     <style name="TextAppearance.Doodle.ListItem.Description" parent="TextAppearance.MaterialComponents.Body1">
         <item name="android:textSize">14sp</item>
-        <item name="android:textColor">@color/on_background_scondary</item>
+        <item name="android:textColor">@color/on_background_secondary</item>
         <item name="android:textAlignment">viewStart</item>
     </style>
 

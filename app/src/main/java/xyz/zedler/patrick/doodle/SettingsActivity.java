@@ -66,7 +66,7 @@ public class SettingsActivity extends AppCompatActivity
 						this,
 						isWallpaperServiceRunning()
 								? R.color.secondary_disabled
-								: R.color.secondary
+								: R.color.retro_green_bg_white
 				)
 		);
 		binding.buttonSet.setTextColor(
@@ -180,7 +180,7 @@ public class SettingsActivity extends AppCompatActivity
 		if (!isWallpaperServiceRunning()) {
 			binding.buttonSet.setEnabled(true);
 			binding.buttonSet.setBackgroundColor(
-					ContextCompat.getColor(this, R.color.secondary)
+					ContextCompat.getColor(this, R.color.retro_green_bg_white)
 			);
 			binding.buttonSet.setTextColor(
 					ContextCompat.getColor(this, R.color.on_secondary)
@@ -203,7 +203,7 @@ public class SettingsActivity extends AppCompatActivity
 			if (resultCode == RESULT_CANCELED) {
 				binding.buttonSet.setEnabled(true);
 				binding.buttonSet.setBackgroundColor(
-						ContextCompat.getColor(this, R.color.secondary)
+						ContextCompat.getColor(this, R.color.retro_green_bg_white)
 				);
 				binding.buttonSet.setTextColor(
 						ContextCompat.getColor(this, R.color.on_secondary)

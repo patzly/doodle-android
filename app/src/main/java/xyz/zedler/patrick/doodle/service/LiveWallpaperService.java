@@ -99,7 +99,11 @@ public class LiveWallpaperService extends WallpaperService {
 		@Override
 		public void onCreate(SurfaceHolder surfaceHolder) {
 			super.onCreate(surfaceHolder);
+
 			setTouchEventsEnabled(false);
+
+			paint.setColor(colorBackground);
+			paint.setStyle(Paint.Style.FILL);
 		}
 
 		@Override
@@ -204,8 +208,6 @@ public class LiveWallpaperService extends WallpaperService {
 			try {
 				canvas = surfaceHolder.lockCanvas();
 				if (canvas != null) {
-					paint.setColor(colorBackground);
-					paint.setStyle(Paint.Style.FILL);
 					canvas.drawRect(0, 0, frame.width(), frame.height(), paint);
 					switch (theme) {
 						case Constants.THEME.DOODLE:

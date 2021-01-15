@@ -8,6 +8,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.preference.PreferenceManager;
 import android.service.wallpaper.WallpaperService;
 import android.view.SurfaceHolder;
@@ -102,7 +103,6 @@ public class LiveWallpaperService extends WallpaperService {
 
 			setTouchEventsEnabled(false);
 
-			paint.setColor(colorBackground);
 			paint.setStyle(Paint.Style.FILL);
 		}
 
@@ -207,8 +207,11 @@ public class LiveWallpaperService extends WallpaperService {
 			Canvas canvas = null;
 			try {
 				canvas = surfaceHolder.lockCanvas();
+
 				if (canvas != null) {
+					paint.setColor(colorBackground);
 					canvas.drawRect(0, 0, frame.width(), frame.height(), paint);
+
 					switch (theme) {
 						case Constants.THEME.DOODLE:
 							drawShape(doodleArc, 0.25, 0.28, zDoodleArc, xOffset);
@@ -257,14 +260,14 @@ public class LiveWallpaperService extends WallpaperService {
 			}
 		}
 
-		private void drawOnCanvas(Canvas canvas, VectorDrawableCompat... vectors) {
-			for (VectorDrawableCompat vector : vectors) {
-				if (vector != null) vector.draw(canvas);
+		private void drawOnCanvas(Canvas canvas, Drawable... drawables) {
+			for (Drawable drawable : drawables) {
+				if (drawable != null) drawable.draw(canvas);
 			}
 		}
 
 		private void drawShape(
-				VectorDrawableCompat vdc,
+				Drawable drawable,
 				double x,
 				double y,
 				double z,
@@ -273,13 +276,13 @@ public class LiveWallpaperService extends WallpaperService {
 			int xPos, yPos, offset;
 			Rect frame = getSurfaceHolder().getSurfaceFrame();
 			offset = (int) (xOffset * z * parallax);
-			xPos = ((int) (x * frame.width()) - vdc.getIntrinsicWidth() / 2) - offset;
-			yPos = (int) (y * frame.height()) - vdc.getIntrinsicHeight() / 2;
+			xPos = ((int) (x * frame.width()) - drawable.getIntrinsicWidth() / 2) - offset;
+			yPos = (int) (y * frame.height()) - drawable.getIntrinsicHeight() / 2;
 			double scale = isSizeBig ? 1.2 : 1;
-			vdc.setBounds(
+			drawable.setBounds(
 					xPos, yPos,
-					(int) (scale * vdc.getIntrinsicWidth()) + xPos,
-					(int) (scale * vdc.getIntrinsicHeight()) + yPos
+					(int) (scale * drawable.getIntrinsicWidth()) + xPos,
+					(int) (scale * drawable.getIntrinsicHeight()) + yPos
 			);
 		}
 	}

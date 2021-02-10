@@ -22,8 +22,8 @@ The wallpapers are based on the doodle live wallpapers of the Google Pixel 4.
 * In-App auto dark mode
 
 ## How to set as background
-* Tap _SET_ in the top right corner, it should appear a preview
-* Now tap _SET WALLPAPER_
+* Tap SET in the top right corner, it should appear a preview
+* Now tap SET WALLPAPER
 
 ## Compatibility
 

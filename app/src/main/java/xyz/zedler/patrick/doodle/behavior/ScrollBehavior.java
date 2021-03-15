@@ -7,6 +7,7 @@ import android.content.res.Configuration;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewTreeObserver;
@@ -75,7 +76,7 @@ public class ScrollBehavior {
 						}
 						if (liftOnScroll) {
 							if (scrollY < pufferSize) {
-								new Handler().postDelayed(() -> {
+								new Handler(Looper.getMainLooper()).postDelayed(() -> {
 									if (scrollY > 0) {
 										nestedScrollView.setOverScrollMode(View.OVER_SCROLL_NEVER);
 									}

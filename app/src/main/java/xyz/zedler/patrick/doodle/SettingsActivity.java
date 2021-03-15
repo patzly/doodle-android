@@ -9,6 +9,7 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.CompoundButton;
@@ -242,7 +243,7 @@ public class SettingsActivity extends AppCompatActivity
 			}
 		} else if (id == R.id.linear_developer) {
 			IconUtil.start(binding.imageDeveloper);
-			new Handler().postDelayed(
+			new Handler(Looper.getMainLooper()).postDelayed(
 					() -> startActivity(
 							new Intent(
 									Intent.ACTION_VIEW,
@@ -281,12 +282,14 @@ public class SettingsActivity extends AppCompatActivity
 					.setDuration(200)
 					.start();
 			sharedPrefs.edit().putBoolean(Constants.PREF.NIGHT_MODE, isChecked).apply();
-			new Handler().postDelayed(() -> binding.imageNightMode.setImageResource(
-					isChecked
-							? R.drawable.ic_round_night_mode_off_anim
-							: R.drawable.ic_round_night_mode_on_anim
-
-			), 300);
+			new Handler(Looper.getMainLooper()).postDelayed(
+					() -> binding.imageNightMode.setImageResource(
+							isChecked
+									? R.drawable.ic_round_night_mode_off_anim
+									: R.drawable.ic_round_night_mode_on_anim
+					),
+					300
+			);
 		} else if (id == R.id.switch_follow_system) {
 			sharedPrefs.edit().putBoolean(Constants.PREF.FOLLOW_SYSTEM, isChecked).apply();
 		}

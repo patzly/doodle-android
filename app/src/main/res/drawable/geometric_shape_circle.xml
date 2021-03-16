@@ -1,3 +1,18 @@
+<!--
+  ~ This file is part of Doodle Android.
+  ~ Doodle Android is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~ Doodle Android is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with Doodle Android. If not, see <http://www.gnu.org/licenses/>.
+  ~ Copyright 2021 by Patrick Zedler
+  -->
+
 <vector android:height="160dp" android:viewportHeight="515"
     android:viewportWidth="515" android:width="160dp" xmlns:android="http://schemas.android.com/apk/res/android">
     <path android:fillColor="?attr/geometric_circle" android:pathData="M515,257.5A257.5,257.5 0,0 1,257.5 515,257.5 257.5,0 0,1 0,257.5 257.5,257.5 0,0 1,257.5 0,257.5 257.5,0 0,1 515,257.5z"/>

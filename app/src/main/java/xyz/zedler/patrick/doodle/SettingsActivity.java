@@ -35,6 +35,7 @@ import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.content.ContextCompat;
 import com.google.android.material.card.MaterialCardView;
 import xyz.zedler.patrick.doodle.behavior.ScrollBehavior;
+import xyz.zedler.patrick.doodle.behavior.SystemBarBehavior;
 import xyz.zedler.patrick.doodle.databinding.ActivitySettingsBinding;
 import xyz.zedler.patrick.doodle.service.LiveWallpaperService;
 import xyz.zedler.patrick.doodle.util.ClickUtil;
@@ -60,19 +61,13 @@ public class SettingsActivity extends AppCompatActivity
     sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
     clickUtil = new ClickUtil();
 
-    binding.frameBack.setOnClickListener(v -> {
-			if (clickUtil.isDisabled()) {
-				return;
-			}
-      finish();
-    });
+    SystemBarBehavior systemBarBehavior = new SystemBarBehavior(this);
+    systemBarBehavior.setAppBar(binding.appBar);
+    systemBarBehavior.setScroll(binding.scroll, binding.linearContainer);
+    systemBarBehavior.setUp();
 
-    new ScrollBehavior().setUpScroll(
-        this,
-        binding.appBar,
-        binding.linearAppBar,
-        binding.scroll,
-        true
+    new ScrollBehavior(this).setUpScroll(
+        binding.appBar, binding.scroll, true
     );
 
     binding.buttonSet.setEnabled(!isWallpaperServiceRunning());

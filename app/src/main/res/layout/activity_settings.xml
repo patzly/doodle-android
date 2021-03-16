@@ -57,15 +57,12 @@
       </FrameLayout>
 
       <TextView
+        style="@style/Widget.Doodle.TextView.Toolbar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
-        android:singleLine="true"
         android:layout_weight="1"
-        android:text="@string/app_name"
-        android:fontFamily="@font/roboto_mono_bold"
-        android:textAlignment="viewStart"
-        android:textAppearance="@style/TextAppearance.Doodle.Toolbar" />
+        android:text="@string/app_name" />
 
       <com.google.android.material.button.MaterialButton
         android:id="@+id/button_set"
@@ -95,18 +92,18 @@
 
       <LinearLayout
         android:id="@+id/linear_help"
-        style="@style/Theme.Doodle.ListItem.TwoLine">
+        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine">
 
         <ImageView
           android:id="@+id/image_help"
-          style="@style/Theme.Doodle.ListItem.Icon"
+          style="@style/Widget.Doodle.ImageView.ListItem.Icon"
           android:src="@drawable/ic_round_help_anim"
           tools:ignore="ContentDescription" />
 
-        <LinearLayout style="@style/Theme.Doodle.ListItem.TextBox">
+        <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
 
           <TextView
-            style="@style/Theme.Doodle.ListItem.Title"
+            style="@style/Widget.Doodle.TextView.ListItem.Title"
             android:text="@string/info_description"
             android:textSize="15sp" />
 
@@ -115,11 +112,11 @@
       </LinearLayout>
 
       <TextView
-        style="@style/Theme.Doodle.Category"
-        android:text="@string/category_customisation" />
+        style="@style/Widget.Doodle.Category"
+        android:text="@string/category_customization" />
 
       <LinearLayout
-        style="@style/Theme.Doodle.ListItem.TwoLine"
+        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine"
         android:paddingTop="0dp"
         android:paddingBottom="0dp"
         android:paddingStart="16dp"
@@ -128,13 +125,13 @@
 
         <ImageView
           android:id="@+id/image_theme"
-          style="@style/Theme.Doodle.ListItem.Icon"
+          style="@style/Widget.Doodle.ImageView.ListItem.Icon"
           android:layout_marginEnd="25dp"
           android:src="@drawable/ic_round_palette_anim"
           tools:ignore="ContentDescription" />
 
         <LinearLayout
-          style="@style/Theme.Doodle.ListItem.TextBox"
+          style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:orientation="horizontal"
@@ -150,7 +147,8 @@
             style="@style/Widget.Doodle.Card"
             android:layout_marginEnd="4dp">
 
-            <com.google.android.material.card.MaterialCardView style="@style/Widget.Doodle.Card.Circle">
+            <com.google.android.material.card.MaterialCardView
+              style="@style/Widget.Doodle.Card.Circle">
 
               <ImageView
                 android:layout_width="match_parent"
@@ -167,7 +165,8 @@
             android:layout_marginStart="4dp"
             android:layout_marginEnd="4dp">
 
-            <com.google.android.material.card.MaterialCardView style="@style/Widget.Doodle.Card.Circle">
+            <com.google.android.material.card.MaterialCardView
+              style="@style/Widget.Doodle.Card.Circle">
 
               <ImageView
                 android:layout_width="match_parent"
@@ -183,7 +182,8 @@
             style="@style/Widget.Doodle.Card"
             android:layout_marginStart="4dp">
 
-            <com.google.android.material.card.MaterialCardView style="@style/Widget.Doodle.Card.Circle">
+            <com.google.android.material.card.MaterialCardView
+              style="@style/Widget.Doodle.Card.Circle">
 
               <ImageView
                 android:layout_width="match_parent"
@@ -199,7 +199,7 @@
       </LinearLayout>
 
       <LinearLayout
-        style="@style/Theme.Doodle.ListItem.TwoLine"
+        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine"
         android:paddingTop="0dp"
         android:paddingBottom="0dp"
         android:paddingStart="16dp"
@@ -208,14 +208,14 @@
 
         <ImageView
           android:id="@+id/image_variant"
-          style="@style/Theme.Doodle.ListItem.Icon"
+          style="@style/Widget.Doodle.ImageView.ListItem.Icon"
           android:layout_marginEnd="25dp"
           android:src="@drawable/ic_round_tonality"
           tools:ignore="ContentDescription" />
 
         <LinearLayout
           android:id="@+id/linear_variant"
-          style="@style/Theme.Doodle.ListItem.TextBox"
+          style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:orientation="horizontal"
@@ -267,23 +267,23 @@
 
       <LinearLayout
         android:id="@+id/linear_night_mode"
-        style="@style/Theme.Doodle.ListItem.TwoLine.Clickable"
+        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable"
         android:paddingTop="8dp"
         android:paddingBottom="8dp">
 
         <ImageView
           android:id="@+id/image_night_mode"
-          style="@style/Theme.Doodle.ListItem.Icon"
+          style="@style/Widget.Doodle.ImageView.ListItem.Icon"
           tools:ignore="ContentDescription" />
 
-        <LinearLayout style="@style/Theme.Doodle.ListItem.TextBox.Stretch">
+        <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
 
           <TextView
-            style="@style/Theme.Doodle.ListItem.Title"
+            style="@style/Widget.Doodle.TextView.ListItem.Title"
             android:text="@string/setting_night_mode" />
 
           <TextView
-            style="@style/Theme.Doodle.ListItem.Description"
+            style="@style/Widget.Doodle.TextView.ListItem.Description"
             android:text="@string/setting_night_mode_description" />
 
         </LinearLayout>
@@ -298,7 +298,7 @@
 
       <LinearLayout
         android:id="@+id/linear_follow_system"
-        style="@style/Theme.Doodle.ListItem.TwoLine.Clickable"
+        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable"
         android:paddingTop="8dp"
         android:paddingBottom="8dp">
 
@@ -311,18 +311,18 @@
 
           <ImageView
             android:id="@+id/image_follow_system"
-            style="@style/Theme.Doodle.ListItem.Icon"
+            style="@style/Widget.Doodle.ImageView.ListItem.Icon"
             android:src="@drawable/ic_round_brightness_auto_anim"
             tools:ignore="ContentDescription" />
 
-          <LinearLayout style="@style/Theme.Doodle.ListItem.TextBox.Stretch">
+          <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
 
             <TextView
-              style="@style/Theme.Doodle.ListItem.Title"
+              style="@style/Widget.Doodle.TextView.ListItem.Title"
               android:text="@string/setting_follow_system" />
 
             <TextView
-              style="@style/Theme.Doodle.ListItem.Description"
+              style="@style/Widget.Doodle.TextView.ListItem.Description"
               android:text="@string/setting_follow_system_description" />
 
           </LinearLayout>
@@ -338,25 +338,25 @@
       </LinearLayout>
 
       <LinearLayout
-        style="@style/Theme.Doodle.ListItem.TwoLine"
+        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine"
         android:paddingTop="16dp"
         android:paddingBottom="8dp"
         android:minHeight="50dp">
 
         <ImageView
           android:id="@+id/image_parallax"
-          style="@style/Theme.Doodle.ListItem.Icon"
+          style="@style/Widget.Doodle.ImageView.ListItem.Icon"
           android:src="@drawable/ic_round_swap_horiz_anim"
           tools:ignore="ContentDescription" />
 
-        <LinearLayout style="@style/Theme.Doodle.ListItem.TextBox">
+        <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
 
           <TextView
-            style="@style/Theme.Doodle.ListItem.Title"
+            style="@style/Widget.Doodle.TextView.ListItem.Title"
             android:text="@string/setting_parallax" />
 
           <TextView
-            style="@style/Theme.Doodle.ListItem.Description"
+            style="@style/Widget.Doodle.TextView.ListItem.Description"
             android:text="@string/setting_parallax_description" />
 
         </LinearLayout>
@@ -389,25 +389,25 @@
       </RadioGroup>
 
       <LinearLayout
-        style="@style/Theme.Doodle.ListItem.TwoLine"
+        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine"
         android:paddingTop="12dp"
         android:paddingBottom="8dp"
         android:minHeight="50dp">
 
         <ImageView
           android:id="@+id/image_size"
-          style="@style/Theme.Doodle.ListItem.Icon"
+          style="@style/Widget.Doodle.ImageView.ListItem.Icon"
           android:src="@drawable/ic_round_filter_center_focus_anim"
           tools:ignore="ContentDescription" />
 
-        <LinearLayout style="@style/Theme.Doodle.ListItem.TextBox">
+        <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
 
           <TextView
-            style="@style/Theme.Doodle.ListItem.Title"
+            style="@style/Widget.Doodle.TextView.ListItem.Title"
             android:text="@string/setting_size" />
 
           <TextView
-            style="@style/Theme.Doodle.ListItem.Description"
+            style="@style/Widget.Doodle.TextView.ListItem.Description"
             android:text="@string/setting_size_description" />
 
         </LinearLayout>
@@ -435,24 +435,24 @@
       </RadioGroup>
 
       <TextView
-        style="@style/Theme.Doodle.Category"
+        style="@style/Widget.Doodle.Category"
         android:text="@string/category_info" />
 
-      <LinearLayout style="@style/Theme.Doodle.ListItem.TwoLine">
+      <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine">
 
         <ImageView
-          style="@style/Theme.Doodle.ListItem.Icon"
+          style="@style/Widget.Doodle.ImageView.ListItem.Icon"
           android:src="@drawable/ic_round_info_outline"
           tools:ignore="ContentDescription" />
 
-        <LinearLayout style="@style/Theme.Doodle.ListItem.TextBox">
+        <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
 
           <TextView
-            style="@style/Theme.Doodle.ListItem.Title"
+            style="@style/Widget.Doodle.TextView.ListItem.Title"
             android:text="@string/info_version" />
 
           <TextView
-            style="@style/Theme.Doodle.ListItem.Description"
+            style="@style/Widget.Doodle.TextView.ListItem.Description"
             android:text="@string/versionName" />
 
         </LinearLayout>
@@ -461,22 +461,22 @@
 
       <LinearLayout
         android:id="@+id/linear_developer"
-        style="@style/Theme.Doodle.ListItem.TwoLine.Clickable">
+        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable">
 
         <ImageView
           android:id="@+id/image_developer"
-          style="@style/Theme.Doodle.ListItem.Icon"
+          style="@style/Widget.Doodle.ImageView.ListItem.Icon"
           android:src="@drawable/ic_round_person_anim"
           tools:ignore="ContentDescription" />
 
-        <LinearLayout style="@style/Theme.Doodle.ListItem.TextBox">
+        <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
 
           <TextView
-            style="@style/Theme.Doodle.ListItem.Title"
+            style="@style/Widget.Doodle.TextView.ListItem.Title"
             android:text="@string/info_developer" />
 
           <TextView
-            style="@style/Theme.Doodle.ListItem.Description"
+            style="@style/Widget.Doodle.TextView.ListItem.Description"
             android:text="@string/app_developer" />
 
         </LinearLayout>

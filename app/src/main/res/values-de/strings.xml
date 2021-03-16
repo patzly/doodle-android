@@ -41,7 +41,7 @@
     <string name="info_version">Version</string>
     <string name="info_developer">Entwickler</string>
 
-    <string name="category_customisation">Anpassung</string>
+    <string name="category_customization">Anpassung</string>
     <string name="category_info">Info</string>
 
 </resources>

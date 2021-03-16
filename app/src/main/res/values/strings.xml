@@ -42,7 +42,7 @@
     <string name="info_version">Version</string>
     <string name="info_developer">Developer</string>
 
-    <string name="category_customisation">Customisation</string>
+    <string name="category_customization">Customization</string>
     <string name="category_info">Info</string>
 
 </resources>

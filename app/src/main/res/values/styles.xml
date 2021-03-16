@@ -34,86 +34,11 @@
     <item name="cornerRadius">6dp</item>
   </style>
 
-  <!-- Category -->
-  <style name="Theme.Doodle.Category" parent="">
-    <item name="android:layout_width">wrap_content</item>
-    <item name="android:layout_height">wrap_content</item>
-    <item name="android:layout_marginStart">72dp</item>
-    <item name="android:paddingTop">10dp</item>
-    <item name="android:paddingBottom">3dp</item>
-    <item name="android:textAppearance">@style/TextAppearance.Doodle.Category</item>
-  </style>
-
-  <!-- List -->
-  <style name="Theme.Doodle.ListItem" parent="">
-    <item name="android:layout_width">match_parent</item>
-    <item name="android:layout_height">wrap_content</item>
-    <item name="android:paddingStart">16dp</item>
-    <item name="android:paddingEnd">16dp</item>
-    <item name="android:paddingTop">16dp</item>
-    <item name="android:paddingBottom">16dp</item>
-    <item name="android:gravity">center_vertical</item>
-    <item name="android:orientation">horizontal</item>
-  </style>
-
-  <style name="Theme.Doodle.ListItem.Clickable" parent="Theme.Doodle.ListItem">
-    <item name="android:clickable">true</item>
-    <item name="android:background">@drawable/bg_list_item_ripple</item>
-  </style>
-
-  <style name="Theme.Doodle.ListItem.SingleLine" parent="Theme.Doodle.ListItem">
-    <item name="android:minHeight">56dp</item>
-  </style>
-
-  <style name="Theme.Doodle.ListItem.SingleLine.Clickable" parent="Theme.Doodle.ListItem.SingleLine">
-    <item name="android:clickable">true</item>
-    <item name="android:background">@drawable/bg_list_item_ripple</item>
-  </style>
-
-  <style name="Theme.Doodle.ListItem.TwoLine" parent="Theme.Doodle.ListItem">
-    <item name="android:minHeight">72dp</item>
-  </style>
-
-  <style name="Theme.Doodle.ListItem.TwoLine.Clickable" parent="Theme.Doodle.ListItem.TwoLine">
-    <item name="android:clickable">true</item>
-    <item name="android:background">@drawable/bg_list_item_ripple</item>
-  </style>
-
-  <style name="Theme.Doodle.ListItem.TextBox" parent="">
-    <item name="android:layout_width">match_parent</item>
-    <item name="android:layout_height">wrap_content</item>
-    <item name="android:orientation">vertical</item>
-  </style>
-
-  <style name="Theme.Doodle.ListItem.TextBox.Stretch" parent="Theme.Doodle.ListItem.TextBox">
-    <item name="android:layout_width">0dp</item>
-    <item name="android:layout_weight">1</item>
-  </style>
-
-  <style name="Theme.Doodle.ListItem.Title" parent="">
-    <item name="android:layout_width">match_parent</item>
-    <item name="android:layout_height">wrap_content</item>
-    <item name="android:textAppearance">@style/TextAppearance.Doodle.ListItem.Title</item>
-    <item name="android:textAlignment">viewStart</item>
-  </style>
-
-  <style name="Theme.Doodle.ListItem.Description" parent="Theme.Doodle.ListItem.Title">
-    <item name="android:textAppearance">@style/TextAppearance.Doodle.ListItem.Description</item>
-    <item name="android:maxLines">10</item>
-    <item name="android:textAlignment">viewStart</item>
-  </style>
-
-  <!-- Icon -->
-  <style name="Theme.Doodle.ListItem.Icon" parent="">
-    <item name="android:layout_width">24dp</item>
-    <item name="android:layout_height">24dp</item>
-    <item name="android:layout_gravity">start|center_vertical</item>
-    <item name="android:layout_marginEnd">32dp</item>
-    <item name="android:importantForAccessibility">no</item>
-  </style>
-
   <!-- RADIO BUTTON -->
-  <style name="Widget.Doodle.RadioButton" parent="Widget.MaterialComponents.CompoundButton.RadioButton">
+  
+  <style
+    name="Widget.Doodle.RadioButton"
+    parent="Widget.MaterialComponents.CompoundButton.RadioButton">
     <item name="android:layout_width">match_parent</item>
     <item name="android:layout_height">wrap_content</item>
     <item name="android:textSize">16sp</item>
@@ -123,6 +48,7 @@
   </style>
 
   <!-- CARD -->
+  
   <style name="Widget.Doodle.Card" parent="Widget.MaterialComponents.CardView">
     <item name="android:layout_width">@dimen/theme_selection_card_size</item>
     <item name="android:layout_height">@dimen/theme_selection_card_size</item>
@@ -148,65 +74,160 @@
     <item name="cardCornerRadius">@dimen/theme_selection_circle_corner_radius</item>
     <item name="android:layout_gravity">center</item>
   </style>
+  
+  <!-- LIST -->
 
-  <!-- TEXT APPEARANCES -->
+    <style name="Widget.Doodle.LinearLayout.ListItem" parent="">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:paddingBottom">16dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
 
-  <style name="TextAppearance.Doodle.Body1" parent="TextAppearance.MaterialComponents.Body1">
-    <item name="android:textColor">@color/on_background</item>
+    <style
+        name="Widget.Doodle.LinearLayout.ListItem.Clickable"
+        parent="Widget.Doodle.LinearLayout.ListItem">
+        <item name="android:clickable">true</item>
+        <item name="android:background">@drawable/bg_list_item</item>
+    </style>
+
+    <style
+        name="Widget.Doodle.LinearLayout.ListItem.SingleLine"
+        parent="Widget.Doodle.LinearLayout.ListItem">
+        <item name="android:minHeight">48dp</item>
+    </style>
+
+    <style
+        name="Widget.Doodle.LinearLayout.ListItem.SingleLine.Icon"
+        parent="Widget.Doodle.LinearLayout.ListItem.SingleLine">
+        <item name="android:minHeight">56dp</item>
+    </style>
+
+    <style
+        name="Widget.Doodle.LinearLayout.ListItem.SingleLine.Clickable"
+        parent="Widget.Doodle.LinearLayout.ListItem.SingleLine">
+        <item name="android:clickable">true</item>
+        <item name="android:background">@drawable/bg_list_item</item>
+    </style>
+
+    <style
+        name="Widget.Doodle.LinearLayout.ListItem.SingleLine.Icon.Clickable"
+        parent="Widget.Doodle.LinearLayout.ListItem.SingleLine.Icon">
+        <item name="android:clickable">true</item>
+        <item name="android:background">@drawable/bg_list_item</item>
+    </style>
+
+    <style
+        name="Widget.Doodle.LinearLayout.ListItem.TwoLine"
+        parent="Widget.Doodle.LinearLayout.ListItem">
+        <item name="android:minHeight">64dp</item>
+    </style>
+
+    <style
+        name="Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon"
+        parent="Widget.Doodle.LinearLayout.ListItem.TwoLine">
+        <item name="android:minHeight">72dp</item>
+    </style>
+
+    <style
+        name="Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable"
+        parent="Widget.Doodle.LinearLayout.ListItem.TwoLine">
+        <item name="android:clickable">true</item>
+        <item name="android:background">@drawable/bg_list_item</item>
+    </style>
+
+    <style
+        name="Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon.Clickable"
+        parent="Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon">
+        <item name="android:clickable">true</item>
+        <item name="android:background">@drawable/bg_list_item</item>
+    </style>
+
+    <style name="Widget.Doodle.LinearLayout.ListItem.TextBox" parent="">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style
+        name="Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch"
+        parent="Widget.Doodle.LinearLayout.ListItem.TextBox">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="Widget.Doodle.ImageView.ListItem.Icon" parent="">
+        <item name="android:layout_width">24dp</item>
+        <item name="android:layout_height">24dp</item>
+        <item name="android:layout_gravity">start|center_vertical</item>
+        <item name="android:layout_marginEnd">32dp</item>
+        <item name="android:importantForAccessibility">no</item>
+    </style>
+
+  <!-- TEXT -->
+
+  <style name="Widget.Doodle.TextView" parent="Widget.MaterialComponents.TextView">
     <item name="android:textSize">14sp</item>
+    <item name="android:textColor">@color/on_background</item>
     <item name="android:textAlignment">viewStart</item>
+    <item name="android:fontFamily">@font/roboto_mono_regular</item>
   </style>
 
-  <style name="TextAppearance.Doodle.Body2" parent="TextAppearance.Doodle.Body1">
-    <item name="android:textSize">13sp</item>
+  <style name="Widget.Doodle.TextView.Paragraph" parent="Widget.Doodle.TextView">
+    <item name="android:justificationMode" tools:targetApi="o">inter_word</item>
+    <item name="android:breakStrategy" tools:targetApi="m">high_quality</item>
+    <item name="android:hyphenationFrequency" tools:targetApi="m">full</item>
   </style>
 
-  <style name="TextAppearance.Doodle.Title" parent="TextAppearance.Doodle.Body1">
-    <item name="android:textStyle">bold</item>
-    <item name="android:textSize">18sp</item>
-  </style>
-
-  <style name="TextAppearance.Doodle.Toolbar" parent="TextAppearance.MaterialComponents.Body1">
-    <item name="android:textColor">@color/onPrimary</item>
+  <style name="Widget.Doodle.TextView.Toolbar" parent="Widget.Doodle.TextView">
+    <item name="android:textColor">@color/on_background</item>
     <item name="android:textSize" tools:ignore="SpUsage">20dp</item>
-    <item name="android:textStyle">bold</item>
-    <item name="android:textAlignment">viewStart</item>
+    <item name="android:fontFamily">@font/roboto_mono_bold</item>
+    <item name="android:singleLine">true</item>
   </style>
 
-  <style name="TextAppearance.Doodle.Category" parent="TextAppearance.MaterialComponents.Body1">
-    <item name="android:textStyle">bold</item>
+  <style name="Widget.Doodle.Category" parent="">
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_marginStart">72dp</item>
+    <item name="android:paddingTop">10dp</item>
+    <item name="android:paddingBottom">3dp</item>
+    <item name="android:fontFamily">@font/roboto_mono_bold</item>
     <item name="android:textSize">13sp</item>
     <item name="android:textColor">@color/secondary</item>
-    <item name="android:textAlignment">viewStart</item>
   </style>
 
-  <style name="TextAppearance.Doodle.ListItem.Title" parent="TextAppearance.MaterialComponents.Body1">
+  <style name="Widget.Doodle.TextView.ListItem.OverLine" parent="Widget.Doodle.TextView">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:maxLines">2</item>
+    <item name="android:textSize">12sp</item>
+    <item name="android:letterSpacing">0.1</item>
+    <item name="android:textColor">@color/on_background_secondary</item>
+    <item name="android:textAllCaps">true</item>
+  </style>
+
+  <style name="Widget.Doodle.TextView.ListItem.Title" parent="Widget.Doodle.TextView">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">wrap_content</item>
     <item name="android:textSize">16sp</item>
-    <item name="android:textColor">@color/on_background</item>
-    <item name="android:textAlignment">viewStart</item>
   </style>
 
-  <style name="TextAppearance.Doodle.ListItem.Description" parent="TextAppearance.MaterialComponents.Body1">
+  <style name="Widget.Doodle.TextView.ListItem.Description" parent="Widget.Doodle.TextView">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">wrap_content</item>
     <item name="android:textSize">14sp</item>
     <item name="android:textColor">@color/on_background_secondary</item>
-    <item name="android:textAlignment">viewStart</item>
   </style>
 
-  <style name="TextAppearance.Doodle.BottomSheet.Title" parent="TextAppearance.MaterialComponents.Body2">
-    <item name="android:textStyle">bold</item>
-    <item name="android:textColor">@color/on_background</item>
-    <item name="android:textSize">18sp</item>
-    <item name="android:textAlignment">viewStart</item>
-  </style>
-
-  <style name="TextAppearance.Doodle.BottomSheet.Text" parent="TextAppearance.MaterialComponents.Body2">
-    <item name="android:textColor">@color/on_background</item>
-    <item name="android:textSize">14sp</item>
-    <item name="android:textAlignment">viewStart</item>
-  </style>
-
-  <style name="TextAppearance.Doodle.BottomSheet.Text.Small" parent="TextAppearance.Doodle.BottomSheet.Text">
-    <item name="android:textSize">13sp</item>
+  <style name="Widget.Doodle.TextView.Title.BottomSheet" parent="Widget.Doodle.TextView">
+    <item name="android:textSize">19sp</item>
+    <item name="android:fontFamily">@font/roboto_mono_bold</item>
+    <item name="singleLine">true</item>
   </style>
 
   <!-- WALLPAPERS -->

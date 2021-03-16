@@ -13,7 +13,7 @@ The wallpapers are based on the doodle live wallpapers of the Google Pixel 4.
 
 * Stunning colors
 * System dependent night mode
-* Parallax effect
+* Parallax effect on page swipe
 * Various customization options
 * No permanent animations
 * Also suitable for less powerful smartphones

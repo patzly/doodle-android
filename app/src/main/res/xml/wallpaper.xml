@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <!--
   ~ This file is part of Doodle Android.
   ~ Doodle Android is free software: you can redistribute it and/or modify
@@ -15,7 +16,7 @@
   -->
 
 <wallpaper
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:thumbnail="@raw/thumbnail"
-    android:description="@string/info_description_wallpaper"
-    android:settingsActivity="xyz.zedler.patrick.doodle.SettingsActivity" />
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:thumbnail="@raw/thumbnail"
+  android:description="@string/info_description_wallpaper"
+  android:settingsActivity="xyz.zedler.patrick.doodle.SettingsActivity" />

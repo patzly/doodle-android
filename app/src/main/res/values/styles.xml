@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <!--
   ~ This file is part of Doodle Android.
   ~ Doodle Android is free software: you can redistribute it and/or modify
@@ -15,303 +16,303 @@
 
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- Divider -->
-    <style name="Theme.Doodle.Divider">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">1dp</item>
-        <item name="android:layout_marginTop">8dp</item>
-        <item name="android:layout_marginBottom">8dp</item>
-        <item name="android:background">@color/stroke</item>
-    </style>
+  <!-- Divider -->
+  <style name="Theme.Doodle.Divider">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">1dp</item>
+    <item name="android:layout_marginTop">8dp</item>
+    <item name="android:layout_marginBottom">8dp</item>
+    <item name="android:background">@color/stroke</item>
+  </style>
 
-    <!-- Buttons -->
-    <style name="Theme.Doodle.Button.UnelevatedButton" parent="Widget.MaterialComponents.Button.UnelevatedButton">
-        <item name="rippleColor">@color/highlight_on_secondary</item>
-        <item name="backgroundTint">@color/retro_green_bg_white</item>
-        <item name="android:textColor">@color/on_secondary</item>
-        <item name="android:fontFamily">@font/roboto_mono_bold</item>
-        <item name="cornerRadius">6dp</item>
-    </style>
+  <!-- Buttons -->
+  <style name="Theme.Doodle.Button.UnelevatedButton" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+    <item name="rippleColor">@color/highlight_on_secondary</item>
+    <item name="backgroundTint">@color/retro_green_bg_white</item>
+    <item name="android:textColor">@color/on_secondary</item>
+    <item name="android:fontFamily">@font/roboto_mono_bold</item>
+    <item name="cornerRadius">6dp</item>
+  </style>
 
-    <!-- Category -->
-    <style name="Theme.Doodle.Category" parent="">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginStart">72dp</item>
-        <item name="android:paddingTop">10dp</item>
-        <item name="android:paddingBottom">3dp</item>
-        <item name="android:textAppearance">@style/TextAppearance.Doodle.Category</item>
-    </style>
+  <!-- Category -->
+  <style name="Theme.Doodle.Category" parent="">
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_marginStart">72dp</item>
+    <item name="android:paddingTop">10dp</item>
+    <item name="android:paddingBottom">3dp</item>
+    <item name="android:textAppearance">@style/TextAppearance.Doodle.Category</item>
+  </style>
 
-    <!-- List -->
-    <style name="Theme.Doodle.ListItem" parent="">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:paddingStart">16dp</item>
-        <item name="android:paddingEnd">16dp</item>
-        <item name="android:paddingTop">16dp</item>
-        <item name="android:paddingBottom">16dp</item>
-        <item name="android:gravity">center_vertical</item>
-        <item name="android:orientation">horizontal</item>
-    </style>
+  <!-- List -->
+  <style name="Theme.Doodle.ListItem" parent="">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:paddingStart">16dp</item>
+    <item name="android:paddingEnd">16dp</item>
+    <item name="android:paddingTop">16dp</item>
+    <item name="android:paddingBottom">16dp</item>
+    <item name="android:gravity">center_vertical</item>
+    <item name="android:orientation">horizontal</item>
+  </style>
 
-    <style name="Theme.Doodle.ListItem.Clickable" parent="Theme.Doodle.ListItem">
-        <item name="android:clickable">true</item>
-        <item name="android:background">@drawable/bg_list_item_ripple</item>
-    </style>
+  <style name="Theme.Doodle.ListItem.Clickable" parent="Theme.Doodle.ListItem">
+    <item name="android:clickable">true</item>
+    <item name="android:background">@drawable/bg_list_item_ripple</item>
+  </style>
 
-    <style name="Theme.Doodle.ListItem.SingleLine" parent="Theme.Doodle.ListItem">
-        <item name="android:minHeight">56dp</item>
-    </style>
+  <style name="Theme.Doodle.ListItem.SingleLine" parent="Theme.Doodle.ListItem">
+    <item name="android:minHeight">56dp</item>
+  </style>
 
-    <style name="Theme.Doodle.ListItem.SingleLine.Clickable" parent="Theme.Doodle.ListItem.SingleLine">
-        <item name="android:clickable">true</item>
-        <item name="android:background">@drawable/bg_list_item_ripple</item>
-    </style>
+  <style name="Theme.Doodle.ListItem.SingleLine.Clickable" parent="Theme.Doodle.ListItem.SingleLine">
+    <item name="android:clickable">true</item>
+    <item name="android:background">@drawable/bg_list_item_ripple</item>
+  </style>
 
-    <style name="Theme.Doodle.ListItem.TwoLine" parent="Theme.Doodle.ListItem">
-        <item name="android:minHeight">72dp</item>
-    </style>
+  <style name="Theme.Doodle.ListItem.TwoLine" parent="Theme.Doodle.ListItem">
+    <item name="android:minHeight">72dp</item>
+  </style>
 
-    <style name="Theme.Doodle.ListItem.TwoLine.Clickable" parent="Theme.Doodle.ListItem.TwoLine">
-        <item name="android:clickable">true</item>
-        <item name="android:background">@drawable/bg_list_item_ripple</item>
-    </style>
+  <style name="Theme.Doodle.ListItem.TwoLine.Clickable" parent="Theme.Doodle.ListItem.TwoLine">
+    <item name="android:clickable">true</item>
+    <item name="android:background">@drawable/bg_list_item_ripple</item>
+  </style>
 
-    <style name="Theme.Doodle.ListItem.TextBox" parent="">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:orientation">vertical</item>
-    </style>
+  <style name="Theme.Doodle.ListItem.TextBox" parent="">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:orientation">vertical</item>
+  </style>
 
-    <style name="Theme.Doodle.ListItem.TextBox.Stretch" parent="Theme.Doodle.ListItem.TextBox">
-        <item name="android:layout_width">0dp</item>
-        <item name="android:layout_weight">1</item>
-    </style>
+  <style name="Theme.Doodle.ListItem.TextBox.Stretch" parent="Theme.Doodle.ListItem.TextBox">
+    <item name="android:layout_width">0dp</item>
+    <item name="android:layout_weight">1</item>
+  </style>
 
-    <style name="Theme.Doodle.ListItem.Title" parent="">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:textAppearance">@style/TextAppearance.Doodle.ListItem.Title</item>
-        <item name="android:textAlignment">viewStart</item>
-    </style>
+  <style name="Theme.Doodle.ListItem.Title" parent="">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:textAppearance">@style/TextAppearance.Doodle.ListItem.Title</item>
+    <item name="android:textAlignment">viewStart</item>
+  </style>
 
-    <style name="Theme.Doodle.ListItem.Description" parent="Theme.Doodle.ListItem.Title">
-        <item name="android:textAppearance">@style/TextAppearance.Doodle.ListItem.Description</item>
-        <item name="android:maxLines">10</item>
-        <item name="android:textAlignment">viewStart</item>
-    </style>
+  <style name="Theme.Doodle.ListItem.Description" parent="Theme.Doodle.ListItem.Title">
+    <item name="android:textAppearance">@style/TextAppearance.Doodle.ListItem.Description</item>
+    <item name="android:maxLines">10</item>
+    <item name="android:textAlignment">viewStart</item>
+  </style>
 
-    <!-- Icon -->
-    <style name="Theme.Doodle.ListItem.Icon" parent="">
-        <item name="android:layout_width">24dp</item>
-        <item name="android:layout_height">24dp</item>
-        <item name="android:layout_gravity">start|center_vertical</item>
-        <item name="android:layout_marginEnd">32dp</item>
-        <item name="android:importantForAccessibility">no</item>
-    </style>
+  <!-- Icon -->
+  <style name="Theme.Doodle.ListItem.Icon" parent="">
+    <item name="android:layout_width">24dp</item>
+    <item name="android:layout_height">24dp</item>
+    <item name="android:layout_gravity">start|center_vertical</item>
+    <item name="android:layout_marginEnd">32dp</item>
+    <item name="android:importantForAccessibility">no</item>
+  </style>
 
-    <!-- RADIO BUTTON -->
-    <style name="Widget.Doodle.RadioButton" parent="Widget.MaterialComponents.CompoundButton.RadioButton">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">16sp</item>
-        <item name="android:paddingStart">16dp</item>
-        <item name="android:minHeight">40dp</item>
-        <item name="android:textAlignment">viewStart</item>
-    </style>
+  <!-- RADIO BUTTON -->
+  <style name="Widget.Doodle.RadioButton" parent="Widget.MaterialComponents.CompoundButton.RadioButton">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:textSize">16sp</item>
+    <item name="android:paddingStart">16dp</item>
+    <item name="android:minHeight">40dp</item>
+    <item name="android:textAlignment">viewStart</item>
+  </style>
 
-    <!-- CARD -->
-    <style name="Widget.Doodle.Card" parent="Widget.MaterialComponents.CardView">
-        <item name="android:layout_width">@dimen/theme_selection_card_size</item>
-        <item name="android:layout_height">@dimen/theme_selection_card_size</item>
-        <item name="android:clickable">true</item>
-        <item name="android:focusable">true</item>
-        <item name="android:checkable">true</item>
-        <item name="checkedIcon">@null</item>
-        <item name="elevation">0dp</item>
-        <item name="android:gravity">center</item>
-        <item name="strokeColor">@color/stroke</item>
-        <item name="strokeWidth">2dp</item>
-        <item name="rippleColor">@color/highlight</item>
-        <item name="cardBackgroundColor">@color/background</item>
-        <item name="cardCornerRadius">@dimen/theme_selection_card_corner_radius</item>
-    </style>
+  <!-- CARD -->
+  <style name="Widget.Doodle.Card" parent="Widget.MaterialComponents.CardView">
+    <item name="android:layout_width">@dimen/theme_selection_card_size</item>
+    <item name="android:layout_height">@dimen/theme_selection_card_size</item>
+    <item name="android:clickable">true</item>
+    <item name="android:focusable">true</item>
+    <item name="android:checkable">true</item>
+    <item name="checkedIcon">@null</item>
+    <item name="elevation">0dp</item>
+    <item name="android:gravity">center</item>
+    <item name="strokeColor">@color/stroke</item>
+    <item name="strokeWidth">2dp</item>
+    <item name="rippleColor">@color/highlight</item>
+    <item name="cardBackgroundColor">@color/background</item>
+    <item name="cardCornerRadius">@dimen/theme_selection_card_corner_radius</item>
+  </style>
 
-    <style name="Widget.Doodle.Card.Circle" parent="Widget.Doodle.Card">
-        <item name="android:layout_width">@dimen/theme_selection_circle_size</item>
-        <item name="android:layout_height">@dimen/theme_selection_circle_size</item>
-        <item name="android:clickable">false</item>
-        <item name="android:focusable">false</item>
-        <item name="android:checkable">false</item>
-        <item name="cardCornerRadius">@dimen/theme_selection_circle_corner_radius</item>
-        <item name="android:layout_gravity">center</item>
-    </style>
+  <style name="Widget.Doodle.Card.Circle" parent="Widget.Doodle.Card">
+    <item name="android:layout_width">@dimen/theme_selection_circle_size</item>
+    <item name="android:layout_height">@dimen/theme_selection_circle_size</item>
+    <item name="android:clickable">false</item>
+    <item name="android:focusable">false</item>
+    <item name="android:checkable">false</item>
+    <item name="cardCornerRadius">@dimen/theme_selection_circle_corner_radius</item>
+    <item name="android:layout_gravity">center</item>
+  </style>
 
-    <!-- TEXT APPEARANCES -->
+  <!-- TEXT APPEARANCES -->
 
-    <style name="TextAppearance.Doodle.Body1" parent="TextAppearance.MaterialComponents.Body1">
-        <item name="android:textColor">@color/on_background</item>
-        <item name="android:textSize">14sp</item>
-        <item name="android:textAlignment">viewStart</item>
-    </style>
+  <style name="TextAppearance.Doodle.Body1" parent="TextAppearance.MaterialComponents.Body1">
+    <item name="android:textColor">@color/on_background</item>
+    <item name="android:textSize">14sp</item>
+    <item name="android:textAlignment">viewStart</item>
+  </style>
 
-    <style name="TextAppearance.Doodle.Body2" parent="TextAppearance.Doodle.Body1">
-        <item name="android:textSize">13sp</item>
-    </style>
+  <style name="TextAppearance.Doodle.Body2" parent="TextAppearance.Doodle.Body1">
+    <item name="android:textSize">13sp</item>
+  </style>
 
-    <style name="TextAppearance.Doodle.Title" parent="TextAppearance.Doodle.Body1">
-        <item name="android:textStyle">bold</item>
-        <item name="android:textSize">18sp</item>
-    </style>
+  <style name="TextAppearance.Doodle.Title" parent="TextAppearance.Doodle.Body1">
+    <item name="android:textStyle">bold</item>
+    <item name="android:textSize">18sp</item>
+  </style>
 
-    <style name="TextAppearance.Doodle.Toolbar" parent="TextAppearance.MaterialComponents.Body1">
-        <item name="android:textColor">@color/onPrimary</item>
-        <item name="android:textSize" tools:ignore="SpUsage">20dp</item>
-        <item name="android:textStyle">bold</item>
-        <item name="android:textAlignment">viewStart</item>
-    </style>
+  <style name="TextAppearance.Doodle.Toolbar" parent="TextAppearance.MaterialComponents.Body1">
+    <item name="android:textColor">@color/onPrimary</item>
+    <item name="android:textSize" tools:ignore="SpUsage">20dp</item>
+    <item name="android:textStyle">bold</item>
+    <item name="android:textAlignment">viewStart</item>
+  </style>
 
-    <style name="TextAppearance.Doodle.Category" parent="TextAppearance.MaterialComponents.Body1">
-        <item name="android:textStyle">bold</item>
-        <item name="android:textSize">13sp</item>
-        <item name="android:textColor">@color/secondary</item>
-        <item name="android:textAlignment">viewStart</item>
-    </style>
+  <style name="TextAppearance.Doodle.Category" parent="TextAppearance.MaterialComponents.Body1">
+    <item name="android:textStyle">bold</item>
+    <item name="android:textSize">13sp</item>
+    <item name="android:textColor">@color/secondary</item>
+    <item name="android:textAlignment">viewStart</item>
+  </style>
 
-    <style name="TextAppearance.Doodle.ListItem.Title" parent="TextAppearance.MaterialComponents.Body1">
-        <item name="android:textSize">16sp</item>
-        <item name="android:textColor">@color/on_background</item>
-        <item name="android:textAlignment">viewStart</item>
-    </style>
+  <style name="TextAppearance.Doodle.ListItem.Title" parent="TextAppearance.MaterialComponents.Body1">
+    <item name="android:textSize">16sp</item>
+    <item name="android:textColor">@color/on_background</item>
+    <item name="android:textAlignment">viewStart</item>
+  </style>
 
-    <style name="TextAppearance.Doodle.ListItem.Description" parent="TextAppearance.MaterialComponents.Body1">
-        <item name="android:textSize">14sp</item>
-        <item name="android:textColor">@color/on_background_secondary</item>
-        <item name="android:textAlignment">viewStart</item>
-    </style>
+  <style name="TextAppearance.Doodle.ListItem.Description" parent="TextAppearance.MaterialComponents.Body1">
+    <item name="android:textSize">14sp</item>
+    <item name="android:textColor">@color/on_background_secondary</item>
+    <item name="android:textAlignment">viewStart</item>
+  </style>
 
-    <style name="TextAppearance.Doodle.BottomSheet.Title" parent="TextAppearance.MaterialComponents.Body2">
-        <item name="android:textStyle">bold</item>
-        <item name="android:textColor">@color/on_background</item>
-        <item name="android:textSize">18sp</item>
-        <item name="android:textAlignment">viewStart</item>
-    </style>
+  <style name="TextAppearance.Doodle.BottomSheet.Title" parent="TextAppearance.MaterialComponents.Body2">
+    <item name="android:textStyle">bold</item>
+    <item name="android:textColor">@color/on_background</item>
+    <item name="android:textSize">18sp</item>
+    <item name="android:textAlignment">viewStart</item>
+  </style>
 
-    <style name="TextAppearance.Doodle.BottomSheet.Text" parent="TextAppearance.MaterialComponents.Body2">
-        <item name="android:textColor">@color/on_background</item>
-        <item name="android:textSize">14sp</item>
-        <item name="android:textAlignment">viewStart</item>
-    </style>
+  <style name="TextAppearance.Doodle.BottomSheet.Text" parent="TextAppearance.MaterialComponents.Body2">
+    <item name="android:textColor">@color/on_background</item>
+    <item name="android:textSize">14sp</item>
+    <item name="android:textAlignment">viewStart</item>
+  </style>
 
-    <style name="TextAppearance.Doodle.BottomSheet.Text.Small" parent="TextAppearance.Doodle.BottomSheet.Text">
-        <item name="android:textSize">13sp</item>
-    </style>
+  <style name="TextAppearance.Doodle.BottomSheet.Text.Small" parent="TextAppearance.Doodle.BottomSheet.Text">
+    <item name="android:textSize">13sp</item>
+  </style>
 
-    <!-- WALLPAPERS -->
+  <!-- WALLPAPERS -->
 
-    <!-- Doodle -->
+  <!-- Doodle -->
 
-    <style name="Wallpaper.Doodle.Black" parent="">
-        <item name="doodle_arc_bg">#f2c5b1</item>
-        <item name="doodle_arc_dot">#ff9052</item>
-        <item name="doodle_dot">#c6c5c1</item>
-        <item name="doodle_u_bg">#bdd6bd</item>
-        <item name="doodle_u_dot">#f58551</item>
-        <item name="doodle_rect_big">#3a3837</item>
-        <item name="doodle_rect_small">#ddc1b3</item>
-        <item name="doodle_ring">#b5b1a3</item>
-        <item name="doodle_moon_inner">#fde8ca</item>
-        <item name="doodle_moon_outer">#9393c1</item>
-        <item name="doodle_poly_line">#757575</item>
-        <item name="doodle_poly_ring">#bdd6bd</item>
-    </style>
+  <style name="Wallpaper.Doodle.Black" parent="">
+    <item name="doodle_arc_bg">#f2c5b1</item>
+    <item name="doodle_arc_dot">#ff9052</item>
+    <item name="doodle_dot">#c6c5c1</item>
+    <item name="doodle_u_bg">#bdd6bd</item>
+    <item name="doodle_u_dot">#f58551</item>
+    <item name="doodle_rect_big">#3a3837</item>
+    <item name="doodle_rect_small">#ddc1b3</item>
+    <item name="doodle_ring">#b5b1a3</item>
+    <item name="doodle_moon_inner">#fde8ca</item>
+    <item name="doodle_moon_outer">#9393c1</item>
+    <item name="doodle_poly_line">#757575</item>
+    <item name="doodle_poly_ring">#bdd6bd</item>
+  </style>
 
-    <style name="Wallpaper.Doodle.White" parent="">
-        <item name="doodle_arc_bg">#ffb9a1</item>
-        <item name="doodle_arc_dot">#ff815f</item>
-        <item name="doodle_dot">#ccc6b8</item>
-        <item name="doodle_u_bg">#f4e3c9</item>
-        <item name="doodle_u_dot">#f58551</item>
-        <item name="doodle_rect_big">#ffe5c5</item>
-        <item name="doodle_rect_small">#b5afa1</item>
-        <item name="doodle_ring">#ffffff</item>
-        <item name="doodle_moon_inner">#fde8ca</item>
-        <item name="doodle_moon_outer">#ff6550</item>
-        <item name="doodle_poly_line">#ffffff</item>
-        <item name="doodle_poly_ring">#ffea94</item>
-    </style>
+  <style name="Wallpaper.Doodle.White" parent="">
+    <item name="doodle_arc_bg">#ffb9a1</item>
+    <item name="doodle_arc_dot">#ff815f</item>
+    <item name="doodle_dot">#ccc6b8</item>
+    <item name="doodle_u_bg">#f4e3c9</item>
+    <item name="doodle_u_dot">#f58551</item>
+    <item name="doodle_rect_big">#ffe5c5</item>
+    <item name="doodle_rect_small">#b5afa1</item>
+    <item name="doodle_ring">#ffffff</item>
+    <item name="doodle_moon_inner">#fde8ca</item>
+    <item name="doodle_moon_outer">#ff6550</item>
+    <item name="doodle_poly_line">#ffffff</item>
+    <item name="doodle_poly_ring">#ffea94</item>
+  </style>
 
-    <style name="Wallpaper.Doodle.Orange" parent="">
-        <item name="doodle_arc_bg">#f7d2c4</item>
-        <item name="doodle_arc_dot">#ff9052</item>
-        <item name="doodle_dot">#add8b7</item>
-        <item name="doodle_u_bg">#e5e1a3</item>
-        <item name="doodle_u_dot">#f58551</item>
-        <item name="doodle_rect_big">#f9deb9</item>
-        <item name="doodle_rect_small">#ffaf99</item>
-        <item name="doodle_ring">#ede6d1</item>
-        <item name="doodle_moon_inner">#fde8ca</item>
-        <item name="doodle_moon_outer">#ff6155</item>
-        <item name="doodle_poly_line">#eae2d0</item>
-        <item name="doodle_poly_ring">#bcddba</item>
-    </style>
+  <style name="Wallpaper.Doodle.Orange" parent="">
+    <item name="doodle_arc_bg">#f7d2c4</item>
+    <item name="doodle_arc_dot">#ff9052</item>
+    <item name="doodle_dot">#add8b7</item>
+    <item name="doodle_u_bg">#e5e1a3</item>
+    <item name="doodle_u_dot">#f58551</item>
+    <item name="doodle_rect_big">#f9deb9</item>
+    <item name="doodle_rect_small">#ffaf99</item>
+    <item name="doodle_ring">#ede6d1</item>
+    <item name="doodle_moon_inner">#fde8ca</item>
+    <item name="doodle_moon_outer">#ff6155</item>
+    <item name="doodle_poly_line">#eae2d0</item>
+    <item name="doodle_poly_ring">#bcddba</item>
+  </style>
 
-    <style name="Wallpaper.Doodle.Night" parent="">
-        <item name="doodle_arc_bg">#0f0f0f</item>
-        <item name="doodle_arc_dot">#ff9052</item>
-        <item name="doodle_dot">#0f0f0f</item>
-        <item name="doodle_u_bg">#0f0f0f</item>
-        <item name="doodle_u_dot">#f58551</item>
-        <item name="doodle_rect_big">#0f0f0f</item>
-        <item name="doodle_rect_small">#ddc1b3</item>
-        <item name="doodle_ring">#0f0f0f</item>
-        <item name="doodle_moon_inner">#0f0f0f</item>
-        <item name="doodle_moon_outer">#9393c1</item>
-        <item name="doodle_poly_line">#0f0f0f</item>
-        <item name="doodle_poly_ring">#bdd6bd</item>
-    </style>
+  <style name="Wallpaper.Doodle.Night" parent="">
+    <item name="doodle_arc_bg">#0f0f0f</item>
+    <item name="doodle_arc_dot">#ff9052</item>
+    <item name="doodle_dot">#0f0f0f</item>
+    <item name="doodle_u_bg">#0f0f0f</item>
+    <item name="doodle_u_dot">#f58551</item>
+    <item name="doodle_rect_big">#0f0f0f</item>
+    <item name="doodle_rect_small">#ddc1b3</item>
+    <item name="doodle_ring">#0f0f0f</item>
+    <item name="doodle_moon_inner">#0f0f0f</item>
+    <item name="doodle_moon_outer">#9393c1</item>
+    <item name="doodle_poly_line">#0f0f0f</item>
+    <item name="doodle_poly_ring">#bdd6bd</item>
+  </style>
 
-    <!-- Neon -->
+  <!-- Neon -->
 
-    <style name="Wallpaper.Neon" parent="">
-        <item name="neon_circle_front">#abe3e0</item>
-        <item name="neon_pill_front">#3766fa</item>
-        <item name="neon_pill_back">#97e2e2</item>
-        <item name="neon_line_ends">#f27493</item>
-        <item name="neon_line_middle">#fec4d9</item>
-        <item name="neon_circle_back">#3766fa</item>
-        <item name="neon_dot">#bec3fd</item>
-    </style>
+  <style name="Wallpaper.Neon" parent="">
+    <item name="neon_circle_front">#abe3e0</item>
+    <item name="neon_pill_front">#3766fa</item>
+    <item name="neon_pill_back">#97e2e2</item>
+    <item name="neon_line_ends">#f27493</item>
+    <item name="neon_line_middle">#fec4d9</item>
+    <item name="neon_circle_back">#3766fa</item>
+    <item name="neon_dot">#bec3fd</item>
+  </style>
 
-    <style name="Wallpaper.Neon.Night" parent="">
-        <item name="neon_circle_front">#8fe5de</item>
-        <item name="neon_pill_front">#8fe5de</item>
-        <item name="neon_pill_back">#a181de</item>
-        <item name="neon_line_ends">#312073</item>
-        <item name="neon_line_middle">#2d1c6c</item>
-        <item name="neon_circle_back">#a181de</item>
-        <item name="neon_dot">#b7b7e0</item>
-    </style>
+  <style name="Wallpaper.Neon.Night" parent="">
+    <item name="neon_circle_front">#8fe5de</item>
+    <item name="neon_pill_front">#8fe5de</item>
+    <item name="neon_pill_back">#a181de</item>
+    <item name="neon_line_ends">#312073</item>
+    <item name="neon_line_middle">#2d1c6c</item>
+    <item name="neon_circle_back">#a181de</item>
+    <item name="neon_dot">#b7b7e0</item>
+  </style>
 
-    <!-- Geometric -->
+  <!-- Geometric -->
 
-    <style name="Wallpaper.Geometric" parent="">
-        <item name="geometric_rect">#000</item>
-        <item name="geometric_line">#47484a</item>
-        <item name="geometric_poly">#e7e9eb</item>
-        <item name="geometric_circle">#dfd6cb</item>
-        <item name="geometric_grid">#2d2d2d</item>
-        <item name="geometric_sheet">#c3c8cc</item>
-    </style>
+  <style name="Wallpaper.Geometric" parent="">
+    <item name="geometric_rect">#000</item>
+    <item name="geometric_line">#47484a</item>
+    <item name="geometric_poly">#e7e9eb</item>
+    <item name="geometric_circle">#dfd6cb</item>
+    <item name="geometric_grid">#2d2d2d</item>
+    <item name="geometric_sheet">#c3c8cc</item>
+  </style>
 
-    <style name="Wallpaper.Geometric.Night" parent="">
-        <item name="geometric_rect">#494949</item>
-        <item name="geometric_line">#47484a</item>
-        <item name="geometric_poly">#494949</item>
-        <item name="geometric_circle">#5b5a5a</item>
-        <item name="geometric_grid">#6a6966</item>
-        <item name="geometric_sheet">#3d3b3c</item>
-    </style>
+  <style name="Wallpaper.Geometric.Night" parent="">
+    <item name="geometric_rect">#494949</item>
+    <item name="geometric_line">#47484a</item>
+    <item name="geometric_poly">#494949</item>
+    <item name="geometric_circle">#5b5a5a</item>
+    <item name="geometric_grid">#6a6966</item>
+    <item name="geometric_sheet">#3d3b3c</item>
+  </style>
 
 </resources>

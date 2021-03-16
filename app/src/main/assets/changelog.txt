@@ -1,0 +1,17 @@
+2.3.0:
+- New: animated splash screen in settings
+- New: immersive fullscreen experience in settings
+- Improved: internal cleanup
+- Fixed: start with boot
+
+2.2.0:
+- Improved: app icon
+- Improved: internal cleanup
+
+2.1.2:
+- Improved: settings update
+- Fixed: theme selection
+
+2.1.1:
+- Improved: description and appearance
+- Fixed: interface style

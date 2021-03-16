@@ -10,31 +10,34 @@
  * GNU General Public License for more details.
  * You should have received a copy of the GNU General Public License
  * along with Doodle Android. If not, see <http://www.gnu.org/licenses/>.
- * Copyright 2021 by Patrick Zedler
+ * Copyright (c) 2021 by Patrick Zedler
  */
 
 package xyz.zedler.patrick.doodle;
 
 public final class Constants {
 
-    public final static class PREF {
-        public final static String NIGHT_MODE = "night_mode";
-        public final static String FOLLOW_SYSTEM = "follow_system";
-        public final static String THEME = "theme";
-        public final static String VARIANT = "variant";
-        public final static String PARALLAX = "parallax";
-        public final static String SIZE_BIG = "size_big";
-    }
+  public final static class PREF {
 
-    public final static class THEME {
-        public final static String DOODLE = "doodle";
-        public final static String NEON = "neon";
-        public final static String GEOMETRIC = "geometric";
-    }
+    public final static String NIGHT_MODE = "night_mode";
+    public final static String FOLLOW_SYSTEM = "follow_system";
+    public final static String THEME = "theme";
+    public final static String VARIANT = "variant";
+    public final static String PARALLAX = "parallax";
+    public final static String SIZE_BIG = "size_big";
+  }
 
-    public final static class VARIANT {
-        public final static String BLACK = "black";
-        public final static String WHITE = "white";
-        public final static String ORANGE = "orange";
-    }
+  public final static class THEME {
+
+    public final static String DOODLE = "doodle";
+    public final static String NEON = "neon";
+    public final static String GEOMETRIC = "geometric";
+  }
+
+  public final static class VARIANT {
+
+    public final static String BLACK = "black";
+    public final static String WHITE = "white";
+    public final static String ORANGE = "orange";
+  }
 }

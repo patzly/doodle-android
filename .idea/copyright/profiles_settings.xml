@@ -1,7 +1,7 @@
 <component name="CopyrightManager">
-  <settings default="android">
+  <settings default="Doodle">
     <module2copyright>
-      <element module="All" copyright="android" />
+      <element module="All" copyright="Doodle" />
     </module2copyright>
   </settings>
 </component>

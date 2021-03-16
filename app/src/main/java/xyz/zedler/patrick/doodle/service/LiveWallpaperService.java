@@ -10,7 +10,7 @@
  * GNU General Public License for more details.
  * You should have received a copy of the GNU General Public License
  * along with Doodle Android. If not, see <http://www.gnu.org/licenses/>.
- * Copyright 2021 by Patrick Zedler
+ * Copyright (c) 2021 by Patrick Zedler
  */
 
 package xyz.zedler.patrick.doodle.service;
@@ -27,393 +27,402 @@ import android.graphics.drawable.Drawable;
 import android.preference.PreferenceManager;
 import android.service.wallpaper.WallpaperService;
 import android.view.SurfaceHolder;
-
 import androidx.annotation.DrawableRes;
 import androidx.vectordrawable.graphics.drawable.VectorDrawableCompat;
-
 import java.util.Random;
-
 import xyz.zedler.patrick.doodle.Constants;
 import xyz.zedler.patrick.doodle.R;
 
 public class LiveWallpaperService extends WallpaperService {
 
-	private final static String TAG = LiveWallpaperService.class.getSimpleName();
+  private final static String TAG = LiveWallpaperService.class.getSimpleName();
 
-	private SharedPreferences sharedPrefs;
-	private Resources.Theme themeRes;
-	private String theme, variant;
-	private boolean nightMode, followSystem, isNight, isSizeBig;
-	private int colorBackground, parallax;
+  private SharedPreferences sharedPrefs;
+  private Resources.Theme themeRes;
+  private String theme, variant;
+  private boolean nightMode, followSystem, isNight, isSizeBig;
+  private int colorBackground, parallax;
 
-	private VectorDrawableCompat doodleArc;
-	private VectorDrawableCompat doodleDot;
-	private VectorDrawableCompat doodleU;
-	private VectorDrawableCompat doodleRect;
-	private VectorDrawableCompat doodleRing;
-	private VectorDrawableCompat doodleMoon;
-	private VectorDrawableCompat doodlePoly;
+  private VectorDrawableCompat doodleArc;
+  private VectorDrawableCompat doodleDot;
+  private VectorDrawableCompat doodleU;
+  private VectorDrawableCompat doodleRect;
+  private VectorDrawableCompat doodleRing;
+  private VectorDrawableCompat doodleMoon;
+  private VectorDrawableCompat doodlePoly;
 
-	private VectorDrawableCompat neonKidneyFront;
-	private VectorDrawableCompat neonCircleFront;
-	private VectorDrawableCompat neonPill;
-	private VectorDrawableCompat neonLine;
-	private VectorDrawableCompat neonKidneyBack;
-	private VectorDrawableCompat neonCircleBack;
-	private VectorDrawableCompat neonDot;
+  private VectorDrawableCompat neonKidneyFront;
+  private VectorDrawableCompat neonCircleFront;
+  private VectorDrawableCompat neonPill;
+  private VectorDrawableCompat neonLine;
+  private VectorDrawableCompat neonKidneyBack;
+  private VectorDrawableCompat neonCircleBack;
+  private VectorDrawableCompat neonDot;
 
-	private VectorDrawableCompat geometricRect;
-	private VectorDrawableCompat geometricLine;
-	private VectorDrawableCompat geometricPoly;
-	private VectorDrawableCompat geometricCircle;
-	private VectorDrawableCompat geometricSheet;
+  private VectorDrawableCompat geometricRect;
+  private VectorDrawableCompat geometricLine;
+  private VectorDrawableCompat geometricPoly;
+  private VectorDrawableCompat geometricCircle;
+  private VectorDrawableCompat geometricSheet;
 
-	private float zDoodleArc;
-	private float zDoodleDot;
-	private float zDoodleU;
-	private float zDoodleRect;
-	private float zDoodleRing;
-	private float zDoodleMoon;
-	private float zDoodlePoly;
+  private float zDoodleArc;
+  private float zDoodleDot;
+  private float zDoodleU;
+  private float zDoodleRect;
+  private float zDoodleRing;
+  private float zDoodleMoon;
+  private float zDoodlePoly;
 
-	private float zNeonKidneyFront;
-	private float zNeonCircleFront;
-	private float zNeonPill;
-	private float zNeonLine;
-	private float zNeonKidneyBack;
-	private float zNeonCircleBack;
-	private float zNeonDot;
+  private float zNeonKidneyFront;
+  private float zNeonCircleFront;
+  private float zNeonPill;
+  private float zNeonLine;
+  private float zNeonKidneyBack;
+  private float zNeonCircleBack;
+  private float zNeonDot;
 
-	private float zGeometricRect;
-	private float zGeometricLine;
-	private float zGeometricPoly;
-	private float zGeometricCircle;
-	private float zGeometricSheet;
+  private float zGeometricRect;
+  private float zGeometricLine;
+  private float zGeometricPoly;
+  private float zGeometricCircle;
+  private float zGeometricSheet;
 
-	@Override
-	public Engine onCreateEngine() {
-		sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
-		theme = sharedPrefs.getString(Constants.PREF.THEME, Constants.THEME.DOODLE);
-		variant = sharedPrefs.getString(Constants.PREF.VARIANT, Constants.VARIANT.BLACK);
-		nightMode = sharedPrefs.getBoolean(Constants.PREF.NIGHT_MODE, true);
-		followSystem = sharedPrefs.getBoolean(Constants.PREF.FOLLOW_SYSTEM, true);
-		isNight = isNightMode();
-		parallax = sharedPrefs.getInt(Constants.PREF.PARALLAX, 100);
-		isSizeBig = sharedPrefs.getBoolean(Constants.PREF.SIZE_BIG, false);
-		themeRes = getResources().newTheme();
-		newRandomZ();
-		refreshTheme();
-		return new CustomEngine();
-	}
+  @Override
+  public Engine onCreateEngine() {
+    sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+    theme = sharedPrefs.getString(Constants.PREF.THEME, Constants.THEME.DOODLE);
+    variant = sharedPrefs.getString(Constants.PREF.VARIANT, Constants.VARIANT.BLACK);
+    nightMode = sharedPrefs.getBoolean(Constants.PREF.NIGHT_MODE, true);
+    followSystem = sharedPrefs.getBoolean(Constants.PREF.FOLLOW_SYSTEM, true);
+    isNight = isNightMode();
+    parallax = sharedPrefs.getInt(Constants.PREF.PARALLAX, 100);
+    isSizeBig = sharedPrefs.getBoolean(Constants.PREF.SIZE_BIG, false);
+    themeRes = getResources().newTheme();
+    newRandomZ();
+    refreshTheme();
+    return new CustomEngine();
+  }
 
-	class CustomEngine extends Engine  {
-		private float xOffset = 0;
-		private final Paint paint = new Paint();
+  private VectorDrawableCompat getVectorDrawable(@DrawableRes int resId, Resources.Theme theme) {
+    return VectorDrawableCompat.create(getApplicationContext().getResources(), resId, theme);
+  }
 
-		CustomEngine() {}
+  private void refreshTheme() {
+    if (isNightMode()) {
+      switch (theme) {
+        case Constants.THEME.DOODLE:
+          themeRes.applyStyle(R.style.Wallpaper_Doodle_Night, true);
+          colorBackground = getColor(R.color.wp_bg_doodle_night);
+          break;
+        case Constants.THEME.NEON:
+          themeRes.applyStyle(R.style.Wallpaper_Neon_Night, true);
+          colorBackground = getColor(R.color.wp_bg_neon_night);
+          break;
+        case Constants.THEME.GEOMETRIC:
+          themeRes.applyStyle(R.style.Wallpaper_Geometric_Night, true);
+          colorBackground = getColor(R.color.wp_bg_geometric_night);
+          break;
+      }
+    } else {
+      switch (theme) {
+        case Constants.THEME.DOODLE:
+          switch (variant) {
+            case Constants.VARIANT.BLACK:
+              themeRes.applyStyle(R.style.Wallpaper_Doodle_Black, true);
+              colorBackground = getColor(R.color.wp_bg_doodle_black);
+              break;
+            case Constants.VARIANT.WHITE:
+              themeRes.applyStyle(R.style.Wallpaper_Doodle_White, true);
+              colorBackground = getColor(R.color.wp_bg_doodle_white);
+              break;
+            case Constants.VARIANT.ORANGE:
+              themeRes.applyStyle(R.style.Wallpaper_Doodle_Orange, true);
+              colorBackground = getColor(R.color.wp_bg_doodle_orange);
+              break;
+          }
+          break;
+        case Constants.THEME.NEON:
+          themeRes.applyStyle(R.style.Wallpaper_Neon, true);
+          colorBackground = getColor(R.color.wp_bg_neon);
+          break;
+        case Constants.THEME.GEOMETRIC:
+          themeRes.applyStyle(R.style.Wallpaper_Geometric, true);
+          colorBackground = getColor(R.color.wp_bg_geometric);
+          break;
+      }
+    }
 
-		@Override
-		public void onCreate(SurfaceHolder surfaceHolder) {
-			super.onCreate(surfaceHolder);
+    switch (theme) {
+      case Constants.THEME.DOODLE:
+        doodleArc = getVectorDrawable(R.drawable.doodle_shape_arc, themeRes);
+        doodleDot = getVectorDrawable(R.drawable.doodle_shape_dot, themeRes);
+        doodleU = getVectorDrawable(R.drawable.doodle_shape_u, themeRes);
+        doodleRect = getVectorDrawable(R.drawable.doodle_shape_rect, themeRes);
+        doodleRing = getVectorDrawable(R.drawable.doodle_shape_ring, themeRes);
+        doodleMoon = getVectorDrawable(R.drawable.doodle_shape_moon, themeRes);
+        doodlePoly = getVectorDrawable(R.drawable.doodle_shape_poly, themeRes);
+        break;
+      case Constants.THEME.NEON:
+        neonKidneyFront = getVectorDrawable(R.drawable.neon_shape_kidney_front, null);
+        neonCircleFront = getVectorDrawable(R.drawable.neon_shape_circle_front, themeRes);
+        neonPill = getVectorDrawable(R.drawable.neon_shape_pill, themeRes);
+        neonLine = getVectorDrawable(R.drawable.neon_shape_line, themeRes);
+        neonKidneyBack = getVectorDrawable(R.drawable.neon_shape_kidney_back, null);
+        neonCircleBack = getVectorDrawable(R.drawable.neon_shape_circle_back, themeRes);
+        neonDot = getVectorDrawable(R.drawable.neon_shape_dot, themeRes);
+        break;
+      case Constants.THEME.GEOMETRIC:
+        geometricRect = getVectorDrawable(R.drawable.geometric_shape_rect, themeRes);
+        geometricLine = getVectorDrawable(R.drawable.geometric_shape_line, themeRes);
+        geometricPoly = getVectorDrawable(R.drawable.geometric_shape_poly, themeRes);
+        geometricCircle = getVectorDrawable(R.drawable.geometric_shape_circle, themeRes);
+        geometricSheet = getVectorDrawable(R.drawable.geometric_shape_sheet, themeRes);
+        break;
+    }
+  }
 
-			setTouchEventsEnabled(false);
+  private void newRandomZ() {
+    Random random = new Random();
+    switch (theme) {
+      case Constants.THEME.DOODLE:
+        zDoodleArc = random.nextFloat();
+        zDoodleDot = random.nextFloat();
+        zDoodleU = random.nextFloat();
+        zDoodleRect = random.nextFloat();
+        zDoodleRing = random.nextFloat();
+        zDoodleMoon = random.nextFloat();
+        zDoodlePoly = random.nextFloat();
+        break;
+      case Constants.THEME.NEON:
+        zNeonKidneyFront = random.nextFloat();
+        zNeonCircleFront = random.nextFloat();
+        zNeonPill = random.nextFloat();
+        zNeonLine = random.nextFloat();
+        zNeonKidneyBack = random.nextFloat();
+        zNeonCircleBack = random.nextFloat();
+        zNeonDot = random.nextFloat();
+        break;
+      case Constants.THEME.GEOMETRIC:
+        zGeometricRect = random.nextFloat();
+        zGeometricLine = random.nextFloat();
+        zGeometricPoly = random.nextFloat();
+        zGeometricCircle = random.nextFloat();
+        zGeometricSheet = random.nextFloat();
+        break;
+    }
+  }
 
-			paint.setStyle(Paint.Style.FILL);
+  private boolean isNightMode() {
+		if (nightMode && !followSystem) {
+			return true;
 		}
+    int flags = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
+    return nightMode && flags == Configuration.UI_MODE_NIGHT_YES;
+  }
 
-		@Override
-		public WallpaperColors onComputeColors() {
-			int background = 0xFF232323;
-			if (isNightMode()) {
-				switch (theme) {
-					case Constants.THEME.DOODLE:
-						background = 0xFF272628;
-						break;
-					case Constants.THEME.NEON:
-						background = 0xFF0e032d;
-						break;
-					case Constants.THEME.GEOMETRIC:
-						background = 0xFF212121;
-						break;
-				}
-			} else {
-				switch (theme) {
-					case Constants.THEME.DOODLE:
-						switch (variant) {
-							case Constants.VARIANT.BLACK:
-								background = 0xFF232323;
-								break;
-							case Constants.VARIANT.WHITE:
-								background = 0xFFdbd7ce;
-								break;
-							case Constants.VARIANT.ORANGE:
-								background = 0xFFf98a6c;
-								break;
-						}
-						break;
-					case Constants.THEME.NEON:
-						background = 0xFFcbcbef;
-						break;
-					case Constants.THEME.GEOMETRIC:
-						background = 0xFFb9c1c7;
-						break;
-				}
+  class CustomEngine extends Engine {
+
+    private final Paint paint = new Paint();
+    private float xOffset = 0;
+
+    CustomEngine() {
+    }
+
+    @Override
+    public void onCreate(SurfaceHolder surfaceHolder) {
+      super.onCreate(surfaceHolder);
+
+      setTouchEventsEnabled(false);
+
+      paint.setStyle(Paint.Style.FILL);
+    }
+
+    @Override
+    public WallpaperColors onComputeColors() {
+      int background = 0xFF232323;
+      if (isNightMode()) {
+        switch (theme) {
+          case Constants.THEME.DOODLE:
+            background = 0xFF272628;
+            break;
+          case Constants.THEME.NEON:
+            background = 0xFF0e032d;
+            break;
+          case Constants.THEME.GEOMETRIC:
+            background = 0xFF212121;
+            break;
+        }
+      } else {
+        switch (theme) {
+          case Constants.THEME.DOODLE:
+            switch (variant) {
+              case Constants.VARIANT.BLACK:
+                background = 0xFF232323;
+                break;
+              case Constants.VARIANT.WHITE:
+                background = 0xFFdbd7ce;
+                break;
+              case Constants.VARIANT.ORANGE:
+                background = 0xFFf98a6c;
+                break;
+            }
+            break;
+          case Constants.THEME.NEON:
+            background = 0xFFcbcbef;
+            break;
+          case Constants.THEME.GEOMETRIC:
+            background = 0xFFb9c1c7;
+            break;
+        }
+      }
+
+      return WallpaperColors.fromDrawable(new ColorDrawable(background));
+    }
+
+    @Override
+    public void onVisibilityChanged(boolean visible) {
+			if (!visible) {
+				return;
 			}
 
-			return WallpaperColors.fromDrawable(new ColorDrawable(background));
-		}
+      sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 
-		@Override
-		public void onVisibilityChanged(boolean visible) {
-			if(!visible) return;
+      String themeNew = sharedPrefs.getString(Constants.PREF.THEME, Constants.THEME.DOODLE);
+      String variantNew = sharedPrefs.getString(
+          Constants.PREF.VARIANT, Constants.VARIANT.BLACK
+      );
+      nightMode = sharedPrefs.getBoolean(Constants.PREF.NIGHT_MODE, true);
+      followSystem = sharedPrefs.getBoolean(Constants.PREF.FOLLOW_SYSTEM, true);
+      parallax = sharedPrefs.getInt(Constants.PREF.PARALLAX, 100);
+      isSizeBig = sharedPrefs.getBoolean(Constants.PREF.SIZE_BIG, false);
 
-			sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+      if (!theme.equals(themeNew)) {
+        theme = themeNew;
+        variant = variantNew;
+        refreshTheme();
+        notifyColorsChanged();
+      } else if (isNight != isNightMode()) {
+        isNight = isNightMode();
+        refreshTheme();
+        notifyColorsChanged();
+      } else if (!variant.equals(variantNew)) {
+        variant = variantNew;
+        refreshTheme();
+        notifyColorsChanged();
+      }
 
-			String themeNew = sharedPrefs.getString(Constants.PREF.THEME, Constants.THEME.DOODLE);
-			String variantNew = sharedPrefs.getString(
-					Constants.PREF.VARIANT, Constants.VARIANT.BLACK
-			);
-			nightMode = sharedPrefs.getBoolean(Constants.PREF.NIGHT_MODE, true);
-			followSystem = sharedPrefs.getBoolean(Constants.PREF.FOLLOW_SYSTEM, true);
-			parallax = sharedPrefs.getInt(Constants.PREF.PARALLAX, 100);
-			isSizeBig = sharedPrefs.getBoolean(Constants.PREF.SIZE_BIG, false);
+      newRandomZ();
+      drawFrame(xOffset);
+    }
 
-			if (!theme.equals(themeNew)) {
-				theme = themeNew;
-				variant = variantNew;
-				refreshTheme();
-				notifyColorsChanged();
-			} else if (isNight != isNightMode()){
-				isNight = isNightMode();
-				refreshTheme();
-				notifyColorsChanged();
-			} else if (!variant.equals(variantNew)) {
-				variant = variantNew;
-				refreshTheme();
-				notifyColorsChanged();
+    @Override
+    public void notifyColorsChanged() {
+      super.notifyColorsChanged();
+    }
+
+    @Override
+    public void onOffsetsChanged(
+        float xOffset,
+        float yOffset,
+        float xStep,
+        float yStep,
+        int xPixels,
+        int yPixels
+    ) {
+      super.onOffsetsChanged(xOffset, yOffset, xStep, yStep, xPixels, yPixels);
+			if (parallax != 0) {
+				drawFrame(xOffset);
 			}
+      this.xOffset = xOffset;
+    }
 
-			newRandomZ();
-			drawFrame(xOffset);
-		}
+    void drawFrame(float xOffset) {
+      final SurfaceHolder surfaceHolder = getSurfaceHolder();
+      final Rect frame = surfaceHolder.getSurfaceFrame();
+      Canvas canvas = null;
+      try {
+        canvas = surfaceHolder.lockCanvas();
 
-		@Override
-		public void notifyColorsChanged() {
-			super.notifyColorsChanged();
-		}
+        if (canvas != null) {
+          paint.setColor(colorBackground);
+          canvas.drawRect(0, 0, frame.width(), frame.height(), paint);
 
-		@Override
-		public void onOffsetsChanged(
-				float xOffset,
-				float yOffset,
-				float xStep,
-				float yStep,
-				int xPixels,
-				int yPixels
-		) {
-			super.onOffsetsChanged(xOffset, yOffset,xStep, yStep, xPixels, yPixels);
-			if (parallax != 0) drawFrame(xOffset);
-			this.xOffset = xOffset;
-		}
-
-		void drawFrame(float xOffset) {
-			final SurfaceHolder surfaceHolder = getSurfaceHolder();
-			final Rect frame = surfaceHolder.getSurfaceFrame();
-			Canvas canvas = null;
-			try {
-				canvas = surfaceHolder.lockCanvas();
-
+          switch (theme) {
+            case Constants.THEME.DOODLE:
+              drawShape(doodleArc, 0.25, 0.28, zDoodleArc, xOffset);
+              drawShape(doodleDot, 0.142, 0.468, zDoodleDot, xOffset);
+              drawShape(doodleU, 0.25, 0.72, zDoodleU, xOffset);
+              drawShape(doodleRect, 0.7, 0.8, zDoodleRect, xOffset);
+              drawShape(doodleRing, 0.66, 0.5, zDoodleRing, xOffset);
+              drawShape(doodleMoon, 0.75, 0.56, zDoodleMoon, xOffset);
+              drawShape(doodlePoly, 0.7, 0.2, zDoodlePoly, xOffset);
+              drawOnCanvas(
+                  canvas,
+                  doodleArc, doodleDot, doodleU, doodleRect,
+                  doodleRing, doodleMoon, doodlePoly
+              );
+              break;
+            case Constants.THEME.NEON:
+              drawShape(neonKidneyFront, 0.85, 0.65, zNeonKidneyFront, xOffset);
+              drawShape(neonCircleFront, 0.98, 0.468, zNeonCircleFront, xOffset);
+              drawShape(neonPill, 0.26, 0.58, zNeonPill, xOffset);
+              drawShape(neonLine, 0.55, 0.4, zNeonLine, xOffset);
+              drawShape(neonKidneyBack, 0.63, 0.37, zNeonKidneyBack, xOffset);
+              drawShape(neonCircleBack, 0.5, 0.63, zNeonCircleBack, xOffset);
+              drawShape(neonDot, 0.6, 0.15, zNeonDot, xOffset);
+              drawOnCanvas(
+                  canvas,
+                  neonDot, neonCircleBack, neonKidneyBack, neonLine,
+                  neonPill, neonCircleFront, neonKidneyFront
+              );
+              break;
+            case Constants.THEME.GEOMETRIC:
+              drawShape(geometricRect, 0.35, 0.78, zGeometricRect, xOffset);
+              drawShape(geometricLine, 0.5, 0.82, zGeometricLine, xOffset);
+              drawShape(geometricPoly, 0.8, 0.67, zGeometricPoly, xOffset);
+              drawShape(geometricCircle, 0.6, 0.2, zGeometricCircle, xOffset);
+              drawShape(geometricSheet, 0.4, 0.21, zGeometricSheet, xOffset);
+              drawOnCanvas(
+                  canvas,
+                  geometricSheet, geometricCircle, geometricPoly,
+                  geometricLine, geometricRect
+              );
+              break;
+          }
+        }
+      } finally {
 				if (canvas != null) {
-					paint.setColor(colorBackground);
-					canvas.drawRect(0, 0, frame.width(), frame.height(), paint);
-
-					switch (theme) {
-						case Constants.THEME.DOODLE:
-							drawShape(doodleArc, 0.25, 0.28, zDoodleArc, xOffset);
-							drawShape(doodleDot, 0.142, 0.468, zDoodleDot, xOffset);
-							drawShape(doodleU, 0.25, 0.72, zDoodleU, xOffset);
-							drawShape(doodleRect, 0.7, 0.8, zDoodleRect, xOffset);
-							drawShape(doodleRing, 0.66, 0.5, zDoodleRing, xOffset);
-							drawShape(doodleMoon, 0.75, 0.56, zDoodleMoon, xOffset);
-							drawShape(doodlePoly, 0.7, 0.2, zDoodlePoly, xOffset);
-							drawOnCanvas(
-									canvas,
-									doodleArc, doodleDot, doodleU, doodleRect,
-									doodleRing, doodleMoon, doodlePoly
-							);
-							break;
-						case Constants.THEME.NEON:
-							drawShape(neonKidneyFront, 0.85, 0.65, zNeonKidneyFront, xOffset);
-							drawShape(neonCircleFront, 0.98, 0.468, zNeonCircleFront, xOffset);
-							drawShape(neonPill, 0.26, 0.58, zNeonPill, xOffset);
-							drawShape(neonLine, 0.55, 0.4, zNeonLine, xOffset);
-							drawShape(neonKidneyBack, 0.63, 0.37, zNeonKidneyBack, xOffset);
-							drawShape(neonCircleBack, 0.5, 0.63, zNeonCircleBack, xOffset);
-							drawShape(neonDot, 0.6, 0.15, zNeonDot, xOffset);
-							drawOnCanvas(
-									canvas,
-									neonDot, neonCircleBack, neonKidneyBack, neonLine,
-									neonPill, neonCircleFront, neonKidneyFront
-							);
-							break;
-						case Constants.THEME.GEOMETRIC:
-							drawShape(geometricRect, 0.35, 0.78, zGeometricRect, xOffset);
-							drawShape(geometricLine, 0.5, 0.82, zGeometricLine, xOffset);
-							drawShape(geometricPoly, 0.8, 0.67, zGeometricPoly, xOffset);
-							drawShape(geometricCircle, 0.6, 0.2, zGeometricCircle, xOffset);
-							drawShape(geometricSheet, 0.4, 0.21, zGeometricSheet, xOffset);
-							drawOnCanvas(
-									canvas,
-									geometricSheet, geometricCircle, geometricPoly,
-									geometricLine, geometricRect
-							);
-							break;
-					}
+					surfaceHolder.unlockCanvasAndPost(canvas);
 				}
-			} finally {
-				if (canvas != null) surfaceHolder.unlockCanvasAndPost(canvas);
-			}
-		}
+      }
+    }
 
-		private void drawOnCanvas(Canvas canvas, Drawable... drawables) {
-			for (Drawable drawable : drawables) {
-				if (drawable != null) drawable.draw(canvas);
-			}
-		}
+    private void drawOnCanvas(Canvas canvas, Drawable... drawables) {
+      for (Drawable drawable : drawables) {
+				if (drawable != null) {
+					drawable.draw(canvas);
+				}
+      }
+    }
 
-		private void drawShape(
-				Drawable drawable,
-				double x,
-				double y,
-				double z,
-				double xOffset
-		) {
-			int xPos, yPos, offset;
-			Rect frame = getSurfaceHolder().getSurfaceFrame();
-			offset = (int) (xOffset * z * parallax);
-			xPos = ((int) (x * frame.width()) - drawable.getIntrinsicWidth() / 2) - offset;
-			yPos = (int) (y * frame.height()) - drawable.getIntrinsicHeight() / 2;
-			double scale = isSizeBig ? 1.2 : 1;
-			drawable.setBounds(
-					xPos, yPos,
-					(int) (scale * drawable.getIntrinsicWidth()) + xPos,
-					(int) (scale * drawable.getIntrinsicHeight()) + yPos
-			);
-		}
-	}
-
-	private VectorDrawableCompat getVectorDrawable(@DrawableRes int resId, Resources.Theme theme) {
-		return VectorDrawableCompat.create(getApplicationContext().getResources(), resId, theme);
-	}
-
-	private void refreshTheme() {
-		if (isNightMode()) {
-			switch (theme) {
-				case Constants.THEME.DOODLE:
-					themeRes.applyStyle(R.style.Wallpaper_Doodle_Night, true);
-					colorBackground = getColor(R.color.wp_bg_doodle_night);
-					break;
-				case Constants.THEME.NEON:
-					themeRes.applyStyle(R.style.Wallpaper_Neon_Night, true);
-					colorBackground = getColor(R.color.wp_bg_neon_night);
-					break;
-				case Constants.THEME.GEOMETRIC:
-					themeRes.applyStyle(R.style.Wallpaper_Geometric_Night, true);
-					colorBackground = getColor(R.color.wp_bg_geometric_night);
-					break;
-			}
-		} else {
-			switch (theme) {
-				case Constants.THEME.DOODLE:
-					switch (variant) {
-						case Constants.VARIANT.BLACK:
-							themeRes.applyStyle(R.style.Wallpaper_Doodle_Black, true);
-							colorBackground = getColor(R.color.wp_bg_doodle_black);
-							break;
-						case Constants.VARIANT.WHITE:
-							themeRes.applyStyle(R.style.Wallpaper_Doodle_White, true);
-							colorBackground = getColor(R.color.wp_bg_doodle_white);
-							break;
-						case Constants.VARIANT.ORANGE:
-							themeRes.applyStyle(R.style.Wallpaper_Doodle_Orange, true);
-							colorBackground = getColor(R.color.wp_bg_doodle_orange);
-							break;
-					}
-					break;
-				case Constants.THEME.NEON:
-					themeRes.applyStyle(R.style.Wallpaper_Neon, true);
-					colorBackground = getColor(R.color.wp_bg_neon);
-					break;
-				case Constants.THEME.GEOMETRIC:
-					themeRes.applyStyle(R.style.Wallpaper_Geometric, true);
-					colorBackground = getColor(R.color.wp_bg_geometric);
-					break;
-			}
-		}
-
-		switch (theme) {
-			case Constants.THEME.DOODLE:
-				doodleArc = getVectorDrawable(R.drawable.doodle_shape_arc, themeRes);
-				doodleDot = getVectorDrawable(R.drawable.doodle_shape_dot, themeRes);
-				doodleU = getVectorDrawable(R.drawable.doodle_shape_u, themeRes);
-				doodleRect = getVectorDrawable(R.drawable.doodle_shape_rect, themeRes);
-				doodleRing = getVectorDrawable(R.drawable.doodle_shape_ring, themeRes);
-				doodleMoon = getVectorDrawable(R.drawable.doodle_shape_moon, themeRes);
-				doodlePoly = getVectorDrawable(R.drawable.doodle_shape_poly, themeRes);
-				break;
-			case Constants.THEME.NEON:
-				neonKidneyFront = getVectorDrawable(R.drawable.neon_shape_kidney_front, null);
-				neonCircleFront = getVectorDrawable(R.drawable.neon_shape_circle_front, themeRes);
-				neonPill = getVectorDrawable(R.drawable.neon_shape_pill, themeRes);
-				neonLine = getVectorDrawable(R.drawable.neon_shape_line, themeRes);
-				neonKidneyBack = getVectorDrawable(R.drawable.neon_shape_kidney_back, null);
-				neonCircleBack = getVectorDrawable(R.drawable.neon_shape_circle_back, themeRes);
-				neonDot = getVectorDrawable(R.drawable.neon_shape_dot, themeRes);
-				break;
-			case Constants.THEME.GEOMETRIC:
-				geometricRect = getVectorDrawable(R.drawable.geometric_shape_rect, themeRes);
-				geometricLine = getVectorDrawable(R.drawable.geometric_shape_line, themeRes);
-				geometricPoly = getVectorDrawable(R.drawable.geometric_shape_poly, themeRes);
-				geometricCircle = getVectorDrawable(R.drawable.geometric_shape_circle, themeRes);
-				geometricSheet = getVectorDrawable(R.drawable.geometric_shape_sheet, themeRes);
-				break;
-		}
-	}
-
-	private void newRandomZ() {
-		Random random = new Random();
-		switch (theme) {
-			case Constants.THEME.DOODLE:
-				zDoodleArc = random.nextFloat();
-				zDoodleDot = random.nextFloat();
-				zDoodleU = random.nextFloat();
-				zDoodleRect = random.nextFloat();
-				zDoodleRing = random.nextFloat();
-				zDoodleMoon = random.nextFloat();
-				zDoodlePoly = random.nextFloat();
-				break;
-			case Constants.THEME.NEON:
-				zNeonKidneyFront = random.nextFloat();
-				zNeonCircleFront = random.nextFloat();
-				zNeonPill = random.nextFloat();
-				zNeonLine = random.nextFloat();
-				zNeonKidneyBack = random.nextFloat();
-				zNeonCircleBack = random.nextFloat();
-				zNeonDot = random.nextFloat();
-				break;
-			case Constants.THEME.GEOMETRIC:
-				zGeometricRect = random.nextFloat();
-				zGeometricLine = random.nextFloat();
-				zGeometricPoly = random.nextFloat();
-				zGeometricCircle = random.nextFloat();
-				zGeometricSheet = random.nextFloat();
-				break;
-		}
-	}
-
-	private boolean isNightMode() {
-		if (nightMode && !followSystem) return true;
-		int flags = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
-		return nightMode && flags == Configuration.UI_MODE_NIGHT_YES;
-	}
+    private void drawShape(
+        Drawable drawable,
+        double x,
+        double y,
+        double z,
+        double xOffset
+    ) {
+      int xPos, yPos, offset;
+      Rect frame = getSurfaceHolder().getSurfaceFrame();
+      offset = (int) (xOffset * z * parallax);
+      xPos = ((int) (x * frame.width()) - drawable.getIntrinsicWidth() / 2) - offset;
+      yPos = (int) (y * frame.height()) - drawable.getIntrinsicHeight() / 2;
+      double scale = isSizeBig ? 1.2 : 1;
+      drawable.setBounds(
+          xPos, yPos,
+          (int) (scale * drawable.getIntrinsicWidth()) + xPos,
+          (int) (scale * drawable.getIntrinsicHeight()) + yPos
+      );
+    }
+  }
 }

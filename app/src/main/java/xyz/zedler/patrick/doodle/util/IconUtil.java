@@ -10,7 +10,7 @@
  * GNU General Public License for more details.
  * You should have received a copy of the GNU General Public License
  * along with Doodle Android. If not, see <http://www.gnu.org/licenses/>.
- * Copyright 2021 by Patrick Zedler
+ * Copyright (c) 2021 by Patrick Zedler
  */
 
 package xyz.zedler.patrick.doodle.util;
@@ -22,20 +22,26 @@ import android.widget.ImageView;
 
 public class IconUtil {
 
-    private final static String TAG = IconUtil.class.getSimpleName();
-    private final static boolean DEBUG = false;
+  private final static String TAG = IconUtil.class.getSimpleName();
+  private final static boolean DEBUG = false;
 
-    public static void start(ImageView imageView) {
-        if (imageView == null) return;
-        start(imageView.getDrawable());
-    }
+  public static void start(ImageView imageView) {
+      if (imageView == null) {
+          return;
+      }
+    start(imageView.getDrawable());
+  }
 
-    public static void start(Drawable drawable) {
-        if (drawable == null) return;
-        try {
-            ((Animatable) drawable).start();
-        } catch (ClassCastException cla) {
-            if (DEBUG) Log.e(TAG, "start() requires AnimVectorDrawable");
+  public static void start(Drawable drawable) {
+      if (drawable == null) {
+          return;
+      }
+    try {
+      ((Animatable) drawable).start();
+    } catch (ClassCastException cla) {
+        if (DEBUG) {
+            Log.e(TAG, "start() requires AnimVectorDrawable");
         }
     }
+  }
 }

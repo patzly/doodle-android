@@ -10,7 +10,7 @@
  * GNU General Public License for more details.
  * You should have received a copy of the GNU General Public License
  * along with Doodle Android. If not, see <http://www.gnu.org/licenses/>.
- * Copyright 2021 by Patrick Zedler
+ * Copyright (c) 2021 by Patrick Zedler
  */
 
 package xyz.zedler.patrick.doodle.util;
@@ -21,30 +21,36 @@ import android.widget.CompoundButton;
 
 public class ClickUtil {
 
-    private long lastClick;
+  private long lastClick;
 
-    public ClickUtil() {
-        lastClick = 0;
-    }
+  public ClickUtil() {
+    lastClick = 0;
+  }
 
-    public void update() {
-        lastClick = SystemClock.elapsedRealtime();
-    }
+  public static void setOnClickListeners(View.OnClickListener listener, View... views) {
+      for (View view : views) {
+          view.setOnClickListener(listener);
+      }
+  }
 
-    public boolean isDisabled() {
-        if (SystemClock.elapsedRealtime() - lastClick < 500) return true;
-        update();
-        return false;
-    }
+  public static void setOnCheckedChangeListeners(
+      CompoundButton.OnCheckedChangeListener listener,
+      CompoundButton... compoundButtons
+  ) {
+      for (CompoundButton view : compoundButtons) {
+          view.setOnCheckedChangeListener(listener);
+      }
+  }
 
-    public static void setOnClickListeners(View.OnClickListener listener, View... views) {
-        for (View view : views) view.setOnClickListener(listener);
-    }
+  public void update() {
+    lastClick = SystemClock.elapsedRealtime();
+  }
 
-    public static void setOnCheckedChangeListeners(
-            CompoundButton.OnCheckedChangeListener listener,
-            CompoundButton... compoundButtons
-    ) {
-        for (CompoundButton view : compoundButtons) view.setOnCheckedChangeListener(listener);
-    }
+  public boolean isDisabled() {
+      if (SystemClock.elapsedRealtime() - lastClick < 500) {
+          return true;
+      }
+    update();
+    return false;
+  }
 }

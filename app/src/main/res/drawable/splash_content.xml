@@ -20,9 +20,10 @@
         android:drawable="@color/background" />
 
     <item
+      android:id="@+id/splash_logo"
         android:gravity="center"
-        android:width="100dp"
-        android:height="100dp"
-        android:drawable="@drawable/splash_logo" />
+        android:width="90dp"
+        android:height="90dp"
+        android:drawable="@drawable/splash_logo_anim" />
 
 </layer-list>

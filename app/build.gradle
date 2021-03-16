@@ -27,7 +27,7 @@ android {
         minSdkVersion 27
         targetSdkVersion 30
         versionCode 14
-        versionName "2.2.1"
+        versionName "2.3.0"
     }
 
     applicationVariants.all { variant ->

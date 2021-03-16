@@ -13,7 +13,7 @@
  * Copyright (c) 2021 by Patrick Zedler
  */
 
-package xyz.zedler.patrick.doodle;
+package xyz.zedler.patrick.doodle.activity;
 
 import android.app.ActivityManager;
 import android.app.WallpaperManager;
@@ -34,6 +34,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.content.ContextCompat;
 import com.google.android.material.card.MaterialCardView;
+import xyz.zedler.patrick.doodle.Constants;
+import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.behavior.ScrollBehavior;
 import xyz.zedler.patrick.doodle.behavior.SystemBarBehavior;
 import xyz.zedler.patrick.doodle.databinding.ActivitySettingsBinding;

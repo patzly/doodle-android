@@ -19,4 +19,4 @@
   xmlns:android="http://schemas.android.com/apk/res/android"
   android:thumbnail="@raw/thumbnail"
   android:description="@string/info_description_wallpaper"
-  android:settingsActivity="xyz.zedler.patrick.doodle.SettingsActivity" />
+  android:settingsActivity="xyz.zedler.patrick.doodle.activity.SettingsActivity" />

@@ -30,15 +30,20 @@ import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.RadioGroup;
 import androidx.annotation.Nullable;
+import androidx.annotation.StringRes;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.content.ContextCompat;
+import androidx.fragment.app.DialogFragment;
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.google.android.material.card.MaterialCardView;
 import xyz.zedler.patrick.doodle.Constants;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.behavior.ScrollBehavior;
 import xyz.zedler.patrick.doodle.behavior.SystemBarBehavior;
 import xyz.zedler.patrick.doodle.databinding.ActivitySettingsBinding;
+import xyz.zedler.patrick.doodle.fragment.ChangelogBottomSheetDialogFragment;
+import xyz.zedler.patrick.doodle.fragment.TextBottomSheetDialogFragment;
 import xyz.zedler.patrick.doodle.service.LiveWallpaperService;
 import xyz.zedler.patrick.doodle.util.ClickUtil;
 import xyz.zedler.patrick.doodle.util.IconUtil;
@@ -80,7 +85,7 @@ public class SettingsActivity extends AppCompatActivity
             this,
             isWallpaperServiceRunning()
                 ? R.color.secondary_disabled
-                : R.color.retro_blue_bg_white
+                : R.color.retro_green_bg_white
         )
     );
     binding.buttonSet.setTextColor(
@@ -161,7 +166,7 @@ public class SettingsActivity extends AppCompatActivity
 
     ClickUtil.setOnClickListeners(
         this,
-        binding.linearHelp,
+        binding.cardInfo,
         binding.cardDoodle,
         binding.cardNeon,
         binding.cardGeometric,
@@ -170,8 +175,12 @@ public class SettingsActivity extends AppCompatActivity
         binding.cardOrange,
         binding.linearNightMode,
         binding.linearFollowSystem,
+        binding.linearChangelog,
         binding.linearDeveloper,
-        binding.buttonSet
+        binding.buttonSet,
+        binding.linearLicenseMaterialComponents,
+        binding.linearLicenseMaterialIcons,
+        binding.linearLicenseRoboto
     );
 
     ClickUtil.setOnCheckedChangeListeners(
@@ -194,7 +203,7 @@ public class SettingsActivity extends AppCompatActivity
     if (!isWallpaperServiceRunning()) {
       binding.buttonSet.setEnabled(true);
       binding.buttonSet.setBackgroundColor(
-          ContextCompat.getColor(this, R.color.retro_blue_bg_white)
+          ContextCompat.getColor(this, R.color.retro_green_bg_white)
       );
       binding.buttonSet.setTextColor(
           ContextCompat.getColor(this, R.color.on_secondary)
@@ -217,7 +226,7 @@ public class SettingsActivity extends AppCompatActivity
     } else if (requestCode == Constants.REQUEST_CODE && resultCode == RESULT_CANCELED) {
       binding.buttonSet.setEnabled(true);
       binding.buttonSet.setBackgroundColor(
-          ContextCompat.getColor(this, R.color.retro_blue_bg_white)
+          ContextCompat.getColor(this, R.color.retro_green_bg_white)
       );
       binding.buttonSet.setTextColor(
           ContextCompat.getColor(this, R.color.on_secondary)
@@ -232,7 +241,13 @@ public class SettingsActivity extends AppCompatActivity
 		}
 
     int id = v.getId();
-    if (id == R.id.card_doodle) {
+    if (id == R.id.card_info) {
+      showTextBottomSheet(
+          "info",
+          R.string.info_title,
+          -1
+      );
+    } else if (id == R.id.card_doodle) {
       IconUtil.start(binding.imageTheme);
       refreshSelectionTheme(Constants.THEME.DOODLE);
     } else if (id == R.id.card_neon) {
@@ -254,6 +269,10 @@ public class SettingsActivity extends AppCompatActivity
       if (binding.switchNightMode.isChecked()) {
         binding.switchFollowSystem.setChecked(!binding.switchFollowSystem.isChecked());
       }
+    } else if (id == R.id.linear_changelog) {
+      IconUtil.start(binding.imageChangelog);
+      BottomSheetDialogFragment fragment = new ChangelogBottomSheetDialogFragment();
+      fragment.show(getSupportFragmentManager(), fragment.toString());
     } else if (id == R.id.linear_developer) {
       IconUtil.start(binding.imageDeveloper);
       new Handler(Looper.getMainLooper()).postDelayed(
@@ -278,6 +297,27 @@ public class SettingsActivity extends AppCompatActivity
                   )
               ),
           Constants.REQUEST_CODE
+      );
+    } else if (id == R.id.linear_license_material_components) {
+      IconUtil.start(binding.imageLicenseMaterialComponents);
+      showTextBottomSheet(
+          "apache",
+          R.string.license_material_components,
+          R.string.license_material_components_link
+      );
+    } else if (id == R.id.linear_license_material_icons) {
+      IconUtil.start(binding.imageLicenseMaterialIcons);
+      showTextBottomSheet(
+          "apache",
+          R.string.license_material_icons,
+          R.string.license_material_icons_link
+      );
+    } else if (id == R.id.linear_license_roboto) {
+      IconUtil.start(binding.imageLicenseRoboto);
+      showTextBottomSheet(
+          "apache",
+          R.string.license_roboto,
+          R.string.license_roboto_link
       );
     }
   }
@@ -385,5 +425,17 @@ public class SettingsActivity extends AppCompatActivity
       }
     }
     return false;
+  }
+
+  private void showTextBottomSheet(String file, @StringRes int title, @StringRes int link) {
+    DialogFragment fragment = new TextBottomSheetDialogFragment();
+    Bundle bundle = new Bundle();
+    bundle.putString(Constants.EXTRA.TITLE, getString(title));
+    bundle.putString(Constants.EXTRA.FILE, file);
+    if (link != -1) {
+      bundle.putString(Constants.EXTRA.LINK, getString(link));
+    }
+    fragment.setArguments(bundle);
+    fragment.show(getSupportFragmentManager(), fragment.toString());
   }
 }

@@ -42,4 +42,11 @@ public final class Constants {
     public final static String WHITE = "white";
     public final static String ORANGE = "orange";
   }
+
+  public final static class EXTRA {
+
+    public final static String TITLE = "title";
+    public final static String LINK = "link";
+    public final static String FILE = "file";
+  }
 }

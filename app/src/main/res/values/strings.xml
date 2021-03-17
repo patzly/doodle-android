@@ -37,12 +37,33 @@
     <string name="setting_size_default">Default</string>
     <string name="setting_size_big">Big</string>
 
-    <string name="info_description">Colorful live wallpapers with auto dark mode and efficient parallax effect</string>
+    <array name="changelog_highlights" translatable="false">
+        <item>New:</item>
+        <item>Improved:</item>
+        <item>Fixed:</item>
+    </array>
+
+    <string name="info_title">Information</string>
+    <string name="info_description">Colorful live wallpapers with auto dark mode and battery-efficient parallax effect. Tap to learn more.</string>
     <string name="info_description_wallpaper">A colorful collection of shapes</string>
     <string name="info_version">Version</string>
+    <string name="info_changelog">Changelog</string>
+    <string name="info_changelog_description">What\'s new?</string>
     <string name="info_developer">Developer</string>
+    <string name="info_material_components_built_with">Built with</string>
+    <string name="info_material_components">Material Components</string>
 
     <string name="category_customization">Customization</string>
-    <string name="category_about">About Doodle</string>
+    <string name="category_about">About</string>
+    <string name="category_licenses">Open source licenses</string>
+
+    <string name="license_author_google" translatable="false">Google</string>
+    <string name="license_material_icons" translatable="false">Material Design Icons</string>
+    <string name="license_material_icons_link" translatable="false">https://github.com/google/material-design-icons</string>
+    <string name="license_material_components" translatable="false">Material Components Android</string>
+    <string name="license_material_components_link" translatable="false">https://github.com/material-components/material-components-android</string>
+    <string name="license_roboto" translatable="false">Roboto Typeface</string>
+    <string name="license_roboto_author" translatable="false">Christian Robertson</string>
+    <string name="license_roboto_link" translatable="false">https://github.com/google/roboto</string>
 
 </resources>

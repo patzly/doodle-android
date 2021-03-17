@@ -1,0 +1,10 @@
+These live wallpapers are based on the original doodle live wallpapers of the Google Pixel 4.
+
+They are right for you if you look for something less power consuming and if you want to have automatic dark mode applied to your wallpaper based on your device's current theme.
+
+How to set as background:
+- Tap SET in the top right corner, it should appear a preview
+- Now tap SET WALLPAPER
+
+What if there is no movement?
+You need more than one home screen page. When you swipe between them, you should see a parallax effect.

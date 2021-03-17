@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ This file is part of Doodle Android.
+  ~ Doodle Android is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~ Doodle Android is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with Doodle Android. If not, see <http://www.gnu.org/licenses/>.
+  ~ Copyright (c) 2021 by Patrick Zedler
+  -->
+
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:orientation="vertical">
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <TextView
+      android:id="@+id/text_text_title"
+      style="@style/Widget.Doodle.TextView.Title.BottomSheet"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:padding="16dp"
+      android:layout_weight="1"
+      android:singleLine="true" />
+
+    <FrameLayout
+      android:id="@+id/frame_text_open_link"
+      android:layout_width="48dp"
+      android:layout_height="48dp"
+      android:background="?attr/actionBarItemBackground"
+      android:clickable="true"
+      android:layout_gravity="end|center_vertical"
+      android:focusable="true">
+
+      <ImageView
+        android:id="@+id/image_text_open_link"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_gravity="center"
+        android:importantForAccessibility="no"
+        android:src="@drawable/ic_round_open_in_browser_anim" />
+
+    </FrameLayout>
+
+  </LinearLayout>
+
+  <View
+    style="@style/Widget.Doodle.Divider"
+    android:layout_marginTop="0dp"
+    android:layout_marginBottom="0dp" />
+
+  <androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:scrollbars="none">
+
+    <TextView
+      android:id="@+id/text_text"
+      style="@style/Widget.Doodle.TextView.Paragraph"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:padding="16dp" />
+
+  </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

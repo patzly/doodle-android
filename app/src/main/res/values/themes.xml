@@ -19,7 +19,7 @@
   <style name="Theme.Doodle" parent="Theme.MaterialComponents.DayNight.NoActionBar">
     <item name="colorPrimary">@color/primary</item>
     <item name="colorPrimaryDark">@color/primary_variant</item>
-    <item name="colorOnPrimary">@color/onPrimary</item>
+    <item name="colorOnPrimary">@color/on_background</item>
 
     <item name="colorSecondary">@color/secondary</item>
     <item name="colorOnSecondary">@color/on_secondary</item>

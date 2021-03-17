@@ -17,6 +17,8 @@ package xyz.zedler.patrick.doodle;
 
 public final class Constants {
 
+  public final static int REQUEST_CODE = 1;
+
   public final static class PREF {
 
     public final static String NIGHT_MODE = "night_mode";

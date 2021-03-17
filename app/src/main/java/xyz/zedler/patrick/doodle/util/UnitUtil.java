@@ -34,6 +34,14 @@ public class UnitUtil {
         );
     }
 
+    public static int getSp(Context context, float sp) {
+        return (int) TypedValue.applyDimension(
+            TypedValue.COMPLEX_UNIT_SP,
+            sp,
+            context.getResources().getDisplayMetrics()
+        );
+    }
+
     public static int getDisplayHeight(WindowManager windowManager) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
             WindowMetrics windowMetrics = windowManager.getCurrentWindowMetrics();

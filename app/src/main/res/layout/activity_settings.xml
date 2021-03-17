@@ -34,7 +34,7 @@
       android:orientation="horizontal">
 
       <FrameLayout
-        android:id="@+id/frame_back"
+        android:id="@+id/frame_close"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginStart="4dp"
@@ -42,8 +42,8 @@
         android:background="?attr/actionBarItemBackground"
         android:clickable="true"
         android:gravity="center"
-        android:contentDescription="@string/action_back"
-        android:tooltipText="@string/action_back"
+        android:contentDescription="@string/action_close"
+        android:tooltipText="@string/action_close"
         android:focusable="true"
         tools:targetApi="o">
 
@@ -52,7 +52,7 @@
           android:layout_height="24dp"
           android:layout_gravity="center"
           android:importantForAccessibility="no"
-          android:src="@drawable/ic_round_arrow_back" />
+          android:src="@drawable/ic_round_close" />
 
       </FrameLayout>
 
@@ -66,7 +66,7 @@
 
       <com.google.android.material.button.MaterialButton
         android:id="@+id/button_set"
-        style="@style/Theme.Doodle.Button.UnelevatedButton"
+        style="@style/Widget.Doodle.Button.UnelevatedButton"
         android:layout_marginEnd="16dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -222,7 +222,7 @@
           android:paddingStart="7dp"
           android:paddingEnd="0dp"
           android:paddingTop="8dp"
-          android:paddingBottom="8dp"
+          android:paddingBottom="16dp"
           android:clipToPadding="false"
           tools:ignore="UnusedAttribute">
 
@@ -267,16 +267,14 @@
 
       <LinearLayout
         android:id="@+id/linear_night_mode"
-        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable"
-        android:paddingTop="8dp"
-        android:paddingBottom="8dp">
+        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable">
 
         <ImageView
           android:id="@+id/image_night_mode"
           style="@style/Widget.Doodle.ImageView.ListItem.Icon"
           tools:ignore="ContentDescription" />
 
-        <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
+        <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">
 
           <TextView
             style="@style/Widget.Doodle.TextView.ListItem.Title"
@@ -298,9 +296,7 @@
 
       <LinearLayout
         android:id="@+id/linear_follow_system"
-        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable"
-        android:paddingTop="8dp"
-        android:paddingBottom="8dp">
+        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable">
 
         <LinearLayout
           android:id="@+id/linear_follow_system_container"
@@ -315,7 +311,7 @@
             android:src="@drawable/ic_round_brightness_auto_anim"
             tools:ignore="ContentDescription" />
 
-          <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
+          <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">
 
             <TextView
               style="@style/Widget.Doodle.TextView.ListItem.Title"
@@ -436,7 +432,7 @@
 
       <TextView
         style="@style/Widget.Doodle.Category"
-        android:text="@string/category_info" />
+        android:text="@string/category_about" />
 
       <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine">
 

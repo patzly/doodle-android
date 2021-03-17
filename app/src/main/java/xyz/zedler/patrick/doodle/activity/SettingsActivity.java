@@ -72,13 +72,15 @@ public class SettingsActivity extends AppCompatActivity
         binding.appBar, binding.scroll, true
     );
 
+    binding.frameClose.setOnClickListener(v -> finish());
+
     binding.buttonSet.setEnabled(!isWallpaperServiceRunning());
     binding.buttonSet.setBackgroundColor(
         ContextCompat.getColor(
             this,
             isWallpaperServiceRunning()
                 ? R.color.secondary_disabled
-                : R.color.retro_green_bg_white
+                : R.color.retro_blue_bg_white
         )
     );
     binding.buttonSet.setTextColor(
@@ -192,7 +194,7 @@ public class SettingsActivity extends AppCompatActivity
     if (!isWallpaperServiceRunning()) {
       binding.buttonSet.setEnabled(true);
       binding.buttonSet.setBackgroundColor(
-          ContextCompat.getColor(this, R.color.retro_green_bg_white)
+          ContextCompat.getColor(this, R.color.retro_blue_bg_white)
       );
       binding.buttonSet.setTextColor(
           ContextCompat.getColor(this, R.color.on_secondary)
@@ -202,27 +204,25 @@ public class SettingsActivity extends AppCompatActivity
 
   @Override
   protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-    if (requestCode == 1) {
-      if (resultCode == RESULT_OK) {
-        binding.buttonSet.setEnabled(false);
-        binding.buttonSet.setBackgroundColor(
-            ContextCompat.getColor(this, R.color.secondary_disabled)
-        );
-        binding.buttonSet.setTextColor(
-            ContextCompat.getColor(this, R.color.on_secondary_disabled)
-        );
-      }
-      if (resultCode == RESULT_CANCELED) {
-        binding.buttonSet.setEnabled(true);
-        binding.buttonSet.setBackgroundColor(
-            ContextCompat.getColor(this, R.color.retro_green_bg_white)
-        );
-        binding.buttonSet.setTextColor(
-            ContextCompat.getColor(this, R.color.on_secondary)
-        );
-      }
-    }
     super.onActivityResult(requestCode, resultCode, data);
+
+    if (requestCode == Constants.REQUEST_CODE && resultCode == RESULT_OK) {
+      binding.buttonSet.setEnabled(false);
+      binding.buttonSet.setBackgroundColor(
+          ContextCompat.getColor(this, R.color.secondary_disabled)
+      );
+      binding.buttonSet.setTextColor(
+          ContextCompat.getColor(this, R.color.on_secondary_disabled)
+      );
+    } else if (requestCode == Constants.REQUEST_CODE && resultCode == RESULT_CANCELED) {
+      binding.buttonSet.setEnabled(true);
+      binding.buttonSet.setBackgroundColor(
+          ContextCompat.getColor(this, R.color.retro_blue_bg_white)
+      );
+      binding.buttonSet.setTextColor(
+          ContextCompat.getColor(this, R.color.on_secondary)
+      );
+    }
   }
 
   @Override
@@ -274,11 +274,10 @@ public class SettingsActivity extends AppCompatActivity
                   WallpaperManager.EXTRA_LIVE_WALLPAPER_COMPONENT,
                   new ComponentName(
                       "xyz.zedler.patrick.doodle",
-                      "xyz.zedler.patrick.doodle.service." +
-                          "LiveWallpaperService"
+                      "xyz.zedler.patrick.doodle.service.LiveWallpaperService"
                   )
               ),
-          1
+          Constants.REQUEST_CODE
       );
     }
   }

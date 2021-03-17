@@ -20,7 +20,7 @@
     <string name="app_name">Doodle</string>
     <string name="app_developer" translatable="false">Patrick Zedler</string>
 
-    <string name="action_back">Back</string>
+    <string name="action_close">Close</string>
     <string name="action_set">Set</string>
 
     <string name="setting_night_mode">Night mode</string>
@@ -43,6 +43,6 @@
     <string name="info_developer">Developer</string>
 
     <string name="category_customization">Customization</string>
-    <string name="category_info">Info</string>
+    <string name="category_about">About Doodle</string>
 
 </resources>

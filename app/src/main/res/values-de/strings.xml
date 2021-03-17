@@ -19,7 +19,7 @@
 
     <string name="app_name">Doodle</string>
 
-    <string name="action_back">Zurück</string>
+    <string name="action_close">Schließen</string>
     <string name="action_set">Festlegen</string>
 
     <string name="setting_night_mode">Nachtmodus</string>
@@ -42,6 +42,6 @@
     <string name="info_developer">Entwickler</string>
 
     <string name="category_customization">Anpassung</string>
-    <string name="category_info">Info</string>
+    <string name="category_about">Über Doodle</string>
 
 </resources>

@@ -24,13 +24,21 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+import android.os.Build.VERSION;
+import android.os.Build.VERSION_CODES;
+import android.os.Handler;
+import android.os.Looper;
 import android.preference.PreferenceManager;
 import android.service.wallpaper.WallpaperService;
 import android.view.SurfaceHolder;
+import androidx.annotation.ColorRes;
 import androidx.annotation.DrawableRes;
+import androidx.core.content.ContextCompat;
 import androidx.vectordrawable.graphics.drawable.VectorDrawableCompat;
 import java.util.Random;
 import xyz.zedler.patrick.doodle.Constants;
+import xyz.zedler.patrick.doodle.Constants.THEME;
+import xyz.zedler.patrick.doodle.Constants.VARIANT;
 import xyz.zedler.patrick.doodle.R;
 
 public class LiveWallpaperService extends WallpaperService {
@@ -112,15 +120,15 @@ public class LiveWallpaperService extends WallpaperService {
       switch (theme) {
         case Constants.THEME.DOODLE:
           themeRes.applyStyle(R.style.Wallpaper_Doodle_Night, true);
-          colorBackground = getColor(R.color.wp_bg_doodle_night);
+          colorBackground = getCompatColor(R.color.wp_bg_doodle_night);
           break;
         case Constants.THEME.NEON:
           themeRes.applyStyle(R.style.Wallpaper_Neon_Night, true);
-          colorBackground = getColor(R.color.wp_bg_neon_night);
+          colorBackground = getCompatColor(R.color.wp_bg_neon_night);
           break;
         case Constants.THEME.GEOMETRIC:
           themeRes.applyStyle(R.style.Wallpaper_Geometric_Night, true);
-          colorBackground = getColor(R.color.wp_bg_geometric_night);
+          colorBackground = getCompatColor(R.color.wp_bg_geometric_night);
           break;
       }
     } else {
@@ -129,25 +137,25 @@ public class LiveWallpaperService extends WallpaperService {
           switch (variant) {
             case Constants.VARIANT.BLACK:
               themeRes.applyStyle(R.style.Wallpaper_Doodle_Black, true);
-              colorBackground = getColor(R.color.wp_bg_doodle_black);
+              colorBackground = getCompatColor(R.color.wp_bg_doodle_black);
               break;
             case Constants.VARIANT.WHITE:
               themeRes.applyStyle(R.style.Wallpaper_Doodle_White, true);
-              colorBackground = getColor(R.color.wp_bg_doodle_white);
+              colorBackground = getCompatColor(R.color.wp_bg_doodle_white);
               break;
             case Constants.VARIANT.ORANGE:
               themeRes.applyStyle(R.style.Wallpaper_Doodle_Orange, true);
-              colorBackground = getColor(R.color.wp_bg_doodle_orange);
+              colorBackground = getCompatColor(R.color.wp_bg_doodle_orange);
               break;
           }
           break;
         case Constants.THEME.NEON:
           themeRes.applyStyle(R.style.Wallpaper_Neon, true);
-          colorBackground = getColor(R.color.wp_bg_neon);
+          colorBackground = getCompatColor(R.color.wp_bg_neon);
           break;
         case Constants.THEME.GEOMETRIC:
           themeRes.applyStyle(R.style.Wallpaper_Geometric, true);
-          colorBackground = getColor(R.color.wp_bg_geometric);
+          colorBackground = getCompatColor(R.color.wp_bg_geometric);
           break;
       }
     }
@@ -220,12 +228,17 @@ public class LiveWallpaperService extends WallpaperService {
     return nightMode && flags == Configuration.UI_MODE_NIGHT_YES;
   }
 
+  private int getCompatColor(@ColorRes int resId) {
+    return ContextCompat.getColor(this, resId);
+  }
+
   class CustomEngine extends Engine {
 
-    private final Paint paint = new Paint();
+    private final Paint paint;
     private float xOffset = 0;
 
     CustomEngine() {
+      paint = new Paint();
     }
 
     @Override
@@ -242,41 +255,45 @@ public class LiveWallpaperService extends WallpaperService {
       int background = 0xFF232323;
       if (isNightMode()) {
         switch (theme) {
-          case Constants.THEME.DOODLE:
+          case THEME.DOODLE:
             background = 0xFF272628;
             break;
-          case Constants.THEME.NEON:
+          case THEME.NEON:
             background = 0xFF0e032d;
             break;
-          case Constants.THEME.GEOMETRIC:
+          case THEME.GEOMETRIC:
             background = 0xFF212121;
             break;
         }
       } else {
         switch (theme) {
-          case Constants.THEME.DOODLE:
+          case THEME.DOODLE:
             switch (variant) {
-              case Constants.VARIANT.BLACK:
+              case VARIANT.BLACK:
                 background = 0xFF232323;
                 break;
-              case Constants.VARIANT.WHITE:
+              case VARIANT.WHITE:
                 background = 0xFFdbd7ce;
                 break;
-              case Constants.VARIANT.ORANGE:
-                background = 0xFFf98a6c;
+              case VARIANT.ORANGE:
+                background = 0xFFfbb29e;
                 break;
             }
             break;
-          case Constants.THEME.NEON:
+          case THEME.NEON:
             background = 0xFFcbcbef;
             break;
-          case Constants.THEME.GEOMETRIC:
+          case THEME.GEOMETRIC:
             background = 0xFFb9c1c7;
             break;
         }
       }
 
-      return WallpaperColors.fromDrawable(new ColorDrawable(background));
+      if (VERSION.SDK_INT >= VERSION_CODES.O_MR1) {
+        return WallpaperColors.fromDrawable(new ColorDrawable(background));
+      } else {
+        return super.onComputeColors();
+      }
     }
 
     @Override
@@ -300,15 +317,15 @@ public class LiveWallpaperService extends WallpaperService {
         theme = themeNew;
         variant = variantNew;
         refreshTheme();
-        notifyColorsChanged();
+        colorsHaveChanged();
       } else if (isNight != isNightMode()) {
         isNight = isNightMode();
         refreshTheme();
-        notifyColorsChanged();
+        colorsHaveChanged();
       } else if (!variant.equals(variantNew)) {
         variant = variantNew;
         refreshTheme();
-        notifyColorsChanged();
+        colorsHaveChanged();
       }
 
       newRandomZ();
@@ -428,6 +445,13 @@ public class LiveWallpaperService extends WallpaperService {
           (int) (scale * drawable.getIntrinsicWidth()) + xPos,
           (int) (scale * drawable.getIntrinsicHeight()) + yPos
       );
+    }
+
+    private void colorsHaveChanged() {
+      if (VERSION.SDK_INT >= VERSION_CODES.O_MR1) {
+        notifyColorsChanged();
+        new Handler(Looper.getMainLooper()).postDelayed(this::notifyColorsChanged, 300);
+      }
     }
   }
 }

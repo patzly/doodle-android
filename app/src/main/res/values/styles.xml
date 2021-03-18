@@ -30,6 +30,7 @@
     <item name="rippleColor">@color/highlight_on_secondary</item>
     <item name="backgroundTint">@color/retro_green_bg_white</item>
     <item name="android:textColor">@color/on_secondary</item>
+    <item name="android:textSize">14.5sp</item>
     <item name="android:fontFamily">@font/jost_bold</item>
     <item name="cornerRadius">6dp</item>
   </style>

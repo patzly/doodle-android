@@ -4,10 +4,11 @@
 - New: immersive fullscreen experience in settings
 - New: medium size option
 - New: start with boot
+- New: wallpaper description
 - New: optimized for Android 11 and support down to Android 6
 - Improved: more information in settings
 - Improved: internal cleanup
-- Fix: color changes not being applied to launcher
+- Fixed: color changes not being applied to launcher
 
 2.2.0:
 - Improved: app icon

@@ -17,6 +17,10 @@
 
 <wallpaper
   xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:showMetadataInPreview="true"
   android:thumbnail="@raw/thumbnail"
+  android:author="@string/app_developer"
   android:description="@string/info_description_wallpaper"
-  android:settingsActivity="xyz.zedler.patrick.doodle.activity.SettingsActivity" />
+  android:settingsActivity="xyz.zedler.patrick.doodle.activity.SettingsActivity"
+  tools:targetApi="n_mr1" />

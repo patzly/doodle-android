@@ -3,7 +3,7 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)  [![Release](https://img.shields.io/github/v/release/patzly/doodle-android?label=Release&logo=github)](https://github.com/patzly/doodle-android/releases)  [![APK Downloads](https://img.shields.io/github/downloads/patzly/doodle-android/total.svg?label=APK%20Downloads&logo=github)](https://github.com/patzly/doodle-android/releases)
 
 Doodle Android is an open-source Android app that provides colorful live wallpapers with auto dark mode and an battery-efficient parallax effect.  
-The wallpapers are based on the doodle live wallpapers of the Google Pixel 4.
+The wallpapers are based on the original doodle live wallpapers of the Google Pixel 4.
 
 ## Download
 
@@ -11,7 +11,7 @@ The wallpapers are based on the doodle live wallpapers of the Google Pixel 4.
 
 ## Features
 
-* Stunning colors
+* Stunning colors and theme variants
 * System dependent night mode
 * Parallax effect on page swipe
 * Various customization options
@@ -27,11 +27,11 @@ The wallpapers are based on the doodle live wallpapers of the Google Pixel 4.
 
 ## Compatibility
 
-Doodle Android requires at least Android 8.0 Oreo on your device. The app will work properly on devices without any Google service installed.
+Doodle Android requires at least Android 6 Marshmallow on your device. The app will work properly on devices without any Google service installed.
 
 ## License
 
-Copyright &copy; 2020 Patrick Zedler. All rights reserved.
+Copyright &copy; 2021 Patrick Zedler. All rights reserved.
 
 [GNU General Public License version 3](https://www.gnu.org/licenses/gpl.txt)
 

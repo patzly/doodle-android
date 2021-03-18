@@ -20,6 +20,6 @@
   <dimen name="theme_selection_card_size">55dp</dimen>
   <dimen name="theme_selection_card_corner_radius">14dp</dimen>
   <dimen name="theme_selection_circle_size">32dp</dimen>
-  <dimen name="theme_selection_circle_corner_radius">32dp</dimen>
+  <dimen name="theme_selection_circle_corner_radius">16dp</dimen>
 
 </resources>

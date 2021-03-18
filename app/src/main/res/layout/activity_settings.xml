@@ -148,7 +148,8 @@
             style="@style/Widget.Doodle.Card"
             android:layout_marginEnd="4dp">
 
-            <com.google.android.material.card.MaterialCardView style="@style/Widget.Doodle.Card.Circle">
+            <com.google.android.material.card.MaterialCardView
+              style="@style/Widget.Doodle.Card.Circle">
 
               <ImageView
                 android:layout_width="match_parent"
@@ -165,7 +166,8 @@
             android:layout_marginStart="4dp"
             android:layout_marginEnd="4dp">
 
-            <com.google.android.material.card.MaterialCardView style="@style/Widget.Doodle.Card.Circle">
+            <com.google.android.material.card.MaterialCardView
+              style="@style/Widget.Doodle.Card.Circle">
 
               <ImageView
                 android:layout_width="match_parent"

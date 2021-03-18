@@ -26,7 +26,7 @@
   <string name="setting_night_mode">Night mode</string>
   <string name="setting_night_mode_description">Completely dark shapes</string>
   <string name="setting_follow_system">Follow system</string>
-  <string name="setting_follow_system_description">Only supported devices</string>
+  <string name="setting_follow_system_description">Adopt device theme</string>
   <string name="setting_parallax">Parallax strength</string>
   <string name="setting_parallax_description">Horizontal offset on swipe</string>
   <string name="setting_parallax_none">None</string>

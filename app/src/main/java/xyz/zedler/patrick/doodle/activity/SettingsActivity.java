@@ -111,8 +111,8 @@ public class SettingsActivity extends AppCompatActivity
 
     binding.imageNightMode.setImageResource(
         sharedPrefs.getBoolean(Constants.PREF.NIGHT_MODE, true)
-            ? R.drawable.ic_round_night_mode_off_anim
-            : R.drawable.ic_round_night_mode_on_anim
+            ? R.drawable.ic_round_dark_mode_to_light_mode_anim
+            : R.drawable.ic_round_light_mode_to_dark_mode_anim
     );
 
     switch (sharedPrefs.getInt(Constants.PREF.PARALLAX, 100)) {
@@ -219,13 +219,10 @@ public class SettingsActivity extends AppCompatActivity
     } else if (id == R.id.card_info) {
       showTextBottomSheet("info", R.string.info_title, -1);
     } else if (id == R.id.card_doodle) {
-      IconUtil.start(binding.imageTheme);
       refreshSelectionTheme(Constants.THEME.DOODLE);
     } else if (id == R.id.card_neon) {
-      IconUtil.start(binding.imageTheme);
       refreshSelectionTheme(Constants.THEME.NEON);
     } else if (id == R.id.card_geometric) {
-      IconUtil.start(binding.imageTheme);
       refreshSelectionTheme(Constants.THEME.GEOMETRIC);
     } else if (id == R.id.card_black) {
       refreshSelectionVariant(Constants.VARIANT.BLACK);
@@ -293,8 +290,8 @@ public class SettingsActivity extends AppCompatActivity
       new Handler(Looper.getMainLooper()).postDelayed(
           () -> binding.imageNightMode.setImageResource(
               isChecked
-                  ? R.drawable.ic_round_night_mode_off_anim
-                  : R.drawable.ic_round_night_mode_on_anim
+                  ? R.drawable.ic_round_dark_mode_to_light_mode_anim
+                  : R.drawable.ic_round_light_mode_to_dark_mode_anim
           ),
           300
       );
@@ -304,6 +301,7 @@ public class SettingsActivity extends AppCompatActivity
   }
 
   private void refreshSelectionTheme(String selection) {
+    IconUtil.start(binding.imageTheme);
     MaterialCardView mcvSelected, mcv1, mcv2;
     switch (selection) {
       case Constants.THEME.NEON:
@@ -333,6 +331,7 @@ public class SettingsActivity extends AppCompatActivity
   }
 
   private void refreshSelectionVariant(String selection) {
+    IconUtil.start(binding.imageVariant);
     MaterialCardView mcvSelected, mcv1, mcv2;
     switch (selection) {
       case Constants.VARIANT.WHITE:

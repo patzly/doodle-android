@@ -16,10 +16,8 @@
 package xyz.zedler.patrick.doodle.util;
 
 import android.content.Context;
-import android.content.Intent;
 import android.util.Log;
 import androidx.annotation.NonNull;
-import androidx.annotation.StringRes;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
@@ -54,12 +52,5 @@ public class ResUtil {
       return "";
     }
     return text.toString();
-  }
-
-  public static void share(Context context, @StringRes int resId) {
-    Intent intent = new Intent(Intent.ACTION_SEND);
-    intent.putExtra(Intent.EXTRA_TEXT, context.getString(resId));
-    intent.setType("text/plain");
-    context.startActivity(Intent.createChooser(intent, null));
   }
 }

@@ -129,7 +129,7 @@
           android:id="@+id/image_theme"
           style="@style/Widget.Doodle.ImageView.ListItem.Icon"
           android:layout_marginEnd="25dp"
-          android:src="@drawable/ic_round_palette_anim"
+          android:src="@drawable/ic_round_wallpaper_anim"
           tools:ignore="ContentDescription" />
 
         <LinearLayout
@@ -209,7 +209,7 @@
           android:id="@+id/image_variant"
           style="@style/Widget.Doodle.ImageView.ListItem.Icon"
           android:layout_marginEnd="25dp"
-          android:src="@drawable/ic_round_tonality"
+          android:src="@drawable/ic_round_palette_anim"
           tools:ignore="ContentDescription" />
 
         <LinearLayout

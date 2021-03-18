@@ -25,7 +25,7 @@
   <string name="setting_night_mode">Nachtmodus</string>
   <string name="setting_night_mode_description">Abgedunkelte Formen</string>
   <string name="setting_follow_system">System folgen</string>
-  <string name="setting_follow_system_description">Nur unterstützte Geräte</string>
+  <string name="setting_follow_system_description">Adaption des Designs</string>
   <string name="setting_parallax">Parallax-Stärke</string>
   <string name="setting_parallax_description">Horizontaler Versatz beim Wischen</string>
   <string name="setting_parallax_none">Aus</string>

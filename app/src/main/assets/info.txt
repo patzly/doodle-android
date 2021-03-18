@@ -1,10 +1,13 @@
 These live wallpapers are based on the original doodle live wallpapers of the Google Pixel 4.
 
-They are right for you if you look for something less power consuming and if you want to have automatic dark mode applied to your wallpaper based on your device's current theme.
+Advantages over the original:
+- Less power consumption because parallax effect only occurs when swiping between pages
+- Automatic dark mode based on the current theme of your device
+- Customization options
 
 How to set as background:
 - Tap SET in the top right corner, it should appear a preview
 - Now tap SET WALLPAPER
 
-What if there is no movement?
-You need more than one home screen page. When you swipe between them, you should see a parallax effect.
+If you see no movement, you probably have only one home screen page. Drag an app icon to the right edge to add another page, then swipe between them.
+You need to turn on background scrolling in your launcher's settings if you have disabled it before to make parallax effect work.

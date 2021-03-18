@@ -17,6 +17,7 @@ package xyz.zedler.patrick.doodle.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -58,6 +59,8 @@ public class ChangelogBottomSheetDialogFragment extends BaseBottomSheetDialogFra
         TextView.BufferType.SPANNABLE
     );
 
+    binding.textTextTitle.setGravity(Gravity.CENTER_HORIZONTAL);
+    binding.textTextTitle.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
     binding.frameTextOpenLink.setVisibility(View.GONE);
 
     return binding.getRoot();

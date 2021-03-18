@@ -1,9 +1,10 @@
 These live wallpapers are based on the original doodle live wallpapers of the Google Pixel 4.
+I rewrote them completely on my own, nothing except the look is taken from the original.
 
 Advantages over the original:
 - Less power consumption because parallax effect only occurs when swiping between pages
 - Automatic dark mode based on the current theme of your device
-- Customization options
+- Extra customization options
 
 How to set as background:
 - Tap SET in the top right corner, it should appear a preview

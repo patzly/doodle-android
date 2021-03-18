@@ -206,12 +206,11 @@ public class SettingsActivity extends AppCompatActivity
 
   @Override
   public void onClick(View v) {
-    if (clickUtil.isDisabled()) {
-      return;
-    }
-
     int id = v.getId();
     if (id == R.id.button_set) {
+      if (clickUtil.isDisabled()) {
+        return;
+      }
       startActivityForResult(
           new Intent()
               .setAction(WallpaperManager.ACTION_CHANGE_LIVE_WALLPAPER)
@@ -246,10 +245,16 @@ public class SettingsActivity extends AppCompatActivity
         binding.switchFollowSystem.setChecked(!binding.switchFollowSystem.isChecked());
       }
     } else if (id == R.id.linear_changelog) {
+      if (clickUtil.isDisabled()) {
+        return;
+      }
       IconUtil.start(binding.imageChangelog);
       BottomSheetDialogFragment fragment = new ChangelogBottomSheetDialogFragment();
       fragment.show(getSupportFragmentManager(), fragment.toString());
     } else if (id == R.id.linear_developer) {
+      if (clickUtil.isDisabled()) {
+        return;
+      }
       IconUtil.start(binding.imageDeveloper);
       new Handler(Looper.getMainLooper()).postDelayed(
           () -> startActivity(
@@ -260,6 +265,9 @@ public class SettingsActivity extends AppCompatActivity
           ), 300
       );
     } else if (id == R.id.linear_license_material_components) {
+      if (clickUtil.isDisabled()) {
+        return;
+      }
       IconUtil.start(binding.imageLicenseMaterialComponents);
       showTextBottomSheet(
           "apache",
@@ -267,6 +275,9 @@ public class SettingsActivity extends AppCompatActivity
           R.string.license_material_components_link
       );
     } else if (id == R.id.linear_license_material_icons) {
+      if (clickUtil.isDisabled()) {
+        return;
+      }
       IconUtil.start(binding.imageLicenseMaterialIcons);
       showTextBottomSheet(
           "apache",
@@ -274,6 +285,9 @@ public class SettingsActivity extends AppCompatActivity
           R.string.license_material_icons_link
       );
     } else if (id == R.id.linear_license_jost) {
+      if (clickUtil.isDisabled()) {
+        return;
+      }
       IconUtil.start(binding.imageLicenseJost);
       showTextBottomSheet(
           "open-font",

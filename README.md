@@ -16,7 +16,7 @@ The wallpapers are based on the doodle live wallpapers of the Google Pixel 4.
 * Parallax effect on page swipe
 * Various customization options
 * No permanent animations
-* Also suitable for less powerful smartphones
+* Also suitable for less powerful devices
 * No ads and no analytics
 * Tiny download size
 * In-App auto dark mode

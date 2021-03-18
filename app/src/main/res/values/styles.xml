@@ -28,7 +28,7 @@
     name="Widget.Doodle.Button.UnelevatedButton"
     parent="Widget.MaterialComponents.Button.UnelevatedButton">
     <item name="rippleColor">@color/highlight_on_secondary</item>
-    <item name="backgroundTint">@color/retro_blue_bg_white</item>
+    <item name="backgroundTint">@color/retro_green_bg_white</item>
     <item name="android:textColor">@color/on_secondary</item>
     <item name="android:textSize">14.5sp</item>
     <item name="android:fontFamily">@font/jost_bold</item>

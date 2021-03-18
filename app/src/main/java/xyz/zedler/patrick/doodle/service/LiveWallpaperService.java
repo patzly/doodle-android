@@ -316,11 +316,6 @@ public class LiveWallpaperService extends WallpaperService {
     }
 
     @Override
-    public void notifyColorsChanged() {
-      super.notifyColorsChanged();
-    }
-
-    @Override
     public void onOffsetsChanged(
         float xOffset,
         float yOffset,

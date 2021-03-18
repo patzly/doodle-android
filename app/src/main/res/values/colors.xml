@@ -21,24 +21,10 @@
   <color name="black">#000</color>
   <color name="transparent">#00000000</color>
 
-  <color name="retro_red">#e06a4e</color>
-  <color name="retro_red_fg">#c14f33</color>
-  <color name="retro_red_bg_black">#ee7e62</color>
-
-  <color name="retro_yellow">#deb853</color>
-
-  <color name="retro_dirt">#e2d9a2</color>
-  <color name="retro_dirt_fg">#bab27c</color>
-
   <color name="retro_green">#789f8a</color>
   <color name="retro_green_fg">#60837a</color>
   <color name="retro_green_bg_white">#689283</color>
   <color name="retro_green_bg_black">#789f8a</color>
-
-  <color name="retro_blue">#5a97aa</color>
-  <color name="retro_blue_fg">#4a7b9e</color>
-  <color name="retro_blue_bg_black">#96bdc9</color>
-  <color name="retro_blue_bg_white">#5a97aa</color>
 
   <color name="grey200">#e8eaed</color>
   <color name="grey300">#dadce0</color>

@@ -14,139 +14,139 @@
   -->
 
 <animated-vector
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:aapt="http://schemas.android.com/aapt">
-    <aapt:attr name="android:drawable">
-        <vector
-            android:name="vector"
-            android:width="24dp"
-            android:height="24dp"
-            android:viewportWidth="24"
-            android:viewportHeight="24">
-            <path
-                android:name="circle_left"
-                android:pathData="M 12 3 C 9.614 3 7.323 3.949 5.636 5.636 C 3.949 7.323 3 9.614 3 12 C 3 14.386 3.949 16.677 5.636 18.364 C 7.323 20.051 9.614 21 12 21 L 12 3 Z"
-                android:fillColor="@color/icon"
-                android:strokeWidth="1"/>
-            <path
-                android:name="circle_right"
-                android:pathData="M 12 3 C 12 3 12 3 12 3 C 13.551 3 15.011 3.349 16.285 3.963 C 17.926 4.754 19.259 5.986 20.084 7.479 C 20.671 8.542 21 9.737 21 11 C 21 13.76 18.76 16 16 16 C 15.41 16 14.82 16 14.23 16 C 13.4 16 12.73 16.67 12.73 17.5 C 12.73 17.88 12.879 18.23 13.109 18.49 C 13.349 18.76 13.5 19.11 13.5 19.5 C 13.5 20.33 12.83 21 12 21 L 12 3"
-                android:fillColor="@color/icon"
-                android:strokeWidth="1"/>
-            <path
-                android:name="line"
-                android:pathData="M 12 3 L 12 21"
-                android:strokeColor="@color/icon"
-                android:strokeWidth="1"/>
-            <group
-                android:name="group_dot_1"
-                android:pivotX="12"
-                android:pivotY="12">
-                <path
-                    android:name="dot_1"
-                    android:pathData="M 6.5 9 C 6.102 9 5.721 9.158 5.439 9.439 C 5.158 9.721 5 10.102 5 10.5 C 5 10.898 5.158 11.279 5.439 11.561 C 5.721 11.842 6.102 12 6.5 12 C 6.898 12 7.279 11.842 7.561 11.561 C 7.842 11.279 8 10.898 8 10.5 C 8 10.102 7.842 9.721 7.561 9.439 C 7.279 9.158 6.898 9 6.5 9 Z"
-                    android:fillColor="@color/background"
-                    android:strokeWidth="1"/>
-            </group>
-            <group
-                android:name="group_dot_2"
-                android:pivotX="12"
-                android:pivotY="12">
-                <path
-                    android:name="dot_2"
-                    android:pathData="M 9.5 5 C 9.183 5 8.875 5.1 8.618 5.286 C 8.362 5.473 8.171 5.735 8.073 6.036 C 7.976 6.338 7.976 6.662 8.073 6.964 C 8.171 7.265 8.362 7.527 8.618 7.714 C 8.875 7.9 9.183 8 9.5 8 C 9.817 8 10.125 7.9 10.382 7.714 C 10.638 7.527 10.829 7.265 10.927 6.964 C 11.024 6.662 11.024 6.338 10.927 6.036 C 10.829 5.735 10.638 5.473 10.382 5.286 C 10.125 5.1 9.817 5 9.5 5 Z"
-                    android:fillColor="@color/background"
-                    android:strokeWidth="1"/>
-            </group>
-            <group
-                android:name="group_dot_3"
-                android:pivotX="12"
-                android:pivotY="12">
-                <path
-                    android:name="dot_3"
-                    android:pathData="M 14.5 5 C 14.183 5 13.875 5.1 13.618 5.286 C 13.362 5.473 13.171 5.735 13.073 6.036 C 12.976 6.338 12.976 6.662 13.073 6.964 C 13.171 7.265 13.362 7.527 13.618 7.714 C 13.875 7.9 14.183 8 14.5 8 C 14.817 8 15.125 7.9 15.382 7.714 C 15.638 7.527 15.829 7.265 15.927 6.964 C 16.024 6.662 16.024 6.338 15.927 6.036 C 15.829 5.735 15.638 5.473 15.382 5.286 C 15.125 5.1 14.817 5 14.5 5 Z"
-                    android:fillColor="@color/background"
-                    android:strokeWidth="1"/>
-            </group>
-            <group
-                android:name="group_dot_4"
-                android:pivotX="12"
-                android:pivotY="12">
-                <path
-                    android:name="dot_4"
-                    android:pathData="M 17.5 9 C 17.102 9 16.721 9.158 16.439 9.439 C 16.158 9.721 16 10.102 16 10.5 C 16 10.898 16.158 11.279 16.439 11.561 C 16.721 11.842 17.102 12 17.5 12 C 17.898 12 18.279 11.842 18.561 11.561 C 18.842 11.279 19 10.898 19 10.5 C 19 10.102 18.842 9.721 18.561 9.439 C 18.279 9.158 17.898 9 17.5 9 Z"
-                    android:fillColor="@color/background"
-                    android:strokeWidth="1"/>
-            </group>
-        </vector>
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:aapt="http://schemas.android.com/aapt">
+  <aapt:attr name="android:drawable">
+    <vector
+      android:name="vector"
+      android:width="24dp"
+      android:height="24dp"
+      android:viewportWidth="24"
+      android:viewportHeight="24">
+      <path
+        android:name="circle_left"
+        android:pathData="M 12 3 C 9.614 3 7.323 3.949 5.636 5.636 C 3.949 7.323 3 9.614 3 12 C 3 14.386 3.949 16.677 5.636 18.364 C 7.323 20.051 9.614 21 12 21 L 12 3 Z"
+        android:fillColor="@color/icon"
+        android:strokeWidth="1" />
+      <path
+        android:name="circle_right"
+        android:pathData="M 12 3 C 12 3 12 3 12 3 C 13.551 3 15.011 3.349 16.285 3.963 C 17.926 4.754 19.259 5.986 20.084 7.479 C 20.671 8.542 21 9.737 21 11 C 21 13.76 18.76 16 16 16 C 15.41 16 14.82 16 14.23 16 C 13.4 16 12.73 16.67 12.73 17.5 C 12.73 17.88 12.879 18.23 13.109 18.49 C 13.349 18.76 13.5 19.11 13.5 19.5 C 13.5 20.33 12.83 21 12 21 L 12 3"
+        android:fillColor="@color/icon"
+        android:strokeWidth="1" />
+      <path
+        android:name="line"
+        android:pathData="M 12 3 L 12 21"
+        android:strokeColor="@color/icon"
+        android:strokeWidth="1" />
+      <group
+        android:name="group_dot_1"
+        android:pivotX="12"
+        android:pivotY="12">
+        <path
+          android:name="dot_1"
+          android:pathData="M 6.5 9 C 6.102 9 5.721 9.158 5.439 9.439 C 5.158 9.721 5 10.102 5 10.5 C 5 10.898 5.158 11.279 5.439 11.561 C 5.721 11.842 6.102 12 6.5 12 C 6.898 12 7.279 11.842 7.561 11.561 C 7.842 11.279 8 10.898 8 10.5 C 8 10.102 7.842 9.721 7.561 9.439 C 7.279 9.158 6.898 9 6.5 9 Z"
+          android:fillColor="@color/background"
+          android:strokeWidth="1" />
+      </group>
+      <group
+        android:name="group_dot_2"
+        android:pivotX="12"
+        android:pivotY="12">
+        <path
+          android:name="dot_2"
+          android:pathData="M 9.5 5 C 9.183 5 8.875 5.1 8.618 5.286 C 8.362 5.473 8.171 5.735 8.073 6.036 C 7.976 6.338 7.976 6.662 8.073 6.964 C 8.171 7.265 8.362 7.527 8.618 7.714 C 8.875 7.9 9.183 8 9.5 8 C 9.817 8 10.125 7.9 10.382 7.714 C 10.638 7.527 10.829 7.265 10.927 6.964 C 11.024 6.662 11.024 6.338 10.927 6.036 C 10.829 5.735 10.638 5.473 10.382 5.286 C 10.125 5.1 9.817 5 9.5 5 Z"
+          android:fillColor="@color/background"
+          android:strokeWidth="1" />
+      </group>
+      <group
+        android:name="group_dot_3"
+        android:pivotX="12"
+        android:pivotY="12">
+        <path
+          android:name="dot_3"
+          android:pathData="M 14.5 5 C 14.183 5 13.875 5.1 13.618 5.286 C 13.362 5.473 13.171 5.735 13.073 6.036 C 12.976 6.338 12.976 6.662 13.073 6.964 C 13.171 7.265 13.362 7.527 13.618 7.714 C 13.875 7.9 14.183 8 14.5 8 C 14.817 8 15.125 7.9 15.382 7.714 C 15.638 7.527 15.829 7.265 15.927 6.964 C 16.024 6.662 16.024 6.338 15.927 6.036 C 15.829 5.735 15.638 5.473 15.382 5.286 C 15.125 5.1 14.817 5 14.5 5 Z"
+          android:fillColor="@color/background"
+          android:strokeWidth="1" />
+      </group>
+      <group
+        android:name="group_dot_4"
+        android:pivotX="12"
+        android:pivotY="12">
+        <path
+          android:name="dot_4"
+          android:pathData="M 17.5 9 C 17.102 9 16.721 9.158 16.439 9.439 C 16.158 9.721 16 10.102 16 10.5 C 16 10.898 16.158 11.279 16.439 11.561 C 16.721 11.842 17.102 12 17.5 12 C 17.898 12 18.279 11.842 18.561 11.561 C 18.842 11.279 19 10.898 19 10.5 C 19 10.102 18.842 9.721 18.561 9.439 C 18.279 9.158 17.898 9 17.5 9 Z"
+          android:fillColor="@color/background"
+          android:strokeWidth="1" />
+      </group>
+    </vector>
+  </aapt:attr>
+  <target android:name="circle_right">
+    <aapt:attr name="android:animation">
+      <set>
+        <objectAnimator
+          android:propertyName="pathData"
+          android:duration="250"
+          android:valueFrom="M 12 3 C 12 3 12 3 12 3 C 13.551 3 15.011 3.349 16.285 3.963 C 17.926 4.754 19.259 5.986 20.084 7.479 C 20.671 8.542 21 9.737 21 11 C 21 13.76 18.76 16 16 16 C 15.41 16 14.82 16 14.23 16 C 13.4 16 12.73 16.67 12.73 17.5 C 12.73 17.88 12.879 18.23 13.109 18.49 C 13.349 18.76 13.5 19.11 13.5 19.5 C 13.5 20.33 12.83 21 12 21 L 12 3"
+          android:valueTo="M 12 3 C 12.137 3 12.274 3.003 12.411 3.009 C 13.848 3.075 15.251 3.485 16.5 4.206 C 17.868 4.996 19.004 6.132 19.794 7.5 C 20.584 8.868 21 10.42 21 12 C 21 13.58 20.584 15.132 19.794 16.5 C 19.596 16.842 19.377 17.169 19.138 17.481 C 18.899 17.792 18.641 18.087 18.364 18.364 C 18.087 18.641 17.792 18.899 17.481 19.138 C 17.169 19.377 16.842 19.596 16.5 19.794 C 15.132 20.584 13.58 21 12 21 L 12 3"
+          android:valueType="pathType"
+          android:interpolator="@android:interpolator/fast_out_slow_in" />
+        <objectAnimator
+          android:propertyName="pathData"
+          android:startOffset="250"
+          android:duration="250"
+          android:valueFrom="M 12 3 C 12.137 3 12.274 3.003 12.411 3.009 C 13.848 3.075 15.251 3.485 16.5 4.206 C 17.868 4.996 19.004 6.132 19.794 7.5 C 20.584 8.868 21 10.42 21 12 C 21 13.58 20.584 15.132 19.794 16.5 C 19.596 16.842 19.377 17.169 19.138 17.481 C 18.899 17.792 18.641 18.087 18.364 18.364 C 18.087 18.641 17.792 18.899 17.481 19.138 C 17.169 19.377 16.842 19.596 16.5 19.794 C 15.132 20.584 13.58 21 12 21 L 12 3"
+          android:valueTo="M 12 3 C 12 3 12 3 12 3 C 13.551 3 15.011 3.349 16.285 3.963 C 17.926 4.754 19.259 5.986 20.084 7.479 C 20.671 8.542 21 9.737 21 11 C 21 13.76 18.76 16 16 16 C 15.41 16 14.82 16 14.23 16 C 13.4 16 12.73 16.67 12.73 17.5 C 12.73 17.88 12.879 18.23 13.109 18.49 C 13.349 18.76 13.5 19.11 13.5 19.5 C 13.5 20.33 12.83 21 12 21 L 12 3"
+          android:valueType="pathType"
+          android:interpolator="@android:interpolator/fast_out_slow_in" />
+      </set>
     </aapt:attr>
-    <target android:name="circle_right">
-        <aapt:attr name="android:animation">
-            <set>
-                <objectAnimator
-                    android:propertyName="pathData"
-                    android:duration="250"
-                    android:valueFrom="M 12 3 C 12 3 12 3 12 3 C 13.551 3 15.011 3.349 16.285 3.963 C 17.926 4.754 19.259 5.986 20.084 7.479 C 20.671 8.542 21 9.737 21 11 C 21 13.76 18.76 16 16 16 C 15.41 16 14.82 16 14.23 16 C 13.4 16 12.73 16.67 12.73 17.5 C 12.73 17.88 12.879 18.23 13.109 18.49 C 13.349 18.76 13.5 19.11 13.5 19.5 C 13.5 20.33 12.83 21 12 21 L 12 3"
-                    android:valueTo="M 12 3 C 12.137 3 12.274 3.003 12.411 3.009 C 13.848 3.075 15.251 3.485 16.5 4.206 C 17.868 4.996 19.004 6.132 19.794 7.5 C 20.584 8.868 21 10.42 21 12 C 21 13.58 20.584 15.132 19.794 16.5 C 19.596 16.842 19.377 17.169 19.138 17.481 C 18.899 17.792 18.641 18.087 18.364 18.364 C 18.087 18.641 17.792 18.899 17.481 19.138 C 17.169 19.377 16.842 19.596 16.5 19.794 C 15.132 20.584 13.58 21 12 21 L 12 3"
-                    android:valueType="pathType"
-                    android:interpolator="@android:interpolator/fast_out_slow_in"/>
-                <objectAnimator
-                    android:propertyName="pathData"
-                    android:startOffset="250"
-                    android:duration="250"
-                    android:valueFrom="M 12 3 C 12.137 3 12.274 3.003 12.411 3.009 C 13.848 3.075 15.251 3.485 16.5 4.206 C 17.868 4.996 19.004 6.132 19.794 7.5 C 20.584 8.868 21 10.42 21 12 C 21 13.58 20.584 15.132 19.794 16.5 C 19.596 16.842 19.377 17.169 19.138 17.481 C 18.899 17.792 18.641 18.087 18.364 18.364 C 18.087 18.641 17.792 18.899 17.481 19.138 C 17.169 19.377 16.842 19.596 16.5 19.794 C 15.132 20.584 13.58 21 12 21 L 12 3"
-                    android:valueTo="M 12 3 C 12 3 12 3 12 3 C 13.551 3 15.011 3.349 16.285 3.963 C 17.926 4.754 19.259 5.986 20.084 7.479 C 20.671 8.542 21 9.737 21 11 C 21 13.76 18.76 16 16 16 C 15.41 16 14.82 16 14.23 16 C 13.4 16 12.73 16.67 12.73 17.5 C 12.73 17.88 12.879 18.23 13.109 18.49 C 13.349 18.76 13.5 19.11 13.5 19.5 C 13.5 20.33 12.83 21 12 21 L 12 3"
-                    android:valueType="pathType"
-                    android:interpolator="@android:interpolator/fast_out_slow_in"/>
-            </set>
-        </aapt:attr>
-    </target>
-    <target android:name="group_dot_1">
-        <aapt:attr name="android:animation">
-            <objectAnimator
-                android:propertyName="rotation"
-                android:startOffset="160"
-                android:duration="300"
-                android:valueFrom="0"
-                android:valueTo="360"
-                android:valueType="floatType"
-                android:interpolator="@android:interpolator/fast_out_slow_in"/>
-        </aapt:attr>
-    </target>
-    <target android:name="group_dot_2">
-        <aapt:attr name="android:animation">
-            <objectAnimator
-                android:propertyName="rotation"
-                android:startOffset="140"
-                android:duration="300"
-                android:valueFrom="0"
-                android:valueTo="360"
-                android:valueType="floatType"
-                android:interpolator="@android:interpolator/fast_out_slow_in"/>
-        </aapt:attr>
-    </target>
-    <target android:name="group_dot_3">
-        <aapt:attr name="android:animation">
-            <objectAnimator
-                android:propertyName="rotation"
-                android:startOffset="120"
-                android:duration="300"
-                android:valueFrom="0"
-                android:valueTo="360"
-                android:valueType="floatType"
-                android:interpolator="@android:interpolator/fast_out_slow_in"/>
-        </aapt:attr>
-    </target>
-    <target android:name="group_dot_4">
-        <aapt:attr name="android:animation">
-            <objectAnimator
-                android:propertyName="rotation"
-                android:startOffset="100"
-                android:duration="300"
-                android:valueFrom="0"
-                android:valueTo="360"
-                android:valueType="floatType"
-                android:interpolator="@android:interpolator/fast_out_slow_in"/>
-        </aapt:attr>
-    </target>
+  </target>
+  <target android:name="group_dot_1">
+    <aapt:attr name="android:animation">
+      <objectAnimator
+        android:propertyName="rotation"
+        android:startOffset="160"
+        android:duration="300"
+        android:valueFrom="0"
+        android:valueTo="360"
+        android:valueType="floatType"
+        android:interpolator="@android:interpolator/fast_out_slow_in" />
+    </aapt:attr>
+  </target>
+  <target android:name="group_dot_2">
+    <aapt:attr name="android:animation">
+      <objectAnimator
+        android:propertyName="rotation"
+        android:startOffset="140"
+        android:duration="300"
+        android:valueFrom="0"
+        android:valueTo="360"
+        android:valueType="floatType"
+        android:interpolator="@android:interpolator/fast_out_slow_in" />
+    </aapt:attr>
+  </target>
+  <target android:name="group_dot_3">
+    <aapt:attr name="android:animation">
+      <objectAnimator
+        android:propertyName="rotation"
+        android:startOffset="120"
+        android:duration="300"
+        android:valueFrom="0"
+        android:valueTo="360"
+        android:valueType="floatType"
+        android:interpolator="@android:interpolator/fast_out_slow_in" />
+    </aapt:attr>
+  </target>
+  <target android:name="group_dot_4">
+    <aapt:attr name="android:animation">
+      <objectAnimator
+        android:propertyName="rotation"
+        android:startOffset="100"
+        android:duration="300"
+        android:valueFrom="0"
+        android:valueTo="360"
+        android:valueType="floatType"
+        android:interpolator="@android:interpolator/fast_out_slow_in" />
+    </aapt:attr>
+  </target>
 </animated-vector>

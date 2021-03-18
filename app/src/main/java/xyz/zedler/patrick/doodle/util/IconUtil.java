@@ -26,22 +26,22 @@ public class IconUtil {
   private final static boolean DEBUG = false;
 
   public static void start(ImageView imageView) {
-      if (imageView == null) {
-          return;
-      }
+    if (imageView == null) {
+      return;
+    }
     start(imageView.getDrawable());
   }
 
   public static void start(Drawable drawable) {
-      if (drawable == null) {
-          return;
-      }
+    if (drawable == null) {
+      return;
+    }
     try {
       ((Animatable) drawable).start();
     } catch (ClassCastException cla) {
-        if (DEBUG) {
-            Log.e(TAG, "start() requires AnimVectorDrawable");
-        }
+      if (DEBUG) {
+        Log.e(TAG, "start() requires AnimVectorDrawable");
+      }
     }
   }
 }

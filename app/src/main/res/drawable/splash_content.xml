@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <!--
   ~ This file is part of Doodle Android.
   ~ Doodle Android is free software: you can redistribute it and/or modify
@@ -16,14 +17,13 @@
 
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item
-        android:drawable="@color/background" />
+  <item android:drawable="@color/background" />
 
-    <item
-      android:id="@+id/splash_logo"
-        android:gravity="center"
-        android:width="80dp"
-        android:height="80dp"
-        android:drawable="@drawable/splash_logo_anim" />
+  <item
+    android:id="@+id/splash_logo"
+    android:gravity="center"
+    android:width="80dp"
+    android:height="80dp"
+    android:drawable="@drawable/splash_logo_anim" />
 
 </layer-list>

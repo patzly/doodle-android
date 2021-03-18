@@ -13,25 +13,25 @@
   ~ Copyright (c) 2021 by Patrick Zedler
   -->
 
-<vector xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:aapt="http://schemas.android.com/aapt"
-    android:width="338dp"
-    android:height="250dp"
-    android:viewportWidth="49.416"
-    android:viewportHeight="36.647">
+<vector
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:aapt="http://schemas.android.com/aapt"
+  android:width="338dp"
+  android:height="250dp"
+  android:viewportWidth="49.416"
+  android:viewportHeight="36.647">
 
-    <path
-        android:pathData="M35.012,16.76c-3.456,0.33 -8.72,2.37 -12.151,0.053 -3.316,-2.238 -3.378,-6.688 -4.052,-10.262C18.272,3.708 16.34,0.885 13.343,0.262 9.825,-0.47 5.698,0.301 3.201,2.952 -0.338,6.708 -0.388,12.37 0.438,17.235c1.419,8.35 7.73,14.652 16.045,17.479 8.314,2.826 14.208,2.066 21.238,0.785 4.744,-0.864 9.255,-4.097 10.792,-6.833 1.537,-2.735 1.342,-8.181 -2.39,-10.562 -3.73,-2.381 -7.654,-1.674 -11.11,-1.344z">
-        <aapt:attr name="android:fillColor">
-            <gradient
-                android:endColor="#a0b0fb"
-                android:endX="10"
-                android:endY="0"
-                android:startColor="#d8d4fe"
-                android:startX="25"
-                android:startY="0"
-                android:type="linear"/>
-        </aapt:attr>
-    </path>
+  <path android:pathData="M35.012,16.76c-3.456,0.33 -8.72,2.37 -12.151,0.053 -3.316,-2.238 -3.378,-6.688 -4.052,-10.262C18.272,3.708 16.34,0.885 13.343,0.262 9.825,-0.47 5.698,0.301 3.201,2.952 -0.338,6.708 -0.388,12.37 0.438,17.235c1.419,8.35 7.73,14.652 16.045,17.479 8.314,2.826 14.208,2.066 21.238,0.785 4.744,-0.864 9.255,-4.097 10.792,-6.833 1.537,-2.735 1.342,-8.181 -2.39,-10.562 -3.73,-2.381 -7.654,-1.674 -11.11,-1.344z">
+    <aapt:attr name="android:fillColor">
+      <gradient
+        android:endColor="#a0b0fb"
+        android:endX="10"
+        android:endY="0"
+        android:startColor="#d8d4fe"
+        android:startX="25"
+        android:startY="0"
+        android:type="linear" />
+    </aapt:attr>
+  </path>
 
 </vector>

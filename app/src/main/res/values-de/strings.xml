@@ -17,37 +17,37 @@
 
 <resources>
 
-    <string name="app_name">Doodle</string>
+  <string name="app_name">Doodle</string>
 
-    <string name="action_close">Schließen</string>
-    <string name="action_set">Festlegen</string>
+  <string name="action_close">Schließen</string>
+  <string name="action_set">Festlegen</string>
 
-    <string name="setting_night_mode">Nachtmodus</string>
-    <string name="setting_night_mode_description">Abgedunkelte Formen</string>
-    <string name="setting_follow_system">System folgen</string>
-    <string name="setting_follow_system_description">Nur unterstützte Geräte</string>
-    <string name="setting_parallax">Parallax-Stärke</string>
-    <string name="setting_parallax_description">Horizontaler Versatz beim Wischen</string>
-    <string name="setting_parallax_none">Aus</string>
-    <string name="setting_parallax_little">Wenig</string>
-    <string name="setting_parallax_much">Viel</string>
-    <string name="setting_size">Größe der Formen</string>
-    <string name="setting_size_description">Nützlich für große Displays</string>
-    <string name="setting_size_default">Normal</string>
-    <string name="setting_size_big">Groß</string>
+  <string name="setting_night_mode">Nachtmodus</string>
+  <string name="setting_night_mode_description">Abgedunkelte Formen</string>
+  <string name="setting_follow_system">System folgen</string>
+  <string name="setting_follow_system_description">Nur unterstützte Geräte</string>
+  <string name="setting_parallax">Parallax-Stärke</string>
+  <string name="setting_parallax_description">Horizontaler Versatz beim Wischen</string>
+  <string name="setting_parallax_none">Aus</string>
+  <string name="setting_parallax_little">Wenig</string>
+  <string name="setting_parallax_much">Viel</string>
+  <string name="setting_size">Größe der Formen</string>
+  <string name="setting_size_description">Nützlich für große Displays</string>
+  <string name="setting_size_default">Normal</string>
+  <string name="setting_size_big">Groß</string>
 
-    <string name="info_title">Informationen</string>
-    <string name="info_description">Ein farbenfroher Live-Hintergrund mit Nachtmodus und akku-effizientem Parallax-Effekt. Tippen, um mehr zu lernen.</string>
-    <string name="info_description_wallpaper">Eine nette Kollektion von Formen</string>
-    <string name="info_version">Version</string>
-    <string name="info_changelog">Änderungen</string>
-    <string name="info_changelog_description">Was ist neu?</string>
-    <string name="info_developer">Entwickler</string>
-    <string name="info_material_components_built_with">Built with</string>
-    <string name="info_material_components">Material Components</string>
+  <string name="info_title">Informationen</string>
+  <string name="info_description">Ein farbenfroher Live-Hintergrund mit Nachtmodus und akku-effizientem Parallax-Effekt. Tippen, um mehr zu lernen.</string>
+  <string name="info_description_wallpaper">Eine nette Kollektion von Formen</string>
+  <string name="info_version">Version</string>
+  <string name="info_changelog">Änderungen</string>
+  <string name="info_changelog_description">Was ist neu?</string>
+  <string name="info_developer">Entwickler</string>
+  <string name="info_material_components_built_with">Built with</string>
+  <string name="info_material_components">Material Components</string>
 
-    <string name="category_customization">Anpassung</string>
-    <string name="category_about">Über</string>
-    <string name="category_licenses">Open-Source-Lizenzen</string>
+  <string name="category_customization">Anpassung</string>
+  <string name="category_about">Über</string>
+  <string name="category_licenses">Open-Source-Lizenzen</string>
 
 </resources>

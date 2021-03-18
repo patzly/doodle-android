@@ -213,9 +213,9 @@ public class LiveWallpaperService extends WallpaperService {
   }
 
   private boolean isNightMode() {
-		if (nightMode && !followSystem) {
-			return true;
-		}
+    if (nightMode && !followSystem) {
+      return true;
+    }
     int flags = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
     return nightMode && flags == Configuration.UI_MODE_NIGHT_YES;
   }
@@ -281,9 +281,9 @@ public class LiveWallpaperService extends WallpaperService {
 
     @Override
     public void onVisibilityChanged(boolean visible) {
-			if (!visible) {
-				return;
-			}
+      if (!visible) {
+        return;
+      }
 
       sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 
@@ -330,9 +330,9 @@ public class LiveWallpaperService extends WallpaperService {
         int yPixels
     ) {
       super.onOffsetsChanged(xOffset, yOffset, xStep, yStep, xPixels, yPixels);
-			if (parallax != 0) {
-				drawFrame(xOffset);
-			}
+      if (parallax != 0) {
+        drawFrame(xOffset);
+      }
       this.xOffset = xOffset;
     }
 
@@ -391,17 +391,17 @@ public class LiveWallpaperService extends WallpaperService {
           }
         }
       } finally {
-				if (canvas != null) {
-					surfaceHolder.unlockCanvasAndPost(canvas);
-				}
+        if (canvas != null) {
+          surfaceHolder.unlockCanvasAndPost(canvas);
+        }
       }
     }
 
     private void drawOnCanvas(Canvas canvas, Drawable... drawables) {
       for (Drawable drawable : drawables) {
-				if (drawable != null) {
-					drawable.draw(canvas);
-				}
+        if (drawable != null) {
+          drawable.draw(canvas);
+        }
       }
     }
 

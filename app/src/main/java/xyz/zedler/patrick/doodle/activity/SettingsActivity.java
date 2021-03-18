@@ -62,6 +62,7 @@ public class SettingsActivity extends AppCompatActivity
     super.onCreate(savedInstanceState);
 
     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
+
     binding = ActivitySettingsBinding.inflate(getLayoutInflater());
     setContentView(binding.getRoot());
 
@@ -73,9 +74,7 @@ public class SettingsActivity extends AppCompatActivity
     systemBarBehavior.setScroll(binding.scroll, binding.linearContainer);
     systemBarBehavior.setUp();
 
-    new ScrollBehavior(this).setUpScroll(
-        binding.appBar, binding.scroll, true
-    );
+    new ScrollBehavior(this).setUpScroll(binding.appBar, binding.scroll, true);
 
     binding.frameClose.setOnClickListener(v -> finish());
 
@@ -83,44 +82,37 @@ public class SettingsActivity extends AppCompatActivity
     binding.buttonSet.setBackgroundColor(
         ContextCompat.getColor(
             this,
-            isWallpaperServiceRunning()
-                ? R.color.secondary_disabled
-                : R.color.retro_green_bg_white
+            isWallpaperServiceRunning() ? R.color.secondary_disabled : R.color.retro_green_bg_white
         )
     );
     binding.buttonSet.setTextColor(
         ContextCompat.getColor(
             this,
-            isWallpaperServiceRunning()
-                ? R.color.on_secondary_disabled
-                : R.color.on_secondary
+            isWallpaperServiceRunning() ? R.color.on_secondary_disabled : R.color.on_secondary
         )
     );
+
     binding.switchNightMode.setChecked(
         sharedPrefs.getBoolean(Constants.PREF.NIGHT_MODE, true)
     );
+
     binding.switchFollowSystem.setChecked(
         sharedPrefs.getBoolean(Constants.PREF.FOLLOW_SYSTEM, true)
     );
     binding.switchFollowSystem.setEnabled(binding.switchNightMode.isChecked());
-    boolean active = sharedPrefs.getString(
+
+    boolean isDoodleThemeActive = sharedPrefs.getString(
         Constants.PREF.THEME, Constants.THEME.DOODLE
     ).equals(Constants.THEME.DOODLE);
-    binding.linearVariant.setAlpha(active ? 1 : 0.5f);
-    if (!active) {
-      for (int i = 0; i < binding.linearVariant.getChildCount(); i++) {
-        binding.linearVariant.getChildAt(i).setEnabled(false);
-      }
-    }
+    setVariantSelectionEnabled(isDoodleThemeActive, false);
+
     binding.linearFollowSystem.setEnabled(binding.switchNightMode.isChecked());
-    binding.linearFollowSystemContainer.setAlpha(
-        binding.switchNightMode.isChecked() ? 1 : 0.5f
-    );
+    binding.linearFollowSystemContainer.setAlpha(binding.switchNightMode.isChecked() ? 1 : 0.5f);
+
     binding.imageNightMode.setImageResource(
         sharedPrefs.getBoolean(Constants.PREF.NIGHT_MODE, true)
             ? R.drawable.ic_round_night_mode_off_anim
             : R.drawable.ic_round_night_mode_on_anim
-
     );
 
     switch (sharedPrefs.getInt(Constants.PREF.PARALLAX, 100)) {
@@ -136,13 +128,15 @@ public class SettingsActivity extends AppCompatActivity
     }
     binding.radioGroupParallax.setOnCheckedChangeListener((RadioGroup group, int checkedId) -> {
       IconUtil.start(binding.imageParallax);
-      if (checkedId == R.id.radio_none) {
-        sharedPrefs.edit().putInt(Constants.PREF.PARALLAX, 0).apply();
-      } else if (checkedId == R.id.radio_little) {
-        sharedPrefs.edit().putInt(Constants.PREF.PARALLAX, 100).apply();
+      int parallax;
+      if (checkedId == R.id.radio_little) {
+        parallax = 100;
       } else if (checkedId == R.id.radio_much) {
-        sharedPrefs.edit().putInt(Constants.PREF.PARALLAX, 200).apply();
+        parallax = 200;
+      } else {
+        parallax = 0;
       }
+      sharedPrefs.edit().putInt(Constants.PREF.PARALLAX, parallax).apply();
     });
 
     binding.radioGroupSize.check(
@@ -152,41 +146,29 @@ public class SettingsActivity extends AppCompatActivity
     );
     binding.radioGroupSize.setOnCheckedChangeListener((RadioGroup group, int checkedId) -> {
       IconUtil.start(binding.imageSize);
-      if (checkedId == R.id.radio_default) {
-        sharedPrefs.edit().putBoolean(Constants.PREF.SIZE_BIG, false).apply();
-      } else if (checkedId == R.id.radio_big) {
-        sharedPrefs.edit().putBoolean(Constants.PREF.SIZE_BIG, true).apply();
-      }
+      sharedPrefs.edit().putBoolean(Constants.PREF.SIZE_BIG, checkedId == R.id.radio_big).apply();
     });
 
     refreshSelectionTheme(sharedPrefs.getString(Constants.PREF.THEME, Constants.THEME.DOODLE));
-    refreshSelectionVariant(
-        sharedPrefs.getString(Constants.PREF.VARIANT, Constants.VARIANT.BLACK)
-    );
+    refreshSelectionVariant(sharedPrefs.getString(Constants.PREF.VARIANT, Constants.VARIANT.BLACK));
 
     ClickUtil.setOnClickListeners(
         this,
+        binding.buttonSet,
         binding.cardInfo,
-        binding.cardDoodle,
-        binding.cardNeon,
-        binding.cardGeometric,
-        binding.cardBlack,
-        binding.cardWhite,
-        binding.cardOrange,
+        binding.cardDoodle, binding.cardNeon, binding.cardGeometric,
+        binding.cardBlack, binding.cardWhite, binding.cardOrange,
         binding.linearNightMode,
         binding.linearFollowSystem,
         binding.linearChangelog,
         binding.linearDeveloper,
-        binding.buttonSet,
         binding.linearLicenseMaterialComponents,
         binding.linearLicenseMaterialIcons,
         binding.linearLicenseRoboto
     );
 
     ClickUtil.setOnCheckedChangeListeners(
-        this,
-        binding.switchNightMode,
-        binding.switchFollowSystem
+        this, binding.switchNightMode, binding.switchFollowSystem
     );
   }
 
@@ -201,13 +183,7 @@ public class SettingsActivity extends AppCompatActivity
     super.onResume();
 
     if (!isWallpaperServiceRunning()) {
-      binding.buttonSet.setEnabled(true);
-      binding.buttonSet.setBackgroundColor(
-          ContextCompat.getColor(this, R.color.retro_green_bg_white)
-      );
-      binding.buttonSet.setTextColor(
-          ContextCompat.getColor(this, R.color.on_secondary)
-      );
+      setActivateButtonEnabled(true);
     }
   }
 
@@ -215,38 +191,33 @@ public class SettingsActivity extends AppCompatActivity
   protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
     super.onActivityResult(requestCode, resultCode, data);
 
-    if (requestCode == Constants.REQUEST_CODE && resultCode == RESULT_OK) {
-      binding.buttonSet.setEnabled(false);
-      binding.buttonSet.setBackgroundColor(
-          ContextCompat.getColor(this, R.color.secondary_disabled)
-      );
-      binding.buttonSet.setTextColor(
-          ContextCompat.getColor(this, R.color.on_secondary_disabled)
-      );
-    } else if (requestCode == Constants.REQUEST_CODE && resultCode == RESULT_CANCELED) {
-      binding.buttonSet.setEnabled(true);
-      binding.buttonSet.setBackgroundColor(
-          ContextCompat.getColor(this, R.color.retro_green_bg_white)
-      );
-      binding.buttonSet.setTextColor(
-          ContextCompat.getColor(this, R.color.on_secondary)
-      );
+    if (requestCode == Constants.REQUEST_CODE) {
+      setActivateButtonEnabled(resultCode != RESULT_OK);
     }
   }
 
   @Override
   public void onClick(View v) {
-		if (clickUtil.isDisabled()) {
-			return;
-		}
+    if (clickUtil.isDisabled()) {
+      return;
+    }
 
     int id = v.getId();
-    if (id == R.id.card_info) {
-      showTextBottomSheet(
-          "info",
-          R.string.info_title,
-          -1
+    if (id == R.id.button_set) {
+      startActivityForResult(
+          new Intent()
+              .setAction(WallpaperManager.ACTION_CHANGE_LIVE_WALLPAPER)
+              .putExtra(
+                  WallpaperManager.EXTRA_LIVE_WALLPAPER_COMPONENT,
+                  new ComponentName(
+                      "xyz.zedler.patrick.doodle",
+                      "xyz.zedler.patrick.doodle.service.LiveWallpaperService"
+                  )
+              ),
+          Constants.REQUEST_CODE
       );
+    } else if (id == R.id.card_info) {
+      showTextBottomSheet("info", R.string.info_title, -1);
     } else if (id == R.id.card_doodle) {
       IconUtil.start(binding.imageTheme);
       refreshSelectionTheme(Constants.THEME.DOODLE);
@@ -279,24 +250,9 @@ public class SettingsActivity extends AppCompatActivity
           () -> startActivity(
               new Intent(
                   Intent.ACTION_VIEW,
-                  Uri.parse("http://play.google.com/store/apps/dev" +
-                      "?id=8122479227040208191"
-                  )
+                  Uri.parse("http://play.google.com/store/apps/dev?id=8122479227040208191")
               )
           ), 300
-      );
-    } else if (id == R.id.button_set) {
-      startActivityForResult(
-          new Intent()
-              .setAction(WallpaperManager.ACTION_CHANGE_LIVE_WALLPAPER)
-              .putExtra(
-                  WallpaperManager.EXTRA_LIVE_WALLPAPER_COMPONENT,
-                  new ComponentName(
-                      "xyz.zedler.patrick.doodle",
-                      "xyz.zedler.patrick.doodle.service.LiveWallpaperService"
-                  )
-              ),
-          Constants.REQUEST_CODE
       );
     } else if (id == R.id.linear_license_material_components) {
       IconUtil.start(binding.imageLicenseMaterialComponents);
@@ -372,15 +328,7 @@ public class SettingsActivity extends AppCompatActivity
     mcv1.setChecked(false);
     mcv2.setStrokeColor(ContextCompat.getColor(this, R.color.stroke));
     mcv2.setChecked(false);
-    binding.linearVariant.animate()
-        .alpha(selection.equals(Constants.THEME.DOODLE) ? 1 : 0.5f)
-        .setDuration(200)
-        .start();
-    for (int i = 0; i < binding.linearVariant.getChildCount(); i++) {
-      binding.linearVariant.getChildAt(i).setEnabled(
-          selection.equals(Constants.THEME.DOODLE)
-      );
-    }
+    setVariantSelectionEnabled(selection.equals(Constants.THEME.DOODLE), true);
     sharedPrefs.edit().putString(Constants.PREF.THEME, selection).apply();
   }
 
@@ -412,6 +360,31 @@ public class SettingsActivity extends AppCompatActivity
     sharedPrefs.edit().putString(Constants.PREF.VARIANT, selection).apply();
   }
 
+  private void setActivateButtonEnabled(boolean enabled) {
+    binding.buttonSet.setEnabled(enabled);
+    binding.buttonSet.setBackgroundColor(
+        ContextCompat.getColor(
+            this, enabled ? R.color.retro_green_bg_white : R.color.secondary_disabled
+        )
+    );
+    binding.buttonSet.setTextColor(
+        ContextCompat.getColor(
+            this, enabled ? R.color.on_secondary : R.color.on_secondary_disabled
+        )
+    );
+  }
+
+  private void setVariantSelectionEnabled(boolean enabled, boolean animated) {
+    if (animated) {
+      binding.linearVariant.animate().alpha(enabled ? 1 : 0.5f).setDuration(200).start();
+    } else {
+      binding.linearVariant.setAlpha(enabled ? 1 : 0.5f);
+    }
+    for (int i = 0; i < binding.linearVariant.getChildCount(); i++) {
+      binding.linearVariant.getChildAt(i).setEnabled(enabled);
+    }
+  }
+
   @SuppressWarnings("deprecation")
   private boolean isWallpaperServiceRunning() {
     ActivityManager manager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
@@ -428,13 +401,13 @@ public class SettingsActivity extends AppCompatActivity
   }
 
   private void showTextBottomSheet(String file, @StringRes int title, @StringRes int link) {
-    DialogFragment fragment = new TextBottomSheetDialogFragment();
     Bundle bundle = new Bundle();
     bundle.putString(Constants.EXTRA.TITLE, getString(title));
     bundle.putString(Constants.EXTRA.FILE, file);
     if (link != -1) {
       bundle.putString(Constants.EXTRA.LINK, getString(link));
     }
+    DialogFragment fragment = new TextBottomSheetDialogFragment();
     fragment.setArguments(bundle);
     fragment.show(getSupportFragmentManager(), fragment.toString());
   }

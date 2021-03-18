@@ -13,8 +13,15 @@
   ~ Copyright (c) 2021 by Patrick Zedler
   -->
 
-<vector android:height="114dp" android:viewportHeight="359.7"
-    android:viewportWidth="346.7" android:width="110dp" xmlns:android="http://schemas.android.com/apk/res/android">
-    <path android:fillColor="#00000000"
-        android:pathData="M30,331L317,28" android:strokeColor="?attr/geometric_rect" android:strokeWidth="82.9"/>
+<vector
+  android:height="114dp"
+  android:viewportHeight="359.7"
+  android:viewportWidth="346.7"
+  android:width="110dp"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+  <path
+    android:fillColor="#00000000"
+    android:pathData="M30,331L317,28"
+    android:strokeColor="?attr/geometric_rect"
+    android:strokeWidth="82.9" />
 </vector>

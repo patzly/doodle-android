@@ -13,18 +13,19 @@
   ~ Copyright (c) 2021 by Patrick Zedler
   -->
 
-<vector xmlns:android="http://schemas.android.com/apk/res/android"
-    android:width="24dp"
-    android:height="24dp"
-    android:viewportWidth="24"
-    android:viewportHeight="24">
+<vector
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:width="24dp"
+  android:height="24dp"
+  android:viewportWidth="24"
+  android:viewportHeight="24">
   <path
-      android:pathData="M0,0h24v24H0z"
-      android:fillColor="#a8b3fc"/>
+    android:pathData="M0,0h24v24H0z"
+    android:fillColor="#a8b3fc" />
   <path
-      android:pathData="M7.2,10.9A15.2,15.2 0,0 0,0 12.7V24h22.2a15.2,15.2 0,0 0,-15 -13.1z"
-      android:fillColor="#98e2e2"/>
+    android:pathData="M7.2,10.9A15.2,15.2 0,0 0,0 12.7V24h22.2a15.2,15.2 0,0 0,-15 -13.1z"
+    android:fillColor="#98e2e2" />
   <path
-      android:pathData="M24,2a16.2,16.2 0,0 0,-13.1 16,16.2 16.2,0 0,0 1.2,6H24z"
-      android:fillColor="#3666fa"/>
+    android:pathData="M24,2a16.2,16.2 0,0 0,-13.1 16,16.2 16.2,0 0,0 1.2,6H24z"
+    android:fillColor="#3666fa" />
 </vector>

@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <!--
   ~ This file is part of Doodle Android.
   ~ Doodle Android is free software: you can redistribute it and/or modify
@@ -15,14 +16,19 @@
   -->
 
 <ripple
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:color="@color/highlight">
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:color="@color/highlight">
 
-    <item android:left="8dp" android:top="2dp" android:bottom="2dp">
-        <shape android:shape="rectangle">
-            <corners android:topLeftRadius="16dp" android:bottomLeftRadius="16dp"/>
-            <solid android:color="@color/background"/>
-        </shape>
-    </item>
+  <item
+    android:left="8dp"
+    android:top="2dp"
+    android:bottom="2dp">
+    <shape android:shape="rectangle">
+      <corners
+        android:topLeftRadius="16dp"
+        android:bottomLeftRadius="16dp" />
+      <solid android:color="@color/background" />
+    </shape>
+  </item>
 
 </ripple>

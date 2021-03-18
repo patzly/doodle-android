@@ -29,49 +29,49 @@ import xyz.zedler.patrick.doodle.util.ResUtil;
 
 public class ChangelogBottomSheetDialogFragment extends BaseBottomSheetDialogFragment {
 
-	private final static String TAG = "ChangelogBottomSheetDialog";
+  private final static String TAG = "ChangelogBottomSheetDialog";
 
-	private FragmentBottomsheetTextBinding binding;
+  private FragmentBottomsheetTextBinding binding;
 
-	@Override
-	public View onCreateView(@NonNull LayoutInflater inflater,
-							 ViewGroup container,
-							 Bundle savedInstanceState) {
-		binding = FragmentBottomsheetTextBinding.inflate(
-				inflater, container, false
-		);
+  @Override
+  public View onCreateView(@NonNull LayoutInflater inflater,
+      ViewGroup container,
+      Bundle savedInstanceState) {
+    binding = FragmentBottomsheetTextBinding.inflate(
+        inflater, container, false
+    );
 
-		Context context = getContext();
-		assert context != null;
+    Context context = getContext();
+    assert context != null;
 
-		binding.textTextTitle.setText(R.string.info_changelog);
+    binding.textTextTitle.setText(R.string.info_changelog);
 
-		binding.textText.setText(
-				BulletUtil.makeBulletList(
-						getContext(),
-						6,
-						2,
-						"- ",
-						ResUtil.readFromFile(getContext(), "changelog"),
-						getResources().getStringArray(R.array.changelog_highlights)
-				),
-				TextView.BufferType.SPANNABLE
-		);
+    binding.textText.setText(
+        BulletUtil.makeBulletList(
+            getContext(),
+            6,
+            2,
+            "- ",
+            ResUtil.readFromFile(getContext(), "changelog"),
+            getResources().getStringArray(R.array.changelog_highlights)
+        ),
+        TextView.BufferType.SPANNABLE
+    );
 
-		binding.frameTextOpenLink.setVisibility(View.GONE);
+    binding.frameTextOpenLink.setVisibility(View.GONE);
 
-		return binding.getRoot();
-	}
+    return binding.getRoot();
+  }
 
-	@Override
-	public void onDestroy() {
-		super.onDestroy();
-		binding = null;
-	}
+  @Override
+  public void onDestroy() {
+    super.onDestroy();
+    binding = null;
+  }
 
-	@NonNull
-	@Override
-	public String toString() {
-		return TAG;
-	}
+  @NonNull
+  @Override
+  public String toString() {
+    return TAG;
+  }
 }

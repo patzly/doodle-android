@@ -28,18 +28,18 @@ public class ClickUtil {
   }
 
   public static void setOnClickListeners(View.OnClickListener listener, View... views) {
-      for (View view : views) {
-          view.setOnClickListener(listener);
-      }
+    for (View view : views) {
+      view.setOnClickListener(listener);
+    }
   }
 
   public static void setOnCheckedChangeListeners(
       CompoundButton.OnCheckedChangeListener listener,
       CompoundButton... compoundButtons
   ) {
-      for (CompoundButton view : compoundButtons) {
-          view.setOnCheckedChangeListener(listener);
-      }
+    for (CompoundButton view : compoundButtons) {
+      view.setOnCheckedChangeListener(listener);
+    }
   }
 
   public void update() {
@@ -47,9 +47,9 @@ public class ClickUtil {
   }
 
   public boolean isDisabled() {
-      if (SystemClock.elapsedRealtime() - lastClick < 500) {
-          return true;
-      }
+    if (SystemClock.elapsedRealtime() - lastClick < 500) {
+      return true;
+    }
     update();
     return false;
   }

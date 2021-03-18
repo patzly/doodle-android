@@ -109,7 +109,7 @@
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:textColor="@color/on_background"
-          android:text="@string/info_description"/>
+          android:text="@string/info_description" />
 
       </com.google.android.material.card.MaterialCardView>
 
@@ -149,8 +149,7 @@
             style="@style/Widget.Doodle.Card"
             android:layout_marginEnd="4dp">
 
-            <com.google.android.material.card.MaterialCardView
-              style="@style/Widget.Doodle.Card.Circle">
+            <com.google.android.material.card.MaterialCardView style="@style/Widget.Doodle.Card.Circle">
 
               <ImageView
                 android:layout_width="match_parent"
@@ -167,8 +166,7 @@
             android:layout_marginStart="4dp"
             android:layout_marginEnd="4dp">
 
-            <com.google.android.material.card.MaterialCardView
-              style="@style/Widget.Doodle.Card.Circle">
+            <com.google.android.material.card.MaterialCardView style="@style/Widget.Doodle.Card.Circle">
 
               <ImageView
                 android:layout_width="match_parent"
@@ -184,8 +182,7 @@
             style="@style/Widget.Doodle.Card"
             android:layout_marginStart="4dp">
 
-            <com.google.android.material.card.MaterialCardView
-              style="@style/Widget.Doodle.Card.Circle">
+            <com.google.android.material.card.MaterialCardView style="@style/Widget.Doodle.Card.Circle">
 
               <ImageView
                 android:layout_width="match_parent"
@@ -446,11 +443,11 @@
         <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
 
           <TextView
-            style="@style/Widget.Doodle.TextView.ListItem.Title"
+            style="@style/Widget.Doodle.TextView.ListItem.OverLine"
             android:text="@string/info_version" />
 
           <TextView
-            style="@style/Widget.Doodle.TextView.ListItem.Description"
+            style="@style/Widget.Doodle.TextView.ListItem.Title"
             android:text="@string/versionName" />
 
         </LinearLayout>
@@ -494,11 +491,11 @@
         <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
 
           <TextView
-            style="@style/Widget.Doodle.TextView.ListItem.Title"
+            style="@style/Widget.Doodle.TextView.ListItem.OverLine"
             android:text="@string/info_developer" />
 
           <TextView
-            style="@style/Widget.Doodle.TextView.ListItem.Description"
+            style="@style/Widget.Doodle.TextView.ListItem.Title"
             android:text="@string/app_developer" />
 
         </LinearLayout>
@@ -531,7 +528,7 @@
 
       <TextView
         style="@style/Widget.Doodle.Category"
-        android:text="@string/category_licenses"/>
+        android:text="@string/category_licenses" />
 
       <LinearLayout
         android:id="@+id/linear_license_material_components"

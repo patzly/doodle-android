@@ -69,8 +69,7 @@ public class SystemBarBehavior {
     containerPaddingBottom = container.getPaddingBottom();
   }
 
-  public void setScroll(@NonNull NestedScrollView scrollView,
-      @NonNull ViewGroup scrollContent) {
+  public void setScroll(@NonNull NestedScrollView scrollView, @NonNull ViewGroup scrollContent) {
     this.scrollView = scrollView;
     this.scrollContent = scrollContent;
     scrollContentPaddingBottom = scrollContent.getPaddingBottom();

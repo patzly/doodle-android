@@ -29,33 +29,33 @@ import xyz.zedler.patrick.doodle.behavior.SystemBarBehavior;
 
 public class SplashActivity extends AppCompatActivity {
 
-    public void onCreate(Bundle bundle) {
-        super.onCreate(bundle);
+  public void onCreate(Bundle bundle) {
+    super.onCreate(bundle);
 
-        new SystemBarBehavior(this).setUp();
+    new SystemBarBehavior(this).setUp();
 
-        LayerDrawable splashContent = (LayerDrawable) ResourcesCompat.getDrawable(
-                getResources(), R.drawable.splash_content, null
-        );
+    LayerDrawable splashContent = (LayerDrawable) ResourcesCompat.getDrawable(
+        getResources(), R.drawable.splash_content, null
+    );
 
-        getWindow().setBackgroundDrawable(splashContent);
+    getWindow().setBackgroundDrawable(splashContent);
 
-        try {
-            assert splashContent != null;
-            Drawable splashLogo = splashContent.findDrawableByLayerId(R.id.splash_logo);
-            AnimatedVectorDrawable logo = (AnimatedVectorDrawable) splashLogo;
-            logo.start();
-            new Handler(Looper.getMainLooper()).postDelayed(
-                this::startNextActivity, 900
-            );
-        } catch (Exception e) {
-            startNextActivity();
-        }
+    try {
+      assert splashContent != null;
+      Drawable splashLogo = splashContent.findDrawableByLayerId(R.id.splash_logo);
+      AnimatedVectorDrawable logo = (AnimatedVectorDrawable) splashLogo;
+      logo.start();
+      new Handler(Looper.getMainLooper()).postDelayed(
+          this::startSettingsActivity, 900
+      );
+    } catch (Exception e) {
+      startSettingsActivity();
     }
+  }
 
-    private void startNextActivity() {
-        startActivity(new Intent(this, SettingsActivity.class));
-        overridePendingTransition(0, R.anim.fade_out);
-        finish();
-    }
+  private void startSettingsActivity() {
+    startActivity(new Intent(this, SettingsActivity.class));
+    overridePendingTransition(0, R.anim.fade_out);
+    finish();
+  }
 }

@@ -32,55 +32,55 @@ import xyz.zedler.patrick.doodle.util.ResUtil;
 
 public class TextBottomSheetDialogFragment extends BaseBottomSheetDialogFragment {
 
-	private final static String TAG = "TextBottomSheetDialog";
+  private final static String TAG = "TextBottomSheetDialog";
 
-	private FragmentBottomsheetTextBinding binding;
+  private FragmentBottomsheetTextBinding binding;
 
-	@Override
-	public View onCreateView(@NonNull LayoutInflater inflater,
-							 ViewGroup container,
-							 Bundle savedInstanceState) {
-		binding = FragmentBottomsheetTextBinding.inflate(
-				inflater, container, false
-		);
+  @Override
+  public View onCreateView(@NonNull LayoutInflater inflater,
+      ViewGroup container,
+      Bundle savedInstanceState) {
+    binding = FragmentBottomsheetTextBinding.inflate(
+        inflater, container, false
+    );
 
-		Context context = getContext();
-		Bundle bundle = getArguments();
-		assert context != null && bundle != null;
+    Context context = getContext();
+    Bundle bundle = getArguments();
+    assert context != null && bundle != null;
 
-		binding.textTextTitle.setText(
-				bundle.getString(Constants.EXTRA.TITLE)
-		);
+    binding.textTextTitle.setText(
+        bundle.getString(Constants.EXTRA.TITLE)
+    );
 
-		String link = bundle.getString(Constants.EXTRA.LINK);
-		if (link != null) {
-			binding.frameTextOpenLink.setOnClickListener(v -> {
-				IconUtil.start(binding.imageTextOpenLink);
-				new Handler(Looper.getMainLooper()).postDelayed(
-						() -> startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(link))),
-						500
-				);
-			});
-		} else {
-			binding.frameTextOpenLink.setVisibility(View.GONE);
-		}
+    String link = bundle.getString(Constants.EXTRA.LINK);
+    if (link != null) {
+      binding.frameTextOpenLink.setOnClickListener(v -> {
+        IconUtil.start(binding.imageTextOpenLink);
+        new Handler(Looper.getMainLooper()).postDelayed(
+            () -> startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(link))),
+            500
+        );
+      });
+    } else {
+      binding.frameTextOpenLink.setVisibility(View.GONE);
+    }
 
-		binding.textText.setText(
-				ResUtil.readFromFile(context, bundle.getString(Constants.EXTRA.FILE))
-		);
+    binding.textText.setText(
+        ResUtil.readFromFile(context, bundle.getString(Constants.EXTRA.FILE))
+    );
 
-		return binding.getRoot();
-	}
+    return binding.getRoot();
+  }
 
-	@Override
-	public void onDestroy() {
-		super.onDestroy();
-		binding = null;
-	}
+  @Override
+  public void onDestroy() {
+    super.onDestroy();
+    binding = null;
+  }
 
-	@NonNull
-	@Override
-	public String toString() {
-		return TAG;
-	}
+  @NonNull
+  @Override
+  public String toString() {
+    return TAG;
+  }
 }

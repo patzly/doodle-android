@@ -126,6 +126,7 @@ public class SettingsActivity extends AppCompatActivity
         binding.radioGroupParallax.check(R.id.radio_much);
         break;
     }
+    binding.radioGroupParallax.jumpDrawablesToCurrentState();
     binding.radioGroupParallax.setOnCheckedChangeListener((RadioGroup group, int checkedId) -> {
       IconUtil.start(binding.imageParallax);
       int parallax;
@@ -144,13 +145,20 @@ public class SettingsActivity extends AppCompatActivity
             ? R.id.radio_big
             : R.id.radio_default
     );
+    binding.radioGroupSize.jumpDrawablesToCurrentState();
     binding.radioGroupSize.setOnCheckedChangeListener((RadioGroup group, int checkedId) -> {
       IconUtil.start(binding.imageSize);
       sharedPrefs.edit().putBoolean(Constants.PREF.SIZE_BIG, checkedId == R.id.radio_big).apply();
     });
 
-    refreshSelectionTheme(sharedPrefs.getString(Constants.PREF.THEME, Constants.THEME.DOODLE));
-    refreshSelectionVariant(sharedPrefs.getString(Constants.PREF.VARIANT, Constants.VARIANT.BLACK));
+    refreshSelectionTheme(
+        sharedPrefs.getString(Constants.PREF.THEME, Constants.THEME.DOODLE),
+        false
+    );
+    refreshSelectionVariant(
+        sharedPrefs.getString(Constants.PREF.VARIANT, Constants.VARIANT.BLACK),
+        false
+    );
 
     ClickUtil.setOnClickListeners(
         this,
@@ -219,17 +227,17 @@ public class SettingsActivity extends AppCompatActivity
     } else if (id == R.id.card_info) {
       showTextBottomSheet("info", R.string.info_title, -1);
     } else if (id == R.id.card_doodle) {
-      refreshSelectionTheme(Constants.THEME.DOODLE);
+      refreshSelectionTheme(Constants.THEME.DOODLE, true);
     } else if (id == R.id.card_neon) {
-      refreshSelectionTheme(Constants.THEME.NEON);
+      refreshSelectionTheme(Constants.THEME.NEON, true);
     } else if (id == R.id.card_geometric) {
-      refreshSelectionTheme(Constants.THEME.GEOMETRIC);
+      refreshSelectionTheme(Constants.THEME.GEOMETRIC, true);
     } else if (id == R.id.card_black) {
-      refreshSelectionVariant(Constants.VARIANT.BLACK);
+      refreshSelectionVariant(Constants.VARIANT.BLACK, true);
     } else if (id == R.id.card_white) {
-      refreshSelectionVariant(Constants.VARIANT.WHITE);
+      refreshSelectionVariant(Constants.VARIANT.WHITE, true);
     } else if (id == R.id.card_orange) {
-      refreshSelectionVariant(Constants.VARIANT.ORANGE);
+      refreshSelectionVariant(Constants.VARIANT.ORANGE, true);
     } else if (id == R.id.linear_night_mode) {
       binding.switchNightMode.setChecked(!binding.switchNightMode.isChecked());
     } else if (id == R.id.linear_follow_system) {
@@ -300,8 +308,10 @@ public class SettingsActivity extends AppCompatActivity
     }
   }
 
-  private void refreshSelectionTheme(String selection) {
-    IconUtil.start(binding.imageTheme);
+  private void refreshSelectionTheme(String selection, boolean animated) {
+    if (animated) {
+      IconUtil.start(binding.imageTheme);
+    }
     MaterialCardView mcvSelected, mcv1, mcv2;
     switch (selection) {
       case Constants.THEME.NEON:
@@ -330,8 +340,10 @@ public class SettingsActivity extends AppCompatActivity
     sharedPrefs.edit().putString(Constants.PREF.THEME, selection).apply();
   }
 
-  private void refreshSelectionVariant(String selection) {
-    IconUtil.start(binding.imageVariant);
+  private void refreshSelectionVariant(String selection, boolean animated) {
+    if (animated) {
+      IconUtil.start(binding.imageVariant);
+    }
     MaterialCardView mcvSelected, mcv1, mcv2;
     switch (selection) {
       case Constants.VARIANT.WHITE:

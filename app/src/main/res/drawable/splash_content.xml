@@ -15,15 +15,18 @@
   ~ Copyright (c) 2021 by Patrick Zedler
   -->
 
-<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+<layer-list
+  xmlns:tools="http://schemas.android.com/tools"
+  xmlns:android="http://schemas.android.com/apk/res/android">
 
   <item android:drawable="@color/background" />
 
   <item
     android:id="@+id/splash_logo"
     android:gravity="center"
-    android:width="80dp"
-    android:height="80dp"
-    android:drawable="@drawable/splash_logo_anim" />
+    android:width="90dp"
+    android:height="90dp"
+    android:drawable="@drawable/splash_logo_anim"
+    tools:ignore="UnusedAttribute" />
 
 </layer-list>

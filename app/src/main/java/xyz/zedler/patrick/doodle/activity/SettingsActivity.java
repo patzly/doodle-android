@@ -410,7 +410,6 @@ public class SettingsActivity extends AppCompatActivity
     }
   }
 
-  @SuppressWarnings("deprecation")
   private boolean isWallpaperServiceRunning() {
     ActivityManager manager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
     if (manager != null) {

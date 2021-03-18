@@ -66,7 +66,7 @@ public class BulletUtil {
         line = line.replaceAll("\n", "<br/>");
       }
 
-      Spannable spannable = new SpannableString(Html.fromHtml(line, Html.FROM_HTML_MODE_LEGACY));
+      Spannable spannable = new SpannableString(Html.fromHtml(line));
       spannable.setSpan(bulletSpan, 0, spannable.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
       builder.append(spannable);
     }

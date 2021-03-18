@@ -3,6 +3,7 @@
 - New: animated splash screen in settings
 - New: immersive fullscreen experience in settings
 - New: start with boot
+- New: Optimized for Android 11 and support down to Android 5
 - Improved: more information in settings
 - Improved: internal cleanup
 

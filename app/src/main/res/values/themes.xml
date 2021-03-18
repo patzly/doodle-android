@@ -35,8 +35,6 @@
     <item name="android:colorControlActivated">@color/secondary</item>
     <item name="android:colorControlHighlight">@color/highlight</item>
     <item name="android:colorEdgeEffect">@color/highlight</item>
-
-    <item name="android:fontFamily">@font/roboto_mono_regular</item>
   </style>
 
   <style name="Theme.Doodle.BottomSheetDialog" parent="Theme.MaterialComponents.BottomSheetDialog">
@@ -58,9 +56,6 @@
     <item name="android:colorControlActivated">@color/secondary</item>
     <item name="android:colorControlHighlight">@color/highlight</item>
     <item name="android:colorEdgeEffect">@color/highlight</item>
-
-    <item name="android:fontFamily">@font/roboto_mono_regular</item>
-    <item name="android:lineSpacingExtra">5dp</item>
 
     <item name="android:windowIsFloating">false</item>
   </style>

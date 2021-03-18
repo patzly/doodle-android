@@ -579,11 +579,11 @@
       </LinearLayout>
 
       <LinearLayout
-        android:id="@+id/linear_license_roboto"
+        android:id="@+id/linear_license_jost"
         style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable">
 
         <ImageView
-          android:id="@+id/image_license_roboto"
+          android:id="@+id/image_license_jost"
           style="@style/Widget.Doodle.ImageView.ListItem.Icon"
           android:src="@drawable/ic_round_copyright_anim"
           tools:ignore="ContentDescription" />
@@ -592,11 +592,11 @@
 
           <TextView
             style="@style/Widget.Doodle.TextView.ListItem.Title"
-            android:text="@string/license_roboto" />
+            android:text="@string/license_jost" />
 
           <TextView
             style="@style/Widget.Doodle.TextView.ListItem.Description"
-            android:text="@string/license_roboto_author" />
+            android:text="@string/license_jost_author" />
 
         </LinearLayout>
 

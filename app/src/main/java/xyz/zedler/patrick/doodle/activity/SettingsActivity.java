@@ -164,7 +164,7 @@ public class SettingsActivity extends AppCompatActivity
         binding.linearDeveloper,
         binding.linearLicenseMaterialComponents,
         binding.linearLicenseMaterialIcons,
-        binding.linearLicenseRoboto
+        binding.linearLicenseJost
     );
 
     ClickUtil.setOnCheckedChangeListeners(
@@ -265,12 +265,12 @@ public class SettingsActivity extends AppCompatActivity
           R.string.license_material_icons,
           R.string.license_material_icons_link
       );
-    } else if (id == R.id.linear_license_roboto) {
-      IconUtil.start(binding.imageLicenseRoboto);
+    } else if (id == R.id.linear_license_jost) {
+      IconUtil.start(binding.imageLicenseJost);
       showTextBottomSheet(
-          "apache",
-          R.string.license_roboto,
-          R.string.license_roboto_link
+          "open-font",
+          R.string.license_jost,
+          R.string.license_jost_link
       );
     }
   }

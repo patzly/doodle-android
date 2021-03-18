@@ -1,8 +1,9 @@
 2.3.0:
+- New: Jost* typeface
 - New: animated splash screen in settings
 - New: immersive fullscreen experience in settings
 - New: start with boot
-- New: more information in settings
+- Improved: more information in settings
 - Improved: internal cleanup
 
 2.2.0:

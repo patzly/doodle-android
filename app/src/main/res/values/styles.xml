@@ -30,21 +30,23 @@
     <item name="rippleColor">@color/highlight_on_secondary</item>
     <item name="backgroundTint">@color/retro_blue_bg_white</item>
     <item name="android:textColor">@color/on_secondary</item>
-    <item name="android:fontFamily">@font/roboto_mono_bold</item>
+    <item name="android:textSize">14.5sp</item>
+    <item name="android:fontFamily">@font/jost_bold</item>
     <item name="cornerRadius">6dp</item>
   </style>
-  
+
   <style
     name="Widget.Doodle.RadioButton"
     parent="Widget.MaterialComponents.CompoundButton.RadioButton">
     <item name="android:layout_width">match_parent</item>
     <item name="android:layout_height">wrap_content</item>
-    <item name="android:textSize">16sp</item>
+    <item name="android:textSize">16.5sp</item>
     <item name="android:paddingStart">16dp</item>
     <item name="android:minHeight">40dp</item>
+    <item name="android:fontFamily">@font/jost_book</item>
     <item name="android:textAlignment">viewStart</item>
   </style>
-  
+
   <style name="Widget.Doodle.Card" parent="Widget.MaterialComponents.CardView">
     <item name="android:layout_width">@dimen/theme_selection_card_size</item>
     <item name="android:layout_height">@dimen/theme_selection_card_size</item>
@@ -70,7 +72,7 @@
     <item name="cardCornerRadius">@dimen/theme_selection_circle_corner_radius</item>
     <item name="android:layout_gravity">center</item>
   </style>
-  
+
   <!-- LIST -->
 
     <style name="Widget.Doodle.LinearLayout.ListItem" parent="">
@@ -167,10 +169,11 @@
   <!-- TEXT -->
 
   <style name="Widget.Doodle.TextView" parent="Widget.MaterialComponents.TextView">
-    <item name="android:textSize">14sp</item>
+    <item name="android:textSize">15.5sp</item>
+    <item name="android:lineSpacingExtra">-1.5sp</item>
     <item name="android:textColor">@color/on_background</item>
     <item name="android:textAlignment">viewStart</item>
-    <item name="android:fontFamily">@font/roboto_mono_regular</item>
+    <item name="android:fontFamily">@font/jost_book</item>
   </style>
 
   <style name="Widget.Doodle.TextView.Paragraph" parent="Widget.Doodle.TextView">
@@ -182,7 +185,7 @@
   <style name="Widget.Doodle.TextView.Toolbar" parent="Widget.Doodle.TextView">
     <item name="android:textColor">@color/on_background</item>
     <item name="android:textSize" tools:ignore="SpUsage">20dp</item>
-    <item name="android:fontFamily">@font/roboto_mono_bold</item>
+    <item name="android:fontFamily">@font/jost_bold</item>
     <item name="android:singleLine">true</item>
   </style>
 
@@ -192,8 +195,8 @@
     <item name="android:layout_marginStart">72dp</item>
     <item name="android:paddingTop">10dp</item>
     <item name="android:paddingBottom">3dp</item>
-    <item name="android:fontFamily">@font/roboto_mono_bold</item>
-    <item name="android:textSize">13sp</item>
+    <item name="android:fontFamily">@font/jost_bold</item>
+    <item name="android:textSize">14.5sp</item>
     <item name="android:textColor">@color/secondary</item>
   </style>
 
@@ -203,6 +206,7 @@
     <item name="android:maxLines">2</item>
     <item name="android:textSize">12sp</item>
     <item name="android:letterSpacing">0.1</item>
+    <item name="android:textStyle">bold</item>
     <item name="android:textColor">@color/on_background_secondary</item>
     <item name="android:textAllCaps">true</item>
   </style>
@@ -210,19 +214,19 @@
   <style name="Widget.Doodle.TextView.ListItem.Title" parent="Widget.Doodle.TextView">
     <item name="android:layout_width">match_parent</item>
     <item name="android:layout_height">wrap_content</item>
-    <item name="android:textSize">16sp</item>
+    <item name="android:textSize">16.5sp</item>
   </style>
 
   <style name="Widget.Doodle.TextView.ListItem.Description" parent="Widget.Doodle.TextView">
     <item name="android:layout_width">match_parent</item>
     <item name="android:layout_height">wrap_content</item>
-    <item name="android:textSize">14sp</item>
+    <item name="android:textSize">15sp</item>
     <item name="android:textColor">@color/on_background_secondary</item>
   </style>
 
   <style name="Widget.Doodle.TextView.Title.BottomSheet" parent="Widget.Doodle.TextView">
     <item name="android:textSize">19sp</item>
-    <item name="android:fontFamily">@font/roboto_mono_bold</item>
+    <item name="android:fontFamily">@font/jost_bold</item>
     <item name="singleLine">true</item>
   </style>
 

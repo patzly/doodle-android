@@ -422,6 +422,11 @@
           android:text="@string/setting_size_default" />
 
         <com.google.android.material.radiobutton.MaterialRadioButton
+          android:id="@+id/radio_medium"
+          style="@style/Widget.Doodle.RadioButton"
+          android:text="@string/setting_size_medium" />
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
           android:id="@+id/radio_big"
           style="@style/Widget.Doodle.RadioButton"
           android:text="@string/setting_size_big" />

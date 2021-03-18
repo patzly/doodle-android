@@ -34,6 +34,7 @@
   <string name="setting_size">Größe der Formen</string>
   <string name="setting_size_description">Nützlich für große Displays</string>
   <string name="setting_size_default">Normal</string>
+  <string name="setting_size_medium">Mittel</string>
   <string name="setting_size_big">Groß</string>
 
   <string name="info_title">Informationen</string>

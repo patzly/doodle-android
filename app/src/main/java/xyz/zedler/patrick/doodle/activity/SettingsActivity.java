@@ -38,6 +38,7 @@ import androidx.fragment.app.DialogFragment;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.google.android.material.card.MaterialCardView;
 import xyz.zedler.patrick.doodle.Constants;
+import xyz.zedler.patrick.doodle.Constants.PREF;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.behavior.ScrollBehavior;
 import xyz.zedler.patrick.doodle.behavior.SystemBarBehavior;
@@ -140,15 +141,29 @@ public class SettingsActivity extends AppCompatActivity
       sharedPrefs.edit().putInt(Constants.PREF.PARALLAX, parallax).apply();
     });
 
-    binding.radioGroupSize.check(
-        sharedPrefs.getBoolean(Constants.PREF.SIZE_BIG, false)
-            ? R.id.radio_big
-            : R.id.radio_default
-    );
+    switch (sharedPrefs.getInt(Constants.PREF.SIZE, 0)) {
+      case 0:
+        binding.radioGroupSize.check(R.id.radio_default);
+        break;
+      case 1:
+        binding.radioGroupSize.check(R.id.radio_medium);
+        break;
+      case 2:
+        binding.radioGroupSize.check(R.id.radio_big);
+        break;
+    }
     binding.radioGroupSize.jumpDrawablesToCurrentState();
     binding.radioGroupSize.setOnCheckedChangeListener((RadioGroup group, int checkedId) -> {
       IconUtil.start(binding.imageSize);
-      sharedPrefs.edit().putBoolean(Constants.PREF.SIZE_BIG, checkedId == R.id.radio_big).apply();
+      int size;
+      if (checkedId == R.id.radio_medium) {
+        size = 1;
+      } else if (checkedId == R.id.radio_big) {
+        size = 2;
+      } else {
+        size = 0;
+      }
+      sharedPrefs.edit().putInt(PREF.SIZE, size).apply();
     });
 
     refreshSelectionTheme(

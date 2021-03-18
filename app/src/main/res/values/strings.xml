@@ -35,6 +35,7 @@
   <string name="setting_size">Shape scale</string>
   <string name="setting_size_description">Useful for big screens</string>
   <string name="setting_size_default">Default</string>
+  <string name="setting_size_medium">Medium</string>
   <string name="setting_size_big">Big</string>
 
   <array name="changelog_highlights" translatable="false">

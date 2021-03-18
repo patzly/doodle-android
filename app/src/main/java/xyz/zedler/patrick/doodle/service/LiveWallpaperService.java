@@ -40,8 +40,8 @@ public class LiveWallpaperService extends WallpaperService {
   private SharedPreferences sharedPrefs;
   private Resources.Theme themeRes;
   private String theme, variant;
-  private boolean nightMode, followSystem, isNight, isSizeBig;
-  private int colorBackground, parallax;
+  private boolean nightMode, followSystem, isNight;
+  private int colorBackground, parallax, size;
 
   private VectorDrawableCompat doodleArc;
   private VectorDrawableCompat doodleDot;
@@ -96,7 +96,7 @@ public class LiveWallpaperService extends WallpaperService {
     followSystem = sharedPrefs.getBoolean(Constants.PREF.FOLLOW_SYSTEM, true);
     isNight = isNightMode();
     parallax = sharedPrefs.getInt(Constants.PREF.PARALLAX, 100);
-    isSizeBig = sharedPrefs.getBoolean(Constants.PREF.SIZE_BIG, false);
+    size = sharedPrefs.getInt(Constants.PREF.SIZE, 0);
     themeRes = getResources().newTheme();
     newRandomZ();
     refreshTheme();
@@ -294,7 +294,7 @@ public class LiveWallpaperService extends WallpaperService {
       nightMode = sharedPrefs.getBoolean(Constants.PREF.NIGHT_MODE, true);
       followSystem = sharedPrefs.getBoolean(Constants.PREF.FOLLOW_SYSTEM, true);
       parallax = sharedPrefs.getInt(Constants.PREF.PARALLAX, 100);
-      isSizeBig = sharedPrefs.getBoolean(Constants.PREF.SIZE_BIG, false);
+      size = sharedPrefs.getInt(Constants.PREF.SIZE, 0);
 
       if (!theme.equals(themeNew)) {
         theme = themeNew;
@@ -412,7 +412,17 @@ public class LiveWallpaperService extends WallpaperService {
       offset = (int) (xOffset * z * parallax);
       xPos = ((int) (x * frame.width()) - drawable.getIntrinsicWidth() / 2) - offset;
       yPos = (int) (y * frame.height()) - drawable.getIntrinsicHeight() / 2;
-      double scale = isSizeBig ? 1.2 : 1;
+      double scale;
+      switch (size) {
+        case 1:
+          scale = 1.1;
+          break;
+        case 2:
+          scale = 1.2;
+          break;
+        default:
+          scale = 1;
+      }
       drawable.setBounds(
           xPos, yPos,
           (int) (scale * drawable.getIntrinsicWidth()) + xPos,

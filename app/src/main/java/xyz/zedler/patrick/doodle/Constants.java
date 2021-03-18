@@ -26,7 +26,7 @@ public final class Constants {
     public final static String THEME = "theme";
     public final static String VARIANT = "variant";
     public final static String PARALLAX = "parallax";
-    public final static String SIZE_BIG = "size_big";
+    public final static String SIZE = "size";
   }
 
   public final static class THEME {

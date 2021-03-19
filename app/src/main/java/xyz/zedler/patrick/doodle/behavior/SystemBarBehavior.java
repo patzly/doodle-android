@@ -280,17 +280,6 @@ public class SystemBarBehavior {
       } else {
         window.setNavigationBarColor(Color.BLACK);
       }
-    } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) { // 21
-      window.setStatusBarColor(isDarkModeActive ? Color.TRANSPARENT : SystemUiUtil.COLOR_SCRIM);
-      if (isOrientationPortrait) {
-        window.setNavigationBarColor(
-            isDarkModeActive
-                ? (isScrollable ? SystemUiUtil.COLOR_SCRIM_DARK : Color.TRANSPARENT)
-                : SystemUiUtil.COLOR_SCRIM
-        );
-      } else {
-        window.setNavigationBarColor(Color.BLACK);
-      }
     }
   }
 

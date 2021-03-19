@@ -38,12 +38,6 @@
   <string name="setting_size_medium">Medium</string>
   <string name="setting_size_big">Big</string>
 
-  <array name="changelog_highlights" translatable="false">
-    <item>New:</item>
-    <item>Improved:</item>
-    <item>Fixed:</item>
-  </array>
-
   <string name="info_title">Information</string>
   <string name="info_description">Colorful live wallpapers with auto dark mode and battery-efficient parallax effect. Tap to learn more.</string>
   <string name="info_description_wallpaper">Explore a colorful collection of shapes, refined with a gentle parallax effect when you swipe through your home screens.\nCustomize the wallpaper to match your own style.</string>
@@ -53,6 +47,12 @@
   <string name="info_developer">Developer</string>
   <string name="info_material_components_built_with">Built with</string>
   <string name="info_material_components">Material Components</string>
+
+  <array name="changelog_highlights" translatable="false">
+    <item>New:</item>
+    <item>Improved:</item>
+    <item>Fixed:</item>
+  </array>
 
   <string name="category_customization">Customization</string>
   <string name="category_about">About</string>

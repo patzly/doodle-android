@@ -171,18 +171,6 @@ public class BaseBottomSheetDialogFragment extends BottomSheetDialogFragment {
       } else {
         window.setNavigationBarColor(Color.BLACK);
       }
-    } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) { // 21
-      window.setStatusBarColor(Color.TRANSPARENT);
-      if (isOrientationPortrait) {
-        if (isDarkModeActive) {
-          addCompatNavigationBarDivider(context, sheet);
-          window.setNavigationBarColor(ContextCompat.getColor(context, R.color.surface));
-        } else {
-          window.setNavigationBarColor(SystemUiUtil.COLOR_SCRIM_OPAQUE);
-        }
-      } else {
-        window.setNavigationBarColor(Color.BLACK);
-      }
     }
   }
 

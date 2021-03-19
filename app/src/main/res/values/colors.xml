@@ -36,7 +36,6 @@
   <!-- PRIMARY -->
 
   <color name="primary">@color/white</color>
-  <color name="primary_variant">@color/white</color>
 
   <!-- SECONDARY -->
 

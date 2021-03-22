@@ -113,7 +113,7 @@
       </com.google.android.material.card.MaterialCardView>
 
       <TextView
-        style="@style/Widget.Doodle.Category"
+        style="@style/Widget.Doodle.TextView.Category"
         android:text="@string/category_customization" />
 
       <LinearLayout
@@ -436,7 +436,7 @@
       </RadioGroup>
 
       <TextView
-        style="@style/Widget.Doodle.Category"
+        style="@style/Widget.Doodle.TextView.Category"
         android:text="@string/category_about" />
 
       <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine">
@@ -533,7 +533,7 @@
       </LinearLayout>
 
       <TextView
-        style="@style/Widget.Doodle.Category"
+        style="@style/Widget.Doodle.TextView.Category"
         android:text="@string/category_licenses" />
 
       <LinearLayout

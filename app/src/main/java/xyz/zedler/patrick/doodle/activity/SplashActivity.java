@@ -19,7 +19,6 @@ import android.content.Intent;
 import android.graphics.drawable.AnimatedVectorDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.LayerDrawable;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -34,11 +33,6 @@ public class SplashActivity extends AppCompatActivity {
     super.onCreate(bundle);
 
     new SystemBarBehavior(this).setUp();
-
-    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
-      startSettingsActivity();
-      return;
-    }
 
     LayerDrawable splashContent = (LayerDrawable) ResourcesCompat.getDrawable(
         getResources(), R.drawable.splash_content, null

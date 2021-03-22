@@ -35,6 +35,8 @@
     <item name="android:colorControlActivated">@color/secondary</item>
     <item name="android:colorControlHighlight">@color/highlight</item>
     <item name="android:colorEdgeEffect">@color/highlight</item>
+
+    <item name="android:fontFamily">@font/jost_book</item>
   </style>
 
   <style name="Theme.Doodle.BottomSheetDialog" parent="Theme.MaterialComponents.BottomSheetDialog">
@@ -58,6 +60,8 @@
     <item name="android:colorEdgeEffect">@color/highlight</item>
 
     <item name="android:windowIsFloating">false</item>
+
+    <item name="android:fontFamily">@font/jost_book</item>
   </style>
 
 </resources>

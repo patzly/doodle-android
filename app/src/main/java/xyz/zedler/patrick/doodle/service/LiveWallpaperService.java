@@ -298,6 +298,7 @@ public class LiveWallpaperService extends WallpaperService {
 
     @Override
     public void onVisibilityChanged(boolean visible) {
+      super.onVisibilityChanged(visible);
       if (!visible) {
         return;
       }

@@ -189,7 +189,7 @@
     <item name="android:singleLine">true</item>
   </style>
 
-  <style name="Widget.Doodle.Category" parent="">
+  <style name="Widget.Doodle.TextView.Category" parent="Widget.Doodle.TextView">
     <item name="android:layout_width">wrap_content</item>
     <item name="android:layout_height">wrap_content</item>
     <item name="android:layout_marginStart">72dp</item>

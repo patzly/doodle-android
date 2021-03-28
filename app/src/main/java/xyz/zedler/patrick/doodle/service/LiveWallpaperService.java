@@ -28,7 +28,6 @@ import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
 import android.os.Handler;
 import android.os.Looper;
-import android.preference.PreferenceManager;
 import android.service.wallpaper.WallpaperService;
 import android.view.SurfaceHolder;
 import androidx.annotation.ColorRes;
@@ -303,8 +302,6 @@ public class LiveWallpaperService extends WallpaperService {
       if (!visible) {
         return;
       }
-
-      sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 
       String themeNew = sharedPrefs.getString(Constants.PREF.THEME, Constants.THEME.DOODLE);
       String variantNew = sharedPrefs.getString(

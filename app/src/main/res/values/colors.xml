@@ -60,7 +60,7 @@
   <!-- HIGHLIGHT -->
 
   <color name="highlight">#11000000</color>
-  <color name="highlight_secondary">#05000000</color>
+  <color name="highlight_secondary">#08000000</color>
 
   <!-- STROKES -->
 
@@ -69,10 +69,6 @@
   <!-- ICONS -->
 
   <color name="icon">@color/grey800</color>
-
-  <color name="mdc_square">#212121</color>
-  <color name="mdc_circle">#b2ff59</color>
-  <color name="mdc_overlay">#00e676</color>
 
   <!-- WALLPAPER -->
 

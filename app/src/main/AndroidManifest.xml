@@ -24,6 +24,8 @@
     android:name="android.software.live_wallpaper"
     android:required="true" />
 
+  <uses-permission android:name="android.permission.VIBRATE" />
+
   <application
     android:allowBackup="true"
     android:icon="@mipmap/ic_launcher"
@@ -32,7 +34,9 @@
     android:theme="@style/Theme.Doodle"
     tools:ignore="AllowBackup">
 
-    <activity android:name=".activity.SplashActivity">
+    <activity
+      android:name=".activity.SplashActivity"
+      android:theme="@style/Theme.Doodle.Splash">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
         <category android:name="android.intent.category.LAUNCHER" />

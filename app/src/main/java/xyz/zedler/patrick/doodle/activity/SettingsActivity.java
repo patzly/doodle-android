@@ -48,6 +48,7 @@ import xyz.zedler.patrick.doodle.service.LiveWallpaperService;
 import xyz.zedler.patrick.doodle.util.ClickUtil;
 import xyz.zedler.patrick.doodle.util.IconUtil;
 import xyz.zedler.patrick.doodle.util.PrefsUtil;
+import xyz.zedler.patrick.doodle.util.VibratorUtil;
 
 public class SettingsActivity extends AppCompatActivity
     implements View.OnClickListener, CompoundButton.OnCheckedChangeListener {
@@ -57,6 +58,7 @@ public class SettingsActivity extends AppCompatActivity
   private ActivitySettingsBinding binding;
   private SharedPreferences sharedPrefs;
   private ClickUtil clickUtil;
+  private VibratorUtil vibratorUtil;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +71,7 @@ public class SettingsActivity extends AppCompatActivity
 
     sharedPrefs = new PrefsUtil(this).getSharedPrefs();
     clickUtil = new ClickUtil();
+    vibratorUtil = new VibratorUtil(this);
 
     SystemBarBehavior systemBarBehavior = new SystemBarBehavior(this);
     systemBarBehavior.setAppBar(binding.appBar);
@@ -76,8 +79,6 @@ public class SettingsActivity extends AppCompatActivity
     systemBarBehavior.setUp();
 
     new ScrollBehavior(this).setUpScroll(binding.appBar, binding.scroll, true);
-
-    binding.frameClose.setOnClickListener(v -> finish());
 
     binding.buttonSet.setEnabled(!isWallpaperServiceRunning());
     binding.buttonSet.setBackgroundColor(
@@ -139,6 +140,7 @@ public class SettingsActivity extends AppCompatActivity
         parallax = 0;
       }
       sharedPrefs.edit().putInt(Constants.PREF.PARALLAX, parallax).apply();
+      vibratorUtil.vibrate(VibratorUtil.TICK);
     });
 
     switch (sharedPrefs.getInt(Constants.PREF.SIZE, 0)) {
@@ -164,6 +166,7 @@ public class SettingsActivity extends AppCompatActivity
         size = 0;
       }
       sharedPrefs.edit().putInt(PREF.SIZE, size).apply();
+      vibratorUtil.vibrate(VibratorUtil.TICK);
     });
 
     refreshSelectionTheme(
@@ -177,6 +180,7 @@ public class SettingsActivity extends AppCompatActivity
 
     ClickUtil.setOnClickListeners(
         this,
+        binding.frameClose,
         binding.buttonSet,
         binding.cardInfo,
         binding.cardDoodle, binding.cardNeon, binding.cardGeometric,
@@ -222,7 +226,10 @@ public class SettingsActivity extends AppCompatActivity
   @Override
   public void onClick(View v) {
     int id = v.getId();
-    if (id == R.id.button_set && clickUtil.isEnabled()) {
+    if (id == R.id.frame_close && clickUtil.isEnabled()) {
+      vibratorUtil.vibrate(VibratorUtil.TAP);
+      finish();
+    } else if (id == R.id.button_set && clickUtil.isEnabled()) {
       startActivityForResult(
           new Intent()
               .setAction(WallpaperManager.ACTION_CHANGE_LIVE_WALLPAPER)
@@ -235,20 +242,28 @@ public class SettingsActivity extends AppCompatActivity
               ),
           Constants.REQUEST_CODE
       );
+      vibratorUtil.vibrate(VibratorUtil.TICK);
     } else if (id == R.id.card_info) {
       showTextBottomSheet("info", R.string.info_title, -1);
+      vibratorUtil.vibrate(VibratorUtil.TAP);
     } else if (id == R.id.card_doodle) {
       refreshSelectionTheme(Constants.THEME.DOODLE, true);
+      vibratorUtil.vibrate(VibratorUtil.TAP);
     } else if (id == R.id.card_neon) {
       refreshSelectionTheme(Constants.THEME.NEON, true);
+      vibratorUtil.vibrate(VibratorUtil.TAP);
     } else if (id == R.id.card_geometric) {
       refreshSelectionTheme(Constants.THEME.GEOMETRIC, true);
+      vibratorUtil.vibrate(VibratorUtil.TAP);
     } else if (id == R.id.card_black) {
       refreshSelectionVariant(Constants.VARIANT.BLACK, true);
+      vibratorUtil.vibrate(VibratorUtil.TAP);
     } else if (id == R.id.card_white) {
       refreshSelectionVariant(Constants.VARIANT.WHITE, true);
+      vibratorUtil.vibrate(VibratorUtil.TAP);
     } else if (id == R.id.card_orange) {
       refreshSelectionVariant(Constants.VARIANT.ORANGE, true);
+      vibratorUtil.vibrate(VibratorUtil.TAP);
     } else if (id == R.id.linear_night_mode) {
       binding.switchNightMode.setChecked(!binding.switchNightMode.isChecked());
     } else if (id == R.id.linear_follow_system) {
@@ -260,6 +275,7 @@ public class SettingsActivity extends AppCompatActivity
       IconUtil.start(binding.imageChangelog);
       BottomSheetDialogFragment fragment = new ChangelogBottomSheetDialogFragment();
       fragment.show(getSupportFragmentManager(), fragment.toString());
+      vibratorUtil.vibrate(VibratorUtil.TAP);
     } else if (id == R.id.linear_developer && clickUtil.isEnabled()) {
       IconUtil.start(binding.imageDeveloper);
       new Handler(Looper.getMainLooper()).postDelayed(
@@ -270,6 +286,7 @@ public class SettingsActivity extends AppCompatActivity
               )
           ), 300
       );
+      vibratorUtil.vibrate(VibratorUtil.TAP);
     } else if (id == R.id.linear_license_material_components && clickUtil.isEnabled()) {
       IconUtil.start(binding.imageLicenseMaterialComponents);
       showTextBottomSheet(
@@ -277,6 +294,7 @@ public class SettingsActivity extends AppCompatActivity
           R.string.license_material_components,
           R.string.license_material_components_link
       );
+      vibratorUtil.vibrate(VibratorUtil.TAP);
     } else if (id == R.id.linear_license_material_icons && clickUtil.isEnabled()) {
       IconUtil.start(binding.imageLicenseMaterialIcons);
       showTextBottomSheet(
@@ -284,13 +302,15 @@ public class SettingsActivity extends AppCompatActivity
           R.string.license_material_icons,
           R.string.license_material_icons_link
       );
+      vibratorUtil.vibrate(VibratorUtil.TAP);
     } else if (id == R.id.linear_license_jost && clickUtil.isEnabled()) {
       IconUtil.start(binding.imageLicenseJost);
       showTextBottomSheet(
-          "open-font",
+          "ofl",
           R.string.license_jost,
           R.string.license_jost_link
       );
+      vibratorUtil.vibrate(VibratorUtil.TAP);
     }
   }
 
@@ -317,6 +337,7 @@ public class SettingsActivity extends AppCompatActivity
     } else if (id == R.id.switch_follow_system) {
       sharedPrefs.edit().putBoolean(Constants.PREF.FOLLOW_SYSTEM, isChecked).apply();
     }
+    vibratorUtil.vibrate(VibratorUtil.TICK);
   }
 
   private void refreshSelectionTheme(String selection, boolean animated) {

@@ -53,8 +53,4 @@
 
   <color name="icon">@color/grey400</color>
 
-  <color name="mdc_square">@color/white</color>
-  <color name="mdc_circle">#00e676</color>
-  <color name="mdc_overlay">#b2ff59</color>
-
 </resources>

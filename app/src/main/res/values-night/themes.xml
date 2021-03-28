@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <!--
   ~ This file is part of Doodle Android.
   ~ Doodle Android is free software: you can redistribute it and/or modify
@@ -13,19 +14,10 @@
   ~ Copyright (c) 2021 by Patrick Zedler
   -->
 
-<vector
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  android:width="24dp"
-  android:height="24dp"
-  android:viewportWidth="24"
-  android:viewportHeight="24">
-  <path
-    android:pathData="M21 15a6 6 0 0 1-6 6 6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6z"
-    android:fillColor="@color/mdc_circle" />
-  <path
-    android:pathData="M3 3h12v12H3z"
-    android:fillColor="@color/mdc_square" />
-  <path
-    android:pathData="M15 9c-3.314 0-6 2.686-6 6h6z"
-    android:fillColor="@color/mdc_overlay" />
-</vector>
+<resources>
+
+  <style name="Theme.Doodle.Splash" parent="Theme.Doodle">
+    <item name="android:navigationBarColor">@color/background</item>
+  </style>
+
+</resources>

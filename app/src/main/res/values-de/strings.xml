@@ -44,8 +44,6 @@
   <string name="info_changelog">Änderungen</string>
   <string name="info_changelog_description">Was ist neu?</string>
   <string name="info_developer">Entwickler</string>
-  <string name="info_material_components_built_with">Built with</string>
-  <string name="info_material_components">Material Components</string>
 
   <string name="category_customization">Anpassung</string>
   <string name="category_about">Über</string>

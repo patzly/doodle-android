@@ -1,6 +1,6 @@
 2.4.0:
 - New: haptic feedback in settings
-- Improved: interface
+- Improved: settings interface
 - Fixed: crash on boot caused by missing access to preferences
 
 2.3.0:

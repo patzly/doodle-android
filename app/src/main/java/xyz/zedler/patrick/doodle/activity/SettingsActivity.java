@@ -33,8 +33,6 @@ import androidx.annotation.StringRes;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.content.ContextCompat;
-import androidx.fragment.app.DialogFragment;
-import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.google.android.material.card.MaterialCardView;
 import xyz.zedler.patrick.doodle.Constants;
 import xyz.zedler.patrick.doodle.Constants.PREF;
@@ -48,6 +46,7 @@ import xyz.zedler.patrick.doodle.service.LiveWallpaperService;
 import xyz.zedler.patrick.doodle.util.ClickUtil;
 import xyz.zedler.patrick.doodle.util.IconUtil;
 import xyz.zedler.patrick.doodle.util.PrefsUtil;
+import xyz.zedler.patrick.doodle.util.SheetUtil;
 import xyz.zedler.patrick.doodle.util.VibratorUtil;
 
 public class SettingsActivity extends AppCompatActivity
@@ -59,6 +58,7 @@ public class SettingsActivity extends AppCompatActivity
   private SharedPreferences sharedPrefs;
   private ClickUtil clickUtil;
   private VibratorUtil vibratorUtil;
+  private SheetUtil sheetUtil;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -72,6 +72,7 @@ public class SettingsActivity extends AppCompatActivity
     sharedPrefs = new PrefsUtil(this).getSharedPrefs();
     clickUtil = new ClickUtil();
     vibratorUtil = new VibratorUtil(this);
+    sheetUtil = new SheetUtil(getSupportFragmentManager());
 
     SystemBarBehavior systemBarBehavior = new SystemBarBehavior(this);
     systemBarBehavior.setAppBar(binding.appBar);
@@ -273,8 +274,7 @@ public class SettingsActivity extends AppCompatActivity
       }
     } else if (id == R.id.linear_changelog && clickUtil.isEnabled()) {
       IconUtil.start(binding.imageChangelog);
-      BottomSheetDialogFragment fragment = new ChangelogBottomSheetDialogFragment();
-      fragment.show(getSupportFragmentManager(), fragment.toString());
+      sheetUtil.show(new ChangelogBottomSheetDialogFragment());
       vibratorUtil.vibrate(VibratorUtil.TAP);
     } else if (id == R.id.linear_developer && clickUtil.isEnabled()) {
       IconUtil.start(binding.imageDeveloper);
@@ -449,8 +449,6 @@ public class SettingsActivity extends AppCompatActivity
     if (link != -1) {
       bundle.putString(Constants.EXTRA.LINK, getString(link));
     }
-    DialogFragment fragment = new TextBottomSheetDialogFragment();
-    fragment.setArguments(bundle);
-    fragment.show(getSupportFragmentManager(), fragment.toString());
+    sheetUtil.show(new TextBottomSheetDialogFragment(), bundle);
   }
 }

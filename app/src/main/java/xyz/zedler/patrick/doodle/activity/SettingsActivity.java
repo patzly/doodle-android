@@ -67,7 +67,7 @@ public class SettingsActivity extends AppCompatActivity
     binding = ActivitySettingsBinding.inflate(getLayoutInflater());
     setContentView(binding.getRoot());
 
-    sharedPrefs = new PrefsUtil(this).getSharedPrefs();;
+    sharedPrefs = new PrefsUtil(this).getSharedPrefs();
     clickUtil = new ClickUtil();
 
     SystemBarBehavior systemBarBehavior = new SystemBarBehavior(this);
@@ -222,10 +222,7 @@ public class SettingsActivity extends AppCompatActivity
   @Override
   public void onClick(View v) {
     int id = v.getId();
-    if (id == R.id.button_set) {
-      if (clickUtil.isDisabled()) {
-        return;
-      }
+    if (id == R.id.button_set && clickUtil.isEnabled()) {
       startActivityForResult(
           new Intent()
               .setAction(WallpaperManager.ACTION_CHANGE_LIVE_WALLPAPER)
@@ -259,17 +256,11 @@ public class SettingsActivity extends AppCompatActivity
       if (binding.switchNightMode.isChecked()) {
         binding.switchFollowSystem.setChecked(!binding.switchFollowSystem.isChecked());
       }
-    } else if (id == R.id.linear_changelog) {
-      if (clickUtil.isDisabled()) {
-        return;
-      }
+    } else if (id == R.id.linear_changelog && clickUtil.isEnabled()) {
       IconUtil.start(binding.imageChangelog);
       BottomSheetDialogFragment fragment = new ChangelogBottomSheetDialogFragment();
       fragment.show(getSupportFragmentManager(), fragment.toString());
-    } else if (id == R.id.linear_developer) {
-      if (clickUtil.isDisabled()) {
-        return;
-      }
+    } else if (id == R.id.linear_developer && clickUtil.isEnabled()) {
       IconUtil.start(binding.imageDeveloper);
       new Handler(Looper.getMainLooper()).postDelayed(
           () -> startActivity(
@@ -279,30 +270,21 @@ public class SettingsActivity extends AppCompatActivity
               )
           ), 300
       );
-    } else if (id == R.id.linear_license_material_components) {
-      if (clickUtil.isDisabled()) {
-        return;
-      }
+    } else if (id == R.id.linear_license_material_components && clickUtil.isEnabled()) {
       IconUtil.start(binding.imageLicenseMaterialComponents);
       showTextBottomSheet(
           "apache",
           R.string.license_material_components,
           R.string.license_material_components_link
       );
-    } else if (id == R.id.linear_license_material_icons) {
-      if (clickUtil.isDisabled()) {
-        return;
-      }
+    } else if (id == R.id.linear_license_material_icons && clickUtil.isEnabled()) {
       IconUtil.start(binding.imageLicenseMaterialIcons);
       showTextBottomSheet(
           "apache",
           R.string.license_material_icons,
           R.string.license_material_icons_link
       );
-    } else if (id == R.id.linear_license_jost) {
-      if (clickUtil.isDisabled()) {
-        return;
-      }
+    } else if (id == R.id.linear_license_jost && clickUtil.isEnabled()) {
       IconUtil.start(binding.imageLicenseJost);
       showTextBottomSheet(
           "open-font",

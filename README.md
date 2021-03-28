@@ -15,6 +15,7 @@ The wallpapers are based on the original doodle live wallpapers of the Google Pi
 * System dependent night mode
 * Parallax effect on page swipe
 * Various customization options
+* Direct boot support
 * No permanent animations
 * Also suitable for less powerful devices
 * No ads and no analytics

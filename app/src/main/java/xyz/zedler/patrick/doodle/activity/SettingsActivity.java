@@ -25,7 +25,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.RadioGroup;
@@ -48,6 +47,7 @@ import xyz.zedler.patrick.doodle.fragment.TextBottomSheetDialogFragment;
 import xyz.zedler.patrick.doodle.service.LiveWallpaperService;
 import xyz.zedler.patrick.doodle.util.ClickUtil;
 import xyz.zedler.patrick.doodle.util.IconUtil;
+import xyz.zedler.patrick.doodle.util.PrefsUtil;
 
 public class SettingsActivity extends AppCompatActivity
     implements View.OnClickListener, CompoundButton.OnCheckedChangeListener {
@@ -67,7 +67,7 @@ public class SettingsActivity extends AppCompatActivity
     binding = ActivitySettingsBinding.inflate(getLayoutInflater());
     setContentView(binding.getRoot());
 
-    sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+    sharedPrefs = new PrefsUtil(this).getSharedPrefs();;
     clickUtil = new ClickUtil();
 
     SystemBarBehavior systemBarBehavior = new SystemBarBehavior(this);

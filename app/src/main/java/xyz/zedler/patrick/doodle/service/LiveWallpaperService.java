@@ -40,6 +40,7 @@ import xyz.zedler.patrick.doodle.Constants;
 import xyz.zedler.patrick.doodle.Constants.THEME;
 import xyz.zedler.patrick.doodle.Constants.VARIANT;
 import xyz.zedler.patrick.doodle.R;
+import xyz.zedler.patrick.doodle.util.PrefsUtil;
 
 public class LiveWallpaperService extends WallpaperService {
 
@@ -97,7 +98,7 @@ public class LiveWallpaperService extends WallpaperService {
 
   @Override
   public Engine onCreateEngine() {
-    sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+    sharedPrefs = new PrefsUtil(this).getSharedPrefs();
     theme = sharedPrefs.getString(Constants.PREF.THEME, Constants.THEME.DOODLE);
     variant = sharedPrefs.getString(Constants.PREF.VARIANT, Constants.VARIANT.BLACK);
     nightMode = sharedPrefs.getBoolean(Constants.PREF.NIGHT_MODE, true);

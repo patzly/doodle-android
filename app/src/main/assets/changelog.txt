@@ -1,3 +1,6 @@
+2.4.0:
+- Fixed: crash on boot caused by missing access to preferences
+
 2.3.0:
 - New: Jost* typeface
 - New: animated splash screen in settings

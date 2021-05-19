@@ -25,6 +25,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -202,6 +203,8 @@ public class SettingsActivity extends AppCompatActivity
     ClickUtil.setOnCheckedChangeListeners(
         this, binding.switchNightMode, binding.switchFollowSystem
     );
+
+    if (isTouchWiz()) binding.cardTouchWiz.setVisibility(View.VISIBLE);
   }
 
   @Override
@@ -456,11 +459,21 @@ public class SettingsActivity extends AppCompatActivity
     sheetUtil.show(new TextBottomSheetDialogFragment(), bundle);
   }
 
-  public void performHapticClick() {
+  private boolean isTouchWiz() {
+    PackageManager localPackageManager = getPackageManager();
+    Intent intent = new Intent("android.intent.action.MAIN");
+    intent.addCategory("android.intent.category.HOME");
+    String launcher = localPackageManager.resolveActivity(
+        intent, PackageManager.MATCH_DEFAULT_ONLY
+    ).activityInfo.packageName;
+    return launcher != null && launcher.equals("com.sec.android.app.launcher");
+  }
+
+  private void performHapticClick() {
     vibratorUtil.click();
   }
 
-  public void performHapticHeavyClick() {
+  private void performHapticHeavyClick() {
     vibratorUtil.heavyClick();
   }
 }

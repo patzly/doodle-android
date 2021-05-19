@@ -45,6 +45,7 @@
   <string name="info_title">Information</string>
   <string name="info_description">Colorful live wallpapers with auto dark mode and battery-efficient parallax effect. Tap to learn more.</string>
   <string name="info_description_wallpaper">Explore a colorful collection of shapes, refined with a gentle parallax effect when you swipe through your home screens.\nCustomize the wallpaper to match your own style.</string>
+  <string name="info_touch_wiz">Your launcher (Samsung TouchWiz) unfortunately does not support background scrolling. Doodle therefore tries to simulate this effect, which unfortunately sometimes makes it look asynchronous.\nPlease try a different launcher for correct background scrolling.</string>
   <string name="info_version">Version</string>
   <string name="info_changelog">Changelog</string>
   <string name="info_changelog_description">What\'s new?</string>

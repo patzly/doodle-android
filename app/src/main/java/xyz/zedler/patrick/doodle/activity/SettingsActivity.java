@@ -145,7 +145,7 @@ public class SettingsActivity extends AppCompatActivity
         parallax = 0;
       }
       sharedPrefs.edit().putInt(Constants.PREF.PARALLAX, parallax).apply();
-      vibratorUtil.vibrate(VibratorUtil.TICK);
+      performHapticClick();
     });
 
     switch (sharedPrefs.getInt(Constants.PREF.SIZE, 0)) {
@@ -171,7 +171,7 @@ public class SettingsActivity extends AppCompatActivity
         size = 0;
       }
       sharedPrefs.edit().putInt(PREF.SIZE, size).apply();
-      vibratorUtil.vibrate(VibratorUtil.TICK);
+      performHapticClick();
     });
 
     refreshSelectionTheme(
@@ -232,7 +232,7 @@ public class SettingsActivity extends AppCompatActivity
   public void onClick(View v) {
     int id = v.getId();
     if (id == R.id.frame_close && clickUtil.isEnabled()) {
-      vibratorUtil.vibrate(VibratorUtil.TAP);
+      performHapticClick();
       finish();
     } else if (id == R.id.button_set && clickUtil.isEnabled()) {
       startActivityForResult(
@@ -247,28 +247,28 @@ public class SettingsActivity extends AppCompatActivity
               ),
           Constants.REQUEST_CODE
       );
-      vibratorUtil.vibrate(VibratorUtil.TICK);
+      performHapticHeavyClick();
     } else if (id == R.id.card_info) {
       showTextBottomSheet("info", R.string.info_title, -1);
-      vibratorUtil.vibrate(VibratorUtil.TAP);
+      performHapticClick();
     } else if (id == R.id.card_doodle) {
       refreshSelectionTheme(Constants.THEME.DOODLE, true);
-      vibratorUtil.vibrate(VibratorUtil.TAP);
+      performHapticClick();
     } else if (id == R.id.card_neon) {
       refreshSelectionTheme(Constants.THEME.NEON, true);
-      vibratorUtil.vibrate(VibratorUtil.TAP);
+      performHapticClick();
     } else if (id == R.id.card_geometric) {
       refreshSelectionTheme(Constants.THEME.GEOMETRIC, true);
-      vibratorUtil.vibrate(VibratorUtil.TAP);
+      performHapticClick();
     } else if (id == R.id.card_black) {
       refreshSelectionVariant(Constants.VARIANT.BLACK, true);
-      vibratorUtil.vibrate(VibratorUtil.TAP);
+      performHapticClick();
     } else if (id == R.id.card_white) {
       refreshSelectionVariant(Constants.VARIANT.WHITE, true);
-      vibratorUtil.vibrate(VibratorUtil.TAP);
+      performHapticClick();
     } else if (id == R.id.card_orange) {
       refreshSelectionVariant(Constants.VARIANT.ORANGE, true);
-      vibratorUtil.vibrate(VibratorUtil.TAP);
+      performHapticClick();
     } else if (id == R.id.linear_night_mode) {
       binding.switchNightMode.setChecked(!binding.switchNightMode.isChecked());
     } else if (id == R.id.linear_follow_system) {
@@ -279,7 +279,7 @@ public class SettingsActivity extends AppCompatActivity
     } else if (id == R.id.linear_changelog && clickUtil.isEnabled()) {
       IconUtil.start(binding.imageChangelog);
       sheetUtil.show(new ChangelogBottomSheetDialogFragment());
-      vibratorUtil.vibrate(VibratorUtil.TAP);
+      performHapticClick();
     } else if (id == R.id.linear_developer && clickUtil.isEnabled()) {
       IconUtil.start(binding.imageDeveloper);
       new Handler(Looper.getMainLooper()).postDelayed(
@@ -290,7 +290,7 @@ public class SettingsActivity extends AppCompatActivity
               )
           ), 300
       );
-      vibratorUtil.vibrate(VibratorUtil.TAP);
+      performHapticClick();
     } else if (id == R.id.linear_license_material_components && clickUtil.isEnabled()) {
       IconUtil.start(binding.imageLicenseMaterialComponents);
       showTextBottomSheet(
@@ -298,7 +298,7 @@ public class SettingsActivity extends AppCompatActivity
           R.string.license_material_components,
           R.string.license_material_components_link
       );
-      vibratorUtil.vibrate(VibratorUtil.TAP);
+      performHapticClick();
     } else if (id == R.id.linear_license_material_icons && clickUtil.isEnabled()) {
       IconUtil.start(binding.imageLicenseMaterialIcons);
       showTextBottomSheet(
@@ -306,7 +306,7 @@ public class SettingsActivity extends AppCompatActivity
           R.string.license_material_icons,
           R.string.license_material_icons_link
       );
-      vibratorUtil.vibrate(VibratorUtil.TAP);
+      performHapticClick();
     } else if (id == R.id.linear_license_jost && clickUtil.isEnabled()) {
       IconUtil.start(binding.imageLicenseJost);
       showTextBottomSheet(
@@ -314,7 +314,7 @@ public class SettingsActivity extends AppCompatActivity
           R.string.license_jost,
           R.string.license_jost_link
       );
-      vibratorUtil.vibrate(VibratorUtil.TAP);
+      performHapticClick();
     }
   }
 
@@ -341,7 +341,7 @@ public class SettingsActivity extends AppCompatActivity
     } else if (id == R.id.switch_follow_system) {
       sharedPrefs.edit().putBoolean(Constants.PREF.FOLLOW_SYSTEM, isChecked).apply();
     }
-    vibratorUtil.vibrate(VibratorUtil.TICK);
+    performHapticClick();
   }
 
   private void refreshSelectionTheme(String selection, boolean animated) {
@@ -454,5 +454,13 @@ public class SettingsActivity extends AppCompatActivity
       bundle.putString(Constants.EXTRA.LINK, getString(link));
     }
     sheetUtil.show(new TextBottomSheetDialogFragment(), bundle);
+  }
+
+  public void performHapticClick() {
+    vibratorUtil.click();
+  }
+
+  public void performHapticHeavyClick() {
+    vibratorUtil.heavyClick();
   }
 }

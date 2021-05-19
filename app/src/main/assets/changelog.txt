@@ -1,3 +1,6 @@
+2.5.0:
+- Improved: haptic feedback in settings
+
 2.4.0:
 - New: haptic feedback in settings
 - Improved: settings interface

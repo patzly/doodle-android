@@ -22,7 +22,7 @@ package xyz.zedler.patrick.doodle.util;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Build;
-import android.preference.PreferenceManager;
+import androidx.preference.PreferenceManager;
 import android.util.Log;
 
 public class PrefsUtil {
@@ -37,7 +37,8 @@ public class PrefsUtil {
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
       final Context deviceContext = context.createDeviceProtectedStorageContext();
       boolean success = deviceContext.moveSharedPreferencesFrom(
-          context, PreferenceManager.getDefaultSharedPreferencesName(context)
+          // TODO: don't rely on this name, old getDefaultSharedPreferencesName was better
+          context, context.getPackageName() + "_preferences"
       );
       if (!success) {
         Log.w(TAG, "Failed to migrate shared preferences");

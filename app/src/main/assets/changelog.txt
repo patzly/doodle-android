@@ -1,4 +1,5 @@
 2.5.0:
+- Improved: show warning if current launcher is TouchWiz
 - Improved: haptic feedback in settings
 
 2.4.0:

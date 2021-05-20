@@ -102,6 +102,7 @@ public class LiveWallpaperService extends WallpaperService {
   @Override
   public Engine onCreateEngine() {
     sharedPrefs = new PrefsUtil(this).getSharedPrefs();
+
     theme = sharedPrefs.getString(Constants.PREF.THEME, Constants.THEME.DOODLE);
     variant = sharedPrefs.getString(Constants.PREF.VARIANT, Constants.VARIANT.BLACK);
     nightMode = sharedPrefs.getBoolean(Constants.PREF.NIGHT_MODE, true);
@@ -110,8 +111,10 @@ public class LiveWallpaperService extends WallpaperService {
     parallax = sharedPrefs.getInt(Constants.PREF.PARALLAX, 100);
     size = sharedPrefs.getInt(Constants.PREF.SIZE, 0);
     themeRes = getResources().newTheme();
+
     newRandomZ();
     refreshTheme();
+
     return new CustomEngine();
   }
 

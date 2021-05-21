@@ -15,3 +15,4 @@ How to set as background:
 If you see no movement, you probably have only one home screen page. Drag an app icon to the right edge to add another page, then swipe between them. Parallax effect only occurs during page swipe.
 
 You need to turn on background scrolling in your launcher's settings if you have disabled it before to make parallax effect work.
+Some launchers don't support background scrolling at all, like Samsung's TouchWiz. As a solution, please try installing another launcher.

@@ -361,9 +361,7 @@
 
       <LinearLayout
         style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine"
-        android:paddingTop="16dp"
-        android:paddingBottom="8dp"
-        android:minHeight="50dp">
+        android:paddingBottom="0dp">
 
         <ImageView
           android:id="@+id/image_parallax"
@@ -385,36 +383,16 @@
 
       </LinearLayout>
 
-      <RadioGroup
-        android:id="@+id/radio_group_parallax"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="72dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="4dp">
-
-        <com.google.android.material.radiobutton.MaterialRadioButton
-          android:id="@+id/radio_none"
-          style="@style/Widget.Doodle.RadioButton"
-          android:text="@string/setting_parallax_none" />
-
-        <com.google.android.material.radiobutton.MaterialRadioButton
-          android:id="@+id/radio_little"
-          style="@style/Widget.Doodle.RadioButton"
-          android:text="@string/setting_parallax_little" />
-
-        <com.google.android.material.radiobutton.MaterialRadioButton
-          android:id="@+id/radio_much"
-          style="@style/Widget.Doodle.RadioButton"
-          android:text="@string/setting_parallax_much" />
-
-      </RadioGroup>
+      <com.google.android.material.slider.Slider
+        android:id="@+id/slider_parallax"
+        style="@style/Widget.Doodle.Slider"
+        android:valueFrom="0"
+        android:valueTo="200"
+        android:stepSize="100"/>
 
       <LinearLayout
         style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine"
-        android:paddingTop="12dp"
-        android:paddingBottom="8dp"
-        android:minHeight="50dp">
+        android:paddingBottom="0dp">
 
         <ImageView
           android:id="@+id/image_size"
@@ -436,30 +414,12 @@
 
       </LinearLayout>
 
-      <RadioGroup
-        android:id="@+id/radio_group_size"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="72dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="8dp">
-
-        <com.google.android.material.radiobutton.MaterialRadioButton
-          android:id="@+id/radio_default"
-          style="@style/Widget.Doodle.RadioButton"
-          android:text="@string/setting_size_default" />
-
-        <com.google.android.material.radiobutton.MaterialRadioButton
-          android:id="@+id/radio_medium"
-          style="@style/Widget.Doodle.RadioButton"
-          android:text="@string/setting_size_medium" />
-
-        <com.google.android.material.radiobutton.MaterialRadioButton
-          android:id="@+id/radio_big"
-          style="@style/Widget.Doodle.RadioButton"
-          android:text="@string/setting_size_big" />
-
-      </RadioGroup>
+      <com.google.android.material.slider.Slider
+        android:id="@+id/slider_size"
+        style="@style/Widget.Doodle.Slider"
+        android:valueFrom="1"
+        android:valueTo="1.5"
+        android:stepSize="0.1"/>
 
       <TextView
         style="@style/Widget.Doodle.TextView.Category"

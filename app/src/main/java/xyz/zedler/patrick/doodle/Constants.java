@@ -28,10 +28,21 @@ public final class Constants {
     public final static String NIGHT_MODE = "night_mode";
     public final static String FOLLOW_SYSTEM = "follow_system";
     public final static String ZOOM = "zoom";
-    public final static String WALLPAPER = "theme";
+    public final static String WALLPAPER = "wallpaper";
     public final static String VARIANT = "variant";
     public final static String PARALLAX = "parallax";
     public final static String SIZE = "size";
+  }
+
+  public final static class DEF {
+
+    public final static boolean NIGHT_MODE = true;
+    public final static boolean FOLLOW_SYSTEM = true;
+    public final static float ZOOM = 0.3f;
+    public final static String WALLPAPER = Constants.WALLPAPER.DOODLE;
+    public final static String VARIANT = Constants.VARIANT.BLACK;
+    public final static int PARALLAX = 100;
+    public final static float SIZE = 1;
   }
 
   public final static class WALLPAPER {

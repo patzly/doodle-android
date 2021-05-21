@@ -36,7 +36,7 @@
   <string name="setting_parallax_none">None</string>
   <string name="setting_parallax_little">Little</string>
   <string name="setting_parallax_much">Much</string>
-  <string name="setting_size">Shape scale</string>
+  <string name="setting_size">Shape size</string>
   <string name="setting_size_description">Useful for big screens</string>
   <string name="setting_size_default">Default</string>
   <string name="setting_size_medium">Medium</string>

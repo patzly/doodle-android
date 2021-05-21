@@ -25,10 +25,10 @@ import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.content.res.Resources.Theme;
 import android.graphics.Canvas;
-import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
 import android.os.Handler;
@@ -43,9 +43,12 @@ import androidx.core.content.ContextCompat;
 import androidx.vectordrawable.graphics.drawable.VectorDrawableCompat;
 import java.util.Random;
 import xyz.zedler.patrick.doodle.Constants;
+import xyz.zedler.patrick.doodle.Constants.DEF;
+import xyz.zedler.patrick.doodle.Constants.PREF;
 import xyz.zedler.patrick.doodle.Constants.VARIANT;
 import xyz.zedler.patrick.doodle.Constants.WALLPAPER;
 import xyz.zedler.patrick.doodle.R;
+import xyz.zedler.patrick.doodle.util.MigrationUtil;
 import xyz.zedler.patrick.doodle.util.PrefsUtil;
 
 public class LiveWallpaperService extends WallpaperService {
@@ -55,11 +58,12 @@ public class LiveWallpaperService extends WallpaperService {
   private SharedPreferences sharedPrefs;
   private Theme theme;
   private String wallpaper, variant;
-  private boolean nightMode, followSystem, isNight, isZoomEnabled;
-  private int colorBackground, parallax, size;
-  private float fps = 60;
-
-  private final static double ZOOM_INTENSITY = 0.3;
+  private boolean nightMode, followSystem, isNight;
+  private int colorBackground;
+  private int parallax;
+  private float size;
+  private float fps;
+  private float zoomIntensity;
 
   private VectorDrawableCompat doodleArc;
   private VectorDrawableCompat doodleDot;
@@ -108,30 +112,24 @@ public class LiveWallpaperService extends WallpaperService {
   @Override
   public Engine onCreateEngine() {
     sharedPrefs = new PrefsUtil(this).getSharedPrefs();
+    new MigrationUtil(sharedPrefs).checkForMigrations();
 
-    wallpaper = sharedPrefs.getString(Constants.PREF.WALLPAPER, WALLPAPER.DOODLE);
-    variant = sharedPrefs.getString(Constants.PREF.VARIANT, Constants.VARIANT.BLACK);
-    nightMode = sharedPrefs.getBoolean(Constants.PREF.NIGHT_MODE, true);
-    followSystem = sharedPrefs.getBoolean(Constants.PREF.FOLLOW_SYSTEM, true);
-    isZoomEnabled = sharedPrefs.getBoolean(Constants.PREF.ZOOM, true);
+    wallpaper = sharedPrefs.getString(PREF.WALLPAPER, DEF.WALLPAPER);
+    variant = sharedPrefs.getString(PREF.VARIANT, DEF.VARIANT);
+    nightMode = sharedPrefs.getBoolean(PREF.NIGHT_MODE, DEF.NIGHT_MODE);
+    followSystem = sharedPrefs.getBoolean(PREF.FOLLOW_SYSTEM, DEF.FOLLOW_SYSTEM);
+    parallax = sharedPrefs.getInt(PREF.PARALLAX, DEF.PARALLAX);
+    size = sharedPrefs.getFloat(PREF.SIZE, DEF.SIZE);
+    zoomIntensity = sharedPrefs.getFloat(PREF.ZOOM, DEF.ZOOM);
+
     isNight = isNightMode();
-    parallax = sharedPrefs.getInt(Constants.PREF.PARALLAX, 100);
-    size = sharedPrefs.getInt(Constants.PREF.SIZE, 0);
     theme = getResources().newTheme();
-
-    WindowManager windowManager = ((WindowManager) getSystemService(Context.WINDOW_SERVICE));
-    if (windowManager != null) {
-      fps = windowManager.getDefaultDisplay().getRefreshRate();
-    }
+    fps = getFrameRate();
 
     newRandomZ();
     refreshTheme();
 
     return new CustomEngine();
-  }
-
-  private VectorDrawableCompat getVectorDrawable(@DrawableRes int resId) {
-    return VectorDrawableCompat.create(getResources(), resId, theme);
   }
 
   private void refreshTheme() {
@@ -251,24 +249,25 @@ public class LiveWallpaperService extends WallpaperService {
     return ContextCompat.getColor(this, resId);
   }
 
-  class CustomEngine extends Engine {
+  private float getFrameRate() {
+    WindowManager windowManager = ((WindowManager) getSystemService(Context.WINDOW_SERVICE));
+    return windowManager != null ? windowManager.getDefaultDisplay().getRefreshRate() : 60;
+  }
 
-    private final Paint paint;
+  private VectorDrawableCompat getVectorDrawable(@DrawableRes int resId) {
+    return VectorDrawableCompat.create(getResources(), resId, theme);
+  }
+
+  class CustomEngine extends Engine {
     private float xOffset = 0;
     private float zoom = 0;
     private long lastDraw;
-
-    CustomEngine() {
-      paint = new Paint();
-    }
 
     @Override
     public void onCreate(SurfaceHolder surfaceHolder) {
       super.onCreate(surfaceHolder);
 
       setTouchEventsEnabled(false);
-
-      paint.setStyle(Paint.Style.FILL);
     }
 
     @Override
@@ -324,14 +323,14 @@ public class LiveWallpaperService extends WallpaperService {
         return;
       }
 
-      String wallpaperNew = sharedPrefs.getString(Constants.PREF.WALLPAPER, WALLPAPER.DOODLE);
-      String variantNew = sharedPrefs.getString(
-          Constants.PREF.VARIANT, Constants.VARIANT.BLACK
-      );
-      nightMode = sharedPrefs.getBoolean(Constants.PREF.NIGHT_MODE, true);
-      followSystem = sharedPrefs.getBoolean(Constants.PREF.FOLLOW_SYSTEM, true);
-      parallax = sharedPrefs.getInt(Constants.PREF.PARALLAX, 100);
-      size = sharedPrefs.getInt(Constants.PREF.SIZE, 0);
+      String wallpaperNew = sharedPrefs.getString(PREF.WALLPAPER, DEF.WALLPAPER);
+      String variantNew = sharedPrefs.getString(Constants.PREF.VARIANT, DEF.VARIANT);
+
+      nightMode = sharedPrefs.getBoolean(PREF.NIGHT_MODE, DEF.NIGHT_MODE);
+      followSystem = sharedPrefs.getBoolean(PREF.FOLLOW_SYSTEM, DEF.FOLLOW_SYSTEM);
+      parallax = sharedPrefs.getInt(PREF.PARALLAX, DEF.PARALLAX);
+      size = sharedPrefs.getFloat(PREF.SIZE, DEF.SIZE);
+      zoomIntensity = sharedPrefs.getFloat(PREF.ZOOM, DEF.ZOOM);
 
       if (!wallpaper.equals(wallpaperNew)) {
         wallpaper = wallpaperNew;
@@ -369,7 +368,7 @@ public class LiveWallpaperService extends WallpaperService {
 
     @Override
     public void onZoomChanged(float zoom) {
-      if (isZoomEnabled) {
+      if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R && zoomIntensity > 0) {
         this.zoom = zoom;
         drawFrame(false);
       }
@@ -381,14 +380,12 @@ public class LiveWallpaperService extends WallpaperService {
       }
 
       final SurfaceHolder surfaceHolder = getSurfaceHolder();
-      final Rect frame = surfaceHolder.getSurfaceFrame();
       Canvas canvas = null;
       try {
         canvas = surfaceHolder.lockCanvas();
 
         if (canvas != null) {
-          paint.setColor(colorBackground);
-          canvas.drawRect(0, 0, frame.width(), frame.height(), paint);
+          canvas.drawColor(colorBackground);
 
           switch (wallpaper) {
             case WALLPAPER.DOODLE:
@@ -455,17 +452,8 @@ public class LiveWallpaperService extends WallpaperService {
     }
 
     private void drawShape(Drawable drawable, double x, double y, double z, double scale) {
-      switch (size) {
-        case 1:
-          scale *= 1.1;
-          break;
-        case 2:
-          scale *= 1.2;
-          break;
-        default:
-          scale *= 1;
-      }
-      scale = scale - (zoom * z * ZOOM_INTENSITY);
+      scale *= size;
+      scale = scale - (zoom * z * zoomIntensity);
       int width = (int) (scale * drawable.getIntrinsicWidth());
       int height = (int) (scale * drawable.getIntrinsicHeight());
 

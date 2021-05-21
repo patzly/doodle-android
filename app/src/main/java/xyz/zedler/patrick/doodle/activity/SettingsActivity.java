@@ -32,15 +32,20 @@ import android.os.Handler;
 import android.os.Looper;
 import android.view.View;
 import android.widget.CompoundButton;
-import android.widget.RadioGroup;
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.content.ContextCompat;
 import com.google.android.material.card.MaterialCardView;
+import com.google.android.material.slider.Slider;
+import com.google.android.material.slider.Slider.OnChangeListener;
 import xyz.zedler.patrick.doodle.Constants;
+import xyz.zedler.patrick.doodle.Constants.DEF;
+import xyz.zedler.patrick.doodle.Constants.EXTRA;
 import xyz.zedler.patrick.doodle.Constants.PREF;
+import xyz.zedler.patrick.doodle.Constants.VARIANT;
 import xyz.zedler.patrick.doodle.Constants.WALLPAPER;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.behavior.ScrollBehavior;
@@ -51,12 +56,13 @@ import xyz.zedler.patrick.doodle.fragment.TextBottomSheetDialogFragment;
 import xyz.zedler.patrick.doodle.service.LiveWallpaperService;
 import xyz.zedler.patrick.doodle.util.ClickUtil;
 import xyz.zedler.patrick.doodle.util.IconUtil;
+import xyz.zedler.patrick.doodle.util.MigrationUtil;
 import xyz.zedler.patrick.doodle.util.PrefsUtil;
 import xyz.zedler.patrick.doodle.util.SheetUtil;
 import xyz.zedler.patrick.doodle.util.VibratorUtil;
 
 public class SettingsActivity extends AppCompatActivity
-    implements View.OnClickListener, CompoundButton.OnCheckedChangeListener {
+    implements View.OnClickListener, CompoundButton.OnCheckedChangeListener, OnChangeListener {
 
   private final static String TAG = SettingsActivity.class.getSimpleName();
 
@@ -76,6 +82,8 @@ public class SettingsActivity extends AppCompatActivity
     setContentView(binding.getRoot());
 
     sharedPrefs = new PrefsUtil(this).getSharedPrefs();
+    new MigrationUtil(sharedPrefs).checkForMigrations();
+
     clickUtil = new ClickUtil();
     vibratorUtil = new VibratorUtil(this);
     sheetUtil = new SheetUtil(getSupportFragmentManager());
@@ -101,17 +109,13 @@ public class SettingsActivity extends AppCompatActivity
         )
     );
 
-    binding.switchNightMode.setChecked(
-        sharedPrefs.getBoolean(Constants.PREF.NIGHT_MODE, true)
-    );
+    binding.switchNightMode.setChecked(sharedPrefs.getBoolean(PREF.NIGHT_MODE, true));
 
-    binding.switchFollowSystem.setChecked(
-        sharedPrefs.getBoolean(Constants.PREF.FOLLOW_SYSTEM, true)
-    );
+    binding.switchFollowSystem.setChecked(sharedPrefs.getBoolean(PREF.FOLLOW_SYSTEM, true));
     binding.switchFollowSystem.setEnabled(binding.switchNightMode.isChecked());
 
     boolean isDoodleThemeActive = sharedPrefs.getString(
-        Constants.PREF.WALLPAPER, WALLPAPER.DOODLE
+        PREF.WALLPAPER, WALLPAPER.DOODLE
     ).equals(WALLPAPER.DOODLE);
     setVariantSelectionEnabled(isDoodleThemeActive, false);
 
@@ -119,71 +123,35 @@ public class SettingsActivity extends AppCompatActivity
     binding.linearFollowSystemContainer.setAlpha(binding.switchNightMode.isChecked() ? 1 : 0.5f);
 
     binding.imageNightMode.setImageResource(
-        sharedPrefs.getBoolean(Constants.PREF.NIGHT_MODE, true)
+        sharedPrefs.getBoolean(PREF.NIGHT_MODE, true)
             ? R.drawable.ic_round_dark_mode_to_light_mode_anim
             : R.drawable.ic_round_light_mode_to_dark_mode_anim
     );
 
-    switch (sharedPrefs.getInt(Constants.PREF.PARALLAX, 100)) {
-      case 0:
-        binding.radioGroupParallax.check(R.id.radio_none);
-        break;
-      case 100:
-        binding.radioGroupParallax.check(R.id.radio_little);
-        break;
-      case 200:
-        binding.radioGroupParallax.check(R.id.radio_much);
-        break;
-    }
-    binding.radioGroupParallax.jumpDrawablesToCurrentState();
-    binding.radioGroupParallax.setOnCheckedChangeListener((RadioGroup group, int checkedId) -> {
-      IconUtil.start(binding.imageParallax);
-      int parallax;
-      if (checkedId == R.id.radio_little) {
-        parallax = 100;
-      } else if (checkedId == R.id.radio_much) {
-        parallax = 200;
+    binding.sliderParallax.setValue(sharedPrefs.getInt(PREF.PARALLAX, DEF.PARALLAX));
+    binding.sliderParallax.addOnChangeListener(this);
+    binding.sliderParallax.setLabelFormatter(value -> {
+      if (value == 0) {
+        return getString(R.string.setting_parallax_none);
+      } else if (value == 200) {
+        return getString(R.string.setting_parallax_much);
       } else {
-        parallax = 0;
+        return getString(R.string.setting_parallax_little);
       }
-      sharedPrefs.edit().putInt(Constants.PREF.PARALLAX, parallax).apply();
-      performHapticClick();
     });
 
-    switch (sharedPrefs.getInt(Constants.PREF.SIZE, 0)) {
-      case 0:
-        binding.radioGroupSize.check(R.id.radio_default);
-        break;
-      case 1:
-        binding.radioGroupSize.check(R.id.radio_medium);
-        break;
-      case 2:
-        binding.radioGroupSize.check(R.id.radio_big);
-        break;
-    }
-    binding.radioGroupSize.jumpDrawablesToCurrentState();
-    binding.radioGroupSize.setOnCheckedChangeListener((RadioGroup group, int checkedId) -> {
-      IconUtil.start(binding.imageSize);
-      int size;
-      if (checkedId == R.id.radio_medium) {
-        size = 1;
-      } else if (checkedId == R.id.radio_big) {
-        size = 2;
+    binding.sliderSize.setValue(sharedPrefs.getFloat(PREF.SIZE, DEF.SIZE));
+    binding.sliderSize.addOnChangeListener(this);
+    binding.sliderSize.setLabelFormatter(value -> {
+      if (value == 1) {
+        return getString(R.string.setting_size_default);
       } else {
-        size = 0;
+        return String.format("×%s", value);
       }
-      sharedPrefs.edit().putInt(PREF.SIZE, size).apply();
-      performHapticClick();
     });
 
-    refreshSelectionTheme(
-        sharedPrefs.getString(Constants.PREF.WALLPAPER, WALLPAPER.DOODLE),
-        false
-    );
-    refreshSelectionVariant(
-        sharedPrefs.getString(Constants.PREF.VARIANT, Constants.VARIANT.BLACK),
-        false
-    );
+    refreshSelectionTheme(sharedPrefs.getString(PREF.WALLPAPER, WALLPAPER.DOODLE), false);
+    refreshSelectionVariant(sharedPrefs.getString(PREF.VARIANT, VARIANT.BLACK), false);
 
     ClickUtil.setOnClickListeners(
         this,
@@ -265,13 +233,13 @@ public class SettingsActivity extends AppCompatActivity
       refreshSelectionTheme(WALLPAPER.GEOMETRIC, true);
       performHapticClick();
     } else if (id == R.id.card_black) {
-      refreshSelectionVariant(Constants.VARIANT.BLACK, true);
+      refreshSelectionVariant(VARIANT.BLACK, true);
       performHapticClick();
     } else if (id == R.id.card_white) {
-      refreshSelectionVariant(Constants.VARIANT.WHITE, true);
+      refreshSelectionVariant(VARIANT.WHITE, true);
       performHapticClick();
     } else if (id == R.id.card_orange) {
-      refreshSelectionVariant(Constants.VARIANT.ORANGE, true);
+      refreshSelectionVariant(VARIANT.ORANGE, true);
       performHapticClick();
     } else if (id == R.id.linear_night_mode) {
       binding.switchNightMode.setChecked(!binding.switchNightMode.isChecked());
@@ -333,7 +301,7 @@ public class SettingsActivity extends AppCompatActivity
           .alpha(isChecked ? 1 : 0.5f)
           .setDuration(200)
           .start();
-      sharedPrefs.edit().putBoolean(Constants.PREF.NIGHT_MODE, isChecked).apply();
+      sharedPrefs.edit().putBoolean(PREF.NIGHT_MODE, isChecked).apply();
       new Handler(Looper.getMainLooper()).postDelayed(
           () -> binding.imageNightMode.setImageResource(
               isChecked
@@ -343,9 +311,26 @@ public class SettingsActivity extends AppCompatActivity
           300
       );
     } else if (id == R.id.switch_follow_system) {
-      sharedPrefs.edit().putBoolean(Constants.PREF.FOLLOW_SYSTEM, isChecked).apply();
+      sharedPrefs.edit().putBoolean(PREF.FOLLOW_SYSTEM, isChecked).apply();
     }
     performHapticClick();
+  }
+
+  @Override
+  public void onValueChange(@NonNull Slider slider, float value, boolean fromUser) {
+    if (!fromUser) {
+      return;
+    }
+    int id = slider.getId();
+    if (id == R.id.slider_parallax) {
+      sharedPrefs.edit().putInt(PREF.PARALLAX, (int) value).apply();
+      IconUtil.start(binding.imageParallax);
+    } else if (id == R.id.slider_size) {
+      sharedPrefs.edit().putFloat(PREF.SIZE, value).apply();
+      IconUtil.start(binding.imageSize);
+    }
+    performHapticClick();
+    //notifySettingsHaveChanged();
   }
 
   private void refreshSelectionTheme(String selection, boolean animated) {
@@ -377,7 +362,7 @@ public class SettingsActivity extends AppCompatActivity
     mcv2.setStrokeColor(ContextCompat.getColor(this, R.color.stroke));
     mcv2.setChecked(false);
     setVariantSelectionEnabled(selection.equals(WALLPAPER.DOODLE), true);
-    sharedPrefs.edit().putString(Constants.PREF.WALLPAPER, selection).apply();
+    sharedPrefs.edit().putString(PREF.WALLPAPER, selection).apply();
   }
 
   private void refreshSelectionVariant(String selection, boolean animated) {
@@ -386,12 +371,12 @@ public class SettingsActivity extends AppCompatActivity
     }
     MaterialCardView mcvSelected, mcv1, mcv2;
     switch (selection) {
-      case Constants.VARIANT.WHITE:
+      case VARIANT.WHITE:
         mcvSelected = binding.cardWhite;
         mcv1 = binding.cardBlack;
         mcv2 = binding.cardOrange;
         break;
-      case Constants.VARIANT.ORANGE:
+      case VARIANT.ORANGE:
         mcvSelected = binding.cardOrange;
         mcv1 = binding.cardBlack;
         mcv2 = binding.cardWhite;
@@ -408,7 +393,7 @@ public class SettingsActivity extends AppCompatActivity
     mcv1.setChecked(false);
     mcv2.setStrokeColor(ContextCompat.getColor(this, R.color.stroke));
     mcv2.setChecked(false);
-    sharedPrefs.edit().putString(Constants.PREF.VARIANT, selection).apply();
+    sharedPrefs.edit().putString(PREF.VARIANT, selection).apply();
   }
 
   private void setActivateButtonEnabled(boolean enabled) {
@@ -452,10 +437,10 @@ public class SettingsActivity extends AppCompatActivity
 
   private void showTextBottomSheet(String file, @StringRes int title, @StringRes int link) {
     Bundle bundle = new Bundle();
-    bundle.putString(Constants.EXTRA.TITLE, getString(title));
-    bundle.putString(Constants.EXTRA.FILE, file);
+    bundle.putString(EXTRA.TITLE, getString(title));
+    bundle.putString(EXTRA.FILE, file);
     if (link != -1) {
-      bundle.putString(Constants.EXTRA.LINK, getString(link));
+      bundle.putString(EXTRA.LINK, getString(link));
     }
     sheetUtil.show(new TextBottomSheetDialogFragment(), bundle);
   }

@@ -1,6 +1,8 @@
 2.5.0:
 - Improved: show warning if current launcher is TouchWiz
 - Improved: haptic feedback in settings
+- Improved: animation efficiency by using frame rate of the device
+- Improved: sliders for customization
 
 2.4.0:
 - New: haptic feedback in settings

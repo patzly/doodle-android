@@ -77,6 +77,33 @@
     <item name="android:layout_gravity">center</item>
   </style>
 
+  <style name="Widget.Doodle.Slider" parent="Widget.MaterialComponents.Slider">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_marginStart">59dp</item>
+    <item name="android:layout_marginEnd">14dp</item>
+    <item name="android:stepSize">1</item>
+    <item name="trackColorInactive">@color/on_background_tertiary</item>
+    <item name="tickColorInactive">@color/on_background_secondary</item>
+    <item name="trackColorActive">@color/secondary</item>
+    <item name="thumbColor">@color/secondary</item>
+    <item name="tickColorActive">@color/transparent</item>
+    <item name="haloColor">@color/highlight</item>
+    <item name="thumbRadius">9.7dp</item>
+    <item name="labelStyle">@style/Widget.Doodle.Tooltip</item>
+  </style>
+
+  <style name="Widget.Doodle.Tooltip" parent="Widget.MaterialComponents.Tooltip">
+    <item name="android:textColor">@color/background</item>
+    <item name="android:textAppearance">@style/TextAppearance.Doodle.Tooltip</item>
+    <item name="shapeAppearance">@style/ShapeAppearance.Doodle.Tooltip</item>
+  </style>
+
+  <style name="ShapeAppearance.Doodle.Tooltip" parent="">
+    <item name="cornerFamily">rounded</item>
+    <item name="cornerSize">6dp</item>
+  </style>
+
   <!-- LIST -->
 
     <style name="Widget.Doodle.LinearLayout.ListItem" parent="">
@@ -232,6 +259,11 @@
     <item name="android:textSize">19sp</item>
     <item name="android:fontFamily">@font/jost_bold</item>
     <item name="singleLine">true</item>
+  </style>
+
+  <style name="TextAppearance.Doodle.Tooltip" parent="TextAppearance.MaterialComponents.Tooltip">
+    <item name="android:textColor">@color/background</item>
+    <item name="fontFamily">@font/jost_book</item>
   </style>
 
   <!-- WALLPAPERS -->

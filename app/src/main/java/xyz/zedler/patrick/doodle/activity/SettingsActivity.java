@@ -110,7 +110,7 @@ public class SettingsActivity extends AppCompatActivity
     binding.switchFollowSystem.setEnabled(binding.switchNightMode.isChecked());
 
     boolean isDoodleThemeActive = sharedPrefs.getString(
-        Constants.PREF.THEME, Constants.THEME.DOODLE
+        Constants.PREF.WALLPAPER, Constants.THEME.DOODLE
     ).equals(Constants.THEME.DOODLE);
     setVariantSelectionEnabled(isDoodleThemeActive, false);
 
@@ -176,7 +176,7 @@ public class SettingsActivity extends AppCompatActivity
     });
 
     refreshSelectionTheme(
-        sharedPrefs.getString(Constants.PREF.THEME, Constants.THEME.DOODLE),
+        sharedPrefs.getString(Constants.PREF.WALLPAPER, Constants.THEME.DOODLE),
         false
     );
     refreshSelectionVariant(
@@ -376,7 +376,7 @@ public class SettingsActivity extends AppCompatActivity
     mcv2.setStrokeColor(ContextCompat.getColor(this, R.color.stroke));
     mcv2.setChecked(false);
     setVariantSelectionEnabled(selection.equals(Constants.THEME.DOODLE), true);
-    sharedPrefs.edit().putString(Constants.PREF.THEME, selection).apply();
+    sharedPrefs.edit().putString(Constants.PREF.WALLPAPER, selection).apply();
   }
 
   private void refreshSelectionVariant(String selection, boolean animated) {

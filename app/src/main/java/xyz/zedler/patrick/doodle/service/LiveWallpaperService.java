@@ -22,7 +22,7 @@ package xyz.zedler.patrick.doodle.service;
 import android.app.WallpaperColors;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
-import android.content.res.Resources;
+import android.content.res.Resources.Theme;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
@@ -50,7 +50,7 @@ public class LiveWallpaperService extends WallpaperService {
   private final static String TAG = LiveWallpaperService.class.getSimpleName();
 
   private SharedPreferences sharedPrefs;
-  private Resources.Theme themeRes;
+  private Theme themeRes;
   private String theme, variant;
   private boolean nightMode, followSystem, isNight;
   private int colorBackground, parallax, size;
@@ -103,7 +103,7 @@ public class LiveWallpaperService extends WallpaperService {
   public Engine onCreateEngine() {
     sharedPrefs = new PrefsUtil(this).getSharedPrefs();
 
-    theme = sharedPrefs.getString(Constants.PREF.THEME, Constants.THEME.DOODLE);
+    theme = sharedPrefs.getString(Constants.PREF.WALLPAPER, Constants.THEME.DOODLE);
     variant = sharedPrefs.getString(Constants.PREF.VARIANT, Constants.VARIANT.BLACK);
     nightMode = sharedPrefs.getBoolean(Constants.PREF.NIGHT_MODE, true);
     followSystem = sharedPrefs.getBoolean(Constants.PREF.FOLLOW_SYSTEM, true);
@@ -118,8 +118,8 @@ public class LiveWallpaperService extends WallpaperService {
     return new CustomEngine();
   }
 
-  private VectorDrawableCompat getVectorDrawable(@DrawableRes int resId, Resources.Theme theme) {
-    return VectorDrawableCompat.create(getApplicationContext().getResources(), resId, theme);
+  private VectorDrawableCompat getVectorDrawable(@DrawableRes int resId) {
+    return VectorDrawableCompat.create(getResources(), resId, themeRes);
   }
 
   private void refreshTheme() {
@@ -169,29 +169,29 @@ public class LiveWallpaperService extends WallpaperService {
 
     switch (theme) {
       case Constants.THEME.DOODLE:
-        doodleArc = getVectorDrawable(R.drawable.doodle_shape_arc, themeRes);
-        doodleDot = getVectorDrawable(R.drawable.doodle_shape_dot, themeRes);
-        doodleU = getVectorDrawable(R.drawable.doodle_shape_u, themeRes);
-        doodleRect = getVectorDrawable(R.drawable.doodle_shape_rect, themeRes);
-        doodleRing = getVectorDrawable(R.drawable.doodle_shape_ring, themeRes);
-        doodleMoon = getVectorDrawable(R.drawable.doodle_shape_moon, themeRes);
-        doodlePoly = getVectorDrawable(R.drawable.doodle_shape_poly, themeRes);
+        doodleArc = getVectorDrawable(R.drawable.doodle_shape_arc);
+        doodleDot = getVectorDrawable(R.drawable.doodle_shape_dot);
+        doodleU = getVectorDrawable(R.drawable.doodle_shape_u);
+        doodleRect = getVectorDrawable(R.drawable.doodle_shape_rect);
+        doodleRing = getVectorDrawable(R.drawable.doodle_shape_ring);
+        doodleMoon = getVectorDrawable(R.drawable.doodle_shape_moon);
+        doodlePoly = getVectorDrawable(R.drawable.doodle_shape_poly);
         break;
       case Constants.THEME.NEON:
-        neonKidneyFront = getVectorDrawable(R.drawable.neon_shape_kidney_front, null);
-        neonCircleFront = getVectorDrawable(R.drawable.neon_shape_circle_front, themeRes);
-        neonPill = getVectorDrawable(R.drawable.neon_shape_pill, themeRes);
-        neonLine = getVectorDrawable(R.drawable.neon_shape_line, themeRes);
-        neonKidneyBack = getVectorDrawable(R.drawable.neon_shape_kidney_back, null);
-        neonCircleBack = getVectorDrawable(R.drawable.neon_shape_circle_back, themeRes);
-        neonDot = getVectorDrawable(R.drawable.neon_shape_dot, themeRes);
+        neonKidneyFront = getVectorDrawable(R.drawable.neon_shape_kidney_front);
+        neonCircleFront = getVectorDrawable(R.drawable.neon_shape_circle_front);
+        neonPill = getVectorDrawable(R.drawable.neon_shape_pill);
+        neonLine = getVectorDrawable(R.drawable.neon_shape_line);
+        neonKidneyBack = getVectorDrawable(R.drawable.neon_shape_kidney_back);
+        neonCircleBack = getVectorDrawable(R.drawable.neon_shape_circle_back);
+        neonDot = getVectorDrawable(R.drawable.neon_shape_dot);
         break;
       case Constants.THEME.GEOMETRIC:
-        geometricRect = getVectorDrawable(R.drawable.geometric_shape_rect, themeRes);
-        geometricLine = getVectorDrawable(R.drawable.geometric_shape_line, themeRes);
-        geometricPoly = getVectorDrawable(R.drawable.geometric_shape_poly, themeRes);
-        geometricCircle = getVectorDrawable(R.drawable.geometric_shape_circle, themeRes);
-        geometricSheet = getVectorDrawable(R.drawable.geometric_shape_sheet, themeRes);
+        geometricRect = getVectorDrawable(R.drawable.geometric_shape_rect);
+        geometricLine = getVectorDrawable(R.drawable.geometric_shape_line);
+        geometricPoly = getVectorDrawable(R.drawable.geometric_shape_poly);
+        geometricCircle = getVectorDrawable(R.drawable.geometric_shape_circle);
+        geometricSheet = getVectorDrawable(R.drawable.geometric_shape_sheet);
         break;
     }
   }
@@ -310,7 +310,7 @@ public class LiveWallpaperService extends WallpaperService {
         return;
       }
 
-      String themeNew = sharedPrefs.getString(Constants.PREF.THEME, Constants.THEME.DOODLE);
+      String themeNew = sharedPrefs.getString(Constants.PREF.WALLPAPER, Constants.THEME.DOODLE);
       String variantNew = sharedPrefs.getString(
           Constants.PREF.VARIANT, Constants.VARIANT.BLACK
       );

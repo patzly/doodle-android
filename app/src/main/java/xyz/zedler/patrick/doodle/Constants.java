@@ -27,7 +27,7 @@ public final class Constants {
 
     public final static String NIGHT_MODE = "night_mode";
     public final static String FOLLOW_SYSTEM = "follow_system";
-    public final static String THEME = "theme";
+    public final static String WALLPAPER = "theme";
     public final static String VARIANT = "variant";
     public final static String PARALLAX = "parallax";
     public final static String SIZE = "size";

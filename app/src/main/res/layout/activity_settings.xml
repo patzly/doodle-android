@@ -421,6 +421,45 @@
         android:valueTo="1.5"
         android:stepSize="0.1"/>
 
+      <LinearLayout
+        android:id="@+id/linear_zoom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+          style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine"
+          android:paddingBottom="0dp">
+
+          <ImageView
+            android:id="@+id/image_zoom"
+            style="@style/Widget.Doodle.ImageView.ListItem.Icon"
+            android:src="@drawable/ic_round_filter_center_focus_anim"
+            tools:ignore="ContentDescription" />
+
+          <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
+
+            <TextView
+              style="@style/Widget.Doodle.TextView.ListItem.Title"
+              android:text="@string/setting_zoom" />
+
+            <TextView
+              style="@style/Widget.Doodle.TextView.ListItem.Description"
+              android:text="@string/setting_zoom_description" />
+
+          </LinearLayout>
+
+        </LinearLayout>
+
+        <com.google.android.material.slider.Slider
+          android:id="@+id/slider_zoom"
+          style="@style/Widget.Doodle.Slider"
+          android:valueFrom="0"
+          android:valueTo="2"
+          android:stepSize="1"/>
+
+      </LinearLayout>
+
       <TextView
         style="@style/Widget.Doodle.TextView.Category"
         android:text="@string/category_about" />

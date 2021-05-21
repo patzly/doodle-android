@@ -39,8 +39,11 @@
   <string name="setting_size">Shape size</string>
   <string name="setting_size_description">Useful for big screens</string>
   <string name="setting_size_default">Default</string>
-  <string name="setting_size_medium">Medium</string>
-  <string name="setting_size_big">Big</string>
+  <string name="setting_zoom">Zoom effect intensity</string>
+  <string name="setting_zoom_description">Not supported by every launcher</string>
+  <string name="setting_zoom_off">Off</string>
+  <string name="setting_zoom_little">Little</string>
+  <string name="setting_zoom_much">Much</string>
 
   <string name="info_title">Information</string>
   <string name="info_description">Colorful live wallpapers with auto dark mode and battery-efficient parallax effect. Tap to learn more.</string>

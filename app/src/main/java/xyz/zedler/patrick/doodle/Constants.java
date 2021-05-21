@@ -38,7 +38,7 @@ public final class Constants {
 
     public final static boolean NIGHT_MODE = true;
     public final static boolean FOLLOW_SYSTEM = true;
-    public final static float ZOOM = 0.3f;
+    public final static int ZOOM = 1;
     public final static String WALLPAPER = Constants.WALLPAPER.DOODLE;
     public final static String VARIANT = Constants.VARIANT.BLACK;
     public final static int PARALLAX = 100;

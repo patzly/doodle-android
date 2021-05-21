@@ -150,6 +150,18 @@ public class SettingsActivity extends AppCompatActivity
       }
     });
 
+    binding.sliderZoom.setValue(sharedPrefs.getInt(PREF.ZOOM, DEF.ZOOM));
+    binding.sliderZoom.addOnChangeListener(this);
+    binding.sliderZoom.setLabelFormatter(value -> {
+      if (value == 0) {
+        return getString(R.string.setting_zoom_off);
+      } else if (value == 2) {
+        return getString(R.string.setting_zoom_much);
+      } else {
+        return getString(R.string.setting_zoom_little);
+      }
+    });
+
     refreshSelectionTheme(sharedPrefs.getString(PREF.WALLPAPER, WALLPAPER.DOODLE), false);
     refreshSelectionVariant(sharedPrefs.getString(PREF.VARIANT, VARIANT.BLACK), false);
 
@@ -328,6 +340,9 @@ public class SettingsActivity extends AppCompatActivity
     } else if (id == R.id.slider_size) {
       sharedPrefs.edit().putFloat(PREF.SIZE, value).apply();
       IconUtil.start(binding.imageSize);
+    } else if (id == R.id.slider_zoom) {
+      sharedPrefs.edit().putInt(PREF.ZOOM, (int) value).apply();
+      IconUtil.start(binding.imageZoom);
     }
     performHapticClick();
     //notifySettingsHaveChanged();

@@ -63,7 +63,7 @@ public class LiveWallpaperService extends WallpaperService {
   private int parallax;
   private float size;
   private float fps;
-  private float zoomIntensity;
+  private int zoomIntensity;
 
   private VectorDrawableCompat doodleArc;
   private VectorDrawableCompat doodleDot;
@@ -120,7 +120,7 @@ public class LiveWallpaperService extends WallpaperService {
     followSystem = sharedPrefs.getBoolean(PREF.FOLLOW_SYSTEM, DEF.FOLLOW_SYSTEM);
     parallax = sharedPrefs.getInt(PREF.PARALLAX, DEF.PARALLAX);
     size = sharedPrefs.getFloat(PREF.SIZE, DEF.SIZE);
-    zoomIntensity = sharedPrefs.getFloat(PREF.ZOOM, DEF.ZOOM);
+    zoomIntensity = sharedPrefs.getInt(PREF.ZOOM, DEF.ZOOM);
 
     isNight = isNightMode();
     theme = getResources().newTheme();
@@ -330,7 +330,7 @@ public class LiveWallpaperService extends WallpaperService {
       followSystem = sharedPrefs.getBoolean(PREF.FOLLOW_SYSTEM, DEF.FOLLOW_SYSTEM);
       parallax = sharedPrefs.getInt(PREF.PARALLAX, DEF.PARALLAX);
       size = sharedPrefs.getFloat(PREF.SIZE, DEF.SIZE);
-      zoomIntensity = sharedPrefs.getFloat(PREF.ZOOM, DEF.ZOOM);
+      zoomIntensity = sharedPrefs.getInt(PREF.ZOOM, DEF.ZOOM);
 
       if (!wallpaper.equals(wallpaperNew)) {
         wallpaper = wallpaperNew;
@@ -453,7 +453,21 @@ public class LiveWallpaperService extends WallpaperService {
 
     private void drawShape(Drawable drawable, double x, double y, double z, double scale) {
       scale *= size;
-      scale = scale - (zoom * z * zoomIntensity);
+
+      float intensity;
+      switch (zoomIntensity) {
+        case 1:
+          intensity = 0.3f;
+          break;
+        case 2:
+          intensity = 0.5f;
+          break;
+        default:
+          intensity = 0;
+          break;
+      }
+
+      scale = scale - (zoom * z * intensity);
       int width = (int) (scale * drawable.getIntrinsicWidth());
       int height = (int) (scale * drawable.getIntrinsicHeight());
 

@@ -33,7 +33,7 @@ public final class Constants {
     public final static String SIZE = "size";
   }
 
-  public final static class THEME {
+  public final static class WALLPAPER {
 
     public final static String DOODLE = "doodle";
     public final static String NEON = "neon";

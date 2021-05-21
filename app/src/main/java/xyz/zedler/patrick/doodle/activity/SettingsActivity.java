@@ -41,6 +41,7 @@ import androidx.core.content.ContextCompat;
 import com.google.android.material.card.MaterialCardView;
 import xyz.zedler.patrick.doodle.Constants;
 import xyz.zedler.patrick.doodle.Constants.PREF;
+import xyz.zedler.patrick.doodle.Constants.WALLPAPER;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.behavior.ScrollBehavior;
 import xyz.zedler.patrick.doodle.behavior.SystemBarBehavior;
@@ -110,8 +111,8 @@ public class SettingsActivity extends AppCompatActivity
     binding.switchFollowSystem.setEnabled(binding.switchNightMode.isChecked());
 
     boolean isDoodleThemeActive = sharedPrefs.getString(
-        Constants.PREF.WALLPAPER, Constants.THEME.DOODLE
-    ).equals(Constants.THEME.DOODLE);
+        Constants.PREF.WALLPAPER, WALLPAPER.DOODLE
+    ).equals(WALLPAPER.DOODLE);
     setVariantSelectionEnabled(isDoodleThemeActive, false);
 
     binding.linearFollowSystem.setEnabled(binding.switchNightMode.isChecked());
@@ -176,7 +177,7 @@ public class SettingsActivity extends AppCompatActivity
     });
 
     refreshSelectionTheme(
-        sharedPrefs.getString(Constants.PREF.WALLPAPER, Constants.THEME.DOODLE),
+        sharedPrefs.getString(Constants.PREF.WALLPAPER, WALLPAPER.DOODLE),
         false
     );
     refreshSelectionVariant(
@@ -255,13 +256,13 @@ public class SettingsActivity extends AppCompatActivity
       showTextBottomSheet("info", R.string.info_title, -1);
       performHapticClick();
     } else if (id == R.id.card_doodle) {
-      refreshSelectionTheme(Constants.THEME.DOODLE, true);
+      refreshSelectionTheme(WALLPAPER.DOODLE, true);
       performHapticClick();
     } else if (id == R.id.card_neon) {
-      refreshSelectionTheme(Constants.THEME.NEON, true);
+      refreshSelectionTheme(WALLPAPER.NEON, true);
       performHapticClick();
     } else if (id == R.id.card_geometric) {
-      refreshSelectionTheme(Constants.THEME.GEOMETRIC, true);
+      refreshSelectionTheme(WALLPAPER.GEOMETRIC, true);
       performHapticClick();
     } else if (id == R.id.card_black) {
       refreshSelectionVariant(Constants.VARIANT.BLACK, true);
@@ -349,16 +350,16 @@ public class SettingsActivity extends AppCompatActivity
 
   private void refreshSelectionTheme(String selection, boolean animated) {
     if (animated) {
-      IconUtil.start(binding.imageTheme);
+      IconUtil.start(binding.imageWallpaper);
     }
     MaterialCardView mcvSelected, mcv1, mcv2;
     switch (selection) {
-      case Constants.THEME.NEON:
+      case WALLPAPER.NEON:
         mcvSelected = binding.cardNeon;
         mcv1 = binding.cardDoodle;
         mcv2 = binding.cardGeometric;
         break;
-      case Constants.THEME.GEOMETRIC:
+      case WALLPAPER.GEOMETRIC:
         mcvSelected = binding.cardGeometric;
         mcv1 = binding.cardDoodle;
         mcv2 = binding.cardNeon;
@@ -375,7 +376,7 @@ public class SettingsActivity extends AppCompatActivity
     mcv1.setChecked(false);
     mcv2.setStrokeColor(ContextCompat.getColor(this, R.color.stroke));
     mcv2.setChecked(false);
-    setVariantSelectionEnabled(selection.equals(Constants.THEME.DOODLE), true);
+    setVariantSelectionEnabled(selection.equals(WALLPAPER.DOODLE), true);
     sharedPrefs.edit().putString(Constants.PREF.WALLPAPER, selection).apply();
   }
 

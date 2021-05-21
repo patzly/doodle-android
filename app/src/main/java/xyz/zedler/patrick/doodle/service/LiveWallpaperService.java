@@ -40,7 +40,7 @@ import androidx.core.content.ContextCompat;
 import androidx.vectordrawable.graphics.drawable.VectorDrawableCompat;
 import java.util.Random;
 import xyz.zedler.patrick.doodle.Constants;
-import xyz.zedler.patrick.doodle.Constants.THEME;
+import xyz.zedler.patrick.doodle.Constants.WALLPAPER;
 import xyz.zedler.patrick.doodle.Constants.VARIANT;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.util.PrefsUtil;
@@ -50,8 +50,8 @@ public class LiveWallpaperService extends WallpaperService {
   private final static String TAG = LiveWallpaperService.class.getSimpleName();
 
   private SharedPreferences sharedPrefs;
-  private Theme themeRes;
-  private String theme, variant;
+  private Theme theme;
+  private String wallpaper, variant;
   private boolean nightMode, followSystem, isNight;
   private int colorBackground, parallax, size;
 
@@ -103,14 +103,14 @@ public class LiveWallpaperService extends WallpaperService {
   public Engine onCreateEngine() {
     sharedPrefs = new PrefsUtil(this).getSharedPrefs();
 
-    theme = sharedPrefs.getString(Constants.PREF.WALLPAPER, Constants.THEME.DOODLE);
+    wallpaper = sharedPrefs.getString(Constants.PREF.WALLPAPER, WALLPAPER.DOODLE);
     variant = sharedPrefs.getString(Constants.PREF.VARIANT, Constants.VARIANT.BLACK);
     nightMode = sharedPrefs.getBoolean(Constants.PREF.NIGHT_MODE, true);
     followSystem = sharedPrefs.getBoolean(Constants.PREF.FOLLOW_SYSTEM, true);
     isNight = isNightMode();
     parallax = sharedPrefs.getInt(Constants.PREF.PARALLAX, 100);
     size = sharedPrefs.getInt(Constants.PREF.SIZE, 0);
-    themeRes = getResources().newTheme();
+    theme = getResources().newTheme();
 
     newRandomZ();
     refreshTheme();
@@ -119,56 +119,56 @@ public class LiveWallpaperService extends WallpaperService {
   }
 
   private VectorDrawableCompat getVectorDrawable(@DrawableRes int resId) {
-    return VectorDrawableCompat.create(getResources(), resId, themeRes);
+    return VectorDrawableCompat.create(getResources(), resId, theme);
   }
 
   private void refreshTheme() {
     if (isNightMode()) {
-      switch (theme) {
-        case Constants.THEME.DOODLE:
-          themeRes.applyStyle(R.style.Wallpaper_Doodle_Night, true);
+      switch (wallpaper) {
+        case WALLPAPER.DOODLE:
+          theme.applyStyle(R.style.Wallpaper_Doodle_Night, true);
           colorBackground = getCompatColor(R.color.wp_bg_doodle_night);
           break;
-        case Constants.THEME.NEON:
-          themeRes.applyStyle(R.style.Wallpaper_Neon_Night, true);
+        case WALLPAPER.NEON:
+          theme.applyStyle(R.style.Wallpaper_Neon_Night, true);
           colorBackground = getCompatColor(R.color.wp_bg_neon_night);
           break;
-        case Constants.THEME.GEOMETRIC:
-          themeRes.applyStyle(R.style.Wallpaper_Geometric_Night, true);
+        case WALLPAPER.GEOMETRIC:
+          theme.applyStyle(R.style.Wallpaper_Geometric_Night, true);
           colorBackground = getCompatColor(R.color.wp_bg_geometric_night);
           break;
       }
     } else {
-      switch (theme) {
-        case Constants.THEME.DOODLE:
+      switch (wallpaper) {
+        case WALLPAPER.DOODLE:
           switch (variant) {
             case Constants.VARIANT.BLACK:
-              themeRes.applyStyle(R.style.Wallpaper_Doodle_Black, true);
+              theme.applyStyle(R.style.Wallpaper_Doodle_Black, true);
               colorBackground = getCompatColor(R.color.wp_bg_doodle_black);
               break;
             case Constants.VARIANT.WHITE:
-              themeRes.applyStyle(R.style.Wallpaper_Doodle_White, true);
+              theme.applyStyle(R.style.Wallpaper_Doodle_White, true);
               colorBackground = getCompatColor(R.color.wp_bg_doodle_white);
               break;
             case Constants.VARIANT.ORANGE:
-              themeRes.applyStyle(R.style.Wallpaper_Doodle_Orange, true);
+              theme.applyStyle(R.style.Wallpaper_Doodle_Orange, true);
               colorBackground = getCompatColor(R.color.wp_bg_doodle_orange);
               break;
           }
           break;
-        case Constants.THEME.NEON:
-          themeRes.applyStyle(R.style.Wallpaper_Neon, true);
+        case WALLPAPER.NEON:
+          theme.applyStyle(R.style.Wallpaper_Neon, true);
           colorBackground = getCompatColor(R.color.wp_bg_neon);
           break;
-        case Constants.THEME.GEOMETRIC:
-          themeRes.applyStyle(R.style.Wallpaper_Geometric, true);
+        case WALLPAPER.GEOMETRIC:
+          theme.applyStyle(R.style.Wallpaper_Geometric, true);
           colorBackground = getCompatColor(R.color.wp_bg_geometric);
           break;
       }
     }
 
-    switch (theme) {
-      case Constants.THEME.DOODLE:
+    switch (wallpaper) {
+      case WALLPAPER.DOODLE:
         doodleArc = getVectorDrawable(R.drawable.doodle_shape_arc);
         doodleDot = getVectorDrawable(R.drawable.doodle_shape_dot);
         doodleU = getVectorDrawable(R.drawable.doodle_shape_u);
@@ -177,7 +177,7 @@ public class LiveWallpaperService extends WallpaperService {
         doodleMoon = getVectorDrawable(R.drawable.doodle_shape_moon);
         doodlePoly = getVectorDrawable(R.drawable.doodle_shape_poly);
         break;
-      case Constants.THEME.NEON:
+      case WALLPAPER.NEON:
         neonKidneyFront = getVectorDrawable(R.drawable.neon_shape_kidney_front);
         neonCircleFront = getVectorDrawable(R.drawable.neon_shape_circle_front);
         neonPill = getVectorDrawable(R.drawable.neon_shape_pill);
@@ -186,7 +186,7 @@ public class LiveWallpaperService extends WallpaperService {
         neonCircleBack = getVectorDrawable(R.drawable.neon_shape_circle_back);
         neonDot = getVectorDrawable(R.drawable.neon_shape_dot);
         break;
-      case Constants.THEME.GEOMETRIC:
+      case WALLPAPER.GEOMETRIC:
         geometricRect = getVectorDrawable(R.drawable.geometric_shape_rect);
         geometricLine = getVectorDrawable(R.drawable.geometric_shape_line);
         geometricPoly = getVectorDrawable(R.drawable.geometric_shape_poly);
@@ -198,8 +198,8 @@ public class LiveWallpaperService extends WallpaperService {
 
   private void newRandomZ() {
     Random random = new Random();
-    switch (theme) {
-      case Constants.THEME.DOODLE:
+    switch (wallpaper) {
+      case WALLPAPER.DOODLE:
         zDoodleArc = random.nextFloat();
         zDoodleDot = random.nextFloat();
         zDoodleU = random.nextFloat();
@@ -208,7 +208,7 @@ public class LiveWallpaperService extends WallpaperService {
         zDoodleMoon = random.nextFloat();
         zDoodlePoly = random.nextFloat();
         break;
-      case Constants.THEME.NEON:
+      case WALLPAPER.NEON:
         zNeonKidneyFront = random.nextFloat();
         zNeonCircleFront = random.nextFloat();
         zNeonPill = random.nextFloat();
@@ -217,7 +217,7 @@ public class LiveWallpaperService extends WallpaperService {
         zNeonCircleBack = random.nextFloat();
         zNeonDot = random.nextFloat();
         break;
-      case Constants.THEME.GEOMETRIC:
+      case WALLPAPER.GEOMETRIC:
         zGeometricRect = random.nextFloat();
         zGeometricLine = random.nextFloat();
         zGeometricPoly = random.nextFloat();
@@ -261,20 +261,20 @@ public class LiveWallpaperService extends WallpaperService {
     public WallpaperColors onComputeColors() {
       int background = 0xFF232323;
       if (isNightMode()) {
-        switch (theme) {
-          case THEME.DOODLE:
+        switch (wallpaper) {
+          case WALLPAPER.DOODLE:
             background = 0xFF272628;
             break;
-          case THEME.NEON:
+          case WALLPAPER.NEON:
             background = 0xFF0e032d;
             break;
-          case THEME.GEOMETRIC:
+          case WALLPAPER.GEOMETRIC:
             background = 0xFF212121;
             break;
         }
       } else {
-        switch (theme) {
-          case THEME.DOODLE:
+        switch (wallpaper) {
+          case WALLPAPER.DOODLE:
             switch (variant) {
               case VARIANT.BLACK:
                 background = 0xFF232323;
@@ -287,10 +287,10 @@ public class LiveWallpaperService extends WallpaperService {
                 break;
             }
             break;
-          case THEME.NEON:
+          case WALLPAPER.NEON:
             background = 0xFFcbcbef;
             break;
-          case THEME.GEOMETRIC:
+          case WALLPAPER.GEOMETRIC:
             background = 0xFFb9c1c7;
             break;
         }
@@ -310,7 +310,7 @@ public class LiveWallpaperService extends WallpaperService {
         return;
       }
 
-      String themeNew = sharedPrefs.getString(Constants.PREF.WALLPAPER, Constants.THEME.DOODLE);
+      String wallpaperNew = sharedPrefs.getString(Constants.PREF.WALLPAPER, WALLPAPER.DOODLE);
       String variantNew = sharedPrefs.getString(
           Constants.PREF.VARIANT, Constants.VARIANT.BLACK
       );
@@ -319,8 +319,8 @@ public class LiveWallpaperService extends WallpaperService {
       parallax = sharedPrefs.getInt(Constants.PREF.PARALLAX, 100);
       size = sharedPrefs.getInt(Constants.PREF.SIZE, 0);
 
-      if (!theme.equals(themeNew)) {
-        theme = themeNew;
+      if (!wallpaper.equals(wallpaperNew)) {
+        wallpaper = wallpaperNew;
         variant = variantNew;
         refreshTheme();
         colorsHaveChanged();
@@ -365,8 +365,8 @@ public class LiveWallpaperService extends WallpaperService {
           paint.setColor(colorBackground);
           canvas.drawRect(0, 0, frame.width(), frame.height(), paint);
 
-          switch (theme) {
-            case Constants.THEME.DOODLE:
+          switch (wallpaper) {
+            case WALLPAPER.DOODLE:
               drawShape(doodleArc, 0.25, 0.28, zDoodleArc, xOffset);
               drawShape(doodleDot, 0.142, 0.468, zDoodleDot, xOffset);
               drawShape(doodleU, 0.25, 0.72, zDoodleU, xOffset);
@@ -380,7 +380,7 @@ public class LiveWallpaperService extends WallpaperService {
                   doodleRing, doodleMoon, doodlePoly
               );
               break;
-            case Constants.THEME.NEON:
+            case WALLPAPER.NEON:
               drawShape(neonKidneyFront, 0.85, 0.65, zNeonKidneyFront, xOffset);
               drawShape(neonCircleFront, 0.98, 0.468, zNeonCircleFront, xOffset);
               drawShape(neonPill, 0.26, 0.58, zNeonPill, xOffset);
@@ -394,7 +394,7 @@ public class LiveWallpaperService extends WallpaperService {
                   neonPill, neonCircleFront, neonKidneyFront
               );
               break;
-            case Constants.THEME.GEOMETRIC:
+            case WALLPAPER.GEOMETRIC:
               drawShape(geometricRect, 0.35, 0.78, zGeometricRect, xOffset);
               drawShape(geometricLine, 0.5, 0.82, zGeometricLine, xOffset);
               drawShape(geometricPoly, 0.8, 0.67, zGeometricPoly, xOffset);

@@ -20,6 +20,7 @@
 package xyz.zedler.patrick.doodle.service;
 
 import android.app.WallpaperColors;
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.content.res.Resources.Theme;
@@ -32,16 +33,18 @@ import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
 import android.os.Handler;
 import android.os.Looper;
+import android.os.SystemClock;
 import android.service.wallpaper.WallpaperService;
 import android.view.SurfaceHolder;
+import android.view.WindowManager;
 import androidx.annotation.ColorRes;
 import androidx.annotation.DrawableRes;
 import androidx.core.content.ContextCompat;
 import androidx.vectordrawable.graphics.drawable.VectorDrawableCompat;
 import java.util.Random;
 import xyz.zedler.patrick.doodle.Constants;
-import xyz.zedler.patrick.doodle.Constants.WALLPAPER;
 import xyz.zedler.patrick.doodle.Constants.VARIANT;
+import xyz.zedler.patrick.doodle.Constants.WALLPAPER;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.util.PrefsUtil;
 
@@ -52,8 +55,11 @@ public class LiveWallpaperService extends WallpaperService {
   private SharedPreferences sharedPrefs;
   private Theme theme;
   private String wallpaper, variant;
-  private boolean nightMode, followSystem, isNight;
+  private boolean nightMode, followSystem, isNight, isZoomEnabled;
   private int colorBackground, parallax, size;
+  private float fps = 60;
+
+  private final static double ZOOM_INTENSITY = 0.3;
 
   private VectorDrawableCompat doodleArc;
   private VectorDrawableCompat doodleDot;
@@ -107,10 +113,16 @@ public class LiveWallpaperService extends WallpaperService {
     variant = sharedPrefs.getString(Constants.PREF.VARIANT, Constants.VARIANT.BLACK);
     nightMode = sharedPrefs.getBoolean(Constants.PREF.NIGHT_MODE, true);
     followSystem = sharedPrefs.getBoolean(Constants.PREF.FOLLOW_SYSTEM, true);
+    isZoomEnabled = sharedPrefs.getBoolean(Constants.PREF.ZOOM, true);
     isNight = isNightMode();
     parallax = sharedPrefs.getInt(Constants.PREF.PARALLAX, 100);
     size = sharedPrefs.getInt(Constants.PREF.SIZE, 0);
     theme = getResources().newTheme();
+
+    WindowManager windowManager = ((WindowManager) getSystemService(Context.WINDOW_SERVICE));
+    if (windowManager != null) {
+      fps = windowManager.getDefaultDisplay().getRefreshRate();
+    }
 
     newRandomZ();
     refreshTheme();
@@ -243,6 +255,8 @@ public class LiveWallpaperService extends WallpaperService {
 
     private final Paint paint;
     private float xOffset = 0;
+    private float zoom = 0;
+    private long lastDraw;
 
     CustomEngine() {
       paint = new Paint();
@@ -335,7 +349,7 @@ public class LiveWallpaperService extends WallpaperService {
       }
 
       newRandomZ();
-      drawFrame(xOffset);
+      drawFrame(true);
     }
 
     @Override
@@ -347,14 +361,25 @@ public class LiveWallpaperService extends WallpaperService {
         int xPixels,
         int yPixels
     ) {
-      super.onOffsetsChanged(xOffset, yOffset, xStep, yStep, xPixels, yPixels);
       if (parallax != 0) {
-        drawFrame(xOffset);
+        this.xOffset = xOffset;
+        drawFrame(false);
       }
-      this.xOffset = xOffset;
     }
 
-    void drawFrame(float xOffset) {
+    @Override
+    public void onZoomChanged(float zoom) {
+      if (isZoomEnabled) {
+        this.zoom = zoom;
+        drawFrame(false);
+      }
+    }
+
+    void drawFrame(boolean force) {
+      if (!force && SystemClock.elapsedRealtime() - lastDraw < 1000 / fps) {
+        return;
+      }
+
       final SurfaceHolder surfaceHolder = getSurfaceHolder();
       final Rect frame = surfaceHolder.getSurfaceFrame();
       Canvas canvas = null;
@@ -367,13 +392,13 @@ public class LiveWallpaperService extends WallpaperService {
 
           switch (wallpaper) {
             case WALLPAPER.DOODLE:
-              drawShape(doodleArc, 0.25, 0.28, zDoodleArc, xOffset);
-              drawShape(doodleDot, 0.142, 0.468, zDoodleDot, xOffset);
-              drawShape(doodleU, 0.25, 0.72, zDoodleU, xOffset);
-              drawShape(doodleRect, 0.7, 0.8, zDoodleRect, xOffset);
-              drawShape(doodleRing, 0.66, 0.5, zDoodleRing, xOffset);
-              drawShape(doodleMoon, 0.75, 0.56, zDoodleMoon, xOffset);
-              drawShape(doodlePoly, 0.7, 0.2, zDoodlePoly, xOffset);
+              drawShape(doodleArc, 0.25, 0.28, zDoodleArc);
+              drawShape(doodleDot, 0.142, 0.468, zDoodleDot);
+              drawShape(doodleU, 0.25, 0.72, zDoodleU);
+              drawShape(doodleRect, 0.7, 0.8, zDoodleRect);
+              drawShape(doodleRing, 0.66, 0.5, zDoodleRing);
+              drawShape(doodleMoon, 0.75, 0.56, zDoodleMoon);
+              drawShape(doodlePoly, 0.7, 0.2, zDoodlePoly);
               drawOnCanvas(
                   canvas,
                   doodleArc, doodleDot, doodleU, doodleRect,
@@ -381,13 +406,13 @@ public class LiveWallpaperService extends WallpaperService {
               );
               break;
             case WALLPAPER.NEON:
-              drawShape(neonKidneyFront, 0.85, 0.65, zNeonKidneyFront, xOffset);
-              drawShape(neonCircleFront, 0.98, 0.468, zNeonCircleFront, xOffset);
-              drawShape(neonPill, 0.26, 0.58, zNeonPill, xOffset);
-              drawShape(neonLine, 0.55, 0.4, zNeonLine, xOffset);
-              drawShape(neonKidneyBack, 0.63, 0.37, zNeonKidneyBack, xOffset);
-              drawShape(neonCircleBack, 0.5, 0.63, zNeonCircleBack, xOffset);
-              drawShape(neonDot, 0.6, 0.15, zNeonDot, xOffset);
+              drawShape(neonKidneyFront, 0.85, 0.65, zNeonKidneyFront);
+              drawShape(neonCircleFront, 0.98, 0.468, zNeonCircleFront);
+              drawShape(neonPill, 0.26, 0.58, zNeonPill);
+              drawShape(neonLine, 0.55, 0.4, zNeonLine);
+              drawShape(neonKidneyBack, 0.63, 0.37, zNeonKidneyBack);
+              drawShape(neonCircleBack, 0.5, 0.63, zNeonCircleBack);
+              drawShape(neonDot, 0.6, 0.15, zNeonDot);
               drawOnCanvas(
                   canvas,
                   neonDot, neonCircleBack, neonKidneyBack, neonLine,
@@ -395,11 +420,11 @@ public class LiveWallpaperService extends WallpaperService {
               );
               break;
             case WALLPAPER.GEOMETRIC:
-              drawShape(geometricRect, 0.35, 0.78, zGeometricRect, xOffset);
-              drawShape(geometricLine, 0.5, 0.82, zGeometricLine, xOffset);
-              drawShape(geometricPoly, 0.8, 0.67, zGeometricPoly, xOffset);
-              drawShape(geometricCircle, 0.6, 0.2, zGeometricCircle, xOffset);
-              drawShape(geometricSheet, 0.4, 0.21, zGeometricSheet, xOffset);
+              drawShape(geometricRect, 0.35, 0.78, zGeometricRect);
+              drawShape(geometricLine, 0.5, 0.82, zGeometricLine);
+              drawShape(geometricPoly, 0.8, 0.67, zGeometricPoly);
+              drawShape(geometricCircle, 0.6, 0.2, zGeometricCircle);
+              drawShape(geometricSheet, 0.4, 0.21, zGeometricSheet, 1.3);
               drawOnCanvas(
                   canvas,
                   geometricSheet, geometricCircle, geometricPoly,
@@ -407,6 +432,8 @@ public class LiveWallpaperService extends WallpaperService {
               );
               break;
           }
+
+          lastDraw = SystemClock.elapsedRealtime();
         }
       } finally {
         if (canvas != null) {
@@ -423,33 +450,36 @@ public class LiveWallpaperService extends WallpaperService {
       }
     }
 
-    private void drawShape(
-        Drawable drawable,
-        double x,
-        double y,
-        double z,
-        double xOffset
-    ) {
+    private void drawShape(Drawable drawable, double x, double y, double z) {
+      drawShape(drawable, x, y, z, 1);
+    }
+
+    private void drawShape(Drawable drawable, double x, double y, double z, double scale) {
+      switch (size) {
+        case 1:
+          scale *= 1.1;
+          break;
+        case 2:
+          scale *= 1.2;
+          break;
+        default:
+          scale *= 1;
+      }
+      scale = scale - (zoom * z * ZOOM_INTENSITY);
+      int width = (int) (scale * drawable.getIntrinsicWidth());
+      int height = (int) (scale * drawable.getIntrinsicHeight());
+
       int xPos, yPos, offset;
       Rect frame = getSurfaceHolder().getSurfaceFrame();
       offset = (int) (xOffset * z * parallax);
-      xPos = ((int) (x * frame.width()) - drawable.getIntrinsicWidth() / 2) - offset;
-      yPos = (int) (y * frame.height()) - drawable.getIntrinsicHeight() / 2;
-      double scale;
-      switch (size) {
-        case 1:
-          scale = 1.1;
-          break;
-        case 2:
-          scale = 1.2;
-          break;
-        default:
-          scale = 1;
-      }
+      xPos = ((int) (x * frame.width())) - offset;
+      yPos = (int) (y * frame.height());
+
       drawable.setBounds(
-          xPos, yPos,
-          (int) (scale * drawable.getIntrinsicWidth()) + xPos,
-          (int) (scale * drawable.getIntrinsicHeight()) + yPos
+          xPos - width / 2,
+          yPos - height / 2,
+          xPos + width / 2,
+          yPos + height / 2
       );
     }
 

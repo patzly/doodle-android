@@ -454,7 +454,10 @@ public class LiveWallpaperService extends WallpaperService {
               drawShape(geometricLine, 0.5, 0.82, zGeometricLine);
               drawShape(geometricPoly, 0.8, 0.67, zGeometricPoly);
               drawShape(geometricCircle, 0.6, 0.2, zGeometricCircle);
-              drawShape(geometricSheet, isPortrait() ? 0.4 : 0.25, 0.21, zGeometricSheet);
+              drawShape(
+                  geometricSheet,
+                  isPortrait() ? 0.4 : 0.25, 0.21, zGeometricSheet, false
+              );
               drawOnCanvas(
                   canvas,
                   geometricSheet, geometricPoly, geometricCircle, geometricLine, geometricRect
@@ -480,17 +483,17 @@ public class LiveWallpaperService extends WallpaperService {
     }
 
     private void drawShape(Drawable drawable, double x, double y, double z) {
+      drawShape(drawable, x, y, z, true);
+    }
+
+    private void drawShape(Drawable drawable, double x, double y, double z, boolean shouldZoom) {
       float intensity;
-      switch (zoomIntensity) {
-        case 1:
-          intensity = 0.3f;
-          break;
-        case 2:
-          intensity = 0.5f;
-          break;
-        default:
-          intensity = 0;
-          break;
+      if (zoomIntensity == 0 || !shouldZoom) {
+        intensity = 0;
+      } else if (zoomIntensity == 2) {
+        intensity = 0.5f;
+      } else {
+        intensity = 0.3f;
       }
 
       double scale = size - (zoom * z * intensity);

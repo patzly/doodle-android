@@ -25,6 +25,13 @@
 
   <string name="action_close">Schließen</string>
   <string name="action_set">Festlegen</string>
+  <string name="action_send_feedback">Feedback senden</string>
+  <string name="action_share">Teilen</string>
+  <string name="action_share_description">Freunden von Doodle erzählen</string>
+  <string name="action_email">Email senden</string>
+  <string name="action_email_description">Entwickler kontaktieren</string>
+  <string name="action_rate">Bei Google Play bewerten</string>
+  <string name="action_rate_description">Entwicklung unterstützen</string>
 
   <string name="setting_night_mode">Nachtmodus</string>
   <string name="setting_night_mode_description">Abgedunkelte Formen</string>
@@ -44,6 +51,13 @@
   <string name="setting_zoom_little">Wenig</string>
   <string name="setting_zoom_much">Viel</string>
 
+  <string name="category_customization">Anpassung</string>
+  <string name="category_about">Über</string>
+  <string name="category_licenses">Open-Source-Lizenzen</string>
+
+  <string name="msg_feedback">Eine tolle App kostet viel Zeit und lebt von der Rückmeldung ihrer Nutzer.\n\nHaben Sie Wünsche, Anmerkungen oder Fragen? Schreiben Sie mir!\nAnsonsten freue ich mich über eine nette Bewertung im Play Store.</string>
+  <string name="msg_share">Schau dir mal diese coole Live-Wallpaper-App an: \nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
+
   <string name="info_title">Informationen</string>
   <string name="info_description">Ein farbenfroher Live-Hintergrund mit Nachtmodus und akku-effizientem Parallax-Effekt. Tippen, um mehr zu erfahren.</string>
   <string name="info_description_wallpaper">Entdecke eine farbenfrohe Sammlung von Formen, verfeinert mit einem sanften Parallax-Effekt beim Wechseln zwischen deinen Startbildschirmen.\nPasse den Hintergrund mit mehreren Optionen an deinen eigenen Stil an.</string>
@@ -53,8 +67,6 @@
   <string name="info_changelog_description">Was ist neu?</string>
   <string name="info_developer">Entwickler</string>
 
-  <string name="category_customization">Anpassung</string>
-  <string name="category_about">Über</string>
-  <string name="category_licenses">Open-Source-Lizenzen</string>
+  <string name="title_feedback">Rückmeldung</string>
 
 </resources>

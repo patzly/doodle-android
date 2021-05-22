@@ -1,4 +1,6 @@
 2.6.0:
+- New: changes are shown after update
+- New: feedback section
 - Improved: max. shape size now bigger for tablets
 - Improved: wallpapers optimized for landscape mode
 

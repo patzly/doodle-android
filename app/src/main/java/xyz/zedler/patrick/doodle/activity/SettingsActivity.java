@@ -39,7 +39,6 @@ import androidx.annotation.StringRes;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.content.ContextCompat;
-import androidx.fragment.app.DialogFragment;
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.slider.Slider;
 import com.google.android.material.slider.Slider.OnChangeListener;
@@ -56,6 +55,7 @@ import xyz.zedler.patrick.doodle.behavior.ScrollBehavior;
 import xyz.zedler.patrick.doodle.behavior.SystemBarBehavior;
 import xyz.zedler.patrick.doodle.databinding.ActivitySettingsBinding;
 import xyz.zedler.patrick.doodle.fragment.ChangelogBottomSheetDialogFragment;
+import xyz.zedler.patrick.doodle.fragment.FeedbackBottomSheetDialogFragment;
 import xyz.zedler.patrick.doodle.fragment.TextBottomSheetDialogFragment;
 import xyz.zedler.patrick.doodle.service.LiveWallpaperService;
 import xyz.zedler.patrick.doodle.util.ClickUtil;
@@ -185,6 +185,7 @@ public class SettingsActivity extends AppCompatActivity
         binding.linearNightMode,
         binding.linearFollowSystem,
         binding.linearChangelog,
+        binding.linearFeedback,
         binding.linearDeveloper,
         binding.linearLicenseMaterialComponents,
         binding.linearLicenseMaterialIcons,
@@ -198,6 +199,7 @@ public class SettingsActivity extends AppCompatActivity
     if (isTouchWiz()) binding.cardTouchWiz.setVisibility(View.VISIBLE);
 
     showChangelog();
+    showFeedbackPopUp();
   }
 
   @Override
@@ -280,6 +282,10 @@ public class SettingsActivity extends AppCompatActivity
     } else if (id == R.id.linear_changelog && clickUtil.isEnabled()) {
       IconUtil.start(binding.imageChangelog);
       sheetUtil.show(new ChangelogBottomSheetDialogFragment());
+      performHapticClick();
+    } else if (id == R.id.linear_feedback && clickUtil.isEnabled()) {
+      IconUtil.start(binding.imageFeedback);
+      sheetUtil.show(new FeedbackBottomSheetDialogFragment());
       performHapticClick();
     } else if (id == R.id.linear_developer && clickUtil.isEnabled()) {
       IconUtil.start(binding.imageDeveloper);
@@ -497,8 +503,18 @@ public class SettingsActivity extends AppCompatActivity
       sharedPrefs.edit().putInt(PREF.LAST_VERSION, versionNew).apply();
     } else if (versionOld != versionNew) {
       sharedPrefs.edit().putInt(PREF.LAST_VERSION, versionNew).apply();
-      DialogFragment fragment = new ChangelogBottomSheetDialogFragment();
-      fragment.show(getSupportFragmentManager(), fragment.toString());
+      sheetUtil.show(new ChangelogBottomSheetDialogFragment());
+    }
+  }
+
+  private void showFeedbackPopUp() {
+    int feedbackCount = sharedPrefs.getInt(Constants.PREF.FEEDBACK_POP_UP_COUNT, 1);
+    if (feedbackCount > 0) {
+      if (feedbackCount < 5) {
+        sharedPrefs.edit().putInt(Constants.PREF.FEEDBACK_POP_UP_COUNT, feedbackCount + 1).apply();
+      } else {
+        sheetUtil.show(new FeedbackBottomSheetDialogFragment());
+      }
     }
   }
 

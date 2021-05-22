@@ -37,6 +37,7 @@ public final class Constants {
     public final static String CHANGES_APPLIED = "changes_applied";
 
     public final static String LAST_VERSION = "last_version";
+    public final static String FEEDBACK_POP_UP_COUNT = "feedback_pop_up_count";
   }
 
   public final static class DEF {

@@ -30,6 +30,8 @@
   <color name="retro_green_bg_white">#689283</color>
   <color name="retro_green_bg_black">#789f8a</color>
 
+  <color name="retro_yellow">#deb853</color>
+
   <color name="grey200">#e8eaed</color>
   <color name="grey300">#dadce0</color>
   <color name="grey400">#bdc1c6</color>

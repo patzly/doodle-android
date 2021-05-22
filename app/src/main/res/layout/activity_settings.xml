@@ -434,7 +434,7 @@
           <ImageView
             android:id="@+id/image_zoom"
             style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-            android:src="@drawable/ic_round_filter_center_focus_anim"
+            android:src="@drawable/ic_round_zoom_out"
             tools:ignore="ContentDescription" />
 
           <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">

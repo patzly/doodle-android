@@ -256,6 +256,10 @@ public class LiveWallpaperService extends WallpaperService {
     return nightMode && flags == Configuration.UI_MODE_NIGHT_YES;
   }
 
+  private boolean isPortrait() {
+    return getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT;
+  }
+
   private int getCompatColor(@ColorRes int resId) {
     return ContextCompat.getColor(this, resId);
   }
@@ -414,25 +418,29 @@ public class LiveWallpaperService extends WallpaperService {
             case WALLPAPER.DOODLE:
               drawShape(doodleArc, 0.25, 0.28, zDoodleArc);
               drawShape(doodleDot, 0.142, 0.468, zDoodleDot);
-              drawShape(doodleU, 0.25, 0.72, zDoodleU);
+              drawShape(doodleU, isPortrait() ? 0.25 : 0.32, 0.72, zDoodleU);
               drawShape(doodleRect, 0.7, 0.8, zDoodleRect);
-              drawShape(doodleRing, 0.66, 0.5, zDoodleRing);
-              drawShape(doodleMoon, 0.75, 0.56, zDoodleMoon);
+              drawShape(
+                  doodleRing, isPortrait() ? 0.66 : 0.6, isPortrait() ? 0.5 : 0.48, zDoodleRing
+              );
+              drawShape(
+                  doodleMoon, isPortrait() ? 0.75 : 0.65, isPortrait() ? 0.56 : 0.58, zDoodleMoon
+              );
               drawShape(doodlePoly, 0.7, 0.2, zDoodlePoly);
               drawOnCanvas(
                   canvas,
-                  doodleArc, doodleDot, doodleU, doodleRect,
-                  doodleRing, doodleMoon, doodlePoly
+                  doodleArc, doodleDot, doodleU, doodleRect, doodleRing, doodleMoon, doodlePoly
               );
               break;
             case WALLPAPER.NEON:
-              drawShape(neonKidneyFront, 0.85, 0.65, zNeonKidneyFront);
-              drawShape(neonCircleFront, 0.98, 0.468, zNeonCircleFront);
-              drawShape(neonPill, 0.26, 0.58, zNeonPill);
-              drawShape(neonLine, 0.55, 0.4, zNeonLine);
-              drawShape(neonKidneyBack, 0.63, 0.37, zNeonKidneyBack);
-              drawShape(neonCircleBack, 0.5, 0.63, zNeonCircleBack);
-              drawShape(neonDot, 0.6, 0.15, zNeonDot);
+              double shift = isPortrait() ? 0 : -0.15;
+              drawShape(neonKidneyFront, 0.85 + shift, 0.65, zNeonKidneyFront);
+              drawShape(neonCircleFront, 0.98 + shift, 0.468, zNeonCircleFront);
+              drawShape(neonPill, 0.26 + shift, 0.58, zNeonPill);
+              drawShape(neonLine, 0.55 + shift, 0.4, zNeonLine);
+              drawShape(neonKidneyBack, 0.63 + shift, 0.37, zNeonKidneyBack);
+              drawShape(neonCircleBack, 0.5 + shift, 0.63, zNeonCircleBack);
+              drawShape(neonDot, 0.6 + shift, 0.15, zNeonDot);
               drawOnCanvas(
                   canvas,
                   neonDot, neonCircleBack, neonKidneyBack, neonLine,
@@ -444,11 +452,10 @@ public class LiveWallpaperService extends WallpaperService {
               drawShape(geometricLine, 0.5, 0.82, zGeometricLine);
               drawShape(geometricPoly, 0.8, 0.67, zGeometricPoly);
               drawShape(geometricCircle, 0.6, 0.2, zGeometricCircle);
-              drawShape(geometricSheet, 0.4, 0.21, zGeometricSheet, 1.3);
+              drawShape(geometricSheet, isPortrait() ? 0.4 : 0.25, 0.21, zGeometricSheet);
               drawOnCanvas(
                   canvas,
-                  geometricSheet, geometricCircle, geometricPoly,
-                  geometricLine, geometricRect
+                  geometricSheet, geometricPoly, geometricCircle, geometricLine, geometricRect
               );
               break;
           }
@@ -471,12 +478,6 @@ public class LiveWallpaperService extends WallpaperService {
     }
 
     private void drawShape(Drawable drawable, double x, double y, double z) {
-      drawShape(drawable, x, y, z, 1);
-    }
-
-    private void drawShape(Drawable drawable, double x, double y, double z, double scale) {
-      scale *= size;
-
       float intensity;
       switch (zoomIntensity) {
         case 1:
@@ -490,7 +491,7 @@ public class LiveWallpaperService extends WallpaperService {
           break;
       }
 
-      scale = scale - (zoom * z * intensity);
+      double scale = size - (zoom * z * intensity);
       int width = (int) (scale * drawable.getIntrinsicWidth());
       int height = (int) (scale * drawable.getIntrinsicHeight());
 

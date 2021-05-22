@@ -1,5 +1,6 @@
 2.6.0:
 - Improved: max. shape size now bigger for tablets
+- Improved: wallpapers optimized for landscape mode
 
 2.5.0:
 - New: support for zoom effect on Android 11

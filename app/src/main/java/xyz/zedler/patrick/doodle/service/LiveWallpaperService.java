@@ -341,7 +341,6 @@ public class LiveWallpaperService extends WallpaperService {
         return;
       }
 
-      isNight = isNightMode();
       reloadSettingsIfChanged();
 
       newRandomZ();
@@ -361,6 +360,7 @@ public class LiveWallpaperService extends WallpaperService {
       clearShapes();
       System.gc();
 
+      isNight = isNightMode();
       theme = getResources().newTheme();
       refreshTheme();
       colorsHaveChanged();
@@ -374,6 +374,8 @@ public class LiveWallpaperService extends WallpaperService {
             .putBoolean(PREF.SETTINGS_CHANGED, false)
             .putBoolean(PREF.CHANGES_APPLIED, true)
             .apply();
+        loadSettings();
+      } else if (isNight != isNightMode()) {
         loadSettings();
       }
     }

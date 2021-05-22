@@ -74,7 +74,7 @@ public class FeedbackBottomSheetDialogFragment extends BaseBottomSheetDialogFrag
           Uri.parse(
               "mailto:"
                   + getString(R.string.app_mail)
-                  + "?subject=" + Uri.encode("Feedback@Tack")
+                  + "?subject=" + Uri.encode("Feedback@Doodle")
           )
       );
       startActivity(Intent.createChooser(intent, getString(R.string.action_send_feedback)));

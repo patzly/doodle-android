@@ -527,7 +527,7 @@
 
           <TextView
             style="@style/Widget.Doodle.TextView.ListItem.Description"
-            android:text="@string/action_rate_description" />
+            android:text="@string/action_send_feedback_description" />
 
         </LinearLayout>
 

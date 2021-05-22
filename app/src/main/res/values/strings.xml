@@ -28,6 +28,7 @@
   <string name="action_close">Close</string>
   <string name="action_set">Set</string>
   <string name="action_send_feedback">Send feedback</string>
+  <string name="action_send_feedback_description">Report issues and support the development</string>
   <string name="action_share">Share</string>
   <string name="action_share_description">Tell your friends about Doodle</string>
   <string name="action_email">Send email</string>

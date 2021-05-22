@@ -1,6 +1,9 @@
+2.6.0:
+- Improved: max. shape size now bigger for tablets
+
 2.5.0:
-- New: Support for zoom effect on Android 11
-- Improved: show warning if default launcher is TouchWiz
+- New: support for zoom effect on Android 11
+- Improved: show warning when default launcher is TouchWiz
 - Improved: sliders for customization
 - Improved: haptic feedback in settings
 - Improved: animation efficiency by using frame rate of the device

@@ -42,6 +42,7 @@ import androidx.core.content.ContextCompat;
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.slider.Slider;
 import com.google.android.material.slider.Slider.OnChangeListener;
+import java.util.Locale;
 import xyz.zedler.patrick.doodle.Constants;
 import xyz.zedler.patrick.doodle.Constants.DEF;
 import xyz.zedler.patrick.doodle.Constants.EXTRA;
@@ -148,7 +149,7 @@ public class SettingsActivity extends AppCompatActivity
       if (value == 1) {
         return getString(R.string.setting_size_default);
       } else {
-        return String.format("×%s", value);
+        return String.format(Locale.getDefault(), "×%.1f", value);
       }
     });
 

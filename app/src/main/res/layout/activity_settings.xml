@@ -418,7 +418,7 @@
         android:id="@+id/slider_size"
         style="@style/Widget.Doodle.Slider"
         android:valueFrom="1"
-        android:valueTo="1.5"
+        android:valueTo="2"
         android:stepSize="0.1"/>
 
       <LinearLayout

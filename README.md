@@ -3,7 +3,7 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)  [![Release](https://img.shields.io/github/v/release/patzly/doodle-android?label=Release&logo=github)](https://github.com/patzly/doodle-android/releases)  [![APK Downloads](https://img.shields.io/github/downloads/patzly/doodle-android/total.svg?label=APK%20Downloads&logo=github)](https://github.com/patzly/doodle-android/releases)
 
 Doodle Android is an open-source Android app that provides colorful live wallpapers with auto dark mode and an battery-efficient parallax effect.  
-The wallpapers are based on the original doodle live wallpapers of the Google Pixel 4.
+The wallpapers are based on the original Doodle live wallpapers of the Google Pixel 4.
 
 ## Download
 
@@ -12,15 +12,15 @@ The wallpapers are based on the original doodle live wallpapers of the Google Pi
 ## Features
 
 * Stunning colors and theme variants
-* System dependent night mode
-* Parallax effect on page swipe
+* System dependent dark mode
+* Battery-efficient parallax effect on page swipe
+* Support for Android 11 zoom effect
 * Various customization options
 * Direct boot support
-* No permanent animations
+* No permanent animations or gyroscore sensor requests
 * Also suitable for less powerful devices
 * No ads and no analytics
-* Tiny download size
-* In-App auto dark mode
+* Tiny installation size (~3.5MB)
 
 ## How to set as background
 * Tap SET in the top right corner, it should appear a preview
@@ -29,6 +29,9 @@ The wallpapers are based on the original doodle live wallpapers of the Google Pi
 ## Compatibility
 
 Doodle Android requires at least Android 6 Marshmallow on your device. The app will work properly on devices without any Google service installed.
+
+You need to turn on background scrolling in your launcher's settings if you have disabled it before to make parallax effect work.
+Some launchers don't support background scrolling at all, like Samsung's TouchWiz. As a solution, please try installing another launcher.
 
 ## License
 

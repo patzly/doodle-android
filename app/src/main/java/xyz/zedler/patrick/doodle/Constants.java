@@ -35,6 +35,8 @@ public final class Constants {
 
     public final static String SETTINGS_CHANGED = "settings_changed";
     public final static String CHANGES_APPLIED = "changes_applied";
+
+    public final static String LAST_VERSION = "last_version";
   }
 
   public final static class DEF {

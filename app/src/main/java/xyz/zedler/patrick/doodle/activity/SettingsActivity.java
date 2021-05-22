@@ -39,10 +39,12 @@ import androidx.annotation.StringRes;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.content.ContextCompat;
+import androidx.fragment.app.DialogFragment;
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.slider.Slider;
 import com.google.android.material.slider.Slider.OnChangeListener;
 import java.util.Locale;
+import xyz.zedler.patrick.doodle.BuildConfig;
 import xyz.zedler.patrick.doodle.Constants;
 import xyz.zedler.patrick.doodle.Constants.DEF;
 import xyz.zedler.patrick.doodle.Constants.EXTRA;
@@ -194,6 +196,8 @@ public class SettingsActivity extends AppCompatActivity
     );
 
     if (isTouchWiz()) binding.cardTouchWiz.setVisibility(View.VISIBLE);
+
+    showChangelog();
   }
 
   @Override
@@ -484,6 +488,18 @@ public class SettingsActivity extends AppCompatActivity
       bundle.putString(EXTRA.LINK, getString(link));
     }
     sheetUtil.show(new TextBottomSheetDialogFragment(), bundle);
+  }
+
+  private void showChangelog() {
+    int versionNew = BuildConfig.VERSION_CODE;
+    int versionOld = sharedPrefs.getInt(PREF.LAST_VERSION, 0);
+    if (versionOld == 0) {
+      sharedPrefs.edit().putInt(PREF.LAST_VERSION, versionNew).apply();
+    } else if (versionOld != versionNew) {
+      sharedPrefs.edit().putInt(PREF.LAST_VERSION, versionNew).apply();
+      DialogFragment fragment = new ChangelogBottomSheetDialogFragment();
+      fragment.show(getSupportFragmentManager(), fragment.toString());
+    }
   }
 
   private boolean isTouchWiz() {

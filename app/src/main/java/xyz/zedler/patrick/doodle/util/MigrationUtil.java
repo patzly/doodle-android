@@ -19,7 +19,13 @@ public class MigrationUtil {
     migrateString("theme", PREF.WALLPAPER, DEF.WALLPAPER);
 
     // size is stored in a new way
-    removePreference(PREF.SIZE);
+    if (sharedPrefs.contains(PREF.SIZE)) {
+      try {
+        sharedPrefs.getFloat(PREF.SIZE, DEF.SIZE);
+      } catch (ClassCastException e) {
+        removePreference(PREF.SIZE);
+      }
+    }
   }
 
   private void migrateString(String keyOld, String keyNew, String def) {

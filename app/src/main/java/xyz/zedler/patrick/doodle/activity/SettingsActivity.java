@@ -27,6 +27,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -71,6 +72,7 @@ public class SettingsActivity extends AppCompatActivity
   private ClickUtil clickUtil;
   private VibratorUtil vibratorUtil;
   private SheetUtil sheetUtil;
+  private boolean settingsChanged;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -150,6 +152,11 @@ public class SettingsActivity extends AppCompatActivity
       }
     });
 
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+      binding.linearZoom.setVisibility(View.VISIBLE);
+    } else {
+      binding.linearZoom.setVisibility(View.GONE);
+    }
     binding.sliderZoom.setValue(sharedPrefs.getInt(PREF.ZOOM, DEF.ZOOM));
     binding.sliderZoom.addOnChangeListener(this);
     binding.sliderZoom.setLabelFormatter(value -> {
@@ -200,6 +207,11 @@ public class SettingsActivity extends AppCompatActivity
 
     if (!isWallpaperServiceRunning()) {
       setActivateButtonEnabled(true);
+    }
+
+    boolean changesApplied = sharedPrefs.getBoolean(PREF.CHANGES_APPLIED, false);
+    if (changesApplied) {
+      settingsChanged = false;
     }
   }
 
@@ -326,6 +338,7 @@ public class SettingsActivity extends AppCompatActivity
       sharedPrefs.edit().putBoolean(PREF.FOLLOW_SYSTEM, isChecked).apply();
     }
     performHapticClick();
+    notifySettingsHaveChanged();
   }
 
   @Override
@@ -345,7 +358,7 @@ public class SettingsActivity extends AppCompatActivity
       IconUtil.start(binding.imageZoom);
     }
     performHapticClick();
-    //notifySettingsHaveChanged();
+    notifySettingsHaveChanged();
   }
 
   private void refreshSelectionTheme(String selection, boolean animated) {
@@ -378,6 +391,7 @@ public class SettingsActivity extends AppCompatActivity
     mcv2.setChecked(false);
     setVariantSelectionEnabled(selection.equals(WALLPAPER.DOODLE), true);
     sharedPrefs.edit().putString(PREF.WALLPAPER, selection).apply();
+    notifySettingsHaveChanged();
   }
 
   private void refreshSelectionVariant(String selection, boolean animated) {
@@ -409,6 +423,17 @@ public class SettingsActivity extends AppCompatActivity
     mcv2.setStrokeColor(ContextCompat.getColor(this, R.color.stroke));
     mcv2.setChecked(false);
     sharedPrefs.edit().putString(PREF.VARIANT, selection).apply();
+    notifySettingsHaveChanged();
+  }
+
+  private void notifySettingsHaveChanged() {
+    if (!settingsChanged) {
+      settingsChanged = true;
+      sharedPrefs.edit()
+          .putBoolean(PREF.SETTINGS_CHANGED, true)
+          .putBoolean(PREF.CHANGES_APPLIED, false)
+          .apply();
+    }
   }
 
   private void setActivateButtonEnabled(boolean enabled) {

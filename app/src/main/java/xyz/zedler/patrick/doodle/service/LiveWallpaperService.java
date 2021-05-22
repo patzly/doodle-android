@@ -114,20 +114,7 @@ public class LiveWallpaperService extends WallpaperService {
     sharedPrefs = new PrefsUtil(this).getSharedPrefs();
     new MigrationUtil(sharedPrefs).checkForMigrations();
 
-    wallpaper = sharedPrefs.getString(PREF.WALLPAPER, DEF.WALLPAPER);
-    variant = sharedPrefs.getString(PREF.VARIANT, DEF.VARIANT);
-    nightMode = sharedPrefs.getBoolean(PREF.NIGHT_MODE, DEF.NIGHT_MODE);
-    followSystem = sharedPrefs.getBoolean(PREF.FOLLOW_SYSTEM, DEF.FOLLOW_SYSTEM);
-    parallax = sharedPrefs.getInt(PREF.PARALLAX, DEF.PARALLAX);
-    size = sharedPrefs.getFloat(PREF.SIZE, DEF.SIZE);
-    zoomIntensity = sharedPrefs.getInt(PREF.ZOOM, DEF.ZOOM);
-
-    isNight = isNightMode();
-    theme = getResources().newTheme();
     fps = getFrameRate();
-
-    newRandomZ();
-    refreshTheme();
 
     return new CustomEngine();
   }
@@ -237,6 +224,30 @@ public class LiveWallpaperService extends WallpaperService {
     }
   }
 
+  private void clearShapes() {
+    doodleArc = null;
+    doodleDot = null;
+    doodleU = null;
+    doodleRect = null;
+    doodleRing = null;
+    doodleMoon = null;
+    doodlePoly = null;
+
+    neonKidneyFront = null;
+    neonCircleFront = null;
+    neonPill = null;
+    neonLine = null;
+    neonKidneyBack = null;
+    neonCircleBack = null;
+    neonDot = null;
+
+    geometricRect = null;
+    geometricLine = null;
+    geometricPoly = null;
+    geometricCircle = null;
+    geometricSheet = null;
+  }
+
   private boolean isNightMode() {
     if (nightMode && !followSystem) {
       return true;
@@ -266,6 +277,9 @@ public class LiveWallpaperService extends WallpaperService {
     @Override
     public void onCreate(SurfaceHolder surfaceHolder) {
       super.onCreate(surfaceHolder);
+
+      isNight = isNightMode();
+      loadSettings();
 
       setTouchEventsEnabled(false);
     }
@@ -323,32 +337,41 @@ public class LiveWallpaperService extends WallpaperService {
         return;
       }
 
-      String wallpaperNew = sharedPrefs.getString(PREF.WALLPAPER, DEF.WALLPAPER);
-      String variantNew = sharedPrefs.getString(Constants.PREF.VARIANT, DEF.VARIANT);
+      isNight = isNightMode();
+      reloadSettingsIfChanged();
 
+      newRandomZ();
+      drawFrame(true);
+    }
+
+    private void loadSettings() {
+      wallpaper = sharedPrefs.getString(PREF.WALLPAPER, DEF.WALLPAPER);
+      variant = sharedPrefs.getString(PREF.VARIANT, DEF.VARIANT);
       nightMode = sharedPrefs.getBoolean(PREF.NIGHT_MODE, DEF.NIGHT_MODE);
       followSystem = sharedPrefs.getBoolean(PREF.FOLLOW_SYSTEM, DEF.FOLLOW_SYSTEM);
       parallax = sharedPrefs.getInt(PREF.PARALLAX, DEF.PARALLAX);
       size = sharedPrefs.getFloat(PREF.SIZE, DEF.SIZE);
       zoomIntensity = sharedPrefs.getInt(PREF.ZOOM, DEF.ZOOM);
 
-      if (!wallpaper.equals(wallpaperNew)) {
-        wallpaper = wallpaperNew;
-        variant = variantNew;
-        refreshTheme();
-        colorsHaveChanged();
-      } else if (isNight != isNightMode()) {
-        isNight = isNightMode();
-        refreshTheme();
-        colorsHaveChanged();
-      } else if (!variant.equals(variantNew)) {
-        variant = variantNew;
-        refreshTheme();
-        colorsHaveChanged();
-      }
+      theme = null;
+      clearShapes();
+      System.gc();
 
-      newRandomZ();
-      drawFrame(true);
+      theme = getResources().newTheme();
+      refreshTheme();
+      colorsHaveChanged();
+    }
+
+    private void reloadSettingsIfChanged() {
+      boolean settingsChanged = sharedPrefs.getBoolean(PREF.SETTINGS_CHANGED, false);
+      boolean changesApplied = sharedPrefs.getBoolean(PREF.CHANGES_APPLIED, true);
+      if (settingsChanged && !changesApplied) {
+        sharedPrefs.edit()
+            .putBoolean(PREF.SETTINGS_CHANGED, false)
+            .putBoolean(PREF.CHANGES_APPLIED, true)
+            .apply();
+        loadSettings();
+      }
     }
 
     @Override
@@ -362,7 +385,7 @@ public class LiveWallpaperService extends WallpaperService {
     ) {
       if (parallax != 0) {
         this.xOffset = xOffset;
-        drawFrame(false);
+        drawFrame(true);
       }
     }
 

@@ -48,9 +48,8 @@
   <string name="setting_size_default">Normal</string>
   <string name="setting_zoom">Intensität des Zoom-Effekts</string>
   <string name="setting_zoom_description">Nur flüssig auf High-End-Geräten und nur mit manchen Hintergründen, ggf. unten ausschalten</string>
-  <string name="setting_zoom_off">Aus</string>
-  <string name="setting_zoom_little">Wenig</string>
-  <string name="setting_zoom_much">Viel</string>
+  <string name="setting_zoom_launcher">Beim Öffnen der Schnelleinstellungen oder des App-Drawers herauszoomen</string>
+  <string name="setting_zoom_unlock">Auf dem Sperrbildschirm herauszoomen</string>
 
   <string name="category_customization">Anpassung</string>
   <string name="category_about">Über</string>

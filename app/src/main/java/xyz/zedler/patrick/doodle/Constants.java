@@ -28,6 +28,8 @@ public final class Constants {
     public final static String NIGHT_MODE = "night_mode";
     public final static String FOLLOW_SYSTEM = "follow_system";
     public final static String ZOOM = "zoom";
+    public final static String ZOOM_LAUNCHER = "zoom_launcher";
+    public final static String ZOOM_UNLOCK = "zoom_unlock";
     public final static String WALLPAPER = "wallpaper";
     public final static String VARIANT = "variant";
     public final static String PARALLAX = "parallax";
@@ -44,7 +46,9 @@ public final class Constants {
 
     public final static boolean NIGHT_MODE = true;
     public final static boolean FOLLOW_SYSTEM = true;
-    public final static int ZOOM = 1;
+    public final static int ZOOM = 3;
+    public final static boolean ZOOM_LAUNCHER = true;
+    public final static boolean ZOOM_UNLOCK = true;
     public final static String WALLPAPER = Constants.WALLPAPER.DOODLE;
     public final static String VARIANT = Constants.VARIANT.BLACK;
     public final static int PARALLAX = 1;

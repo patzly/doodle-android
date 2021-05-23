@@ -71,8 +71,9 @@ public class LiveWallpaperService extends WallpaperService {
   private float size;
   private float fps;
   private int zoomIntensity;
+  private boolean isZoomLauncherEnabled, isZoomUnlockEnabled;
   private String presence;
-  private boolean receiverRegistered = false;
+  private boolean isReceiverRegistered = false;
   private UserPresenceListener userPresenceListener;
 
   private VectorDrawableCompat doodleArc;
@@ -142,23 +143,33 @@ public class LiveWallpaperService extends WallpaperService {
 
     fps = getFrameRate();
 
-    IntentFilter filter = new IntentFilter(Intent.ACTION_USER_PRESENT);
-    filter.addAction(Intent.ACTION_SCREEN_OFF);
-    filter.addAction(Intent.ACTION_SCREEN_ON);
-    registerReceiver(presenceReceiver, filter);
-    receiverRegistered = true;
+    registerReceiver();
     setUserPresence(isKeyguardLocked() ? USER_PRESENCE.LOCKED : USER_PRESENCE.UNLOCKED);
 
     return new UserAwareEngine();
   }
 
   public void onDestroy() {
-    if (receiverRegistered) {
-      unregisterReceiver(presenceReceiver);
-      receiverRegistered = false;
-    }
+    unregisterReceiver();
     clearShapes();
     super.onDestroy();
+  }
+
+  private void registerReceiver() {
+    if (!isReceiverRegistered) {
+      IntentFilter filter = new IntentFilter(Intent.ACTION_USER_PRESENT);
+      filter.addAction(Intent.ACTION_SCREEN_OFF);
+      filter.addAction(Intent.ACTION_SCREEN_ON);
+      registerReceiver(presenceReceiver, filter);
+      isReceiverRegistered = true;
+    }
+  }
+
+  private void unregisterReceiver() {
+    if (isReceiverRegistered) {
+      unregisterReceiver(presenceReceiver);
+      isReceiverRegistered = false;
+    }
   }
 
   private void refreshTheme() {
@@ -442,6 +453,14 @@ public class LiveWallpaperService extends WallpaperService {
       parallax = sharedPrefs.getInt(PREF.PARALLAX, DEF.PARALLAX);
       size = sharedPrefs.getFloat(PREF.SIZE, DEF.SIZE);
       zoomIntensity = sharedPrefs.getInt(PREF.ZOOM, DEF.ZOOM);
+      isZoomLauncherEnabled = sharedPrefs.getBoolean(PREF.ZOOM_LAUNCHER, DEF.ZOOM_LAUNCHER);
+      isZoomUnlockEnabled = sharedPrefs.getBoolean(PREF.ZOOM_UNLOCK, DEF.ZOOM_UNLOCK);
+
+      if (isZoomUnlockEnabled && !isReceiverRegistered) {
+        registerReceiver();
+      } else if (!isZoomUnlockEnabled && isReceiverRegistered) {
+        unregisterReceiver();
+      }
 
       theme = null;
       clearShapes();
@@ -595,16 +614,12 @@ public class LiveWallpaperService extends WallpaperService {
     }
 
     private void drawShape(Drawable drawable, double x, double y, double z, boolean shouldZoom) {
-      float intensity;
-      if (zoomIntensity == 0 || !shouldZoom) {
-        intensity = 0;
-      } else if (zoomIntensity == 2) {
-        intensity = 0.5f;
-      } else {
-        intensity = 0.3f;
-      }
+      float intensity = shouldZoom ? zoomIntensity / 10f : 0;
 
-      double scale = size - (zoomLauncher * z * intensity) - (zoomUnlock * z * intensity);
+      double finalZoomLauncher = isZoomLauncherEnabled ? zoomLauncher * z * intensity : 0;
+      double finalZoomUnlock = isZoomUnlockEnabled ? zoomUnlock * z * intensity : 0;
+
+      double scale = size - finalZoomLauncher - finalZoomUnlock;
       int width = (int) (scale * drawable.getIntrinsicWidth());
       int height = (int) (scale * drawable.getIntrinsicHeight());
 
@@ -619,21 +634,37 @@ public class LiveWallpaperService extends WallpaperService {
       int centerY = frame.centerY();
       if (xPos < centerX) {
         int dist = centerX - xPos;
-        xPos += dist * z * zoomLauncher * intensity;
-        xPos += dist * z * zoomUnlock * intensity;
+        if (isZoomLauncherEnabled) {
+          xPos += dist * z * zoomLauncher * intensity;
+        }
+        if (isZoomUnlockEnabled) {
+          xPos += dist * z * zoomUnlock * intensity;
+        }
       } else {
         int dist = xPos - centerX;
-        xPos -= dist * z * zoomLauncher * intensity;
-        xPos -= dist * z * zoomUnlock * intensity;
+        if (isZoomLauncherEnabled) {
+          xPos -= dist * z * zoomLauncher * intensity;
+        }
+        if (isZoomUnlockEnabled) {
+          xPos -= dist * z * zoomUnlock * intensity;
+        }
       }
       if (yPos < centerY) {
         int dist = centerY - yPos;
-        yPos += dist * z * zoomLauncher * intensity;
-        yPos += dist * z * zoomUnlock * intensity;
+        if (isZoomLauncherEnabled) {
+          yPos += dist * z * zoomLauncher * intensity;
+        }
+        if (isZoomUnlockEnabled) {
+          yPos += dist * z * zoomUnlock * intensity;
+        }
       } else {
         int dist = yPos - centerY;
-        yPos -= dist * z * zoomLauncher * intensity;
-        yPos -= dist * z * zoomUnlock * intensity;
+        if (isZoomLauncherEnabled) {
+          yPos -= dist * z * zoomLauncher * intensity;
+        }
+        if (isZoomUnlockEnabled) {
+          yPos -= dist * z * zoomUnlock * intensity;
+        }
       }
 
       drawable.setBounds(

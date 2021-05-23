@@ -52,9 +52,8 @@
   <string name="setting_size_default">Default</string>
   <string name="setting_zoom">Zoom effect intensity</string>
   <string name="setting_zoom_description">Only fluid on high-end devices and only for some wallpapers, turn it off below if necessary</string>
-  <string name="setting_zoom_off">Off</string>
-  <string name="setting_zoom_little">Little</string>
-  <string name="setting_zoom_much">Much</string>
+  <string name="setting_zoom_launcher">Zoom out when opening quick settings or app drawer</string>
+  <string name="setting_zoom_unlock">Zoom out on lockscreen</string>
 
   <string name="info_title">Information</string>
   <string name="info_description">Colorful live wallpapers with auto dark mode and battery-efficient animations. Tap to learn more.</string>

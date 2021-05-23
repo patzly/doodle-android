@@ -27,6 +27,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -154,22 +155,23 @@ public class SettingsActivity extends AppCompatActivity
       }
     });
 
-/*    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-      binding.linearZoom.setVisibility(View.VISIBLE);
-    } else {
-      binding.linearZoom.setVisibility(View.GONE);
-    }*/
     binding.sliderZoom.setValue(sharedPrefs.getInt(PREF.ZOOM, DEF.ZOOM));
     binding.sliderZoom.addOnChangeListener(this);
-    binding.sliderZoom.setLabelFormatter(value -> {
-      if (value == 0) {
-        return getString(R.string.setting_zoom_off);
-      } else if (value == 2) {
-        return getString(R.string.setting_zoom_much);
-      } else {
-        return getString(R.string.setting_zoom_little);
-      }
-    });
+    binding.sliderZoom.setLabelFormatter(
+        value -> String.format(Locale.getDefault(), "-%.1f", value / 10)
+    );
+
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+      binding.linearZoomLauncher.setVisibility(View.VISIBLE);
+    } else {
+      binding.linearZoomLauncher.setVisibility(View.GONE);
+    }
+    binding.checkboxZoomLauncher.setChecked(
+        sharedPrefs.getBoolean(PREF.ZOOM_LAUNCHER, DEF.ZOOM_LAUNCHER)
+    );
+    binding.checkboxZoomUnlock.setChecked(
+        sharedPrefs.getBoolean(PREF.ZOOM_UNLOCK, DEF.ZOOM_UNLOCK)
+    );
 
     refreshSelectionTheme(sharedPrefs.getString(PREF.WALLPAPER, WALLPAPER.DOODLE), false);
     refreshSelectionVariant(sharedPrefs.getString(PREF.VARIANT, VARIANT.BLACK), false);
@@ -183,6 +185,8 @@ public class SettingsActivity extends AppCompatActivity
         binding.cardBlack, binding.cardWhite, binding.cardOrange,
         binding.linearNightMode,
         binding.linearFollowSystem,
+        binding.linearZoomLauncher,
+        binding.linearZoomUnlock,
         binding.linearGithub,
         binding.linearChangelog,
         binding.linearFeedback,
@@ -193,7 +197,11 @@ public class SettingsActivity extends AppCompatActivity
     );
 
     ClickUtil.setOnCheckedChangeListeners(
-        this, binding.switchNightMode, binding.switchFollowSystem
+        this,
+        binding.switchNightMode,
+        binding.switchFollowSystem,
+        binding.checkboxZoomLauncher,
+        binding.checkboxZoomUnlock
     );
 
     showChangelog();
@@ -279,6 +287,12 @@ public class SettingsActivity extends AppCompatActivity
       if (binding.switchNightMode.isChecked()) {
         binding.switchFollowSystem.setChecked(!binding.switchFollowSystem.isChecked());
       }
+    } else if (id == R.id.linear_zoom_launcher) {
+      IconUtil.start(binding.imageZoom);
+      binding.checkboxZoomLauncher.setChecked(!binding.checkboxZoomLauncher.isChecked());
+    } else if (id == R.id.linear_zoom_unlock) {
+      IconUtil.start(binding.imageZoom);
+      binding.checkboxZoomUnlock.setChecked(!binding.checkboxZoomUnlock.isChecked());
     } else if (id == R.id.linear_github && clickUtil.isEnabled()) {
       startActivity(new Intent(
           Intent.ACTION_VIEW,
@@ -352,6 +366,10 @@ public class SettingsActivity extends AppCompatActivity
       );
     } else if (id == R.id.switch_follow_system) {
       sharedPrefs.edit().putBoolean(PREF.FOLLOW_SYSTEM, isChecked).apply();
+    } else if (id == R.id.checkbox_zoom_launcher) {
+      sharedPrefs.edit().putBoolean(PREF.ZOOM_LAUNCHER, isChecked).apply();
+    } else if (id == R.id.checkbox_zoom_unlock) {
+      sharedPrefs.edit().putBoolean(PREF.ZOOM_UNLOCK, isChecked).apply();
     }
     performHapticClick();
     notifySettingsHaveChanged();

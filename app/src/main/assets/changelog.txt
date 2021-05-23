@@ -1,10 +1,12 @@
 2.6.0:
-- New: zoom-in animation when unlocking + preferences
-- New: changes are shown after update
-- New: feedback and GitHub link in settings app
+- New: zoom-in animation when unlocking
+- New: changelog is shown after update
+- New: feedback and GitHub link in app
 - Improved: max. shape size now bigger for tablets
+- Improved: increased max. parallax strength
 - Improved: wallpapers optimized for landscape mode
-- Improved: General information and descriptions
+- Improved: general information and descriptions
+- Fixed: dark mode not adopting from system
 - Fixed: laggy animations after resizing shapes in settings
 
 2.5.0:

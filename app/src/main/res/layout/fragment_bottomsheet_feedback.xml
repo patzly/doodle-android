@@ -112,7 +112,8 @@
 
       <LinearLayout
         android:id="@+id/linear_feedback_github"
-        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable">
+        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable"
+        android:background="@drawable/ripple_bg_list_item_surface">
 
         <ImageView
           style="@style/Widget.Doodle.ImageView.ListItem.Icon"

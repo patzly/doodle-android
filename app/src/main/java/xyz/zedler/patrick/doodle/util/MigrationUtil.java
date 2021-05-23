@@ -45,6 +45,16 @@ public class MigrationUtil {
         removePreference(PREF.SIZE);
       }
     }
+
+    // parallax is stored in a new way
+    if (sharedPrefs.contains(PREF.PARALLAX)) {
+      int parallax = sharedPrefs.getInt(PREF.PARALLAX, DEF.PARALLAX);
+      if (parallax == 100 || parallax == 200) {
+        sharedPrefs.edit().putInt(PREF.PARALLAX, parallax / 100).apply();
+      } else {
+        removePreference(PREF.PARALLAX);
+      }
+    }
   }
 
   private void migrateString(String keyOld, String keyNew, String def) {

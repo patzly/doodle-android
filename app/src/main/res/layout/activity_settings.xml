@@ -387,8 +387,8 @@
         android:id="@+id/slider_parallax"
         style="@style/Widget.Doodle.Slider"
         android:valueFrom="0"
-        android:valueTo="200"
-        android:stepSize="100"/>
+        android:valueTo="3"
+        android:stepSize="1"/>
 
       <LinearLayout
         style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine"

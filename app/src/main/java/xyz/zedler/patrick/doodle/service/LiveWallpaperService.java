@@ -340,7 +340,7 @@ public class LiveWallpaperService extends WallpaperService {
     void onPresenceChange(String presence);
   }
 
-  // ENGINE
+  // ENGINE ------------------------------------------------------------
 
   class UserAwareEngine extends Engine implements UserPresenceListener {
     private float xOffset = 0;
@@ -609,7 +609,7 @@ public class LiveWallpaperService extends WallpaperService {
 
       int xPos, yPos, offset;
       Rect frame = getSurfaceHolder().getSurfaceFrame();
-      offset = (int) (xOffset * z * parallax);
+      offset = (int) (xOffset * z * (parallax * 100));
       xPos = ((int) (x * frame.width())) - offset;
       yPos = (int) (y * frame.height());
 

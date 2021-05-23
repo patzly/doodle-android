@@ -47,7 +47,7 @@ public final class Constants {
     public final static int ZOOM = 1;
     public final static String WALLPAPER = Constants.WALLPAPER.DOODLE;
     public final static String VARIANT = Constants.VARIANT.BLACK;
-    public final static int PARALLAX = 100;
+    public final static int PARALLAX = 1;
     public final static float SIZE = 1;
   }
 

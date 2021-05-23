@@ -19,8 +19,13 @@
 
 package xyz.zedler.patrick.doodle.service;
 
+import android.animation.ValueAnimator;
+import android.app.KeyguardManager;
 import android.app.WallpaperColors;
+import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.content.res.Resources.Theme;
@@ -40,11 +45,13 @@ import android.view.WindowManager;
 import androidx.annotation.ColorRes;
 import androidx.annotation.DrawableRes;
 import androidx.core.content.ContextCompat;
+import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
 import androidx.vectordrawable.graphics.drawable.VectorDrawableCompat;
 import java.util.Random;
 import xyz.zedler.patrick.doodle.Constants;
 import xyz.zedler.patrick.doodle.Constants.DEF;
 import xyz.zedler.patrick.doodle.Constants.PREF;
+import xyz.zedler.patrick.doodle.Constants.USER_PRESENCE;
 import xyz.zedler.patrick.doodle.Constants.VARIANT;
 import xyz.zedler.patrick.doodle.Constants.WALLPAPER;
 import xyz.zedler.patrick.doodle.R;
@@ -64,6 +71,9 @@ public class LiveWallpaperService extends WallpaperService {
   private float size;
   private float fps;
   private int zoomIntensity;
+  private String presence;
+  private boolean receiverRegistered = false;
+  private UserPresenceListener userPresenceListener;
 
   private VectorDrawableCompat doodleArc;
   private VectorDrawableCompat doodleDot;
@@ -109,6 +119,22 @@ public class LiveWallpaperService extends WallpaperService {
   private float zGeometricCircle;
   private float zGeometricSheet;
 
+  protected BroadcastReceiver presenceReceiver = new BroadcastReceiver() {
+    public void onReceive(Context context, Intent intent) {
+      switch (intent.getAction()) {
+        case Intent.ACTION_USER_PRESENT:
+          setUserPresence(USER_PRESENCE.UNLOCKED);
+          break;
+        case Intent.ACTION_SCREEN_OFF:
+          setUserPresence(USER_PRESENCE.OFF);
+          break;
+        case Intent.ACTION_SCREEN_ON:
+          setUserPresence(isKeyguardLocked() ? USER_PRESENCE.LOCKED : USER_PRESENCE.UNLOCKED);
+          break;
+      }
+    }
+  };
+
   @Override
   public Engine onCreateEngine() {
     sharedPrefs = new PrefsUtil(this).getSharedPrefs();
@@ -116,7 +142,23 @@ public class LiveWallpaperService extends WallpaperService {
 
     fps = getFrameRate();
 
-    return new CustomEngine();
+    IntentFilter filter = new IntentFilter(Intent.ACTION_USER_PRESENT);
+    filter.addAction(Intent.ACTION_SCREEN_OFF);
+    filter.addAction(Intent.ACTION_SCREEN_ON);
+    registerReceiver(presenceReceiver, filter);
+    receiverRegistered = true;
+    setUserPresence(isKeyguardLocked() ? USER_PRESENCE.LOCKED : USER_PRESENCE.UNLOCKED);
+
+    return new UserAwareEngine();
+  }
+
+  public void onDestroy() {
+    if (receiverRegistered) {
+      unregisterReceiver(presenceReceiver);
+      receiverRegistered = false;
+    }
+    clearShapes();
+    super.onDestroy();
   }
 
   private void refreshTheme() {
@@ -197,31 +239,37 @@ public class LiveWallpaperService extends WallpaperService {
     Random random = new Random();
     switch (wallpaper) {
       case WALLPAPER.DOODLE:
-        zDoodleArc = random.nextFloat();
-        zDoodleDot = random.nextFloat();
-        zDoodleU = random.nextFloat();
-        zDoodleRect = random.nextFloat();
-        zDoodleRing = random.nextFloat();
-        zDoodleMoon = random.nextFloat();
-        zDoodlePoly = random.nextFloat();
+        zDoodleArc = getRandomFloat(random);
+        zDoodleDot = getRandomFloat(random);
+        zDoodleU = getRandomFloat(random);
+        zDoodleRect = getRandomFloat(random);
+        zDoodleRing = getRandomFloat(random);
+        zDoodleMoon = getRandomFloat(random);
+        zDoodlePoly = getRandomFloat(random);
         break;
       case WALLPAPER.NEON:
-        zNeonKidneyFront = random.nextFloat();
-        zNeonCircleFront = random.nextFloat();
-        zNeonPill = random.nextFloat();
-        zNeonLine = random.nextFloat();
-        zNeonKidneyBack = random.nextFloat();
-        zNeonCircleBack = random.nextFloat();
-        zNeonDot = random.nextFloat();
+        zNeonKidneyFront = getRandomFloat(random);
+        zNeonCircleFront = getRandomFloat(random);
+        zNeonPill = getRandomFloat(random);
+        zNeonLine = getRandomFloat(random);
+        zNeonKidneyBack = getRandomFloat(random);
+        zNeonCircleBack = getRandomFloat(random);
+        zNeonDot = getRandomFloat(random);
         break;
       case WALLPAPER.GEOMETRIC:
-        zGeometricRect = random.nextFloat();
-        zGeometricLine = random.nextFloat();
-        zGeometricPoly = random.nextFloat();
-        zGeometricCircle = random.nextFloat();
-        zGeometricSheet = random.nextFloat();
+        zGeometricRect = getRandomFloat(random);
+        zGeometricLine = getRandomFloat(random);
+        zGeometricPoly = getRandomFloat(random);
+        zGeometricCircle = getRandomFloat(random);
+        zGeometricSheet = getRandomFloat(random);
         break;
     }
+  }
+
+  private float getRandomFloat(Random random) {
+    float min = 0.1f;
+    float max = 1;
+    return min + random.nextFloat() * (max - min);
   }
 
   private void clearShapes() {
@@ -260,6 +308,10 @@ public class LiveWallpaperService extends WallpaperService {
     return getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT;
   }
 
+  private boolean isKeyguardLocked() {
+    return ((KeyguardManager) getSystemService(KEYGUARD_SERVICE)).isKeyguardLocked();
+  }
+
   private int getCompatColor(@ColorRes int resId) {
     return ContextCompat.getColor(this, resId);
   }
@@ -273,19 +325,53 @@ public class LiveWallpaperService extends WallpaperService {
     return VectorDrawableCompat.create(getResources(), resId, theme);
   }
 
-  class CustomEngine extends Engine {
+  public void setUserPresence(final String presence) {
+    if (presence.equals(this.presence)) {
+      return;
+    }
+    this.presence = presence;
+    if (userPresenceListener != null) {
+      userPresenceListener.onPresenceChange(presence);
+    }
+  }
+
+  public interface UserPresenceListener {
+
+    void onPresenceChange(String presence);
+  }
+
+  // ENGINE
+
+  class UserAwareEngine extends Engine implements UserPresenceListener {
     private float xOffset = 0;
-    private float zoom = 0;
+    private float zoomLauncher = 0;
+    private float zoomUnlock = 0;
     private long lastDraw;
+    private boolean isVisible;
+    private ValueAnimator valueAnimator;
 
     @Override
     public void onCreate(SurfaceHolder surfaceHolder) {
       super.onCreate(surfaceHolder);
 
+      userPresenceListener = this;
+
       isNight = isNightMode();
       loadSettings();
 
+      zoomUnlock = 1;
+      animateZoom(0);
+
       setTouchEventsEnabled(false);
+    }
+
+    @Override
+    public void onDestroy() {
+      if (valueAnimator != null) {
+        valueAnimator.cancel();
+        valueAnimator.removeAllUpdateListeners();
+        valueAnimator = null;
+      }
     }
 
     @Override
@@ -336,7 +422,7 @@ public class LiveWallpaperService extends WallpaperService {
 
     @Override
     public void onVisibilityChanged(boolean visible) {
-      super.onVisibilityChanged(visible);
+      isVisible = visible;
       if (!visible) {
         return;
       }
@@ -398,8 +484,29 @@ public class LiveWallpaperService extends WallpaperService {
     @Override
     public void onZoomChanged(float zoom) {
       if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R && zoomIntensity > 0) {
-        this.zoom = zoom;
+        this.zoomLauncher = zoom;
         drawFrame(false);
+      }
+    }
+
+    @Override
+    public void onPresenceChange(String presence) {
+      switch (presence) {
+        case USER_PRESENCE.OFF:
+          zoomUnlock = 1;
+          drawFrame(true);
+          break;
+        case USER_PRESENCE.LOCKED:
+          animateZoom(0.5f);
+          break;
+        case USER_PRESENCE.UNLOCKED:
+          if (isVisible) {
+            animateZoom(0);
+          } else {
+            zoomUnlock = 0;
+            drawFrame(true);
+          }
+          break;
       }
     }
 
@@ -496,7 +603,7 @@ public class LiveWallpaperService extends WallpaperService {
         intensity = 0.3f;
       }
 
-      double scale = size - (zoom * z * intensity);
+      double scale = size - (zoomLauncher * z * intensity) - (zoomUnlock * z * intensity);
       int width = (int) (scale * drawable.getIntrinsicWidth());
       int height = (int) (scale * drawable.getIntrinsicHeight());
 
@@ -506,12 +613,49 @@ public class LiveWallpaperService extends WallpaperService {
       xPos = ((int) (x * frame.width())) - offset;
       yPos = (int) (y * frame.height());
 
+      // zoom out moves shapes to the center
+      int centerX = frame.centerX();
+      int centerY = frame.centerY();
+      if (xPos < centerX) {
+        int dist = centerX - xPos;
+        xPos += dist * z * zoomLauncher * intensity;
+        xPos += dist * z * zoomUnlock * intensity;
+      } else {
+        int dist = xPos - centerX;
+        xPos -= dist * z * zoomLauncher * intensity;
+        xPos -= dist * z * zoomUnlock * intensity;
+      }
+      if (yPos < centerY) {
+        int dist = centerY - yPos;
+        yPos += dist * z * zoomLauncher * intensity;
+        yPos += dist * z * zoomUnlock * intensity;
+      } else {
+        int dist = yPos - centerY;
+        yPos -= dist * z * zoomLauncher * intensity;
+        yPos -= dist * z * zoomUnlock * intensity;
+      }
+
       drawable.setBounds(
           xPos - width / 2,
           yPos - height / 2,
           xPos + width / 2,
           yPos + height / 2
       );
+    }
+
+    private void animateZoom(float valueTo) {
+      if (valueAnimator != null) {
+        valueAnimator.cancel();
+        valueAnimator.removeAllUpdateListeners();
+        valueAnimator = null;
+      }
+      valueAnimator = ValueAnimator.ofFloat(zoomUnlock, valueTo);
+      valueAnimator.addUpdateListener(animation -> {
+        zoomUnlock = (float) animation.getAnimatedValue();
+        drawFrame(true);
+      });
+      valueAnimator.setInterpolator(new FastOutSlowInInterpolator());
+      valueAnimator.setDuration(1000).start();
     }
 
     private void colorsHaveChanged() {

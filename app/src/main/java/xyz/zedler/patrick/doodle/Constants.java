@@ -71,4 +71,11 @@ public final class Constants {
     public final static String LINK = "link";
     public final static String FILE = "file";
   }
+
+  public final static class USER_PRESENCE {
+
+    public final static String LOCKED = "locked";
+    public final static String OFF = "off";
+    public final static String UNLOCKED = "unlocked";
+  }
 }

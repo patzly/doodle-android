@@ -38,6 +38,7 @@
   <string name="action_rate">Rate on Google Play</string>
   <string name="action_rate_description">Support the development</string>
 
+  <string name="setting_default">Default</string>
   <string name="setting_night_mode">Night mode</string>
   <string name="setting_night_mode_description">Completely dark shapes</string>
   <string name="setting_follow_system">Follow system</string>
@@ -45,11 +46,8 @@
   <string name="setting_parallax">Parallax strength</string>
   <string name="setting_parallax_description">Horizontal offset on page swipe</string>
   <string name="setting_parallax_none">None</string>
-  <string name="setting_parallax_little">Little</string>
-  <string name="setting_parallax_much">Much</string>
   <string name="setting_size">Shape size</string>
   <string name="setting_size_description">Useful for big screens</string>
-  <string name="setting_size_default">Default</string>
   <string name="setting_zoom">Zoom effect intensity</string>
   <string name="setting_zoom_description">Only fluid on high-end devices and only for some wallpapers, turn it off below if necessary</string>
   <string name="setting_zoom_launcher">Zoom out when opening quick settings or app drawer</string>

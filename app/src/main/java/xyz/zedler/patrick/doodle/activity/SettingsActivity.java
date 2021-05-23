@@ -138,10 +138,10 @@ public class SettingsActivity extends AppCompatActivity
     binding.sliderParallax.setLabelFormatter(value -> {
       if (value == 0) {
         return getString(R.string.setting_parallax_none);
-      } else if (value == 200) {
-        return getString(R.string.setting_parallax_much);
+      } else if (value == DEF.PARALLAX) {
+        return getString(R.string.setting_default);
       } else {
-        return getString(R.string.setting_parallax_little);
+        return String.valueOf((int) value);
       }
     });
 
@@ -149,7 +149,7 @@ public class SettingsActivity extends AppCompatActivity
     binding.sliderSize.addOnChangeListener(this);
     binding.sliderSize.setLabelFormatter(value -> {
       if (value == 1) {
-        return getString(R.string.setting_size_default);
+        return getString(R.string.setting_default);
       } else {
         return String.format(Locale.getDefault(), "×%.1f", value);
       }

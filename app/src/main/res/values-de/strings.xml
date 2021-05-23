@@ -34,6 +34,7 @@
   <string name="action_rate">Bei Google Play bewerten</string>
   <string name="action_rate_description">Entwicklung unterstützen</string>
 
+  <string name="setting_default">Standard</string>
   <string name="setting_night_mode">Nachtmodus</string>
   <string name="setting_night_mode_description">Abgedunkelte Formen</string>
   <string name="setting_follow_system">System folgen</string>
@@ -41,11 +42,8 @@
   <string name="setting_parallax">Parallax-Stärke</string>
   <string name="setting_parallax_description">Horizontaler Versatz beim Wechseln zwischen Startbildschirmen</string>
   <string name="setting_parallax_none">Aus</string>
-  <string name="setting_parallax_little">Wenig</string>
-  <string name="setting_parallax_much">Viel</string>
   <string name="setting_size">Größe der Formen</string>
   <string name="setting_size_description">Nützlich für große Displays</string>
-  <string name="setting_size_default">Normal</string>
   <string name="setting_zoom">Intensität des Zoom-Effekts</string>
   <string name="setting_zoom_description">Nur flüssig auf High-End-Geräten und nur mit manchen Hintergründen, ggf. unten ausschalten</string>
   <string name="setting_zoom_launcher">Beim Öffnen der Schnelleinstellungen oder des App-Drawers herauszoomen</string>

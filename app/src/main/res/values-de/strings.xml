@@ -65,6 +65,7 @@
   <string name="info_version">Version</string>
   <string name="info_github">Doodle Android auf GitHub</string>
   <string name="info_github_description">Quellcode</string>
+  <string name="info_github_feedback_description">Open a new issue</string>
   <string name="info_changelog">Änderungen</string>
   <string name="info_changelog_description">Was ist neu?</string>
   <string name="info_developer">Entwickler</string>

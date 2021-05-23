@@ -1,4 +1,5 @@
 2.6.0:
+- New: zoom-in animation when unlocking + preferences
 - New: changes are shown after update
 - New: feedback and GitHub link in settings app
 - Improved: max. shape size now bigger for tablets

@@ -294,10 +294,8 @@ public class SettingsActivity extends AppCompatActivity
       IconUtil.start(binding.imageZoom);
       binding.checkboxZoomUnlock.setChecked(!binding.checkboxZoomUnlock.isChecked());
     } else if (id == R.id.linear_github && clickUtil.isEnabled()) {
-      startActivity(new Intent(
-          Intent.ACTION_VIEW,
-          Uri.parse(getString(R.string.app_github))
-      ));
+      startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.app_github))));
+      performHapticClick();
     } else if (id == R.id.linear_changelog && clickUtil.isEnabled()) {
       IconUtil.start(binding.imageChangelog);
       sheetUtil.show(new ChangelogBottomSheetDialogFragment());

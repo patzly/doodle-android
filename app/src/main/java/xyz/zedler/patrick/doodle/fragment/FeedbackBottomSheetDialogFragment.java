@@ -100,6 +100,12 @@ public class FeedbackBottomSheetDialogFragment extends BaseBottomSheetDialogFrag
       dismiss();
     });
 
+    binding.linearFeedbackGithub.setOnClickListener(v -> {
+      vibratorUtil.click();
+      startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.app_github))));
+      dismiss();
+    });
+
     binding.linearFeedbackShare.setOnClickListener(v -> {
       vibratorUtil.click();
       ResUtil.share(activity, R.string.msg_share);

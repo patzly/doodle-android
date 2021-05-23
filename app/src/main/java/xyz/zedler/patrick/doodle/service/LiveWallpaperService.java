@@ -120,7 +120,7 @@ public class LiveWallpaperService extends WallpaperService {
   private float zGeometricCircle;
   private float zGeometricSheet;
 
-  protected BroadcastReceiver presenceReceiver = new BroadcastReceiver() {
+  private final BroadcastReceiver presenceReceiver = new BroadcastReceiver() {
     public void onReceive(Context context, Intent intent) {
       switch (intent.getAction()) {
         case Intent.ACTION_USER_PRESENT:

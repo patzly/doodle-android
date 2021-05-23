@@ -15,9 +15,10 @@ The wallpapers are based on the original Doodle live wallpapers of the Google Pi
 * System dependent dark mode
 * Battery-efficient parallax effect on page swipe
 * Support for Android 11 zoom effect
+* Optional zoom-in animation when unlocking
 * Various customization options
-* Direct boot support
-* No permanent animations or gyroscore sensor requests
+* Direct boot support (immediately active after device restart)
+* No permanent animations or gyroscope sensor requests
 * Also suitable for less powerful devices
 * No ads and no analytics
 * Tiny installation size (~3.5MB)

@@ -27,7 +27,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -155,11 +154,11 @@ public class SettingsActivity extends AppCompatActivity
       }
     });
 
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+/*    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
       binding.linearZoom.setVisibility(View.VISIBLE);
     } else {
       binding.linearZoom.setVisibility(View.GONE);
-    }
+    }*/
     binding.sliderZoom.setValue(sharedPrefs.getInt(PREF.ZOOM, DEF.ZOOM));
     binding.sliderZoom.addOnChangeListener(this);
     binding.sliderZoom.setLabelFormatter(value -> {

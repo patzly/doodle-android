@@ -30,7 +30,7 @@
   <string name="action_share">Teilen</string>
   <string name="action_share_description">Freunden von Doodle erzählen</string>
   <string name="action_email">Email senden</string>
-  <string name="action_email_description">Entwickler kontaktieren</string>
+  <string name="action_email_description">Den Entwickler kontaktieren</string>
   <string name="action_rate">Bei Google Play bewerten</string>
   <string name="action_rate_description">Entwicklung unterstützen</string>
 
@@ -39,7 +39,7 @@
   <string name="setting_follow_system">System folgen</string>
   <string name="setting_follow_system_description">Adaption des Designs</string>
   <string name="setting_parallax">Parallax-Stärke</string>
-  <string name="setting_parallax_description">Horizontaler Versatz beim Wischen</string>
+  <string name="setting_parallax_description">Horizontaler Versatz beim Wechseln zwischen Startbildschirmen</string>
   <string name="setting_parallax_none">Aus</string>
   <string name="setting_parallax_little">Wenig</string>
   <string name="setting_parallax_much">Viel</string>
@@ -47,7 +47,7 @@
   <string name="setting_size_description">Nützlich für große Displays</string>
   <string name="setting_size_default">Normal</string>
   <string name="setting_zoom">Intensität des Zoom-Effekts</string>
-  <string name="setting_zoom_description">Nicht von jedem Launcher unterstützt</string>
+  <string name="setting_zoom_description">Nur flüssig auf High-End-Geräten und nur mit manchen Hintergründen, ggf. unten ausschalten</string>
   <string name="setting_zoom_off">Aus</string>
   <string name="setting_zoom_little">Wenig</string>
   <string name="setting_zoom_much">Viel</string>
@@ -56,7 +56,7 @@
   <string name="category_about">Über</string>
   <string name="category_licenses">Open-Source-Lizenzen</string>
 
-  <string name="msg_feedback">Eine tolle App kostet viel Zeit und lebt von der Rückmeldung ihrer Nutzer.\n\nHaben Sie Wünsche, Anmerkungen oder Fragen? Schreiben Sie mir!\nAnsonsten freue ich mich über eine nette Bewertung im Play Store.</string>
+  <string name="msg_feedback">Eine tolle App kostet viel Zeit und lebt von der Rückmeldung ihrer Nutzer.\n\nHast du Wünsche, Anmerkungen oder Fragen? Dann lass es mich wissen!\nAnsonsten freue ich mich über eine nette Bewertung im Play Store.</string>
   <string name="msg_share">Schau dir mal diese coole Live-Wallpaper-App an: \nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
 
   <string name="info_title">Informationen</string>

@@ -368,8 +368,8 @@ public class LiveWallpaperService extends WallpaperService {
 
       userPresenceListener = this;
 
-      isNight = isNightMode();
       loadSettings();
+      loadTheme();
 
       zoomUnlock = 1;
       animateZoom(0);
@@ -439,19 +439,14 @@ public class LiveWallpaperService extends WallpaperService {
         return;
       }
 
-      reloadSettingsIfChanged();
+      handleRefreshRequests();
 
       newRandomZ();
       drawFrame(true);
     }
 
     private void loadSettings() {
-      wallpaper = sharedPrefs.getString(PREF.WALLPAPER, DEF.WALLPAPER);
-      variant = sharedPrefs.getString(PREF.VARIANT, DEF.VARIANT);
-      nightMode = sharedPrefs.getBoolean(PREF.NIGHT_MODE, DEF.NIGHT_MODE);
-      followSystem = sharedPrefs.getBoolean(PREF.FOLLOW_SYSTEM, DEF.FOLLOW_SYSTEM);
       parallax = sharedPrefs.getInt(PREF.PARALLAX, DEF.PARALLAX);
-      size = sharedPrefs.getFloat(PREF.SIZE, DEF.SIZE);
       zoomIntensity = sharedPrefs.getInt(PREF.ZOOM, DEF.ZOOM);
       isZoomLauncherEnabled = sharedPrefs.getBoolean(PREF.ZOOM_LAUNCHER, DEF.ZOOM_LAUNCHER);
       isZoomUnlockEnabled = sharedPrefs.getBoolean(PREF.ZOOM_UNLOCK, DEF.ZOOM_UNLOCK);
@@ -461,6 +456,14 @@ public class LiveWallpaperService extends WallpaperService {
       } else if (!isZoomUnlockEnabled && isReceiverRegistered) {
         unregisterReceiver();
       }
+    }
+
+    private void loadTheme() {
+      wallpaper = sharedPrefs.getString(PREF.WALLPAPER, DEF.WALLPAPER);
+      variant = sharedPrefs.getString(PREF.VARIANT, DEF.VARIANT);
+      nightMode = sharedPrefs.getBoolean(PREF.NIGHT_MODE, DEF.NIGHT_MODE);
+      followSystem = sharedPrefs.getBoolean(PREF.FOLLOW_SYSTEM, DEF.FOLLOW_SYSTEM);
+      size = sharedPrefs.getFloat(PREF.SIZE, DEF.SIZE);
 
       theme = null;
       clearShapes();
@@ -472,17 +475,19 @@ public class LiveWallpaperService extends WallpaperService {
       colorsHaveChanged();
     }
 
-    private void reloadSettingsIfChanged() {
-      boolean settingsChanged = sharedPrefs.getBoolean(PREF.SETTINGS_CHANGED, false);
-      boolean changesApplied = sharedPrefs.getBoolean(PREF.CHANGES_APPLIED, true);
-      if (settingsChanged && !changesApplied) {
-        sharedPrefs.edit()
-            .putBoolean(PREF.SETTINGS_CHANGED, false)
-            .putBoolean(PREF.CHANGES_APPLIED, true)
-            .apply();
+    private void handleRefreshRequests() {
+      boolean settingsApplied = sharedPrefs.getBoolean(PREF.SETTINGS_APPLIED, true);
+      if (!settingsApplied) {
+        sharedPrefs.edit().putBoolean(PREF.SETTINGS_APPLIED, true).apply();
         loadSettings();
+      }
+
+      boolean themeApplied = sharedPrefs.getBoolean(PREF.THEME_APPLIED, true);
+      if (!themeApplied) {
+        sharedPrefs.edit().putBoolean(PREF.THEME_APPLIED, true).apply();
+        loadTheme();
       } else if (isNight != isNightMode()) {
-        loadSettings();
+        loadTheme();
       }
     }
 

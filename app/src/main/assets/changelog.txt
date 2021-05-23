@@ -1,3 +1,7 @@
+2.7.0:
+- Improved: applying preferences not related to color now is more efficient
+- Fixed: preferences sometimes not applied to wallpaper
+
 2.6.0:
 - New: zoom-in animation when unlocking
 - New: changelog is shown after update

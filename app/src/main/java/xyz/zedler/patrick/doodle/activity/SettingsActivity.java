@@ -75,7 +75,8 @@ public class SettingsActivity extends AppCompatActivity
   private ClickUtil clickUtil;
   private VibratorUtil vibratorUtil;
   private SheetUtil sheetUtil;
-  private boolean settingsChanged;
+  private boolean settingsApplied;
+  private boolean themeApplied;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -224,10 +225,8 @@ public class SettingsActivity extends AppCompatActivity
 
     binding.cardTouchWiz.setVisibility(isTouchWiz() ? View.VISIBLE : View.GONE);
 
-    boolean changesApplied = sharedPrefs.getBoolean(PREF.CHANGES_APPLIED, false);
-    if (changesApplied) {
-      settingsChanged = false;
-    }
+    settingsApplied = sharedPrefs.getBoolean(PREF.SETTINGS_APPLIED, true);
+    themeApplied = sharedPrefs.getBoolean(PREF.THEME_APPLIED, true);
   }
 
   @Override
@@ -362,15 +361,18 @@ public class SettingsActivity extends AppCompatActivity
           ),
           300
       );
+      requestThemeRefresh();
     } else if (id == R.id.switch_follow_system) {
       sharedPrefs.edit().putBoolean(PREF.FOLLOW_SYSTEM, isChecked).apply();
+      requestThemeRefresh();
     } else if (id == R.id.checkbox_zoom_launcher) {
       sharedPrefs.edit().putBoolean(PREF.ZOOM_LAUNCHER, isChecked).apply();
+      requestSettingsRefresh();
     } else if (id == R.id.checkbox_zoom_unlock) {
       sharedPrefs.edit().putBoolean(PREF.ZOOM_UNLOCK, isChecked).apply();
+      requestSettingsRefresh();
     }
     performHapticClick();
-    notifySettingsHaveChanged();
   }
 
   @Override
@@ -382,15 +384,19 @@ public class SettingsActivity extends AppCompatActivity
     if (id == R.id.slider_parallax) {
       sharedPrefs.edit().putInt(PREF.PARALLAX, (int) value).apply();
       IconUtil.start(binding.imageParallax);
+      requestSettingsRefresh();
     } else if (id == R.id.slider_size) {
       sharedPrefs.edit().putFloat(PREF.SIZE, value).apply();
       IconUtil.start(binding.imageSize);
+      // When the size changes the drawables have to be reloaded
+      // Without this and the new size is smaller, the big cached bitmaps are causing lags
+      requestThemeRefresh();
     } else if (id == R.id.slider_zoom) {
       sharedPrefs.edit().putInt(PREF.ZOOM, (int) value).apply();
       IconUtil.start(binding.imageZoom);
+      requestSettingsRefresh();
     }
     performHapticClick();
-    notifySettingsHaveChanged();
   }
 
   private void refreshSelectionTheme(String selection, boolean animated) {
@@ -423,7 +429,7 @@ public class SettingsActivity extends AppCompatActivity
     mcv2.setChecked(false);
     setVariantSelectionEnabled(selection.equals(WALLPAPER.DOODLE), true);
     sharedPrefs.edit().putString(PREF.WALLPAPER, selection).apply();
-    notifySettingsHaveChanged();
+    requestThemeRefresh();
   }
 
   private void refreshSelectionVariant(String selection, boolean animated) {
@@ -455,16 +461,20 @@ public class SettingsActivity extends AppCompatActivity
     mcv2.setStrokeColor(ContextCompat.getColor(this, R.color.stroke));
     mcv2.setChecked(false);
     sharedPrefs.edit().putString(PREF.VARIANT, selection).apply();
-    notifySettingsHaveChanged();
+    requestThemeRefresh();
   }
 
-  private void notifySettingsHaveChanged() {
-    if (!settingsChanged) {
-      settingsChanged = true;
-      sharedPrefs.edit()
-          .putBoolean(PREF.SETTINGS_CHANGED, true)
-          .putBoolean(PREF.CHANGES_APPLIED, false)
-          .apply();
+  private void requestSettingsRefresh() {
+    if (settingsApplied) {
+      sharedPrefs.edit().putBoolean(PREF.SETTINGS_APPLIED, false).apply();
+      settingsApplied = false;
+    }
+  }
+
+  private void requestThemeRefresh() {
+    if (themeApplied) {
+      sharedPrefs.edit().putBoolean(PREF.THEME_APPLIED, false).apply();
+      themeApplied = false;
     }
   }
 

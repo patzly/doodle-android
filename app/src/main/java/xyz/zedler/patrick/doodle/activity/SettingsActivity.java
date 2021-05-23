@@ -183,6 +183,7 @@ public class SettingsActivity extends AppCompatActivity
         binding.cardBlack, binding.cardWhite, binding.cardOrange,
         binding.linearNightMode,
         binding.linearFollowSystem,
+        binding.linearGithub,
         binding.linearChangelog,
         binding.linearFeedback,
         binding.linearDeveloper,
@@ -278,6 +279,11 @@ public class SettingsActivity extends AppCompatActivity
       if (binding.switchNightMode.isChecked()) {
         binding.switchFollowSystem.setChecked(!binding.switchFollowSystem.isChecked());
       }
+    } else if (id == R.id.linear_github && clickUtil.isEnabled()) {
+      startActivity(new Intent(
+          Intent.ACTION_VIEW,
+          Uri.parse(getString(R.string.app_github))
+      ));
     } else if (id == R.id.linear_changelog && clickUtil.isEnabled()) {
       IconUtil.start(binding.imageChangelog);
       sheetUtil.show(new ChangelogBottomSheetDialogFragment());
@@ -292,7 +298,7 @@ public class SettingsActivity extends AppCompatActivity
           () -> startActivity(
               new Intent(
                   Intent.ACTION_VIEW,
-                  Uri.parse("http://play.google.com/store/apps/dev?id=8122479227040208191")
+                  Uri.parse(getString(R.string.app_developer_play))
               )
           ), 300
       );

@@ -64,6 +64,8 @@
   <string name="info_description_wallpaper">Entdecke eine farbenfrohe Sammlung von Formen, verfeinert mit sanften Parallax- und Zoom-Effekten beim Wechseln zwischen deinen Startbildschirmen und Entsperren deines Smartphones.\nPasse den Hintergrund mit mehreren Optionen an deinen eigenen Stil an.</string>
   <string name="info_touch_wiz">Der momentan festgelegte Launcher (Samsung TouchWiz) unterstützt leider kein Hintergrund-Scrolling. Probiere einen anderen aus, um den Parallax-Effekt zu aktivieren.</string>
   <string name="info_version">Version</string>
+  <string name="info_github">Doodle Android auf GitHub</string>
+  <string name="info_github_description">Quellcode</string>
   <string name="info_changelog">Änderungen</string>
   <string name="info_changelog_description">Was ist neu?</string>
   <string name="info_developer">Entwickler</string>

@@ -1,8 +1,9 @@
 2.6.0:
 - New: changes are shown after update
-- New: feedback section
+- New: feedback and GitHub link in settings app
 - Improved: max. shape size now bigger for tablets
 - Improved: wallpapers optimized for landscape mode
+- Improved: General information and descriptions
 - Fixed: laggy animations after resizing shapes in settings
 
 2.5.0:

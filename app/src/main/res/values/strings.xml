@@ -24,6 +24,8 @@
   <string name="app_name">Doodle</string>
   <string name="app_developer" translatable="false">Patrick Zedler</string>
   <string name="app_mail" translatable="false">patrick@zedler.xyz</string>
+  <string name="app_github" translatable="false">https://github.com/patzly/doodle-android/</string>
+  <string name="app_developer_play" translatable="false">http://play.google.com/store/apps/dev?id=8122479227040208191</string>
 
   <string name="action_close">Close</string>
   <string name="action_set">Set</string>
@@ -59,6 +61,8 @@
   <string name="info_description_wallpaper">Explore a colorful collection of shapes, refined with gentle parallax and zoom effects when you swipe through your home screens and unlock your phone.\nCustomize the wallpaper to match your own style.</string>
   <string name="info_touch_wiz">Your current launcher (Samsung TouchWiz) unfortunately does not support background scrolling. Please try a different launcher to activate the parallax effect.</string>
   <string name="info_version">Version</string>
+  <string name="info_github">Doodle Android on GitHub</string>
+  <string name="info_github_description">Source code</string>
   <string name="info_changelog">Changelog</string>
   <string name="info_changelog_description">What\'s new?</string>
   <string name="info_developer">Developer</string>

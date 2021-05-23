@@ -3,11 +3,13 @@ They are completely rewritten, nothing except the look is taken from the origina
 
 Advantages over the original:
 - No permanent animations or gyroscope sensor requests
+- Also suitable for larger devices like tablets
 - Support for Android 11 zoom effect
 - Suitable for less powerful devices (you may need to turn of the zoom effect)
 - Battery-efficient animations
 - Auto dark mode based on the current theme of your device
 - Better text contrast (switches to dark text in light themes instead of using white text with shadow)
+- Also suitable for larger devices like tablets
 - Various customization and color options
 - Tiny installation size (~3.5MB)
 

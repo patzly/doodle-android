@@ -4,7 +4,7 @@
 - New: feedback and GitHub link in app
 - Improved: max. shape size now bigger for tablets
 - Improved: increased max. parallax strength
-- Improved: wallpapers optimized for landscape mode
+- Improved: wallpapers optimized for landscape mode and tablets
 - Improved: general information and descriptions
 - Fixed: dark mode not adopting from system
 - Fixed: laggy animations after resizing shapes in settings

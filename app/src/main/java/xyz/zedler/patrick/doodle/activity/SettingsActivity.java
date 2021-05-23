@@ -196,8 +196,6 @@ public class SettingsActivity extends AppCompatActivity
         this, binding.switchNightMode, binding.switchFollowSystem
     );
 
-    if (isTouchWiz()) binding.cardTouchWiz.setVisibility(View.VISIBLE);
-
     showChangelog();
     showFeedbackPopUp();
   }
@@ -215,6 +213,8 @@ public class SettingsActivity extends AppCompatActivity
     if (!isWallpaperServiceRunning()) {
       setActivateButtonEnabled(true);
     }
+
+    binding.cardTouchWiz.setVisibility(isTouchWiz() ? View.VISIBLE : View.GONE);
 
     boolean changesApplied = sharedPrefs.getBoolean(PREF.CHANGES_APPLIED, false);
     if (changesApplied) {

@@ -687,7 +687,7 @@ public class LiveWallpaperService extends WallpaperService {
         drawFrame(true);
       });
       valueAnimator.setInterpolator(new FastOutSlowInInterpolator());
-      valueAnimator.setDuration(1000).start();
+      valueAnimator.setDuration(1250).start();
     }
 
     private void colorsHaveChanged() {

@@ -49,10 +49,20 @@ public class MigrationUtil {
     // parallax is stored in a new way
     if (sharedPrefs.contains(PREF.PARALLAX)) {
       int parallax = sharedPrefs.getInt(PREF.PARALLAX, DEF.PARALLAX);
-      if (parallax == 100 || parallax == 200) {
-        sharedPrefs.edit().putInt(PREF.PARALLAX, parallax / 100).apply();
+      if (parallax >= 0 && parallax <= 3) {
+        sharedPrefs.edit().putInt(PREF.PARALLAX, parallax).apply();
       } else {
         removePreference(PREF.PARALLAX);
+      }
+    }
+
+    // zoom is stored in a new way
+    if (sharedPrefs.contains(PREF.ZOOM)) {
+      int zoom = sharedPrefs.getInt(PREF.ZOOM, DEF.ZOOM);
+      if (zoom >= 2 && zoom <= 5) {
+        sharedPrefs.edit().putInt(PREF.ZOOM, zoom).apply();
+      } else {
+        removePreference(PREF.ZOOM);
       }
     }
   }

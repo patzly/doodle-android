@@ -322,7 +322,8 @@ public class LiveWallpaperService extends WallpaperService {
   }
 
   private VectorDrawableCompat getVectorDrawable(@DrawableRes int resId) {
-    return VectorDrawableCompat.create(getResources(), resId, theme);
+    VectorDrawableCompat drawable = VectorDrawableCompat.create(getResources(), resId, theme);
+    return drawable != null ? (VectorDrawableCompat) drawable.mutate() : null;
   }
 
   public void setUserPresence(final String presence) {

@@ -3,6 +3,7 @@
 - New: feedback section
 - Improved: max. shape size now bigger for tablets
 - Improved: wallpapers optimized for landscape mode
+- Fixed: laggy animations after resizing shapes in settings
 
 2.5.0:
 - New: support for zoom effect on Android 11

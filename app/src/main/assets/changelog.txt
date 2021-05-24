@@ -1,6 +1,6 @@
-2.7.0:
-- Improved: applying preferences not related to color now is more efficient
-- Fixed: preferences sometimes not applied to wallpaper
+2.6.1:
+- Improved: applying preferences unrelated to color or size now is more efficient
+- Fixed: preferences were sometimes not applied to wallpaper
 
 2.6.0:
 - New: zoom-in animation when unlocking

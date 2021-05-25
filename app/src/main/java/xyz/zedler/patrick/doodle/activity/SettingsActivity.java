@@ -400,9 +400,6 @@ public class SettingsActivity extends AppCompatActivity
   }
 
   private void refreshSelectionTheme(String selection, boolean animated) {
-    if (animated) {
-      IconUtil.start(binding.imageWallpaper);
-    }
     MaterialCardView mcvSelected, mcv1, mcv2;
     switch (selection) {
       case WALLPAPER.NEON:
@@ -421,6 +418,9 @@ public class SettingsActivity extends AppCompatActivity
         mcv2 = binding.cardNeon;
         break;
     }
+    if (mcvSelected.isChecked()) {
+      return;
+    }
     mcvSelected.setStrokeColor(ContextCompat.getColor(this, R.color.secondary));
     mcvSelected.setChecked(true);
     mcv1.setStrokeColor(ContextCompat.getColor(this, R.color.stroke));
@@ -428,14 +428,14 @@ public class SettingsActivity extends AppCompatActivity
     mcv2.setStrokeColor(ContextCompat.getColor(this, R.color.stroke));
     mcv2.setChecked(false);
     setVariantSelectionEnabled(selection.equals(WALLPAPER.DOODLE), true);
-    sharedPrefs.edit().putString(PREF.WALLPAPER, selection).apply();
-    requestThemeRefresh();
+    if (animated) {
+      IconUtil.start(binding.imageWallpaper);
+      sharedPrefs.edit().putString(PREF.WALLPAPER, selection).apply();
+      requestThemeRefresh();
+    }
   }
 
   private void refreshSelectionVariant(String selection, boolean animated) {
-    if (animated) {
-      IconUtil.start(binding.imageVariant);
-    }
     MaterialCardView mcvSelected, mcv1, mcv2;
     switch (selection) {
       case VARIANT.WHITE:
@@ -454,14 +454,20 @@ public class SettingsActivity extends AppCompatActivity
         mcv2 = binding.cardOrange;
         break;
     }
+    if (mcvSelected.isChecked()) {
+      return;
+    }
     mcvSelected.setStrokeColor(ContextCompat.getColor(this, R.color.secondary));
     mcvSelected.setChecked(true);
     mcv1.setStrokeColor(ContextCompat.getColor(this, R.color.stroke));
     mcv1.setChecked(false);
     mcv2.setStrokeColor(ContextCompat.getColor(this, R.color.stroke));
     mcv2.setChecked(false);
-    sharedPrefs.edit().putString(PREF.VARIANT, selection).apply();
-    requestThemeRefresh();
+    if (animated) {
+      IconUtil.start(binding.imageVariant);
+      sharedPrefs.edit().putString(PREF.VARIANT, selection).apply();
+      requestThemeRefresh();
+    }
   }
 
   private void requestSettingsRefresh() {

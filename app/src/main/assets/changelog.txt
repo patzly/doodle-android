@@ -1,6 +1,7 @@
 2.6.1:
 - Improved: applying preferences unrelated to color or size now is more efficient
 - Fixed: preferences were sometimes not applied to wallpaper
+- Fixed: a few potential crashes
 
 2.6.0:
 - New: zoom-in animation when unlocking

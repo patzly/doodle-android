@@ -38,8 +38,6 @@ import android.graphics.drawable.VectorDrawable;
 import android.os.Build;
 import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
-import android.os.Handler;
-import android.os.Looper;
 import android.os.SystemClock;
 import android.service.wallpaper.WallpaperService;
 import android.util.Log;
@@ -715,7 +713,8 @@ public class LiveWallpaperService extends WallpaperService {
     private void colorsHaveChanged() {
       if (VERSION.SDK_INT >= VERSION_CODES.O_MR1) {
         notifyColorsChanged();
-        new Handler(Looper.getMainLooper()).postDelayed(this::notifyColorsChanged, 300);
+        // We have to call it again to take any effect, causes a warning...
+        notifyColorsChanged();
       }
     }
   }

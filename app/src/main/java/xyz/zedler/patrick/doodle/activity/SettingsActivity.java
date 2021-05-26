@@ -19,6 +19,7 @@
 
 package xyz.zedler.patrick.doodle.activity;
 
+import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.WallpaperManager;
 import android.content.ComponentName;
@@ -33,8 +34,9 @@ import android.os.Handler;
 import android.os.Looper;
 import android.view.View;
 import android.widget.CompoundButton;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
@@ -72,6 +74,7 @@ public class SettingsActivity extends AppCompatActivity
 
   private ActivitySettingsBinding binding;
   private SharedPreferences sharedPrefs;
+  private ActivityResultLauncher<Intent> wallpaperPickerLauncher;
   private ClickUtil clickUtil;
   private VibratorUtil vibratorUtil;
   private SheetUtil sheetUtil;
@@ -113,6 +116,11 @@ public class SettingsActivity extends AppCompatActivity
             this,
             isWallpaperServiceRunning() ? R.color.on_secondary_disabled : R.color.on_secondary
         )
+    );
+
+    wallpaperPickerLauncher = registerForActivityResult(
+        new ActivityResultContracts.StartActivityForResult(),
+        result -> setActivateButtonEnabled(result.getResultCode() != Activity.RESULT_OK)
     );
 
     binding.switchNightMode.setChecked(sharedPrefs.getBoolean(PREF.NIGHT_MODE, true));
@@ -230,22 +238,13 @@ public class SettingsActivity extends AppCompatActivity
   }
 
   @Override
-  protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-    super.onActivityResult(requestCode, resultCode, data);
-
-    if (requestCode == Constants.REQUEST_CODE) {
-      setActivateButtonEnabled(resultCode != RESULT_OK);
-    }
-  }
-
-  @Override
   public void onClick(View v) {
     int id = v.getId();
     if (id == R.id.frame_close && clickUtil.isEnabled()) {
       performHapticClick();
       finish();
     } else if (id == R.id.button_set && clickUtil.isEnabled()) {
-      startActivityForResult(
+      wallpaperPickerLauncher.launch(
           new Intent()
               .setAction(WallpaperManager.ACTION_CHANGE_LIVE_WALLPAPER)
               .putExtra(
@@ -254,8 +253,7 @@ public class SettingsActivity extends AppCompatActivity
                       "xyz.zedler.patrick.doodle",
                       "xyz.zedler.patrick.doodle.service.LiveWallpaperService"
                   )
-              ),
-          Constants.REQUEST_CODE
+              )
       );
       performHapticHeavyClick();
     } else if (id == R.id.card_info) {

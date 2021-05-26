@@ -28,11 +28,13 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.content.res.Resources.NotFoundException;
 import android.content.res.Resources.Theme;
 import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+import android.graphics.drawable.VectorDrawable;
 import android.os.Build;
 import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
@@ -40,13 +42,14 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.SystemClock;
 import android.service.wallpaper.WallpaperService;
+import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.WindowManager;
 import androidx.annotation.ColorRes;
 import androidx.annotation.DrawableRes;
 import androidx.core.content.ContextCompat;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
-import androidx.vectordrawable.graphics.drawable.VectorDrawableCompat;
 import java.util.Random;
 import xyz.zedler.patrick.doodle.Constants;
 import xyz.zedler.patrick.doodle.Constants.DEF;
@@ -76,27 +79,27 @@ public class LiveWallpaperService extends WallpaperService {
   private boolean isReceiverRegistered = false;
   private UserPresenceListener userPresenceListener;
 
-  private VectorDrawableCompat doodleArc;
-  private VectorDrawableCompat doodleDot;
-  private VectorDrawableCompat doodleU;
-  private VectorDrawableCompat doodleRect;
-  private VectorDrawableCompat doodleRing;
-  private VectorDrawableCompat doodleMoon;
-  private VectorDrawableCompat doodlePoly;
+  private VectorDrawable doodleArc;
+  private VectorDrawable doodleDot;
+  private VectorDrawable doodleU;
+  private VectorDrawable doodleRect;
+  private VectorDrawable doodleRing;
+  private VectorDrawable doodleMoon;
+  private VectorDrawable doodlePoly;
 
-  private VectorDrawableCompat neonKidneyFront;
-  private VectorDrawableCompat neonCircleFront;
-  private VectorDrawableCompat neonPill;
-  private VectorDrawableCompat neonLine;
-  private VectorDrawableCompat neonKidneyBack;
-  private VectorDrawableCompat neonCircleBack;
-  private VectorDrawableCompat neonDot;
+  private VectorDrawable neonKidneyFront;
+  private VectorDrawable neonCircleFront;
+  private VectorDrawable neonPill;
+  private VectorDrawable neonLine;
+  private VectorDrawable neonKidneyBack;
+  private VectorDrawable neonCircleBack;
+  private VectorDrawable neonDot;
 
-  private VectorDrawableCompat geometricRect;
-  private VectorDrawableCompat geometricLine;
-  private VectorDrawableCompat geometricPoly;
-  private VectorDrawableCompat geometricCircle;
-  private VectorDrawableCompat geometricSheet;
+  private VectorDrawable geometricRect;
+  private VectorDrawable geometricLine;
+  private VectorDrawable geometricPoly;
+  private VectorDrawable geometricCircle;
+  private VectorDrawable geometricSheet;
 
   private float zDoodleArc;
   private float zDoodleDot;
@@ -332,9 +335,14 @@ public class LiveWallpaperService extends WallpaperService {
     return windowManager != null ? windowManager.getDefaultDisplay().getRefreshRate() : 60;
   }
 
-  private VectorDrawableCompat getVectorDrawable(@DrawableRes int resId) {
-    VectorDrawableCompat drawable = VectorDrawableCompat.create(getResources(), resId, theme);
-    return drawable != null ? (VectorDrawableCompat) drawable.mutate() : null;
+  private VectorDrawable getVectorDrawable(@DrawableRes int resId) {
+    Drawable drawable = null;
+    try {
+      drawable = ResourcesCompat.getDrawable(getResources(), resId, theme);
+    } catch (NotFoundException e) {
+      Log.e(TAG, "getVectorDrawable: " + e);
+    }
+    return drawable != null ? (VectorDrawable) drawable.mutate() : null;
   }
 
   public void setUserPresence(final String presence) {
@@ -619,6 +627,10 @@ public class LiveWallpaperService extends WallpaperService {
     }
 
     private void drawShape(Drawable drawable, double x, double y, double z, boolean shouldZoom) {
+      if (drawable == null) {
+        return;
+      }
+
       float intensity = shouldZoom ? zoomIntensity / 10f : 0;
 
       double finalZoomLauncher = isZoomLauncherEnabled ? zoomLauncher * z * intensity : 0;

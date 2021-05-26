@@ -2,6 +2,9 @@
   <dictionary name="pzedler">
     <words>
       <w>jost</w>
+      <w>linecap</w>
+      <w>linejoin</w>
+      <w>xlink</w>
     </words>
   </dictionary>
 </component>

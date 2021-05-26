@@ -78,6 +78,7 @@ public class LiveWallpaperService extends WallpaperService {
   private String presence;
   private boolean isReceiverRegistered = false;
   private UserPresenceListener userPresenceListener;
+  //private SvgDrawable svgDrawable;
 
   private VectorDrawable doodleArc;
   private VectorDrawable doodleDot;
@@ -247,6 +248,8 @@ public class LiveWallpaperService extends WallpaperService {
         geometricSheet = getVectorDrawable(R.drawable.geometric_shape_sheet);
         break;
     }
+
+    //svgDrawable = new SvgDrawable(this, R.raw.doodle);
   }
 
   private void newRandomZ() {
@@ -604,6 +607,8 @@ public class LiveWallpaperService extends WallpaperService {
               );
               break;
           }
+
+          //svgDrawable.draw(canvas);
 
           lastDraw = SystemClock.elapsedRealtime();
         }

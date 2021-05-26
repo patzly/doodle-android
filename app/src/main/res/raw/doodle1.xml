@@ -1,0 +1,29 @@
+<!--
+  ~ This file is part of Doodle Android.
+  ~
+  ~ Doodle Android is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Doodle Android is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with Doodle Android. If not, see <http://www.gnu.org/licenses/>.
+  ~
+  ~ Copyright (c) 2020-2021 by Patrick Zedler
+  -->
+
+<svg xmlns="http://www.w3.org/2000/svg" id="svg18" version="1.1" viewBox="0 0 1080 2340">
+  <circle id="circle2" cx="741.894" cy="1088.122" r="149.787" fill="none" stroke="#b8b2a2" stroke-linecap="round" stroke-linejoin="round" stroke-width="11.429"/>
+  <circle id="circle4" cx="176.013" cy="1019.541" r="26.532" fill="#c6c5c1"/>
+  <circle id="circle6" cx="859.615" cy="1206.323" r="61.806" fill="#9293c1"/>
+  <path id="path8" fill="#fde8c9" d="M859.615 1144.518a61.806 61.806 0 00-61.806 61.804 61.806 61.806 0 008.414 31.131 102.879 102.879 0 0088.828-81.767 61.806 61.806 0 00-35.436-11.168z"/>
+  <path id="path10" fill="none" stroke="#f2c5b2" stroke-linecap="round" stroke-width="69.662" d="M236.72 691.48c-59.137-109.693 37.024-246.451 160.25-227.94"/>
+  <circle id="circle12" cx="396.637" cy="463.721" r="26.532" fill="#ff9051"/>
+  <path id="path14" fill="none" stroke="#bfd7c1" stroke-linecap="round" stroke-width="69.49" d="M293.491 1687.7l129.667-94.345c38.533-28.023 41.749-78.917 17.661-112.007-23.648-32.49-73.202-45.9-112.007-17.66l-129.667 94.346"/>
+  <circle id="circle16" cx="293.658" cy="1687.69" r="26.532" fill="#f58651"/>
+</svg>

@@ -24,13 +24,16 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.Matrix;
 import android.graphics.Paint;
+import android.graphics.Paint.Cap;
+import android.graphics.Paint.Join;
 import android.graphics.Paint.Style;
+import android.graphics.Path;
+import android.graphics.RectF;
 import android.util.Base64;
-import android.util.DisplayMetrics;
 import android.util.Log;
 import android.util.Xml;
-import android.view.WindowManager;
 import androidx.annotation.Nullable;
 import androidx.annotation.RawRes;
 import java.io.IOException;
@@ -40,6 +43,8 @@ import java.util.HashMap;
 import java.util.List;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
+import xyz.zedler.patrick.doodle.parser.PathParser;
+import xyz.zedler.patrick.doodle.util.UnitUtil;
 
 public class SvgDrawable {
 
@@ -47,25 +52,19 @@ public class SvgDrawable {
 
   private final static boolean ENABLE_IMAGES = true;
 
-  private Context context;
-  private HashMap<String, SvgObject> objectHashMap;
-  private List<String> ids;
+  private final HashMap<String, SvgObject> objectHashMap;
+  private final List<String> ids;
   private float offsetX;
   private float offsetY;
   private float scale;
   private float zoom;
-  private float screenWidth, svgWidth, svgHeight, pixelUnit;
-  private Paint paint;
+  private final float pixelUnit;
+  private float svgWidth, svgHeight;
+  private final Paint paint;
+  private RectF rectF;
 
   public SvgDrawable(Context context, @RawRes int resId) {
-    this.context = context;
-
-    DisplayMetrics metrics = new DisplayMetrics();
-    WindowManager manager = ((WindowManager) context.getSystemService(Context.WINDOW_SERVICE));
-    manager.getDefaultDisplay().getMetrics(metrics);
-    int w = metrics.widthPixels;
-    int h = metrics.heightPixels;
-    screenWidth = Math.min(h, w);
+    pixelUnit = UnitUtil.getDp(context, 1) * 0.33f;
 
     objectHashMap = new HashMap<>();
     ids = new ArrayList<>();
@@ -73,12 +72,13 @@ public class SvgDrawable {
     try {
       parse(context.getResources().openRawResource(resId));
     } catch (IOException e) {
-      Log.e(TAG, "SvgDrawable: " + e);
+      Log.e(TAG, "SvgDrawable: ", e);
     }
 
     scale = 1;
 
     paint = new Paint();
+    rectF = new RectF();
   }
 
   @Nullable
@@ -107,12 +107,18 @@ public class SvgDrawable {
     for (String id : ids) {
       SvgObject object = objectHashMap.get(id);
       if (object != null) {
+
+        startTransformation(canvas, object);
+
         switch (object.type) {
           case SvgObject.TYPE_PATH:
+            drawPath(canvas, object);
             break;
           case SvgObject.TYPE_RECT:
+            drawRect(canvas, object);
             break;
           case SvgObject.TYPE_CIRCLE:
+          case SvgObject.TYPE_ELLIPSE:
             drawCircle(canvas, object);
             break;
           case SvgObject.TYPE_IMAGE:
@@ -121,6 +127,7 @@ public class SvgDrawable {
             }
             break;
         }
+        stopTransformation(canvas, object);
       }
     }
   }
@@ -133,7 +140,7 @@ public class SvgDrawable {
       parser.next();
       readSvg(parser);
     } catch (XmlPullParserException|IOException e) {
-      Log.e(TAG, "parse: " + e);
+      Log.e(TAG, "parse: ", e);
     } finally {
       inputStream.close();
     }
@@ -141,9 +148,17 @@ public class SvgDrawable {
 
   private void readSvg(XmlPullParser parser) throws IOException, XmlPullParserException {
     parser.require(XmlPullParser.START_TAG, null, "svg");
+    String viewBox = parser.getAttributeValue(null, "viewBox");
+    if (viewBox != null) {
+      String[] metrics = viewBox.split(" ");
+      svgWidth = Float.parseFloat(metrics[2]) - Float.parseFloat(metrics[0]);
+      svgHeight = Float.parseFloat(metrics[3]) - Float.parseFloat(metrics[1]);
+    } else {
+      Log.e(TAG, "readSvg: required viewBox attribute is missing");
+      return;
+    }
 
     while (parser.getEventType() != XmlPullParser.END_DOCUMENT) {
-      Log.i(TAG, "readSvg: hello" + parser.getEventType() + ", " + parser.getName());
       parser.next();
       if (parser.getEventType() != XmlPullParser.START_TAG) {
         continue;
@@ -158,13 +173,16 @@ public class SvgDrawable {
         case SvgObject.TYPE_CIRCLE:
           readCircle(parser);
           break;
+        case SvgObject.TYPE_ELLIPSE:
+          readEllipse(parser);
+          break;
         case SvgObject.TYPE_IMAGE:
           if (ENABLE_IMAGES) {
             readImage(parser);
           }
           break;
         default:
-          //skip(parser);
+          //skip(parser); We don't want to skip group elements, we want to go inside of them
           break;
       }
     }
@@ -177,16 +195,66 @@ public class SvgDrawable {
     String id = parser.getAttributeValue(null, "id");
     if (tag.equals(SvgObject.TYPE_PATH)) {
       if (id != null){
-        object.d = parser.getAttributeValue(null, "d");
+        String d = parser.getAttributeValue(null, "d");
+        if (d != null && !d.isEmpty()) {
+          try {
+            object.path = PathParser.createPathFromPathData(d);
+            if (object.path == null) {
+              return;
+            }
+          } catch (RuntimeException e) {
+            return;
+          }
+        } else {
+          return;
+        }
+
+        if (rectF == null || rectF.isEmpty()) {
+          rectF = new RectF();
+        }
+        object.path.computeBounds(rectF, true);
+        object.width = rectF.width();
+        object.height = rectF.height();
+        object.cx = rectF.centerX();
+        object.cy = rectF.centerY();
+
         readStyle(parser, object);
+        parseTransformation(parser.getAttributeValue(null, "transform"), object);
+
         parser.nextTag();
       } else {
         return;
       }
     }
     parser.require(XmlPullParser.END_TAG, null, SvgObject.TYPE_PATH);
+
+    // apply display metrics
+    Matrix scaleMatrix = new Matrix();
+    scaleMatrix.setScale(pixelUnit, pixelUnit, object.cx, object.cy);
+    object.path.transform(scaleMatrix);
+
     objectHashMap.put(id, object);
     ids.add(id);
+  }
+
+  private void drawPath(Canvas canvas, SvgObject object) {
+    // start with fill and repeat with stroke if both are set
+    int runs = applyPaintStyle(object, false) ? 2 : 1;
+    for (int i = 0; i < runs; i++) {
+      if (i == 1) {
+        applyPaintStyle(object, true);
+      }
+      canvas.save();
+
+      // draw path to required position
+      float requiredCenterX = (object.cx / svgWidth) * canvas.getWidth();
+      float requiredCenterY = (object.cy / svgHeight) * canvas.getHeight();
+      float dx = requiredCenterX - object.cx;
+      float dy = requiredCenterY - object.cy;
+      canvas.translate(dx, dy);
+      canvas.drawPath(object.path, paint);
+      canvas.restore();
+    }
   }
 
   private void readRect(XmlPullParser parser) throws IOException, XmlPullParserException {
@@ -196,19 +264,69 @@ public class SvgDrawable {
     String id = parser.getAttributeValue(null, "id");
     if (tag.equals(SvgObject.TYPE_RECT)) {
       if (id != null){
-        object.width = Float.parseFloat(parser.getAttributeValue(null, "width"));
-        object.height = Float.parseFloat(parser.getAttributeValue(null, "height"));
-        object.x = Float.parseFloat(parser.getAttributeValue(null, "x"));
-        object.y = Float.parseFloat(parser.getAttributeValue(null, "y"));
+        object.width = parseFloat(parser.getAttributeValue(null, "width"));
+        object.height = parseFloat(parser.getAttributeValue(null, "height"));
+        object.x = parseFloat(parser.getAttributeValue(null, "x"));
+        object.y = parseFloat(parser.getAttributeValue(null, "y"));
+        object.cx = object.x + object.width / 2;
+        object.cy = object.y + object.height / 2;
+        object.rx = parseFloat(parser.getAttributeValue(null, "rx"));
+        object.ry = parseFloat(parser.getAttributeValue(null, "ry"));
+
         readStyle(parser, object);
+        parseTransformation(parser.getAttributeValue(null, "transform"), object);
+
         parser.nextTag();
       } else {
         return;
       }
     }
     parser.require(XmlPullParser.END_TAG, null, SvgObject.TYPE_RECT);
+
+    // apply display metrics
+    object.width *= pixelUnit;
+    object.height *= pixelUnit;
+    object.rx *= pixelUnit;
+    object.ry *= pixelUnit;
+    object.cx /= svgWidth;
+    object.cy /= svgHeight;
+
     objectHashMap.put(id, object);
     ids.add(id);
+  }
+
+  private void drawRect(Canvas canvas, SvgObject object) {
+    // start with fill and repeat with stroke if both are set
+    int runs = applyPaintStyle(object, false) ? 2 : 1;
+    for (int i = 0; i < runs; i++) {
+      if (i == 1) {
+        applyPaintStyle(object, true);
+      }
+      float cx = object.cx * canvas.getWidth();
+      float cy = object.cy * canvas.getHeight();
+
+      if (object.rx == 0 && object.ry == 0) {
+        canvas.drawRect(
+            cx - object.width / 2,
+            cy - object.height / 2,
+            cx + object.width / 2,
+            cy + object.height / 2,
+            paint
+        );
+      } else {
+        float rx = object.rx != 0 ? object.rx : object.ry;
+        float ry = object.ry != 0 ? object.ry : object.rx;
+        canvas.drawRoundRect(
+            cx - object.width / 2,
+            cy - object.height / 2,
+            cx + object.width / 2,
+            cy + object.height / 2,
+            rx,
+            ry,
+            paint
+        );
+      }
+    }
   }
 
   private void readCircle(XmlPullParser parser) throws IOException, XmlPullParserException {
@@ -218,29 +336,72 @@ public class SvgDrawable {
     String id = parser.getAttributeValue(null, "id");
     if (tag.equals(SvgObject.TYPE_CIRCLE)) {
       if (id != null){
-        object.cx = Float.parseFloat(parser.getAttributeValue(null, "cx"));
-        object.cy = Float.parseFloat(parser.getAttributeValue(null, "cy"));
-        object.r = Float.parseFloat(parser.getAttributeValue(null, "r"));
+        object.cx = parseFloat(parser.getAttributeValue(null, "cx")) / svgWidth;
+        object.cy = parseFloat(parser.getAttributeValue(null, "cy")) / svgHeight;
+        object.r = parseFloat(parser.getAttributeValue(null, "r")) * pixelUnit;
+
         readStyle(parser, object);
+        parseTransformation(parser.getAttributeValue(null, "transform"), object);
+
         parser.nextTag();
       } else {
         return;
       }
     }
     parser.require(XmlPullParser.END_TAG, null, SvgObject.TYPE_CIRCLE);
+
     objectHashMap.put(id, object);
     ids.add(id);
   }
 
   private void drawCircle(Canvas canvas, SvgObject object) {
-    boolean fillAndStroke = applyPaintStyle(object, false);
-    // draw with fill style (or stroke if only this is set)
-    canvas.drawCircle(object.cx, object.cy, object.r, paint);
-    // draw again with stroke style
-    if (fillAndStroke) {
-      applyPaintStyle(object, true);
-      canvas.drawCircle(object.cx, object.cy, object.r, paint);
+    // start with fill and repeat with stroke if both are set
+    int runs = applyPaintStyle(object, false) ? 2 : 1;
+    for (int i = 0; i < runs; i++) {
+      if (i == 1) {
+        applyPaintStyle(object, true);
+      }
+      if (object.type.equals(SvgObject.TYPE_CIRCLE) || object.rx == object.ry) {
+        float radius = object.r > 0 ? object.r : object.rx;
+        canvas.drawCircle(
+            object.cx * canvas.getWidth(), object.cy * canvas.getHeight(), radius, paint
+        );
+      } else if (object.type.equals(SvgObject.TYPE_ELLIPSE)) {
+        canvas.drawOval(
+            object.cx * canvas.getWidth() - object.rx,
+            object.cy * canvas.getHeight() - object.ry,
+            object.cx * canvas.getWidth() + object.rx,
+            object.cy * canvas.getHeight() + object.ry,
+            paint
+        );
+      }
     }
+  }
+
+  private void readEllipse(XmlPullParser parser) throws IOException, XmlPullParserException {
+    SvgObject object = new SvgObject(SvgObject.TYPE_ELLIPSE);
+    parser.require(XmlPullParser.START_TAG, null, SvgObject.TYPE_ELLIPSE);
+    String tag = parser.getName();
+    String id = parser.getAttributeValue(null, "id");
+    if (tag.equals(SvgObject.TYPE_ELLIPSE)) {
+      if (id != null){
+        object.cx = parseFloat(parser.getAttributeValue(null, "cx")) / svgWidth;
+        object.cy = parseFloat(parser.getAttributeValue(null, "cy")) / svgHeight;
+        object.rx = parseFloat(parser.getAttributeValue(null, "rx")) * pixelUnit;
+        object.ry = parseFloat(parser.getAttributeValue(null, "ry")) * pixelUnit;
+
+        readStyle(parser, object);
+        parseTransformation(parser.getAttributeValue(null, "transform"), object);
+
+        parser.nextTag();
+      } else {
+        return;
+      }
+    }
+    parser.require(XmlPullParser.END_TAG, null, SvgObject.TYPE_ELLIPSE);
+
+    objectHashMap.put(id, object);
+    ids.add(id);
   }
 
   private void readImage(XmlPullParser parser) throws IOException, XmlPullParserException {
@@ -250,10 +411,15 @@ public class SvgDrawable {
     String id = parser.getAttributeValue(null, "id");
     if (tag.equals(SvgObject.TYPE_IMAGE)) {
       if (id != null){
-        object.width = Float.parseFloat(parser.getAttributeValue(null, "width"));
-        object.height = Float.parseFloat(parser.getAttributeValue(null, "height"));
-        object.x = Float.parseFloat(parser.getAttributeValue(null, "x"));
-        object.y = Float.parseFloat(parser.getAttributeValue(null, "y"));
+        object.width = parseFloat(parser.getAttributeValue(null, "width"));
+        object.height = parseFloat(parser.getAttributeValue(null, "height"));
+        object.x = parseFloat(parser.getAttributeValue(null, "x"));
+        object.y = parseFloat(parser.getAttributeValue(null, "y"));
+        object.cx = object.x + object.width / 2;
+        object.cy = object.y + object.height / 2;
+
+        readStyle(parser, object);
+        parseTransformation(parser.getAttributeValue(null, "transform"), object);
 
         String image = parser.getAttributeValue(parser.getNamespace("xlink"), "href");
         if (image != null) {
@@ -262,70 +428,126 @@ public class SvgDrawable {
           object.bitmap = BitmapFactory.decodeByteArray(decoded, 0, decoded.length);
         }
 
-        readStyle(parser, object);
         parser.nextTag();
       } else {
         return;
       }
     }
     parser.require(XmlPullParser.END_TAG, null, SvgObject.TYPE_IMAGE);
+
+    // apply display metrics
+    object.width *= pixelUnit;
+    object.height *= pixelUnit;
+    object.cx /= svgWidth;
+    object.cy /= svgHeight;
+
     objectHashMap.put(id, object);
     ids.add(id);
   }
 
   private void drawImage(Canvas canvas, SvgObject object) {
     applyPaintStyle(object, false);
-    canvas.drawBitmap(object.bitmap, object.x, object.y, paint); // TODO: get size from object
+
+    float cx = object.cx * canvas.getWidth();
+    float cy = object.cy * canvas.getHeight();
+    if (rectF == null || rectF.isEmpty()) {
+      rectF = new RectF();
+    }
+    rectF.left = cx - object.width / 2;
+    rectF.top = cy - object.height / 2;
+    rectF.right = cx + object.width / 2;
+    rectF.bottom = cy + object.height / 2;
+
+    canvas.drawBitmap(object.bitmap, null, rectF, paint);
+  }
+
+  private void parseTransformation(String transformation, SvgObject object) {
+    if (transformation == null || transformation.isEmpty()) {
+      return;
+    }
+    String[] transform = transformation.split("[\\n\\r\\s]+");
+    for (String action : transform) {
+      if (action.contains("rotate")) {
+        String rotation = action.substring(action.indexOf("(") + 1, action.indexOf(")"));
+        object.rotation = Float.parseFloat(rotation);
+
+        float[] newCenter = getOriginRotatedPoint(object.cx, object.cy, object.rotation);
+        object.cx = newCenter[0];
+        object.cy = newCenter[1];
+      }
+    }
+  }
+
+  private void startTransformation(Canvas canvas, SvgObject object) {
+    if (object.rotation != 0) {
+      canvas.save();
+      canvas.rotate(
+          object.rotation, object.cx * canvas.getWidth(), object.cy * canvas.getHeight()
+      );
+    }
+  }
+
+  private void stopTransformation(Canvas canvas, SvgObject object) {
+    if (object.rotation != 0) {
+      canvas.restore();
+    }
   }
 
   private void readStyle(XmlPullParser parser, SvgObject object) {
-    String fill = parser.getAttributeValue(null, "fill");
-    if (isValidColor(fill)) {
-      object.fill = fill;
-    }
-    String stroke = parser.getAttributeValue(null, "stroke");
-    if (isValidColor(stroke)) {
-      object.stroke = stroke;
-    }
-    String strokeWidth = parser.getAttributeValue(null, "stroke-width");
-    if (strokeWidth != null && !strokeWidth.isEmpty()) {
-      object.strokeWidth = Float.parseFloat(strokeWidth);
-    }
+    object.fill = parseColor(parser.getAttributeValue(null, "fill"));
+    object.stroke = parseColor(parser.getAttributeValue(null, "stroke"));
+    object.strokeWidth = parseFloat(parser.getAttributeValue(null, "stroke-width"));
     object.strokeLineCap = parser.getAttributeValue(null, "stroke-linecap");
     object.strokeLineJoin = parser.getAttributeValue(null, "stroke-linejoin");
   }
 
   /**
-   * @param object
    * @return true if a second draw for a separate stroke style is needed
    */
   private boolean applyPaintStyle(SvgObject object, boolean applyStrokeIfBothSet) {
     paint.reset();
     paint.setAntiAlias(true);
 
-    boolean hasFill = object.fill != null;
-    boolean hasStroke = object.stroke != null && object.strokeWidth > 0;
-    boolean fillAndStroke = hasFill && hasStroke;
+    boolean hasFill = object.fill != 0;
+    boolean hasStroke = object.stroke != 0 && object.strokeWidth > 0;
+    boolean hasFillAndStroke = hasFill && hasStroke;
 
-    if ((fillAndStroke && applyStrokeIfBothSet) || (!hasFill && hasStroke)) {
-      paint.setColor(Color.parseColor(object.stroke));
-      paint.setStrokeWidth(object.strokeWidth);
+    if ((hasFillAndStroke && applyStrokeIfBothSet) || (!hasFill && hasStroke)) {
       paint.setStyle(Style.STROKE);
-      // TODO: cap & join
-    } else if (fillAndStroke || hasFill) {
-      paint.setColor(Color.parseColor(object.fill));
+      paint.setColor(object.stroke);
+      paint.setStrokeWidth(object.strokeWidth * pixelUnit);
+      if (object.strokeLineCap != null) {
+        switch (object.strokeLineCap) {
+          case SvgObject.LINE_CAP_BUTT:
+            paint.setStrokeCap(Cap.BUTT);
+            break;
+          case SvgObject.LINE_CAP_ROUND:
+            paint.setStrokeCap(Cap.ROUND);
+            break;
+          case SvgObject.LINE_CAP_SQUARE:
+            paint.setStrokeCap(Cap.SQUARE);
+            break;
+        }
+      }
+      if (object.strokeLineJoin != null) {
+        switch (object.strokeLineJoin) {
+          case SvgObject.LINE_JOIN_MITER:
+            paint.setStrokeJoin(Join.MITER);
+            break;
+          case SvgObject.LINE_JOIN_ROUND:
+            paint.setStrokeJoin(Join.ROUND);
+            break;
+          case SvgObject.LINE_JOIN_BEVEL:
+            paint.setStrokeJoin(Join.BEVEL);
+            break;
+        }
+      }
+    } else if (hasFillAndStroke || hasFill) {
       paint.setStyle(Style.FILL);
+      paint.setColor(object.fill);
     }
 
-    return hasFill && hasStroke;
-  }
-
-  private void getProportionsIfNotSet(float objectWidth) {
-    if (pixelUnit == 0 && objectWidth > 0) {
-      float svgProportion = objectWidth / svgWidth;
-      float screenProportion = screenWidth * svgProportion;
-      pixelUnit = screenProportion / objectWidth;
-    }
+    return hasFillAndStroke;
   }
 
   private void skip(XmlPullParser parser) throws XmlPullParserException, IOException {
@@ -345,7 +567,7 @@ public class SvgDrawable {
     }
   }
 
-  public static class SvgObject {
+  private static class SvgObject {
     public final static String TYPE_NONE = "none";
     public final static String TYPE_PATH = "path";
     public final static String TYPE_RECT = "rect";
@@ -353,33 +575,37 @@ public class SvgDrawable {
     public final static String TYPE_ELLIPSE = "ellipse";
     public final static String TYPE_IMAGE = "image";
     // stroke line cap
+    public final static String LINE_CAP_BUTT = "butt";
     public final static String LINE_CAP_ROUND = "round";
+    public final static String LINE_CAP_SQUARE = "square";
     // stroke line join
     public final static String LINE_JOIN_ROUND = "round";
+    public final static String LINE_JOIN_BEVEL = "bevel";
+    public final static String LINE_JOIN_MITER = "miter";
 
-    private String type = TYPE_NONE;
+    public final String type;
     public float elevation;
 
     public SvgObject(String type) {
       this.type = type;
     }
 
-    public String getType() {
-      return type;
-    }
-
     // STYLE
-    public String fill;
-    public String stroke;
+    public int fill;
+    public int stroke;
     public String strokeLineCap, strokeLineJoin;
     public float strokeWidth;
 
+    // TRANSFORMATION
+    public float rotation;
+
     // PATH
-    public String d;
+    public Path path;
 
     // RECT/IMAGE
     public float width, height;
     public float x, y;
+    public float rx, ry;
     public Bitmap bitmap;
 
     // CIRCLE
@@ -387,16 +613,46 @@ public class SvgDrawable {
     public float r;
   }
 
-  private boolean isValidColor(String hex) {
-    if (hex != null && !hex.isEmpty() && !hex.equals("#00000000") && !hex.equals("none")) {
+  private float parseFloat(String value) {
+    if (value != null && !value.isEmpty()) {
       try {
-        Color.parseColor(hex);
-        return true;
-      } catch (IllegalArgumentException e) {
-        return false;
+        return Float.parseFloat(value);
+      } catch (NumberFormatException e) {
+        return 0;
       }
     } else {
-      return false;
+      return 0;
     }
+  }
+
+  private int parseColor(String value) {
+    if (value != null && !value.isEmpty() && !value.equals("#00000000") && !value.equals("none")) {
+      try {
+        return Color.parseColor(value);
+      } catch (IllegalArgumentException e) {
+        if (value.matches("#[a-fA-F0-9]{3}")) {
+          String first = value.substring(1, 2);
+          String second = value.substring(2, 3);
+          String third = value.substring(3, 4);
+          String hex = "#" + first + first + second + second + third + third;
+          try {
+            return Color.parseColor(hex);
+          } catch (IllegalArgumentException exception) {
+            return 0;
+          }
+        } else {
+          return 0;
+        }
+      }
+    } else {
+      return 0;
+    }
+  }
+
+  private float[] getOriginRotatedPoint(float x, float y, float angle) {
+    double radians = Math.toRadians(angle);
+    float newX = (float) (x * Math.cos(radians) - y * Math.sin(radians));
+    float newY = (float) (x * Math.sin(radians) + y * Math.cos(radians));
+    return new float[]{newX, newY};
   }
 }

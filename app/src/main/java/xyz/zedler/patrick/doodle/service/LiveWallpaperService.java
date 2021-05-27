@@ -56,6 +56,7 @@ import xyz.zedler.patrick.doodle.Constants.USER_PRESENCE;
 import xyz.zedler.patrick.doodle.Constants.VARIANT;
 import xyz.zedler.patrick.doodle.Constants.WALLPAPER;
 import xyz.zedler.patrick.doodle.R;
+import xyz.zedler.patrick.doodle.drawable.SvgDrawable;
 import xyz.zedler.patrick.doodle.util.MigrationUtil;
 import xyz.zedler.patrick.doodle.util.PrefsUtil;
 
@@ -76,7 +77,7 @@ public class LiveWallpaperService extends WallpaperService {
   private String presence;
   private boolean isReceiverRegistered = false;
   private UserPresenceListener userPresenceListener;
-  //private SvgDrawable svgDrawable;
+  private SvgDrawable svgDrawable;
 
   private VectorDrawable doodleArc;
   private VectorDrawable doodleDot;
@@ -247,7 +248,7 @@ public class LiveWallpaperService extends WallpaperService {
         break;
     }
 
-    //svgDrawable = new SvgDrawable(this, R.raw.doodle);
+    svgDrawable = new SvgDrawable(this, R.raw.test_image);
   }
 
   private void newRandomZ() {
@@ -606,7 +607,7 @@ public class LiveWallpaperService extends WallpaperService {
               break;
           }
 
-          //svgDrawable.draw(canvas);
+          svgDrawable.draw(canvas);
 
           lastDraw = SystemClock.elapsedRealtime();
         }

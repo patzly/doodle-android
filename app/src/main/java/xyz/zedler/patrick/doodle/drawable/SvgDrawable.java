@@ -61,6 +61,7 @@ public class SvgDrawable {
   private final float pixelUnit;
   private float svgWidth, svgHeight;
   private final Paint paint;
+  private int backgroundColor;
   private RectF rectF;
 
   public SvgDrawable(Context context, @RawRes int resId) {
@@ -104,6 +105,8 @@ public class SvgDrawable {
   }
 
   public void draw(Canvas canvas) {
+    canvas.drawColor(backgroundColor);
+
     for (String id : ids) {
       SvgObject object = objectHashMap.get(id);
       if (object != null) {
@@ -275,6 +278,12 @@ public class SvgDrawable {
 
         readStyle(parser, object);
         parseTransformation(parser.getAttributeValue(null, "transform"), object);
+
+        // has same size as SVG? Use it as background color.
+        if (object.width == svgWidth && object.height == svgHeight) {
+          backgroundColor = object.fill;
+          return;
+        }
 
         parser.nextTag();
       } else {

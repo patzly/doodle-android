@@ -36,6 +36,7 @@ import android.util.Log;
 import android.util.Xml;
 import androidx.annotation.Nullable;
 import androidx.annotation.RawRes;
+import androidx.core.graphics.PathParser;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -43,7 +44,7 @@ import java.util.HashMap;
 import java.util.List;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
-import xyz.zedler.patrick.doodle.parser.PathParser;
+import xyz.zedler.patrick.doodle.parser.AltPathParser;
 import xyz.zedler.patrick.doodle.util.UnitUtil;
 
 public class SvgDrawable {
@@ -206,7 +207,10 @@ public class SvgDrawable {
               return;
             }
           } catch (RuntimeException e) {
-            return;
+            Log.w(
+                TAG, "readPath: error with legacy path parser, using alternative instead ", e
+            );
+            object.path = AltPathParser.toPath(d);
           }
         } else {
           return;

@@ -9,21 +9,13 @@
     height="1920"
     x="0"
     y="0"
-    fill="#e0dcd3"
-    fill-opacity="1"
-    stroke="none"
-    stroke-dasharray="none"
-    stroke-linecap="square"
-    stroke-linejoin="round"
-    stroke-miterlimit="4"
-    stroke-width="0" />
+    fill="#e0dcd3" />
   <g id="g1000">
     <path
       id="path14"
       fill="none"
       stroke="#f4e3c9"
       stroke-linecap="round"
-      stroke-opacity="1"
       stroke-width="69.28"
       d="M249.97 1485.11l129.26-94.05c38.42-27.94 41.62-78.67 17.61-111.66-23.57-32.4-72.97-45.76-111.66-17.6l-129.27 94.05" />
     <circle
@@ -31,9 +23,7 @@
       cx="250.13"
       cy="1485.95"
       r="27.78"
-      fill="#f58551"
-      fill-opacity="1"
-      stroke-width="1.05" />
+      fill="#f58551" />
   </g>
   <circle
     id="circle2"
@@ -44,11 +34,8 @@
     stroke="#fff"
     stroke-linecap="round"
     stroke-linejoin="round"
-    stroke-opacity="1"
     stroke-width="11.43" />
-  <g
-    id="g992"
-    fill-opacity="1">
+  <g id="g992">
     <circle
       id="circle6"
       cx="801.35"
@@ -62,10 +49,6 @@
   </g>
   <g
     id="g1004"
-    fill-opacity="1"
-    stroke-linecap="square"
-    stroke-linejoin="round"
-    stroke-width="0"
     transform="rotate(-43.04)">
     <rect
       id="rect79"
@@ -87,16 +70,13 @@
     cx="148.27"
     cy="914.13"
     r="26.8"
-    fill="#ccc6b8"
-    fill-opacity="1"
-    stroke-width="1.01" />
+    fill="#ccc6b8" />
   <g id="g988">
     <path
       id="path10"
       fill="none"
       stroke="#ffb9a1"
       stroke-linecap="round"
-      stroke-opacity="1"
       stroke-width="69.66"
       d="M203.89 645.6c-63.43-125.84 35.5-243 157.84-230.76" />
     <circle
@@ -104,31 +84,23 @@
       cx="361.02"
       cy="415"
       r="27.78"
-      fill="#ff815f"
-      fill-opacity="1"
-      stroke-width="1.05" />
+      fill="#ff815f" />
   </g>
-  <g
-    id="g996"
-    fill="none"
-    stroke-dasharray="none"
-    stroke-miterlimit="4"
-    stroke-opacity="1">
+  <g id="g996">
     <path
       id="path932"
+      fill="none"
       stroke="#fff"
       stroke-linecap="round"
-      stroke-linejoin="miter"
       stroke-width="8"
       d="M854.46 568.64L721.16 294.3c-15.91-32.74-54.16-45.95-86.88-30.05-32.85 15.96-46.04 53.96-30.05 86.87l80.86 166.4c10.33 21.25 32.22 28.8 53.46 18.49l170.89-83.04c21.36-10.39 28.83-32.19 18.5-53.46l-32.79-67.46" />
     <circle
       id="path940"
+      fill="none"
       cx="659.99"
       cy="629.91"
       r="24.25"
       stroke="#fdea98"
-      stroke-linecap="square"
-      stroke-linejoin="round"
       stroke-width="29.57"
       transform="rotate(-25.92)" />
   </g>

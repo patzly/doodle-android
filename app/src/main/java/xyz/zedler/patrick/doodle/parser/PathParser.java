@@ -80,58 +80,6 @@ public class PathParser {
     return list.toArray(new PathDataNode[0]);
   }
 
-  /**
-   * @param source The array of PathDataNode to be duplicated.
-   * @return a deep copy of the <code>source</code>.
-   */
-  public static PathDataNode[] deepCopyNodes(PathDataNode[] source) {
-    if (source == null) {
-      return null;
-    }
-    PathDataNode[] copy = new PathParser.PathDataNode[source.length];
-    for (int i = 0; i < source.length; i++) {
-      copy[i] = new PathDataNode(source[i]);
-    }
-    return copy;
-  }
-
-  /**
-   * @param nodesFrom The source path represented in an array of PathDataNode
-   * @param nodesTo   The target path represented in an array of PathDataNode
-   * @return whether the <code>nodesFrom</code> can morph into <code>nodesTo</code>
-   */
-  public static boolean canMorph(PathDataNode[] nodesFrom, PathDataNode[] nodesTo) {
-    if (nodesFrom == null || nodesTo == null) {
-      return false;
-    }
-    if (nodesFrom.length != nodesTo.length) {
-      return false;
-    }
-    for (int i = 0; i < nodesFrom.length; i++) {
-      if (nodesFrom[i].mType != nodesTo[i].mType
-          || nodesFrom[i].mParams.length != nodesTo[i].mParams.length) {
-        return false;
-      }
-    }
-    return true;
-  }
-
-  /**
-   * Update the target's data to match the source. Before calling this, make sure canMorph(target,
-   * source) is true.
-   *
-   * @param target The target path represented in an array of PathDataNode
-   * @param source The source path represented in an array of PathDataNode
-   */
-  public static void updateNodes(PathDataNode[] target, PathDataNode[] source) {
-    for (int i = 0; i < source.length; i++) {
-      target[i].mType = source[i].mType;
-      System.arraycopy(
-          source[i].mParams, 0, target[i].mParams, 0, source[i].mParams.length
-      );
-    }
-  }
-
   private static int nextStart(String s, int end) {
     char c;
     while (end < s.length()) {
@@ -261,17 +209,12 @@ public class PathParser {
    */
   public static class PathDataNode {
 
-    private char mType;
+    private final char mType;
     private final float[] mParams;
 
     private PathDataNode(char type, float[] params) {
       mType = type;
       mParams = params;
-    }
-
-    private PathDataNode(PathDataNode n) {
-      mType = n.mType;
-      mParams = Arrays.copyOf(n.mParams, n.mParams.length);
     }
 
     /**
@@ -286,23 +229,6 @@ public class PathParser {
       for (PathDataNode pathDataNode : node) {
         addCommand(path, current, previousCommand, pathDataNode.mType, pathDataNode.mParams);
         previousCommand = pathDataNode.mType;
-      }
-    }
-
-    /**
-     * The current PathDataNode will be interpolated between the
-     * <code>nodeFrom</code> and <code>nodeTo</code> according to the
-     * <code>fraction</code>.
-     *
-     * @param nodeFrom The start value as a PathDataNode.
-     * @param nodeTo   The end value as a PathDataNode
-     * @param fraction The fraction to interpolate.
-     */
-    public void interpolatePathDataNode(PathDataNode nodeFrom,
-        PathDataNode nodeTo, float fraction) {
-      for (int i = 0; i < nodeFrom.mParams.length; i++) {
-        mParams[i] = nodeFrom.mParams[i] * (1 - fraction)
-            + nodeTo.mParams[i] * fraction;
       }
     }
 

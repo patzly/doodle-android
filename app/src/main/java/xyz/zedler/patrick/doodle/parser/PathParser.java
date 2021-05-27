@@ -23,9 +23,9 @@ import android.graphics.Path;
 import android.graphics.RectF;
 import android.util.Log;
 
-public class AltPathParser {
+public class PathParser {
 
-  private static final String TAG = AltPathParser.class.getSimpleName();
+  private static final String TAG = PathParser.class.getSimpleName();
 
   /*
    * This is where the hard-to-parse paths are handled.
@@ -46,7 +46,7 @@ public class AltPathParser {
    * <p/>
    * Numbers are separate by whitespace, comma or nothing at all (!) if they are self-delimiting, (ie. begin with a - sign)
    */
-  public static Path toPath(String s) {
+  public static Path getPath(String s) {
     int n = s.length();
     ParserHelper ph = new ParserHelper(s);
     ph.skipWhitespace();

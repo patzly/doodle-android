@@ -505,6 +505,12 @@ public class SvgDrawable {
   private void readStyle(XmlPullParser parser, SvgObject object) {
     object.fill = parseColor(parser.getAttributeValue(null, "fill"));
     object.stroke = parseColor(parser.getAttributeValue(null, "stroke"));
+    object.fillOpacity = parseOpacity(
+        parser.getAttributeValue(null, "fill-opacity")
+    );
+    object.strokeOpacity = parseOpacity(
+        parser.getAttributeValue(null, "stroke-opacity")
+    );
     object.strokeWidth = parseFloat(parser.getAttributeValue(null, "stroke-width"));
     object.strokeLineCap = parser.getAttributeValue(null, "stroke-linecap");
     object.strokeLineJoin = parser.getAttributeValue(null, "stroke-linejoin");
@@ -523,7 +529,12 @@ public class SvgDrawable {
 
     if ((hasFillAndStroke && applyStrokeIfBothSet) || (!hasFill && hasStroke)) {
       paint.setStyle(Style.STROKE);
-      paint.setColor(object.stroke);
+      paint.setARGB(
+          (int) (object.strokeOpacity * 255),
+          Color.red(object.stroke),
+          Color.green(object.stroke),
+          Color.blue(object.stroke)
+      );
       paint.setStrokeWidth(object.strokeWidth * pixelUnit);
       if (object.strokeLineCap != null) {
         switch (object.strokeLineCap) {
@@ -553,7 +564,12 @@ public class SvgDrawable {
       }
     } else if (hasFillAndStroke || hasFill) {
       paint.setStyle(Style.FILL);
-      paint.setColor(object.fill);
+      paint.setARGB(
+          (int) (object.fillOpacity * 255),
+          Color.red(object.fill),
+          Color.green(object.fill),
+          Color.blue(object.fill)
+      );
     }
 
     return hasFillAndStroke;
@@ -602,6 +618,7 @@ public class SvgDrawable {
     // STYLE
     public int fill;
     public int stroke;
+    public float fillOpacity, strokeOpacity;
     public String strokeLineCap, strokeLineJoin;
     public float strokeWidth;
 
@@ -631,6 +648,18 @@ public class SvgDrawable {
       }
     } else {
       return 0;
+    }
+  }
+
+  private float parseOpacity(String value) {
+    if (value != null && !value.isEmpty()) {
+      try {
+        return Float.parseFloat(value);
+      } catch (NumberFormatException e) {
+        return 0;
+      }
+    } else {
+      return 1;
     }
   }
 

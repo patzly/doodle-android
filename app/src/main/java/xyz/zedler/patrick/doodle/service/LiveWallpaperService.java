@@ -248,7 +248,7 @@ public class LiveWallpaperService extends WallpaperService {
         break;
     }
 
-    svgDrawable = new SvgDrawable(this, R.raw.organic);
+    svgDrawable = new SvgDrawable(this, R.raw.doodle);
   }
 
   private void newRandomZ() {

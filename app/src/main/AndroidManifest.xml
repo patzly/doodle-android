@@ -28,7 +28,15 @@
     android:name="android.software.live_wallpaper"
     android:required="true" />
 
+  <permission
+    android:label="@string/broadcast_permission"
+    android:name="xyz.zedler.patrick.doodle.APPLY_SETTINGS"
+    android:protectionLevel="normal|signature|system"
+    android:description="@string/broadcast_permission" />
+
   <uses-permission android:name="android.permission.VIBRATE" />
+  <uses-permission android:name="com.android.systemui.permission.PLUGIN" />
+
 
   <application
     android:allowBackup="true"
@@ -51,6 +59,10 @@
       android:name=".activity.SettingsActivity"
       android:exported="true" />
 
+    <activity
+      android:name="androidx.slice.compat.SlicePermissionActivity"
+      android:excludeFromRecents="true" />
+
     <service
       android:directBootAware="true"
       android:label="@string/app_name"
@@ -64,6 +76,35 @@
         android:name="android.service.wallpaper"
         android:resource="@xml/wallpaper" />
     </service>
+
+    <receiver
+      android:name=".settings.receiver.NotificationsReceiver"
+      android:permission="xyz.zedler.patrick.doodle.APPLY_SETTINGS"
+      android:enabled="true"
+      android:exported="true"
+      android:directBootAware="true"
+      tools:targetApi="n">
+      <intent-filter>
+        <action android:name="xyz.zedler.patrick.doodle.settings" />
+      </intent-filter>
+    </receiver>
+
+    <receiver
+      android:name=".settings.receiver.SettingsBroadcastReceiver"
+      android:exported="false"
+      android:directBootAware="true"
+      tools:targetApi="n" />
+
+    <provider
+      android:name=".settings.DoodleSettingsProvider"
+      android:exported="true"
+      android:authorities="xyz.zedler.patrick.doodle"
+      android:grantUriPermissions="true">
+      <intent-filter>
+        <action android:name="android.intent.action.VIEW" />
+        <category android:name="android.app.slice.category.SLICE" />
+      </intent-filter>
+    </provider>
 
   </application>
 

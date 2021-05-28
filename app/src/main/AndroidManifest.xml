@@ -9,12 +9,6 @@
     android:required="true" />
 
   <uses-permission android:name="android.permission.VIBRATE" />
-  <uses-permission android:name="android.permission.AMBIENT_WALLPAPER"/>
-  <permission
-    android:label="@string/info_title"
-    android:name="xyz.zedler.patrick.doodle.APPLY_SETTINGS"
-    android:protectionLevel="normal|signature|system"
-    android:description="@string/info_title" />
 
   <application
     android:allowBackup="true"
@@ -50,26 +44,6 @@
         android:name="android.service.wallpaper"
         android:resource="@xml/wallpaper" />
     </service>
-
-    <provider
-      android:authorities="xyz.zedler.patrick.doodle"
-      android:exported="true"
-      android:name=".settings.SettingsSliceProvider">
-      <intent-filter>
-        <action android:name="android.intent.action.VIEW" />
-        <category android:name="android.app.slice.category.SLICE" />
-        <data
-          android:host="patrick.zedler.xyz/doodle"
-          android:pathPrefix="/"
-          android:scheme="http" />
-      </intent-filter>
-    </provider>
-
-    <receiver
-      android:name=".settings.receiver.SettingsBroadcastReceiver"
-      android:exported="false"
-      android:directBootAware="true"
-      tools:targetApi="n" />
 
   </application>
 

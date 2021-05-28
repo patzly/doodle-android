@@ -21,6 +21,8 @@ SVGOMG: https://jakearchibald.github.io/svgomg/
 - child groups in groups are not supported
 - group transformation is not supported, rotation needs to be applied to every child separately
 
+## Wallpaper code names
+
 - Pixel
 - Johanna
 - Reiko

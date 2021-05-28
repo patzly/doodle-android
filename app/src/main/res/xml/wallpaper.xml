@@ -27,5 +27,4 @@
   android:author="@string/app_developer"
   android:description="@string/info_description_wallpaper"
   android:settingsActivity="xyz.zedler.patrick.doodle.activity.SettingsActivity"
-  android:settingsSliceUri="content://xyz.zedler.patrick.doodle/settings"
-  tools:targetApi="q" />
+  tools:targetApi="n_mr1" />

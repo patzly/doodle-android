@@ -34,12 +34,12 @@ import android.graphics.RectF;
 import android.util.Base64;
 import android.util.Log;
 import android.util.Xml;
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RawRes;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -52,7 +52,7 @@ public class SvgDrawable {
 
   private final static boolean ENABLE_IMAGES = true;
 
-  private final HashMap<String, SvgObject> objectHashMap;
+  private final List<SvgObject> objects;
   private final List<String> ids;
   private float offsetX;
   private float offsetY;
@@ -67,7 +67,7 @@ public class SvgDrawable {
   public SvgDrawable(Context context, @RawRes int resId) {
     pixelUnit = UnitUtil.getDp(context, 1) * 0.33f;
 
-    objectHashMap = new HashMap<>();
+    objects = new ArrayList<>();
     ids = new ArrayList<>();
 
     try {
@@ -84,7 +84,11 @@ public class SvgDrawable {
 
   @Nullable
   public SvgObject findObjectById(String id) {
-    return objectHashMap.get(id);
+    if (ids.contains(id)) {
+      return objects.get(ids.indexOf(id));
+    } else {
+      return null;
+    }
   }
 
   public void setOffset(float offsetX) {
@@ -107,31 +111,27 @@ public class SvgDrawable {
   public void draw(Canvas canvas) {
     canvas.drawColor(backgroundColor);
 
-    for (String id : ids) {
-      SvgObject object = objectHashMap.get(id);
-      if (object != null) {
+    for (SvgObject object : objects) {
+      startTransformation(canvas, object);
 
-        startTransformation(canvas, object);
-
-        switch (object.type) {
-          case SvgObject.TYPE_PATH:
-            drawPath(canvas, object);
-            break;
-          case SvgObject.TYPE_RECT:
-            drawRect(canvas, object);
-            break;
-          case SvgObject.TYPE_CIRCLE:
-          case SvgObject.TYPE_ELLIPSE:
-            drawCircle(canvas, object);
-            break;
-          case SvgObject.TYPE_IMAGE:
-            if (ENABLE_IMAGES) {
-              drawImage(canvas, object);
-            }
-            break;
-        }
-        stopTransformation(canvas, object);
+      switch (object.type) {
+        case SvgObject.TYPE_PATH:
+          drawPath(canvas, object);
+          break;
+        case SvgObject.TYPE_RECT:
+          drawRect(canvas, object);
+          break;
+        case SvgObject.TYPE_CIRCLE:
+        case SvgObject.TYPE_ELLIPSE:
+          drawCircle(canvas, object);
+          break;
+        case SvgObject.TYPE_IMAGE:
+          if (ENABLE_IMAGES) {
+            drawImage(canvas, object);
+          }
+          break;
       }
+      stopTransformation(canvas, object);
     }
   }
 
@@ -161,77 +161,125 @@ public class SvgDrawable {
       return;
     }
 
-    while (parser.getEventType() != XmlPullParser.END_DOCUMENT) {
-      parser.next();
+    while (parser.next() != XmlPullParser.END_DOCUMENT) {
       if (parser.getEventType() != XmlPullParser.START_TAG) {
         continue;
       }
-      switch (parser.getName()) {
-        case SvgObject.TYPE_PATH:
-          readPath(parser);
-          break;
-        case SvgObject.TYPE_RECT:
-          readRect(parser);
-          break;
-        case SvgObject.TYPE_CIRCLE:
-          readCircle(parser);
-          break;
-        case SvgObject.TYPE_ELLIPSE:
-          readEllipse(parser);
-          break;
-        case SvgObject.TYPE_IMAGE:
-          if (ENABLE_IMAGES) {
-            readImage(parser);
-          }
-          break;
-        default:
-          //skip(parser); We don't want to skip group elements, we want to go inside of them
-          break;
-      }
+      readObject(parser, false);
     }
   }
 
-  private void readPath(XmlPullParser parser) throws IOException, XmlPullParserException {
+  private void readObject(XmlPullParser parser, boolean isInGroup)
+      throws IOException, XmlPullParserException {
+    switch (parser.getName()) {
+      case SvgObject.TYPE_GROUP:
+        if (!isInGroup) {
+          readGroup(parser);
+        } else {
+          Log.w(TAG, "readSvg: child group in group not supported, skipping");
+          skip(parser);
+        }
+        break;
+      case SvgObject.TYPE_PATH:
+        readPath(parser, isInGroup);
+        break;
+      case SvgObject.TYPE_RECT:
+        readRect(parser, isInGroup);
+        break;
+      case SvgObject.TYPE_CIRCLE:
+        readCircle(parser, isInGroup);
+        break;
+      case SvgObject.TYPE_ELLIPSE:
+        readEllipse(parser, isInGroup);
+        break;
+      case SvgObject.TYPE_IMAGE:
+        if (ENABLE_IMAGES) {
+          readImage(parser, isInGroup);
+        }
+        break;
+      default:
+        skip(parser);
+        break;
+    }
+  }
+
+  private void readGroup(XmlPullParser parser) throws IOException, XmlPullParserException {
+    SvgObject object = new SvgObject(SvgObject.TYPE_GROUP);
+    parser.require(XmlPullParser.START_TAG, null, SvgObject.TYPE_GROUP);
+    while (parser.next() != XmlPullParser.END_TAG) {
+      if (parser.getEventType() != XmlPullParser.START_TAG) {
+        continue;
+      }
+      readObject(parser, true);
+    }
+
+
+    /*if (rectF == null || rectF.isEmpty()) {
+      rectF = new RectF();
+    }
+    object.path.computeBounds(rectF, true);
+    object.width = rectF.width();
+    object.height = rectF.height();
+    object.cx = rectF.centerX();
+    object.cy = rectF.centerY();
+
+    readStyle(parser, object);
+    parseTransformation(parser.getAttributeValue(null, "transform"), object);*/
+
+
+    //parser.require(XmlPullParser.END_TAG, null, SvgObject.TYPE_GROUP);
+
+    // apply display metrics
+    /*Matrix scaleMatrix = new Matrix();
+    scaleMatrix.setScale(pixelUnit, pixelUnit, object.cx, object.cy);
+    object.path.transform(scaleMatrix);
+
+    objectHashMap.put(id, object);
+    ids.add(id);*/
+  }
+
+  private void readPath(XmlPullParser parser, boolean isInGroup)
+      throws IOException, XmlPullParserException {
     SvgObject object = new SvgObject(SvgObject.TYPE_PATH);
+    object.isInGroup = isInGroup;
     parser.require(XmlPullParser.START_TAG, null, SvgObject.TYPE_PATH);
     String tag = parser.getName();
-    String id = parser.getAttributeValue(null, "id");
+    object.id = parser.getAttributeValue(null, "id");
     if (tag.equals(SvgObject.TYPE_PATH)) {
-      if (id != null){
-        String d = parser.getAttributeValue(null, "d");
-        if (d != null && !d.isEmpty()) {
-          try {
-            object.path = androidx.core.graphics.PathParser.createPathFromPathData(d);
-            if (object.path == null) {
-              return;
-            }
-          } catch (RuntimeException e) {
-            Log.w(
-                TAG,
-                "readPath: error with legacy path parser, tried with alternative instead ", e
-            );
-            object.path = PathParser.getPath(d);
+      if (object.id == null) {
+        return;
+      }
+      String d = parser.getAttributeValue(null, "d");
+      if (d != null && !d.isEmpty()) {
+        try {
+          object.path = androidx.core.graphics.PathParser.createPathFromPathData(d);
+          if (object.path == null) {
+            return;
           }
-        } else {
-          return;
+        } catch (RuntimeException e) {
+          Log.w(
+              TAG,
+              "readPath: error with legacy path parser, tried with alternative instead ", e
+          );
+          object.path = PathParser.getPath(d);
         }
-
-        if (rectF == null || rectF.isEmpty()) {
-          rectF = new RectF();
-        }
-        object.path.computeBounds(rectF, true);
-        object.width = rectF.width();
-        object.height = rectF.height();
-        object.cx = rectF.centerX();
-        object.cy = rectF.centerY();
-
-        readStyle(parser, object);
-        parseTransformation(parser.getAttributeValue(null, "transform"), object);
-
-        parser.nextTag();
       } else {
         return;
       }
+
+      if (rectF == null || rectF.isEmpty()) {
+        rectF = new RectF();
+      }
+      object.path.computeBounds(rectF, true);
+      object.width = rectF.width();
+      object.height = rectF.height();
+      object.cx = rectF.centerX();
+      object.cy = rectF.centerY();
+
+      readStyle(parser, object);
+      parseTransformation(parser.getAttributeValue(null, "transform"), object);
+
+      parser.nextTag();
     }
     parser.require(XmlPullParser.END_TAG, null, SvgObject.TYPE_PATH);
 
@@ -240,8 +288,8 @@ public class SvgDrawable {
     scaleMatrix.setScale(pixelUnit, pixelUnit, object.cx, object.cy);
     object.path.transform(scaleMatrix);
 
-    objectHashMap.put(id, object);
-    ids.add(id);
+    objects.add(object);
+    ids.add(object.id);
   }
 
   private void drawPath(Canvas canvas, SvgObject object) {
@@ -264,35 +312,36 @@ public class SvgDrawable {
     }
   }
 
-  private void readRect(XmlPullParser parser) throws IOException, XmlPullParserException {
+  private void readRect(XmlPullParser parser, boolean isInGroup)
+      throws IOException, XmlPullParserException {
     SvgObject object = new SvgObject(SvgObject.TYPE_RECT);
+    object.isInGroup = isInGroup;
     parser.require(XmlPullParser.START_TAG, null, SvgObject.TYPE_RECT);
     String tag = parser.getName();
-    String id = parser.getAttributeValue(null, "id");
+    object.id = parser.getAttributeValue(null, "id");
     if (tag.equals(SvgObject.TYPE_RECT)) {
-      if (id != null){
-        object.width = parseFloat(parser.getAttributeValue(null, "width"));
-        object.height = parseFloat(parser.getAttributeValue(null, "height"));
-        object.x = parseFloat(parser.getAttributeValue(null, "x"));
-        object.y = parseFloat(parser.getAttributeValue(null, "y"));
-        object.cx = object.x + object.width / 2;
-        object.cy = object.y + object.height / 2;
-        object.rx = parseFloat(parser.getAttributeValue(null, "rx"));
-        object.ry = parseFloat(parser.getAttributeValue(null, "ry"));
-
-        readStyle(parser, object);
-        parseTransformation(parser.getAttributeValue(null, "transform"), object);
-
-        // has same size as SVG? Use it as background color.
-        if (object.width == svgWidth && object.height == svgHeight) {
-          backgroundColor = object.fill;
-          return;
-        }
-
-        parser.nextTag();
-      } else {
+      if (object.id == null) {
         return;
       }
+      object.width = parseFloat(parser.getAttributeValue(null, "width"));
+      object.height = parseFloat(parser.getAttributeValue(null, "height"));
+      object.x = parseFloat(parser.getAttributeValue(null, "x"));
+      object.y = parseFloat(parser.getAttributeValue(null, "y"));
+      object.cx = object.x + object.width / 2;
+      object.cy = object.y + object.height / 2;
+      object.rx = parseFloat(parser.getAttributeValue(null, "rx"));
+      object.ry = parseFloat(parser.getAttributeValue(null, "ry"));
+
+      readStyle(parser, object);
+      parseTransformation(parser.getAttributeValue(null, "transform"), object);
+
+      // has same size as SVG? Use it as background color.
+      if (object.width == svgWidth && object.height == svgHeight) {
+        backgroundColor = object.fill;
+        return;
+      }
+
+      parser.nextTag();
     }
     parser.require(XmlPullParser.END_TAG, null, SvgObject.TYPE_RECT);
 
@@ -304,8 +353,8 @@ public class SvgDrawable {
     object.cx /= svgWidth;
     object.cy /= svgHeight;
 
-    objectHashMap.put(id, object);
-    ids.add(id);
+    objects.add(object);
+    ids.add(object.id);
   }
 
   private void drawRect(Canvas canvas, SvgObject object) {
@@ -342,29 +391,35 @@ public class SvgDrawable {
     }
   }
 
-  private void readCircle(XmlPullParser parser) throws IOException, XmlPullParserException {
+  private void readCircle(XmlPullParser parser, boolean isInGroup)
+      throws IOException, XmlPullParserException {
     SvgObject object = new SvgObject(SvgObject.TYPE_CIRCLE);
+    object.isInGroup = isInGroup;
     parser.require(XmlPullParser.START_TAG, null, SvgObject.TYPE_CIRCLE);
     String tag = parser.getName();
-    String id = parser.getAttributeValue(null, "id");
+    object.id = parser.getAttributeValue(null, "id");
     if (tag.equals(SvgObject.TYPE_CIRCLE)) {
-      if (id != null){
-        object.cx = parseFloat(parser.getAttributeValue(null, "cx")) / svgWidth;
-        object.cy = parseFloat(parser.getAttributeValue(null, "cy")) / svgHeight;
-        object.r = parseFloat(parser.getAttributeValue(null, "r")) * pixelUnit;
-
-        readStyle(parser, object);
-        parseTransformation(parser.getAttributeValue(null, "transform"), object);
-
-        parser.nextTag();
-      } else {
+      if (object.id == null) {
         return;
       }
+      object.cx = parseFloat(parser.getAttributeValue(null, "cx"));
+      object.cy = parseFloat(parser.getAttributeValue(null, "cy"));
+      object.r = parseFloat(parser.getAttributeValue(null, "r"));
+
+      readStyle(parser, object);
+      parseTransformation(parser.getAttributeValue(null, "transform"), object);
+
+      parser.nextTag();
     }
     parser.require(XmlPullParser.END_TAG, null, SvgObject.TYPE_CIRCLE);
 
-    objectHashMap.put(id, object);
-    ids.add(id);
+    // apply display metrics
+    object.cx /= svgWidth;
+    object.cy /= svgHeight;
+    object.r *= pixelUnit;
+
+    objects.add(object);
+    ids.add(object.id);
   }
 
   private void drawCircle(Canvas canvas, SvgObject object) {
@@ -391,60 +446,62 @@ public class SvgDrawable {
     }
   }
 
-  private void readEllipse(XmlPullParser parser) throws IOException, XmlPullParserException {
+  private void readEllipse(XmlPullParser parser, boolean isInGroup)
+      throws IOException, XmlPullParserException {
     SvgObject object = new SvgObject(SvgObject.TYPE_ELLIPSE);
+    object.isInGroup = isInGroup;
     parser.require(XmlPullParser.START_TAG, null, SvgObject.TYPE_ELLIPSE);
     String tag = parser.getName();
-    String id = parser.getAttributeValue(null, "id");
+    object.id = parser.getAttributeValue(null, "id");
     if (tag.equals(SvgObject.TYPE_ELLIPSE)) {
-      if (id != null){
-        object.cx = parseFloat(parser.getAttributeValue(null, "cx")) / svgWidth;
-        object.cy = parseFloat(parser.getAttributeValue(null, "cy")) / svgHeight;
-        object.rx = parseFloat(parser.getAttributeValue(null, "rx")) * pixelUnit;
-        object.ry = parseFloat(parser.getAttributeValue(null, "ry")) * pixelUnit;
-
-        readStyle(parser, object);
-        parseTransformation(parser.getAttributeValue(null, "transform"), object);
-
-        parser.nextTag();
-      } else {
+      if (object.id == null) {
         return;
       }
+      object.cx = parseFloat(parser.getAttributeValue(null, "cx")) / svgWidth;
+      object.cy = parseFloat(parser.getAttributeValue(null, "cy")) / svgHeight;
+      object.rx = parseFloat(parser.getAttributeValue(null, "rx")) * pixelUnit;
+      object.ry = parseFloat(parser.getAttributeValue(null, "ry")) * pixelUnit;
+
+      readStyle(parser, object);
+      parseTransformation(parser.getAttributeValue(null, "transform"), object);
+
+      parser.nextTag();
     }
     parser.require(XmlPullParser.END_TAG, null, SvgObject.TYPE_ELLIPSE);
 
-    objectHashMap.put(id, object);
-    ids.add(id);
+    objects.add(object);
+    ids.add(object.id);
   }
 
-  private void readImage(XmlPullParser parser) throws IOException, XmlPullParserException {
+  private void readImage(XmlPullParser parser, boolean isInGroup)
+      throws IOException, XmlPullParserException {
     SvgObject object = new SvgObject(SvgObject.TYPE_IMAGE);
+    object.isInGroup = isInGroup;
     parser.require(XmlPullParser.START_TAG, null, SvgObject.TYPE_IMAGE);
     String tag = parser.getName();
-    String id = parser.getAttributeValue(null, "id");
+    object.id = parser.getAttributeValue(null, "id");
     if (tag.equals(SvgObject.TYPE_IMAGE)) {
-      if (id != null){
-        object.width = parseFloat(parser.getAttributeValue(null, "width"));
-        object.height = parseFloat(parser.getAttributeValue(null, "height"));
-        object.x = parseFloat(parser.getAttributeValue(null, "x"));
-        object.y = parseFloat(parser.getAttributeValue(null, "y"));
-        object.cx = object.x + object.width / 2;
-        object.cy = object.y + object.height / 2;
-
-        readStyle(parser, object);
-        parseTransformation(parser.getAttributeValue(null, "transform"), object);
-
-        String image = parser.getAttributeValue(parser.getNamespace("xlink"), "href");
-        if (image != null) {
-          image = image.substring(image.indexOf(",") + 1);
-          byte[] decoded = Base64.decode(image, Base64.DEFAULT);
-          object.bitmap = BitmapFactory.decodeByteArray(decoded, 0, decoded.length);
-        }
-
-        parser.nextTag();
-      } else {
+      if (object.id == null) {
         return;
       }
+      object.width = parseFloat(parser.getAttributeValue(null, "width"));
+      object.height = parseFloat(parser.getAttributeValue(null, "height"));
+      object.x = parseFloat(parser.getAttributeValue(null, "x"));
+      object.y = parseFloat(parser.getAttributeValue(null, "y"));
+      object.cx = object.x + object.width / 2;
+      object.cy = object.y + object.height / 2;
+
+      readStyle(parser, object);
+      parseTransformation(parser.getAttributeValue(null, "transform"), object);
+
+      String image = parser.getAttributeValue(parser.getNamespace("xlink"), "href");
+      if (image != null) {
+        image = image.substring(image.indexOf(",") + 1);
+        byte[] decoded = Base64.decode(image, Base64.DEFAULT);
+        object.bitmap = BitmapFactory.decodeByteArray(decoded, 0, decoded.length);
+      }
+
+      parser.nextTag();
     }
     parser.require(XmlPullParser.END_TAG, null, SvgObject.TYPE_IMAGE);
 
@@ -454,8 +511,8 @@ public class SvgDrawable {
     object.cx /= svgWidth;
     object.cy /= svgHeight;
 
-    objectHashMap.put(id, object);
-    ids.add(id);
+    objects.add(object);
+    ids.add(object.id);
   }
 
   private void drawImage(Canvas canvas, SvgObject object) {
@@ -478,15 +535,33 @@ public class SvgDrawable {
     if (transformation == null || transformation.isEmpty()) {
       return;
     }
-    String[] transform = transformation.split("[\\n\\r\\s]+");
+    String[] transform = transformation.split("[ ](?=[^)]*?(?:\\(|$))");
     for (String action : transform) {
+      String value = action.substring(action.indexOf("(") + 1, action.indexOf(")"));
       if (action.contains("rotate")) {
-        String rotation = action.substring(action.indexOf("(") + 1, action.indexOf(")"));
-        object.rotation = Float.parseFloat(rotation);
+        String[] rotation = value.split("[\\n\\r\\s]+");
 
-        float[] newCenter = getOriginRotatedPoint(object.cx, object.cy, object.rotation);
+        object.rotation = Float.parseFloat(rotation[0]);
+        if (rotation.length == 3) {
+          object.rotationX = Float.parseFloat(rotation[1]);
+          object.rotationY = Float.parseFloat(rotation[2]);
+        }
+        float[] newCenter = getRotatedPoint(
+            object.cx, object.cy, object.rotationX, object.rotationY, object.rotation
+        );
         object.cx = newCenter[0];
         object.cy = newCenter[1];
+      } else if (action.contains("scale")) {
+        String[] scale = value.split("[\\n\\r\\s]+");
+        if (scale.length > 1) {
+          Log.e(TAG, "parseTransformation: scale: multiple values are not supported");
+          return;
+        }
+        object.scale = Float.parseFloat(scale[0]);
+        /*if (object.scale != 1) { TODO: at that time the cx and cy values are floats from 0-1...
+          object.cx *= object.scale;
+          object.cy *= object.scale;
+        }*/
       }
     }
   }
@@ -597,7 +672,7 @@ public class SvgDrawable {
   }
 
   private static class SvgObject {
-    public final static String TYPE_NONE = "none";
+    public final static String TYPE_GROUP = "g";
     public final static String TYPE_PATH = "path";
     public final static String TYPE_RECT = "rect";
     public final static String TYPE_CIRCLE = "circle";
@@ -612,7 +687,9 @@ public class SvgDrawable {
     public final static String LINE_JOIN_BEVEL = "bevel";
     public final static String LINE_JOIN_MITER = "miter";
 
+    public String id;
     public final String type;
+    public boolean isInGroup;
     public float elevation;
 
     public SvgObject(String type) {
@@ -627,7 +704,8 @@ public class SvgDrawable {
     public float strokeWidth;
 
     // TRANSFORMATION
-    public float rotation;
+    public float rotation, rotationX, rotationY;
+    public float scale;
 
     // PATH
     public Path path;
@@ -641,6 +719,12 @@ public class SvgDrawable {
     // CIRCLE
     public float cx, cy;
     public float r;
+
+    @NonNull
+    @Override
+    public String toString() {
+      return "SvgObject{ id='" + id + "', type='" + type + "', isInGroup=" + isInGroup + '}';
+    }
   }
 
   private float parseFloat(String value) {
@@ -691,10 +775,15 @@ public class SvgDrawable {
     }
   }
 
-  private float[] getOriginRotatedPoint(float x, float y, float angle) {
-    double radians = Math.toRadians(angle);
-    float newX = (float) (x * Math.cos(radians) - y * Math.sin(radians));
-    float newY = (float) (x * Math.sin(radians) + y * Math.cos(radians));
-    return new float[]{newX, newY};
+  private float[] getRotatedPoint(float x, float y, float cx, float cy, float degrees) {
+    double radians = Math.toRadians(degrees);
+
+    float x1 = x - cx;
+    float y1 = y - cy;
+
+    float x2 = (float) (x1 * Math.cos(radians) - y1 * Math.sin(radians));
+    float y2 = (float) (x1 * Math.sin(radians) + y1 * Math.cos(radians));
+
+    return new float[]{x2 + cx, y2 + cy};
   }
 }

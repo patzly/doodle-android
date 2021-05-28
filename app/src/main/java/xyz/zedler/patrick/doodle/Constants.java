@@ -47,7 +47,7 @@ public final class Constants {
     public final static int ZOOM = 3;
     public final static boolean ZOOM_LAUNCHER = true;
     public final static boolean ZOOM_UNLOCK = true;
-    public final static String WALLPAPER = Constants.WALLPAPER.DOODLE;
+    public final static String WALLPAPER = Constants.WALLPAPER.PIXEL;
     public final static String VARIANT = Constants.VARIANT.BLACK;
     public final static int PARALLAX = 1;
     public final static float SIZE = 1;
@@ -55,9 +55,10 @@ public final class Constants {
 
   public final static class WALLPAPER {
 
-    public final static String DOODLE = "doodle";
-    public final static String NEON = "neon";
-    public final static String GEOMETRIC = "geometric";
+    public final static String PIXEL = "pixel";
+    public final static String JOHANNA = "johanna";
+    public final static String REIKO = "neon";
+    public final static String ANTHONY = "geometric";
   }
 
   public final static class VARIANT {

@@ -147,13 +147,12 @@
         android:paddingTop="0dp"
         android:paddingBottom="0dp"
         android:paddingStart="16dp"
-        android:paddingEnd="8dp"
-        android:clipToPadding="false">
+        android:paddingEnd="8dp">
 
         <ImageView
           android:id="@+id/image_wallpaper"
           style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-          android:layout_marginEnd="25dp"
+          android:layout_marginEnd="32dp"
           android:src="@drawable/ic_round_wallpaper_anim"
           tools:ignore="ContentDescription" />
 
@@ -162,61 +161,59 @@
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:orientation="horizontal"
-          android:paddingStart="7dp"
+          android:paddingStart="0dp"
           android:paddingEnd="0dp"
           android:paddingTop="8dp"
           android:paddingBottom="8dp"
-          android:clipToPadding="false"
-          tools:ignore="UnusedAttribute,ContentDescription">
+          tools:ignore="ContentDescription">
 
           <com.google.android.material.card.MaterialCardView
-            android:id="@+id/card_doodle"
-            style="@style/Widget.Doodle.Card"
+            android:id="@+id/card_pixel"
+            style="@style/Widget.Doodle.Card.Selection"
             android:layout_marginEnd="4dp">
 
-            <com.google.android.material.card.MaterialCardView
-              style="@style/Widget.Doodle.Card.Circle">
-
-              <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/preview_doodle" />
-
-            </com.google.android.material.card.MaterialCardView>
+            <ImageView
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:src="@drawable/selection_pixel" />
 
           </com.google.android.material.card.MaterialCardView>
 
           <com.google.android.material.card.MaterialCardView
-            android:id="@+id/card_neon"
-            style="@style/Widget.Doodle.Card"
+            android:id="@+id/card_johanna"
+            style="@style/Widget.Doodle.Card.Selection"
             android:layout_marginStart="4dp"
             android:layout_marginEnd="4dp">
 
-            <com.google.android.material.card.MaterialCardView
-              style="@style/Widget.Doodle.Card.Circle">
-
-              <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/preview_neon" />
-
-            </com.google.android.material.card.MaterialCardView>
+            <ImageView
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:src="@drawable/selection_johanna" />
 
           </com.google.android.material.card.MaterialCardView>
 
           <com.google.android.material.card.MaterialCardView
-            android:id="@+id/card_geometric"
-            style="@style/Widget.Doodle.Card"
+            android:id="@+id/card_reiko"
+            style="@style/Widget.Doodle.Card.Selection"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp">
+
+            <ImageView
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:src="@drawable/selection_reiko" />
+
+          </com.google.android.material.card.MaterialCardView>
+
+          <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_anthony"
+            style="@style/Widget.Doodle.Card.Selection"
             android:layout_marginStart="4dp">
 
-            <com.google.android.material.card.MaterialCardView style="@style/Widget.Doodle.Card.Circle">
-
-              <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/preview_geometric" />
-
-            </com.google.android.material.card.MaterialCardView>
+            <ImageView
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:src="@drawable/selection_anthony" />
 
           </com.google.android.material.card.MaterialCardView>
 
@@ -235,7 +232,7 @@
         <ImageView
           android:id="@+id/image_variant"
           style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-          android:layout_marginEnd="25dp"
+          android:layout_marginEnd="32dp"
           android:src="@drawable/ic_round_palette_anim"
           tools:ignore="ContentDescription" />
 
@@ -245,47 +242,30 @@
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:orientation="horizontal"
-          android:paddingStart="7dp"
+          android:paddingStart="0dp"
           android:paddingEnd="0dp"
           android:paddingTop="8dp"
-          android:paddingBottom="16dp"
-          android:clipToPadding="false"
-          tools:ignore="UnusedAttribute">
+          android:paddingBottom="8dp">
 
           <com.google.android.material.card.MaterialCardView
             android:id="@+id/card_black"
-            style="@style/Widget.Doodle.Card"
-            android:layout_marginEnd="4dp">
-
-            <com.google.android.material.card.MaterialCardView
-              style="@style/Widget.Doodle.Card.Circle"
-              app:cardBackgroundColor="@color/wp_bg_doodle_black" />
-
-          </com.google.android.material.card.MaterialCardView>
+            style="@style/Widget.Doodle.Card.Selection"
+            android:layout_marginEnd="4dp"
+            app:cardBackgroundColor="@color/wp_bg_doodle_black" />
 
           <com.google.android.material.card.MaterialCardView
             android:id="@+id/card_white"
-            style="@style/Widget.Doodle.Card"
+            style="@style/Widget.Doodle.Card.Selection"
             android:layout_marginStart="4dp"
-            android:layout_marginEnd="4dp">
-
-            <com.google.android.material.card.MaterialCardView
-              style="@style/Widget.Doodle.Card.Circle"
-              app:cardBackgroundColor="@color/wp_bg_doodle_white" />
-
-          </com.google.android.material.card.MaterialCardView>
+            android:layout_marginEnd="4dp"
+            app:cardBackgroundColor="@color/wp_bg_doodle_white" />
 
           <com.google.android.material.card.MaterialCardView
             android:id="@+id/card_orange"
-            style="@style/Widget.Doodle.Card"
+            style="@style/Widget.Doodle.Card.Selection"
             android:layout_marginStart="4dp"
-            android:layout_marginEnd="4dp">
-
-            <com.google.android.material.card.MaterialCardView
-              style="@style/Widget.Doodle.Card.Circle"
-              app:cardBackgroundColor="@color/wp_bg_doodle_orange" />
-
-          </com.google.android.material.card.MaterialCardView>
+            android:layout_marginEnd="4dp"
+            app:cardBackgroundColor="@color/wp_bg_doodle_orange" />
 
         </LinearLayout>
 

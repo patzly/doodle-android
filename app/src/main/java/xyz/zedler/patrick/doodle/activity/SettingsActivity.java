@@ -65,6 +65,7 @@ import xyz.zedler.patrick.doodle.util.IconUtil;
 import xyz.zedler.patrick.doodle.util.MigrationUtil;
 import xyz.zedler.patrick.doodle.util.PrefsUtil;
 import xyz.zedler.patrick.doodle.util.SheetUtil;
+import xyz.zedler.patrick.doodle.util.UnitUtil;
 import xyz.zedler.patrick.doodle.util.VibratorUtil;
 
 public class SettingsActivity extends AppCompatActivity
@@ -129,8 +130,8 @@ public class SettingsActivity extends AppCompatActivity
     binding.switchFollowSystem.setEnabled(binding.switchNightMode.isChecked());
 
     boolean isDoodleThemeActive = sharedPrefs.getString(
-        PREF.WALLPAPER, WALLPAPER.DOODLE
-    ).equals(WALLPAPER.DOODLE);
+        PREF.WALLPAPER, WALLPAPER.PIXEL
+    ).equals(WALLPAPER.PIXEL);
     setVariantSelectionEnabled(isDoodleThemeActive, false);
 
     binding.linearFollowSystem.setEnabled(binding.switchNightMode.isChecked());
@@ -182,7 +183,7 @@ public class SettingsActivity extends AppCompatActivity
         sharedPrefs.getBoolean(PREF.ZOOM_UNLOCK, DEF.ZOOM_UNLOCK)
     );
 
-    refreshSelectionTheme(sharedPrefs.getString(PREF.WALLPAPER, WALLPAPER.DOODLE), false);
+    refreshSelectionTheme(sharedPrefs.getString(PREF.WALLPAPER, WALLPAPER.PIXEL), false);
     refreshSelectionVariant(sharedPrefs.getString(PREF.VARIANT, VARIANT.BLACK), false);
 
     ClickUtil.setOnClickListeners(
@@ -190,7 +191,7 @@ public class SettingsActivity extends AppCompatActivity
         binding.frameClose,
         binding.buttonSet,
         binding.cardInfo,
-        binding.cardDoodle, binding.cardNeon, binding.cardGeometric,
+        binding.cardPixel, binding.cardJohanna, binding.cardReiko, binding.cardAnthony,
         binding.cardBlack, binding.cardWhite, binding.cardOrange,
         binding.linearNightMode,
         binding.linearFollowSystem,
@@ -259,14 +260,17 @@ public class SettingsActivity extends AppCompatActivity
     } else if (id == R.id.card_info) {
       showTextBottomSheet("info", R.string.info_title, -1);
       performHapticClick();
-    } else if (id == R.id.card_doodle) {
-      refreshSelectionTheme(WALLPAPER.DOODLE, true);
+    } else if (id == R.id.card_pixel) {
+      refreshSelectionTheme(WALLPAPER.PIXEL, true);
       performHapticClick();
-    } else if (id == R.id.card_neon) {
-      refreshSelectionTheme(WALLPAPER.NEON, true);
+    } else if (id == R.id.card_johanna) {
+      refreshSelectionTheme(WALLPAPER.JOHANNA, true);
       performHapticClick();
-    } else if (id == R.id.card_geometric) {
-      refreshSelectionTheme(WALLPAPER.GEOMETRIC, true);
+    } else if (id == R.id.card_reiko) {
+      refreshSelectionTheme(WALLPAPER.REIKO, true);
+      performHapticClick();
+    } else if (id == R.id.card_anthony) {
+      refreshSelectionTheme(WALLPAPER.ANTHONY, true);
       performHapticClick();
     } else if (id == R.id.card_black) {
       refreshSelectionVariant(VARIANT.BLACK, true);
@@ -398,34 +402,49 @@ public class SettingsActivity extends AppCompatActivity
   }
 
   private void refreshSelectionTheme(String selection, boolean animated) {
-    MaterialCardView mcvSelected, mcv1, mcv2;
+    MaterialCardView mcvSelected, mcv1, mcv2, mcv3;
     switch (selection) {
-      case WALLPAPER.NEON:
-        mcvSelected = binding.cardNeon;
-        mcv1 = binding.cardDoodle;
-        mcv2 = binding.cardGeometric;
+      case WALLPAPER.JOHANNA:
+        mcvSelected = binding.cardJohanna;
+        mcv1 = binding.cardPixel;
+        mcv2 = binding.cardReiko;
+        mcv3 = binding.cardAnthony;
         break;
-      case WALLPAPER.GEOMETRIC:
-        mcvSelected = binding.cardGeometric;
-        mcv1 = binding.cardDoodle;
-        mcv2 = binding.cardNeon;
+      case WALLPAPER.REIKO:
+        mcvSelected = binding.cardReiko;
+        mcv1 = binding.cardPixel;
+        mcv2 = binding.cardJohanna;
+        mcv3 = binding.cardAnthony;
+        break;
+      case WALLPAPER.ANTHONY:
+        mcvSelected = binding.cardAnthony;
+        mcv1 = binding.cardPixel;
+        mcv2 = binding.cardJohanna;
+        mcv3 = binding.cardReiko;
         break;
       default:
-        mcvSelected = binding.cardDoodle;
-        mcv1 = binding.cardGeometric;
-        mcv2 = binding.cardNeon;
+        mcvSelected = binding.cardPixel;
+        mcv1 = binding.cardJohanna;
+        mcv2 = binding.cardAnthony;
+        mcv3 = binding.cardReiko;
         break;
     }
     if (mcvSelected.isChecked()) {
       return;
     }
     mcvSelected.setStrokeColor(ContextCompat.getColor(this, R.color.secondary));
+    mcvSelected.setStrokeWidth(UnitUtil.getDp(this, 3));
     mcvSelected.setChecked(true);
     mcv1.setStrokeColor(ContextCompat.getColor(this, R.color.stroke));
+    mcv1.setStrokeWidth(UnitUtil.getDp(this, 1));
     mcv1.setChecked(false);
     mcv2.setStrokeColor(ContextCompat.getColor(this, R.color.stroke));
+    mcv2.setStrokeWidth(UnitUtil.getDp(this, 1));
     mcv2.setChecked(false);
-    setVariantSelectionEnabled(selection.equals(WALLPAPER.DOODLE), true);
+    mcv3.setStrokeColor(ContextCompat.getColor(this, R.color.stroke));
+    mcv3.setStrokeWidth(UnitUtil.getDp(this, 1));
+    mcv3.setChecked(false);
+    setVariantSelectionEnabled(selection.equals(WALLPAPER.PIXEL), true);
     if (animated) {
       IconUtil.start(binding.imageWallpaper);
       sharedPrefs.edit().putString(PREF.WALLPAPER, selection).apply();
@@ -456,10 +475,13 @@ public class SettingsActivity extends AppCompatActivity
       return;
     }
     mcvSelected.setStrokeColor(ContextCompat.getColor(this, R.color.secondary));
+    mcvSelected.setStrokeWidth(UnitUtil.getDp(this, 3));
     mcvSelected.setChecked(true);
     mcv1.setStrokeColor(ContextCompat.getColor(this, R.color.stroke));
+    mcv1.setStrokeWidth(UnitUtil.getDp(this, 1));
     mcv1.setChecked(false);
     mcv2.setStrokeColor(ContextCompat.getColor(this, R.color.stroke));
+    mcv2.setStrokeWidth(UnitUtil.getDp(this, 1));
     mcv2.setChecked(false);
     if (animated) {
       IconUtil.start(binding.imageVariant);

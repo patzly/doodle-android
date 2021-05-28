@@ -36,32 +36,22 @@
     <item name="android:textColor">@color/on_secondary</item>
     <item name="android:textSize">14.5sp</item>
     <item name="android:fontFamily">@font/jost_bold</item>
-    <item name="cornerRadius">6dp</item>
+    <item name="cornerRadius">12dp</item>
   </style>
 
-  <style name="Widget.Doodle.Card" parent="Widget.MaterialComponents.CardView">
-    <item name="android:layout_width">@dimen/theme_selection_card_size</item>
-    <item name="android:layout_height">@dimen/theme_selection_card_size</item>
+  <style name="Widget.Doodle.Card.Selection" parent="Widget.MaterialComponents.CardView">
+    <item name="android:layout_width">48dp</item>
+    <item name="android:layout_height">48dp</item>
     <item name="android:clickable">true</item>
     <item name="android:focusable">true</item>
     <item name="android:checkable">true</item>
-    <item name="checkedIcon">@null</item>
-    <item name="cardElevation">0dp</item>
-    <item name="android:gravity">center</item>
     <item name="strokeColor">@color/stroke</item>
-    <item name="strokeWidth">2dp</item>
+    <item name="strokeWidth">1dp</item>
     <item name="rippleColor">@color/highlight</item>
     <item name="cardBackgroundColor">@color/background</item>
-    <item name="cardCornerRadius">@dimen/theme_selection_card_corner_radius</item>
-  </style>
-
-  <style name="Widget.Doodle.Card.Circle" parent="Widget.Doodle.Card">
-    <item name="android:layout_width">@dimen/theme_selection_circle_size</item>
-    <item name="android:layout_height">@dimen/theme_selection_circle_size</item>
-    <item name="android:clickable">false</item>
-    <item name="android:focusable">false</item>
-    <item name="android:checkable">false</item>
-    <item name="cardCornerRadius">@dimen/theme_selection_circle_corner_radius</item>
+    <item name="checkedIcon">@null</item>
+    <item name="cardElevation">0dp</item>
+    <item name="cardCornerRadius">32dp</item>
     <item name="android:layout_gravity">center</item>
   </style>
 

@@ -178,22 +178,22 @@ public class LiveWallpaperService extends WallpaperService {
   private void refreshTheme() {
     if (isNightMode()) {
       switch (wallpaper) {
-        case WALLPAPER.DOODLE:
+        case WALLPAPER.PIXEL:
           theme.applyStyle(R.style.Wallpaper_Doodle_Night, true);
           colorBackground = getCompatColor(R.color.wp_bg_doodle_night);
           break;
-        case WALLPAPER.NEON:
+        case WALLPAPER.REIKO:
           theme.applyStyle(R.style.Wallpaper_Neon_Night, true);
           colorBackground = getCompatColor(R.color.wp_bg_neon_night);
           break;
-        case WALLPAPER.GEOMETRIC:
+        case WALLPAPER.ANTHONY:
           theme.applyStyle(R.style.Wallpaper_Geometric_Night, true);
           colorBackground = getCompatColor(R.color.wp_bg_geometric_night);
           break;
       }
     } else {
       switch (wallpaper) {
-        case WALLPAPER.DOODLE:
+        case WALLPAPER.PIXEL:
           switch (variant) {
             case Constants.VARIANT.BLACK:
               theme.applyStyle(R.style.Wallpaper_Doodle_Black, true);
@@ -209,11 +209,11 @@ public class LiveWallpaperService extends WallpaperService {
               break;
           }
           break;
-        case WALLPAPER.NEON:
+        case WALLPAPER.REIKO:
           theme.applyStyle(R.style.Wallpaper_Neon, true);
           colorBackground = getCompatColor(R.color.wp_bg_neon);
           break;
-        case WALLPAPER.GEOMETRIC:
+        case WALLPAPER.ANTHONY:
           theme.applyStyle(R.style.Wallpaper_Geometric, true);
           colorBackground = getCompatColor(R.color.wp_bg_geometric);
           break;
@@ -221,7 +221,7 @@ public class LiveWallpaperService extends WallpaperService {
     }
 
     switch (wallpaper) {
-      case WALLPAPER.DOODLE:
+      case WALLPAPER.PIXEL:
         doodleArc = getVectorDrawable(R.drawable.doodle_shape_arc);
         doodleDot = getVectorDrawable(R.drawable.doodle_shape_dot);
         doodleU = getVectorDrawable(R.drawable.doodle_shape_u);
@@ -230,7 +230,7 @@ public class LiveWallpaperService extends WallpaperService {
         doodleMoon = getVectorDrawable(R.drawable.doodle_shape_moon);
         doodlePoly = getVectorDrawable(R.drawable.doodle_shape_poly);
         break;
-      case WALLPAPER.NEON:
+      case WALLPAPER.REIKO:
         neonKidneyFront = getVectorDrawable(R.drawable.neon_shape_kidney_front);
         neonCircleFront = getVectorDrawable(R.drawable.neon_shape_circle_front);
         neonPill = getVectorDrawable(R.drawable.neon_shape_pill);
@@ -239,7 +239,7 @@ public class LiveWallpaperService extends WallpaperService {
         neonCircleBack = getVectorDrawable(R.drawable.neon_shape_circle_back);
         neonDot = getVectorDrawable(R.drawable.neon_shape_dot);
         break;
-      case WALLPAPER.GEOMETRIC:
+      case WALLPAPER.ANTHONY:
         geometricRect = getVectorDrawable(R.drawable.geometric_shape_rect);
         geometricLine = getVectorDrawable(R.drawable.geometric_shape_line);
         geometricPoly = getVectorDrawable(R.drawable.geometric_shape_poly);
@@ -254,7 +254,7 @@ public class LiveWallpaperService extends WallpaperService {
   private void newRandomZ() {
     Random random = new Random();
     switch (wallpaper) {
-      case WALLPAPER.DOODLE:
+      case WALLPAPER.PIXEL:
         zDoodleArc = getRandomFloat(random);
         zDoodleDot = getRandomFloat(random);
         zDoodleU = getRandomFloat(random);
@@ -263,7 +263,7 @@ public class LiveWallpaperService extends WallpaperService {
         zDoodleMoon = getRandomFloat(random);
         zDoodlePoly = getRandomFloat(random);
         break;
-      case WALLPAPER.NEON:
+      case WALLPAPER.REIKO:
         zNeonKidneyFront = getRandomFloat(random);
         zNeonCircleFront = getRandomFloat(random);
         zNeonPill = getRandomFloat(random);
@@ -272,7 +272,7 @@ public class LiveWallpaperService extends WallpaperService {
         zNeonCircleBack = getRandomFloat(random);
         zNeonDot = getRandomFloat(random);
         break;
-      case WALLPAPER.GEOMETRIC:
+      case WALLPAPER.ANTHONY:
         zGeometricRect = getRandomFloat(random);
         zGeometricLine = getRandomFloat(random);
         zGeometricPoly = getRandomFloat(random);
@@ -401,19 +401,19 @@ public class LiveWallpaperService extends WallpaperService {
       int background = 0xFF232323;
       if (isNightMode()) {
         switch (wallpaper) {
-          case WALLPAPER.DOODLE:
+          case WALLPAPER.PIXEL:
             background = 0xFF272628;
             break;
-          case WALLPAPER.NEON:
+          case WALLPAPER.REIKO:
             background = 0xFF0e032d;
             break;
-          case WALLPAPER.GEOMETRIC:
+          case WALLPAPER.ANTHONY:
             background = 0xFF212121;
             break;
         }
       } else {
         switch (wallpaper) {
-          case WALLPAPER.DOODLE:
+          case WALLPAPER.PIXEL:
             switch (variant) {
               case VARIANT.BLACK:
                 background = 0xFF232323;
@@ -426,10 +426,10 @@ public class LiveWallpaperService extends WallpaperService {
                 break;
             }
             break;
-          case WALLPAPER.NEON:
+          case WALLPAPER.REIKO:
             background = 0xFFcbcbef;
             break;
-          case WALLPAPER.GEOMETRIC:
+          case WALLPAPER.ANTHONY:
             background = 0xFFb9c1c7;
             break;
         }
@@ -559,7 +559,7 @@ public class LiveWallpaperService extends WallpaperService {
           canvas.drawColor(colorBackground);
 
           switch (wallpaper) {
-            case WALLPAPER.DOODLE:
+            case WALLPAPER.PIXEL:
               drawShape(doodleArc, 0.25, 0.28, zDoodleArc);
               drawShape(doodleDot, 0.142, 0.468, zDoodleDot);
               drawShape(doodleU, isPortrait() ? 0.25 : 0.32, 0.72, zDoodleU);
@@ -576,7 +576,7 @@ public class LiveWallpaperService extends WallpaperService {
                   doodleArc, doodleDot, doodleU, doodleRect, doodleRing, doodleMoon, doodlePoly
               );
               break;
-            case WALLPAPER.NEON:
+            case WALLPAPER.REIKO:
               double shift = isPortrait() ? 0 : -0.15;
               drawShape(neonKidneyFront, 0.85 + shift, 0.65, zNeonKidneyFront);
               drawShape(neonCircleFront, 0.98 + shift, 0.468, zNeonCircleFront);
@@ -591,7 +591,7 @@ public class LiveWallpaperService extends WallpaperService {
                   neonPill, neonCircleFront, neonKidneyFront
               );
               break;
-            case WALLPAPER.GEOMETRIC:
+            case WALLPAPER.ANTHONY:
               drawShape(geometricRect, 0.35, 0.78, zGeometricRect);
               drawShape(geometricLine, 0.5, 0.82, zGeometricLine);
               drawShape(geometricPoly, 0.8, 0.67, zGeometricPoly);

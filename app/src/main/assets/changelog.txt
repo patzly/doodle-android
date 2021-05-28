@@ -1,3 +1,8 @@
+3.0.0:
+- New: completely rewritten rendering engine (even more efficient)
+- New: "organic" doodle wallpaper
+- Improved: settings style and layout
+
 2.6.1:
 - Improved: applying preferences unrelated to color or size now is more efficient
 - Fixed: preferences were sometimes not applied to wallpaper

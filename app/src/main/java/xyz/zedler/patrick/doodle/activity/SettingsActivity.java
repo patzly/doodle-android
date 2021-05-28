@@ -65,6 +65,7 @@ import xyz.zedler.patrick.doodle.util.IconUtil;
 import xyz.zedler.patrick.doodle.util.MigrationUtil;
 import xyz.zedler.patrick.doodle.util.PrefsUtil;
 import xyz.zedler.patrick.doodle.util.SheetUtil;
+import xyz.zedler.patrick.doodle.util.SliceUtil;
 import xyz.zedler.patrick.doodle.util.VibratorUtil;
 
 public class SettingsActivity extends AppCompatActivity
@@ -215,6 +216,8 @@ public class SettingsActivity extends AppCompatActivity
 
     showChangelog();
     showFeedbackPopUp();
+
+    SliceUtil.grantSlicePermission(getApplicationContext());
   }
 
   @Override

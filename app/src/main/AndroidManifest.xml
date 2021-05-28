@@ -1,24 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<!--
-  ~ This file is part of Doodle Android.
-  ~
-  ~ Doodle Android is free software: you can redistribute it and/or modify
-  ~ it under the terms of the GNU General Public License as published by
-  ~ the Free Software Foundation, either version 3 of the License, or
-  ~ (at your option) any later version.
-  ~
-  ~ Doodle Android is distributed in the hope that it will be useful,
-  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
-  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-  ~ GNU General Public License for more details.
-  ~
-  ~ You should have received a copy of the GNU General Public License
-  ~ along with Doodle Android. If not, see <http://www.gnu.org/licenses/>.
-  ~
-  ~ Copyright (c) 2020-2021 by Patrick Zedler
-  -->
-
 <manifest
   xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:tools="http://schemas.android.com/tools"
@@ -29,6 +9,12 @@
     android:required="true" />
 
   <uses-permission android:name="android.permission.VIBRATE" />
+  <uses-permission android:name="android.permission.AMBIENT_WALLPAPER"/>
+  <permission
+    android:label="@string/info_title"
+    android:name="xyz.zedler.patrick.doodle.APPLY_SETTINGS"
+    android:protectionLevel="normal|signature|system"
+    android:description="@string/info_title" />
 
   <application
     android:allowBackup="true"
@@ -51,10 +37,6 @@
       android:name=".activity.SettingsActivity"
       android:exported="true" />
 
-    <activity
-      android:name="androidx.slice.compat.SlicePermissionActivity"
-      android:excludeFromRecents="true" />
-
     <service
       android:directBootAware="true"
       android:label="@string/app_name"
@@ -68,6 +50,26 @@
         android:name="android.service.wallpaper"
         android:resource="@xml/wallpaper" />
     </service>
+
+    <provider
+      android:authorities="xyz.zedler.patrick.doodle"
+      android:exported="true"
+      android:name=".settings.SettingsSliceProvider">
+      <intent-filter>
+        <action android:name="android.intent.action.VIEW" />
+        <category android:name="android.app.slice.category.SLICE" />
+        <data
+          android:host="patrick.zedler.xyz/doodle"
+          android:pathPrefix="/"
+          android:scheme="http" />
+      </intent-filter>
+    </provider>
+
+    <receiver
+      android:name=".settings.receiver.SettingsBroadcastReceiver"
+      android:exported="false"
+      android:directBootAware="true"
+      tools:targetApi="n" />
 
   </application>
 

@@ -72,6 +72,12 @@ public final class Constants {
     public final static String TITLE = "title";
     public final static String LINK = "link";
     public final static String FILE = "file";
+
+    // SLICES
+    public final static String THEME = "theme";
+    public final static String UPDATE = "update";
+    public final static String ACTION = "action";
+    public final static String SAVE = "save";
   }
 
   public final static class USER_PRESENCE {

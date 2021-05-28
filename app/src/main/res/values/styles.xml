@@ -40,8 +40,8 @@
   </style>
 
   <style name="Widget.Doodle.Card.Selection" parent="Widget.MaterialComponents.CardView">
-    <item name="android:layout_width">48dp</item>
-    <item name="android:layout_height">48dp</item>
+    <item name="android:layout_width">42dp</item>
+    <item name="android:layout_height">42dp</item>
     <item name="android:clickable">true</item>
     <item name="android:focusable">true</item>
     <item name="android:checkable">true</item>

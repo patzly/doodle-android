@@ -53,8 +53,6 @@
   <string name="setting_zoom_launcher">Zoom out when opening quick settings or app drawer</string>
   <string name="setting_zoom_unlock">Zoom out on lockscreen</string>
 
-  <string name="setting_slice_title">Theme</string>
-
   <string name="info_title">Information</string>
   <string name="info_description">Colorful live wallpapers with auto dark mode and battery-efficient animations. Tap to learn more.</string>
   <string name="info_description_wallpaper">Explore a colorful collection of shapes, refined with gentle parallax and zoom effects when you swipe through your home screens and unlock your phone.\nCustomize the wallpaper to match your own style.</string>
@@ -90,7 +88,5 @@
   <string name="license_jost_link" translatable="false">https://github.com/indestructible-type/Jost</string>
 
   <string name="title_feedback">Feedback</string>
-
-  <string name="broadcast_permission" translatable="false">Wallpaper settings permissions</string>
 
 </resources>

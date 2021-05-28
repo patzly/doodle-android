@@ -49,8 +49,6 @@
   <string name="setting_zoom_launcher">Beim Öffnen der Schnelleinstellungen oder des App-Drawers herauszoomen</string>
   <string name="setting_zoom_unlock">Auf dem Sperrbildschirm herauszoomen</string>
 
-  <string name="setting_slice_title">Design</string>
-
   <string name="category_customization">Anpassung</string>
   <string name="category_about">Über</string>
   <string name="category_licenses">Open-Source-Lizenzen</string>

@@ -96,16 +96,7 @@
 
       <com.google.android.material.card.MaterialCardView
         android:id="@+id/card_info"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="8dp"
-        app:contentPadding="16dp"
-        app:rippleColor="@color/highlight_secondary"
-        app:cardElevation="0dp"
-        app:cardCornerRadius="12dp"
-        app:cardBackgroundColor="@color/on_background_tertiary">
+        style="@style/Widget.Doodle.Card.Text">
 
         <TextView
           style="@style/Widget.Doodle.TextView.Paragraph"
@@ -118,16 +109,8 @@
 
       <com.google.android.material.card.MaterialCardView
         android:id="@+id/card_touch_wiz"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="8dp"
-        android:visibility="gone"
-        app:contentPadding="16dp"
-        app:cardElevation="0dp"
-        app:cardCornerRadius="12dp"
-        app:cardBackgroundColor="@color/on_background_tertiary">
+        style="@style/Widget.Doodle.Card.Text"
+        android:visibility="gone">
 
         <TextView
           style="@style/Widget.Doodle.TextView.Paragraph"
@@ -140,16 +123,8 @@
 
       <com.google.android.material.card.MaterialCardView
         android:id="@+id/card_gpu"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="8dp"
-        android:visibility="gone"
-        app:contentPadding="16dp"
-        app:cardElevation="0dp"
-        app:cardCornerRadius="12dp"
-        app:cardBackgroundColor="@color/on_background_tertiary">
+        style="@style/Widget.Doodle.Card.Text"
+        android:visibility="gone">
 
         <TextView
           style="@style/Widget.Doodle.TextView.Paragraph"

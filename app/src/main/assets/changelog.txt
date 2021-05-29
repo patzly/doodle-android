@@ -1,6 +1,7 @@
 3.0.0:
 - New: completely rewritten rendering engine (even more efficient)
 - New: "organic" doodle wallpaper
+- New: hardware acceleration for devices with Android 8 and higher (incredible smooth animations)
 - Improved: settings style and layout
 
 2.6.1:

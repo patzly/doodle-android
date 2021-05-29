@@ -138,6 +138,28 @@
 
       </com.google.android.material.card.MaterialCardView>
 
+      <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_gpu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone"
+        app:contentPadding="16dp"
+        app:cardElevation="0dp"
+        app:cardCornerRadius="12dp"
+        app:cardBackgroundColor="@color/on_background_tertiary">
+
+        <TextView
+          style="@style/Widget.Doodle.TextView.Paragraph"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:textColor="@color/on_background"
+          android:text="@string/info_gpu" />
+
+      </com.google.android.material.card.MaterialCardView>
+
       <TextView
         style="@style/Widget.Doodle.TextView.Category"
         android:text="@string/category_customization" />

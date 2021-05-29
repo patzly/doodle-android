@@ -124,15 +124,19 @@ public class SettingsActivity extends AppCompatActivity
         result -> setActivateButtonEnabled(result.getResultCode() != Activity.RESULT_OK)
     );
 
+    binding.cardGpu.setVisibility(
+        Build.VERSION.SDK_INT >= Build.VERSION_CODES.O ? View.GONE : View.VISIBLE
+    );
+
     binding.switchNightMode.setChecked(sharedPrefs.getBoolean(PREF.NIGHT_MODE, true));
 
     binding.switchFollowSystem.setChecked(sharedPrefs.getBoolean(PREF.FOLLOW_SYSTEM, true));
     binding.switchFollowSystem.setEnabled(binding.switchNightMode.isChecked());
 
-    boolean isDoodleThemeActive = sharedPrefs.getString(
+    boolean isPixelWallpaperActive = sharedPrefs.getString(
         PREF.WALLPAPER, WALLPAPER.PIXEL
     ).equals(WALLPAPER.PIXEL);
-    setVariantSelectionEnabled(isDoodleThemeActive, false);
+    setVariantSelectionEnabled(isPixelWallpaperActive, false);
 
     binding.linearFollowSystem.setEnabled(binding.switchNightMode.isChecked());
     binding.linearFollowSystemContainer.setAlpha(binding.switchNightMode.isChecked() ? 1 : 0.5f);

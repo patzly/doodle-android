@@ -549,12 +549,14 @@ public class LiveWallpaperService extends WallpaperService {
       if (!force && SystemClock.elapsedRealtime() - lastDraw < 1000 / fps) {
         return;
       }
-
       final SurfaceHolder surfaceHolder = getSurfaceHolder();
       Canvas canvas = null;
       try {
-        canvas = surfaceHolder.lockCanvas();
-
+        if (VERSION.SDK_INT >= VERSION_CODES.O) {
+          canvas = surfaceHolder.lockHardwareCanvas();
+        } else {
+          canvas = surfaceHolder.lockCanvas();
+        }
         if (canvas != null) {
           canvas.drawColor(colorBackground);
 

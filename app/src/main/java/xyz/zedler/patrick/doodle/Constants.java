@@ -31,7 +31,7 @@ public final class Constants {
     public final static String WALLPAPER = "wallpaper";
     public final static String VARIANT = "variant";
     public final static String PARALLAX = "parallax";
-    public final static String SIZE = "size";
+    public final static String SCALE = "size";
 
     public final static String SETTINGS_APPLIED = "settings_applied";
     public final static String THEME_APPLIED = "theme_applied";
@@ -50,7 +50,7 @@ public final class Constants {
     public final static String WALLPAPER = Constants.WALLPAPER.PIXEL;
     public final static String VARIANT = Constants.VARIANT.BLACK;
     public final static int PARALLAX = 1;
-    public final static float SIZE = 1;
+    public final static float SCALE = 1;
   }
 
   public final static class WALLPAPER {

@@ -38,11 +38,11 @@ public class MigrationUtil {
     migrateString("theme", PREF.WALLPAPER, DEF.WALLPAPER);
 
     // size is stored in a new way
-    if (sharedPrefs.contains(PREF.SIZE)) {
+    if (sharedPrefs.contains(PREF.SCALE)) {
       try {
-        sharedPrefs.getFloat(PREF.SIZE, DEF.SIZE);
+        sharedPrefs.getFloat(PREF.SCALE, DEF.SCALE);
       } catch (ClassCastException e) {
-        removePreference(PREF.SIZE);
+        removePreference(PREF.SCALE);
       }
     }
 

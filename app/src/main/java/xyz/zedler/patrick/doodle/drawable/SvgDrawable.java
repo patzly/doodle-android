@@ -30,6 +30,7 @@ import android.graphics.Paint.Cap;
 import android.graphics.Paint.Join;
 import android.graphics.Paint.Style;
 import android.graphics.Path;
+import android.graphics.PointF;
 import android.graphics.RectF;
 import android.util.Base64;
 import android.util.Log;
@@ -41,6 +42,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import xyz.zedler.patrick.doodle.parser.PathParser;
@@ -63,6 +65,8 @@ public class SvgDrawable {
   private final Paint paint;
   private int backgroundColor;
   private RectF rectF;
+  private PointF pointF;
+  private final Random random;
 
   public SvgDrawable(Context context, @RawRes int resId) {
     pixelUnit = UnitUtil.getDp(context, 1) * 0.33f;
@@ -80,6 +84,7 @@ public class SvgDrawable {
 
     paint = new Paint();
     rectF = new RectF();
+    random = new Random();
   }
 
   @Nullable
@@ -91,21 +96,40 @@ public class SvgDrawable {
     }
   }
 
-  public void setOffset(float offsetX) {
-    setOffset(offsetX, 0);
-  }
-
+  /**
+   * The final offset is calculated with the elevation
+   */
   public void setOffset(float offsetX, float offsetY) {
     this.offsetX = offsetX;
     this.offsetY = offsetY;
+    // TODO: offsetX * elevation
   }
 
   public void setScale(float scale) {
     this.scale = scale;
   }
 
+  /**
+   * Set how much should be zoomed out. The final value is calculated with the elevation of each
+   * object. An object with elevation of 1 (nearest) is zoomed out much more than an object with the
+   * elevation 0.1 (almost no parallax/zoom effect).
+   *
+   * @param zoom value from 0-1: 0 = original size; 1 = max zoomed out (depending on the elevation)
+   */
   public void setZoom(float zoom) {
     this.zoom = zoom;
+    // TODO: final scale factor = scale - (zoom * elevation)
+    // TODO: has to be
+  }
+
+  /**
+   * Apply random elevation between 0 (no parallax/zoom) to 1 (maximal effects) to all objects
+   * @param min Set the minimal parallax/zoom intensity (good if nothing should be completely still)
+   */
+  public void applyRandomElevationToAll(float min) {
+    for (SvgObject object : objects) {
+      object.elevation =  min + random.nextFloat() * (1 - min);
+    }
   }
 
   public void draw(Canvas canvas) {
@@ -301,9 +325,12 @@ public class SvgDrawable {
       }
       canvas.save();
 
+      float offsetX = this.offsetX * object.elevation;
+      float offsetY = this.offsetY * object.elevation;
+
       // draw path to required position
-      float requiredCenterX = (object.cx / svgWidth) * canvas.getWidth();
-      float requiredCenterY = (object.cy / svgHeight) * canvas.getHeight();
+      float requiredCenterX = (object.cx / svgWidth) * canvas.getWidth() - offsetX;
+      float requiredCenterY = (object.cy / svgHeight) * canvas.getHeight() - offsetY;
       float dx = requiredCenterX - object.cx;
       float dy = requiredCenterY - object.cy;
       canvas.translate(dx, dy);
@@ -364,8 +391,11 @@ public class SvgDrawable {
       if (i == 1) {
         applyPaintStyle(object, true);
       }
-      float cx = object.cx * canvas.getWidth();
-      float cy = object.cy * canvas.getHeight();
+      float offsetX = this.offsetX * object.elevation;
+      float offsetY = this.offsetY * object.elevation;
+      float cx = object.cx * canvas.getWidth() - offsetX;
+      float cy = object.cy * canvas.getHeight() - offsetY;
+      // TODO: shifts in direction of rotation when transformed...
 
       if (object.rx == 0 && object.ry == 0) {
         canvas.drawRect(
@@ -518,15 +548,31 @@ public class SvgDrawable {
   private void drawImage(Canvas canvas, SvgObject object) {
     applyPaintStyle(object, false);
 
-    float cx = object.cx * canvas.getWidth();
-    float cy = object.cy * canvas.getHeight();
-    if (rectF == null || rectF.isEmpty()) {
+    /*float offsetX = this.offsetX * object.elevation;
+    float offsetY = this.offsetY * object.elevation;
+    float cx = object.cx * canvas.getWidth() - offsetX;
+    float cy = object.cy * canvas.getHeight() - offsetY;
+
+    float centerX = canvas.getWidth() / 2f;
+    if (cx < centerX) {
+      float dist = centerX - cx;
+      cx += dist * object.elevation * zoom;
+    } else {
+      float dist = cx - centerX;
+      cx -= dist * object.elevation * zoom;
+    }*/
+    pointF = getFinalCenter(canvas, object);
+
+    /*if (rectF == null || rectF.isEmpty()) {
       rectF = new RectF();
-    }
-    rectF.left = cx - object.width / 2;
-    rectF.top = cy - object.height / 2;
-    rectF.right = cx + object.width / 2;
-    rectF.bottom = cy + object.height / 2;
+    }*/
+    float scale = getFinalScale(object);
+    rectF.set(
+        pointF.x - (object.width * scale) / 2,
+        pointF.y - (object.height * scale) / 2,
+        pointF.x + (object.width * scale) / 2,
+        pointF.y + (object.height * scale) / 2
+    );
 
     canvas.drawBitmap(object.bitmap, null, rectF, paint);
   }
@@ -725,6 +771,34 @@ public class SvgDrawable {
     public String toString() {
       return "SvgObject{ id='" + id + "', type='" + type + "', isInGroup=" + isInGroup + '}';
     }
+  }
+
+  private PointF getFinalCenter(Canvas canvas, SvgObject object) {
+    float cx = object.cx * canvas.getWidth() - (offsetX * object.elevation);
+    float cy = object.cy * canvas.getHeight() - (offsetY * object.elevation);
+
+    float centerX = canvas.getWidth() / 2f;
+    if (cx < centerX) {
+      float dist = centerX - cx;
+      cx += dist * object.elevation * zoom;
+    } else {
+      float dist = cx - centerX;
+      cx -= dist * object.elevation * zoom;
+    }
+
+    float centerY = canvas.getHeight() / 2f;
+    if (cy < centerY) {
+      float dist = centerY - cy;
+      cy += dist * object.elevation * zoom;
+    } else {
+      float dist = cy - centerY;
+      cy -= dist * object.elevation * zoom;
+    }
+    return new PointF(cx, cy);
+  }
+
+  private float getFinalScale(SvgObject object) {
+    return scale - (zoom * object.elevation);
   }
 
   private float parseFloat(String value) {

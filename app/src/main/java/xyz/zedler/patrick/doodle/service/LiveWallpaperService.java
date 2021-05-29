@@ -28,27 +28,19 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
-import android.content.res.Resources.NotFoundException;
-import android.content.res.Resources.Theme;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Rect;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
-import android.graphics.drawable.VectorDrawable;
 import android.os.Build;
 import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
 import android.os.SystemClock;
 import android.service.wallpaper.WallpaperService;
-import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.WindowManager;
-import androidx.annotation.ColorRes;
-import androidx.annotation.DrawableRes;
-import androidx.core.content.ContextCompat;
-import androidx.core.content.res.ResourcesCompat;
 import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
-import java.util.Random;
 import xyz.zedler.patrick.doodle.Constants;
 import xyz.zedler.patrick.doodle.Constants.DEF;
 import xyz.zedler.patrick.doodle.Constants.PREF;
@@ -65,12 +57,9 @@ public class LiveWallpaperService extends WallpaperService {
   private final static String TAG = LiveWallpaperService.class.getSimpleName();
 
   private SharedPreferences sharedPrefs;
-  private Theme theme;
   private String wallpaper, variant;
   private boolean nightMode, followSystem, isNight;
-  private int colorBackground;
   private int parallax;
-  private float size;
   private float fps;
   private int zoomIntensity;
   private boolean isZoomLauncherEnabled, isZoomUnlockEnabled;
@@ -78,50 +67,6 @@ public class LiveWallpaperService extends WallpaperService {
   private boolean isReceiverRegistered = false;
   private UserPresenceListener userPresenceListener;
   private SvgDrawable svgDrawable;
-
-  private VectorDrawable doodleArc;
-  private VectorDrawable doodleDot;
-  private VectorDrawable doodleU;
-  private VectorDrawable doodleRect;
-  private VectorDrawable doodleRing;
-  private VectorDrawable doodleMoon;
-  private VectorDrawable doodlePoly;
-
-  private VectorDrawable neonKidneyFront;
-  private VectorDrawable neonCircleFront;
-  private VectorDrawable neonPill;
-  private VectorDrawable neonLine;
-  private VectorDrawable neonKidneyBack;
-  private VectorDrawable neonCircleBack;
-  private VectorDrawable neonDot;
-
-  private VectorDrawable geometricRect;
-  private VectorDrawable geometricLine;
-  private VectorDrawable geometricPoly;
-  private VectorDrawable geometricCircle;
-  private VectorDrawable geometricSheet;
-
-  private float zDoodleArc;
-  private float zDoodleDot;
-  private float zDoodleU;
-  private float zDoodleRect;
-  private float zDoodleRing;
-  private float zDoodleMoon;
-  private float zDoodlePoly;
-
-  private float zNeonKidneyFront;
-  private float zNeonCircleFront;
-  private float zNeonPill;
-  private float zNeonLine;
-  private float zNeonKidneyBack;
-  private float zNeonCircleBack;
-  private float zNeonDot;
-
-  private float zGeometricRect;
-  private float zGeometricLine;
-  private float zGeometricPoly;
-  private float zGeometricCircle;
-  private float zGeometricSheet;
 
   private final BroadcastReceiver presenceReceiver = new BroadcastReceiver() {
     public void onReceive(Context context, Intent intent) {
@@ -154,7 +99,6 @@ public class LiveWallpaperService extends WallpaperService {
 
   public void onDestroy() {
     unregisterReceiver();
-    clearShapes();
     super.onDestroy();
   }
 
@@ -175,20 +119,21 @@ public class LiveWallpaperService extends WallpaperService {
     }
   }
 
-  private void refreshTheme() {
+  private void loadWallpaper() {
+    int resId = -1;
     if (isNightMode()) {
       switch (wallpaper) {
         case WALLPAPER.PIXEL:
-          theme.applyStyle(R.style.Wallpaper_Doodle_Night, true);
-          colorBackground = getCompatColor(R.color.wp_bg_doodle_night);
+          resId = R.raw.pixel;
+          break;
+        case WALLPAPER.JOHANNA:
+          resId = R.raw.johanna_dark;
           break;
         case WALLPAPER.REIKO:
-          theme.applyStyle(R.style.Wallpaper_Neon_Night, true);
-          colorBackground = getCompatColor(R.color.wp_bg_neon_night);
+          resId = R.raw.pixel;
           break;
         case WALLPAPER.ANTHONY:
-          theme.applyStyle(R.style.Wallpaper_Geometric_Night, true);
-          colorBackground = getCompatColor(R.color.wp_bg_geometric_night);
+          resId = R.raw.pixel;
           break;
       }
     } else {
@@ -196,120 +141,31 @@ public class LiveWallpaperService extends WallpaperService {
         case WALLPAPER.PIXEL:
           switch (variant) {
             case Constants.VARIANT.BLACK:
-              theme.applyStyle(R.style.Wallpaper_Doodle_Black, true);
-              colorBackground = getCompatColor(R.color.wp_bg_doodle_black);
+              resId = R.raw.pixel;
               break;
             case Constants.VARIANT.WHITE:
-              theme.applyStyle(R.style.Wallpaper_Doodle_White, true);
-              colorBackground = getCompatColor(R.color.wp_bg_doodle_white);
+              resId = R.raw.pixel;
               break;
             case Constants.VARIANT.ORANGE:
-              theme.applyStyle(R.style.Wallpaper_Doodle_Orange, true);
-              colorBackground = getCompatColor(R.color.wp_bg_doodle_orange);
+              resId = R.raw.pixel;
               break;
           }
           break;
+        case WALLPAPER.JOHANNA:
+          resId = R.raw.johanna;
+          break;
         case WALLPAPER.REIKO:
-          theme.applyStyle(R.style.Wallpaper_Neon, true);
-          colorBackground = getCompatColor(R.color.wp_bg_neon);
+          resId = R.raw.pixel;
           break;
         case WALLPAPER.ANTHONY:
-          theme.applyStyle(R.style.Wallpaper_Geometric, true);
-          colorBackground = getCompatColor(R.color.wp_bg_geometric);
+          resId = R.raw.pixel;
           break;
       }
     }
-
-    switch (wallpaper) {
-      case WALLPAPER.PIXEL:
-        doodleArc = getVectorDrawable(R.drawable.doodle_shape_arc);
-        doodleDot = getVectorDrawable(R.drawable.doodle_shape_dot);
-        doodleU = getVectorDrawable(R.drawable.doodle_shape_u);
-        doodleRect = getVectorDrawable(R.drawable.doodle_shape_rect);
-        doodleRing = getVectorDrawable(R.drawable.doodle_shape_ring);
-        doodleMoon = getVectorDrawable(R.drawable.doodle_shape_moon);
-        doodlePoly = getVectorDrawable(R.drawable.doodle_shape_poly);
-        break;
-      case WALLPAPER.REIKO:
-        neonKidneyFront = getVectorDrawable(R.drawable.neon_shape_kidney_front);
-        neonCircleFront = getVectorDrawable(R.drawable.neon_shape_circle_front);
-        neonPill = getVectorDrawable(R.drawable.neon_shape_pill);
-        neonLine = getVectorDrawable(R.drawable.neon_shape_line);
-        neonKidneyBack = getVectorDrawable(R.drawable.neon_shape_kidney_back);
-        neonCircleBack = getVectorDrawable(R.drawable.neon_shape_circle_back);
-        neonDot = getVectorDrawable(R.drawable.neon_shape_dot);
-        break;
-      case WALLPAPER.ANTHONY:
-        geometricRect = getVectorDrawable(R.drawable.geometric_shape_rect);
-        geometricLine = getVectorDrawable(R.drawable.geometric_shape_line);
-        geometricPoly = getVectorDrawable(R.drawable.geometric_shape_poly);
-        geometricCircle = getVectorDrawable(R.drawable.geometric_shape_circle);
-        geometricSheet = getVectorDrawable(R.drawable.geometric_shape_sheet);
-        break;
+    if (resId == -1) {
+      resId = R.raw.pixel;
     }
-
-    svgDrawable = new SvgDrawable(this, R.raw.doodle);
-  }
-
-  private void newRandomZ() {
-    Random random = new Random();
-    switch (wallpaper) {
-      case WALLPAPER.PIXEL:
-        zDoodleArc = getRandomFloat(random);
-        zDoodleDot = getRandomFloat(random);
-        zDoodleU = getRandomFloat(random);
-        zDoodleRect = getRandomFloat(random);
-        zDoodleRing = getRandomFloat(random);
-        zDoodleMoon = getRandomFloat(random);
-        zDoodlePoly = getRandomFloat(random);
-        break;
-      case WALLPAPER.REIKO:
-        zNeonKidneyFront = getRandomFloat(random);
-        zNeonCircleFront = getRandomFloat(random);
-        zNeonPill = getRandomFloat(random);
-        zNeonLine = getRandomFloat(random);
-        zNeonKidneyBack = getRandomFloat(random);
-        zNeonCircleBack = getRandomFloat(random);
-        zNeonDot = getRandomFloat(random);
-        break;
-      case WALLPAPER.ANTHONY:
-        zGeometricRect = getRandomFloat(random);
-        zGeometricLine = getRandomFloat(random);
-        zGeometricPoly = getRandomFloat(random);
-        zGeometricCircle = getRandomFloat(random);
-        zGeometricSheet = getRandomFloat(random);
-        break;
-    }
-  }
-
-  private float getRandomFloat(Random random) {
-    float min = 0.1f;
-    float max = 1;
-    return min + random.nextFloat() * (max - min);
-  }
-
-  private void clearShapes() {
-    doodleArc = null;
-    doodleDot = null;
-    doodleU = null;
-    doodleRect = null;
-    doodleRing = null;
-    doodleMoon = null;
-    doodlePoly = null;
-
-    neonKidneyFront = null;
-    neonCircleFront = null;
-    neonPill = null;
-    neonLine = null;
-    neonKidneyBack = null;
-    neonCircleBack = null;
-    neonDot = null;
-
-    geometricRect = null;
-    geometricLine = null;
-    geometricPoly = null;
-    geometricCircle = null;
-    geometricSheet = null;
+    svgDrawable = new SvgDrawable(this, resId);
   }
 
   private boolean isNightMode() {
@@ -320,31 +176,13 @@ public class LiveWallpaperService extends WallpaperService {
     return nightMode && flags == Configuration.UI_MODE_NIGHT_YES;
   }
 
-  private boolean isPortrait() {
-    return getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT;
-  }
-
   private boolean isKeyguardLocked() {
     return ((KeyguardManager) getSystemService(KEYGUARD_SERVICE)).isKeyguardLocked();
-  }
-
-  private int getCompatColor(@ColorRes int resId) {
-    return ContextCompat.getColor(this, resId);
   }
 
   private float getFrameRate() {
     WindowManager windowManager = ((WindowManager) getSystemService(Context.WINDOW_SERVICE));
     return windowManager != null ? windowManager.getDefaultDisplay().getRefreshRate() : 60;
-  }
-
-  private VectorDrawable getVectorDrawable(@DrawableRes int resId) {
-    Drawable drawable = null;
-    try {
-      drawable = ResourcesCompat.getDrawable(getResources(), resId, theme);
-    } catch (NotFoundException e) {
-      Log.e(TAG, "getVectorDrawable: " + e);
-    }
-    return drawable != null ? (VectorDrawable) drawable.mutate() : null;
   }
 
   public void setUserPresence(final String presence) {
@@ -365,7 +203,6 @@ public class LiveWallpaperService extends WallpaperService {
   // ENGINE ------------------------------------------------------------
 
   class UserAwareEngine extends Engine implements UserPresenceListener {
-    private float xOffset = 0;
     private float zoomLauncher = 0;
     private float zoomUnlock = 0;
     private long lastDraw;
@@ -398,17 +235,20 @@ public class LiveWallpaperService extends WallpaperService {
 
     @Override
     public WallpaperColors onComputeColors() {
-      int background = 0xFF232323;
+      int background = Color.parseColor("#232323");
       if (isNightMode()) {
         switch (wallpaper) {
           case WALLPAPER.PIXEL:
-            background = 0xFF272628;
+            background = Color.parseColor("#272628");
+            break;
+          case WALLPAPER.JOHANNA:
+            background = Color.parseColor("#32373a");
             break;
           case WALLPAPER.REIKO:
-            background = 0xFF0e032d;
+            background = Color.parseColor("#0e032d");
             break;
           case WALLPAPER.ANTHONY:
-            background = 0xFF212121;
+            background = Color.parseColor("#212121");
             break;
         }
       } else {
@@ -416,25 +256,27 @@ public class LiveWallpaperService extends WallpaperService {
           case WALLPAPER.PIXEL:
             switch (variant) {
               case VARIANT.BLACK:
-                background = 0xFF232323;
+                background = Color.parseColor("#232323");
                 break;
               case VARIANT.WHITE:
-                background = 0xFFdbd7ce;
+                background = Color.parseColor("#dbd7ce");
                 break;
               case VARIANT.ORANGE:
-                background = 0xFFfbb29e;
+                background = Color.parseColor("#fbb29e");
                 break;
             }
             break;
+          case WALLPAPER.JOHANNA:
+            background = Color.parseColor("#fcf4e9");
+            break;
           case WALLPAPER.REIKO:
-            background = 0xFFcbcbef;
+            background = Color.parseColor("#cbcbef");
             break;
           case WALLPAPER.ANTHONY:
-            background = 0xFFb9c1c7;
+            background = Color.parseColor("#b9c1c7");
             break;
         }
       }
-
       if (VERSION.SDK_INT >= VERSION_CODES.O_MR1) {
         return WallpaperColors.fromDrawable(new ColorDrawable(background));
       } else {
@@ -451,12 +293,15 @@ public class LiveWallpaperService extends WallpaperService {
 
       handleRefreshRequests();
 
-      newRandomZ();
+      svgDrawable.applyRandomElevationToAll(0.1f);
       drawFrame(true);
     }
 
     private void loadSettings() {
       parallax = sharedPrefs.getInt(PREF.PARALLAX, DEF.PARALLAX);
+      if (svgDrawable != null) {
+        svgDrawable.setScale(sharedPrefs.getFloat(PREF.SCALE, DEF.SCALE));
+      }
       zoomIntensity = sharedPrefs.getInt(PREF.ZOOM, DEF.ZOOM);
       isZoomLauncherEnabled = sharedPrefs.getBoolean(PREF.ZOOM_LAUNCHER, DEF.ZOOM_LAUNCHER);
       isZoomUnlockEnabled = sharedPrefs.getBoolean(PREF.ZOOM_UNLOCK, DEF.ZOOM_UNLOCK);
@@ -473,15 +318,11 @@ public class LiveWallpaperService extends WallpaperService {
       variant = sharedPrefs.getString(PREF.VARIANT, DEF.VARIANT);
       nightMode = sharedPrefs.getBoolean(PREF.NIGHT_MODE, DEF.NIGHT_MODE);
       followSystem = sharedPrefs.getBoolean(PREF.FOLLOW_SYSTEM, DEF.FOLLOW_SYSTEM);
-      size = sharedPrefs.getFloat(PREF.SIZE, DEF.SIZE);
-
-      theme = null;
-      clearShapes();
-      System.gc();
-
       isNight = isNightMode();
-      theme = getResources().newTheme();
-      refreshTheme();
+
+      loadWallpaper();
+      svgDrawable.setScale(sharedPrefs.getFloat(PREF.SCALE, DEF.SCALE));
+
       colorsHaveChanged();
     }
 
@@ -511,7 +352,7 @@ public class LiveWallpaperService extends WallpaperService {
         int yPixels
     ) {
       if (parallax != 0) {
-        this.xOffset = xOffset;
+        svgDrawable.setOffset(xOffset * parallax * 100, 0);
         drawFrame(true);
       }
     }
@@ -558,59 +399,13 @@ public class LiveWallpaperService extends WallpaperService {
           canvas = surfaceHolder.lockCanvas();
         }
         if (canvas != null) {
-          canvas.drawColor(colorBackground);
-
-          switch (wallpaper) {
-            case WALLPAPER.PIXEL:
-              drawShape(doodleArc, 0.25, 0.28, zDoodleArc);
-              drawShape(doodleDot, 0.142, 0.468, zDoodleDot);
-              drawShape(doodleU, isPortrait() ? 0.25 : 0.32, 0.72, zDoodleU);
-              drawShape(doodleRect, 0.7, 0.8, zDoodleRect);
-              drawShape(
-                  doodleRing, isPortrait() ? 0.66 : 0.6, isPortrait() ? 0.5 : 0.48, zDoodleRing
-              );
-              drawShape(
-                  doodleMoon, isPortrait() ? 0.75 : 0.65, isPortrait() ? 0.56 : 0.58, zDoodleMoon
-              );
-              drawShape(doodlePoly, 0.7, 0.2, zDoodlePoly);
-              drawOnCanvas(
-                  canvas,
-                  doodleArc, doodleDot, doodleU, doodleRect, doodleRing, doodleMoon, doodlePoly
-              );
-              break;
-            case WALLPAPER.REIKO:
-              double shift = isPortrait() ? 0 : -0.15;
-              drawShape(neonKidneyFront, 0.85 + shift, 0.65, zNeonKidneyFront);
-              drawShape(neonCircleFront, 0.98 + shift, 0.468, zNeonCircleFront);
-              drawShape(neonPill, 0.26 + shift, 0.58, zNeonPill);
-              drawShape(neonLine, 0.55 + shift, 0.4, zNeonLine);
-              drawShape(neonKidneyBack, 0.63 + shift, 0.37, zNeonKidneyBack);
-              drawShape(neonCircleBack, 0.5 + shift, 0.63, zNeonCircleBack);
-              drawShape(neonDot, 0.6 + shift, 0.15, zNeonDot);
-              drawOnCanvas(
-                  canvas,
-                  neonDot, neonCircleBack, neonKidneyBack, neonLine,
-                  neonPill, neonCircleFront, neonKidneyFront
-              );
-              break;
-            case WALLPAPER.ANTHONY:
-              drawShape(geometricRect, 0.35, 0.78, zGeometricRect);
-              drawShape(geometricLine, 0.5, 0.82, zGeometricLine);
-              drawShape(geometricPoly, 0.8, 0.67, zGeometricPoly);
-              drawShape(geometricCircle, 0.6, 0.2, zGeometricCircle);
-              drawShape(
-                  geometricSheet,
-                  isPortrait() ? 0.4 : 0.25, 0.21, zGeometricSheet, false
-              );
-              drawOnCanvas(
-                  canvas,
-                  geometricSheet, geometricPoly, geometricCircle, geometricLine, geometricRect
-              );
-              break;
-          }
+          // ZOOM
+          float intensity = zoomIntensity / 10f;
+          double finalZoomLauncher = isZoomLauncherEnabled ? zoomLauncher * intensity : 0;
+          double finalZoomUnlock = isZoomUnlockEnabled ? zoomUnlock * intensity : 0;
+          svgDrawable.setZoom((float) (finalZoomLauncher + finalZoomUnlock));
 
           svgDrawable.draw(canvas);
-
           lastDraw = SystemClock.elapsedRealtime();
         }
       } finally {
@@ -618,18 +413,6 @@ public class LiveWallpaperService extends WallpaperService {
           surfaceHolder.unlockCanvasAndPost(canvas);
         }
       }
-    }
-
-    private void drawOnCanvas(Canvas canvas, Drawable... drawables) {
-      for (Drawable drawable : drawables) {
-        if (drawable != null) {
-          drawable.draw(canvas);
-        }
-      }
-    }
-
-    private void drawShape(Drawable drawable, double x, double y, double z) {
-      drawShape(drawable, x, y, z, true);
     }
 
     private void drawShape(Drawable drawable, double x, double y, double z, boolean shouldZoom) {
@@ -642,13 +425,13 @@ public class LiveWallpaperService extends WallpaperService {
       double finalZoomLauncher = isZoomLauncherEnabled ? zoomLauncher * z * intensity : 0;
       double finalZoomUnlock = isZoomUnlockEnabled ? zoomUnlock * z * intensity : 0;
 
-      double scale = size - finalZoomLauncher - finalZoomUnlock;
+      double scale = /*this.scale*/1 - finalZoomLauncher - finalZoomUnlock;
       int width = (int) (scale * drawable.getIntrinsicWidth());
       int height = (int) (scale * drawable.getIntrinsicHeight());
 
       int xPos, yPos, offset;
       Rect frame = getSurfaceHolder().getSurfaceFrame();
-      offset = (int) (xOffset * z * (parallax * 100));
+      offset = (int) (/*xOffset*/0 * z * (parallax * 100));
       xPos = ((int) (x * frame.width())) - offset;
       yPos = (int) (y * frame.height());
 

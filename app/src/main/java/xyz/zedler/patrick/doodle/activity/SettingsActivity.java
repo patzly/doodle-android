@@ -155,7 +155,7 @@ public class SettingsActivity extends AppCompatActivity
       }
     });
 
-    binding.sliderSize.setValue(sharedPrefs.getFloat(PREF.SIZE, DEF.SIZE));
+    binding.sliderSize.setValue(sharedPrefs.getFloat(PREF.SCALE, DEF.SCALE));
     binding.sliderSize.addOnChangeListener(this);
     binding.sliderSize.setLabelFormatter(value -> {
       if (value == 1) {
@@ -388,11 +388,11 @@ public class SettingsActivity extends AppCompatActivity
       IconUtil.start(binding.imageParallax);
       requestSettingsRefresh();
     } else if (id == R.id.slider_size) {
-      sharedPrefs.edit().putFloat(PREF.SIZE, value).apply();
+      sharedPrefs.edit().putFloat(PREF.SCALE, value).apply();
       IconUtil.start(binding.imageSize);
       // When the size changes the drawables have to be reloaded
       // Without this and the new size is smaller, the big cached bitmaps are causing lags
-      requestThemeRefresh();
+      requestSettingsRefresh();
     } else if (id == R.id.slider_zoom) {
       sharedPrefs.edit().putInt(PREF.ZOOM, (int) value).apply();
       IconUtil.start(binding.imageZoom);

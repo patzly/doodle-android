@@ -11,20 +11,24 @@ The wallpapers are based on the original Doodle live wallpapers of the Google Pi
 
 ## Features
 
-* Stunning colors and theme variants
+* Stunning colors and design variants
 * System dependent dark mode
 * Battery-efficient parallax effect on page swipe
-* Support for Android 11 zoom effect
 * Optional zoom-in animation when unlocking
-* Various customization options
 * Direct boot support (immediately active after device restart)
-* No permanent animations or gyroscope sensor requests
-* Also suitable for less powerful devices
 * No ads and no analytics
+
+## Advantages over original Pixel 4 live wallpapers
+
+* Less power consumption (no permanent animations or gyroscope sensor requests, no 3D engine)
+* Improved text contrast for light themes (black text instead of the hard to read white one with blurry shadow)
+* Support for Android 11 zoom effect and optional zoom-in animation when unlocking
+* Many customization options
 * Tiny installation size (~3.5MB)
+* Rendering works well even on less powerful devices (very efficient drawing method for shapes)
 
 ## How to set as background
-* Tap SET in the top right corner, it should appear a preview
+* Tap SET in the top right corner of the app, it should appear a preview
 * Now tap SET WALLPAPER
 
 ## Compatibility

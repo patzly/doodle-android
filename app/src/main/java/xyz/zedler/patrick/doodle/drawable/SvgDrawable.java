@@ -592,11 +592,11 @@ public class SvgDrawable {
           object.rotationX = Float.parseFloat(rotation[1]);
           object.rotationY = Float.parseFloat(rotation[2]);
         }
-        float[] newCenter = getRotatedPoint(
+        pointF = getRotatedPoint(
             object.cx, object.cy, object.rotationX, object.rotationY, object.rotation
         );
-        object.cx = newCenter[0];
-        object.cy = newCenter[1];
+        object.cx = pointF.x;
+        object.cy = pointF.y;
       } else if (action.contains("scale")) {
         String[] scale = value.split("[\\n\\r\\s]+");
         if (scale.length > 1) {
@@ -773,30 +773,6 @@ public class SvgDrawable {
     }
   }
 
-  private PointF getFinalCenter(Canvas canvas, SvgObject object) {
-    float cx = object.cx * canvas.getWidth() - (offsetX * object.elevation);
-    float cy = object.cy * canvas.getHeight() - (offsetY * object.elevation);
-
-    float centerX = canvas.getWidth() / 2f;
-    if (cx < centerX) {
-      float dist = centerX - cx;
-      cx += dist * object.elevation * zoom;
-    } else {
-      float dist = cx - centerX;
-      cx -= dist * object.elevation * zoom;
-    }
-
-    float centerY = canvas.getHeight() / 2f;
-    if (cy < centerY) {
-      float dist = centerY - cy;
-      cy += dist * object.elevation * zoom;
-    } else {
-      float dist = cy - centerY;
-      cy -= dist * object.elevation * zoom;
-    }
-    return new PointF(cx, cy);
-  }
-
   private float getFinalScale(SvgObject object) {
     return scale - (zoom * object.elevation);
   }
@@ -849,7 +825,7 @@ public class SvgDrawable {
     }
   }
 
-  private float[] getRotatedPoint(float x, float y, float cx, float cy, float degrees) {
+  private PointF getRotatedPoint(float x, float y, float cx, float cy, float degrees) {
     double radians = Math.toRadians(degrees);
 
     float x1 = x - cx;
@@ -858,6 +834,30 @@ public class SvgDrawable {
     float x2 = (float) (x1 * Math.cos(radians) - y1 * Math.sin(radians));
     float y2 = (float) (x1 * Math.sin(radians) + y1 * Math.cos(radians));
 
-    return new float[]{x2 + cx, y2 + cy};
+    return new PointF(x2 + cx, y2 + cy);
+  }
+
+  private PointF getFinalCenter(Canvas canvas, SvgObject object) {
+    float cx = object.cx * canvas.getWidth() - (offsetX * object.elevation);
+    float cy = object.cy * canvas.getHeight() - (offsetY * object.elevation);
+
+    float centerX = canvas.getWidth() / 2f;
+    if (cx < centerX) {
+      float dist = centerX - cx;
+      cx += dist * object.elevation * zoom;
+    } else {
+      float dist = cx - centerX;
+      cx -= dist * object.elevation * zoom;
+    }
+
+    float centerY = canvas.getHeight() / 2f;
+    if (cy < centerY) {
+      float dist = centerY - cy;
+      cy += dist * object.elevation * zoom;
+    } else {
+      float dist = cy - centerY;
+      cy -= dist * object.elevation * zoom;
+    }
+    return new PointF(cx, cy);
   }
 }

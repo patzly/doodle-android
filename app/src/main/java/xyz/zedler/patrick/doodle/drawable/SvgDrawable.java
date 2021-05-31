@@ -136,26 +136,7 @@ public class SvgDrawable {
     canvas.drawColor(backgroundColor);
 
     for (SvgObject object : objects) {
-      startTransformation(canvas, object);
-
-      switch (object.type) {
-        case SvgObject.TYPE_PATH:
-          drawPath(canvas, object);
-          break;
-        case SvgObject.TYPE_RECT:
-          drawRect(canvas, object);
-          break;
-        case SvgObject.TYPE_CIRCLE:
-        case SvgObject.TYPE_ELLIPSE:
-          drawCircle(canvas, object);
-          break;
-        case SvgObject.TYPE_IMAGE:
-          if (ENABLE_IMAGES) {
-            drawImage(canvas, object);
-          }
-          break;
-      }
-      stopTransformation(canvas, object);
+      drawObject(canvas, object);
     }
   }
 
@@ -189,36 +170,37 @@ public class SvgDrawable {
       if (parser.getEventType() != XmlPullParser.START_TAG) {
         continue;
       }
-      readObject(parser, false);
+      readObject(parser, null);
     }
+    Log.i(TAG, "readSvg: hello " + objects);
   }
 
-  private void readObject(XmlPullParser parser, boolean isInGroup)
+  private void readObject(XmlPullParser parser, SvgObject parentGroup)
       throws IOException, XmlPullParserException {
     switch (parser.getName()) {
       case SvgObject.TYPE_GROUP:
-        if (!isInGroup) {
+        if (parentGroup == null) {
           readGroup(parser);
         } else {
-          Log.w(TAG, "readSvg: child group in group not supported, skipping");
+          Log.w(TAG, "readSvg: child groups in groups are not supported, skipping...");
           skip(parser);
         }
         break;
       case SvgObject.TYPE_PATH:
-        readPath(parser, isInGroup);
+        readPath(parser, parentGroup);
         break;
       case SvgObject.TYPE_RECT:
-        readRect(parser, isInGroup);
+        readRect(parser, parentGroup);
         break;
       case SvgObject.TYPE_CIRCLE:
-        readCircle(parser, isInGroup);
+        readCircle(parser, parentGroup);
         break;
       case SvgObject.TYPE_ELLIPSE:
-        readEllipse(parser, isInGroup);
+        readEllipse(parser, parentGroup);
         break;
       case SvgObject.TYPE_IMAGE:
         if (ENABLE_IMAGES) {
-          readImage(parser, isInGroup);
+          readImage(parser, parentGroup);
         }
         break;
       default:
@@ -227,52 +209,93 @@ public class SvgDrawable {
     }
   }
 
-  private void readGroup(XmlPullParser parser) throws IOException, XmlPullParserException {
-    SvgObject object = new SvgObject(SvgObject.TYPE_GROUP);
-    parser.require(XmlPullParser.START_TAG, null, SvgObject.TYPE_GROUP);
-    while (parser.next() != XmlPullParser.END_TAG) {
-      if (parser.getEventType() != XmlPullParser.START_TAG) {
-        continue;
-      }
-      readObject(parser, true);
+  private void drawObject(Canvas canvas, SvgObject object) {
+    if (!object.isInGroup && object.rotation != 0) {
+      canvas.save();
+      canvas.rotate(
+          object.rotation, object.cx * canvas.getWidth(), object.cy * canvas.getHeight()
+      );
     }
-
-
-    /*if (rectF == null || rectF.isEmpty()) {
-      rectF = new RectF();
+    switch (object.type) {
+      case SvgObject.TYPE_GROUP:
+        drawGroup(canvas, object);
+        break;
+      case SvgObject.TYPE_PATH:
+        drawPath(canvas, object);
+        break;
+      case SvgObject.TYPE_RECT:
+        drawRect(canvas, object);
+        break;
+      case SvgObject.TYPE_CIRCLE:
+      case SvgObject.TYPE_ELLIPSE:
+        drawCircle(canvas, object);
+        break;
+      case SvgObject.TYPE_IMAGE:
+        if (ENABLE_IMAGES) {
+          drawImage(canvas, object);
+        }
+        break;
     }
-    object.path.computeBounds(rectF, true);
-    object.width = rectF.width();
-    object.height = rectF.height();
-    object.cx = rectF.centerX();
-    object.cy = rectF.centerY();
-
-    readStyle(parser, object);
-    parseTransformation(parser.getAttributeValue(null, "transform"), object);*/
-
-
-    //parser.require(XmlPullParser.END_TAG, null, SvgObject.TYPE_GROUP);
-
-    // apply display metrics
-    /*Matrix scaleMatrix = new Matrix();
-    scaleMatrix.setScale(pixelUnit, pixelUnit, object.cx, object.cy);
-    object.path.transform(scaleMatrix);
-
-    objectHashMap.put(id, object);
-    ids.add(id);*/
+    if (!object.isInGroup && object.rotation != 0) {
+      canvas.restore();
+    }
   }
 
-  private void readPath(XmlPullParser parser, boolean isInGroup)
+  private void readGroup(XmlPullParser parser) throws IOException, XmlPullParserException {
+    SvgObject object = new SvgObject(SvgObject.TYPE_GROUP);
+    object.children = new ArrayList<>();
+
+    parser.require(XmlPullParser.START_TAG, null, SvgObject.TYPE_GROUP);
+    String tag = parser.getName();
+    object.id = parser.getAttributeValue(null, "id");
+
+    if (tag.equals(SvgObject.TYPE_GROUP)) {
+      if (object.id == null) {
+        Log.w(TAG, "readGroup: id is missing, skipping...");
+        return;
+      } else if (ids.contains(object.id)) {
+        Log.w(TAG, "readGroup: id '" + object.id + "' already exists, skipping...");
+        return;
+      }
+
+      parseTransformation(parser.getAttributeValue(null, "transform"), object);
+
+      while (parser.next() != XmlPullParser.END_TAG) {
+        if (parser.getEventType() != XmlPullParser.START_TAG) {
+          continue;
+        }
+        readObject(parser, object);
+      }
+    }
+
+    objects.add(object);
+    ids.add(object.id);
+  }
+
+  private void drawGroup(Canvas canvas, SvgObject object) {
+    for (SvgObject child : object.children) {
+      drawObject(canvas, child);
+    }
+  }
+
+  private void readPath(XmlPullParser parser, SvgObject parentGroup)
       throws IOException, XmlPullParserException {
     SvgObject object = new SvgObject(SvgObject.TYPE_PATH);
-    object.isInGroup = isInGroup;
+    object.isInGroup = parentGroup != null;
+
     parser.require(XmlPullParser.START_TAG, null, SvgObject.TYPE_PATH);
     String tag = parser.getName();
     object.id = parser.getAttributeValue(null, "id");
+
     if (tag.equals(SvgObject.TYPE_PATH)) {
       if (object.id == null) {
+        Log.w(TAG, "readPath: id is missing, skipping...");
+        return;
+      } else if (ids.contains(object.id)) {
+        Log.e(TAG, "readPath: id '" + object.id + "' already exists, skipping...");
         return;
       }
+
       String d = parser.getAttributeValue(null, "d");
       if (d != null && !d.isEmpty()) {
         try {
@@ -281,10 +304,7 @@ public class SvgDrawable {
             return;
           }
         } catch (RuntimeException e) {
-          Log.w(
-              TAG,
-              "readPath: error with legacy path parser, tried with alternative instead ", e
-          );
+          Log.w(TAG, "readPath: error with legacy parser, trying with alternative...");
           object.path = PathParser.getPath(d);
         }
       } else {
@@ -312,8 +332,12 @@ public class SvgDrawable {
     scaleMatrix.setScale(pixelUnit, pixelUnit, object.cx, object.cy);
     object.path.transform(scaleMatrix);
 
-    objects.add(object);
-    ids.add(object.id);
+    if (parentGroup == null) {
+      objects.add(object);
+      ids.add(object.id);
+    } else {
+      parentGroup.children.add(object);
+    }
   }
 
   private void drawPath(Canvas canvas, SvgObject object) {
@@ -339,17 +363,24 @@ public class SvgDrawable {
     }
   }
 
-  private void readRect(XmlPullParser parser, boolean isInGroup)
+  private void readRect(XmlPullParser parser, SvgObject parentGroup)
       throws IOException, XmlPullParserException {
     SvgObject object = new SvgObject(SvgObject.TYPE_RECT);
-    object.isInGroup = isInGroup;
+    object.isInGroup = parentGroup != null;
+
     parser.require(XmlPullParser.START_TAG, null, SvgObject.TYPE_RECT);
     String tag = parser.getName();
     object.id = parser.getAttributeValue(null, "id");
+
     if (tag.equals(SvgObject.TYPE_RECT)) {
       if (object.id == null) {
+        Log.w(TAG, "readRect: id is missing, skipping...");
+        return;
+      } else if (ids.contains(object.id)) {
+        Log.w(TAG, "readRect: id '" + object.id + "' already exists, skipping...");
         return;
       }
+
       object.width = parseFloat(parser.getAttributeValue(null, "width"));
       object.height = parseFloat(parser.getAttributeValue(null, "height"));
       object.x = parseFloat(parser.getAttributeValue(null, "x"));
@@ -362,7 +393,7 @@ public class SvgDrawable {
       readStyle(parser, object);
       parseTransformation(parser.getAttributeValue(null, "transform"), object);
 
-      // has same size as SVG? Use it as background color.
+      // has same size as SVG? Use it as background color and don't use it as object
       if (object.width == svgWidth && object.height == svgHeight) {
         backgroundColor = object.fill;
         return;
@@ -380,8 +411,12 @@ public class SvgDrawable {
     object.cx /= svgWidth;
     object.cy /= svgHeight;
 
-    objects.add(object);
-    ids.add(object.id);
+    if (parentGroup == null) {
+      objects.add(object);
+      ids.add(object.id);
+    } else {
+      parentGroup.children.add(object);
+    }
   }
 
   private void drawRect(Canvas canvas, SvgObject object) {
@@ -421,17 +456,24 @@ public class SvgDrawable {
     }
   }
 
-  private void readCircle(XmlPullParser parser, boolean isInGroup)
+  private void readCircle(XmlPullParser parser, SvgObject parentGroup)
       throws IOException, XmlPullParserException {
     SvgObject object = new SvgObject(SvgObject.TYPE_CIRCLE);
-    object.isInGroup = isInGroup;
+    object.isInGroup = parentGroup != null;
+
     parser.require(XmlPullParser.START_TAG, null, SvgObject.TYPE_CIRCLE);
     String tag = parser.getName();
     object.id = parser.getAttributeValue(null, "id");
+
     if (tag.equals(SvgObject.TYPE_CIRCLE)) {
       if (object.id == null) {
+        Log.w(TAG, "readCircle: id is missing, skipping...");
+        return;
+      } else if (ids.contains(object.id)) {
+        Log.w(TAG, "readCircle: id '" + object.id + "' already exists, skipping...");
         return;
       }
+
       object.cx = parseFloat(parser.getAttributeValue(null, "cx"));
       object.cy = parseFloat(parser.getAttributeValue(null, "cy"));
       object.r = parseFloat(parser.getAttributeValue(null, "r"));
@@ -448,8 +490,12 @@ public class SvgDrawable {
     object.cy /= svgHeight;
     object.r *= pixelUnit;
 
-    objects.add(object);
-    ids.add(object.id);
+    if (parentGroup == null) {
+      objects.add(object);
+      ids.add(object.id);
+    } else {
+      parentGroup.children.add(object);
+    }
   }
 
   private void drawCircle(Canvas canvas, SvgObject object) {
@@ -459,34 +505,43 @@ public class SvgDrawable {
       if (i == 1) {
         applyPaintStyle(object, true);
       }
+
+      pointF = getFinalCenter(canvas, object);
+      float scale = getFinalScale(object);
+
       if (object.type.equals(SvgObject.TYPE_CIRCLE) || object.rx == object.ry) {
         float radius = object.r > 0 ? object.r : object.rx;
-        canvas.drawCircle(
-            object.cx * canvas.getWidth(), object.cy * canvas.getHeight(), radius, paint
-        );
+        canvas.drawCircle(pointF.x, pointF.y, radius * scale, paint);
       } else if (object.type.equals(SvgObject.TYPE_ELLIPSE)) {
         canvas.drawOval(
-            object.cx * canvas.getWidth() - object.rx,
-            object.cy * canvas.getHeight() - object.ry,
-            object.cx * canvas.getWidth() + object.rx,
-            object.cy * canvas.getHeight() + object.ry,
+            pointF.x - object.rx * scale,
+            pointF.y - object.ry * scale,
+            pointF.x + object.rx * scale,
+            pointF.y + object.ry * scale,
             paint
         );
       }
     }
   }
 
-  private void readEllipse(XmlPullParser parser, boolean isInGroup)
+  private void readEllipse(XmlPullParser parser, SvgObject parentGroup)
       throws IOException, XmlPullParserException {
     SvgObject object = new SvgObject(SvgObject.TYPE_ELLIPSE);
-    object.isInGroup = isInGroup;
+    object.isInGroup = parentGroup != null;
+
     parser.require(XmlPullParser.START_TAG, null, SvgObject.TYPE_ELLIPSE);
     String tag = parser.getName();
     object.id = parser.getAttributeValue(null, "id");
+
     if (tag.equals(SvgObject.TYPE_ELLIPSE)) {
       if (object.id == null) {
+        Log.w(TAG, "readEllipse: id is missing, skipping...");
+        return;
+      } else if (ids.contains(object.id)) {
+        Log.w(TAG, "readEllipse: id '" + object.id + "' already exists, skipping...");
         return;
       }
+
       object.cx = parseFloat(parser.getAttributeValue(null, "cx")) / svgWidth;
       object.cy = parseFloat(parser.getAttributeValue(null, "cy")) / svgHeight;
       object.rx = parseFloat(parser.getAttributeValue(null, "rx")) * pixelUnit;
@@ -499,21 +554,32 @@ public class SvgDrawable {
     }
     parser.require(XmlPullParser.END_TAG, null, SvgObject.TYPE_ELLIPSE);
 
-    objects.add(object);
-    ids.add(object.id);
+    if (parentGroup == null) {
+      objects.add(object);
+      ids.add(object.id);
+    } else {
+      parentGroup.children.add(object);
+    }
   }
 
-  private void readImage(XmlPullParser parser, boolean isInGroup)
+  private void readImage(XmlPullParser parser, SvgObject parentGroup)
       throws IOException, XmlPullParserException {
     SvgObject object = new SvgObject(SvgObject.TYPE_IMAGE);
-    object.isInGroup = isInGroup;
+    object.isInGroup = parentGroup != null;
+
     parser.require(XmlPullParser.START_TAG, null, SvgObject.TYPE_IMAGE);
     String tag = parser.getName();
     object.id = parser.getAttributeValue(null, "id");
+
     if (tag.equals(SvgObject.TYPE_IMAGE)) {
       if (object.id == null) {
+        Log.w(TAG, "readImage: id is missing, skipping...");
+        return;
+      } else if (ids.contains(object.id)) {
+        Log.w(TAG, "readImage: id '" + object.id + "' already exists, skipping...");
         return;
       }
+
       object.width = parseFloat(parser.getAttributeValue(null, "width"));
       object.height = parseFloat(parser.getAttributeValue(null, "height"));
       object.x = parseFloat(parser.getAttributeValue(null, "x"));
@@ -541,8 +607,12 @@ public class SvgDrawable {
     object.cx /= svgWidth;
     object.cy /= svgHeight;
 
-    objects.add(object);
-    ids.add(object.id);
+    if (parentGroup == null) {
+      objects.add(object);
+      ids.add(object.id);
+    } else {
+      parentGroup.children.add(object);
+    }
   }
 
   private void drawImage(Canvas canvas, SvgObject object) {
@@ -561,12 +631,9 @@ public class SvgDrawable {
       float dist = cx - centerX;
       cx -= dist * object.elevation * zoom;
     }*/
-    pointF = getFinalCenter(canvas, object);
 
-    /*if (rectF == null || rectF.isEmpty()) {
-      rectF = new RectF();
-    }*/
     float scale = getFinalScale(object);
+    pointF = getFinalCenter(canvas, object);
     rectF.set(
         pointF.x - (object.width * scale) / 2,
         pointF.y - (object.height * scale) / 2,
@@ -609,21 +676,6 @@ public class SvgDrawable {
           object.cy *= object.scale;
         }*/
       }
-    }
-  }
-
-  private void startTransformation(Canvas canvas, SvgObject object) {
-    if (object.rotation != 0) {
-      canvas.save();
-      canvas.rotate(
-          object.rotation, object.cx * canvas.getWidth(), object.cy * canvas.getHeight()
-      );
-    }
-  }
-
-  private void stopTransformation(Canvas canvas, SvgObject object) {
-    if (object.rotation != 0) {
-      canvas.restore();
     }
   }
 
@@ -738,9 +790,8 @@ public class SvgDrawable {
     public boolean isInGroup;
     public float elevation;
 
-    public SvgObject(String type) {
-      this.type = type;
-    }
+    // GROUP
+    public List<SvgObject> children;
 
     // STYLE
     public int fill;
@@ -766,10 +817,18 @@ public class SvgDrawable {
     public float cx, cy;
     public float r;
 
+    public SvgObject(String type) {
+      this.type = type;
+    }
+
     @NonNull
     @Override
     public String toString() {
-      return "SvgObject{ id='" + id + "', type='" + type + "', isInGroup=" + isInGroup + '}';
+      if (type.equals(TYPE_GROUP)) {
+        return "SvgGroup{'" + id + "', children=" + children.toString() + '}';
+      } else {
+        return "SvgObject('" + id + "', '" + type + "')";
+      }
     }
   }
 

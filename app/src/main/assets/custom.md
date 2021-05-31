@@ -21,6 +21,11 @@ SVGOMG: https://jakearchibald.github.io/svgomg/
 - child groups in groups are not supported
 - group transformation is not supported, rotation needs to be applied to every child separately
 
+## SvgDrawable#findObjectById(String id)
+
+- only returns objects which are not in a group
+- therefore elevation can only be set on non-child objects and groups
+
 ## Wallpaper code names
 
 - Pixel

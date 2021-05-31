@@ -48,24 +48,31 @@
       d="m 801.34537,996.31121 a 61.806,61.806 0 0 0 -61.806,61.80399 61.806,61.806 0 0 0 8.414,31.131 102.879,102.879 0 0 0 88.828,-81.767 61.806,61.806 0 0 0 -35.436,-11.16799 z" />
   </g>
   <g
-    id="g1004">
+    id="g1004"
+    transform="rotate(-43.04)">
     <rect
       id="rect79"
       width="117"
       height="274.76"
       x="-533.02"
       y="1499.01"
-      fill="#ffe5c5"
-      transform="rotate(-43.04)"/>
+      fill="#ffe5c5"/>
     <rect
       id="rect81"
       width="27.77"
       height="274.76"
       x="-533.02"
       y="1499.01"
-      fill="#b5afa1"
-      transform="rotate(-43.04)"/>
+      fill="#b5afa1" />
   </g>
+  <rect
+    id="rect79"
+    width="117"
+    height="274.76"
+    x="333.02"
+    y="599.01"
+    fill="#ffe5c5"
+    transform="rotate(-20)"/>
   <circle
     id="circle85"
     cx="148.27"

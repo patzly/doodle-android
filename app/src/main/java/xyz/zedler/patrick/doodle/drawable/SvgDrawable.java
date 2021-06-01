@@ -303,6 +303,7 @@ public class SvgDrawable {
     pointF = getFinalCenter(canvas, object, null);
     object.cxAbs = pointF.x;
     object.cyAbs = pointF.y;
+    object.childScale = getFinalScale(object);
     for (SvgObject child : object.children) {
       drawObject(canvas, child, object);
     }
@@ -834,7 +835,8 @@ public class SvgDrawable {
     // GROUP
     public List<SvgObject> children;
     public float cxAbs, cyAbs;
-    // offset for each child
+    public float childScale;
+    // offset for each child (set on the child objects)
     public float xDistGroupCenter, yDistGroupCenter;
 
     // STYLE
@@ -940,8 +942,8 @@ public class SvgDrawable {
     float cx;
     float cy;
     if (object.isInGroup && parentGroup != null) {
-      cx = parentGroup.cxAbs + object.xDistGroupCenter;
-      cy = parentGroup.cyAbs + object.yDistGroupCenter;
+      cx = parentGroup.cxAbs + object.xDistGroupCenter * parentGroup.childScale;
+      cy = parentGroup.cyAbs + object.yDistGroupCenter * parentGroup.childScale;
     } else {
       cx = object.cx * canvas.getWidth();
       cy = object.cy * canvas.getHeight();

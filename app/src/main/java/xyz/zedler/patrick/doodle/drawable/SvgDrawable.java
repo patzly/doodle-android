@@ -426,32 +426,24 @@ public class SvgDrawable {
       if (i == 1) {
         applyPaintStyle(object, true);
       }
-      float offsetX = this.offsetX * object.elevation;
-      float offsetY = this.offsetY * object.elevation;
-      float cx = object.cx * canvas.getWidth() - offsetX;
-      float cy = object.cy * canvas.getHeight() - offsetY;
+
+      float scale = getFinalScale(object);
+      pointF = getFinalCenter(canvas, object);
+      rectF.set(
+          pointF.x - (object.width * scale) / 2,
+          pointF.y - (object.height * scale) / 2,
+          pointF.x + (object.width * scale) / 2,
+          pointF.y + (object.height * scale) / 2
+      );
+
       // TODO: shifts in direction of rotation when transformed...
 
       if (object.rx == 0 && object.ry == 0) {
-        canvas.drawRect(
-            cx - object.width / 2,
-            cy - object.height / 2,
-            cx + object.width / 2,
-            cy + object.height / 2,
-            paint
-        );
+        canvas.drawRect(rectF, paint);
       } else {
         float rx = object.rx != 0 ? object.rx : object.ry;
         float ry = object.ry != 0 ? object.ry : object.rx;
-        canvas.drawRoundRect(
-            cx - object.width / 2,
-            cy - object.height / 2,
-            cx + object.width / 2,
-            cy + object.height / 2,
-            rx,
-            ry,
-            paint
-        );
+        canvas.drawRoundRect(rectF, rx, ry, paint);
       }
     }
   }
@@ -542,10 +534,10 @@ public class SvgDrawable {
         return;
       }
 
-      object.cx = parseFloat(parser.getAttributeValue(null, "cx")) / svgWidth;
-      object.cy = parseFloat(parser.getAttributeValue(null, "cy")) / svgHeight;
-      object.rx = parseFloat(parser.getAttributeValue(null, "rx")) * pixelUnit;
-      object.ry = parseFloat(parser.getAttributeValue(null, "ry")) * pixelUnit;
+      object.cx = parseFloat(parser.getAttributeValue(null, "cx"));
+      object.cy = parseFloat(parser.getAttributeValue(null, "cy"));
+      object.rx = parseFloat(parser.getAttributeValue(null, "rx"));
+      object.ry = parseFloat(parser.getAttributeValue(null, "ry"));
 
       readStyle(parser, object);
       parseTransformation(parser.getAttributeValue(null, "transform"), object);
@@ -553,6 +545,12 @@ public class SvgDrawable {
       parser.nextTag();
     }
     parser.require(XmlPullParser.END_TAG, null, SvgObject.TYPE_ELLIPSE);
+
+    // apply display metrics
+    object.cx /= svgWidth;
+    object.cy /= svgHeight;
+    object.rx *= pixelUnit;
+    object.ry *= pixelUnit;
 
     if (parentGroup == null) {
       objects.add(object);
@@ -832,10 +830,6 @@ public class SvgDrawable {
     }
   }
 
-  private float getFinalScale(SvgObject object) {
-    return scale - (zoom * object.elevation);
-  }
-
   private float parseFloat(String value) {
     if (value != null && !value.isEmpty()) {
       try {
@@ -897,8 +891,17 @@ public class SvgDrawable {
   }
 
   private PointF getFinalCenter(Canvas canvas, SvgObject object) {
-    float cx = object.cx * canvas.getWidth() - (offsetX * object.elevation);
-    float cy = object.cy * canvas.getHeight() - (offsetY * object.elevation);
+    float cx = object.cx * canvas.getWidth();
+    float cy = object.cy * canvas.getHeight();
+
+    float cxShifted = cx - (offsetX * object.elevation);
+    float cyShifted = cy - (offsetY * object.elevation);
+
+    // We need to compensate the object rotation, else the object would shift in that direction
+    // This is caused by the canvas rotation, but that's how objects can be rotated
+    PointF compensated = getRotatedPoint(cxShifted, cyShifted, cx, cy, -object.rotation);
+    cx = compensated.x;
+    cy = compensated.y;
 
     float centerX = canvas.getWidth() / 2f;
     if (cx < centerX) {
@@ -918,5 +921,9 @@ public class SvgDrawable {
       cy -= dist * object.elevation * zoom;
     }
     return new PointF(cx, cy);
+  }
+
+  private float getFinalScale(SvgObject object) {
+    return scale - (zoom * object.elevation);
   }
 }

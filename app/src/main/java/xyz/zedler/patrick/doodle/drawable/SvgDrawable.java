@@ -35,9 +35,11 @@ import android.graphics.RectF;
 import android.util.Base64;
 import android.util.Log;
 import android.util.Xml;
+import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RawRes;
+import androidx.core.content.ContextCompat;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -45,12 +47,14 @@ import java.util.List;
 import java.util.Random;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
+import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.parser.PathParser;
 import xyz.zedler.patrick.doodle.util.UnitUtil;
 
 public class SvgDrawable {
 
   private final static String TAG = SvgDrawable.class.getSimpleName();
+  private final static boolean DEBUG_PATHS = false;
 
   private final static boolean ENABLE_IMAGES = true;
 
@@ -62,7 +66,7 @@ public class SvgDrawable {
   private float zoom;
   private final float pixelUnit;
   private float svgWidth, svgHeight;
-  private final Paint paint;
+  private final Paint paint, paintDebug;
   private int backgroundColor;
   private final RectF rectF;
   private PointF pointF;
@@ -85,6 +89,12 @@ public class SvgDrawable {
     paint = new Paint();
     rectF = new RectF();
     random = new Random();
+
+    paintDebug = new Paint(Paint.ANTI_ALIAS_FLAG);
+    paintDebug.setStrokeWidth(UnitUtil.getDp(context, 4));
+    paintDebug.setStyle(Style.STROKE);
+    paintDebug.setStrokeCap(Cap.ROUND);
+    paintDebug.setColor(ContextCompat.getColor(context, R.color.retro_green_fg));
   }
 
   @Nullable
@@ -301,9 +311,9 @@ public class SvgDrawable {
 
   private void drawGroup(Canvas canvas, SvgObject object) {
     pointF = getFinalCenter(canvas, object, null);
-    object.cxAbs = pointF.x;
-    object.cyAbs = pointF.y;
-    object.childScale = getFinalScale(object);
+    object.cxFinal = pointF.x;
+    object.cyFinal = pointF.y;
+    object.childScale = getFinalScale(object, null);
     for (SvgObject child : object.children) {
       drawObject(canvas, child, object);
     }
@@ -374,29 +384,48 @@ public class SvgDrawable {
   }
 
   private void drawPath(Canvas canvas, SvgObject object, SvgObject parentGroup) {
+
+    canvas.save();
+
+    float scale = getFinalScale(object, parentGroup);
+    pointF = getFinalCenter(canvas, object, parentGroup);
+
+    if (DEBUG_PATHS) { // draw final object center
+      canvas.drawPoint(pointF.x, pointF.y, getDebugPaint(Color.RED));
+    }
+
+    float dx = pointF.x - object.cx * (object.isInGroup ? 1 : svgWidth);
+    float dy = pointF.y - object.cy * (object.isInGroup ? 1 : svgHeight);
+
+    float px = object.isInGroup ? parentGroup.cxFinal - dx : pointF.x - dx;
+    float py = object.isInGroup ? parentGroup.cyFinal - dy : pointF.y - dy;
+
+    if (object.isInGroup) {
+      float elevation = parentGroup.elevation;
+      float xCompensate = ((px + dx) - pointF.x) * (this.scale - 1) * (1 - zoom * elevation);
+      float yCompensate = ((py + dy) - pointF.y) * (this.scale - 1) * (1 - zoom * elevation);
+      canvas.translate(dx + xCompensate, dy + yCompensate);
+    } else {
+      canvas.translate(dx, dy);
+    }
+
+    if (DEBUG_PATHS) { // draw scaling pivot point
+      canvas.drawPoint(px, py, getDebugPaint(Color.BLUE));
+    }
+
+    canvas.scale(scale, scale, px, py);
+
     // start with fill and repeat with stroke if both are set
-    int runs = applyPaintStyle(object, false) ? 2 : 1;
+    // don't apply scale to stroke width, stroke is already scaled with canvas transformation
+    int runs = applyPaintStyle(object, 1, false) ? 2 : 1;
     for (int i = 0; i < runs; i++) {
       if (i == 1) {
-        applyPaintStyle(object, true);
+        applyPaintStyle(object, 1, true);
       }
-      canvas.save();
-
-      float scale = getFinalScale(object);
-      pointF = getFinalCenter(canvas, object, parentGroup);
-
-      /*float offsetX = this.offsetX * object.elevation;
-      float offsetY = this.offsetY * object.elevation;*/
-
-      // draw path to required position
-      //float requiredCenterX = (object.cx / svgWidth) * canvas.getWidth() - offsetX;
-      //float requiredCenterY = (object.cy / svgHeight) * canvas.getHeight() - offsetY;
-      float dx = pointF.x - object.cx;
-      float dy = pointF.y - object.cy;
-      canvas.translate(dx, dy);
       canvas.drawPath(object.path, paint);
-      canvas.restore();
     }
+
+    canvas.restore();
   }
 
   private void readRect(XmlPullParser parser, SvgObject parentGroup)
@@ -458,22 +487,21 @@ public class SvgDrawable {
   }
 
   private void drawRect(Canvas canvas, SvgObject object, SvgObject parentGroup) {
+    float scale = getFinalScale(object, parentGroup);
+    pointF = getFinalCenter(canvas, object, parentGroup);
+    rectF.set(
+        pointF.x - (object.width * scale) / 2,
+        pointF.y - (object.height * scale) / 2,
+        pointF.x + (object.width * scale) / 2,
+        pointF.y + (object.height * scale) / 2
+    );
+
     // start with fill and repeat with stroke if both are set
-    int runs = applyPaintStyle(object, false) ? 2 : 1;
+    int runs = applyPaintStyle(object, scale, false) ? 2 : 1;
     for (int i = 0; i < runs; i++) {
       if (i == 1) {
-        applyPaintStyle(object, true);
+        applyPaintStyle(object, scale, true);
       }
-
-      float scale = getFinalScale(object);
-      pointF = getFinalCenter(canvas, object, parentGroup);
-      rectF.set(
-          pointF.x - (object.width * scale) / 2,
-          pointF.y - (object.height * scale) / 2,
-          pointF.x + (object.width * scale) / 2,
-          pointF.y + (object.height * scale) / 2
-      );
-
       if (object.rx == 0 && object.ry == 0) {
         canvas.drawRect(rectF, paint);
       } else {
@@ -529,16 +557,15 @@ public class SvgDrawable {
   }
 
   private void drawCircle(Canvas canvas, SvgObject object, SvgObject parentGroup) {
+    pointF = getFinalCenter(canvas, object, parentGroup);
+    float scale = getFinalScale(object, parentGroup);
+
     // start with fill and repeat with stroke if both are set
-    int runs = applyPaintStyle(object, false) ? 2 : 1;
+    int runs = applyPaintStyle(object, scale, false) ? 2 : 1;
     for (int i = 0; i < runs; i++) {
       if (i == 1) {
-        applyPaintStyle(object, true);
+        applyPaintStyle(object, scale, true);
       }
-
-      pointF = getFinalCenter(canvas, object, parentGroup);
-      float scale = getFinalScale(object);
-
       if (object.type.equals(SvgObject.TYPE_CIRCLE) || object.rx == object.ry) {
         float radius = object.r > 0 ? object.r : object.rx;
         canvas.drawCircle(pointF.x, pointF.y, radius * scale, paint);
@@ -658,8 +685,6 @@ public class SvgDrawable {
   }
 
   private void drawImage(Canvas canvas, SvgObject object, SvgObject parentGroup) {
-    applyPaintStyle(object, false);
-
     /*float offsetX = this.offsetX * object.elevation;
     float offsetY = this.offsetY * object.elevation;
     float cx = object.cx * canvas.getWidth() - offsetX;
@@ -674,7 +699,10 @@ public class SvgDrawable {
       cx -= dist * object.elevation * zoom;
     }*/
 
-    float scale = getFinalScale(object);
+    paint.reset();
+    paint.setAntiAlias(true);
+
+    float scale = getFinalScale(object, parentGroup);
     pointF = getFinalCenter(canvas, object, parentGroup);
     rectF.set(
         pointF.x - (object.width * scale) / 2,
@@ -738,7 +766,7 @@ public class SvgDrawable {
   /**
    * @return true if a second draw for a separate stroke style is needed
    */
-  private boolean applyPaintStyle(SvgObject object, boolean applyStrokeIfBothSet) {
+  private boolean applyPaintStyle(SvgObject object, float scale, boolean applyStrokeIfBothSet) {
     paint.reset();
     paint.setAntiAlias(true);
 
@@ -754,7 +782,7 @@ public class SvgDrawable {
           Color.green(object.stroke),
           Color.blue(object.stroke)
       );
-      paint.setStrokeWidth(object.strokeWidth * pixelUnit);
+      paint.setStrokeWidth(object.strokeWidth * pixelUnit * scale);
       if (object.strokeLineCap != null) {
         switch (object.strokeLineCap) {
           case SvgObject.LINE_CAP_BUTT:
@@ -789,6 +817,10 @@ public class SvgDrawable {
           Color.green(object.fill),
           Color.blue(object.fill)
       );
+    }
+
+    if (DEBUG_PATHS) { // draw semi-translucent for point/pivot debugging
+      paint.setAlpha(100);
     }
 
     return hasFillAndStroke;
@@ -834,7 +866,7 @@ public class SvgDrawable {
 
     // GROUP
     public List<SvgObject> children;
-    public float cxAbs, cyAbs;
+    public float cxFinal, cyFinal;
     public float childScale;
     // offset for each child (set on the child objects)
     public float xDistGroupCenter, yDistGroupCenter;
@@ -941,9 +973,9 @@ public class SvgDrawable {
   private PointF getFinalCenter(Canvas canvas, SvgObject object, SvgObject parentGroup) {
     float cx;
     float cy;
-    if (object.isInGroup && parentGroup != null) {
-      cx = parentGroup.cxAbs + object.xDistGroupCenter * parentGroup.childScale;
-      cy = parentGroup.cyAbs + object.yDistGroupCenter * parentGroup.childScale;
+    if (object.isInGroup) {
+      cx = parentGroup.cxFinal + object.xDistGroupCenter * parentGroup.childScale;
+      cy = parentGroup.cyFinal + object.yDistGroupCenter * parentGroup.childScale;
     } else {
       cx = object.cx * canvas.getWidth();
       cy = object.cy * canvas.getHeight();
@@ -978,7 +1010,12 @@ public class SvgDrawable {
     return new PointF(cx, cy);
   }
 
-  private float getFinalScale(SvgObject object) {
-    return scale - (zoom * object.elevation);
+  private float getFinalScale(SvgObject object, SvgObject parentGroup) {
+    return object.isInGroup ? parentGroup.childScale : scale - (zoom * object.elevation);
+  }
+
+  private Paint getDebugPaint(@ColorInt int color) {
+    paintDebug.setColor(color);
+    return paintDebug;
   }
 }

@@ -64,7 +64,7 @@ public class SvgDrawable {
   private float svgWidth, svgHeight;
   private final Paint paint;
   private int backgroundColor;
-  private RectF rectF;
+  private final RectF rectF;
   private PointF pointF;
   private final Random random;
 
@@ -102,7 +102,6 @@ public class SvgDrawable {
   public void setOffset(float offsetX, float offsetY) {
     this.offsetX = offsetX;
     this.offsetY = offsetY;
-    // TODO: offsetX * elevation
   }
 
   public void setScale(float scale) {
@@ -118,8 +117,6 @@ public class SvgDrawable {
    */
   public void setZoom(float zoom) {
     this.zoom = zoom;
-    // TODO: final scale factor = scale - (zoom * elevation)
-    // TODO: has to be
   }
 
   /**
@@ -136,7 +133,7 @@ public class SvgDrawable {
     canvas.drawColor(backgroundColor);
 
     for (SvgObject object : objects) {
-      drawObject(canvas, object);
+      drawObject(canvas, object, null);
     }
   }
 
@@ -209,30 +206,34 @@ public class SvgDrawable {
     }
   }
 
-  private void drawObject(Canvas canvas, SvgObject object) {
+  private void drawObject(Canvas canvas, SvgObject object, SvgObject parentGroup) {
     if (!object.isInGroup && object.rotation != 0) {
       canvas.save();
-      canvas.rotate(
-          object.rotation, object.cx * canvas.getWidth(), object.cy * canvas.getHeight()
-      );
+      if (object.type.equals(SvgObject.TYPE_GROUP)) {
+        canvas.rotate(object.rotation);
+      } else {
+        canvas.rotate(
+            object.rotation, object.cx * canvas.getWidth(), object.cy * canvas.getHeight()
+        );
+      }
     }
     switch (object.type) {
       case SvgObject.TYPE_GROUP:
         drawGroup(canvas, object);
         break;
       case SvgObject.TYPE_PATH:
-        drawPath(canvas, object);
+        drawPath(canvas, object, parentGroup);
         break;
       case SvgObject.TYPE_RECT:
-        drawRect(canvas, object);
+        drawRect(canvas, object, parentGroup);
         break;
       case SvgObject.TYPE_CIRCLE:
       case SvgObject.TYPE_ELLIPSE:
-        drawCircle(canvas, object);
+        drawCircle(canvas, object, parentGroup);
         break;
       case SvgObject.TYPE_IMAGE:
         if (ENABLE_IMAGES) {
-          drawImage(canvas, object);
+          drawImage(canvas, object, parentGroup);
         }
         break;
     }
@@ -258,7 +259,9 @@ public class SvgDrawable {
         return;
       }
 
-      parseTransformation(parser.getAttributeValue(null, "transform"), object);
+      // Save transformation value now (but don't use it, center is not calculated yet)
+      // When we continue parsing, the translation value would be lost
+      String transformation = parser.getAttributeValue(null, "transform");
 
       while (parser.next() != XmlPullParser.END_TAG) {
         if (parser.getEventType() != XmlPullParser.START_TAG) {
@@ -266,6 +269,30 @@ public class SvgDrawable {
         }
         readObject(parser, object);
       }
+
+      // Calculate group center
+      RectF centersBounds = new RectF();
+      for (int i = 0; i < object.children.size(); i++) {
+        SvgObject child = object.children.get(i);
+        if (i == 0) {
+          centersBounds.offset(child.cx, child.cy);
+        } else {
+          centersBounds.union(child.cx, child.cy);
+        }
+      }
+      object.cx = centersBounds.centerX();
+      object.cy = centersBounds.centerY();
+
+      parseTransformation(transformation, object);
+
+      // Pass the distance from group center to all children
+      for (SvgObject child : object.children) {
+        child.xDistGroupCenter = (child.cx - object.cx) * pixelUnit;
+        child.yDistGroupCenter = (child.cy - object.cy) * pixelUnit;
+      }
+      // Make group center relative
+      object.cx /= svgWidth;
+      object.cy /= svgHeight;
     }
 
     objects.add(object);
@@ -273,8 +300,11 @@ public class SvgDrawable {
   }
 
   private void drawGroup(Canvas canvas, SvgObject object) {
+    pointF = getFinalCenter(canvas, object, null);
+    object.cxAbs = pointF.x;
+    object.cyAbs = pointF.y;
     for (SvgObject child : object.children) {
-      drawObject(canvas, child);
+      drawObject(canvas, child, object);
     }
   }
 
@@ -311,14 +341,12 @@ public class SvgDrawable {
         return;
       }
 
-      if (rectF == null || rectF.isEmpty()) {
-        rectF = new RectF();
-      }
-      object.path.computeBounds(rectF, true);
-      object.width = rectF.width();
-      object.height = rectF.height();
-      object.cx = rectF.centerX();
-      object.cy = rectF.centerY();
+      RectF bounds = new RectF();
+      object.path.computeBounds(bounds, true);
+      object.width = bounds.width();
+      object.height = bounds.height();
+      object.cx = bounds.centerX();
+      object.cy = bounds.centerY();
 
       readStyle(parser, object);
       parseTransformation(parser.getAttributeValue(null, "transform"), object);
@@ -331,6 +359,10 @@ public class SvgDrawable {
     Matrix scaleMatrix = new Matrix();
     scaleMatrix.setScale(pixelUnit, pixelUnit, object.cx, object.cy);
     object.path.transform(scaleMatrix);
+    if (!object.isInGroup) { // else keep absolute values for later calculation
+      object.cx /= svgWidth;
+      object.cy /= svgHeight;
+    }
 
     if (parentGroup == null) {
       objects.add(object);
@@ -340,7 +372,7 @@ public class SvgDrawable {
     }
   }
 
-  private void drawPath(Canvas canvas, SvgObject object) {
+  private void drawPath(Canvas canvas, SvgObject object, SvgObject parentGroup) {
     // start with fill and repeat with stroke if both are set
     int runs = applyPaintStyle(object, false) ? 2 : 1;
     for (int i = 0; i < runs; i++) {
@@ -349,14 +381,17 @@ public class SvgDrawable {
       }
       canvas.save();
 
-      float offsetX = this.offsetX * object.elevation;
-      float offsetY = this.offsetY * object.elevation;
+      float scale = getFinalScale(object);
+      pointF = getFinalCenter(canvas, object, parentGroup);
+
+      /*float offsetX = this.offsetX * object.elevation;
+      float offsetY = this.offsetY * object.elevation;*/
 
       // draw path to required position
-      float requiredCenterX = (object.cx / svgWidth) * canvas.getWidth() - offsetX;
-      float requiredCenterY = (object.cy / svgHeight) * canvas.getHeight() - offsetY;
-      float dx = requiredCenterX - object.cx;
-      float dy = requiredCenterY - object.cy;
+      //float requiredCenterX = (object.cx / svgWidth) * canvas.getWidth() - offsetX;
+      //float requiredCenterY = (object.cy / svgHeight) * canvas.getHeight() - offsetY;
+      float dx = pointF.x - object.cx;
+      float dy = pointF.y - object.cy;
       canvas.translate(dx, dy);
       canvas.drawPath(object.path, paint);
       canvas.restore();
@@ -408,8 +443,10 @@ public class SvgDrawable {
     object.height *= pixelUnit;
     object.rx *= pixelUnit;
     object.ry *= pixelUnit;
-    object.cx /= svgWidth;
-    object.cy /= svgHeight;
+    if (!object.isInGroup) { // else keep absolute values for later calculation
+      object.cx /= svgWidth;
+      object.cy /= svgHeight;
+    }
 
     if (parentGroup == null) {
       objects.add(object);
@@ -419,7 +456,7 @@ public class SvgDrawable {
     }
   }
 
-  private void drawRect(Canvas canvas, SvgObject object) {
+  private void drawRect(Canvas canvas, SvgObject object, SvgObject parentGroup) {
     // start with fill and repeat with stroke if both are set
     int runs = applyPaintStyle(object, false) ? 2 : 1;
     for (int i = 0; i < runs; i++) {
@@ -428,15 +465,13 @@ public class SvgDrawable {
       }
 
       float scale = getFinalScale(object);
-      pointF = getFinalCenter(canvas, object);
+      pointF = getFinalCenter(canvas, object, parentGroup);
       rectF.set(
           pointF.x - (object.width * scale) / 2,
           pointF.y - (object.height * scale) / 2,
           pointF.x + (object.width * scale) / 2,
           pointF.y + (object.height * scale) / 2
       );
-
-      // TODO: shifts in direction of rotation when transformed...
 
       if (object.rx == 0 && object.ry == 0) {
         canvas.drawRect(rectF, paint);
@@ -478,8 +513,10 @@ public class SvgDrawable {
     parser.require(XmlPullParser.END_TAG, null, SvgObject.TYPE_CIRCLE);
 
     // apply display metrics
-    object.cx /= svgWidth;
-    object.cy /= svgHeight;
+    if (!object.isInGroup) { // else keep absolute values for later calculation
+      object.cx /= svgWidth;
+      object.cy /= svgHeight;
+    }
     object.r *= pixelUnit;
 
     if (parentGroup == null) {
@@ -490,7 +527,7 @@ public class SvgDrawable {
     }
   }
 
-  private void drawCircle(Canvas canvas, SvgObject object) {
+  private void drawCircle(Canvas canvas, SvgObject object, SvgObject parentGroup) {
     // start with fill and repeat with stroke if both are set
     int runs = applyPaintStyle(object, false) ? 2 : 1;
     for (int i = 0; i < runs; i++) {
@@ -498,7 +535,7 @@ public class SvgDrawable {
         applyPaintStyle(object, true);
       }
 
-      pointF = getFinalCenter(canvas, object);
+      pointF = getFinalCenter(canvas, object, parentGroup);
       float scale = getFinalScale(object);
 
       if (object.type.equals(SvgObject.TYPE_CIRCLE) || object.rx == object.ry) {
@@ -547,8 +584,10 @@ public class SvgDrawable {
     parser.require(XmlPullParser.END_TAG, null, SvgObject.TYPE_ELLIPSE);
 
     // apply display metrics
-    object.cx /= svgWidth;
-    object.cy /= svgHeight;
+    if (!object.isInGroup) { // else keep absolute values for later calculation
+      object.cx /= svgWidth;
+      object.cy /= svgHeight;
+    }
     object.rx *= pixelUnit;
     object.ry *= pixelUnit;
 
@@ -559,6 +598,8 @@ public class SvgDrawable {
       parentGroup.children.add(object);
     }
   }
+
+  // drawEllipse is included in drawCircle
 
   private void readImage(XmlPullParser parser, SvgObject parentGroup)
       throws IOException, XmlPullParserException {
@@ -602,8 +643,10 @@ public class SvgDrawable {
     // apply display metrics
     object.width *= pixelUnit;
     object.height *= pixelUnit;
-    object.cx /= svgWidth;
-    object.cy /= svgHeight;
+    if (!object.isInGroup) { // else keep absolute values for later calculation
+      object.cx /= svgWidth;
+      object.cy /= svgHeight;
+    }
 
     if (parentGroup == null) {
       objects.add(object);
@@ -613,7 +656,7 @@ public class SvgDrawable {
     }
   }
 
-  private void drawImage(Canvas canvas, SvgObject object) {
+  private void drawImage(Canvas canvas, SvgObject object, SvgObject parentGroup) {
     applyPaintStyle(object, false);
 
     /*float offsetX = this.offsetX * object.elevation;
@@ -631,7 +674,7 @@ public class SvgDrawable {
     }*/
 
     float scale = getFinalScale(object);
-    pointF = getFinalCenter(canvas, object);
+    pointF = getFinalCenter(canvas, object, parentGroup);
     rectF.set(
         pointF.x - (object.width * scale) / 2,
         pointF.y - (object.height * scale) / 2,
@@ -669,7 +712,7 @@ public class SvgDrawable {
           return;
         }
         object.scale = Float.parseFloat(scale[0]);
-        /*if (object.scale != 1) { TODO: at that time the cx and cy values are floats from 0-1...
+        /*if (object.scale != 1) { TODO: at that time the cx and cy values in the original svg size
           object.cx *= object.scale;
           object.cy *= object.scale;
         }*/
@@ -790,6 +833,9 @@ public class SvgDrawable {
 
     // GROUP
     public List<SvgObject> children;
+    public float cxAbs, cyAbs;
+    // offset for each child
+    public float xDistGroupCenter, yDistGroupCenter;
 
     // STYLE
     public int fill;
@@ -890,9 +936,16 @@ public class SvgDrawable {
     return new PointF(x2 + cx, y2 + cy);
   }
 
-  private PointF getFinalCenter(Canvas canvas, SvgObject object) {
-    float cx = object.cx * canvas.getWidth();
-    float cy = object.cy * canvas.getHeight();
+  private PointF getFinalCenter(Canvas canvas, SvgObject object, SvgObject parentGroup) {
+    float cx;
+    float cy;
+    if (object.isInGroup && parentGroup != null) {
+      cx = parentGroup.cxAbs + object.xDistGroupCenter;
+      cy = parentGroup.cyAbs + object.yDistGroupCenter;
+    } else {
+      cx = object.cx * canvas.getWidth();
+      cy = object.cy * canvas.getHeight();
+    }
 
     float cxShifted = cx - (offsetX * object.elevation);
     float cyShifted = cy - (offsetY * object.elevation);

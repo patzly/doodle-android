@@ -254,10 +254,7 @@ public class SettingsActivity extends AppCompatActivity
               .setAction(WallpaperManager.ACTION_CHANGE_LIVE_WALLPAPER)
               .putExtra(
                   WallpaperManager.EXTRA_LIVE_WALLPAPER_COMPONENT,
-                  new ComponentName(
-                      "xyz.zedler.patrick.doodle",
-                      "xyz.zedler.patrick.doodle.service.LiveWallpaperService"
-                  )
+                  new ComponentName(getPackageName(), LiveWallpaperService.class.getCanonicalName())
               )
       );
       performHapticHeavyClick();

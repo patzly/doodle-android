@@ -297,6 +297,12 @@ public class LiveWallpaperService extends WallpaperService {
       drawFrame(true);
     }
 
+    @Override
+    public void onSurfaceRedrawNeeded(SurfaceHolder holder) {
+      // Not necessarily needed
+      drawFrame(true);
+    }
+
     private void loadSettings() {
       parallax = sharedPrefs.getInt(PREF.PARALLAX, DEF.PARALLAX);
       if (svgDrawable != null) {

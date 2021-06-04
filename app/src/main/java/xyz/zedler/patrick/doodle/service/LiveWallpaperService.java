@@ -124,7 +124,7 @@ public class LiveWallpaperService extends WallpaperService {
     if (isNightMode()) {
       switch (wallpaper) {
         case WALLPAPER.PIXEL:
-          resId = R.raw.pixel;
+          resId = R.raw.pixel_dark;
           break;
         case WALLPAPER.JOHANNA:
           resId = R.raw.johanna_dark;

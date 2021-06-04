@@ -1,0 +1,107 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  id="svg8"
+  version="1.1"
+  viewBox="0 0 1080 1920">
+  <rect
+    id="rect833"
+    width="1080"
+    height="1920"
+    x="0"
+    y="0"
+    fill="#272628" />
+  <g id="g1000">
+    <path
+      id="path14"
+      fill="none"
+      stroke="#0f0f0f"
+      stroke-linecap="round"
+      stroke-width="69.28"
+      d="M249.97 1485.11l129.26-94.05c38.42-27.94 41.62-78.67 17.61-111.66-23.57-32.4-72.97-45.76-111.66-17.6l-129.27 94.05" />
+    <circle
+      id="circle16"
+      cx="250.13"
+      cy="1485.95"
+      r="27.78"
+      fill="#f58551" />
+  </g>
+  <circle
+    id="circle2"
+    cx="717"
+    cy="971.24"
+    r="149.79"
+    fill="none"
+    stroke="#0f0f0f"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="11.43" />
+  <g id="g992">
+    <circle
+      id="circle6"
+      cx="801.35"
+      cy="1058.12"
+      r="61.81"
+      fill="#9393c1" />
+    <path
+      id="path8"
+      fill="#0f0f0f"
+      d="m 801.34537,996.31121 a 61.806,61.806 0 0 0 -61.806,61.80399 61.806,61.806 0 0 0 8.414,31.131 102.879,102.879 0 0 0 88.828,-81.767 61.806,61.806 0 0 0 -35.436,-11.16799 z" />
+  </g>
+  <g
+    id="g1004"
+    transform="rotate(-43.04)">
+    <rect
+      id="rect79"
+      width="89.23"
+      height="274.76"
+      x="-505.25"
+      y="1499.01"
+      fill="#0f0f0f"/>
+    <rect
+      id="rect81"
+      width="27.77"
+      height="274.76"
+      x="-533.02"
+      y="1499.01"
+      fill="#ddc1b3" />
+  </g>
+  <circle
+    id="circle85"
+    cx="148.27"
+    cy="914.13"
+    r="26.8"
+    fill="#0f0f0f" />
+  <g id="g988">
+    <path
+      id="path10"
+      fill="none"
+      stroke="#0f0f0f"
+      stroke-linecap="round"
+      stroke-width="69.66"
+      d="M203.89 645.6c-63.43-125.84 35.5-243 157.84-230.76" />
+    <circle
+      id="circle16-3"
+      cx="361.02"
+      cy="415"
+      r="27.78"
+      fill="#ff9052" />
+  </g>
+  <g id="g996">
+    <path
+      id="path932"
+      fill="none"
+      stroke="#0f0f0f"
+      stroke-linecap="round"
+      stroke-width="8"
+      d="M854.46 568.64L721.16 294.3c-15.91-32.74-54.16-45.95-86.88-30.05-32.85 15.96-46.04 53.96-30.05 86.87l80.86 166.4c10.33 21.25 32.22 28.8 53.46 18.49l170.89-83.04c21.36-10.39 28.83-32.19 18.5-53.46l-32.79-67.46" />
+    <circle
+      id="path940"
+      fill="none"
+      cx="659.99"
+      cy="629.91"
+      r="24.25"
+      stroke="#bdd6bd"
+      stroke-width="29.57"
+      transform="rotate(-25.92)" />
+  </g>
+</svg>

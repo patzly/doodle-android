@@ -49,12 +49,12 @@
   <string name="setting_size">Shape size</string>
   <string name="setting_size_description">Useful for big screens</string>
   <string name="setting_zoom">Zoom effect intensity</string>
-  <string name="setting_zoom_description">Only fluid on high-end devices and only for some wallpapers, turn it off below if necessary</string>
+  <string name="setting_zoom_description">When increased, the camera zooms out more</string>
   <string name="setting_zoom_launcher">Zoom out when opening quick settings or app drawer</string>
   <string name="setting_zoom_unlock">Zoom out on lockscreen</string>
 
   <string name="info_title">Information</string>
-  <string name="info_description">Colorful live wallpapers with auto dark mode and battery-efficient animations. Tap to learn more.</string>
+  <string name="info_description">Colorful live wallpapers with auto dark mode and power-efficient animations. Tap to learn more.</string>
   <string name="info_description_wallpaper">Explore a colorful collection of shapes, refined with gentle parallax and zoom effects when you swipe through your home screens and unlock your phone.\nCustomize the wallpaper to match your own style.</string>
   <string name="info_touch_wiz">Your current launcher (Samsung TouchWiz) unfortunately does not support background scrolling. Please try a different launcher to activate the parallax effect.</string>
   <string name="info_gpu">Hardware acceleration is only available for Doodle starting with Android 8. The wallpaper animations might therefore be a bit jerky, especially with the second wallpaper.</string>

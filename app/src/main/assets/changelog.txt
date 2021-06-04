@@ -1,3 +1,6 @@
+3.0.1:
+- Improved: text and descriptions
+
 3.0.0:
 - New: completely rewritten rendering engine (much more efficient and faster)
 - New: "organic" doodle wallpaper

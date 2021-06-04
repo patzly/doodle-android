@@ -130,10 +130,10 @@ public class LiveWallpaperService extends WallpaperService {
           resId = R.raw.johanna_dark;
           break;
         case WALLPAPER.REIKO:
-          resId = R.raw.pixel;
+          resId = R.raw.pixel_white;
           break;
         case WALLPAPER.ANTHONY:
-          resId = R.raw.pixel;
+          resId = R.raw.pixel_white;
           break;
       }
     } else {
@@ -141,13 +141,13 @@ public class LiveWallpaperService extends WallpaperService {
         case WALLPAPER.PIXEL:
           switch (variant) {
             case Constants.VARIANT.BLACK:
-              resId = R.raw.pixel;
+              resId = R.raw.pixel_black;
               break;
             case Constants.VARIANT.WHITE:
-              resId = R.raw.pixel;
+              resId = R.raw.pixel_white;
               break;
             case Constants.VARIANT.ORANGE:
-              resId = R.raw.pixel;
+              resId = R.raw.pixel_orange;
               break;
           }
           break;
@@ -155,15 +155,15 @@ public class LiveWallpaperService extends WallpaperService {
           resId = R.raw.johanna;
           break;
         case WALLPAPER.REIKO:
-          resId = R.raw.pixel;
+          resId = R.raw.reiko;
           break;
         case WALLPAPER.ANTHONY:
-          resId = R.raw.pixel;
+          resId = R.raw.pixel_white;
           break;
       }
     }
     if (resId == -1) {
-      resId = R.raw.pixel;
+      resId = R.raw.pixel_white;
     }
     svgDrawable = new SvgDrawable(this, resId);
   }

@@ -50,7 +50,9 @@
     cy="230.5"
     r="23.8"
     fill="#d8d4fe" />
-  <g id="pill">
+  <g
+    id="pill"
+    transform="translate(-356.1,4.29)">
     <path
       id="pill_back"
       fill="#97e2e2"

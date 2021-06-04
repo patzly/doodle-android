@@ -219,10 +219,12 @@ public class SvgDrawable {
   private void drawObject(Canvas canvas, SvgObject object, SvgObject parentGroup) {
     if (!object.isInGroup && object.rotation != 0) {
       canvas.save();
-      // Even for groups this rotation is required
-      canvas.rotate(
-          object.rotation, object.cx * canvas.getWidth(), object.cy * canvas.getHeight()
-      );
+      if (object.rotation != 0) {
+        // Even for groups this rotation is required
+        canvas.rotate(
+            object.rotation, object.cx * canvas.getWidth(), object.cy * canvas.getHeight()
+        );
+      }
     }
     switch (object.type) {
       case SvgObject.TYPE_GROUP:
@@ -277,21 +279,7 @@ public class SvgDrawable {
         readObject(parser, object);
       }
 
-      // GROUP TRANSFORMATION (rotation)
-      if (transformation != null && !transformation.isEmpty()) {
-        String[] transform = transformation.split("[ ](?=[^)]*?(?:\\(|$))");
-        for (String action : transform) {
-          String value = action.substring(action.indexOf("(") + 1, action.indexOf(")"));
-          if (action.contains("rotate")) {
-            String[] rotation = value.split("[\\n\\r\\s]+");
-            object.rotation = Float.parseFloat(rotation[0]);
-            if (rotation.length == 3) {
-              object.rotationX = Float.parseFloat(rotation[1]);
-              object.rotationY = Float.parseFloat(rotation[2]);
-            }
-          }
-        }
-      }
+      parseTransformation(transformation, object);
 
       // Compensate rotation of the child center positions
       for (SvgObject child : object.children) {
@@ -766,22 +754,22 @@ public class SvgDrawable {
           object.rotationX = Float.parseFloat(rotation[1]);
           object.rotationY = Float.parseFloat(rotation[2]);
         }
-        pointF = getRotatedPoint(
-            object.cx, object.cy, object.rotationX, object.rotationY, object.rotation
-        );
-        object.cx = pointF.x;
-        object.cy = pointF.y;
 
-        /*if (object.type.equals(SvgObject.TYPE_GROUP)) {
-          // Compensate rotation in the child center positions
-          for (SvgObject child : children) {
-            PointF center = getRotatedPoint(
-                child.cx, child.cy, object.rotationX, object.rotationY, -object.rotation
-            );
-            child.cx = center.x;
-            child.cy = center.y;
-          }
-        }*/
+        if (!object.type.equals(SvgObject.TYPE_GROUP)) {
+          pointF = getRotatedPoint(
+              object.cx, object.cy, object.rotationX, object.rotationY, object.rotation
+          );
+          object.cx = pointF.x;
+          object.cy = pointF.y;
+        }
+      } else if (action.contains("translate")) {
+        String[] translation = value.split(",");
+        if (translation.length != 2) {
+          Log.e(TAG, "parseTransformation: translation: value not supported");
+          return;
+        }
+        object.translationX = Float.parseFloat(translation[0]) / svgWidth;
+        object.translationY = Float.parseFloat(translation[1]) / svgHeight;
       } else if (action.contains("scale")) {
         String[] scale = value.split("[\\n\\r\\s]+");
         if (scale.length > 1) {
@@ -928,6 +916,7 @@ public class SvgDrawable {
 
     // TRANSFORMATION
     public float rotation, rotationX, rotationY;
+    public float translationX, translationY;
     public float scale;
 
     // PATH
@@ -1024,8 +1013,8 @@ public class SvgDrawable {
       cx = parentGroup.cxFinal + object.xDistGroupCenter * parentGroup.childScale;
       cy = parentGroup.cyFinal + object.yDistGroupCenter * parentGroup.childScale;
     } else {
-      cx = object.cx * canvas.getWidth();
-      cy = object.cy * canvas.getHeight();
+      cx = object.cx * canvas.getWidth() + object.translationX * canvas.getWidth();
+      cy = object.cy * canvas.getHeight() + object.translationY * canvas.getHeight();
     }
 
     float cxShifted = cx - (offsetX * object.elevation);

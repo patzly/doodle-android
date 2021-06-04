@@ -149,7 +149,7 @@
         <ImageView
           android:id="@+id/image_wallpaper"
           style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-          android:layout_marginEnd="32dp"
+          android:layout_marginEnd="24dp"
           android:src="@drawable/ic_round_wallpaper_anim"
           tools:ignore="ContentDescription" />
 
@@ -158,10 +158,11 @@
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:orientation="horizontal"
-          android:paddingStart="0dp"
-          android:paddingEnd="0dp"
+          android:paddingStart="8dp"
+          android:paddingEnd="8dp"
           android:paddingTop="12dp"
           android:paddingBottom="12dp"
+          android:clipToPadding="false"
           tools:ignore="ContentDescription">
 
           <com.google.android.material.card.MaterialCardView
@@ -223,13 +224,12 @@
         android:paddingTop="0dp"
         android:paddingBottom="0dp"
         android:paddingStart="16dp"
-        android:paddingEnd="8dp"
-        android:clipToPadding="false">
+        android:paddingEnd="8dp">
 
         <ImageView
           android:id="@+id/image_variant"
           style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-          android:layout_marginEnd="32dp"
+          android:layout_marginEnd="24dp"
           android:src="@drawable/ic_round_palette_anim"
           tools:ignore="ContentDescription" />
 
@@ -239,10 +239,11 @@
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:orientation="horizontal"
-          android:paddingStart="0dp"
-          android:paddingEnd="0dp"
+          android:paddingStart="8dp"
+          android:paddingEnd="8dp"
           android:paddingTop="12dp"
-          android:paddingBottom="12dp">
+          android:paddingBottom="12dp"
+          android:clipToPadding="false">
 
           <com.google.android.material.card.MaterialCardView
             android:id="@+id/card_black"
@@ -261,7 +262,6 @@
             android:id="@+id/card_orange"
             style="@style/Widget.Doodle.Card.Selection"
             android:layout_marginStart="6dp"
-            android:layout_marginEnd="6dp"
             app:cardBackgroundColor="#f98a6b" />
 
         </LinearLayout>

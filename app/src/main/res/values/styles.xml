@@ -58,11 +58,13 @@
     <item name="android:focusable">true</item>
     <item name="android:checkable">true</item>
     <item name="strokeColor">@color/stroke</item>
-    <item name="strokeWidth">1dp</item>
+    <item name="strokeWidth">0dp</item>
     <item name="rippleColor">@color/highlight</item>
     <item name="cardBackgroundColor">@color/background</item>
-    <item name="checkedIcon">@null</item>
-    <item name="cardElevation">0dp</item>
+    <item name="checkedIcon">@drawable/ic_round_check_circle_anim</item>
+    <item name="checkedIconTint">@null</item>
+    <item name="checkedIconMargin">8.75dp</item>
+    <item name="cardElevation">2.5dp</item>
     <item name="cardCornerRadius">32dp</item>
     <item name="android:layout_gravity">center</item>
   </style>

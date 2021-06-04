@@ -65,7 +65,6 @@ import xyz.zedler.patrick.doodle.util.IconUtil;
 import xyz.zedler.patrick.doodle.util.MigrationUtil;
 import xyz.zedler.patrick.doodle.util.PrefsUtil;
 import xyz.zedler.patrick.doodle.util.SheetUtil;
-import xyz.zedler.patrick.doodle.util.UnitUtil;
 import xyz.zedler.patrick.doodle.util.VibratorUtil;
 
 public class SettingsActivity extends AppCompatActivity
@@ -133,10 +132,7 @@ public class SettingsActivity extends AppCompatActivity
     binding.switchFollowSystem.setChecked(sharedPrefs.getBoolean(PREF.FOLLOW_SYSTEM, true));
     binding.switchFollowSystem.setEnabled(binding.switchNightMode.isChecked());
 
-    boolean isPixelWallpaperActive = sharedPrefs.getString(
-        PREF.WALLPAPER, WALLPAPER.PIXEL
-    ).equals(WALLPAPER.PIXEL);
-    setVariantSelectionEnabled(isPixelWallpaperActive, false);
+    setVariantSelectionEnabled(isPixelWallpaperActive(), false);
 
     binding.linearFollowSystem.setEnabled(binding.switchNightMode.isChecked());
     binding.linearFollowSystemContainer.setAlpha(binding.switchNightMode.isChecked() ? 1 : 0.5f);
@@ -273,13 +269,13 @@ public class SettingsActivity extends AppCompatActivity
     } else if (id == R.id.card_anthony) {
       refreshSelectionTheme(WALLPAPER.ANTHONY, true);
       performHapticClick();
-    } else if (id == R.id.card_black) {
+    } else if (id == R.id.card_black && isPixelWallpaperActive()) {
       refreshSelectionVariant(VARIANT.BLACK, true);
       performHapticClick();
-    } else if (id == R.id.card_white) {
+    } else if (id == R.id.card_white && isPixelWallpaperActive()) {
       refreshSelectionVariant(VARIANT.WHITE, true);
       performHapticClick();
-    } else if (id == R.id.card_orange) {
+    } else if (id == R.id.card_orange && isPixelWallpaperActive()) {
       refreshSelectionVariant(VARIANT.ORANGE, true);
       performHapticClick();
     } else if (id == R.id.linear_night_mode) {
@@ -433,21 +429,15 @@ public class SettingsActivity extends AppCompatActivity
     if (mcvSelected.isChecked()) {
       return;
     }
-    mcvSelected.setStrokeColor(ContextCompat.getColor(this, R.color.secondary));
-    mcvSelected.setStrokeWidth(UnitUtil.getDp(this, 3));
     mcvSelected.setChecked(true);
-    mcv1.setStrokeColor(ContextCompat.getColor(this, R.color.stroke));
-    mcv1.setStrokeWidth(UnitUtil.getDp(this, 1));
     mcv1.setChecked(false);
-    mcv2.setStrokeColor(ContextCompat.getColor(this, R.color.stroke));
-    mcv2.setStrokeWidth(UnitUtil.getDp(this, 1));
     mcv2.setChecked(false);
-    mcv3.setStrokeColor(ContextCompat.getColor(this, R.color.stroke));
-    mcv3.setStrokeWidth(UnitUtil.getDp(this, 1));
     mcv3.setChecked(false);
+
     setVariantSelectionEnabled(selection.equals(WALLPAPER.PIXEL), true);
     if (animated) {
       IconUtil.start(binding.imageWallpaper);
+      IconUtil.start(mcvSelected.getCheckedIcon());
       sharedPrefs.edit().putString(PREF.WALLPAPER, selection).apply();
       requestThemeRefresh();
     }
@@ -475,17 +465,13 @@ public class SettingsActivity extends AppCompatActivity
     if (mcvSelected.isChecked()) {
       return;
     }
-    mcvSelected.setStrokeColor(ContextCompat.getColor(this, R.color.secondary));
-    mcvSelected.setStrokeWidth(UnitUtil.getDp(this, 3));
     mcvSelected.setChecked(true);
-    mcv1.setStrokeColor(ContextCompat.getColor(this, R.color.stroke));
-    mcv1.setStrokeWidth(UnitUtil.getDp(this, 1));
     mcv1.setChecked(false);
-    mcv2.setStrokeColor(ContextCompat.getColor(this, R.color.stroke));
-    mcv2.setStrokeWidth(UnitUtil.getDp(this, 1));
     mcv2.setChecked(false);
+
     if (animated) {
       IconUtil.start(binding.imageVariant);
+      IconUtil.start(mcvSelected.getCheckedIcon());
       sharedPrefs.edit().putString(PREF.VARIANT, selection).apply();
       requestThemeRefresh();
     }
@@ -524,9 +510,6 @@ public class SettingsActivity extends AppCompatActivity
       binding.linearVariant.animate().alpha(enabled ? 1 : 0.5f).setDuration(200).start();
     } else {
       binding.linearVariant.setAlpha(enabled ? 1 : 0.5f);
-    }
-    for (int i = 0; i < binding.linearVariant.getChildCount(); i++) {
-      binding.linearVariant.getChildAt(i).setEnabled(enabled);
     }
   }
 
@@ -574,6 +557,10 @@ public class SettingsActivity extends AppCompatActivity
         sheetUtil.show(new FeedbackBottomSheetDialogFragment());
       }
     }
+  }
+
+  private boolean isPixelWallpaperActive() {
+    return sharedPrefs.getString(PREF.WALLPAPER, WALLPAPER.PIXEL).equals(WALLPAPER.PIXEL);
   }
 
   private boolean isTouchWiz() {

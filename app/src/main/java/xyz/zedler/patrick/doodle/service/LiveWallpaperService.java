@@ -30,7 +30,9 @@ import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.LinearGradient;
 import android.graphics.Rect;
+import android.graphics.Shader.TileMode;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
@@ -49,6 +51,7 @@ import xyz.zedler.patrick.doodle.Constants.VARIANT;
 import xyz.zedler.patrick.doodle.Constants.WALLPAPER;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.drawable.SvgDrawable;
+import xyz.zedler.patrick.doodle.drawable.SvgDrawable.SvgObject;
 import xyz.zedler.patrick.doodle.util.MigrationUtil;
 import xyz.zedler.patrick.doodle.util.PrefsUtil;
 
@@ -120,20 +123,19 @@ public class LiveWallpaperService extends WallpaperService {
   }
 
   private void loadWallpaper() {
-    int resId = -1;
     if (isNightMode()) {
       switch (wallpaper) {
         case WALLPAPER.PIXEL:
-          resId = R.raw.pixel_dark;
+          svgDrawable = new SvgDrawable(this, R.raw.pixel_dark);
           break;
         case WALLPAPER.JOHANNA:
-          resId = R.raw.johanna_dark;
+          svgDrawable = new SvgDrawable(this, R.raw.johanna_dark);
           break;
         case WALLPAPER.REIKO:
-          resId = R.raw.pixel_white;
+          svgDrawable = new SvgDrawable(this, R.raw.pixel_white);
           break;
         case WALLPAPER.ANTHONY:
-          resId = R.raw.pixel_white;
+          svgDrawable = new SvgDrawable(this, R.raw.pixel_white);
           break;
       }
     } else {
@@ -141,31 +143,45 @@ public class LiveWallpaperService extends WallpaperService {
         case WALLPAPER.PIXEL:
           switch (variant) {
             case Constants.VARIANT.BLACK:
-              resId = R.raw.pixel_black;
+              svgDrawable = new SvgDrawable(this, R.raw.pixel_black);
               break;
             case Constants.VARIANT.WHITE:
-              resId = R.raw.pixel_white;
+              svgDrawable = new SvgDrawable(this, R.raw.pixel_white);
               break;
             case Constants.VARIANT.ORANGE:
-              resId = R.raw.pixel_orange;
+              svgDrawable = new SvgDrawable(this, R.raw.pixel_orange);
               break;
           }
           break;
         case WALLPAPER.JOHANNA:
-          resId = R.raw.johanna;
+          svgDrawable = new SvgDrawable(this, R.raw.johanna);
           break;
         case WALLPAPER.REIKO:
-          resId = R.raw.reiko;
+          svgDrawable = new SvgDrawable(this, R.raw.reiko);
+          SvgObject kidneyFront = svgDrawable.findObjectById("kidney_front");
+          if (kidneyFront != null) {
+            kidneyFront.shader = new LinearGradient(
+                700, 0, 1100, 0,
+                Color.parseColor("#a0b0fb"),
+                Color.parseColor("#d8d4fe"),
+                TileMode.CLAMP
+            );
+          }
+          SvgObject kidneyBack = svgDrawable.findObjectById("kidney_back");
+          if (kidneyBack != null) {
+            kidneyBack.shader = new LinearGradient(
+                400, 0, 800, 0,
+                Color.parseColor("#a0b0fb"),
+                Color.parseColor("#d8d4fe"),
+                TileMode.CLAMP
+            );
+          }
           break;
         case WALLPAPER.ANTHONY:
-          resId = R.raw.pixel_white;
+          svgDrawable = new SvgDrawable(this, R.raw.pixel_white);
           break;
       }
     }
-    if (resId == -1) {
-      resId = R.raw.pixel_white;
-    }
-    svgDrawable = new SvgDrawable(this, resId);
   }
 
   private boolean isNightMode() {

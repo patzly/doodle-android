@@ -32,6 +32,7 @@ import android.graphics.Paint.Style;
 import android.graphics.Path;
 import android.graphics.PointF;
 import android.graphics.RectF;
+import android.graphics.Shader;
 import android.util.Base64;
 import android.util.Log;
 import android.util.Xml;
@@ -812,6 +813,7 @@ public class SvgDrawable {
 
     if ((hasFillAndStroke && applyStrokeIfBothSet) || (!hasFill && hasStroke)) {
       paint.setStyle(Style.STROKE);
+      paint.setShader(object.shader);
       paint.setARGB(
           (int) (object.strokeOpacity * 255),
           Color.red(object.stroke),
@@ -847,6 +849,7 @@ public class SvgDrawable {
       }
     } else if (hasFillAndStroke || hasFill) {
       paint.setStyle(Style.FILL);
+      paint.setShader(object.shader);
       paint.setARGB(
           (int) (object.fillOpacity * 255),
           Color.red(object.fill),
@@ -879,7 +882,7 @@ public class SvgDrawable {
     }
   }
 
-  private static class SvgObject {
+  public static class SvgObject {
     public final static String TYPE_GROUP = "g";
     public final static String TYPE_PATH = "path";
     public final static String TYPE_RECT = "rect";
@@ -913,6 +916,7 @@ public class SvgDrawable {
     public float fillOpacity, strokeOpacity;
     public String strokeLineCap, strokeLineJoin;
     public float strokeWidth;
+    public Shader shader;
 
     // TRANSFORMATION
     public float rotation, rotationX, rotationY;

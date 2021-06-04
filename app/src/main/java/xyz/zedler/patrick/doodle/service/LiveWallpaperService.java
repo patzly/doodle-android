@@ -132,7 +132,8 @@ public class LiveWallpaperService extends WallpaperService {
           svgDrawable = new SvgDrawable(this, R.raw.johanna_dark);
           break;
         case WALLPAPER.REIKO:
-          svgDrawable = new SvgDrawable(this, R.raw.pixel_white);
+          svgDrawable = new SvgDrawable(this, R.raw.reiko_dark);
+          setGradientReiko();
           break;
         case WALLPAPER.ANTHONY:
           svgDrawable = new SvgDrawable(this, R.raw.pixel_white);
@@ -158,29 +159,29 @@ public class LiveWallpaperService extends WallpaperService {
           break;
         case WALLPAPER.REIKO:
           svgDrawable = new SvgDrawable(this, R.raw.reiko);
-          SvgObject kidneyFront = svgDrawable.findObjectById("kidney_front");
-          if (kidneyFront != null) {
-            kidneyFront.shader = new LinearGradient(
-                700, 0, 1100, 0,
-                Color.parseColor("#a0b0fb"),
-                Color.parseColor("#d8d4fe"),
-                TileMode.CLAMP
-            );
-          }
-          SvgObject kidneyBack = svgDrawable.findObjectById("kidney_back");
-          if (kidneyBack != null) {
-            kidneyBack.shader = new LinearGradient(
-                400, 0, 800, 0,
-                Color.parseColor("#a0b0fb"),
-                Color.parseColor("#d8d4fe"),
-                TileMode.CLAMP
-            );
-          }
+          setGradientReiko();
           break;
         case WALLPAPER.ANTHONY:
           svgDrawable = new SvgDrawable(this, R.raw.pixel_white);
           break;
       }
+    }
+  }
+
+  private void setGradientReiko() {
+    int colorStart = Color.parseColor("#a0b0fb");
+    int colorEnd = Color.parseColor("#d8d4fe");
+    SvgObject kidneyFront = svgDrawable.findObjectById("kidney_front");
+    if (kidneyFront != null) {
+      kidneyFront.shader = new LinearGradient(
+          700, 0, 1100, 0, colorStart, colorEnd, TileMode.CLAMP
+      );
+    }
+    SvgObject kidneyBack = svgDrawable.findObjectById("kidney_back");
+    if (kidneyBack != null) {
+      kidneyBack.shader = new LinearGradient(
+          400, 0, 800, 0, colorStart, colorEnd, TileMode.CLAMP
+      );
     }
   }
 

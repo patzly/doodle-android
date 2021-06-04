@@ -5,13 +5,11 @@ Advantages over the original:
 - No permanent animations or gyroscope sensor requests
 - Support for Android 11 zoom effect
 - Optional zoom effect when unlocking the device
-- Suitable for less powerful devices
-- Power-efficient animations
-- Auto dark mode based on the current theme of your device
-- Better text contrast (switches to dark text in light themes instead of using white text with shadow)
+- Suitable for less powerful devices with power-efficient animations
+- Better text contrast (dark text for light themes instead of white text with shadow)
 - Also suitable for larger devices like tablets
 - Various customization and color options
-- Tiny installation size (~4.5MB)
+- Tiny installation size
 
 How to set as background:
 - Tap SET in the top right corner, it should appear a preview

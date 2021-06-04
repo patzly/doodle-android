@@ -136,7 +136,7 @@ public class LiveWallpaperService extends WallpaperService {
           setGradientReiko();
           break;
         case WALLPAPER.ANTHONY:
-          svgDrawable = new SvgDrawable(this, R.raw.pixel_white);
+          svgDrawable = new SvgDrawable(this, R.raw.anthony_dark);
           break;
       }
     } else {
@@ -162,7 +162,7 @@ public class LiveWallpaperService extends WallpaperService {
           setGradientReiko();
           break;
         case WALLPAPER.ANTHONY:
-          svgDrawable = new SvgDrawable(this, R.raw.pixel_white);
+          svgDrawable = new SvgDrawable(this, R.raw.anthony);
           break;
       }
     }

@@ -248,21 +248,21 @@
             android:id="@+id/card_black"
             style="@style/Widget.Doodle.Card.Selection"
             android:layout_marginEnd="6dp"
-            app:cardBackgroundColor="@color/wp_bg_doodle_black" />
+            app:cardBackgroundColor="#232323" />
 
           <com.google.android.material.card.MaterialCardView
             android:id="@+id/card_white"
             style="@style/Widget.Doodle.Card.Selection"
             android:layout_marginStart="6dp"
             android:layout_marginEnd="6dp"
-            app:cardBackgroundColor="@color/wp_bg_doodle_white" />
+            app:cardBackgroundColor="#e0dcd3" />
 
           <com.google.android.material.card.MaterialCardView
             android:id="@+id/card_orange"
             style="@style/Widget.Doodle.Card.Selection"
             android:layout_marginStart="6dp"
             android:layout_marginEnd="6dp"
-            app:cardBackgroundColor="@color/wp_bg_doodle_orange" />
+            app:cardBackgroundColor="#f98a6b" />
 
         </LinearLayout>
 

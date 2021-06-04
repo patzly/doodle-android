@@ -76,17 +76,4 @@
 
   <color name="icon">@color/grey800</color>
 
-  <!-- WALLPAPER -->
-
-  <color name="wp_bg_doodle_black">#232323</color>
-  <color name="wp_bg_doodle_white">#e0dcd3</color>
-  <color name="wp_bg_doodle_orange">#f98a6b</color>
-  <color name="wp_bg_doodle_night">#272628</color>
-
-  <color name="wp_bg_neon">#cbcbef</color>
-  <color name="wp_bg_neon_night">#0e032d</color>
-
-  <color name="wp_bg_geometric">#b9c1c7</color>
-  <color name="wp_bg_geometric_night">#212121</color>
-
 </resources>

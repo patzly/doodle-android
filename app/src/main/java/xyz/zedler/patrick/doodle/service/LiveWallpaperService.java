@@ -31,10 +31,8 @@ import android.content.res.Configuration;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.LinearGradient;
-import android.graphics.Rect;
 import android.graphics.Shader.TileMode;
 import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
@@ -436,72 +434,6 @@ public class LiveWallpaperService extends WallpaperService {
           surfaceHolder.unlockCanvasAndPost(canvas);
         }
       }
-    }
-
-    private void drawShape(Drawable drawable, double x, double y, double z, boolean shouldZoom) {
-      if (drawable == null) {
-        return;
-      }
-
-      float intensity = shouldZoom ? zoomIntensity / 10f : 0;
-
-      double finalZoomLauncher = isZoomLauncherEnabled ? zoomLauncher * z * intensity : 0;
-      double finalZoomUnlock = isZoomUnlockEnabled ? zoomUnlock * z * intensity : 0;
-
-      double scale = /*this.scale*/1 - finalZoomLauncher - finalZoomUnlock;
-      int width = (int) (scale * drawable.getIntrinsicWidth());
-      int height = (int) (scale * drawable.getIntrinsicHeight());
-
-      int xPos, yPos, offset;
-      Rect frame = getSurfaceHolder().getSurfaceFrame();
-      offset = (int) (/*xOffset*/0 * z * (parallax * 100));
-      xPos = ((int) (x * frame.width())) - offset;
-      yPos = (int) (y * frame.height());
-
-      // zoom out moves shapes to the center
-      int centerX = frame.centerX();
-      int centerY = frame.centerY();
-      if (xPos < centerX) {
-        int dist = centerX - xPos;
-        if (isZoomLauncherEnabled) {
-          xPos += dist * z * zoomLauncher * intensity;
-        }
-        if (isZoomUnlockEnabled) {
-          xPos += dist * z * zoomUnlock * intensity;
-        }
-      } else {
-        int dist = xPos - centerX;
-        if (isZoomLauncherEnabled) {
-          xPos -= dist * z * zoomLauncher * intensity;
-        }
-        if (isZoomUnlockEnabled) {
-          xPos -= dist * z * zoomUnlock * intensity;
-        }
-      }
-      if (yPos < centerY) {
-        int dist = centerY - yPos;
-        if (isZoomLauncherEnabled) {
-          yPos += dist * z * zoomLauncher * intensity;
-        }
-        if (isZoomUnlockEnabled) {
-          yPos += dist * z * zoomUnlock * intensity;
-        }
-      } else {
-        int dist = yPos - centerY;
-        if (isZoomLauncherEnabled) {
-          yPos -= dist * z * zoomLauncher * intensity;
-        }
-        if (isZoomUnlockEnabled) {
-          yPos -= dist * z * zoomUnlock * intensity;
-        }
-      }
-
-      drawable.setBounds(
-          xPos - width / 2,
-          yPos - height / 2,
-          xPos + width / 2,
-          yPos + height / 2
-      );
     }
 
     private void animateZoom(float valueTo) {

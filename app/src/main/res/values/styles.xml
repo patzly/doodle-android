@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ This file is part of Doodle Android.
   ~
   ~ Doodle Android is free software: you can redistribute it and/or modify
@@ -107,96 +106,96 @@
 
   <!-- LIST -->
 
-    <style name="Widget.Doodle.LinearLayout.ListItem" parent="">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:paddingStart">16dp</item>
-        <item name="android:paddingEnd">16dp</item>
-        <item name="android:paddingTop">16dp</item>
-        <item name="android:paddingBottom">16dp</item>
-        <item name="android:gravity">center_vertical</item>
-        <item name="android:orientation">horizontal</item>
-    </style>
+  <style name="Widget.Doodle.LinearLayout.ListItem" parent="">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:paddingStart">16dp</item>
+    <item name="android:paddingEnd">16dp</item>
+    <item name="android:paddingTop">16dp</item>
+    <item name="android:paddingBottom">16dp</item>
+    <item name="android:gravity">center_vertical</item>
+    <item name="android:orientation">horizontal</item>
+  </style>
 
-    <style
-        name="Widget.Doodle.LinearLayout.ListItem.Clickable"
-        parent="Widget.Doodle.LinearLayout.ListItem">
-        <item name="android:clickable">true</item>
-        <item name="android:background">@drawable/ripple_bg_list_item</item>
-    </style>
+  <style
+    name="Widget.Doodle.LinearLayout.ListItem.Clickable"
+    parent="Widget.Doodle.LinearLayout.ListItem">
+    <item name="android:clickable">true</item>
+    <item name="android:background">@drawable/ripple_bg_list_item</item>
+  </style>
 
-    <style
-        name="Widget.Doodle.LinearLayout.ListItem.SingleLine"
-        parent="Widget.Doodle.LinearLayout.ListItem">
-        <item name="android:minHeight">48dp</item>
-    </style>
+  <style
+    name="Widget.Doodle.LinearLayout.ListItem.SingleLine"
+    parent="Widget.Doodle.LinearLayout.ListItem">
+    <item name="android:minHeight">48dp</item>
+  </style>
 
-    <style
-        name="Widget.Doodle.LinearLayout.ListItem.SingleLine.Icon"
-        parent="Widget.Doodle.LinearLayout.ListItem.SingleLine">
-        <item name="android:minHeight">56dp</item>
-    </style>
+  <style
+    name="Widget.Doodle.LinearLayout.ListItem.SingleLine.Icon"
+    parent="Widget.Doodle.LinearLayout.ListItem.SingleLine">
+    <item name="android:minHeight">56dp</item>
+  </style>
 
-    <style
-        name="Widget.Doodle.LinearLayout.ListItem.SingleLine.Clickable"
-        parent="Widget.Doodle.LinearLayout.ListItem.SingleLine">
-        <item name="android:clickable">true</item>
-        <item name="android:background">@drawable/ripple_bg_list_item</item>
-    </style>
+  <style
+    name="Widget.Doodle.LinearLayout.ListItem.SingleLine.Clickable"
+    parent="Widget.Doodle.LinearLayout.ListItem.SingleLine">
+    <item name="android:clickable">true</item>
+    <item name="android:background">@drawable/ripple_bg_list_item</item>
+  </style>
 
-    <style
-        name="Widget.Doodle.LinearLayout.ListItem.SingleLine.Icon.Clickable"
-        parent="Widget.Doodle.LinearLayout.ListItem.SingleLine.Icon">
-        <item name="android:clickable">true</item>
-        <item name="android:background">@drawable/ripple_bg_list_item</item>
-    </style>
+  <style
+    name="Widget.Doodle.LinearLayout.ListItem.SingleLine.Icon.Clickable"
+    parent="Widget.Doodle.LinearLayout.ListItem.SingleLine.Icon">
+    <item name="android:clickable">true</item>
+    <item name="android:background">@drawable/ripple_bg_list_item</item>
+  </style>
 
-    <style
-        name="Widget.Doodle.LinearLayout.ListItem.TwoLine"
-        parent="Widget.Doodle.LinearLayout.ListItem">
-        <item name="android:minHeight">64dp</item>
-    </style>
+  <style
+    name="Widget.Doodle.LinearLayout.ListItem.TwoLine"
+    parent="Widget.Doodle.LinearLayout.ListItem">
+    <item name="android:minHeight">64dp</item>
+  </style>
 
-    <style
-        name="Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon"
-        parent="Widget.Doodle.LinearLayout.ListItem.TwoLine">
-        <item name="android:minHeight">72dp</item>
-    </style>
+  <style
+    name="Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon"
+    parent="Widget.Doodle.LinearLayout.ListItem.TwoLine">
+    <item name="android:minHeight">72dp</item>
+  </style>
 
-    <style
-        name="Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable"
-        parent="Widget.Doodle.LinearLayout.ListItem.TwoLine">
-        <item name="android:clickable">true</item>
-        <item name="android:background">@drawable/ripple_bg_list_item</item>
-    </style>
+  <style
+    name="Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable"
+    parent="Widget.Doodle.LinearLayout.ListItem.TwoLine">
+    <item name="android:clickable">true</item>
+    <item name="android:background">@drawable/ripple_bg_list_item</item>
+  </style>
 
-    <style
-        name="Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon.Clickable"
-        parent="Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon">
-        <item name="android:clickable">true</item>
-        <item name="android:background">@drawable/ripple_bg_list_item</item>
-    </style>
+  <style
+    name="Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon.Clickable"
+    parent="Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon">
+    <item name="android:clickable">true</item>
+    <item name="android:background">@drawable/ripple_bg_list_item</item>
+  </style>
 
-    <style name="Widget.Doodle.LinearLayout.ListItem.TextBox" parent="">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:orientation">vertical</item>
-    </style>
+  <style name="Widget.Doodle.LinearLayout.ListItem.TextBox" parent="">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:orientation">vertical</item>
+  </style>
 
-    <style
-        name="Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch"
-        parent="Widget.Doodle.LinearLayout.ListItem.TextBox">
-        <item name="android:layout_width">0dp</item>
-        <item name="android:layout_weight">1</item>
-    </style>
+  <style
+    name="Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch"
+    parent="Widget.Doodle.LinearLayout.ListItem.TextBox">
+    <item name="android:layout_width">0dp</item>
+    <item name="android:layout_weight">1</item>
+  </style>
 
-    <style name="Widget.Doodle.ImageView.ListItem.Icon" parent="">
-        <item name="android:layout_width">24dp</item>
-        <item name="android:layout_height">24dp</item>
-        <item name="android:layout_gravity">start|center_vertical</item>
-        <item name="android:layout_marginEnd">32dp</item>
-        <item name="android:importantForAccessibility">no</item>
-    </style>
+  <style name="Widget.Doodle.ImageView.ListItem.Icon" parent="">
+    <item name="android:layout_width">24dp</item>
+    <item name="android:layout_height">24dp</item>
+    <item name="android:layout_gravity">start|center_vertical</item>
+    <item name="android:layout_marginEnd">32dp</item>
+    <item name="android:importantForAccessibility">no</item>
+  </style>
 
   <!-- TEXT -->
 

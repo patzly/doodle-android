@@ -54,7 +54,7 @@ import xyz.zedler.patrick.doodle.util.UnitUtil;
 public class SvgDrawable {
 
   private final static String TAG = SvgDrawable.class.getSimpleName();
-  private final static boolean DEBUG_PATHS = false;
+  private final static boolean DEBUG = false;
 
   private final static boolean ENABLE_IMAGES = true;
 
@@ -219,13 +219,10 @@ public class SvgDrawable {
   private void drawObject(Canvas canvas, SvgObject object, SvgObject parentGroup) {
     if (!object.isInGroup && object.rotation != 0) {
       canvas.save();
-      if (object.type.equals(SvgObject.TYPE_GROUP)) {
-        canvas.rotate(object.rotation);
-      } else {
-        canvas.rotate(
-            object.rotation, object.cx * canvas.getWidth(), object.cy * canvas.getHeight()
-        );
-      }
+      // Even for groups this rotation is required
+      canvas.rotate(
+          object.rotation, object.cx * canvas.getWidth(), object.cy * canvas.getHeight()
+      );
     }
     switch (object.type) {
       case SvgObject.TYPE_GROUP:
@@ -280,6 +277,31 @@ public class SvgDrawable {
         readObject(parser, object);
       }
 
+      // GROUP TRANSFORMATION (rotation)
+      if (transformation != null && !transformation.isEmpty()) {
+        String[] transform = transformation.split("[ ](?=[^)]*?(?:\\(|$))");
+        for (String action : transform) {
+          String value = action.substring(action.indexOf("(") + 1, action.indexOf(")"));
+          if (action.contains("rotate")) {
+            String[] rotation = value.split("[\\n\\r\\s]+");
+            object.rotation = Float.parseFloat(rotation[0]);
+            if (rotation.length == 3) {
+              object.rotationX = Float.parseFloat(rotation[1]);
+              object.rotationY = Float.parseFloat(rotation[2]);
+            }
+          }
+        }
+      }
+
+      // Compensate rotation of the child center positions
+      for (SvgObject child : object.children) {
+        PointF center = getRotatedPoint(
+            child.cx, child.cy, object.rotationX, object.rotationY, object.rotation
+        );
+        child.cx = center.x;
+        child.cy = center.y;
+      }
+
       // Calculate group center
       RectF centersBounds = new RectF();
       for (int i = 0; i < object.children.size(); i++) {
@@ -293,13 +315,18 @@ public class SvgDrawable {
       object.cx = centersBounds.centerX();
       object.cy = centersBounds.centerY();
 
-      parseTransformation(transformation, object);
-
       // Pass the distance from group center to all children
       for (SvgObject child : object.children) {
         child.xDistGroupCenter = (child.cx - object.cx) * pixelUnit;
         child.yDistGroupCenter = (child.cy - object.cy) * pixelUnit;
+        // Rotate the child around the group center with the negative group rotation angle
+        PointF finalDistance = getRotatedPoint(
+            child.xDistGroupCenter, child.yDistGroupCenter, 0, 0, -object.rotation
+        );
+        child.xDistGroupCenter = finalDistance.x;
+        child.yDistGroupCenter = finalDistance.y;
       }
+
       // Make group center relative
       object.cx /= svgWidth;
       object.cy /= svgHeight;
@@ -311,6 +338,12 @@ public class SvgDrawable {
 
   private void drawGroup(Canvas canvas, SvgObject object) {
     pointF = getFinalCenter(canvas, object, null);
+    if (DEBUG) { // draw final group center
+      float strokeWidth = paintDebug.getStrokeWidth();
+      paintDebug.setStrokeWidth(strokeWidth * 2);
+      canvas.drawPoint(pointF.x, pointF.y, getDebugPaint(Color.GREEN));
+      paintDebug.setStrokeWidth(strokeWidth);
+    }
     object.cxFinal = pointF.x;
     object.cyFinal = pointF.y;
     object.childScale = getFinalScale(object, null);
@@ -390,7 +423,7 @@ public class SvgDrawable {
     float scale = getFinalScale(object, parentGroup);
     pointF = getFinalCenter(canvas, object, parentGroup);
 
-    if (DEBUG_PATHS) { // draw final object center
+    if (DEBUG) { // draw final object center
       canvas.drawPoint(pointF.x, pointF.y, getDebugPaint(Color.RED));
     }
 
@@ -409,7 +442,7 @@ public class SvgDrawable {
       canvas.translate(dx, dy);
     }
 
-    if (DEBUG_PATHS) { // draw scaling pivot point
+    if (DEBUG) { // draw scaling pivot point
       canvas.drawPoint(px, py, getDebugPaint(Color.BLUE));
     }
 
@@ -448,10 +481,10 @@ public class SvgDrawable {
 
       object.width = parseFloat(parser.getAttributeValue(null, "width"));
       object.height = parseFloat(parser.getAttributeValue(null, "height"));
-      object.x = parseFloat(parser.getAttributeValue(null, "x"));
-      object.y = parseFloat(parser.getAttributeValue(null, "y"));
-      object.cx = object.x + object.width / 2;
-      object.cy = object.y + object.height / 2;
+      float x = parseFloat(parser.getAttributeValue(null, "x"));
+      float y = parseFloat(parser.getAttributeValue(null, "y"));
+      object.cx = x + object.width / 2;
+      object.cy = y + object.height / 2;
       object.rx = parseFloat(parser.getAttributeValue(null, "rx"));
       object.ry = parseFloat(parser.getAttributeValue(null, "ry"));
 
@@ -509,6 +542,10 @@ public class SvgDrawable {
         float ry = object.ry != 0 ? object.ry : object.rx;
         canvas.drawRoundRect(rectF, rx, ry, paint);
       }
+    }
+
+    if (DEBUG) { // draw final object center
+      canvas.drawPoint(pointF.x, pointF.y, getDebugPaint(Color.RED));
     }
   }
 
@@ -649,10 +686,10 @@ public class SvgDrawable {
 
       object.width = parseFloat(parser.getAttributeValue(null, "width"));
       object.height = parseFloat(parser.getAttributeValue(null, "height"));
-      object.x = parseFloat(parser.getAttributeValue(null, "x"));
-      object.y = parseFloat(parser.getAttributeValue(null, "y"));
-      object.cx = object.x + object.width / 2;
-      object.cy = object.y + object.height / 2;
+      float x = parseFloat(parser.getAttributeValue(null, "x"));
+      float y = parseFloat(parser.getAttributeValue(null, "y"));
+      object.cx = x + object.width / 2;
+      object.cy = y + object.height / 2;
 
       readStyle(parser, object);
       parseTransformation(parser.getAttributeValue(null, "transform"), object);
@@ -734,6 +771,17 @@ public class SvgDrawable {
         );
         object.cx = pointF.x;
         object.cy = pointF.y;
+
+        /*if (object.type.equals(SvgObject.TYPE_GROUP)) {
+          // Compensate rotation in the child center positions
+          for (SvgObject child : children) {
+            PointF center = getRotatedPoint(
+                child.cx, child.cy, object.rotationX, object.rotationY, -object.rotation
+            );
+            child.cx = center.x;
+            child.cy = center.y;
+          }
+        }*/
       } else if (action.contains("scale")) {
         String[] scale = value.split("[\\n\\r\\s]+");
         if (scale.length > 1) {
@@ -819,8 +867,8 @@ public class SvgDrawable {
       );
     }
 
-    if (DEBUG_PATHS) { // draw semi-translucent for point/pivot debugging
-      paint.setAlpha(100);
+    if (DEBUG) { // draw semi-translucent for point/pivot debugging
+      paint.setAlpha(150);
     }
 
     return hasFillAndStroke;
@@ -887,7 +935,6 @@ public class SvgDrawable {
 
     // RECT/IMAGE
     public float width, height;
-    public float x, y;
     public float rx, ry;
     public Bitmap bitmap;
 

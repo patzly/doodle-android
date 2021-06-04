@@ -57,41 +57,40 @@ public class LiveWallpaperService extends WallpaperService {
 
   private final static String TAG = LiveWallpaperService.class.getSimpleName();
 
+  // All things where we need a context or the service's context are done in this Service class
+  // All other things should be done in the inner Engine class
+
   private SharedPreferences sharedPrefs;
+  // Wallpaper
+  private SvgDrawable svgDrawable;
   private String wallpaper, variant;
-  private boolean nightMode, followSystem, isNight;
-  private int parallax;
-  private float fps;
-  private int zoomIntensity;
-  private boolean isZoomLauncherEnabled, isZoomUnlockEnabled;
+  private boolean nightMode, followSystem;
+  // User presence
   private String presence;
   private boolean isReceiverRegistered = false;
   private UserPresenceListener userPresenceListener;
-  private SvgDrawable svgDrawable;
-
-  private final BroadcastReceiver presenceReceiver = new BroadcastReceiver() {
-    public void onReceive(Context context, Intent intent) {
-      switch (intent.getAction()) {
-        case Intent.ACTION_USER_PRESENT:
-          setUserPresence(USER_PRESENCE.UNLOCKED);
-          break;
-        case Intent.ACTION_SCREEN_OFF:
-          setUserPresence(USER_PRESENCE.OFF);
-          break;
-        case Intent.ACTION_SCREEN_ON:
-          setUserPresence(isKeyguardLocked() ? USER_PRESENCE.LOCKED : USER_PRESENCE.UNLOCKED);
-          break;
-      }
-    }
-  };
+  private BroadcastReceiver presenceReceiver;
 
   @Override
   public Engine onCreateEngine() {
-    sharedPrefs = new PrefsUtil(this).getSharedPrefs();
+    sharedPrefs = new PrefsUtil(LiveWallpaperService.this).getSharedPrefs();
     new MigrationUtil(sharedPrefs).checkForMigrations();
 
-    fps = getFrameRate();
-
+    presenceReceiver = new BroadcastReceiver() {
+      public void onReceive(Context context, Intent intent) {
+        switch (intent.getAction()) {
+          case Intent.ACTION_USER_PRESENT:
+            setUserPresence(USER_PRESENCE.UNLOCKED);
+            break;
+          case Intent.ACTION_SCREEN_OFF:
+            setUserPresence(USER_PRESENCE.OFF);
+            break;
+          case Intent.ACTION_SCREEN_ON:
+            setUserPresence(isKeyguardLocked() ? USER_PRESENCE.LOCKED : USER_PRESENCE.UNLOCKED);
+            break;
+        }
+      }
+    };
     registerReceiver();
     setUserPresence(isKeyguardLocked() ? USER_PRESENCE.LOCKED : USER_PRESENCE.UNLOCKED);
 
@@ -195,12 +194,7 @@ public class LiveWallpaperService extends WallpaperService {
     return ((KeyguardManager) getSystemService(KEYGUARD_SERVICE)).isKeyguardLocked();
   }
 
-  private float getFrameRate() {
-    WindowManager windowManager = ((WindowManager) getSystemService(Context.WINDOW_SERVICE));
-    return windowManager != null ? windowManager.getDefaultDisplay().getRefreshRate() : 60;
-  }
-
-  public void setUserPresence(final String presence) {
+  private void setUserPresence(final String presence) {
     if (presence.equals(this.presence)) {
       return;
     }
@@ -210,7 +204,7 @@ public class LiveWallpaperService extends WallpaperService {
     }
   }
 
-  public interface UserPresenceListener {
+  private interface UserPresenceListener {
 
     void onPresenceChange(String presence);
   }
@@ -218,21 +212,31 @@ public class LiveWallpaperService extends WallpaperService {
   // ENGINE ------------------------------------------------------------
 
   class UserAwareEngine extends Engine implements UserPresenceListener {
-    private float zoomLauncher = 0;
-    private float zoomUnlock = 0;
+    private int zoomIntensity;
+    private boolean isZoomLauncherEnabled, isZoomUnlockEnabled;
+    private float zoomLauncher;
+    private float zoomUnlock;
+    private float scale;
+    private int parallax;
     private long lastDraw;
     private boolean isVisible;
-    private ValueAnimator valueAnimator;
+    private boolean isNight;
+    private float fps;
+    private ValueAnimator zoomAnimator;
 
     @Override
     public void onCreate(SurfaceHolder surfaceHolder) {
       super.onCreate(surfaceHolder);
+
+      fps = getFrameRate();
 
       userPresenceListener = this;
 
       loadSettings();
       loadTheme();
 
+      zoomLauncher = 0;
+      // This starts the zoom effect already in wallpaper preview
       zoomUnlock = 1;
       animateZoom(0);
 
@@ -241,10 +245,10 @@ public class LiveWallpaperService extends WallpaperService {
 
     @Override
     public void onDestroy() {
-      if (valueAnimator != null) {
-        valueAnimator.cancel();
-        valueAnimator.removeAllUpdateListeners();
-        valueAnimator = null;
+      if (zoomAnimator != null) {
+        zoomAnimator.cancel();
+        zoomAnimator.removeAllUpdateListeners();
+        zoomAnimator = null;
       }
     }
 
@@ -314,14 +318,15 @@ public class LiveWallpaperService extends WallpaperService {
 
     @Override
     public void onSurfaceRedrawNeeded(SurfaceHolder holder) {
-      // Not necessarily needed
+      // Not necessarily needed but recommended
       drawFrame(true);
     }
 
     private void loadSettings() {
       parallax = sharedPrefs.getInt(PREF.PARALLAX, DEF.PARALLAX);
+      scale = sharedPrefs.getFloat(PREF.SCALE, DEF.SCALE);
       if (svgDrawable != null) {
-        svgDrawable.setScale(sharedPrefs.getFloat(PREF.SCALE, DEF.SCALE));
+        svgDrawable.setScale(scale);
       }
       zoomIntensity = sharedPrefs.getInt(PREF.ZOOM, DEF.ZOOM);
       isZoomLauncherEnabled = sharedPrefs.getBoolean(PREF.ZOOM_LAUNCHER, DEF.ZOOM_LAUNCHER);
@@ -342,7 +347,7 @@ public class LiveWallpaperService extends WallpaperService {
       isNight = isNightMode();
 
       loadWallpaper();
-      svgDrawable.setScale(sharedPrefs.getFloat(PREF.SCALE, DEF.SCALE));
+      svgDrawable.setScale(scale);
 
       colorsHaveChanged();
     }
@@ -355,10 +360,8 @@ public class LiveWallpaperService extends WallpaperService {
       }
 
       boolean themeApplied = sharedPrefs.getBoolean(PREF.THEME_APPLIED, true);
-      if (!themeApplied) {
+      if (!themeApplied || isNight != isNightMode()) {
         sharedPrefs.edit().putBoolean(PREF.THEME_APPLIED, true).apply();
-        loadTheme();
-      } else if (isNight != isNightMode()) {
         loadTheme();
       }
     }
@@ -437,18 +440,18 @@ public class LiveWallpaperService extends WallpaperService {
     }
 
     private void animateZoom(float valueTo) {
-      if (valueAnimator != null) {
-        valueAnimator.cancel();
-        valueAnimator.removeAllUpdateListeners();
-        valueAnimator = null;
+      if (zoomAnimator != null) {
+        zoomAnimator.cancel();
+        zoomAnimator.removeAllUpdateListeners();
+        zoomAnimator = null;
       }
-      valueAnimator = ValueAnimator.ofFloat(zoomUnlock, valueTo);
-      valueAnimator.addUpdateListener(animation -> {
+      zoomAnimator = ValueAnimator.ofFloat(zoomUnlock, valueTo);
+      zoomAnimator.addUpdateListener(animation -> {
         zoomUnlock = (float) animation.getAnimatedValue();
         drawFrame(true);
       });
-      valueAnimator.setInterpolator(new FastOutSlowInInterpolator());
-      valueAnimator.setDuration(1250).start();
+      zoomAnimator.setInterpolator(new FastOutSlowInInterpolator());
+      zoomAnimator.setDuration(1250).start();
     }
 
     private void colorsHaveChanged() {
@@ -458,5 +461,10 @@ public class LiveWallpaperService extends WallpaperService {
         notifyColorsChanged();
       }
     }
+  }
+
+  private float getFrameRate() {
+    WindowManager windowManager = ((WindowManager) getSystemService(Context.WINDOW_SERVICE));
+    return windowManager != null ? windowManager.getDefaultDisplay().getRefreshRate() : 60;
   }
 }

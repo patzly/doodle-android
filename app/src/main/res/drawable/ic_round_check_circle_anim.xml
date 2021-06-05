@@ -1,49 +1,27 @@
-<!--
-  ~ This file is part of Doodle Android.
-  ~
-  ~ Doodle Android is free software: you can redistribute it and/or modify
-  ~ it under the terms of the GNU General Public License as published by
-  ~ the Free Software Foundation, either version 3 of the License, or
-  ~ (at your option) any later version.
-  ~
-  ~ Doodle Android is distributed in the hope that it will be useful,
-  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
-  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-  ~ GNU General Public License for more details.
-  ~
-  ~ You should have received a copy of the GNU General Public License
-  ~ along with Doodle Android. If not, see <http://www.gnu.org/licenses/>.
-  ~
-  ~ Copyright (c) 2020-2021 by Patrick Zedler
-  -->
-
 <animated-vector
   xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:aapt="http://schemas.android.com/aapt">
   <aapt:attr name="android:drawable">
     <vector
       android:name="vector"
-      android:width="24dp"
-      android:height="24dp"
-      android:viewportWidth="24"
-      android:viewportHeight="24">
+      android:width="42dp"
+      android:height="42dp"
+      android:viewportWidth="42"
+      android:viewportHeight="42">
       <path
         android:name="circle"
-        android:pathData="M 12 2 C 6.48 2 2 6.48 2 12 C 2 17.52 6.48 22 12 22 C 17.52 22 22 17.52 22 12 C 22 6.48 17.52 2 12 2 Z"
-        android:fillColor="#fff"
-        android:strokeColor="#bdc1c6"
-        android:strokeWidth="2" />
+        android:pathData="M 21 0 C 15.433 0 10.088 2.214 6.151 6.151 C 2.214 10.088 0 15.433 0 21 C 0 26.567 2.214 31.912 6.151 35.849 C 10.088 39.786 15.433 42 21 42 C 26.567 42 31.912 39.786 35.849 35.849 C 39.786 31.912 42 26.567 42 21 C 42 15.433 39.786 10.088 35.849 6.151 C 31.912 2.214 26.567 0 21 0 Z"
+        android:fillColor="#000"
+        android:fillAlpha="0.4"
+        android:strokeWidth="1" />
       <group
         android:name="group"
-        android:pivotX="9"
-        android:pivotY="17">
+        android:pivotX="18"
+        android:pivotY="26">
         <path
           android:name="tick"
-          android:pathData="M 6.364 11.963 L 10 15.589 L 17.615 7.97"
-          android:strokeColor="@color/secondary"
-          android:strokeWidth="2"
-          android:strokeLineCap="round"
-          android:strokeLineJoin="round" />
+          android:pathData="M 17.8 24.905 L 14.3 21.405 C 13.91 21.015 13.29 21.015 12.9 21.405 C 12.51 21.795 12.51 22.415 12.9 22.805 L 17.09 26.995 C 17.48 27.385 18.11 27.385 18.5 26.995 L 29.1 16.405 C 29.49 16.015 29.49 15.395 29.1 15.005 C 28.71 14.615 28.09 14.615 27.7 15.005 Z"
+          android:fillColor="#fff" />
       </group>
     </vector>
   </aapt:attr>
@@ -51,33 +29,10 @@
     <aapt:attr name="android:animation">
       <set>
         <objectAnimator
-          android:propertyName="translateY"
-          android:duration="150"
-          android:valueFrom="0"
-          android:valueTo="2"
-          android:valueType="floatType"
-          android:interpolator="@android:interpolator/fast_out_slow_in" />
-        <objectAnimator
           android:propertyName="rotation"
           android:duration="150"
           android:valueFrom="0"
           android:valueTo="10"
-          android:valueType="floatType"
-          android:interpolator="@android:interpolator/fast_out_slow_in" />
-        <objectAnimator
-          android:propertyName="translateY"
-          android:startOffset="150"
-          android:duration="75"
-          android:valueFrom="2"
-          android:valueTo="-1"
-          android:valueType="floatType"
-          android:interpolator="@android:interpolator/fast_out_slow_in" />
-        <objectAnimator
-          android:propertyName="translateY"
-          android:startOffset="225"
-          android:duration="75"
-          android:valueFrom="-1"
-          android:valueTo="0"
           android:valueType="floatType"
           android:interpolator="@android:interpolator/fast_out_slow_in" />
         <objectAnimator
@@ -93,6 +48,29 @@
           android:startOffset="225"
           android:duration="75"
           android:valueFrom="-7"
+          android:valueTo="0"
+          android:valueType="floatType"
+          android:interpolator="@android:interpolator/fast_out_slow_in" />
+        <objectAnimator
+          android:propertyName="translateY"
+          android:duration="150"
+          android:valueFrom="0"
+          android:valueTo="3"
+          android:valueType="floatType"
+          android:interpolator="@android:interpolator/fast_out_slow_in" />
+        <objectAnimator
+          android:propertyName="translateY"
+          android:startOffset="150"
+          android:duration="75"
+          android:valueFrom="3"
+          android:valueTo="-2"
+          android:valueType="floatType"
+          android:interpolator="@android:interpolator/fast_out_slow_in" />
+        <objectAnimator
+          android:propertyName="translateY"
+          android:startOffset="225"
+          android:duration="75"
+          android:valueFrom="-2"
           android:valueTo="0"
           android:valueType="floatType"
           android:interpolator="@android:interpolator/fast_out_slow_in" />

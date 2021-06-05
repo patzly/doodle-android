@@ -249,7 +249,7 @@
             android:id="@+id/card_black"
             style="@style/Widget.Doodle.Card.Selection"
             android:layout_marginEnd="6dp"
-            app:cardBackgroundColor="#232323" />
+            app:cardBackgroundColor="@color/grey800" />
 
           <com.google.android.material.card.MaterialCardView
             android:id="@+id/card_white"

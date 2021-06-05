@@ -5,9 +5,13 @@
 Doodle Android is an open-source Android app that provides colorful live wallpapers with auto dark mode and an battery-efficient parallax effect.  
 The wallpapers are based on the original Doodle live wallpapers of the Google Pixel 4.
 
-## Download
+## Downloads
 
-<a href='https://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle'><img alt='Get it on Google Play' height="80" src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png'/></a><a href='https://github.com/patzly/doodle-android/releases'><img alt='Get it on GitHub' height="80" src='assets/badge_github.png'/></a>
+<a href='https://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle'><img alt='Get it on Google Play' height="80" src='assets/badge_playstore.png'/></a><a href='https://github.com/patzly/doodle-android/releases'><img alt='Get it on GitHub' height="80" src='assets/badge_github.png'/></a>
+
+## Screenshots
+
+<a href="assets/screen1.png"><img src="assets/screen1.png" width="200px"/></a><a href="assets/screen2.png"><img src="assets/screen2.png" width="200px"/></a><a href="assets/screen3.png"><img src="assets/screen3.png" width="200px"/></a>
 
 ## Features
 

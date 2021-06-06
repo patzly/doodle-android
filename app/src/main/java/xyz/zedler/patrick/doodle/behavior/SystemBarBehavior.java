@@ -29,6 +29,7 @@ import android.view.Window;
 import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat.Type;
 import androidx.core.widget.NestedScrollView;
 import com.google.android.material.appbar.AppBarLayout;
 import xyz.zedler.patrick.doodle.R;
@@ -90,7 +91,7 @@ public class SystemBarBehavior {
       ViewCompat.setOnApplyWindowInsetsListener(appBarLayout, (v, insets) -> {
         // STATUS BAR INSET
         appBarLayout.setPadding(
-            0, insets.getSystemWindowInsetTop(), 0,
+            0, insets.getInsets(Type.systemBars()).top, 0,
             appBarLayout.getPaddingBottom()
         );
         appBarLayout.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED);
@@ -104,7 +105,7 @@ public class SystemBarBehavior {
         } else if (container != null) {
           container.setPadding(
               container.getPaddingLeft(),
-              containerPaddingTop + insets.getSystemWindowInsetTop(),
+              containerPaddingTop + insets.getInsets(Type.systemBars()).top,
               container.getPaddingRight(),
               container.getPaddingBottom()
           );
@@ -117,7 +118,7 @@ public class SystemBarBehavior {
         // STATUS BAR INSET
         container.setPadding(
             container.getPaddingLeft(),
-            containerPaddingTop + insets.getSystemWindowInsetTop(),
+            containerPaddingTop + insets.getInsets(Type.systemBars()).top,
             container.getPaddingRight(),
             container.getPaddingBottom()
         );
@@ -136,7 +137,7 @@ public class SystemBarBehavior {
             container.getPaddingLeft(),
             container.getPaddingTop(),
             container.getPaddingRight(),
-            paddingBottom + insets.getSystemWindowInsetBottom()
+            paddingBottom + insets.getInsets(Type.systemBars()).bottom
         );
         return insets;
       });
@@ -151,7 +152,7 @@ public class SystemBarBehavior {
               container.getPaddingLeft(),
               container.getPaddingTop(),
               container.getPaddingRight(),
-              paddingBottom + insets.getSystemWindowInsetBottom()
+              paddingBottom + insets.getInsets(Type.systemBars()).bottom
           );
           return insets;
         });
@@ -161,7 +162,7 @@ public class SystemBarBehavior {
           root.setPadding(
               root.getPaddingLeft(),
               root.getPaddingTop(),
-              insets.getSystemWindowInsetRight(),
+              insets.getInsets(Type.systemBars()).right,
               root.getPaddingBottom()
           );
           return insets;

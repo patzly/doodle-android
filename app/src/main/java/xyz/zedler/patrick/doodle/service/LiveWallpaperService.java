@@ -38,6 +38,7 @@ import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
 import android.os.SystemClock;
 import android.service.wallpaper.WallpaperService;
+import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.WindowManager;
 import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
@@ -114,7 +115,11 @@ public class LiveWallpaperService extends WallpaperService {
 
   private void unregisterReceiver() {
     if (isReceiverRegistered) {
-      unregisterReceiver(presenceReceiver);
+      try {
+        unregisterReceiver(presenceReceiver);
+      } catch (Exception e) {
+        Log.e(TAG, "unregisterReceiver: ", e);
+      }
       isReceiverRegistered = false;
     }
   }
@@ -162,6 +167,10 @@ public class LiveWallpaperService extends WallpaperService {
           svgDrawable = new SvgDrawable(this, R.raw.anthony);
           break;
       }
+    }
+    if (svgDrawable == null) {
+      // Prevent NullPointerExceptions
+      svgDrawable = new SvgDrawable(this, R.raw.pixel_dark);
     }
   }
 
@@ -319,7 +328,7 @@ public class LiveWallpaperService extends WallpaperService {
     @Override
     public void onSurfaceRedrawNeeded(SurfaceHolder holder) {
       // Not necessarily needed but recommended
-      drawFrame(true);
+      // drawFrame(true);
     }
 
     private void loadSettings() {
@@ -332,9 +341,9 @@ public class LiveWallpaperService extends WallpaperService {
       isZoomLauncherEnabled = sharedPrefs.getBoolean(PREF.ZOOM_LAUNCHER, DEF.ZOOM_LAUNCHER);
       isZoomUnlockEnabled = sharedPrefs.getBoolean(PREF.ZOOM_UNLOCK, DEF.ZOOM_UNLOCK);
 
-      if (isZoomUnlockEnabled && !isReceiverRegistered) {
+      if (isZoomUnlockEnabled) {
         registerReceiver();
-      } else if (!isZoomUnlockEnabled && isReceiverRegistered) {
+      } else {
         unregisterReceiver();
       }
     }
@@ -456,9 +465,14 @@ public class LiveWallpaperService extends WallpaperService {
 
     private void colorsHaveChanged() {
       if (VERSION.SDK_INT >= VERSION_CODES.O_MR1) {
-        notifyColorsChanged();
-        // We have to call it again to take any effect, causes a warning...
-        notifyColorsChanged();
+        // NullPointerException on many devices!?
+        try {
+          notifyColorsChanged();
+          // We have to call it again to take any effect, causes a warning...
+          notifyColorsChanged();
+        } catch (Exception e) {
+          Log.e(TAG, "colorsHaveChanged: ", e);
+        }
       }
     }
   }

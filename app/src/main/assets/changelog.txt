@@ -1,4 +1,4 @@
-3.0.2:
+3.1.0:
 - New: switch to turn hardware acceleration off (only useful if the wallpaper crashes for you)
 - Improved: wallpaper and theme selection appearance
 - Improved: text of warnings

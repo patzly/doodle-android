@@ -1,5 +1,5 @@
 3.1.0:
-- New: switch to turn hardware acceleration off (only useful if the wallpaper crashes for you)
+- New: switch to turn off hardware acceleration (only useful if the wallpaper crashes)
 - Improved: wallpaper and theme selection appearance
 - Improved: text of warnings
 - Fixed: hopefully some crashes (if crashes still occur, please report them on GitHub)

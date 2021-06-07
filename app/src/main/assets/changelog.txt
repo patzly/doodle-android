@@ -1,6 +1,8 @@
 3.0.2:
+- New: switch to turn hardware acceleration off (only useful if the wallpaper crashes for you)
 - Improved: wallpaper and theme selection appearance
 - Improved: text of warnings
+- Fixed: hopefully some crashes (if crashes still occur, please report them on GitHub)
 
 3.0.1:
 - Improved: text and descriptions

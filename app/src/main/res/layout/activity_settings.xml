@@ -281,11 +281,11 @@
 
           <TextView
             style="@style/Widget.Doodle.TextView.ListItem.Title"
-            android:text="@string/setting_night_mode" />
+            android:text="@string/settings_night_mode" />
 
           <TextView
             style="@style/Widget.Doodle.TextView.ListItem.Description"
-            android:text="@string/setting_night_mode_description" />
+            android:text="@string/settings_night_mode_description" />
 
         </LinearLayout>
 
@@ -318,11 +318,11 @@
 
             <TextView
               style="@style/Widget.Doodle.TextView.ListItem.Title"
-              android:text="@string/setting_follow_system" />
+              android:text="@string/settings_follow_system" />
 
             <TextView
               style="@style/Widget.Doodle.TextView.ListItem.Description"
-              android:text="@string/setting_follow_system_description" />
+              android:text="@string/settings_follow_system_description" />
 
           </LinearLayout>
 
@@ -350,11 +350,11 @@
 
           <TextView
             style="@style/Widget.Doodle.TextView.ListItem.Title"
-            android:text="@string/setting_parallax" />
+            android:text="@string/settings_parallax" />
 
           <TextView
             style="@style/Widget.Doodle.TextView.ListItem.Description"
-            android:text="@string/setting_parallax_description" />
+            android:text="@string/settings_parallax_description" />
 
         </LinearLayout>
 
@@ -381,11 +381,11 @@
 
           <TextView
             style="@style/Widget.Doodle.TextView.ListItem.Title"
-            android:text="@string/setting_size" />
+            android:text="@string/settings_size" />
 
           <TextView
             style="@style/Widget.Doodle.TextView.ListItem.Description"
-            android:text="@string/setting_size_description" />
+            android:text="@string/settings_size_description" />
 
         </LinearLayout>
 
@@ -412,11 +412,11 @@
 
           <TextView
             style="@style/Widget.Doodle.TextView.ListItem.Title"
-            android:text="@string/setting_zoom" />
+            android:text="@string/settings_zoom" />
 
           <TextView
             style="@style/Widget.Doodle.TextView.ListItem.Description"
-            android:text="@string/setting_zoom_description" />
+            android:text="@string/settings_zoom_description" />
 
         </LinearLayout>
 
@@ -445,7 +445,7 @@
           android:layout_width="0dp"
           android:layout_weight="1"
           android:layout_marginStart="8dp"
-          android:text="@string/setting_zoom_launcher" />
+          android:text="@string/settings_zoom_launcher" />
 
         <com.google.android.material.checkbox.MaterialCheckBox
           android:id="@+id/checkbox_zoom_launcher"
@@ -470,12 +470,42 @@
           android:layout_width="0dp"
           android:layout_weight="1"
           android:layout_marginStart="8dp"
-          android:text="@string/setting_zoom_unlock" />
+          android:text="@string/settings_zoom_unlock" />
 
         <com.google.android.material.checkbox.MaterialCheckBox
           android:id="@+id/checkbox_zoom_unlock"
           style="@style/Widget.Doodle.CheckBox"
           android:layout_width="wrap_content" />
+
+      </LinearLayout>
+
+      <LinearLayout
+        android:id="@+id/linear_gpu"
+        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable">
+
+        <ImageView
+          android:id="@+id/image_gpu"
+          style="@style/Widget.Doodle.ImageView.ListItem.Icon"
+          android:src="@drawable/ic_round_zoom_out"
+          tools:ignore="ContentDescription" />
+
+        <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">
+
+          <TextView
+            style="@style/Widget.Doodle.TextView.ListItem.Title"
+            android:text="@string/settings_gpu" />
+
+          <TextView
+            style="@style/Widget.Doodle.TextView.ListItem.Description"
+            android:text="@string/settings_gpu_description" />
+
+        </LinearLayout>
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+          android:id="@+id/switch_gpu"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="16dp" />
 
       </LinearLayout>
 

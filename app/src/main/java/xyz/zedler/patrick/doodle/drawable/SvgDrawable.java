@@ -180,7 +180,6 @@ public class SvgDrawable {
       }
       readObject(parser, null);
     }
-    Log.i(TAG, "readSvg: hello " + objects);
   }
 
   private void readObject(XmlPullParser parser, SvgObject parentGroup)

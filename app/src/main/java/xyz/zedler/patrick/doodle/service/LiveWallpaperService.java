@@ -230,6 +230,7 @@ public class LiveWallpaperService extends WallpaperService {
     private long lastDraw;
     private boolean isVisible;
     private boolean isNight;
+    private boolean useGpu;
     private float fps;
     private ValueAnimator zoomAnimator;
 
@@ -240,6 +241,9 @@ public class LiveWallpaperService extends WallpaperService {
       fps = getFrameRate();
 
       userPresenceListener = this;
+
+      // Load this only once on creation, else it would cause a crash caused by OpenGL
+      useGpu = sharedPrefs.getBoolean(PREF.GPU, DEF.GPU);
 
       loadSettings();
       loadTheme();
@@ -426,7 +430,7 @@ public class LiveWallpaperService extends WallpaperService {
       final SurfaceHolder surfaceHolder = getSurfaceHolder();
       Canvas canvas = null;
       try {
-        if (VERSION.SDK_INT >= VERSION_CODES.O) {
+        if (VERSION.SDK_INT >= VERSION_CODES.O && useGpu) {
           canvas = surfaceHolder.lockHardwareCanvas();
         } else {
           canvas = surfaceHolder.lockCanvas();

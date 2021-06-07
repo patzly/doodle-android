@@ -34,20 +34,22 @@
   <string name="action_rate">Bei Google Play bewerten</string>
   <string name="action_rate_description">Entwicklung unterstützen</string>
 
-  <string name="setting_default">Standard</string>
-  <string name="setting_night_mode">Nachtmodus</string>
-  <string name="setting_night_mode_description">Abgedunkelte Formen</string>
-  <string name="setting_follow_system">System folgen</string>
-  <string name="setting_follow_system_description">Adaption des Designs</string>
-  <string name="setting_parallax">Parallax-Stärke</string>
-  <string name="setting_parallax_description">Horizontaler Versatz beim Wechseln zwischen Startbildschirmen</string>
-  <string name="setting_parallax_none">Aus</string>
-  <string name="setting_size">Größe der Formen</string>
-  <string name="setting_size_description">Nützlich für große Displays</string>
-  <string name="setting_zoom">Intensität des Zoom-Effekts</string>
-  <string name="setting_zoom_description">Je höher, desto weiter wird herausgezoomt</string>
-  <string name="setting_zoom_launcher">Beim Öffnen der Schnelleinstellungen oder des App-Drawers herauszoomen</string>
-  <string name="setting_zoom_unlock">Auf dem Sperrbildschirm herauszoomen</string>
+  <string name="settings_default">Standard</string>
+  <string name="settings_night_mode">Nachtmodus</string>
+  <string name="settings_night_mode_description">Abgedunkelte Formen</string>
+  <string name="settings_follow_system">System folgen</string>
+  <string name="settings_follow_system_description">Adaption des Designs</string>
+  <string name="settings_parallax">Parallax-Stärke</string>
+  <string name="settings_parallax_description">Horizontaler Versatz beim Wechseln zwischen Startbildschirmen</string>
+  <string name="settings_parallax_none">Aus</string>
+  <string name="settings_size">Größe der Formen</string>
+  <string name="settings_size_description">Nützlich für große Displays</string>
+  <string name="settings_zoom">Intensität des Zoom-Effekts</string>
+  <string name="settings_zoom_description">Je höher, desto weiter wird herausgezoomt</string>
+  <string name="settings_zoom_launcher">Beim Öffnen der Schnelleinstellungen oder des App-Drawers herauszoomen</string>
+  <string name="settings_zoom_unlock">Auf dem Sperrbildschirm herauszoomen</string>
+  <string name="settings_gpu">Hardware-Beschleunigung</string>
+  <string name="settings_gpu_description">Ausschalten, wenn der Live-Hintergrund abstürtzt.\nErfordert bei aktivem Hintergrund einen Neustart des Geräts, um in Kraft zu treten.</string>
 
   <string name="category_customization">Anpassung</string>
   <string name="category_about">Über</string>

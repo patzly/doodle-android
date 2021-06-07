@@ -27,6 +27,8 @@
   <string name="app_github" translatable="false">https://github.com/patzly/doodle-android/</string>
   <string name="app_developer_play" translatable="false">http://play.google.com/store/apps/dev?id=8122479227040208191</string>
 
+  <!-- ACTIONS -->
+
   <string name="action_close">Close</string>
   <string name="action_set">Set</string>
   <string name="action_send_feedback">Send feedback</string>
@@ -38,20 +40,26 @@
   <string name="action_rate">Rate on Google Play</string>
   <string name="action_rate_description">Support the development</string>
 
-  <string name="setting_default">Default</string>
-  <string name="setting_night_mode">Night mode</string>
-  <string name="setting_night_mode_description">Completely dark shapes</string>
-  <string name="setting_follow_system">Follow system</string>
-  <string name="setting_follow_system_description">Adopt device theme</string>
-  <string name="setting_parallax">Parallax strength</string>
-  <string name="setting_parallax_description">Horizontal offset on page swipe</string>
-  <string name="setting_parallax_none">None</string>
-  <string name="setting_size">Shape size</string>
-  <string name="setting_size_description">Useful for big screens</string>
-  <string name="setting_zoom">Zoom effect intensity</string>
-  <string name="setting_zoom_description">When increased, the camera zooms out more</string>
-  <string name="setting_zoom_launcher">Zoom out when opening quick settings or app drawer</string>
-  <string name="setting_zoom_unlock">Zoom out on lockscreen</string>
+  <!-- SETTINGS -->
+
+  <string name="settings_default">Default</string>
+  <string name="settings_night_mode">Night mode</string>
+  <string name="settings_night_mode_description">Completely dark shapes</string>
+  <string name="settings_follow_system">Follow system</string>
+  <string name="settings_follow_system_description">Adopt device theme</string>
+  <string name="settings_parallax">Parallax strength</string>
+  <string name="settings_parallax_description">Horizontal offset on page swipe</string>
+  <string name="settings_parallax_none">None</string>
+  <string name="settings_size">Shape size</string>
+  <string name="settings_size_description">Useful for big screens</string>
+  <string name="settings_zoom">Zoom effect intensity</string>
+  <string name="settings_zoom_description">When increased, the camera zooms out more</string>
+  <string name="settings_zoom_launcher">Zoom out when opening quick settings or app drawer</string>
+  <string name="settings_zoom_unlock">Zoom out on lockscreen</string>
+  <string name="settings_gpu">Hardware acceleration</string>
+  <string name="settings_gpu_description">Turn off if the wallpaper crashes. Requires restart of the device to take effect if the wallpaper is currently active.</string>
+
+  <!-- ABOUT -->
 
   <string name="info_title">Information</string>
   <string name="info_description">Colorful live wallpapers with auto dark mode and power-efficient animations. Tap to learn more.</string>
@@ -78,6 +86,8 @@
 
   <string name="msg_feedback">A great app requires a lot of time and lives from the feedback of its users.\n\nDo you have any wishes, comments or questions? Contact me!\nOtherwise I would be very happy about a nice review in the Play Store.</string>
   <string name="msg_share">Check out this cool live wallpaper app: \nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
+
+  <!-- LICENSES -->
 
   <string name="license_author_google" translatable="false">Google</string>
   <string name="license_material_icons" translatable="false">Material Design Icons</string>

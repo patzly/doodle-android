@@ -147,9 +147,9 @@ public class SettingsActivity extends AppCompatActivity
     binding.sliderParallax.addOnChangeListener(this);
     binding.sliderParallax.setLabelFormatter(value -> {
       if (value == 0) {
-        return getString(R.string.setting_parallax_none);
+        return getString(R.string.settings_parallax_none);
       } else if (value == DEF.PARALLAX) {
-        return getString(R.string.setting_default);
+        return getString(R.string.settings_default);
       } else {
         return String.valueOf((int) value);
       }
@@ -159,7 +159,7 @@ public class SettingsActivity extends AppCompatActivity
     binding.sliderSize.addOnChangeListener(this);
     binding.sliderSize.setLabelFormatter(value -> {
       if (value == 1) {
-        return getString(R.string.setting_default);
+        return getString(R.string.settings_default);
       } else {
         return String.format(Locale.getDefault(), "×%.1f", value);
       }
@@ -183,6 +183,13 @@ public class SettingsActivity extends AppCompatActivity
         sharedPrefs.getBoolean(PREF.ZOOM_UNLOCK, DEF.ZOOM_UNLOCK)
     );
 
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+      binding.linearGpu.setVisibility(View.VISIBLE);
+    } else {
+      binding.linearGpu.setVisibility(View.GONE);
+    }
+    binding.switchGpu.setChecked(sharedPrefs.getBoolean(PREF.GPU, DEF.GPU));
+
     refreshSelectionTheme(sharedPrefs.getString(PREF.WALLPAPER, WALLPAPER.PIXEL), false);
     refreshSelectionVariant(sharedPrefs.getString(PREF.VARIANT, VARIANT.BLACK), false);
 
@@ -197,6 +204,7 @@ public class SettingsActivity extends AppCompatActivity
         binding.linearFollowSystem,
         binding.linearZoomLauncher,
         binding.linearZoomUnlock,
+        binding.linearGpu,
         binding.linearGithub,
         binding.linearChangelog,
         binding.linearFeedback,
@@ -211,7 +219,8 @@ public class SettingsActivity extends AppCompatActivity
         binding.switchNightMode,
         binding.switchFollowSystem,
         binding.checkboxZoomLauncher,
-        binding.checkboxZoomUnlock
+        binding.checkboxZoomUnlock,
+        binding.switchGpu
     );
 
     showChangelog();
@@ -246,12 +255,10 @@ public class SettingsActivity extends AppCompatActivity
       finish();
     } else if (id == R.id.button_set && clickUtil.isEnabled()) {
       wallpaperPickerLauncher.launch(
-          new Intent()
-              .setAction(WallpaperManager.ACTION_CHANGE_LIVE_WALLPAPER)
-              .putExtra(
-                  WallpaperManager.EXTRA_LIVE_WALLPAPER_COMPONENT,
-                  new ComponentName(getPackageName(), LiveWallpaperService.class.getCanonicalName())
-              )
+          new Intent(WallpaperManager.ACTION_CHANGE_LIVE_WALLPAPER).putExtra(
+              WallpaperManager.EXTRA_LIVE_WALLPAPER_COMPONENT,
+              new ComponentName(getPackageName(), LiveWallpaperService.class.getCanonicalName())
+          )
       );
       performHapticHeavyClick();
     } else if (id == R.id.card_info) {
@@ -291,6 +298,8 @@ public class SettingsActivity extends AppCompatActivity
     } else if (id == R.id.linear_zoom_unlock) {
       IconUtil.start(binding.imageZoom);
       binding.checkboxZoomUnlock.setChecked(!binding.checkboxZoomUnlock.isChecked());
+    } else if (id == R.id.linear_gpu) {
+      binding.switchGpu.setChecked(!binding.switchGpu.isChecked());
     } else if (id == R.id.linear_github && clickUtil.isEnabled()) {
       startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.app_github))));
       performHapticClick();
@@ -369,6 +378,9 @@ public class SettingsActivity extends AppCompatActivity
       requestSettingsRefresh();
     } else if (id == R.id.checkbox_zoom_unlock) {
       sharedPrefs.edit().putBoolean(PREF.ZOOM_UNLOCK, isChecked).apply();
+      requestSettingsRefresh();
+    } else if (id == R.id.switch_gpu) {
+      sharedPrefs.edit().putBoolean(PREF.GPU, isChecked).apply();
       requestSettingsRefresh();
     }
     performHapticClick();

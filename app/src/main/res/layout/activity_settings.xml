@@ -535,29 +535,6 @@
       </LinearLayout>
 
       <LinearLayout
-        android:id="@+id/linear_github"
-        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable">
-
-        <ImageView
-          style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-          android:src="@drawable/ic_round_github"
-          tools:ignore="ContentDescription" />
-
-        <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
-
-          <TextView
-            style="@style/Widget.Doodle.TextView.ListItem.Title"
-            android:text="@string/info_github" />
-
-          <TextView
-            style="@style/Widget.Doodle.TextView.ListItem.Description"
-            android:text="@string/info_github_description" />
-
-        </LinearLayout>
-
-      </LinearLayout>
-
-      <LinearLayout
         android:id="@+id/linear_changelog"
         style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable">
 
@@ -576,6 +553,29 @@
           <TextView
             style="@style/Widget.Doodle.TextView.ListItem.Description"
             android:text="@string/info_changelog_description" />
+
+        </LinearLayout>
+
+      </LinearLayout>
+
+      <LinearLayout
+        android:id="@+id/linear_github"
+        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable">
+
+        <ImageView
+          style="@style/Widget.Doodle.ImageView.ListItem.Icon"
+          android:src="@drawable/ic_round_github"
+          tools:ignore="ContentDescription" />
+
+        <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
+
+          <TextView
+            style="@style/Widget.Doodle.TextView.ListItem.Title"
+            android:text="@string/info_github" />
+
+          <TextView
+            style="@style/Widget.Doodle.TextView.ListItem.Description"
+            android:text="@string/info_github_description" />
 
         </LinearLayout>
 

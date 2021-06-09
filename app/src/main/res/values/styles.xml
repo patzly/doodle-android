@@ -216,6 +216,10 @@
     <item name="android:hyphenationFrequency" tools:targetApi="m">full</item>
   </style>
 
+  <style name="Widget.Doodle.TextView.Paragraph.Fix" parent="Widget.Doodle.TextView.Paragraph">
+    <item name="android:breakStrategy" tools:targetApi="m">simple</item>
+  </style>
+
   <style name="Widget.Doodle.TextView.Toolbar" parent="Widget.Doodle.TextView">
     <item name="android:textColor">@color/on_background</item>
     <item name="android:textSize" tools:ignore="SpUsage">21.5dp</item>

@@ -25,7 +25,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -67,7 +66,6 @@ public class TextBottomSheetDialogFragment extends BaseBottomSheetDialogFragment
         );
       });
     } else {
-      binding.textTextTitle.setGravity(Gravity.CENTER_HORIZONTAL);
       binding.textTextTitle.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
       binding.frameTextOpenLink.setVisibility(View.GONE);
     }

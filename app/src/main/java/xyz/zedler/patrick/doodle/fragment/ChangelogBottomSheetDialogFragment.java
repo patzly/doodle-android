@@ -21,14 +21,13 @@ package xyz.zedler.patrick.doodle.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import xyz.zedler.patrick.doodle.R;
-import xyz.zedler.patrick.doodle.databinding.FragmentBottomsheetTextBinding;
+import xyz.zedler.patrick.doodle.databinding.FragmentBottomsheetChangelogBinding;
 import xyz.zedler.patrick.doodle.util.BulletUtil;
 import xyz.zedler.patrick.doodle.util.ResUtil;
 
@@ -36,22 +35,20 @@ public class ChangelogBottomSheetDialogFragment extends BaseBottomSheetDialogFra
 
   private final static String TAG = "ChangelogBottomSheetDialog";
 
-  private FragmentBottomsheetTextBinding binding;
+  private FragmentBottomsheetChangelogBinding binding;
 
   @Override
   public View onCreateView(@NonNull LayoutInflater inflater,
       ViewGroup container,
       Bundle savedInstanceState) {
-    binding = FragmentBottomsheetTextBinding.inflate(
+    binding = FragmentBottomsheetChangelogBinding.inflate(
         inflater, container, false
     );
 
     Context context = getContext();
     assert context != null;
 
-    binding.textTextTitle.setText(R.string.info_changelog);
-
-    binding.textText.setText(
+    binding.textChangelog.setText(
         BulletUtil.makeBulletList(
             getContext(),
             6,
@@ -62,10 +59,6 @@ public class ChangelogBottomSheetDialogFragment extends BaseBottomSheetDialogFra
         ),
         TextView.BufferType.SPANNABLE
     );
-
-    binding.textTextTitle.setGravity(Gravity.CENTER_HORIZONTAL);
-    binding.textTextTitle.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-    binding.frameTextOpenLink.setVisibility(View.GONE);
 
     return binding.getRoot();
   }

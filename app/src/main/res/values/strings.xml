@@ -21,7 +21,7 @@
 
 <resources>
 
-  <string name="app_name">Doodle</string>
+  <string name="app_name" translatable="false">Doodle</string>
   <string name="app_developer" translatable="false">Patrick Zedler</string>
   <string name="app_mail" translatable="false">patrick@zedler.xyz</string>
   <string name="app_github" translatable="false">https://github.com/patzly/doodle-android/</string>

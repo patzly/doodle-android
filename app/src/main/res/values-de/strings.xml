@@ -21,8 +21,6 @@
 
 <resources>
 
-  <string name="app_name">Doodle</string>
-
   <string name="action_close">Schließen</string>
   <string name="action_set">Festlegen</string>
   <string name="action_send_feedback">Feedback senden</string>

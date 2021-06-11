@@ -71,7 +71,7 @@ public class TextBottomSheetDialogFragment extends BaseBottomSheetDialogFragment
     }
 
     binding.textText.setText(
-        ResUtil.readFromFile(context, bundle.getString(Constants.EXTRA.FILE))
+        ResUtil.getRawText(context, bundle.getInt(Constants.EXTRA.FILE))
     );
 
     return binding.getRoot();

@@ -54,7 +54,7 @@ public class ChangelogBottomSheetDialogFragment extends BaseBottomSheetDialogFra
             6,
             2,
             "- ",
-            ResUtil.readFromFile(getContext(), "changelog"),
+            ResUtil.getRawText(getContext(), R.raw.changelog),
             getResources().getStringArray(R.array.changelog_highlights)
         ),
         TextView.BufferType.SPANNABLE

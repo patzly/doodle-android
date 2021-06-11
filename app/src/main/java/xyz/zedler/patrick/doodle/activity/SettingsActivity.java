@@ -37,6 +37,7 @@ import android.widget.CompoundButton;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
+import androidx.annotation.RawRes;
 import androidx.annotation.StringRes;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
@@ -262,7 +263,7 @@ public class SettingsActivity extends AppCompatActivity
       );
       performHapticHeavyClick();
     } else if (id == R.id.card_info) {
-      showTextBottomSheet("info", R.string.info_title, -1);
+      showTextBottomSheet(R.raw.information, R.string.info_title, -1);
       performHapticClick();
     } else if (id == R.id.card_pixel) {
       refreshSelectionTheme(WALLPAPER.PIXEL, true);
@@ -325,7 +326,7 @@ public class SettingsActivity extends AppCompatActivity
     } else if (id == R.id.linear_license_material_components && clickUtil.isEnabled()) {
       IconUtil.start(binding.imageLicenseMaterialComponents);
       showTextBottomSheet(
-          "apache",
+          R.raw.license_apache,
           R.string.license_material_components,
           R.string.license_material_components_link
       );
@@ -333,7 +334,7 @@ public class SettingsActivity extends AppCompatActivity
     } else if (id == R.id.linear_license_material_icons && clickUtil.isEnabled()) {
       IconUtil.start(binding.imageLicenseMaterialIcons);
       showTextBottomSheet(
-          "apache",
+          R.raw.license_apache,
           R.string.license_material_icons,
           R.string.license_material_icons_link
       );
@@ -341,7 +342,7 @@ public class SettingsActivity extends AppCompatActivity
     } else if (id == R.id.linear_license_jost && clickUtil.isEnabled()) {
       IconUtil.start(binding.imageLicenseJost);
       showTextBottomSheet(
-          "ofl",
+          R.raw.license_ofl,
           R.string.license_jost,
           R.string.license_jost_link
       );
@@ -539,10 +540,10 @@ public class SettingsActivity extends AppCompatActivity
     return false;
   }
 
-  private void showTextBottomSheet(String file, @StringRes int title, @StringRes int link) {
+  private void showTextBottomSheet(@RawRes int file, @StringRes int title, @StringRes int link) {
     Bundle bundle = new Bundle();
     bundle.putString(EXTRA.TITLE, getString(title));
-    bundle.putString(EXTRA.FILE, file);
+    bundle.putInt(EXTRA.FILE, file);
     if (link != -1) {
       bundle.putString(EXTRA.LINK, getString(link));
     }

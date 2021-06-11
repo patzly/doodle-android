@@ -23,39 +23,29 @@ import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 import androidx.annotation.NonNull;
+import androidx.annotation.RawRes;
 import androidx.annotation.StringRes;
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
 public class ResUtil {
 
   private final static String TAG = ResUtil.class.getSimpleName();
-  private final static boolean DEBUG = false;
 
   @NonNull
-  public static String readFromFile(Context context, String file) {
+  public static String getRawText(Context context, @RawRes int resId) {
+    InputStream inputStream = context.getResources().openRawResource(resId);
+    BufferedReader bufferedReader= new BufferedReader(new InputStreamReader(inputStream));
     StringBuilder text = new StringBuilder();
     try {
-      InputStream inputStream = context.getAssets().open(file + ".txt");
-      InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
-      BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
       for (String line; (line = bufferedReader.readLine()) != null; ) {
         text.append(line).append('\n');
       }
       text.deleteCharAt(text.length() - 1);
       inputStream.close();
-    } catch (FileNotFoundException e) {
-      if (DEBUG) {
-        Log.e(TAG, "readFromFile: \"" + file + "\" not found!");
-      }
-      return "";
     } catch (Exception e) {
-      if (DEBUG) {
-        Log.e(TAG, "readFromFile: " + e.toString());
-      }
-      return "";
+      Log.e(TAG, "getRawText: ", e);
     }
     return text.toString();
   }

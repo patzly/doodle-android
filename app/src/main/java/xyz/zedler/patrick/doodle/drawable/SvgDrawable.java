@@ -41,6 +41,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RawRes;
 import androidx.core.content.ContextCompat;
+import androidx.core.graphics.ColorUtils;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -710,20 +711,6 @@ public class SvgDrawable {
   }
 
   private void drawImage(Canvas canvas, SvgObject object, SvgObject parentGroup) {
-    /*float offsetX = this.offsetX * object.elevation;
-    float offsetY = this.offsetY * object.elevation;
-    float cx = object.cx * canvas.getWidth() - offsetX;
-    float cy = object.cy * canvas.getHeight() - offsetY;
-
-    float centerX = canvas.getWidth() / 2f;
-    if (cx < centerX) {
-      float dist = centerX - cx;
-      cx += dist * object.elevation * zoom;
-    } else {
-      float dist = cx - centerX;
-      cx -= dist * object.elevation * zoom;
-    }*/
-
     paint.reset();
     paint.setAntiAlias(true);
 
@@ -849,12 +836,7 @@ public class SvgDrawable {
     } else if (hasFillAndStroke || hasFill) {
       paint.setStyle(Style.FILL);
       paint.setShader(object.shader);
-      paint.setARGB(
-          (int) (object.fillOpacity * 255),
-          Color.red(object.fill),
-          Color.green(object.fill),
-          Color.blue(object.fill)
-      );
+      paint.setColor(ColorUtils.setAlphaComponent(object.fill, (int) (object.fillOpacity * 255)));
     }
 
     if (DEBUG) { // draw semi-translucent for point/pivot debugging

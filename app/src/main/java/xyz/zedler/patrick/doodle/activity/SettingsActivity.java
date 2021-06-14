@@ -224,8 +224,8 @@ public class SettingsActivity extends AppCompatActivity
         binding.switchGpu
     );
 
-    showChangelog();
-    showFeedbackPopUp();
+    showChangelog(true);
+    showFeedbackPopUp(true);
   }
 
   @Override
@@ -306,11 +306,11 @@ public class SettingsActivity extends AppCompatActivity
       performHapticClick();
     } else if (id == R.id.linear_changelog && clickUtil.isEnabled()) {
       IconUtil.start(binding.imageChangelog);
-      sheetUtil.show(new ChangelogBottomSheetDialogFragment());
+      showChangelog(false);
       performHapticClick();
     } else if (id == R.id.linear_feedback && clickUtil.isEnabled()) {
       IconUtil.start(binding.imageFeedback);
-      sheetUtil.show(new FeedbackBottomSheetDialogFragment());
+      showFeedbackPopUp(false);
       performHapticClick();
     } else if (id == R.id.linear_developer && clickUtil.isEnabled()) {
       IconUtil.start(binding.imageDeveloper);
@@ -550,7 +550,11 @@ public class SettingsActivity extends AppCompatActivity
     sheetUtil.show(new TextBottomSheetDialogFragment(), bundle);
   }
 
-  private void showChangelog() {
+  private void showChangelog(boolean onlyIfUpdated) {
+    if (!onlyIfUpdated) {
+      sheetUtil.show(new ChangelogBottomSheetDialogFragment());
+      return;
+    }
     int versionNew = BuildConfig.VERSION_CODE;
     int versionOld = sharedPrefs.getInt(PREF.LAST_VERSION, 0);
     if (versionOld == 0) {
@@ -561,7 +565,11 @@ public class SettingsActivity extends AppCompatActivity
     }
   }
 
-  private void showFeedbackPopUp() {
+  private void showFeedbackPopUp(boolean onlyAfterSomeUsage) {
+    if (!onlyAfterSomeUsage) {
+      sheetUtil.show(new FeedbackBottomSheetDialogFragment());
+      return;
+    }
     int feedbackCount = sharedPrefs.getInt(Constants.PREF.FEEDBACK_POP_UP_COUNT, 1);
     if (feedbackCount > 0) {
       if (feedbackCount < 5) {

@@ -48,12 +48,8 @@ public class FeedbackBottomSheetDialogFragment extends BaseBottomSheetDialogFrag
   private SharedPreferences sharedPrefs;
 
   @Override
-  public View onCreateView(@NonNull LayoutInflater inflater,
-      ViewGroup container,
-      Bundle savedInstanceState) {
-    binding = FragmentBottomsheetFeedbackBinding.inflate(
-        inflater, container, false
-    );
+  public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle state) {
+    binding = FragmentBottomsheetFeedbackBinding.inflate(inflater, container, false);
 
     Activity activity = getActivity();
     assert activity != null;

@@ -26,11 +26,7 @@
   android:orientation="vertical">
 
   <TextView
-    style="@style/Widget.Doodle.TextView.Title.BottomSheet"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:textAlignment="center"
-    android:padding="16dp"
+    style="@style/Widget.Doodle.TextView.Toolbar.BottomSheet"
     android:text="@string/title_feedback" />
 
   <View

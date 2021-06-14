@@ -30,8 +30,8 @@ android {
         applicationId "xyz.zedler.patrick.doodle"
         minSdkVersion 23
         targetSdkVersion 30
-        versionCode 21
-        versionName "3.1.0"
+        versionCode 22
+        versionName "3.2.0"
     }
 
     applicationVariants.all { variant ->
@@ -60,5 +60,5 @@ android {
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.3.0'
     implementation 'androidx.preference:preference:1.1.1'
-    implementation 'com.google.android.material:material:1.3.0'
+    implementation 'com.google.android.material:material:1.4.0-rc01'
 }

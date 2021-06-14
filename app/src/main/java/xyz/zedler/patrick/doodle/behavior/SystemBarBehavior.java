@@ -275,7 +275,10 @@ public class SystemBarBehavior {
         window.setNavigationBarColor(Color.BLACK);
       }
     } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) { // 23
-      window.setStatusBarColor(isDarkModeActive ? Color.TRANSPARENT : SystemUiUtil.COLOR_SCRIM);
+      window.setStatusBarColor(Color.TRANSPARENT);
+      if (!isDarkModeActive) {
+        SystemUiUtil.setLightStatusBar(window);
+      }
       if (isOrientationPortrait) {
         window.setNavigationBarColor(
             isDarkModeActive

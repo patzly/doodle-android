@@ -18,7 +18,7 @@
   ~ Copyright (c) 2020-2021 by Patrick Zedler
   -->
 
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
 
   <style name="Theme.Doodle" parent="Theme.MaterialComponents.DayNight.NoActionBar">
     <item name="colorPrimary">@color/background</item>
@@ -40,36 +40,9 @@
     <item name="android:colorControlHighlight">@color/highlight</item>
     <item name="android:colorEdgeEffect">@color/highlight</item>
 
-    <item name="android:fontFamily">@font/jost_book</item>
-  </style>
-
-  <style name="Theme.Doodle.Splash" parent="Theme.Doodle">
-    <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
-    <item name="android:navigationBarColor">@color/background</item>
-    <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">true</item>
-  </style>
-
-  <style name="Theme.Doodle.BottomSheetDialog" parent="Theme.MaterialComponents.BottomSheetDialog">
-    <item name="colorPrimary">@color/primary</item>
-    <item name="colorPrimaryDark">@color/primary</item>
-    <item name="colorOnPrimary">@color/on_background</item>
-
-    <item name="colorSecondary">@color/secondary</item>
-    <item name="colorOnSecondary">@color/on_secondary</item>
-
-    <item name="android:colorBackground">@color/surface</item>
-    <item name="colorOnBackground">@color/on_background</item>
-    <item name="android:colorForeground">@color/on_background</item>
-
-    <item name="colorSurface">@color/surface</item>
-    <item name="colorOnSurface">@color/on_surface</item>
-
-    <item name="android:colorControlNormal">@color/on_background</item>
-    <item name="android:colorControlActivated">@color/secondary</item>
-    <item name="android:colorControlHighlight">@color/highlight</item>
-    <item name="android:colorEdgeEffect">@color/highlight</item>
-
-    <item name="android:windowIsFloating">false</item>
+    <item name="enableEdgeToEdge">true</item>
+    <item name="android:navigationBarColor">@color/transparent</item>
+    <item name="paddingBottomSystemWindowInsets">false</item>
 
     <item name="android:fontFamily">@font/jost_book</item>
   </style>

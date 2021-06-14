@@ -28,6 +28,7 @@ import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout.LayoutParams;
 import androidx.annotation.NonNull;
 import xyz.zedler.patrick.doodle.Constants;
 import xyz.zedler.patrick.doodle.databinding.FragmentBottomsheetTextBinding;
@@ -36,17 +37,13 @@ import xyz.zedler.patrick.doodle.util.ResUtil;
 
 public class TextBottomSheetDialogFragment extends BaseBottomSheetDialogFragment {
 
-  private final static String TAG = "TextBottomSheetDialog";
+  private final static String TAG = "TextBottomSheet";
 
   private FragmentBottomsheetTextBinding binding;
 
   @Override
-  public View onCreateView(@NonNull LayoutInflater inflater,
-      ViewGroup container,
-      Bundle savedInstanceState) {
-    binding = FragmentBottomsheetTextBinding.inflate(
-        inflater, container, false
-    );
+  public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle state) {
+    binding = FragmentBottomsheetTextBinding.inflate(inflater, container, false);
 
     Context context = getContext();
     Bundle bundle = getArguments();
@@ -81,6 +78,13 @@ public class TextBottomSheetDialogFragment extends BaseBottomSheetDialogFragment
   public void onDestroy() {
     super.onDestroy();
     binding = null;
+  }
+
+  @Override
+  public void applyBottomInset(int bottom) {
+    LayoutParams params = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+    params.setMargins(0, 0, 0, bottom);
+    binding.textText.setLayoutParams(params);
   }
 
   @NonNull

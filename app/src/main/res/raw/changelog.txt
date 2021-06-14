@@ -1,4 +1,5 @@
-3.1.1:
+3.2.0:
+- Improved: appearance and behavior of bottom sheets
 - Improved: internal resource management
 - Fixed: clipped text in changelog
 
@@ -6,7 +7,7 @@
 - New: switch to turn off hardware acceleration (only useful if the wallpaper crashes)
 - Improved: wallpaper and theme selection appearance
 - Improved: text of warnings
-- Fixed: hopefully some crashes (if crashes still occur, please report them on GitHub)
+- Fixed: hopefully some crashes
 
 3.0.1:
 - Improved: text and descriptions

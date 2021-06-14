@@ -26,13 +26,8 @@
   android:orientation="vertical">
 
   <TextView
-    style="@style/Widget.Doodle.TextView.Title.BottomSheet"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:padding="16dp"
-    android:singleLine="true"
-    android:textAlignment="center"
-    android:text="@string/info_changelog"/>
+    style="@style/Widget.Doodle.TextView.Toolbar.BottomSheet"
+    android:text="@string/info_changelog" />
 
   <View
     style="@style/Widget.Doodle.Divider"

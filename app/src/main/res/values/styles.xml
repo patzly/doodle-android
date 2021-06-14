@@ -227,6 +227,15 @@
     <item name="android:singleLine">true</item>
   </style>
 
+  <style name="Widget.Doodle.TextView.Toolbar.BottomSheet" parent="Widget.Doodle.TextView.Toolbar">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">?android:actionBarSize</item>
+    <item name="android:paddingStart">16dp</item>
+    <item name="android:paddingEnd">16dp</item>
+    <item name="android:gravity">center</item>
+    <item name="android:textAlignment">center</item>
+  </style>
+
   <style name="Widget.Doodle.TextView.Category" parent="Widget.Doodle.TextView">
     <item name="android:layout_width">wrap_content</item>
     <item name="android:layout_height">wrap_content</item>
@@ -260,12 +269,6 @@
     <item name="android:layout_height">wrap_content</item>
     <item name="android:textSize">15sp</item>
     <item name="android:textColor">@color/on_background_secondary</item>
-  </style>
-
-  <style name="Widget.Doodle.TextView.Title.BottomSheet" parent="Widget.Doodle.TextView">
-    <item name="android:textSize">19sp</item>
-    <item name="android:fontFamily">@font/jost_bold</item>
-    <item name="singleLine">true</item>
   </style>
 
   <style name="TextAppearance.Doodle.Tooltip" parent="TextAppearance.MaterialComponents.Tooltip">

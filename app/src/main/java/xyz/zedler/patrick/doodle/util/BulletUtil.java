@@ -34,14 +34,11 @@ import xyz.zedler.patrick.doodle.R;
 
 public class BulletUtil {
 
-  public static CharSequence makeBulletList(Context context,
-      float leadingMargin,
-      float bulletSize,
-      String prefixToReplace,
-      @Nullable String text,
-      String... highlights) {
+  public static CharSequence makeBulletList(
+      Context context, float leadingMargin, float bulletSize,
+      String prefixToReplace, @Nullable String text, String... highlights) {
 
-    if (text == null) {
+    if (context == null || text == null) {
       return null;
     }
 

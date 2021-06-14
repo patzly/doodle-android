@@ -32,14 +32,14 @@ public class SheetUtil {
     this.fragmentManager = fragmentManager;
   }
 
-  public void show(BottomSheetDialogFragment bottomSheetDialog) {
-    show(bottomSheetDialog, null);
+  public void show(BottomSheetDialogFragment fragment) {
+    show(fragment, null);
   }
 
-  public void show(BottomSheetDialogFragment bottomSheetDialog, Bundle bundle) {
+  public void show(BottomSheetDialogFragment fragment, Bundle bundle) {
     if (bundle != null) {
-      bottomSheetDialog.setArguments(bundle);
+      fragment.setArguments(bundle);
     }
-    bottomSheetDialog.show(fragmentManager, bottomSheetDialog.toString());
+    fragment.show(fragmentManager, fragment.toString());
   }
 }

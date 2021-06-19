@@ -24,7 +24,7 @@
     <item name="android:layout_height">1dp</item>
     <item name="android:layout_marginTop">8dp</item>
     <item name="android:layout_marginBottom">8dp</item>
-    <item name="android:background">@color/stroke</item>
+    <item name="android:background">@color/stroke_secondary</item>
   </style>
 
   <style
@@ -57,7 +57,7 @@
     <item name="android:clickable">true</item>
     <item name="android:focusable">true</item>
     <item name="android:checkable">true</item>
-    <item name="strokeColor">@color/stroke</item>
+    <item name="strokeColor">@color/stroke_secondary</item>
     <item name="strokeWidth">0dp</item>
     <item name="rippleColor">@color/highlight</item>
     <item name="cardBackgroundColor">@color/background</item>

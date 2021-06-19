@@ -24,14 +24,17 @@ import java.util.Objects;
 import xyz.zedler.patrick.doodle.Constants.DEF;
 import xyz.zedler.patrick.doodle.Constants.PREF;
 
+@Deprecated
 public class MigrationUtil {
 
   private final SharedPreferences sharedPrefs;
 
+  @Deprecated
   public MigrationUtil(SharedPreferences sharedPrefs) {
     this.sharedPrefs = sharedPrefs;
   }
 
+  @Deprecated
   public void checkForMigrations() {
 
     // theme to wallpaper

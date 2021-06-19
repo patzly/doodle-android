@@ -39,7 +39,7 @@ import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.databinding.FragmentBottomsheetFeedbackBinding;
 import xyz.zedler.patrick.doodle.util.IconUtil;
 import xyz.zedler.patrick.doodle.util.ResUtil;
-import xyz.zedler.patrick.doodle.util.VibratorUtil;
+import xyz.zedler.patrick.doodle.util.HapticUtil;
 
 public class FeedbackBottomSheetDialogFragment extends BaseBottomSheetDialogFragment {
 
@@ -57,11 +57,11 @@ public class FeedbackBottomSheetDialogFragment extends BaseBottomSheetDialogFrag
 
     sharedPrefs = PreferenceManager.getDefaultSharedPreferences(activity);
 
-    VibratorUtil vibratorUtil = new VibratorUtil(activity);
+    HapticUtil hapticUtil = new HapticUtil(activity);
 
     binding.linearFeedbackRate.setOnClickListener(v -> {
       IconUtil.start(binding.imageFeedbackRate);
-      vibratorUtil.click();
+      hapticUtil.click();
       Uri uri = Uri.parse(
           "market://details?id=" + activity.getApplicationContext().getPackageName()
       );
@@ -84,7 +84,7 @@ public class FeedbackBottomSheetDialogFragment extends BaseBottomSheetDialogFrag
     });
 
     binding.linearFeedbackEmail.setOnClickListener(v -> {
-      vibratorUtil.click();
+      hapticUtil.click();
       Intent intent = new Intent(Intent.ACTION_SENDTO);
       intent.setData(
           Uri.parse(
@@ -98,13 +98,13 @@ public class FeedbackBottomSheetDialogFragment extends BaseBottomSheetDialogFrag
     });
 
     binding.linearFeedbackGithub.setOnClickListener(v -> {
-      vibratorUtil.click();
+      hapticUtil.click();
       startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.app_github))));
       dismiss();
     });
 
     binding.linearFeedbackShare.setOnClickListener(v -> {
-      vibratorUtil.click();
+      hapticUtil.click();
       ResUtil.share(activity, R.string.msg_share);
       dismiss();
     });

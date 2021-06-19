@@ -32,8 +32,10 @@ import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 import xyz.zedler.patrick.doodle.R;
 
+@Deprecated
 public class BulletUtil {
 
+  @Deprecated
   public static CharSequence makeBulletList(
       Context context, float leadingMargin, float bulletSize,
       String prefixToReplace, @Nullable String text, String... highlights) {

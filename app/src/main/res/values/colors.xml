@@ -70,7 +70,7 @@
 
   <!-- STROKES -->
 
-  <color name="stroke">@color/grey400</color>
+  <color name="stroke_secondary">@color/grey400</color>
 
   <!-- ICONS -->
 

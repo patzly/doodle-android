@@ -24,11 +24,13 @@ import android.graphics.drawable.Drawable;
 import android.util.Log;
 import android.widget.ImageView;
 
+@Deprecated
 public class IconUtil {
 
   private final static String TAG = IconUtil.class.getSimpleName();
   private final static boolean DEBUG = false;
 
+  @Deprecated
   public static void start(ImageView imageView) {
     if (imageView == null) {
       return;
@@ -36,6 +38,7 @@ public class IconUtil {
     start(imageView.getDrawable());
   }
 
+  @Deprecated
   public static void start(Drawable drawable) {
     if (drawable == null) {
       return;

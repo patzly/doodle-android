@@ -24,7 +24,7 @@ import android.os.Build;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
 
-public class VibratorUtil {
+public class HapticUtil {
 
   private final Vibrator vibrator;
   private final boolean hasVibrator;
@@ -32,7 +32,7 @@ public class VibratorUtil {
   public static final long CLICK = 20;
   public static final long HEAVY = 50;
 
-  public VibratorUtil(Context context) {
+  public HapticUtil(Context context) {
     vibrator = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
     hasVibrator = hasVibrator();
   }

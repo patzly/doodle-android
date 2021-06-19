@@ -22,11 +22,19 @@ package xyz.zedler.patrick.doodle.util;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.graphics.Insets;
 import android.os.Build;
 import android.os.Build.VERSION_CODES;
+import android.util.DisplayMetrics;
+import android.util.TypedValue;
 import android.view.View;
 import android.view.Window;
+import android.view.WindowInsets;
 import android.view.WindowInsetsController;
+import android.view.WindowManager;
+import android.view.WindowMetrics;
+import androidx.annotation.Dimension;
+import androidx.annotation.NonNull;
 
 public class SystemUiUtil {
 
@@ -92,5 +100,33 @@ public class SystemUiUtil {
   public static boolean isOrientationPortrait(Context context) {
     int orientation = context.getResources().getConfiguration().orientation;
     return orientation == Configuration.ORIENTATION_PORTRAIT;
+  }
+
+  // Unit conversions
+
+  public static int dpToPx(@NonNull Context context, @Dimension(unit = Dimension.DP) float dp) {
+    Resources r = context.getResources();
+    return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, r.getDisplayMetrics());
+  }
+
+  public static int spToPx(@NonNull Context context, @Dimension(unit = Dimension.SP) float sp) {
+    Resources r = context.getResources();
+    return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, sp, r.getDisplayMetrics());
+  }
+
+  // Display height
+
+  public static int getDisplayHeight(WindowManager windowManager) {
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+      WindowMetrics windowMetrics = windowManager.getCurrentWindowMetrics();
+      Insets insets = windowMetrics.getWindowInsets().getInsetsIgnoringVisibility(
+          WindowInsets.Type.systemBars()
+      );
+      return windowMetrics.getBounds().height() - insets.top - insets.bottom;
+    } else {
+      DisplayMetrics displayMetrics = new DisplayMetrics();
+      windowManager.getDefaultDisplay().getMetrics(displayMetrics);
+      return displayMetrics.heightPixels;
+    }
   }
 }

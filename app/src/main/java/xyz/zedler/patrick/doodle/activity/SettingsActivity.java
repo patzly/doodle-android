@@ -66,7 +66,7 @@ import xyz.zedler.patrick.doodle.util.IconUtil;
 import xyz.zedler.patrick.doodle.util.MigrationUtil;
 import xyz.zedler.patrick.doodle.util.PrefsUtil;
 import xyz.zedler.patrick.doodle.util.SheetUtil;
-import xyz.zedler.patrick.doodle.util.VibratorUtil;
+import xyz.zedler.patrick.doodle.util.HapticUtil;
 
 public class SettingsActivity extends AppCompatActivity
     implements View.OnClickListener, CompoundButton.OnCheckedChangeListener, OnChangeListener {
@@ -77,7 +77,7 @@ public class SettingsActivity extends AppCompatActivity
   private SharedPreferences sharedPrefs;
   private ActivityResultLauncher<Intent> wallpaperPickerLauncher;
   private ClickUtil clickUtil;
-  private VibratorUtil vibratorUtil;
+  private HapticUtil hapticUtil;
   private SheetUtil sheetUtil;
   private boolean settingsApplied;
   private boolean themeApplied;
@@ -95,7 +95,7 @@ public class SettingsActivity extends AppCompatActivity
     new MigrationUtil(sharedPrefs).checkForMigrations();
 
     clickUtil = new ClickUtil();
-    vibratorUtil = new VibratorUtil(this);
+    hapticUtil = new HapticUtil(this);
     sheetUtil = new SheetUtil(getSupportFragmentManager());
 
     SystemBarBehavior systemBarBehavior = new SystemBarBehavior(this);
@@ -595,10 +595,10 @@ public class SettingsActivity extends AppCompatActivity
   }
 
   private void performHapticClick() {
-    vibratorUtil.click();
+    hapticUtil.click();
   }
 
   private void performHapticHeavyClick() {
-    vibratorUtil.heavyClick();
+    hapticUtil.heavyClick();
   }
 }

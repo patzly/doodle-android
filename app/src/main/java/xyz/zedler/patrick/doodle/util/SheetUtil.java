@@ -24,18 +24,22 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentManager;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
+@Deprecated
 public class SheetUtil {
 
   private final FragmentManager fragmentManager;
 
+  @Deprecated
   public SheetUtil(@NonNull FragmentManager fragmentManager) {
     this.fragmentManager = fragmentManager;
   }
 
+  @Deprecated
   public void show(BottomSheetDialogFragment fragment) {
     show(fragment, null);
   }
 
+  @Deprecated
   public void show(BottomSheetDialogFragment fragment, Bundle bundle) {
     if (bundle != null) {
       fragment.setArguments(bundle);

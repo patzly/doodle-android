@@ -228,7 +228,7 @@ public class SystemBarBehavior {
           );
         } else {
           window.setNavigationBarDividerColor(
-              ContextCompat.getColor(activity, R.color.stroke)
+              ContextCompat.getColor(activity, R.color.stroke_secondary)
           );
           window.setNavigationBarColor(
               ContextCompat.getColor(activity, R.color.background)
@@ -251,7 +251,7 @@ public class SystemBarBehavior {
         );
       } else {
         window.setNavigationBarDividerColor(
-            ContextCompat.getColor(activity, R.color.stroke)
+            ContextCompat.getColor(activity, R.color.stroke_secondary)
         );
         window.setNavigationBarColor(ContextCompat.getColor(activity, R.color.background));
       }

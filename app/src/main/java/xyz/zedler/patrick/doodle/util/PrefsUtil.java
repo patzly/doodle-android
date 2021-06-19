@@ -22,34 +22,149 @@ package xyz.zedler.patrick.doodle.util;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Build;
-import androidx.preference.PreferenceManager;
 import android.util.Log;
+import androidx.preference.PreferenceManager;
+import java.util.Objects;
+import xyz.zedler.patrick.doodle.Constants.DEF;
+import xyz.zedler.patrick.doodle.Constants.PREF;
 
 public class PrefsUtil {
 
   private final static String TAG = PrefsUtil.class.getSimpleName();
 
-  private final SharedPreferences sharedPrefs;
+  private final Context context;
+  private SharedPreferences sharedPrefs;
 
+  @Deprecated
   public PrefsUtil(Context context) {
-    Context storageContext;
+    this.context = context;
+    sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
+  }
 
+  public SharedPreferences migrateToStorageContext() {
+    Context storageContext;
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-      final Context deviceContext = context.createDeviceProtectedStorageContext();
+      Context deviceContext = context.createDeviceProtectedStorageContext();
       boolean success = deviceContext.moveSharedPreferencesFrom(
           context, android.preference.PreferenceManager.getDefaultSharedPreferencesName(context)
       );
       if (!success) {
-        Log.w(TAG, "Failed to migrate shared preferences");
+        Log.w(TAG, "Failed to migrate shared preferences to storage context");
       }
       storageContext = deviceContext;
     } else {
       storageContext = context;
     }
     sharedPrefs = PreferenceManager.getDefaultSharedPreferences(storageContext);
+    return sharedPrefs;
   }
 
   public SharedPreferences getSharedPrefs() {
     return sharedPrefs;
+  }
+
+  public void checkForMigrations() {
+
+    // theme to wallpaper
+    migrateString("theme", PREF.WALLPAPER, DEF.WALLPAPER);
+
+    // size is stored in a new way
+    if (sharedPrefs.contains(PREF.SCALE)) {
+      try {
+        sharedPrefs.getFloat(PREF.SCALE, DEF.SCALE);
+      } catch (ClassCastException e) {
+        removePreference(PREF.SCALE);
+      }
+    }
+
+    // parallax is stored in a new way
+    if (sharedPrefs.contains(PREF.PARALLAX)) {
+      int parallax = sharedPrefs.getInt(PREF.PARALLAX, DEF.PARALLAX);
+      if (parallax >= 0 && parallax <= 3) {
+        sharedPrefs.edit().putInt(PREF.PARALLAX, parallax).apply();
+      } else {
+        removePreference(PREF.PARALLAX);
+      }
+    }
+
+    // zoom is stored in a new way
+    if (sharedPrefs.contains(PREF.ZOOM)) {
+      int zoom = sharedPrefs.getInt(PREF.ZOOM, DEF.ZOOM);
+      if (zoom >= 2 && zoom <= 5) {
+        sharedPrefs.edit().putInt(PREF.ZOOM, zoom).apply();
+      } else {
+        removePreference(PREF.ZOOM);
+      }
+    }
+  }
+
+  private void migrateString(String keyOld, String keyNew, String def) {
+    if (sharedPrefs.contains(keyOld)) {
+      SharedPreferences.Editor editor = sharedPrefs.edit();
+      try {
+        String current = sharedPrefs.getString(keyOld, def);
+        if (!Objects.equals(current, def)) {
+          editor.remove(keyOld);
+          editor.putString(keyNew, current);
+        }
+      } catch (ClassCastException ignored) {
+        editor.remove(keyOld);
+      }
+      editor.apply();
+    }
+  }
+
+  private void migrateBoolean(String keyOld, String keyNew, boolean def) {
+    if (sharedPrefs.contains(keyOld)) {
+      SharedPreferences.Editor editor = sharedPrefs.edit();
+      try {
+        boolean current = sharedPrefs.getBoolean(keyOld, def);
+        if (!Objects.equals(current, def)) {
+          editor.remove(keyOld);
+          editor.putBoolean(keyNew, current);
+        }
+      } catch (ClassCastException ignored) {
+        editor.remove(keyOld);
+      }
+      editor.apply();
+    }
+  }
+
+  private void migrateInteger(String keyOld, String keyNew, int def) {
+    if (sharedPrefs.contains(keyOld)) {
+      SharedPreferences.Editor editor = sharedPrefs.edit();
+      try {
+        int current = sharedPrefs.getInt(keyOld, def);
+        if (!Objects.equals(current, def)) {
+          editor.remove(keyOld);
+          editor.putInt(keyNew, current);
+        }
+      } catch (ClassCastException ignored) {
+        editor.remove(keyOld);
+      }
+      editor.apply();
+    }
+  }
+
+  private void migrateFloat(String keyOld, String keyNew, float def) {
+    if (sharedPrefs.contains(keyOld)) {
+      SharedPreferences.Editor editor = sharedPrefs.edit();
+      try {
+        float current = sharedPrefs.getFloat(keyOld, def);
+        if (!Objects.equals(current, def)) {
+          editor.remove(keyOld);
+          editor.putFloat(keyNew, current);
+        }
+      } catch (ClassCastException ignored) {
+        editor.remove(keyOld);
+      }
+      editor.apply();
+    }
+  }
+
+  private void removePreference(String key) {
+    if (sharedPrefs.contains(key)) {
+      sharedPrefs.edit().remove(key).apply();
+    }
   }
 }

@@ -28,8 +28,10 @@ import android.view.WindowInsets;
 import android.view.WindowManager;
 import android.view.WindowMetrics;
 
+@Deprecated
 public class UnitUtil {
 
+  @Deprecated
   public static int getDp(Context context, float dp) {
     return (int) TypedValue.applyDimension(
         TypedValue.COMPLEX_UNIT_DIP,
@@ -38,6 +40,7 @@ public class UnitUtil {
     );
   }
 
+  @Deprecated
   public static int getSp(Context context, float sp) {
     return (int) TypedValue.applyDimension(
         TypedValue.COMPLEX_UNIT_SP,
@@ -46,6 +49,7 @@ public class UnitUtil {
     );
   }
 
+  @Deprecated
   public static int getDisplayHeight(WindowManager windowManager) {
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
       WindowMetrics windowMetrics = windowManager.getCurrentWindowMetrics();

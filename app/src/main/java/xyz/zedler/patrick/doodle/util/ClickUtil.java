@@ -23,20 +23,24 @@ import android.os.SystemClock;
 import android.view.View;
 import android.widget.CompoundButton;
 
+@Deprecated
 public class ClickUtil {
 
   private long lastClick;
 
+  @Deprecated
   public ClickUtil() {
     lastClick = 0;
   }
 
+  @Deprecated
   public static void setOnClickListeners(View.OnClickListener listener, View... views) {
     for (View view : views) {
       view.setOnClickListener(listener);
     }
   }
 
+  @Deprecated
   public static void setOnCheckedChangeListeners(
       CompoundButton.OnCheckedChangeListener listener,
       CompoundButton... compoundButtons
@@ -46,10 +50,12 @@ public class ClickUtil {
     }
   }
 
+  @Deprecated
   public void update() {
     lastClick = SystemClock.elapsedRealtime();
   }
 
+  @Deprecated
   public boolean isDisabled() {
     if (SystemClock.elapsedRealtime() - lastClick < 500) {
       return true;
@@ -58,6 +64,7 @@ public class ClickUtil {
     return false;
   }
 
+  @Deprecated
   public boolean isEnabled() {
     return !isDisabled();
   }

@@ -51,7 +51,6 @@ import xyz.zedler.patrick.doodle.Constants.WALLPAPER;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.drawable.SvgDrawable;
 import xyz.zedler.patrick.doodle.drawable.SvgDrawable.SvgObject;
-import xyz.zedler.patrick.doodle.util.MigrationUtil;
 import xyz.zedler.patrick.doodle.util.PrefsUtil;
 
 public class LiveWallpaperService extends WallpaperService {
@@ -74,8 +73,10 @@ public class LiveWallpaperService extends WallpaperService {
 
   @Override
   public Engine onCreateEngine() {
-    sharedPrefs = new PrefsUtil(LiveWallpaperService.this).getSharedPrefs();
-    new MigrationUtil(sharedPrefs).checkForMigrations();
+    sharedPrefs = new PrefsUtil(LiveWallpaperService.this)
+        .migrateToStorageContext()
+        .checkForMigrations()
+        .getSharedPrefs();
 
     presenceReceiver = new BroadcastReceiver() {
       public void onReceive(Context context, Intent intent) {

@@ -37,9 +37,9 @@ import androidx.annotation.NonNull;
 import xyz.zedler.patrick.doodle.Constants.PREF;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.databinding.FragmentBottomsheetFeedbackBinding;
-import xyz.zedler.patrick.doodle.util.IconUtil;
-import xyz.zedler.patrick.doodle.util.ResUtil;
 import xyz.zedler.patrick.doodle.util.HapticUtil;
+import xyz.zedler.patrick.doodle.util.ResUtil;
+import xyz.zedler.patrick.doodle.util.ViewUtil;
 
 public class FeedbackBottomSheetDialogFragment extends BaseBottomSheetDialogFragment {
 
@@ -60,7 +60,7 @@ public class FeedbackBottomSheetDialogFragment extends BaseBottomSheetDialogFrag
     HapticUtil hapticUtil = new HapticUtil(activity);
 
     binding.linearFeedbackRate.setOnClickListener(v -> {
-      IconUtil.start(binding.imageFeedbackRate);
+      ViewUtil.startIcon(binding.imageFeedbackRate);
       hapticUtil.click();
       Uri uri = Uri.parse(
           "market://details?id=" + activity.getApplicationContext().getPackageName()

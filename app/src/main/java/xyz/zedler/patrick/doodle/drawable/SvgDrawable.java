@@ -51,7 +51,7 @@ import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.parser.PathParser;
-import xyz.zedler.patrick.doodle.util.UnitUtil;
+import xyz.zedler.patrick.doodle.util.SystemUiUtil;
 
 public class SvgDrawable {
 
@@ -75,7 +75,7 @@ public class SvgDrawable {
   private final Random random;
 
   public SvgDrawable(Context context, @RawRes int resId) {
-    pixelUnit = UnitUtil.getDp(context, 1) * 0.33f;
+    pixelUnit = SystemUiUtil.dpToPx(context, 1) * 0.33f;
 
     objects = new ArrayList<>();
     ids = new ArrayList<>();
@@ -93,7 +93,7 @@ public class SvgDrawable {
     random = new Random();
 
     paintDebug = new Paint(Paint.ANTI_ALIAS_FLAG);
-    paintDebug.setStrokeWidth(UnitUtil.getDp(context, 4));
+    paintDebug.setStrokeWidth(SystemUiUtil.dpToPx(context, 4));
     paintDebug.setStyle(Style.STROKE);
     paintDebug.setStrokeCap(Cap.ROUND);
     paintDebug.setColor(ContextCompat.getColor(context, R.color.retro_green_fg));

@@ -43,7 +43,6 @@ import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.util.SystemUiUtil;
-import xyz.zedler.patrick.doodle.util.UnitUtil;
 
 public class BaseBottomSheetDialogFragment extends BottomSheetDialogFragment {
 
@@ -74,13 +73,13 @@ public class BaseBottomSheetDialogFragment extends BottomSheetDialogFragment {
             PaintDrawable background = new PaintDrawable(
                 ContextCompat.getColor(requireContext(), R.color.surface)
             );
-            int radius = UnitUtil.getDp(requireContext(), 16);
+            int radius = SystemUiUtil.dpToPx(requireContext(), 16);
             setCornerRadius(background, radius);
             sheet.setBackground(background);
 
             BottomSheetBehavior<View> behavior = BottomSheetBehavior.from(sheet);
             behavior.setPeekHeight(
-                UnitUtil.getDisplayHeight(
+                SystemUiUtil.getDisplayHeight(
                     (WindowManager) requireActivity().getSystemService(Context.WINDOW_SERVICE)
                 ) / 2
             );

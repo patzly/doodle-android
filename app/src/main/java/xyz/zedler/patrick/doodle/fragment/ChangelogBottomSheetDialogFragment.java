@@ -29,7 +29,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.databinding.FragmentBottomsheetChangelogBinding;
-import xyz.zedler.patrick.doodle.util.BulletUtil;
 import xyz.zedler.patrick.doodle.util.ResUtil;
 
 public class ChangelogBottomSheetDialogFragment extends BaseBottomSheetDialogFragment {
@@ -44,10 +43,8 @@ public class ChangelogBottomSheetDialogFragment extends BaseBottomSheetDialogFra
     binding = FragmentBottomsheetChangelogBinding.inflate(inflater, container, false);
 
     binding.textChangelog.setText(
-        BulletUtil.makeBulletList(
+        ResUtil.getBulletList(
             getContext(),
-            6,
-            2,
             "- ",
             ResUtil.getRawText(requireContext(), R.raw.changelog),
             getResources().getStringArray(R.array.changelog_highlights)

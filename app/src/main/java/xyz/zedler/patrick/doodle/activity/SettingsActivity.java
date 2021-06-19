@@ -61,12 +61,9 @@ import xyz.zedler.patrick.doodle.fragment.ChangelogBottomSheetDialogFragment;
 import xyz.zedler.patrick.doodle.fragment.FeedbackBottomSheetDialogFragment;
 import xyz.zedler.patrick.doodle.fragment.TextBottomSheetDialogFragment;
 import xyz.zedler.patrick.doodle.service.LiveWallpaperService;
-import xyz.zedler.patrick.doodle.util.ClickUtil;
-import xyz.zedler.patrick.doodle.util.IconUtil;
-import xyz.zedler.patrick.doodle.util.MigrationUtil;
-import xyz.zedler.patrick.doodle.util.PrefsUtil;
-import xyz.zedler.patrick.doodle.util.SheetUtil;
 import xyz.zedler.patrick.doodle.util.HapticUtil;
+import xyz.zedler.patrick.doodle.util.PrefsUtil;
+import xyz.zedler.patrick.doodle.util.ViewUtil;
 
 public class SettingsActivity extends AppCompatActivity
     implements View.OnClickListener, CompoundButton.OnCheckedChangeListener, OnChangeListener {
@@ -76,9 +73,8 @@ public class SettingsActivity extends AppCompatActivity
   private ActivitySettingsBinding binding;
   private SharedPreferences sharedPrefs;
   private ActivityResultLauncher<Intent> wallpaperPickerLauncher;
-  private ClickUtil clickUtil;
+  private ViewUtil viewUtil;
   private HapticUtil hapticUtil;
-  private SheetUtil sheetUtil;
   private boolean settingsApplied;
   private boolean themeApplied;
 
@@ -91,12 +87,13 @@ public class SettingsActivity extends AppCompatActivity
     binding = ActivitySettingsBinding.inflate(getLayoutInflater());
     setContentView(binding.getRoot());
 
-    sharedPrefs = new PrefsUtil(this).getSharedPrefs();
-    new MigrationUtil(sharedPrefs).checkForMigrations();
+    sharedPrefs = new PrefsUtil(this)
+        .migrateToStorageContext()
+        .checkForMigrations()
+        .getSharedPrefs();
 
-    clickUtil = new ClickUtil();
+    viewUtil = new ViewUtil();
     hapticUtil = new HapticUtil(this);
-    sheetUtil = new SheetUtil(getSupportFragmentManager());
 
     SystemBarBehavior systemBarBehavior = new SystemBarBehavior(this);
     systemBarBehavior.setAppBar(binding.appBar);
@@ -194,7 +191,7 @@ public class SettingsActivity extends AppCompatActivity
     refreshSelectionTheme(sharedPrefs.getString(PREF.WALLPAPER, WALLPAPER.PIXEL), false);
     refreshSelectionVariant(sharedPrefs.getString(PREF.VARIANT, VARIANT.BLACK), false);
 
-    ClickUtil.setOnClickListeners(
+    ViewUtil.setOnClickListeners(
         this,
         binding.frameClose,
         binding.buttonSet,
@@ -215,7 +212,7 @@ public class SettingsActivity extends AppCompatActivity
         binding.linearLicenseJost
     );
 
-    ClickUtil.setOnCheckedChangeListeners(
+    ViewUtil.setOnCheckedChangeListeners(
         this,
         binding.switchNightMode,
         binding.switchFollowSystem,
@@ -251,10 +248,10 @@ public class SettingsActivity extends AppCompatActivity
   @Override
   public void onClick(View v) {
     int id = v.getId();
-    if (id == R.id.frame_close && clickUtil.isEnabled()) {
+    if (id == R.id.frame_close && viewUtil.isEnabled()) {
       performHapticClick();
       finish();
-    } else if (id == R.id.button_set && clickUtil.isEnabled()) {
+    } else if (id == R.id.button_set && viewUtil.isEnabled()) {
       wallpaperPickerLauncher.launch(
           new Intent(WallpaperManager.ACTION_CHANGE_LIVE_WALLPAPER).putExtra(
               WallpaperManager.EXTRA_LIVE_WALLPAPER_COMPONENT,
@@ -289,31 +286,31 @@ public class SettingsActivity extends AppCompatActivity
     } else if (id == R.id.linear_night_mode) {
       binding.switchNightMode.setChecked(!binding.switchNightMode.isChecked());
     } else if (id == R.id.linear_follow_system) {
-      IconUtil.start(binding.imageFollowSystem);
+      ViewUtil.startIcon(binding.imageFollowSystem);
       if (binding.switchNightMode.isChecked()) {
         binding.switchFollowSystem.setChecked(!binding.switchFollowSystem.isChecked());
       }
     } else if (id == R.id.linear_zoom_launcher) {
-      IconUtil.start(binding.imageZoom);
+      ViewUtil.startIcon(binding.imageZoom);
       binding.checkboxZoomLauncher.setChecked(!binding.checkboxZoomLauncher.isChecked());
     } else if (id == R.id.linear_zoom_unlock) {
-      IconUtil.start(binding.imageZoom);
+      ViewUtil.startIcon(binding.imageZoom);
       binding.checkboxZoomUnlock.setChecked(!binding.checkboxZoomUnlock.isChecked());
     } else if (id == R.id.linear_gpu) {
       binding.switchGpu.setChecked(!binding.switchGpu.isChecked());
-    } else if (id == R.id.linear_github && clickUtil.isEnabled()) {
+    } else if (id == R.id.linear_github && viewUtil.isEnabled()) {
       startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.app_github))));
       performHapticClick();
-    } else if (id == R.id.linear_changelog && clickUtil.isEnabled()) {
-      IconUtil.start(binding.imageChangelog);
+    } else if (id == R.id.linear_changelog && viewUtil.isEnabled()) {
+      ViewUtil.startIcon(binding.imageChangelog);
       showChangelog(false);
       performHapticClick();
-    } else if (id == R.id.linear_feedback && clickUtil.isEnabled()) {
-      IconUtil.start(binding.imageFeedback);
+    } else if (id == R.id.linear_feedback && viewUtil.isEnabled()) {
+      ViewUtil.startIcon(binding.imageFeedback);
       showFeedbackPopUp(false);
       performHapticClick();
-    } else if (id == R.id.linear_developer && clickUtil.isEnabled()) {
-      IconUtil.start(binding.imageDeveloper);
+    } else if (id == R.id.linear_developer && viewUtil.isEnabled()) {
+      ViewUtil.startIcon(binding.imageDeveloper);
       new Handler(Looper.getMainLooper()).postDelayed(
           () -> startActivity(
               new Intent(
@@ -323,24 +320,24 @@ public class SettingsActivity extends AppCompatActivity
           ), 300
       );
       performHapticClick();
-    } else if (id == R.id.linear_license_material_components && clickUtil.isEnabled()) {
-      IconUtil.start(binding.imageLicenseMaterialComponents);
+    } else if (id == R.id.linear_license_material_components && viewUtil.isEnabled()) {
+      ViewUtil.startIcon(binding.imageLicenseMaterialComponents);
       showTextBottomSheet(
           R.raw.license_apache,
           R.string.license_material_components,
           R.string.license_material_components_link
       );
       performHapticClick();
-    } else if (id == R.id.linear_license_material_icons && clickUtil.isEnabled()) {
-      IconUtil.start(binding.imageLicenseMaterialIcons);
+    } else if (id == R.id.linear_license_material_icons && viewUtil.isEnabled()) {
+      ViewUtil.startIcon(binding.imageLicenseMaterialIcons);
       showTextBottomSheet(
           R.raw.license_apache,
           R.string.license_material_icons,
           R.string.license_material_icons_link
       );
       performHapticClick();
-    } else if (id == R.id.linear_license_jost && clickUtil.isEnabled()) {
-      IconUtil.start(binding.imageLicenseJost);
+    } else if (id == R.id.linear_license_jost && viewUtil.isEnabled()) {
+      ViewUtil.startIcon(binding.imageLicenseJost);
       showTextBottomSheet(
           R.raw.license_ofl,
           R.string.license_jost,
@@ -354,7 +351,7 @@ public class SettingsActivity extends AppCompatActivity
   public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
     int id = buttonView.getId();
     if (id == R.id.switch_night_mode) {
-      IconUtil.start(binding.imageNightMode);
+      ViewUtil.startIcon(binding.imageNightMode);
       binding.switchFollowSystem.setEnabled(isChecked);
       binding.linearFollowSystem.setEnabled(isChecked);
       binding.linearFollowSystemContainer.animate()
@@ -395,17 +392,17 @@ public class SettingsActivity extends AppCompatActivity
     int id = slider.getId();
     if (id == R.id.slider_parallax) {
       sharedPrefs.edit().putInt(PREF.PARALLAX, (int) value).apply();
-      IconUtil.start(binding.imageParallax);
+      ViewUtil.startIcon(binding.imageParallax);
       requestSettingsRefresh();
     } else if (id == R.id.slider_size) {
       sharedPrefs.edit().putFloat(PREF.SCALE, value).apply();
-      IconUtil.start(binding.imageSize);
+      ViewUtil.startIcon(binding.imageSize);
       // When the size changes the drawables have to be reloaded
       // Without this and the new size is smaller, the big cached bitmaps are causing lags
       requestSettingsRefresh();
     } else if (id == R.id.slider_zoom) {
       sharedPrefs.edit().putInt(PREF.ZOOM, (int) value).apply();
-      IconUtil.start(binding.imageZoom);
+      ViewUtil.startIcon(binding.imageZoom);
       requestSettingsRefresh();
     }
     performHapticClick();
@@ -449,8 +446,8 @@ public class SettingsActivity extends AppCompatActivity
 
     setVariantSelectionEnabled(selection.equals(WALLPAPER.PIXEL), true);
     if (animated) {
-      IconUtil.start(binding.imageWallpaper);
-      IconUtil.start(mcvSelected.getCheckedIcon());
+      ViewUtil.startIcon(binding.imageWallpaper);
+      ViewUtil.startIcon(mcvSelected.getCheckedIcon());
       sharedPrefs.edit().putString(PREF.WALLPAPER, selection).apply();
       requestThemeRefresh();
     }
@@ -483,8 +480,8 @@ public class SettingsActivity extends AppCompatActivity
     mcv2.setChecked(false);
 
     if (animated) {
-      IconUtil.start(binding.imageVariant);
-      IconUtil.start(mcvSelected.getCheckedIcon());
+      ViewUtil.startIcon(binding.imageVariant);
+      ViewUtil.startIcon(mcvSelected.getCheckedIcon());
       sharedPrefs.edit().putString(PREF.VARIANT, selection).apply();
       requestThemeRefresh();
     }
@@ -547,12 +544,12 @@ public class SettingsActivity extends AppCompatActivity
     if (link != -1) {
       bundle.putString(EXTRA.LINK, getString(link));
     }
-    sheetUtil.show(new TextBottomSheetDialogFragment(), bundle);
+    ViewUtil.showBottomSheet(this, new TextBottomSheetDialogFragment(), bundle);
   }
 
   private void showChangelog(boolean onlyIfUpdated) {
     if (!onlyIfUpdated) {
-      sheetUtil.show(new ChangelogBottomSheetDialogFragment());
+      ViewUtil.showBottomSheet(this, new ChangelogBottomSheetDialogFragment());
       return;
     }
     int versionNew = BuildConfig.VERSION_CODE;
@@ -561,13 +558,13 @@ public class SettingsActivity extends AppCompatActivity
       sharedPrefs.edit().putInt(PREF.LAST_VERSION, versionNew).apply();
     } else if (versionOld != versionNew) {
       sharedPrefs.edit().putInt(PREF.LAST_VERSION, versionNew).apply();
-      sheetUtil.show(new ChangelogBottomSheetDialogFragment());
+      ViewUtil.showBottomSheet(this, new ChangelogBottomSheetDialogFragment());
     }
   }
 
   private void showFeedbackPopUp(boolean onlyAfterSomeUsage) {
     if (!onlyAfterSomeUsage) {
-      sheetUtil.show(new FeedbackBottomSheetDialogFragment());
+      ViewUtil.showBottomSheet(this, new FeedbackBottomSheetDialogFragment());
       return;
     }
     int feedbackCount = sharedPrefs.getInt(Constants.PREF.FEEDBACK_POP_UP_COUNT, 1);
@@ -575,7 +572,7 @@ public class SettingsActivity extends AppCompatActivity
       if (feedbackCount < 5) {
         sharedPrefs.edit().putInt(Constants.PREF.FEEDBACK_POP_UP_COUNT, feedbackCount + 1).apply();
       } else {
-        sheetUtil.show(new FeedbackBottomSheetDialogFragment());
+        ViewUtil.showBottomSheet(this, new FeedbackBottomSheetDialogFragment());
       }
     }
   }

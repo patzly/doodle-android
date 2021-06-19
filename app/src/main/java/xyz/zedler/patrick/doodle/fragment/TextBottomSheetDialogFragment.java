@@ -32,8 +32,8 @@ import android.widget.FrameLayout.LayoutParams;
 import androidx.annotation.NonNull;
 import xyz.zedler.patrick.doodle.Constants;
 import xyz.zedler.patrick.doodle.databinding.FragmentBottomsheetTextBinding;
-import xyz.zedler.patrick.doodle.util.IconUtil;
 import xyz.zedler.patrick.doodle.util.ResUtil;
+import xyz.zedler.patrick.doodle.util.ViewUtil;
 
 public class TextBottomSheetDialogFragment extends BaseBottomSheetDialogFragment {
 
@@ -56,7 +56,7 @@ public class TextBottomSheetDialogFragment extends BaseBottomSheetDialogFragment
     String link = bundle.getString(Constants.EXTRA.LINK);
     if (link != null) {
       binding.frameTextOpenLink.setOnClickListener(v -> {
-        IconUtil.start(binding.imageTextOpenLink);
+        ViewUtil.startIcon(binding.imageTextOpenLink);
         new Handler(Looper.getMainLooper()).postDelayed(
             () -> startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(link))),
             500

@@ -41,6 +41,7 @@ public class SystemUiUtil {
   public final static int COLOR_SCRIM = 0x55000000;
   public final static int COLOR_SCRIM_OPAQUE = 0xFFAAAAAA;
   public final static int COLOR_SCRIM_DARK = 0xB31E1F22;
+  public final static int COLOR_SCRIM_DARK_SURFACE = 0xB3202020;
   public final static int COLOR_SCRIM_LIGHT = 0xB3FFFFFF;
 
   public static void layoutEdgeToEdge(Window window) {
@@ -60,7 +61,7 @@ public class SystemUiUtil {
           WindowInsetsController.APPEARANCE_LIGHT_NAVIGATION_BARS,
           WindowInsetsController.APPEARANCE_LIGHT_NAVIGATION_BARS
       );
-    } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O_MR1) {
+    } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
       final View decorView = window.getDecorView();
       decorView.setSystemUiVisibility(
           decorView.getSystemUiVisibility() | View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR

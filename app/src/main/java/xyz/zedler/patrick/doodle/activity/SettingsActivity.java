@@ -297,6 +297,7 @@ public class SettingsActivity extends AppCompatActivity
       ViewUtil.startIcon(binding.imageZoom);
       binding.checkboxZoomUnlock.setChecked(!binding.checkboxZoomUnlock.isChecked());
     } else if (id == R.id.linear_gpu) {
+      ViewUtil.startIcon(binding.imageGpu);
       binding.switchGpu.setChecked(!binding.switchGpu.isChecked());
     } else if (id == R.id.linear_github && viewUtil.isEnabled()) {
       startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.app_github))));

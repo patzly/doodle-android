@@ -2,6 +2,7 @@
 - Improved: appearance and behavior of bottom sheets
 - Improved: internal resource management
 - Fixed: clipped text in changelog
+- Fixed: GPU icon in settings
 
 3.1.0:
 - New: switch to turn off hardware acceleration (only useful if the wallpaper crashes)

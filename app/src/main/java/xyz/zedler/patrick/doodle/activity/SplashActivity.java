@@ -32,6 +32,7 @@ import xyz.zedler.patrick.doodle.util.ViewUtil;
 
 public class SplashActivity extends AppCompatActivity {
 
+  @Override
   public void onCreate(Bundle bundle) {
     super.onCreate(bundle);
 

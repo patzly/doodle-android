@@ -263,10 +263,10 @@ public class SettingsActivity extends AppCompatActivity
   @Override
   public void onClick(View v) {
     int id = v.getId();
-    if (id == R.id.frame_close && viewUtil.isEnabled()) {
+    if (id == R.id.frame_close && viewUtil.isClickEnabled()) {
       performHapticClick();
       finish();
-    } else if (id == R.id.button_set && viewUtil.isEnabled()) {
+    } else if (id == R.id.button_set && viewUtil.isClickEnabled()) {
       wallpaperPickerLauncher.launch(
           new Intent(WallpaperManager.ACTION_CHANGE_LIVE_WALLPAPER).putExtra(
               WallpaperManager.EXTRA_LIVE_WALLPAPER_COMPONENT,
@@ -332,18 +332,18 @@ public class SettingsActivity extends AppCompatActivity
     } else if (id == R.id.linear_gpu) {
       ViewUtil.startIcon(binding.imageGpu);
       binding.switchGpu.setChecked(!binding.switchGpu.isChecked());
-    } else if (id == R.id.linear_github && viewUtil.isEnabled()) {
+    } else if (id == R.id.linear_github && viewUtil.isClickEnabled()) {
       startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.app_github))));
       performHapticClick();
-    } else if (id == R.id.linear_changelog && viewUtil.isEnabled()) {
+    } else if (id == R.id.linear_changelog && viewUtil.isClickEnabled()) {
       ViewUtil.startIcon(binding.imageChangelog);
       showChangelog(false);
       performHapticClick();
-    } else if (id == R.id.linear_feedback && viewUtil.isEnabled()) {
+    } else if (id == R.id.linear_feedback && viewUtil.isClickEnabled()) {
       ViewUtil.startIcon(binding.imageFeedback);
       showFeedbackPopUp(false);
       performHapticClick();
-    } else if (id == R.id.linear_developer && viewUtil.isEnabled()) {
+    } else if (id == R.id.linear_developer && viewUtil.isClickEnabled()) {
       ViewUtil.startIcon(binding.imageDeveloper);
       new Handler(Looper.getMainLooper()).postDelayed(
           () -> startActivity(
@@ -354,7 +354,7 @@ public class SettingsActivity extends AppCompatActivity
           ), 300
       );
       performHapticClick();
-    } else if (id == R.id.linear_license_material_components && viewUtil.isEnabled()) {
+    } else if (id == R.id.linear_license_material_components && viewUtil.isClickEnabled()) {
       ViewUtil.startIcon(binding.imageLicenseMaterialComponents);
       showTextBottomSheet(
           R.raw.license_apache,
@@ -362,7 +362,7 @@ public class SettingsActivity extends AppCompatActivity
           R.string.license_material_components_link
       );
       performHapticClick();
-    } else if (id == R.id.linear_license_material_icons && viewUtil.isEnabled()) {
+    } else if (id == R.id.linear_license_material_icons && viewUtil.isClickEnabled()) {
       ViewUtil.startIcon(binding.imageLicenseMaterialIcons);
       showTextBottomSheet(
           R.raw.license_apache,
@@ -370,7 +370,7 @@ public class SettingsActivity extends AppCompatActivity
           R.string.license_material_icons_link
       );
       performHapticClick();
-    } else if (id == R.id.linear_license_jost && viewUtil.isEnabled()) {
+    } else if (id == R.id.linear_license_jost && viewUtil.isClickEnabled()) {
       ViewUtil.startIcon(binding.imageLicenseJost);
       showTextBottomSheet(
           R.raw.license_ofl,

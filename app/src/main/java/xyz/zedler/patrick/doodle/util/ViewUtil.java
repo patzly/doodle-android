@@ -56,12 +56,12 @@ public class ViewUtil {
     lastClick = 0;
   }
 
-  public ViewUtil(long idle) {
+  public ViewUtil(long minClickIdle) {
     lastClick = 0;
-    this.idle = idle;
+    idle = minClickIdle;
   }
 
-  public boolean isDisabled() {
+  public boolean isClickDisabled() {
     if (SystemClock.elapsedRealtime() - lastClick < idle) {
       return true;
     }
@@ -69,8 +69,8 @@ public class ViewUtil {
     return false;
   }
 
-  public boolean isEnabled() {
-    return !isDisabled();
+  public boolean isClickEnabled() {
+    return !isClickDisabled();
   }
 
   // Layout direction

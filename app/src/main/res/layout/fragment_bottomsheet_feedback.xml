@@ -121,11 +121,11 @@
 
           <TextView
             style="@style/Widget.Doodle.TextView.ListItem.Title"
-            android:text="@string/info_github" />
+            android:text="@string/action_github" />
 
           <TextView
             style="@style/Widget.Doodle.TextView.ListItem.Description"
-            android:text="@string/info_github_feedback_description" />
+            android:text="@string/action_github_description" />
 
         </LinearLayout>
 

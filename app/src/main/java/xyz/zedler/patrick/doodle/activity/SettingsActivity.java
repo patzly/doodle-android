@@ -218,7 +218,6 @@ public class SettingsActivity extends AppCompatActivity
         binding.linearZoomLauncher,
         binding.linearZoomUnlock,
         binding.linearGpu,
-        binding.linearGithub,
         binding.linearChangelog,
         binding.linearFeedback,
         binding.linearDeveloper,
@@ -332,9 +331,6 @@ public class SettingsActivity extends AppCompatActivity
     } else if (id == R.id.linear_gpu) {
       ViewUtil.startIcon(binding.imageGpu);
       binding.switchGpu.setChecked(!binding.switchGpu.isChecked());
-    } else if (id == R.id.linear_github && viewUtil.isClickEnabled()) {
-      startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.app_github))));
-      performHapticClick();
     } else if (id == R.id.linear_changelog && viewUtil.isClickEnabled()) {
       ViewUtil.startIcon(binding.imageChangelog);
       showChangelog(false);

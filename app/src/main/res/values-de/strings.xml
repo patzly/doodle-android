@@ -31,6 +31,8 @@
   <string name="action_email_description">Den Entwickler kontaktieren</string>
   <string name="action_rate">Bei Google Play bewerten</string>
   <string name="action_rate_description">Entwicklung unterstützen</string>
+  <string name="action_github">Doodle Android auf GitHub</string>
+  <string name="action_github_description">Open a new issue</string>
 
   <string name="settings_default">Standard</string>
   <string name="settings_night_mode">Nachtmodus</string>
@@ -62,9 +64,6 @@
   <string name="info_touch_wiz">Es scheint, dass dein aktueller Standard-Launcher Samsung TouchWiz ist, welcher kein Hintergrund-Scrolling unterstützt. Probiere einen anderen Launcher aus, um den Parallax-Effekt zu ermöglichen.\nDu kannst diese Warnung ignorieren, wenn du einen anderen Standard-Launcher festgelegt hast.</string>
   <string name="info_gpu">Hardware-Beschleunigung ist für Doodle erst ab Android 8 verfügbar. Die Animationen könnten deshalb etwas ruckelig sein, besonders bei dem zweiten Hintergrund.</string>
   <string name="info_version">Version</string>
-  <string name="info_github">Doodle Android auf GitHub</string>
-  <string name="info_github_description">Quellcode</string>
-  <string name="info_github_feedback_description">Open a new issue</string>
   <string name="info_changelog">Änderungen</string>
   <string name="info_changelog_description">Was ist neu?</string>
   <string name="info_developer">Entwickler</string>

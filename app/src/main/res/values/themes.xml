@@ -31,6 +31,7 @@
     <item name="android:colorBackground">@color/background</item>
     <item name="colorOnBackground">@color/on_background</item>
     <item name="android:colorForeground">@color/on_background</item>
+    <item name="android:navigationBarColor">@color/background</item>
 
     <item name="colorSurface">@color/surface</item>
     <item name="colorOnSurface">@color/on_surface</item>
@@ -50,7 +51,6 @@
     parent="ThemeOverlay.MaterialComponents.BottomSheetDialog">
     <item name="enableEdgeToEdge">true</item>
     <item name="android:navigationBarColor">@color/transparent</item>
-    <item name="paddingBottomSystemWindowInsets">true</item>
   </style>
 
 </resources>

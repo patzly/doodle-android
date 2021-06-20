@@ -199,4 +199,14 @@ public class ViewUtil {
     valueAnimator.setInterpolator(new FastOutSlowInInterpolator());
     valueAnimator.setDuration(duration).start();
   }
+
+  // Check MaterialCardViews
+
+  public static void setChecked(boolean checked, MaterialCardView... cardViews) {
+    for (MaterialCardView cardView : cardViews) {
+      if (cardView != null) {
+        cardView.setChecked(checked);
+      }
+    }
+  }
 }

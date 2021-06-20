@@ -205,8 +205,9 @@ public class SettingsActivity extends AppCompatActivity
         binding.cardPixel, binding.cardJohanna, binding.cardReiko, binding.cardAnthony,
         // Variants
         binding.cardPixel1, binding.cardPixel2, binding.cardPixel3,
+        binding.cardPixel4, binding.cardPixel5,
         binding.cardJohanna1,
-        binding.cardReiko1,
+        binding.cardReiko1, binding.cardReiko2,
         binding.cardAnthony1,
         // Other
         binding.frameClose,
@@ -297,11 +298,20 @@ public class SettingsActivity extends AppCompatActivity
     } else if (id == R.id.card_pixel3) {
       refreshSelectionVariant(WALLPAPER.PIXEL, VARIANT.PIXEL3, true);
       performHapticClick();
+    } else if (id == R.id.card_pixel4) {
+      refreshSelectionVariant(WALLPAPER.PIXEL, VARIANT.PIXEL4, true);
+      performHapticClick();
+    } else if (id == R.id.card_pixel5) {
+      refreshSelectionVariant(WALLPAPER.PIXEL, VARIANT.PIXEL5, true);
+      performHapticClick();
     } else if (id == R.id.card_johanna1) {
       refreshSelectionVariant(WALLPAPER.JOHANNA, VARIANT.JOHANNA1, true);
       performHapticClick();
     } else if (id == R.id.card_reiko1) {
       refreshSelectionVariant(WALLPAPER.REIKO, VARIANT.REIKO1, true);
+      performHapticClick();
+    } else if (id == R.id.card_reiko2) {
+      refreshSelectionVariant(WALLPAPER.REIKO, VARIANT.REIKO2, true);
       performHapticClick();
     } else if (id == R.id.card_anthony1) {
       refreshSelectionVariant(WALLPAPER.ANTHONY, VARIANT.ANTHONY1, true);
@@ -438,44 +448,35 @@ public class SettingsActivity extends AppCompatActivity
     binding.linearVariantReiko.setVisibility(View.GONE);
     binding.linearVariantAnthony.setVisibility(View.GONE);
 
-    MaterialCardView mcvSelected, mcv1, mcv2, mcv3;
+    MaterialCardView mcv1 = binding.cardPixel;
+    MaterialCardView mcv2 = binding.cardJohanna;
+    MaterialCardView mcv3 = binding.cardReiko;
+    MaterialCardView mcv4 = binding.cardAnthony;
+    MaterialCardView mcvSelected = null;
+
     switch (selection) {
+      case WALLPAPER.PIXEL:
+        mcvSelected = binding.cardPixel;
+        binding.linearVariantPixel.setVisibility(View.VISIBLE);
+        break;
       case WALLPAPER.JOHANNA:
         mcvSelected = binding.cardJohanna;
-        mcv1 = binding.cardPixel;
-        mcv2 = binding.cardReiko;
-        mcv3 = binding.cardAnthony;
         binding.linearVariantJohanna.setVisibility(View.VISIBLE);
         break;
       case WALLPAPER.REIKO:
         mcvSelected = binding.cardReiko;
-        mcv1 = binding.cardPixel;
-        mcv2 = binding.cardJohanna;
-        mcv3 = binding.cardAnthony;
         binding.linearVariantReiko.setVisibility(View.VISIBLE);
         break;
       case WALLPAPER.ANTHONY:
         mcvSelected = binding.cardAnthony;
-        mcv1 = binding.cardPixel;
-        mcv2 = binding.cardJohanna;
-        mcv3 = binding.cardReiko;
         binding.linearVariantAnthony.setVisibility(View.VISIBLE);
         break;
-      default:
-        mcvSelected = binding.cardPixel;
-        mcv1 = binding.cardJohanna;
-        mcv2 = binding.cardAnthony;
-        mcv3 = binding.cardReiko;
-        binding.linearVariantPixel.setVisibility(View.VISIBLE);
-        break;
     }
-    if (mcvSelected.isChecked()) {
+    if (mcvSelected == null || mcvSelected.isChecked()) {
       return;
     }
+    ViewUtil.setChecked(false, mcv1, mcv2, mcv3, mcv4);
     mcvSelected.setChecked(true);
-    mcv1.setChecked(false);
-    mcv2.setChecked(false);
-    mcv3.setChecked(false);
 
     if (animated) {
       ViewUtil.startIcon(binding.imageWallpaper);
@@ -486,61 +487,72 @@ public class SettingsActivity extends AppCompatActivity
   }
 
   private void refreshSelectionVariant(String wallpaper, String selection, boolean animated) {
-    MaterialCardView mcvSelected, mcv1, mcv2;
-    mcvSelected = mcv1 = mcv2 = null;
+    MaterialCardView mcv1, mcv2, mcv3, mcv4, mcv5, mcvSelected;
+    mcvSelected = mcv1 = mcv2 = mcv3 = mcv4 = mcv5 = null;
 
     switch (wallpaper) {
       case WALLPAPER.PIXEL: {
+        mcv1 = binding.cardPixel1;
+        mcv2 = binding.cardPixel2;
+        mcv3 = binding.cardPixel3;
+        mcv4 = binding.cardPixel4;
+        mcv5 = binding.cardPixel5;
         switch (selection) {
           case VARIANT.PIXEL1:
             mcvSelected = binding.cardPixel1;
-            mcv1 = binding.cardPixel2;
-            mcv2 = binding.cardPixel3;
             break;
           case VARIANT.PIXEL2:
             mcvSelected = binding.cardPixel2;
-            mcv1 = binding.cardPixel1;
-            mcv2 = binding.cardPixel3;
             break;
           case VARIANT.PIXEL3:
             mcvSelected = binding.cardPixel3;
-            mcv1 = binding.cardPixel1;
-            mcv2 = binding.cardPixel2;
+            break;
+          case VARIANT.PIXEL4:
+            mcvSelected = binding.cardPixel4;
+            break;
+          case VARIANT.PIXEL5:
+            mcvSelected = binding.cardPixel5;
             break;
         }
       }
+      break;
       case WALLPAPER.JOHANNA: {
+        mcv1 = binding.cardJohanna1;
         switch (selection) {
           case VARIANT.JOHANNA1:
             mcvSelected = binding.cardJohanna1;
             break;
         }
       }
+      break;
       case WALLPAPER.REIKO: {
+        mcv1 = binding.cardReiko1;
+        mcv2 = binding.cardReiko2;
         switch (selection) {
           case VARIANT.REIKO1:
             mcvSelected = binding.cardReiko1;
             break;
+          case VARIANT.REIKO2:
+            mcvSelected = binding.cardReiko2;
+            break;
         }
       }
+      break;
       case WALLPAPER.ANTHONY: {
+        mcv1 = binding.cardAnthony1;
         switch (selection) {
           case VARIANT.ANTHONY1:
             mcvSelected = binding.cardAnthony1;
             break;
         }
       }
+      break;
     }
     if (mcvSelected == null || mcvSelected.isChecked()) {
       return;
     }
+    ViewUtil.setChecked(false, mcv1, mcv2, mcv3, mcv4, mcv5);
     mcvSelected.setChecked(true);
-    if (mcv1 != null) {
-      mcv1.setChecked(false);
-    }
-    if (mcv2 != null) {
-      mcv2.setChecked(false);
-    }
 
     if (animated) {
       ViewUtil.startIcon(binding.imageVariant);
@@ -630,10 +642,6 @@ public class SettingsActivity extends AppCompatActivity
         ViewUtil.showBottomSheet(this, new FeedbackBottomSheetDialogFragment());
       }
     }
-  }
-
-  private boolean isPixelWallpaperActive() {
-    return sharedPrefs.getString(PREF.WALLPAPER, WALLPAPER.PIXEL).equals(WALLPAPER.PIXEL);
   }
 
   private boolean isTouchWiz() {

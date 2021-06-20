@@ -130,14 +130,25 @@ public class LiveWallpaperService extends WallpaperService {
     if (isNightMode()) {
       switch (wallpaper) {
         case WALLPAPER.PIXEL:
-          svgDrawable = new SvgDrawable(this, R.raw.wallpaper_pixel123_dark);
+          if (variant.equals(VARIANT.PIXEL4)) {
+            svgDrawable = new SvgDrawable(this, R.raw.wallpaper_pixel4_dark);
+          } else if (variant.equals(VARIANT.PIXEL5)) {
+            svgDrawable = new SvgDrawable(this, R.raw.wallpaper_pixel5_dark);
+          } else {
+            svgDrawable = new SvgDrawable(this, R.raw.wallpaper_pixel123_dark);
+          }
           break;
         case WALLPAPER.JOHANNA:
           svgDrawable = new SvgDrawable(this, R.raw.wallpaper_johanna1_dark);
           break;
         case WALLPAPER.REIKO:
-          svgDrawable = new SvgDrawable(this, R.raw.wallpaper_reiko1_dark);
-          setGradientReiko();
+          if (variant.equals(VARIANT.REIKO1)) {
+            svgDrawable = new SvgDrawable(this, R.raw.wallpaper_reiko1_dark);
+            setKidneyGradientReiko("#a0b0fb", "#d8d4fe");
+          } else if (variant.equals(VARIANT.REIKO2)) {
+            svgDrawable = new SvgDrawable(this, R.raw.wallpaper_reiko2_dark);
+            setKidneyGradientReiko("#eb902b", "#ecc12f");
+          }
           break;
         case WALLPAPER.ANTHONY:
           svgDrawable = new SvgDrawable(this, R.raw.wallpaper_anthony1_dark);
@@ -156,14 +167,28 @@ public class LiveWallpaperService extends WallpaperService {
             case VARIANT.PIXEL3:
               svgDrawable = new SvgDrawable(this, R.raw.wallpaper_pixel3);
               break;
+            case VARIANT.PIXEL4:
+              svgDrawable = new SvgDrawable(this, R.raw.wallpaper_pixel4);
+              break;
+            case VARIANT.PIXEL5:
+              svgDrawable = new SvgDrawable(this, R.raw.wallpaper_pixel5);
+              break;
           }
           break;
         case WALLPAPER.JOHANNA:
           svgDrawable = new SvgDrawable(this, R.raw.wallpaper_johanna1);
           break;
         case WALLPAPER.REIKO:
-          svgDrawable = new SvgDrawable(this, R.raw.wallpaper_reiko1);
-          setGradientReiko();
+          switch (variant) {
+            case VARIANT.REIKO1:
+              svgDrawable = new SvgDrawable(this, R.raw.wallpaper_reiko1);
+              setKidneyGradientReiko("#a0b0fb", "#d8d4fe");
+              break;
+            case VARIANT.REIKO2:
+              svgDrawable = new SvgDrawable(this, R.raw.wallpaper_reiko2);
+              setKidneyGradientReiko("#ff931e", "#fbc318");
+              break;
+          }
           break;
         case WALLPAPER.ANTHONY:
           svgDrawable = new SvgDrawable(this, R.raw.wallpaper_anthony1);
@@ -176,9 +201,9 @@ public class LiveWallpaperService extends WallpaperService {
     }
   }
 
-  private void setGradientReiko() {
-    int colorStart = Color.parseColor("#a0b0fb");
-    int colorEnd = Color.parseColor("#d8d4fe");
+  private void setKidneyGradientReiko(String start, String end) {
+    int colorStart = Color.parseColor(start);
+    int colorEnd = Color.parseColor(end);
     SvgObject kidneyFront = svgDrawable.findObjectById("kidney_front");
     if (kidneyFront != null) {
       kidneyFront.shader = new LinearGradient(
@@ -297,6 +322,12 @@ public class LiveWallpaperService extends WallpaperService {
                 break;
               case VARIANT.PIXEL3:
                 background = Color.parseColor("#fbb29e");
+                break;
+              case VARIANT.PIXEL4:
+                background = Color.parseColor("#eae5bf");
+                break;
+              case VARIANT.PIXEL5:
+                background = Color.parseColor("#fff5ec");
                 break;
             }
             break;

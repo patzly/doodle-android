@@ -130,17 +130,17 @@ public class LiveWallpaperService extends WallpaperService {
     if (isNightMode()) {
       switch (wallpaper) {
         case WALLPAPER.PIXEL:
-          svgDrawable = new SvgDrawable(this, R.raw.wallpaper_pixel_dark);
+          svgDrawable = new SvgDrawable(this, R.raw.wallpaper_pixel123_dark);
           break;
         case WALLPAPER.JOHANNA:
-          svgDrawable = new SvgDrawable(this, R.raw.wallpaper_johanna_dark);
+          svgDrawable = new SvgDrawable(this, R.raw.wallpaper_johanna1_dark);
           break;
         case WALLPAPER.REIKO:
-          svgDrawable = new SvgDrawable(this, R.raw.wallpaper_reiko_dark);
+          svgDrawable = new SvgDrawable(this, R.raw.wallpaper_reiko1_dark);
           setGradientReiko();
           break;
         case WALLPAPER.ANTHONY:
-          svgDrawable = new SvgDrawable(this, R.raw.wallpaper_anthony_dark);
+          svgDrawable = new SvgDrawable(this, R.raw.wallpaper_anthony1_dark);
           break;
       }
     } else {
@@ -148,31 +148,31 @@ public class LiveWallpaperService extends WallpaperService {
         case WALLPAPER.PIXEL:
           switch (variant) {
             case VARIANT.PIXEL1:
-              svgDrawable = new SvgDrawable(this, R.raw.wallpaper_pixel_black);
+              svgDrawable = new SvgDrawable(this, R.raw.wallpaper_pixel1);
               break;
             case VARIANT.PIXEL2:
-              svgDrawable = new SvgDrawable(this, R.raw.wallpaper_pixel_white);
+              svgDrawable = new SvgDrawable(this, R.raw.wallpaper_pixel2);
               break;
             case VARIANT.PIXEL3:
-              svgDrawable = new SvgDrawable(this, R.raw.wallpaper_pixel_orange);
+              svgDrawable = new SvgDrawable(this, R.raw.wallpaper_pixel3);
               break;
           }
           break;
         case WALLPAPER.JOHANNA:
-          svgDrawable = new SvgDrawable(this, R.raw.wallpaper_johanna);
+          svgDrawable = new SvgDrawable(this, R.raw.wallpaper_johanna1);
           break;
         case WALLPAPER.REIKO:
-          svgDrawable = new SvgDrawable(this, R.raw.wallpaper_reiko);
+          svgDrawable = new SvgDrawable(this, R.raw.wallpaper_reiko1);
           setGradientReiko();
           break;
         case WALLPAPER.ANTHONY:
-          svgDrawable = new SvgDrawable(this, R.raw.wallpaper_anthony);
+          svgDrawable = new SvgDrawable(this, R.raw.wallpaper_anthony1);
           break;
       }
     }
     if (svgDrawable == null) {
       // Prevent NullPointerExceptions
-      svgDrawable = new SvgDrawable(this, R.raw.wallpaper_pixel_dark);
+      svgDrawable = new SvgDrawable(this, R.raw.wallpaper_pixel123_dark);
     }
   }
 

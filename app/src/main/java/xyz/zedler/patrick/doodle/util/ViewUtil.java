@@ -115,8 +115,7 @@ public class ViewUtil {
   }
 
   public static void showBottomSheet(
-      AppCompatActivity activity, BottomSheetDialogFragment sheet, @Nullable Bundle bundle
-  ) {
+      AppCompatActivity activity, BottomSheetDialogFragment sheet, @Nullable Bundle bundle) {
     if (bundle != null) {
       sheet.setArguments(bundle);
     }
@@ -126,16 +125,14 @@ public class ViewUtil {
   // OnGlobalLayoutListeners
 
   public static void addOnGlobalLayoutListener(
-      @Nullable View view, @NonNull OnGlobalLayoutListener listener
-  ) {
+      @Nullable View view, @NonNull OnGlobalLayoutListener listener) {
     if (view != null) {
       view.getViewTreeObserver().addOnGlobalLayoutListener(listener);
     }
   }
 
   public static void removeOnGlobalLayoutListener(
-      @Nullable View view, @NonNull OnGlobalLayoutListener victim
-  ) {
+      @Nullable View view, @NonNull OnGlobalLayoutListener victim) {
     if (view != null) {
       view.getViewTreeObserver().removeOnGlobalLayoutListener(victim);
     }

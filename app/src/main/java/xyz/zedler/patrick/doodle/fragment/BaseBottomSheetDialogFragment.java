@@ -23,9 +23,10 @@ import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.PaintDrawable;
-import android.os.Build.VERSION;
-import android.os.Build.VERSION_CODES;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.view.Window;
@@ -43,6 +44,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.util.SystemUiUtil;
+import xyz.zedler.patrick.doodle.util.ViewUtil;
 
 public class BaseBottomSheetDialogFragment extends BottomSheetDialogFragment {
 
@@ -91,6 +93,7 @@ public class BaseBottomSheetDialogFragment extends BottomSheetDialogFragment {
                 @Override
                 public void onStateChanged(@NonNull View bottomSheet, int newState) {
                   isExpanded = newState == BottomSheetBehavior.STATE_EXPANDED;
+                  removeWeirdBottomPadding(sheet);
                 }
 
                 @Override
@@ -98,19 +101,14 @@ public class BaseBottomSheetDialogFragment extends BottomSheetDialogFragment {
                   if (bottomSheet.getTop() < insetTop) {
                     float fraction = (float) bottomSheet.getTop() / (float) insetTop;
                     setCornerRadius(background, radius * fraction);
-                    // Fix awkward bottom inset applied by BottomSheetBehavior
-                    sheet.setPadding(
-                        sheet.getPaddingLeft(),
-                        sheet.getPaddingTop(),
-                        sheet.getPaddingRight(),
-                        0
-                    );
                   } else if (bottomSheet.getTop() != 0) {
                     setCornerRadius(background, radius);
                   }
+                  removeWeirdBottomPadding(sheet);
                 }
               });
               if (isExpanded) {
+                // Layout below status bar if it was there before screen rotation
                 sheet.setPadding(
                     sheet.getPaddingLeft(),
                     insetTop - sheet.getTop(),
@@ -118,14 +116,21 @@ public class BaseBottomSheetDialogFragment extends BottomSheetDialogFragment {
                     0
                 );
               }
+              // Ugly, but we have to remove the padding after it is applied by the behavior
+              new Handler(Looper.getMainLooper()).postDelayed(
+                  () -> removeWeirdBottomPadding(sheet),
+                  50
+              );
               return insets;
             });
 
             if (decorView.getViewTreeObserver().isAlive()) {
-              decorView.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+              ViewUtil.removeOnGlobalLayoutListener(decorView, this);
             }
           }
         });
+
+    // TODO: bottom sheet blinks on slower devices before it fades in
 
     layoutEdgeToEdge(dialog.getWindow());
 
@@ -146,37 +151,95 @@ public class BaseBottomSheetDialogFragment extends BottomSheetDialogFragment {
     }
   }
 
+  /**
+   * Fix weird behavior of BottomSheetBehavior
+   * Bottom padding is applied although we have turned that off in the theme...
+   * We have to apply it manually to the scroll content container
+   * So we remove it here again
+   */
+  private void removeWeirdBottomPadding(View sheet) {
+    sheet.setPadding(
+        sheet.getPaddingLeft(), sheet.getPaddingTop(), sheet.getPaddingRight(), 0
+    );
+  }
+
   private void setCornerRadius(PaintDrawable drawable, float radius) {
     drawable.setCornerRadii(new float[]{radius, radius, radius, radius, 0, 0, 0, 0});
   }
 
   private void layoutEdgeToEdge(Window window) {
-    int statusBarColor = VERSION.SDK_INT < VERSION_CODES.M
-        ? SystemUiUtil.COLOR_SCRIM
-        : Color.TRANSPARENT;
-    int navbarColor = VERSION.SDK_INT < VERSION_CODES.O_MR1
-        ? SystemUiUtil.COLOR_SCRIM
-        : Color.TRANSPARENT;
+    SystemUiUtil.layoutEdgeToEdge(window);
 
-    boolean lightBg = isColorLight(ContextCompat.getColor(requireContext(), R.color.surface));
-    boolean lightNavbar = isColorLight(navbarColor);
-    boolean showDarkNavbarIcons = lightNavbar || (navbarColor == Color.TRANSPARENT && lightBg);
+    boolean isOrientationPortrait = SystemUiUtil.isOrientationPortrait(requireContext());
+    boolean isDarkModeActive = SystemUiUtil.isDarkModeActive(requireContext());
 
-    int currentStatusBar = VERSION.SDK_INT >= VERSION_CODES.M
-        ? decorView.getSystemUiVisibility() & View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
-        : 0;
-    int currentNavBar = showDarkNavbarIcons && VERSION.SDK_INT >= VERSION_CODES.O
-        ? View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR
-        : 0;
-
-    window.setNavigationBarColor(navbarColor);
-    window.setStatusBarColor(statusBarColor);
-
-    decorView.setSystemUiVisibility(
-        (View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_LAYOUT_STABLE)
-            | currentStatusBar
-            | currentNavBar
-    );
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) { // 29
+      window.setStatusBarColor(Color.TRANSPARENT);
+      if (SystemUiUtil.isNavigationModeGesture(requireContext())) {
+        window.setNavigationBarColor(Color.TRANSPARENT);
+        window.setNavigationBarContrastEnforced(true);
+      } else {
+        if (!isDarkModeActive) {
+          SystemUiUtil.setLightNavigationBar(window);
+        }
+        if (isOrientationPortrait) {
+          window.setNavigationBarColor(
+              isDarkModeActive
+                  ? SystemUiUtil.COLOR_SCRIM_DARK_SURFACE
+                  : SystemUiUtil.COLOR_SCRIM_LIGHT
+          );
+        } else {
+          window.setNavigationBarDividerColor(
+              ContextCompat.getColor(requireContext(), R.color.stroke_secondary)
+          );
+          window.setNavigationBarColor(
+              ContextCompat.getColor(requireContext(), R.color.background)
+          );
+        }
+      }
+    } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) { // 28
+      window.setStatusBarColor(Color.TRANSPARENT);
+      if (!isDarkModeActive) {
+        SystemUiUtil.setLightNavigationBar(window);
+      }
+      if (isOrientationPortrait) {
+        window.setNavigationBarColor(
+            isDarkModeActive
+                ? SystemUiUtil.COLOR_SCRIM_DARK_SURFACE
+                : SystemUiUtil.COLOR_SCRIM_LIGHT
+        );
+      } else {
+        window.setNavigationBarDividerColor(
+            ContextCompat.getColor(requireContext(), R.color.stroke_secondary)
+        );
+        window.setNavigationBarColor(ContextCompat.getColor(requireContext(), R.color.background));
+      }
+    } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) { // 26
+      window.setStatusBarColor(Color.TRANSPARENT);
+      if (isOrientationPortrait) {
+        window.setNavigationBarColor(
+            isDarkModeActive
+                ? SystemUiUtil.COLOR_SCRIM_DARK_SURFACE
+                : SystemUiUtil.COLOR_SCRIM_LIGHT
+        );
+        if (!isDarkModeActive) {
+          SystemUiUtil.setLightNavigationBar(window);
+        }
+      } else {
+        window.setNavigationBarColor(Color.BLACK);
+      }
+    } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) { // 23
+      window.setStatusBarColor(Color.TRANSPARENT);
+      if (isOrientationPortrait) {
+        window.setNavigationBarColor(
+            isDarkModeActive
+                ? SystemUiUtil.COLOR_SCRIM_DARK_SURFACE
+                : SystemUiUtil.COLOR_SCRIM
+        );
+      } else {
+        window.setNavigationBarColor(Color.BLACK);
+      }
+    }
   }
 
   private static boolean isColorLight(@ColorInt int color) {

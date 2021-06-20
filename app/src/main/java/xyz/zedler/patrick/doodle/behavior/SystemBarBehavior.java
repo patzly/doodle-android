@@ -255,7 +255,7 @@ public class SystemBarBehavior {
         );
         window.setNavigationBarColor(ContextCompat.getColor(activity, R.color.background));
       }
-    } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O_MR1) { // 27
+    } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) { // 26
       window.setStatusBarColor(Color.TRANSPARENT);
       if (!isDarkModeActive) {
         SystemUiUtil.setLightStatusBar(window);

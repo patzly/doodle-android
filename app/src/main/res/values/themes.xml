@@ -42,10 +42,15 @@
 
     <item name="android:fontFamily">@font/jost_book</item>
 
-    <!-- BOTTOM SHEET DIALOG -->
-    <item name="android:navigationBarColor">@color/transparent</item>
-    <item name="enableEdgeToEdge">true</item>
+    <item name="bottomSheetDialogTheme">@style/Theme.Doodle.BottomSheetDialog</item>
+  </style>
 
+  <style
+    name="Theme.Doodle.BottomSheetDialog"
+    parent="ThemeOverlay.MaterialComponents.BottomSheetDialog">
+    <item name="enableEdgeToEdge">true</item>
+    <item name="android:navigationBarColor">@color/transparent</item>
+    <item name="paddingBottomSystemWindowInsets">true</item>
   </style>
 
 </resources>

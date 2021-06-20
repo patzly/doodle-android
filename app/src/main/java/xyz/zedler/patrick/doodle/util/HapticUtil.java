@@ -27,18 +27,19 @@ import android.os.Vibrator;
 public class HapticUtil {
 
   private final Vibrator vibrator;
-  private final boolean hasVibrator;
+  private boolean enabled;
 
+  public static final long TICK = 13;
   public static final long CLICK = 20;
   public static final long HEAVY = 50;
 
   public HapticUtil(Context context) {
     vibrator = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
-    hasVibrator = hasVibrator();
+    enabled = hasVibrator();
   }
 
   public void vibrate(long duration) {
-    if (!hasVibrator) {
+    if (!enabled) {
       return;
     }
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -49,8 +50,16 @@ public class HapticUtil {
   }
 
   private void vibrate(int effectId) {
-    if (hasVibrator && Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+    if (enabled && Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
       vibrator.vibrate(VibrationEffect.createPredefined(effectId));
+    }
+  }
+
+  public void tick() {
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+      vibrate(VibrationEffect.EFFECT_TICK);
+    } else {
+      vibrate(TICK);
     }
   }
 
@@ -62,12 +71,24 @@ public class HapticUtil {
     }
   }
 
+  public void doubleClick() {
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+      vibrate(VibrationEffect.EFFECT_DOUBLE_CLICK);
+    } else {
+      vibrate(CLICK);
+    }
+  }
+
   public void heavyClick() {
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
       vibrate(VibrationEffect.EFFECT_HEAVY_CLICK);
     } else {
       vibrate(HEAVY);
     }
+  }
+
+  public void setEnabled(boolean enabled) {
+    this.enabled = enabled && hasVibrator();
   }
 
   public boolean hasVibrator() {

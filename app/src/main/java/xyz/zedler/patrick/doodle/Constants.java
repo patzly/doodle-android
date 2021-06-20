@@ -21,6 +21,8 @@ package xyz.zedler.patrick.doodle;
 
 public final class Constants {
 
+  public final static String VARIANT_PREFIX = "variant_";
+
   public final static class PREF {
 
     public final static String NIGHT_MODE = "night_mode";
@@ -29,7 +31,10 @@ public final class Constants {
     public final static String ZOOM_LAUNCHER = "zoom_launcher";
     public final static String ZOOM_UNLOCK = "zoom_unlock";
     public final static String WALLPAPER = "wallpaper";
-    public final static String VARIANT = "variant";
+    public final static String VARIANT_PIXEL = "variant_pixel";
+    public final static String VARIANT_JOHANNA = "variant_johanna";
+    public final static String VARIANT_REIKO = "variant_reiko";
+    public final static String VARIANT_ANTHONY = "variant_anthony";
     public final static String PARALLAX = "parallax";
     public final static String SCALE = "size";
     public final static String GPU = "hardware_acceleration";
@@ -49,7 +54,6 @@ public final class Constants {
     public final static boolean ZOOM_LAUNCHER = true;
     public final static boolean ZOOM_UNLOCK = true;
     public final static String WALLPAPER = Constants.WALLPAPER.PIXEL;
-    public final static String VARIANT = Constants.VARIANT.BLACK;
     public final static int PARALLAX = 1;
     public final static float SCALE = 1;
     public final static boolean GPU = true;
@@ -59,15 +63,21 @@ public final class Constants {
 
     public final static String PIXEL = "pixel";
     public final static String JOHANNA = "johanna";
-    public final static String REIKO = "neon";
-    public final static String ANTHONY = "geometric";
+    public final static String REIKO = "reiko";
+    public final static String ANTHONY = "anthony";
   }
 
   public final static class VARIANT {
 
-    public final static String BLACK = "black";
-    public final static String WHITE = "white";
-    public final static String ORANGE = "orange";
+    public final static String PIXEL1 = "pixel1";
+    public final static String PIXEL2 = "pixel2";
+    public final static String PIXEL3 = "pixel3";
+
+    public final static String JOHANNA1 = "johanna1";
+
+    public final static String REIKO1 = "reiko1";
+
+    public final static String ANTHONY1 = "anthony1";
   }
 
   public final static class EXTRA {

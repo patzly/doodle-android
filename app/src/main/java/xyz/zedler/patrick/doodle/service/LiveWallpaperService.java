@@ -147,13 +147,13 @@ public class LiveWallpaperService extends WallpaperService {
       switch (wallpaper) {
         case WALLPAPER.PIXEL:
           switch (variant) {
-            case Constants.VARIANT.BLACK:
+            case VARIANT.PIXEL1:
               svgDrawable = new SvgDrawable(this, R.raw.wallpaper_pixel_black);
               break;
-            case Constants.VARIANT.WHITE:
+            case VARIANT.PIXEL2:
               svgDrawable = new SvgDrawable(this, R.raw.wallpaper_pixel_white);
               break;
-            case Constants.VARIANT.ORANGE:
+            case VARIANT.PIXEL3:
               svgDrawable = new SvgDrawable(this, R.raw.wallpaper_pixel_orange);
               break;
           }
@@ -289,13 +289,13 @@ public class LiveWallpaperService extends WallpaperService {
         switch (wallpaper) {
           case WALLPAPER.PIXEL:
             switch (variant) {
-              case VARIANT.BLACK:
+              case VARIANT.PIXEL1:
                 background = Color.parseColor("#232323");
                 break;
-              case VARIANT.WHITE:
+              case VARIANT.PIXEL2:
                 background = Color.parseColor("#dbd7ce");
                 break;
-              case VARIANT.ORANGE:
+              case VARIANT.PIXEL3:
                 background = Color.parseColor("#fbb29e");
                 break;
             }
@@ -356,7 +356,9 @@ public class LiveWallpaperService extends WallpaperService {
 
     private void loadTheme() {
       wallpaper = sharedPrefs.getString(PREF.WALLPAPER, DEF.WALLPAPER);
-      variant = sharedPrefs.getString(PREF.VARIANT, DEF.VARIANT);
+      variant = sharedPrefs.getString(
+          Constants.VARIANT_PREFIX + wallpaper, wallpaper + "1"
+      );
       nightMode = sharedPrefs.getBoolean(PREF.NIGHT_MODE, DEF.NIGHT_MODE);
       followSystem = sharedPrefs.getBoolean(PREF.FOLLOW_SYSTEM, DEF.FOLLOW_SYSTEM);
       isNight = isNightMode();

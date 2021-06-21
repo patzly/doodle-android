@@ -1,6 +1,7 @@
 3.2.0:
-- New: additional playful color variants
+- New: additional color variants
 - Improved: appearance and behavior of bottom sheets
+- Improved: wallpaper thumbnail
 - Improved: internal resource management
 - Fixed: clipped text in changelog
 - Fixed: GPU icon in settings

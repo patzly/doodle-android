@@ -3,7 +3,7 @@ They are completely rewritten, nothing except the look is taken from the origina
 
 Advantages over the original:
 - No permanent animations or gyroscope sensor requests
-- Additional playful color variants
+- Additional color variants
 - Support for Android 11 zoom effect
 - Optional zoom effect when unlocking the device
 - Suitable for less powerful devices with power-efficient animations

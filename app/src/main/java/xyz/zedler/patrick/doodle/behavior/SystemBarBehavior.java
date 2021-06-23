@@ -286,7 +286,11 @@ public class SystemBarBehavior {
                 : SystemUiUtil.COLOR_SCRIM
         );
       } else {
-        window.setNavigationBarColor(Color.BLACK);
+        window.setNavigationBarColor(
+            isDarkModeActive
+                ? SystemUiUtil.COLOR_SCRIM_DARK
+                : SystemUiUtil.COLOR_SCRIM
+        );
       }
     }
   }

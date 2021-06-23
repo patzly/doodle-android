@@ -61,7 +61,7 @@ public class SystemUiUtil {
           WindowInsetsController.APPEARANCE_LIGHT_NAVIGATION_BARS
       );
     } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-      final View decorView = window.getDecorView();
+      View decorView = window.getDecorView();
       decorView.setSystemUiVisibility(
           decorView.getSystemUiVisibility() | View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR
       );

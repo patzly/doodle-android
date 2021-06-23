@@ -31,11 +31,9 @@ import android.view.View;
 import android.view.ViewTreeObserver;
 import android.view.Window;
 import android.view.WindowManager;
-import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
-import androidx.core.graphics.ColorUtils;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat.Type;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
@@ -230,20 +228,12 @@ public class BaseBottomSheetDialogFragment extends BottomSheetDialogFragment {
       }
     } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) { // 23
       window.setStatusBarColor(Color.TRANSPARENT);
-      if (isOrientationPortrait) {
-        window.setNavigationBarColor(
-            isDarkModeActive
-                ? SystemUiUtil.COLOR_SCRIM_DARK_SURFACE
-                : SystemUiUtil.COLOR_SCRIM
-        );
-      } else {
-        window.setNavigationBarColor(Color.BLACK);
-      }
+      window.setNavigationBarColor(
+          isDarkModeActive
+              ? SystemUiUtil.COLOR_SCRIM_DARK_SURFACE
+              : SystemUiUtil.COLOR_SCRIM
+      );
     }
-  }
-
-  private static boolean isColorLight(@ColorInt int color) {
-    return color != Color.TRANSPARENT && ColorUtils.calculateLuminance(color) > 0.5;
   }
 
   public void applyBottomInset(int bottom) {}

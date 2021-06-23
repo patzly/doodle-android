@@ -66,7 +66,7 @@
     <item name="checkedIconSize">42dp</item>
     <item name="checkedIconMargin">0dp</item>
     <item name="cardElevation">2.5dp</item>
-    <item name="cardCornerRadius">32dp</item>
+    <item name="cardCornerRadius">21dp</item>
     <item name="android:layout_gravity">center</item>
   </style>
 

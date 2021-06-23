@@ -5,6 +5,7 @@
 - Improved: internal resource management
 - Fixed: clipped text in changelog
 - Fixed: GPU icon in settings
+- Fixed: corner radius of selection circles
 
 3.1.0:
 - New: switch to turn off hardware acceleration (only useful if the wallpaper crashes)

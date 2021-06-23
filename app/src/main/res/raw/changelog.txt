@@ -1,7 +1,7 @@
 3.2.0:
 - New: additional color variants
-- Improved: appearance and behavior of bottom sheets
 - Improved: wallpaper thumbnail
+- Improved: appearance and behavior of bottom sheets and system bars
 - Improved: internal resource management
 - Fixed: clipped text in changelog
 - Fixed: GPU icon in settings

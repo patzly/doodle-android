@@ -222,9 +222,9 @@ public class SystemBarBehavior {
           window.setNavigationBarColor(
               isScrollable
                   ? (isDarkModeActive
-                  ? SystemUiUtil.COLOR_SCRIM_DARK
-                  : SystemUiUtil.COLOR_SCRIM_LIGHT)
-                  : Color.TRANSPARENT
+                      ? SystemUiUtil.SCRIM_DARK
+                      : SystemUiUtil.SCRIM_LIGHT)
+                  : Color.parseColor("#01000000")
           );
         } else {
           window.setNavigationBarDividerColor(
@@ -245,8 +245,8 @@ public class SystemBarBehavior {
         window.setNavigationBarColor(
             isScrollable
                 ? (isDarkModeActive
-                ? SystemUiUtil.COLOR_SCRIM_DARK
-                : SystemUiUtil.COLOR_SCRIM_LIGHT)
+                    ? SystemUiUtil.SCRIM_DARK
+                    : SystemUiUtil.SCRIM_LIGHT)
                 : Color.TRANSPARENT
         );
       } else {
@@ -264,15 +264,19 @@ public class SystemBarBehavior {
         window.setNavigationBarColor(
             isScrollable
                 ? (isDarkModeActive
-                ? SystemUiUtil.COLOR_SCRIM_DARK
-                : SystemUiUtil.COLOR_SCRIM_LIGHT)
+                    ? SystemUiUtil.SCRIM_DARK
+                    : SystemUiUtil.SCRIM_LIGHT)
                 : Color.TRANSPARENT
         );
         if (!isDarkModeActive) {
           SystemUiUtil.setLightNavigationBar(window);
         }
       } else {
-        window.setNavigationBarColor(Color.BLACK);
+        window.setNavigationBarColor(
+            isDarkModeActive
+                ? SystemUiUtil.SCRIM_DARK
+                : SystemUiUtil.SCRIM
+        );
       }
     } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) { // 23
       window.setStatusBarColor(Color.TRANSPARENT);
@@ -282,14 +286,14 @@ public class SystemBarBehavior {
       if (isOrientationPortrait) {
         window.setNavigationBarColor(
             isDarkModeActive
-                ? (isScrollable ? SystemUiUtil.COLOR_SCRIM_DARK : Color.TRANSPARENT)
-                : SystemUiUtil.COLOR_SCRIM
+                ? (isScrollable ? SystemUiUtil.SCRIM_DARK : Color.TRANSPARENT)
+                : SystemUiUtil.SCRIM
         );
       } else {
         window.setNavigationBarColor(
             isDarkModeActive
-                ? SystemUiUtil.COLOR_SCRIM_DARK
-                : SystemUiUtil.COLOR_SCRIM
+                ? SystemUiUtil.SCRIM_DARK
+                : SystemUiUtil.SCRIM
         );
       }
     }

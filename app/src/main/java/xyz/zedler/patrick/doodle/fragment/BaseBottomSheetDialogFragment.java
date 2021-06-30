@@ -50,6 +50,7 @@ public class BaseBottomSheetDialogFragment extends BottomSheetDialogFragment {
 
   private View decorView;
   private boolean isExpanded;
+  private boolean lightNavBar;
 
   @NonNull
   @Override
@@ -69,6 +70,14 @@ public class BaseBottomSheetDialogFragment extends BottomSheetDialogFragment {
             if (sheet == null) {
               return;
             }
+
+            if (lightNavBar) {
+              // Below API 30 it does not work for non-gesture if we take the normal method
+              SystemUiUtil.setLightNavigationBar(dialog.getWindow(), sheet);
+            }
+
+
+            boolean isOrientationPortrait = SystemUiUtil.isOrientationPortrait(requireContext());
 
             PaintDrawable background = new PaintDrawable(
                 ContextCompat.getColor(requireContext(), R.color.surface)
@@ -98,9 +107,13 @@ public class BaseBottomSheetDialogFragment extends BottomSheetDialogFragment {
                 public void onSlide(@NonNull View bottomSheet, float slideOffset) {
                   if (bottomSheet.getTop() < insetTop) {
                     float fraction = (float) bottomSheet.getTop() / (float) insetTop;
-                    setCornerRadius(background, radius * fraction);
+                    if (isOrientationPortrait) {
+                      setCornerRadius(background, radius * fraction);
+                    }
                   } else if (bottomSheet.getTop() != 0) {
-                    setCornerRadius(background, radius);
+                    if (isOrientationPortrait) {
+                      setCornerRadius(background, radius);
+                    }
                   }
                   removeWeirdBottomPadding(sheet);
                 }
@@ -127,8 +140,6 @@ public class BaseBottomSheetDialogFragment extends BottomSheetDialogFragment {
             }
           }
         });
-
-    // TODO: bottom sheet blinks on slower devices before it fades in
 
     layoutEdgeToEdge(dialog.getWindow());
 
@@ -166,8 +177,6 @@ public class BaseBottomSheetDialogFragment extends BottomSheetDialogFragment {
   }
 
   private void layoutEdgeToEdge(Window window) {
-    SystemUiUtil.layoutEdgeToEdge(window);
-
     boolean isOrientationPortrait = SystemUiUtil.isOrientationPortrait(requireContext());
     boolean isDarkModeActive = SystemUiUtil.isDarkModeActive(requireContext());
 
@@ -177,61 +186,53 @@ public class BaseBottomSheetDialogFragment extends BottomSheetDialogFragment {
         window.setNavigationBarColor(Color.TRANSPARENT);
         window.setNavigationBarContrastEnforced(true);
       } else {
-        if (!isDarkModeActive) {
-          SystemUiUtil.setLightNavigationBar(window);
-        }
+        lightNavBar = !isDarkModeActive && isOrientationPortrait;
         if (isOrientationPortrait) {
           window.setNavigationBarColor(
               isDarkModeActive
-                  ? SystemUiUtil.COLOR_SCRIM_DARK_SURFACE
-                  : SystemUiUtil.COLOR_SCRIM_LIGHT
+                  ? SystemUiUtil.SCRIM_DARK_SURFACE
+                  : SystemUiUtil.SCRIM_LIGHT
           );
         } else {
-          window.setNavigationBarDividerColor(
-              ContextCompat.getColor(requireContext(), R.color.stroke_secondary)
-          );
           window.setNavigationBarColor(
-              ContextCompat.getColor(requireContext(), R.color.background)
+              isDarkModeActive ? SystemUiUtil.SCRIM_DARK_DIALOG : SystemUiUtil.SCRIM_LIGHT_DIALOG
           );
         }
       }
     } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) { // 28
       window.setStatusBarColor(Color.TRANSPARENT);
-      if (!isDarkModeActive) {
-        SystemUiUtil.setLightNavigationBar(window);
-      }
+      lightNavBar = !isDarkModeActive && isOrientationPortrait;
       if (isOrientationPortrait) {
         window.setNavigationBarColor(
             isDarkModeActive
-                ? SystemUiUtil.COLOR_SCRIM_DARK_SURFACE
-                : SystemUiUtil.COLOR_SCRIM_LIGHT
+                ? SystemUiUtil.SCRIM_DARK_SURFACE
+                : SystemUiUtil.SCRIM_LIGHT
         );
       } else {
-        window.setNavigationBarDividerColor(
-            ContextCompat.getColor(requireContext(), R.color.stroke_secondary)
+        window.setNavigationBarColor(
+            isDarkModeActive ? SystemUiUtil.SCRIM_DARK_DIALOG : SystemUiUtil.SCRIM_LIGHT_DIALOG
         );
-        window.setNavigationBarColor(ContextCompat.getColor(requireContext(), R.color.background));
       }
     } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) { // 26
       window.setStatusBarColor(Color.TRANSPARENT);
+      lightNavBar = !isDarkModeActive && isOrientationPortrait;
       if (isOrientationPortrait) {
         window.setNavigationBarColor(
             isDarkModeActive
-                ? SystemUiUtil.COLOR_SCRIM_DARK_SURFACE
-                : SystemUiUtil.COLOR_SCRIM_LIGHT
+                ? SystemUiUtil.SCRIM_DARK_SURFACE
+                : SystemUiUtil.SCRIM_LIGHT
         );
-        if (!isDarkModeActive) {
-          SystemUiUtil.setLightNavigationBar(window);
-        }
       } else {
-        window.setNavigationBarColor(Color.BLACK);
+        window.setNavigationBarColor(
+            isDarkModeActive ? SystemUiUtil.SCRIM_DARK_DIALOG : SystemUiUtil.SCRIM_LIGHT_DIALOG
+        );
       }
     } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) { // 23
       window.setStatusBarColor(Color.TRANSPARENT);
       window.setNavigationBarColor(
           isDarkModeActive
-              ? SystemUiUtil.COLOR_SCRIM_DARK_SURFACE
-              : SystemUiUtil.COLOR_SCRIM
+              ? SystemUiUtil.SCRIM_DARK_SURFACE
+              : SystemUiUtil.SCRIM
       );
     }
   }

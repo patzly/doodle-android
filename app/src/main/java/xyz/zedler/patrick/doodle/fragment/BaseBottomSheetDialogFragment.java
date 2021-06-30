@@ -228,12 +228,17 @@ public class BaseBottomSheetDialogFragment extends BottomSheetDialogFragment {
         );
       }
     } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) { // 23
-      window.setStatusBarColor(Color.TRANSPARENT);
-      window.setNavigationBarColor(
-          isDarkModeActive
-              ? SystemUiUtil.SCRIM_DARK_SURFACE
-              : SystemUiUtil.SCRIM
-      );
+      if (isOrientationPortrait) {
+        window.setNavigationBarColor(
+            isDarkModeActive
+                ? SystemUiUtil.SCRIM_DARK_SURFACE
+                : SystemUiUtil.SCRIM
+        );
+      } else {
+        window.setNavigationBarColor(
+            isDarkModeActive ? SystemUiUtil.SCRIM_DARK_DIALOG : SystemUiUtil.SCRIM_LIGHT_DIALOG
+        );
+      }
     }
   }
 

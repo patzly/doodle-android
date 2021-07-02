@@ -42,9 +42,11 @@ public class SystemUiUtil {
   public final static int SCRIM_OPAQUE = 0xFFAAAAAA;
   public final static int SCRIM_DARK = 0xB31E1F22;
   public final static int SCRIM_DARK_DIALOG = 0xFF0c0c0e;
+  public final static int SCRIM_DARK_DIALOG_DIVIDER = 0xFF202020;
   public final static int SCRIM_DARK_SURFACE = 0xB3303030;
   public final static int SCRIM_LIGHT = 0xB3FFFFFF;
   public final static int SCRIM_LIGHT_DIALOG = 0xFF666666;
+  public final static int SCRIM_LIGHT_DIALOG_DIVIDER = 0xFF555555;
 
   public static void layoutEdgeToEdge(Window window) {
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {

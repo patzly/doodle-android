@@ -1,7 +1,8 @@
 3.2.0:
 - New: additional color variants
+- New: option to reset all settings (useful if wallpaper crashes after device restart)
 - Improved: wallpaper thumbnail
-- Improved: appearance and behavior of bottom sheets and system bars
+- Improved: appearance and behavior of bottom sheets and system bars (still some bugs)
 - Improved: internal resource management
 - Fixed: clipped text in changelog
 - Fixed: GPU icon in settings

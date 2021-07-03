@@ -75,6 +75,10 @@ public class SystemUiUtil {
   public static void setLightNavigationBar(Window window, View view) {
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
       window.getInsetsController().setSystemBarsAppearance(
+          0,
+          WindowInsetsController.APPEARANCE_LIGHT_NAVIGATION_BARS
+      );
+      window.getInsetsController().setSystemBarsAppearance(
           WindowInsetsController.APPEARANCE_LIGHT_NAVIGATION_BARS,
           WindowInsetsController.APPEARANCE_LIGHT_NAVIGATION_BARS
       );
@@ -131,9 +135,27 @@ public class SystemUiUtil {
     return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, sp, r.getDisplayMetrics());
   }
 
+  // Display width
+
+  public static int getDisplayWidth(Context context) {
+    WindowManager windowManager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+      WindowMetrics windowMetrics = windowManager.getCurrentWindowMetrics();
+      Insets insets = windowMetrics.getWindowInsets().getInsetsIgnoringVisibility(
+          WindowInsets.Type.systemBars()
+      );
+      return windowMetrics.getBounds().width() - insets.left - insets.right;
+    } else {
+      DisplayMetrics displayMetrics = new DisplayMetrics();
+      windowManager.getDefaultDisplay().getMetrics(displayMetrics);
+      return displayMetrics.widthPixels;
+    }
+  }
+
   // Display height
 
-  public static int getDisplayHeight(WindowManager windowManager) {
+  public static int getDisplayHeight(Context context) {
+    WindowManager windowManager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
       WindowMetrics windowMetrics = windowManager.getCurrentWindowMetrics();
       Insets insets = windowMetrics.getWindowInsets().getInsetsIgnoringVisibility(

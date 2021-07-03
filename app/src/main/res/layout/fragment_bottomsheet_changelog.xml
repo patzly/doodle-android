@@ -25,9 +25,15 @@
   android:layout_height="wrap_content"
   android:orientation="vertical">
 
-  <TextView
-    style="@style/Widget.Doodle.TextView.Toolbar.BottomSheet"
-    android:text="@string/info_changelog" />
+  <FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="?android:actionBarSize">
+
+    <TextView
+      style="@style/Widget.Doodle.TextView.Toolbar.BottomSheet.Center"
+      android:text="@string/info_changelog" />
+
+  </FrameLayout>
 
   <View
     style="@style/Widget.Doodle.Divider"

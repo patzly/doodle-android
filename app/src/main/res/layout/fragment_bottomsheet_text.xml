@@ -34,8 +34,8 @@
       android:id="@+id/text_text_title"
       style="@style/Widget.Doodle.TextView.Toolbar.BottomSheet"
       android:layout_width="0dp"
-      android:layout_weight="1"
-      android:textAlignment="textStart" />
+      android:layout_height="match_parent"
+      android:layout_weight="1"/>
 
     <FrameLayout
       android:id="@+id/frame_text_open_link"

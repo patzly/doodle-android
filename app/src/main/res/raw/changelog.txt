@@ -1,3 +1,6 @@
+3.2.1:
+- Improved: confirmation of settings reset
+
 3.2.0:
 - New: additional color variants
 - New: option to reset all settings (reinstalling Doodle would not clean them as they are stored at a special place)

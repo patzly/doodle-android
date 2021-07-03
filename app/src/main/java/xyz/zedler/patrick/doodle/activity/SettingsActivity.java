@@ -45,6 +45,7 @@ import androidx.core.content.ContextCompat;
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.slider.Slider;
 import com.google.android.material.slider.Slider.OnChangeListener;
+import com.google.android.material.snackbar.Snackbar;
 import java.util.Locale;
 import xyz.zedler.patrick.doodle.BuildConfig;
 import xyz.zedler.patrick.doodle.Constants;
@@ -331,14 +332,23 @@ public class SettingsActivity extends AppCompatActivity
       binding.switchGpu.setChecked(!binding.switchGpu.isChecked());
     } else if (id == R.id.linear_reset) {
       ViewUtil.startIcon(binding.imageReset);
-      sharedPrefs.edit().clear().apply();
-      new Handler(Looper.getMainLooper()).postDelayed(() -> {
-        Intent intent = new Intent(this, SettingsActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        startActivity(intent);
-        finish();
-        Runtime.getRuntime().exit(0);
-      }, 300);
+      Snackbar.make(
+          binding.scroll,
+          getString(R.string.msg_reset),
+          Snackbar.LENGTH_LONG
+      ).setActionTextColor(
+          ContextCompat.getColor(this, R.color.retro_green_fg_invert)
+      ).setAction(
+          getString(R.string.action_reset),
+          view -> {
+            sharedPrefs.edit().clear().apply();
+            Intent intent = new Intent(this, SettingsActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+            finish();
+            Runtime.getRuntime().exit(0);
+          }
+      ).show();
     } else if (id == R.id.linear_changelog && viewUtil.isClickEnabled()) {
       ViewUtil.startIcon(binding.imageChangelog);
       showChangelog(false);

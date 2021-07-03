@@ -22,6 +22,7 @@
 <resources>
 
   <color name="retro_green_fg">@color/retro_green_bg_black</color>
+  <color name="retro_green_fg_invert">#60837a</color>
 
   <!-- PRIMARY -->
 

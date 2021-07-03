@@ -1,8 +1,8 @@
 3.2.0:
 - New: additional color variants
-- New: option to reset all settings (useful if wallpaper crashes after device restart)
+- New: option to reset all settings (reinstalling Doodle would not clean them as they are stored at a special place)
 - Improved: wallpaper thumbnail
-- Improved: appearance and behavior of bottom sheets and system bars (still some bugs)
+- Improved: appearance and behavior of bottom sheets and system bars in settings (still some bugs)
 - Improved: internal resource management
 - Fixed: clipped text in changelog
 - Fixed: GPU icon in settings

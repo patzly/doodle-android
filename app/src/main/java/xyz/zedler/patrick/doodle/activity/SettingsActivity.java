@@ -218,6 +218,7 @@ public class SettingsActivity extends AppCompatActivity
         binding.linearZoomLauncher,
         binding.linearZoomUnlock,
         binding.linearGpu,
+        binding.linearReset,
         binding.linearChangelog,
         binding.linearFeedback,
         binding.linearDeveloper,
@@ -331,6 +332,16 @@ public class SettingsActivity extends AppCompatActivity
     } else if (id == R.id.linear_gpu) {
       ViewUtil.startIcon(binding.imageGpu);
       binding.switchGpu.setChecked(!binding.switchGpu.isChecked());
+    } else if (id == R.id.linear_reset) {
+      ViewUtil.startIcon(binding.imageReset);
+      sharedPrefs.edit().clear().apply();
+      new Handler(Looper.getMainLooper()).postDelayed(() -> {
+        Intent intent = new Intent(this, SettingsActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+        finish();
+        Runtime.getRuntime().exit(0);
+      }, 300);
     } else if (id == R.id.linear_changelog && viewUtil.isClickEnabled()) {
       ViewUtil.startIcon(binding.imageChangelog);
       showChangelog(false);

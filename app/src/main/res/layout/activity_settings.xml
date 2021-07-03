@@ -606,6 +606,26 @@
 
       </LinearLayout>
 
+      <LinearLayout
+        android:id="@+id/linear_reset"
+        style="@style/Widget.Doodle.LinearLayout.ListItem.SingleLine.Clickable">
+
+        <ImageView
+          android:id="@+id/image_reset"
+          style="@style/Widget.Doodle.ImageView.ListItem.Icon"
+          android:src="@drawable/ic_round_settings_backup_restore_anim"
+          tools:ignore="ContentDescription" />
+
+        <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
+
+          <TextView
+            style="@style/Widget.Doodle.TextView.ListItem.Title"
+            android:text="@string/settings_reset" />
+
+        </LinearLayout>
+
+      </LinearLayout>
+
       <TextView
         style="@style/Widget.Doodle.TextView.Category"
         android:text="@string/category_about" />

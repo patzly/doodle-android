@@ -58,6 +58,7 @@
   <string name="settings_zoom_unlock">Zoom out on lockscreen</string>
   <string name="settings_gpu">Hardware acceleration</string>
   <string name="settings_gpu_description">Turn off if the wallpaper crashes. Requires restart of the device to take effect if the wallpaper is currently active.</string>
+  <string name="settings_reset">Reset all settings</string>
 
   <!-- ABOUT -->
 

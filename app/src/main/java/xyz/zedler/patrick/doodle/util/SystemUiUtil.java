@@ -75,10 +75,6 @@ public class SystemUiUtil {
   public static void setLightNavigationBar(Window window, View view) {
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
       window.getInsetsController().setSystemBarsAppearance(
-          0,
-          WindowInsetsController.APPEARANCE_LIGHT_NAVIGATION_BARS
-      );
-      window.getInsetsController().setSystemBarsAppearance(
           WindowInsetsController.APPEARANCE_LIGHT_NAVIGATION_BARS,
           WindowInsetsController.APPEARANCE_LIGHT_NAVIGATION_BARS
       );

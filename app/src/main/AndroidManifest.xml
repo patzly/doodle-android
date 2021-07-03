@@ -29,6 +29,13 @@
 
   <uses-permission android:name="android.permission.VIBRATE" />
 
+  <queries>
+    <intent>
+      <action android:name="android.intent.action.MAIN" />
+      <category android:name="android.intent.category.HOME" />
+    </intent>
+  </queries>
+
   <application
     android:allowBackup="true"
     android:icon="@mipmap/ic_launcher"

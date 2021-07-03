@@ -4,6 +4,7 @@
 - Improved: wallpaper thumbnail
 - Improved: appearance and behavior of bottom sheets and system bars in settings (still some bugs)
 - Improved: internal resource management
+- Fixed: incorrect TouchWiz warning on Android 11
 - Fixed: clipped text in changelog
 - Fixed: GPU icon in settings
 - Fixed: corner radius of selection circles for older Android versions

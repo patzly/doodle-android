@@ -39,10 +39,10 @@ public class PrefsUtil {
 
   public PrefsUtil(Context context) {
     this.context = context;
-    sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
+    migrateToStorageContext();
   }
 
-  public PrefsUtil migrateToStorageContext() {
+  private void migrateToStorageContext() {
     Context storageContext;
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
       Context deviceContext = context.createDeviceProtectedStorageContext();
@@ -57,7 +57,6 @@ public class PrefsUtil {
       storageContext = context;
     }
     sharedPrefs = PreferenceManager.getDefaultSharedPreferences(storageContext);
-    return this;
   }
 
   public PrefsUtil checkForMigrations() {

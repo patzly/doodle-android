@@ -74,7 +74,6 @@ public class LiveWallpaperService extends WallpaperService {
   @Override
   public Engine onCreateEngine() {
     sharedPrefs = new PrefsUtil(LiveWallpaperService.this)
-        .migrateToStorageContext()
         .checkForMigrations()
         .getSharedPrefs();
 

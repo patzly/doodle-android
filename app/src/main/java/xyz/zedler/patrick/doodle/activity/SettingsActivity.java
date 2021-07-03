@@ -87,10 +87,7 @@ public class SettingsActivity extends AppCompatActivity
     binding = ActivitySettingsBinding.inflate(getLayoutInflater());
     setContentView(binding.getRoot());
 
-    sharedPrefs = new PrefsUtil(this)
-        .migrateToStorageContext()
-        .checkForMigrations()
-        .getSharedPrefs();
+    sharedPrefs = new PrefsUtil(this).checkForMigrations().getSharedPrefs();
 
     viewUtil = new ViewUtil();
     hapticUtil = new HapticUtil(this);

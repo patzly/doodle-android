@@ -20,4 +20,5 @@ If you see no movement, you probably have only one home screen page. Drag an app
 
 You need to turn on background scrolling in your launcher's settings if you have disabled it before to make parallax effect work.
 Some launchers don't support background scrolling at all, like Samsung's TouchWiz. As a solution, please try installing another launcher.
-In some cases the warning is shown although you have set another launcher as default. The warning then has no impact on the functionality of the parallax effect.
+
+On Samsung devices with Android 11 the zoom effect when you pull down quick settings might be unavailable.

@@ -30,8 +30,8 @@ android {
         applicationId "xyz.zedler.patrick.doodle"
         minSdkVersion 23
         targetSdkVersion 30
-        versionCode 22
-        versionName "3.2.0"
+        versionCode 23
+        versionName "3.2.1"
     }
 
     applicationVariants.all { variant ->

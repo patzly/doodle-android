@@ -23,6 +23,7 @@ import android.content.Context;
 import android.os.Build;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
+import android.provider.Settings;
 
 public class HapticUtil {
 
@@ -93,5 +94,14 @@ public class HapticUtil {
 
   public boolean hasVibrator() {
     return vibrator.hasVibrator();
+  }
+
+  public static boolean areSystemHapticsTurnedOn(Context context) {
+    int hapticFeedbackEnabled = Settings.System.getInt(
+        context.getContentResolver(),
+        Settings.System.HAPTIC_FEEDBACK_ENABLED,
+        0
+    );
+    return hapticFeedbackEnabled != 0;
   }
 }

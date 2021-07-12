@@ -252,6 +252,8 @@ public class SettingsActivity extends AppCompatActivity
       setActivateButtonEnabled(true);
     }
 
+    hapticUtil.setEnabled(HapticUtil.areSystemHapticsTurnedOn(this));
+
     binding.cardTouchWiz.setVisibility(isTouchWiz() ? View.VISIBLE : View.GONE);
 
     settingsApplied = sharedPrefs.getBoolean(PREF.SETTINGS_APPLIED, true);

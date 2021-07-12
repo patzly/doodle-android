@@ -1,4 +1,5 @@
 3.2.1:
+- Improved: haptic feedback in settings now only enabled if system vibrations are enabled
 - Improved: confirmation of settings reset
 
 3.2.0:

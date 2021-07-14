@@ -440,6 +440,7 @@
         <ImageView
           android:id="@+id/image_white_text"
           style="@style/Widget.Doodle.ImageView.ListItem.Icon"
+          android:src="@drawable/ic_round_filter_b_and_w"
           tools:ignore="ContentDescription" />
 
         <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">

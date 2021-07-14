@@ -327,7 +327,6 @@ public class SettingsActivity extends AppCompatActivity
     } else if (id == R.id.linear_night_mode) {
       binding.switchNightMode.setChecked(!binding.switchNightMode.isChecked());
     } else if (id == R.id.linear_follow_system) {
-      ViewUtil.startIcon(binding.imageFollowSystem);
       if (binding.switchNightMode.isChecked()) {
         binding.switchFollowSystem.setChecked(!binding.switchFollowSystem.isChecked());
       }
@@ -429,6 +428,7 @@ public class SettingsActivity extends AppCompatActivity
       );
       requestThemeRefresh();
     } else if (id == R.id.switch_follow_system) {
+      ViewUtil.startIcon(binding.imageFollowSystem);
       sharedPrefs.edit().putBoolean(PREF.FOLLOW_SYSTEM, isChecked).apply();
       requestThemeRefresh();
     } else if (id == R.id.switch_white_text) {

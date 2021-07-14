@@ -40,7 +40,7 @@
   <string name="settings_night_mode_description">Abgedunkelte Formen</string>
   <string name="settings_follow_system">System folgen</string>
   <string name="settings_follow_system_description">Adaption des Designs</string>
-  <string name="settings_white_text">Auf hellem Hintergrund weißen Text mit Schatten nutzen</string>
+  <string name="settings_white_text">Weißen Text mit Schatten auch auf hellem Hintergrund nutzen</string>
   <string name="settings_white_text_description">Nicht empfohlen</string>
   <string name="settings_parallax">Parallax-Stärke</string>
   <string name="settings_parallax_description">Horizontaler Versatz beim Wechseln zwischen Startbildschirmen</string>

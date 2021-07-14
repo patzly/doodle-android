@@ -27,6 +27,7 @@ public final class Constants {
 
     public final static String NIGHT_MODE = "night_mode";
     public final static String FOLLOW_SYSTEM = "follow_system";
+    public final static String USE_WHITE_TEXT = "use_white_text";
     public final static String ZOOM = "zoom";
     public final static String ZOOM_LAUNCHER = "zoom_launcher";
     public final static String ZOOM_UNLOCK = "zoom_unlock";
@@ -50,6 +51,7 @@ public final class Constants {
 
     public final static boolean NIGHT_MODE = true;
     public final static boolean FOLLOW_SYSTEM = true;
+    public final static boolean USE_WHITE_TEXT = false;
     public final static int ZOOM = 3;
     public final static boolean ZOOM_LAUNCHER = true;
     public final static boolean ZOOM_UNLOCK = true;

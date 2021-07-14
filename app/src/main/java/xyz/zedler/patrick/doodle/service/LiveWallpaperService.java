@@ -248,6 +248,7 @@ public class LiveWallpaperService extends WallpaperService {
   // ENGINE ------------------------------------------------------------
 
   class UserAwareEngine extends Engine implements UserPresenceListener {
+    private boolean useWhiteText;
     private int zoomIntensity;
     private boolean isZoomLauncherEnabled, isZoomUnlockEnabled;
     private float zoomLauncher;
@@ -347,10 +348,10 @@ public class LiveWallpaperService extends WallpaperService {
         // Bitmap is more efficient than Drawable here because Drawable would be converted to Bitmap
         Bitmap bitmap = Bitmap.createBitmap(10, 10, Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(bitmap);
-        if (!isNightMode()) {
+        if (!isNightMode() && useWhiteText) {
           float[] hsl = new float[3];
           ColorUtils.colorToHSL(background, hsl);
-          hsl[2] = 0.8f;
+          hsl[2] = 0.7f;
           canvas.drawColor(ColorUtils.HSLToColor(hsl));
         } else {
           canvas.drawColor(background);
@@ -404,6 +405,7 @@ public class LiveWallpaperService extends WallpaperService {
       );
       nightMode = sharedPrefs.getBoolean(PREF.NIGHT_MODE, DEF.NIGHT_MODE);
       followSystem = sharedPrefs.getBoolean(PREF.FOLLOW_SYSTEM, DEF.FOLLOW_SYSTEM);
+      useWhiteText = sharedPrefs.getBoolean(PREF.USE_WHITE_TEXT, DEF.USE_WHITE_TEXT);
       isNight = isNightMode();
 
       loadWallpaper();

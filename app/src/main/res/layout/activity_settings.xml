@@ -434,6 +434,35 @@
       </LinearLayout>
 
       <LinearLayout
+        android:id="@+id/linear_white_text"
+        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable">
+
+        <ImageView
+          android:id="@+id/image_white_text"
+          style="@style/Widget.Doodle.ImageView.ListItem.Icon"
+          tools:ignore="ContentDescription" />
+
+        <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">
+
+          <TextView
+            style="@style/Widget.Doodle.TextView.ListItem.Title"
+            android:text="@string/settings_white_text" />
+
+          <TextView
+            style="@style/Widget.Doodle.TextView.ListItem.Description"
+            android:text="@string/settings_white_text_description" />
+
+        </LinearLayout>
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+          android:id="@+id/switch_white_text"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="16dp" />
+
+      </LinearLayout>
+
+      <LinearLayout
         style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine"
         android:paddingBottom="0dp">
 

@@ -1,4 +1,5 @@
-3.2.1:
+3.3.0:
+- New: option to force white text with shadow on bright backgrounds
 - Improved: haptic feedback in settings only enabled if system vibrations are turned on
 - Improved: confirmation of settings reset
 

@@ -123,18 +123,24 @@ public class SettingsActivity extends AppCompatActivity
         Build.VERSION.SDK_INT >= Build.VERSION_CODES.O ? View.GONE : View.VISIBLE
     );
 
-    binding.switchNightMode.setChecked(sharedPrefs.getBoolean(PREF.NIGHT_MODE, true));
+    binding.switchNightMode.setChecked(sharedPrefs.getBoolean(PREF.NIGHT_MODE, DEF.NIGHT_MODE));
 
-    binding.switchFollowSystem.setChecked(sharedPrefs.getBoolean(PREF.FOLLOW_SYSTEM, true));
+    binding.switchFollowSystem.setChecked(
+        sharedPrefs.getBoolean(PREF.FOLLOW_SYSTEM, DEF.FOLLOW_SYSTEM)
+    );
     binding.switchFollowSystem.setEnabled(binding.switchNightMode.isChecked());
 
     binding.linearFollowSystem.setEnabled(binding.switchNightMode.isChecked());
     binding.linearFollowSystemContainer.setAlpha(binding.switchNightMode.isChecked() ? 1 : 0.5f);
 
     binding.imageNightMode.setImageResource(
-        sharedPrefs.getBoolean(PREF.NIGHT_MODE, true)
+        sharedPrefs.getBoolean(PREF.NIGHT_MODE, DEF.NIGHT_MODE)
             ? R.drawable.ic_round_dark_mode_to_light_mode_anim
             : R.drawable.ic_round_light_mode_to_dark_mode_anim
+    );
+
+    binding.switchWhiteText.setChecked(
+        sharedPrefs.getBoolean(PREF.USE_WHITE_TEXT, DEF.USE_WHITE_TEXT)
     );
 
     binding.sliderParallax.setValue(sharedPrefs.getInt(PREF.PARALLAX, DEF.PARALLAX));
@@ -213,6 +219,7 @@ public class SettingsActivity extends AppCompatActivity
         binding.cardInfo,
         binding.linearNightMode,
         binding.linearFollowSystem,
+        binding.linearWhiteText,
         binding.linearZoomLauncher,
         binding.linearZoomUnlock,
         binding.linearGpu,
@@ -229,6 +236,7 @@ public class SettingsActivity extends AppCompatActivity
         this,
         binding.switchNightMode,
         binding.switchFollowSystem,
+        binding.switchWhiteText,
         binding.checkboxZoomLauncher,
         binding.checkboxZoomUnlock,
         binding.switchGpu
@@ -323,6 +331,8 @@ public class SettingsActivity extends AppCompatActivity
       if (binding.switchNightMode.isChecked()) {
         binding.switchFollowSystem.setChecked(!binding.switchFollowSystem.isChecked());
       }
+    } else if (id == R.id.linear_white_text) {
+      binding.switchWhiteText.setChecked(!binding.switchWhiteText.isChecked());
     } else if (id == R.id.linear_zoom_launcher) {
       ViewUtil.startIcon(binding.imageZoom);
       binding.checkboxZoomLauncher.setChecked(!binding.checkboxZoomLauncher.isChecked());
@@ -420,6 +430,9 @@ public class SettingsActivity extends AppCompatActivity
       requestThemeRefresh();
     } else if (id == R.id.switch_follow_system) {
       sharedPrefs.edit().putBoolean(PREF.FOLLOW_SYSTEM, isChecked).apply();
+      requestThemeRefresh();
+    } else if (id == R.id.switch_white_text) {
+      sharedPrefs.edit().putBoolean(PREF.USE_WHITE_TEXT, isChecked).apply();
       requestThemeRefresh();
     } else if (id == R.id.checkbox_zoom_launcher) {
       sharedPrefs.edit().putBoolean(PREF.ZOOM_LAUNCHER, isChecked).apply();

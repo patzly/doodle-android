@@ -28,11 +28,11 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.LinearGradient;
 import android.graphics.Shader.TileMode;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
@@ -41,6 +41,7 @@ import android.service.wallpaper.WallpaperService;
 import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.WindowManager;
+import androidx.core.graphics.ColorUtils;
 import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
 import xyz.zedler.patrick.doodle.Constants;
 import xyz.zedler.patrick.doodle.Constants.DEF;
@@ -280,6 +281,7 @@ public class LiveWallpaperService extends WallpaperService {
       animateZoom(0);
 
       setTouchEventsEnabled(false);
+      setOffsetNotificationsEnabled(true);
     }
 
     @Override
@@ -342,7 +344,18 @@ public class LiveWallpaperService extends WallpaperService {
         }
       }
       if (VERSION.SDK_INT >= VERSION_CODES.O_MR1) {
-        return WallpaperColors.fromDrawable(new ColorDrawable(background));
+        // Bitmap is more efficient than Drawable here because Drawable would be converted to Bitmap
+        Bitmap bitmap = Bitmap.createBitmap(10, 10, Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(bitmap);
+        if (!isNightMode()) {
+          float[] hsl = new float[3];
+          ColorUtils.colorToHSL(background, hsl);
+          hsl[2] = 0.8f;
+          canvas.drawColor(ColorUtils.HSLToColor(hsl));
+        } else {
+          canvas.drawColor(background);
+        }
+        return WallpaperColors.fromBitmap(bitmap);
       } else {
         return super.onComputeColors();
       }
@@ -364,7 +377,7 @@ public class LiveWallpaperService extends WallpaperService {
     @Override
     public void onSurfaceRedrawNeeded(SurfaceHolder holder) {
       // Not necessarily needed but recommended
-      // drawFrame(true);
+      drawFrame(true);
     }
 
     private void loadSettings() {
@@ -426,6 +439,11 @@ public class LiveWallpaperService extends WallpaperService {
         svgDrawable.setOffset(xOffset * parallax * 100, 0);
         drawFrame(true);
       }
+    }
+
+    public boolean shouldZoomOutWallpaper() {
+      // Return true and clear onZoomChanged if we don't want a custom zoom animation
+      return false;
     }
 
     @Override

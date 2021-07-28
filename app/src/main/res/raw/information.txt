@@ -2,7 +2,7 @@ These live wallpapers are based on the original doodle live wallpapers of the Go
 They are completely rewritten, nothing except the look is taken from the original.
 
 Advantages over the original:
-- No permanent animations or acceleration sensor requests (though they can be optionally switched on)
+- Permanent animation (when tilting the device) is optional
 - No battery-hungry 3D engine
 - Additional color variants
 - Support for Android 11 zoom effect
@@ -25,4 +25,4 @@ Some launchers don't support background scrolling at all, like Samsung's TouchWi
 On Samsung devices with Android 11 the zoom effect when you pull down quick settings might be unavailable.
 
 When the option "Move when tilting the device" is turned on, the wallpaper is rendered continuously, which can cause your battery to drain faster.
-Nevertheless the option is implemented battery-friendly: if your device is not moving, the continuous rendering is automatically paused.
+Nevertheless the option is implemented battery-friendly: if your device does not move, the continuous rendering is automatically paused.

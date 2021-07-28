@@ -272,6 +272,7 @@ public class LiveWallpaperService extends WallpaperService {
     private boolean useGpu;
     private float fps;
     private ValueAnimator zoomAnimator;
+    private SensorEventListener sensorListener;
 
     @Override
     public void onCreate(SurfaceHolder surfaceHolder) {
@@ -281,8 +282,7 @@ public class LiveWallpaperService extends WallpaperService {
 
       userPresenceListener = this;
 
-      Sensor accelerationSensor = sensorManager.getSensorList(Sensor.TYPE_ACCELEROMETER).get(0);
-      sensorManager.registerListener(new SensorEventListener() {
+      sensorListener = new SensorEventListener() {
         @Override
         public void onSensorChanged(SensorEvent event) {
           if (isVisible && isTiltEnabled) {
@@ -297,7 +297,12 @@ public class LiveWallpaperService extends WallpaperService {
         @Override
         public void onAccuracyChanged(Sensor sensor, int accuracy) {
         }
-      }, accelerationSensor, SensorManager.SENSOR_DELAY_GAME);
+      };
+      sensorManager.registerListener(
+          sensorListener,
+          sensorManager.getSensorList(Sensor.TYPE_ACCELEROMETER).get(0),
+          SensorManager.SENSOR_DELAY_GAME
+      );
 
       // Load this only once on creation, else it would cause a crash caused by OpenGL
       useGpu = sharedPrefs.getBoolean(PREF.GPU, DEF.GPU);
@@ -320,6 +325,9 @@ public class LiveWallpaperService extends WallpaperService {
         zoomAnimator.cancel();
         zoomAnimator.removeAllUpdateListeners();
         zoomAnimator = null;
+      }
+      if (sensorManager != null) {
+        sensorManager.unregisterListener(sensorListener);
       }
     }
 

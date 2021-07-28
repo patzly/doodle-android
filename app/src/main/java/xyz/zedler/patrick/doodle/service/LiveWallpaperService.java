@@ -518,12 +518,12 @@ public class LiveWallpaperService extends WallpaperService {
     }
 
     void drawFrame(boolean force) {
-      if ((!force && SystemClock.elapsedRealtime() - lastDraw < 1000 / fps)) {
+      if (!force && SystemClock.elapsedRealtime() - lastDraw < 1000 / fps) {
         return;
       }
       final SurfaceHolder surfaceHolder = getSurfaceHolder();
       if (!surfaceHolder.getSurface().isValid()) {
-        // Prevents IllegalStateException when surface is
+        // Prevents IllegalStateException when surface is not ready
         return;
       }
       Canvas canvas = null;

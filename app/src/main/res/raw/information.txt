@@ -2,7 +2,8 @@ These live wallpapers are based on the original doodle live wallpapers of the Go
 They are completely rewritten, nothing except the look is taken from the original.
 
 Advantages over the original:
-- No permanent animations or gyroscope sensor requests
+- No permanent animations or acceleration sensor requests (though they can be optionally switched on)
+- No battery-hungry 3D engine
 - Additional color variants
 - Support for Android 11 zoom effect
 - Optional zoom effect when unlocking the device

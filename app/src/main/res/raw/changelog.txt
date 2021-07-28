@@ -2,7 +2,7 @@
 - New: optional parallax effect when tilting the device
 - New: Brazilian Portuguese translation (big thanks to Alexandre!)
 - Improved: descriptions of options and information
-- Fixed: potential wallpaper crashes
+- Fixed: potential wallpaper and app crashes
 
 3.3.0:
 - New: option to force white text with shadow on bright backgrounds

@@ -22,6 +22,7 @@ package xyz.zedler.patrick.doodle.activity;
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.WallpaperManager;
+import android.content.ActivityNotFoundException;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
@@ -279,12 +280,20 @@ public class SettingsActivity extends AppCompatActivity
       performHapticClick();
       finish();
     } else if (id == R.id.button_set && viewUtil.isClickEnabled()) {
-      wallpaperPickerLauncher.launch(
-          new Intent(WallpaperManager.ACTION_CHANGE_LIVE_WALLPAPER).putExtra(
-              WallpaperManager.EXTRA_LIVE_WALLPAPER_COMPONENT,
-              new ComponentName(getPackageName(), LiveWallpaperService.class.getCanonicalName())
-          )
-      );
+      try {
+        wallpaperPickerLauncher.launch(
+            new Intent(WallpaperManager.ACTION_CHANGE_LIVE_WALLPAPER).putExtra(
+                WallpaperManager.EXTRA_LIVE_WALLPAPER_COMPONENT,
+                new ComponentName(getPackageName(), LiveWallpaperService.class.getCanonicalName())
+            )
+        );
+      } catch (ActivityNotFoundException e) {
+        Snackbar.make(
+            binding.scroll,
+            getString(R.string.msg_preview_missing),
+            Snackbar.LENGTH_LONG
+        ).show();
+      }
       performHapticHeavyClick();
     } else if (id == R.id.card_info) {
       showTextBottomSheet(R.raw.information, R.string.info_title, -1);

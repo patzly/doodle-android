@@ -306,7 +306,7 @@ public class LiveWallpaperService extends WallpaperService {
             }
             float averageX = sumX / tiltHistory.size();
             float averageY = sumY / tiltHistory.size();
-            float tolerance = 0.04f;
+            float tolerance = 0.045f;
             for (Pair<Float, Float> tilt : tiltHistory) {
               boolean isMovingX = averageX >= 0
                   ? tilt.first > averageX + tolerance

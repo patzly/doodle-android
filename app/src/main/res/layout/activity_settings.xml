@@ -667,7 +667,7 @@
 
       <LinearLayout
         android:id="@+id/linear_reset"
-        style="@style/Widget.Doodle.LinearLayout.ListItem.SingleLine.Clickable">
+        style="@style/Widget.Doodle.LinearLayout.ListItem.SingleLine.Icon.Clickable">
 
         <ImageView
           android:id="@+id/image_reset"

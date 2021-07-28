@@ -7,7 +7,7 @@ Advantages over the original:
 - Additional color variants
 - Support for Android 11 zoom effect
 - Optional zoom effect when unlocking the device
-- Suitable for less powerful devices with power-efficient animations
+- Suitable for less powerful devices with power-efficient and optional animations
 - Improved text contrast (dark text for light themes instead of white text with shadow)
 - Also suitable for larger devices like tablets
 - Various customization and color options
@@ -23,3 +23,6 @@ You need to turn on background scrolling in your launcher's settings if you have
 Some launchers don't support background scrolling at all, like Samsung's TouchWiz. As a solution, please try installing another launcher.
 
 On Samsung devices with Android 11 the zoom effect when you pull down quick settings might be unavailable.
+
+When the option "Move when tilting the device" is turned on, the wallpaper is rendered continuously, which can cause your battery to drain faster.
+Nevertheless the option is implemented battery-friendly: if your device is not moving, the continuous rendering is automatically paused.

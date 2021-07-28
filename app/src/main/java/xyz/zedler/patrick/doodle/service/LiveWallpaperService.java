@@ -43,10 +43,13 @@ import android.os.Build.VERSION_CODES;
 import android.os.SystemClock;
 import android.service.wallpaper.WallpaperService;
 import android.util.Log;
+import android.util.Pair;
 import android.view.SurfaceHolder;
 import android.view.WindowManager;
 import androidx.core.graphics.ColorUtils;
 import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
+import java.util.ArrayList;
+import java.util.List;
 import xyz.zedler.patrick.doodle.Constants;
 import xyz.zedler.patrick.doodle.Constants.DEF;
 import xyz.zedler.patrick.doodle.Constants.PREF;
@@ -273,6 +276,7 @@ public class LiveWallpaperService extends WallpaperService {
     private float fps;
     private ValueAnimator zoomAnimator;
     private SensorEventListener sensorListener;
+    private final List<Pair<Float, Float>> tiltHistory = new ArrayList<>();
 
     @Override
     public void onCreate(SurfaceHolder surfaceHolder) {
@@ -290,7 +294,31 @@ public class LiveWallpaperService extends WallpaperService {
             tiltX = accelerationValues[0];
             tiltY = -accelerationValues[1];
 
-            updateOffset(false);
+            tiltHistory.add(new Pair<>(tiltX, tiltY));
+            while (tiltHistory.size() > 30) {
+              tiltHistory.remove(0);
+            }
+
+            float sumX = 0, sumY = 0;
+            for (Pair<Float, Float> tilt : tiltHistory) {
+              sumX += tilt.first;
+              sumY += tilt.second;
+            }
+            float averageX = sumX / tiltHistory.size();
+            float averageY = sumY / tiltHistory.size();
+            float tolerance = 0.04f;
+            for (Pair<Float, Float> tilt : tiltHistory) {
+              boolean isMovingX = averageX >= 0
+                  ? tilt.first > averageX + tolerance
+                  : tilt.first < averageX - tolerance;
+              boolean isMovingY = averageY >= 0
+                  ? tilt.second > averageY + tolerance
+                  : tilt.second < averageY - tolerance;
+              if (isMovingX || isMovingY) {
+                updateOffset(false);
+                return;
+              }
+            }
           }
         }
 
@@ -476,9 +504,7 @@ public class LiveWallpaperService extends WallpaperService {
         int yPixels
     ) {
       offsetX = xOffset;
-      if (!isTiltEnabled) {
-        updateOffset(true);
-      }
+      updateOffset(true);
     }
 
     private void updateOffset(boolean force) {
@@ -564,7 +590,7 @@ public class LiveWallpaperService extends WallpaperService {
         return input.clone();
       }
       for (int i = 0; i < 2; i++) {
-        output[i] = output[i] + 0.1f * (input[i] - output[i]);
+        output[i] = output[i] + 0.08f * (input[i] - output[i]);
       }
       return output;
     }

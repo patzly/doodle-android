@@ -155,6 +155,8 @@ public class SettingsActivity extends AppCompatActivity
       }
     });
 
+    binding.checkboxTilt.setChecked(sharedPrefs.getBoolean(PREF.TILT, DEF.TILT));
+
     binding.sliderSize.setValue(sharedPrefs.getFloat(PREF.SCALE, DEF.SCALE));
     binding.sliderSize.addOnChangeListener(this);
     binding.sliderSize.setLabelFormatter(value -> {
@@ -220,6 +222,7 @@ public class SettingsActivity extends AppCompatActivity
         binding.linearNightMode,
         binding.linearFollowSystem,
         binding.linearWhiteText,
+        binding.linearTilt,
         binding.linearZoomLauncher,
         binding.linearZoomUnlock,
         binding.linearGpu,
@@ -237,6 +240,7 @@ public class SettingsActivity extends AppCompatActivity
         binding.switchNightMode,
         binding.switchFollowSystem,
         binding.switchWhiteText,
+        binding.checkboxTilt,
         binding.checkboxZoomLauncher,
         binding.checkboxZoomUnlock,
         binding.switchGpu
@@ -332,6 +336,8 @@ public class SettingsActivity extends AppCompatActivity
       }
     } else if (id == R.id.linear_white_text) {
       binding.switchWhiteText.setChecked(!binding.switchWhiteText.isChecked());
+    } else if (id == R.id.linear_tilt) {
+      binding.checkboxTilt.setChecked(!binding.checkboxTilt.isChecked());
     } else if (id == R.id.linear_zoom_launcher) {
       ViewUtil.startIcon(binding.imageZoom);
       binding.checkboxZoomLauncher.setChecked(!binding.checkboxZoomLauncher.isChecked());
@@ -434,6 +440,9 @@ public class SettingsActivity extends AppCompatActivity
     } else if (id == R.id.switch_white_text) {
       sharedPrefs.edit().putBoolean(PREF.USE_WHITE_TEXT, isChecked).apply();
       requestThemeRefresh();
+    } else if (id == R.id.checkbox_tilt) {
+      sharedPrefs.edit().putBoolean(PREF.TILT, isChecked).apply();
+      requestSettingsRefresh();
     } else if (id == R.id.checkbox_zoom_launcher) {
       sharedPrefs.edit().putBoolean(PREF.ZOOM_LAUNCHER, isChecked).apply();
       requestSettingsRefresh();

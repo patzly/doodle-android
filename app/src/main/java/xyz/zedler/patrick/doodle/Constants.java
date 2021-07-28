@@ -37,6 +37,7 @@ public final class Constants {
     public final static String VARIANT_REIKO = "variant_reiko";
     public final static String VARIANT_ANTHONY = "variant_anthony";
     public final static String PARALLAX = "parallax";
+    public final static String TILT = "tilt";
     public final static String SCALE = "size";
     public final static String GPU = "hardware_acceleration";
 
@@ -52,6 +53,7 @@ public final class Constants {
     public final static boolean NIGHT_MODE = true;
     public final static boolean FOLLOW_SYSTEM = true;
     public final static boolean USE_WHITE_TEXT = false;
+    public final static boolean TILT = false;
     public final static int ZOOM = 3;
     public final static boolean ZOOM_LAUNCHER = true;
     public final static boolean ZOOM_UNLOCK = true;

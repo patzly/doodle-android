@@ -33,6 +33,10 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.LinearGradient;
 import android.graphics.Shader.TileMode;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.os.Build;
 import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
@@ -71,6 +75,7 @@ public class LiveWallpaperService extends WallpaperService {
   private boolean isReceiverRegistered = false;
   private UserPresenceListener userPresenceListener;
   private BroadcastReceiver presenceReceiver;
+  private SensorManager sensorManager;
 
   @Override
   public Engine onCreateEngine() {
@@ -95,6 +100,8 @@ public class LiveWallpaperService extends WallpaperService {
     };
     registerReceiver();
     setUserPresence(isKeyguardLocked() ? USER_PRESENCE.LOCKED : USER_PRESENCE.UNLOCKED);
+
+    sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
 
     return new UserAwareEngine();
   }
@@ -255,6 +262,10 @@ public class LiveWallpaperService extends WallpaperService {
     private float zoomUnlock;
     private float scale;
     private int parallax;
+    private boolean isTiltEnabled;
+    private float tiltX, tiltY;
+    private float[] accelerationValues;
+    private float offsetX;
     private long lastDraw;
     private boolean isVisible;
     private boolean isNight;
@@ -269,6 +280,24 @@ public class LiveWallpaperService extends WallpaperService {
       fps = getFrameRate();
 
       userPresenceListener = this;
+
+      Sensor accelerationSensor = sensorManager.getSensorList(Sensor.TYPE_ACCELEROMETER).get(0);
+      sensorManager.registerListener(new SensorEventListener() {
+        @Override
+        public void onSensorChanged(SensorEvent event) {
+          if (isVisible && isTiltEnabled) {
+            accelerationValues = lowPass(event.values, accelerationValues);
+            tiltX = accelerationValues[0];
+            tiltY = -accelerationValues[1];
+
+            updateOffset(false);
+          }
+        }
+
+        @Override
+        public void onAccuracyChanged(Sensor sensor, int accuracy) {
+        }
+      }, accelerationSensor, SensorManager.SENSOR_DELAY_GAME);
 
       // Load this only once on creation, else it would cause a crash caused by OpenGL
       useGpu = sharedPrefs.getBoolean(PREF.GPU, DEF.GPU);
@@ -383,6 +412,7 @@ public class LiveWallpaperService extends WallpaperService {
 
     private void loadSettings() {
       parallax = sharedPrefs.getInt(PREF.PARALLAX, DEF.PARALLAX);
+      isTiltEnabled = sharedPrefs.getBoolean(PREF.TILT, DEF.TILT);
       scale = sharedPrefs.getFloat(PREF.SCALE, DEF.SCALE);
       if (svgDrawable != null) {
         svgDrawable.setScale(scale);
@@ -437,10 +467,20 @@ public class LiveWallpaperService extends WallpaperService {
         int xPixels,
         int yPixels
     ) {
-      if (parallax != 0) {
-        svgDrawable.setOffset(xOffset * parallax * 100, 0);
-        drawFrame(true);
+      offsetX = xOffset;
+      if (!isTiltEnabled) {
+        updateOffset(true);
       }
+    }
+
+    private void updateOffset(boolean force) {
+      float xOffset = parallax != 0 ? offsetX : 0;
+      int tiltFactor = 15 * parallax * (isTiltEnabled ? 1 : 0);
+      svgDrawable.setOffset(
+          xOffset * parallax * 100 + tiltX * tiltFactor,
+          tiltY * tiltFactor
+      );
+      drawFrame(force);
     }
 
     public boolean shouldZoomOutWallpaper() {
@@ -478,10 +518,14 @@ public class LiveWallpaperService extends WallpaperService {
     }
 
     void drawFrame(boolean force) {
-      if (!force && SystemClock.elapsedRealtime() - lastDraw < 1000 / fps) {
+      if ((!force && SystemClock.elapsedRealtime() - lastDraw < 1000 / fps)) {
         return;
       }
       final SurfaceHolder surfaceHolder = getSurfaceHolder();
+      if (!surfaceHolder.getSurface().isValid()) {
+        // Prevents IllegalStateException when surface is
+        return;
+      }
       Canvas canvas = null;
       try {
         if (VERSION.SDK_INT >= VERSION_CODES.O && useGpu) {
@@ -489,6 +533,7 @@ public class LiveWallpaperService extends WallpaperService {
         } else {
           canvas = surfaceHolder.lockCanvas();
         }
+
         if (canvas != null) {
           // ZOOM
           float intensity = zoomIntensity / 10f;
@@ -506,6 +551,16 @@ public class LiveWallpaperService extends WallpaperService {
       }
     }
 
+    private float[] lowPass(float[] input, float[] output) {
+      if (output == null) {
+        return input.clone();
+      }
+      for (int i = 0; i < 2; i++) {
+        output[i] = output[i] + 0.1f * (input[i] - output[i]);
+      }
+      return output;
+    }
+
     private void animateZoom(float valueTo) {
       if (zoomAnimator != null) {
         zoomAnimator.cancel();
@@ -515,7 +570,7 @@ public class LiveWallpaperService extends WallpaperService {
       zoomAnimator = ValueAnimator.ofFloat(zoomUnlock, valueTo);
       zoomAnimator.addUpdateListener(animation -> {
         zoomUnlock = (float) animation.getAnimatedValue();
-        drawFrame(true);
+        drawFrame(false);
       });
       zoomAnimator.setInterpolator(new FastOutSlowInInterpolator());
       zoomAnimator.setDuration(1250).start();

@@ -509,7 +509,7 @@ public class LiveWallpaperService extends WallpaperService {
 
     private void updateOffset(boolean force) {
       float xOffset = parallax != 0 ? offsetX : 0;
-      int tiltFactor = 15 * parallax * (isTiltEnabled ? 1 : 0);
+      int tiltFactor = 18 * parallax * (isTiltEnabled ? 1 : 0);
       svgDrawable.setOffset(
           xOffset * parallax * 100 + tiltX * tiltFactor,
           tiltY * tiltFactor

@@ -53,7 +53,7 @@ public final class Constants {
     public final static boolean NIGHT_MODE = true;
     public final static boolean FOLLOW_SYSTEM = true;
     public final static boolean USE_WHITE_TEXT = false;
-    public final static boolean TILT = false;
+    public final static boolean TILT = true;
     public final static int ZOOM = 3;
     public final static boolean ZOOM_LAUNCHER = true;
     public final static boolean ZOOM_UNLOCK = true;

@@ -1,5 +1,7 @@
 3.4.0:
 - New: optional parallax effect when tilting the device
+- New: Brazilian Portuguese translation (big thanks to Alexandre!)
+- Improved: descriptions of options and information
 - Fixed: potential wallpaper crashes
 
 3.3.0:

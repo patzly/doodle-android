@@ -71,12 +71,6 @@
   <string name="info_changelog_description">O que há de novo?</string>
   <string name="info_developer">Desenvolvedor</string>
 
-  <array name="changelog_highlights" translatable="false">
-    <item>Novo:</item>
-    <item>Melhorado:</item>
-    <item>Consertado:</item>
-  </array>
-
   <string name="category_customization">Costumização</string>
   <string name="category_about">Sobre</string>
   <string name="category_licenses">Licenças de código aberto</string>

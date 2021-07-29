@@ -454,7 +454,7 @@ public class LiveWallpaperService extends WallpaperService {
             SensorManager.SENSOR_DELAY_GAME
         );
         isListenerRegistered = true;
-      } else if (isListenerRegistered) {
+      } else if (!isTiltEnabled && isListenerRegistered) {
         sensorManager.unregisterListener(sensorListener);
         isListenerRegistered = false;
       }

@@ -273,6 +273,7 @@ public class LiveWallpaperService extends WallpaperService {
     private boolean isVisible;
     private boolean isNight;
     private boolean useGpu;
+    private boolean isListenerRegistered = false;
     private float fps;
     private ValueAnimator zoomAnimator;
     private SensorEventListener sensorListener;
@@ -326,11 +327,6 @@ public class LiveWallpaperService extends WallpaperService {
         public void onAccuracyChanged(Sensor sensor, int accuracy) {
         }
       };
-      sensorManager.registerListener(
-          sensorListener,
-          sensorManager.getSensorList(Sensor.TYPE_ACCELEROMETER).get(0),
-          SensorManager.SENSOR_DELAY_GAME
-      );
 
       // Load this only once on creation, else it would cause a crash caused by OpenGL
       useGpu = sharedPrefs.getBoolean(PREF.GPU, DEF.GPU);
@@ -354,8 +350,9 @@ public class LiveWallpaperService extends WallpaperService {
         zoomAnimator.removeAllUpdateListeners();
         zoomAnimator = null;
       }
-      if (sensorManager != null) {
+      if (sensorManager != null && isListenerRegistered) {
         sensorManager.unregisterListener(sensorListener);
+        isListenerRegistered = false;
       }
     }
 
@@ -448,7 +445,20 @@ public class LiveWallpaperService extends WallpaperService {
 
     private void loadSettings() {
       parallax = sharedPrefs.getInt(PREF.PARALLAX, DEF.PARALLAX);
+
       isTiltEnabled = sharedPrefs.getBoolean(PREF.TILT, DEF.TILT);
+      if (isTiltEnabled && !isListenerRegistered) {
+        sensorManager.registerListener(
+            sensorListener,
+            sensorManager.getSensorList(Sensor.TYPE_ACCELEROMETER).get(0),
+            SensorManager.SENSOR_DELAY_GAME
+        );
+        isListenerRegistered = true;
+      } else if (isListenerRegistered) {
+        sensorManager.unregisterListener(sensorListener);
+        isListenerRegistered = false;
+      }
+
       scale = sharedPrefs.getFloat(PREF.SCALE, DEF.SCALE);
       if (svgDrawable != null) {
         svgDrawable.setScale(scale);

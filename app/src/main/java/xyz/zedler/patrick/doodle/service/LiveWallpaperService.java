@@ -434,7 +434,7 @@ public class LiveWallpaperService extends WallpaperService {
       handleRefreshRequests();
 
       svgDrawable.applyRandomElevationToAll(0.1f);
-      drawFrame(true);
+      updateOffset(true);
     }
 
     @Override

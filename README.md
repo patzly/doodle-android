@@ -26,7 +26,8 @@ The wallpapers are based on the original Doodle live wallpapers of the Google Pi
 
 ## Advantages over original Pixel 4 live wallpapers
 
-* Less power consumption (no permanent animations or gyroscope sensor requests, no 3D engine)
+* Permanent animation (when tilting the device) is optional
+* No battery-hungry 3D engine
 * Improved text contrast (dark text for light themes instead of white text with shadow)
 * Support for Android 11 zoom effect and optional zoom-in animation when unlocking
 * Various customization options

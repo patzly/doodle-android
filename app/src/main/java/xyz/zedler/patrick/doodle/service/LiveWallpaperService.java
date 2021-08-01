@@ -274,6 +274,7 @@ public class LiveWallpaperService extends WallpaperService {
     private boolean isNight;
     private boolean useGpu;
     private boolean isListenerRegistered = false;
+    private boolean isSurfaceAvailable = false;
     private float fps;
     private ValueAnimator zoomAnimator;
     private SensorEventListener sensorListener;
@@ -357,6 +358,22 @@ public class LiveWallpaperService extends WallpaperService {
     }
 
     @Override
+    public void onSurfaceCreated(SurfaceHolder holder) {
+      isSurfaceAvailable = true;
+    }
+
+    @Override
+    public void onSurfaceDestroyed(SurfaceHolder holder) {
+      isSurfaceAvailable = false;
+    }
+
+    @Override
+    public void onSurfaceRedrawNeeded(SurfaceHolder holder) {
+      // Not necessarily needed but recommended
+      drawFrame(true);
+    }
+
+    @Override
     public WallpaperColors onComputeColors() {
       int background = Color.parseColor("#232323");
       if (isNightMode()) {
@@ -435,12 +452,6 @@ public class LiveWallpaperService extends WallpaperService {
 
       svgDrawable.applyRandomElevationToAll(0.1f);
       updateOffset(true);
-    }
-
-    @Override
-    public void onSurfaceRedrawNeeded(SurfaceHolder holder) {
-      // Not necessarily needed but recommended
-      drawFrame(true);
     }
 
     private void loadSettings() {
@@ -562,14 +573,15 @@ public class LiveWallpaperService extends WallpaperService {
     }
 
     void drawFrame(boolean force) {
-      if (!force && SystemClock.elapsedRealtime() - lastDraw < 1000 / fps) {
+      if ((!force && SystemClock.elapsedRealtime() - lastDraw < 1000 / fps)
+          || !isSurfaceAvailable || getSurfaceHolder().getSurface() == null
+          // Prevents IllegalStateException when surface is not ready
+          || !getSurfaceHolder().getSurface().isValid()
+      ) {
+        // Cancel drawing request
         return;
       }
       final SurfaceHolder surfaceHolder = getSurfaceHolder();
-      if (!surfaceHolder.getSurface().isValid()) {
-        // Prevents IllegalStateException when surface is not ready
-        return;
-      }
       Canvas canvas = null;
       try {
         if (VERSION.SDK_INT >= VERSION_CODES.O && useGpu) {
@@ -588,8 +600,10 @@ public class LiveWallpaperService extends WallpaperService {
           svgDrawable.draw(canvas);
           lastDraw = SystemClock.elapsedRealtime();
         }
+      } catch (Exception e) {
+        Log.e(TAG, "drawFrame: unexpected exception: " + e);
       } finally {
-        if (canvas != null) {
+        if (canvas != null && isSurfaceAvailable) {
           surfaceHolder.unlockCanvasAndPost(canvas);
         }
       }

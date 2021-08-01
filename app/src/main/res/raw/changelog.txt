@@ -1,6 +1,7 @@
 3.4.1:
 - Improved: acceleration sensor listener will now only be registered if the option is turned on
-- Fixed: frame jump when switching the tilt sensor option on or off
+- Fixed: wallpaper frame jump after switching the tilt sensor option on or off
+- Fixed: potential wallpaper crashes
 
 3.4.0:
 - New: optional parallax effect when tilting the device

@@ -69,7 +69,7 @@
   <string name="info_title">Informationen</string>
   <string name="info_description">Ein farbenfroher Live-Hintergrund mit Nachtmodus und akku-effizienten Animationen. Tippen, um mehr zu erfahren.</string>
   <string name="info_description_wallpaper">Entdecke eine farbenfrohe Sammlung von Formen, verfeinert mit sanften Parallax- und Zoom-Effekten beim Wechseln zwischen deinen Startbildschirmen und Entsperren deines Smartphones.\nPasse den Hintergrund mit mehreren Optionen an deinen eigenen Stil an.</string>
-  <string name="info_touch_wiz">Es scheint, dass dein aktueller Standard-Launcher Samsung TouchWiz ist, welcher kein Hintergrund-Scrolling unterstützt. Probiere einen anderen Launcher aus, um den Parallax-Effekt zu ermöglichen.\nDu kannst diese Warnung ignorieren, wenn du einen anderen Standard-Launcher festgelegt hast.</string>
+  <string name="info_touch_wiz">Es scheint, dass dein aktueller Standard-Launcher Samsung TouchWiz ist, welcher kein Hintergrund-Scrolling unterstützt. Probiere einen anderen Launcher aus, um den Parallax-Effekt mit ausgeschalteter Neigungssensor-Option zu ermöglichen.\nDu kannst diese Warnung ignorieren, wenn du einen anderen Standard-Launcher festgelegt hast.</string>
   <string name="info_gpu">Hardware-Beschleunigung ist für Doodle erst ab Android 8 verfügbar. Die Animationen könnten deshalb etwas ruckelig sein, besonders bei dem zweiten Hintergrund.</string>
   <string name="info_version">Version</string>
   <string name="info_changelog">Änderungen</string>

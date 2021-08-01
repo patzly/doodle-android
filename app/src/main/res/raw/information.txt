@@ -17,9 +17,9 @@ How to set as background:
 - Tap SET in the top right corner, it should appear a preview
 - Now tap SET WALLPAPER
 
-If you see no movement, you probably have only one home screen page. Drag an app icon to the right edge to add another page, then swipe between them. Parallax effect only occurs during page swipe.
+If you see no movement, you probably have only one home screen page. Drag an app icon to the right edge to add another page, then swipe between them. Parallax effect only occurs during page swipe and when the tilt sensor option is switched on.
 
-You need to turn on background scrolling in your launcher's settings if you have disabled it before to make parallax effect work.
+You need to turn on background scrolling in your launcher's settings if you have disabled it before to make parallax effect on page swipe work.
 Some launchers don't support background scrolling at all, like Samsung's TouchWiz. As a solution, please try installing another launcher.
 
 On Samsung devices with Android 11 the zoom effect when you pull down quick settings might be unavailable.

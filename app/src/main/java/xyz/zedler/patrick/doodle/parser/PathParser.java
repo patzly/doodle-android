@@ -72,8 +72,6 @@ public class PathParser {
       }
 
       p.computeBounds(r, true);
-      // Log.d(TAG, "  " + cmd + " " + r);
-      // Util.debug("* Commands remaining: '" + path + "'.");
       boolean wasCurve = false;
       switch (cmd) {
         case 'M':

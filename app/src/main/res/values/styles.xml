@@ -27,6 +27,10 @@
     <item name="cornerRadius">6dp</item>
   </style>
 
+  <style name="Widget.Doodle.OverFlow" parent="Widget.AppCompat.ActionButton.Overflow">
+    <item name="android:tint">@color/icon</item>
+  </style>
+
   <style name="Widget.Doodle.Divider" parent="">
     <item name="android:layout_width">match_parent</item>
     <item name="android:layout_height">1dp</item>

@@ -32,6 +32,7 @@ import android.widget.FrameLayout.LayoutParams;
 import androidx.annotation.NonNull;
 import xyz.zedler.patrick.doodle.Constants;
 import xyz.zedler.patrick.doodle.databinding.FragmentBottomsheetTextBinding;
+import xyz.zedler.patrick.doodle.util.HapticUtil;
 import xyz.zedler.patrick.doodle.util.ResUtil;
 import xyz.zedler.patrick.doodle.util.ViewUtil;
 
@@ -40,7 +41,6 @@ public class TextBottomSheetDialogFragment extends BaseBottomSheetDialogFragment
   private final static String TAG = "TextBottomSheet";
 
   private FragmentBottomsheetTextBinding binding;
-  private ViewUtil viewUtil;
 
   @Override
   public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle state) {
@@ -50,7 +50,8 @@ public class TextBottomSheetDialogFragment extends BaseBottomSheetDialogFragment
     Bundle bundle = getArguments();
     assert context != null && bundle != null;
 
-    viewUtil = new ViewUtil();
+    ViewUtil viewUtil = new ViewUtil();
+    HapticUtil hapticUtil = new HapticUtil(context);
 
     binding.textTextTitle.setText(
         bundle.getString(Constants.EXTRA.TITLE)
@@ -62,6 +63,7 @@ public class TextBottomSheetDialogFragment extends BaseBottomSheetDialogFragment
         if (viewUtil.isClickDisabled()) {
           return;
         }
+        hapticUtil.click();
         ViewUtil.startIcon(binding.imageTextOpenLink);
         new Handler(Looper.getMainLooper()).postDelayed(
             () -> startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(link))),

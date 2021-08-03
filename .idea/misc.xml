@@ -10,6 +10,7 @@
       <map>
         <entry key="app/src/main/res/layout/activity_settings.xml" value="0.3484375" />
         <entry key="app/src/main/res/layout/fragment_bottomsheet_changelog.xml" value="0.3484375" />
+        <entry key="app/src/main/res/layout/fragment_bottomsheet_feedback.xml" value="0.3484375" />
         <entry key="app/src/main/res/layout/fragment_bottomsheet_text.xml" value="0.3484375" />
       </map>
     </option>

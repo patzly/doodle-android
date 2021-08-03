@@ -58,8 +58,12 @@ public class FeedbackBottomSheetDialogFragment extends BaseBottomSheetDialogFrag
     sharedPrefs = PreferenceManager.getDefaultSharedPreferences(activity);
 
     HapticUtil hapticUtil = new HapticUtil(activity);
+    ViewUtil viewUtil = new ViewUtil();
 
     binding.linearFeedbackRate.setOnClickListener(v -> {
+      if (viewUtil.isClickDisabled()) {
+        return;
+      }
       ViewUtil.startIcon(binding.imageFeedbackRate);
       hapticUtil.click();
       Uri uri = Uri.parse(
@@ -84,6 +88,9 @@ public class FeedbackBottomSheetDialogFragment extends BaseBottomSheetDialogFrag
     });
 
     binding.linearFeedbackEmail.setOnClickListener(v -> {
+      if (viewUtil.isClickDisabled()) {
+        return;
+      }
       hapticUtil.click();
       Intent intent = new Intent(Intent.ACTION_SENDTO);
       intent.setData(
@@ -98,12 +105,18 @@ public class FeedbackBottomSheetDialogFragment extends BaseBottomSheetDialogFrag
     });
 
     binding.linearFeedbackGithub.setOnClickListener(v -> {
+      if (viewUtil.isClickDisabled()) {
+        return;
+      }
       hapticUtil.click();
       startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.app_github))));
       dismiss();
     });
 
     binding.linearFeedbackShare.setOnClickListener(v -> {
+      if (viewUtil.isClickDisabled()) {
+        return;
+      }
       hapticUtil.click();
       ResUtil.share(activity, R.string.msg_share);
       dismiss();

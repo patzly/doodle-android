@@ -40,6 +40,7 @@ public class TextBottomSheetDialogFragment extends BaseBottomSheetDialogFragment
   private final static String TAG = "TextBottomSheet";
 
   private FragmentBottomsheetTextBinding binding;
+  private ViewUtil viewUtil;
 
   @Override
   public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle state) {
@@ -49,6 +50,8 @@ public class TextBottomSheetDialogFragment extends BaseBottomSheetDialogFragment
     Bundle bundle = getArguments();
     assert context != null && bundle != null;
 
+    viewUtil = new ViewUtil();
+
     binding.textTextTitle.setText(
         bundle.getString(Constants.EXTRA.TITLE)
     );
@@ -56,6 +59,9 @@ public class TextBottomSheetDialogFragment extends BaseBottomSheetDialogFragment
     String link = bundle.getString(Constants.EXTRA.LINK);
     if (link != null) {
       binding.frameTextOpenLink.setOnClickListener(v -> {
+        if (viewUtil.isClickDisabled()) {
+          return;
+        }
         ViewUtil.startIcon(binding.imageTextOpenLink);
         new Handler(Looper.getMainLooper()).postDelayed(
             () -> startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(link))),

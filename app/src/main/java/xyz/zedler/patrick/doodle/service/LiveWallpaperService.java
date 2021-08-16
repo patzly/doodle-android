@@ -40,6 +40,7 @@ import android.hardware.SensorManager;
 import android.os.Build;
 import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
+import android.os.Bundle;
 import android.os.SystemClock;
 import android.service.wallpaper.WallpaperService;
 import android.util.Log;
@@ -275,6 +276,7 @@ public class LiveWallpaperService extends WallpaperService {
     private boolean useGpu;
     private boolean isListenerRegistered = false;
     private boolean isSurfaceAvailable = false;
+    private boolean iconDropConsumed = true;
     private float fps;
     private ValueAnimator zoomAnimator;
     private SensorEventListener sensorListener;
@@ -452,6 +454,24 @@ public class LiveWallpaperService extends WallpaperService {
 
       svgDrawable.applyRandomElevationToAll(0.1f);
       updateOffset(true);
+    }
+
+    @Override
+    public Bundle onCommand (
+        final String action, final int x, final int y, final int z, final Bundle extras,
+        final boolean resultRequested
+    ) {
+      if (action.equals("android.home.drop")){
+        iconDropConsumed = false;
+        notifyIconDropped(x, y);
+      }
+      return super.onCommand(action, x, y, z, extras, resultRequested);
+    }
+
+    protected void notifyIconDropped( int x, int y) {
+      if (!iconDropConsumed) {
+        iconDropConsumed = true;
+      }
     }
 
     private void loadSettings() {

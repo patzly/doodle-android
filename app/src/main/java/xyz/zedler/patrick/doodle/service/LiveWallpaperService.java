@@ -456,6 +456,7 @@ public class LiveWallpaperService extends WallpaperService {
 
     private void loadSettings() {
       parallax = sharedPrefs.getInt(PREF.PARALLAX, DEF.PARALLAX);
+      setOffsetNotificationsEnabled(parallax != 0);
 
       isTiltEnabled = sharedPrefs.getBoolean(PREF.TILT, DEF.TILT);
       if (isTiltEnabled && !isListenerRegistered) {

@@ -581,7 +581,7 @@
       <com.google.android.material.slider.Slider
         android:id="@+id/slider_zoom"
         style="@style/Widget.Doodle.Slider"
-        android:valueFrom="2"
+        android:valueFrom="1"
         android:valueTo="5"
         android:stepSize="1"/>
 

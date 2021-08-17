@@ -19,6 +19,7 @@
 
 package xyz.zedler.patrick.doodle.service;
 
+import android.animation.TimeInterpolator;
 import android.animation.ValueAnimator;
 import android.app.KeyguardManager;
 import android.app.WallpaperColors;
@@ -278,6 +279,7 @@ public class LiveWallpaperService extends WallpaperService {
     private boolean isSurfaceAvailable = false;
     private boolean iconDropConsumed = true;
     private float fps;
+    private final TimeInterpolator zoomInterpolator = new FastOutSlowInInterpolator();
     private ValueAnimator zoomAnimator;
     private SensorEventListener sensorListener;
     private final List<Pair<Float, Float>> tiltHistory = new ArrayList<>();
@@ -566,8 +568,10 @@ public class LiveWallpaperService extends WallpaperService {
 
     @Override
     public void onZoomChanged(float zoom) {
-      if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R && zoomIntensity > 0) {
-        this.zoomLauncher = zoom;
+      if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R
+          && zoomIntensity > 0
+          && (zoomAnimator == null || !zoomAnimator.isRunning())) {
+        zoomLauncher = zoomInterpolator.getInterpolation(zoom);
         drawFrame(false);
       }
     }
@@ -594,7 +598,7 @@ public class LiveWallpaperService extends WallpaperService {
     }
 
     void drawFrame(boolean force) {
-      if ((!force && SystemClock.elapsedRealtime() - lastDraw < 1000 / fps)
+      if (((!force && !isDrawNecessary()) && SystemClock.elapsedRealtime() - lastDraw < 1000 / fps)
           || !isSurfaceAvailable || getSurfaceHolder().getSurface() == null
           // Prevents IllegalStateException when surface is not ready
           || !getSurfaceHolder().getSurface().isValid()
@@ -630,6 +634,10 @@ public class LiveWallpaperService extends WallpaperService {
       }
     }
 
+    private boolean isDrawNecessary() {
+      return zoomLauncher == 0 || zoomLauncher == 1 || zoomUnlock == 0 || zoomUnlock == 1;
+    }
+
     private float[] lowPass(float[] input, float[] output) {
       if (output == null) {
         return input.clone();
@@ -651,7 +659,7 @@ public class LiveWallpaperService extends WallpaperService {
         zoomUnlock = (float) animation.getAnimatedValue();
         drawFrame(false);
       });
-      zoomAnimator.setInterpolator(new FastOutSlowInInterpolator());
+      zoomAnimator.setInterpolator(zoomInterpolator);
       zoomAnimator.setDuration(1250).start();
     }
 

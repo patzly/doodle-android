@@ -437,6 +437,15 @@ public class SvgDrawable {
 
     canvas.scale(scale, scale, px, py);
 
+    if (object.isInGroup) {
+      // fixes child path offset when zoomed out
+      // TODO: for scale 1.4-1.7 tiny offset still occurs, find a better fix
+      float elevation = parentGroup.elevation;
+      float xCompensate = ((px + dx) - pointF.x) * (1 - (this.scale - 1)) * (zoom * elevation);
+      float yCompensate = ((py + dy) - pointF.y) * (1 - (this.scale - 1)) * (zoom * elevation);
+      canvas.translate(-xCompensate, -yCompensate);
+    }
+
     // start with fill and repeat with stroke if both are set
     // don't apply scale to stroke width, stroke is already scaled with canvas transformation
     int runs = applyPaintStyle(object, 1, false) ? 2 : 1;

@@ -568,9 +568,7 @@ public class LiveWallpaperService extends WallpaperService {
 
     @Override
     public void onZoomChanged(float zoom) {
-      if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R
-          && zoomIntensity > 0
-          && (zoomAnimator == null || !zoomAnimator.isRunning())) {
+      if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R && zoomIntensity > 0) {
         zoomLauncher = zoomInterpolator.getInterpolation(zoom);
         drawFrame(false);
       }

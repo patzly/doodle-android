@@ -61,6 +61,7 @@ public final class Constants {
     public final static int PARALLAX = 1;
     public final static float SCALE = 1;
     public final static boolean GPU = true;
+    public final static boolean LAUNCHER = false;
   }
 
   public final static class WALLPAPER {

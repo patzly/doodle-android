@@ -27,8 +27,6 @@
     android:name="android.software.live_wallpaper"
     android:required="true" />
 
-  <uses-permission android:name="android.permission.VIBRATE" />
-
   <queries>
     <intent>
       <action android:name="android.intent.action.MAIN" />

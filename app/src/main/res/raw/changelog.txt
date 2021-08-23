@@ -1,4 +1,5 @@
 3.5.0:
+- New: option for hiding app icon in launcher
 - Fixed: annoying shape offset in shape groups when zoomed out
 
 3.4.1:

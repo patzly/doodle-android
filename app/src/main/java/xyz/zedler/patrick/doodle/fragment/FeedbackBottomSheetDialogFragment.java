@@ -57,7 +57,7 @@ public class FeedbackBottomSheetDialogFragment extends BaseBottomSheetDialogFrag
 
     sharedPrefs = PreferenceManager.getDefaultSharedPreferences(activity);
 
-    HapticUtil hapticUtil = new HapticUtil(activity);
+    HapticUtil hapticUtil = new HapticUtil(binding.getRoot());
     ViewUtil viewUtil = new ViewUtil();
 
     binding.linearFeedbackRate.setOnClickListener(v -> {

@@ -51,7 +51,7 @@ public class TextBottomSheetDialogFragment extends BaseBottomSheetDialogFragment
     assert context != null && bundle != null;
 
     ViewUtil viewUtil = new ViewUtil();
-    HapticUtil hapticUtil = new HapticUtil(context);
+    HapticUtil hapticUtil = new HapticUtil(binding.getRoot());
 
     binding.textTextTitle.setText(
         bundle.getString(Constants.EXTRA.TITLE)

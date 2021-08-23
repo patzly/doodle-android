@@ -33,6 +33,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.view.HapticFeedbackConstants;
 import android.view.View;
 import android.widget.CompoundButton;
 import androidx.activity.result.ActivityResultLauncher;
@@ -92,7 +93,7 @@ public class SettingsActivity extends AppCompatActivity
     sharedPrefs = new PrefsUtil(this).checkForMigrations().getSharedPrefs();
 
     viewUtil = new ViewUtil();
-    hapticUtil = new HapticUtil(this);
+    hapticUtil = new HapticUtil(binding.getRoot());
 
     SystemBarBehavior systemBarBehavior = new SystemBarBehavior(this);
     systemBarBehavior.setAppBar(binding.appBar);
@@ -193,6 +194,12 @@ public class SettingsActivity extends AppCompatActivity
     }
     binding.switchGpu.setChecked(sharedPrefs.getBoolean(PREF.GPU, DEF.GPU));
 
+    binding.switchLauncher.setChecked(
+        getPackageManager().getComponentEnabledSetting(
+            new ComponentName(this, SplashActivity.class)
+        ) == PackageManager.COMPONENT_ENABLED_STATE_DISABLED
+    );
+
     refreshSelectionTheme(sharedPrefs.getString(PREF.WALLPAPER, WALLPAPER.PIXEL), false);
 
     String[] wallpapers = new String[]{
@@ -227,6 +234,7 @@ public class SettingsActivity extends AppCompatActivity
         binding.linearZoomLauncher,
         binding.linearZoomUnlock,
         binding.linearGpu,
+        binding.linearLauncher,
         binding.linearReset,
         binding.linearChangelog,
         binding.linearFeedback,
@@ -244,7 +252,8 @@ public class SettingsActivity extends AppCompatActivity
         binding.checkboxTilt,
         binding.checkboxZoomLauncher,
         binding.checkboxZoomUnlock,
-        binding.switchGpu
+        binding.switchGpu,
+        binding.switchLauncher
     );
 
     showChangelog(true);
@@ -356,6 +365,9 @@ public class SettingsActivity extends AppCompatActivity
     } else if (id == R.id.linear_gpu) {
       ViewUtil.startIcon(binding.imageGpu);
       binding.switchGpu.setChecked(!binding.switchGpu.isChecked());
+    } else if (id == R.id.linear_launcher) {
+      ViewUtil.startIcon(binding.imageLauncher);
+      binding.switchLauncher.setChecked(!binding.switchLauncher.isChecked());
     } else if (id == R.id.linear_reset) {
       ViewUtil.startIcon(binding.imageReset);
       Snackbar.make(
@@ -461,8 +473,17 @@ public class SettingsActivity extends AppCompatActivity
     } else if (id == R.id.switch_gpu) {
       sharedPrefs.edit().putBoolean(PREF.GPU, isChecked).apply();
       requestSettingsRefresh();
+    } else if (id == R.id.switch_launcher) {
+      getPackageManager().setComponentEnabledSetting(
+          new ComponentName(this, SplashActivity.class),
+          isChecked
+              ? PackageManager.COMPONENT_ENABLED_STATE_DISABLED
+              : PackageManager.COMPONENT_ENABLED_STATE_ENABLED,
+          PackageManager.DONT_KILL_APP
+      );
     }
     performHapticClick();
+    binding.switchLauncher.performHapticFeedback(HapticFeedbackConstants.CONTEXT_CLICK);
   }
 
   @Override

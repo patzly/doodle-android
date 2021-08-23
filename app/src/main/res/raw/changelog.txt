@@ -1,6 +1,7 @@
 3.5.0:
 - New: option for hiding app icon in launcher
 - Fixed: annoying shape offset in shape groups when zoomed out
+- Fixed: settings reset option
 
 3.4.1:
 - Improved: acceleration sensor listener will now only be registered if the option is turned on

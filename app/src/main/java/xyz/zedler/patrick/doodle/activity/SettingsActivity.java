@@ -380,11 +380,15 @@ public class SettingsActivity extends AppCompatActivity
           getString(R.string.action_reset),
           view -> {
             sharedPrefs.edit().clear().apply();
-            Intent intent = new Intent(this, SettingsActivity.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            startActivity(intent);
-            finish();
-            Runtime.getRuntime().exit(0);
+            requestSettingsRefresh();
+            requestThemeRefresh();
+            new Handler(getMainLooper()).postDelayed(() -> {
+              Intent intent = new Intent(this, SettingsActivity.class);
+              intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+              startActivity(intent);
+              finish();
+              Runtime.getRuntime().exit(0);
+            }, 300);
           }
       ).show();
     } else if (id == R.id.linear_changelog && viewUtil.isClickEnabled()) {

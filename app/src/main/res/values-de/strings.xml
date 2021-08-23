@@ -55,6 +55,8 @@
   <string name="settings_zoom_unlock">Auf dem Sperrbildschirm herauszoomen</string>
   <string name="settings_gpu">Hardware-Beschleunigung</string>
   <string name="settings_gpu_description">Ausschalten, wenn der Live-Hintergrund abstürtzt.\nErfordert bei aktivem Hintergrund einen Neustart des Geräts, um in Kraft zu treten</string>
+  <string name="settings_launcher">App-Icon verstecken</string>
+  <string name="settings_launcher_description">Einstellungen nur über Live-Hintergrund-Auswahl des Systems erreichbar</string>
   <string name="settings_reset">Alle Einstellungen zurücksetzen</string>
 
   <string name="category_customization">Anpassung</string>

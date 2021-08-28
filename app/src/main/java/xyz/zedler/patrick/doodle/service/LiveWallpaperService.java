@@ -579,6 +579,7 @@ public class LiveWallpaperService extends WallpaperService {
       switch (presence) {
         case USER_PRESENCE.OFF:
           zoomUnlock = 1;
+          zoomLauncher = 1;
           drawFrame(true);
           break;
         case USER_PRESENCE.LOCKED:
@@ -648,6 +649,7 @@ public class LiveWallpaperService extends WallpaperService {
 
     private void animateZoom(float valueTo) {
       if (zoomAnimator != null) {
+        zoomAnimator.pause();
         zoomAnimator.cancel();
         zoomAnimator.removeAllUpdateListeners();
         zoomAnimator = null;

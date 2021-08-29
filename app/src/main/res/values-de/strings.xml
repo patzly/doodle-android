@@ -47,6 +47,8 @@
   <string name="settings_parallax_none">Aus</string>
   <string name="settings_tilt">Auf Neigung des Gerätes reagieren</string>
   <string name="settings_tilt_description">Der Akku entleert sich dadurch möglicherweise schneller</string>
+  <string name="settings_refresh_rate">Aktualisierungsrate des Neigungs-Sensors</string>
+  <string name="settings_refresh_rate_description">Zu kurze Abstände können die Zoom-Animationen beeinträchtigen</string>
   <string name="settings_size">Größe der Formen</string>
   <string name="settings_size_description">Nützlich für große Displays</string>
   <string name="settings_zoom">Intensität des Zoom-Effekts</string>

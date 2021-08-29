@@ -1,4 +1,5 @@
 3.5.1:
+- New: option to set tilt sensor refresh rate (useful if tilt caused lags with zoom animations)
 - Fixed: skipped frames in zoom animation when unlocking immediately
 
 3.5.0:

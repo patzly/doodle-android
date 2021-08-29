@@ -525,6 +525,36 @@
 
       <LinearLayout
         style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine"
+        android:layout_marginStart="48dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="0dp">
+
+        <LinearLayout
+          style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox"
+          android:layout_marginStart="8dp">
+
+          <TextView
+            style="@style/Widget.Doodle.TextView.ListItem.Title"
+            android:text="@string/settings_refresh_rate" />
+
+          <TextView
+            style="@style/Widget.Doodle.TextView.ListItem.Description"
+            android:text="@string/settings_refresh_rate_description" />
+
+        </LinearLayout>
+
+      </LinearLayout>
+
+      <com.google.android.material.slider.Slider
+        android:id="@+id/slider_refresh_rate"
+        style="@style/Widget.Doodle.Slider"
+        android:valueFrom="20000"
+        android:valueTo="65000"
+        android:stepSize="5000"/>
+
+      <LinearLayout
+        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine"
         android:paddingBottom="0dp">
 
         <ImageView

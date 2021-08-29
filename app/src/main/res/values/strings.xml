@@ -55,6 +55,8 @@
   <string name="settings_parallax_none">None</string>
   <string name="settings_tilt">Move when tilting the device</string>
   <string name="settings_tilt_description">Could cause battery to drain faster</string>
+  <string name="settings_refresh_rate">Tilt sensor refresh rate</string>
+  <string name="settings_refresh_rate_description">Too short delays can make zoom animations laggy</string>
   <string name="settings_size">Shape size</string>
   <string name="settings_size_description">Useful for big screens</string>
   <string name="settings_zoom">Zoom effect intensity</string>

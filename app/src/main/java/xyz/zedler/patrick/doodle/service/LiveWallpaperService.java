@@ -55,6 +55,7 @@ import java.util.List;
 import xyz.zedler.patrick.doodle.Constants;
 import xyz.zedler.patrick.doodle.Constants.DEF;
 import xyz.zedler.patrick.doodle.Constants.PREF;
+import xyz.zedler.patrick.doodle.Constants.REQUEST_SOURCE;
 import xyz.zedler.patrick.doodle.Constants.USER_PRESENCE;
 import xyz.zedler.patrick.doodle.Constants.VARIANT;
 import xyz.zedler.patrick.doodle.Constants.WALLPAPER;
@@ -271,7 +272,7 @@ public class LiveWallpaperService extends WallpaperService {
     private float tiltX, tiltY;
     private float[] accelerationValues;
     private float offsetX;
-    private long lastDraw;
+    private long lastDrawZoomLauncher, lastDrawZoomUnlock, lastDrawTilt;
     private boolean isVisible;
     private boolean isNight;
     private boolean useGpu;
@@ -321,7 +322,7 @@ public class LiveWallpaperService extends WallpaperService {
                   ? tilt.second > averageY + tolerance
                   : tilt.second < averageY - tolerance;
               if (isMovingX || isMovingY) {
-                updateOffset(false);
+                updateOffset(false, REQUEST_SOURCE.TILT);
                 return;
               }
             }
@@ -374,7 +375,7 @@ public class LiveWallpaperService extends WallpaperService {
     @Override
     public void onSurfaceRedrawNeeded(SurfaceHolder holder) {
       // Not necessarily needed but recommended
-      drawFrame(true);
+      drawFrame(true, null);
     }
 
     @Override
@@ -455,7 +456,7 @@ public class LiveWallpaperService extends WallpaperService {
       handleRefreshRequests();
 
       svgDrawable.applyRandomElevationToAll(0.1f);
-      updateOffset(true);
+      updateOffset(true, null);
     }
 
     @Override
@@ -485,10 +486,23 @@ public class LiveWallpaperService extends WallpaperService {
         sensorManager.registerListener(
             sensorListener,
             sensorManager.getSensorList(Sensor.TYPE_ACCELEROMETER).get(0),
-            SensorManager.SENSOR_DELAY_GAME
+            // SENSOR_DELAY_GAME = 20000
+            // SENSOR_DELAY_UI = 66667
+            sharedPrefs.getInt(PREF.REFRESH_RATE, DEF.REFRESH_RATE)
         );
         isListenerRegistered = true;
-      } else if (!isTiltEnabled && isListenerRegistered) {
+      } else if (isTiltEnabled) {
+        sensorManager.unregisterListener(sensorListener);
+        isListenerRegistered = false;
+        sensorManager.registerListener(
+            sensorListener,
+            sensorManager.getSensorList(Sensor.TYPE_ACCELEROMETER).get(0),
+            // SENSOR_DELAY_GAME = 20000
+            // SENSOR_DELAY_UI = 66667
+            sharedPrefs.getInt(PREF.REFRESH_RATE, DEF.REFRESH_RATE)
+        );
+        isListenerRegistered = true;
+      } else if (isListenerRegistered) {
         sensorManager.unregisterListener(sensorListener);
         isListenerRegistered = false;
       }
@@ -548,17 +562,17 @@ public class LiveWallpaperService extends WallpaperService {
         int yPixels
     ) {
       offsetX = xOffset;
-      updateOffset(true);
+      updateOffset(true, null);
     }
 
-    private void updateOffset(boolean force) {
+    private void updateOffset(boolean force, String source) {
       float xOffset = parallax != 0 ? offsetX : 0;
       int tiltFactor = 18 * parallax * (isTiltEnabled ? 1 : 0);
       svgDrawable.setOffset(
           xOffset * parallax * 100 + tiltX * tiltFactor,
           tiltY * tiltFactor
       );
-      drawFrame(force);
+      drawFrame(force, source);
     }
 
     public boolean shouldZoomOutWallpaper() {
@@ -570,7 +584,7 @@ public class LiveWallpaperService extends WallpaperService {
     public void onZoomChanged(float zoom) {
       if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R && zoomIntensity > 0) {
         zoomLauncher = zoomInterpolator.getInterpolation(zoom);
-        drawFrame(false);
+        drawFrame(false, REQUEST_SOURCE.ZOOM_LAUNCHER);
       }
     }
 
@@ -580,7 +594,7 @@ public class LiveWallpaperService extends WallpaperService {
         case USER_PRESENCE.OFF:
           zoomUnlock = 1;
           zoomLauncher = 1;
-          drawFrame(true);
+          drawFrame(true, null);
           break;
         case USER_PRESENCE.LOCKED:
           animateZoom(0.5f);
@@ -590,19 +604,21 @@ public class LiveWallpaperService extends WallpaperService {
             animateZoom(0);
           } else {
             zoomUnlock = 0;
-            drawFrame(true);
+            drawFrame(true, null);
           }
           break;
       }
     }
 
-    void drawFrame(boolean force) {
-      if (((!force && !isDrawNecessary()) && SystemClock.elapsedRealtime() - lastDraw < 1000 / fps)
-          || !isSurfaceAvailable || getSurfaceHolder().getSurface() == null
-          // Prevents IllegalStateException when surface is not ready
-          || !getSurfaceHolder().getSurface().isValid()
-      ) {
+    void drawFrame(boolean force, String source) {
+      if (!isDrawingAllowed(force, source)) {
         // Cancel drawing request
+        return;
+      } else if (!isSurfaceAvailable || getSurfaceHolder().getSurface() == null) {
+        // Cancel drawing request
+        return;
+      } else if (!getSurfaceHolder().getSurface().isValid()) {
+        // Prevents IllegalStateException when surface is not ready
         return;
       }
       final SurfaceHolder surfaceHolder = getSurfaceHolder();
@@ -622,7 +638,20 @@ public class LiveWallpaperService extends WallpaperService {
           svgDrawable.setZoom((float) (finalZoomLauncher + finalZoomUnlock));
 
           svgDrawable.draw(canvas);
-          lastDraw = SystemClock.elapsedRealtime();
+
+          if (source != null) {
+            switch (source) {
+              case REQUEST_SOURCE.ZOOM_LAUNCHER:
+                lastDrawZoomLauncher = SystemClock.elapsedRealtime();
+                break;
+              case REQUEST_SOURCE.ZOOM_UNLOCK:
+                lastDrawZoomUnlock = SystemClock.elapsedRealtime();
+                break;
+              case REQUEST_SOURCE.TILT:
+                lastDrawTilt = SystemClock.elapsedRealtime();
+                break;
+            }
+          }
         }
       } catch (Exception e) {
         Log.e(TAG, "drawFrame: unexpected exception: " + e);
@@ -633,8 +662,23 @@ public class LiveWallpaperService extends WallpaperService {
       }
     }
 
-    private boolean isDrawNecessary() {
-      return zoomLauncher == 0 || zoomLauncher == 1 || zoomUnlock == 0 || zoomUnlock == 1;
+    private boolean isDrawingAllowed(boolean force, String source) {
+      if (force || zoomLauncher == 0 || zoomLauncher == 1 || zoomUnlock == 0 || zoomUnlock == 1) {
+        return true;
+      } else if (source != null) {
+        if (source.equals(REQUEST_SOURCE.ZOOM_LAUNCHER)
+            && SystemClock.elapsedRealtime() - lastDrawZoomLauncher < 1000 / fps) {
+          return true;
+        } else if (source.equals(REQUEST_SOURCE.ZOOM_UNLOCK)
+            && SystemClock.elapsedRealtime() - lastDrawZoomUnlock < 1000 / fps) {
+          return true;
+        } else {
+          return source.equals(REQUEST_SOURCE.TILT)
+              && SystemClock.elapsedRealtime() - lastDrawTilt < 1000 / fps;
+        }
+      } else {
+        return false;
+      }
     }
 
     private float[] lowPass(float[] input, float[] output) {
@@ -657,7 +701,7 @@ public class LiveWallpaperService extends WallpaperService {
       zoomAnimator = ValueAnimator.ofFloat(zoomUnlock, valueTo);
       zoomAnimator.addUpdateListener(animation -> {
         zoomUnlock = (float) animation.getAnimatedValue();
-        drawFrame(false);
+        drawFrame(false, REQUEST_SOURCE.ZOOM_UNLOCK);
       });
       zoomAnimator.setInterpolator(zoomInterpolator);
       zoomAnimator.setDuration(1250).start();

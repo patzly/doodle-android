@@ -38,6 +38,7 @@ public final class Constants {
     public final static String VARIANT_ANTHONY = "variant_anthony";
     public final static String PARALLAX = "parallax";
     public final static String TILT = "tilt";
+    public final static String REFRESH_RATE = "refresh_rate";
     public final static String SCALE = "size";
     public final static String GPU = "hardware_acceleration";
 
@@ -53,7 +54,8 @@ public final class Constants {
     public final static boolean NIGHT_MODE = true;
     public final static boolean FOLLOW_SYSTEM = true;
     public final static boolean USE_WHITE_TEXT = false;
-    public final static boolean TILT = true;
+    public final static boolean TILT = false;
+    public final static int REFRESH_RATE = 30000;
     public final static int ZOOM = 3;
     public final static boolean ZOOM_LAUNCHER = true;
     public final static boolean ZOOM_UNLOCK = true;
@@ -100,5 +102,12 @@ public final class Constants {
     public final static String LOCKED = "locked";
     public final static String OFF = "off";
     public final static String UNLOCKED = "unlocked";
+  }
+
+  public final static class REQUEST_SOURCE {
+
+    public final static String ZOOM_LAUNCHER = "zoom_launcher";
+    public final static String ZOOM_UNLOCK = "zoom_unlock";
+    public final static String TILT = "tilt";
   }
 }

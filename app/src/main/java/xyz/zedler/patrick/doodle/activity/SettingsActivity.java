@@ -159,6 +159,12 @@ public class SettingsActivity extends AppCompatActivity
 
     binding.checkboxTilt.setChecked(sharedPrefs.getBoolean(PREF.TILT, DEF.TILT));
 
+    binding.sliderRefreshRate.setValue(sharedPrefs.getInt(PREF.REFRESH_RATE, DEF.REFRESH_RATE));
+    binding.sliderRefreshRate.addOnChangeListener(this);
+    binding.sliderRefreshRate.setLabelFormatter(
+        value -> String.format(Locale.getDefault(), "%.0fms", value / 1000)
+    );
+
     binding.sliderSize.setValue(sharedPrefs.getFloat(PREF.SCALE, DEF.SCALE));
     binding.sliderSize.addOnChangeListener(this);
     binding.sliderSize.setLabelFormatter(value -> {
@@ -500,11 +506,13 @@ public class SettingsActivity extends AppCompatActivity
       sharedPrefs.edit().putInt(PREF.PARALLAX, (int) value).apply();
       ViewUtil.startIcon(binding.imageParallax);
       requestSettingsRefresh();
+    } else if (id == R.id.slider_refresh_rate) {
+      sharedPrefs.edit().putInt(PREF.REFRESH_RATE, (int) value).apply();
+      ViewUtil.startIcon(binding.imageParallax);
+      requestSettingsRefresh();
     } else if (id == R.id.slider_size) {
       sharedPrefs.edit().putFloat(PREF.SCALE, value).apply();
       ViewUtil.startIcon(binding.imageSize);
-      // When the size changes the drawables have to be reloaded
-      // Without this and the new size is smaller, the big cached bitmaps are causing lags
       requestSettingsRefresh();
     } else if (id == R.id.slider_zoom) {
       sharedPrefs.edit().putInt(PREF.ZOOM, (int) value).apply();

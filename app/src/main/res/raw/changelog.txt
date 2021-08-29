@@ -1,7 +1,7 @@
 3.5.1:
 - New: option to set tilt sensor refresh rate (useful if tilt caused lags with zoom animations)
 - Fixed: skipped frames in zoom animation when unlocking immediately
-- Fixed: SET button not greyed out if settings app is opened from wallpaper preview
+- Fixed: SET button not disabled if settings app is opened from wallpaper preview
 
 3.5.0:
 - New: option for hiding app icon in launcher

@@ -21,6 +21,7 @@ package xyz.zedler.patrick.doodle.activity;
 
 import android.app.Activity;
 import android.app.ActivityManager;
+import android.app.ActivityManager.RunningServiceInfo;
 import android.app.WallpaperManager;
 import android.content.ActivityNotFoundException;
 import android.content.ComponentName;
@@ -102,17 +103,17 @@ public class SettingsActivity extends AppCompatActivity
 
     new ScrollBehavior(this).setUpScroll(binding.appBar, binding.scroll, true);
 
-    binding.buttonSet.setEnabled(!isWallpaperServiceRunning());
+    binding.buttonSet.setEnabled(!isMainWallpaperServiceRunning());
     binding.buttonSet.setBackgroundColor(
         ContextCompat.getColor(
             this,
-            isWallpaperServiceRunning() ? R.color.secondary_disabled : R.color.retro_green_bg_white
+            isMainWallpaperServiceRunning() ? R.color.secondary_disabled : R.color.retro_green_bg_white
         )
     );
     binding.buttonSet.setTextColor(
         ContextCompat.getColor(
             this,
-            isWallpaperServiceRunning() ? R.color.on_secondary_disabled : R.color.on_secondary
+            isMainWallpaperServiceRunning() ? R.color.on_secondary_disabled : R.color.on_secondary
         )
     );
 
@@ -276,7 +277,7 @@ public class SettingsActivity extends AppCompatActivity
   protected void onResume() {
     super.onResume();
 
-    if (!isWallpaperServiceRunning()) {
+    if (!isMainWallpaperServiceRunning()) {
       setActivateButtonEnabled(true);
     }
 
@@ -670,14 +671,12 @@ public class SettingsActivity extends AppCompatActivity
     );
   }
 
-  private boolean isWallpaperServiceRunning() {
+  private boolean isMainWallpaperServiceRunning() {
     ActivityManager manager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
     if (manager != null) {
-      for (ActivityManager.RunningServiceInfo service
-          : manager.getRunningServices(Integer.MAX_VALUE)
-      ) {
+      for (RunningServiceInfo service : manager.getRunningServices(Integer.MAX_VALUE)) {
         if (LiveWallpaperService.class.getName().equals(service.service.getClassName())) {
-          return true;
+          return !sharedPrefs.getBoolean(PREF.PREVIEW_RUNNING, false);
         }
       }
     }

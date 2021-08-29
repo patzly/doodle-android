@@ -347,6 +347,8 @@ public class LiveWallpaperService extends WallpaperService {
 
       setTouchEventsEnabled(false);
       setOffsetNotificationsEnabled(true);
+
+      sharedPrefs.edit().putBoolean(PREF.PREVIEW_RUNNING, isPreview()).apply();
     }
 
     @Override
@@ -360,6 +362,7 @@ public class LiveWallpaperService extends WallpaperService {
         sensorManager.unregisterListener(sensorListener);
         isListenerRegistered = false;
       }
+      sharedPrefs.edit().putBoolean(PREF.PREVIEW_RUNNING, false).apply();
     }
 
     @Override

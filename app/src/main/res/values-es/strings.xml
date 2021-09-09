@@ -21,12 +21,6 @@
 
 <resources>
 
-  <string name="app_name" translatable="false">Doodle</string>
-  <string name="app_developer" translatable="false">Patrick Zedler</string>
-  <string name="app_mail" translatable="false">patrick@zedler.xyz</string>
-  <string name="app_github" translatable="false">https://github.com/patzly/doodle-android/</string>
-  <string name="app_developer_play" translatable="false">http://play.google.com/store/apps/dev?id=8122479227040208191</string>
-
   <!-- ACTIONS -->
 
   <string name="action_close">Cerrar</string>

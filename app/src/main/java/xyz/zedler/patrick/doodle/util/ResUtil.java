@@ -29,7 +29,6 @@ import android.text.SpannableStringBuilder;
 import android.text.Spanned;
 import android.text.style.BulletSpan;
 import android.util.Log;
-import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RawRes;
@@ -73,17 +72,6 @@ public class ResUtil {
   ) {
     if (context == null || text == null) {
       return null;
-    }
-
-    // BulletSpan doesn't support RTL, use original text instead
-    int direction = context.getResources().getConfiguration().getLayoutDirection();
-    if (direction == View.LAYOUT_DIRECTION_RTL) {
-      String formatted = text;
-      for (String highlight : highlights) {
-        formatted = formatted.replaceAll(highlight, "<b>" + highlight + "</b>");
-        formatted = formatted.replaceAll("\n", "<br/>");
-      }
-      return Html.fromHtml(formatted);
     }
 
     int color = ContextCompat.getColor(context, R.color.on_background);

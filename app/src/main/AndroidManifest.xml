@@ -52,7 +52,7 @@
     </activity>
 
     <activity
-      android:name=".activity.SettingsActivity"
+      android:name=".activity.MainActivity"
       android:exported="true" />
 
     <service

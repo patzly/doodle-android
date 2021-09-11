@@ -26,7 +26,6 @@
   <string name="action_close">Fechar</string>
   <string name="action_set">Definir</string>
   <string name="action_send_feedback">Enviar comentários</string>
-  <string name="action_send_feedback_description">Reportar problemas e apoiar o desenvolvimento</string>
   <string name="action_share">Compartilhar</string>
   <string name="action_share_description">Conte aos seus amigos sobre o Doodle</string>
   <string name="action_email">Enviar email</string>
@@ -38,42 +37,40 @@
   <!-- SETTINGS -->
 
   <string name="settings_default">Padrão</string>
-  <string name="settings_night_mode">Modo noturno</string>
-  <string name="settings_night_mode_description">Formas totalmente escuras</string>
-  <string name="settings_follow_system">Seguir sistema</string>
-  <string name="settings_follow_system_description">Adote o tema do dispositivo</string>
-  <string name="settings_white_text">Use texto branco com sombra em fundos brilhantes</string>
-  <string name="settings_white_text_description">Não recomendado</string>
-  <string name="settings_parallax">Force Parallax</string>
-  <string name="settings_parallax_description">Deslocamento horizontal ao deslizar a página</string>
-  <string name="settings_parallax_none">Nenhum</string>
-  <string name="settings_size">Tamanho da forma</string>
-  <string name="settings_size_description">Útil para telas grandes</string>
-  <string name="settings_zoom">Intensidade do efeito de zoom</string>
-  <string name="settings_zoom_description">Quando aumentado, a câmera diminui mais o zoom</string>
-  <string name="settings_zoom_launcher">Diminua o zoom ao abrir as configurações rápidas ou gaveta de aplicativos</string>
-  <string name="settings_zoom_unlock">Diminuir o zoom na tela de bloqueio</string>
-  <string name="settings_gpu">Aceleraçao do hardware</string>
-  <string name="settings_gpu_description">Desligue se o papel de parede travar. Requer a reinicialização do dispositivo para ter efeito se o papel de parede estiver ativo no momento.</string>
-  <string name="settings_reset">Redefinir todas as configurações</string>
+  <string name="appearance_night_mode">Modo noturno</string>
+  <string name="appearance_night_mode_description">Formas totalmente escuras</string>
+  <string name="appearance_follow_system">Seguir sistema</string>
+  <string name="appearance_follow_system_description">Adote o tema do dispositivo</string>
+  <string name="appearance_white_text">Use texto branco com sombra em fundos brilhantes</string>
+  <string name="appearance_white_text_description">Não recomendado</string>
+  <string name="parallax_intensity">Force Parallax</string>
+  <string name="parallax_intensity_description">Deslocamento horizontal ao deslizar a página</string>
+  <string name="parallax_none">Nenhum</string>
+  <string name="size_scale">Tamanho da forma</string>
+  <string name="size_scale_description">Útil para telas grandes</string>
+  <string name="size_zoom">Intensidade do efeito de zoom</string>
+  <string name="size_zoom_description">Quando aumentado, a câmera diminui mais o zoom</string>
+  <string name="size_zoom_launcher">Diminua o zoom ao abrir as configurações rápidas ou gaveta de aplicativos</string>
+  <string name="size_zoom_unlock">Diminuir o zoom na tela de bloqueio</string>
+  <string name="other_gpu">Aceleraçao do hardware</string>
+  <string name="other_gpu_description">Desligue se o papel de parede travar. Requer a reinicialização do dispositivo para ter efeito se o papel de parede estiver ativo no momento.</string>
+  <string name="other_reset">Redefinir todas as configurações</string>
 
   <!-- ABOUT -->
 
-  <string name="info_title">Informação</string>
-  <string name="info_description">Papel de parede animado colorido com modo de escurecimento automático e animações com eficiência energética. Toque para saber mais.</string>
-  <string name="info_description_wallpaper">Explore uma coleção colorida de formas, refinadas com efeitos suaves de paralaxe e zoom quando você desliza pelas telas iniciais e desbloqueia o telefone.\nPersonalize o papel de parede para combinar com seu próprio estilo.</string>
-  <string name="info_touch_wiz">Parece que o seu iniciador atual é o Samsung TouchWiz, que não oferece suporte à rolagem em segundo plano. Tente um inicializador diferente para habilitar o efeito de paralaxe.\nVocê pode ignorar este aviso se definir outro inicializador como padrão.</string>
-  <string name="info_gpu">A aceleração de hardware está disponível apenas para Doodle a partir do Android 8. As animações de papel de parede podem, portanto, ser um pouco instáveis, especialmente com o segundo papel de parede.</string>
-  <string name="info_version">Versão</string>
+  <string name="title_info">Informação</string>
+  <string name="wallpaper_description">Papel de parede animado colorido com modo de escurecimento automático e animações com eficiência energética. Toque para saber mais.</string>
+  <string name="wallpaper_description_picker">Explore uma coleção colorida de formas, refinadas com efeitos suaves de paralaxe e zoom quando você desliza pelas telas iniciais e desbloqueia o telefone.\nPersonalize o papel de parede para combinar com seu próprio estilo.</string>
+  <string name="parallax_touch_wiz">Parece que o seu iniciador atual é o Samsung TouchWiz, que não oferece suporte à rolagem em segundo plano. Tente um inicializador diferente para habilitar o efeito de paralaxe.\nVocê pode ignorar este aviso se definir outro inicializador como padrão.</string>
+  <string name="other_gpu_info">A aceleração de hardware está disponível apenas para Doodle a partir do Android 8. As animações de papel de parede podem, portanto, ser um pouco instáveis, especialmente com o segundo papel de parede.</string>
+  <string name="about_version">Versão</string>
   <string name="action_github">Doodle Android no GitHub</string>
   <string name="action_github_description">Abra um novo problema</string>
-  <string name="info_changelog">Changelog</string>
-  <string name="info_changelog_description">O que há de novo?</string>
-  <string name="info_developer">Desenvolvedor</string>
+  <string name="about_changelog">Changelog</string>
+  <string name="about_changelog_description">O que há de novo?</string>
+  <string name="about_developer">Desenvolvedor</string>
 
-  <string name="category_customization">Costumização</string>
-  <string name="category_about">Sobre</string>
-  <string name="category_licenses">Licenças de código aberto</string>
+  <string name="title_licenses">Licenças de código aberto</string>
 
   <string name="msg_feedback">Um ótimo aplicativo requer muito tempo e vive do feedback de seus usuários.\n\nVocê tem algum desejo, comentário ou pergunta? Contacte-me!\nCaso contrário, ficaria muito satisfeito com uma boa crítica na Play Store.</string>
   <string name="msg_share">Confira este aplicativo legal de papel de parede ao vivo: \nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>

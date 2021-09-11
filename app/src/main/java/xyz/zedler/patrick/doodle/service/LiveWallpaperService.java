@@ -578,6 +578,9 @@ public class LiveWallpaperService extends WallpaperService {
       drawFrame(force, source);
     }
 
+    /**
+     * WallpaperService.Engine#shouldZoomOutWallpaper()
+     */
     public boolean shouldZoomOutWallpaper() {
       // Return true and clear onZoomChanged if we don't want a custom zoom animation
       return false;

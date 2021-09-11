@@ -17,9 +17,8 @@
  * Copyright (c) 2020-2021 by Patrick Zedler
  */
 
-package xyz.zedler.patrick.doodle.fragment;
+package xyz.zedler.patrick.doodle.fragment.dialog;
 
-import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -30,7 +29,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout.LayoutParams;
 import androidx.annotation.NonNull;
-import xyz.zedler.patrick.doodle.Constants;
 import xyz.zedler.patrick.doodle.databinding.FragmentBottomsheetTextBinding;
 import xyz.zedler.patrick.doodle.util.HapticUtil;
 import xyz.zedler.patrick.doodle.util.ResUtil;
@@ -46,38 +44,32 @@ public class TextBottomSheetDialogFragment extends BaseBottomSheetDialogFragment
   public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle state) {
     binding = FragmentBottomsheetTextBinding.inflate(inflater, container, false);
 
-    Context context = getContext();
-    Bundle bundle = getArguments();
-    assert context != null && bundle != null;
+
+    TextBottomSheetDialogFragmentArgs args
+        = TextBottomSheetDialogFragmentArgs.fromBundle(getArguments());
 
     ViewUtil viewUtil = new ViewUtil();
     HapticUtil hapticUtil = new HapticUtil(binding.getRoot());
 
-    binding.textTextTitle.setText(
-        bundle.getString(Constants.EXTRA.TITLE)
-    );
+    binding.textTextTitle.setText(getString(args.getTitle()));
 
-    String link = bundle.getString(Constants.EXTRA.LINK);
+    String link = args.getLink() != 0 ? getString(args.getLink()) : null;
     if (link != null) {
       binding.frameTextOpenLink.setOnClickListener(v -> {
-        if (viewUtil.isClickDisabled()) {
-          return;
+        if (viewUtil.isClickEnabled()) {
+          hapticUtil.click();
+          ViewUtil.startIcon(binding.imageTextOpenLink);
+          new Handler(Looper.getMainLooper()).postDelayed(
+              () -> startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(link))), 500
+          );
         }
-        hapticUtil.click();
-        ViewUtil.startIcon(binding.imageTextOpenLink);
-        new Handler(Looper.getMainLooper()).postDelayed(
-            () -> startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(link))),
-            500
-        );
       });
     } else {
       binding.textTextTitle.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
       binding.frameTextOpenLink.setVisibility(View.GONE);
     }
 
-    binding.textText.setText(
-        ResUtil.getRawText(context, bundle.getInt(Constants.EXTRA.FILE))
-    );
+    binding.textText.setText(ResUtil.getRawText(requireContext(), args.getFile()));
 
     return binding.getRoot();
   }

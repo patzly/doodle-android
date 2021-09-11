@@ -17,9 +17,10 @@
  * Copyright (c) 2020-2021 by Patrick Zedler
  */
 
-package xyz.zedler.patrick.doodle.fragment;
+package xyz.zedler.patrick.doodle.fragment.dialog;
 
 import android.app.Dialog;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.PaintDrawable;
 import android.os.Build;
@@ -35,11 +36,13 @@ import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat.Type;
+import androidx.navigation.NavController;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetBehavior.BottomSheetCallback;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import xyz.zedler.patrick.doodle.R;
+import xyz.zedler.patrick.doodle.activity.MainActivity;
 import xyz.zedler.patrick.doodle.util.SystemUiUtil;
 import xyz.zedler.patrick.doodle.util.ViewUtil;
 
@@ -47,9 +50,19 @@ public class BaseBottomSheetDialogFragment extends BottomSheetDialogFragment {
 
   private final static String TAG = "BaseBottomSheet";
 
+  private MainActivity activity;
   private View decorView;
+  private ViewUtil viewUtil;
   private boolean isExpanded;
   private boolean lightNavBar;
+
+  @Override
+  public void onCreate(@Nullable Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+
+    activity = (MainActivity) requireActivity();
+    viewUtil = new ViewUtil();
+  }
 
   @NonNull
   @Override
@@ -282,6 +295,30 @@ public class BaseBottomSheetDialogFragment extends BottomSheetDialogFragment {
         );
       }
     }
+  }
+
+  public SharedPreferences getSharedPrefs() {
+    return activity.getSharedPrefs();
+  }
+
+  public SharedPreferences getSharedPrefsBasic() {
+    return activity.getSharedPrefsBasic();
+  }
+
+  public ViewUtil getViewUtil() {
+    return viewUtil;
+  }
+
+  public NavController getNavController() {
+    return activity.getNavController();
+  }
+
+  public void performHapticClick() {
+    activity.performHapticClick();
+  }
+
+  public void performHapticHeavyClick() {
+    activity.performHapticHeavyClick();
   }
 
   public void applyBottomInset(int bottom) {}

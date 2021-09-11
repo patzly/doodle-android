@@ -31,7 +31,7 @@
 
     <TextView
       style="@style/Widget.Doodle.TextView.Toolbar.BottomSheet.Center"
-      android:text="@string/info_changelog" />
+      android:text="@string/about_changelog" />
 
   </FrameLayout>
 

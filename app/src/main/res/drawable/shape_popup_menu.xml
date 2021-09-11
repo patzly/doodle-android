@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ This file is part of Doodle Android.
   ~
   ~ Doodle Android is free software: you can redistribute it and/or modify
@@ -19,12 +17,14 @@
   ~ Copyright (c) 2020-2021 by Patrick Zedler
   -->
 
-<wallpaper
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:tools="http://schemas.android.com/tools"
-  android:showMetadataInPreview="true"
-  android:thumbnail="@raw/thumbnail"
-  android:author="@string/app_developer"
-  android:description="@string/wallpaper_description_picker"
-  android:settingsActivity="xyz.zedler.patrick.doodle.activity.MainActivity"
-  tools:targetApi="n_mr1" />
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <solid android:color="@color/surface"/>
+
+  <padding
+    android:top="8dp"
+    android:bottom="8dp" />
+
+  <corners android:radius="8dp" />
+
+</shape>

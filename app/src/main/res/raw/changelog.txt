@@ -1,3 +1,7 @@
+4.0.0:
+- New: completely rewritten settings app
+- New: Spanish translation (big thanks to Nicolás!)
+
 3.5.1:
 - New: option to set tilt sensor refresh rate (useful if tilt caused lags with zoom animations)
 - Fixed: skipped frames in zoom animation when unlocking immediately

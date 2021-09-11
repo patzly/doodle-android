@@ -51,6 +51,7 @@ public class SystemBarBehavior {
   private boolean applyAppBarInsetOnContainer;
   private boolean hasScrollView;
   private boolean isScrollable;
+  private int addBottomInset;
 
   public SystemBarBehavior(@NonNull Activity activity) {
     this.activity = activity;
@@ -83,6 +84,10 @@ public class SystemBarBehavior {
     if (container == null) {
       setContainer(scrollView);
     }
+  }
+
+  public void setAdditionalBottomInset(int additional) {
+    addBottomInset = additional;
   }
 
   public void setUp() {
@@ -137,7 +142,7 @@ public class SystemBarBehavior {
             container.getPaddingLeft(),
             container.getPaddingTop(),
             container.getPaddingRight(),
-            paddingBottom + insets.getInsets(Type.systemBars()).bottom
+            paddingBottom + addBottomInset + insets.getInsets(Type.systemBars()).bottom
         );
         return insets;
       });
@@ -152,7 +157,7 @@ public class SystemBarBehavior {
               container.getPaddingLeft(),
               container.getPaddingTop(),
               container.getPaddingRight(),
-              paddingBottom + insets.getInsets(Type.systemBars()).bottom
+              paddingBottom + addBottomInset + insets.getInsets(Type.systemBars()).bottom
           );
           return insets;
         });
@@ -167,6 +172,15 @@ public class SystemBarBehavior {
           );
           return insets;
         });
+        View container = hasScrollView ? scrollContent : this.container;
+        if (container != null) {
+          container.setPadding(
+              container.getPaddingLeft(),
+              container.getPaddingTop(),
+              container.getPaddingRight(),
+              container.getPaddingBottom() + addBottomInset
+          );
+        }
       }
     }
 
@@ -200,6 +214,16 @@ public class SystemBarBehavior {
 
   public void applyAppBarInsetOnContainer(boolean apply) {
     applyAppBarInsetOnContainer = apply;
+  }
+
+  public static void applyBottomInset(@NonNull View view) {
+    ViewGroup.MarginLayoutParams params = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
+    int marginBottom = params.bottomMargin;
+    ViewCompat.setOnApplyWindowInsetsListener(view, (v, insets) -> {
+      params.bottomMargin = marginBottom + insets.getInsets(Type.systemBars()).bottom;
+      view.setLayoutParams(params);
+      return insets;
+    });
   }
 
   private void updateSystemBars() {

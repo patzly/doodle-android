@@ -21,10 +21,19 @@
 
 <resources>
 
+  <!-- TITLES -->
+
+  <string name="title_info">Informationen</string>
+  <string name="title_feedback">Rückmeldung</string>
+  <string name="title_licenses">Open-Source-Lizenzen</string>
+
+  <!-- ACTIONS -->
+
   <string name="action_close">Schließen</string>
+  <string name="action_back">Zurück</string>
+  <string name="action_reset">Zurücksetzen</string>
   <string name="action_set">Festlegen</string>
   <string name="action_send_feedback">Feedback senden</string>
-  <string name="action_send_feedback_description">Probleme melden und die Entwicklung unterstützen</string>
   <string name="action_share">Teilen</string>
   <string name="action_share_description">Freunden von Doodle erzählen</string>
   <string name="action_email">Email senden</string>
@@ -32,54 +41,78 @@
   <string name="action_rate">Bei Google Play bewerten</string>
   <string name="action_rate_description">Entwicklung unterstützen</string>
   <string name="action_github">Doodle Android auf GitHub</string>
-  <string name="action_github_description">Open a new issue</string>
-  <string name="action_reset">Zurücksetzen</string>
+  <string name="action_github_description">Neues Issue öffnen</string>
 
-  <string name="settings_default">Standard</string>
-  <string name="settings_night_mode">Nachtmodus</string>
-  <string name="settings_night_mode_description">Abgedunkelte Formen</string>
-  <string name="settings_follow_system">System folgen</string>
-  <string name="settings_follow_system_description">Adaption des Designs</string>
-  <string name="settings_white_text">Weißen Text mit Schatten auch auf hellem Hintergrund nutzen</string>
-  <string name="settings_white_text_description">Kann Lesbarkeit beeinträchtigen</string>
-  <string name="settings_parallax">Parallax-Stärke</string>
-  <string name="settings_parallax_description">Horizontaler Versatz beim Wechseln zwischen Startbildschirmen</string>
-  <string name="settings_parallax_none">Aus</string>
-  <string name="settings_tilt">Auf Neigung des Gerätes reagieren</string>
-  <string name="settings_tilt_description">Der Akku entleert sich dadurch möglicherweise schneller</string>
-  <string name="settings_refresh_rate">Aktualisierungsrate des Neigungs-Sensors</string>
-  <string name="settings_refresh_rate_description">Zu kurze Abstände können die Zoom-Animationen beeinträchtigen</string>
-  <string name="settings_size">Größe der Formen</string>
-  <string name="settings_size_description">Nützlich für große Displays</string>
-  <string name="settings_zoom">Intensität des Zoom-Effekts</string>
-  <string name="settings_zoom_description">Je höher, desto weiter wird herausgezoomt</string>
-  <string name="settings_zoom_launcher">Beim Öffnen der Schnelleinstellungen oder des App-Drawers herauszoomen</string>
-  <string name="settings_zoom_unlock">Auf dem Sperrbildschirm herauszoomen</string>
-  <string name="settings_gpu">Hardware-Beschleunigung</string>
-  <string name="settings_gpu_description">Ausschalten, wenn der Live-Hintergrund abstürtzt.\nErfordert bei aktivem Hintergrund einen Neustart des Geräts, um in Kraft zu treten</string>
-  <string name="settings_launcher">App-Icon verstecken</string>
-  <string name="settings_launcher_description">Einstellungen nur über Live-Hintergrund-Auswahl des Systems erreichbar</string>
-  <string name="settings_reset">Alle Einstellungen zurücksetzen</string>
+  <!-- GENERAL -->
 
-  <string name="category_customization">Anpassung</string>
-  <string name="category_about">Über</string>
-  <string name="category_licenses">Open-Source-Lizenzen</string>
+  <string name="wallpaper_description">Ein farbenfroher Live-Hintergrund mit Nachtmodus und akku-effizienten Animationen. Tippen, um mehr zu erfahren.</string>
+  <string name="wallpaper_description_picker">Entdecke eine farbenfrohe Sammlung von Formen, verfeinert mit sanften Parallax- und Zoom-Effekten beim Wechseln zwischen deinen Startbildschirmen und Entsperren deines Smartphones.\nPasse den Hintergrund mit mehreren Optionen an deinen eigenen Stil an.</string>
+
+  <!-- APPEARANCE -->
+
+  <string name="appearance_title">Aussehen</string>
+  <string name="appearance_description">Design &amp; Theme-Optionen</string>
+  <string name="appearance_night_mode">Nachtmodus</string>
+  <string name="appearance_night_mode_description">Abgedunkelte Farben</string>
+  <string name="appearance_follow_system">System folgen</string>
+  <string name="appearance_follow_system_description">Adaption des Designs</string>
+  <string name="appearance_white_text">Weißen Text mit Schatten auch auf hellem Hintergrund nutzen</string>
+  <string name="appearance_white_text_description">Kann Lesbarkeit beeinträchtigen</string>
+
+  <!-- PARALLAX -->
+
+  <string name="parallax_title">Parallax-Effekt</string>
+  <string name="parallax_description">Wischen &amp; Neigung</string>
+  <string name="parallax_touch_wiz">Es scheint, dass dein aktueller Standard-Launcher Samsung TouchWiz ist, welcher kein Hintergrund-Scrolling unterstützt. Probiere einen anderen Launcher aus, um den Parallax-Effekt mit ausgeschalteter Neigungssensor-Option zu ermöglichen.\nDu kannst diese Warnung ignorieren, wenn du einen anderen Standard-Launcher festgelegt hast.</string>
+  <string name="parallax_intensity">Parallax-Stärke</string>
+  <string name="parallax_intensity_description">Horizontaler Versatz beim Wechseln zwischen Startbildschirmen</string>
+  <string name="parallax_none">Aus</string>
+  <string name="parallax_tilt">Auf Neigung des Gerätes reagieren</string>
+  <string name="parallax_tilt_description">Akku entleert sich dadurch möglicherweise schneller</string>
+  <string name="parallax_refresh_rate">Aktualisierungsrate des Neigungs-Sensors</string>
+  <string name="parallax_refresh_rate_description">Zu kurze Abstände können die Zoom-Animationen beeinträchtigen</string>
+
+  <!-- SIZE -->
+
+  <string name="size_title">Größe der Formen</string>
+  <string name="size_description">Skalierung &amp; Zoom-Effekt</string>
+  <string name="size_scale">Skalierung</string>
+  <string name="size_scale_description">Nützlich für große Displays und Auflösungen</string>
+  <string name="size_zoom">Intensität des Zoom-Effekts</string>
+  <string name="size_zoom_description">Je höher, desto weiter wird herausgezoomt</string>
+  <string name="size_zoom_launcher">Beim Öffnen der Schnelleinstellungen oder des App-Drawers herauszoomen</string>
+  <string name="size_zoom_unlock">Auf dem Sperrbildschirm herauszoomen</string>
+
+  <!-- OTHER -->
+
+  <string name="other_title">Andere Optionen</string>
+  <string name="other_description">Rendern &amp; Zurücksetzen</string>
+  <string name="other_gpu">Hardware-Beschleunigung</string>
+  <string name="other_gpu_description">Ausschalten, wenn der Live-Hintergrund abstürzt.\nErfordert bei aktivem Hintergrund einen Neustart des Geräts, um in Kraft zu treten</string>
+  <string name="other_gpu_info">Hardware-Beschleunigung ist für Doodle erst ab Android 8 verfügbar. Die Animationen könnten deshalb etwas ruckelig sein, besonders bei dem zweiten Hintergrund.</string>
+  <string name="other_launcher">App-Icon verstecken</string>
+  <string name="other_launcher_description">Einstellungen nur über Live-Hintergrund-Auswahl des Systems erreichbar</string>
+  <string name="other_reset">Alle Einstellungen zurücksetzen</string>
+  <string name="other_reset_description">Bewirkt mehr als eine Neuinstallation, da die Einstellungen an einem speziellen Ort gespeichert werden, damit sie direkt nach dem Einschalten des Geräts abrufbar sind</string>
+
+  <!-- ABOUT -->
+
+  <string name="about_title">Über</string>
+  <string name="about_description">Informationen über den Entwickler &amp; mehr</string>
+  <string name="about_version">Version</string>
+  <string name="about_changelog">Changelog</string>
+  <string name="about_changelog_description">Was ist neu?</string>
+  <string name="about_developer">Entwickler</string>
+  <string name="about_vending">Google Play Store</string>
+  <string name="about_vending_description">Andere Apps des Entwicklers</string>
+  <string name="about_github">GitHub</string>
+  <string name="about_github_description">Quellcode</string>
+
+  <!-- MESSAGES -->
 
   <string name="msg_feedback">Eine tolle App kostet viel Zeit und lebt von der Rückmeldung ihrer Nutzer.\n\nHast du Wünsche, Anmerkungen oder Fragen? Dann lass es mich wissen!\nAnsonsten freue ich mich über eine nette Bewertung im Play Store.</string>
   <string name="msg_share">Schau dir mal diese coole Live-Wallpaper-App an: \nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
   <string name="msg_reset">Einstellungen zurücksetzen?</string>
   <string name="msg_preview_missing">Es trat ein Fehler auf, bitte wähle den Doodle Live-Hintergrund manuell aus</string>
-
-  <string name="info_title">Informationen</string>
-  <string name="info_description">Ein farbenfroher Live-Hintergrund mit Nachtmodus und akku-effizienten Animationen. Tippen, um mehr zu erfahren.</string>
-  <string name="info_description_wallpaper">Entdecke eine farbenfrohe Sammlung von Formen, verfeinert mit sanften Parallax- und Zoom-Effekten beim Wechseln zwischen deinen Startbildschirmen und Entsperren deines Smartphones.\nPasse den Hintergrund mit mehreren Optionen an deinen eigenen Stil an.</string>
-  <string name="info_touch_wiz">Es scheint, dass dein aktueller Standard-Launcher Samsung TouchWiz ist, welcher kein Hintergrund-Scrolling unterstützt. Probiere einen anderen Launcher aus, um den Parallax-Effekt mit ausgeschalteter Neigungssensor-Option zu ermöglichen.\nDu kannst diese Warnung ignorieren, wenn du einen anderen Standard-Launcher festgelegt hast.</string>
-  <string name="info_gpu">Hardware-Beschleunigung ist für Doodle erst ab Android 8 verfügbar. Die Animationen könnten deshalb etwas ruckelig sein, besonders bei dem zweiten Hintergrund.</string>
-  <string name="info_version">Version</string>
-  <string name="info_changelog">Änderungen</string>
-  <string name="info_changelog_description">Was ist neu?</string>
-  <string name="info_developer">Entwickler</string>
-
-  <string name="title_feedback">Rückmeldung</string>
 
 </resources>

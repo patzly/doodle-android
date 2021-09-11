@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ This file is part of Doodle Android.
+  ~
+  ~ Doodle Android is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Doodle Android is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with Doodle Android. If not, see <http://www.gnu.org/licenses/>.
+  ~
+  ~ Copyright (c) 2020-2021 by Patrick Zedler
+  -->
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+
+  <com.google.android.material.appbar.AppBarLayout
+    android:id="@+id/app_bar_appearance"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="?android:actionBarSize"
+      android:gravity="center_vertical"
+      android:orientation="horizontal">
+
+      <FrameLayout
+        android:id="@+id/frame_appearance_back"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="20dp"
+        android:background="?attr/actionBarItemBackground"
+        android:clickable="true"
+        android:gravity="center"
+        android:contentDescription="@string/action_back"
+        android:tooltipText="@string/action_back"
+        android:focusable="true"
+        tools:targetApi="o">
+
+        <ImageView
+          android:layout_width="24dp"
+          android:layout_height="24dp"
+          android:layout_gravity="center"
+          android:importantForAccessibility="no"
+          android:src="@drawable/ic_round_arrow_back" />
+
+      </FrameLayout>
+
+      <TextView
+        style="@style/Widget.Doodle.TextView.Toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_weight="1"
+        android:text="@string/appearance_title" />
+
+      <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_appearance"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        app:menu="@menu/menu_main" />
+
+    </LinearLayout>
+
+  </com.google.android.material.appbar.AppBarLayout>
+
+  <androidx.core.widget.NestedScrollView
+    android:id="@+id/scroll_appearance"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="?android:actionBarSize">
+
+    <LinearLayout
+      android:id="@+id/linear_appearance_container"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:paddingTop="8dp"
+      android:paddingBottom="8dp"
+      android:orientation="vertical">
+
+      <LinearLayout
+        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine"
+        android:paddingTop="0dp"
+        android:paddingBottom="0dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="8dp">
+
+        <ImageView
+          android:id="@+id/image_appearance_wallpaper"
+          style="@style/Widget.Doodle.ImageView.ListItem.Icon"
+          android:layout_marginEnd="24dp"
+          android:src="@drawable/ic_round_wallpaper_anim"
+          tools:ignore="ContentDescription" />
+
+        <LinearLayout
+          style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:orientation="horizontal"
+          android:paddingStart="8dp"
+          android:paddingEnd="8dp"
+          android:paddingTop="12dp"
+          android:paddingBottom="12dp"
+          android:clipToPadding="false"
+          tools:ignore="ContentDescription">
+
+          <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_appearance_pixel"
+            style="@style/Widget.Doodle.Card.Selection"
+            android:layout_marginEnd="6dp">
+
+            <ImageView
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:src="@drawable/selection_pixel" />
+
+          </com.google.android.material.card.MaterialCardView>
+
+          <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_appearance_johanna"
+            style="@style/Widget.Doodle.Card.Selection"
+            android:layout_marginStart="6dp"
+            android:layout_marginEnd="6dp">
+
+            <ImageView
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:src="@drawable/selection_johanna" />
+
+          </com.google.android.material.card.MaterialCardView>
+
+          <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_appearance_reiko"
+            style="@style/Widget.Doodle.Card.Selection"
+            android:layout_marginStart="6dp"
+            android:layout_marginEnd="6dp">
+
+            <ImageView
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:src="@drawable/selection_reiko" />
+
+          </com.google.android.material.card.MaterialCardView>
+
+          <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_appearance_anthony"
+            style="@style/Widget.Doodle.Card.Selection"
+            android:layout_marginStart="6dp">
+
+            <ImageView
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:src="@drawable/selection_anthony" />
+
+          </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+      </LinearLayout>
+
+      <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:overScrollMode="ifContentScrolls">
+
+        <LinearLayout
+          style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine"
+          android:paddingTop="0dp"
+          android:paddingBottom="0dp"
+          android:paddingStart="16dp"
+          android:paddingEnd="0dp">
+
+          <ImageView
+            android:id="@+id/image_appearance_variant"
+            style="@style/Widget.Doodle.ImageView.ListItem.Icon"
+            android:layout_marginEnd="24dp"
+            android:src="@drawable/ic_round_palette_anim"
+            tools:ignore="ContentDescription" />
+
+          <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+              android:id="@+id/linear_appearance_variant_pixel"
+              style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:orientation="horizontal"
+              android:paddingStart="8dp"
+              android:paddingEnd="16dp"
+              android:paddingTop="12dp"
+              android:paddingBottom="12dp"
+              android:clipToPadding="false">
+
+              <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_appearance_pixel1"
+                style="@style/Widget.Doodle.Card.Selection"
+                android:layout_marginEnd="6dp"
+                app:cardBackgroundColor="@color/grey800" />
+
+              <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_appearance_pixel2"
+                style="@style/Widget.Doodle.Card.Selection"
+                android:layout_marginStart="6dp"
+                android:layout_marginEnd="6dp"
+                app:cardBackgroundColor="#e0dcd3" />
+
+              <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_appearance_pixel3"
+                style="@style/Widget.Doodle.Card.Selection"
+                android:layout_marginStart="6dp"
+                android:layout_marginEnd="6dp"
+                app:cardBackgroundColor="#f98a6b" />
+
+              <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_appearance_pixel4"
+                style="@style/Widget.Doodle.Card.Selection"
+                android:layout_marginStart="6dp"
+                android:layout_marginEnd="6dp"
+                app:cardBackgroundColor="#eae5bf" />
+
+              <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_appearance_pixel5"
+                style="@style/Widget.Doodle.Card.Selection"
+                android:layout_marginStart="6dp"
+                android:layout_marginEnd="6dp"
+                app:cardBackgroundColor="#fff5ec" />
+
+            </LinearLayout>
+
+            <LinearLayout
+              android:id="@+id/linear_appearance_variant_johanna"
+              style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:orientation="horizontal"
+              android:paddingStart="8dp"
+              android:paddingEnd="8dp"
+              android:paddingTop="12dp"
+              android:paddingBottom="12dp"
+              android:clipToPadding="false">
+
+              <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_appearance_johanna1"
+                style="@style/Widget.Doodle.Card.Selection"
+                android:layout_marginEnd="6dp"
+                app:cardBackgroundColor="#fcf4e9" />
+
+            </LinearLayout>
+
+            <LinearLayout
+              android:id="@+id/linear_appearance_variant_reiko"
+              style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:orientation="horizontal"
+              android:paddingStart="8dp"
+              android:paddingEnd="8dp"
+              android:paddingTop="12dp"
+              android:paddingBottom="12dp"
+              android:clipToPadding="false">
+
+              <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_appearance_reiko1"
+                style="@style/Widget.Doodle.Card.Selection"
+                android:layout_marginEnd="6dp"
+                app:cardBackgroundColor="#cbcbef" />
+
+              <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_appearance_reiko2"
+                style="@style/Widget.Doodle.Card.Selection"
+                android:layout_marginStart="6dp"
+                android:layout_marginEnd="6dp"
+                app:cardBackgroundColor="#fdce6c" />
+
+            </LinearLayout>
+
+            <LinearLayout
+              android:id="@+id/linear_appearance_variant_anthony"
+              style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:orientation="horizontal"
+              android:paddingStart="8dp"
+              android:paddingEnd="8dp"
+              android:paddingTop="12dp"
+              android:paddingBottom="12dp"
+              android:clipToPadding="false">
+
+              <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_appearance_anthony1"
+                style="@style/Widget.Doodle.Card.Selection"
+                android:layout_marginEnd="6dp"
+                app:cardBackgroundColor="#b9c1c7" />
+
+            </LinearLayout>
+
+          </LinearLayout>
+
+        </LinearLayout>
+
+      </HorizontalScrollView>
+
+      <LinearLayout
+        android:id="@+id/linear_appearance_night_mode"
+        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable">
+
+        <ImageView
+          android:id="@+id/image_appearance_night_mode"
+          style="@style/Widget.Doodle.ImageView.ListItem.Icon"
+          tools:ignore="ContentDescription" />
+
+        <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">
+
+          <TextView
+            style="@style/Widget.Doodle.TextView.ListItem.Title"
+            android:text="@string/appearance_night_mode" />
+
+          <TextView
+            style="@style/Widget.Doodle.TextView.ListItem.Description"
+            android:text="@string/appearance_night_mode_description" />
+
+        </LinearLayout>
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+          android:id="@+id/switch_appearance_night_mode"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="16dp" />
+
+      </LinearLayout>
+
+      <LinearLayout
+        android:id="@+id/linear_appearance_follow_system"
+        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable">
+
+        <LinearLayout
+          android:id="@+id/linear_appearance_follow_system_container"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:orientation="horizontal">
+
+          <ImageView
+            android:id="@+id/image_appearance_follow_system"
+            style="@style/Widget.Doodle.ImageView.ListItem.Icon"
+            android:src="@drawable/ic_round_brightness_auto_anim"
+            tools:ignore="ContentDescription" />
+
+          <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">
+
+            <TextView
+              style="@style/Widget.Doodle.TextView.ListItem.Title"
+              android:text="@string/appearance_follow_system" />
+
+            <TextView
+              style="@style/Widget.Doodle.TextView.ListItem.Description"
+              android:text="@string/appearance_follow_system_description" />
+
+          </LinearLayout>
+
+        </LinearLayout>
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+          android:id="@+id/switch_appearance_follow_system"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="16dp" />
+
+      </LinearLayout>
+
+      <LinearLayout
+        android:id="@+id/linear_appearance_white_text"
+        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable">
+
+        <ImageView
+          android:id="@+id/image_appearance_white_text"
+          style="@style/Widget.Doodle.ImageView.ListItem.Icon"
+          android:src="@drawable/ic_round_filter_b_and_w"
+          tools:ignore="ContentDescription" />
+
+        <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">
+
+          <TextView
+            style="@style/Widget.Doodle.TextView.ListItem.Title"
+            android:text="@string/appearance_white_text" />
+
+          <TextView
+            style="@style/Widget.Doodle.TextView.ListItem.Description"
+            android:text="@string/appearance_white_text_description" />
+
+        </LinearLayout>
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+          android:id="@+id/switch_appearance_white_text"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="16dp" />
+
+      </LinearLayout>
+
+    </LinearLayout>
+
+  </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

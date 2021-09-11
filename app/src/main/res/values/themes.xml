@@ -36,6 +36,7 @@
     <item name="colorSurface">@color/surface</item>
     <item name="colorOnSurface">@color/on_surface</item>
 
+    <item name="snackbarTextViewStyle">@style/Widget.Doodle.Snackbar.TextView</item>
     <item name="snackbarButtonStyle">@style/Widget.Doodle.Button.TextButton.Snackbar</item>
 
     <item name="android:colorControlNormal">@color/on_background</item>
@@ -44,6 +45,7 @@
     <item name="android:colorEdgeEffect">@color/highlight</item>
 
     <item name="actionOverflowButtonStyle">@style/Widget.Doodle.OverFlow</item>
+    <item name="actionOverflowMenuStyle">@style/Widget.Doodle.PopupMenu</item>
 
     <item name="android:fontFamily">@font/jost_book</item>
 

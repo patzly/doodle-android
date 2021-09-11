@@ -22,6 +22,7 @@ package xyz.zedler.patrick.doodle;
 public final class Constants {
 
   public final static String VARIANT_PREFIX = "variant_";
+  public final static String PREFS_NORMAL = "normal";
 
   public final static class PREF {
 
@@ -57,7 +58,7 @@ public final class Constants {
     public final static boolean USE_WHITE_TEXT = false;
     public final static boolean TILT = false;
     public final static int REFRESH_RATE = 30000;
-    public final static int ZOOM = 3;
+    public final static int ZOOM = 2;
     public final static boolean ZOOM_LAUNCHER = true;
     public final static boolean ZOOM_UNLOCK = true;
     public final static String WALLPAPER = Constants.WALLPAPER.PIXEL;
@@ -89,13 +90,6 @@ public final class Constants {
     public final static String REIKO2 = "reiko2";
 
     public final static String ANTHONY1 = "anthony1";
-  }
-
-  public final static class EXTRA {
-
-    public final static String TITLE = "title";
-    public final static String LINK = "link";
-    public final static String FILE = "file";
   }
 
   public final static class USER_PRESENCE {

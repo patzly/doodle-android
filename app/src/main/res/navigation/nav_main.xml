@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ This file is part of Doodle Android.
+  ~
+  ~ Doodle Android is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Doodle Android is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with Doodle Android. If not, see <http://www.gnu.org/licenses/>.
+  ~
+  ~ Copyright (c) 2020-2021 by Patrick Zedler
+  -->
+
+<navigation
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/navigation_main"
+  app:startDestination="@id/overviewFragment">
+
+  <fragment
+    android:id="@+id/overviewFragment"
+    android:name="xyz.zedler.patrick.doodle.fragment.OverviewFragment"
+    android:label="fragment_overview"
+    tools:layout="@layout/fragment_overview" >
+
+    <action
+      android:id="@+id/action_overview_to_appearance"
+      app:destination="@id/appearanceFragment"
+      app:enterAnim="@anim/anim_enter_end"
+      app:exitAnim="@anim/anim_exit_start"
+      app:popEnterAnim="@anim/anim_enter_start"
+      app:popExitAnim="@anim/anim_exit_end" />
+
+    <action
+      android:id="@+id/action_overview_to_parallax"
+      app:destination="@id/parallaxFragment"
+      app:enterAnim="@anim/anim_enter_end"
+      app:exitAnim="@anim/anim_exit_start"
+      app:popEnterAnim="@anim/anim_enter_start"
+      app:popExitAnim="@anim/anim_exit_end" />
+
+    <action
+      android:id="@+id/action_overview_to_size"
+      app:destination="@id/sizeFragment"
+      app:enterAnim="@anim/anim_enter_end"
+      app:exitAnim="@anim/anim_exit_start"
+      app:popEnterAnim="@anim/anim_enter_start"
+      app:popExitAnim="@anim/anim_exit_end" />
+
+    <action
+      android:id="@+id/action_overview_to_other"
+      app:destination="@id/otherFragment"
+      app:enterAnim="@anim/anim_enter_end"
+      app:exitAnim="@anim/anim_exit_start"
+      app:popEnterAnim="@anim/anim_enter_start"
+      app:popExitAnim="@anim/anim_exit_end" />
+
+    <action
+      android:id="@+id/action_overview_to_about"
+      app:destination="@id/aboutFragment"
+      app:enterAnim="@anim/anim_enter_end"
+      app:exitAnim="@anim/anim_exit_start"
+      app:popEnterAnim="@anim/anim_enter_start"
+      app:popExitAnim="@anim/anim_exit_end" />
+
+    <action
+      android:id="@+id/action_overview_to_text_dialog"
+      app:destination="@id/textBottomSheetDialogFragment">
+
+      <argument
+        android:name="file"
+        app:argType="reference"
+        android:defaultValue="0" />
+
+      <argument
+        android:name="title"
+        app:argType="reference"
+        android:defaultValue="0" />
+
+      <argument
+        android:name="link"
+        app:argType="reference"
+        android:defaultValue="0" />
+
+    </action>
+
+    <action
+      android:id="@+id/action_overview_to_feedback_dialog"
+      app:destination="@id/feedbackBottomSheetDialogFragment" />
+
+    <action
+      android:id="@+id/action_overview_to_changelog_dialog"
+      app:destination="@id/changelogBottomSheetDialogFragment" />
+
+  </fragment>
+
+  <fragment
+    android:id="@+id/appearanceFragment"
+    android:name="xyz.zedler.patrick.doodle.fragment.AppearanceFragment"
+    android:label="fragment_appearance"
+    tools:layout="@layout/fragment_appearance">
+
+    <action
+      android:id="@+id/action_appearance_to_feedback_dialog"
+      app:destination="@id/feedbackBottomSheetDialogFragment" />
+
+  </fragment>
+
+  <fragment
+    android:id="@+id/parallaxFragment"
+    android:name="xyz.zedler.patrick.doodle.fragment.ParallaxFragment"
+    android:label="fragment_parallax"
+    tools:layout="@layout/fragment_parallax">
+
+    <action
+      android:id="@+id/action_parallax_to_feedback_dialog"
+      app:destination="@id/feedbackBottomSheetDialogFragment" />
+
+  </fragment>
+
+  <fragment
+    android:id="@+id/sizeFragment"
+    android:name="xyz.zedler.patrick.doodle.fragment.SizeFragment"
+    android:label="fragment_size"
+    tools:layout="@layout/fragment_size">
+
+    <action
+      android:id="@+id/action_size_to_feedback_dialog"
+      app:destination="@id/feedbackBottomSheetDialogFragment" />
+
+  </fragment>
+
+  <fragment
+    android:id="@+id/otherFragment"
+    android:name="xyz.zedler.patrick.doodle.fragment.OtherFragment"
+    android:label="fragment_other"
+    tools:layout="@layout/fragment_other">
+
+    <action
+      android:id="@+id/action_other_to_feedback_dialog"
+      app:destination="@id/feedbackBottomSheetDialogFragment" />
+
+  </fragment>
+
+  <fragment
+    android:id="@+id/aboutFragment"
+    android:name="xyz.zedler.patrick.doodle.fragment.AboutFragment"
+    android:label="fragment_about"
+    tools:layout="@layout/fragment_about" >
+
+    <action
+      android:id="@+id/action_about_to_feedback_dialog"
+      app:destination="@id/feedbackBottomSheetDialogFragment" />
+
+    <action
+      android:id="@+id/action_about_to_text_dialog"
+      app:destination="@id/textBottomSheetDialogFragment" />
+
+    <action
+      android:id="@+id/action_about_to_changelog_dialog"
+      app:destination="@id/changelogBottomSheetDialogFragment" />
+
+  </fragment>
+
+  <dialog
+    android:id="@+id/textBottomSheetDialogFragment"
+    android:name="xyz.zedler.patrick.doodle.fragment.dialog.TextBottomSheetDialogFragment"
+    android:label="dialog_text">
+
+    <argument
+      android:name="file"
+      app:argType="reference"
+      android:defaultValue="0" />
+
+    <argument
+      android:name="title"
+      app:argType="reference"
+      android:defaultValue="0" />
+
+    <argument
+      android:name="link"
+      app:argType="reference"
+      android:defaultValue="0" />
+
+  </dialog>
+
+  <dialog
+    android:id="@+id/feedbackBottomSheetDialogFragment"
+    android:name="xyz.zedler.patrick.doodle.fragment.dialog.FeedbackBottomSheetDialogFragment"
+    android:label="dialog_feedback" />
+
+  <dialog
+    android:id="@+id/changelogBottomSheetDialogFragment"
+    android:name="xyz.zedler.patrick.doodle.fragment.dialog.ChangelogBottomSheetDialogFragment"
+    android:label="dialog_changelog" />
+
+</navigation>

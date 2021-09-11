@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ This file is part of Doodle Android.
+  ~
+  ~ Doodle Android is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Doodle Android is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with Doodle Android. If not, see <http://www.gnu.org/licenses/>.
+  ~
+  ~ Copyright (c) 2020-2021 by Patrick Zedler
+  -->
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+
+  <com.google.android.material.appbar.AppBarLayout
+    android:id="@+id/app_bar_size"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="?android:actionBarSize"
+      android:gravity="center_vertical"
+      android:orientation="horizontal">
+
+      <FrameLayout
+        android:id="@+id/frame_size_back"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="20dp"
+        android:background="?attr/actionBarItemBackground"
+        android:clickable="true"
+        android:gravity="center"
+        android:contentDescription="@string/action_back"
+        android:tooltipText="@string/action_back"
+        android:focusable="true"
+        tools:targetApi="o">
+
+        <ImageView
+          android:layout_width="24dp"
+          android:layout_height="24dp"
+          android:layout_gravity="center"
+          android:importantForAccessibility="no"
+          android:src="@drawable/ic_round_arrow_back" />
+
+      </FrameLayout>
+
+      <TextView
+        style="@style/Widget.Doodle.TextView.Toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_weight="1"
+        android:text="@string/size_title" />
+
+      <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_size"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        app:menu="@menu/menu_main" />
+
+    </LinearLayout>
+
+  </com.google.android.material.appbar.AppBarLayout>
+
+  <androidx.core.widget.NestedScrollView
+    android:id="@+id/scroll_size"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="?android:actionBarSize">
+
+    <LinearLayout
+      android:id="@+id/linear_size_container"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:paddingTop="8dp"
+      android:paddingBottom="8dp"
+      android:orientation="vertical">
+
+      <LinearLayout
+        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine"
+        android:paddingBottom="0dp">
+
+        <ImageView
+          android:id="@+id/image_size_scale"
+          style="@style/Widget.Doodle.ImageView.ListItem.Icon"
+          android:src="@drawable/ic_round_filter_center_focus_anim"
+          tools:ignore="ContentDescription" />
+
+        <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
+
+          <TextView
+            style="@style/Widget.Doodle.TextView.ListItem.Title"
+            android:text="@string/size_scale" />
+
+          <TextView
+            style="@style/Widget.Doodle.TextView.ListItem.Description"
+            android:text="@string/size_scale_description" />
+
+        </LinearLayout>
+
+      </LinearLayout>
+
+      <com.google.android.material.slider.Slider
+        android:id="@+id/slider_size_scale"
+        style="@style/Widget.Doodle.Slider"
+        android:valueFrom="1"
+        android:valueTo="2"
+        android:stepSize="0.1"/>
+
+      <LinearLayout
+        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine"
+        android:paddingBottom="0dp">
+
+        <ImageView
+          android:id="@+id/image_size_zoom"
+          style="@style/Widget.Doodle.ImageView.ListItem.Icon"
+          android:src="@drawable/ic_round_zoom_out"
+          tools:ignore="ContentDescription" />
+
+        <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
+
+          <TextView
+            style="@style/Widget.Doodle.TextView.ListItem.Title"
+            android:text="@string/size_zoom" />
+
+          <TextView
+            style="@style/Widget.Doodle.TextView.ListItem.Description"
+            android:text="@string/size_zoom_description" />
+
+        </LinearLayout>
+
+      </LinearLayout>
+
+      <com.google.android.material.slider.Slider
+        android:id="@+id/slider_size_zoom"
+        style="@style/Widget.Doodle.Slider"
+        android:valueFrom="1"
+        android:valueTo="5"
+        android:stepSize="1"/>
+
+      <LinearLayout
+        android:id="@+id/linear_size_zoom_launcher"
+        style="@style/Widget.Doodle.LinearLayout.ListItem.SingleLine.Clickable"
+        android:layout_marginStart="48dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="0dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:minHeight="0dp"
+        android:background="@drawable/ripple_bg_list_item">
+
+        <TextView
+          style="@style/Widget.Doodle.TextView.ListItem.Title"
+          android:layout_width="0dp"
+          android:layout_weight="1"
+          android:layout_marginStart="8dp"
+          android:text="@string/size_zoom_launcher" />
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+          android:id="@+id/checkbox_size_zoom_launcher"
+          style="@style/Widget.Doodle.CheckBox"
+          android:layout_width="wrap_content" />
+
+      </LinearLayout>
+
+      <LinearLayout
+        android:id="@+id/linear_size_zoom_unlock"
+        style="@style/Widget.Doodle.LinearLayout.ListItem.SingleLine.Clickable"
+        android:layout_marginStart="48dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="0dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:minHeight="0dp"
+        android:background="@drawable/ripple_bg_list_item">
+
+        <TextView
+          style="@style/Widget.Doodle.TextView.ListItem.Title"
+          android:layout_width="0dp"
+          android:layout_weight="1"
+          android:layout_marginStart="8dp"
+          android:text="@string/size_zoom_unlock" />
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+          android:id="@+id/checkbox_size_zoom_unlock"
+          style="@style/Widget.Doodle.CheckBox"
+          android:layout_width="wrap_content" />
+
+      </LinearLayout>
+
+    </LinearLayout>
+
+  </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

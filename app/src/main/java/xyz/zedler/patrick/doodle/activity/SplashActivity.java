@@ -56,7 +56,9 @@ public class SplashActivity extends AppCompatActivity {
   }
 
   private void startSettingsActivity() {
-    startActivity(new Intent(this, SettingsActivity.class));
+    Intent intent = new Intent(this, MainActivity.class);
+    intent.addCategory("android.intent.category.LAUNCHER");
+    startActivity(intent);
     overridePendingTransition(0, R.anim.fade_out);
     finish();
   }

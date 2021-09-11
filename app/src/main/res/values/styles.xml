@@ -19,6 +19,18 @@
 
 <resources xmlns:tools="http://schemas.android.com/tools">
 
+  <style name="ShapeAppearance.Doodle.ExtendedFloatingActionButton" parent="">
+    <item name="cornerFamily">rounded</item>
+    <item name="cornerSize">16dp</item>
+  </style>
+
+  <style
+    name="Widget.Doodle.Snackbar.TextView"
+    parent="Widget.MaterialComponents.Snackbar.TextView">
+    <item name="android:textSize">14.5sp</item>
+    <item name="android:textColor">@color/background</item>
+  </style>
+
   <style
     name="Widget.Doodle.Button.TextButton.Snackbar"
     parent="Widget.MaterialComponents.Button.TextButton.Snackbar">
@@ -29,6 +41,12 @@
 
   <style name="Widget.Doodle.OverFlow" parent="Widget.AppCompat.ActionButton.Overflow">
     <item name="android:tint">@color/icon</item>
+  </style>
+
+  <style
+    name="Widget.Doodle.PopupMenu"
+    parent="@style/Widget.MaterialComponents.PopupMenu.Overflow">
+    <item name="android:popupBackground">@drawable/shape_popup_menu</item>
   </style>
 
   <style name="Widget.Doodle.Divider" parent="">

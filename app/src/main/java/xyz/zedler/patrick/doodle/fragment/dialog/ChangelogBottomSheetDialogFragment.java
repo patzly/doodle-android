@@ -17,7 +17,7 @@
  * Copyright (c) 2020-2021 by Patrick Zedler
  */
 
-package xyz.zedler.patrick.doodle.fragment;
+package xyz.zedler.patrick.doodle.fragment.dialog;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -47,7 +47,7 @@ public class ChangelogBottomSheetDialogFragment extends BaseBottomSheetDialogFra
             getContext(),
             "- ",
             ResUtil.getRawText(requireContext(), R.raw.changelog),
-            getResources().getStringArray(R.array.changelog_highlights)
+            "New:", "Improved:", "Fixed:"
         ),
         TextView.BufferType.SPANNABLE
     );

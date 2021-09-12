@@ -3,6 +3,7 @@
 - New: Spanish translation (big thanks to Nicolás!)
 - New: Android 12 support (not fully tested yet)
 - Improved: theme selection
+- Fixed: non-gesture navigation bar color on Android 11 and higher
 
 3.5.1:
 - New: option to set tilt sensor refresh rate (useful if tilt caused lags with zoom animations)

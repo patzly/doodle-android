@@ -51,6 +51,7 @@ public class BaseBottomSheetDialogFragment extends BottomSheetDialogFragment {
   private final static String TAG = "BaseBottomSheet";
 
   private MainActivity activity;
+  private Dialog dialog;
   private View decorView;
   private ViewUtil viewUtil;
   private boolean isExpanded;
@@ -67,7 +68,7 @@ public class BaseBottomSheetDialogFragment extends BottomSheetDialogFragment {
   @NonNull
   @Override
   public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
-    Dialog dialog = new BottomSheetDialog(requireContext());
+    dialog = new BottomSheetDialog(requireContext());
 
     decorView = dialog.getWindow().getDecorView();
     if (decorView == null) {
@@ -86,11 +87,6 @@ public class BaseBottomSheetDialogFragment extends BottomSheetDialogFragment {
 
             container.setClipChildren(false);
             container.setClipToPadding(false);
-
-            if (lightNavBar) {
-              // Below API 30 it does not work for non-gesture if we take the normal method
-              SystemUiUtil.setLightNavigationBar(dialog.getWindow(), sheet);
-            }
 
             boolean isOrientationPortrait = SystemUiUtil.isOrientationPortrait(requireContext());
 
@@ -112,6 +108,11 @@ public class BaseBottomSheetDialogFragment extends BottomSheetDialogFragment {
               int insetBottom = insets.getInsets(Type.systemBars()).bottom;
 
               layoutEdgeToEdge(dialog.getWindow(), insetBottom);
+
+              if (lightNavBar) {
+                // Below API 30 it does not work for non-gesture if we take the normal method
+                SystemUiUtil.setLightNavigationBar(dialog.getWindow(), sheet);
+              }
 
               applyBottomInset(insetBottom);
 

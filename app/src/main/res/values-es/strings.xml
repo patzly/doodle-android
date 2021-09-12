@@ -21,9 +21,21 @@
 
 <resources>
 
+  <!-- APP & WALLPAPER -->
+
+  <string name="wallpaper_description">Fondos de pantalla animados coloridos con modo oscuro automático y animaciones de bajo consumo. Toque para obtener más información.</string>
+  <string name="wallpaper_description_picker">Explora una colección colorida de formas, refinadas con suaves efectos de paralaje y zoom cuando pasas el dedo por las pantallas de inicio y desbloqueas el teléfono.\nPersonaliza el fondo de pantalla para que combine con tu propio estilo.</string>
+
+  <!-- TITLES -->
+
+  <string name="title_info">Información</string>
+  <string name="title_feedback">Feedback</string>
+  <string name="title_licenses">Licencias de código abierto</string>
+
   <!-- ACTIONS -->
 
   <string name="action_close">Cerrar</string>
+  <string name="action_reset">Restablecer</string>
   <string name="action_set">Aplicar</string>
   <string name="action_send_feedback">Enviar comentarios</string>
   <string name="action_share">Compartir</string>
@@ -32,17 +44,18 @@
   <string name="action_email_description">Contacta al desarrollador</string>
   <string name="action_rate">Calificar en Google Play</string>
   <string name="action_rate_description">Apoyar el desarrollo</string>
-  <string name="action_reset">Restablecer</string>
+  <string name="action_github">Doodle Android en GitHub</string>
 
-  <!-- SETTINGS -->
+  <!-- APPEARANCE -->
 
-  <string name="settings_default">Default</string>
   <string name="appearance_night_mode">Modo nocturno</string>
-  <string name="appearance_night_mode_description">Formas completamente oscuras</string>
   <string name="appearance_follow_system">Seguir sistema</string>
   <string name="appearance_follow_system_description">Adoptar el tema del dispositivo</string>
-  <string name="appearance_white_text">Utilice texto blanco con sombra sobre fondos brillantes</string>
   <string name="appearance_white_text_description">Puede afectar la legibilidad</string>
+
+  <!-- PARALLAX -->
+
+  <string name="parallax_touch_wiz">Parece que su lanzador actual es Samsung TouchWiz, que no admite el desplazamiento en segundo plano. Prueba con un lanzador diferente para habilitar el efecto de paralaje si no tienes habilitada la opción del sensor de inclinación.\nPuedes ignorar esta advertencia si configuras otro lanzador como predeterminado.</string>
   <string name="parallax_intensity">Fuerza de paralaje</string>
   <string name="parallax_intensity_description">Desplazamiento horizontal al deslizar la página</string>
   <string name="parallax_none">Ninguno</string>
@@ -50,39 +63,37 @@
   <string name="parallax_tilt_description">Podría hacer que la batería se agote más rápido</string>
   <string name="parallax_refresh_rate">Frecuencia de actualización del sensor de inclinación</string>
   <string name="parallax_refresh_rate_description">Los retrasos demasiado cortos pueden hacer que las animaciones de zoom se retrasen</string>
+
+  <!-- SIZE -->
+
   <string name="size_scale">Tamaño de la forma</string>
   <string name="size_scale_description">Útil para pantallas grandes</string>
   <string name="size_zoom">Intensidad del efecto de zoom</string>
   <string name="size_zoom_description">Cuando se aumenta, la cámara se aleja más</string>
   <string name="size_zoom_launcher">Alejar al abrir la configuración rápida o el cajón de aplicaciones</string>
   <string name="size_zoom_unlock">Alejar la pantalla de bloqueo</string>
+
+  <!-- OTHER -->
+
   <string name="other_gpu">Aceleracion por hardware</string>
-  <string name="other_gpu_description">Desactivar si el fondo de pantalla se bloquea. Requiere reiniciar el dispositivo para que surta efecto si el fondo de pantalla está activo actualmente.</string>
+  <string name="other_gpu_description">Desactivar si el fondo de pantalla se bloquea. Requiere reiniciar el dispositivo para que surta efecto si el fondo de pantalla está activo actualmente</string>
+  <string name="other_gpu_info">La aceleración de hardware solo está disponible para Doodle a partir de Android 8. Por lo tanto, las animaciones del fondo de pantalla pueden ser un poco irregulares, especialmente con el segundo fondo de pantalla.</string>
   <string name="other_launcher">Ocultar icono en el lanzador</string>
   <string name="other_launcher_description">Solo se podrá acceder a la configuración en el selector de fondos de pantalla de su sistema</string>
   <string name="other_reset">Restablecer todos los ajustes</string>
 
   <!-- ABOUT -->
 
-  <string name="title_info">Información</string>
-  <string name="wallpaper_description">Fondos de pantalla animados coloridos con modo oscuro automático y animaciones de bajo consumo. Toque para obtener más información.</string>
-  <string name="wallpaper_description_picker">Explora una colección colorida de formas, refinadas con suaves efectos de paralaje y zoom cuando pasas el dedo por las pantallas de inicio y desbloqueas el teléfono.\nPersonaliza el fondo de pantalla para que combine con tu propio estilo.</string>
-  <string name="parallax_touch_wiz">Parece que su lanzador actual es Samsung TouchWiz, que no admite el desplazamiento en segundo plano. Prueba con un lanzador diferente para habilitar el efecto de paralaje si no tienes habilitada la opción del sensor de inclinación.\nPuedes ignorar esta advertencia si configuras otro lanzador como predeterminado.</string>
-  <string name="other_gpu_info">La aceleración de hardware solo está disponible para Doodle a partir de Android 8. Por lo tanto, las animaciones del fondo de pantalla pueden ser un poco irregulares, especialmente con el segundo fondo de pantalla.</string>
-  <string name="about_version">versión</string>
-  <string name="action_github">Doodle Android en GitHub</string>
-  <string name="action_github_description">Open a new issue</string>
+  <string name="about_version">Versión</string>
   <string name="about_changelog">Changelog</string>
   <string name="about_changelog_description">Que hay de nuevo?</string>
   <string name="about_developer">Desarrollador</string>
 
-  <string name="title_licenses">Licencias de código abierto</string>
+  <!-- MESSAGES -->
 
   <string name="msg_feedback">Una gran aplicación requiere mucho tiempo y vive de los comentarios de sus usuarios.\n\n¿Tienes algún deseo, comentario o pregunta? ¡Contáctame!\nDe lo contrario, estaría muy feliz con una buena reseña en Play Store.</string>
   <string name="msg_share">Echa un vistazo a esta fantástica aplicación de fondos de pantalla animados: \nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
   <string name="msg_reset">Restablecer todos los ajustes?</string>
   <string name="msg_preview_missing">Se produjo un error, seleccione Doodle Live Wallpaper manualmente</string>
-
-  <string name="title_feedback">Feedback</string>
 
 </resources>

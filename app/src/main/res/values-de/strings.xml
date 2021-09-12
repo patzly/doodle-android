@@ -21,6 +21,11 @@
 
 <resources>
 
+  <!-- APP & WALLPAPER -->
+
+  <string name="wallpaper_description">Ein farbenfroher Live-Hintergrund mit Nachtmodus und akku-effizienten Animationen. Tippen, um mehr zu erfahren.</string>
+  <string name="wallpaper_description_picker">Entdecke eine farbenfrohe Sammlung von Formen, verfeinert mit sanften Parallax- und Zoom-Effekten beim Wechseln zwischen deinen Startbildschirmen und Entsperren deines Geräts.\nPasse den Hintergrund mit mehreren Optionen an deinen eigenen Stil an.</string>
+
   <!-- TITLES -->
 
   <string name="title_info">Informationen</string>
@@ -42,11 +47,6 @@
   <string name="action_rate_description">Entwicklung unterstützen</string>
   <string name="action_github">Doodle Android auf GitHub</string>
   <string name="action_github_description">Neues Issue öffnen</string>
-
-  <!-- GENERAL -->
-
-  <string name="wallpaper_description">Ein farbenfroher Live-Hintergrund mit Nachtmodus und akku-effizienten Animationen. Tippen, um mehr zu erfahren.</string>
-  <string name="wallpaper_description_picker">Entdecke eine farbenfrohe Sammlung von Formen, verfeinert mit sanften Parallax- und Zoom-Effekten beim Wechseln zwischen deinen Startbildschirmen und Entsperren deines Geräts.\nPasse den Hintergrund mit mehreren Optionen an deinen eigenen Stil an.</string>
 
   <!-- APPEARANCE -->
 
@@ -95,7 +95,7 @@
   <string name="other_launcher">App-Icon verstecken</string>
   <string name="other_launcher_description">Einstellungen nur über Live-Hintergrund-Auswahl des Systems erreichbar</string>
   <string name="other_reset">Alle Einstellungen zurücksetzen</string>
-  <string name="other_reset_description">Bewirkt mehr als eine Neuinstallation, da die Einstellungen an einem speziellen Ort gespeichert werden, damit sie direkt nach dem Einschalten des Geräts abrufbar sind</string>
+  <string name="other_reset_description">Bewirkt mehr als deinstallieren, da die Einstellungen an einem speziellen Ort gespeichert werden, damit sie direkt nach dem Einschalten des Geräts abrufbar sind</string>
 
   <!-- ABOUT -->
 
@@ -105,9 +105,7 @@
   <string name="about_changelog">Changelog</string>
   <string name="about_changelog_description">Was ist neu?</string>
   <string name="about_developer">Entwickler</string>
-  <string name="about_vending">Google Play Store</string>
   <string name="about_vending_description">Andere Apps des Entwicklers</string>
-  <string name="about_github">GitHub</string>
   <string name="about_github_description">Quellcode</string>
 
   <!-- MESSAGES -->

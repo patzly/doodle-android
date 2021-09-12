@@ -19,9 +19,11 @@
   ~ Copyright (c) 2020-2021 by Patrick Zedler
   -->
 
-<resources>
+<resources
+  xmlns:tools="http://schemas.android.com/tools"
+  tools:ignore="MissingTranslation">
 
-  <!-- APP -->
+  <!-- APP & WALLPAPER -->
 
   <string name="app_name" translatable="false">Doodle</string>
   <string name="app_developer" translatable="false">Patrick Zedler</string>
@@ -29,6 +31,9 @@
   <string name="app_website" translatable="false">https://patrick.zedler.xyz</string>
   <string name="app_vending" translatable="false">http://play.google.com/store/apps/dev?id=8122479227040208191</string>
   <string name="app_github" translatable="false">https://github.com/patzly/doodle-android/</string>
+
+  <string name="wallpaper_description">Colorful live wallpapers with auto dark mode and power-efficient animations. Tap to learn more.</string>
+  <string name="wallpaper_description_picker">Explore a colorful collection of shapes, refined with gentle parallax and zoom effects when you swipe through your home screens and unlock your device.\nCustomize the wallpaper to match your own style.</string>
 
   <!-- TITLES -->
 
@@ -51,11 +56,6 @@
   <string name="action_rate_description">Support the development</string>
   <string name="action_github">Doodle Android on GitHub</string>
   <string name="action_github_description">Open a new issue</string>
-
-  <!-- GENERAL -->
-
-  <string name="wallpaper_description">Colorful live wallpapers with auto dark mode and power-efficient animations. Tap to learn more.</string>
-  <string name="wallpaper_description_picker">Explore a colorful collection of shapes, refined with gentle parallax and zoom effects when you swipe through your home screens and unlock your device.\nCustomize the wallpaper to match your own style.</string>
 
   <!-- APPEARANCE -->
 
@@ -104,7 +104,7 @@
   <string name="other_launcher">Hide icon in launcher</string>
   <string name="other_launcher_description">Settings will only be accessible in your system\'s live wallpaper picker</string>
   <string name="other_reset">Reset all settings</string>
-  <string name="other_reset_description">Does more than reinstalling would do, because the preferences are stored at a special place as they have to be accessible directly after device startup</string>
+  <string name="other_reset_description">Does more than uninstalling would do, because the preferences are stored at a special place as they have to be accessible directly after device startup</string>
 
   <!-- ABOUT -->
 
@@ -114,9 +114,9 @@
   <string name="about_changelog">Changelog</string>
   <string name="about_changelog_description">What\'s new?</string>
   <string name="about_developer">Developer</string>
-  <string name="about_vending">Google Play Store</string>
+  <string name="about_vending" translatable="false">Google Play</string>
   <string name="about_vending_description">Other apps by the developer</string>
-  <string name="about_github">GitHub</string>
+  <string name="about_github" translatable="false">GitHub</string>
   <string name="about_github_description">Source code</string>
 
   <!-- MESSAGES -->

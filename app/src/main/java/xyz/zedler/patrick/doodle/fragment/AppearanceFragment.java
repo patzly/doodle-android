@@ -153,7 +153,7 @@ public class AppearanceFragment extends BaseFragment
           performHapticClick();
           uncheckAllChildren(binding.linearAppearanceWallpaperContainer);
           card.setChecked(true);
-          refreshVariantSelection(wallpaper);
+          refreshVariantSelection(wallpaper, true);
           getSharedPrefs().edit().putString(PREF.WALLPAPER, wallpaper.getName()).apply();
           activity.requestThemeRefresh();
         }
@@ -163,7 +163,7 @@ public class AppearanceFragment extends BaseFragment
       ).equals(wallpaper.getName());
       card.setChecked(isSelected);
       if (isSelected) {
-        refreshVariantSelection(wallpaper);
+        refreshVariantSelection(wallpaper, false);
       }
       binding.linearAppearanceWallpaperContainer.addView(card);
     }
@@ -236,7 +236,19 @@ public class AppearanceFragment extends BaseFragment
     }
   }
 
-  private void refreshVariantSelection(BaseWallpaper wallpaper) {
+  private void refreshVariantSelection(BaseWallpaper wallpaper, boolean animated) {
+    if (animated) {
+      binding.linearAppearanceVariantContainer.animate().alpha(0).withEndAction(() -> {
+        replaceVariantContainer(wallpaper);
+        binding.linearAppearanceVariantContainer.animate().alpha(1).setDuration(150).start();
+      }).setDuration(150).start();
+    } else {
+      binding.linearAppearanceVariantContainer.setAlpha(1);
+      replaceVariantContainer(wallpaper);
+    }
+  }
+
+  private void replaceVariantContainer(BaseWallpaper wallpaper) {
     binding.linearAppearanceVariantContainer.removeAllViews();
     for (int i = 0; i < wallpaper.getVariants().length; i++) {
       final int index = i;

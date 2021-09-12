@@ -23,13 +23,13 @@
   <aapt:attr name="android:drawable">
     <vector
       android:name="vector"
-      android:width="42dp"
-      android:height="42dp"
+      android:width="48dp"
+      android:height="48dp"
       android:viewportWidth="42"
       android:viewportHeight="42">
       <path
         android:name="circle"
-        android:pathData="M 21 0 C 15.433 0 10.088 2.214 6.151 6.151 C 2.214 10.088 0 15.433 0 21 C 0 26.567 2.214 31.912 6.151 35.849 C 10.088 39.786 15.433 42 21 42 C 26.567 42 31.912 39.786 35.849 35.849 C 39.786 31.912 42 26.567 42 21 C 42 15.433 39.786 10.088 35.849 6.151 C 31.912 2.214 26.567 0 21 0 Z"
+        android:pathData="M0,0H48V48H0Z"
         android:fillColor="@color/grey800"
         android:fillAlpha="0.5"
         android:strokeWidth="1" />

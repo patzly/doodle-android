@@ -92,85 +92,10 @@
       android:paddingBottom="8dp"
       android:orientation="vertical">
 
-      <LinearLayout
-        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine"
-        android:paddingTop="0dp"
-        android:paddingBottom="0dp"
-        android:paddingStart="16dp"
-        android:paddingEnd="8dp">
-
-        <ImageView
-          android:id="@+id/image_appearance_wallpaper"
-          style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-          android:layout_marginEnd="24dp"
-          android:src="@drawable/ic_round_wallpaper_anim"
-          tools:ignore="ContentDescription" />
-
-        <LinearLayout
-          style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:orientation="horizontal"
-          android:paddingStart="8dp"
-          android:paddingEnd="8dp"
-          android:paddingTop="12dp"
-          android:paddingBottom="12dp"
-          android:clipToPadding="false"
-          tools:ignore="ContentDescription">
-
-          <com.google.android.material.card.MaterialCardView
-            android:id="@+id/card_appearance_pixel"
-            style="@style/Widget.Doodle.Card.Selection"
-            android:layout_marginEnd="6dp">
-
-            <ImageView
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:src="@drawable/selection_pixel" />
-
-          </com.google.android.material.card.MaterialCardView>
-
-          <com.google.android.material.card.MaterialCardView
-            android:id="@+id/card_appearance_johanna"
-            style="@style/Widget.Doodle.Card.Selection"
-            android:layout_marginStart="6dp"
-            android:layout_marginEnd="6dp">
-
-            <ImageView
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:src="@drawable/selection_johanna" />
-
-          </com.google.android.material.card.MaterialCardView>
-
-          <com.google.android.material.card.MaterialCardView
-            android:id="@+id/card_appearance_reiko"
-            style="@style/Widget.Doodle.Card.Selection"
-            android:layout_marginStart="6dp"
-            android:layout_marginEnd="6dp">
-
-            <ImageView
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:src="@drawable/selection_reiko" />
-
-          </com.google.android.material.card.MaterialCardView>
-
-          <com.google.android.material.card.MaterialCardView
-            android:id="@+id/card_appearance_anthony"
-            style="@style/Widget.Doodle.Card.Selection"
-            android:layout_marginStart="6dp">
-
-            <ImageView
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:src="@drawable/selection_anthony" />
-
-          </com.google.android.material.card.MaterialCardView>
-
-        </LinearLayout>
-
-      </LinearLayout>
+      <TextView
+        style="@style/Widget.Doodle.TextView.Category"
+        android:paddingTop="6dp"
+        android:text="@string/appearance_design" />
 
       <HorizontalScrollView
         android:layout_width="match_parent"
@@ -186,133 +111,58 @@
           android:paddingEnd="0dp">
 
           <ImageView
+            android:id="@+id/image_appearance_wallpaper"
+            style="@style/Widget.Doodle.ImageView.ListItem.Icon"
+            android:layout_marginEnd="32dp"
+            android:src="@drawable/ic_round_wallpaper_anim"
+            tools:ignore="ContentDescription" />
+
+          <LinearLayout
+            android:id="@+id/linear_appearance_wallpaper_container"
+            style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"/>
+
+        </LinearLayout>
+
+      </HorizontalScrollView>
+
+      <TextView
+        style="@style/Widget.Doodle.TextView.Category"
+        android:text="@string/appearance_variant" />
+
+      <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:overScrollMode="ifContentScrolls"
+        android:layout_marginBottom="8dp">
+
+        <LinearLayout
+          style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine"
+          android:paddingTop="0dp"
+          android:paddingBottom="0dp"
+          android:paddingStart="16dp"
+          android:paddingEnd="0dp">
+
+          <ImageView
             android:id="@+id/image_appearance_variant"
             style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-            android:layout_marginEnd="24dp"
+            android:layout_marginEnd="32dp"
             android:src="@drawable/ic_round_palette_anim"
             tools:ignore="ContentDescription" />
 
           <LinearLayout
+            android:id="@+id/linear_appearance_variant_container"
+            style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <LinearLayout
-              android:id="@+id/linear_appearance_variant_pixel"
-              style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:orientation="horizontal"
-              android:paddingStart="8dp"
-              android:paddingEnd="16dp"
-              android:paddingTop="12dp"
-              android:paddingBottom="12dp"
-              android:clipToPadding="false">
-
-              <com.google.android.material.card.MaterialCardView
-                android:id="@+id/card_appearance_pixel1"
-                style="@style/Widget.Doodle.Card.Selection"
-                android:layout_marginEnd="6dp"
-                app:cardBackgroundColor="@color/grey800" />
-
-              <com.google.android.material.card.MaterialCardView
-                android:id="@+id/card_appearance_pixel2"
-                style="@style/Widget.Doodle.Card.Selection"
-                android:layout_marginStart="6dp"
-                android:layout_marginEnd="6dp"
-                app:cardBackgroundColor="#e0dcd3" />
-
-              <com.google.android.material.card.MaterialCardView
-                android:id="@+id/card_appearance_pixel3"
-                style="@style/Widget.Doodle.Card.Selection"
-                android:layout_marginStart="6dp"
-                android:layout_marginEnd="6dp"
-                app:cardBackgroundColor="#f98a6b" />
-
-              <com.google.android.material.card.MaterialCardView
-                android:id="@+id/card_appearance_pixel4"
-                style="@style/Widget.Doodle.Card.Selection"
-                android:layout_marginStart="6dp"
-                android:layout_marginEnd="6dp"
-                app:cardBackgroundColor="#eae5bf" />
-
-              <com.google.android.material.card.MaterialCardView
-                android:id="@+id/card_appearance_pixel5"
-                style="@style/Widget.Doodle.Card.Selection"
-                android:layout_marginStart="6dp"
-                android:layout_marginEnd="6dp"
-                app:cardBackgroundColor="#fff5ec" />
-
-            </LinearLayout>
-
-            <LinearLayout
-              android:id="@+id/linear_appearance_variant_johanna"
-              style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:orientation="horizontal"
-              android:paddingStart="8dp"
-              android:paddingEnd="8dp"
-              android:paddingTop="12dp"
-              android:paddingBottom="12dp"
-              android:clipToPadding="false">
-
-              <com.google.android.material.card.MaterialCardView
-                android:id="@+id/card_appearance_johanna1"
-                style="@style/Widget.Doodle.Card.Selection"
-                android:layout_marginEnd="6dp"
-                app:cardBackgroundColor="#fcf4e9" />
-
-            </LinearLayout>
-
-            <LinearLayout
-              android:id="@+id/linear_appearance_variant_reiko"
-              style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:orientation="horizontal"
-              android:paddingStart="8dp"
-              android:paddingEnd="8dp"
-              android:paddingTop="12dp"
-              android:paddingBottom="12dp"
-              android:clipToPadding="false">
-
-              <com.google.android.material.card.MaterialCardView
-                android:id="@+id/card_appearance_reiko1"
-                style="@style/Widget.Doodle.Card.Selection"
-                android:layout_marginEnd="6dp"
-                app:cardBackgroundColor="#cbcbef" />
-
-              <com.google.android.material.card.MaterialCardView
-                android:id="@+id/card_appearance_reiko2"
-                style="@style/Widget.Doodle.Card.Selection"
-                android:layout_marginStart="6dp"
-                android:layout_marginEnd="6dp"
-                app:cardBackgroundColor="#fdce6c" />
-
-            </LinearLayout>
-
-            <LinearLayout
-              android:id="@+id/linear_appearance_variant_anthony"
-              style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:orientation="horizontal"
-              android:paddingStart="8dp"
-              android:paddingEnd="8dp"
-              android:paddingTop="12dp"
-              android:paddingBottom="12dp"
-              android:clipToPadding="false">
-
-              <com.google.android.material.card.MaterialCardView
-                android:id="@+id/card_appearance_anthony1"
-                style="@style/Widget.Doodle.Card.Selection"
-                android:layout_marginEnd="6dp"
-                app:cardBackgroundColor="#b9c1c7" />
-
-            </LinearLayout>
-
-          </LinearLayout>
+            android:orientation="horizontal"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"/>
 
         </LinearLayout>
 

@@ -68,7 +68,7 @@ public class PrefsUtil {
     if (sharedPrefs.contains(PREF.SCALE)) {
       try {
         sharedPrefs.getFloat(PREF.SCALE, DEF.SCALE);
-      } catch (ClassCastException e) {
+      } catch (Exception e) {
         removePreference(PREF.SCALE);
       }
     }
@@ -90,6 +90,37 @@ public class PrefsUtil {
         sharedPrefs.edit().putInt(PREF.ZOOM, zoom).apply();
       } else {
         removePreference(PREF.ZOOM);
+      }
+    }
+
+    // variant is stored in a new way
+
+    if (sharedPrefs.contains(PREF.VARIANT_PIXEL)) {
+      try {
+        sharedPrefs.getInt(PREF.VARIANT_PIXEL, 1);
+      } catch (ClassCastException e) {
+        removePreference(PREF.VARIANT_PIXEL);
+      }
+    }
+    if (sharedPrefs.contains(PREF.VARIANT_JOHANNA)) {
+      try {
+        sharedPrefs.getInt(PREF.VARIANT_JOHANNA, 1);
+      } catch (ClassCastException e) {
+        removePreference(PREF.VARIANT_JOHANNA);
+      }
+    }
+    if (sharedPrefs.contains(PREF.VARIANT_REIKO)) {
+      try {
+        sharedPrefs.getInt(PREF.VARIANT_REIKO, 1);
+      } catch (ClassCastException e) {
+        removePreference(PREF.VARIANT_REIKO);
+      }
+    }
+    if (sharedPrefs.contains(PREF.VARIANT_ANTHONY)) {
+      try {
+        sharedPrefs.getInt(PREF.VARIANT_ANTHONY, 1);
+      } catch (ClassCastException e) {
+        removePreference(PREF.VARIANT_ANTHONY);
       }
     }
     return this;

@@ -52,12 +52,14 @@
 
   <string name="appearance_title">Aussehen</string>
   <string name="appearance_description">Design &amp; Theme-Optionen</string>
+  <string name="appearance_design">Design</string>
+  <string name="appearance_variant">Variation</string>
   <string name="appearance_night_mode">Nachtmodus</string>
   <string name="appearance_night_mode_description">Abgedunkelte Farben</string>
   <string name="appearance_follow_system">System folgen</string>
   <string name="appearance_follow_system_description">Adaption des Designs</string>
-  <string name="appearance_white_text">Weißen Text mit Schatten auch auf hellem Hintergrund nutzen</string>
-  <string name="appearance_white_text_description">Kann Lesbarkeit beeinträchtigen</string>
+  <string name="appearance_white_text">Immer weißen Text mit Schatten nutzen</string>
+  <string name="appearance_white_text_description">Kann die Lesbarkeit beeinträchtigen</string>
 
   <!-- PARALLAX -->
 

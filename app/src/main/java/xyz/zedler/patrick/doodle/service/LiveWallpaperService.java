@@ -29,7 +29,6 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
-import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.LinearGradient;
@@ -48,7 +47,6 @@ import android.util.Log;
 import android.util.Pair;
 import android.view.SurfaceHolder;
 import android.view.WindowManager;
-import androidx.core.graphics.ColorUtils;
 import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
 import java.util.ArrayList;
 import java.util.List;
@@ -57,12 +55,17 @@ import xyz.zedler.patrick.doodle.Constants.DEF;
 import xyz.zedler.patrick.doodle.Constants.PREF;
 import xyz.zedler.patrick.doodle.Constants.REQUEST_SOURCE;
 import xyz.zedler.patrick.doodle.Constants.USER_PRESENCE;
-import xyz.zedler.patrick.doodle.Constants.VARIANT;
 import xyz.zedler.patrick.doodle.Constants.WALLPAPER;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.drawable.SvgDrawable;
 import xyz.zedler.patrick.doodle.drawable.SvgDrawable.SvgObject;
 import xyz.zedler.patrick.doodle.util.PrefsUtil;
+import xyz.zedler.patrick.doodle.wallpaper.AnthonyWallpaper;
+import xyz.zedler.patrick.doodle.wallpaper.BaseWallpaper;
+import xyz.zedler.patrick.doodle.wallpaper.BaseWallpaper.WallpaperVariant;
+import xyz.zedler.patrick.doodle.wallpaper.JohannaWallpaper;
+import xyz.zedler.patrick.doodle.wallpaper.PixelWallpaper;
+import xyz.zedler.patrick.doodle.wallpaper.ReikoWallpaper;
 
 public class LiveWallpaperService extends WallpaperService {
 
@@ -74,7 +77,8 @@ public class LiveWallpaperService extends WallpaperService {
   private SharedPreferences sharedPrefs;
   // Wallpaper
   private SvgDrawable svgDrawable;
-  private String wallpaper, variant;
+  private BaseWallpaper wallpaper;
+  private WallpaperVariant variant;
   private boolean nightMode, followSystem;
   // User presence
   private String presence;
@@ -140,72 +144,26 @@ public class LiveWallpaperService extends WallpaperService {
   }
 
   private void loadWallpaper() {
+    int var = sharedPrefs.getInt(Constants.VARIANT_PREFIX + wallpaper.getName(), 1);
+    if (var >= wallpaper.getVariants().length) {
+      var = 1;
+    }
+
     if (isNightMode()) {
-      switch (wallpaper) {
-        case WALLPAPER.PIXEL:
-          if (variant.equals(VARIANT.PIXEL4)) {
-            svgDrawable = new SvgDrawable(this, R.raw.wallpaper_pixel4_dark);
-          } else if (variant.equals(VARIANT.PIXEL5)) {
-            svgDrawable = new SvgDrawable(this, R.raw.wallpaper_pixel5_dark);
-          } else {
-            svgDrawable = new SvgDrawable(this, R.raw.wallpaper_pixel123_dark);
-          }
-          break;
-        case WALLPAPER.JOHANNA:
-          svgDrawable = new SvgDrawable(this, R.raw.wallpaper_johanna1_dark);
-          break;
-        case WALLPAPER.REIKO:
-          if (variant.equals(VARIANT.REIKO1)) {
-            svgDrawable = new SvgDrawable(this, R.raw.wallpaper_reiko1_dark);
-            setKidneyGradientReiko("#a0b0fb", "#d8d4fe");
-          } else if (variant.equals(VARIANT.REIKO2)) {
-            svgDrawable = new SvgDrawable(this, R.raw.wallpaper_reiko2_dark);
-            setKidneyGradientReiko("#eb902b", "#ecc12f");
-          }
-          break;
-        case WALLPAPER.ANTHONY:
-          svgDrawable = new SvgDrawable(this, R.raw.wallpaper_anthony1_dark);
-          break;
+      variant = wallpaper.getDarkVariants()[var - 1];
+      svgDrawable = new SvgDrawable(this, variant.getSvgResId());
+      if (wallpaper.getName().equals(WALLPAPER.REIKO) && var == 1) {
+        setKidneyGradientReiko("#a0b0fb", "#d8d4fe");
+      } else if (wallpaper.getName().equals(WALLPAPER.REIKO) && var == 2) {
+        setKidneyGradientReiko("#eb902b", "#ecc12f");
       }
     } else {
-      switch (wallpaper) {
-        case WALLPAPER.PIXEL:
-          switch (variant) {
-            case VARIANT.PIXEL1:
-              svgDrawable = new SvgDrawable(this, R.raw.wallpaper_pixel1);
-              break;
-            case VARIANT.PIXEL2:
-              svgDrawable = new SvgDrawable(this, R.raw.wallpaper_pixel2);
-              break;
-            case VARIANT.PIXEL3:
-              svgDrawable = new SvgDrawable(this, R.raw.wallpaper_pixel3);
-              break;
-            case VARIANT.PIXEL4:
-              svgDrawable = new SvgDrawable(this, R.raw.wallpaper_pixel4);
-              break;
-            case VARIANT.PIXEL5:
-              svgDrawable = new SvgDrawable(this, R.raw.wallpaper_pixel5);
-              break;
-          }
-          break;
-        case WALLPAPER.JOHANNA:
-          svgDrawable = new SvgDrawable(this, R.raw.wallpaper_johanna1);
-          break;
-        case WALLPAPER.REIKO:
-          switch (variant) {
-            case VARIANT.REIKO1:
-              svgDrawable = new SvgDrawable(this, R.raw.wallpaper_reiko1);
-              setKidneyGradientReiko("#a0b0fb", "#d8d4fe");
-              break;
-            case VARIANT.REIKO2:
-              svgDrawable = new SvgDrawable(this, R.raw.wallpaper_reiko2);
-              setKidneyGradientReiko("#ff931e", "#fbc318");
-              break;
-          }
-          break;
-        case WALLPAPER.ANTHONY:
-          svgDrawable = new SvgDrawable(this, R.raw.wallpaper_anthony1);
-          break;
+      variant = wallpaper.getVariants()[var - 1];
+      svgDrawable = new SvgDrawable(this, variant.getSvgResId());
+      if (wallpaper.getName().equals(WALLPAPER.REIKO) && var == 1) {
+        setKidneyGradientReiko("#a0b0fb", "#d8d4fe");
+      } else if (wallpaper.getName().equals(WALLPAPER.REIKO) && var == 2) {
+        setKidneyGradientReiko("#ff931e", "#fbc318");
       }
     }
     if (svgDrawable == null) {
@@ -383,67 +341,8 @@ public class LiveWallpaperService extends WallpaperService {
 
     @Override
     public WallpaperColors onComputeColors() {
-      int background = Color.parseColor("#232323");
-      if (isNightMode()) {
-        switch (wallpaper) {
-          case WALLPAPER.PIXEL:
-            background = Color.parseColor("#272628");
-            break;
-          case WALLPAPER.JOHANNA:
-            background = Color.parseColor("#32373a");
-            break;
-          case WALLPAPER.REIKO:
-            background = Color.parseColor("#0e032d");
-            break;
-          case WALLPAPER.ANTHONY:
-            background = Color.parseColor("#212121");
-            break;
-        }
-      } else {
-        switch (wallpaper) {
-          case WALLPAPER.PIXEL:
-            switch (variant) {
-              case VARIANT.PIXEL1:
-                background = Color.parseColor("#232323");
-                break;
-              case VARIANT.PIXEL2:
-                background = Color.parseColor("#dbd7ce");
-                break;
-              case VARIANT.PIXEL3:
-                background = Color.parseColor("#fbb29e");
-                break;
-              case VARIANT.PIXEL4:
-                background = Color.parseColor("#eae5bf");
-                break;
-              case VARIANT.PIXEL5:
-                background = Color.parseColor("#fff5ec");
-                break;
-            }
-            break;
-          case WALLPAPER.JOHANNA:
-            background = Color.parseColor("#fcf4e9");
-            break;
-          case WALLPAPER.REIKO:
-            background = Color.parseColor("#cbcbef");
-            break;
-          case WALLPAPER.ANTHONY:
-            background = Color.parseColor("#b9c1c7");
-            break;
-        }
-      }
       if (VERSION.SDK_INT >= VERSION_CODES.O_MR1) {
-        // Bitmap is more efficient than Drawable here because Drawable would be converted to Bitmap
-        Bitmap bitmap = Bitmap.createBitmap(10, 10, Bitmap.Config.ARGB_8888);
-        Canvas canvas = new Canvas(bitmap);
-        if (!isNightMode() && useWhiteText) {
-          float[] hsl = new float[3];
-          ColorUtils.colorToHSL(background, hsl);
-          hsl[2] = 0.7f;
-          canvas.drawColor(ColorUtils.HSLToColor(hsl));
-        } else {
-          canvas.drawColor(background);
-        }
-        return WallpaperColors.fromBitmap(bitmap);
+        return variant.getWallpaperColors(!isNightMode() && useWhiteText);
       } else {
         return super.onComputeColors();
       }
@@ -526,10 +425,20 @@ public class LiveWallpaperService extends WallpaperService {
     }
 
     private void loadTheme() {
-      wallpaper = sharedPrefs.getString(PREF.WALLPAPER, DEF.WALLPAPER);
-      variant = sharedPrefs.getString(
-          Constants.VARIANT_PREFIX + wallpaper, wallpaper + "1"
-      );
+      switch (sharedPrefs.getString(PREF.WALLPAPER, DEF.WALLPAPER)) {
+        case WALLPAPER.JOHANNA:
+          wallpaper = new JohannaWallpaper();
+          break;
+        case WALLPAPER.REIKO:
+          wallpaper = new ReikoWallpaper();
+          break;
+        case WALLPAPER.ANTHONY:
+          wallpaper = new AnthonyWallpaper();
+          break;
+        default:
+          wallpaper = new PixelWallpaper();
+          break;
+      }
       nightMode = sharedPrefs.getBoolean(PREF.NIGHT_MODE, DEF.NIGHT_MODE);
       followSystem = sharedPrefs.getBoolean(PREF.FOLLOW_SYSTEM, DEF.FOLLOW_SYSTEM);
       useWhiteText = sharedPrefs.getBoolean(PREF.USE_WHITE_TEXT, DEF.USE_WHITE_TEXT);

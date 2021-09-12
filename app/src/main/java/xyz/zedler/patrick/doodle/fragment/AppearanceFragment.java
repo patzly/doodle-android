@@ -26,15 +26,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.view.ViewGroup.LayoutParams;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
+import androidx.core.content.res.ResourcesCompat;
 import com.google.android.material.card.MaterialCardView;
 import xyz.zedler.patrick.doodle.Constants;
 import xyz.zedler.patrick.doodle.Constants.DEF;
 import xyz.zedler.patrick.doodle.Constants.PREF;
-import xyz.zedler.patrick.doodle.Constants.VARIANT;
 import xyz.zedler.patrick.doodle.Constants.WALLPAPER;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.activity.MainActivity;
@@ -42,7 +46,14 @@ import xyz.zedler.patrick.doodle.behavior.ScrollBehavior;
 import xyz.zedler.patrick.doodle.behavior.SystemBarBehavior;
 import xyz.zedler.patrick.doodle.databinding.FragmentAppearanceBinding;
 import xyz.zedler.patrick.doodle.util.ResUtil;
+import xyz.zedler.patrick.doodle.util.SystemUiUtil;
 import xyz.zedler.patrick.doodle.util.ViewUtil;
+import xyz.zedler.patrick.doodle.wallpaper.AnthonyWallpaper;
+import xyz.zedler.patrick.doodle.wallpaper.BaseWallpaper;
+import xyz.zedler.patrick.doodle.wallpaper.BaseWallpaper.WallpaperVariant;
+import xyz.zedler.patrick.doodle.wallpaper.JohannaWallpaper;
+import xyz.zedler.patrick.doodle.wallpaper.PixelWallpaper;
+import xyz.zedler.patrick.doodle.wallpaper.ReikoWallpaper;
 
 public class AppearanceFragment extends BaseFragment
     implements OnClickListener, OnCheckedChangeListener {
@@ -95,15 +106,21 @@ public class AppearanceFragment extends BaseFragment
       }
     });
 
-    binding.switchAppearanceNightMode.setChecked(getSharedPrefs().getBoolean(PREF.NIGHT_MODE, DEF.NIGHT_MODE));
+    binding.switchAppearanceNightMode.setChecked(
+        getSharedPrefs().getBoolean(PREF.NIGHT_MODE, DEF.NIGHT_MODE)
+    );
 
     binding.switchAppearanceFollowSystem.setChecked(
         getSharedPrefs().getBoolean(PREF.FOLLOW_SYSTEM, DEF.FOLLOW_SYSTEM)
     );
     binding.switchAppearanceFollowSystem.setEnabled(binding.switchAppearanceNightMode.isChecked());
 
-    binding.linearAppearanceFollowSystem.setEnabled(binding.switchAppearanceNightMode.isChecked());
-    binding.linearAppearanceFollowSystemContainer.setAlpha(binding.switchAppearanceNightMode.isChecked() ? 1 : 0.5f);
+    binding.linearAppearanceFollowSystem.setEnabled(
+        binding.switchAppearanceNightMode.isChecked()
+    );
+    binding.linearAppearanceFollowSystemContainer.setAlpha(
+        binding.switchAppearanceNightMode.isChecked() ? 1 : 0.5f
+    );
 
     binding.imageAppearanceNightMode.setImageResource(
         getSharedPrefs().getBoolean(PREF.NIGHT_MODE, DEF.NIGHT_MODE)
@@ -115,31 +132,44 @@ public class AppearanceFragment extends BaseFragment
         getSharedPrefs().getBoolean(PREF.USE_WHITE_TEXT, DEF.USE_WHITE_TEXT)
     );
 
-    refreshSelectionTheme(
-        getSharedPrefs().getString(PREF.WALLPAPER, WALLPAPER.PIXEL), false
-    );
-
-    String[] wallpapers = new String[]{
-        WALLPAPER.PIXEL, WALLPAPER.JOHANNA, WALLPAPER.REIKO, WALLPAPER.ANTHONY
+    BaseWallpaper[] baseWallpapers = new BaseWallpaper[]{
+        new PixelWallpaper(),
+        new JohannaWallpaper(),
+        new ReikoWallpaper(),
+        new AnthonyWallpaper()
     };
-    for (String wallpaper : wallpapers) {
-      refreshSelectionVariant(
-          wallpaper,
-          getSharedPrefs().getString(Constants.VARIANT_PREFIX + wallpaper, wallpaper + "1"),
-          false
+    for (BaseWallpaper wallpaper : baseWallpapers) {
+      MaterialCardView card = getNewSelectionCard();
+      ImageView thumbnail = new ImageView(activity);
+      thumbnail.setLayoutParams(
+          new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT)
       );
+      thumbnail.setImageResource(wallpaper.getThumbnailResId());
+      card.addView(thumbnail);
+      card.setOnClickListener(v -> {
+        if (!card.isChecked()) {
+          ViewUtil.startIcon(binding.imageAppearanceWallpaper);
+          ViewUtil.startIcon(card.getCheckedIcon());
+          performHapticClick();
+          uncheckAllChildren(binding.linearAppearanceWallpaperContainer);
+          card.setChecked(true);
+          refreshVariantSelection(wallpaper);
+          getSharedPrefs().edit().putString(PREF.WALLPAPER, wallpaper.getName()).apply();
+          activity.requestThemeRefresh();
+        }
+      });
+      boolean isSelected = getSharedPrefs().getString(
+          PREF.WALLPAPER, WALLPAPER.PIXEL
+      ).equals(wallpaper.getName());
+      card.setChecked(isSelected);
+      if (isSelected) {
+        refreshVariantSelection(wallpaper);
+      }
+      binding.linearAppearanceWallpaperContainer.addView(card);
     }
 
     ViewUtil.setOnClickListeners(
         this,
-        // Wallpapers
-        binding.cardAppearancePixel, binding.cardAppearanceJohanna, binding.cardAppearanceReiko, binding.cardAppearanceAnthony,
-        // Variants
-        binding.cardAppearancePixel1, binding.cardAppearancePixel2, binding.cardAppearancePixel3,
-        binding.cardAppearancePixel4, binding.cardAppearancePixel5,
-        binding.cardAppearanceJohanna1,
-        binding.cardAppearanceReiko1, binding.cardAppearanceReiko2,
-        binding.cardAppearanceAnthony1,
         // Other
         binding.frameAppearanceBack,
         binding.linearAppearanceNightMode,
@@ -161,45 +191,6 @@ public class AppearanceFragment extends BaseFragment
     if (id == R.id.frame_appearance_back) {
       performHapticClick();
       getNavController().navigateUp();
-    } else if (id == R.id.card_appearance_pixel) {
-      refreshSelectionTheme(WALLPAPER.PIXEL, true);
-      performHapticClick();
-    } else if (id == R.id.card_appearance_johanna) {
-      refreshSelectionTheme(WALLPAPER.JOHANNA, true);
-      performHapticClick();
-    } else if (id == R.id.card_appearance_reiko) {
-      refreshSelectionTheme(WALLPAPER.REIKO, true);
-      performHapticClick();
-    } else if (id == R.id.card_appearance_anthony) {
-      refreshSelectionTheme(WALLPAPER.ANTHONY, true);
-      performHapticClick();
-    } else if (id == R.id.card_appearance_pixel1) {
-      refreshSelectionVariant(WALLPAPER.PIXEL, VARIANT.PIXEL1, true);
-      performHapticClick();
-    } else if (id == R.id.card_appearance_pixel2) {
-      refreshSelectionVariant(WALLPAPER.PIXEL, VARIANT.PIXEL2, true);
-      performHapticClick();
-    } else if (id == R.id.card_appearance_pixel3) {
-      refreshSelectionVariant(WALLPAPER.PIXEL, VARIANT.PIXEL3, true);
-      performHapticClick();
-    } else if (id == R.id.card_appearance_pixel4) {
-      refreshSelectionVariant(WALLPAPER.PIXEL, VARIANT.PIXEL4, true);
-      performHapticClick();
-    } else if (id == R.id.card_appearance_pixel5) {
-      refreshSelectionVariant(WALLPAPER.PIXEL, VARIANT.PIXEL5, true);
-      performHapticClick();
-    } else if (id == R.id.card_appearance_johanna1) {
-      refreshSelectionVariant(WALLPAPER.JOHANNA, VARIANT.JOHANNA1, true);
-      performHapticClick();
-    } else if (id == R.id.card_appearance_reiko1) {
-      refreshSelectionVariant(WALLPAPER.REIKO, VARIANT.REIKO1, true);
-      performHapticClick();
-    } else if (id == R.id.card_appearance_reiko2) {
-      refreshSelectionVariant(WALLPAPER.REIKO, VARIANT.REIKO2, true);
-      performHapticClick();
-    } else if (id == R.id.card_appearance_anthony1) {
-      refreshSelectionVariant(WALLPAPER.ANTHONY, VARIANT.ANTHONY1, true);
-      performHapticClick();
     } else if (id == R.id.linear_appearance_night_mode) {
       binding.switchAppearanceNightMode.setChecked(!binding.switchAppearanceNightMode.isChecked());
     } else if (id == R.id.linear_appearance_follow_system) {
@@ -245,123 +236,68 @@ public class AppearanceFragment extends BaseFragment
     }
   }
 
-  private void refreshSelectionTheme(String selection, boolean animated) {
-    binding.linearAppearanceVariantPixel.setVisibility(View.GONE);
-    binding.linearAppearanceVariantJohanna.setVisibility(View.GONE);
-    binding.linearAppearanceVariantReiko.setVisibility(View.GONE);
-    binding.linearAppearanceVariantAnthony.setVisibility(View.GONE);
-
-    MaterialCardView mcv1 = binding.cardAppearancePixel;
-    MaterialCardView mcv2 = binding.cardAppearanceJohanna;
-    MaterialCardView mcv3 = binding.cardAppearanceReiko;
-    MaterialCardView mcv4 = binding.cardAppearanceAnthony;
-    MaterialCardView mcvSelected = null;
-
-    switch (selection) {
-      case WALLPAPER.PIXEL:
-        mcvSelected = binding.cardAppearancePixel;
-        binding.linearAppearanceVariantPixel.setVisibility(View.VISIBLE);
-        break;
-      case WALLPAPER.JOHANNA:
-        mcvSelected = binding.cardAppearanceJohanna;
-        binding.linearAppearanceVariantJohanna.setVisibility(View.VISIBLE);
-        break;
-      case WALLPAPER.REIKO:
-        mcvSelected = binding.cardAppearanceReiko;
-        binding.linearAppearanceVariantReiko.setVisibility(View.VISIBLE);
-        break;
-      case WALLPAPER.ANTHONY:
-        mcvSelected = binding.cardAppearanceAnthony;
-        binding.linearAppearanceVariantAnthony.setVisibility(View.VISIBLE);
-        break;
-    }
-    if (mcvSelected == null || mcvSelected.isChecked()) {
-      return;
-    }
-    ViewUtil.setChecked(false, mcv1, mcv2, mcv3, mcv4);
-    mcvSelected.setChecked(true);
-
-    if (animated) {
-      ViewUtil.startIcon(binding.imageAppearanceWallpaper);
-      ViewUtil.startIcon(mcvSelected.getCheckedIcon());
-      getSharedPrefs().edit().putString(PREF.WALLPAPER, selection).apply();
-      activity.requestThemeRefresh();
+  private void refreshVariantSelection(BaseWallpaper wallpaper) {
+    binding.linearAppearanceVariantContainer.removeAllViews();
+    for (int i = 0; i < wallpaper.getVariants().length; i++) {
+      final int index = i;
+      WallpaperVariant variant = wallpaper.getVariants()[index];
+      MaterialCardView card = getNewSelectionCard();
+      card.setCardBackgroundColor(variant.getPrimaryColor());
+      card.setOnClickListener(v -> {
+        if (!card.isChecked()) {
+          ViewUtil.startIcon(binding.imageAppearanceVariant);
+          ViewUtil.startIcon(card.getCheckedIcon());
+          performHapticClick();
+          uncheckAllChildren(binding.linearAppearanceVariantContainer);
+          card.setChecked(true);
+          getSharedPrefs().edit()
+              .putInt(Constants.VARIANT_PREFIX + wallpaper.getName(), index + 1)
+              .apply();
+          activity.requestThemeRefresh();
+        }
+      });
+      boolean isSelected = getSharedPrefs().getInt(
+          Constants.VARIANT_PREFIX + wallpaper.getName(), 1
+      ) == index + 1;
+      card.setChecked(isSelected);
+      binding.linearAppearanceVariantContainer.addView(card);
     }
   }
 
-  private void refreshSelectionVariant(String wallpaper, String selection, boolean animated) {
-    MaterialCardView mcv1, mcv2, mcv3, mcv4, mcv5, mcvSelected;
-    mcvSelected = mcv1 = mcv2 = mcv3 = mcv4 = mcv5 = null;
-
-    switch (wallpaper) {
-      case WALLPAPER.PIXEL: {
-        mcv1 = binding.cardAppearancePixel1;
-        mcv2 = binding.cardAppearancePixel2;
-        mcv3 = binding.cardAppearancePixel3;
-        mcv4 = binding.cardAppearancePixel4;
-        mcv5 = binding.cardAppearancePixel5;
-        switch (selection) {
-          case VARIANT.PIXEL1:
-            mcvSelected = binding.cardAppearancePixel1;
-            break;
-          case VARIANT.PIXEL2:
-            mcvSelected = binding.cardAppearancePixel2;
-            break;
-          case VARIANT.PIXEL3:
-            mcvSelected = binding.cardAppearancePixel3;
-            break;
-          case VARIANT.PIXEL4:
-            mcvSelected = binding.cardAppearancePixel4;
-            break;
-          case VARIANT.PIXEL5:
-            mcvSelected = binding.cardAppearancePixel5;
-            break;
-        }
-      }
-      break;
-      case WALLPAPER.JOHANNA: {
-        mcv1 = binding.cardAppearanceJohanna1;
-        switch (selection) {
-          case VARIANT.JOHANNA1:
-            mcvSelected = binding.cardAppearanceJohanna1;
-            break;
-        }
-      }
-      break;
-      case WALLPAPER.REIKO: {
-        mcv1 = binding.cardAppearanceReiko1;
-        mcv2 = binding.cardAppearanceReiko2;
-        switch (selection) {
-          case VARIANT.REIKO1:
-            mcvSelected = binding.cardAppearanceReiko1;
-            break;
-          case VARIANT.REIKO2:
-            mcvSelected = binding.cardAppearanceReiko2;
-            break;
-        }
-      }
-      break;
-      case WALLPAPER.ANTHONY: {
-        mcv1 = binding.cardAppearanceAnthony1;
-        switch (selection) {
-          case VARIANT.ANTHONY1:
-            mcvSelected = binding.cardAppearanceAnthony1;
-            break;
-        }
-      }
-      break;
+  private MaterialCardView getNewSelectionCard() {
+    int size = SystemUiUtil.dpToPx(activity, 48);
+    MaterialCardView card = new MaterialCardView(activity);
+    LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(size, size);
+    if (ViewUtil.isLayoutRtl(binding.getRoot())) {
+      params.leftMargin = SystemUiUtil.dpToPx(activity, 12);
+    } else {
+      params.rightMargin = SystemUiUtil.dpToPx(activity, 12);
     }
-    if (mcvSelected == null || mcvSelected.isChecked()) {
-      return;
-    }
-    ViewUtil.setChecked(false, mcv1, mcv2, mcv3, mcv4, mcv5);
-    mcvSelected.setChecked(true);
+    card.setLayoutParams(params);
+    card.setCheckable(true);
+    card.setStrokeColor(ContextCompat.getColor(activity, R.color.stroke_secondary));
+    card.setStrokeWidth(SystemUiUtil.dpToPx(activity, 1));
+    card.setRippleColorResource(R.color.highlight);
+    card.setCardBackgroundColor(ContextCompat.getColor(activity, R.color.background));
+    card.setCheckedIcon(
+        ResourcesCompat.getDrawable(
+            getResources(), R.drawable.ic_round_check_circle_anim, null
+        )
+    );
+    card.setCheckedIconTint(null);
+    card.setCheckedIconSize(size);
+    card.setCheckedIconMargin(0);
+    card.setCardElevation(0);
+    card.setRadius(SystemUiUtil.dpToPx(activity, 16));
+    return card;
+  }
 
-    if (animated) {
-      ViewUtil.startIcon(binding.imageAppearanceVariant);
-      ViewUtil.startIcon(mcvSelected.getCheckedIcon());
-      getSharedPrefs().edit().putString(Constants.VARIANT_PREFIX + wallpaper, selection).apply();
-      activity.requestThemeRefresh();
+  private void uncheckAllChildren(ViewGroup viewGroup) {
+    for (int i = 0; i < viewGroup.getChildCount(); i++) {
+      View child = viewGroup.getChildAt(i);
+      if (child instanceof MaterialCardView) {
+        ((MaterialCardView) child).setChecked(false);
+      }
     }
   }
 }

@@ -76,22 +76,6 @@ public final class Constants {
     public final static String ANTHONY = "anthony";
   }
 
-  public final static class VARIANT {
-
-    public final static String PIXEL1 = "pixel1";
-    public final static String PIXEL2 = "pixel2";
-    public final static String PIXEL3 = "pixel3";
-    public final static String PIXEL4 = "pixel4";
-    public final static String PIXEL5 = "pixel5";
-
-    public final static String JOHANNA1 = "johanna1";
-
-    public final static String REIKO1 = "reiko1";
-    public final static String REIKO2 = "reiko2";
-
-    public final static String ANTHONY1 = "anthony1";
-  }
-
   public final static class USER_PRESENCE {
 
     public final static String LOCKED = "locked";

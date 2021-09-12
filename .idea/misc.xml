@@ -8,6 +8,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/ic_dada.xml" value="0.3640625" />
+        <entry key="app/src/main/res/drawable/ic_round_check_circle_anim.xml" value="0.3640625" />
         <entry key="app/src/main/res/drawable/ic_round_doodle.xml" value="0.3640625" />
         <entry key="app/src/main/res/drawable/ic_round_doodle_anim.xml" value="0.3640625" />
         <entry key="app/src/main/res/drawable/ic_round_feedback_anim.xml" value="0.2078125" />

@@ -19,9 +19,9 @@
   ~ Copyright (c) 2020-2021 by Patrick Zedler
   -->
 
-<resources>
-
-  <!-- APP & WALLPAPER -->
+<resources
+  xmlns:tools="http://schemas.android.com/tools"
+  tools:ignore="MissingTranslation">
 
   <string name="wallpaper_description">Ein farbenfroher Live-Hintergrund mit Nachtmodus und akku-effizienten Animationen. Tippen, um mehr zu erfahren.</string>
   <string name="wallpaper_description_picker">Entdecke eine farbenfrohe Sammlung von Formen, verfeinert mit sanften Parallax- und Zoom-Effekten beim Wechseln zwischen deinen Startbildschirmen und Entsperren deines Geräts.\nPasse den Hintergrund mit mehreren Optionen an deinen eigenen Stil an.</string>
@@ -107,6 +107,7 @@
   <string name="about_developer">Entwickler</string>
   <string name="about_vending_description">Andere Apps des Entwicklers</string>
   <string name="about_github_description">Quellcode</string>
+  <string name="about_translation_description">Hilf mit, Doodle in deine Sprache zu übersetzen</string>
 
   <!-- MESSAGES -->
 
@@ -115,4 +116,4 @@
   <string name="msg_reset">Einstellungen zurücksetzen?</string>
   <string name="msg_preview_missing">Es trat ein Fehler auf, bitte wähle den Doodle Live-Hintergrund manuell aus</string>
 
-</resources>
+  </resources>

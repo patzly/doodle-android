@@ -101,7 +101,7 @@ public class ParallaxFragment extends BaseFragment
       }
     });
 
-    binding.checkboxParallaxTilt.setChecked(getSharedPrefs().getBoolean(PREF.TILT, DEF.TILT));
+    binding.switchParallaxTilt.setChecked(getSharedPrefs().getBoolean(PREF.TILT, DEF.TILT));
 
     binding.sliderParallaxRefreshRate.setValue(
         getSharedPrefs().getInt(PREF.REFRESH_RATE, DEF.REFRESH_RATE)
@@ -119,7 +119,7 @@ public class ParallaxFragment extends BaseFragment
 
     ViewUtil.setOnCheckedChangeListeners(
         this,
-        binding.checkboxParallaxTilt
+        binding.switchParallaxTilt
     );
   }
 
@@ -137,14 +137,14 @@ public class ParallaxFragment extends BaseFragment
       performHapticClick();
       getNavController().navigateUp();
     } else if (id == R.id.linear_parallax_tilt) {
-      binding.checkboxParallaxTilt.setChecked(!binding.checkboxParallaxTilt.isChecked());
+      binding.switchParallaxTilt.setChecked(!binding.switchParallaxTilt.isChecked());
     }
   }
 
   @Override
   public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
     int id = buttonView.getId();
-    if (id == R.id.checkbox_parallax_tilt) {
+    if (id == R.id.switch_parallax_tilt) {
       getSharedPrefs().edit().putBoolean(PREF.TILT, isChecked).apply();
       activity.requestSettingsRefresh();
       performHapticClick();

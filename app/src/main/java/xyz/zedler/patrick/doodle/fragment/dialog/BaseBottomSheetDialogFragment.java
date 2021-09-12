@@ -88,8 +88,6 @@ public class BaseBottomSheetDialogFragment extends BottomSheetDialogFragment {
             container.setClipChildren(false);
             container.setClipToPadding(false);
 
-            boolean isOrientationPortrait = SystemUiUtil.isOrientationPortrait(requireContext());
-
             PaintDrawable background = new PaintDrawable(
                 ContextCompat.getColor(requireContext(), R.color.surface)
             );

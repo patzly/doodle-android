@@ -1,0 +1,91 @@
+<!--
+  ~ This file is part of Doodle Android.
+  ~
+  ~ Doodle Android is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Doodle Android is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with Doodle Android. If not, see <http://www.gnu.org/licenses/>.
+  ~
+  ~ Copyright (c) 2020-2021 by Patrick Zedler
+  -->
+
+<animated-vector
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:aapt="http://schemas.android.com/aapt">
+  <aapt:attr name="android:drawable">
+    <vector
+      android:name="vector"
+      android:width="24dp"
+      android:height="24dp"
+      android:viewportWidth="24"
+      android:viewportHeight="24">
+      <group android:name="group">
+        <path
+          android:name="path"
+          android:pathData="M 18.069 8.959 L 18.069 11.01 L 15 10.996 C 14.448 10.996 13.996 11.44 13.996 12 C 13.996 12.56 14.448 13.004 15 13.004 L 18.069 12.99 L 18.069 15.041 C 18.069 15.479 18.606 15.705 18.924 15.387 L 21.958 12.354 C 22.156 12.156 22.156 11.844 21.958 11.646 L 18.924 8.613 C 18.606 8.295 18.069 8.521 18.069 8.959 Z M 8.959 5.931 L 11.01 5.931 L 10.996 9 C 10.996 9.552 11.448 10.004 12 10.004 C 12.552 10.004 13.004 9.552 13.004 9 L 12.99 5.931 L 15.041 5.931 C 15.479 5.931 15.705 5.394 15.387 5.076 L 12.354 2.042 C 12.156 1.844 11.844 1.844 11.646 2.042 L 8.613 5.076 C 8.295 5.394 8.521 5.931 8.959 5.931 Z M 5.931 15.041 L 5.931 12.99 L 9 13.004 C 9.552 13.004 10.004 12.552 10.004 12 C 10.004 11.448 9.552 10.996 9 10.996 L 5.931 11.01 L 5.931 8.959 C 5.931 8.521 5.394 8.295 5.076 8.613 L 2.042 11.646 C 1.844 11.844 1.844 12.156 2.042 12.354 L 5.076 15.387 C 5.394 15.705 5.931 15.479 5.931 15.041 Z M 15.041 18.069 L 12.99 18.069 L 13.004 15 C 13.004 14.448 12.561 13.996 12 13.996 C 11.439 13.996 10.996 14.448 10.996 15 L 11.01 18.069 L 8.959 18.069 C 8.521 18.069 8.295 18.606 8.613 18.924 L 11.646 21.958 C 11.844 22.156 12.156 22.156 12.354 21.958 L 15.387 18.924 C 15.705 18.606 15.479 18.069 15.041 18.069 Z"
+          android:fillColor="@color/icon"
+          android:strokeWidth="1" />
+      </group>
+    </vector>
+  </aapt:attr>
+  <target android:name="group">
+    <aapt:attr name="android:animation">
+      <set>
+        <objectAnimator
+          android:propertyName="translateX"
+          android:duration="150"
+          android:valueFrom="0"
+          android:valueTo="-1.5"
+          android:valueType="floatType"
+          android:interpolator="@android:interpolator/fast_out_slow_in" />
+        <objectAnimator
+          android:propertyName="translateY"
+          android:duration="150"
+          android:valueFrom="0"
+          android:valueTo="-1.5"
+          android:valueType="floatType"
+          android:interpolator="@android:interpolator/fast_out_slow_in" />
+        <objectAnimator
+          android:propertyName="translateX"
+          android:startOffset="150"
+          android:duration="70"
+          android:valueFrom="-1.5"
+          android:valueTo="1"
+          android:valueType="floatType"
+          android:interpolator="@android:interpolator/fast_out_slow_in" />
+        <objectAnimator
+          android:propertyName="translateY"
+          android:startOffset="150"
+          android:duration="70"
+          android:valueFrom="-1.5"
+          android:valueTo="1"
+          android:valueType="floatType"
+          android:interpolator="@android:interpolator/fast_out_slow_in" />
+        <objectAnimator
+          android:propertyName="translateX"
+          android:startOffset="220"
+          android:duration="80"
+          android:valueFrom="1"
+          android:valueTo="0"
+          android:valueType="floatType"
+          android:interpolator="@android:interpolator/fast_out_slow_in" />
+        <objectAnimator
+          android:propertyName="translateY"
+          android:startOffset="220"
+          android:duration="80"
+          android:valueFrom="1"
+          android:valueTo="0"
+          android:valueType="floatType"
+          android:interpolator="@android:interpolator/fast_out_slow_in" />
+      </set>
+    </aapt:attr>
+  </target>
+</animated-vector>

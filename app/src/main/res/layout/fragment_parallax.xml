@@ -139,15 +139,15 @@
 
       <LinearLayout
         android:id="@+id/linear_parallax_tilt"
-        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable"
-        android:layout_marginStart="48dp"
-        android:paddingStart="16dp"
-        android:paddingEnd="0dp"
-        android:background="@drawable/ripple_bg_list_item">
+        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable">
 
-        <LinearLayout
-          style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch"
-          android:layout_marginStart="8dp">
+        <ImageView
+          android:id="@+id/image_parallax_tilt"
+          style="@style/Widget.Doodle.ImageView.ListItem.Icon"
+          android:src="@drawable/ic_round_all_directions_anim"
+          tools:ignore="ContentDescription" />
+
+        <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">
 
           <TextView
             style="@style/Widget.Doodle.TextView.ListItem.Title"
@@ -159,10 +159,11 @@
 
         </LinearLayout>
 
-        <com.google.android.material.checkbox.MaterialCheckBox
-          android:id="@+id/checkbox_parallax_tilt"
-          style="@style/Widget.Doodle.CheckBox"
-          android:layout_width="wrap_content" />
+        <com.google.android.material.switchmaterial.SwitchMaterial
+          android:id="@+id/switch_parallax_tilt"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="16dp" />
 
       </LinearLayout>
 

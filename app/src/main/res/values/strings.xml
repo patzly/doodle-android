@@ -31,6 +31,7 @@
   <string name="app_website" translatable="false">https://patrick.zedler.xyz</string>
   <string name="app_vending" translatable="false">http://play.google.com/store/apps/dev?id=8122479227040208191</string>
   <string name="app_github" translatable="false">https://github.com/patzly/doodle-android/</string>
+  <string name="app_translate" translatable="false">https://www.transifex.com/patzly/doodle-android/</string>
 
   <string name="wallpaper_description">Colorful live wallpapers with auto dark mode and power-efficient animations. Tap to learn more.</string>
   <string name="wallpaper_description_picker">Explore a colorful collection of shapes, refined with gentle parallax and zoom effects when you swipe through your home screens and unlock your device.\nCustomize the wallpaper to match your own style.</string>
@@ -118,6 +119,8 @@
   <string name="about_vending_description">Other apps by the developer</string>
   <string name="about_github" translatable="false">GitHub</string>
   <string name="about_github_description">Source code</string>
+  <string name="about_translation" translatable="false">Transifex</string>
+  <string name="about_translation_description">Help translate Doodle</string>
 
   <!-- MESSAGES -->
 

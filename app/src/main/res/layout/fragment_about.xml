@@ -209,6 +209,30 @@
 
       </LinearLayout>
 
+      <LinearLayout
+        android:id="@+id/linear_about_translation"
+        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable"
+        android:background="@drawable/ripple_bg_list_item">
+
+        <ImageView
+          style="@style/Widget.Doodle.ImageView.ListItem.Icon"
+          android:src="@drawable/ic_round_translate"
+          tools:ignore="ContentDescription" />
+
+        <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
+
+          <TextView
+            style="@style/Widget.Doodle.TextView.ListItem.OverLine"
+            android:text="@string/about_translation" />
+
+          <TextView
+            style="@style/Widget.Doodle.TextView.ListItem.Title"
+            android:text="@string/about_translation_description" />
+
+        </LinearLayout>
+
+      </LinearLayout>
+
       <TextView
         style="@style/Widget.Doodle.TextView.Category"
         android:text="@string/title_licenses" />

@@ -95,6 +95,7 @@ public class AboutFragment extends BaseFragment implements OnClickListener {
         binding.linearAboutDeveloper,
         binding.linearAboutVending,
         binding.linearAboutGithub,
+        binding.linearAboutTranslation,
         binding.linearAboutLicenseJost,
         binding.linearAboutLicenseMaterialComponents,
         binding.linearAboutLicenseMaterialIcons
@@ -130,6 +131,9 @@ public class AboutFragment extends BaseFragment implements OnClickListener {
     } else if (id == R.id.linear_about_github && getViewUtil().isClickEnabled()) {
       performHapticClick();
       startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.app_github))));
+    } else if (id == R.id.linear_about_translation && getViewUtil().isClickEnabled()) {
+      performHapticClick();
+      startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.app_translate))));
     } else if (id == R.id.linear_about_license_jost && getViewUtil().isClickEnabled()) {
       performHapticClick();
       ViewUtil.startIcon(binding.imageAboutLicenseJost);

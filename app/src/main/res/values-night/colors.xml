@@ -56,4 +56,9 @@
 
   <color name="icon">@color/grey400</color>
 
+  <color name="vending_blue">#00000000</color>
+  <color name="vending_red">#00000000</color>
+  <color name="vending_green">#00000000</color>
+  <color name="vending_yellow">@color/background</color>
+
 </resources>

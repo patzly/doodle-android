@@ -81,4 +81,9 @@
 
   <color name="icon">@color/grey800</color>
 
+  <color name="vending_blue">#00d3ff</color>
+  <color name="vending_red">#f43249</color>
+  <color name="vending_green">#00f176</color>
+  <color name="vending_yellow">#ffc900</color>
+
 </resources>

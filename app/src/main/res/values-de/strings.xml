@@ -46,7 +46,7 @@
   <!-- GENERAL -->
 
   <string name="wallpaper_description">Ein farbenfroher Live-Hintergrund mit Nachtmodus und akku-effizienten Animationen. Tippen, um mehr zu erfahren.</string>
-  <string name="wallpaper_description_picker">Entdecke eine farbenfrohe Sammlung von Formen, verfeinert mit sanften Parallax- und Zoom-Effekten beim Wechseln zwischen deinen Startbildschirmen und Entsperren deines Smartphones.\nPasse den Hintergrund mit mehreren Optionen an deinen eigenen Stil an.</string>
+  <string name="wallpaper_description_picker">Entdecke eine farbenfrohe Sammlung von Formen, verfeinert mit sanften Parallax- und Zoom-Effekten beim Wechseln zwischen deinen Startbildschirmen und Entsperren deines Geräts.\nPasse den Hintergrund mit mehreren Optionen an deinen eigenen Stil an.</string>
 
   <!-- APPEARANCE -->
 
@@ -58,7 +58,7 @@
   <string name="appearance_night_mode_description">Abgedunkelte Farben</string>
   <string name="appearance_follow_system">System folgen</string>
   <string name="appearance_follow_system_description">Adaption des Designs</string>
-  <string name="appearance_white_text">Immer weißen Text mit Schatten nutzen</string>
+  <string name="appearance_white_text">Weißen Text mit Schatten erzwingen</string>
   <string name="appearance_white_text_description">Kann die Lesbarkeit beeinträchtigen</string>
 
   <!-- PARALLAX -->

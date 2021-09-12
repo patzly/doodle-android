@@ -55,7 +55,7 @@
   <!-- GENERAL -->
 
   <string name="wallpaper_description">Colorful live wallpapers with auto dark mode and power-efficient animations. Tap to learn more.</string>
-  <string name="wallpaper_description_picker">Explore a colorful collection of shapes, refined with gentle parallax and zoom effects when you swipe through your home screens and unlock your phone.\nCustomize the wallpaper to match your own style.</string>
+  <string name="wallpaper_description_picker">Explore a colorful collection of shapes, refined with gentle parallax and zoom effects when you swipe through your home screens and unlock your device.\nCustomize the wallpaper to match your own style.</string>
 
   <!-- APPEARANCE -->
 
@@ -67,7 +67,7 @@
   <string name="appearance_night_mode_description">Only dark colors</string>
   <string name="appearance_follow_system">Follow system</string>
   <string name="appearance_follow_system_description">Adopt device theme</string>
-  <string name="appearance_white_text">Always use white text with shadow</string>
+  <string name="appearance_white_text">Force white text with shadow</string>
   <string name="appearance_white_text_description">May affect readability</string>
 
   <!-- PARALLAX -->

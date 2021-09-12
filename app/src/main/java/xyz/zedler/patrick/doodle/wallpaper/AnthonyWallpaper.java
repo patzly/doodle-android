@@ -40,7 +40,13 @@ public class AnthonyWallpaper extends BaseWallpaper {
   @Override
   public WallpaperVariant[] getVariants() {
     return new WallpaperVariant[]{
-        new WallpaperVariant(R.raw.wallpaper_anthony1, "#b9c1c7", null, null)
+        new WallpaperVariant(
+            R.raw.wallpaper_anthony1,
+            "#b9c1c7",
+            null,
+            null,
+            true
+        )
     };
   }
 
@@ -48,7 +54,13 @@ public class AnthonyWallpaper extends BaseWallpaper {
   @Override
   public WallpaperVariant[] getDarkVariants() {
     return new WallpaperVariant[]{
-        new WallpaperVariant(R.raw.wallpaper_anthony1_dark, "#212121", null, null)
+        new WallpaperVariant(
+            R.raw.wallpaper_anthony1_dark,
+            "#212121",
+            null,
+            null,
+            false
+        )
     };
   }
 }

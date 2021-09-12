@@ -3,7 +3,7 @@
 - New: Spanish translation (big thanks to Nicolás!)
 - New: Android 12 support (not fully tested yet)
 - Improved: theme selection
-- Fixed: non-gesture navigation bar color on Android 11 and higher
+- Fixed: non-gesture navigation bar color in dialogs on Android 11 and higher
 
 3.5.1:
 - New: option to set tilt sensor refresh rate (useful if tilt caused lags with zoom animations)
@@ -36,7 +36,7 @@
 - New: additional color variants
 - New: option to reset all settings (reinstalling Doodle would not clean them as they are stored at a special place)
 - Improved: wallpaper thumbnail
-- Improved: appearance and behavior of bottom sheets and system bars in settings (still some bugs)
+- Improved: appearance and behavior of dialogs and system bars in settings (still some bugs)
 - Improved: internal resource management
 - Fixed: incorrect TouchWiz warning on Android 11
 - Fixed: clipped text in changelog

@@ -40,23 +40,72 @@ public class PixelWallpaper extends BaseWallpaper {
   @Override
   public WallpaperVariant[] getVariants() {
     return new WallpaperVariant[]{
-        new WallpaperVariant(R.raw.wallpaper_pixel1, "#232323", null, null),
-        new WallpaperVariant(R.raw.wallpaper_pixel2, "#e0dcd3", null, null),
-        new WallpaperVariant(R.raw.wallpaper_pixel3, "#f98a6b", null, null),
-        new WallpaperVariant(R.raw.wallpaper_pixel4, "#eae5bf", null, null),
-        new WallpaperVariant(R.raw.wallpaper_pixel5, "#fff5ec", null, null)
+        new WallpaperVariant(
+            R.raw.wallpaper_pixel1,
+            "#232323",
+            null,
+            null,
+            true
+        ),
+        new WallpaperVariant(
+            R.raw.wallpaper_pixel2,
+            "#e0dcd3",
+            null,
+            null,
+            true
+        ),
+        new WallpaperVariant(
+            R.raw.wallpaper_pixel3,
+            "#f98a6b",
+            null,
+            null,
+            true
+        ),
+        new WallpaperVariant(
+            R.raw.wallpaper_pixel4,
+            "#eae5bf",
+            null,
+            null,
+            true
+        ),
+        new WallpaperVariant(
+            R.raw.wallpaper_pixel5,
+            "#fff5ec",
+            null,
+            null,
+            true
+        )
     };
   }
 
   @NonNull
   @Override
   public WallpaperVariant[] getDarkVariants() {
+    WallpaperVariant pixelOriginalDark = new WallpaperVariant(
+        R.raw.wallpaper_pixel123_dark,
+        "#272628",
+        null,
+        null,
+        false
+    );
     return new WallpaperVariant[]{
-        new WallpaperVariant(R.raw.wallpaper_pixel123_dark, "#272628", null, null),
-        new WallpaperVariant(R.raw.wallpaper_pixel123_dark, "#272628", null, null),
-        new WallpaperVariant(R.raw.wallpaper_pixel123_dark, "#272628", null, null),
-        new WallpaperVariant(R.raw.wallpaper_pixel4_dark, "#272628", null, null),
-        new WallpaperVariant(R.raw.wallpaper_pixel5_dark, "#272628", null, null)
+        pixelOriginalDark,
+        pixelOriginalDark,
+        pixelOriginalDark,
+        new WallpaperVariant(
+            R.raw.wallpaper_pixel4_dark,
+            "#272628",
+            null,
+            null,
+            false
+        ),
+        new WallpaperVariant(
+            R.raw.wallpaper_pixel5_dark,
+            "#272628",
+            null,
+            null,
+            false
+        )
     };
   }
 }

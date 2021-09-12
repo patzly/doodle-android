@@ -40,8 +40,20 @@ public class ReikoWallpaper extends BaseWallpaper {
   @Override
   public WallpaperVariant[] getVariants() {
     return new WallpaperVariant[]{
-        new WallpaperVariant(R.raw.wallpaper_reiko1, "#cbcbef", null, null),
-        new WallpaperVariant(R.raw.wallpaper_reiko2, "#fef7ed", null, null)
+        new WallpaperVariant(
+            R.raw.wallpaper_reiko1,
+            "#cbcbef",
+            null,
+            null,
+            true
+        ),
+        new WallpaperVariant(
+            R.raw.wallpaper_reiko2,
+            "#fef7ed",
+            null,
+            null,
+            true
+        )
     };
   }
 
@@ -49,8 +61,20 @@ public class ReikoWallpaper extends BaseWallpaper {
   @Override
   public WallpaperVariant[] getDarkVariants() {
     return new WallpaperVariant[]{
-        new WallpaperVariant(R.raw.wallpaper_reiko1_dark, "#0e032d", null, null),
-        new WallpaperVariant(R.raw.wallpaper_reiko2_dark, "#0e1f3b", null, null)
+        new WallpaperVariant(
+            R.raw.wallpaper_reiko1_dark,
+            "#0e032d",
+            null,
+            null,
+            false
+        ),
+        new WallpaperVariant(
+            R.raw.wallpaper_reiko2_dark,
+            "#0e1f3b",
+            null,
+            null,
+            false
+        )
     };
   }
 }

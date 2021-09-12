@@ -36,12 +36,14 @@ public abstract class BaseWallpaper {
   public static class WallpaperVariant {
     private final int svgResId;
     private int primaryColor, secondaryColor, tertiaryColor;
+    private final boolean isDarkTextSupported;
 
     public WallpaperVariant(
         @RawRes int resId,
         @NonNull String primary,
         @Nullable String secondary,
-        @Nullable String tertiary
+        @Nullable String tertiary,
+        boolean isDarkTextSupported
     ) {
       svgResId = resId;
       primaryColor = Color.parseColor(primary);
@@ -51,6 +53,7 @@ public abstract class BaseWallpaper {
       if (tertiary != null) {
         tertiaryColor = Color.parseColor(tertiary);
       }
+      this.isDarkTextSupported = isDarkTextSupported;
     }
 
     public int getSvgResId() {
@@ -65,7 +68,7 @@ public abstract class BaseWallpaper {
     public WallpaperColors getWallpaperColors(boolean useWhiteText) {
       if (VERSION.SDK_INT >= 31) {
         int hints = 0;
-        if (!useWhiteText) {
+        if (!useWhiteText && isDarkTextSupported) {
           hints |= WallpaperColors.HINT_SUPPORTS_DARK_THEME;
           hints |= WallpaperColors.HINT_SUPPORTS_DARK_TEXT;
         }

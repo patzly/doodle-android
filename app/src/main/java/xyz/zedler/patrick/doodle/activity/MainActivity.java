@@ -72,7 +72,6 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
   private boolean settingsApplied;
   private boolean themeApplied;
   private int fabTopEdgeDistance;
-  private int bottomInset;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -98,12 +97,6 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     int height = SystemUiUtil.dpToPx(this, 32) + SystemUiUtil.spToPx(this, 16);
     int margin = SystemUiUtil.dpToPx(this, 40);
     fabTopEdgeDistance = height + margin;
-
-    // Get bottom inset for FAB animation
-    ViewCompat.setOnApplyWindowInsetsListener(binding.getRoot(), (v, insets) -> {
-      bottomInset = insets.getInsets(Type.systemBars()).bottom;
-      return insets;
-    });
 
     NavHostFragment navHost = (NavHostFragment) getSupportFragmentManager().findFragmentById(
         R.id.fragment_main_nav_host
@@ -172,16 +165,20 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
   }
 
   private void setFabVisibility(boolean visible, boolean animated) {
-    if (animated) {
-      binding.fabMain.animate()
-          .translationY(visible ? 0 : fabTopEdgeDistance + bottomInset)
-          .setDuration(400)
-          .setStartDelay(200)
-          .setInterpolator(new FastOutSlowInInterpolator())
-          .start();
-    } else {
-      binding.fabMain.setTranslationY(visible ? 0 : fabTopEdgeDistance + bottomInset);
-    }
+    ViewCompat.setOnApplyWindowInsetsListener(binding.getRoot(), (v, insets) -> {
+      int bottomInset = insets.getInsets(Type.systemBars()).bottom;
+      if (animated) {
+        binding.fabMain.animate()
+            .translationY(visible ? 0 : fabTopEdgeDistance + bottomInset)
+            .setDuration(400)
+            .setStartDelay(200)
+            .setInterpolator(new FastOutSlowInInterpolator())
+            .start();
+      } else {
+        binding.fabMain.setTranslationY(visible ? 0 : fabTopEdgeDistance + bottomInset);
+      }
+      return insets;
+    });
   }
 
   private void showSnackbar(@StringRes int resId) {

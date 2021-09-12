@@ -45,9 +45,18 @@ Doodle Android requires at least Android 6 Marshmallow on your device. The app w
 You need to turn on background scrolling in your launcher's settings if you have disabled it before to make parallax effect work.
 Some launchers don't support background scrolling at all, like Samsung's TouchWiz. As a solution, please try installing another launcher.
 
+## Contribution
+
+If you run into a bug or miss a feature, please [open an issue](https://github.com/patzly/doodle-android/issues) in this repository.
+
+Is Doodle Android not yet available in your language? You can help translate this project at [Transifex](https://www.transifex.com/patzly/doodle-android) if your language is incomplete, contains typos or is not available.
+Translations which reached a completion level of 80% will be included in releases.
+
+Thanks for your contributions!
+
 ## License
 
-Copyright &copy; 2021 Patrick Zedler. All rights reserved.
+Copyright &copy; 2020-2021 Patrick Zedler. All rights reserved.
 
 [GNU General Public License version 3](https://www.gnu.org/licenses/gpl.txt)
 

@@ -508,13 +508,11 @@ public class LiveWallpaperService extends WallpaperService {
       switch (presence) {
         case USER_PRESENCE.OFF:
           zoomUnlock = 1;
-          // TODO: 1 or 0?
-          // With 1 there is a frame jump when unlocking immediately
-          // With 0 the zoom is incorrect when unlocking
           zoomLauncher = 1;
           drawFrame(true, null);
           break;
         case USER_PRESENCE.LOCKED:
+          zoomLauncher = 0;
           animateZoom(0.5f);
           break;
         case USER_PRESENCE.UNLOCKED:

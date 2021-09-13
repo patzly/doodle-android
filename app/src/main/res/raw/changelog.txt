@@ -1,7 +1,7 @@
 4.0.0:
 - New: completely rewritten and reorganized settings app
 - New: Android 12 support (not fully tested yet)
-- New: translation via Transifex (less than 100 strings to translate, link in About!)
+- New: translation via Transifex (less than 80 strings to translate, link in About!)
 - Improved: theme selection
 - Fixed: non-gesture navigation bar color in dialogs on Android 11 and higher
 

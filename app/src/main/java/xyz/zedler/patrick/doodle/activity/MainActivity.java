@@ -72,6 +72,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
   private boolean settingsApplied;
   private boolean themeApplied;
   private int fabTopEdgeDistance;
+  private int bottomInset;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -107,7 +108,12 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     SystemBarBehavior.applyBottomInset(binding.fabMain);
 
     isServiceRunning = isMainWallpaperServiceRunning();
-    setFabVisibility(!isServiceRunning, false);
+
+    ViewCompat.setOnApplyWindowInsetsListener(binding.getRoot(), (v, insets) -> {
+      bottomInset = insets.getInsets(Type.systemBars()).bottom;
+      setFabVisibility(!isServiceRunning, false);
+      return insets;
+    });
 
     ViewUtil.setOnClickListeners(
         this,
@@ -165,20 +171,16 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
   }
 
   private void setFabVisibility(boolean visible, boolean animated) {
-    ViewCompat.setOnApplyWindowInsetsListener(binding.getRoot(), (v, insets) -> {
-      int bottomInset = insets.getInsets(Type.systemBars()).bottom;
-      if (animated) {
-        binding.fabMain.animate()
-            .translationY(visible ? 0 : fabTopEdgeDistance + bottomInset)
-            .setDuration(400)
-            .setStartDelay(200)
-            .setInterpolator(new FastOutSlowInInterpolator())
-            .start();
-      } else {
-        binding.fabMain.setTranslationY(visible ? 0 : fabTopEdgeDistance + bottomInset);
-      }
-      return insets;
-    });
+    if (animated) {
+      binding.fabMain.animate()
+          .translationY(visible ? 0 : fabTopEdgeDistance + bottomInset)
+          .setDuration(400)
+          .setStartDelay(200)
+          .setInterpolator(new FastOutSlowInInterpolator())
+          .start();
+    } else {
+      binding.fabMain.setTranslationY(visible ? 0 : fabTopEdgeDistance + bottomInset);
+    }
   }
 
   private void showSnackbar(@StringRes int resId) {

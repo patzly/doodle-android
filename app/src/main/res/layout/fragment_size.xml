@@ -158,8 +158,6 @@
         android:id="@+id/linear_size_zoom_launcher"
         style="@style/Widget.Doodle.LinearLayout.ListItem.SingleLine.Clickable"
         android:layout_marginStart="48dp"
-        android:paddingStart="16dp"
-        android:paddingEnd="0dp"
         android:paddingTop="12dp"
         android:paddingBottom="12dp"
         android:minHeight="0dp"
@@ -172,10 +170,11 @@
           android:layout_marginStart="8dp"
           android:text="@string/size_zoom_launcher" />
 
-        <com.google.android.material.checkbox.MaterialCheckBox
-          android:id="@+id/checkbox_size_zoom_launcher"
-          style="@style/Widget.Doodle.CheckBox"
-          android:layout_width="wrap_content" />
+        <com.google.android.material.switchmaterial.SwitchMaterial
+          android:id="@+id/switch_size_zoom_launcher"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="16dp" />
 
       </LinearLayout>
 
@@ -183,8 +182,6 @@
         android:id="@+id/linear_size_zoom_unlock"
         style="@style/Widget.Doodle.LinearLayout.ListItem.SingleLine.Clickable"
         android:layout_marginStart="48dp"
-        android:paddingStart="16dp"
-        android:paddingEnd="0dp"
         android:paddingTop="12dp"
         android:paddingBottom="12dp"
         android:minHeight="0dp"
@@ -197,10 +194,11 @@
           android:layout_marginStart="8dp"
           android:text="@string/size_zoom_unlock" />
 
-        <com.google.android.material.checkbox.MaterialCheckBox
-          android:id="@+id/checkbox_size_zoom_unlock"
-          style="@style/Widget.Doodle.CheckBox"
-          android:layout_width="wrap_content" />
+        <com.google.android.material.switchmaterial.SwitchMaterial
+          android:id="@+id/switch_size_zoom_unlock"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="16dp" />
 
       </LinearLayout>
 

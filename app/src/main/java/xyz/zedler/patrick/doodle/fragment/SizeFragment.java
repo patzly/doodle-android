@@ -19,7 +19,6 @@
 
 package xyz.zedler.patrick.doodle.fragment;
 
-import android.annotation.SuppressLint;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -111,10 +110,10 @@ public class SizeFragment extends BaseFragment
     } else {
       binding.linearSizeZoomLauncher.setVisibility(View.GONE);
     }
-    binding.checkboxSizeZoomLauncher.setChecked(
+    binding.switchSizeZoomLauncher.setChecked(
         getSharedPrefs().getBoolean(PREF.ZOOM_LAUNCHER, DEF.ZOOM_LAUNCHER)
     );
-    binding.checkboxSizeZoomUnlock.setChecked(
+    binding.switchSizeZoomUnlock.setChecked(
         getSharedPrefs().getBoolean(PREF.ZOOM_UNLOCK, DEF.ZOOM_UNLOCK)
     );
 
@@ -127,12 +126,11 @@ public class SizeFragment extends BaseFragment
 
     ViewUtil.setOnCheckedChangeListeners(
         this,
-        binding.checkboxSizeZoomLauncher,
-        binding.checkboxSizeZoomUnlock
+        binding.switchSizeZoomLauncher,
+        binding.switchSizeZoomUnlock
     );
   }
 
-  @SuppressLint("ShowToast")
   @Override
   public void onClick(View v) {
     int id = v.getId();
@@ -141,21 +139,21 @@ public class SizeFragment extends BaseFragment
       getNavController().navigateUp();
     } else if (id == R.id.linear_size_zoom_launcher) {
       ViewUtil.startIcon(binding.imageSizeZoom);
-      binding.checkboxSizeZoomLauncher.setChecked(!binding.checkboxSizeZoomLauncher.isChecked());
+      binding.switchSizeZoomLauncher.setChecked(!binding.switchSizeZoomLauncher.isChecked());
     } else if (id == R.id.linear_size_zoom_unlock) {
       ViewUtil.startIcon(binding.imageSizeZoom);
-      binding.checkboxSizeZoomUnlock.setChecked(!binding.checkboxSizeZoomUnlock.isChecked());
+      binding.switchSizeZoomUnlock.setChecked(!binding.switchSizeZoomUnlock.isChecked());
     }
   }
 
   @Override
   public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
     int id = buttonView.getId();
-    if (id == R.id.checkbox_size_zoom_launcher) {
+    if (id == R.id.switch_size_zoom_launcher) {
       getSharedPrefs().edit().putBoolean(PREF.ZOOM_LAUNCHER, isChecked).apply();
       activity.requestSettingsRefresh();
       performHapticClick();
-    } else if (id == R.id.checkbox_size_zoom_unlock) {
+    } else if (id == R.id.switch_size_zoom_unlock) {
       getSharedPrefs().edit().putBoolean(PREF.ZOOM_UNLOCK, isChecked).apply();
       activity.requestSettingsRefresh();
       performHapticClick();

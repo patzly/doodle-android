@@ -19,7 +19,6 @@
 
 package xyz.zedler.patrick.doodle.fragment;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -129,7 +128,6 @@ public class ParallaxFragment extends BaseFragment
     binding.cardParallaxTouchWiz.setVisibility(activity.isTouchWiz() ? View.VISIBLE : View.GONE);
   }
 
-  @SuppressLint("ShowToast")
   @Override
   public void onClick(View v) {
     int id = v.getId();
@@ -148,6 +146,7 @@ public class ParallaxFragment extends BaseFragment
       getSharedPrefs().edit().putBoolean(PREF.TILT, isChecked).apply();
       activity.requestSettingsRefresh();
       performHapticClick();
+      ViewUtil.startIcon(binding.imageParallaxTilt);
     }
   }
 

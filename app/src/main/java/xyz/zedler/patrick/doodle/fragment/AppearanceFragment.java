@@ -195,7 +195,9 @@ public class AppearanceFragment extends BaseFragment
       binding.switchAppearanceNightMode.setChecked(!binding.switchAppearanceNightMode.isChecked());
     } else if (id == R.id.linear_appearance_follow_system) {
       if (binding.switchAppearanceNightMode.isChecked()) {
-        binding.switchAppearanceFollowSystem.setChecked(!binding.switchAppearanceFollowSystem.isChecked());
+        binding.switchAppearanceFollowSystem.setChecked(
+            !binding.switchAppearanceFollowSystem.isChecked()
+        );
       }
     } else if (id == R.id.linear_appearance_white_text) {
       binding.switchAppearanceWhiteText.setChecked(!binding.switchAppearanceWhiteText.isChecked());

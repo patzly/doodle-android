@@ -137,6 +137,10 @@
         android:valueTo="3"
         android:stepSize="1"/>
 
+      <TextView
+        style="@style/Widget.Doodle.TextView.Category"
+        android:text="@string/parallax_category_tilt" />
+
       <LinearLayout
         android:id="@+id/linear_parallax_tilt"
         style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable">
@@ -196,6 +200,36 @@
         android:valueFrom="20000"
         android:valueTo="65000"
         android:stepSize="5000"/>
+
+      <LinearLayout
+        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine"
+        android:layout_marginStart="48dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="0dp">
+
+        <LinearLayout
+          style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox"
+          android:layout_marginStart="8dp">
+
+          <TextView
+            style="@style/Widget.Doodle.TextView.ListItem.Title"
+            android:text="@string/parallax_damping" />
+
+          <TextView
+            style="@style/Widget.Doodle.TextView.ListItem.Description"
+            android:text="@string/parallax_damping_description" />
+
+        </LinearLayout>
+
+      </LinearLayout>
+
+      <com.google.android.material.slider.Slider
+        android:id="@+id/slider_parallax_damping"
+        style="@style/Widget.Doodle.Slider"
+        android:valueFrom="1"
+        android:valueTo="20"
+        android:stepSize="1"/>
 
     </LinearLayout>
 

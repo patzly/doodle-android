@@ -41,6 +41,7 @@ public final class Constants {
     public final static String PARALLAX = "parallax";
     public final static String TILT = "tilt";
     public final static String REFRESH_RATE = "refresh_rate";
+    public final static String DAMPING = "damping";
     public final static String SCALE = "size";
     public final static String GPU = "hardware_acceleration";
 
@@ -65,6 +66,7 @@ public final class Constants {
     public final static int ZOOM_DURATION = 1200;
     public final static String WALLPAPER = Constants.WALLPAPER.PIXEL;
     public final static int PARALLAX = 1;
+    public final static int DAMPING = 8;
     public final static float SCALE = 1;
     public final static boolean GPU = true;
     public final static boolean LAUNCHER = false;

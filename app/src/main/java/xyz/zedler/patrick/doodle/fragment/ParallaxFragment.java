@@ -110,6 +110,14 @@ public class ParallaxFragment extends BaseFragment
         value -> String.format(Locale.getDefault(), "%.0fms", value / 1000)
     );
 
+    binding.sliderParallaxDamping.setValue(
+        getSharedPrefs().getInt(PREF.DAMPING, DEF.DAMPING)
+    );
+    binding.sliderParallaxDamping.addOnChangeListener(this);
+    binding.sliderParallaxDamping.setLabelFormatter(
+        value -> String.format(Locale.getDefault(), "%.0f", value)
+    );
+
     ViewUtil.setOnClickListeners(
         this,
         binding.frameParallaxBack,
@@ -163,6 +171,11 @@ public class ParallaxFragment extends BaseFragment
       performHapticClick();
     } else if (id == R.id.slider_parallax_refresh_rate) {
       getSharedPrefs().edit().putInt(PREF.REFRESH_RATE, (int) value).apply();
+      ViewUtil.startIcon(binding.imageParallaxIntensity);
+      activity.requestSettingsRefresh();
+      performHapticClick();
+    } else if (id == R.id.slider_parallax_damping) {
+      getSharedPrefs().edit().putInt(PREF.DAMPING, (int) value).apply();
       ViewUtil.startIcon(binding.imageParallaxIntensity);
       activity.requestSettingsRefresh();
       performHapticClick();

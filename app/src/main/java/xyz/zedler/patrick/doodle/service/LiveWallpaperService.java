@@ -228,6 +228,7 @@ public class LiveWallpaperService extends WallpaperService {
     private float scale;
     private int parallax;
     private int zoomDuration;
+    private int damping;
     private boolean isTiltEnabled;
     private float tiltX, tiltY;
     private float[] accelerationValues;
@@ -386,6 +387,7 @@ public class LiveWallpaperService extends WallpaperService {
       setOffsetNotificationsEnabled(parallax != 0);
 
       isTiltEnabled = sharedPrefs.getBoolean(PREF.TILT, DEF.TILT);
+      damping = sharedPrefs.getInt(PREF.DAMPING, DEF.DAMPING);
       if (isTiltEnabled && !isListenerRegistered) {
         sensorManager.registerListener(
             sensorListener,
@@ -608,7 +610,7 @@ public class LiveWallpaperService extends WallpaperService {
         return input.clone();
       }
       for (int i = 0; i < 2; i++) {
-        output[i] = output[i] + 0.08f * (input[i] - output[i]);
+        output[i] = output[i] + (damping / 100f) * (input[i] - output[i]);
       }
       return output;
     }

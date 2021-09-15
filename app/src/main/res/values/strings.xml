@@ -77,12 +77,15 @@
   <string name="parallax_description">Swipe &amp; tilt effect</string>
   <string name="parallax_touch_wiz">It seems that your current launcher is Samsung TouchWiz, which does not support background scrolling. Please try a different launcher to enable the parallax effect if you don\'t have the tilt sensor option enabled.\nYou can ignore this warning if you set another launcher as default.</string>
   <string name="parallax_intensity">Parallax strength</string>
-  <string name="parallax_intensity_description">Horizontal offset on page swipe</string>
+  <string name="parallax_intensity_description">Horizontal offset on page swipe and tilt effect intensity</string>
   <string name="parallax_none">None</string>
+  <string name="parallax_category_tilt">Tilt effect</string>
   <string name="parallax_tilt">Move when tilting the device</string>
-  <string name="parallax_tilt_description">Could cause battery to drain faster</string>
+  <string name="parallax_tilt_description">Consumes more battery</string>
   <string name="parallax_refresh_rate">Tilt sensor refresh rate</string>
   <string name="parallax_refresh_rate_description">Too short delays can make zoom animations laggy</string>
+  <string name="parallax_damping">Motion damping</string>
+  <string name="parallax_damping_description">Decrease for more smoothness </string>
 
   <!-- SIZE -->
 

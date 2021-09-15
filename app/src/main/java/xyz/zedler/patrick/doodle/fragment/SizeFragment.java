@@ -117,6 +117,14 @@ public class SizeFragment extends BaseFragment
         getSharedPrefs().getBoolean(PREF.ZOOM_UNLOCK, DEF.ZOOM_UNLOCK)
     );
 
+    binding.sliderSizeZoomDuration.setValue(
+        getSharedPrefs().getInt(PREF.ZOOM_DURATION, DEF.ZOOM_DURATION)
+    );
+    binding.sliderSizeZoomDuration.addOnChangeListener(this);
+    binding.sliderSizeZoomDuration.setLabelFormatter(
+        value -> String.format(Locale.getDefault(), "%.0fms", value)
+    );
+
     ViewUtil.setOnClickListeners(
         this,
         binding.frameSizeBack,
@@ -173,6 +181,11 @@ public class SizeFragment extends BaseFragment
       performHapticClick();
     } else if (id == R.id.slider_size_zoom) {
       getSharedPrefs().edit().putInt(PREF.ZOOM, (int) value).apply();
+      ViewUtil.startIcon(binding.imageSizeZoom);
+      activity.requestSettingsRefresh();
+      performHapticClick();
+    } else if (id == R.id.slider_size_zoom_duration) {
+      getSharedPrefs().edit().putInt(PREF.ZOOM_DURATION, (int) value).apply();
       ViewUtil.startIcon(binding.imageSizeZoom);
       activity.requestSettingsRefresh();
       performHapticClick();

@@ -123,6 +123,10 @@
         android:valueTo="2"
         android:stepSize="0.1"/>
 
+      <TextView
+        style="@style/Widget.Doodle.TextView.Category"
+        android:text="@string/size_category_zoom" />
+
       <LinearLayout
         style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine"
         android:paddingBottom="0dp">
@@ -201,6 +205,33 @@
           android:layout_marginStart="16dp" />
 
       </LinearLayout>
+
+      <LinearLayout
+        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine"
+        android:paddingStart="72dp"
+        android:paddingEnd="0dp"
+        android:paddingBottom="0dp">
+
+        <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
+
+          <TextView
+            style="@style/Widget.Doodle.TextView.ListItem.Title"
+            android:text="@string/size_zoom_duration" />
+
+          <TextView
+            style="@style/Widget.Doodle.TextView.ListItem.Description"
+            android:text="@string/size_zoom_duration_description" />
+
+        </LinearLayout>
+
+      </LinearLayout>
+
+      <com.google.android.material.slider.Slider
+        android:id="@+id/slider_size_zoom_duration"
+        style="@style/Widget.Doodle.Slider"
+        android:valueFrom="500"
+        android:valueTo="1500"
+        android:stepSize="100"/>
 
     </LinearLayout>
 

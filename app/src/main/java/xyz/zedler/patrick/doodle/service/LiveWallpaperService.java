@@ -227,6 +227,7 @@ public class LiveWallpaperService extends WallpaperService {
     private float zoomUnlock;
     private float scale;
     private int parallax;
+    private int zoomDuration;
     private boolean isTiltEnabled;
     private float tiltX, tiltY;
     private float[] accelerationValues;
@@ -417,6 +418,7 @@ public class LiveWallpaperService extends WallpaperService {
       zoomIntensity = sharedPrefs.getInt(PREF.ZOOM, DEF.ZOOM);
       isZoomLauncherEnabled = sharedPrefs.getBoolean(PREF.ZOOM_LAUNCHER, DEF.ZOOM_LAUNCHER);
       isZoomUnlockEnabled = sharedPrefs.getBoolean(PREF.ZOOM_UNLOCK, DEF.ZOOM_UNLOCK);
+      zoomDuration = sharedPrefs.getInt(PREF.ZOOM_DURATION, DEF.ZOOM_DURATION);
 
       if (isZoomUnlockEnabled) {
         registerReceiver();
@@ -624,7 +626,7 @@ public class LiveWallpaperService extends WallpaperService {
         drawFrame(false, REQUEST_SOURCE.ZOOM_UNLOCK);
       });
       zoomAnimator.setInterpolator(zoomInterpolator);
-      zoomAnimator.setDuration(1250).start();
+      zoomAnimator.setDuration(zoomDuration).start();
     }
 
     private void colorsHaveChanged() {

@@ -3,6 +3,7 @@
 - New: Material You wallpaper
 - New: Android 12 support (not fully tested yet)
 - New: translation via Transifex (less than 80 strings to translate, link in About!)
+- New: set unlock zoom animation duration
 - Improved: theme selection and internal wallpaper management
 - Fixed: incorrect zoom on lockscreen
 - Fixed: non-gesture navigation bar color in dialogs on Android 11 and higher

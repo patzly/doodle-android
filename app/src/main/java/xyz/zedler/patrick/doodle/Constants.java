@@ -32,6 +32,7 @@ public final class Constants {
     public final static String ZOOM = "zoom";
     public final static String ZOOM_LAUNCHER = "zoom_launcher";
     public final static String ZOOM_UNLOCK = "zoom_unlock";
+    public final static String ZOOM_DURATION = "zoom_duration";
     public final static String WALLPAPER = "wallpaper";
     public final static String VARIANT_PIXEL = "variant_pixel";
     public final static String VARIANT_JOHANNA = "variant_johanna";
@@ -61,6 +62,7 @@ public final class Constants {
     public final static int ZOOM = 2;
     public final static boolean ZOOM_LAUNCHER = true;
     public final static boolean ZOOM_UNLOCK = true;
+    public final static int ZOOM_DURATION = 1200;
     public final static String WALLPAPER = Constants.WALLPAPER.PIXEL;
     public final static int PARALLAX = 1;
     public final static float SCALE = 1;

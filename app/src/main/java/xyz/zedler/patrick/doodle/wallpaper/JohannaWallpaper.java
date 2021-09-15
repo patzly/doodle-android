@@ -43,8 +43,8 @@ public class JohannaWallpaper extends BaseWallpaper {
         new WallpaperVariant(
             R.raw.wallpaper_johanna1,
             "#fcf4e9",
-            null,
-            null,
+            "#f8bfa6",
+            "#d8e2eb",
             true
         )
     };
@@ -57,8 +57,8 @@ public class JohannaWallpaper extends BaseWallpaper {
         new WallpaperVariant(
             R.raw.wallpaper_johanna1_dark,
             "#32373a",
-            null,
-            null,
+            "#855642",
+            "#5f8393",
             false
         )
     };

@@ -43,36 +43,36 @@ public class PixelWallpaper extends BaseWallpaper {
         new WallpaperVariant(
             R.raw.wallpaper_pixel1,
             "#232323",
-            null,
-            null,
+            "#f2c5b1",
+            "#bdd6bd",
             true
         ),
         new WallpaperVariant(
             R.raw.wallpaper_pixel2,
             "#e0dcd3",
-            null,
-            null,
+            "#ffb9a1",
+            "#f4e3c9",
             true
         ),
         new WallpaperVariant(
             R.raw.wallpaper_pixel3,
             "#f98a6b",
-            null,
-            null,
+            "#e5e1a3",
+            "#bcddba",
             true
         ),
         new WallpaperVariant(
             R.raw.wallpaper_pixel4,
             "#eae5bf",
-            null,
-            null,
+            "#789f8a",
+            "#e06a4e",
             true
         ),
         new WallpaperVariant(
             R.raw.wallpaper_pixel5,
             "#fff5ec",
-            null,
-            null,
+            "#052464",
+            "#fe765e",
             true
         )
     };
@@ -84,8 +84,8 @@ public class PixelWallpaper extends BaseWallpaper {
     WallpaperVariant pixelOriginalDark = new WallpaperVariant(
         R.raw.wallpaper_pixel123_dark,
         "#272628",
-        null,
-        null,
+        "#ff9052",
+        "#bdd6bd",
         false
     );
     return new WallpaperVariant[]{
@@ -95,15 +95,15 @@ public class PixelWallpaper extends BaseWallpaper {
         new WallpaperVariant(
             R.raw.wallpaper_pixel4_dark,
             "#272628",
-            null,
-            null,
+            "#e06a4e",
+            "#6c8e7a",
             false
         ),
         new WallpaperVariant(
             R.raw.wallpaper_pixel5_dark,
             "#272628",
-            null,
-            null,
+            "#d4634f",
+            "#324b84",
             false
         )
     };

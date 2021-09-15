@@ -43,15 +43,15 @@ public class ReikoWallpaper extends BaseWallpaper {
         new WallpaperVariant(
             R.raw.wallpaper_reiko1,
             "#cbcbef",
-            null,
-            null,
+            "#fe7a9a",
+            "#abe3e0",
             true
         ),
         new WallpaperVariant(
             R.raw.wallpaper_reiko2,
             "#fef7ed",
-            null,
-            null,
+            "#fea31c",
+            "#e0342b",
             true
         )
     };
@@ -64,15 +64,15 @@ public class ReikoWallpaper extends BaseWallpaper {
         new WallpaperVariant(
             R.raw.wallpaper_reiko1_dark,
             "#0e032d",
-            null,
-            null,
+            "#a181de",
+            "#8fe5de",
             false
         ),
         new WallpaperVariant(
             R.raw.wallpaper_reiko2_dark,
             "#0e1f3b",
-            null,
-            null,
+            "#a0b0fb",
+            "#c6433a",
             false
         )
     };

@@ -227,6 +227,8 @@ public class LiveWallpaperService extends WallpaperService {
     private float zoomUnlock;
     private float scale;
     private int parallax;
+    private int rotation;
+    private boolean isRotationZoomEnabled, isRotationSwipeEnabled;
     private int zoomDuration;
     private int damping;
     private boolean isTiltEnabled;
@@ -362,6 +364,12 @@ public class LiveWallpaperService extends WallpaperService {
       handleRefreshRequests();
 
       svgDrawable.applyRandomElevationToAll(0.1f);
+      if (isRotationSwipeEnabled || isRotationZoomEnabled) {
+        svgDrawable.applyRandomRotationToAll(-rotation, rotation);
+      }
+      svgDrawable.setRotateOnOffsetChanged(isRotationSwipeEnabled);
+      svgDrawable.setRotateOnZoomChanged(isRotationZoomEnabled);
+
       updateOffset(true, null);
     }
 
@@ -423,6 +431,10 @@ public class LiveWallpaperService extends WallpaperService {
       isZoomLauncherEnabled = sharedPrefs.getBoolean(PREF.ZOOM_LAUNCHER, DEF.ZOOM_LAUNCHER);
       isZoomUnlockEnabled = sharedPrefs.getBoolean(PREF.ZOOM_UNLOCK, DEF.ZOOM_UNLOCK);
       zoomDuration = sharedPrefs.getInt(PREF.ZOOM_DURATION, DEF.ZOOM_DURATION);
+
+      rotation = sharedPrefs.getInt(PREF.ROTATION, DEF.ROTATION);
+      isRotationZoomEnabled = sharedPrefs.getBoolean(PREF.ROTATION_ZOOM, DEF.ROTATION_ZOOM);
+      isRotationSwipeEnabled = sharedPrefs.getBoolean(PREF.ROTATION_SWIPE, DEF.ROTATION_SWIPE);
 
       if (isZoomUnlockEnabled) {
         registerReceiver();
@@ -488,6 +500,7 @@ public class LiveWallpaperService extends WallpaperService {
     }
 
     private void updateOffset(boolean force, String source) {
+      svgDrawable.setOriginalOffsetX(offsetX);
       float xOffset = parallax != 0 ? offsetX : 0;
       int tiltFactor = 18 * parallax * (isTiltEnabled ? 1 : 0);
       svgDrawable.setOffset(

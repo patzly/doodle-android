@@ -55,6 +55,14 @@
       app:popExitAnim="@anim/anim_exit_end" />
 
     <action
+      android:id="@+id/action_overview_to_rotation"
+      app:destination="@id/rotationFragment"
+      app:enterAnim="@anim/anim_enter_end"
+      app:exitAnim="@anim/anim_exit_start"
+      app:popEnterAnim="@anim/anim_enter_start"
+      app:popExitAnim="@anim/anim_exit_end" />
+
+    <action
       android:id="@+id/action_overview_to_other"
       app:destination="@id/otherFragment"
       app:enterAnim="@anim/anim_enter_end"
@@ -133,6 +141,18 @@
 
     <action
       android:id="@+id/action_size_to_feedback_dialog"
+      app:destination="@id/feedbackBottomSheetDialogFragment" />
+
+  </fragment>
+
+  <fragment
+    android:id="@+id/rotationFragment"
+    android:name="xyz.zedler.patrick.doodle.fragment.RotationFragment"
+    android:label="fragment_rotation"
+    tools:layout="@layout/fragment_rotation">
+
+    <action
+      android:id="@+id/action_rotation_to_feedback_dialog"
       app:destination="@id/feedbackBottomSheetDialogFragment" />
 
   </fragment>

@@ -112,6 +112,7 @@ public class OverviewFragment extends BaseFragment implements OnClickListener {
         binding.linearOverviewAppearance,
         binding.linearOverviewParallax,
         binding.linearOverviewSize,
+        binding.linearOverviewRotation,
         binding.linearOverviewOther,
         binding.linearOverviewAbout
     );
@@ -135,6 +136,9 @@ public class OverviewFragment extends BaseFragment implements OnClickListener {
       performHapticClick();
     } else if (id == R.id.linear_overview_size && getViewUtil().isClickEnabled()) {
       getNavController().navigate(OverviewFragmentDirections.actionOverviewToSize());
+      performHapticClick();
+    } else if (id == R.id.linear_overview_rotation && getViewUtil().isClickEnabled()) {
+      getNavController().navigate(OverviewFragmentDirections.actionOverviewToRotation());
       performHapticClick();
     } else if (id == R.id.linear_overview_other && getViewUtil().isClickEnabled()) {
       getNavController().navigate(OverviewFragmentDirections.actionOverviewToOther());

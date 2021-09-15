@@ -56,20 +56,15 @@
 
   <string name="parallax_touch_wiz">Parece que su lanzador actual es Samsung TouchWiz, que no admite el desplazamiento en segundo plano. Prueba con un lanzador diferente para habilitar el efecto de paralaje si no tienes habilitada la opción del sensor de inclinación.\nPuedes ignorar esta advertencia si configuras otro lanzador como predeterminado.</string>
   <string name="parallax_intensity">Fuerza de paralaje</string>
-  <string name="parallax_intensity_description">Desplazamiento horizontal al deslizar la página</string>
   <string name="parallax_none">Ninguno</string>
   <string name="parallax_tilt">Mover al inclinar el dispositivo</string>
-  <string name="parallax_tilt_description">Podría hacer que la batería se agote más rápido</string>
   <string name="parallax_refresh_rate">Frecuencia de actualización del sensor de inclinación</string>
   <string name="parallax_refresh_rate_description">Los retrasos demasiado cortos pueden hacer que las animaciones de zoom se retrasen</string>
-
   <string name="size_scale">Tamaño de la forma</string>
   <string name="size_scale_description">Útil para pantallas grandes</string>
-  <string name="size_zoom">Intensidad del efecto de zoom</string>
   <string name="size_zoom_description">Cuando se aumenta, la cámara se aleja más</string>
   <string name="size_zoom_launcher">Alejar al abrir la configuración rápida o el cajón de aplicaciones</string>
   <string name="size_zoom_unlock">Alejar la pantalla de bloqueo</string>
-
   <string name="other_gpu">Aceleracion por hardware</string>
   <string name="other_gpu_description">Desactivar si el fondo de pantalla se bloquea. Requiere reiniciar el dispositivo para que surta efecto si el fondo de pantalla está activo actualmente.</string>
   <string name="other_gpu_info">La aceleración de hardware solo está disponible para Doodle a partir de Android 8. Por lo tanto, las animaciones del fondo de pantalla pueden ser un poco irregulares, especialmente con el segundo fondo de pantalla.</string>

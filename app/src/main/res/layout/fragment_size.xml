@@ -245,6 +245,37 @@
         android:valueTo="1500"
         android:stepSize="100"/>
 
+      <LinearLayout
+        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine"
+        android:paddingBottom="0dp">
+
+        <ImageView
+          android:id="@+id/image_size_zoom_rotation"
+          style="@style/Widget.Doodle.ImageView.ListItem.Icon"
+          android:src="@drawable/ic_round_filter_center_focus_anim"
+          tools:ignore="ContentDescription" />
+
+        <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
+
+          <TextView
+            style="@style/Widget.Doodle.TextView.ListItem.Title"
+            android:text="@string/size_zoom_rotation" />
+
+          <TextView
+            style="@style/Widget.Doodle.TextView.ListItem.Description"
+            android:text="@string/size_zoom_rotation_description" />
+
+        </LinearLayout>
+
+      </LinearLayout>
+
+      <com.google.android.material.slider.Slider
+        android:id="@+id/slider_size_zoom_rotation"
+        style="@style/Widget.Doodle.Slider"
+        android:valueFrom="0"
+        android:valueTo="100"
+        android:stepSize="20"/>
+
     </LinearLayout>
 
   </androidx.core.widget.NestedScrollView>

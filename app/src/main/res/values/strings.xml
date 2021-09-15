@@ -102,15 +102,8 @@
   <string name="size_zoom_unlock">Zoom out on lockscreen</string>
   <string name="size_zoom_duration">Unlock zoom duration</string>
   <string name="size_zoom_duration_description">Decrease for faster animation</string>
-
-  <!-- ROTATION -->
-
-  <string name="rotation_title">Shape rotation</string>
-  <string name="rotation_description">While swiping &amp; unlocking</string>
-  <string name="rotation_degrees">Maximum rotation in degrees</string>
-  <string name="rotation_degrees_description">Limit for randomly selected angles</string>
-  <string name="rotation_swipe">Rotate when you swipe through your home screens</string>
-  <string name="rotation_zoom">Rotate while the camera zooms in or out</string>
+  <string name="size_zoom_rotation">Rotate while zooming</string>
+  <string name="size_zoom_rotation_description">Maximum rotation in degrees</string>
 
   <!-- OTHER -->
 

@@ -62,13 +62,10 @@ public class SvgDrawable {
 
   private final List<SvgObject> objects;
   private final List<String> ids;
-  private float originalOffsetX;
   private float offsetX;
   private float offsetY;
   private float scale;
   private float zoom;
-  private boolean rotateOnOffsetChanged = false;
-  private boolean rotateOnZoomChanged = false;
   private final float pixelUnit;
   private float svgWidth, svgHeight;
   private final Paint paint, paintDebug;
@@ -112,13 +109,6 @@ public class SvgDrawable {
   }
 
   /**
-   * The original offset as a float from 0 to 1
-   */
-  public void setOriginalOffsetX(float offsetX) {
-    originalOffsetX = offsetX;
-  }
-
-  /**
    * The final offset is calculated with the elevation
    */
   public void setOffset(float offsetX, float offsetY) {
@@ -152,23 +142,14 @@ public class SvgDrawable {
   }
 
   /**
-   * Apply random rotation to all objects, which is applied either with the current zoom intensity
-   * or with offset change
+   * Apply random rotation to all objects, which is applied with the current zoom intensity
    * @param min Set the minimal rotation in degrees (can be negative)
    * @param max Set the maximal rotation in degrees
    */
-  public void applyRandomRotationToAll(int min, int max) {
+  public void applyRandomZoomRotationToAll(int min, int max) {
     for (SvgObject object : objects) {
-      object.userRotation = min == 0 && max == 0 ? 0 : random.nextInt(max - min + 1) + min;
+      object.zoomRotation = min == 0 && max == 0 ? 0 : random.nextInt(max - min + 1) + min;
     }
-  }
-
-  public void setRotateOnOffsetChanged(boolean rotate) {
-    rotateOnOffsetChanged = rotate;
-  }
-
-  public void setRotateOnZoomChanged(boolean rotate) {
-    rotateOnZoomChanged = rotate;
   }
 
   public void draw(Canvas canvas) {
@@ -248,9 +229,7 @@ public class SvgDrawable {
   }
 
   private void drawObject(Canvas canvas, SvgObject object, SvgObject parentGroup) {
-    float rotationOffset = rotateOnOffsetChanged ? object.userRotation * originalOffsetX : 0;
-    float rotationZoom = rotateOnZoomChanged ? object.userRotation * zoom : 0;
-    float rotation = object.rotation + rotationOffset + rotationZoom;
+    float rotation = object.rotation + object.zoomRotation * zoom;
     if (!object.isInGroup && rotation != 0) {
       canvas.save();
       if (rotation != 0) {
@@ -925,7 +904,7 @@ public class SvgDrawable {
     public final String type;
     public boolean isInGroup;
     public float elevation;
-    public int userRotation;
+    public int zoomRotation;
 
     // GROUP
     public List<SvgObject> children;

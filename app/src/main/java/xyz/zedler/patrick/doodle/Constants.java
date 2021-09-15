@@ -33,9 +33,7 @@ public final class Constants {
     public final static String ZOOM_LAUNCHER = "zoom_launcher";
     public final static String ZOOM_UNLOCK = "zoom_unlock";
     public final static String ZOOM_DURATION = "zoom_duration";
-    public final static String ROTATION = "rotation";
-    public final static String ROTATION_SWIPE = "rotation_swipe";
-    public final static String ROTATION_ZOOM = "rotation_zoom";
+    public final static String ZOOM_ROTATION = "zoom_rotation";
     public final static String WALLPAPER = "wallpaper";
     public final static String VARIANT_PIXEL = "variant_pixel";
     public final static String VARIANT_JOHANNA = "variant_johanna";
@@ -68,9 +66,7 @@ public final class Constants {
     public final static boolean ZOOM_LAUNCHER = true;
     public final static boolean ZOOM_UNLOCK = true;
     public final static int ZOOM_DURATION = 1200;
-    public final static int ROTATION = 80;
-    public final static boolean ROTATION_SWIPE = false;
-    public final static boolean ROTATION_ZOOM = true;
+    public final static int ZOOM_ROTATION = 80;
     public final static String WALLPAPER = Constants.WALLPAPER.PIXEL;
     public final static int PARALLAX = 1;
     public final static int DAMPING = 8;

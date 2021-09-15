@@ -231,6 +231,7 @@ public class LiveWallpaperService extends WallpaperService {
     private int damping;
     private boolean isTiltEnabled;
     private float tiltX, tiltY;
+    private int tiltThreshold;
     private float[] accelerationValues;
     private float offsetX;
     private long lastDrawZoomLauncher, lastDrawZoomUnlock, lastDrawTilt;
@@ -274,7 +275,7 @@ public class LiveWallpaperService extends WallpaperService {
             }
             float averageX = sumX / tiltHistory.size();
             float averageY = sumY / tiltHistory.size();
-            float tolerance = 0.045f; // Allow small deviations caused by the sensor
+            float tolerance = tiltThreshold / 100f; // Allow small deviations caused by the sensor
             for (Pair<Float, Float> tilt : tiltHistory) {
               boolean isMovingX = averageX >= 0
                   ? tilt.first > averageX + tolerance
@@ -388,6 +389,7 @@ public class LiveWallpaperService extends WallpaperService {
 
       isTiltEnabled = sharedPrefs.getBoolean(PREF.TILT, DEF.TILT);
       damping = sharedPrefs.getInt(PREF.DAMPING, DEF.DAMPING);
+      tiltThreshold = sharedPrefs.getInt(PREF.THRESHOLD, DEF.THRESHOLD);
       if (isTiltEnabled && !isListenerRegistered) {
         sensorManager.registerListener(
             sensorListener,

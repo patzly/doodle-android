@@ -9,12 +9,15 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable/ic_dada.xml" value="0.3640625" />
+        <entry key="app/src/main/res/drawable/ic_palette_black_24dp.xml" value="0.3640625" />
         <entry key="app/src/main/res/drawable/ic_round_all_directions_anim.xml" value="0.3640625" />
         <entry key="app/src/main/res/drawable/ic_round_check_circle_anim.xml" value="0.3640625" />
         <entry key="app/src/main/res/drawable/ic_round_doodle.xml" value="0.3640625" />
         <entry key="app/src/main/res/drawable/ic_round_doodle_anim.xml" value="0.3640625" />
         <entry key="app/src/main/res/drawable/ic_round_feedback_anim.xml" value="0.2078125" />
+        <entry key="app/src/main/res/drawable/ic_round_palette_anim.xml" value="0.3640625" />
         <entry key="app/src/main/res/drawable/ic_round_person_anim.xml" value="0.3640625" />
+        <entry key="app/src/main/res/drawable/ic_round_refresh_anim.xml" value="0.3640625" />
         <entry key="app/src/main/res/drawable/ic_round_settings_suggest.xml" value="0.3640625" />
         <entry key="app/src/main/res/drawable/ic_round_translate.xml" value="0.3640625" />
         <entry key="app/src/main/res/drawable/ic_round_vending_anim.xml" value="0.3640625" />

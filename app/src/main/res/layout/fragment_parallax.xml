@@ -173,14 +173,15 @@
 
       <LinearLayout
         style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine"
-        android:layout_marginStart="48dp"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
         android:paddingBottom="0dp">
 
-        <LinearLayout
-          style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox"
-          android:layout_marginStart="8dp">
+        <ImageView
+          android:id="@+id/image_parallax_refresh_rate"
+          style="@style/Widget.Doodle.ImageView.ListItem.Icon"
+          android:src="@drawable/ic_round_refresh_anim"
+          tools:ignore="ContentDescription" />
+
+        <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
 
           <TextView
             style="@style/Widget.Doodle.TextView.ListItem.Title"
@@ -203,14 +204,15 @@
 
       <LinearLayout
         style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine"
-        android:layout_marginStart="48dp"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
         android:paddingBottom="0dp">
 
-        <LinearLayout
-          style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox"
-          android:layout_marginStart="8dp">
+        <ImageView
+          android:id="@+id/image_parallax_damping"
+          style="@style/Widget.Doodle.ImageView.ListItem.Icon"
+          android:src="@drawable/ic_round_vibration_anim"
+          tools:ignore="ContentDescription" />
+
+        <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
 
           <TextView
             style="@style/Widget.Doodle.TextView.ListItem.Title"
@@ -229,6 +231,36 @@
         style="@style/Widget.Doodle.Slider"
         android:valueFrom="1"
         android:valueTo="20"
+        android:stepSize="1"/>
+
+      <LinearLayout
+        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine"
+        android:layout_marginStart="48dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="0dp">
+
+        <LinearLayout
+          style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox"
+          android:layout_marginStart="8dp">
+
+          <TextView
+            style="@style/Widget.Doodle.TextView.ListItem.Title"
+            android:text="@string/parallax_threshold" />
+
+          <TextView
+            style="@style/Widget.Doodle.TextView.ListItem.Description"
+            android:text="@string/parallax_threshold_description" />
+
+        </LinearLayout>
+
+      </LinearLayout>
+
+      <com.google.android.material.slider.Slider
+        android:id="@+id/slider_parallax_threshold"
+        style="@style/Widget.Doodle.Slider"
+        android:valueFrom="1"
+        android:valueTo="10"
         android:stepSize="1"/>
 
     </LinearLayout>

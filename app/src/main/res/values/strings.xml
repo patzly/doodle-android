@@ -85,7 +85,9 @@
   <string name="parallax_refresh_rate">Tilt sensor refresh rate</string>
   <string name="parallax_refresh_rate_description">Too short delays can make zoom animations laggy</string>
   <string name="parallax_damping">Motion damping</string>
-  <string name="parallax_damping_description">Decrease for more smoothness </string>
+  <string name="parallax_damping_description">Decrease for more smoothness</string>
+  <string name="parallax_threshold">Movement threshold</string>
+  <string name="parallax_threshold_description">Increase to pause continuous rendering despite little movement</string>
 
   <!-- SIZE -->
 

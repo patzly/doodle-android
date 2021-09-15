@@ -122,7 +122,9 @@ public class SizeFragment extends BaseFragment
     );
     binding.sliderSizeZoomDuration.addOnChangeListener(this);
     binding.sliderSizeZoomDuration.setLabelFormatter(
-        value -> String.format(Locale.getDefault(), "%.0fms", value)
+        value -> getString(
+            R.string.label_ms, String.format(Locale.getDefault(), "%.0f", value)
+        )
     );
 
     binding.sliderSizeZoomRotation.setValue(
@@ -130,7 +132,9 @@ public class SizeFragment extends BaseFragment
     );
     binding.sliderSizeZoomRotation.addOnChangeListener(this);
     binding.sliderSizeZoomRotation.setLabelFormatter(
-        value -> String.format(Locale.getDefault(), "+/-%.0f degrees", value)
+        value -> getString(
+            R.string.label_degrees, String.format(Locale.getDefault(), "%.0f", value)
+        )
     );
 
     ViewUtil.setOnClickListeners(

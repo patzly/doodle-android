@@ -107,7 +107,9 @@ public class ParallaxFragment extends BaseFragment
     );
     binding.sliderParallaxRefreshRate.addOnChangeListener(this);
     binding.sliderParallaxRefreshRate.setLabelFormatter(
-        value -> String.format(Locale.getDefault(), "%.0fms", value / 1000)
+        value -> getString(
+            R.string.label_ms, String.format(Locale.getDefault(), "%.0f", value / 1000)
+        )
     );
 
     binding.sliderParallaxDamping.setValue(

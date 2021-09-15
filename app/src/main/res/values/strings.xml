@@ -42,6 +42,11 @@
   <string name="title_feedback">Feedback</string>
   <string name="title_licenses">Open source licenses</string>
 
+  <!-- LABELS -->
+
+  <string name="label_ms">%1$sms</string>
+  <string name="label_degrees">%1$s degrees</string>
+
   <!-- ACTIONS -->
 
   <string name="action_close">Close</string>

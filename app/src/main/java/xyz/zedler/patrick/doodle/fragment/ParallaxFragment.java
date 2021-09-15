@@ -189,7 +189,7 @@ public class ParallaxFragment extends BaseFragment
       performHapticClick();
     } else if (id == R.id.slider_parallax_threshold) {
       getSharedPrefs().edit().putInt(PREF.THRESHOLD, (int) value).apply();
-      ViewUtil.startIcon(binding.imageParallaxTilt);
+      ViewUtil.startIcon(binding.imageParallaxThreshold);
       activity.requestSettingsRefresh();
       performHapticClick();
     }

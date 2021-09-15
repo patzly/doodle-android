@@ -186,7 +186,7 @@ public class SizeFragment extends BaseFragment
       performHapticClick();
     } else if (id == R.id.slider_size_zoom_duration) {
       getSharedPrefs().edit().putInt(PREF.ZOOM_DURATION, (int) value).apply();
-      ViewUtil.startIcon(binding.imageSizeZoom);
+      ViewUtil.startIcon(binding.imageSizeZoomDuration);
       activity.requestSettingsRefresh();
       performHapticClick();
     }

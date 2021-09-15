@@ -211,7 +211,7 @@
         <ImageView
           android:id="@+id/image_overview_size"
           style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-          android:src="@drawable/ic_round_zoom_out"
+          android:src="@drawable/ic_round_filter_center_focus_anim"
           tools:ignore="ContentDescription" />
 
         <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">

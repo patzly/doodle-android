@@ -161,17 +161,21 @@
       <LinearLayout
         android:id="@+id/linear_size_zoom_launcher"
         style="@style/Widget.Doodle.LinearLayout.ListItem.SingleLine.Clickable"
-        android:layout_marginStart="48dp"
         android:paddingTop="12dp"
         android:paddingBottom="12dp"
         android:minHeight="0dp"
         android:background="@drawable/ripple_bg_list_item">
 
+        <ImageView
+          android:id="@+id/image_size_zoom_launcher"
+          style="@style/Widget.Doodle.ImageView.ListItem.Icon"
+          android:src="@drawable/ic_round_aod"
+          tools:ignore="ContentDescription" />
+
         <TextView
           style="@style/Widget.Doodle.TextView.ListItem.Title"
           android:layout_width="0dp"
           android:layout_weight="1"
-          android:layout_marginStart="8dp"
           android:text="@string/size_zoom_launcher" />
 
         <com.google.android.material.switchmaterial.SwitchMaterial
@@ -185,17 +189,21 @@
       <LinearLayout
         android:id="@+id/linear_size_zoom_unlock"
         style="@style/Widget.Doodle.LinearLayout.ListItem.SingleLine.Clickable"
-        android:layout_marginStart="48dp"
         android:paddingTop="12dp"
         android:paddingBottom="12dp"
         android:minHeight="0dp"
         android:background="@drawable/ripple_bg_list_item">
 
+        <ImageView
+          android:id="@+id/image_size_zoom_unlock"
+          style="@style/Widget.Doodle.ImageView.ListItem.Icon"
+          android:src="@drawable/ic_round_screen_lock_portrait"
+          tools:ignore="ContentDescription" />
+
         <TextView
           style="@style/Widget.Doodle.TextView.ListItem.Title"
           android:layout_width="0dp"
           android:layout_weight="1"
-          android:layout_marginStart="8dp"
           android:text="@string/size_zoom_unlock" />
 
         <com.google.android.material.switchmaterial.SwitchMaterial
@@ -208,9 +216,13 @@
 
       <LinearLayout
         style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine"
-        android:paddingStart="72dp"
-        android:paddingEnd="0dp"
         android:paddingBottom="0dp">
+
+        <ImageView
+          android:id="@+id/image_size_zoom_duration"
+          style="@style/Widget.Doodle.ImageView.ListItem.Icon"
+          android:src="@drawable/ic_round_timer_anim"
+          tools:ignore="ContentDescription" />
 
         <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
 

@@ -1,8 +1,9 @@
 4.0.0:
 - New: completely rewritten and reorganized settings app
 - New: Material You wallpaper
-- New: Android 12 support (not fully tested yet)
+- New: Android 12 wallpaper color support (not fully tested yet)
 - New: translation via Transifex (less than 80 strings to translate, link in About!)
+- New: optional shape rotation while zooming
 - New: change unlock zoom animation duration
 - New: adjust motion damping intensity and movement threshold for tilt effect
 - Improved: theme selection and internal wallpaper management

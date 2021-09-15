@@ -66,7 +66,7 @@ public final class Constants {
     public final static boolean ZOOM_LAUNCHER = true;
     public final static boolean ZOOM_UNLOCK = true;
     public final static int ZOOM_DURATION = 1200;
-    public final static int ZOOM_ROTATION = 80;
+    public final static int ZOOM_ROTATION = 0;
     public final static String WALLPAPER = Constants.WALLPAPER.PIXEL;
     public final static int PARALLAX = 1;
     public final static int DAMPING = 8;

@@ -146,7 +146,7 @@ public class LiveWallpaperService extends WallpaperService {
 
   private void loadWallpaper() {
     int var = sharedPrefs.getInt(Constants.VARIANT_PREFIX + wallpaper.getName(), 1);
-    if (var >= wallpaper.getVariants().length) {
+    if (var > wallpaper.getVariants().length) {
       var = 1;
     }
 
@@ -169,7 +169,7 @@ public class LiveWallpaperService extends WallpaperService {
     }
     if (svgDrawable == null) {
       // Prevent NullPointerExceptions
-      svgDrawable = new SvgDrawable(this, R.raw.wallpaper_pixel123_dark);
+      svgDrawable = new SvgDrawable(this, R.raw.wallpaper_pixel1);
     }
   }
 

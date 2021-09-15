@@ -64,6 +64,7 @@ import xyz.zedler.patrick.doodle.wallpaper.AnthonyWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.BaseWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.BaseWallpaper.WallpaperVariant;
 import xyz.zedler.patrick.doodle.wallpaper.JohannaWallpaper;
+import xyz.zedler.patrick.doodle.wallpaper.MonetWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.PixelWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.ReikoWallpaper;
 
@@ -434,6 +435,9 @@ public class LiveWallpaperService extends WallpaperService {
           break;
         case WALLPAPER.ANTHONY:
           wallpaper = new AnthonyWallpaper();
+          break;
+        case WALLPAPER.MONET:
+          wallpaper = new MonetWallpaper();
           break;
         default:
           wallpaper = new PixelWallpaper();

@@ -52,6 +52,7 @@ import xyz.zedler.patrick.doodle.wallpaper.AnthonyWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.BaseWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.BaseWallpaper.WallpaperVariant;
 import xyz.zedler.patrick.doodle.wallpaper.JohannaWallpaper;
+import xyz.zedler.patrick.doodle.wallpaper.MonetWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.PixelWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.ReikoWallpaper;
 
@@ -136,7 +137,8 @@ public class AppearanceFragment extends BaseFragment
         new PixelWallpaper(),
         new JohannaWallpaper(),
         new ReikoWallpaper(),
-        new AnthonyWallpaper()
+        new AnthonyWallpaper(),
+        new MonetWallpaper()
     };
     for (BaseWallpaper wallpaper : baseWallpapers) {
       MaterialCardView card = getNewSelectionCard();

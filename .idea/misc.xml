@@ -21,6 +21,7 @@
         <entry key="app/src/main/res/drawable/ic_round_vibration_anim.xml" value="0.3640625" />
         <entry key="app/src/main/res/drawable/ic_round_visibility_off.xml" value="0.3640625" />
         <entry key="app/src/main/res/drawable/ic_round_zoom_out.xml" value="0.3640625" />
+        <entry key="app/src/main/res/drawable/selection_monet.xml" value="0.3640625" />
         <entry key="app/src/main/res/drawable/splash_logo_anim.xml" value="0.3640625" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.3249150072850899" />
         <entry key="app/src/main/res/layout/activity_settings.xml" value="0.3345" />

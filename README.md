@@ -4,7 +4,7 @@
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)  [![Release](https://img.shields.io/github/v/release/patzly/doodle-android?label=Release&logo=github)](https://github.com/patzly/doodle-android/releases)  [![APK Downloads](https://img.shields.io/github/downloads/patzly/doodle-android/total.svg?label=APK%20Downloads&logo=github)](https://github.com/patzly/doodle-android/releases)
 
-Doodle Android is an open-source Android app that provides colorful live wallpapers with auto dark mode and an power-efficient animation.
+Doodle Android is an open-source Android app that provides colorful live wallpapers with auto dark mode and power-efficient animations.
 
 The wallpapers are based on the original Doodle live wallpaper collection of the Google Pixel 4. Additionally there is an exclusive "Material You"-inspired live wallpaper included.  
 The app is not just a copy of the original wallpapers, it's a complete rewrite without the permanent animations to save battery and storage space. In addition, there are many customization options to match your preferences.

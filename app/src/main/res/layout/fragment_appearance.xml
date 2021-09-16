@@ -122,6 +122,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:paddingStart="0dp"
+            android:paddingEnd="4dp"
             android:paddingTop="8dp"
             android:paddingBottom="8dp" />
 
@@ -160,6 +162,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:paddingStart="0dp"
+            android:paddingEnd="4dp"
             android:paddingTop="8dp"
             android:paddingBottom="8dp" />
 

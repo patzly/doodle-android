@@ -29,6 +29,7 @@ import android.text.SpannableStringBuilder;
 import android.text.Spanned;
 import android.text.style.BulletSpan;
 import android.util.Log;
+import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RawRes;
@@ -104,5 +105,10 @@ public class ResUtil {
       builder.append(spannable);
     }
     return builder;
+  }
+
+  public static boolean isLayoutRtl(Context context) {
+    int direction = context.getResources().getConfiguration().getLayoutDirection();
+    return direction == View.LAYOUT_DIRECTION_RTL;
   }
 }

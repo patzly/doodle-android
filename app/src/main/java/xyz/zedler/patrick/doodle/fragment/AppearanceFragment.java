@@ -281,7 +281,7 @@ public class AppearanceFragment extends BaseFragment
     int size = SystemUiUtil.dpToPx(activity, 48);
     MaterialCardView card = new MaterialCardView(activity);
     LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(size, size);
-    if (ViewUtil.isLayoutRtl(binding.getRoot())) {
+    if (ResUtil.isLayoutRtl(activity)) {
       params.leftMargin = SystemUiUtil.dpToPx(activity, 12);
     } else {
       params.rightMargin = SystemUiUtil.dpToPx(activity, 12);

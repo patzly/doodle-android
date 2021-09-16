@@ -37,7 +37,6 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.ColorUtils;
-import androidx.core.view.ViewCompat;
 import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.google.android.material.card.MaterialCardView;
@@ -71,12 +70,6 @@ public class ViewUtil {
 
   public boolean isClickEnabled() {
     return !isClickDisabled();
-  }
-
-  // Layout direction
-
-  public static boolean isLayoutRtl(View view) {
-    return ViewCompat.getLayoutDirection(view) == ViewCompat.LAYOUT_DIRECTION_RTL;
   }
 
   // Show keyboard for EditText

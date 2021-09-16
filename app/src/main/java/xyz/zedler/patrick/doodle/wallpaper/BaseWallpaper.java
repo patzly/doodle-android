@@ -23,7 +23,6 @@ import android.app.WallpaperColors;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
-import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -66,7 +65,7 @@ public abstract class BaseWallpaper {
 
     @RequiresApi(api = VERSION_CODES.O_MR1)
     public WallpaperColors getWallpaperColors(boolean useWhiteText) {
-      if (VERSION.SDK_INT >= 31) {
+      /*if (VERSION.SDK_INT >= 31) {
         int hints = 0;
         if (!useWhiteText && isDarkTextSupported) {
           hints |= WallpaperColors.HINT_SUPPORTS_DARK_THEME;
@@ -79,7 +78,7 @@ public abstract class BaseWallpaper {
             hints
         );
       } else {
-        if (useWhiteText) {
+        */if (useWhiteText) {
           float[] hsl = new float[3];
           ColorUtils.colorToHSL(primaryColor, hsl);
           hsl[2] = 0.7f;
@@ -90,7 +89,7 @@ public abstract class BaseWallpaper {
         Bitmap bitmap = Bitmap.createBitmap(10, 10, Bitmap.Config.ARGB_8888);
         new Canvas(bitmap).drawColor(primaryColor);
         return WallpaperColors.fromBitmap(bitmap);
-      }
+      //}
     }
   }
 

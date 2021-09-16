@@ -23,7 +23,7 @@ plugins {
 }
 
 android {
-    compileSdkVersion 31
+    compileSdkVersion 30
 
     buildFeatures {
         viewBinding true
@@ -32,7 +32,7 @@ android {
     defaultConfig {
         applicationId "xyz.zedler.patrick.doodle"
         minSdkVersion 23
-        targetSdkVersion 31
+        targetSdkVersion 30
         versionCode 28
         versionName "4.0.0"
     }

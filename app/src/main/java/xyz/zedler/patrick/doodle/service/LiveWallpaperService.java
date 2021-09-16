@@ -43,10 +43,10 @@ import android.os.Build.VERSION_CODES;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.service.wallpaper.WallpaperService;
-import android.util.LayoutDirection;
 import android.util.Log;
 import android.util.Pair;
 import android.view.SurfaceHolder;
+import android.view.View;
 import android.view.WindowManager;
 import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
 import java.util.ArrayList;
@@ -245,6 +245,7 @@ public class LiveWallpaperService extends WallpaperService {
     private boolean isSurfaceAvailable = false;
     private boolean iconDropConsumed = true;
     private boolean isRtl = false;
+    private boolean isPreview = false;
     private float fps;
     private final TimeInterpolator zoomInterpolator = new FastOutSlowInInterpolator();
     private ValueAnimator zoomAnimator;
@@ -256,6 +257,7 @@ public class LiveWallpaperService extends WallpaperService {
       super.onCreate(surfaceHolder);
 
       fps = getFrameRate();
+      isPreview = isPreview();
 
       userPresenceListener = this;
 
@@ -314,7 +316,7 @@ public class LiveWallpaperService extends WallpaperService {
       setTouchEventsEnabled(false);
       setOffsetNotificationsEnabled(true);
 
-      sharedPrefs.edit().putBoolean(PREF.PREVIEW_RUNNING, isPreview()).apply();
+      sharedPrefs.edit().putBoolean(PREF.PREVIEW_RUNNING, isPreview).apply();
     }
 
     @Override
@@ -365,7 +367,7 @@ public class LiveWallpaperService extends WallpaperService {
 
       handleRefreshRequests();
 
-      isRtl = getResources().getConfiguration().getLayoutDirection() == LayoutDirection.RTL;
+      isRtl = getResources().getConfiguration().getLayoutDirection() == View.LAYOUT_DIRECTION_RTL;
 
       svgDrawable.applyRandomElevationToAll(0.1f);
 
@@ -496,7 +498,11 @@ public class LiveWallpaperService extends WallpaperService {
         int xPixels,
         int yPixels
     ) {
-      offsetX = xOffset;
+      if (isRtl && !isPreview) {
+        offsetX = xOffset - 1;
+      } else {
+        offsetX = xOffset;
+      }
       updateOffset(true, null);
     }
 

@@ -23,6 +23,7 @@ import android.app.WallpaperColors;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -37,13 +38,15 @@ public abstract class BaseWallpaper {
     private final int svgResId;
     private int primaryColor, secondaryColor, tertiaryColor;
     private final boolean isDarkTextSupported;
+    private final boolean isDarkThemeSupported;
 
     public WallpaperVariant(
         @RawRes int resId,
         @NonNull String primary,
         @Nullable String secondary,
         @Nullable String tertiary,
-        boolean isDarkTextSupported
+        boolean isDarkTextSupported,
+        boolean isDarkThemeSupported
     ) {
       svgResId = resId;
       primaryColor = Color.parseColor(primary);
@@ -54,6 +57,7 @@ public abstract class BaseWallpaper {
         tertiaryColor = Color.parseColor(tertiary);
       }
       this.isDarkTextSupported = isDarkTextSupported;
+      this.isDarkThemeSupported = isDarkThemeSupported;
     }
 
     public int getSvgResId() {
@@ -66,11 +70,13 @@ public abstract class BaseWallpaper {
 
     @RequiresApi(api = VERSION_CODES.O_MR1)
     public WallpaperColors getWallpaperColors(boolean useWhiteText) {
-      /*if (VERSION.SDK_INT >= 31) {
+      if (VERSION.SDK_INT >= 31) {
         int hints = 0;
         if (!useWhiteText && isDarkTextSupported) {
-          hints |= WallpaperColors.HINT_SUPPORTS_DARK_THEME;
           hints |= WallpaperColors.HINT_SUPPORTS_DARK_TEXT;
+        }
+        if (isDarkThemeSupported) {
+          hints |= WallpaperColors.HINT_SUPPORTS_DARK_THEME;
         }
         return new WallpaperColors(
             Color.valueOf(primaryColor),
@@ -79,18 +85,19 @@ public abstract class BaseWallpaper {
             hints
         );
       } else {
-        */if (useWhiteText) {
+        if (useWhiteText) {
           float[] hsl = new float[3];
           ColorUtils.colorToHSL(primaryColor, hsl);
           hsl[2] = 0.7f;
           primaryColor = ColorUtils.HSLToColor(hsl);
         }
-        // Fix required for older versions, color constructor does not work here
+        // Fix required for older versions, color constructor only calculates dark theme support
+        // We need a way to set dark text support, the bitmap method calls the calculation method
         // Bitmap is more efficient than Drawable here because Drawable would be converted to Bitmap
         Bitmap bitmap = Bitmap.createBitmap(10, 10, Bitmap.Config.ARGB_8888);
         new Canvas(bitmap).drawColor(primaryColor);
         return WallpaperColors.fromBitmap(bitmap);
-      //}
+      }
     }
   }
 

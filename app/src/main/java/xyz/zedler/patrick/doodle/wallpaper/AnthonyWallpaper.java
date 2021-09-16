@@ -45,7 +45,8 @@ public class AnthonyWallpaper extends BaseWallpaper {
             "#b9c1c7",
             "#e1d7cc",
             "#47484a",
-            true
+            true,
+            false
         )
     };
   }
@@ -59,7 +60,8 @@ public class AnthonyWallpaper extends BaseWallpaper {
             "#212121",
             "#5b5a5a",
             null,
-            false
+            false,
+            true
         )
     };
   }

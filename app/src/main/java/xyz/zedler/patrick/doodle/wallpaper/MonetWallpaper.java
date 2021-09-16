@@ -45,21 +45,24 @@ public class MonetWallpaper extends BaseWallpaper {
             "#fcedea",
             "#924642",
             "#fbdeac",
-            true
+            true,
+            false
         ),
         new WallpaperVariant(
             R.raw.wallpaper_monet2,
             "#634b67",
             "#dbd870",
             "#ff45c9",
-            false
+            false,
+            true
         ),
         new WallpaperVariant(
             R.raw.wallpaper_monet3,
             "#e9eec5",
             "#f2ea45",
             "#acba78",
-            true
+            true,
+            false
         )
     };
   }
@@ -73,21 +76,24 @@ public class MonetWallpaper extends BaseWallpaper {
             "#222020",
             "#924642",
             null,
-            false
+            false,
+            true
         ),
         new WallpaperVariant(
             R.raw.wallpaper_monet2_dark,
             "#231f24",
             "#ff45c9",
             "#dbd870",
-            false
+            false,
+            true
         ),
         new WallpaperVariant(
             R.raw.wallpaper_monet3_dark,
             "#22241f",
             "#acba78",
             "#f2ea45",
-            false
+            false,
+            true
         )
     };
   }

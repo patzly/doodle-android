@@ -45,7 +45,8 @@ public class JohannaWallpaper extends BaseWallpaper {
             "#fcf4e9",
             "#f8bfa6",
             "#d8e2eb",
-            true
+            true,
+            false
         )
     };
   }
@@ -59,7 +60,8 @@ public class JohannaWallpaper extends BaseWallpaper {
             "#32373a",
             "#855642",
             "#5f8393",
-            false
+            false,
+            true
         )
     };
   }

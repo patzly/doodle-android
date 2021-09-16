@@ -1,19 +1,19 @@
-These live wallpapers are based on the original doodle live wallpapers of the Google Pixel 4.
+These live wallpapers are based on the original doodle live wallpaper collection of the Google Pixel 4.
 They are completely rewritten, nothing except the look is taken from the original.
 
 Advantages over the original:
-- Permanent animation (when tilting the device) is optional
+- Permanent animation (when tilting the device) is optional and customizable
 - No battery-hungry 3D engine
-- Additional color variants
-- Support for Android 11 zoom effect
+- Additional color variants and more live wallpapers to come
+- Support for Android 11 zoom effect and Android 12 color extraction (Material You)
 - Optional zoom effect when unlocking the device
 - Suitable for less powerful devices with power-efficient and optional animations
 - Improved text contrast (dark text for light themes instead of white text with shadow)
-- Also suitable for larger devices like tablets
-- Various customization and color options
+- Also suitable for larger devices like tablets, scaling option available
+- Many additional customization options
 - Tiny installation size
 
-If you see no movement, you probably have only one home screen page. Drag an app icon to the right edge to add another page, then swipe between them. Parallax effect only occurs during page swipe or when the tilt sensor option is enabled.
+If you see no movement, you probably have only one home screen page and tilt effect disabled. Drag an app icon to the right edge to add another page, then swipe between them. Parallax effect only occurs during page swipe or when tilt effect is enabled.
 
 You need to turn on background scrolling in your launcher's settings if you have disabled it before to make parallax effect on page swipe work.
 Some launchers don't support background scrolling at all, like Samsung's TouchWiz. As a solution, please try installing another launcher.
@@ -21,4 +21,4 @@ Some launchers don't support background scrolling at all, like Samsung's TouchWi
 On Samsung devices with Android 11 the zoom effect when you pull down quick settings might be unavailable.
 
 When the option "Move when tilting the device" is turned on, the wallpaper is rendered continuously, which can cause your battery to drain faster.
-Nevertheless the option is implemented battery-friendly: if your device does not move, the continuous rendering is automatically paused.
+Nevertheless the option is implemented battery-friendly: if your device does not move, the continuous rendering is automatically paused (the threshold is adjustable).

@@ -1,14 +1,15 @@
 4.0.0:
 - New: completely rewritten and reorganized settings app
-- New: Material You wallpaper
-- New: Android 12 wallpaper color support (not fully tested yet)
+- New: "Material You"-inspired wallpaper
+- New: Android 12 wallpaper color support (not tested yet, please report related issues on GitHub (doodle-android) if you have Android 12 Beta installed)
 - New: translation via Transifex (less than 90 strings to translate, link in About!)
 - New: optional shape rotation while zooming
 - New: change unlock zoom animation duration
 - New: adjust motion damping intensity and movement threshold for tilt effect
 - Improved: theme selection and internal wallpaper management
+- Improved: RTL layout support
 - Fixed: incorrect zoom on lockscreen
-- Fixed: non-gesture navigation bar color in dialogs on Android 11 and higher
+- Fixed: non-gesture navigation bar color in dialogs for Android 11 and higher
 
 3.5.1:
 - New: option to set tilt sensor refresh rate (useful if tilt caused lags with zoom animations)

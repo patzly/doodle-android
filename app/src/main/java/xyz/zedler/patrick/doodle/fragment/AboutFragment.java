@@ -139,7 +139,8 @@ public class AboutFragment extends BaseFragment implements OnClickListener {
       ViewUtil.startIcon(binding.imageAboutLicenseJost);
       showLicense(R.raw.license_ofl, R.string.license_jost, R.string.license_jost_link);
     } else if (
-        id == R.id.linear_about_license_material_components&& getViewUtil().isClickEnabled()) {
+        id == R.id.linear_about_license_material_components && getViewUtil().isClickEnabled()
+    ) {
       performHapticClick();
       ViewUtil.startIcon(binding.imageAboutLicenseMaterialComponents);
       showLicense(

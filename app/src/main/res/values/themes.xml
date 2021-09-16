@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ This file is part of Doodle Android.
   ~
   ~ Doodle Android is free software: you can redistribute it and/or modify
@@ -52,9 +51,7 @@
     <item name="bottomSheetDialogTheme">@style/Theme.Doodle.BottomSheetDialog</item>
   </style>
 
-  <style
-    name="Theme.Doodle.BottomSheetDialog"
-    parent="ThemeOverlay.MaterialComponents.BottomSheetDialog">
+  <style name="Theme.Doodle.BottomSheetDialog" parent="ThemeOverlay.MaterialComponents.BottomSheetDialog">
     <item name="enableEdgeToEdge">true</item>
     <item name="android:navigationBarColor">@color/transparent</item>
   </style>

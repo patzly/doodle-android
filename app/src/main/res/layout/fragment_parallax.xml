@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ This file is part of Doodle Android.
   ~
   ~ Doodle Android is free software: you can redistribute it and/or modify
@@ -135,7 +134,7 @@
         style="@style/Widget.Doodle.Slider"
         android:valueFrom="0"
         android:valueTo="3"
-        android:stepSize="1"/>
+        android:stepSize="1" />
 
       <TextView
         style="@style/Widget.Doodle.TextView.Category"
@@ -200,7 +199,7 @@
         style="@style/Widget.Doodle.Slider"
         android:valueFrom="20000"
         android:valueTo="65000"
-        android:stepSize="5000"/>
+        android:stepSize="5000" />
 
       <LinearLayout
         style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine"
@@ -231,7 +230,7 @@
         style="@style/Widget.Doodle.Slider"
         android:valueFrom="1"
         android:valueTo="20"
-        android:stepSize="1"/>
+        android:stepSize="1" />
 
       <LinearLayout
         style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine"
@@ -262,7 +261,7 @@
         style="@style/Widget.Doodle.Slider"
         android:valueFrom="1"
         android:valueTo="10"
-        android:stepSize="1"/>
+        android:stepSize="1" />
 
     </LinearLayout>
 

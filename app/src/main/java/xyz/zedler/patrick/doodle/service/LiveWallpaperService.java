@@ -221,6 +221,7 @@ public class LiveWallpaperService extends WallpaperService {
   // ENGINE ------------------------------------------------------------
 
   class UserAwareEngine extends Engine implements UserPresenceListener {
+
     private boolean useWhiteText;
     private int zoomIntensity;
     private boolean isZoomLauncherEnabled, isZoomUnlockEnabled;
@@ -378,18 +379,18 @@ public class LiveWallpaperService extends WallpaperService {
     }
 
     @Override
-    public Bundle onCommand (
+    public Bundle onCommand(
         final String action, final int x, final int y, final int z, final Bundle extras,
         final boolean resultRequested
     ) {
-      if (action.equals("android.home.drop")){
+      if (action.equals("android.home.drop")) {
         iconDropConsumed = false;
         notifyIconDropped(x, y);
       }
       return super.onCommand(action, x, y, z, extras, resultRequested);
     }
 
-    protected void notifyIconDropped( int x, int y) {
+    protected void notifyIconDropped(int x, int y) {
       if (!iconDropConsumed) {
         iconDropConsumed = true;
       }

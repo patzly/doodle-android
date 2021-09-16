@@ -333,7 +333,8 @@ public class PathParser {
     angleExtent %= 360f;
     angleStart %= 360f;
 
-    RectF oval = new RectF((float) (cx - rx), (float) (cy - ry), (float) (cx + rx), (float) (cy + ry));
+    RectF oval = new RectF((float) (cx - rx), (float) (cy - ry), (float) (cx + rx),
+        (float) (cy + ry));
     path.addArc(oval, (float) angleStart, (float) angleExtent);
   }
 

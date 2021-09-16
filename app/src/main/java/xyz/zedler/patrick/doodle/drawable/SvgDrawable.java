@@ -133,16 +133,18 @@ public class SvgDrawable {
 
   /**
    * Apply random elevation between 0 (no parallax/zoom) to 1 (maximal effects) to all objects
-   * @param min Set the minimal parallax/zoom intensity (good if nothing should be completely still)
+   *
+   * @param min Set the minimal parallax/zoom intensity (good if nothing should be static)
    */
   public void applyRandomElevationToAll(float min) {
     for (SvgObject object : objects) {
-      object.elevation =  min + random.nextFloat() * (1 - min);
+      object.elevation = min + random.nextFloat() * (1 - min);
     }
   }
 
   /**
    * Apply random rotation to all objects, which is applied with the current zoom intensity
+   *
    * @param min Set the minimal rotation in degrees (can be negative)
    * @param max Set the maximal rotation in degrees
    */
@@ -167,7 +169,7 @@ public class SvgDrawable {
       parser.setInput(inputStream, null);
       parser.next();
       readSvg(parser);
-    } catch (XmlPullParserException|IOException e) {
+    } catch (XmlPullParserException | IOException e) {
       Log.e(TAG, "parse: ", e);
     } finally {
       inputStream.close();
@@ -885,6 +887,7 @@ public class SvgDrawable {
   }
 
   public static class SvgObject {
+
     public final static String TYPE_GROUP = "g";
     public final static String TYPE_PATH = "path";
     public final static String TYPE_RECT = "rect";

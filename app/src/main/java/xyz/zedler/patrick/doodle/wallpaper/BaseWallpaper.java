@@ -33,6 +33,7 @@ import androidx.core.graphics.ColorUtils;
 public abstract class BaseWallpaper {
 
   public static class WallpaperVariant {
+
     private final int svgResId;
     private int primaryColor, secondaryColor, tertiaryColor;
     private final boolean isDarkTextSupported;

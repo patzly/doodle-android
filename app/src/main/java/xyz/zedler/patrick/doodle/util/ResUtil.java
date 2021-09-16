@@ -46,7 +46,7 @@ public class ResUtil {
   @NonNull
   public static String getRawText(Context context, @RawRes int resId) {
     InputStream inputStream = context.getResources().openRawResource(resId);
-    BufferedReader bufferedReader= new BufferedReader(new InputStreamReader(inputStream));
+    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
     StringBuilder text = new StringBuilder();
     try {
       for (String line; (line = bufferedReader.readLine()) != null; ) {

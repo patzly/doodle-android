@@ -44,7 +44,6 @@ public class TextBottomSheetDialogFragment extends BaseBottomSheetDialogFragment
   public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle state) {
     binding = FragmentBottomsheetTextBinding.inflate(inflater, container, false);
 
-
     TextBottomSheetDialogFragmentArgs args
         = TextBottomSheetDialogFragmentArgs.fromBundle(getArguments());
 

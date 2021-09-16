@@ -204,12 +204,11 @@ public class BaseBottomSheetDialogFragment extends BottomSheetDialogFragment {
   }
 
   /**
-   * Fix weird behavior of BottomSheetBehavior
-   * Bottom padding is applied although we have turned that off in the theme...
-   * We have to apply it manually to the scroll content container
-   * So we remove it here again
+   * Fix weird behavior of BottomSheetBehavior Bottom padding is applied although we have turned
+   * that off in the theme... We have to apply it manually to the scroll content container, so we
+   * remove it here again
    */
-  private void removeWeirdBottomPadding(View...views) {
+  private void removeWeirdBottomPadding(View... views) {
     for (View view : views) {
       view.setPadding(0, view.getPaddingTop(), 0, 0);
     }
@@ -320,5 +319,6 @@ public class BaseBottomSheetDialogFragment extends BottomSheetDialogFragment {
     activity.performHapticHeavyClick();
   }
 
-  public void applyBottomInset(int bottom) {}
+  public void applyBottomInset(int bottom) {
+  }
 }

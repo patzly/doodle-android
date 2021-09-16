@@ -243,12 +243,11 @@ public class SystemBarBehavior {
           SystemUiUtil.setLightNavigationBar(window);
         }
         if (isOrientationPortrait) {
+          int scrollableColor = isDarkModeActive
+              ? SystemUiUtil.SCRIM_DARK
+              : SystemUiUtil.SCRIM_LIGHT;
           window.setNavigationBarColor(
-              isScrollable
-                  ? (isDarkModeActive
-                      ? SystemUiUtil.SCRIM_DARK
-                      : SystemUiUtil.SCRIM_LIGHT)
-                  : Color.parseColor("#01000000")
+              isScrollable ? scrollableColor : Color.parseColor("#01000000")
           );
         } else {
           window.setNavigationBarDividerColor(
@@ -266,13 +265,10 @@ public class SystemBarBehavior {
         SystemUiUtil.setLightNavigationBar(window);
       }
       if (isOrientationPortrait) {
-        window.setNavigationBarColor(
-            isScrollable
-                ? (isDarkModeActive
-                    ? SystemUiUtil.SCRIM_DARK
-                    : SystemUiUtil.SCRIM_LIGHT)
-                : Color.TRANSPARENT
-        );
+        int scrollableColor = isDarkModeActive
+            ? SystemUiUtil.SCRIM_DARK
+            : SystemUiUtil.SCRIM_LIGHT;
+        window.setNavigationBarColor(isScrollable ? scrollableColor : Color.TRANSPARENT);
       } else {
         window.setNavigationBarDividerColor(
             ContextCompat.getColor(activity, R.color.stroke_secondary)
@@ -285,13 +281,10 @@ public class SystemBarBehavior {
         SystemUiUtil.setLightStatusBar(window);
       }
       if (isOrientationPortrait) {
-        window.setNavigationBarColor(
-            isScrollable
-                ? (isDarkModeActive
-                    ? SystemUiUtil.SCRIM_DARK
-                    : SystemUiUtil.SCRIM_LIGHT)
-                : Color.TRANSPARENT
-        );
+        int scrollableColor = isDarkModeActive
+            ? SystemUiUtil.SCRIM_DARK
+            : SystemUiUtil.SCRIM_LIGHT;
+        window.setNavigationBarColor(isScrollable ? scrollableColor : Color.TRANSPARENT);
         if (!isDarkModeActive) {
           SystemUiUtil.setLightNavigationBar(window);
         }

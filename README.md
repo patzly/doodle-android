@@ -4,8 +4,10 @@
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)  [![Release](https://img.shields.io/github/v/release/patzly/doodle-android?label=Release&logo=github)](https://github.com/patzly/doodle-android/releases)  [![APK Downloads](https://img.shields.io/github/downloads/patzly/doodle-android/total.svg?label=APK%20Downloads&logo=github)](https://github.com/patzly/doodle-android/releases)
 
-Doodle Android is an open-source Android app that provides colorful live wallpapers with auto dark mode and an battery-efficient parallax effect.  
-The wallpapers are based on the original Doodle live wallpapers of the Google Pixel 4. They are completely rewritten, nothing except the look is taken from the original.
+Doodle Android is an open-source Android app that provides colorful live wallpapers with auto dark mode and power-efficient animations.
+
+The wallpapers are based on the original Doodle live wallpaper collection of the Google Pixel 4. Additionally there is an exclusive "Material You"-inspired live wallpaper included.  
+The app is not just a copy of the original wallpapers, it's a complete rewrite without the permanent animations to save battery and storage space. In addition, there are many customization options to match your preferences.
 
 ## Downloads
 
@@ -19,40 +21,37 @@ The wallpapers are based on the original Doodle live wallpapers of the Google Pi
 
 * Stunning wallpaper designs and Pixel feeling
 * System dependent dark mode
-* Power-efficient parallax effect on page swipe
-* Optional zoom-in animations
+* Power-efficient parallax effect on page swipe or when tilting the device
+* Optional zoom effects
 * Direct boot support (immediately active after device restart)
 * No ads and no analytics
 
 ## Advantages over original Pixel 4 live wallpapers
 
-* Permanent animation (when tilting the device) is optional
+* Permanent animations (when tilting the device) are optional
+* Support for Android 12 color extraction
+* Exclusive "Material You"-inspired live wallpaper
 * No battery-hungry 3D engine
 * Improved text contrast (dark text for light themes instead of white text with shadow)
-* Support for Android 11 zoom effect and optional zoom-in animation when unlocking
-* Various customization options
-* Tiny installation size
+* Support for Android 11 zoom effect
+* Many additional customization options
 * Rendering works well even on less powerful devices (very efficient rendering engine)
-
-## How to set as background
-* Tap SET in the top right corner of the app, it should appear a preview
-* Now tap SET WALLPAPER
+* Also suitable for larger devices like tablets (scaling option available)
+* Tiny installation size
 
 ## Compatibility
 
 Doodle Android requires at least Android 6 Marshmallow on your device. The app will work properly on devices without any Google service installed.
 
-You need to turn on background scrolling in your launcher's settings if you have disabled it before to make parallax effect work.
+You need to turn on background scrolling in your launcher's settings if you have disabled it before to make parallax effect work without the tilt effect enabled.
 Some launchers don't support background scrolling at all, like Samsung's TouchWiz. As a solution, please try installing another launcher.
 
 ## Contribution
 
 If you run into a bug or miss a feature, please [open an issue](https://github.com/patzly/doodle-android/issues) in this repository.
 
-Is Doodle Android not yet available in your language? You can help translate this project at [Transifex](https://www.transifex.com/patzly/doodle-android) if your language is incomplete, contains typos or is not available.
+Doodle Android is not yet available in your language? You can help translate this project at [Transifex](https://www.transifex.com/patzly/doodle-android)!  
 Translations which reached a completion level of 80% will be included in releases.
-
-Thanks for your contributions!
 
 ## License
 

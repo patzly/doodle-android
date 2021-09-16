@@ -19,7 +19,8 @@
 
 <animated-vector
   xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:aapt="http://schemas.android.com/aapt">
+  xmlns:aapt="http://schemas.android.com/aapt"
+  android:autoMirrored="true">
   <aapt:attr name="android:drawable">
     <vector
       android:name="vector"

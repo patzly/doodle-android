@@ -93,14 +93,12 @@ public class SizeFragment extends BaseFragment
 
     binding.sliderSizeScale.setValue(getSharedPrefs().getFloat(PREF.SCALE, DEF.SCALE) * 10);
     binding.sliderSizeScale.addOnChangeListener(this);
-    binding.sliderSizeScale.setLabelFormatter(
-        value -> {
-          float scale = value / 10f;
-          return String.format(
-              Locale.getDefault(), scale == 1 || scale == 2 ? "×%.0f" : "×%.1f", scale
-          );
-        }
-    );
+    binding.sliderSizeScale.setLabelFormatter(value -> {
+      float scale = value / 10f;
+      return String.format(
+          Locale.getDefault(), scale == 1 || scale == 2 ? "×%.0f" : "×%.1f", scale
+      );
+    });
 
     binding.sliderSizeZoom.setValue(getSharedPrefs().getInt(PREF.ZOOM, DEF.ZOOM));
     binding.sliderSizeZoom.addOnChangeListener(this);

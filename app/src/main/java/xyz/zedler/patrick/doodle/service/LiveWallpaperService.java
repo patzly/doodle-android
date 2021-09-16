@@ -43,6 +43,7 @@ import android.os.Build.VERSION_CODES;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.service.wallpaper.WallpaperService;
+import android.util.LayoutDirection;
 import android.util.Log;
 import android.util.Pair;
 import android.view.SurfaceHolder;
@@ -243,6 +244,7 @@ public class LiveWallpaperService extends WallpaperService {
     private boolean isListenerRegistered = false;
     private boolean isSurfaceAvailable = false;
     private boolean iconDropConsumed = true;
+    private boolean isRtl = false;
     private float fps;
     private final TimeInterpolator zoomInterpolator = new FastOutSlowInInterpolator();
     private ValueAnimator zoomAnimator;
@@ -362,6 +364,8 @@ public class LiveWallpaperService extends WallpaperService {
       }
 
       handleRefreshRequests();
+
+      isRtl = getResources().getConfiguration().getLayoutDirection() == LayoutDirection.RTL;
 
       svgDrawable.applyRandomElevationToAll(0.1f);
 

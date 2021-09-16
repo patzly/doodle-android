@@ -9,7 +9,7 @@ Advantages over the original:
 - Optional zoom effect when unlocking the device
 - Suitable for less powerful devices with power-efficient and optional animations
 - Improved text contrast (dark text for light themes instead of white text with shadow)
-- Also suitable for larger devices like tablets, scaling option available
+- Also suitable for larger devices like tablets (scaling option available)
 - Many additional customization options
 - Tiny installation size
 

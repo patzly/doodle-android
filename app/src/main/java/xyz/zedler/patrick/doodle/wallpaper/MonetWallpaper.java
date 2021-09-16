@@ -58,9 +58,9 @@ public class MonetWallpaper extends BaseWallpaper {
         ),
         new WallpaperVariant(
             R.raw.wallpaper_monet3,
-            "#e9eec5",
-            "#f2ea45",
-            "#acba78",
+            "#f5f4e2",
+            "#dbec8c",
+            "#caebdf",
             true,
             false
         )
@@ -89,9 +89,9 @@ public class MonetWallpaper extends BaseWallpaper {
         ),
         new WallpaperVariant(
             R.raw.wallpaper_monet3_dark,
-            "#22241f",
-            "#acba78",
-            "#f2ea45",
+            "#171815",
+            "#909b5d",
+            "#badbd0",
             false,
             true
         )

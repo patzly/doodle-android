@@ -91,12 +91,15 @@ public class SizeFragment extends BaseFragment
       }
     });
 
-    binding.sliderSizeScale.setValue(getSharedPrefs().getFloat(PREF.SCALE, DEF.SCALE));
+    binding.sliderSizeScale.setValue(getSharedPrefs().getFloat(PREF.SCALE, DEF.SCALE) * 10);
     binding.sliderSizeScale.addOnChangeListener(this);
     binding.sliderSizeScale.setLabelFormatter(
-        value -> String.format(
-            Locale.getDefault(), value == 1 || value == 2 ? "×%.0f" : "×%.1f", value
-        )
+        value -> {
+          float scale = value / 10f;
+          return String.format(
+              Locale.getDefault(), scale == 1 || scale == 2 ? "×%.0f" : "×%.1f", scale
+          );
+        }
     );
 
     binding.sliderSizeZoom.setValue(getSharedPrefs().getInt(PREF.ZOOM, DEF.ZOOM));
@@ -206,7 +209,7 @@ public class SizeFragment extends BaseFragment
     }
     int id = slider.getId();
     if (id == R.id.slider_size_scale) {
-      getSharedPrefs().edit().putFloat(PREF.SCALE, value).apply();
+      getSharedPrefs().edit().putFloat(PREF.SCALE, value / 10).apply();
       ViewUtil.startIcon(binding.imageSizeScale);
       activity.requestSettingsRefresh();
       performHapticClick();

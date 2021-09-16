@@ -201,30 +201,21 @@
         android:id="@+id/linear_appearance_follow_system"
         style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable">
 
-        <LinearLayout
-          android:id="@+id/linear_appearance_follow_system_container"
-          android:layout_width="0dp"
-          android:layout_height="wrap_content"
-          android:layout_weight="1"
-          android:orientation="horizontal">
+        <ImageView
+          android:id="@+id/image_appearance_follow_system"
+          style="@style/Widget.Doodle.ImageView.ListItem.Icon"
+          android:src="@drawable/ic_round_brightness_auto_anim"
+          tools:ignore="ContentDescription" />
 
-          <ImageView
-            android:id="@+id/image_appearance_follow_system"
-            style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-            android:src="@drawable/ic_round_brightness_auto_anim"
-            tools:ignore="ContentDescription" />
+        <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">
 
-          <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">
+          <TextView
+            style="@style/Widget.Doodle.TextView.ListItem.Title"
+            android:text="@string/appearance_follow_system" />
 
-            <TextView
-              style="@style/Widget.Doodle.TextView.ListItem.Title"
-              android:text="@string/appearance_follow_system" />
-
-            <TextView
-              style="@style/Widget.Doodle.TextView.ListItem.Description"
-              android:text="@string/appearance_follow_system_description" />
-
-          </LinearLayout>
+          <TextView
+            style="@style/Widget.Doodle.TextView.ListItem.Description"
+            android:text="@string/appearance_follow_system_description" />
 
         </LinearLayout>
 

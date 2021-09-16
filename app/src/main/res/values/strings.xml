@@ -104,7 +104,10 @@
   <string name="size_zoom">Zoom intensity</string>
   <string name="size_zoom_description">When increased, the camera zooms out more</string>
   <string name="size_zoom_launcher">Zoom out when opening quick settings or app drawer</string>
+  <string name="size_zoom_system">Use system-provided zoom effect</string>
+  <string name="size_zoom_system_description">Fixes jerky zoom animation when tilt effect is turned on. Requires wallpaper restart to take effect</string>
   <string name="size_zoom_unlock">Zoom out on lockscreen</string>
+  <string name="size_zoom_unlock_description">Might be jerky if tilt effect is turned on.</string>
   <string name="size_zoom_duration">Unlock zoom duration</string>
   <string name="size_zoom_duration_description">Decrease for faster animation</string>
   <string name="size_zoom_rotation">Rotate while zooming</string>

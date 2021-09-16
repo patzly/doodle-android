@@ -105,14 +105,21 @@ public class SizeFragment extends BaseFragment
         value -> String.format(Locale.getDefault(), "%.0f", value)
     );
 
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-      binding.linearSizeZoomLauncher.setVisibility(View.VISIBLE);
-    } else {
-      binding.linearSizeZoomLauncher.setVisibility(View.GONE);
-    }
+    int launcherZoom = Build.VERSION.SDK_INT >= Build.VERSION_CODES.R ? View.VISIBLE : View.GONE;
+
+    binding.linearSizeZoomLauncher.setVisibility(launcherZoom);
     binding.switchSizeZoomLauncher.setChecked(
         getSharedPrefs().getBoolean(PREF.ZOOM_LAUNCHER, DEF.ZOOM_LAUNCHER)
     );
+
+    binding.linearSizeZoomSystem.setVisibility(launcherZoom);
+    binding.linearSizeZoomSystem.setEnabled(binding.switchSizeZoomLauncher.isChecked());
+    binding.linearSizeZoomSystem.setAlpha(binding.switchSizeZoomLauncher.isChecked() ? 1 : 0.5f);
+    binding.switchSizeZoomSystem.setChecked(
+        getSharedPrefs().getBoolean(PREF.ZOOM_SYSTEM, DEF.ZOOM_SYSTEM)
+    );
+    binding.switchSizeZoomSystem.setEnabled(binding.switchSizeZoomLauncher.isChecked());
+
     binding.switchSizeZoomUnlock.setChecked(
         getSharedPrefs().getBoolean(PREF.ZOOM_UNLOCK, DEF.ZOOM_UNLOCK)
     );
@@ -141,12 +148,14 @@ public class SizeFragment extends BaseFragment
         this,
         binding.frameSizeBack,
         binding.linearSizeZoomLauncher,
+        binding.linearSizeZoomSystem,
         binding.linearSizeZoomUnlock
     );
 
     ViewUtil.setOnCheckedChangeListeners(
         this,
         binding.switchSizeZoomLauncher,
+        binding.switchSizeZoomSystem,
         binding.switchSizeZoomUnlock
     );
   }
@@ -158,10 +167,13 @@ public class SizeFragment extends BaseFragment
       performHapticClick();
       getNavController().navigateUp();
     } else if (id == R.id.linear_size_zoom_launcher) {
-      ViewUtil.startIcon(binding.imageSizeZoom);
+      ViewUtil.startIcon(binding.imageSizeZoomLauncher);
       binding.switchSizeZoomLauncher.setChecked(!binding.switchSizeZoomLauncher.isChecked());
+    } else if (id == R.id.linear_size_zoom_system && binding.switchSizeZoomLauncher.isChecked()) {
+      ViewUtil.startIcon(binding.imageSizeZoomLauncher);
+      binding.switchSizeZoomSystem.setChecked(!binding.switchSizeZoomSystem.isChecked());
     } else if (id == R.id.linear_size_zoom_unlock) {
-      ViewUtil.startIcon(binding.imageSizeZoom);
+      ViewUtil.startIcon(binding.imageSizeZoomUnlock);
       binding.switchSizeZoomUnlock.setChecked(!binding.switchSizeZoomUnlock.isChecked());
     }
   }
@@ -171,6 +183,13 @@ public class SizeFragment extends BaseFragment
     int id = buttonView.getId();
     if (id == R.id.switch_size_zoom_launcher) {
       getSharedPrefs().edit().putBoolean(PREF.ZOOM_LAUNCHER, isChecked).apply();
+      activity.requestSettingsRefresh();
+      performHapticClick();
+      binding.switchSizeZoomSystem.setEnabled(isChecked);
+      binding.linearSizeZoomSystem.setEnabled(isChecked);
+      binding.linearSizeZoomSystem.animate().alpha(isChecked ? 1 : 0.5f).setDuration(200).start();
+    } else if (id == R.id.switch_size_zoom_system) {
+      getSharedPrefs().edit().putBoolean(PREF.ZOOM_SYSTEM, isChecked).apply();
       activity.requestSettingsRefresh();
       performHapticClick();
     } else if (id == R.id.switch_size_zoom_unlock) {

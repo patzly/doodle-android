@@ -115,11 +115,8 @@ public class AppearanceFragment extends BaseFragment
         getSharedPrefs().getBoolean(PREF.FOLLOW_SYSTEM, DEF.FOLLOW_SYSTEM)
     );
     binding.switchAppearanceFollowSystem.setEnabled(binding.switchAppearanceNightMode.isChecked());
-
-    binding.linearAppearanceFollowSystem.setEnabled(
-        binding.switchAppearanceNightMode.isChecked()
-    );
-    binding.linearAppearanceFollowSystemContainer.setAlpha(
+    binding.linearAppearanceFollowSystem.setEnabled(binding.switchAppearanceNightMode.isChecked());
+    binding.linearAppearanceFollowSystem.setAlpha(
         binding.switchAppearanceNightMode.isChecked() ? 1 : 0.5f
     );
 
@@ -214,7 +211,7 @@ public class AppearanceFragment extends BaseFragment
       performHapticClick();
       binding.switchAppearanceFollowSystem.setEnabled(isChecked);
       binding.linearAppearanceFollowSystem.setEnabled(isChecked);
-      binding.linearAppearanceFollowSystemContainer.animate()
+      binding.linearAppearanceFollowSystem.animate()
           .alpha(isChecked ? 1 : 0.5f)
           .setDuration(200)
           .start();

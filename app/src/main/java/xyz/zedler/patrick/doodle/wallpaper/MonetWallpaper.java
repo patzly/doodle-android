@@ -41,10 +41,24 @@ public class MonetWallpaper extends BaseWallpaper {
   public WallpaperVariant[] getVariants() {
     return new WallpaperVariant[]{
         new WallpaperVariant(
-            R.raw.wallpaper_monet,
+            R.raw.wallpaper_monet1,
             "#fcedea",
             "#924642",
             "#fbdeac",
+            true
+        ),
+        new WallpaperVariant(
+            R.raw.wallpaper_monet2,
+            "#634b67",
+            "#dbd870",
+            "#ff45c9",
+            false
+        ),
+        new WallpaperVariant(
+            R.raw.wallpaper_monet3,
+            "#e9eec5",
+            "#f2ea45",
+            "#acba78",
             true
         )
     };
@@ -55,10 +69,24 @@ public class MonetWallpaper extends BaseWallpaper {
   public WallpaperVariant[] getDarkVariants() {
     return new WallpaperVariant[]{
         new WallpaperVariant(
-            R.raw.wallpaper_monet_dark,
+            R.raw.wallpaper_monet1_dark,
             "#222020",
-            "#443635",
-            "#4a4337",
+            "#924642",
+            null,
+            false
+        ),
+        new WallpaperVariant(
+            R.raw.wallpaper_monet2_dark,
+            "#231f24",
+            "#ff45c9",
+            "#dbd870",
+            false
+        ),
+        new WallpaperVariant(
+            R.raw.wallpaper_monet3_dark,
+            "#22241f",
+            "#acba78",
+            "#f2ea45",
             false
         )
     };

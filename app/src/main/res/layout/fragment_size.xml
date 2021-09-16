@@ -161,9 +161,6 @@
       <LinearLayout
         android:id="@+id/linear_size_zoom_launcher"
         style="@style/Widget.Doodle.LinearLayout.ListItem.SingleLine.Clickable"
-        android:paddingTop="12dp"
-        android:paddingBottom="12dp"
-        android:minHeight="0dp"
         android:background="@drawable/ripple_bg_list_item">
 
         <ImageView
@@ -187,11 +184,37 @@
       </LinearLayout>
 
       <LinearLayout
+        android:id="@+id/linear_size_zoom_system"
+        style="@style/Widget.Doodle.LinearLayout.ListItem.SingleLine.Clickable"
+        android:layout_marginStart="48dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+
+        <LinearLayout
+          style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch"
+          android:layout_marginStart="8dp">
+
+          <TextView
+            style="@style/Widget.Doodle.TextView.ListItem.Title"
+            android:text="@string/size_zoom_system" />
+
+          <TextView
+            style="@style/Widget.Doodle.TextView.ListItem.Description"
+            android:text="@string/size_zoom_system_description" />
+
+        </LinearLayout>
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+          android:id="@+id/switch_size_zoom_system"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="16dp" />
+
+      </LinearLayout>
+
+      <LinearLayout
         android:id="@+id/linear_size_zoom_unlock"
         style="@style/Widget.Doodle.LinearLayout.ListItem.SingleLine.Clickable"
-        android:paddingTop="12dp"
-        android:paddingBottom="12dp"
-        android:minHeight="0dp"
         android:background="@drawable/ripple_bg_list_item">
 
         <ImageView
@@ -200,11 +223,17 @@
           android:src="@drawable/ic_round_screen_lock_portrait"
           tools:ignore="ContentDescription" />
 
-        <TextView
-          style="@style/Widget.Doodle.TextView.ListItem.Title"
-          android:layout_width="0dp"
-          android:layout_weight="1"
-          android:text="@string/size_zoom_unlock" />
+        <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">
+
+          <TextView
+            style="@style/Widget.Doodle.TextView.ListItem.Title"
+            android:text="@string/size_zoom_unlock" />
+
+          <TextView
+            style="@style/Widget.Doodle.TextView.ListItem.Description"
+            android:text="@string/size_zoom_unlock_description" />
+
+        </LinearLayout>
 
         <com.google.android.material.switchmaterial.SwitchMaterial
           android:id="@+id/switch_size_zoom_unlock"

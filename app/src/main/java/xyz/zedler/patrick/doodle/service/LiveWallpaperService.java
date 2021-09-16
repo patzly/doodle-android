@@ -225,6 +225,7 @@ public class LiveWallpaperService extends WallpaperService {
     private boolean isZoomLauncherEnabled, isZoomUnlockEnabled;
     private float zoomLauncher;
     private float zoomUnlock;
+    private boolean useSystemZoom;
     private float scale;
     private int parallax;
     private int zoomRotation;
@@ -427,6 +428,7 @@ public class LiveWallpaperService extends WallpaperService {
       zoomIntensity = sharedPrefs.getInt(PREF.ZOOM, DEF.ZOOM);
       isZoomLauncherEnabled = sharedPrefs.getBoolean(PREF.ZOOM_LAUNCHER, DEF.ZOOM_LAUNCHER);
       isZoomUnlockEnabled = sharedPrefs.getBoolean(PREF.ZOOM_UNLOCK, DEF.ZOOM_UNLOCK);
+      useSystemZoom = sharedPrefs.getBoolean(PREF.ZOOM_SYSTEM, DEF.ZOOM_SYSTEM);
       zoomDuration = sharedPrefs.getInt(PREF.ZOOM_DURATION, DEF.ZOOM_DURATION);
 
       zoomRotation = sharedPrefs.getInt(PREF.ZOOM_ROTATION, DEF.ZOOM_ROTATION);
@@ -509,14 +511,16 @@ public class LiveWallpaperService extends WallpaperService {
      */
     public boolean shouldZoomOutWallpaper() {
       // Return true and clear onZoomChanged if we don't want a custom zoom animation
-      return false;
+      return isZoomLauncherEnabled && useSystemZoom;
     }
 
     @Override
     public void onZoomChanged(float zoom) {
-      if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R && zoomIntensity > 0) {
-        zoomLauncher = zoomInterpolator.getInterpolation(zoom);
-        drawFrame(false, REQUEST_SOURCE.ZOOM_LAUNCHER);
+      if (!useSystemZoom) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R && zoomIntensity > 0) {
+          zoomLauncher = zoomInterpolator.getInterpolation(zoom);
+          drawFrame(false, REQUEST_SOURCE.ZOOM_LAUNCHER);
+        }
       }
     }
 

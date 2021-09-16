@@ -32,6 +32,11 @@
   <string name="title_feedback">Rückmeldung</string>
   <string name="title_licenses">Open-Source-Lizenzen</string>
 
+  <!-- LABELS -->
+
+  <string name="label_ms">%1$sms</string>
+  <string name="label_degrees">%1$s°</string>
+
   <!-- ACTIONS -->
 
   <string name="action_close">Schließen</string>
@@ -89,9 +94,14 @@
   <string name="size_zoom">Zoomstärke</string>
   <string name="size_zoom_description">Je höher, desto weiter wird herausgezoomt</string>
   <string name="size_zoom_launcher">Beim Öffnen der Schnelleinstellungen oder des App-Drawers herauszoomen</string>
+  <string name="size_zoom_system">Zoom-Effekt des Systems nutzen</string>
+  <string name="size_zoom_system_description">Behebt die ruckelige Zoom-Animation bei eingeschaltetem Neigungs-Effekt. Wird erst nach Neustart des Hintergrunds übernommen</string>
   <string name="size_zoom_unlock">Auf dem Sperrbildschirm herauszoomen</string>
+  <string name="size_zoom_unlock_description">Eventuell ruckelig, wenn der Neigungs-Effekt eingeschaltet ist</string>
   <string name="size_zoom_duration">Zoom-Dauer beim Entsperren</string>
   <string name="size_zoom_duration_description">Verringern für schnellere Animationen</string>
+  <string name="size_zoom_rotation">Drehen während des Zoomens</string>
+  <string name="size_zoom_rotation_description">Maximale Drehung in Grad</string>
 
   <!-- OTHER -->
 

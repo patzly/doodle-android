@@ -171,6 +171,9 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
   }
 
   private void setFabVisibility(boolean visible, boolean animated) {
+    if (binding == null) {
+      return;
+    }
     if (animated) {
       binding.fabMain.animate()
           .translationY(visible ? 0 : fabTopEdgeDistance + bottomInset)

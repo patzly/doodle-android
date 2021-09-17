@@ -74,16 +74,16 @@ public class MonetWallpaper extends BaseWallpaper {
         new WallpaperVariant(
             R.raw.wallpaper_monet1_dark,
             "#222020",
-            "#924642",
-            null,
+            "#9a726e",
+            "#dac095",
             false,
             true
         ),
         new WallpaperVariant(
             R.raw.wallpaper_monet2_dark,
             "#231f24",
-            "#ff45c9",
-            "#dbd870",
+            "#634b67",
+            "#c9c767",
             false,
             true
         ),

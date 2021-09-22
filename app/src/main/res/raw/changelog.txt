@@ -1,5 +1,6 @@
 4.0.1:
 - Improved: Material You wallpaper variants
+- Improved: start page layout
 - Fixed: crash at start
 
 4.0.0:

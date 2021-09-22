@@ -183,6 +183,12 @@
     <item name="android:importantForAccessibility">no</item>
   </style>
 
+  <style name="Widget.Doodle.ImageView.ListItem.Icon.End" parent="Widget.Doodle.ImageView.ListItem.Icon">
+    <item name="android:layout_gravity">end|center_vertical</item>
+    <item name="android:layout_marginStart">16dp</item>
+    <item name="android:layout_marginEnd">0dp</item>
+  </style>
+
   <!-- TEXT -->
 
   <style name="Widget.Doodle.TextView" parent="Widget.MaterialComponents.TextView">

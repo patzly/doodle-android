@@ -23,6 +23,7 @@ import android.animation.TimeInterpolator;
 import android.animation.ValueAnimator;
 import android.app.KeyguardManager;
 import android.app.WallpaperColors;
+import android.app.WallpaperManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -383,7 +384,7 @@ public class LiveWallpaperService extends WallpaperService {
         final String action, final int x, final int y, final int z, final Bundle extras,
         final boolean resultRequested
     ) {
-      if (action.equals("android.home.drop")) {
+      if (action.equals(WallpaperManager.COMMAND_DROP)) {
         iconDropConsumed = false;
         notifyIconDropped(x, y);
       }

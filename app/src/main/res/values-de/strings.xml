@@ -101,7 +101,7 @@
   <string name="size_zoom_duration">Zoom-Dauer beim Entsperren</string>
   <string name="size_zoom_duration_description">Verringern für schnellere Animationen</string>
   <string name="size_zoom_rotation">Drehen während des Zoomens</string>
-  <string name="size_zoom_rotation_description">Maximale Drehung in Grad, wird nur von ein paar Hintergründen unterstützt</string>
+  <string name="size_zoom_rotation_description">Maximale Drehung in Grad</string>
 
   <!-- OTHER -->
 

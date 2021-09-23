@@ -78,6 +78,13 @@ public final class Constants {
     public final static boolean LAUNCHER = false;
   }
 
+  public final static class DESIGN {
+
+    public final static String DOODLE = "doodle";
+    public final static String MONET = "monet";
+    public final static String ANNA = "anna";
+  }
+
   public final static class WALLPAPER {
 
     public final static String PIXEL = "pixel";

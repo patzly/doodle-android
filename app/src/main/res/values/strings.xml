@@ -66,6 +66,9 @@
   <string name="appearance_title">Appearance</string>
   <string name="appearance_description">Design &amp; theme options</string>
   <string name="appearance_design">Design</string>
+  <string name="appearance_design_doodle">Original Pixel 4 Doodle Collection</string>
+  <string name="appearance_design_monet">Inspired by Material You</string>
+  <string name="appearance_design_anna">Live wallpapers à l\'Anna Kövecses</string>
   <string name="appearance_variant">Variant</string>
   <string name="appearance_night_mode">Night mode</string>
   <string name="appearance_night_mode_description">Only dark colors</string>

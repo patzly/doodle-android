@@ -1,7 +1,8 @@
 4.0.1:
+- New: live wallpaper based on a static Chrome OS wallpaper by Anna Kövecses
 - Improved: Material You wallpaper variants
-- Improved: additional color variant
-- Improved: start page layout
+- Improved: additional color variant for Doodle collection
+- Improved: start page layout and wallpaper selection
 - Fixed: crash at start
 
 4.0.0:

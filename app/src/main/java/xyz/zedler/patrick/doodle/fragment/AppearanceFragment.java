@@ -38,6 +38,7 @@ import androidx.core.content.res.ResourcesCompat;
 import com.google.android.material.card.MaterialCardView;
 import xyz.zedler.patrick.doodle.Constants;
 import xyz.zedler.patrick.doodle.Constants.DEF;
+import xyz.zedler.patrick.doodle.Constants.DESIGN;
 import xyz.zedler.patrick.doodle.Constants.PREF;
 import xyz.zedler.patrick.doodle.Constants.WALLPAPER;
 import xyz.zedler.patrick.doodle.R;
@@ -131,43 +132,9 @@ public class AppearanceFragment extends BaseFragment
         getSharedPrefs().getBoolean(PREF.USE_WHITE_TEXT, DEF.USE_WHITE_TEXT)
     );
 
-    BaseWallpaper[] baseWallpapers = new BaseWallpaper[]{
-        new PixelWallpaper(),
-        new JohannaWallpaper(),
-        new ReikoWallpaper(),
-        new AnthonyWallpaper(),
-        new MonetWallpaper(),
-        new FogWallpaper()
-    };
-    for (BaseWallpaper wallpaper : baseWallpapers) {
-      MaterialCardView card = getNewSelectionCard();
-      ImageView thumbnail = new ImageView(activity);
-      thumbnail.setLayoutParams(
-          new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT)
-      );
-      thumbnail.setImageResource(wallpaper.getThumbnailResId());
-      card.addView(thumbnail);
-      card.setOnClickListener(v -> {
-        if (!card.isChecked()) {
-          ViewUtil.startIcon(binding.imageAppearanceWallpaper);
-          ViewUtil.startIcon(card.getCheckedIcon());
-          performHapticClick();
-          uncheckAllChildren(binding.linearAppearanceWallpaperContainer);
-          card.setChecked(true);
-          refreshVariantSelection(wallpaper, true);
-          getSharedPrefs().edit().putString(PREF.WALLPAPER, wallpaper.getName()).apply();
-          activity.requestThemeRefresh();
-        }
-      });
-      boolean isSelected = getSharedPrefs().getString(
-          PREF.WALLPAPER, WALLPAPER.PIXEL
-      ).equals(wallpaper.getName());
-      card.setChecked(isSelected);
-      if (isSelected) {
-        refreshVariantSelection(wallpaper, false);
-      }
-      binding.linearAppearanceWallpaperContainer.addView(card);
-    }
+    setUpDesignSelections(DESIGN.DOODLE);
+    setUpDesignSelections(DESIGN.MONET);
+    setUpDesignSelections(DESIGN.ANNA);
 
     ViewUtil.setOnClickListeners(
         this,
@@ -239,6 +206,67 @@ public class AppearanceFragment extends BaseFragment
     }
   }
 
+  private void setUpDesignSelections(String design) {
+    BaseWallpaper[] baseWallpapers;
+    ViewGroup container;
+    switch (design) {
+      case DESIGN.MONET:
+        baseWallpapers = new BaseWallpaper[]{
+            new MonetWallpaper()
+        };
+        container = binding.linearAppearanceWallpaperContainerMonet;
+        break;
+      case DESIGN.ANNA:
+        baseWallpapers = new BaseWallpaper[]{
+            new FogWallpaper()
+        };
+        container = binding.linearAppearanceWallpaperContainerAnna;
+        break;
+      default:
+        baseWallpapers = new BaseWallpaper[]{
+            new PixelWallpaper(),
+            new JohannaWallpaper(),
+            new ReikoWallpaper(),
+            new AnthonyWallpaper()
+        };
+        container = binding.linearAppearanceWallpaperContainerDoodle;
+        break;
+    }
+    for (BaseWallpaper wallpaper : baseWallpapers) {
+      MaterialCardView card = getNewSelectionCard();
+      ImageView thumbnail = new ImageView(activity);
+      thumbnail.setLayoutParams(
+          new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT)
+      );
+      thumbnail.setImageResource(wallpaper.getThumbnailResId());
+      card.addView(thumbnail);
+      card.setOnClickListener(v -> {
+        if (!card.isChecked()) {
+          ViewUtil.startIcon(binding.imageAppearanceWallpaper);
+          ViewUtil.startIcon(card.getCheckedIcon());
+          performHapticClick();
+          uncheckAllChildren(
+              binding.linearAppearanceWallpaperContainerDoodle,
+              binding.linearAppearanceWallpaperContainerMonet,
+              binding.linearAppearanceWallpaperContainerAnna
+          );
+          card.setChecked(true);
+          refreshVariantSelection(wallpaper, true);
+          getSharedPrefs().edit().putString(PREF.WALLPAPER, wallpaper.getName()).apply();
+          activity.requestThemeRefresh();
+        }
+      });
+      boolean isSelected = getSharedPrefs().getString(
+          PREF.WALLPAPER, WALLPAPER.PIXEL
+      ).equals(wallpaper.getName());
+      card.setChecked(isSelected);
+      if (isSelected) {
+        refreshVariantSelection(wallpaper, false);
+      }
+      container.addView(card);
+    }
+  }
+
   private void refreshVariantSelection(BaseWallpaper wallpaper, boolean animated) {
     if (animated) {
       binding.linearAppearanceVariantContainer.animate().alpha(0).withEndAction(() -> {
@@ -307,11 +335,13 @@ public class AppearanceFragment extends BaseFragment
     return card;
   }
 
-  private void uncheckAllChildren(ViewGroup viewGroup) {
-    for (int i = 0; i < viewGroup.getChildCount(); i++) {
-      View child = viewGroup.getChildAt(i);
-      if (child instanceof MaterialCardView) {
-        ((MaterialCardView) child).setChecked(false);
+  private void uncheckAllChildren(ViewGroup... viewGroups) {
+    for (ViewGroup viewGroup : viewGroups) {
+      for (int i = 0; i < viewGroup.getChildCount(); i++) {
+        View child = viewGroup.getChildAt(i);
+        if (child instanceof MaterialCardView) {
+          ((MaterialCardView) child).setChecked(false);
+        }
       }
     }
   }

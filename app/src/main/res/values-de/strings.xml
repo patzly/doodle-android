@@ -19,9 +19,7 @@
   ~ Copyright (c) 2020-2021 by Patrick Zedler
   -->
 
-<resources
-  xmlns:tools="http://schemas.android.com/tools"
-  tools:ignore="MissingTranslation">
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
   <string name="wallpaper_description">Ein farbenfroher Live-Hintergrund mit Nachtmodus und akku-effizienten Animationen. Tippen, um mehr zu erfahren.</string>
   <string name="wallpaper_description_picker">Entdecke eine farbenfrohe Sammlung von Formen, verfeinert mit sanften Parallax- und Zoom-Effekten beim Wechseln zwischen deinen Startbildschirmen und Entsperren deines Geräts.\nPasse den Hintergrund mit mehreren Optionen an deinen eigenen Stil an.</string>
@@ -58,6 +56,9 @@
   <string name="appearance_title">Aussehen</string>
   <string name="appearance_description">Design &amp; Theme-Optionen</string>
   <string name="appearance_design">Design</string>
+  <string name="appearance_design_doodle">Original Pixel 4 Doodle-Kollektion</string>
+  <string name="appearance_design_monet">Inspiriert von Material You</string>
+  <string name="appearance_design_anna">Live-Hintergründe à l\'Anna Kövecses</string>
   <string name="appearance_variant">Variation</string>
   <string name="appearance_night_mode">Nachtmodus</string>
   <string name="appearance_night_mode_description">Abgedunkelte Farben</string>
@@ -101,7 +102,7 @@
   <string name="size_zoom_duration">Zoom-Dauer beim Entsperren</string>
   <string name="size_zoom_duration_description">Verringern für schnellere Animationen</string>
   <string name="size_zoom_rotation">Drehen während des Zoomens</string>
-  <string name="size_zoom_rotation_description">Maximale Drehung in Grad</string>
+  <string name="size_zoom_rotation_description">Maximale Drehung in Grad, wird nur von ein paar Hintergründen unterstützt</string>
 
   <!-- OTHER -->
 

@@ -19,9 +19,7 @@
   ~ Copyright (c) 2020-2021 by Patrick Zedler
   -->
 
-<resources
-  xmlns:tools="http://schemas.android.com/tools"
-  tools:ignore="MissingTranslation">
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
   <string name="wallpaper_description">Fondos de pantalla animados coloridos con modo oscuro automático y animaciones de bajo consumo. Toque para obtener más información.</string>
   <string name="wallpaper_description_picker">Explora una colección colorida de formas, refinadas con suaves efectos de paralaje y zoom cuando pasas el dedo por las pantallas de inicio y desbloqueas el teléfono.\nPersonaliza el fondo de pantalla para que combine con tu propio estilo.</string>

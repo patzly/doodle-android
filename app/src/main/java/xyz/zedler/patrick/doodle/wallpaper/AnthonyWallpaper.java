@@ -47,6 +47,14 @@ public class AnthonyWallpaper extends BaseWallpaper {
             "#47484a",
             true,
             false
+        ),
+        new WallpaperVariant(
+            R.raw.wallpaper_anthony2,
+            "#608ca5",
+            "#fccbb5",
+            "#fefffe",
+            false,
+            true
         )
     };
   }
@@ -60,6 +68,14 @@ public class AnthonyWallpaper extends BaseWallpaper {
             "#212121",
             "#5b5a5a",
             null,
+            false,
+            true
+        ),
+        new WallpaperVariant(
+            R.raw.wallpaper_anthony2_dark,
+            "#212121",
+            "#997c6e",
+            "#32393c",
             false,
             true
         )

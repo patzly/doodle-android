@@ -1,4 +1,4 @@
-4.0.1:
+4.1.0:
 - New: live wallpaper based on a static Chrome OS wallpaper by Anna Kövecses
 - Improved: Material You wallpaper variants
 - Improved: additional color variant for Doodle collection

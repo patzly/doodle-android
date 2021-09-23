@@ -25,6 +25,10 @@ import xyz.zedler.patrick.doodle.R;
 
 public class MonetWallpaper extends BaseWallpaper {
 
+  public MonetWallpaper() {
+    setRotationSupported(true);
+  }
+
   @NonNull
   @Override
   public String getName() {

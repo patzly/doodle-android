@@ -109,7 +109,7 @@
   <string name="size_zoom_duration">Unlock zoom duration</string>
   <string name="size_zoom_duration_description">Decrease for faster animation</string>
   <string name="size_zoom_rotation">Rotate while zooming</string>
-  <string name="size_zoom_rotation_description">Maximum rotation in degrees</string>
+  <string name="size_zoom_rotation_description">Maximum rotation in degrees, only supported by some wallpapers</string>
 
   <!-- OTHER -->
 

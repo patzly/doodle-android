@@ -25,6 +25,10 @@ import xyz.zedler.patrick.doodle.R;
 
 public class PixelWallpaper extends BaseWallpaper {
 
+  public PixelWallpaper() {
+    setRotationSupported(true);
+  }
+
   @NonNull
   @Override
   public String getName() {

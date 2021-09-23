@@ -174,7 +174,7 @@ public class LiveWallpaperService extends WallpaperService {
       // Prevent NullPointerExceptions
       svgDrawable = new SvgDrawable(this, R.raw.wallpaper_pixel1);
     }
-    if (wallpaper.hasStaticDepth()) {
+    if (wallpaper.isDepthStatic()) {
       svgDrawable.applyRelativeElevationToAll(0.3f);
     }
   }
@@ -375,11 +375,11 @@ public class LiveWallpaperService extends WallpaperService {
 
       isRtl = getResources().getConfiguration().getLayoutDirection() == View.LAYOUT_DIRECTION_RTL;
 
-      if (!wallpaper.hasStaticDepth()) {
+      if (!wallpaper.isDepthStatic()) {
         svgDrawable.applyRandomElevationToAll(0.1f);
       }
 
-      int degrees = zoomRotation != 0 ? zoomRotation : 0;
+      int degrees = zoomRotation != 0 && wallpaper.isRotationSupported() ? zoomRotation : 0;
       svgDrawable.applyRandomZoomRotationToAll(-degrees, degrees);
 
       updateOffset(true, null);

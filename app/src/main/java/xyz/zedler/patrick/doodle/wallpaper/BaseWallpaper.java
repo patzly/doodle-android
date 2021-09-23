@@ -33,7 +33,8 @@ import androidx.core.graphics.ColorUtils;
 
 public abstract class BaseWallpaper {
 
-  private boolean staticDepth = false;
+  private boolean isDepthStatic = false;
+  private boolean isRotationSupported = false;
 
   public static class WallpaperVariant {
 
@@ -115,10 +116,18 @@ public abstract class BaseWallpaper {
   public abstract WallpaperVariant[] getDarkVariants();
 
   public void setStaticDepthEnabled(boolean enabled) {
-    staticDepth = enabled;
+    isDepthStatic = enabled;
   }
 
-  public boolean hasStaticDepth() {
-    return staticDepth;
+  public boolean isDepthStatic() {
+    return isDepthStatic;
+  }
+
+  public void setRotationSupported(boolean supported) {
+    isRotationSupported = supported;
+  }
+
+  public boolean isRotationSupported() {
+    return isRotationSupported;
   }
 }

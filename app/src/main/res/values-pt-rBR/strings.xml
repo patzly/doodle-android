@@ -19,9 +19,7 @@
   ~ Copyright (c) 2020-2021 by Patrick Zedler
   -->
 
-<resources
-  xmlns:tools="http://schemas.android.com/tools"
-  tools:ignore="MissingTranslation">
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
   <string name="wallpaper_description">Papel de parede animado colorido com modo de escurecimento automático e animações com eficiência energética. Toque para saber mais.</string>
   <string name="wallpaper_description_picker">Explore uma coleção colorida de formas, refinadas com efeitos suaves de paralaxe e zoom quando você desliza pelas telas iniciais e desbloqueia o telefone.\nPersonalize o papel de parede para combinar com seu próprio estilo.</string>

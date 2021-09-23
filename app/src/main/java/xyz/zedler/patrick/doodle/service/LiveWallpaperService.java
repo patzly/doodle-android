@@ -65,6 +65,7 @@ import xyz.zedler.patrick.doodle.util.PrefsUtil;
 import xyz.zedler.patrick.doodle.wallpaper.AnthonyWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.BaseWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.BaseWallpaper.WallpaperVariant;
+import xyz.zedler.patrick.doodle.wallpaper.FogWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.JohannaWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.MonetWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.PixelWallpaper;
@@ -172,6 +173,9 @@ public class LiveWallpaperService extends WallpaperService {
     if (svgDrawable == null) {
       // Prevent NullPointerExceptions
       svgDrawable = new SvgDrawable(this, R.raw.wallpaper_pixel1);
+    }
+    if (wallpaper.hasStaticDepth()) {
+      svgDrawable.applyRelativeElevationToAll(0.3f);
     }
   }
 
@@ -371,7 +375,9 @@ public class LiveWallpaperService extends WallpaperService {
 
       isRtl = getResources().getConfiguration().getLayoutDirection() == View.LAYOUT_DIRECTION_RTL;
 
-      svgDrawable.applyRandomElevationToAll(0.1f);
+      if (!wallpaper.hasStaticDepth()) {
+        svgDrawable.applyRandomElevationToAll(0.1f);
+      }
 
       int degrees = zoomRotation != 0 ? zoomRotation : 0;
       svgDrawable.applyRandomZoomRotationToAll(-degrees, degrees);
@@ -461,6 +467,9 @@ public class LiveWallpaperService extends WallpaperService {
           break;
         case WALLPAPER.MONET:
           wallpaper = new MonetWallpaper();
+          break;
+        case WALLPAPER.FOG:
+          wallpaper = new FogWallpaper();
           break;
         default:
           wallpaper = new PixelWallpaper();

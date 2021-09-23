@@ -33,6 +33,8 @@ import androidx.core.graphics.ColorUtils;
 
 public abstract class BaseWallpaper {
 
+  private boolean staticDepth = false;
+
   public static class WallpaperVariant {
 
     private final int svgResId;
@@ -111,4 +113,12 @@ public abstract class BaseWallpaper {
 
   @NonNull
   public abstract WallpaperVariant[] getDarkVariants();
+
+  public void setStaticDepthEnabled(boolean enabled) {
+    staticDepth = enabled;
+  }
+
+  public boolean hasStaticDepth() {
+    return staticDepth;
+  }
 }

@@ -73,6 +73,7 @@ public class SvgDrawable {
   private final RectF rectF;
   private PointF pointF;
   private final Random random;
+  private boolean staticDepth = false;
 
   public SvgDrawable(Context context, @RawRes int resId) {
     pixelUnit = SystemUiUtil.dpToPx(context, 1) * 0.33f;
@@ -139,6 +140,19 @@ public class SvgDrawable {
   public void applyRandomElevationToAll(float min) {
     for (SvgObject object : objects) {
       object.elevation = min + random.nextFloat() * (1 - min);
+    }
+  }
+
+  /**
+   * Apply elevation between 0 (no parallax/zoom) to 1 (maximal effects) to all objects in the
+   * original order
+   *
+   * @param min Set the minimal parallax/zoom intensity (good if nothing should be static)
+   */
+  public void applyRelativeElevationToAll(float min) {
+    float step = (1 - min) / objects.size();
+    for (int i = 0; i < objects.size(); i++) {
+      objects.get(i).elevation = Math.min(min + step * i, 1);
     }
   }
 

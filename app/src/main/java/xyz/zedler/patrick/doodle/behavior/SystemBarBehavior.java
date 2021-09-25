@@ -313,6 +313,17 @@ public class SystemBarBehavior {
                 : SystemUiUtil.SCRIM
         );
       }
+    } else { // 21
+      window.setStatusBarColor(isDarkModeActive ? Color.TRANSPARENT : SystemUiUtil.SCRIM);
+      if (isOrientationPortrait) {
+        window.setNavigationBarColor(
+            isDarkModeActive
+                ? (isScrollable ? SystemUiUtil.SCRIM_DARK : Color.TRANSPARENT)
+                : SystemUiUtil.SCRIM
+        );
+      } else {
+        window.setNavigationBarColor(Color.BLACK);
+      }
     }
   }
 

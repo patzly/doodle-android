@@ -19,6 +19,7 @@
 
 package xyz.zedler.patrick.doodle.fragment;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -90,7 +91,7 @@ public class OverviewFragment extends BaseFragment implements OnClickListener {
 
     binding.frameOverviewClose.setVisibility(startedFromLauncher ? View.GONE : View.VISIBLE);
     binding.frameOverviewLogo.setVisibility(startedFromLauncher ? View.VISIBLE : View.GONE);
-    if (startedFromLauncher) {
+    if (startedFromLauncher && Build.VERSION.SDK_INT > Build.VERSION_CODES.M) {
       binding.appBarOverview.setOnClickListener(v -> {
         if (viewUtilLogo.isClickEnabled()) {
           ViewUtil.startIcon(binding.imageOverviewLogo);

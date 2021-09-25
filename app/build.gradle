@@ -31,7 +31,7 @@ android {
 
     defaultConfig {
         applicationId "xyz.zedler.patrick.doodle"
-        minSdkVersion 23
+        minSdkVersion 21
         targetSdkVersion 31
         versionCode 29
         versionName "4.1.0"

@@ -280,7 +280,7 @@ public class BaseBottomSheetDialogFragment extends BottomSheetDialogFragment {
             isDarkModeActive ? SystemUiUtil.SCRIM_DARK_DIALOG : SystemUiUtil.SCRIM_LIGHT_DIALOG
         );
       }
-    } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) { // 23
+    } else  { // down to 21
       if (isOrientationPortraitOrNavAtBottom) {
         window.setNavigationBarColor(
             isDarkModeActive

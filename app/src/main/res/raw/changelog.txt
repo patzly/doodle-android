@@ -1,5 +1,6 @@
 4.1.0:
 - New: live wallpaper based on a static Chrome OS wallpaper by Anna Kövecses
+- New: support for Android versions down to Android 5
 - Improved: Material You wallpaper variants
 - Improved: additional color variant for Doodle collection
 - Improved: start page layout and wallpaper selection

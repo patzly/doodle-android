@@ -5,6 +5,8 @@
 - Improved: start page layout and wallpaper selection
 - Fixed: crash at start
 
+Please consider translating this app into your language at Transifex. There are less than 90 strings to translate!
+
 4.0.0:
 - New: completely rewritten and reorganized settings app
 - New: "Material You"-inspired wallpaper

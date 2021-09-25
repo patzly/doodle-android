@@ -19,6 +19,7 @@
 
 package xyz.zedler.patrick.doodle.activity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.drawable.LayerDrawable;
 import android.os.Build;
@@ -31,6 +32,7 @@ import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.behavior.SystemBarBehavior;
 import xyz.zedler.patrick.doodle.util.ViewUtil;
 
+@SuppressLint("CustomSplashScreen")
 public class SplashActivity extends AppCompatActivity {
 
   @Override
@@ -39,33 +41,32 @@ public class SplashActivity extends AppCompatActivity {
 
     new SystemBarBehavior(this).setUp();
 
-    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
-      startSettingsActivity();
-      return;
-    }
-
-    LayerDrawable splashContent = (LayerDrawable) ResourcesCompat.getDrawable(
-        getResources(), R.drawable.splash_content, null
-    );
-
-    getWindow().setBackgroundDrawable(splashContent);
-
-    try {
-      assert splashContent != null;
-      ViewUtil.startIcon(splashContent.findDrawableByLayerId(R.id.splash_logo));
-      new Handler(Looper.getMainLooper()).postDelayed(
-          this::startSettingsActivity, 900
+    if (Build.VERSION.SDK_INT >= 31) {
+      startSettingsActivity(false);
+    } else if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) {
+      LayerDrawable splashContent = (LayerDrawable) ResourcesCompat.getDrawable(
+          getResources(), R.drawable.splash_content, null
       );
-    } catch (Exception e) {
-      startSettingsActivity();
+      getWindow().setBackgroundDrawable(splashContent);
+      try {
+        assert splashContent != null;
+        ViewUtil.startIcon(splashContent.findDrawableByLayerId(R.id.splash_logo));
+        new Handler(Looper.getMainLooper()).postDelayed(
+            () -> startSettingsActivity(true), 900
+        );
+      } catch (Exception e) {
+        startSettingsActivity(true);
+      }
+    } else {
+      startSettingsActivity(true);
     }
   }
 
-  private void startSettingsActivity() {
+  private void startSettingsActivity(boolean fadeOut) {
     Intent intent = new Intent(this, MainActivity.class);
     intent.addCategory("android.intent.category.LAUNCHER");
     startActivity(intent);
-    overridePendingTransition(0, R.anim.fade_out);
+    overridePendingTransition(0, fadeOut ? R.anim.fade_out : 0);
     finish();
   }
 }

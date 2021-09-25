@@ -4,7 +4,7 @@
 - Improved: Material You wallpaper variants
 - Improved: additional color variant for Doodle collection
 - Improved: start page layout and wallpaper selection
-- Fixed: crash at start
+- Improved: splash screen on Android 12
 
 Please consider translating this app into your language at Transifex. There are less than 90 strings to translate!
 

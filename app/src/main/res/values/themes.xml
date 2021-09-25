@@ -17,7 +17,7 @@
   ~ Copyright (c) 2020-2021 by Patrick Zedler
   -->
 
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
   <style name="Theme.Doodle" parent="Theme.MaterialComponents.DayNight.NoActionBar">
     <item name="colorPrimary">@color/background</item>
@@ -49,9 +49,15 @@
     <item name="android:fontFamily">@font/jost_book</item>
 
     <item name="bottomSheetDialogTheme">@style/Theme.Doodle.BottomSheetDialog</item>
+
+    <item name="android:windowSplashScreenBackground" tools:targetApi="s">@color/background</item>
+    <item name="android:windowSplashScreenAnimatedIcon" tools:targetApi="s">@drawable/splash_logo_anim</item>
+    <item name="android:windowSplashScreenAnimationDuration" tools:targetApi="s">1050</item>
   </style>
 
-  <style name="Theme.Doodle.BottomSheetDialog" parent="ThemeOverlay.MaterialComponents.BottomSheetDialog">
+  <style
+    name="Theme.Doodle.BottomSheetDialog"
+    parent="ThemeOverlay.MaterialComponents.BottomSheetDialog">
     <item name="enableEdgeToEdge">true</item>
     <item name="android:navigationBarColor">@color/transparent</item>
   </style>

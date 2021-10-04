@@ -93,6 +93,7 @@ public final class Constants {
     public final static String ANTHONY = "anthony";
     public final static String MONET = "monet";
     public final static String FOG = "fog";
+    public final static String LEAFY = "leafy";
   }
 
   public final static class USER_PRESENCE {

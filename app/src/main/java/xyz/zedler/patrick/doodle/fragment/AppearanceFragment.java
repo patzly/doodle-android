@@ -54,6 +54,7 @@ import xyz.zedler.patrick.doodle.wallpaper.BaseWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.BaseWallpaper.WallpaperVariant;
 import xyz.zedler.patrick.doodle.wallpaper.FogWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.JohannaWallpaper;
+import xyz.zedler.patrick.doodle.wallpaper.LeafyWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.MonetWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.PixelWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.ReikoWallpaper;
@@ -218,6 +219,7 @@ public class AppearanceFragment extends BaseFragment
         break;
       case DESIGN.ANNA:
         baseWallpapers = new BaseWallpaper[]{
+            new LeafyWallpaper(),
             new FogWallpaper()
         };
         container = binding.linearAppearanceWallpaperContainerAnna;

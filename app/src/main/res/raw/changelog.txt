@@ -1,3 +1,6 @@
+4.2.0:
+- New: another live wallpaper based on an artwork by Anna Kövecses
+
 4.1.0:
 - New: live wallpaper based on a static Chrome OS wallpaper by Anna Kövecses
 - New: support for Android versions down to Android 5

@@ -1,6 +1,8 @@
 4.2.0:
 - New: another live wallpaper based on an artwork by Anna Kövecses
 
+Please consider translating this app into your language at Transifex. There are less than 90 strings to translate!
+
 4.1.0:
 - New: live wallpaper based on a static Chrome OS wallpaper by Anna Kövecses
 - New: support for Android versions down to Android 5
@@ -8,8 +10,6 @@
 - Improved: additional color variant for Doodle collection
 - Improved: start page layout and wallpaper selection
 - Improved: splash screen on Android 12
-
-Please consider translating this app into your language at Transifex. There are less than 90 strings to translate!
 
 4.0.0:
 - New: completely rewritten and reorganized settings app

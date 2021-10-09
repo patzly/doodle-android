@@ -1,5 +1,6 @@
 4.2.0:
 - New: another live wallpaper based on an artwork by Anna Kövecses
+- Fixed: wrong tilt effect direction in landscape mode
 
 Please consider translating this app into your language at Transifex. There are less than 90 strings to translate!
 

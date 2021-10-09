@@ -65,6 +65,7 @@ import xyz.zedler.patrick.doodle.util.PrefsUtil;
 import xyz.zedler.patrick.doodle.wallpaper.AnthonyWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.BaseWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.BaseWallpaper.WallpaperVariant;
+import xyz.zedler.patrick.doodle.wallpaper.FloralWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.FogWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.JohannaWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.LeafyWallpaper;
@@ -454,6 +455,9 @@ public class LiveWallpaperService extends WallpaperService {
           break;
         case WALLPAPER.FOG:
           wallpaper = new FogWallpaper();
+          break;
+        case WALLPAPER.FLORAL:
+          wallpaper = new FloralWallpaper();
           break;
         default:
           wallpaper = new PixelWallpaper();

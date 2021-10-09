@@ -52,6 +52,7 @@ import xyz.zedler.patrick.doodle.util.ViewUtil;
 import xyz.zedler.patrick.doodle.wallpaper.AnthonyWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.BaseWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.BaseWallpaper.WallpaperVariant;
+import xyz.zedler.patrick.doodle.wallpaper.FloralWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.FogWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.JohannaWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.LeafyWallpaper;
@@ -213,6 +214,7 @@ public class AppearanceFragment extends BaseFragment
     switch (design) {
       case DESIGN.MONET:
         baseWallpapers = new BaseWallpaper[]{
+            new FloralWallpaper(),
             new MonetWallpaper()
         };
         container = binding.linearAppearanceWallpaperContainerMonet;

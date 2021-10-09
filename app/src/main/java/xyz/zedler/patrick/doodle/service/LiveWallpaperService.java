@@ -156,44 +156,24 @@ public class LiveWallpaperService extends WallpaperService {
 
     if (isNightMode()) {
       variant = wallpaper.getDarkVariants()[var - 1];
-      svgDrawable = new SvgDrawable(this, variant.getSvgResId());
-      if (wallpaper.getName().equals(WALLPAPER.REIKO) && var == 1) {
-        setKidneyGradientReiko("#a0b0fb", "#d8d4fe");
-      } else if (wallpaper.getName().equals(WALLPAPER.REIKO) && var == 2) {
-        setKidneyGradientReiko("#eb902b", "#ecc12f");
-      }
+      svgDrawable = wallpaper.getPreparedSvg(
+          new SvgDrawable(this, variant.getSvgResId()), var, true
+      );
     } else {
       variant = wallpaper.getVariants()[var - 1];
-      svgDrawable = new SvgDrawable(this, variant.getSvgResId());
-      if (wallpaper.getName().equals(WALLPAPER.REIKO) && var == 1) {
-        setKidneyGradientReiko("#a0b0fb", "#d8d4fe");
-      } else if (wallpaper.getName().equals(WALLPAPER.REIKO) && var == 2) {
-        setKidneyGradientReiko("#ff931e", "#fbc318");
-      }
+      svgDrawable = wallpaper.getPreparedSvg(
+          new SvgDrawable(this, variant.getSvgResId()), var, false
+      );
     }
+
     if (svgDrawable == null) {
       // Prevent NullPointerExceptions
-      svgDrawable = new SvgDrawable(this, R.raw.wallpaper_pixel1);
+      svgDrawable = wallpaper.getPreparedSvg(
+          new SvgDrawable(this, R.raw.wallpaper_pixel1), 1, false
+      );
     }
     if (wallpaper.isDepthStatic()) {
-      svgDrawable.applyRelativeElevationToAll(0.3f);
-    }
-  }
-
-  private void setKidneyGradientReiko(String start, String end) {
-    int colorStart = Color.parseColor(start);
-    int colorEnd = Color.parseColor(end);
-    SvgObject kidneyFront = svgDrawable.findObjectById("kidney_front");
-    if (kidneyFront != null) {
-      kidneyFront.shader = new LinearGradient(
-          700, 0, 1100, 0, colorStart, colorEnd, TileMode.CLAMP
-      );
-    }
-    SvgObject kidneyBack = svgDrawable.findObjectById("kidney_back");
-    if (kidneyBack != null) {
-      kidneyBack.shader = new LinearGradient(
-          400, 0, 800, 0, colorStart, colorEnd, TileMode.CLAMP
-      );
+      svgDrawable.applyRelativeElevationToAll(0.2f);
     }
   }
 

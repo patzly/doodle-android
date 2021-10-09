@@ -23,6 +23,7 @@ The SVG should be unified with the free online tool SVGOMG, which you can find [
 There you have to **turn on all options** and then **turn the following off**:
 
 - Show original
+- Multipass
 - Remove xmlns
 - Clean IDs
 - Remove raster images

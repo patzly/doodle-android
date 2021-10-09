@@ -30,6 +30,8 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RawRes;
 import androidx.annotation.RequiresApi;
 import androidx.core.graphics.ColorUtils;
+import xyz.zedler.patrick.doodle.drawable.SvgDrawable;
+import xyz.zedler.patrick.doodle.drawable.SvgDrawable.SvgObject;
 
 public abstract class BaseWallpaper {
 
@@ -114,6 +116,10 @@ public abstract class BaseWallpaper {
 
   @NonNull
   public abstract WallpaperVariant[] getDarkVariants();
+
+  public SvgDrawable getPreparedSvg(SvgDrawable svgDrawable, int variant, boolean isNightMode) {
+    return svgDrawable;
+  }
 
   public void setStaticDepthEnabled(boolean enabled) {
     isDepthStatic = enabled;

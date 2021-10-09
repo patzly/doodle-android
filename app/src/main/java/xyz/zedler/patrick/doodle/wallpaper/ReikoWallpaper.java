@@ -19,9 +19,14 @@
 
 package xyz.zedler.patrick.doodle.wallpaper;
 
+import android.graphics.Color;
+import android.graphics.LinearGradient;
+import android.graphics.Shader.TileMode;
 import androidx.annotation.NonNull;
 import xyz.zedler.patrick.doodle.Constants.WALLPAPER;
 import xyz.zedler.patrick.doodle.R;
+import xyz.zedler.patrick.doodle.drawable.SvgDrawable;
+import xyz.zedler.patrick.doodle.drawable.SvgDrawable.SvgObject;
 
 public class ReikoWallpaper extends BaseWallpaper {
 
@@ -34,6 +39,24 @@ public class ReikoWallpaper extends BaseWallpaper {
   @Override
   public int getThumbnailResId() {
     return R.drawable.selection_reiko;
+  }
+
+  @Override
+  public SvgDrawable getPreparedSvg(SvgDrawable svgDrawable, int variant, boolean isNightMode) {
+    if (isNightMode) {
+      if (variant == 1) {
+        setKidneyGradientReiko(svgDrawable, "#a0b0fb", "#d8d4fe");
+      } else if (variant == 2) {
+        setKidneyGradientReiko(svgDrawable, "#eb902b", "#ecc12f");
+      }
+    } else {
+      if (variant == 1) {
+        setKidneyGradientReiko(svgDrawable, "#a0b0fb", "#d8d4fe");
+      } else if (variant == 2) {
+        setKidneyGradientReiko(svgDrawable, "#ff931e", "#fbc318");
+      }
+    }
+    return svgDrawable;
   }
 
   @NonNull
@@ -80,5 +103,22 @@ public class ReikoWallpaper extends BaseWallpaper {
             true
         )
     };
+  }
+
+  private static void setKidneyGradientReiko(SvgDrawable svgDrawable, String start, String end) {
+    int colorStart = Color.parseColor(start);
+    int colorEnd = Color.parseColor(end);
+    SvgObject kidneyFront = svgDrawable.findObjectById("kidney_front");
+    if (kidneyFront != null) {
+      kidneyFront.shader = new LinearGradient(
+          700, 0, 1100, 0, colorStart, colorEnd, TileMode.CLAMP
+      );
+    }
+    SvgObject kidneyBack = svgDrawable.findObjectById("kidney_back");
+    if (kidneyBack != null) {
+      kidneyBack.shader = new LinearGradient(
+          400, 0, 800, 0, colorStart, colorEnd, TileMode.CLAMP
+      );
+    }
   }
 }

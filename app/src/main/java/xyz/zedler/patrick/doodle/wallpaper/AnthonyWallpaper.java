@@ -22,6 +22,7 @@ package xyz.zedler.patrick.doodle.wallpaper;
 import androidx.annotation.NonNull;
 import xyz.zedler.patrick.doodle.Constants.WALLPAPER;
 import xyz.zedler.patrick.doodle.R;
+import xyz.zedler.patrick.doodle.drawable.SvgDrawable;
 
 public class AnthonyWallpaper extends BaseWallpaper {
 
@@ -34,6 +35,14 @@ public class AnthonyWallpaper extends BaseWallpaper {
   @Override
   public int getThumbnailResId() {
     return R.drawable.selection_anthony;
+  }
+
+  @Override
+  public SvgDrawable getPreparedSvg(SvgDrawable svgDrawable, int variant, boolean isNightMode) {
+    svgDrawable.requireObjectById("sheet").isRotatable = true;
+    svgDrawable.requireObjectById("rect").isRotatable = true;
+    svgDrawable.requireObjectById("circle_grid").isRotatable = true;
+    return svgDrawable;
   }
 
   @NonNull

@@ -73,7 +73,6 @@ public class SvgDrawable {
   private final RectF rectF;
   private PointF pointF;
   private final Random random;
-  private boolean staticDepth = false;
 
   public SvgDrawable(Context context, @RawRes int resId) {
     pixelUnit = SystemUiUtil.dpToPx(context, 1) * 0.33f;
@@ -106,6 +105,15 @@ public class SvgDrawable {
       return objects.get(ids.indexOf(id));
     } else {
       return null;
+    }
+  }
+
+  @NonNull
+  public SvgObject requireObjectById(String id) {
+    if (ids.contains(id)) {
+      return objects.get(ids.indexOf(id));
+    } else {
+      return new SvgObject(SvgObject.TYPE_NONE);
     }
   }
 
@@ -164,7 +172,11 @@ public class SvgDrawable {
    */
   public void applyRandomZoomRotationToAll(int min, int max) {
     for (SvgObject object : objects) {
-      object.zoomRotation = min == 0 && max == 0 ? 0 : random.nextInt(max - min + 1) + min;
+      if (object.isRotatable) {
+        object.zoomRotation = min == 0 && max == 0 ? 0 : random.nextInt(max - min + 1) + min;
+      } else {
+        object.zoomRotation = 0;
+      }
     }
   }
 
@@ -245,7 +257,8 @@ public class SvgDrawable {
   }
 
   private void drawObject(Canvas canvas, SvgObject object, SvgObject parentGroup) {
-    float rotation = object.rotation + object.zoomRotation * zoom;
+    float zoomRotation = object.isRotatable ? object.zoomRotation * zoom : 0;
+    float rotation = object.rotation + zoomRotation;
     if (!object.isInGroup && rotation != 0) {
       canvas.save();
       if (rotation != 0) {
@@ -902,6 +915,7 @@ public class SvgDrawable {
 
   public static class SvgObject {
 
+    public final static String TYPE_NONE = "none";
     public final static String TYPE_GROUP = "g";
     public final static String TYPE_PATH = "path";
     public final static String TYPE_RECT = "rect";
@@ -922,6 +936,7 @@ public class SvgDrawable {
     public boolean isInGroup;
     public float elevation;
     public int zoomRotation;
+    public boolean isRotatable;
 
     // GROUP
     public List<SvgObject> children;

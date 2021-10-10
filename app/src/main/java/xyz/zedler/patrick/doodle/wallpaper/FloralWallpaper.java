@@ -23,6 +23,7 @@ import androidx.annotation.NonNull;
 
 import xyz.zedler.patrick.doodle.Constants.WALLPAPER;
 import xyz.zedler.patrick.doodle.R;
+import xyz.zedler.patrick.doodle.drawable.SvgDrawable;
 
 public class FloralWallpaper extends BaseWallpaper {
 
@@ -39,6 +40,15 @@ public class FloralWallpaper extends BaseWallpaper {
   @Override
   public int getThumbnailResId() {
     return R.drawable.selection_pixel;
+  }
+
+  @Override
+  public SvgDrawable getPreparedSvg(SvgDrawable svgDrawable, int variant, boolean isNightMode) {
+    svgDrawable.requireObjectById("star").isRotatable = true;
+    svgDrawable.requireObjectById("quad_top").isRotatable = true;
+    svgDrawable.requireObjectById("quad_bottom").isRotatable = true;
+    svgDrawable.requireObjectById("kidney").isRotatable = true;
+    return svgDrawable;
   }
 
   @NonNull

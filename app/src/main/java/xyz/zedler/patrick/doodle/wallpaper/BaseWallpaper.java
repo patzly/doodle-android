@@ -132,8 +132,4 @@ public abstract class BaseWallpaper {
   public void setRotationSupported(boolean supported) {
     isRotationSupported = supported;
   }
-
-  public boolean isRotationSupported() {
-    return isRotationSupported;
-  }
 }

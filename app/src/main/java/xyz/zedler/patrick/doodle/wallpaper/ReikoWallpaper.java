@@ -108,17 +108,15 @@ public class ReikoWallpaper extends BaseWallpaper {
   private static void setKidneyGradientReiko(SvgDrawable svgDrawable, String start, String end) {
     int colorStart = Color.parseColor(start);
     int colorEnd = Color.parseColor(end);
-    SvgObject kidneyFront = svgDrawable.findObjectById("kidney_front");
-    if (kidneyFront != null) {
-      kidneyFront.shader = new LinearGradient(
-          700, 0, 1100, 0, colorStart, colorEnd, TileMode.CLAMP
-      );
-    }
-    SvgObject kidneyBack = svgDrawable.findObjectById("kidney_back");
-    if (kidneyBack != null) {
-      kidneyBack.shader = new LinearGradient(
-          400, 0, 800, 0, colorStart, colorEnd, TileMode.CLAMP
-      );
-    }
+    SvgObject kidneyFront = svgDrawable.requireObjectById("kidney_front");
+    kidneyFront.shader = new LinearGradient(
+        700, 0, 1100, 0, colorStart, colorEnd, TileMode.CLAMP
+    );
+    kidneyFront.isRotatable = true;
+    SvgObject kidneyBack = svgDrawable.requireObjectById("kidney_back");
+    kidneyBack.shader = new LinearGradient(
+        400, 0, 800, 0, colorStart, colorEnd, TileMode.CLAMP
+    );
+    kidneyBack.isRotatable = true;
   }
 }

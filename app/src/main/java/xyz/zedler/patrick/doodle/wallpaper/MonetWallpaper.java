@@ -22,6 +22,7 @@ package xyz.zedler.patrick.doodle.wallpaper;
 import androidx.annotation.NonNull;
 import xyz.zedler.patrick.doodle.Constants.WALLPAPER;
 import xyz.zedler.patrick.doodle.R;
+import xyz.zedler.patrick.doodle.drawable.SvgDrawable;
 
 public class MonetWallpaper extends BaseWallpaper {
 
@@ -38,6 +39,14 @@ public class MonetWallpaper extends BaseWallpaper {
   @Override
   public int getThumbnailResId() {
     return R.drawable.selection_monet;
+  }
+
+  @Override
+  public SvgDrawable getPreparedSvg(SvgDrawable svgDrawable, int variant, boolean isNightMode) {
+    svgDrawable.requireObjectById("circle").isRotatable = true;
+    svgDrawable.requireObjectById("quad").isRotatable = true;
+    svgDrawable.requireObjectById("pill").isRotatable = true;
+    return svgDrawable;
   }
 
   @NonNull

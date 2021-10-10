@@ -361,8 +361,7 @@ public class LiveWallpaperService extends WallpaperService {
         svgDrawable.applyRandomElevationToAll(0.1f);
       }
 
-      int degrees = zoomRotation != 0 && wallpaper.isRotationSupported() ? zoomRotation : 0;
-      svgDrawable.applyRandomZoomRotationToAll(-degrees, degrees);
+      svgDrawable.applyRandomZoomRotationToAll(-zoomRotation, zoomRotation);
 
       updateOffset(true, null);
     }

@@ -22,6 +22,7 @@ package xyz.zedler.patrick.doodle.wallpaper;
 import androidx.annotation.NonNull;
 import xyz.zedler.patrick.doodle.Constants.WALLPAPER;
 import xyz.zedler.patrick.doodle.R;
+import xyz.zedler.patrick.doodle.drawable.SvgDrawable;
 
 public class FogWallpaper extends BaseWallpaper {
 
@@ -38,6 +39,13 @@ public class FogWallpaper extends BaseWallpaper {
   @Override
   public int getThumbnailResId() {
     return R.drawable.selection_fog;
+  }
+
+  @Override
+  public SvgDrawable getPreparedSvg(SvgDrawable svgDrawable, int variant, boolean isNightMode) {
+    svgDrawable.requireObjectById("center").isRotatable = true;
+    svgDrawable.requireObjectById("circle").isRotatable = true;
+    return svgDrawable;
   }
 
   @NonNull

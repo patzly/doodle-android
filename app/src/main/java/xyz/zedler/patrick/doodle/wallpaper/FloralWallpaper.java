@@ -44,10 +44,9 @@ public class FloralWallpaper extends BaseWallpaper {
 
   @Override
   public SvgDrawable getPreparedSvg(SvgDrawable svgDrawable, int variant, boolean isNightMode) {
-    svgDrawable.requireObjectById("star").isRotatable = true;
+    svgDrawable.requireObjectById("circle").isRotatable = true;
     svgDrawable.requireObjectById("quad_top").isRotatable = true;
     svgDrawable.requireObjectById("quad_bottom").isRotatable = true;
-    svgDrawable.requireObjectById("kidney").isRotatable = true;
     return svgDrawable;
   }
 

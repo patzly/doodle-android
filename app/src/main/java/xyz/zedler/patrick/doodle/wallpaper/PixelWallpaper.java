@@ -45,6 +45,14 @@ public class PixelWallpaper extends BaseWallpaper {
   @Override
   public SvgDrawable getPreparedSvg(SvgDrawable svgDrawable, int variant, boolean isNightMode) {
     svgDrawable.requireObjectById("moon").isRotatable = true;
+
+    svgDrawable.requireObjectById("arc").isRotatable = true;
+    svgDrawable.requireObjectById("arc").pivotOffsetX = 100;
+    svgDrawable.requireObjectById("arc").pivotOffsetY = 180;
+
+    svgDrawable.requireObjectById("poly").isRotatable = true;
+    svgDrawable.requireObjectById("poly").pivotOffsetX = -40;
+    svgDrawable.requireObjectById("poly").pivotOffsetY = 80;
     return svgDrawable;
   }
 

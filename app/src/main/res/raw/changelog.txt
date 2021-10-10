@@ -1,5 +1,7 @@
 4.2.0:
+- New: exclusive live wallpapers based on leaked original Pixel 6 wallpapers
 - New: another live wallpaper based on an artwork by Anna Kövecses
+- Improved: shape rotation
 - Fixed: wrong tilt effect direction in landscape mode
 
 Please consider translating this app into your language at Transifex. There are less than 90 strings to translate!

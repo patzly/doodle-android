@@ -23,6 +23,7 @@ import androidx.annotation.NonNull;
 import xyz.zedler.patrick.doodle.Constants.WALLPAPER;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.drawable.SvgDrawable;
+import xyz.zedler.patrick.doodle.drawable.SvgDrawable.SvgObject;
 
 public class LeafyWallpaper extends BaseWallpaper {
 
@@ -43,9 +44,21 @@ public class LeafyWallpaper extends BaseWallpaper {
 
   @Override
   public SvgDrawable getPreparedSvg(SvgDrawable svgDrawable, int variant, boolean isNightMode) {
-    svgDrawable.requireObjectById("red").isRotatable = true;
-    svgDrawable.requireObjectById("green").isRotatable = true;
-    svgDrawable.requireObjectById("blue").isRotatable = true;
+    SvgObject red = svgDrawable.requireObjectById("red");
+    red.isRotatable = true;
+    red.pivotOffsetX = 600;
+    red.pivotOffsetY = 100;
+
+    SvgObject green = svgDrawable.requireObjectById("green");
+    green.isRotatable = true;
+    green.pivotOffsetX = -300;
+    green.pivotOffsetY = 550;
+
+    SvgObject blue = svgDrawable.requireObjectById("blue");
+    blue.isRotatable = true;
+    blue.pivotOffsetX = -600;
+    blue.pivotOffsetY = 100;
+
     return svgDrawable;
   }
 

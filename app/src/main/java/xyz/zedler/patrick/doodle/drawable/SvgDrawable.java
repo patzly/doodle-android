@@ -173,7 +173,13 @@ public class SvgDrawable {
   public void applyRandomZoomRotationToAll(int min, int max) {
     for (SvgObject object : objects) {
       if (object.isRotatable) {
-        object.zoomRotation = min == 0 && max == 0 ? 0 : random.nextInt(max - min + 1) + min;
+        if (DEBUG) {
+          object.zoomRotation = 260;
+        } else {
+          object.zoomRotation = min == 0 && max == 0
+              ? 0
+              : random.nextInt(max - min + 1) + min;
+        }
       } else {
         object.zoomRotation = 0;
       }
@@ -258,14 +264,36 @@ public class SvgDrawable {
 
   private void drawObject(Canvas canvas, SvgObject object, SvgObject parentGroup) {
     float zoomRotation = object.isRotatable ? object.zoomRotation * zoom : 0;
-    float rotation = object.rotation + zoomRotation;
-    if (!object.isInGroup && rotation != 0) {
+    boolean hasPivotOffset = object.pivotOffsetX != 0 || object.pivotOffsetY != 0;
+    if (!object.isInGroup && (object.rotation != 0 || zoomRotation != 0)) {
       canvas.save();
-      if (rotation != 0) {
+      if ((object.rotation != 0 || zoomRotation != 0) && !hasPivotOffset) {
         // Even for groups this rotation is required
         canvas.rotate(
-            rotation, object.cx * canvas.getWidth(), object.cy * canvas.getHeight()
+            object.rotation + zoomRotation,
+            object.cx * canvas.getWidth(),
+            object.cy * canvas.getHeight()
         );
+      } else {
+        if (object.rotation != 0) {
+          canvas.rotate(
+              object.rotation, object.cx * canvas.getWidth(), object.cy * canvas.getHeight()
+          );
+        }
+        if (zoomRotation != 0) {
+          if (DEBUG) { // draw pivot offset
+            canvas.drawPoint(
+                object.cx * canvas.getWidth() + object.pivotOffsetX * pixelUnit * scale,
+                object.cy * canvas.getHeight() + object.pivotOffsetY * pixelUnit * scale,
+                getDebugPaint(Color.YELLOW)
+            );
+          }
+          canvas.rotate(
+              zoomRotation,
+              object.cx * canvas.getWidth() + object.pivotOffsetX * pixelUnit * scale,
+              object.cy * canvas.getHeight() + object.pivotOffsetY * pixelUnit * scale
+          );
+        }
       }
     }
     switch (object.type) {
@@ -288,7 +316,7 @@ public class SvgDrawable {
         }
         break;
     }
-    if (!object.isInGroup && rotation != 0) {
+    if (!object.isInGroup && (object.rotation != 0 || zoomRotation != 0)) {
       canvas.restore();
     }
   }
@@ -937,6 +965,7 @@ public class SvgDrawable {
     public float elevation;
     public int zoomRotation;
     public boolean isRotatable;
+    public float pivotOffsetX, pivotOffsetY;
 
     // GROUP
     public List<SvgObject> children;

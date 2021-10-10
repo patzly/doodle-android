@@ -39,7 +39,7 @@ public class FloralWallpaper extends BaseWallpaper {
 
   @Override
   public int getThumbnailResId() {
-    return R.drawable.selection_pixel;
+    return R.drawable.selection_floral;
   }
 
   @Override
@@ -56,9 +56,9 @@ public class FloralWallpaper extends BaseWallpaper {
     return new WallpaperVariant[]{
         new WallpaperVariant(
             R.raw.wallpaper_floral5,
-            "#e0dcd3",
-            "#ffb9a1",
-            "#f4e3c9",
+            "#fce2e0",
+            "#e4254d",
+            "#ffce3a",
             true,
             false
         ),
@@ -70,12 +70,12 @@ public class FloralWallpaper extends BaseWallpaper {
   public WallpaperVariant[] getDarkVariants() {
       return new WallpaperVariant[]{
               new WallpaperVariant(
-                      R.raw.wallpaper_floral5,
-                      "#e0dcd3",
-                      "#ffb9a1",
-                      "#f4e3c9",
-                      true,
-                      false
+                      R.raw.wallpaper_floral5_dark,
+                      "#222020",
+                      "#a6262f",
+                      "#b4942a",
+                      false,
+                      true
               ),
       };
   }

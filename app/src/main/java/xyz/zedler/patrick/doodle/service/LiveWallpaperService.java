@@ -46,6 +46,7 @@ import android.os.SystemClock;
 import android.service.wallpaper.WallpaperService;
 import android.util.Log;
 import android.util.Pair;
+import android.view.Surface;
 import android.view.SurfaceHolder;
 import android.view.View;
 import android.view.WindowManager;
@@ -223,6 +224,7 @@ public class LiveWallpaperService extends WallpaperService {
     private int damping;
     private boolean isTiltEnabled;
     private float tiltX, tiltY;
+    private int screenRotation;
     private int tiltThreshold;
     private float[] accelerationValues;
     private float offsetX;
@@ -334,8 +336,16 @@ public class LiveWallpaperService extends WallpaperService {
 
     @Override
     public void onSurfaceRedrawNeeded(SurfaceHolder holder) {
-      // Not necessarily needed but recommended
-      drawFrame(true, null);
+      WindowManager window = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
+      int screenRotationOld = screenRotation;
+      screenRotation =  window.getDefaultDisplay().getRotation();
+      if (screenRotation != screenRotationOld) {
+        accelerationValues = null;
+        updateOffset(true, null);
+      } else {
+        // Not necessarily needed but recommended
+        drawFrame(true, null);
+      }
     }
 
     @Override
@@ -508,12 +518,33 @@ public class LiveWallpaperService extends WallpaperService {
       updateOffset(true, null);
     }
 
+    @SuppressWarnings("SuspiciousNameCombination")
     private void updateOffset(boolean force, String source) {
       float xOffset = parallax != 0 ? offsetX : 0;
       int tiltFactor = 18 * parallax * (isTiltEnabled ? 1 : 0);
+      float finalTiltX, finalTiltY;
+      switch (screenRotation) {
+        case Surface.ROTATION_90:
+          finalTiltX = tiltY;
+          finalTiltY = -tiltX;
+          break;
+        case Surface.ROTATION_180:
+          finalTiltX = -tiltX;
+          finalTiltY = -tiltY;
+          break;
+        case Surface.ROTATION_270:
+          finalTiltX = -tiltY;
+          finalTiltY = tiltX;
+          break;
+        case Surface.ROTATION_0:
+        default:
+          finalTiltX = tiltX;
+          finalTiltY = tiltY;
+          break;
+      }
       svgDrawable.setOffset(
-          xOffset * parallax * 100 + tiltX * tiltFactor,
-          tiltY * tiltFactor
+          xOffset * parallax * 100 + finalTiltX * tiltFactor,
+          finalTiltY * tiltFactor
       );
       drawFrame(force, source);
     }

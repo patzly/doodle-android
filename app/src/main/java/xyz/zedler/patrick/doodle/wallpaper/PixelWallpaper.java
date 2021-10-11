@@ -26,10 +26,6 @@ import xyz.zedler.patrick.doodle.drawable.SvgDrawable;
 
 public class PixelWallpaper extends BaseWallpaper {
 
-  public PixelWallpaper() {
-    setRotationSupported(true);
-  }
-
   @NonNull
   @Override
   public String getName() {

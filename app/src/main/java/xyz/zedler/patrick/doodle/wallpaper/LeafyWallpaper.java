@@ -27,10 +27,6 @@ import xyz.zedler.patrick.doodle.drawable.SvgDrawable.SvgObject;
 
 public class LeafyWallpaper extends BaseWallpaper {
 
-  public LeafyWallpaper() {
-    setStaticDepthEnabled(true);
-  }
-
   @NonNull
   @Override
   public String getName() {
@@ -40,6 +36,11 @@ public class LeafyWallpaper extends BaseWallpaper {
   @Override
   public int getThumbnailResId() {
     return R.drawable.selection_leafy;
+  }
+
+  @Override
+  public boolean isDepthStatic() {
+    return true;
   }
 
   @Override

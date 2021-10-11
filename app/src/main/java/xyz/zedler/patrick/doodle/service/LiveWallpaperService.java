@@ -72,6 +72,7 @@ import xyz.zedler.patrick.doodle.wallpaper.LeafyWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.MonetWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.PixelWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.ReikoWallpaper;
+import xyz.zedler.patrick.doodle.wallpaper.StoneWallpaper;
 
 public class LiveWallpaperService extends WallpaperService {
 
@@ -454,6 +455,9 @@ public class LiveWallpaperService extends WallpaperService {
           break;
         case WALLPAPER.FOG:
           wallpaper = new FogWallpaper();
+          break;
+        case WALLPAPER.STONE:
+          wallpaper = new StoneWallpaper();
           break;
         case WALLPAPER.FLORAL:
           wallpaper = new FloralWallpaper();

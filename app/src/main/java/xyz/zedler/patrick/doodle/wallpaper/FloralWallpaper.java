@@ -26,10 +26,6 @@ import xyz.zedler.patrick.doodle.drawable.SvgDrawable;
 
 public class FloralWallpaper extends BaseWallpaper {
 
-  public FloralWallpaper() {
-    setRotationSupported(true);
-  }
-
   @NonNull
   @Override
   public String getName() {
@@ -54,7 +50,7 @@ public class FloralWallpaper extends BaseWallpaper {
   public WallpaperVariant[] getVariants() {
     return new WallpaperVariant[]{
         new WallpaperVariant(
-            R.raw.wallpaper_floral5,
+            R.raw.wallpaper_floral,
             "#fce2e0",
             "#e4254d",
             "#ffce3a",
@@ -69,7 +65,7 @@ public class FloralWallpaper extends BaseWallpaper {
   public WallpaperVariant[] getDarkVariants() {
     return new WallpaperVariant[]{
         new WallpaperVariant(
-            R.raw.wallpaper_floral5_dark,
+            R.raw.wallpaper_floral_dark,
             "#222020",
             "#a6262f",
             "#b4942a",

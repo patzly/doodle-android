@@ -91,10 +91,13 @@ public final class Constants {
     public final static String JOHANNA = "johanna";
     public final static String REIKO = "reiko";
     public final static String ANTHONY = "anthony";
-    public final static String MONET = "monet";
-    public final static String FOG = "fog";
-    public final static String LEAFY = "leafy";
+
+    public final static String STONE = "stone";
     public final static String FLORAL = "floral";
+    public final static String MONET = "monet";
+
+    public final static String LEAFY = "leafy";
+    public final static String FOG = "fog";
   }
 
   public final static class USER_PRESENCE {

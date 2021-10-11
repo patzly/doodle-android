@@ -34,9 +34,6 @@ import xyz.zedler.patrick.doodle.drawable.SvgDrawable;
 
 public abstract class BaseWallpaper {
 
-  private boolean isDepthStatic = false;
-  private boolean isRotationSupported = false;
-
   public static class WallpaperVariant {
 
     private final int svgResId;
@@ -120,15 +117,7 @@ public abstract class BaseWallpaper {
     return svgDrawable;
   }
 
-  public void setStaticDepthEnabled(boolean enabled) {
-    isDepthStatic = enabled;
-  }
-
   public boolean isDepthStatic() {
-    return isDepthStatic;
-  }
-
-  public void setRotationSupported(boolean supported) {
-    isRotationSupported = supported;
+    return false;
   }
 }

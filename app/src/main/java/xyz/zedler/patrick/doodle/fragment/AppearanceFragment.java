@@ -59,6 +59,7 @@ import xyz.zedler.patrick.doodle.wallpaper.LeafyWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.MonetWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.PixelWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.ReikoWallpaper;
+import xyz.zedler.patrick.doodle.wallpaper.StoneWallpaper;
 
 public class AppearanceFragment extends BaseFragment
     implements OnClickListener, OnCheckedChangeListener {
@@ -214,6 +215,7 @@ public class AppearanceFragment extends BaseFragment
     switch (design) {
       case DESIGN.MONET:
         baseWallpapers = new BaseWallpaper[]{
+            new StoneWallpaper(),
             new FloralWallpaper(),
             new MonetWallpaper()
         };

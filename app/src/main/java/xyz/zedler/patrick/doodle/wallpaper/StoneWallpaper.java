@@ -24,29 +24,25 @@ import xyz.zedler.patrick.doodle.Constants.WALLPAPER;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.drawable.SvgDrawable;
 
-public class FogWallpaper extends BaseWallpaper {
+public class StoneWallpaper extends BaseWallpaper {
 
   @NonNull
   @Override
   public String getName() {
-    return WALLPAPER.FOG;
+    return WALLPAPER.STONE;
   }
 
   @Override
   public int getThumbnailResId() {
-    return R.drawable.selection_fog;
+    return R.drawable.selection_stone;
   }
 
   @Override
   public SvgDrawable getPreparedSvg(SvgDrawable svgDrawable, int variant, boolean isNightMode) {
-    svgDrawable.requireObjectById("center").isRotatable = true;
-    svgDrawable.requireObjectById("circle").isRotatable = true;
+    svgDrawable.requireObjectById("sand").isRotatable = true;
+    svgDrawable.requireObjectById("kidney").isRotatable = true;
+    svgDrawable.requireObjectById("star").isRotatable = true;
     return svgDrawable;
-  }
-
-  @Override
-  public boolean isDepthStatic() {
-    return true;
   }
 
   @NonNull
@@ -54,10 +50,10 @@ public class FogWallpaper extends BaseWallpaper {
   public WallpaperVariant[] getVariants() {
     return new WallpaperVariant[]{
         new WallpaperVariant(
-            R.raw.wallpaper_fog,
-            "#e6baad",
-            "#4c87bf",
-            "#eadcc2",
+            R.raw.wallpaper_stone,
+            "#e6efd7",
+            "#c4d6e4",
+            "#b49e5f",
             true,
             false
         )
@@ -69,10 +65,10 @@ public class FogWallpaper extends BaseWallpaper {
   public WallpaperVariant[] getDarkVariants() {
     return new WallpaperVariant[]{
         new WallpaperVariant(
-            R.raw.wallpaper_fog_dark,
-            "#1c1715",
-            "#273555",
-            "#84504a",
+            R.raw.wallpaper_stone,
+            "#e6efd7",
+            "#a6262f",
+            "#b4942a",
             false,
             true
         )

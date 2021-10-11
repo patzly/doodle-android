@@ -57,7 +57,7 @@
   <string name="appearance_description">Design &amp; Theme-Optionen</string>
   <string name="appearance_design">Design</string>
   <string name="appearance_design_doodle">Original Pixel 4 Doodle-Kollektion</string>
-  <string name="appearance_design_monet">Inspiriert von Material You</string>
+  <string name="appearance_design_monet">Pixel 6 Material You Collection</string>
   <string name="appearance_design_anna">Live-Hintergründe à l\'Anna Kövecses</string>
   <string name="appearance_variant">Variation</string>
   <string name="appearance_night_mode">Nachtmodus</string>
@@ -101,8 +101,8 @@
   <string name="size_zoom_unlock_description">Eventuell ruckelig, wenn der Neigungs-Effekt eingeschaltet ist</string>
   <string name="size_zoom_duration">Zoom-Dauer beim Entsperren</string>
   <string name="size_zoom_duration_description">Verringern für schnellere Animationen</string>
-  <string name="size_zoom_rotation">Drehen während des Zoomens</string>
-  <string name="size_zoom_rotation_description">Maximale Drehung in Grad, wird nur von ein paar Hintergründen unterstützt</string>
+  <string name="size_zoom_rotation">Drehen ausgewählter Formen während des Zoomens</string>
+  <string name="size_zoom_rotation_description">Maximale Drehung in Grad</string>
 
   <!-- OTHER -->
 

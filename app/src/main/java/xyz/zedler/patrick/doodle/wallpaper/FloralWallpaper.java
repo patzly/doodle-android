@@ -20,7 +20,6 @@
 package xyz.zedler.patrick.doodle.wallpaper;
 
 import androidx.annotation.NonNull;
-
 import xyz.zedler.patrick.doodle.Constants.WALLPAPER;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.drawable.SvgDrawable;
@@ -61,22 +60,22 @@ public class FloralWallpaper extends BaseWallpaper {
             "#ffce3a",
             true,
             false
-        ),
+        )
     };
   }
 
   @NonNull
   @Override
   public WallpaperVariant[] getDarkVariants() {
-      return new WallpaperVariant[]{
-              new WallpaperVariant(
-                      R.raw.wallpaper_floral5_dark,
-                      "#222020",
-                      "#a6262f",
-                      "#b4942a",
-                      false,
-                      true
-              ),
-      };
+    return new WallpaperVariant[]{
+        new WallpaperVariant(
+            R.raw.wallpaper_floral5_dark,
+            "#222020",
+            "#a6262f",
+            "#b4942a",
+            false,
+            true
+        )
+    };
   }
 }

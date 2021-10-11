@@ -31,7 +31,6 @@ import androidx.annotation.RawRes;
 import androidx.annotation.RequiresApi;
 import androidx.core.graphics.ColorUtils;
 import xyz.zedler.patrick.doodle.drawable.SvgDrawable;
-import xyz.zedler.patrick.doodle.drawable.SvgDrawable.SvgObject;
 
 public abstract class BaseWallpaper {
 

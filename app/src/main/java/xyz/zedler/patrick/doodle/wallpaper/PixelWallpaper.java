@@ -23,7 +23,6 @@ import androidx.annotation.NonNull;
 import xyz.zedler.patrick.doodle.Constants.WALLPAPER;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.drawable.SvgDrawable;
-import xyz.zedler.patrick.doodle.drawable.SvgDrawable.SvgObject;
 
 public class PixelWallpaper extends BaseWallpaper {
 

@@ -1,0 +1,32 @@
+<p>Doodle is an open-source Android app that provides colorful live wallpapers with auto dark mode and power-efficient animations.</p>
+<p>The wallpapers are based on the original Doodle live wallpaper collection of the Google Pixel 4. Additionally there is an exclusive "Material You"-inspired live wallpaper included.</p>
+<p>The app is not just a copy of the original wallpapers, it's a complete rewrite without the permanent animations to save battery and storage space. In addition, there are many customization options to match your preferences.</p>
+
+<p><b>Features:</b></p><ul>
+   <li>Stunning wallpaper designs and Pixel feeling</li>
+   <li>System dependent dark mode</li>
+   <li>Power-efficient parallax effect on page swipe or when tilting the device</li>
+   <li>Optional zoom effects</li>
+   <li>Direct boot support (immediately active after device restart)</li>
+   <li>No ads and no analytics</li>
+   <li>100% open-source</li>
+</ul>
+
+<p><b>Advantages over original Pixel 4 live wallpapers:</b></p><ul>
+   <li>Permanent animations (when tilting the device) are optional</li>
+   <li>Support for Android 12 color extraction</li>
+   <li>Exclusive "Material You"-inspired live wallpaper</li>
+   <li>No battery-hungry 3D engine</li>
+   <li>Improved text contrast (dark text for light themes instead of white text with shadow)</li>
+   <li>Support for Android 11 zoom effect</li>
+   <li>Many additional customization options</li>
+   <li>Rendering works well even on less powerful devices (very efficient rendering engine)</li>
+   <li>Also suitable for larger devices like tablets (scaling option available)</li>
+   <li>Tiny installation size</li>
+</ul>
+
+<p><b>Source code and issue tracker:</b></p>
+<p><a href="https://github.com/patzly/doodle-android">github.com/patzly/doodle-android</a></p>
+
+<p><b>Translation management:</b></p>
+<p><a href="https://www.transifex.com/patzly/doodle-android">www.transifex.com/patzly/doodle-android</a></p>

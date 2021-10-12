@@ -1,0 +1,4 @@
+• New: exclusive live wallpapers based on leaked Pixel 6 wallpapers (more to come!)
+• New: another live wallpaper based on an artwork by Anna Kövecses
+• Improved: shape rotation
+• Fixed: wrong tilt effect direction in landscape mode

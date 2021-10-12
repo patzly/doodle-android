@@ -1,4 +1,4 @@
-These live wallpapers are based on the original doodle live wallpaper collection of the Google Pixel 4.
+These live wallpapers are based on the original Doodle live wallpaper collection of the Google Pixel 4, extended with additional wallpapers.
 They are completely rewritten, nothing except the look is taken from the original.
 
 Advantages over the original:

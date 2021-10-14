@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ This file is part of Doodle Android.
+  ~
+  ~ Doodle Android is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Doodle Android is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with Doodle Android. If not, see <http://www.gnu.org/licenses/>.
+  ~
+  ~ Copyright (c) 2020-2021 by Patrick Zedler
+  -->
+
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+
+  <string name="wallpaper_description">Des fonds d\'écran animés et colorés, un mode sombre automatique et des animations économes en énergie. Appuyez pour en savoir plus.</string>
+  <string name="wallpaper_description_picker">Explorez une collection de formes colorées, raffinées avec des effets de parallaxe et de zoom lorsque vous faites défiler vos écrans d\'accueil et déverrouillez votre appareil.\nPersonnalisez le fond d\'écran pour qu\'il corresponde à votre propre style.</string>
+
+  <!-- TITLES -->
+
+  <string name="title_info">Informations</string>
+  <string name="title_feedback">Commentaires</string>
+  <string name="title_licenses">Licences open source</string>
+
+  <!-- LABELS -->
+
+  <string name="label_ms">%1$sms</string>
+  <string name="label_degrees">%1$s degrés</string>
+
+  <!-- ACTIONS -->
+
+  <string name="action_close">Fermer</string>
+  <string name="action_back">Retour</string>
+  <string name="action_reset">Réinitialiser</string>
+  <string name="action_set">Définir le papier peint</string>
+  <string name="action_send_feedback">Envoyer des commentaires</string>
+  <string name="action_share">Partager</string>
+  <string name="action_share_description">Parlez de Doodle à vos amis</string>
+  <string name="action_email">Envoyer un e-mail</string>
+  <string name="action_email_description">Contacter le développeur</string>
+  <string name="action_rate">Évaluer sur Google Play</string>
+  <string name="action_rate_description">Encourager le développement</string>
+  <string name="action_github">Doodle Android sur GitHub</string>
+  <string name="action_github_description">Signaler un problème</string>
+
+  <!-- APPEARANCE -->
+
+  <string name="appearance_title">Apparence</string>
+  <string name="appearance_description">Style et options du thème</string>
+  <string name="appearance_design">Style</string>
+  <string name="appearance_design_doodle">Collection de Doodle Pixel 4</string>
+  <string name="appearance_design_monet">Collection Material You Pixel 6</string>
+  <string name="appearance_design_anna">Fonds d\'écran animés Anna Kövecses</string>
+  <string name="appearance_variant">Variantes</string>
+  <string name="appearance_night_mode">Mode nuit</string>
+  <string name="appearance_night_mode_description">Couleurs sombres uniquement</string>
+  <string name="appearance_follow_system">Suivre le système</string>
+  <string name="appearance_follow_system_description">Suivre le thème de l\'appareil</string>
+  <string name="appearance_white_text">Forcer le texte blanc avec une ombre</string>
+  <string name="appearance_white_text_description">Peut affecter la lisibilité</string>
+
+  <!-- PARALLAX -->
+
+  <string name="parallax_title">Parallaxe</string>
+  <string name="parallax_description">Effet de balayage et d\'inclinaison</string>
+  <string name="parallax_touch_wiz">Il semblerait que votre lanceur d\'applications actuel soit Samsung TouchWiz qui ne prend pas en charge le défilement en arrière-plan. Veuillez essayer un autre lanceur d\'applications pour activer l\'effet de parallaxe dans le cas où l\'option du capteur d\'inclinaison n\'est pas activée.\nVous pouvez ignorer cet avertissement si vous définissez un autre lanceur par défaut.</string>
+  <string name="parallax_intensity">Intensité de parallaxe</string>
+  <string name="parallax_intensity_description">Décalage horizontal lors du balayage et intensité de l\'effet d\'inclinaison</string>
+  <string name="parallax_none">Aucun</string>
+  <string name="parallax_category_tilt">Effet d\'inclinaison</string>
+  <string name="parallax_tilt">Bouger lors de l\'inclinaison de l\'appareil</string>
+  <string name="parallax_tilt_description">Consomme davantage de batterie</string>
+  <string name="parallax_refresh_rate">Taux de rafraîchissement du capteur d\'inclinaison</string>
+  <string name="parallax_refresh_rate_description">Un délai trop court peut ralentir les animations de zoom</string>
+  <string name="parallax_damping">Amortissement du mouvement</string>
+  <string name="parallax_damping_description">Diminuer pour plus de fluidité</string>
+  <string name="parallax_threshold">Seuil de mouvement</string>
+  <string name="parallax_threshold_description">Augmenter afin de suspendre le rendu continu lorsque les mouvements sont faibles</string>
+
+  <!-- SIZE -->
+
+  <string name="size_title">Taille de la forme</string>
+  <string name="size_description">Échelle et effets de zoom</string>
+  <string name="size_scale">Échelle</string>
+  <string name="size_scale_description">Utile pour les grands écrans et les densités élevées</string>
+  <string name="size_category_zoom">Effet de zoom</string>
+  <string name="size_zoom">Intensité du zoom</string>
+  <string name="size_zoom_description">Lorsqu\'elle est augmentée, la caméra effectue un zoom arrière plus important</string>
+  <string name="size_zoom_launcher">Effectuer un zoom arrière lors de l\'ouverture des paramètres rapides ou du tiroir d\'applications</string>
+  <string name="size_zoom_system">Utiliser l\'effet de zoom fourni par le système</string>
+  <string name="size_zoom_system_description">Corrige l\'animation de zoom saccadée lorsque l\'effet d\'inclinaison est activé. Nécessite un redémarrage du fond d\'écran animé pour prendre effet.</string>
+  <string name="size_zoom_unlock">Zoom arrière sur l\'écran de verrouillage</string>
+  <string name="size_zoom_unlock_description">Peut être saccadé si l\'effet d\'inclinaison est activé</string>
+  <string name="size_zoom_duration">Durée du zoom au déverrouillage</string>
+  <string name="size_zoom_duration_description">Diminuer pour une animation plus rapide</string>
+  <string name="size_zoom_rotation">Faire pivoter certaines formes tout en zoomant</string>
+  <string name="size_zoom_rotation_description">Rotation maximale en degrés</string>
+
+  <!-- OTHER -->
+
+  <string name="other_title">Autres options</string>
+  <string name="other_description">Rendu et réinitialisation</string>
+  <string name="other_gpu">Accélération matérielle</string>
+  <string name="other_gpu_description">Désactiver si le fond d\'écran animé plante. Nécessite le redémarrage de l\'appareil pour prendre effet si le fond d\'écran est actuellement actif.</string>
+  <string name="other_gpu_info">L\'accélération matérielle n\'est disponible pour Doodle qu\'à partir d\'Android 8. Les animations de fond d\'écran peuvent donc être un peu saccadées, surtout avec le deuxième fond d\'écran.</string>
+  <string name="other_launcher">Masquer l\'icône dans le lanceur d\'applications</string>
+  <string name="other_launcher_description">Les paramètres ne seront accessibles que dans le sélecteur de fonds d\'écran animés de votre système</string>
+  <string name="other_reset">Réinitialiser tous les réglages</string>
+  <string name="other_reset_description">Fait plus que la désinstallation ne le ferait car les préférences sont stockées à un endroit spécial afin d\'être accessibles directement après le démarrage de l\'appareil</string>
+
+  <!-- ABOUT -->
+
+  <string name="about_title">À propos</string>
+  <string name="about_description">Informations sur le développeur et autre</string>
+  <string name="about_version">Version</string>
+  <string name="about_changelog">Journal des modifications</string>
+  <string name="about_changelog_description">Quoi de neuf ?</string>
+  <string name="about_developer">Développeur</string>
+  <string name="about_vending_description">Autres applications du développeur</string>
+  <string name="about_github_description">Code source</string>
+  <string name="about_translation_description">Aider à traduire Doodle</string>
+
+  <!-- MESSAGES -->
+
+  <string name="msg_feedback">Une bonne application demande beaucoup de temps et vit des retours de ses utilisateurs.\n\nAvez-vous des souhaits, des commentaires ou des questions ? Contactez-moi !\nSinon, je serais très heureux d\'avoir une bonne critique sur le Play Store.</string>
+  <string name="msg_share">Découvrez cette excellente application de fonds d\'écran animés : \nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
+  <string name="msg_reset">Réinitialiser tous les réglages ?</string>
+  <string name="msg_preview_missing">Une erreur s\'est produite, veuillez sélectionner manuellement le fond d\'écran animé Doodle</string>
+
+  </resources>

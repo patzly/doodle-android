@@ -164,6 +164,7 @@
 
         <com.google.android.material.switchmaterial.SwitchMaterial
           android:id="@+id/switch_parallax_tilt"
+          style="@style/Widget.Material3.CompoundButton.Switch"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_marginStart="16dp" />

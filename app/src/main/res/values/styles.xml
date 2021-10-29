@@ -19,17 +19,14 @@
 
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-  <style name="ShapeAppearance.Doodle.ExtendedFloatingActionButton" parent="">
-    <item name="cornerFamily">rounded</item>
-    <item name="cornerSize">16dp</item>
-  </style>
-
-  <style name="Widget.Doodle.Snackbar.TextView" parent="Widget.MaterialComponents.Snackbar.TextView">
+  <style name="Widget.Doodle.Snackbar.TextView" parent="Widget.Material3.Snackbar.TextView">
     <item name="android:textSize">14.5sp</item>
-    <item name="android:textColor">@color/background</item>
+    <item name="android:textColor">?attr/colorSurfaceVariant</item>
   </style>
 
-  <style name="Widget.Doodle.Button.TextButton.Snackbar" parent="Widget.MaterialComponents.Button.TextButton.Snackbar">
+  <style
+    name="Widget.Doodle.Button.TextButton.Snackbar"
+    parent="Widget.Material3.Button.TextButton.Snackbar">
     <item name="android:fontFamily">@font/jost_bold</item>
     <item name="android:textSize">14.5sp</item>
     <item name="cornerRadius">8dp</item>
@@ -39,7 +36,9 @@
     <item name="android:tint">@color/icon</item>
   </style>
 
-  <style name="Widget.Doodle.PopupMenu" parent="@style/Widget.MaterialComponents.PopupMenu.Overflow">
+  <style
+    name="Widget.Doodle.PopupMenu"
+    parent="@style/Widget.Material3.PopupMenu.Overflow">
     <item name="android:popupBackground">@drawable/shape_popup_menu</item>
   </style>
 
@@ -48,19 +47,21 @@
     <item name="android:layout_height">1dp</item>
     <item name="android:layout_marginTop">8dp</item>
     <item name="android:layout_marginBottom">8dp</item>
-    <item name="android:background">@color/stroke_secondary</item>
+    <item name="android:background">@color/outline_secondary</item>
   </style>
 
-  <style name="Widget.Doodle.Button.UnelevatedButton" parent="Widget.MaterialComponents.Button.UnelevatedButton">
-    <item name="rippleColor">@color/highlight_on_secondary</item>
+  <style
+    name="Widget.Doodle.Button.UnelevatedButton"
+    parent="Widget.Material3.Button.UnelevatedButton">
+    <!--<item name="rippleColor">@color/highlight_on_secondary</item>
     <item name="backgroundTint">@color/retro_green_bg_white</item>
-    <item name="android:textColor">@color/on_secondary</item>
+    <item name="android:textColor">@color/on_secondary</item>-->
     <item name="android:textSize">14.5sp</item>
     <item name="android:fontFamily">@font/jost_bold</item>
     <item name="cornerRadius">12dp</item>
   </style>
 
-  <style name="Widget.Doodle.Card.Text" parent="Widget.MaterialComponents.CardView">
+  <style name="Widget.Doodle.Card.Text" parent="@style/Widget.Material3.CardView.Filled">
     <item name="android:layout_width">match_parent</item>
     <item name="android:layout_height">wrap_content</item>
     <item name="android:layout_marginStart">16dp</item>
@@ -69,40 +70,40 @@
     <item name="contentPadding">16dp</item>
     <item name="cardElevation">0dp</item>
     <item name="cardCornerRadius">12dp</item>
-    <item name="cardBackgroundColor">@color/on_background_tertiary</item>
+    <!--<item name="cardBackgroundColor">@color/on_background_tertiary</item>-->
     <item name="rippleColor">@color/highlight_secondary</item>
   </style>
 
-  <style name="Widget.Doodle.CheckBox" parent="Widget.MaterialComponents.CompoundButton.CheckBox">
+  <style name="Widget.Doodle.CheckBox" parent="Widget.Material3.CompoundButton.CheckBox">
     <item name="android:layout_width">match_parent</item>
     <item name="android:layout_height">wrap_content</item>
     <item name="android:textSize">16sp</item>
     <item name="android:paddingStart">16dp</item>
     <item name="android:minHeight">38dp</item>
-    <item name="android:textColor">@color/on_surface</item>
     <item name="android:textAlignment">viewStart</item>
   </style>
 
-  <style name="Widget.Doodle.Slider" parent="Widget.MaterialComponents.Slider">
+  <style name="Widget.Doodle.Slider" parent="Widget.Material3.Slider">
     <item name="android:layout_width">match_parent</item>
     <item name="android:layout_height">wrap_content</item>
     <item name="android:layout_marginStart">59dp</item>
     <item name="android:layout_marginEnd">14dp</item>
     <item name="android:stepSize">1</item>
-    <item name="trackColorInactive">@color/on_background_tertiary</item>
+    <!--<item name="trackColorInactive">@color/on_background_tertiary</item>
     <item name="tickColorInactive">@color/on_background_secondary</item>
     <item name="trackColorActive">@color/secondary</item>
     <item name="thumbColor">@color/secondary</item>
     <item name="tickColorActive">@color/transparent</item>
-    <item name="haloColor">@color/highlight</item>
+    <item name="haloColor">@color/highlight</item>-->
     <item name="thumbRadius">9.7dp</item>
     <item name="labelStyle">@style/Widget.Doodle.Tooltip</item>
   </style>
 
-  <style name="Widget.Doodle.Tooltip" parent="Widget.MaterialComponents.Tooltip">
-    <item name="android:textColor">@color/background</item>
+  <style name="Widget.Doodle.Tooltip" parent="Widget.Material3.Tooltip">
+    <item name="android:textColor">?attr/colorOnTertiaryContainer</item>
     <item name="android:textAppearance">@style/TextAppearance.Doodle.Tooltip</item>
     <item name="shapeAppearance">@style/ShapeAppearance.Doodle.Tooltip</item>
+    <item name="backgroundTint">?attr/colorTertiaryContainer</item>
   </style>
 
   <style name="ShapeAppearance.Doodle.Tooltip" parent="">
@@ -123,43 +124,61 @@
     <item name="android:orientation">horizontal</item>
   </style>
 
-  <style name="Widget.Doodle.LinearLayout.ListItem.Clickable" parent="Widget.Doodle.LinearLayout.ListItem">
+  <style
+    name="Widget.Doodle.LinearLayout.ListItem.Clickable"
+    parent="Widget.Doodle.LinearLayout.ListItem">
     <item name="android:clickable">true</item>
     <item name="android:background">@drawable/ripple_bg_list_item</item>
   </style>
 
-  <style name="Widget.Doodle.LinearLayout.ListItem.SingleLine" parent="Widget.Doodle.LinearLayout.ListItem">
+  <style
+    name="Widget.Doodle.LinearLayout.ListItem.SingleLine"
+    parent="Widget.Doodle.LinearLayout.ListItem">
     <item name="android:minHeight">48dp</item>
   </style>
 
-  <style name="Widget.Doodle.LinearLayout.ListItem.SingleLine.Icon" parent="Widget.Doodle.LinearLayout.ListItem.SingleLine">
+  <style
+    name="Widget.Doodle.LinearLayout.ListItem.SingleLine.Icon"
+    parent="Widget.Doodle.LinearLayout.ListItem.SingleLine">
     <item name="android:minHeight">56dp</item>
   </style>
 
-  <style name="Widget.Doodle.LinearLayout.ListItem.SingleLine.Clickable" parent="Widget.Doodle.LinearLayout.ListItem.SingleLine">
+  <style
+    name="Widget.Doodle.LinearLayout.ListItem.SingleLine.Clickable"
+    parent="Widget.Doodle.LinearLayout.ListItem.SingleLine">
     <item name="android:clickable">true</item>
     <item name="android:background">@drawable/ripple_bg_list_item</item>
   </style>
 
-  <style name="Widget.Doodle.LinearLayout.ListItem.SingleLine.Icon.Clickable" parent="Widget.Doodle.LinearLayout.ListItem.SingleLine.Icon">
+  <style
+    name="Widget.Doodle.LinearLayout.ListItem.SingleLine.Icon.Clickable"
+    parent="Widget.Doodle.LinearLayout.ListItem.SingleLine.Icon">
     <item name="android:clickable">true</item>
     <item name="android:background">@drawable/ripple_bg_list_item</item>
   </style>
 
-  <style name="Widget.Doodle.LinearLayout.ListItem.TwoLine" parent="Widget.Doodle.LinearLayout.ListItem">
+  <style
+    name="Widget.Doodle.LinearLayout.ListItem.TwoLine"
+    parent="Widget.Doodle.LinearLayout.ListItem">
     <item name="android:minHeight">64dp</item>
   </style>
 
-  <style name="Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon" parent="Widget.Doodle.LinearLayout.ListItem.TwoLine">
+  <style
+    name="Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon"
+    parent="Widget.Doodle.LinearLayout.ListItem.TwoLine">
     <item name="android:minHeight">72dp</item>
   </style>
 
-  <style name="Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable" parent="Widget.Doodle.LinearLayout.ListItem.TwoLine">
+  <style
+    name="Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable"
+    parent="Widget.Doodle.LinearLayout.ListItem.TwoLine">
     <item name="android:clickable">true</item>
     <item name="android:background">@drawable/ripple_bg_list_item</item>
   </style>
 
-  <style name="Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon.Clickable" parent="Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon">
+  <style
+    name="Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon.Clickable"
+    parent="Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon">
     <item name="android:clickable">true</item>
     <item name="android:background">@drawable/ripple_bg_list_item</item>
   </style>
@@ -170,7 +189,9 @@
     <item name="android:orientation">vertical</item>
   </style>
 
-  <style name="Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch" parent="Widget.Doodle.LinearLayout.ListItem.TextBox">
+  <style
+    name="Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch"
+    parent="Widget.Doodle.LinearLayout.ListItem.TextBox">
     <item name="android:layout_width">0dp</item>
     <item name="android:layout_weight">1</item>
   </style>
@@ -183,7 +204,9 @@
     <item name="android:importantForAccessibility">no</item>
   </style>
 
-  <style name="Widget.Doodle.ImageView.ListItem.Icon.End" parent="Widget.Doodle.ImageView.ListItem.Icon">
+  <style
+    name="Widget.Doodle.ImageView.ListItem.Icon.End"
+    parent="Widget.Doodle.ImageView.ListItem.Icon">
     <item name="android:layout_gravity">end|center_vertical</item>
     <item name="android:layout_marginStart">16dp</item>
     <item name="android:layout_marginEnd">0dp</item>
@@ -194,7 +217,7 @@
   <style name="Widget.Doodle.TextView" parent="Widget.MaterialComponents.TextView">
     <item name="android:textSize">15.5sp</item>
     <item name="android:lineSpacingExtra">-1.5sp</item>
-    <item name="android:textColor">@color/on_background</item>
+    <item name="android:textColor">?attr/colorOnBackground</item>
     <item name="android:textAlignment">viewStart</item>
     <item name="android:fontFamily">@font/jost_book</item>
   </style>
@@ -210,7 +233,6 @@
   </style>
 
   <style name="Widget.Doodle.TextView.Toolbar" parent="Widget.Doodle.TextView">
-    <item name="android:textColor">@color/on_background</item>
     <item name="android:textSize" tools:ignore="SpUsage">21.5dp</item>
     <item name="android:fontFamily">@font/jost_bold</item>
     <item name="android:singleLine">true</item>
@@ -224,7 +246,9 @@
     <item name="android:gravity">center_vertical</item>
   </style>
 
-  <style name="Widget.Doodle.TextView.Toolbar.BottomSheet.Center" parent="Widget.Doodle.TextView.Toolbar.BottomSheet">
+  <style
+    name="Widget.Doodle.TextView.Toolbar.BottomSheet.Center"
+    parent="Widget.Doodle.TextView.Toolbar.BottomSheet">
     <item name="android:layout_width">wrap_content</item>
     <item name="android:gravity">center</item>
     <item name="android:textAlignment">center</item>
@@ -239,7 +263,7 @@
     <item name="android:paddingBottom">3dp</item>
     <item name="android:fontFamily">@font/jost_bold</item>
     <item name="android:textSize">14.5sp</item>
-    <item name="android:textColor">@color/secondary</item>
+    <item name="android:textColor">?attr/colorSecondary</item>
   </style>
 
   <style name="Widget.Doodle.TextView.ListItem.OverLine" parent="Widget.Doodle.TextView">

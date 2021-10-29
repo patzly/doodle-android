@@ -143,7 +143,7 @@ public class OtherFragment extends BaseFragment
           Snackbar.make(
               binding.getRoot(), getString(R.string.msg_reset), Snackbar.LENGTH_LONG
           ).setActionTextColor(
-              ContextCompat.getColor(activity, R.color.retro_green_fg_invert)
+              ContextCompat.getColor(activity, R.color.retro_green_60)
           ).setAction(
               getString(R.string.action_reset), view -> {
                 performHapticHeavyClick();

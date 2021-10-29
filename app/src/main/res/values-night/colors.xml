@@ -21,27 +21,11 @@
 
 <resources>
 
-  <color name="retro_green_fg">@color/retro_green_bg_black</color>
-  <color name="retro_green_fg_invert">#60837a</color>
-
-  <color name="retro_dirt_fg">#e2d9a2</color>
-  <color name="retro_dirt_bg">#c9c2a2</color>
-
-  <!-- PRIMARY -->
-
-  <color name="primary">#313235</color>
-
   <!-- BACKGROUND -->
 
   <color name="background">#1e1f22</color>
-  <color name="on_background">@color/grey200</color>
-  <color name="on_background_secondary">@color/grey600</color>
+  <color name="on_background_secondary">@color/grey_40</color>
   <color name="on_background_tertiary">#292a2e</color>
-
-  <!-- SURFACE -->
-
-  <color name="surface">#303030</color>
-  <color name="on_surface">@color/grey200</color>
 
   <!-- HIGHLIGHT -->
 
@@ -50,11 +34,11 @@
 
   <!-- STROKES -->
 
-  <color name="stroke_secondary">#3a3b3e</color>
+  <color name="outline_secondary">@color/grey_20</color>
 
   <!-- ICONS -->
 
-  <color name="icon">@color/grey400</color>
+  <color name="icon">@color/grey_60</color>
 
   <color name="vending_blue">#00000000</color>
   <color name="vending_red">#00000000</color>

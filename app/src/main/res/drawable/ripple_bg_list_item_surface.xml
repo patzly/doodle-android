@@ -31,7 +31,7 @@
           <corners
             android:topLeftRadius="16dp"
             android:bottomLeftRadius="16dp" />
-          <solid android:color="@color/surface" />
+          <solid android:color="?attr/colorSurface" />
         </shape>
       </item>
     </ripple>

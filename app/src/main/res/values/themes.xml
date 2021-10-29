@@ -19,27 +19,15 @@
 
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-  <style name="Theme.Doodle" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-    <item name="colorPrimary">@color/background</item>
-    <item name="colorPrimaryDark">@color/background</item>
-    <item name="colorOnPrimary">@color/on_background</item>
-
-    <item name="colorSecondary">@color/secondary</item>
-    <item name="colorOnSecondary">@color/on_secondary</item>
-
-    <item name="android:colorBackground">@color/background</item>
-    <item name="colorOnBackground">@color/on_background</item>
-    <item name="android:colorForeground">@color/on_background</item>
-    <item name="android:navigationBarColor">@color/background</item>
-
-    <item name="colorSurface">@color/surface</item>
-    <item name="colorOnSurface">@color/on_surface</item>
+  <style name="Base.Doodle" parent="Theme.Material3.DayNight.NoActionBar">
+    <item name="android:colorPrimaryDark">?android:attr/colorBackground</item>
+    <item name="android:navigationBarColor">?android:attr/colorBackground</item>
 
     <item name="snackbarTextViewStyle">@style/Widget.Doodle.Snackbar.TextView</item>
     <item name="snackbarButtonStyle">@style/Widget.Doodle.Button.TextButton.Snackbar</item>
 
-    <item name="android:colorControlNormal">@color/on_background</item>
-    <item name="android:colorControlActivated">@color/secondary</item>
+    <item name="android:colorControlNormal">?attr/colorOnBackground</item>
+    <item name="android:colorControlActivated">?attr/colorSecondary</item>
     <item name="android:colorControlHighlight">@color/highlight</item>
     <item name="android:colorEdgeEffect">@color/highlight</item>
 
@@ -55,9 +43,44 @@
     <item name="android:windowSplashScreenAnimationDuration" tools:targetApi="s">1050</item>
   </style>
 
+  <style name="Theme.Doodle" parent="Base.Doodle">
+    <item name="android:colorBackground">@color/grey_99</item>
+    <item name="colorOnBackground">@color/grey_10</item>
+
+    <item name="colorPrimary">@color/retro_green_40</item>
+    <item name="colorOnPrimary">@color/white</item>
+    <item name="colorPrimaryContainer">@color/retro_green_90</item>
+    <item name="colorOnPrimaryContainer">@color/retro_green_10</item>
+    <item name="colorPrimaryInverse">@color/retro_green_80</item>
+
+    <item name="colorSurface">@color/grey_99</item>
+    <item name="colorOnSurface">@color/grey_10</item>
+    <item name="colorSurfaceVariant">@color/grey_90</item>
+    <item name="colorOnSurfaceVariant">@color/grey_30</item>
+    <item name="colorSurfaceInverse">@color/grey_20</item>
+    <item name="colorOnSurfaceInverse">@color/grey_50</item>
+
+    <item name="colorSecondary">@color/retro_green_40</item>
+    <item name="colorOnSecondary">@color/white</item>
+    <item name="colorSecondaryContainer">@color/retro_green_90</item>
+    <item name="colorOnSecondaryContainer">@color/retro_green_10</item>
+
+    <item name="colorTertiary">@color/retro_dirt_40</item>
+    <item name="colorOnTertiary">@color/white</item>
+    <item name="colorTertiaryContainer">@color/retro_dirt_90</item>
+    <item name="colorOnTertiaryContainer">@color/retro_dirt_10</item>
+
+    <item name="colorError">@color/retro_red_40</item>
+    <item name="colorOnError">@color/white</item>
+    <item name="colorErrorContainer">@color/retro_red_90</item>
+    <item name="colorOnErrorContainer">@color/retro_red_10</item>
+
+    <item name="colorOutline">@color/grey_50</item>
+  </style>
+
   <style
     name="Theme.Doodle.BottomSheetDialog"
-    parent="ThemeOverlay.MaterialComponents.BottomSheetDialog">
+    parent="ThemeOverlay.Material3.BottomSheetDialog">
     <item name="enableEdgeToEdge">true</item>
     <item name="android:navigationBarColor">@color/transparent</item>
   </style>

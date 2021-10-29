@@ -96,7 +96,7 @@ public class SvgDrawable {
     paintDebug.setStrokeWidth(SystemUiUtil.dpToPx(context, 4));
     paintDebug.setStyle(Style.STROKE);
     paintDebug.setStrokeCap(Cap.ROUND);
-    paintDebug.setColor(ContextCompat.getColor(context, R.color.retro_green_fg));
+    paintDebug.setColor(ContextCompat.getColor(context, R.color.retro_green_50));
   }
 
   @Nullable

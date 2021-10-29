@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ This file is part of Doodle Android.
+  ~
+  ~ Doodle Android is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Doodle Android is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with Doodle Android. If not, see <http://www.gnu.org/licenses/>.
+  ~
+  ~ Copyright (c) 2020-2021 by Patrick Zedler
+  -->
+
+<resources>
+
+  <style name="Theme.Doodle" parent="Base.Doodle">
+    <item name="android:colorBackground">@color/grey_10</item>
+    <item name="colorOnBackground">@color/grey_90</item>
+
+    <item name="colorPrimary">@color/retro_green_80</item>
+    <item name="colorOnPrimary">@color/retro_green_20</item>
+    <item name="colorPrimaryContainer">@color/retro_green_30</item>
+    <item name="colorOnPrimaryContainer">@color/retro_green_90</item>
+    <item name="colorPrimaryInverse">@color/retro_green_40</item>
+
+    <item name="colorSurface">@color/grey_10</item>
+    <item name="colorOnSurface">@color/grey_90</item>
+    <item name="colorSurfaceVariant">@color/grey_30</item>
+    <item name="colorOnSurfaceVariant">@color/grey_80</item>
+    <item name="colorSurfaceInverse">@color/grey_90</item>
+    <item name="colorOnSurfaceInverse">@color/grey_20</item>
+
+    <item name="colorSecondary">@color/retro_green_80</item>
+    <item name="colorOnSecondary">@color/retro_green_20</item>
+    <item name="colorSecondaryContainer">@color/retro_green_30</item>
+    <item name="colorOnSecondaryContainer">@color/retro_green_90</item>
+
+    <item name="colorTertiary">@color/retro_dirt_80</item>
+    <item name="colorOnTertiary">@color/retro_dirt_20</item>
+    <item name="colorTertiaryContainer">@color/retro_dirt_30</item>
+    <item name="colorOnTertiaryContainer">@color/retro_dirt_90</item>
+
+    <item name="colorError">@color/retro_red_80</item>
+    <item name="colorOnError">@color/retro_red_20</item>
+    <item name="colorErrorContainer">@color/retro_red_30</item>
+    <item name="colorOnErrorContainer">@color/retro_red_80</item>
+
+    <item name="colorOutline">@color/grey_60</item>
+  </style>
+
+</resources>

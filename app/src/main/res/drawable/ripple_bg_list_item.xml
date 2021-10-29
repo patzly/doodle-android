@@ -31,7 +31,7 @@
       <corners
         android:topLeftRadius="16dp"
         android:bottomLeftRadius="16dp" />
-      <solid android:color="@color/background" />
+      <solid android:color="?android:attr/colorBackground" />
     </shape>
   </item>
 

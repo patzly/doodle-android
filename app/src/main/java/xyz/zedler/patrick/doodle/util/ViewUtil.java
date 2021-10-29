@@ -175,7 +175,7 @@ public class ViewUtil {
     valueAnimator.addUpdateListener(animation -> {
       cardView.setStrokeColor(
           ColorUtils.blendARGB(
-              ContextCompat.getColor(context, R.color.stroke_secondary),
+              ContextCompat.getColor(context, R.color.outline_secondary),
               ContextCompat.getColor(context, resId),
               (float) valueAnimator.getAnimatedValue()
           )

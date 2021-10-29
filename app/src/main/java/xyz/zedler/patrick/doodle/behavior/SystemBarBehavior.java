@@ -251,7 +251,7 @@ public class SystemBarBehavior {
           );
         } else {
           window.setNavigationBarDividerColor(
-              ContextCompat.getColor(activity, R.color.stroke_secondary)
+              ContextCompat.getColor(activity, R.color.outline_secondary)
           );
           window.setNavigationBarColor(
               ContextCompat.getColor(activity, R.color.background)
@@ -271,7 +271,7 @@ public class SystemBarBehavior {
         window.setNavigationBarColor(isScrollable ? scrollableColor : Color.TRANSPARENT);
       } else {
         window.setNavigationBarDividerColor(
-            ContextCompat.getColor(activity, R.color.stroke_secondary)
+            ContextCompat.getColor(activity, R.color.outline_secondary)
         );
         window.setNavigationBarColor(ContextCompat.getColor(activity, R.color.background));
       }

@@ -20,7 +20,7 @@
 <shape
   xmlns:android="http://schemas.android.com/apk/res/android">
 
-  <solid android:color="@color/surface" />
+  <solid android:color="?attr/colorSurface" />
 
   <padding
     android:top="8dp"

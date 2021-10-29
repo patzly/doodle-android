@@ -91,11 +91,15 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 
     wallpaperPickerLauncher = registerForActivityResult(
         new ActivityResultContracts.StartActivityForResult(),
-        result -> setFabVisibility(result.getResultCode() != Activity.RESULT_OK, true)
+        result -> setFabVisibility(
+            result.getResultCode() != Activity.RESULT_OK, true
+        )
     );
 
     // Calculate FAB top edge distance to bottom (excluding bottom inset)
-    int height = SystemUiUtil.dpToPx(this, 32) + SystemUiUtil.spToPx(this, 16);
+    int height = SystemUiUtil.dpToPx(
+        this, 32) + SystemUiUtil.spToPx(this, 16
+    );
     int margin = SystemUiUtil.dpToPx(this, 40);
     fabTopEdgeDistance = height + margin;
 

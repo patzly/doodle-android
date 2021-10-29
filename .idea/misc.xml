@@ -8,9 +8,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/ic_round_check_circle_anim.xml" value="0.1" />
+        <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/ic_round_doodle_anim.xml" value="0.1" />
+        <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/ic_round_star_anim.xml" value="0.1" />
+        <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/ripple_bg_list_item.xml" value="0.1953125" />
+        <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/ripple_bg_list_item_surface.xml" value="0.1953125" />
         <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/selection_floral.xml" value="0.1953125" />
         <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/selection_stone.xml" value="0.1953125" />
+        <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/shape_popup_menu.xml" value="0.1953125" />
+        <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/splash_logo_anim.xml" value="0.1" />
+        <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/layout/activity_main.xml" value="0.1764102564102564" />
         <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/layout/fragment_appearance.xml" value="0.11775362318840579" />
+        <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/layout/fragment_overview.xml" value="0.17916666666666667" />
+        <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/layout/fragment_parallax.xml" value="0.1764102564102564" />
         <entry key="app/src/main/res/drawable/ic_dada.xml" value="0.3640625" />
         <entry key="app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.3640625" />
         <entry key="app/src/main/res/drawable/ic_palette_black_24dp.xml" value="0.3640625" />

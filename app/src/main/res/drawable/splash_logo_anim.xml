@@ -42,7 +42,7 @@
           <path
             android:name="ring"
             android:pathData="M 15.613 5.102 C 14.62 5.568 14.191 6.748 14.653 7.742 C 15.114 8.739 16.296 9.173 17.293 8.712 C 18.291 8.247 18.721 7.059 18.253 6.062 C 17.787 5.07 16.607 4.64 15.613 5.102 Z"
-            android:fillColor="@color/retro_dirt_fg"
+            android:fillColor="@color/retro_dirt_50"
             android:strokeWidth="1" />
         </group>
         <path

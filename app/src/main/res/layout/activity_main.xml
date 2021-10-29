@@ -35,21 +35,15 @@
 
   <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
     android:id="@+id/fab_main"
+    style="@style/Widget.Material3.ExtendedFloatingActionButton.Tertiary"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:text="@string/action_set"
     android:layout_marginBottom="24dp"
     android:fontFamily="@font/jost_bold"
-    android:textColor="@color/retro_dark"
     android:textSize="16sp"
-    android:paddingStart="16dp"
-    android:paddingEnd="16dp"
-    android:paddingTop="16dp"
-    android:paddingBottom="16dp"
     app:layout_anchor="@id/fragment_main_nav_host"
     app:layout_anchorGravity="bottom|center_horizontal"
-    app:rippleColor="@color/highlight_on_secondary"
-    app:backgroundTint="@color/retro_dirt_bg"
-    app:shapeAppearanceOverlay="@style/ShapeAppearance.Doodle.ExtendedFloatingActionButton" />
+    app:rippleColor="@color/highlight_on_secondary" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

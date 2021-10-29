@@ -21,19 +21,20 @@ package xyz.zedler.patrick.doodle.fragment.dialog;
 
 import android.app.Dialog;
 import android.content.SharedPreferences;
+import android.content.res.Resources.Theme;
 import android.graphics.Color;
 import android.graphics.drawable.PaintDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.view.Window;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.core.content.ContextCompat;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat.Type;
 import androidx.navigation.NavController;
@@ -88,9 +89,11 @@ public class BaseBottomSheetDialogFragment extends BottomSheetDialogFragment {
             container.setClipChildren(false);
             container.setClipToPadding(false);
 
-            PaintDrawable background = new PaintDrawable(
-                ContextCompat.getColor(requireContext(), R.color.surface)
-            );
+            TypedValue typedValue = new TypedValue();
+            Theme theme = activity.getTheme();
+            theme.resolveAttribute(R.attr.colorSurface, typedValue, true);
+
+            PaintDrawable background = new PaintDrawable(typedValue.data);
             int radius = SystemUiUtil.dpToPx(requireContext(), 16);
             setCornerRadius(background, radius);
             sheet.setBackground(background);

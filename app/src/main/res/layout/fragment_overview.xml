@@ -86,7 +86,7 @@
         android:layout_weight="1"
         android:text="@string/app_name" />
 
-      <androidx.appcompat.widget.Toolbar
+      <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar_overview"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
@@ -119,7 +119,7 @@
           style="@style/Widget.Doodle.TextView.Paragraph"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:textColor="@color/on_background"
+          android:textColor="?attr/colorOnSurfaceVariant"
           android:text="@string/wallpaper_description" />
 
       </com.google.android.material.card.MaterialCardView>

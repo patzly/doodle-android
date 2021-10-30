@@ -32,7 +32,6 @@ import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.core.content.ContextCompat;
 import com.google.android.material.snackbar.Snackbar;
 import xyz.zedler.patrick.doodle.Constants.DEF;
 import xyz.zedler.patrick.doodle.Constants.PREF;
@@ -143,7 +142,7 @@ public class OtherFragment extends BaseFragment
           Snackbar.make(
               binding.getRoot(), getString(R.string.msg_reset), Snackbar.LENGTH_LONG
           ).setActionTextColor(
-              ContextCompat.getColor(activity, R.color.retro_green_60)
+              ResUtil.getColorAttr(activity, R.attr.colorPrimaryInverse)
           ).setAction(
               getString(R.string.action_reset), view -> {
                 performHapticHeavyClick();

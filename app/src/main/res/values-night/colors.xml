@@ -24,7 +24,7 @@
   <!-- BACKGROUND -->
 
   <color name="background">#1e1f22</color>
-  <color name="on_background_secondary">@color/grey_40</color>
+  <color name="on_background_secondary">@color/grey_60</color>
   <color name="on_background_tertiary">#292a2e</color>
 
   <!-- HIGHLIGHT -->

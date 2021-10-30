@@ -20,6 +20,8 @@
 <resources>
 
   <style name="Theme.Doodle" parent="Base.Doodle">
+    <item name="elevationOverlayEnabled">true</item>
+
     <item name="android:colorBackground">@color/grey_10</item>
     <item name="colorOnBackground">@color/grey_90</item>
 

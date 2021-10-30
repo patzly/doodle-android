@@ -66,7 +66,7 @@
         android:layout_weight="1"
         android:text="@string/parallax_title" />
 
-      <androidx.appcompat.widget.Toolbar
+      <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar_parallax"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"

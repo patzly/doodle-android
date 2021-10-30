@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ This file is part of Doodle Android.
+  ~
+  ~ Doodle Android is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Doodle Android is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with Doodle Android. If not, see <http://www.gnu.org/licenses/>.
+  ~
+  ~ Copyright (c) 2020-2021 by Patrick Zedler
+  -->
+
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+
+  <string name="wallpaper_description">多彩的动态壁纸，具有自动黑暗模式和节能动画。点击了解更多信息。</string>
+  <string name="wallpaper_description_picker">探索丰富多彩的形状集合，当您在主屏幕上滑动并解锁设备时，通过柔和的视觉差和缩放效果进行优化。
+自定义墙纸以找到适合您自己的风格</string>
+
+  <!-- TITLES -->
+
+  <string name="title_info">信息</string>
+  <string name="title_feedback">反馈</string>
+  <string name="title_licenses">开放源代码许可证</string>
+
+  <!-- LABELS -->
+
+  <string name="label_ms">%1$s毫秒</string>
+  <string name="label_degrees">%1$s度</string>
+
+  <!-- ACTIONS -->
+
+  <string name="action_close">关闭</string>
+  <string name="action_back">返回</string>
+  <string name="action_reset">重置</string>
+  <string name="action_set">设置壁纸</string>
+  <string name="action_send_feedback">发送反馈</string>
+  <string name="action_share">分享</string>
+  <string name="action_share_description">把Doodle告诉你的朋友们</string>
+  <string name="action_email">发送邮件</string>
+  <string name="action_email_description">联系开发者</string>
+  <string name="action_rate">在Google Play上进行打赏</string>
+  <string name="action_rate_description">支持发展</string>
+  <string name="action_github">在GitHub上的Doodle项目</string>
+  <string name="action_github_description">去制作一个新的项目</string>
+
+  <!-- APPEARANCE -->
+
+  <string name="appearance_title">外观</string>
+  <string name="appearance_description">设计和主题设置</string>
+  <string name="appearance_design">设计</string>
+  <string name="appearance_design_doodle">Doodle收集的Pixel 4 壁纸</string>
+  <string name="appearance_design_monet">你自己使用Pixel 6 的素材来创作壁纸吧</string>
+  <string name="appearance_design_anna">动态壁纸à l\'Anna Kövecses</string>
+  <string name="appearance_variant">其它种类</string>
+  <string name="appearance_night_mode">深色模式</string>
+  <string name="appearance_night_mode_description">只有暗黑色彩</string>
+  <string name="appearance_follow_system">跟随系统</string>
+  <string name="appearance_follow_system_description">采用自带主题</string>
+  <string name="appearance_white_text">强制带阴影的白色文本</string>
+  <string name="appearance_white_text_description">可能会影响到美观</string>
+
+  <!-- PARALLAX -->
+
+  <string name="parallax_title">视差</string>
+  <string name="parallax_description">滑动和倾斜效果</string>
+  <string name="parallax_touch_wiz">您当前的启动器似乎是三星TouchWiz，它不支持后台滚动。
+如果您没有倾斜传感器，请尝试其他桌面启动器以启用视差效果</string>
+  <string name="parallax_intensity">视差强度</string>
+  <string name="parallax_intensity_description">页面滑动和倾斜效果强度上的水平偏移</string>
+  <string name="parallax_none">无</string>
+  <string name="parallax_category_tilt">倾斜效果</string>
+  <string name="parallax_tilt">倾斜设备时图案移动</string>
+  <string name="parallax_tilt_description">会消耗更多的电量</string>
+  <string name="parallax_refresh_rate">倾斜传感器刷新率</string>
+  <string name="parallax_refresh_rate_description">延迟过短会使缩放动画变慢</string>
+  <string name="parallax_damping">运动阻碍大小</string>
+  <string name="parallax_damping_description">减少以获得更平滑的效果</string>
+  <string name="parallax_threshold">运动阈值</string>
+  <string name="parallax_threshold_description">增加以暂停连续渲染，尽管几乎没有移动</string>
+
+  <!-- SIZE -->
+
+  <string name="size_title">形状尺寸</string>
+  <string name="size_description">规模和缩放效果</string>
+  <string name="size_scale">规模</string>
+  <string name="size_scale_description">适用于大屏幕和密度</string>
+  <string name="size_category_zoom">变焦效果</string>
+  <string name="size_zoom">变焦强度</string>
+  <string name="size_zoom_description">增加时，图案间距会缩小更多</string>
+  <string name="size_zoom_launcher">打开快速设置或应用程序抽屉时缩小</string>
+  <string name="size_zoom_system">使用系统提供的缩放效果</string>
+  <string name="size_zoom_system_description">修复启用“倾斜效果”时的抖动缩放动画，需要重新启动墙纸才能生效</string>
+  <string name="size_zoom_unlock">在锁屏上缩小</string>
+  <string name="size_zoom_unlock_description">如果启用“倾斜效果”，则可能会出现抖动</string>
+  <string name="size_zoom_duration">关闭锁定缩放持续时间</string>
+  <string name="size_zoom_duration_description">减少速度以获得更快的动画效果</string>
+  <string name="size_zoom_rotation">缩放时旋转某些形状</string>
+  <string name="size_zoom_rotation_description">以度为单位的最大旋转</string>
+
+  <!-- OTHER -->
+
+  <string name="other_title">其他设置</string>
+  <string name="other_description">渲染和重置</string>
+  <string name="other_gpu">硬件加速</string>
+  <string name="other_gpu_description">如果壁纸崩溃，请关闭。如果壁纸当前处于活动状态，则需要重新启动设备才能生效。</string>
+  <string name="other_gpu_info">硬件加速仅适用于从Android 8开始的安卓系统因此，墙纸动画可能有点不稳定，尤其是第二张墙纸。</string>
+  <string name="other_launcher">在桌面上隐藏图标</string>
+  <string name="other_launcher_description">设置只能在系统的实时壁纸选取器中访问</string>
+  <string name="other_reset">重置所有设置</string>
+  <string name="other_reset_description">花费的时间比卸载要多，因为首选项存储在一个特殊的位置，我们必须要清除它</string>
+
+  <!-- ABOUT -->
+
+  <string name="about_title">关于</string>
+  <string name="about_description">开发者信息以及更多</string>
+  <string name="about_version">版本</string>
+  <string name="about_changelog">变更日志</string>
+  <string name="about_changelog_description">更新了什么？</string>
+  <string name="about_developer">开发者</string>
+  <string name="about_vending_description">开发者的其它Apps</string>
+  <string name="about_github_description">源代码</string>
+  <string name="about_translation_description">帮助翻译Doodle</string>
+
+  <!-- MESSAGES -->
+
+  <string name="msg_feedback">一个好的应用程序需要花费大量的时间和精力来获得用户的好评。
+您有任何愿望、评论或问题吗？
+联系我，无论如何，我会很高兴在Play Store回复你。</string>
+  <string name="msg_share">查看此酷炫的动态壁纸应用程序:https://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
+  <string name="msg_reset">重置所有设置吗？</string>
+  <string name="msg_preview_missing">发生错误，请手动选择Doodle Live墙纸</string>
+
+  </resources>

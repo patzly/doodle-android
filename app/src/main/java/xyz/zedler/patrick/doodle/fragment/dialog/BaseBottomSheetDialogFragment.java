@@ -40,9 +40,9 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetBehavior.BottomSheetCallback;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
+import com.google.android.material.elevation.SurfaceColors;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.activity.MainActivity;
-import xyz.zedler.patrick.doodle.util.ResUtil;
 import xyz.zedler.patrick.doodle.util.SystemUiUtil;
 import xyz.zedler.patrick.doodle.util.ViewUtil;
 
@@ -56,6 +56,7 @@ public class BaseBottomSheetDialogFragment extends BottomSheetDialogFragment {
   private ViewUtil viewUtil;
   private boolean isExpanded;
   private boolean lightNavBar;
+  private int backgroundColor;
 
   @Override
   public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -88,9 +89,8 @@ public class BaseBottomSheetDialogFragment extends BottomSheetDialogFragment {
             container.setClipChildren(false);
             container.setClipToPadding(false);
 
-            PaintDrawable background = new PaintDrawable(
-                ResUtil.getColorAttr(activity, R.attr.colorSurface)
-            );
+            backgroundColor = SurfaceColors.SURFACE_1.getColor(activity);
+            PaintDrawable background = new PaintDrawable(backgroundColor);
             int radius = SystemUiUtil.dpToPx(requireContext(), 16);
             setCornerRadius(background, radius);
             sheet.setBackground(background);
@@ -320,5 +320,9 @@ public class BaseBottomSheetDialogFragment extends BottomSheetDialogFragment {
   }
 
   public void applyBottomInset(int bottom) {
+  }
+
+  public int getBackgroundColor() {
+    return backgroundColor;
   }
 }

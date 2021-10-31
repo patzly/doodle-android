@@ -48,6 +48,15 @@ public class FeedbackBottomSheetDialogFragment extends BaseBottomSheetDialogFrag
   @Override
   public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle state) {
     binding = FragmentBottomsheetFeedbackBinding.inflate(inflater, container, false);
+
+    ViewUtil.setOnClickListeners(
+        this,
+        binding.linearFeedbackRate,
+        binding.linearFeedbackEmail,
+        binding.linearFeedbackGithub,
+        binding.linearFeedbackShare
+    );
+
     return binding.getRoot();
   }
 

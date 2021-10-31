@@ -43,10 +43,10 @@
     <item name="colorSecondaryContainer">@color/retro_green_30</item>
     <item name="colorOnSecondaryContainer">@color/retro_green_90</item>
 
-    <item name="colorTertiary">@color/retro_dirt_80</item>
-    <item name="colorOnTertiary">@color/retro_dirt_20</item>
-    <item name="colorTertiaryContainer">@color/retro_dirt_30</item>
-    <item name="colorOnTertiaryContainer">@color/retro_dirt_90</item>
+    <item name="colorTertiary">@color/retro_green_80</item>
+    <item name="colorOnTertiary">@color/retro_green_20</item>
+    <item name="colorTertiaryContainer">@color/retro_green_30</item>
+    <item name="colorOnTertiaryContainer">@color/retro_green_90</item>
 
     <item name="colorError">@color/retro_red_80</item>
     <item name="colorOnError">@color/retro_red_20</item>

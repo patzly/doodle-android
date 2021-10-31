@@ -1,10 +1,16 @@
+4.3.0:
+- New: exclusive live wallpaper based on Pixel 6 wallpapers (more to come!)
+- New: dynamic colors in settings app for Android 12
+- New: visual implementation of Material Design 3
+- Fixed: feedback dialog
+
+Please consider translating this app into your language at Transifex. There are less than 90 strings to translate!
+
 4.2.0:
-- New: exclusive live wallpapers based on leaked Pixel 6 wallpapers (more to come!)
+- New: exclusive live wallpapers based on leaked Pixel 6 wallpapers
 - New: another live wallpaper based on an artwork by Anna Kövecses
 - Improved: shape rotation
 - Fixed: wrong tilt effect direction in landscape mode
-
-Please consider translating this app into your language at Transifex. There are less than 90 strings to translate!
 
 4.1.0:
 - New: live wallpaper based on a static Chrome OS wallpaper by Anna Kövecses

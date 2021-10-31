@@ -18,21 +18,18 @@
   ~ Copyright (c) 2020-2021 by Patrick Zedler
   -->
 
-<layer-list
+<ripple
   xmlns:android="http://schemas.android.com/apk/res/android"
-  android:autoMirrored="true">
-  <item>
-    <ripple android:color="@color/highlight">
-      <item
-        android:left="8dp"
-        android:right="8dp"
-        android:top="2dp"
-        android:bottom="2dp">
-        <shape android:shape="rectangle">
-          <corners android:radius="16dp" />
-          <solid android:color="?attr/colorSurface" />
-        </shape>
-      </item>
-    </ripple>
+  android:color="@color/highlight">
+  <item
+    android:left="8dp"
+    android:right="8dp"
+    android:top="2dp"
+    android:bottom="2dp">
+    <shape
+      android:shape="rectangle">
+      <corners android:radius="16dp" />
+      <solid android:color="?attr/colorSurface" />
+    </shape>
   </item>
-</layer-list>
+</ripple>

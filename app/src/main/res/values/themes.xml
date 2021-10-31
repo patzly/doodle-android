@@ -67,8 +67,8 @@
 
     <item name="colorTertiary">@color/retro_dirt_40</item>
     <item name="colorOnTertiary">@color/white</item>
-    <item name="colorTertiaryContainer">@color/retro_dirt_90</item>
-    <item name="colorOnTertiaryContainer">@color/retro_dirt_10</item>
+    <item name="colorTertiaryContainer">@color/retro_dirt_80</item>
+    <item name="colorOnTertiaryContainer">@color/retro_dark</item>
 
     <item name="colorError">@color/retro_red_40</item>
     <item name="colorOnError">@color/white</item>

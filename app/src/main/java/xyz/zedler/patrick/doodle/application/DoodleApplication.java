@@ -19,10 +19,11 @@
 
 package xyz.zedler.patrick.doodle.application;
 
+import android.app.Application;
 import com.google.android.material.color.DynamicColors;
 import xyz.zedler.patrick.doodle.R;
 
-public class DoodleApplication extends android.app.Application {
+public class DoodleApplication extends Application {
 
   @Override
   public void onCreate() {

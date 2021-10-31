@@ -44,9 +44,9 @@ public class SplashActivity extends AppCompatActivity {
       startSettingsActivity(false);
     } else if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) {
       LayerDrawable splashContent = (LayerDrawable) ResourcesCompat.getDrawable(
-          getResources(), R.drawable.splash_content, null
+          getResources(), R.drawable.splash_content, getTheme()
       );
-      getWindow().setBackgroundDrawable(splashContent);
+      getWindow().getDecorView().setBackground(splashContent);
       try {
         assert splashContent != null;
         ViewUtil.startIcon(splashContent.findDrawableByLayerId(R.id.splash_logo));

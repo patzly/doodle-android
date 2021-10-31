@@ -23,6 +23,8 @@
   xmlns:tools="http://schemas.android.com/tools"
   xmlns:android="http://schemas.android.com/apk/res/android">
 
+  <item android:drawable="?android:attr/colorBackground" />
+
   <item
     android:id="@+id/splash_logo"
     android:gravity="center"

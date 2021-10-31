@@ -8,18 +8,55 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/ic_round_all_directions_anim.xml" value="0.1953125" />
+        <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/ic_round_aod.xml" value="0.1953125" />
+        <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/ic_round_arrow_back.xml" value="0.1953125" />
+        <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/ic_round_autorenew_anim.xml" value="0.1953125" />
+        <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/ic_round_brightness_auto_anim.xml" value="0.1953125" />
         <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/ic_round_check_circle_anim.xml" value="0.1" />
+        <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/ic_round_close.xml" value="0.1953125" />
+        <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/ic_round_copyright_anim.xml" value="0.1953125" />
+        <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/ic_round_dark_mode_to_light_mode_anim.xml" value="0.1953125" />
         <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/ic_round_doodle_anim.xml" value="0.1" />
+        <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/ic_round_email.xml" value="0.1953125" />
+        <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/ic_round_filter_alt_anim.xml" value="0.1953125" />
+        <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/ic_round_filter_b_and_w.xml" value="0.1953125" />
+        <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/ic_round_filter_center_focus_anim.xml" value="0.1953125" />
+        <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/ic_round_github.xml" value="0.1953125" />
+        <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/ic_round_history_anim.xml" value="0.1953125" />
+        <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/ic_round_info_outline.xml" value="0.1953125" />
+        <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/ic_round_light_mode_to_dark_mode_anim.xml" value="0.1953125" />
+        <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/ic_round_memory.xml" value="0.1" />
+        <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/ic_round_navigate_next.xml" value="0.1953125" />
+        <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/ic_round_open_in_browser_anim.xml" value="0.1953125" />
+        <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/ic_round_palette_anim.xml" value="0.1953125" />
+        <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/ic_round_person_anim.xml" value="0.1953125" />
+        <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/ic_round_refresh_anim.xml" value="0.1953125" />
+        <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/ic_round_screen_lock_portrait.xml" value="0.1953125" />
+        <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/ic_round_settings_backup_restore_anim.xml" value="0.1953125" />
+        <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/ic_round_settings_suggest.xml" value="0.1953125" />
+        <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/ic_round_share.xml" value="0.1953125" />
         <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/ic_round_star_anim.xml" value="0.1" />
+        <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/ic_round_swap_horiz_anim.xml" value="0.1953125" />
+        <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/ic_round_timer_anim.xml" value="0.1953125" />
+        <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/ic_round_translate.xml" value="0.1953125" />
+        <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/ic_round_vending_anim.xml" value="0.1953125" />
+        <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/ic_round_vibration_anim.xml" value="0.1953125" />
+        <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/ic_round_visibility_off.xml" value="0.1953125" />
+        <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/ic_round_wallpaper_anim.xml" value="0.1953125" />
+        <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/ic_round_zoom_out.xml" value="0.1953125" />
         <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/ripple_bg_list_item.xml" value="0.1953125" />
         <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/ripple_bg_list_item_surface.xml" value="0.1953125" />
         <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/selection_floral.xml" value="0.1953125" />
         <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/selection_stone.xml" value="0.1953125" />
         <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/shape_popup_menu.xml" value="0.1953125" />
+        <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/splash_content.xml" value="0.1953125" />
         <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/splash_logo_anim.xml" value="0.1" />
         <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/layout/activity_main.xml" value="0.1764102564102564" />
         <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/layout/fragment_about.xml" value="0.17916666666666667" />
         <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/layout/fragment_appearance.xml" value="0.11775362318840579" />
+        <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/layout/fragment_bottomsheet_changelog.xml" value="0.17916666666666667" />
+        <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/layout/fragment_bottomsheet_feedback.xml" value="0.17916666666666667" />
         <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/layout/fragment_other.xml" value="0.17916666666666667" />
         <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/layout/fragment_overview.xml" value="0.17916666666666667" />
         <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/layout/fragment_parallax.xml" value="0.1764102564102564" />

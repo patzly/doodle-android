@@ -33,7 +33,7 @@
   </style>
 
   <style name="Widget.Doodle.OverFlow" parent="Widget.AppCompat.ActionButton.Overflow">
-    <item name="android:tint">@color/icon</item>
+    <item name="android:tint">?attr/colorOnSurfaceVariant</item>
   </style>
 
   <style
@@ -48,6 +48,18 @@
     <item name="android:layout_marginTop">8dp</item>
     <item name="android:layout_marginBottom">8dp</item>
     <item name="android:background">@color/outline_secondary</item>
+  </style>
+
+  <style name="Widget.Doodle.ImageView.Icon" parent="">
+    <item name="android:layout_width">24dp</item>
+    <item name="android:layout_height">24dp</item>
+    <item name="tint">?attr/colorOnSurfaceVariant</item>
+    <item name="android:importantForAccessibility">no</item>
+  </style>
+
+  <style name="Widget.Doodle.ImageView.Icon.Navigation" parent="Widget.Doodle.ImageView.Icon">
+    <item name="tint">?attr/colorOnSurface</item>
+    <item name="android:layout_gravity">center</item>
   </style>
 
   <style
@@ -201,7 +213,14 @@
     <item name="android:layout_height">24dp</item>
     <item name="android:layout_gravity">start|center_vertical</item>
     <item name="android:layout_marginEnd">32dp</item>
+    <item name="tint">?attr/colorOnSurfaceVariant</item>
     <item name="android:importantForAccessibility">no</item>
+  </style>
+
+  <style
+    name="Widget.Doodle.ImageView.ListItem.Icon.Colored"
+    parent="Widget.Doodle.ImageView.ListItem.Icon">
+    <item name="tint">@null</item>
   </style>
 
   <style
@@ -233,14 +252,15 @@
   </style>
 
   <style name="Widget.Doodle.TextView.Toolbar" parent="Widget.Doodle.TextView">
-    <item name="android:textSize" tools:ignore="SpUsage">21.5dp</item>
+    <item name="android:textSize" tools:ignore="SpUsage">22dp</item>
     <item name="android:fontFamily">@font/jost_bold</item>
     <item name="android:singleLine">true</item>
+    <item name="android:textColor">?attr/colorOnSurface</item>
   </style>
 
   <style name="Widget.Doodle.TextView.Toolbar.BottomSheet" parent="Widget.Doodle.TextView.Toolbar">
     <item name="android:layout_width">match_parent</item>
-    <item name="android:layout_height">?android:actionBarSize</item>
+    <item name="android:layout_height">?attr/actionBarSize</item>
     <item name="android:paddingStart">16dp</item>
     <item name="android:paddingEnd">16dp</item>
     <item name="android:gravity">center_vertical</item>
@@ -291,7 +311,7 @@
   </style>
 
   <style name="TextAppearance.Doodle.Tooltip" parent="TextAppearance.MaterialComponents.Tooltip">
-    <item name="android:textColor">@color/background</item>
+    <item name="android:textColor">?android:attr/colorBackground</item>
     <item name="fontFamily">@font/jost_book</item>
   </style>
 

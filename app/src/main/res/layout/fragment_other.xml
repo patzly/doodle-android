@@ -31,7 +31,7 @@
 
     <LinearLayout
       android:layout_width="match_parent"
-      android:layout_height="?android:actionBarSize"
+      android:layout_height="?attr/actionBarSize"
       android:gravity="center_vertical"
       android:orientation="horizontal">
 
@@ -50,9 +50,7 @@
         tools:targetApi="o">
 
         <ImageView
-          android:layout_width="24dp"
-          android:layout_height="24dp"
-          android:layout_gravity="center"
+          style="@style/Widget.Doodle.ImageView.Icon.Navigation"
           android:importantForAccessibility="no"
           android:src="@drawable/ic_round_arrow_back" />
 
@@ -81,7 +79,7 @@
     android:id="@+id/scroll_other"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="?android:actionBarSize">
+    android:layout_marginTop="?attr/actionBarSize">
 
     <LinearLayout
       android:id="@+id/linear_other_container"
@@ -111,7 +109,7 @@
 
         <ImageView
           android:id="@+id/image_other_gpu"
-          style="@style/Widget.Doodle.ImageView.ListItem.Icon"
+          style="@style/Widget.Doodle.ImageView.ListItem.Icon.Colored"
           android:src="@drawable/ic_round_memory"
           tools:ignore="ContentDescription" />
 

@@ -19,6 +19,7 @@
 
 package xyz.zedler.patrick.doodle.fragment;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -87,7 +88,7 @@ public class OverviewFragment extends BaseFragment implements OnClickListener {
     });
 
     boolean startedFromLauncher = activity.getIntent() != null
-        && activity.getIntent().hasCategory("android.intent.category.LAUNCHER");
+        && activity.getIntent().hasCategory(Intent.CATEGORY_LAUNCHER);
 
     binding.frameOverviewClose.setVisibility(startedFromLauncher ? View.GONE : View.VISIBLE);
     binding.frameOverviewLogo.setVisibility(startedFromLauncher ? View.VISIBLE : View.GONE);

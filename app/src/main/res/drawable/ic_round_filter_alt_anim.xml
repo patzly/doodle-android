@@ -31,7 +31,7 @@
         <path
           android:name="circle_2"
           android:pathData="M 15 -5 C 14.47 -5 13.961 -4.789 13.586 -4.414 C 13.211 -4.039 13 -3.53 13 -3 C 13 -2.47 13.211 -1.961 13.586 -1.586 C 13.961 -1.211 14.47 -1 15 -1 C 15.53 -1 16.039 -1.211 16.414 -1.586 C 16.789 -1.961 17 -2.47 17 -3 C 17 -3.53 16.789 -4.039 16.414 -4.414 C 16.039 -4.789 15.53 -5 15 -5 Z"
-          android:fillColor="@color/icon"
+          android:fillColor="#000"
           android:fillAlpha="0"
           android:strokeWidth="1" />
       </group>
@@ -39,7 +39,7 @@
         <path
           android:name="circle_1"
           android:pathData="M 9 -5 C 8.47 -5 7.961 -4.789 7.586 -4.414 C 7.211 -4.039 7 -3.53 7 -3 C 7 -2.47 7.211 -1.961 7.586 -1.586 C 7.961 -1.211 8.47 -1 9 -1 C 9.53 -1 10.039 -1.211 10.414 -1.586 C 10.789 -1.961 11 -2.47 11 -3 C 11 -3.53 10.789 -4.039 10.414 -4.414 C 10.039 -4.789 9.53 -5 9 -5 Z"
-          android:fillColor="@color/icon"
+          android:fillColor="#000"
           android:fillAlpha="0"
           android:strokeWidth="1" />
       </group>
@@ -47,7 +47,7 @@
         <path
           android:name="path"
           android:pathData="M 4.25 5.61 C 6.57 8.59 10 13 10 13 L 10 18 C 10 19.1 10.9 20 12 20 C 13.1 20 14 19.1 14 18 L 14 13 C 14 13 17.43 8.59 19.75 5.61 C 20.26 4.95 19.79 4 18.95 4 L 5.04 4 C 4.21 4 3.74 4.95 4.25 5.61 Z"
-          android:fillColor="@color/icon"
+          android:fillColor="#000"
           android:strokeWidth="1" />
       </group>
     </vector>

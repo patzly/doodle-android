@@ -28,12 +28,13 @@ import android.os.Looper;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewTreeObserver;
-import androidx.annotation.ColorRes;
+import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
-import androidx.core.content.ContextCompat;
 import androidx.core.widget.NestedScrollView;
 import com.google.android.material.appbar.AppBarLayout;
+import com.google.android.material.elevation.SurfaceColors;
 import xyz.zedler.patrick.doodle.R;
+import xyz.zedler.patrick.doodle.util.ResUtil;
 
 public class ScrollBehavior {
 
@@ -117,7 +118,7 @@ public class ScrollBehavior {
   private void onTopScroll() {
     isTopScroll = true;
     if (liftOnScroll) {
-      tintAppBarLayout(R.color.background);
+      tintAppBarLayout(SurfaceColors.SURFACE_0.getColor(activity));
       appBarLayout.setLifted(false);
     }
     if (DEBUG) {
@@ -128,7 +129,7 @@ public class ScrollBehavior {
   private void onScrollUp() {
     currentState = STATE_SCROLLED_UP;
     appBarLayout.setLifted(true);
-    tintAppBarLayout(R.color.primary);
+    tintAppBarLayout(SurfaceColors.SURFACE_2.getColor(activity));
     if (DEBUG) {
       Log.i(TAG, "onScrollUp: UP");
     }
@@ -140,7 +141,7 @@ public class ScrollBehavior {
     currentState = STATE_SCROLLED_DOWN;
     if (scrollView != null) {
       appBarLayout.setLifted(true);
-      tintAppBarLayout(R.color.primary);
+      tintAppBarLayout(SurfaceColors.SURFACE_2.getColor(activity));
       scrollView.setOverScrollMode(
           noOverScroll ? View.OVER_SCROLL_NEVER : View.OVER_SCROLL_IF_CONTENT_SCROLLS
       );
@@ -165,15 +166,15 @@ public class ScrollBehavior {
       if (lift) {
         if (scrollView.getScrollY() == 0) {
           appBarLayout.setLifted(false);
-          tintAppBarLayout(R.color.background);
+          tintAppBarLayout(SurfaceColors.SURFACE_0.getColor(activity));
           scrollView.setOverScrollMode(View.OVER_SCROLL_NEVER);
         } else {
           appBarLayout.setLifted(true);
-          tintAppBarLayout(R.color.primary);
+          tintAppBarLayout(SurfaceColors.SURFACE_2.getColor(activity));
         }
       } else {
         appBarLayout.setLifted(true);
-        tintAppBarLayout(R.color.primary);
+        tintAppBarLayout(SurfaceColors.SURFACE_2.getColor(activity));
         scrollView.setOverScrollMode(
             noOverScroll
                 ? View.OVER_SCROLL_NEVER
@@ -184,10 +185,10 @@ public class ScrollBehavior {
       if (lift) {
         appBarLayout.setLiftable(true);
         appBarLayout.setLifted(false);
-        tintAppBarLayout(R.color.background);
+        tintAppBarLayout(SurfaceColors.SURFACE_0.getColor(activity));
       } else {
         appBarLayout.setLiftable(false);
-        tintAppBarLayout(R.color.primary);
+        tintAppBarLayout(SurfaceColors.SURFACE_2.getColor(activity));
       }
     }
     if (DEBUG) {
@@ -223,9 +224,8 @@ public class ScrollBehavior {
         });
   }
 
-  private void tintAppBarLayout(@ColorRes int target) {
+  private void tintAppBarLayout(@ColorInt int targetColor) {
     int appBarColor = getAppBarLayoutColor();
-    int targetColor = ContextCompat.getColor(activity, target);
     if (appBarColor == targetColor) {
       return;
     }
@@ -242,7 +242,7 @@ public class ScrollBehavior {
   private int getAppBarLayoutColor() {
     Drawable background = appBarLayout.getBackground();
     if (background == null || background.getClass() != ColorDrawable.class) {
-      appBarLayout.setBackgroundColor(ContextCompat.getColor(activity, R.color.background));
+      appBarLayout.setBackgroundColor(ResUtil.getBgColor(activity));
     }
     return ((ColorDrawable) appBarLayout.getBackground()).getColor();
   }

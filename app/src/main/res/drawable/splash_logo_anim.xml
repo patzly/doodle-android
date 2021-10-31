@@ -48,7 +48,7 @@
         <path
           android:name="stroke"
           android:pathData="M 15.951 20.114 L 10.333 8.027 C 9.567 6.379 7.958 5.791 6.309 6.557 C 4.661 7.323 4.073 8.932 4.839 10.581 L 8.414 18.273 C 8.677 18.838 9.478 19.114 10.024 18.861 L 18.815 14.775 C 19.364 14.52 19.66 13.719 19.403 13.165 L 17.87 9.869"
-          android:strokeColor="?attr/colorOnBackground"
+          android:strokeColor="?attr/colorPrimary"
           android:strokeAlpha="0"
           android:strokeWidth="1"
           android:trimPathEnd="0"

@@ -67,6 +67,17 @@
 
   <color name="retro_dark">#0a373a</color>
 
+  <color name="neutral_99">#fcfcfc</color>
+  <color name="neutral_90">#e3e6e5</color>
+  <color name="neutral_80">#cad0ce</color>
+  <color name="neutral_70">#aeb8b4</color>
+  <color name="neutral_60">#93a09a</color>
+  <color name="neutral_50">#77877f</color>
+  <color name="neutral_40">#606d66</color>
+  <color name="neutral_30">#47504c</color>
+  <color name="neutral_20">#303633</color>
+  <color name="neutral_10">#191c1b</color>
+
   <color name="grey_99">#fdfdfd</color>
   <color name="grey_90">#e3e4e6</color>
   <color name="grey_80">#c9cacf</color>
@@ -78,13 +89,8 @@
   <color name="grey_20">#303236</color>
   <color name="grey_10">#18191b</color>
 
-  <!-- PRIMARY -->
-
-  <color name="primary">@color/white</color>
-
   <!-- BACKGROUND -->
 
-  <color name="background">@color/white</color>
   <color name="on_background">#dd000000</color>
   <color name="on_background_secondary">@color/grey_50</color>
   <color name="on_background_tertiary">#edeff1</color>
@@ -93,15 +99,17 @@
 
   <color name="highlight">#11000000</color>
   <color name="highlight_secondary">#08000000</color>
-  <color name="highlight_on_secondary">#08ffffff</color>
+  <color name="highlight_on_secondary">#0f000000</color>
 
   <!-- OUTLINE -->
 
-  <color name="outline_secondary">@color/grey_80</color>
+  <color name="outline_secondary">@color/neutral_80</color>
 
   <!-- ICONS -->
 
-  <color name="icon">@color/grey_20</color>
+  <color name="icon">@color/neutral_20</color>
+
+  <color name="feedback_star">@color/retro_yellow_50</color>
 
   <color name="vending_blue">#00d3ff</color>
   <color name="vending_red">#f43249</color>

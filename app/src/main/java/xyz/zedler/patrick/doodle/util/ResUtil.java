@@ -36,7 +36,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RawRes;
 import androidx.annotation.StringRes;
-import androidx.core.content.ContextCompat;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -77,7 +76,7 @@ public class ResUtil {
       return null;
     }
 
-    int color = ContextCompat.getColor(context, R.color.on_background);
+    int color = getColorAttr(context, R.attr.colorOnSurface);
     int margin = SystemUiUtil.spToPx(context, 6);
 
     String[] lines = text.split("\n");
@@ -117,6 +116,12 @@ public class ResUtil {
   public static int getColorAttr(Context context, @AttrRes int resId) {
     TypedValue typedValue = new TypedValue();
     context.getTheme().resolveAttribute(resId, typedValue, true);
+    return typedValue.data;
+  }
+
+  public static int getBgColor(Context context) {
+    TypedValue typedValue = new TypedValue();
+    context.getTheme().resolveAttribute(android.R.attr.colorBackground, typedValue, true);
     return typedValue.data;
   }
 }

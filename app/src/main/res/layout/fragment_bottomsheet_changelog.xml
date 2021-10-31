@@ -28,7 +28,7 @@
 
   <FrameLayout
     android:layout_width="match_parent"
-    android:layout_height="?android:actionBarSize">
+    android:layout_height="?attr/actionBarSize">
 
     <TextView
       style="@style/Widget.Doodle.TextView.Toolbar.BottomSheet.Center"

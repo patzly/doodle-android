@@ -33,6 +33,7 @@ import androidx.core.view.WindowInsetsCompat.Type;
 import androidx.core.widget.NestedScrollView;
 import com.google.android.material.appbar.AppBarLayout;
 import xyz.zedler.patrick.doodle.R;
+import xyz.zedler.patrick.doodle.util.ResUtil;
 import xyz.zedler.patrick.doodle.util.SystemUiUtil;
 
 public class SystemBarBehavior {
@@ -253,9 +254,7 @@ public class SystemBarBehavior {
           window.setNavigationBarDividerColor(
               ContextCompat.getColor(activity, R.color.outline_secondary)
           );
-          window.setNavigationBarColor(
-              ContextCompat.getColor(activity, R.color.background)
-          );
+          window.setNavigationBarColor(ResUtil.getBgColor(activity));
         }
       }
     } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) { // 28
@@ -273,7 +272,7 @@ public class SystemBarBehavior {
         window.setNavigationBarDividerColor(
             ContextCompat.getColor(activity, R.color.outline_secondary)
         );
-        window.setNavigationBarColor(ContextCompat.getColor(activity, R.color.background));
+        window.setNavigationBarColor(ResUtil.getBgColor(activity));
       }
     } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) { // 26
       window.setStatusBarColor(Color.TRANSPARENT);

@@ -25,7 +25,6 @@ import android.graphics.drawable.LayerDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.Looper;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.res.ResourcesCompat;
 import xyz.zedler.patrick.doodle.R;
@@ -51,7 +50,7 @@ public class SplashActivity extends AppCompatActivity {
       try {
         assert splashContent != null;
         ViewUtil.startIcon(splashContent.findDrawableByLayerId(R.id.splash_logo));
-        new Handler(Looper.getMainLooper()).postDelayed(
+        new Handler(getMainLooper()).postDelayed(
             () -> startSettingsActivity(true), 900
         );
       } catch (Exception e) {
@@ -64,7 +63,7 @@ public class SplashActivity extends AppCompatActivity {
 
   private void startSettingsActivity(boolean fadeOut) {
     Intent intent = new Intent(this, MainActivity.class);
-    intent.addCategory("android.intent.category.LAUNCHER");
+    intent.addCategory(Intent.CATEGORY_LAUNCHER);
     startActivity(intent);
     overridePendingTransition(0, fadeOut ? R.anim.fade_out : 0);
     finish();

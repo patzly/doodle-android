@@ -69,9 +69,7 @@ public class AboutFragment extends BaseFragment implements OnClickListener {
     systemBarBehavior.setAdditionalBottomInset(activity.getFabTopEdgeDistance());
     systemBarBehavior.setUp();
 
-    new ScrollBehavior(activity).setUpScroll(
-        binding.appBarAbout, binding.scrollAbout, true
-    );
+    new ScrollBehavior(activity).setUpScroll(binding.appBarAbout, binding.scrollAbout, true);
 
     binding.toolbarAbout.setOnMenuItemClickListener(item -> {
       int id = item.getItemId();

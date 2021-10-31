@@ -23,7 +23,6 @@
 
   <!-- BACKGROUND -->
 
-  <color name="background">#1e1f22</color>
   <color name="on_background_secondary">@color/grey_60</color>
   <color name="on_background_tertiary">#292a2e</color>
 
@@ -31,6 +30,7 @@
 
   <color name="highlight">#11bdbdbd</color>
   <color name="highlight_secondary">#11bdbdbd</color>
+  <color name="highlight_on_secondary">#0fffffff</color>
 
   <!-- STROKES -->
 
@@ -38,11 +38,8 @@
 
   <!-- ICONS -->
 
-  <color name="icon">@color/grey_60</color>
+  <color name="icon">@color/neutral_60</color>
 
-  <color name="vending_blue">#00000000</color>
-  <color name="vending_red">#00000000</color>
-  <color name="vending_green">#00000000</color>
-  <color name="vending_yellow">@color/background</color>
+  <color name="feedback_star">@color/retro_yellow_70</color>
 
 </resources>

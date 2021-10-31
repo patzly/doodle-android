@@ -33,7 +33,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.core.content.ContextCompat;
 import androidx.core.content.res.ResourcesCompat;
 import com.google.android.material.card.MaterialCardView;
 import xyz.zedler.patrick.doodle.Constants;
@@ -324,10 +323,10 @@ public class AppearanceFragment extends BaseFragment
     }
     card.setLayoutParams(params);
     card.setCheckable(true);
-    card.setStrokeColor(ContextCompat.getColor(activity, R.color.outline_secondary));
-    card.setStrokeWidth(SystemUiUtil.dpToPx(activity, 1));
+    card.setStrokeColor(ResUtil.getColorAttr(activity, R.attr.colorOutline));
+    card.setStrokeWidth(SystemUiUtil.dpToPx(activity, 2));
     card.setRippleColorResource(R.color.highlight);
-    card.setCardBackgroundColor(ContextCompat.getColor(activity, R.color.background));
+    card.setCardBackgroundColor(ResUtil.getBgColor(activity));
     card.setCheckedIcon(
         ResourcesCompat.getDrawable(
             getResources(), R.drawable.ic_round_check_circle_anim, null

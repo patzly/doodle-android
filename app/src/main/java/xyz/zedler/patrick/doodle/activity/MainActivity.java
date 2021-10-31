@@ -233,7 +233,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     new Handler(getMainLooper()).postDelayed(() -> {
       Intent intent = new Intent(this, MainActivity.class);
       intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-      intent.addCategory("android.intent.category.LAUNCHER");
+      intent.addCategory(Intent.CATEGORY_LAUNCHER);
       startActivity(intent);
       finish();
       Runtime.getRuntime().exit(0);

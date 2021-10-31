@@ -22,8 +22,8 @@
   <style name="Theme.Doodle" parent="Base.Doodle">
     <item name="elevationOverlayEnabled">true</item>
 
-    <item name="android:colorBackground">@color/grey_10</item>
-    <item name="colorOnBackground">@color/grey_90</item>
+    <item name="android:colorBackground">@color/neutral_10</item>
+    <item name="colorOnBackground">@color/neutral_90</item>
 
     <item name="colorPrimary">@color/retro_green_80</item>
     <item name="colorOnPrimary">@color/retro_green_20</item>
@@ -31,12 +31,12 @@
     <item name="colorOnPrimaryContainer">@color/retro_green_90</item>
     <item name="colorPrimaryInverse">@color/retro_green_40</item>
 
-    <item name="colorSurface">@color/grey_10</item>
-    <item name="colorOnSurface">@color/grey_90</item>
-    <item name="colorSurfaceVariant">@color/grey_30</item>
-    <item name="colorOnSurfaceVariant">@color/grey_80</item>
-    <item name="colorSurfaceInverse">@color/grey_90</item>
-    <item name="colorOnSurfaceInverse">@color/grey_20</item>
+    <item name="colorSurface">@color/neutral_10</item>
+    <item name="colorOnSurface">@color/neutral_90</item>
+    <item name="colorSurfaceVariant">@color/neutral_30</item>
+    <item name="colorOnSurfaceVariant">@color/neutral_80</item>
+    <item name="colorSurfaceInverse">@color/neutral_90</item>
+    <item name="colorOnSurfaceInverse">@color/neutral_20</item>
 
     <item name="colorSecondary">@color/retro_green_80</item>
     <item name="colorOnSecondary">@color/retro_green_20</item>
@@ -53,7 +53,7 @@
     <item name="colorErrorContainer">@color/retro_red_30</item>
     <item name="colorOnErrorContainer">@color/retro_red_80</item>
 
-    <item name="colorOutline">@color/grey_60</item>
+    <item name="colorOutline">@color/neutral_60</item>
   </style>
 
 </resources>

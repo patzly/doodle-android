@@ -91,14 +91,11 @@
 
   <!-- BACKGROUND -->
 
-  <color name="on_background">#dd000000</color>
   <color name="on_background_secondary">@color/grey_50</color>
-  <color name="on_background_tertiary">#edeff1</color>
 
   <!-- HIGHLIGHT -->
 
   <color name="highlight">#11000000</color>
-  <color name="highlight_secondary">#08000000</color>
   <color name="highlight_on_secondary">#0f000000</color>
 
   <!-- OUTLINE -->
@@ -106,8 +103,6 @@
   <color name="outline_secondary">@color/neutral_80</color>
 
   <!-- ICONS -->
-
-  <color name="icon">@color/neutral_20</color>
 
   <color name="feedback_star">@color/retro_yellow_50</color>
 

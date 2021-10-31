@@ -24,12 +24,10 @@
   <!-- BACKGROUND -->
 
   <color name="on_background_secondary">@color/grey_60</color>
-  <color name="on_background_tertiary">#292a2e</color>
 
   <!-- HIGHLIGHT -->
 
   <color name="highlight">#11bdbdbd</color>
-  <color name="highlight_secondary">#11bdbdbd</color>
   <color name="highlight_on_secondary">#0fffffff</color>
 
   <!-- STROKES -->
@@ -37,8 +35,6 @@
   <color name="outline_secondary">@color/grey_20</color>
 
   <!-- ICONS -->
-
-  <color name="icon">@color/neutral_60</color>
 
   <color name="feedback_star">@color/retro_yellow_70</color>
 

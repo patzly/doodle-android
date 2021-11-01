@@ -45,7 +45,6 @@
 
     <activity
       android:name=".activity.SplashActivity"
-      android:theme="@style/Theme.Doodle.Splash"
       android:exported="true">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />

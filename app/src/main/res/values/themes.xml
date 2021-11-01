@@ -43,10 +43,6 @@
     <item name="android:windowSplashScreenAnimationDuration" tools:targetApi="s">1050</item>
   </style>
 
-  <style name="Theme.Doodle.Splash" parent="Theme.Doodle">
-    <item name="android:windowBackground">@drawable/splash_content</item>
-  </style>
-
   <style name="Theme.Doodle" parent="Base.Doodle">
     <item name="android:colorBackground">@color/neutral_99</item>
     <item name="colorOnBackground">@color/neutral_10</item>

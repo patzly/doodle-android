@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ This file is part of Doodle Android.
   ~
   ~ Doodle Android is free software: you can redistribute it and/or modify
@@ -18,18 +17,11 @@
   ~ Copyright (c) 2020-2021 by Patrick Zedler
   -->
 
-<ripple
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  android:color="@color/selector_highlight">
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
   <item
-    android:left="8dp"
-    android:right="8dp"
-    android:top="2dp"
-    android:bottom="2dp">
-    <shape
-      android:shape="rectangle">
-      <corners android:radius="16dp" />
-      <solid android:color="@color/transparent" />
-    </shape>
-  </item>
-</ripple>
+    android:color="?attr/colorOutline"
+    android:alpha="0.4"
+    android:state_enabled="true" />
+
+</selector>

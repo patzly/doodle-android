@@ -21,6 +21,7 @@
 
   <item
     android:color="?attr/colorOnSecondaryContainer"
-    android:alpha="0.07" />
+    android:alpha="0.07"
+    android:state_enabled="true" />
 
 </selector>

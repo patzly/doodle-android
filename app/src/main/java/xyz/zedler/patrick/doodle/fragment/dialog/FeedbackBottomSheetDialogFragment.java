@@ -49,6 +49,19 @@ public class FeedbackBottomSheetDialogFragment extends BaseBottomSheetDialogFrag
   public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle state) {
     binding = FragmentBottomsheetFeedbackBinding.inflate(inflater, container, false);
 
+    binding.linearFeedbackRate.setBackground(
+        ViewUtil.getRippleBgListItemSurface(requireContext())
+    );
+    binding.linearFeedbackEmail.setBackground(
+        ViewUtil.getRippleBgListItemSurface(requireContext())
+    );
+    binding.linearFeedbackGithub.setBackground(
+        ViewUtil.getRippleBgListItemSurface(requireContext())
+    );
+    binding.linearFeedbackShare.setBackground(
+        ViewUtil.getRippleBgListItemSurface(requireContext())
+    );
+
     ViewUtil.setOnClickListeners(
         this,
         binding.linearFeedbackRate,

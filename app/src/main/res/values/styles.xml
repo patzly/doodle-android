@@ -47,7 +47,7 @@
     <item name="android:layout_height">1dp</item>
     <item name="android:layout_marginTop">8dp</item>
     <item name="android:layout_marginBottom">8dp</item>
-    <item name="android:background">?attr/colorSurfaceVariant</item>
+    <item name="android:background">@color/selector_outline_secondary</item>
   </style>
 
   <style name="Widget.Doodle.ImageView.Icon" parent="">

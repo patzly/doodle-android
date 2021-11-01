@@ -21,8 +21,13 @@ package xyz.zedler.patrick.doodle.util;
 
 import android.animation.ValueAnimator;
 import android.content.Context;
+import android.content.res.ColorStateList;
 import android.graphics.drawable.Animatable;
 import android.graphics.drawable.Drawable;
+import android.graphics.drawable.InsetDrawable;
+import android.graphics.drawable.RippleDrawable;
+import android.graphics.drawable.ShapeDrawable;
+import android.graphics.drawable.shapes.RoundRectShape;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.util.Log;
@@ -40,6 +45,8 @@ import androidx.core.graphics.ColorUtils;
 import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.google.android.material.card.MaterialCardView;
+import com.google.android.material.elevation.SurfaceColors;
+import java.util.Arrays;
 import xyz.zedler.patrick.doodle.R;
 
 public class ViewUtil {
@@ -198,5 +205,26 @@ public class ViewUtil {
         cardView.setChecked(checked);
       }
     }
+  }
+
+  // Ripple background for surface list items
+
+  public static Drawable getRippleBgListItemSurface(Context context) {
+    float[] radii = new float[8];
+    Arrays.fill(radii, SystemUiUtil.dpToPx(context, 16));
+    RoundRectShape rect = new RoundRectShape(radii, null, null);
+    ShapeDrawable shape = new ShapeDrawable(rect);
+    shape.getPaint().setColor(SurfaceColors.SURFACE_1.getColor(context));
+    return new RippleDrawable(
+        ColorStateList.valueOf(ContextCompat.getColor(context, R.color.selector_highlight)),
+        null,
+        new InsetDrawable(
+            shape,
+            SystemUiUtil.dpToPx(context, 8),
+            SystemUiUtil.dpToPx(context, 2),
+            SystemUiUtil.dpToPx(context, 8),
+            SystemUiUtil.dpToPx(context, 2)
+        )
+    );
   }
 }

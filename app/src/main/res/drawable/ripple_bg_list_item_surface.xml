@@ -20,7 +20,7 @@
 
 <ripple
   xmlns:android="http://schemas.android.com/apk/res/android"
-  android:color="@color/highlight">
+  android:color="@color/selector_highlight">
   <item
     android:left="8dp"
     android:right="8dp"
@@ -29,7 +29,7 @@
     <shape
       android:shape="rectangle">
       <corners android:radius="16dp" />
-      <solid android:color="?attr/colorSurface" />
+      <solid android:color="@color/transparent" />
     </shape>
   </item>
 </ripple>

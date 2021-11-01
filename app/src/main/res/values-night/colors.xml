@@ -25,11 +25,6 @@
 
   <color name="on_background_secondary">@color/grey_60</color>
 
-  <!-- HIGHLIGHT -->
-
-  <color name="highlight">#11bdbdbd</color>
-  <color name="highlight_on_secondary">#0fffffff</color>
-
   <!-- STROKES -->
 
   <color name="outline_secondary">@color/grey_20</color>

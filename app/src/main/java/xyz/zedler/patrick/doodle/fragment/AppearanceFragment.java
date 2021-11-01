@@ -325,7 +325,7 @@ public class AppearanceFragment extends BaseFragment
     card.setCheckable(true);
     card.setStrokeColor(ResUtil.getColorAttr(activity, R.attr.colorOutline));
     card.setStrokeWidth(SystemUiUtil.dpToPx(activity, 2));
-    card.setRippleColorResource(R.color.highlight);
+    card.setRippleColorResource(R.color.selector_highlight);
     card.setCardBackgroundColor(ResUtil.getBgColor(activity));
     card.setCheckedIcon(
         ResourcesCompat.getDrawable(

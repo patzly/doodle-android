@@ -67,16 +67,16 @@
 
   <color name="retro_dark">#0a373a</color>
 
-  <color name="neutral_99">#fcfcfc</color>
-  <color name="neutral_90">#e3e6e5</color>
-  <color name="neutral_80">#cad0ce</color>
-  <color name="neutral_70">#aeb8b4</color>
-  <color name="neutral_60">#93a09a</color>
-  <color name="neutral_50">#77877f</color>
-  <color name="neutral_40">#606d66</color>
-  <color name="neutral_30">#47504c</color>
-  <color name="neutral_20">#303633</color>
-  <color name="neutral_10">#191c1b</color>
+  <color name="neutral_99">#fcfdfc</color>
+  <color name="neutral_90">#e3e5e5</color>
+  <color name="neutral_80">#cacecc</color>
+  <color name="neutral_70">#b0b6b4</color>
+  <color name="neutral_60">#959e9a</color>
+  <color name="neutral_50">#7a847f</color>
+  <color name="neutral_40">#626b66</color>
+  <color name="neutral_30">#4a504c</color>
+  <color name="neutral_20">#323633</color>
+  <color name="neutral_10">#1a1c1a</color>
 
   <color name="grey_99">#fdfdfd</color>
   <color name="grey_90">#e3e4e6</color>
@@ -92,11 +92,6 @@
   <!-- BACKGROUND -->
 
   <color name="on_background_secondary">@color/grey_50</color>
-
-  <!-- HIGHLIGHT -->
-
-  <color name="highlight">#11000000</color>
-  <color name="highlight_on_secondary">#0f000000</color>
 
   <!-- OUTLINE -->
 

@@ -44,6 +44,6 @@
     android:textSize="16sp"
     app:layout_anchor="@id/fragment_main_nav_host"
     app:layout_anchorGravity="bottom|center_horizontal"
-    app:rippleColor="@color/highlight_on_secondary" />
+    app:rippleColor="@color/selector_highlight_inverse" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

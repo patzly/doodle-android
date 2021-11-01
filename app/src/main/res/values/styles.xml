@@ -47,7 +47,7 @@
     <item name="android:layout_height">1dp</item>
     <item name="android:layout_marginTop">8dp</item>
     <item name="android:layout_marginBottom">8dp</item>
-    <item name="android:background">@color/outline_secondary</item>
+    <item name="android:background">?attr/colorSurfaceVariant</item>
   </style>
 
   <style name="Widget.Doodle.ImageView.Icon" parent="">
@@ -83,7 +83,7 @@
     <item name="cardElevation">0dp</item>
     <item name="cardCornerRadius">12dp</item>
     <!--<item name="cardBackgroundColor">@color/on_background_tertiary</item>-->
-    <item name="rippleColor">@color/highlight</item>
+    <item name="rippleColor">@color/selector_highlight</item>
   </style>
 
   <style name="Widget.Doodle.CheckBox" parent="Widget.Material3.CompoundButton.CheckBox">

@@ -156,7 +156,6 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
   public void onClick(View v) {
     int id = v.getId();
     if (id == R.id.fab_main && viewUtil.isClickEnabled()) {
-      startActivity(new Intent(this, SplashActivity.class));
       try {
         wallpaperPickerLauncher.launch(
             new Intent(WallpaperManager.ACTION_CHANGE_LIVE_WALLPAPER).putExtra(

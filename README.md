@@ -2,7 +2,7 @@
 
 # Doodle Android – Live Wallpapers à la Pixel 4
 
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)  [![Release](https://img.shields.io/github/v/release/patzly/doodle-android?label=Release&logo=github)](https://github.com/patzly/doodle-android/releases)  [![APK Downloads](https://img.shields.io/github/downloads/patzly/doodle-android/total.svg?label=APK%20Downloads&logo=github)](https://github.com/patzly/doodle-android/releases)  [![IzzyOnDroid](https://img.shields.io/endpoint?url=https://apt.izzysoft.de/fdroid/api/v1/shield/xyz.zedler.patrick.doodle)](https://apt.izzysoft.de/fdroid/index/apk/xyz.zedler.patrick.doodle)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)  [![Release](https://img.shields.io/github/v/release/patzly/doodle-android?label=Release&logo=github)](https://github.com/patzly/doodle-android/releases)  [![APK Downloads](https://img.shields.io/github/downloads/patzly/doodle-android/total.svg?label=APK%20Downloads&logo=github)](https://github.com/patzly/doodle-android/releases)
 
 Doodle Android is an open-source Android app that provides colorful live wallpapers with auto dark mode and power-efficient animations.
 
@@ -12,7 +12,7 @@ The app is not just a copy of the original wallpapers, it's a complete rewrite w
 ## Downloads
 
 <a href='https://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle'><img alt='Get it on Google Play' height="80" src='assets/badge_playstore.png'/></a>
-<a href='https://apt.izzysoft.de/fdroid/index/apk/xyz.zedler.patrick.doodle'><img alt='Get it on IzzyOnDroid' height="80" src='assets/badge_izzi.png'/></a>
+<a href='https://f-droid.org/en/packages/xyz.zedler.patrick.doodle/'><img alt='Get it on F-Droid' height="80" src='assets/badge_fdroid.png'/></a>
 <a href='https://github.com/patzly/doodle-android/releases'><img alt='Get it on GitHub' height="80" src='assets/badge_github.png'/></a>
 
 ## Screenshots

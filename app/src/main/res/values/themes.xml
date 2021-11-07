@@ -31,8 +31,8 @@
     <item name="android:colorControlHighlight">@color/selector_highlight</item>
     <item name="android:colorEdgeEffect">@color/selector_highlight</item>
 
-    <item name="actionOverflowButtonStyle">@style/Widget.Doodle.OverFlow</item>
-    <item name="actionOverflowMenuStyle">@style/Widget.Doodle.PopupMenu</item>
+    <item name="popupMenuBackground">@drawable/shape_popup_menu</item>
+    <item name="actionOverflowButtonStyle">@style/ThemeOverlay.Doodle.OverFlow</item>
 
     <item name="android:fontFamily">@font/jost_book</item>
 
@@ -44,38 +44,39 @@
   </style>
 
   <style name="Theme.Doodle" parent="Base.Doodle">
+    <item name="colorPrimary">@color/primary_40</item>
+    <item name="colorOnPrimary">@color/white</item>
+    <item name="colorPrimaryContainer">@color/primary_90</item>
+    <item name="colorOnPrimaryContainer">@color/primary_10</item>
+    <item name="colorPrimaryInverse">@color/primary_80</item>
+
+    <item name="colorSecondary">@color/secondary_40</item>
+    <item name="colorOnSecondary">@color/white</item>
+    <item name="colorSecondaryContainer">@color/secondary_90</item>
+    <item name="colorOnSecondaryContainer">@color/secondary_10</item>
+
+    <item name="colorTertiary">@color/tertiary_40</item>
+    <item name="colorOnTertiary">@color/white</item>
+    <item name="colorTertiaryContainer">@color/tertiary_90</item>
+    <item name="colorOnTertiaryContainer">@color/tertiary_10</item>
+
+    <item name="colorError">@color/error_40</item>
+    <item name="colorOnError">@color/white</item>
+    <item name="colorErrorContainer">@color/error_90</item>
+    <item name="colorOnErrorContainer">@color/error_10</item>
+
     <item name="android:colorBackground">@color/neutral_99</item>
     <item name="colorOnBackground">@color/neutral_10</item>
 
-    <item name="colorPrimary">@color/retro_green_40</item>
-    <item name="colorOnPrimary">@color/white</item>
-    <item name="colorPrimaryContainer">@color/retro_green_90</item>
-    <item name="colorOnPrimaryContainer">@color/retro_green_10</item>
-    <item name="colorPrimaryInverse">@color/retro_green_80</item>
-
     <item name="colorSurface">@color/neutral_99</item>
     <item name="colorOnSurface">@color/neutral_10</item>
-    <item name="colorSurfaceVariant">@color/neutral_90</item>
-    <item name="colorOnSurfaceVariant">@color/neutral_30</item>
     <item name="colorSurfaceInverse">@color/neutral_20</item>
     <item name="colorOnSurfaceInverse">@color/neutral_50</item>
 
-    <item name="colorSecondary">@color/retro_green_40</item>
-    <item name="colorOnSecondary">@color/white</item>
-    <item name="colorSecondaryContainer">@color/retro_green_90</item>
-    <item name="colorOnSecondaryContainer">@color/retro_green_10</item>
+    <item name="colorSurfaceVariant">@color/neutral_variant_90</item>
+    <item name="colorOnSurfaceVariant">@color/neutral_variant_30</item>
 
-    <item name="colorTertiary">@color/retro_dirt_40</item>
-    <item name="colorOnTertiary">@color/white</item>
-    <item name="colorTertiaryContainer">@color/retro_dirt_80</item>
-    <item name="colorOnTertiaryContainer">@color/retro_dark</item>
-
-    <item name="colorError">@color/retro_red_40</item>
-    <item name="colorOnError">@color/white</item>
-    <item name="colorErrorContainer">@color/retro_red_90</item>
-    <item name="colorOnErrorContainer">@color/retro_red_10</item>
-
-    <item name="colorOutline">@color/neutral_50</item>
+    <item name="colorOutline">@color/neutral_variant_50</item>
   </style>
 
   <style

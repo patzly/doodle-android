@@ -17,28 +17,11 @@
   ~ Copyright (c) 2020-2021 by Patrick Zedler
   -->
 
-<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-  <item>
-    <shape>
-      <solid android:color="?attr/colorSurface"/>
-      <corners
-        android:bottomLeftRadius="8dp"
-        android:bottomRightRadius="8dp"
-        android:topLeftRadius="8dp"
-        android:topRightRadius="8dp"/>
-    </shape>
-  </item>
-  <item>
-    <shape>
-      <solid android:color="@color/m3_popupmenu_overlay_color"/>
-      <corners
-        android:bottomLeftRadius="8dp"
-        android:bottomRightRadius="8dp"
-        android:topLeftRadius="8dp"
-        android:topRightRadius="8dp"/>
-      <padding
-        android:bottom="8dp"
-        android:top="8dp"/>
-    </shape>
-  </item>
-</layer-list>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <item
+    android:color="?attr/colorOnBackground"
+    android:alpha="0.5"
+    android:state_enabled="true" />
+
+</selector>

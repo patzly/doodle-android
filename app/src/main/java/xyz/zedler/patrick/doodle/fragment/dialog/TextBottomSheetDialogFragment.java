@@ -20,6 +20,7 @@
 package xyz.zedler.patrick.doodle.fragment.dialog;
 
 import android.content.Intent;
+import android.content.res.ColorStateList;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -29,6 +30,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout.LayoutParams;
 import androidx.annotation.NonNull;
+import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.databinding.FragmentBottomsheetTextBinding;
 import xyz.zedler.patrick.doodle.util.HapticUtil;
 import xyz.zedler.patrick.doodle.util.ResUtil;
@@ -50,22 +52,31 @@ public class TextBottomSheetDialogFragment extends BaseBottomSheetDialogFragment
     ViewUtil viewUtil = new ViewUtil();
     HapticUtil hapticUtil = new HapticUtil(binding.getRoot());
 
-    binding.textTextTitle.setText(getString(args.getTitle()));
+    binding.toolbarText.setTitle(getString(args.getTitle()));
 
     String link = args.getLink() != 0 ? getString(args.getLink()) : null;
     if (link != null) {
-      binding.frameTextOpenLink.setOnClickListener(v -> {
-        if (viewUtil.isClickEnabled()) {
+      binding.toolbarText.inflateMenu(R.menu.menu_link);
+      binding.toolbarText.getMenu().findItem(R.id.action_open_link).getIcon().setTintList(
+          ColorStateList.valueOf(
+              ResUtil.getColorAttr(requireContext(), R.attr.colorOnSurfaceVariant)
+          )
+      );
+      binding.toolbarText.setOnMenuItemClickListener(item -> {
+        int id = item.getItemId();
+        if (id == R.id.action_open_link && viewUtil.isClickEnabled()) {
           hapticUtil.click();
-          ViewUtil.startIcon(binding.imageTextOpenLink);
+          ViewUtil.startIcon(item.getIcon());
           new Handler(Looper.getMainLooper()).postDelayed(
               () -> startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(link))), 500
           );
+          return true;
+        } else {
+          return false;
         }
       });
     } else {
-      binding.textTextTitle.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-      binding.frameTextOpenLink.setVisibility(View.GONE);
+      binding.toolbarText.setTitleCentered(true);
     }
 
     binding.textText.setText(ResUtil.getRawText(requireContext(), args.getFile()));

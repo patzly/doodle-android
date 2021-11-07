@@ -39,22 +39,7 @@
                 <path
                     android:name="path_1"
                     android:pathData="M 9.857 9.514 L 15.643 12.986 C 16.116 13.27 16.116 13.73 15.643 14.014 L 9.857 17.486 C 9.384 17.77 9 17.552 9 17 L 9 10 C 9 9.448 9.384 9.23 9.857 9.514 Z"
-                    android:fillColor="@color/vending_yellow"
-                    android:strokeWidth="1"/>
-                <path
-                    android:name="path_2"
-                    android:pathData="M 9.34 9.408 C 9.134 9.467 9 9.675 9 10 L 9 17 C 9 17.548 9.377 17.766 9.846 17.492 L 9.857 17.486 L 14 15 L 9.34 9.408 Z"
-                    android:fillColor="@color/vending_red"
-                    android:strokeWidth="1"/>
-                <path
-                    android:name="path_3"
-                    android:pathData="M 9.449 9.391 C 9.182 9.4 9 9.62 9 10 L 9 17 C 9 17.325 9.134 17.533 9.34 17.592 L 14 12 L 9.857 9.514 C 9.854 9.511 9.85 9.51 9.846 9.508 C 9.702 9.424 9.568 9.387 9.449 9.391 Z"
-                    android:fillColor="@color/vending_green"
-                    android:strokeWidth="1"/>
-                <path
-                    android:name="path_4"
-                    android:pathData="M 9.34 9.408 C 9.134 9.467 9 9.675 9 10 L 9 17 C 9 17.325 9.134 17.533 9.34 17.592 L 12.75 13.5 L 9.34 9.408 Z"
-                    android:fillColor="@color/vending_blue"
+                    android:fillColor="?android:attr/colorBackground"
                     android:strokeWidth="1"/>
             </group>
         </vector>

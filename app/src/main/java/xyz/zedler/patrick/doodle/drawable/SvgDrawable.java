@@ -40,7 +40,6 @@ import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RawRes;
-import androidx.core.content.ContextCompat;
 import androidx.core.graphics.ColorUtils;
 import java.io.IOException;
 import java.io.InputStream;
@@ -49,7 +48,6 @@ import java.util.List;
 import java.util.Random;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
-import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.parser.PathParser;
 import xyz.zedler.patrick.doodle.util.SystemUiUtil;
 
@@ -96,7 +94,7 @@ public class SvgDrawable {
     paintDebug.setStrokeWidth(SystemUiUtil.dpToPx(context, 4));
     paintDebug.setStyle(Style.STROKE);
     paintDebug.setStrokeCap(Cap.ROUND);
-    paintDebug.setColor(ContextCompat.getColor(context, R.color.retro_green_50));
+    paintDebug.setColor(Color.CYAN);
   }
 
   @Nullable

@@ -75,6 +75,12 @@ public class ParallaxFragment extends BaseFragment
         binding.appBarParallax, binding.scrollParallax, true
     );
 
+    binding.toolbarParallax.setNavigationOnClickListener(v -> {
+      if (getViewUtil().isClickEnabled()) {
+        performHapticClick();
+        getNavController().navigateUp();
+      }
+    });
     binding.toolbarParallax.setOnMenuItemClickListener(item -> {
       int id = item.getItemId();
       if (id == R.id.action_share) {
@@ -130,7 +136,6 @@ public class ParallaxFragment extends BaseFragment
 
     ViewUtil.setOnClickListeners(
         this,
-        binding.frameParallaxBack,
         binding.linearParallaxTilt
     );
 
@@ -149,10 +154,7 @@ public class ParallaxFragment extends BaseFragment
   @Override
   public void onClick(View v) {
     int id = v.getId();
-    if (id == R.id.frame_parallax_back && getViewUtil().isClickEnabled()) {
-      performHapticClick();
-      getNavController().navigateUp();
-    } else if (id == R.id.linear_parallax_tilt) {
+    if (id == R.id.linear_parallax_tilt) {
       binding.switchParallaxTilt.setChecked(!binding.switchParallaxTilt.isChecked());
     }
   }

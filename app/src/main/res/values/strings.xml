@@ -49,6 +49,7 @@
 
   <string name="action_close">Close</string>
   <string name="action_back">Back</string>
+  <string name="action_open_link">Open external website</string>
   <string name="action_reset">Reset</string>
   <string name="action_set">Set wallpaper</string>
   <string name="action_send_feedback">Send feedback</string>

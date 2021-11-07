@@ -71,6 +71,12 @@ public class AboutFragment extends BaseFragment implements OnClickListener {
 
     new ScrollBehavior(activity).setUpScroll(binding.appBarAbout, binding.scrollAbout, true);
 
+    binding.toolbarAbout.setNavigationOnClickListener(v -> {
+      if (getViewUtil().isClickEnabled()) {
+        performHapticClick();
+        getNavController().navigateUp();
+      }
+    });
     binding.toolbarAbout.setOnMenuItemClickListener(item -> {
       int id = item.getItemId();
       if (id == R.id.action_share) {
@@ -88,7 +94,6 @@ public class AboutFragment extends BaseFragment implements OnClickListener {
 
     ViewUtil.setOnClickListeners(
         this,
-        binding.frameAboutBack,
         binding.linearAboutChangelog,
         binding.linearAboutDeveloper,
         binding.linearAboutVending,
@@ -103,10 +108,7 @@ public class AboutFragment extends BaseFragment implements OnClickListener {
   @Override
   public void onClick(View v) {
     int id = v.getId();
-    if (id == R.id.frame_about_back && getViewUtil().isClickEnabled()) {
-      performHapticClick();
-      getNavController().navigateUp();
-    } else if (id == R.id.linear_about_changelog && getViewUtil().isClickEnabled()) {
+    if (id == R.id.linear_about_changelog && getViewUtil().isClickEnabled()) {
       performHapticClick();
       getNavController().navigate(AboutFragmentDirections.actionAboutToChangelogDialog());
       ViewUtil.startIcon(binding.imageAboutChangelog);

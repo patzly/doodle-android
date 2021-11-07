@@ -29,49 +29,11 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <LinearLayout
-      android:layout_width="match_parent"
-      android:layout_height="?attr/actionBarSize"
-      android:gravity="center_vertical"
-      android:orientation="horizontal">
-
-      <FrameLayout
-        android:id="@+id/frame_size_back"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginEnd="20dp"
-        android:background="?attr/actionBarItemBackground"
-        android:clickable="true"
-        android:gravity="center"
-        android:contentDescription="@string/action_back"
-        android:tooltipText="@string/action_back"
-        android:focusable="true"
-        tools:targetApi="o">
-
-        <ImageView
-          style="@style/Widget.Doodle.ImageView.Icon.Navigation"
-          android:importantForAccessibility="no"
-          android:src="@drawable/ic_round_arrow_back" />
-
-      </FrameLayout>
-
-      <TextView
-        style="@style/Widget.Doodle.TextView.Toolbar"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_weight="1"
-        android:text="@string/size_title" />
-
-      <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/toolbar_size"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="end"
-        app:menu="@menu/menu_main" />
-
-    </LinearLayout>
+    <com.google.android.material.appbar.MaterialToolbar
+      android:id="@+id/toolbar_size"
+      style="@style/Widget.Doodle.Toolbar.Back"
+      app:title="@string/size_title"
+      app:menu="@menu/menu_main" />
 
   </com.google.android.material.appbar.AppBarLayout>
 

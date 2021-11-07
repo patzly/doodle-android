@@ -8,6 +8,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../.gradle/caches/transforms-3/6deaae5b2b9978431e07ce91bde20e7c/transformed/material-1.5.0-alpha05/res/drawable-v23/m3_popupmenu_background_overlay.xml" value="0.3640625" />
         <entry key="..\:/Users/Patrick/.gradle/caches/transforms-3/aabd215579a4ff9e9c3102d950613b7b/transformed/jetified-MonetCompat-0.2.1/res/drawable/background_splash.xml" value="0.1712962962962963" />
         <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable-night/ic_round_vending_anim.xml" value="0.16296296296296298" />
         <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/ic_round_all_directions_anim.xml" value="0.1953125" />
@@ -63,6 +64,7 @@
         <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/layout/fragment_overview.xml" value="0.17916666666666667" />
         <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/layout/fragment_parallax.xml" value="0.1764102564102564" />
         <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/layout/fragment_size.xml" value="0.17916666666666667" />
+        <entry key="app/src/main/res/drawable-night/ic_round_vending_anim.xml" value="0.3640625" />
         <entry key="app/src/main/res/drawable/ic_dada.xml" value="0.3640625" />
         <entry key="app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.3640625" />
         <entry key="app/src/main/res/drawable/ic_palette_black_24dp.xml" value="0.3640625" />
@@ -78,8 +80,10 @@
         <entry key="app/src/main/res/drawable/ic_round_feedback_anim.xml" value="0.2078125" />
         <entry key="app/src/main/res/drawable/ic_round_filter_alt_anim.xml" value="0.3640625" />
         <entry key="app/src/main/res/drawable/ic_round_filter_b_and_w.xml" value="0.3640625" />
+        <entry key="app/src/main/res/drawable/ic_round_info_outline.xml" value="0.3640625" />
         <entry key="app/src/main/res/drawable/ic_round_light_mode_to_dark_mode_anim.xml" value="0.3640625" />
         <entry key="app/src/main/res/drawable/ic_round_navigate_next.xml" value="0.3640625" />
+        <entry key="app/src/main/res/drawable/ic_round_open_in_browser_anim.xml" value="0.3640625" />
         <entry key="app/src/main/res/drawable/ic_round_palette_anim.xml" value="0.3640625" />
         <entry key="app/src/main/res/drawable/ic_round_person_anim.xml" value="0.3640625" />
         <entry key="app/src/main/res/drawable/ic_round_refresh_anim.xml" value="0.3640625" />
@@ -97,6 +101,7 @@
         <entry key="app/src/main/res/drawable/selection_fog.xml" value="0.3640625" />
         <entry key="app/src/main/res/drawable/selection_leafy.xml" value="0.3640625" />
         <entry key="app/src/main/res/drawable/selection_monet.xml" value="0.3640625" />
+        <entry key="app/src/main/res/drawable/shape_popup_menu.xml" value="0.3640625" />
         <entry key="app/src/main/res/drawable/splash_content.xml" value="0.3640625" />
         <entry key="app/src/main/res/drawable/splash_logo_anim.xml" value="0.3640625" />
         <entry key="app/src/main/res/drawable/splash_logo_anim_s.xml" value="0.3640625" />
@@ -113,6 +118,7 @@
         <entry key="app/src/main/res/layout/fragment_parallax.xml" value="0.3484375" />
         <entry key="app/src/main/res/layout/fragment_rotation.xml" value="0.3484375" />
         <entry key="app/src/main/res/layout/fragment_size.xml" value="0.3484375" />
+        <entry key="app/src/main/res/menu/menu_link.xml" value="0.3484375" />
         <entry key="app/src/main/res/menu/menu_main.xml" value="0.3484375" />
       </map>
     </option>

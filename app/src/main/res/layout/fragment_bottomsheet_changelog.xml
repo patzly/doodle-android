@@ -21,20 +21,15 @@
 
 <LinearLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="wrap_content"
   android:orientation="vertical">
 
-  <FrameLayout
-    android:layout_width="match_parent"
-    android:layout_height="?attr/actionBarSize">
-
-    <TextView
-      style="@style/Widget.Doodle.TextView.Toolbar.BottomSheet.Center"
-      android:text="@string/about_changelog" />
-
-  </FrameLayout>
+  <com.google.android.material.appbar.MaterialToolbar
+    style="@style/Widget.Doodle.Toolbar.Centered"
+    app:title="@string/about_changelog" />
 
   <View
     style="@style/Widget.Doodle.Divider"

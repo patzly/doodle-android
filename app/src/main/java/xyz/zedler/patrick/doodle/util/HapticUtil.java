@@ -20,6 +20,8 @@
 package xyz.zedler.patrick.doodle.util;
 
 import android.content.Context;
+import android.os.Build.VERSION;
+import android.os.Build.VERSION_CODES;
 import android.provider.Settings;
 import android.view.HapticFeedbackConstants;
 import android.view.View;
@@ -37,7 +39,10 @@ public class HapticUtil {
   public void click() {
     if (enabled) {
       view.performHapticFeedback(
-          HapticFeedbackConstants.CONTEXT_CLICK, HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING
+          VERSION.SDK_INT >= VERSION_CODES.M
+              ? HapticFeedbackConstants.CONTEXT_CLICK
+              : HapticFeedbackConstants.KEYBOARD_TAP,
+          HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING
       );
     }
   }

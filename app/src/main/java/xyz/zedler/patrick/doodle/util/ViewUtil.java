@@ -182,7 +182,7 @@ public class ViewUtil {
     valueAnimator.addUpdateListener(animation -> {
       cardView.setStrokeColor(
           ColorUtils.blendARGB(
-              ContextCompat.getColor(context, R.color.outline_secondary),
+              ContextCompat.getColor(context, R.color.selector_outline_secondary),
               ContextCompat.getColor(context, resId),
               (float) valueAnimator.getAnimatedValue()
           )
@@ -225,6 +225,21 @@ public class ViewUtil {
             SystemUiUtil.dpToPx(context, 8),
             SystemUiUtil.dpToPx(context, 2)
         )
+    );
+  }
+
+  public static Drawable getPopupBackground(Context context) {
+    float[] radii = new float[8];
+    Arrays.fill(radii, SystemUiUtil.dpToPx(context, 8));
+    RoundRectShape rect = new RoundRectShape(radii, null, null);
+    ShapeDrawable shape = new ShapeDrawable(rect);
+    shape.getPaint().setColor(SurfaceColors.SURFACE_1.getColor(context));
+    return new InsetDrawable(
+        shape,
+        SystemUiUtil.dpToPx(context, 8),
+        SystemUiUtil.dpToPx(context, 2),
+        SystemUiUtil.dpToPx(context, 8),
+        SystemUiUtil.dpToPx(context, 2)
     );
   }
 }

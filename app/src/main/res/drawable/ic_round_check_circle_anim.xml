@@ -30,7 +30,7 @@
       <path
         android:name="circle"
         android:pathData="M0,0H48V48H0Z"
-        android:fillColor="@color/grey_20"
+        android:fillColor="#303236"
         android:fillAlpha="0.5"
         android:strokeWidth="1" />
       <group

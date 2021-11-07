@@ -94,6 +94,12 @@ public class AppearanceFragment extends BaseFragment
         binding.appBarAppearance, binding.scrollAppearance, true
     );
 
+    binding.toolbarAppearance.setNavigationOnClickListener(v -> {
+      if (getViewUtil().isClickEnabled()) {
+        performHapticClick();
+        getNavController().navigateUp();
+      }
+    });
     binding.toolbarAppearance.setOnMenuItemClickListener(item -> {
       int id = item.getItemId();
       if (id == R.id.action_share) {
@@ -141,7 +147,6 @@ public class AppearanceFragment extends BaseFragment
     ViewUtil.setOnClickListeners(
         this,
         // Other
-        binding.frameAppearanceBack,
         binding.linearAppearanceNightMode,
         binding.linearAppearanceFollowSystem,
         binding.linearAppearanceWhiteText
@@ -158,10 +163,7 @@ public class AppearanceFragment extends BaseFragment
   @Override
   public void onClick(View v) {
     int id = v.getId();
-    if (id == R.id.frame_appearance_back) {
-      performHapticClick();
-      getNavController().navigateUp();
-    } else if (id == R.id.linear_appearance_night_mode) {
+    if (id == R.id.linear_appearance_night_mode) {
       binding.switchAppearanceNightMode.setChecked(!binding.switchAppearanceNightMode.isChecked());
     } else if (id == R.id.linear_appearance_follow_system) {
       if (binding.switchAppearanceNightMode.isChecked()) {

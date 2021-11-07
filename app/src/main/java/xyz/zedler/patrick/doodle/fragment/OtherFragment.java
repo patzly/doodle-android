@@ -78,6 +78,12 @@ public class OtherFragment extends BaseFragment
         binding.appBarOther, binding.scrollOther, true
     );
 
+    binding.toolbarOther.setNavigationOnClickListener(v -> {
+      if (getViewUtil().isClickEnabled()) {
+        performHapticClick();
+        getNavController().navigateUp();
+      }
+    });
     binding.toolbarOther.setOnMenuItemClickListener(item -> {
       int id = item.getItemId();
       if (id == R.id.action_share) {
@@ -106,7 +112,6 @@ public class OtherFragment extends BaseFragment
 
     ViewUtil.setOnClickListeners(
         this,
-        binding.frameOtherBack,
         binding.linearOtherLauncher,
         binding.linearOtherReset
     );
@@ -124,10 +129,7 @@ public class OtherFragment extends BaseFragment
   @Override
   public void onClick(View v) {
     int id = v.getId();
-    if (id == R.id.frame_other_back && getViewUtil().isClickEnabled()) {
-      performHapticClick();
-      getNavController().navigateUp();
-    } else if (id == R.id.linear_other_gpu) {
+    if (id == R.id.linear_other_gpu) {
       ViewUtil.startIcon(binding.imageOtherGpu);
       performHapticClick();
       binding.switchOtherGpu.setChecked(!binding.switchOtherGpu.isChecked());

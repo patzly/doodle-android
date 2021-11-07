@@ -76,6 +76,12 @@ public class SizeFragment extends BaseFragment
         binding.appBarSize, binding.scrollSize, true
     );
 
+    binding.toolbarSize.setNavigationOnClickListener(v -> {
+      if (getViewUtil().isClickEnabled()) {
+        performHapticClick();
+        getNavController().navigateUp();
+      }
+    });
     binding.toolbarSize.setOnMenuItemClickListener(item -> {
       int id = item.getItemId();
       if (id == R.id.action_share) {
@@ -147,7 +153,6 @@ public class SizeFragment extends BaseFragment
 
     ViewUtil.setOnClickListeners(
         this,
-        binding.frameSizeBack,
         binding.linearSizeZoomLauncher,
         binding.linearSizeZoomSystem,
         binding.linearSizeZoomUnlock
@@ -164,10 +169,7 @@ public class SizeFragment extends BaseFragment
   @Override
   public void onClick(View v) {
     int id = v.getId();
-    if (id == R.id.frame_size_back && getViewUtil().isClickEnabled()) {
-      performHapticClick();
-      getNavController().navigateUp();
-    } else if (id == R.id.linear_size_zoom_launcher) {
+    if (id == R.id.linear_size_zoom_launcher) {
       ViewUtil.startIcon(binding.imageSizeZoomLauncher);
       binding.switchSizeZoomLauncher.setChecked(!binding.switchSizeZoomLauncher.isChecked());
     } else if (id == R.id.linear_size_zoom_system && binding.switchSizeZoomLauncher.isChecked()) {

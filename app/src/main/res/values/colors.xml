@@ -22,88 +22,46 @@
 <resources>
 
   <color name="white">#fff</color>
-  <color name="black">#000</color>
   <color name="transparent">#00000000</color>
 
-  <color name="retro_green_90">#e0e8e4</color>
-  <color name="retro_green_80">#c2d4ca</color>
-  <color name="retro_green_70">#a6c0b2</color>
-  <color name="retro_green_60">#87aa97</color>
-  <color name="retro_green_50">#6a947f</color>
-  <color name="retro_green_40">#557766</color>
-  <color name="retro_green_30">#3f594c</color>
-  <color name="retro_green_20">#2b3d34</color>
-  <color name="retro_green_10">#161f1a</color>
+  <color name="primary_90">#ffdadb</color>
+  <color name="primary_80">#ffb3b6</color>
+  <color name="primary_40">#9c4146</color>
+  <color name="primary_30">#7e2a30</color>
+  <color name="primary_20">#5f131c</color>
+  <color name="primary_10">#400009</color>
 
-  <color name="retro_dirt_90">#f3efd8</color>
-  <color name="retro_dirt_80">#e6e0b2</color>
-  <color name="retro_dirt_70">#dccd89</color>
-  <color name="retro_dirt_60">#d2b960</color>
-  <color name="retro_dirt_50">#c6a738</color>
-  <color name="retro_dirt_40">#9f862d</color>
-  <color name="retro_dirt_30">#786522</color>
-  <color name="retro_dirt_20">#524517</color>
-  <color name="retro_dirt_10">#2a230c</color>
+  <color name="secondary_90">#ffdad9</color>
+  <color name="secondary_80">#e6bcbc</color>
+  <color name="secondary_40">#775657</color>
+  <color name="secondary_30">#5d3f3f</color>
+  <color name="secondary_20">#44292a</color>
+  <color name="secondary_10">#2c1516</color>
 
-  <color name="retro_yellow_90">#f7edd4</color>
-  <color name="retro_yellow_80">#efdca9</color>
-  <color name="retro_yellow_70">#e6ca7e</color>
-  <color name="retro_yellow_60">#deb853</color>
-  <color name="retro_yellow_50">#d5a629</color>
-  <color name="retro_yellow_40">#aa8521</color>
-  <color name="retro_yellow_30">#7f6318</color>
-  <color name="retro_yellow_20">#564310</color>
-  <color name="retro_yellow_10">#2b2108</color>
+  <color name="tertiary_90">#ffddab</color>
+  <color name="tertiary_80">#eebf78</color>
+  <color name="tertiary_40">#7b581b</color>
+  <color name="tertiary_30">#604003</color>
+  <color name="tertiary_20">#442b00</color>
+  <color name="tertiary_10">#291800</color>
 
-  <color name="retro_red_90">#f8dcd5</color>
-  <color name="retro_red_80">#f0b7aa</color>
-  <color name="retro_red_70">#e8917d</color>
-  <color name="retro_red_60">#e06c51</color>
-  <color name="retro_red_50">#d84826</color>
-  <color name="retro_red_40">#ad3a1e</color>
-  <color name="retro_red_30">#832c17</color>
-  <color name="retro_red_20">#591e10</color>
-  <color name="retro_red_10">#2c0f08</color>
+  <color name="error_90">#f9dedc</color>
+  <color name="error_80">#f2b8b5</color>
+  <color name="error_40">#b3261e</color>
+  <color name="error_30">#8c1d18</color>
+  <color name="error_20">#601410</color>
+  <color name="error_10">#410e0b</color>
 
-  <color name="retro_dark">#0a373a</color>
+  <color name="neutral_99">#fffbfa</color>
+  <color name="neutral_90">#ecdfdf</color>
+  <color name="neutral_50">#8f7272</color>
+  <color name="neutral_20">#382d2d</color>
+  <color name="neutral_10">#201a1a</color>
 
-  <color name="neutral_99">#fcfdfc</color>
-  <color name="neutral_90">#e3e5e5</color>
-  <color name="neutral_80">#cacecc</color>
-  <color name="neutral_70">#b0b6b4</color>
-  <color name="neutral_60">#959e9a</color>
-  <color name="neutral_50">#7a847f</color>
-  <color name="neutral_40">#626b66</color>
-  <color name="neutral_30">#4a504c</color>
-  <color name="neutral_20">#323633</color>
-  <color name="neutral_10">#1a1c1a</color>
-
-  <color name="grey_99">#fdfdfd</color>
-  <color name="grey_90">#e3e4e6</color>
-  <color name="grey_80">#c9cacf</color>
-  <color name="grey_70">#aeb0b7</color>
-  <color name="grey_60">#92959f</color>
-  <color name="grey_50">#787c87</color>
-  <color name="grey_40">#5f626c</color>
-  <color name="grey_30">#484a52</color>
-  <color name="grey_20">#303236</color>
-  <color name="grey_10">#18191b</color>
-
-  <!-- BACKGROUND -->
-
-  <color name="on_background_secondary">@color/grey_50</color>
-
-  <!-- OUTLINE -->
-
-  <color name="outline_secondary">@color/neutral_80</color>
-
-  <!-- ICONS -->
-
-  <color name="feedback_star">@color/retro_yellow_50</color>
-
-  <color name="vending_blue">#00d3ff</color>
-  <color name="vending_red">#f43249</color>
-  <color name="vending_green">#00f176</color>
-  <color name="vending_yellow">#ffc900</color>
+  <color name="neutral_variant_90">#f6e2e2</color>
+  <color name="neutral_variant_80">#d7c2c1</color>
+  <color name="neutral_variant_60">#a08c8c</color>
+  <color name="neutral_variant_50">#847271</color>
+  <color name="neutral_variant_30">#534343</color>
 
 </resources>

@@ -39,6 +39,7 @@
 
   <string name="action_close">Schließen</string>
   <string name="action_back">Zurück</string>
+  <string name="action_open_link">Externe Website öffnen</string>
   <string name="action_reset">Zurücksetzen</string>
   <string name="action_set">Festlegen</string>
   <string name="action_send_feedback">Feedback senden</string>
@@ -50,6 +51,7 @@
   <string name="action_rate_description">Entwicklung unterstützen</string>
   <string name="action_github">Doodle Android auf GitHub</string>
   <string name="action_github_description">Neues Issue öffnen</string>
+  <string name="action_language_select">Sprache auswählen</string>
 
   <!-- APPEARANCE -->
 
@@ -107,7 +109,11 @@
   <!-- OTHER -->
 
   <string name="other_title">Andere Optionen</string>
-  <string name="other_description">Rendern &amp; Zurücksetzen</string>
+  <string name="other_description">Rendering, Sprache &amp; Reset</string>
+  <string name="other_language">Sprache</string>
+  <string name="other_language_description">Vielen Dank an alle freiwilligen Übersetzer*innen bei Transifex! Besuchen Sie die GitHub-Seite dieses Projekts, um zu erfahren, wie Sie helfen können, Doodle Live Hintergründe für Ihre Sprache verfügbar zu machen.</string>
+  <string name="setting_language_system">Systemstandard: %1$s</string>
+  <string name="setting_language_not_available">Nicht verfügbar</string>
   <string name="other_gpu">Hardware-Beschleunigung</string>
   <string name="other_gpu_description">Ausschalten, wenn der Live-Hintergrund abstürzt.\nErfordert bei aktivem Hintergrund einen Neustart des Geräts, um in Kraft zu treten</string>
   <string name="other_gpu_info">Hardware-Beschleunigung ist für Doodle erst ab Android 8 verfügbar. Die Animationen könnten deshalb etwas ruckelig sein, besonders bei dem zweiten Hintergrund.</string>
@@ -124,7 +130,7 @@
   <string name="about_changelog">Changelog</string>
   <string name="about_changelog_description">Was ist neu?</string>
   <string name="about_developer">Entwickler</string>
-  <string name="about_vending_description">Andere Apps des Entwicklers</string>
+  <string name="about_vending_description">Weitere Apps des Entwicklers</string>
   <string name="about_github_description">Quellcode</string>
   <string name="about_translation_description">Hilf mit, Doodle in deine Sprache zu übersetzen</string>
 

@@ -29,12 +29,17 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.content.res.Configuration;
+import android.content.res.Resources;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.NonNull;
 import androidx.annotation.StringRes;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
@@ -43,17 +48,20 @@ import androidx.core.view.WindowInsetsCompat.Type;
 import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
+import androidx.preference.PreferenceManager;
 import com.google.android.material.snackbar.Snackbar;
+import java.util.Locale;
 import xyz.zedler.patrick.doodle.BuildConfig;
-import xyz.zedler.patrick.doodle.Constants;
 import xyz.zedler.patrick.doodle.Constants.PREF;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.behavior.SystemBarBehavior;
 import xyz.zedler.patrick.doodle.databinding.ActivityMainBinding;
+import xyz.zedler.patrick.doodle.fragment.BaseFragment;
 import xyz.zedler.patrick.doodle.fragment.dialog.ChangelogBottomSheetDialogFragment;
 import xyz.zedler.patrick.doodle.fragment.dialog.FeedbackBottomSheetDialogFragment;
 import xyz.zedler.patrick.doodle.service.LiveWallpaperService;
 import xyz.zedler.patrick.doodle.util.HapticUtil;
+import xyz.zedler.patrick.doodle.util.LocaleUtil;
 import xyz.zedler.patrick.doodle.util.PrefsUtil;
 import xyz.zedler.patrick.doodle.util.SystemUiUtil;
 import xyz.zedler.patrick.doodle.util.ViewUtil;
@@ -68,6 +76,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
   private ViewUtil viewUtil;
   private HapticUtil hapticUtil;
   private ActivityResultLauncher<Intent> wallpaperPickerLauncher;
+  private NavHostFragment navHost;
   private boolean isServiceRunning;
   private boolean settingsApplied;
   private boolean themeApplied;
@@ -76,15 +85,33 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
+
+    sharedPrefsBasic = PreferenceManager.getDefaultSharedPreferences(this);
+    Log.i(TAG, "onCreate: hello " + sharedPrefsBasic);
+
+    // LANGUAGE
+
+    Locale userLocale = LocaleUtil.getUserLocale(this, sharedPrefsBasic);
+    Locale.setDefault(userLocale);
+    // base
+    Resources resBase = getBaseContext().getResources();
+    Configuration configBase = resBase.getConfiguration();
+    configBase.setLocale(userLocale);
+    resBase.updateConfiguration(configBase, resBase.getDisplayMetrics());
+    // app
+    Resources resApp = getApplicationContext().getResources();
+    Configuration configApp = resApp.getConfiguration();
+    configApp.setLocale(userLocale);
+    resApp.updateConfiguration(configApp, getResources().getDisplayMetrics());
 
     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
+
+    super.onCreate(savedInstanceState);
 
     binding = ActivityMainBinding.inflate(getLayoutInflater());
     setContentView(binding.getRoot());
 
     sharedPrefs = new PrefsUtil(this).checkForMigrations().getSharedPrefs();
-    sharedPrefsBasic = getSharedPreferences(Constants.PREFS_NORMAL, Context.MODE_PRIVATE);
 
     viewUtil = new ViewUtil();
     hapticUtil = new HapticUtil(binding.getRoot());
@@ -103,7 +130,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     int margin = SystemUiUtil.dpToPx(this, 40);
     fabTopEdgeDistance = height + margin;
 
-    NavHostFragment navHost = (NavHostFragment) getSupportFragmentManager().findFragmentById(
+    navHost = (NavHostFragment) getSupportFragmentManager().findFragmentById(
         R.id.fragment_main_nav_host
     );
     assert navHost != null;
@@ -168,6 +195,30 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
       }
       performHapticHeavyClick();
     }
+  }
+
+  @Override
+  protected void attachBaseContext(Context base) {
+    Locale userLocale = LocaleUtil.getUserLocale(base);
+    Locale.setDefault(userLocale);
+    Resources resources = base.getResources();
+    Configuration configuration = resources.getConfiguration();
+    configuration.setLocale(userLocale);
+    resources.updateConfiguration(configuration, resources.getDisplayMetrics());
+    super.attachBaseContext(base.createConfigurationContext(configuration));
+  }
+
+  @Override
+  public void applyOverrideConfiguration(Configuration overrideConfiguration) {
+    if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.N_MR1) {
+      overrideConfiguration.setLocale(LocaleUtil.getUserLocale(this, sharedPrefsBasic));
+    }
+    super.applyOverrideConfiguration(overrideConfiguration);
+  }
+
+  @NonNull
+  public BaseFragment getCurrentFragment() {
+    return (BaseFragment) navHost.getChildFragmentManager().getFragments().get(0);
   }
 
   public int getFabTopEdgeDistance() {

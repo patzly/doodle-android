@@ -29,6 +29,7 @@ import androidx.preference.PreferenceManager;
 import java.util.Objects;
 import xyz.zedler.patrick.doodle.Constants.DEF;
 import xyz.zedler.patrick.doodle.Constants.PREF;
+import xyz.zedler.patrick.doodle.activity.MainActivity;
 
 public class PrefsUtil {
 
@@ -200,8 +201,8 @@ public class PrefsUtil {
     }
   }
 
-  public static void restartToApply(Activity activity, Class<Activity> launchClass) {
-    Intent intent = new Intent(activity, launchClass);
+  public static void restartToApply(Activity activity) {
+    Intent intent = new Intent(activity, MainActivity.class);
     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
     activity.startActivity(intent);
     activity.finish();

@@ -61,6 +61,7 @@
   <string name="action_rate_description">Support the development</string>
   <string name="action_github">Doodle Android on GitHub</string>
   <string name="action_github_description">Open a new issue</string>
+  <string name="action_language_select">Select language</string>
 
   <!-- APPEARANCE -->
 
@@ -118,7 +119,11 @@
   <!-- OTHER -->
 
   <string name="other_title">Other options</string>
-  <string name="other_description">Rendering &amp; reset</string>
+  <string name="other_description">Rendering, language &amp; reset</string>
+  <string name="other_language">Language</string>
+  <string name="other_language_description">Many thanks to all the volunteer translators at Transifex! Please visit the project\'s GitHub page to learn how you can help make Doodle Live Wallpapers available for your language.</string>
+  <string name="setting_language_system">System default: %1$s</string>
+  <string name="setting_language_not_available">Not available</string>
   <string name="other_gpu">Hardware acceleration</string>
   <string name="other_gpu_description">Turn off if the wallpaper crashes. Requires restart of the device to take effect if the wallpaper is currently active.</string>
   <string name="other_gpu_info">Hardware acceleration is only available for Doodle starting with Android 8. The wallpaper animations might therefore be a bit jerky, especially with the second wallpaper.</string>
@@ -130,13 +135,13 @@
   <!-- ABOUT -->
 
   <string name="about_title">About</string>
-  <string name="about_description">Developer info &amp; more</string>
+  <string name="about_description">Version info &amp; more</string>
   <string name="about_version">Version</string>
   <string name="about_changelog">Changelog</string>
   <string name="about_changelog_description">What\'s new?</string>
   <string name="about_developer">Developer</string>
   <string name="about_vending" translatable="false">Google Play</string>
-  <string name="about_vending_description">Other apps by the developer</string>
+  <string name="about_vending_description">More apps by the developer</string>
   <string name="about_github" translatable="false">GitHub</string>
   <string name="about_github_description">Source code</string>
   <string name="about_translation" translatable="false">Transifex</string>

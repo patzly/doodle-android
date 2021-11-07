@@ -51,6 +51,31 @@
       android:paddingBottom="8dp"
       android:orientation="vertical">
 
+      <LinearLayout
+        android:id="@+id/linear_other_language"
+        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon.Clickable">
+
+        <ImageView
+          android:id="@+id/image_other_language"
+          style="@style/Widget.Doodle.ImageView.ListItem.Icon"
+          android:src="@drawable/ic_round_language_anim"
+          tools:ignore="ContentDescription" />
+
+        <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
+
+          <TextView
+            style="@style/Widget.Doodle.TextView.ListItem.Title"
+            android:text="@string/other_language" />
+
+          <TextView
+            android:id="@+id/text_other_language"
+            style="@style/Widget.Doodle.TextView.ListItem.Description"
+            android:text="@string/setting_language_system" />
+
+        </LinearLayout>
+
+      </LinearLayout>
+
       <com.google.android.material.card.MaterialCardView
         android:id="@+id/card_other_gpu"
         style="@style/Widget.Doodle.Card.Text"

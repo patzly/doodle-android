@@ -228,18 +228,16 @@ public class ViewUtil {
     );
   }
 
-  public static Drawable getPopupBackground(Context context) {
+  public static Drawable getRippleBgListItemSurfaceRecyclerItem(Context context) {
     float[] radii = new float[8];
-    Arrays.fill(radii, SystemUiUtil.dpToPx(context, 8));
+    Arrays.fill(radii, SystemUiUtil.dpToPx(context, 16));
     RoundRectShape rect = new RoundRectShape(radii, null, null);
     ShapeDrawable shape = new ShapeDrawable(rect);
     shape.getPaint().setColor(SurfaceColors.SURFACE_1.getColor(context));
-    return new InsetDrawable(
-        shape,
-        SystemUiUtil.dpToPx(context, 8),
-        SystemUiUtil.dpToPx(context, 2),
-        SystemUiUtil.dpToPx(context, 8),
-        SystemUiUtil.dpToPx(context, 2)
+    return new RippleDrawable(
+        ColorStateList.valueOf(ContextCompat.getColor(context, R.color.selector_highlight)),
+        null,
+        shape
     );
   }
 }

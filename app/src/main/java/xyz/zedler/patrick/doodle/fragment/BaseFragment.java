@@ -44,6 +44,10 @@ public class BaseFragment extends Fragment {
     return activity.getSharedPrefs();
   }
 
+  public SharedPreferences getSharedPrefsBasic() {
+    return activity.getSharedPrefsBasic();
+  }
+
   public ViewUtil getViewUtil() {
     return viewUtil;
   }

@@ -26,26 +26,39 @@ public final class Constants {
 
   public final static class PREF {
 
+    // Appearance
+
+    public final static String WALLPAPER = "wallpaper";
+    public final static String VARIANT_PIXEL = "variant_pixel";
+    public final static String VARIANT_JOHANNA = "variant_johanna";
+    public final static String VARIANT_REIKO = "variant_reiko";
+    public final static String VARIANT_ANTHONY = "variant_anthony";
+
     public final static String NIGHT_MODE = "night_mode";
     public final static String FOLLOW_SYSTEM = "follow_system";
     public final static String USE_WHITE_TEXT = "use_white_text";
+
+    // Parallax
+
+    public final static String PARALLAX = "parallax";
+    public final static String TILT = "tilt";
+    public final static String REFRESH_RATE = "refresh_rate";
+    public final static String DAMPING = "damping";
+    public final static String THRESHOLD = "threshold";
+
+    // Size
+
+    public final static String SCALE = "size";
     public final static String ZOOM = "zoom";
     public final static String ZOOM_LAUNCHER = "zoom_launcher";
     public final static String ZOOM_UNLOCK = "zoom_unlock";
     public final static String ZOOM_SYSTEM = "zoom_system";
     public final static String ZOOM_DURATION = "zoom_duration";
     public final static String ZOOM_ROTATION = "zoom_rotation";
-    public final static String WALLPAPER = "wallpaper";
-    public final static String VARIANT_PIXEL = "variant_pixel";
-    public final static String VARIANT_JOHANNA = "variant_johanna";
-    public final static String VARIANT_REIKO = "variant_reiko";
-    public final static String VARIANT_ANTHONY = "variant_anthony";
-    public final static String PARALLAX = "parallax";
-    public final static String TILT = "tilt";
-    public final static String REFRESH_RATE = "refresh_rate";
-    public final static String DAMPING = "damping";
-    public final static String THRESHOLD = "threshold";
-    public final static String SCALE = "size";
+
+    // Other
+
+    public final static String LANGUAGE = "language";
     public final static String GPU = "hardware_acceleration";
 
     public final static String SETTINGS_APPLIED = "settings_applied";
@@ -76,6 +89,7 @@ public final class Constants {
     public final static float SCALE = 1;
     public final static boolean GPU = true;
     public final static boolean LAUNCHER = false;
+    public final static String LANGUAGE = null;
   }
 
   public final static class DESIGN {

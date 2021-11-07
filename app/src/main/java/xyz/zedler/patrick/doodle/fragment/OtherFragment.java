@@ -33,6 +33,7 @@ import android.widget.CompoundButton.OnCheckedChangeListener;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import com.google.android.material.snackbar.Snackbar;
+import java.util.Locale;
 import xyz.zedler.patrick.doodle.Constants.DEF;
 import xyz.zedler.patrick.doodle.Constants.PREF;
 import xyz.zedler.patrick.doodle.R;
@@ -41,6 +42,9 @@ import xyz.zedler.patrick.doodle.activity.SplashActivity;
 import xyz.zedler.patrick.doodle.behavior.ScrollBehavior;
 import xyz.zedler.patrick.doodle.behavior.SystemBarBehavior;
 import xyz.zedler.patrick.doodle.databinding.FragmentOtherBinding;
+import xyz.zedler.patrick.doodle.fragment.dialog.LanguagesBottomSheetDialogFragment;
+import xyz.zedler.patrick.doodle.model.Language;
+import xyz.zedler.patrick.doodle.util.LocaleUtil;
 import xyz.zedler.patrick.doodle.util.ResUtil;
 import xyz.zedler.patrick.doodle.util.ViewUtil;
 
@@ -99,6 +103,8 @@ public class OtherFragment extends BaseFragment
       }
     });
 
+    binding.textOtherLanguage.setText(getLanguage());
+
     binding.linearOtherGpu.setVisibility(
         Build.VERSION.SDK_INT >= Build.VERSION_CODES.O ? View.VISIBLE : View.GONE
     );
@@ -112,6 +118,7 @@ public class OtherFragment extends BaseFragment
 
     ViewUtil.setOnClickListeners(
         this,
+        binding.linearOtherLanguage,
         binding.linearOtherLauncher,
         binding.linearOtherReset
     );
@@ -129,7 +136,11 @@ public class OtherFragment extends BaseFragment
   @Override
   public void onClick(View v) {
     int id = v.getId();
-    if (id == R.id.linear_other_gpu) {
+    if (id == R.id.linear_other_language) {
+      ViewUtil.startIcon(binding.imageOtherLanguage);
+      performHapticClick();
+      ViewUtil.showBottomSheet(activity, new LanguagesBottomSheetDialogFragment());
+    } else if (id == R.id.linear_other_gpu) {
       ViewUtil.startIcon(binding.imageOtherGpu);
       performHapticClick();
       binding.switchOtherGpu.setChecked(!binding.switchOtherGpu.isChecked());
@@ -159,7 +170,7 @@ public class OtherFragment extends BaseFragment
   public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
     int id = buttonView.getId();
     if (id == R.id.switch_other_gpu) {
-      getSharedPrefs().edit().putBoolean(PREF.GPU, isChecked).apply();
+      getSharedPrefsBasic().edit().putBoolean(PREF.GPU, isChecked).apply();
       activity.requestSettingsRefresh();
       performHapticClick();
     } else if (id == R.id.switch_other_launcher) {
@@ -172,6 +183,27 @@ public class OtherFragment extends BaseFragment
           PackageManager.DONT_KILL_APP
       );
     }
+  }
+
+  public void setLanguage(Language language) {
+    Locale locale = language != null
+        ? LocaleUtil.getLocaleFromCode(language.getCode())
+        : LocaleUtil.getNearestSupportedLocale(activity, LocaleUtil.getDeviceLocale());
+    binding.textOtherLanguage.setText(
+        language != null
+            ? locale.getDisplayName()
+            : getString(R.string.setting_language_system, locale.getDisplayName())
+    );
+  }
+
+  public String getLanguage() {
+    String code = getSharedPrefsBasic().getString(PREF.LANGUAGE, DEF.LANGUAGE);
+    Locale locale = code != null
+        ? LocaleUtil.getLocaleFromCode(code)
+        : LocaleUtil.getNearestSupportedLocale(activity, LocaleUtil.getDeviceLocale());
+    return code != null
+        ? locale.getDisplayName()
+        : getString(R.string.setting_language_system, locale.getDisplayName());
   }
 
   private void setGpuOptionEnabled(boolean enabled) {

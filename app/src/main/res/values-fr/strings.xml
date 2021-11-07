@@ -51,6 +51,7 @@
   <string name="action_rate_description">Encourager le développement</string>
   <string name="action_github">Doodle Android sur GitHub</string>
   <string name="action_github_description">Signaler un problème</string>
+  <string name="action_language_select">Sélectionner la langue</string>
 
   <!-- APPEARANCE -->
 
@@ -108,7 +109,11 @@
   <!-- OTHER -->
 
   <string name="other_title">Autres options</string>
-  <string name="other_description">Rendu et réinitialisation</string>
+  <string name="other_description">Rendu, langue et réinitialisation</string>
+  <string name="other_language">Langue</string>
+  <string name="other_language_description">Un grand merci à tous les traducteurs bénévoles de Transifex ! Veuillez visiter la page GitHub du projet pour savoir comment vous pouvez aider à rendre Doodle disponible dans votre langue.</string>
+  <string name="setting_language_system">Par défaut système : %1$s</string>
+  <string name="setting_language_not_available">Indisponible</string>
   <string name="other_gpu">Accélération matérielle</string>
   <string name="other_gpu_description">Désactiver si le fond d\'écran animé plante. Nécessite le redémarrage de l\'appareil pour prendre effet si le fond d\'écran est actuellement actif.</string>
   <string name="other_gpu_info">L\'accélération matérielle n\'est disponible pour Doodle qu\'à partir d\'Android 8. Les animations de fond d\'écran peuvent donc être un peu saccadées, surtout avec le deuxième fond d\'écran.</string>
@@ -120,12 +125,12 @@
   <!-- ABOUT -->
 
   <string name="about_title">À propos</string>
-  <string name="about_description">Informations sur le développeur et autre</string>
+  <string name="about_description">Infos sur le développeur et plus</string>
   <string name="about_version">Version</string>
   <string name="about_changelog">Journal des modifications</string>
   <string name="about_changelog_description">Quoi de neuf ?</string>
   <string name="about_developer">Développeur</string>
-  <string name="about_vending_description">Autres applications du développeur</string>
+  <string name="about_vending_description">Plus d\'applications du même développeur</string>
   <string name="about_github_description">Code source</string>
   <string name="about_translation_description">Aider à traduire Doodle</string>
 

@@ -135,7 +135,7 @@
   <!-- ABOUT -->
 
   <string name="about_title">About</string>
-  <string name="about_description">Version info &amp; more</string>
+  <string name="about_description">Developer info &amp; more</string>
   <string name="about_version">Version</string>
   <string name="about_changelog">Changelog</string>
   <string name="about_changelog_description">What\'s new?</string>

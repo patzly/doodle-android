@@ -4,7 +4,7 @@
 - New: visual implementation of Material Design 3
 - Fixed: feedback dialog
 
-Please consider translating this app into your language at Transifex. There are less than 90 strings to translate!
+Please consider translating this app into your language at Transifex. There are less than 100 strings to translate!
 
 4.2.0:
 - New: exclusive live wallpapers based on leaked Pixel 6 wallpapers

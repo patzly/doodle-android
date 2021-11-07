@@ -97,10 +97,16 @@ public class LanguagesBottomSheetDialogFragment extends BaseBottomSheetDialogFra
         fragment.setLanguage(language);
         dismiss();
       } else {
-        new Handler().postDelayed(() -> PrefsUtil.restartToApply(activity), 100);
+        new Handler().postDelayed(
+            () -> PrefsUtil.restartToApply(activity, activity.isStartedFromLauncher()),
+            100
+        );
       }
     } else {
-      new Handler().postDelayed(() -> PrefsUtil.restartToApply(activity), 100);
+      new Handler().postDelayed(
+          () -> PrefsUtil.restartToApply(activity, activity.isStartedFromLauncher()),
+          100
+      );
     }
 
     getSharedPrefsBasic().edit().putString(Constants.PREF.LANGUAGE, selectedCode).apply();

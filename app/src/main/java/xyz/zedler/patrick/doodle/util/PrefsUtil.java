@@ -201,9 +201,12 @@ public class PrefsUtil {
     }
   }
 
-  public static void restartToApply(Activity activity) {
+  public static void restartToApply(Activity activity, boolean isStartedFromLauncher) {
     Intent intent = new Intent(activity, MainActivity.class);
     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+    if (isStartedFromLauncher) {
+      intent.addCategory(Intent.CATEGORY_LAUNCHER);
+    }
     activity.startActivity(intent);
     activity.finish();
     Runtime.getRuntime().exit(0);

@@ -325,6 +325,10 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     }
   }
 
+  public boolean isStartedFromLauncher() {
+    return getIntent() != null && getIntent().hasCategory(Intent.CATEGORY_LAUNCHER);
+  }
+
   public boolean isTouchWiz() {
     PackageManager localPackageManager = getPackageManager();
     Intent intent = new Intent("android.intent.action.MAIN");

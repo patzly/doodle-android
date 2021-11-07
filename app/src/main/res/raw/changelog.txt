@@ -1,7 +1,8 @@
 4.3.0:
-- New: exclusive live wallpaper based on Pixel 6 wallpapers (more to come!)
-- New: dynamic colors in settings app for Android 12
-- New: visual implementation of Material Design 3
+- New: another exclusive live wallpaper based on Pixel 6 wallpapers (more to come!)
+- New: dynamic colors in Doodle settings app for Android 12
+- New: complete implementation of Material Design 3
+- New: option to change language
 - Fixed: feedback dialog
 
 Please consider translating this app into your language at Transifex. There are less than 100 strings to translate!

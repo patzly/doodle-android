@@ -39,6 +39,7 @@
 
   <string name="action_close">Fermer</string>
   <string name="action_back">Retour</string>
+  <string name="action_open_link">Ouvrir un site web externe</string>
   <string name="action_reset">Réinitialiser</string>
   <string name="action_set">Définir le papier peint</string>
   <string name="action_send_feedback">Envoyer des commentaires</string>

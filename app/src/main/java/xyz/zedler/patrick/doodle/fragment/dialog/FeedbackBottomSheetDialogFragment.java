@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with Doodle Android. If not, see <http://www.gnu.org/licenses/>.
  *
- * Copyright (c) 2020-2021 by Patrick Zedler
+ * Copyright (c) 2019-2021 by Patrick Zedler
  */
 
 package xyz.zedler.patrick.doodle.fragment.dialog;
@@ -83,8 +83,8 @@ public class FeedbackBottomSheetDialogFragment extends BaseBottomSheetDialogFrag
   public void onDismiss(@NonNull DialogInterface dialog) {
     super.onDismiss(dialog);
 
-    if (getSharedPrefsBasic().getInt(PREF.FEEDBACK_POP_UP_COUNT, 1) != 0) {
-      getSharedPrefsBasic().edit().putInt(PREF.FEEDBACK_POP_UP_COUNT, 0).apply();
+    if (getSharedPrefs().getInt(PREF.FEEDBACK_POP_UP_COUNT, 1) != 0) {
+      getSharedPrefs().edit().putInt(PREF.FEEDBACK_POP_UP_COUNT, 0).apply();
     }
   }
 

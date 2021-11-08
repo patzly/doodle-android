@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with Doodle Android. If not, see <http://www.gnu.org/licenses/>.
  *
- * Copyright (c) 2020-2021 by Patrick Zedler
+ * Copyright (c) 2019-2021 by Patrick Zedler
  */
 
 package xyz.zedler.patrick.doodle.fragment.dialog;
@@ -297,10 +297,6 @@ public class BaseBottomSheetDialogFragment extends BottomSheetDialogFragment {
 
   public SharedPreferences getSharedPrefs() {
     return activity.getSharedPrefs();
-  }
-
-  public SharedPreferences getSharedPrefsBasic() {
-    return activity.getSharedPrefsBasic();
   }
 
   public ViewUtil getViewUtil() {

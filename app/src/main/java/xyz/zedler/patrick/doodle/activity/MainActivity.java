@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with Doodle Android. If not, see <http://www.gnu.org/licenses/>.
  *
- * Copyright (c) 2020-2021 by Patrick Zedler
+ * Copyright (c) 2019-2021 by Patrick Zedler
  */
 
 package xyz.zedler.patrick.doodle.activity;
@@ -34,7 +34,6 @@ import android.content.res.Resources;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import androidx.activity.result.ActivityResultLauncher;
@@ -48,7 +47,6 @@ import androidx.core.view.WindowInsetsCompat.Type;
 import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
-import androidx.preference.PreferenceManager;
 import com.google.android.material.snackbar.Snackbar;
 import java.util.Locale;
 import xyz.zedler.patrick.doodle.BuildConfig;
@@ -72,7 +70,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 
   private ActivityMainBinding binding;
   private NavController navController;
-  private SharedPreferences sharedPrefs, sharedPrefsBasic;
+  private SharedPreferences sharedPrefs;
   private ViewUtil viewUtil;
   private HapticUtil hapticUtil;
   private ActivityResultLauncher<Intent> wallpaperPickerLauncher;
@@ -86,12 +84,11 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
 
-    sharedPrefsBasic = PreferenceManager.getDefaultSharedPreferences(this);
-    Log.i(TAG, "onCreate: hello " + sharedPrefsBasic);
+    sharedPrefs = new PrefsUtil(this).checkForMigrations().getSharedPrefs();
 
     // LANGUAGE
 
-    Locale userLocale = LocaleUtil.getUserLocale(this, sharedPrefsBasic);
+    Locale userLocale = LocaleUtil.getUserLocale(this, sharedPrefs);
     Locale.setDefault(userLocale);
     // base
     Resources resBase = getBaseContext().getResources();
@@ -110,8 +107,6 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 
     binding = ActivityMainBinding.inflate(getLayoutInflater());
     setContentView(binding.getRoot());
-
-    sharedPrefs = new PrefsUtil(this).checkForMigrations().getSharedPrefs();
 
     viewUtil = new ViewUtil();
     hapticUtil = new HapticUtil(binding.getRoot());
@@ -211,7 +206,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
   @Override
   public void applyOverrideConfiguration(Configuration overrideConfiguration) {
     if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.N_MR1) {
-      overrideConfiguration.setLocale(LocaleUtil.getUserLocale(this, sharedPrefsBasic));
+      overrideConfiguration.setLocale(LocaleUtil.getUserLocale(this, sharedPrefs));
     }
     super.applyOverrideConfiguration(overrideConfiguration);
   }
@@ -259,10 +254,6 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     return sharedPrefs;
   }
 
-  public SharedPreferences getSharedPrefsBasic() {
-    return sharedPrefsBasic;
-  }
-
   public void requestSettingsRefresh() {
     if (settingsApplied) {
       sharedPrefs.edit().putBoolean(PREF.SETTINGS_APPLIED, false).apply();
@@ -305,20 +296,20 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 
   private void showChangelogIfUpdated() {
     int versionNew = BuildConfig.VERSION_CODE;
-    int versionOld = sharedPrefsBasic.getInt(PREF.LAST_VERSION, 0);
+    int versionOld = sharedPrefs.getInt(PREF.LAST_VERSION, 0);
     if (versionOld == 0) {
-      sharedPrefsBasic.edit().putInt(PREF.LAST_VERSION, versionNew).apply();
+      sharedPrefs.edit().putInt(PREF.LAST_VERSION, versionNew).apply();
     } else if (versionOld != versionNew) {
-      sharedPrefsBasic.edit().putInt(PREF.LAST_VERSION, versionNew).apply();
+      sharedPrefs.edit().putInt(PREF.LAST_VERSION, versionNew).apply();
       ViewUtil.showBottomSheet(this, new ChangelogBottomSheetDialogFragment());
     }
   }
 
   private void showFeedbackAfterSomeUsage() {
-    int feedbackCount = sharedPrefsBasic.getInt(PREF.FEEDBACK_POP_UP_COUNT, 1);
+    int feedbackCount = sharedPrefs.getInt(PREF.FEEDBACK_POP_UP_COUNT, 1);
     if (feedbackCount > 0) {
       if (feedbackCount < 5) {
-        sharedPrefsBasic.edit().putInt(PREF.FEEDBACK_POP_UP_COUNT, feedbackCount + 1).apply();
+        sharedPrefs.edit().putInt(PREF.FEEDBACK_POP_UP_COUNT, feedbackCount + 1).apply();
       } else {
         ViewUtil.showBottomSheet(this, new FeedbackBottomSheetDialogFragment());
       }

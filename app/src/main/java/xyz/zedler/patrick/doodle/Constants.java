@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with Doodle Android. If not, see <http://www.gnu.org/licenses/>.
  *
- * Copyright (c) 2020-2021 by Patrick Zedler
+ * Copyright (c) 2019-2021 by Patrick Zedler
  */
 
 package xyz.zedler.patrick.doodle;
@@ -108,6 +108,7 @@ public final class Constants {
 
     public final static String STONE = "stone";
     public final static String FLORAL = "floral";
+    public final static String WATER = "water";
     public final static String MONET = "monet";
 
     public final static String LEAFY = "leafy";

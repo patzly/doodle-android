@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with Doodle Android. If not, see <http://www.gnu.org/licenses/>.
  *
- * Copyright (c) 2020-2021 by Patrick Zedler
+ * Copyright (c) 2019-2021 by Patrick Zedler
  */
 
 package xyz.zedler.patrick.doodle.service;
@@ -70,6 +70,7 @@ import xyz.zedler.patrick.doodle.wallpaper.MonetWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.PixelWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.ReikoWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.StoneWallpaper;
+import xyz.zedler.patrick.doodle.wallpaper.WaterWallpaper;
 
 public class LiveWallpaperService extends WallpaperService {
 
@@ -93,9 +94,7 @@ public class LiveWallpaperService extends WallpaperService {
 
   @Override
   public Engine onCreateEngine() {
-    sharedPrefs = new PrefsUtil(LiveWallpaperService.this)
-        .checkForMigrations()
-        .getSharedPrefs();
+    sharedPrefs = new PrefsUtil(this).checkForMigrations().getSharedPrefs();
 
     presenceReceiver = new BroadcastReceiver() {
       public void onReceive(Context context, Intent intent) {
@@ -443,6 +442,7 @@ public class LiveWallpaperService extends WallpaperService {
     }
 
     private void loadTheme() {
+      Log.i(TAG, "loadTheme: hello " + sharedPrefs.getString(PREF.WALLPAPER, DEF.WALLPAPER));
       switch (sharedPrefs.getString(PREF.WALLPAPER, DEF.WALLPAPER)) {
         case WALLPAPER.JOHANNA:
           wallpaper = new JohannaWallpaper();
@@ -467,6 +467,9 @@ public class LiveWallpaperService extends WallpaperService {
           break;
         case WALLPAPER.FLORAL:
           wallpaper = new FloralWallpaper();
+          break;
+        case WALLPAPER.WATER:
+          wallpaper = new WaterWallpaper();
           break;
         default:
           wallpaper = new PixelWallpaper();

@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with Doodle Android. If not, see <http://www.gnu.org/licenses/>.
  *
- * Copyright (c) 2020-2021 by Patrick Zedler
+ * Copyright (c) 2019-2021 by Patrick Zedler
  */
 
 package xyz.zedler.patrick.doodle.fragment;
@@ -22,6 +22,7 @@ package xyz.zedler.patrick.doodle.fragment;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -59,9 +60,12 @@ import xyz.zedler.patrick.doodle.wallpaper.MonetWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.PixelWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.ReikoWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.StoneWallpaper;
+import xyz.zedler.patrick.doodle.wallpaper.WaterWallpaper;
 
 public class AppearanceFragment extends BaseFragment
     implements OnClickListener, OnCheckedChangeListener {
+
+  private final static String TAG = AppearanceFragment.class.getSimpleName();
 
   private FragmentAppearanceBinding binding;
   private MainActivity activity;
@@ -216,6 +220,7 @@ public class AppearanceFragment extends BaseFragment
     switch (design) {
       case DESIGN.MONET:
         baseWallpapers = new BaseWallpaper[]{
+            new WaterWallpaper(),
             new StoneWallpaper(),
             new FloralWallpaper(),
             new MonetWallpaper()
@@ -260,6 +265,7 @@ public class AppearanceFragment extends BaseFragment
           card.setChecked(true);
           refreshVariantSelection(wallpaper, true);
           getSharedPrefs().edit().putString(PREF.WALLPAPER, wallpaper.getName()).apply();
+          Log.i(TAG, "setUpDesignSelections: hello " + getSharedPrefs().getString(PREF.WALLPAPER, wallpaper.getName()));
           activity.requestThemeRefresh();
         }
       });

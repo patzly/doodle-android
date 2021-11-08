@@ -24,24 +24,23 @@ import xyz.zedler.patrick.doodle.Constants.WALLPAPER;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.drawable.SvgDrawable;
 
-public class JohannaWallpaper extends BaseWallpaper {
+public class WaterWallpaper extends BaseWallpaper {
 
   @NonNull
   @Override
   public String getName() {
-    return WALLPAPER.JOHANNA;
+    return WALLPAPER.WATER;
   }
 
   @Override
   public int getThumbnailResId() {
-    return R.drawable.selection_johanna;
+    return R.drawable.selection_water;
   }
 
   @Override
   public SvgDrawable getPreparedSvg(SvgDrawable svgDrawable, int variant, boolean isNightMode) {
-    svgDrawable.requireObjectById("blue").isRotatable = true;
-    svgDrawable.requireObjectById("yellow").isRotatable = true;
-    svgDrawable.requireObjectById("green").isRotatable = true;
+    svgDrawable.requireObjectById("dotted").isRotatable = true;
+    svgDrawable.requireObjectById("kidney").isRotatable = true;
     return svgDrawable;
   }
 
@@ -50,10 +49,10 @@ public class JohannaWallpaper extends BaseWallpaper {
   public WallpaperVariant[] getVariants() {
     return new WallpaperVariant[]{
         new WallpaperVariant(
-            R.raw.wallpaper_johanna1,
-            "#fcf4e9",
-            "#f8bfa6",
-            "#d8e2eb",
+            R.raw.wallpaper_water,
+            "#e0e0df",
+            "#406382",
+            "#d0e3ef",
             true,
             false
         )
@@ -65,10 +64,10 @@ public class JohannaWallpaper extends BaseWallpaper {
   public WallpaperVariant[] getDarkVariants() {
     return new WallpaperVariant[]{
         new WallpaperVariant(
-            R.raw.wallpaper_johanna1_dark,
-            "#32373a",
-            "#855642",
-            "#5f8393",
+            R.raw.wallpaper_water_dark,
+            "#151718",
+            "#476988",
+            "#586a73",
             false,
             true
         )

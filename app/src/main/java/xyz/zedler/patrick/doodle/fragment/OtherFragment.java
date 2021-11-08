@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with Doodle Android. If not, see <http://www.gnu.org/licenses/>.
  *
- * Copyright (c) 2020-2021 by Patrick Zedler
+ * Copyright (c) 2019-2021 by Patrick Zedler
  */
 
 package xyz.zedler.patrick.doodle.fragment;
@@ -170,7 +170,7 @@ public class OtherFragment extends BaseFragment
   public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
     int id = buttonView.getId();
     if (id == R.id.switch_other_gpu) {
-      getSharedPrefsBasic().edit().putBoolean(PREF.GPU, isChecked).apply();
+      getSharedPrefs().edit().putBoolean(PREF.GPU, isChecked).apply();
       activity.requestSettingsRefresh();
       performHapticClick();
     } else if (id == R.id.switch_other_launcher) {
@@ -197,7 +197,7 @@ public class OtherFragment extends BaseFragment
   }
 
   public String getLanguage() {
-    String code = getSharedPrefsBasic().getString(PREF.LANGUAGE, DEF.LANGUAGE);
+    String code = getSharedPrefs().getString(PREF.LANGUAGE, DEF.LANGUAGE);
     Locale locale = code != null
         ? LocaleUtil.getLocaleFromCode(code)
         : LocaleUtil.getNearestSupportedLocale(activity, LocaleUtil.getDeviceLocale());

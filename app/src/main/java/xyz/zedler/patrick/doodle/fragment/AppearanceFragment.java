@@ -22,7 +22,6 @@ package xyz.zedler.patrick.doodle.fragment;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -265,7 +264,6 @@ public class AppearanceFragment extends BaseFragment
           card.setChecked(true);
           refreshVariantSelection(wallpaper, true);
           getSharedPrefs().edit().putString(PREF.WALLPAPER, wallpaper.getName()).apply();
-          Log.i(TAG, "setUpDesignSelections: hello " + getSharedPrefs().getString(PREF.WALLPAPER, wallpaper.getName()));
           activity.requestThemeRefresh();
         }
       });

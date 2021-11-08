@@ -34,6 +34,7 @@ import android.content.res.Resources;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import androidx.activity.result.ActivityResultLauncher;
@@ -50,6 +51,7 @@ import androidx.navigation.fragment.NavHostFragment;
 import com.google.android.material.snackbar.Snackbar;
 import java.util.Locale;
 import xyz.zedler.patrick.doodle.BuildConfig;
+import xyz.zedler.patrick.doodle.Constants.ACTION;
 import xyz.zedler.patrick.doodle.Constants.PREF;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.behavior.SystemBarBehavior;
@@ -76,8 +78,6 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
   private ActivityResultLauncher<Intent> wallpaperPickerLauncher;
   private NavHostFragment navHost;
   private boolean isServiceRunning;
-  private boolean settingsApplied;
-  private boolean themeApplied;
   private int fabTopEdgeDistance;
   private int bottomInset;
 
@@ -169,9 +169,6 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     }
 
     hapticUtil.setEnabled(HapticUtil.areSystemHapticsTurnedOn(this));
-
-    settingsApplied = sharedPrefs.getBoolean(PREF.SETTINGS_APPLIED, true);
-    themeApplied = sharedPrefs.getBoolean(PREF.THEME_APPLIED, true);
   }
 
   @Override
@@ -256,17 +253,16 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
   }
 
   public void requestSettingsRefresh() {
-    if (settingsApplied) {
-      sharedPrefs.edit().putBoolean(PREF.SETTINGS_APPLIED, false).apply();
-      settingsApplied = false;
-    }
+    Intent intent = new Intent();
+    intent.setAction(ACTION.SETTINGS_CHANGED);
+    sendBroadcast(intent);
   }
 
   public void requestThemeRefresh() {
-    if (themeApplied) {
-      sharedPrefs.edit().putBoolean(PREF.THEME_APPLIED, false).apply();
-      themeApplied = false;
-    }
+    Intent intent = new Intent();
+    intent.setAction(ACTION.THEME_CHANGED);
+    sendBroadcast(intent);
+    Log.i(TAG, "requestThemeRefresh: hello theme");
   }
 
   public void reset() {

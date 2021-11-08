@@ -2,8 +2,9 @@
 - New: another exclusive live wallpaper based on Pixel 6 wallpapers (more to come!)
 - New: dynamic colors in Doodle settings app for Android 12
 - New: complete implementation of Material Design 3
-- New: option to change language
-- Fixed: feedback dialog
+- New: option to change language (translations by volunteers on Transifex, thank you all!)
+- Improved: changed settings are applied to the wallpaper instantly
+- Fixed: broken buttons in feedback dialog
 
 Please consider translating this app into your language at Transifex. There are less than 100 strings to translate!
 

@@ -61,8 +61,6 @@ public final class Constants {
     public final static String LANGUAGE = "language";
     public final static String GPU = "hardware_acceleration";
 
-    public final static String SETTINGS_APPLIED = "settings_applied";
-    public final static String THEME_APPLIED = "theme_applied";
     public final static String PREVIEW_RUNNING = "preview_running";
 
     public final static String LAST_VERSION = "last_version";
@@ -127,5 +125,11 @@ public final class Constants {
     public final static String ZOOM_LAUNCHER = "zoom_launcher";
     public final static String ZOOM_UNLOCK = "zoom_unlock";
     public final static String TILT = "tilt";
+  }
+
+  public final static class ACTION {
+
+    public final static String THEME_CHANGED = "action_theme_changed";
+    public final static String SETTINGS_CHANGED = "action_settings_changed";
   }
 }

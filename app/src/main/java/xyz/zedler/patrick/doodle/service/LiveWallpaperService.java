@@ -51,6 +51,7 @@ import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
 import java.util.ArrayList;
 import java.util.List;
 import xyz.zedler.patrick.doodle.Constants;
+import xyz.zedler.patrick.doodle.Constants.ACTION;
 import xyz.zedler.patrick.doodle.Constants.DEF;
 import xyz.zedler.patrick.doodle.Constants.PREF;
 import xyz.zedler.patrick.doodle.Constants.REQUEST_SOURCE;
@@ -87,9 +88,10 @@ public class LiveWallpaperService extends WallpaperService {
   private boolean nightMode, followSystem;
   // User presence
   private String presence;
-  private boolean isReceiverRegistered = false;
+  private boolean areReceiversRegistered = false;
   private UserPresenceListener userPresenceListener;
-  private BroadcastReceiver presenceReceiver;
+  private RefreshListener refreshListener;
+  private BroadcastReceiver presenceReceiver, refreshReceiver;
   private SensorManager sensorManager;
 
   @Override
@@ -111,7 +113,18 @@ public class LiveWallpaperService extends WallpaperService {
         }
       }
     };
-    registerReceiver();
+    refreshReceiver = new BroadcastReceiver() {
+      public void onReceive(Context context, Intent intent) {
+        String action = intent.getAction();
+        if (refreshListener != null && action.equals(ACTION.THEME_CHANGED)) {
+          refreshListener.onRefreshTheme();
+        } else if (refreshListener != null && action.equals(ACTION.SETTINGS_CHANGED)) {
+          refreshListener.onRefreshSettings();
+        }
+      }
+    };
+    registerReceivers();
+
     setUserPresence(isKeyguardLocked() ? USER_PRESENCE.LOCKED : USER_PRESENCE.UNLOCKED);
 
     sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
@@ -121,28 +134,36 @@ public class LiveWallpaperService extends WallpaperService {
 
   @Override
   public void onDestroy() {
-    unregisterReceiver();
+    unregisterReceivers();
     super.onDestroy();
   }
 
-  private void registerReceiver() {
-    if (!isReceiverRegistered) {
-      IntentFilter filter = new IntentFilter(Intent.ACTION_USER_PRESENT);
-      filter.addAction(Intent.ACTION_SCREEN_OFF);
-      filter.addAction(Intent.ACTION_SCREEN_ON);
-      registerReceiver(presenceReceiver, filter);
-      isReceiverRegistered = true;
+  private void registerReceivers() {
+    if (!areReceiversRegistered) {
+      areReceiversRegistered = true;
+
+      IntentFilter filterPresence = new IntentFilter();
+      filterPresence.addAction(Intent.ACTION_USER_PRESENT);
+      filterPresence.addAction(Intent.ACTION_SCREEN_OFF);
+      filterPresence.addAction(Intent.ACTION_SCREEN_ON);
+      registerReceiver(presenceReceiver, filterPresence);
+
+      IntentFilter filterRefresh = new IntentFilter();
+      filterRefresh.addAction(ACTION.THEME_CHANGED);
+      filterRefresh.addAction(ACTION.SETTINGS_CHANGED);
+      registerReceiver(refreshReceiver, filterRefresh);
     }
   }
 
-  private void unregisterReceiver() {
-    if (isReceiverRegistered) {
+  private void unregisterReceivers() {
+    if (areReceiversRegistered) {
       try {
         unregisterReceiver(presenceReceiver);
+        unregisterReceiver(refreshReceiver);
       } catch (Exception e) {
         Log.e(TAG, "unregisterReceiver: ", e);
       }
-      isReceiverRegistered = false;
+      areReceiversRegistered = false;
     }
   }
 
@@ -202,9 +223,15 @@ public class LiveWallpaperService extends WallpaperService {
     void onPresenceChange(String presence);
   }
 
+  private interface RefreshListener {
+
+    void onRefreshTheme();
+    void onRefreshSettings();
+  }
+
   // ENGINE ------------------------------------------------------------
 
-  class UserAwareEngine extends Engine implements UserPresenceListener {
+  class UserAwareEngine extends Engine implements UserPresenceListener, RefreshListener {
 
     private boolean useWhiteText;
     private int zoomIntensity;
@@ -246,6 +273,7 @@ public class LiveWallpaperService extends WallpaperService {
       isPreview = isPreview();
 
       userPresenceListener = this;
+      refreshListener = this;
 
       sensorListener = new SensorEventListener() {
         @Override
@@ -359,7 +387,9 @@ public class LiveWallpaperService extends WallpaperService {
         return;
       }
 
-      handleRefreshRequests();
+      if (isNight != isNightMode()) {
+        loadTheme();
+      }
 
       isRtl = getResources().getConfiguration().getLayoutDirection() == View.LAYOUT_DIRECTION_RTL;
 
@@ -435,14 +465,13 @@ public class LiveWallpaperService extends WallpaperService {
       zoomRotation = sharedPrefs.getInt(PREF.ZOOM_ROTATION, DEF.ZOOM_ROTATION);
 
       if (isZoomUnlockEnabled) {
-        registerReceiver();
+        registerReceivers();
       } else {
-        unregisterReceiver();
+        unregisterReceivers();
       }
     }
 
     private void loadTheme() {
-      Log.i(TAG, "loadTheme: hello " + sharedPrefs.getString(PREF.WALLPAPER, DEF.WALLPAPER));
       switch (sharedPrefs.getString(PREF.WALLPAPER, DEF.WALLPAPER)) {
         case WALLPAPER.JOHANNA:
           wallpaper = new JohannaWallpaper();
@@ -484,20 +513,6 @@ public class LiveWallpaperService extends WallpaperService {
       svgDrawable.setScale(scale);
 
       colorsHaveChanged();
-    }
-
-    private void handleRefreshRequests() {
-      boolean settingsApplied = sharedPrefs.getBoolean(PREF.SETTINGS_APPLIED, true);
-      if (!settingsApplied) {
-        sharedPrefs.edit().putBoolean(PREF.SETTINGS_APPLIED, true).apply();
-        loadSettings();
-      }
-
-      boolean themeApplied = sharedPrefs.getBoolean(PREF.THEME_APPLIED, true);
-      if (!themeApplied || isNight != isNightMode()) {
-        sharedPrefs.edit().putBoolean(PREF.THEME_APPLIED, true).apply();
-        loadTheme();
-      }
     }
 
     @Override
@@ -587,6 +602,16 @@ public class LiveWallpaperService extends WallpaperService {
           }
           break;
       }
+    }
+
+    @Override
+    public void onRefreshTheme() {
+      loadTheme();
+    }
+
+    @Override
+    public void onRefreshSettings() {
+      loadSettings();
     }
 
     void drawFrame(boolean force, String source) {
@@ -692,6 +717,7 @@ public class LiveWallpaperService extends WallpaperService {
         try {
           notifyColorsChanged();
           // We have to call it again to take any effect, causes a warning...
+          // Is the recall bad for dynamic colors in Android 12?
           notifyColorsChanged();
         } catch (Exception e) {
           Log.e(TAG, "colorsHaveChanged: ", e);

@@ -179,12 +179,13 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     int id = v.getId();
     if (id == R.id.fab_main && viewUtil.isClickEnabled()) {
       try {
-        wallpaperPickerLauncher.launch(
-            new Intent(WallpaperManager.ACTION_CHANGE_LIVE_WALLPAPER).putExtra(
-                WallpaperManager.EXTRA_LIVE_WALLPAPER_COMPONENT,
-                new ComponentName(getPackageName(), LiveWallpaperService.class.getCanonicalName())
-            )
+        Intent intent = new Intent(WallpaperManager.ACTION_CHANGE_LIVE_WALLPAPER);
+        intent.putExtra(
+            WallpaperManager.EXTRA_LIVE_WALLPAPER_COMPONENT,
+            new ComponentName(getPackageName(), LiveWallpaperService.class.getCanonicalName())
         );
+        intent.putExtra("SET_LOCKSCREEN_WALLPAPER", true);
+        wallpaperPickerLauncher.launch(intent);
       } catch (ActivityNotFoundException e) {
         showSnackbar(R.string.msg_preview_missing);
       }

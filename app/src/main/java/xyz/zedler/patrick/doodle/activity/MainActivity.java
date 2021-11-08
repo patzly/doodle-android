@@ -34,7 +34,6 @@ import android.content.res.Resources;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import androidx.activity.result.ActivityResultLauncher;
@@ -262,7 +261,6 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     Intent intent = new Intent();
     intent.setAction(ACTION.THEME_CHANGED);
     sendBroadcast(intent);
-    Log.i(TAG, "requestThemeRefresh: hello theme");
   }
 
   public void reset() {

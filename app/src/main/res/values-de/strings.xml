@@ -115,7 +115,7 @@
   <string name="setting_language_system">Systemstandard: %1$s</string>
   <string name="setting_language_not_available">Nicht verfügbar</string>
   <string name="other_gpu">Hardware-Beschleunigung</string>
-  <string name="other_gpu_description">Ausschalten, wenn der Live-Hintergrund abstürzt.\nErfordert bei aktivem Hintergrund einen Neustart des Geräts, um in Kraft zu treten</string>
+  <string name="other_gpu_description">Ausschalten, wenn der Live-Hintergrund abstürzt. Eine Änderung führt zu einem Neustart der App und des Hintergrunds.</string>
   <string name="other_gpu_info">Hardware-Beschleunigung ist für Doodle erst ab Android 8 verfügbar. Die Animationen könnten deshalb etwas ruckelig sein, besonders bei dem zweiten Hintergrund.</string>
   <string name="other_launcher">App-Icon verstecken</string>
   <string name="other_launcher_description">Einstellungen nur über Live-Hintergrund-Auswahl des Systems erreichbar</string>

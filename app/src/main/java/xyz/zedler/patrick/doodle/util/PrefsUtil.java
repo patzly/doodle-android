@@ -208,7 +208,6 @@ public class PrefsUtil {
       intent.addCategory(Intent.CATEGORY_LAUNCHER);
     }
     activity.startActivity(intent);
-    activity.finish();
-    Runtime.getRuntime().exit(0);
+    activity.finishAndRemoveTask();
   }
 }

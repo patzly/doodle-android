@@ -21,9 +21,12 @@ package xyz.zedler.patrick.doodle.fragment;
 
 import android.annotation.SuppressLint;
 import android.content.ComponentName;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Process;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -171,8 +174,16 @@ public class OtherFragment extends BaseFragment
     int id = buttonView.getId();
     if (id == R.id.switch_other_gpu) {
       getSharedPrefs().edit().putBoolean(PREF.GPU, isChecked).apply();
-      activity.requestSettingsRefresh();
       performHapticClick();
+      new Handler().postDelayed(() -> {
+        Intent intent = new Intent(activity, MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        if (activity.isStartedFromLauncher()) {
+          intent.addCategory(Intent.CATEGORY_LAUNCHER);
+        }
+        activity.startActivity(intent);
+        Process.killProcess(Process.myPid());
+      }, 300);
     } else if (id == R.id.switch_other_launcher) {
       performHapticClick();
       activity.getPackageManager().setComponentEnabledSetting(

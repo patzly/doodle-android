@@ -4,6 +4,7 @@
 - New: complete implementation of Material Design 3
 - New: option to change language (translations by volunteers on Transifex, thank you all!)
 - Improved: changed settings are applied to the wallpaper instantly
+- Improved: restart behavior for applying certain settings
 - Fixed: broken buttons in feedback dialog
 
 Please consider translating this app into your language at Transifex. There are less than 100 strings to translate!

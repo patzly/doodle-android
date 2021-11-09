@@ -115,7 +115,7 @@
   <string name="setting_language_system">Par défaut système : %1$s</string>
   <string name="setting_language_not_available">Indisponible</string>
   <string name="other_gpu">Accélération matérielle</string>
-  <string name="other_gpu_description">Désactiver si le fond d\'écran animé plante. Nécessite le redémarrage de l\'appareil pour prendre effet si le fond d\'écran est actuellement actif.</string>
+  <string name="other_gpu_description">Désactiver si le fond d\'écran se bloque. Ce changement redémarrera l\'application et le fond d\'écran.</string>
   <string name="other_gpu_info">L\'accélération matérielle n\'est disponible pour Doodle qu\'à partir d\'Android 8. Les animations de fond d\'écran peuvent donc être un peu saccadées, surtout avec le deuxième fond d\'écran.</string>
   <string name="other_launcher">Masquer l\'icône dans le lanceur d\'applications</string>
   <string name="other_launcher_description">Les paramètres ne seront accessibles que dans le sélecteur de fonds d\'écran animés de votre système</string>

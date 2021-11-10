@@ -52,6 +52,7 @@ import com.google.android.material.snackbar.Snackbar;
 import java.util.Locale;
 import xyz.zedler.patrick.doodle.BuildConfig;
 import xyz.zedler.patrick.doodle.Constants.ACTION;
+import xyz.zedler.patrick.doodle.Constants.DEF;
 import xyz.zedler.patrick.doodle.Constants.PREF;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.behavior.SystemBarBehavior;
@@ -81,6 +82,9 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
   private boolean isServiceRunning;
   private int fabTopEdgeDistance;
   private int bottomInset;
+
+  public boolean useGpuInit;
+  public boolean useZoomSystemInit;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -135,6 +139,9 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     SystemBarBehavior.applyBottomInset(binding.fabMain);
 
     isServiceRunning = isWallpaperServiceRunning(true);
+
+    useGpuInit = sharedPrefs.getBoolean(PREF.GPU, DEF.GPU);
+    useZoomSystemInit = sharedPrefs.getBoolean(PREF.ZOOM_SYSTEM, DEF.ZOOM_SYSTEM);
 
     ViewCompat.setOnApplyWindowInsetsListener(binding.getRoot(), (v, insets) -> {
       bottomInset = insets.getInsets(Type.systemBars()).bottom;

@@ -53,7 +53,6 @@ public class OtherFragment extends BaseFragment
 
   private FragmentOtherBinding binding;
   private MainActivity activity;
-  private boolean useGpuInit;
 
   @Override
   public View onCreateView(
@@ -109,8 +108,7 @@ public class OtherFragment extends BaseFragment
     binding.linearOtherGpu.setVisibility(
         Build.VERSION.SDK_INT >= Build.VERSION_CODES.O ? View.VISIBLE : View.GONE
     );
-    useGpuInit = getSharedPrefs().getBoolean(PREF.GPU, DEF.GPU);
-    binding.switchOtherGpu.setChecked(useGpuInit);
+    binding.switchOtherGpu.setChecked(getSharedPrefs().getBoolean(PREF.GPU, DEF.GPU));
 
     binding.switchOtherLauncher.setChecked(
         activity.getPackageManager().getComponentEnabledSetting(
@@ -172,7 +170,8 @@ public class OtherFragment extends BaseFragment
     if (id == R.id.switch_other_gpu) {
       getSharedPrefs().edit().putBoolean(PREF.GPU, isChecked).apply();
       performHapticClick();
-      if (activity.isWallpaperServiceRunning(false) && isChecked != useGpuInit) {
+      if (activity.isWallpaperServiceRunning(false)
+          && isChecked != activity.useGpuInit) {
         activity.showForceStopRequest();
       }
     } else if (id == R.id.switch_other_launcher) {

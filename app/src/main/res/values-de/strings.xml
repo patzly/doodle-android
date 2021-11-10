@@ -27,6 +27,7 @@
   <!-- TITLES -->
 
   <string name="title_info">Informationen</string>
+  <string name="title_apply_changes">Änderungen anwenden</string>
   <string name="title_feedback">Rückmeldung</string>
   <string name="title_licenses">Open-Source-Lizenzen</string>
 
@@ -41,6 +42,8 @@
   <string name="action_back">Zurück</string>
   <string name="action_open_link">Externe Website öffnen</string>
   <string name="action_reset">Zurücksetzen</string>
+  <string name="action_continue">Fortfahren</string>
+  <string name="action_open_app_info">App-Info öffnen</string>
   <string name="action_set">Hintergrund festlegen</string>
   <string name="action_send_feedback">Feedback senden</string>
   <string name="action_share">Teilen</string>
@@ -98,7 +101,7 @@
   <string name="size_zoom_description">Je höher, desto weiter wird herausgezoomt</string>
   <string name="size_zoom_launcher">Beim Öffnen der Schnelleinstellungen oder des App-Drawers herauszoomen</string>
   <string name="size_zoom_system">Zoom-Effekt des Systems nutzen</string>
-  <string name="size_zoom_system_description">Behebt die ruckelige Zoom-Animation bei eingeschaltetem Neigungs-Effekt. Wird erst nach Neustart des Hintergrunds übernommen</string>
+  <string name="size_zoom_system_description">Kann die ruckelige Zoom-Animation bei eingeschaltetem Neigungs-Effekt beheben</string>
   <string name="size_zoom_unlock">Auf dem Sperrbildschirm herauszoomen</string>
   <string name="size_zoom_unlock_description">Eventuell ruckelig, wenn der Neigungs-Effekt eingeschaltet ist</string>
   <string name="size_zoom_duration">Zoom-Dauer beim Entsperren</string>
@@ -115,7 +118,7 @@
   <string name="other_language_system">Systemstandard: %1$s</string>
   <string name="other_language_not_available">Nicht verfügbar</string>
   <string name="other_gpu">Hardware-Beschleunigung</string>
-  <string name="other_gpu_description">Ausschalten, wenn der Live-Hintergrund abstürzt. Eine Änderung führt zu einem Neustart der App und des Hintergrunds.</string>
+  <string name="other_gpu_description">Ausschalten, wenn der Hintergrund abstürzt</string>
   <string name="other_gpu_info">Hardware-Beschleunigung ist für Doodle erst ab Android 8 verfügbar. Die Animationen könnten deshalb etwas ruckelig sein, besonders bei dem zweiten Hintergrund.</string>
   <string name="other_launcher">App-Icon verstecken</string>
   <string name="other_launcher_description">Einstellungen nur über Live-Hintergrund-Auswahl des Systems erreichbar</string>
@@ -139,6 +142,8 @@
   <string name="msg_feedback">Eine tolle App kostet viel Zeit und lebt von der Rückmeldung ihrer Nutzer.\n\nHast du Wünsche, Anmerkungen oder Fragen? Dann lass es mich wissen!\nAnsonsten freue ich mich über eine nette Bewertung im Play Store.</string>
   <string name="msg_share">Schau dir mal diese coole Live-Wallpaper-App an: \nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
   <string name="msg_reset">Einstellungen zurücksetzen?</string>
+  <string name="msg_force_stop">Um die Änderung anzuwenden, muss Doodle zwanghaft beendet werden</string>
+  <string name="msg_apply_changes">Das Ändern dieser Option erfordert einen Neustart des laufenden Hintergrunds. Dies kann nicht automatisch erfolgen.\nBitte beenden Sie die App in Ihren Systemeinstellungen und wenden Sie Doodle erneut als Live-Hintergrund an.</string>
   <string name="msg_preview_missing">Es trat ein Fehler auf, bitte wähle den Doodle Live-Hintergrund manuell aus</string>
 
   </resources>

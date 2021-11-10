@@ -37,6 +37,7 @@
   <!-- TITLES -->
 
   <string name="title_info">Information</string>
+  <string name="title_apply_changes">Apply changes</string>
   <string name="title_feedback">Feedback</string>
   <string name="title_licenses">Open source licenses</string>
 
@@ -51,6 +52,8 @@
   <string name="action_back">Back</string>
   <string name="action_open_link">Open external website</string>
   <string name="action_reset">Reset</string>
+  <string name="action_continue">Continue</string>
+  <string name="action_open_app_info">Open app info</string>
   <string name="action_set">Set wallpaper</string>
   <string name="action_send_feedback">Send feedback</string>
   <string name="action_share">Share</string>
@@ -108,7 +111,7 @@
   <string name="size_zoom_description">When increased, the camera zooms out more</string>
   <string name="size_zoom_launcher">Zoom out when opening quick settings or app drawer</string>
   <string name="size_zoom_system">Use system-provided zoom effect</string>
-  <string name="size_zoom_system_description">Fixes jerky zoom animation when tilt effect is turned on. Requires wallpaper restart to take effect</string>
+  <string name="size_zoom_system_description">Might fix jerky zoom animation when tilt effect is turned on</string>
   <string name="size_zoom_unlock">Zoom out on lockscreen</string>
   <string name="size_zoom_unlock_description">Might be jerky if tilt effect is turned on</string>
   <string name="size_zoom_duration">Unlock zoom duration</string>
@@ -122,10 +125,10 @@
   <string name="other_description">Rendering, language &amp; reset</string>
   <string name="other_language">Language</string>
   <string name="other_language_description">Many thanks to all the volunteer translators at Transifex! Please visit the project\'s GitHub page to learn how you can help make Doodle Live Wallpapers available for your language.</string>
-  <string name="setting_language_system">System default: %1$s</string>
-  <string name="setting_language_not_available">Not available</string>
+  <string name="other_language_system">System default: %1$s</string>
+  <string name="other_language_not_available">Not available</string>
   <string name="other_gpu">Hardware acceleration</string>
-  <string name="other_gpu_description">Turn off if the wallpaper crashes. Changing will restart app and wallpaper.</string>
+  <string name="other_gpu_description">Turn off if the wallpaper crashes</string>
   <string name="other_gpu_info">Hardware acceleration is only available for Doodle starting with Android 8. The wallpaper animations might therefore be a bit jerky, especially with the second wallpaper.</string>
   <string name="other_launcher">Hide icon in launcher</string>
   <string name="other_launcher_description">Settings will only be accessible in your system\'s live wallpaper picker</string>
@@ -152,6 +155,8 @@
   <string name="msg_feedback">A great app requires a lot of time and lives from the feedback of its users.\n\nDo you have any wishes, comments or questions? Contact me!\nOtherwise I would be very happy about a nice review in the Play Store.</string>
   <string name="msg_share">Check out this cool live wallpaper app: \nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
   <string name="msg_reset">Reset all settings?</string>
+  <string name="msg_force_stop">Forced stop required to apply changes</string>
+  <string name="msg_apply_changes">Changing this option requires a restart of the running wallpaper service. This cannot be done automatically.\nPlease force-stop Doodle in your system settings and then apply Doodle as your wallpaper again.</string>
   <string name="msg_preview_missing">An error occurred, please select Doodle Live Wallpaper manually</string>
 
   <!-- LICENSES -->

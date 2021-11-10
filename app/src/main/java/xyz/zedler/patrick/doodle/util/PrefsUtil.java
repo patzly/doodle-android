@@ -19,9 +19,7 @@
 
 package xyz.zedler.patrick.doodle.util;
 
-import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.util.Log;
@@ -29,7 +27,6 @@ import androidx.preference.PreferenceManager;
 import java.util.Objects;
 import xyz.zedler.patrick.doodle.Constants.DEF;
 import xyz.zedler.patrick.doodle.Constants.PREF;
-import xyz.zedler.patrick.doodle.activity.MainActivity;
 
 public class PrefsUtil {
 
@@ -199,15 +196,5 @@ public class PrefsUtil {
     if (sharedPrefs.contains(key)) {
       sharedPrefs.edit().remove(key).apply();
     }
-  }
-
-  public static void restartToApply(Activity activity, boolean isStartedFromLauncher) {
-    Intent intent = new Intent(activity, MainActivity.class);
-    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-    if (isStartedFromLauncher) {
-      intent.addCategory(Intent.CATEGORY_LAUNCHER);
-    }
-    activity.startActivity(intent);
-    activity.finishAndRemoveTask();
   }
 }

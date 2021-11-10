@@ -19,6 +19,7 @@
 
 package xyz.zedler.patrick.doodle.activity;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.ActivityManager.RunningServiceInfo;
@@ -56,6 +57,7 @@ import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.behavior.SystemBarBehavior;
 import xyz.zedler.patrick.doodle.databinding.ActivityMainBinding;
 import xyz.zedler.patrick.doodle.fragment.BaseFragment;
+import xyz.zedler.patrick.doodle.fragment.dialog.ApplyBottomSheetDialogFragment;
 import xyz.zedler.patrick.doodle.fragment.dialog.ChangelogBottomSheetDialogFragment;
 import xyz.zedler.patrick.doodle.fragment.dialog.FeedbackBottomSheetDialogFragment;
 import xyz.zedler.patrick.doodle.service.LiveWallpaperService;
@@ -132,7 +134,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 
     SystemBarBehavior.applyBottomInset(binding.fabMain);
 
-    isServiceRunning = isMainWallpaperServiceRunning();
+    isServiceRunning = isWallpaperServiceRunning(true);
 
     ViewCompat.setOnApplyWindowInsetsListener(binding.getRoot(), (v, insets) -> {
       bottomInset = insets.getInsets(Type.systemBars()).bottom;
@@ -161,7 +163,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
   protected void onResume() {
     super.onResume();
 
-    boolean isServiceRunningNew = isMainWallpaperServiceRunning();
+    boolean isServiceRunningNew = isWallpaperServiceRunning(true);
     if (isServiceRunning != isServiceRunningNew) {
       isServiceRunning = isServiceRunningNew;
       setFabVisibility(!isServiceRunning, true);
@@ -187,6 +189,15 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
       }
       performHapticHeavyClick();
     }
+  }
+
+  public void stopLiveWallpaperService() {
+    Intent intent = new Intent(WallpaperManager.ACTION_CHANGE_LIVE_WALLPAPER);
+    intent.putExtra(
+        WallpaperManager.EXTRA_LIVE_WALLPAPER_COMPONENT,
+        new ComponentName(getPackageName(), LiveWallpaperService.class.getCanonicalName())
+    );
+    stopService(intent);
   }
 
   @Override
@@ -267,22 +278,45 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     sharedPrefs.edit().clear().apply();
     requestSettingsRefresh();
     requestThemeRefresh();
-    new Handler(getMainLooper()).postDelayed(() -> {
-      Intent intent = new Intent(this, MainActivity.class);
-      intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-      intent.addCategory(Intent.CATEGORY_LAUNCHER);
-      startActivity(intent);
-      finish();
-      Runtime.getRuntime().exit(0);
-    }, 300);
+    restartToApply(100);
   }
 
-  private boolean isMainWallpaperServiceRunning() {
+  public void restartToApply(long delay) {
+    new Handler().postDelayed(() -> {
+      Intent intent = new Intent(this, MainActivity.class);
+      intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+      if (isStartedFromLauncher()) {
+        intent.addCategory(Intent.CATEGORY_LAUNCHER);
+      }
+      startActivity(intent);
+      finishAndRemoveTask();
+    }, delay);
+  }
+
+  @SuppressLint("ShowToast")
+  public void showForceStopRequest() {
+    showSnackbar(
+        Snackbar.make(
+            binding.getRoot(), getString(R.string.msg_force_stop), Snackbar.LENGTH_LONG
+        ).setAction(
+            getString(R.string.action_continue), view -> {
+              performHapticHeavyClick();
+              ViewUtil.showBottomSheet(this, new ApplyBottomSheetDialogFragment());
+            }
+        )
+    );
+  }
+
+  public boolean isWallpaperServiceRunning(boolean requireMain) {
     ActivityManager manager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
     if (manager != null) {
       for (RunningServiceInfo service : manager.getRunningServices(Integer.MAX_VALUE)) {
         if (LiveWallpaperService.class.getName().equals(service.service.getClassName())) {
-          return !sharedPrefs.getBoolean(PREF.PREVIEW_RUNNING, false);
+          if (requireMain) {
+            return !sharedPrefs.getBoolean(PREF.PREVIEW_RUNNING, false);
+          } else {
+            return true;
+          }
         }
       }
     }

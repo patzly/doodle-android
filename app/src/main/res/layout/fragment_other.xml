@@ -70,7 +70,7 @@
           <TextView
             android:id="@+id/text_other_language"
             style="@style/Widget.Doodle.TextView.ListItem.Description"
-            android:text="@string/setting_language_system" />
+            android:text="@string/other_language_system" />
 
         </LinearLayout>
 

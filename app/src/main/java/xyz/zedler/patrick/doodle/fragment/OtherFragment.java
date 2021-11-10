@@ -21,12 +21,9 @@ package xyz.zedler.patrick.doodle.fragment;
 
 import android.annotation.SuppressLint;
 import android.content.ComponentName;
-import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Process;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -56,6 +53,7 @@ public class OtherFragment extends BaseFragment
 
   private FragmentOtherBinding binding;
   private MainActivity activity;
+  private boolean useGpuInit;
 
   @Override
   public View onCreateView(
@@ -111,7 +109,8 @@ public class OtherFragment extends BaseFragment
     binding.linearOtherGpu.setVisibility(
         Build.VERSION.SDK_INT >= Build.VERSION_CODES.O ? View.VISIBLE : View.GONE
     );
-    binding.switchOtherGpu.setChecked(getSharedPrefs().getBoolean(PREF.GPU, DEF.GPU));
+    useGpuInit = getSharedPrefs().getBoolean(PREF.GPU, DEF.GPU);
+    binding.switchOtherGpu.setChecked(useGpuInit);
 
     binding.switchOtherLauncher.setChecked(
         activity.getPackageManager().getComponentEnabledSetting(
@@ -157,8 +156,6 @@ public class OtherFragment extends BaseFragment
       activity.showSnackbar(
           Snackbar.make(
               binding.getRoot(), getString(R.string.msg_reset), Snackbar.LENGTH_LONG
-          ).setActionTextColor(
-              ResUtil.getColorAttr(activity, R.attr.colorPrimaryInverse)
           ).setAction(
               getString(R.string.action_reset), view -> {
                 performHapticHeavyClick();
@@ -175,15 +172,9 @@ public class OtherFragment extends BaseFragment
     if (id == R.id.switch_other_gpu) {
       getSharedPrefs().edit().putBoolean(PREF.GPU, isChecked).apply();
       performHapticClick();
-      new Handler().postDelayed(() -> {
-        Intent intent = new Intent(activity, MainActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        if (activity.isStartedFromLauncher()) {
-          intent.addCategory(Intent.CATEGORY_LAUNCHER);
-        }
-        activity.startActivity(intent);
-        Process.killProcess(Process.myPid());
-      }, 300);
+      if (activity.isWallpaperServiceRunning(false) && isChecked != useGpuInit) {
+        activity.showForceStopRequest();
+      }
     } else if (id == R.id.switch_other_launcher) {
       performHapticClick();
       activity.getPackageManager().setComponentEnabledSetting(
@@ -203,7 +194,7 @@ public class OtherFragment extends BaseFragment
     binding.textOtherLanguage.setText(
         language != null
             ? locale.getDisplayName()
-            : getString(R.string.setting_language_system, locale.getDisplayName())
+            : getString(R.string.other_language_system, locale.getDisplayName())
     );
   }
 
@@ -214,7 +205,7 @@ public class OtherFragment extends BaseFragment
         : LocaleUtil.getNearestSupportedLocale(activity, LocaleUtil.getDeviceLocale());
     return code != null
         ? locale.getDisplayName()
-        : getString(R.string.setting_language_system, locale.getDisplayName());
+        : getString(R.string.other_language_system, locale.getDisplayName());
   }
 
   private void setGpuOptionEnabled(boolean enabled) {

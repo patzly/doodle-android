@@ -112,8 +112,8 @@
   <string name="other_description">Rendu, langue et réinitialisation</string>
   <string name="other_language">Langue</string>
   <string name="other_language_description">Un grand merci à tous les traducteurs bénévoles de Transifex ! Veuillez visiter la page GitHub du projet pour savoir comment vous pouvez aider à rendre Doodle disponible dans votre langue.</string>
-  <string name="setting_language_system">Par défaut système : %1$s</string>
-  <string name="setting_language_not_available">Indisponible</string>
+  <string name="other_language_system">Par défaut système : %1$s</string>
+  <string name="other_language_not_available">Indisponible</string>
   <string name="other_gpu">Accélération matérielle</string>
   <string name="other_gpu_description">Désactiver si le fond d\'écran animé plante. Nécessite le redémarrage de l\'appareil pour prendre effet si le fond d\'écran est actuellement actif.</string>
   <string name="other_gpu_info">L\'accélération matérielle n\'est disponible pour Doodle qu\'à partir d\'Android 8. Les animations de fond d\'écran peuvent donc être un peu saccadées, surtout avec le deuxième fond d\'écran.</string>

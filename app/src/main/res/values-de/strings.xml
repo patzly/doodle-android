@@ -112,8 +112,8 @@
   <string name="other_description">Rendering, Sprache &amp; Reset</string>
   <string name="other_language">Sprache</string>
   <string name="other_language_description">Vielen Dank an alle freiwilligen Übersetzer*innen bei Transifex! Besuchen Sie die GitHub-Seite dieses Projekts, um zu erfahren, wie Sie helfen können, Doodle Live Hintergründe für Ihre Sprache verfügbar zu machen.</string>
-  <string name="setting_language_system">Systemstandard: %1$s</string>
-  <string name="setting_language_not_available">Nicht verfügbar</string>
+  <string name="other_language_system">Systemstandard: %1$s</string>
+  <string name="other_language_not_available">Nicht verfügbar</string>
   <string name="other_gpu">Hardware-Beschleunigung</string>
   <string name="other_gpu_description">Ausschalten, wenn der Live-Hintergrund abstürzt. Eine Änderung führt zu einem Neustart der App und des Hintergrunds.</string>
   <string name="other_gpu_info">Hardware-Beschleunigung ist für Doodle erst ab Android 8 verfügbar. Die Animationen könnten deshalb etwas ruckelig sein, besonders bei dem zweiten Hintergrund.</string>

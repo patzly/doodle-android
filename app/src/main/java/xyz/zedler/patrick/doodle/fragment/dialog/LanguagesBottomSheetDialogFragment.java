@@ -20,7 +20,6 @@
 package xyz.zedler.patrick.doodle.fragment.dialog;
 
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,7 +35,6 @@ import xyz.zedler.patrick.doodle.databinding.FragmentBottomsheetListSelectionBin
 import xyz.zedler.patrick.doodle.fragment.OtherFragment;
 import xyz.zedler.patrick.doodle.model.Language;
 import xyz.zedler.patrick.doodle.util.LocaleUtil;
-import xyz.zedler.patrick.doodle.util.PrefsUtil;
 import xyz.zedler.patrick.doodle.util.SystemUiUtil;
 
 public class LanguagesBottomSheetDialogFragment extends BaseBottomSheetDialogFragment
@@ -97,16 +95,10 @@ public class LanguagesBottomSheetDialogFragment extends BaseBottomSheetDialogFra
         fragment.setLanguage(language);
         dismiss();
       } else {
-        new Handler().postDelayed(
-            () -> PrefsUtil.restartToApply(activity, activity.isStartedFromLauncher()),
-            100
-        );
+        activity.restartToApply(100);
       }
     } else {
-      new Handler().postDelayed(
-          () -> PrefsUtil.restartToApply(activity, activity.isStartedFromLauncher()),
-          100
-      );
+      activity.restartToApply(100);
     }
 
     getSharedPrefs().edit().putString(Constants.PREF.LANGUAGE, selectedCode).apply();

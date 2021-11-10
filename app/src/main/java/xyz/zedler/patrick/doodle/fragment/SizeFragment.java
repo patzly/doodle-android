@@ -47,6 +47,7 @@ public class SizeFragment extends BaseFragment
 
   private FragmentSizeBinding binding;
   private MainActivity activity;
+  private boolean isZoomSystemInit;
 
   @Override
   public View onCreateView(
@@ -122,9 +123,8 @@ public class SizeFragment extends BaseFragment
     binding.linearSizeZoomSystem.setVisibility(launcherZoom);
     binding.linearSizeZoomSystem.setEnabled(binding.switchSizeZoomLauncher.isChecked());
     binding.linearSizeZoomSystem.setAlpha(binding.switchSizeZoomLauncher.isChecked() ? 1 : 0.5f);
-    binding.switchSizeZoomSystem.setChecked(
-        getSharedPrefs().getBoolean(PREF.ZOOM_SYSTEM, DEF.ZOOM_SYSTEM)
-    );
+    isZoomSystemInit = getSharedPrefs().getBoolean(PREF.ZOOM_SYSTEM, DEF.ZOOM_SYSTEM);
+    binding.switchSizeZoomSystem.setChecked(isZoomSystemInit);
     binding.switchSizeZoomSystem.setEnabled(binding.switchSizeZoomLauncher.isChecked());
 
     binding.switchSizeZoomUnlock.setChecked(
@@ -193,8 +193,10 @@ public class SizeFragment extends BaseFragment
       binding.linearSizeZoomSystem.animate().alpha(isChecked ? 1 : 0.5f).setDuration(200).start();
     } else if (id == R.id.switch_size_zoom_system) {
       getSharedPrefs().edit().putBoolean(PREF.ZOOM_SYSTEM, isChecked).apply();
-      activity.requestSettingsRefresh();
       performHapticClick();
+      if (activity.isWallpaperServiceRunning(false) && isChecked != isZoomSystemInit) {
+        activity.showForceStopRequest();
+      }
     } else if (id == R.id.switch_size_zoom_unlock) {
       getSharedPrefs().edit().putBoolean(PREF.ZOOM_UNLOCK, isChecked).apply();
       activity.requestSettingsRefresh();

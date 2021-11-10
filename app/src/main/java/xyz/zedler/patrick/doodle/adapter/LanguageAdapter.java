@@ -97,12 +97,12 @@ public class LanguageAdapter extends RecyclerView.Adapter<LanguageAdapter.ViewHo
       String translators = language != null
           ? language.getTranslators()
           : holder.binding.getRoot().getContext().getString(
-              R.string.setting_language_not_available
+              R.string.other_language_not_available
           );
 
       holder.binding.textLanguageName.setText(
           holder.binding.textLanguageName.getContext().getString(
-              R.string.setting_language_system,
+              R.string.other_language_system,
               localeSystem.getDisplayName(localeSystem)
           )
       );

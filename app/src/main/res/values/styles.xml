@@ -77,12 +77,9 @@
   <style
     name="Widget.Doodle.Button.UnelevatedButton"
     parent="Widget.Material3.Button.UnelevatedButton">
-    <!--<item name="rippleColor">@color/highlight_on_secondary</item>
-    <item name="backgroundTint">@color/retro_green_bg_white</item>
-    <item name="android:textColor">@color/on_secondary</item>-->
     <item name="android:textSize">@dimen/m3_sys_typescale_label_large_text_size</item>
     <item name="android:fontFamily">@font/jost_medium</item>
-    <item name="cornerRadius">12dp</item>
+    <item name="cornerRadius">20dp</item>
   </style>
 
   <style name="Widget.Doodle.Card.Text" parent="@style/Widget.Material3.CardView.Filled">
@@ -94,7 +91,6 @@
     <item name="contentPadding">16dp</item>
     <item name="cardElevation">0dp</item>
     <item name="cardCornerRadius">12dp</item>
-    <!--<item name="cardBackgroundColor">@color/on_background_tertiary</item>-->
     <item name="rippleColor">@color/selector_highlight</item>
   </style>
 

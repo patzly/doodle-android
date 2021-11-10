@@ -27,6 +27,7 @@
   <!-- TITLES -->
 
   <string name="title_info">Informations</string>
+  <string name="title_apply_changes">Appliquer les modifications</string>
   <string name="title_feedback">Commentaires</string>
   <string name="title_licenses">Licences open source</string>
 
@@ -41,6 +42,8 @@
   <string name="action_back">Retour</string>
   <string name="action_open_link">Ouvrir un site web externe</string>
   <string name="action_reset">Réinitialiser</string>
+  <string name="action_continue">Continuer</string>
+  <string name="action_open_app_info">Ouvrir les infos sur l\'app</string>
   <string name="action_set">Définir le papier peint</string>
   <string name="action_send_feedback">Envoyer des commentaires</string>
   <string name="action_share">Partager</string>
@@ -98,7 +101,7 @@
   <string name="size_zoom_description">Lorsqu\'elle est augmentée, la caméra effectue un zoom arrière plus important</string>
   <string name="size_zoom_launcher">Effectuer un zoom arrière lors de l\'ouverture des paramètres rapides ou du tiroir d\'applications</string>
   <string name="size_zoom_system">Utiliser l\'effet de zoom fourni par le système</string>
-  <string name="size_zoom_system_description">Corrige l\'animation de zoom saccadée lorsque l\'effet d\'inclinaison est activé. Nécessite un redémarrage du fond d\'écran animé pour prendre effet.</string>
+  <string name="size_zoom_system_description">Peut corriger l\'animation de zoom saccadée lorsque l\'effet d\'inclinaison est activé</string>
   <string name="size_zoom_unlock">Zoom arrière sur l\'écran de verrouillage</string>
   <string name="size_zoom_unlock_description">Peut être saccadé si l\'effet d\'inclinaison est activé</string>
   <string name="size_zoom_duration">Durée du zoom au déverrouillage</string>
@@ -115,8 +118,8 @@
   <string name="other_language_system">Par défaut système : %1$s</string>
   <string name="other_language_not_available">Indisponible</string>
   <string name="other_gpu">Accélération matérielle</string>
-  <string name="other_gpu_description">Désactiver si le fond d\'écran se bloque. Ce changement redémarrera l\'application et le fond d\'écran.</string>
-  <string name="other_gpu_info">L\'accélération matérielle n\'est disponible pour Doodle qu\'à partir d\'Android 8. Les animations de fond d\'écran peuvent donc être un peu saccadées, surtout avec le deuxième fond d\'écran.</string>
+  <string name="other_gpu_description">Désactiver si le fond d\'écran se bloque</string>
+  <string name="other_gpu_info">L\'accélération matérielle n\'est disponible pour Doodle qu\'à partir d\'Android 8. Les animations de fond d\'écran pourraient donc être un peu saccadées.</string>
   <string name="other_launcher">Masquer l\'icône dans le lanceur d\'applications</string>
   <string name="other_launcher_description">Les paramètres ne seront accessibles que dans le sélecteur de fonds d\'écran animés de votre système</string>
   <string name="other_reset">Réinitialiser tous les réglages</string>
@@ -139,6 +142,8 @@
   <string name="msg_feedback">Une bonne application demande beaucoup de temps et vit des retours de ses utilisateurs.\n\nAvez-vous des souhaits, des commentaires ou des questions ? Contactez-moi !\nSinon, je serais très heureux d\'avoir une bonne critique sur le Play Store.</string>
   <string name="msg_share">Découvrez cette excellente application de fonds d\'écran animés : \nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
   <string name="msg_reset">Réinitialiser tous les réglages ?</string>
+  <string name="msg_force_stop">Arrêt forcé requis pour appliquer les modifications</string>
+  <string name="msg_apply_changes">Modifier cette option nécessite un redémarrage du service de fond d\'écrans en cours d\'exécution. Cela ne peut pas être fait automatiquement.\nVeuillez forcer l\'arrêt de Doodle dans les paramètres de votre système, puis appliquez à nouveau Doodle comme fond d\'écran.</string>
   <string name="msg_preview_missing">Une erreur s\'est produite, veuillez sélectionner manuellement le fond d\'écran animé Doodle</string>
 
   </resources>

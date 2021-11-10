@@ -142,7 +142,7 @@
   <string name="msg_feedback">Eine tolle App kostet viel Zeit und lebt von der Rückmeldung ihrer Nutzer.\n\nHast du Wünsche, Anmerkungen oder Fragen? Dann lass es mich wissen!\nAnsonsten freue ich mich über eine nette Bewertung im Play Store.</string>
   <string name="msg_share">Schau dir mal diese coole Live-Wallpaper-App an: \nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
   <string name="msg_reset">Einstellungen zurücksetzen?</string>
-  <string name="msg_force_stop">Um die Änderung anzuwenden, muss Doodle zwanghaft beendet werden</string>
+  <string name="msg_force_stop">Erzwungenes Beenden wird benötigt, um die Änderung anzuwenden</string>
   <string name="msg_apply_changes">Das Ändern dieser Option erfordert einen Neustart des laufenden Hintergrunds. Dies kann nicht automatisch erfolgen.\nBitte beende die App in Deinen Systemeinstellungen und wende Doodle erneut als Live-Hintergrund an.</string>
   <string name="msg_preview_missing">Es trat ein Fehler auf, bitte wähle den Doodle Live-Hintergrund manuell aus</string>
 

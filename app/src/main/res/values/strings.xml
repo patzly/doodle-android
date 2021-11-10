@@ -129,7 +129,7 @@
   <string name="other_language_not_available">Not available</string>
   <string name="other_gpu">Hardware acceleration</string>
   <string name="other_gpu_description">Turn off if the wallpaper crashes</string>
-  <string name="other_gpu_info">Hardware acceleration is only available for Doodle starting with Android 8. The wallpaper animations might therefore be a bit jerky, especially with the second wallpaper.</string>
+  <string name="other_gpu_info">Hardware acceleration is only available for Doodle starting with Android 8. The wallpaper animations might therefore be a bit jerky.</string>
   <string name="other_launcher">Hide icon in launcher</string>
   <string name="other_launcher_description">Settings will only be accessible in your system\'s live wallpaper picker</string>
   <string name="other_reset">Reset all settings</string>

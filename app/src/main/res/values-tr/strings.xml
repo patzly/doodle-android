@@ -128,7 +128,7 @@
   <!-- ABOUT -->
 
   <string name="about_title">Hakkında</string>
-  <string name="about_description">Geliştirici hakkında & fazlası</string>
+  <string name="about_description">Geliştirici hakkında &amp; fazlası</string>
   <string name="about_version">Sürüm</string>
   <string name="about_changelog">Değişiklik günlüğü </string>
   <string name="about_changelog_description">Neler yeni?</string>

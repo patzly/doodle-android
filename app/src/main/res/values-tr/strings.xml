@@ -69,7 +69,7 @@
   <string name="appearance_night_mode_description">Sadece karanlık renkler</string>
   <string name="appearance_follow_system">Sisteme uy</string>
   <string name="appearance_follow_system_description">Cihaz temasını benimse</string>
-  <string name="appearance_white_text">Yazıları gölgeli beyaza zorla</string>
+  <string name="appearance_white_text">Gölgeli beyaz metni zorla </string>
   <string name="appearance_white_text_description">Okunabilirliğe etkisi olabilir</string>
 
   <!-- PARALLAX -->

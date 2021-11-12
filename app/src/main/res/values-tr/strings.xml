@@ -59,7 +59,7 @@
   <!-- APPEARANCE -->
 
   <string name="appearance_title">Görünüm</string>
-  <string name="appearance_description">Tasarım & tema seçenekleri</string>
+  <string name="appearance_description">Tasarım &amp; tema seçenekleri</string>
   <string name="appearance_design">Tasarım</string>
   <string name="appearance_design_doodle">Pixel 4 Doodle Koleksiyonu</string>
   <string name="appearance_design_monet">Pixel 6 Material You Koleksiyonu</string>

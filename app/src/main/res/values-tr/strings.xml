@@ -93,7 +93,7 @@
   <!-- SIZE -->
 
   <string name="size_title">Şekil boyutu</string>
-  <string name="size_description">Ölçek & Yakınlaştırma efekti</string>
+  <string name="size_description">Ölçek &amp; Yakınlaştırma efekti</string>
   <string name="size_scale">Ölçek</string>
   <string name="size_scale_description">Büyük ekranlar ve yüksek yoğunluklar için kullanışlı</string>
   <string name="size_category_zoom">Yakınlaştırma efekti</string>

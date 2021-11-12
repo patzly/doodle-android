@@ -56,36 +56,33 @@
         android:paddingTop="6dp"
         android:text="@string/appearance_design" />
 
-      <HorizontalScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:scrollbars="none"
-        android:overScrollMode="ifContentScrolls">
+      <LinearLayout
+        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine"
+        android:paddingTop="12dp"
+        android:paddingBottom="0dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="0dp"
+        android:minHeight="0dp">
 
-        <LinearLayout
-          style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine"
-          android:paddingTop="12dp"
-          android:paddingBottom="0dp"
-          android:paddingStart="16dp"
-          android:paddingEnd="4dp"
-          android:minHeight="0dp">
+        <ImageView
+          android:id="@+id/image_appearance_wallpaper"
+          style="@style/Widget.Doodle.ImageView.ListItem.Icon"
+          android:src="@drawable/ic_round_wallpaper_anim"
+          tools:ignore="ContentDescription" />
 
-          <ImageView
-            android:id="@+id/image_appearance_wallpaper"
-            style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-            android:layout_marginEnd="32dp"
-            android:src="@drawable/ic_round_wallpaper_anim"
-            tools:ignore="ContentDescription" />
+        <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">
 
-          <LinearLayout
-            android:layout_width="wrap_content"
+          <TextView
+            style="@style/Widget.Doodle.TextView.ListItem.Title"
+            android:text="@string/appearance_design_doodle"
+            android:paddingStart="0dp"
+            android:paddingEnd="16dp"/>
+
+          <HorizontalScrollView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-              style="@style/Widget.Doodle.TextView.ListItem.Title"
-              android:layout_width="wrap_content"
-              android:text="@string/appearance_design_doodle" />
+            android:scrollbars="none"
+            android:overScrollMode="ifContentScrolls">
 
             <LinearLayout
               android:id="@+id/linear_appearance_wallpaper_container_doodle"
@@ -93,38 +90,38 @@
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:orientation="horizontal"
+              android:paddingStart="0dp"
+              android:paddingEnd="4dp"
               android:paddingTop="8dp"
               android:paddingBottom="8dp" />
 
-          </LinearLayout>
+          </HorizontalScrollView>
 
         </LinearLayout>
 
-      </HorizontalScrollView>
+      </LinearLayout>
 
-      <HorizontalScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:scrollbars="none"
-        android:overScrollMode="ifContentScrolls">
+      <LinearLayout
+        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine"
+        android:paddingTop="8dp"
+        android:paddingBottom="0dp"
+        android:paddingStart="72dp"
+        android:paddingEnd="0dp"
+        android:minHeight="0dp">
 
-        <LinearLayout
-          style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine"
-          android:paddingTop="8dp"
-          android:paddingBottom="0dp"
-          android:paddingStart="72dp"
-          android:paddingEnd="4dp"
-          android:minHeight="0dp">
+        <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">
 
-          <LinearLayout
-            android:layout_width="wrap_content"
+          <TextView
+            style="@style/Widget.Doodle.TextView.ListItem.Title"
+            android:text="@string/appearance_design_monet"
+            android:paddingStart="0dp"
+            android:paddingEnd="16dp"/>
+
+          <HorizontalScrollView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-              style="@style/Widget.Doodle.TextView.ListItem.Title"
-              android:layout_width="wrap_content"
-              android:text="@string/appearance_design_monet" />
+            android:scrollbars="none"
+            android:overScrollMode="ifContentScrolls">
 
             <LinearLayout
               android:id="@+id/linear_appearance_wallpaper_container_monet"
@@ -132,38 +129,38 @@
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:orientation="horizontal"
+              android:paddingStart="0dp"
+              android:paddingEnd="4dp"
               android:paddingTop="8dp"
               android:paddingBottom="8dp" />
 
-          </LinearLayout>
+          </HorizontalScrollView>
 
         </LinearLayout>
 
-      </HorizontalScrollView>
+      </LinearLayout>
 
-      <HorizontalScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:scrollbars="none"
-        android:overScrollMode="ifContentScrolls">
+      <LinearLayout
+        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine"
+        android:paddingTop="8dp"
+        android:paddingBottom="0dp"
+        android:paddingStart="72dp"
+        android:paddingEnd="0dp"
+        android:minHeight="0dp">
 
-        <LinearLayout
-          style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine"
-          android:paddingTop="8dp"
-          android:paddingBottom="0dp"
-          android:paddingStart="72dp"
-          android:paddingEnd="4dp"
-          android:minHeight="0dp">
+        <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">
 
-          <LinearLayout
-            android:layout_width="wrap_content"
+          <TextView
+            style="@style/Widget.Doodle.TextView.ListItem.Title"
+            android:text="@string/appearance_design_anna"
+            android:paddingStart="0dp"
+            android:paddingEnd="16dp"/>
+
+          <HorizontalScrollView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-              style="@style/Widget.Doodle.TextView.ListItem.Title"
-              android:layout_width="wrap_content"
-              android:text="@string/appearance_design_anna" />
+            android:scrollbars="none"
+            android:overScrollMode="ifContentScrolls">
 
             <LinearLayout
               android:id="@+id/linear_appearance_wallpaper_container_anna"
@@ -171,14 +168,16 @@
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:orientation="horizontal"
+              android:paddingStart="0dp"
+              android:paddingEnd="4dp"
               android:paddingTop="8dp"
               android:paddingBottom="8dp" />
 
-          </LinearLayout>
+          </HorizontalScrollView>
 
         </LinearLayout>
 
-      </HorizontalScrollView>
+      </LinearLayout>
 
       <TextView
         style="@style/Widget.Doodle.TextView.Category"

@@ -109,13 +109,6 @@
     <item name="android:layout_marginStart">59dp</item>
     <item name="android:layout_marginEnd">14dp</item>
     <item name="android:stepSize">1</item>
-    <!--<item name="trackColorInactive">@color/on_background_tertiary</item>
-    <item name="tickColorInactive">@color/on_background_secondary</item>
-    <item name="trackColorActive">@color/secondary</item>
-    <item name="thumbColor">@color/secondary</item>
-    <item name="tickColorActive">@color/transparent</item>
-    <item name="haloColor">@color/highlight</item>-->
-    <item name="thumbRadius">9.7dp</item>
     <item name="labelStyle">@style/Widget.Doodle.Tooltip</item>
   </style>
 
@@ -128,7 +121,7 @@
 
   <style name="ShapeAppearance.Doodle.Tooltip" parent="">
     <item name="cornerFamily">rounded</item>
-    <item name="cornerSize">6dp</item>
+    <item name="cornerSize">8dp</item>
   </style>
 
   <style
@@ -299,6 +292,7 @@
   <style name="Widget.Doodle.TextView.ListItem.Title" parent="Widget.Doodle.TextView">
     <item name="android:layout_width">match_parent</item>
     <item name="android:layout_height">wrap_content</item>
+    <item name="android:textSize">18sp</item>
   </style>
 
   <style name="Widget.Doodle.TextView.ListItem.Description" parent="Widget.Doodle.TextView">

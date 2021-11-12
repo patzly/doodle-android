@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ This file is part of Doodle Android.
+  ~
+  ~ Doodle Android is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Doodle Android is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with Doodle Android. If not, see <http://www.gnu.org/licenses/>.
+  ~
+  ~ Copyright (c) 2019-2021 by Patrick Zedler
+  -->
+
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+
+  <string name="wallpaper_description">Fazla güç tüketmeyen, otomatik karanlık moda sahip rengarenk hareketli duvar kağıtları. Daha fazlası için dokunun. </string>
+  <string name="wallpaper_description_picker">Ana ekranınızda sayfalar arası geçiş yaparken ve cihazınızın kilidini açarken yakınlaştırma ve paralaks efektleriyle harmanlanmış rengarenk şekiller topluluğunu keşfedin. Duvar kağıdını kendi stilinize uyacak şekilde kişiselleştirin.</string>
+
+  <!-- TITLES -->
+
+  <string name="title_info">Bilgi</string>
+  <string name="title_apply_changes">Değişiklikleri uygula</string>
+  <string name="title_feedback">Geri bildirim</string>
+  <string name="title_licenses">Açık kaynaklı lisanslar</string>
+
+  <!-- LABELS -->
+
+  <string name="label_ms">%1$smilisaniye</string>
+  <string name="label_degrees">%1$sderece</string>
+
+  <!-- ACTIONS -->
+
+  <string name="action_close">Kapat</string>
+  <string name="action_back">Geri</string>
+  <string name="action_open_link">Açık harici websitesi</string>
+  <string name="action_reset">Sıfırla</string>
+  <string name="action_continue">Devam et</string>
+  <string name="action_open_app_info">Uygulama bilgisini aç</string>
+  <string name="action_set">Duvar kağıdı olarak ayarla</string>
+  <string name="action_send_feedback">Geri bildirim gönder</string>
+  <string name="action_share">Paylaş</string>
+  <string name="action_share_description">Doodle\'ı arkadaşlarına anlat</string>
+  <string name="action_email">E-Posta gönder</string>
+  <string name="action_email_description">Geliştirici ile iletişime geç</string>
+  <string name="action_rate">Google Play\'de oyla</string>
+  <string name="action_rate_description">Uygulama gelişimini destekle</string>
+  <string name="action_github">GitHub\'da Doodle Android</string>
+  <string name="action_github_description">Yeni bir yardım talebi oluştur</string>
+  <string name="action_language_select">Dil seç</string>
+
+  <!-- APPEARANCE -->
+
+  <string name="appearance_title">Görünüm</string>
+  <string name="appearance_description">Tasarım & tema seçenekleri</string>
+  <string name="appearance_design">Tasarım</string>
+  <string name="appearance_design_doodle">Pixel 4 Doodle Koleksiyonu</string>
+  <string name="appearance_design_monet">Pixel 6 Material You Koleksiyonu</string>
+  <string name="appearance_design_anna">à l\'Anna Kövecses\'in Hareketli Duvar Kağıtları </string>
+  <string name="appearance_variant">Biçim</string>
+  <string name="appearance_night_mode">Karanlık Modu</string>
+  <string name="appearance_night_mode_description">Sadece karanlık renkler</string>
+  <string name="appearance_follow_system">Sisteme uy</string>
+  <string name="appearance_follow_system_description">Cihaz temasını benimse</string>
+  <string name="appearance_white_text">Yazıları gölgeli beyaza zorla</string>
+  <string name="appearance_white_text_description">Okunabilirliğe etkisi olabilir</string>
+
+  <!-- PARALLAX -->
+
+  <string name="parallax_title">Paralaks</string>
+  <string name="parallax_description">Kaydırma ve eğme efekti</string>
+  <string name="parallax_touch_wiz">Kullandığınız başlatıcı Samsung TouchWiz olarak görünüyor. TouchWiz arkaplan kaydırma özelliğini desteklemez. Eğer eğim sensörü seçeneği kullanılabilir değilse, paralaks efektini tekrardan aktif hale getirmek için lütfen farklı bir başlatıcı deneyin. Eğer farklı bir başlatıcıyı varsayılan olarak kullanıyorsanız bu uyarıyı görmezden gelebilirsiniz.</string>
+  <string name="parallax_intensity">Paralaks gücü</string>
+  <string name="parallax_intensity_description">Sayfa kaydırmada yatay uzaklık ve eğim efekti yoğunluğu </string>
+  <string name="parallax_none">Hiçbiri</string>
+  <string name="parallax_category_tilt">Eğim efekti</string>
+  <string name="parallax_tilt">Cihazı eğdiğinde hareket ettir</string>
+  <string name="parallax_tilt_description">Daha fazla pil harcar</string>
+  <string name="parallax_refresh_rate">Eğim sensörü yenileme hızı</string>
+  <string name="parallax_refresh_rate_description">Çok kısa gecikmeler yakınlaştırma animasyonlarını duraksamalı gösterebilir</string>
+  <string name="parallax_damping">Hareket zayıflatma</string>
+  <string name="parallax_damping_description">Daha fazla pürüzsüzlük için azaltın</string>
+  <string name="parallax_threshold">Hareket sınırı</string>
+  <string name="parallax_threshold_description">Ufak harekete rağmen sürekli işleyişi duraklatmak için arttırın</string>
+
+  <!-- SIZE -->
+
+  <string name="size_title">Şekil boyutu</string>
+  <string name="size_description">Ölçek & Yakınlaştırma efekti</string>
+  <string name="size_scale">Ölçek</string>
+  <string name="size_scale_description">Büyük ekranlar ve yüksek yoğunluklar için kullanışlı</string>
+  <string name="size_category_zoom">Yakınlaştırma efekti</string>
+  <string name="size_zoom">Yakınlaştırma yoğunluğu</string>
+  <string name="size_zoom_description">Arttırıldığında kamera daha fazla uzaklaşır</string>
+  <string name="size_zoom_launcher">Hızlı erişim menüsü ya da uygulama çekmecesi açıldığında uzaklaştır</string>
+  <string name="size_zoom_system">Sistem tarafından sağlanan yakınlaştırma efektini kullan</string>
+  <string name="size_zoom_system_description">Eğim efekti açıldığında sarsıntılı yakınlaştırma animasyonunu düzeltebilir</string>
+  <string name="size_zoom_unlock">Kilit ekranında uzaklaş</string>
+  <string name="size_zoom_unlock_description">Eğim efekti açıldığında sarsıntılı sonuç verebilir</string>
+  <string name="size_zoom_duration">Yakınlaştırma süresinin kilidini aç </string>
+  <string name="size_zoom_duration_description">Daha hızlı animasyonlar için azaltın </string>
+  <string name="size_zoom_rotation">Yakınlaştırma efekti sırasında bazı şekiller hareket eder</string>
+  <string name="size_zoom_rotation_description">Derece cinsinden maksimum dönüş </string>
+
+  <!-- OTHER -->
+
+  <string name="other_title">Diğer seçenekler</string>
+  <string name="other_description">İşleyici, dil & sıfırlama</string>
+  <string name="other_language">Dil</string>
+  <string name="other_language_description">Transifex\'teki tüm gönüllü çevirmenlere çokça teşekkürler! Doodle Canlı Duvar Kağıtlarının kendi dilinizde kullanıma sunulmasına nasıl yardımcı olabileceğinizi öğrenmek için lütfen projenin GitHub sayfasını ziyaret edin.</string>
+  <string name="other_language_system">Sistem varsayılanı: %1$s</string>
+  <string name="other_language_not_available">Mevcut değil</string>
+  <string name="other_gpu">Donanım hızlandırması</string>
+  <string name="other_gpu_description">Eğer duvar kağıdı çöküyorsa kapatın</string>
+  <string name="other_gpu_info">Doodle\'da donanım hızlandırması sadece Android 8 ve üstünde mevcut. Duvar kağıdı animasyonları bu nedenle sarsıntılı olabilir.</string>
+  <string name="other_launcher">Başlatıcıda uygulama simgesini gizle</string>
+  <string name="other_launcher_description">Duvar kağıdı ayarları yalnızca cihazın canlı duvar kağıdı seçicisinde erişilebilir olacaktır</string>
+  <string name="other_reset">Tüm ayarları sıfırla </string>
+  <string name="other_reset_description">Kaldırmadan fazlası gerekir, çünkü uygulama ayarları cihaz açılır açılmaz direkt erişilebilir olması gerektiği için özel bir yerde saklanıyor</string>
+
+  <!-- ABOUT -->
+
+  <string name="about_title">Hakkında</string>
+  <string name="about_description">Geliştirici hakkında & fazlası</string>
+  <string name="about_version">Sürüm</string>
+  <string name="about_changelog">Değişiklik günlüğü </string>
+  <string name="about_changelog_description">Neler yeni?</string>
+  <string name="about_developer">Geliştirici</string>
+  <string name="about_vending_description">Geliştiriciden daha fazla uygulama</string>
+  <string name="about_github_description">Kaynak kodu</string>
+  <string name="about_translation_description">Doodle\'ı çevirmeye yardım et</string>
+
+  <!-- MESSAGES -->
+
+  <string name="msg_feedback">Başarılı bir uygulama çok zaman gerektirir ve kullanıcılarının geri bildirimlerine dayanır.\n\nHerhangi bir dileğiniz, yorumunuz ya da sorunuz var mı? Benimle iletişime geçin!\nAksi takdirde Play Store\'da güzel bir inceleme için çok mutlu olurdum. </string>
+  <string name="msg_share">Bu harika canlı duvar kağıdı uygulamasına göz atın:\nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
+  <string name="msg_reset">Tüm ayarlar sıfırlansın mı?</string>
+  <string name="msg_force_stop">Değişiklikleri uygulamak için zorunlu durdurma gerekli</string>
+  <string name="msg_apply_changes">Bu ayarı değiştirmek şu anda çalışan duvar kağıdı servisinin yeniden başlamasını gerektirir. Bu otomatik olarak yapılamaz.\nLütfen Doodle\'ı sistem ayarlarından durdurup tekrardan duvar kağıdınız olarak ayarlayın.</string>
+  <string name="msg_preview_missing">Bir hata meydana geldi, lütfen Doodle Hareketli Duvar Kağıdını manuel olarak seçin </string>
+
+  </resources>

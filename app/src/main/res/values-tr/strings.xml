@@ -76,7 +76,7 @@
 
   <string name="parallax_title">Paralaks</string>
   <string name="parallax_description">Kaydırma ve eğme efekti</string>
-  <string name="parallax_touch_wiz">Kullandığınız başlatıcı Samsung TouchWiz olarak görünüyor. TouchWiz arkaplan kaydırma özelliğini desteklemez. Eğer eğim sensörü seçeneği kullanılabilir değilse, paralaks efektini tekrardan aktif hale getirmek için lütfen farklı bir başlatıcı deneyin. Eğer farklı bir başlatıcıyı varsayılan olarak kullanıyorsanız bu uyarıyı görmezden gelebilirsiniz.</string>
+  <string name="parallax_touch_wiz">Kullandığınız başlatıcı Samsung TouchWiz olarak görünüyor. TouchWiz arkaplan kaydırma özelliğini desteklemez. Eğer eğim sensörü seçeneği kullanılabilir değilse, paralaks efektini tekrardan aktif hale getirmek için lütfen farklı bir başlatıcı deneyin.\nEğer farklı bir başlatıcıyı varsayılan olarak kullanıyorsanız bu uyarıyı görmezden gelebilirsiniz.</string>
   <string name="parallax_intensity">Paralaks gücü</string>
   <string name="parallax_intensity_description">Sayfa kaydırmada yatay uzaklık ve eğim efekti yoğunluğu </string>
   <string name="parallax_none">Hiçbiri</string>

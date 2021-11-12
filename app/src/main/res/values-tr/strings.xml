@@ -112,7 +112,7 @@
   <!-- OTHER -->
 
   <string name="other_title">Diğer seçenekler</string>
-  <string name="other_description">İşleyici, dil & sıfırlama</string>
+  <string name="other_description">İşleyici, dil &amp; sıfırlama</string>
   <string name="other_language">Dil</string>
   <string name="other_language_description">Transifex\'teki tüm gönüllü çevirmenlere çokça teşekkürler! Doodle Canlı Duvar Kağıtlarının kendi dilinizde kullanıma sunulmasına nasıl yardımcı olabileceğinizi öğrenmek için lütfen projenin GitHub sayfasını ziyaret edin.</string>
   <string name="other_language_system">Sistem varsayılanı: %1$s</string>

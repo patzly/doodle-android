@@ -123,7 +123,7 @@
   <string name="other_launcher">Başlatıcıda uygulama simgesini gizle</string>
   <string name="other_launcher_description">Duvar kağıdı ayarları yalnızca cihazın canlı duvar kağıdı seçicisinde erişilebilir olacaktır</string>
   <string name="other_reset">Tüm ayarları sıfırla </string>
-  <string name="other_reset_description">Kaldırmadan fazlası gerekir, çünkü uygulama ayarları cihaz açılır açılmaz direkt erişilebilir olması gerektiği için özel bir yerde saklanıyor</string>
+  <string name="other_reset_description">Kaldırmanın yapacağından daha fazlasını yapar, çünkü uygulama ayarları cihaz açılır açılmaz direkt erişilebilir olması gerektiği için özel bir yerde saklanıyor</string>
 
   <!-- ABOUT -->
 

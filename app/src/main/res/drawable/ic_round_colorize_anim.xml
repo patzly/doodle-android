@@ -1,0 +1,80 @@
+<!--
+  ~ This file is part of Doodle Android.
+  ~
+  ~ Doodle Android is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Doodle Android is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with Doodle Android. If not, see <http://www.gnu.org/licenses/>.
+  ~
+  ~ Copyright (c) 2019-2021 by Patrick Zedler
+  -->
+
+<animated-vector
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:aapt="http://schemas.android.com/aapt">
+  <aapt:attr name="android:drawable">
+    <vector
+      android:name="vector"
+      android:width="24dp"
+      android:height="24dp"
+      android:viewportWidth="24"
+      android:viewportHeight="24"
+      android:autoMirrored="true">
+      <group
+        android:name="group"
+        android:pivotX="3"
+        android:pivotY="21">
+        <path
+          android:name="path"
+          android:pathData="M20.71,5.63l-2.34,-2.34c-0.39,-0.39 -1.02,-0.39 -1.41,0l-3.12,3.12 -1.23,-1.21c-0.39,-0.39 -1.02,-0.38 -1.41,0 -0.39,0.39 -0.39,1.02 0,1.41l0.72,0.72 -8.77,8.77c-0.1,0.1 -0.15,0.22 -0.15,0.36v4.04c0,0.28 0.22,0.5 0.5,0.5h4.04c0.13,0 0.26,-0.05 0.35,-0.15l8.77,-8.77 0.72,0.72c0.39,0.39 1.02,0.39 1.41,0 0.39,-0.39 0.39,-1.02 0,-1.41l-1.22,-1.22 3.12,-3.12c0.41,-0.4 0.41,-1.03 0.02,-1.42zM6.92,19L5,17.08l8.06,-8.06 1.92,1.92L6.92,19z"
+          android:fillColor="#000"
+          android:strokeWidth="1" />
+      </group>
+    </vector>
+  </aapt:attr>
+  <target android:name="group">
+    <aapt:attr name="android:animation">
+      <set>
+        <objectAnimator
+          android:propertyName="rotation"
+          android:duration="100"
+          android:valueFrom="0"
+          android:valueTo="20"
+          android:valueType="floatType"
+          android:interpolator="@android:interpolator/fast_out_slow_in" />
+        <objectAnimator
+          android:propertyName="rotation"
+          android:startOffset="100"
+          android:duration="100"
+          android:valueFrom="20"
+          android:valueTo="-10"
+          android:valueType="floatType"
+          android:interpolator="@android:interpolator/fast_out_slow_in" />
+        <objectAnimator
+          android:propertyName="rotation"
+          android:startOffset="200"
+          android:duration="50"
+          android:valueFrom="-10"
+          android:valueTo="5"
+          android:valueType="floatType"
+          android:interpolator="@android:interpolator/fast_out_slow_in" />
+        <objectAnimator
+          android:propertyName="rotation"
+          android:startOffset="250"
+          android:duration="50"
+          android:valueFrom="5"
+          android:valueTo="0"
+          android:valueType="floatType"
+          android:interpolator="@android:interpolator/fast_out_slow_in" />
+      </set>
+    </aapt:attr>
+  </target>
+</animated-vector>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ This file is part of Doodle Android.
+  ~
+  ~ Doodle Android is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Doodle Android is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with Doodle Android. If not, see <http://www.gnu.org/licenses/>.
+  ~
+  ~ Copyright (c) 2019-2021 by Patrick Zedler
+  -->
+
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:orientation="vertical">
+
+  <com.google.android.material.appbar.MaterialToolbar
+    android:id="@+id/toolbar_colors"
+    style="@style/Widget.Doodle.Toolbar.Centered" />
+
+  <View
+    style="@style/Widget.Doodle.Divider"
+    android:layout_marginTop="0dp"
+    android:layout_marginBottom="0dp" />
+
+  <androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:scrollbars="none">
+
+    <LinearLayout
+      android:id="@+id/linear_colors_container"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      android:paddingTop="16dp"
+      android:paddingBottom="16dp">
+
+      <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:overScrollMode="ifContentScrolls"
+        tools:ignore="UselessParent">
+
+        <LinearLayout
+          android:id="@+id/linear_colors_container_colors"
+          style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:orientation="horizontal"
+          android:paddingStart="16dp"
+          android:paddingEnd="4dp"
+          android:paddingTop="16dp"
+          android:paddingBottom="16dp" />
+
+      </HorizontalScrollView>
+
+    </LinearLayout>
+
+  </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

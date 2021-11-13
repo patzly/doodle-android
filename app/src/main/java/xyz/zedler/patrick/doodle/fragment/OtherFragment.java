@@ -172,7 +172,7 @@ public class OtherFragment extends BaseFragment
       performHapticClick();
       if (activity.isWallpaperServiceRunning(false)
           && isChecked != activity.useGpuInit) {
-        activity.showForceStopRequest();
+        activity.showForceStopRequest(OtherFragmentDirections.actionOtherToApplyDialog());
       }
     } else if (id == R.id.switch_other_launcher) {
       performHapticClick();

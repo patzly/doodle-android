@@ -38,6 +38,7 @@ public abstract class BaseWallpaper {
 
     private final int svgResId;
     private int primaryColor, secondaryColor, tertiaryColor;
+    private String[] colors;
     private final boolean isDarkTextSupported;
     private final boolean isDarkThemeSupported;
 
@@ -57,6 +58,29 @@ public abstract class BaseWallpaper {
       if (tertiary != null) {
         tertiaryColor = Color.parseColor(tertiary);
       }
+      colors = new String[]{"#000000"};
+      this.isDarkTextSupported = isDarkTextSupported;
+      this.isDarkThemeSupported = isDarkThemeSupported;
+    }
+
+    public WallpaperVariant(
+        @RawRes int resId,
+        @NonNull String primary,
+        @Nullable String secondary,
+        @Nullable String tertiary,
+        @NonNull String[] colors,
+        boolean isDarkTextSupported,
+        boolean isDarkThemeSupported
+    ) {
+      svgResId = resId;
+      primaryColor = Color.parseColor(primary);
+      if (secondary != null) {
+        secondaryColor = Color.parseColor(secondary);
+      }
+      if (tertiary != null) {
+        tertiaryColor = Color.parseColor(tertiary);
+      }
+      this.colors = colors;
       this.isDarkTextSupported = isDarkTextSupported;
       this.isDarkThemeSupported = isDarkThemeSupported;
     }
@@ -67,6 +91,18 @@ public abstract class BaseWallpaper {
 
     public int getPrimaryColor() {
       return primaryColor;
+    }
+
+    public int getSecondaryColor() {
+      return secondaryColor;
+    }
+
+    public int getTertiaryColor() {
+      return tertiaryColor;
+    }
+
+    public String[] getColors() {
+      return colors;
     }
 
     @RequiresApi(api = VERSION_CODES.O_MR1)

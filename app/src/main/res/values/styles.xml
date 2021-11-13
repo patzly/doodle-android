@@ -82,6 +82,14 @@
     <item name="cornerRadius">20dp</item>
   </style>
 
+  <style
+    name="Widget.Doodle.Button.TextButton"
+    parent="Widget.Material3.Button.TextButton">
+    <item name="android:textSize">@dimen/m3_sys_typescale_label_large_text_size</item>
+    <item name="android:fontFamily">@font/jost_medium</item>
+    <item name="cornerRadius">20dp</item>
+  </style>
+
   <style name="Widget.Doodle.Card.Text" parent="@style/Widget.Material3.CardView.Filled">
     <item name="android:layout_width">match_parent</item>
     <item name="android:layout_height">wrap_content</item>

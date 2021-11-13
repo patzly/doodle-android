@@ -196,7 +196,7 @@ public class SizeFragment extends BaseFragment
       performHapticClick();
       if (activity.isWallpaperServiceRunning(false)
           && isChecked != activity.useZoomSystemInit) {
-        activity.showForceStopRequest();
+        activity.showForceStopRequest(SizeFragmentDirections.actionSizeToApplyDialog());
       }
     } else if (id == R.id.switch_size_zoom_unlock) {
       getSharedPrefs().edit().putBoolean(PREF.ZOOM_UNLOCK, isChecked).apply();

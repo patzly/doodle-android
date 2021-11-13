@@ -47,6 +47,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat.Type;
 import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
 import androidx.navigation.NavController;
+import androidx.navigation.NavDirections;
 import androidx.navigation.fragment.NavHostFragment;
 import com.google.android.material.snackbar.Snackbar;
 import java.util.Locale;
@@ -301,13 +302,14 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
   }
 
   @SuppressLint("ShowToast")
-  public void showForceStopRequest() {
+  public void showForceStopRequest(NavDirections directions) {
     showSnackbar(
         Snackbar.make(
             binding.getRoot(), getString(R.string.msg_force_stop), Snackbar.LENGTH_LONG
         ).setAction(
             getString(R.string.action_continue), view -> {
               performHapticHeavyClick();
+              navController.navigate(directions);
               ViewUtil.showBottomSheet(this, new ApplyBottomSheetDialogFragment());
             }
         )

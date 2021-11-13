@@ -22,7 +22,9 @@ package xyz.zedler.patrick.doodle;
 public final class Constants {
 
   public final static String VARIANT_PREFIX = "variant_";
-  public final static String PREFS_NORMAL = "normal";
+  public final static String COLOR_PREFIX = "color_";
+  // e.g. color_floral_1_0 (Floral, first variant, primary color)
+  // e.g. color_pixel_2_2_dark (Pixel, second variant, tertiary color, dark mode)
 
   public final static class PREF {
 

@@ -19,9 +19,14 @@
 
 package xyz.zedler.patrick.doodle.fragment;
 
+import android.animation.ValueAnimator;
+import android.app.Activity;
+import android.content.res.Configuration;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -34,10 +39,10 @@ import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.res.ResourcesCompat;
+import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
 import com.google.android.material.card.MaterialCardView;
 import xyz.zedler.patrick.doodle.Constants;
 import xyz.zedler.patrick.doodle.Constants.DEF;
-import xyz.zedler.patrick.doodle.Constants.DESIGN;
 import xyz.zedler.patrick.doodle.Constants.PREF;
 import xyz.zedler.patrick.doodle.Constants.WALLPAPER;
 import xyz.zedler.patrick.doodle.R;
@@ -68,6 +73,9 @@ public class AppearanceFragment extends BaseFragment
 
   private FragmentAppearanceBinding binding;
   private MainActivity activity;
+  private BaseWallpaper currentWallpaper;
+  private WallpaperVariant currentVariant;
+  private int currentVariantIndex;
 
   @Override
   public View onCreateView(
@@ -143,9 +151,8 @@ public class AppearanceFragment extends BaseFragment
         getSharedPrefs().getBoolean(PREF.USE_WHITE_TEXT, DEF.USE_WHITE_TEXT)
     );
 
-    setUpDesignSelections(DESIGN.DOODLE);
-    setUpDesignSelections(DESIGN.MONET);
-    setUpDesignSelections(DESIGN.ANNA);
+    setUpDesignSelections();
+    setUpColorsContainer();
 
     ViewUtil.setOnClickListeners(
         this,
@@ -213,27 +220,12 @@ public class AppearanceFragment extends BaseFragment
     }
   }
 
-  private void setUpDesignSelections(String design) {
+  private void setUpDesignSelections() {
     BaseWallpaper[] baseWallpapers;
     ViewGroup container;
-    switch (design) {
-      case DESIGN.MONET:
-        baseWallpapers = new BaseWallpaper[]{
-            new WaterWallpaper(),
-            new StoneWallpaper(),
-            new FloralWallpaper(),
-            new MonetWallpaper()
-        };
-        container = binding.linearAppearanceWallpaperContainerMonet;
-        break;
-      case DESIGN.ANNA:
-        baseWallpapers = new BaseWallpaper[]{
-            new LeafyWallpaper(),
-            new FogWallpaper()
-        };
-        container = binding.linearAppearanceWallpaperContainerAnna;
-        break;
-      default:
+
+    for (int i = 0; i < 3; i++) {
+      if (i == 0) {
         baseWallpapers = new BaseWallpaper[]{
             new PixelWallpaper(),
             new JohannaWallpaper(),
@@ -241,62 +233,110 @@ public class AppearanceFragment extends BaseFragment
             new AnthonyWallpaper()
         };
         container = binding.linearAppearanceWallpaperContainerDoodle;
-        break;
-    }
-    for (BaseWallpaper wallpaper : baseWallpapers) {
-      MaterialCardView card = getNewSelectionCard();
-      ImageView thumbnail = new ImageView(activity);
-      thumbnail.setLayoutParams(
-          new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT)
-      );
-      thumbnail.setImageResource(wallpaper.getThumbnailResId());
-      card.addView(thumbnail);
-      card.setOnClickListener(v -> {
-        if (!card.isChecked()) {
-          ViewUtil.startIcon(binding.imageAppearanceWallpaper);
-          ViewUtil.startIcon(card.getCheckedIcon());
-          performHapticClick();
-          uncheckAllChildren(
-              binding.linearAppearanceWallpaperContainerDoodle,
-              binding.linearAppearanceWallpaperContainerMonet,
-              binding.linearAppearanceWallpaperContainerAnna
-          );
-          card.setChecked(true);
-          refreshVariantSelection(wallpaper, true);
-          getSharedPrefs().edit().putString(PREF.WALLPAPER, wallpaper.getName()).apply();
-          activity.requestThemeRefresh();
-        }
-      });
-      boolean isSelected = getSharedPrefs().getString(
-          PREF.WALLPAPER, WALLPAPER.PIXEL
-      ).equals(wallpaper.getName());
-      card.setChecked(isSelected);
-      if (isSelected) {
-        refreshVariantSelection(wallpaper, false);
+      } else if (i == 1) {
+        baseWallpapers = new BaseWallpaper[]{
+            new WaterWallpaper(),
+            new StoneWallpaper(),
+            new FloralWallpaper(),
+            new MonetWallpaper()
+        };
+        container = binding.linearAppearanceWallpaperContainerMonet;
+      } else {
+        baseWallpapers = new BaseWallpaper[]{
+            new LeafyWallpaper(),
+            new FogWallpaper()
+        };
+        container = binding.linearAppearanceWallpaperContainerAnna;
       }
-      container.addView(card);
+
+      for (BaseWallpaper wallpaper : baseWallpapers) {
+        MaterialCardView card = getNewSelectionCard(activity);
+        ImageView thumbnail = new ImageView(activity);
+        thumbnail.setLayoutParams(
+            new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT)
+        );
+        thumbnail.setImageResource(wallpaper.getThumbnailResId());
+        card.addView(thumbnail);
+        card.setOnClickListener(v -> {
+          if (!card.isChecked()) {
+            ViewUtil.startIcon(binding.imageAppearanceWallpaper);
+            ViewUtil.startIcon(card.getCheckedIcon());
+            performHapticClick();
+            uncheckAllChildren(
+                binding.linearAppearanceWallpaperContainerDoodle,
+                binding.linearAppearanceWallpaperContainerMonet,
+                binding.linearAppearanceWallpaperContainerAnna
+            );
+            card.setChecked(true);
+            int oldCount = currentWallpaper != null ? currentWallpaper.getVariants().length : 0;
+            currentWallpaper = wallpaper;
+            refreshVariantSelection(oldCount, wallpaper, true);
+            getSharedPrefs().edit().putString(PREF.WALLPAPER, wallpaper.getName()).apply();
+            activity.requestThemeRefresh();
+          }
+        });
+
+        boolean isSelected = getSharedPrefs().getString(
+            PREF.WALLPAPER, WALLPAPER.PIXEL
+        ).equals(wallpaper.getName());
+        card.setChecked(isSelected);
+        if (isSelected) {
+          int oldCount = currentWallpaper != null ? currentWallpaper.getVariants().length : 0;
+          currentWallpaper = wallpaper;
+          refreshVariantSelection(oldCount, wallpaper, false);
+        }
+        container.addView(card);
+      }
     }
   }
 
-  private void refreshVariantSelection(BaseWallpaper wallpaper, boolean animated) {
+  private void refreshVariantSelection(int oldCount, BaseWallpaper wallpaper, boolean animated) {
     if (animated) {
-      binding.linearAppearanceVariantContainer.animate().alpha(0).withEndAction(() -> {
-        replaceVariantContainer(wallpaper);
-        binding.linearAppearanceVariantContainer.animate().alpha(1).setDuration(150).start();
-      }).setDuration(150).start();
+      if (oldCount == wallpaper.getVariants().length) {
+        replaceVariantContainer(wallpaper, true);
+      } else {
+        binding.linearAppearanceVariantContainer.animate().alpha(0).withEndAction(() -> {
+          replaceVariantContainer(wallpaper, false);
+          binding.linearAppearanceVariantContainer.animate().alpha(1).setDuration(150).start();
+        }).setDuration(150).start();
+      }
     } else {
       binding.linearAppearanceVariantContainer.setAlpha(1);
-      replaceVariantContainer(wallpaper);
+      replaceVariantContainer(wallpaper, oldCount == wallpaper.getVariants().length);
     }
   }
 
-  private void replaceVariantContainer(BaseWallpaper wallpaper) {
-    binding.linearAppearanceVariantContainer.removeAllViews();
+  private void replaceVariantContainer(BaseWallpaper wallpaper, boolean sameCount) {
+    if (!sameCount) {
+      binding.linearAppearanceVariantContainer.removeAllViews();
+    }
+    boolean isNightMode = isWallpaperNightMode();
     for (int i = 0; i < wallpaper.getVariants().length; i++) {
-      final int index = i;
-      WallpaperVariant variant = wallpaper.getVariants()[index];
-      MaterialCardView card = getNewSelectionCard();
-      card.setCardBackgroundColor(variant.getPrimaryColor());
+      final int iFinal = i;
+      WallpaperVariant variant = isNightMode
+          ? wallpaper.getDarkVariants()[iFinal]
+          : wallpaper.getVariants()[iFinal];
+      MaterialCardView card;
+      if (sameCount) {
+        MaterialCardView child
+            = (MaterialCardView) binding.linearAppearanceVariantContainer.getChildAt(i);
+        card = child != null ? child : getNewSelectionCard(activity);
+      } else {
+        card = getNewSelectionCard(activity);
+      }
+
+      if (sameCount) {
+        ValueAnimator animator = ValueAnimator.ofArgb(
+            card.getCardBackgroundColor().getDefaultColor(), variant.getPrimaryColor()
+        );
+        animator.addUpdateListener(
+            animation -> card.setCardBackgroundColor((int) animation.getAnimatedValue()));
+        animator.setDuration(300);
+        animator.setInterpolator(new FastOutSlowInInterpolator());
+        animator.start();
+      } else {
+        card.setCardBackgroundColor(variant.getPrimaryColor());
+      }
       card.setOnClickListener(v -> {
         if (!card.isChecked()) {
           ViewUtil.startIcon(binding.imageAppearanceVariant);
@@ -304,21 +344,31 @@ public class AppearanceFragment extends BaseFragment
           performHapticClick();
           uncheckAllChildren(binding.linearAppearanceVariantContainer);
           card.setChecked(true);
+          currentVariant = variant;
+          currentVariantIndex = iFinal;
+          refreshColors();
           getSharedPrefs().edit()
-              .putInt(Constants.VARIANT_PREFIX + wallpaper.getName(), index + 1)
+              .putInt(Constants.VARIANT_PREFIX + wallpaper.getName(), iFinal + 1)
               .apply();
           activity.requestThemeRefresh();
         }
       });
       boolean isSelected = getSharedPrefs().getInt(
           Constants.VARIANT_PREFIX + wallpaper.getName(), 1
-      ) == index + 1;
+      ) == iFinal + 1;
       card.setChecked(isSelected);
-      binding.linearAppearanceVariantContainer.addView(card);
+      if (isSelected) {
+        currentVariant = variant;
+        currentVariantIndex = iFinal;
+      }
+      if (!sameCount) {
+        binding.linearAppearanceVariantContainer.addView(card);
+      }
     }
+    refreshColors(); // reload theme colors
   }
 
-  private MaterialCardView getNewSelectionCard() {
+  public static MaterialCardView getNewSelectionCard(Activity activity) {
     int size = SystemUiUtil.dpToPx(activity, 48);
     MaterialCardView card = new MaterialCardView(activity);
     LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(size, size);
@@ -335,7 +385,7 @@ public class AppearanceFragment extends BaseFragment
     card.setCardBackgroundColor(ResUtil.getBgColor(activity));
     card.setCheckedIcon(
         ResourcesCompat.getDrawable(
-            getResources(), R.drawable.ic_round_check_circle_anim, null
+            activity.getResources(), R.drawable.ic_round_check_circle_anim, null
         )
     );
     card.setCheckedIconTint(null);
@@ -346,7 +396,120 @@ public class AppearanceFragment extends BaseFragment
     return card;
   }
 
-  private void uncheckAllChildren(ViewGroup... viewGroups) {
+  private void setUpColorsContainer() {
+    binding.linearAppearanceColorsContainer.removeAllViews();
+    for (int i = 0; i < 3; i++) {
+      final int iFinal = i;
+      MaterialCardView card = getNewSelectionCard(activity);
+      card.setCardBackgroundColor(Color.BLACK);
+      card.setOnClickListener(v -> {
+        ViewUtil.startIcon(binding.imageAppearanceColors);
+        performHapticClick();
+        AppearanceFragmentDirections.ActionAppearanceToColorsDialog action
+            = AppearanceFragmentDirections.actionAppearanceToColorsDialog();
+        switch (iFinal) {
+          case 1:
+            action.setTitle(R.string.appearance_colors_secondary);
+            break;
+          case 2:
+            action.setTitle(R.string.appearance_colors_tertiary);
+            break;
+          default:
+            action.setTitle(R.string.appearance_colors_primary);
+            break;
+        }
+        action.setColors(TextUtils.join(" ", currentVariant.getColors()));
+        action.setSelection(
+            getSharedPrefs().getString(
+                Constants.COLOR_PREFIX
+                    + currentWallpaper.getName() + "_"
+                    + currentVariantIndex + "_"
+                    + iFinal
+                    + (isWallpaperNightMode() ? "_dark" : ""),
+                null
+            )
+        );
+        action.setPriority(iFinal);
+        getNavController().navigate(action);
+      });
+      binding.linearAppearanceColorsContainer.addView(card);
+      refreshColor(iFinal, false);
+    }
+  }
+
+  private void refreshColor(int priority, boolean animated) {
+    String colorHex = getSharedPrefs().getString(
+        Constants.COLOR_PREFIX
+            + currentWallpaper.getName() + "_"
+            + currentVariantIndex + "_"
+            + priority
+            + (isWallpaperNightMode() ? "_dark" : ""),
+        null
+    );
+    int color;
+    if (colorHex != null) {
+      color = Color.parseColor(colorHex);
+    } else {
+      switch (priority) {
+        case 1:
+          color = currentVariant.getSecondaryColor();
+          break;
+        case 2:
+          color = currentVariant.getTertiaryColor();
+          break;
+        default:
+          color = currentVariant.getPrimaryColor();
+          break;
+      }
+    }
+    MaterialCardView card
+        = (MaterialCardView) binding.linearAppearanceColorsContainer.getChildAt(priority);
+    if (card == null) {
+      return;
+    }
+    if (animated) {
+      ValueAnimator animator = ValueAnimator.ofArgb(
+          card.getCardBackgroundColor().getDefaultColor(), color
+      );
+      animator.addUpdateListener(
+          animation -> card.setCardBackgroundColor((int) animation.getAnimatedValue()));
+      animator.setDuration(300);
+      animator.setInterpolator(new FastOutSlowInInterpolator());
+      animator.start();
+    } else {
+      card.setCardBackgroundColor(color);
+    }
+  }
+
+  private void refreshColors() {
+    refreshColor(0, true);
+    refreshColor(1, true);
+    refreshColor(2, true);
+  }
+
+  public void setColor(int priority, String color) {
+    getSharedPrefs().edit().putString(
+        Constants.COLOR_PREFIX
+            + currentWallpaper.getName() + "_"
+            + currentVariantIndex + "_"
+            + priority
+            + (isWallpaperNightMode() ? "_dark" : ""),
+        color
+    ).apply();
+    refreshColor(priority, true);
+  }
+
+  private boolean isWallpaperNightMode() {
+    boolean nightMode = getSharedPrefs().getBoolean(PREF.NIGHT_MODE, DEF.NIGHT_MODE);
+    boolean followSystem = getSharedPrefs().getBoolean(PREF.FOLLOW_SYSTEM, DEF.FOLLOW_SYSTEM);
+    if (nightMode && !followSystem) {
+      return true;
+    }
+    int flags = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
+    return nightMode && flags == Configuration.UI_MODE_NIGHT_YES;
+  }
+
+  public static void uncheckAllChildren(ViewGroup... viewGroups) {
     for (ViewGroup viewGroup : viewGroups) {
       for (int i = 0; i < viewGroup.getChildCount(); i++) {
         View child = viewGroup.getChildAt(i);

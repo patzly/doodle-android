@@ -72,24 +72,7 @@
 
     <action
       android:id="@+id/action_overview_to_text_dialog"
-      app:destination="@id/textBottomSheetDialogFragment">
-
-      <argument
-        android:name="file"
-        app:argType="reference"
-        android:defaultValue="0" />
-
-      <argument
-        android:name="title"
-        app:argType="reference"
-        android:defaultValue="0" />
-
-      <argument
-        android:name="link"
-        app:argType="reference"
-        android:defaultValue="0" />
-
-    </action>
+      app:destination="@id/textBottomSheetDialogFragment" />
 
     <action
       android:id="@+id/action_overview_to_feedback_dialog"
@@ -106,6 +89,10 @@
     android:name="xyz.zedler.patrick.doodle.fragment.AppearanceFragment"
     android:label="fragment_appearance"
     tools:layout="@layout/fragment_appearance">
+
+    <action
+      android:id="@+id/action_appearance_to_colors_dialog"
+      app:destination="@id/colorsBottomSheetDialogFragment" />
 
     <action
       android:id="@+id/action_appearance_to_feedback_dialog"
@@ -135,6 +122,10 @@
       android:id="@+id/action_size_to_feedback_dialog"
       app:destination="@id/feedbackBottomSheetDialogFragment" />
 
+    <action
+      android:id="@+id/action_size_to_apply_dialog"
+      app:destination="@id/applyBottomSheetDialogFragment" />
+
   </fragment>
 
   <fragment
@@ -146,6 +137,10 @@
     <action
       android:id="@+id/action_other_to_feedback_dialog"
       app:destination="@id/feedbackBottomSheetDialogFragment" />
+
+    <action
+      android:id="@+id/action_other_to_apply_dialog"
+      app:destination="@id/applyBottomSheetDialogFragment" />
 
   </fragment>
 
@@ -200,5 +195,38 @@
     android:id="@+id/changelogBottomSheetDialogFragment"
     android:name="xyz.zedler.patrick.doodle.fragment.dialog.ChangelogBottomSheetDialogFragment"
     android:label="dialog_changelog" />
+
+  <dialog
+    android:id="@+id/applyBottomSheetDialogFragment"
+    android:name="xyz.zedler.patrick.doodle.fragment.dialog.ApplyBottomSheetDialogFragment"
+    android:label="dialog_apply" />
+
+  <dialog
+    android:id="@+id/colorsBottomSheetDialogFragment"
+    android:name="xyz.zedler.patrick.doodle.fragment.dialog.ColorsBottomSheetDialogFragment"
+    android:label="dialog_colors">
+
+    <argument
+      android:name="title"
+      app:argType="reference"
+      android:defaultValue="0" />
+
+    <argument
+      android:name="colors"
+      app:argType="string"
+      android:defaultValue="#000000" />
+
+    <argument
+      android:name="priority"
+      app:argType="integer"
+      android:defaultValue="0" />
+
+    <argument
+      android:name="selection"
+      app:argType="string"
+      app:nullable="true"
+      android:defaultValue="@null" />
+
+  </dialog>
 
 </navigation>

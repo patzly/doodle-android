@@ -183,26 +183,25 @@
         style="@style/Widget.Doodle.TextView.Category"
         android:text="@string/appearance_variant" />
 
-      <HorizontalScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:scrollbars="none"
-        android:overScrollMode="ifContentScrolls"
-        android:layout_marginBottom="8dp">
+      <LinearLayout
+        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon"
+        android:paddingTop="0dp"
+        android:paddingBottom="0dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="0dp">
 
-        <LinearLayout
-          style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine"
-          android:paddingTop="0dp"
-          android:paddingBottom="0dp"
-          android:paddingStart="16dp"
-          android:paddingEnd="0dp">
+        <ImageView
+          android:id="@+id/image_appearance_variant"
+          style="@style/Widget.Doodle.ImageView.ListItem.Icon"
+          android:layout_marginEnd="32dp"
+          android:src="@drawable/ic_round_palette_anim"
+          tools:ignore="ContentDescription" />
 
-          <ImageView
-            android:id="@+id/image_appearance_variant"
-            style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-            android:layout_marginEnd="32dp"
-            android:src="@drawable/ic_round_palette_anim"
-            tools:ignore="ContentDescription" />
+        <HorizontalScrollView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:scrollbars="none"
+          android:overScrollMode="ifContentScrolls">
 
           <LinearLayout
             android:id="@+id/linear_appearance_variant_container"
@@ -215,9 +214,64 @@
             android:paddingTop="8dp"
             android:paddingBottom="8dp" />
 
+        </HorizontalScrollView>
+
+      </LinearLayout>
+
+      <TextView
+        style="@style/Widget.Doodle.TextView.Category"
+        android:text="@string/other_title" />
+
+      <LinearLayout
+        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon"
+        android:paddingTop="12dp"
+        android:paddingBottom="0dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="0dp">
+
+        <ImageView
+          android:id="@+id/image_appearance_colors"
+          style="@style/Widget.Doodle.ImageView.ListItem.Icon"
+          android:layout_marginEnd="32dp"
+          android:src="@drawable/ic_round_colorize_anim"
+          tools:ignore="ContentDescription" />
+
+        <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">
+
+          <TextView
+            style="@style/Widget.Doodle.TextView.ListItem.Title"
+            android:text="@string/appearance_colors"
+            android:paddingStart="0dp"
+            android:paddingEnd="16dp"/>
+
+          <TextView
+            style="@style/Widget.Doodle.TextView.ListItem.Description"
+            android:text="@string/appearance_colors_description"
+            android:paddingStart="0dp"
+            android:paddingEnd="16dp"/>
+
+          <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+            android:overScrollMode="ifContentScrolls">
+
+            <LinearLayout
+              android:id="@+id/linear_appearance_colors_container"
+              style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:orientation="horizontal"
+              android:paddingStart="0dp"
+              android:paddingEnd="4dp"
+              android:paddingTop="8dp"
+              android:paddingBottom="8dp" />
+
+          </HorizontalScrollView>
+
         </LinearLayout>
 
-      </HorizontalScrollView>
+      </LinearLayout>
 
       <LinearLayout
         android:id="@+id/linear_appearance_night_mode"

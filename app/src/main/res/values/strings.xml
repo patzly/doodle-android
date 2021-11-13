@@ -81,6 +81,11 @@
   <string name="appearance_follow_system_description">Adopt device theme</string>
   <string name="appearance_white_text">Force white text with shadow</string>
   <string name="appearance_white_text_description">May affect readability</string>
+  <string name="appearance_colors">Extracted colors</string>
+  <string name="appearance_colors_description">Used by the system\'s theming engine</string>
+  <string name="appearance_colors_primary">Choose primary color</string>
+  <string name="appearance_colors_secondary">Choose secondary color</string>
+  <string name="appearance_colors_tertiary">Choose tertiary color</string>
 
   <!-- PARALLAX -->
 

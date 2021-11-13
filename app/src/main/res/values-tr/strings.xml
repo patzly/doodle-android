@@ -69,8 +69,13 @@
   <string name="appearance_night_mode_description">Sadece karanlık renkler</string>
   <string name="appearance_follow_system">Sisteme uy</string>
   <string name="appearance_follow_system_description">Cihaz temasını benimse</string>
-  <string name="appearance_white_text">Gölgeli beyaz metni zorla </string>
+  <string name="appearance_white_text">Yazıları gölgeli beyaz renge zorla</string>
   <string name="appearance_white_text_description">Okunabilirliğe etkisi olabilir</string>
+  <string name="appearance_colors">Çıkartılmış renkler</string>
+  <string name="appearance_colors_description">Sistemin tema motoru tarafından kullanılmış </string>
+  <string name="appearance_colors_primary">Ana renk seç</string>
+  <string name="appearance_colors_secondary">İkincil renk seç</string>
+  <string name="appearance_colors_tertiary">Üçüncül rengi seç</string>
 
   <!-- PARALLAX -->
 

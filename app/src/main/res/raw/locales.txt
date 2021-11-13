@@ -11,7 +11,10 @@ fr
 choukajohn
 
 ru
-VoicelessCinder, uvdllm 
+VoicelessCinder, uvdllm
+
+tr
+k2edih
 
 zh_CN
 Schauding

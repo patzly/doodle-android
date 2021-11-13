@@ -71,6 +71,11 @@
   <string name="appearance_follow_system_description">Adaption des Designs</string>
   <string name="appearance_white_text">Weißen Text mit Schatten erzwingen</string>
   <string name="appearance_white_text_description">Kann die Lesbarkeit beeinträchtigen</string>
+  <string name="appearance_colors">Extrahierte Farben</string>
+  <string name="appearance_colors_description">Werden von dem Theme-Generator des Systems genutzt</string>
+  <string name="appearance_colors_primary">Primäre Farbe auswählen</string>
+  <string name="appearance_colors_secondary">Sekundäre Farbe auswählen</string>
+  <string name="appearance_colors_tertiary">Tertiäre Farbe auswählen</string>
 
   <!-- PARALLAX -->
 

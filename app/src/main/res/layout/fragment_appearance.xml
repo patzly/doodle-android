@@ -223,6 +223,7 @@
         android:text="@string/other_title" />
 
       <LinearLayout
+        android:id="@+id/linear_appearance_colors"
         style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon"
         android:paddingTop="12dp"
         android:paddingBottom="0dp"

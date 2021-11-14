@@ -44,15 +44,15 @@ public class ReikoWallpaper extends BaseWallpaper {
   @Override
   public SvgDrawable getPreparedSvg(SvgDrawable svgDrawable, int variant, boolean isNightMode) {
     if (isNightMode) {
-      if (variant == 1) {
+      if (variant == 0) {
         setKidneyGradientReiko(svgDrawable, "#a0b0fb", "#d8d4fe");
-      } else if (variant == 2) {
+      } else if (variant == 1) {
         setKidneyGradientReiko(svgDrawable, "#eb902b", "#ecc12f");
       }
     } else {
-      if (variant == 1) {
+      if (variant == 0) {
         setKidneyGradientReiko(svgDrawable, "#a0b0fb", "#d8d4fe");
-      } else if (variant == 2) {
+      } else if (variant == 1) {
         setKidneyGradientReiko(svgDrawable, "#ff931e", "#fbc318");
       }
     }

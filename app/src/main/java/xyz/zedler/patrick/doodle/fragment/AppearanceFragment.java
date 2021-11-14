@@ -41,6 +41,7 @@ import androidx.annotation.Nullable;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
 import com.google.android.material.card.MaterialCardView;
+import com.google.android.material.color.DynamicColors;
 import xyz.zedler.patrick.doodle.Constants;
 import xyz.zedler.patrick.doodle.Constants.DEF;
 import xyz.zedler.patrick.doodle.Constants.PREF;
@@ -152,7 +153,11 @@ public class AppearanceFragment extends BaseFragment
     );
 
     setUpDesignSelections();
-    setUpColorsContainer();
+    if (DynamicColors.isDynamicColorAvailable()) {
+      setUpColorsContainer();
+    } else {
+      binding.linearAppearanceColors.setVisibility(View.GONE);
+    }
 
     ViewUtil.setOnClickListeners(
         this,
@@ -316,6 +321,8 @@ public class AppearanceFragment extends BaseFragment
       WallpaperVariant variant = isNightMode
           ? wallpaper.getDarkVariants()[iFinal]
           : wallpaper.getVariants()[iFinal];
+      WallpaperVariant variantLight = wallpaper.getVariants()[iFinal];
+
       MaterialCardView card;
       if (sameCount) {
         MaterialCardView child
@@ -327,7 +334,7 @@ public class AppearanceFragment extends BaseFragment
 
       if (sameCount) {
         ValueAnimator animator = ValueAnimator.ofArgb(
-            card.getCardBackgroundColor().getDefaultColor(), variant.getPrimaryColor()
+            card.getCardBackgroundColor().getDefaultColor(), variantLight.getPrimaryColor()
         );
         animator.addUpdateListener(
             animation -> card.setCardBackgroundColor((int) animation.getAnimatedValue()));
@@ -335,7 +342,7 @@ public class AppearanceFragment extends BaseFragment
         animator.setInterpolator(new FastOutSlowInInterpolator());
         animator.start();
       } else {
-        card.setCardBackgroundColor(variant.getPrimaryColor());
+        card.setCardBackgroundColor(variantLight.getPrimaryColor());
       }
       card.setOnClickListener(v -> {
         if (!card.isChecked()) {
@@ -346,16 +353,18 @@ public class AppearanceFragment extends BaseFragment
           card.setChecked(true);
           currentVariant = variant;
           currentVariantIndex = iFinal;
-          refreshColors();
+          if (DynamicColors.isDynamicColorAvailable()) {
+            refreshColors(); // reload theme colors
+          }
           getSharedPrefs().edit()
-              .putInt(Constants.VARIANT_PREFIX + wallpaper.getName(), iFinal + 1)
+              .putInt(Constants.VARIANT_PREFIX + wallpaper.getName(), iFinal)
               .apply();
           activity.requestThemeRefresh();
         }
       });
       boolean isSelected = getSharedPrefs().getInt(
-          Constants.VARIANT_PREFIX + wallpaper.getName(), 1
-      ) == iFinal + 1;
+          Constants.VARIANT_PREFIX + wallpaper.getName(), 0
+      ) == iFinal;
       card.setChecked(isSelected);
       if (isSelected) {
         currentVariant = variant;
@@ -365,7 +374,9 @@ public class AppearanceFragment extends BaseFragment
         binding.linearAppearanceVariantContainer.addView(card);
       }
     }
-    refreshColors(); // reload theme colors
+    if (DynamicColors.isDynamicColorAvailable()) {
+      refreshColors(); // reload theme colors
+    }
   }
 
   public static MaterialCardView getNewSelectionCard(Activity activity) {
@@ -421,12 +432,10 @@ public class AppearanceFragment extends BaseFragment
         action.setColors(TextUtils.join(" ", currentVariant.getColors()));
         action.setSelection(
             getSharedPrefs().getString(
-                Constants.COLOR_PREFIX
-                    + currentWallpaper.getName() + "_"
-                    + currentVariantIndex + "_"
-                    + iFinal
-                    + (isWallpaperNightMode() ? "_dark" : ""),
-                null
+                Constants.getThemeColorPref(
+                    currentWallpaper.getName(), currentVariantIndex, iFinal, isWallpaperNightMode()
+                ),
+                currentVariant.getColorHex(iFinal)
             )
         );
         action.setPriority(iFinal);
@@ -439,11 +448,9 @@ public class AppearanceFragment extends BaseFragment
 
   private void refreshColor(int priority, boolean animated) {
     String colorHex = getSharedPrefs().getString(
-        Constants.COLOR_PREFIX
-            + currentWallpaper.getName() + "_"
-            + currentVariantIndex + "_"
-            + priority
-            + (isWallpaperNightMode() ? "_dark" : ""),
+        Constants.getThemeColorPref(
+            currentWallpaper.getName(), currentVariantIndex, priority, isWallpaperNightMode()
+        ),
         null
     );
     int color;
@@ -489,14 +496,13 @@ public class AppearanceFragment extends BaseFragment
 
   public void setColor(int priority, String color) {
     getSharedPrefs().edit().putString(
-        Constants.COLOR_PREFIX
-            + currentWallpaper.getName() + "_"
-            + currentVariantIndex + "_"
-            + priority
-            + (isWallpaperNightMode() ? "_dark" : ""),
+        Constants.getThemeColorPref(
+            currentWallpaper.getName(), currentVariantIndex, priority, isWallpaperNightMode()
+        ),
         color
     ).apply();
     refreshColor(priority, true);
+    activity.requestThemeRefresh();
   }
 
   private boolean isWallpaperNightMode() {

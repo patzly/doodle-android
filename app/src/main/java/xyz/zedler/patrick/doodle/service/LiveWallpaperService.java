@@ -31,6 +31,7 @@ import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -85,6 +86,7 @@ public class LiveWallpaperService extends WallpaperService {
   private SvgDrawable svgDrawable;
   private BaseWallpaper wallpaper;
   private WallpaperVariant variant;
+  private int variantIndex;
   private boolean nightMode, followSystem;
   // User presence
   private String presence;
@@ -168,20 +170,22 @@ public class LiveWallpaperService extends WallpaperService {
   }
 
   private void loadWallpaper() {
-    int var = sharedPrefs.getInt(Constants.VARIANT_PREFIX + wallpaper.getName(), 1);
-    if (var > wallpaper.getVariants().length) {
-      var = 1;
+    variantIndex = sharedPrefs.getInt(
+        Constants.VARIANT_PREFIX + wallpaper.getName(), 0
+    );
+    if (variantIndex > wallpaper.getVariants().length) {
+      variantIndex = 0;
     }
 
     if (isNightMode()) {
-      variant = wallpaper.getDarkVariants()[var - 1];
+      variant = wallpaper.getDarkVariants()[variantIndex];
       svgDrawable = wallpaper.getPreparedSvg(
-          new SvgDrawable(this, variant.getSvgResId()), var, true
+          new SvgDrawable(this, variant.getSvgResId()), variantIndex, true
       );
     } else {
-      variant = wallpaper.getVariants()[var - 1];
+      variant = wallpaper.getVariants()[variantIndex];
       svgDrawable = wallpaper.getPreparedSvg(
-          new SvgDrawable(this, variant.getSvgResId()), var, false
+          new SvgDrawable(this, variant.getSvgResId()), variantIndex, false
       );
     }
 
@@ -374,9 +378,27 @@ public class LiveWallpaperService extends WallpaperService {
     @Override
     public WallpaperColors onComputeColors() {
       if (VERSION.SDK_INT >= VERSION_CODES.O_MR1) {
-        return variant.getWallpaperColors(!isNightMode() && useWhiteText);
+        boolean isNightMode = isNightMode();
+        return variant.getWallpaperColors(
+            getThemeColor(0, isNightMode),
+            getThemeColor(1, isNightMode),
+            getThemeColor(2, isNightMode),
+            !isNightMode() && useWhiteText
+        );
       } else {
         return super.onComputeColors();
+      }
+    }
+
+    private int getThemeColor(int priority, boolean isNightMode) {
+      String colorHex = sharedPrefs.getString(
+          Constants.getThemeColorPref(wallpaper.getName(), variantIndex, priority, isNightMode),
+          null
+      );
+      if (colorHex != null) {
+        return Color.parseColor(colorHex);
+      } else {
+        return variant.getColor(priority);
       }
     }
 
@@ -399,6 +421,23 @@ public class LiveWallpaperService extends WallpaperService {
 
       svgDrawable.applyRandomZoomRotationToAll(-zoomRotation, zoomRotation);
 
+      updateOffset(true, null);
+    }
+
+    @Override
+    public void onOffsetsChanged(
+        float xOffset,
+        float yOffset,
+        float xStep,
+        float yStep,
+        int xPixels,
+        int yPixels
+    ) {
+      if (isRtl && !isPreview) {
+        offsetX = xOffset - 1;
+      } else {
+        offsetX = xOffset;
+      }
       updateOffset(true, null);
     }
 
@@ -513,23 +552,6 @@ public class LiveWallpaperService extends WallpaperService {
       svgDrawable.setScale(scale);
 
       colorsHaveChanged();
-    }
-
-    @Override
-    public void onOffsetsChanged(
-        float xOffset,
-        float yOffset,
-        float xStep,
-        float yStep,
-        int xPixels,
-        int yPixels
-    ) {
-      if (isRtl && !isPreview) {
-        offsetX = xOffset - 1;
-      } else {
-        offsetX = xOffset;
-      }
-      updateOffset(true, null);
     }
 
     @SuppressWarnings("SuspiciousNameCombination")

@@ -76,7 +76,7 @@ public class AnthonyWallpaper extends BaseWallpaper {
             R.raw.wallpaper_anthony1_dark,
             "#212121",
             "#5b5a5a",
-            null,
+            "#5b5a5a",
             false,
             true
         ),

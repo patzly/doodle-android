@@ -44,9 +44,7 @@
       android:id="@+id/linear_colors_container"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:orientation="vertical"
-      android:paddingTop="16dp"
-      android:paddingBottom="16dp">
+      android:orientation="vertical">
 
       <HorizontalScrollView
         android:layout_width="match_parent"
@@ -67,6 +65,15 @@
           android:paddingBottom="16dp" />
 
       </HorizontalScrollView>
+
+      <TextView
+        style="@style/Widget.Doodle.TextView.Paragraph"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/appearance_colors_info"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp" />
 
     </LinearLayout>
 

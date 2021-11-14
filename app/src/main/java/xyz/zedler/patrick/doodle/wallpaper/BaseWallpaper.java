@@ -26,10 +26,10 @@ import android.graphics.Color;
 import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.annotation.RawRes;
 import androidx.annotation.RequiresApi;
 import androidx.core.graphics.ColorUtils;
+import java.util.Arrays;
 import xyz.zedler.patrick.doodle.drawable.SvgDrawable;
 
 public abstract class BaseWallpaper {
@@ -37,50 +37,46 @@ public abstract class BaseWallpaper {
   public static class WallpaperVariant {
 
     private final int svgResId;
-    private int primaryColor, secondaryColor, tertiaryColor;
-    private String[] colors;
+    private final String primaryColor;
+    private final String secondaryColor;
+    private final String tertiaryColor;
+    private final String[] otherColors;
     private final boolean isDarkTextSupported;
     private final boolean isDarkThemeSupported;
 
     public WallpaperVariant(
         @RawRes int resId,
         @NonNull String primary,
-        @Nullable String secondary,
-        @Nullable String tertiary,
+        @NonNull String secondary,
+        @NonNull String tertiary,
         boolean isDarkTextSupported,
         boolean isDarkThemeSupported
     ) {
-      svgResId = resId;
-      primaryColor = Color.parseColor(primary);
-      if (secondary != null) {
-        secondaryColor = Color.parseColor(secondary);
-      }
-      if (tertiary != null) {
-        tertiaryColor = Color.parseColor(tertiary);
-      }
-      colors = new String[]{"#000000"};
-      this.isDarkTextSupported = isDarkTextSupported;
-      this.isDarkThemeSupported = isDarkThemeSupported;
+      this(
+          resId,
+          primary,
+          secondary,
+          tertiary,
+          new String[]{"#000000"},
+          isDarkTextSupported,
+          isDarkThemeSupported
+      );
     }
 
     public WallpaperVariant(
         @RawRes int resId,
         @NonNull String primary,
-        @Nullable String secondary,
-        @Nullable String tertiary,
+        @NonNull String secondary,
+        @NonNull String tertiary,
         @NonNull String[] colors,
         boolean isDarkTextSupported,
         boolean isDarkThemeSupported
     ) {
       svgResId = resId;
-      primaryColor = Color.parseColor(primary);
-      if (secondary != null) {
-        secondaryColor = Color.parseColor(secondary);
-      }
-      if (tertiary != null) {
-        tertiaryColor = Color.parseColor(tertiary);
-      }
-      this.colors = colors;
+      primaryColor = primary;
+      secondaryColor = secondary;
+      tertiaryColor = tertiary;
+      this.otherColors = colors;
       this.isDarkTextSupported = isDarkTextSupported;
       this.isDarkThemeSupported = isDarkThemeSupported;
     }
@@ -89,24 +85,51 @@ public abstract class BaseWallpaper {
       return svgResId;
     }
 
+    public int getColor(int priority) {
+      switch (priority) {
+        case 1:
+          return Color.parseColor(secondaryColor);
+        case 2:
+          return Color.parseColor(tertiaryColor);
+        default:
+          return Color.parseColor(primaryColor);
+      }
+    }
+
+    public String getColorHex(int priority) {
+      switch (priority) {
+        case 1:
+          return secondaryColor;
+        case 2:
+          return tertiaryColor;
+        default:
+          return primaryColor;
+      }
+    }
+
     public int getPrimaryColor() {
-      return primaryColor;
+      return Color.parseColor(primaryColor);
     }
 
     public int getSecondaryColor() {
-      return secondaryColor;
+      return Color.parseColor(secondaryColor);
     }
 
     public int getTertiaryColor() {
-      return tertiaryColor;
+      return Color.parseColor(tertiaryColor);
     }
 
     public String[] getColors() {
-      return colors;
+      String[] main = new String[]{primaryColor, secondaryColor, tertiaryColor};
+      String[] all = Arrays.copyOf(main, main.length + otherColors.length);
+      System.arraycopy(otherColors, 0, all, main.length, otherColors.length);
+      return all;
     }
 
     @RequiresApi(api = VERSION_CODES.O_MR1)
-    public WallpaperColors getWallpaperColors(boolean useWhiteText) {
+    public WallpaperColors getWallpaperColors(
+        int primary, int secondary, int tertiary, boolean useWhiteText
+    ) {
       if (VERSION.SDK_INT >= 31) {
         int hints = 0;
         if (!useWhiteText && isDarkTextSupported) {
@@ -116,23 +139,23 @@ public abstract class BaseWallpaper {
           hints |= WallpaperColors.HINT_SUPPORTS_DARK_THEME;
         }
         return new WallpaperColors(
-            Color.valueOf(primaryColor),
-            secondaryColor != 0 ? Color.valueOf(secondaryColor) : null,
-            tertiaryColor != 0 ? Color.valueOf(tertiaryColor) : null,
+            Color.valueOf(primary),
+            secondary != 0 ? Color.valueOf(secondary) : null,
+            tertiary != 0 ? Color.valueOf(tertiary) : null,
             hints
         );
       } else {
         if (useWhiteText) {
           float[] hsl = new float[3];
-          ColorUtils.colorToHSL(primaryColor, hsl);
+          ColorUtils.colorToHSL(primary, hsl);
           hsl[2] = 0.7f;
-          primaryColor = ColorUtils.HSLToColor(hsl);
+          primary = ColorUtils.HSLToColor(hsl);
         }
         // Fix required for older versions, color constructor only calculates dark theme support
         // We need a way to set dark text support, the bitmap method calls the calculation method
         // Bitmap is more efficient than Drawable here because Drawable would be converted to Bitmap
         Bitmap bitmap = Bitmap.createBitmap(10, 10, Bitmap.Config.ARGB_8888);
-        new Canvas(bitmap).drawColor(primaryColor);
+        new Canvas(bitmap).drawColor(primary);
         return WallpaperColors.fromBitmap(bitmap);
       }
     }

@@ -32,6 +32,7 @@ import java.util.Objects;
 import xyz.zedler.patrick.doodle.activity.MainActivity;
 import xyz.zedler.patrick.doodle.databinding.FragmentBottomsheetColorsBinding;
 import xyz.zedler.patrick.doodle.fragment.AppearanceFragment;
+import xyz.zedler.patrick.doodle.util.ViewUtil;
 
 public class ColorsBottomSheetDialogFragment extends BaseBottomSheetDialogFragment {
 
@@ -59,6 +60,7 @@ public class ColorsBottomSheetDialogFragment extends BaseBottomSheetDialogFragme
       card.setCardBackgroundColor(Color.parseColor(colors[iFinal]));
       card.setOnClickListener(v -> {
         if (!card.isChecked()) {
+          ViewUtil.startIcon(card.getCheckedIcon());
           performHapticClick();
           AppearanceFragment.uncheckAllChildren(binding.linearColorsContainerColors);
           card.setChecked(true);

@@ -60,6 +60,10 @@ public class PixelWallpaper extends BaseWallpaper {
             "#232323",
             "#f2c5b1",
             "#bdd6bd",
+            new String[]{
+                "#f58551", "#b5b1a3", "#9393c1", "#fde8ca",
+                "#3a3837", "#ddc1b3", "#ff9052"
+            },
             false,
             true
         ),
@@ -106,6 +110,7 @@ public class PixelWallpaper extends BaseWallpaper {
         "#272628",
         "#ff9052",
         "#bdd6bd",
+        new String[]{"#9393c1", "#ddc1b3"},
         false,
         true
     );

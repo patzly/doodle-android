@@ -23,8 +23,14 @@ public final class Constants {
 
   public final static String VARIANT_PREFIX = "variant_";
   public final static String COLOR_PREFIX = "color_";
-  // e.g. color_floral_1_0 (Floral, first variant, primary color)
-  // e.g. color_pixel_2_2_dark (Pixel, second variant, tertiary color, dark mode)
+  // e.g. color_floral_0_0 (Floral, first variant, primary color)
+  // e.g. color_pixel_1_2_dark (Pixel, second variant, tertiary color, dark mode)
+
+  public static String getThemeColorPref(
+      String wallpaperName, int variant, int priority, boolean isNight
+  ) {
+    return COLOR_PREFIX + wallpaperName + "_" + variant + "_" + priority + (isNight ? "_dark" : "");
+  }
 
   public final static class PREF {
 

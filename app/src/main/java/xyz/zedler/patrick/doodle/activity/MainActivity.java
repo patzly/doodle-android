@@ -30,6 +30,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.content.res.ColorStateList;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Build;
@@ -66,6 +67,7 @@ import xyz.zedler.patrick.doodle.service.LiveWallpaperService;
 import xyz.zedler.patrick.doodle.util.HapticUtil;
 import xyz.zedler.patrick.doodle.util.LocaleUtil;
 import xyz.zedler.patrick.doodle.util.PrefsUtil;
+import xyz.zedler.patrick.doodle.util.ResUtil;
 import xyz.zedler.patrick.doodle.util.SystemUiUtil;
 import xyz.zedler.patrick.doodle.util.ViewUtil;
 
@@ -149,6 +151,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
       setFabVisibility(!isServiceRunning, false);
       return insets;
     });
+
+    binding.fabMain.setRippleColor(ColorStateList.valueOf(ResUtil.getColorAttr(this, R.attr.colorOnTertiaryContainer, 0.07f)));
 
     ViewUtil.setOnClickListeners(
         this,

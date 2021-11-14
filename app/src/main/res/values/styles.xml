@@ -59,7 +59,8 @@
     <item name="android:layout_height">1dp</item>
     <item name="android:layout_marginTop">8dp</item>
     <item name="android:layout_marginBottom">8dp</item>
-    <item name="android:background">@color/selector_outline_secondary</item>
+    <item name="android:background">?attr/colorOutline</item>
+    <item name="android:alpha">0.4</item>
   </style>
 
   <style name="Widget.Doodle.ImageView.Icon" parent="">
@@ -137,7 +138,6 @@
     parent="Widget.Material3.ExtendedFloatingActionButton.Tertiary">
     <item name="android:textSize">@dimen/m3_sys_typescale_label_large_text_size</item>
     <item name="android:fontFamily">@font/jost_medium</item>
-    <item name="rippleColor">@color/selector_highlight_inverse</item>
   </style>
 
   <!-- LIST -->
@@ -293,8 +293,8 @@
     <item name="android:textSize">@dimen/m3_sys_typescale_body_small_text_size</item>
     <item name="android:letterSpacing">0.1</item>
     <item name="android:textStyle">bold</item>
-    <item name="android:textColor">@color/selector_on_background_secondary</item>
     <item name="android:textAllCaps">true</item>
+    <item name="android:alpha">0.5</item>
   </style>
 
   <style name="Widget.Doodle.TextView.ListItem.Title" parent="Widget.Doodle.TextView">
@@ -306,7 +306,7 @@
   <style name="Widget.Doodle.TextView.ListItem.Description" parent="Widget.Doodle.TextView">
     <item name="android:layout_width">match_parent</item>
     <item name="android:layout_height">wrap_content</item>
-    <item name="android:textColor">@color/selector_on_background_secondary</item>
+    <item name="android:alpha">0.5</item>
   </style>
 
   <style name="TextAppearance.Doodle.Toolbar.Title" parent="TextAppearance.Material3.TitleLarge">

@@ -242,7 +242,7 @@ public class ScrollBehavior {
   private int getAppBarLayoutColor() {
     Drawable background = appBarLayout.getBackground();
     if (background == null || background.getClass() != ColorDrawable.class) {
-      appBarLayout.setBackgroundColor(ResUtil.getBgColor(activity));
+      appBarLayout.setBackgroundColor(ResUtil.getColorBg(activity));
     }
     return ((ColorDrawable) appBarLayout.getBackground()).getColor();
   }

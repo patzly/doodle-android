@@ -36,6 +36,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RawRes;
 import androidx.annotation.StringRes;
+import androidx.core.graphics.ColorUtils;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -119,9 +120,23 @@ public class ResUtil {
     return typedValue.data;
   }
 
-  public static int getBgColor(Context context) {
+  public static int getColorAttr(Context context, @AttrRes int resId, float alpha) {
+    return ColorUtils.setAlphaComponent(getColorAttr(context, resId), (int) (alpha * 255));
+  }
+
+  public static int getColorBg(Context context) {
     TypedValue typedValue = new TypedValue();
     context.getTheme().resolveAttribute(android.R.attr.colorBackground, typedValue, true);
     return typedValue.data;
+  }
+
+  public static int getColorOutlineSecondary(Context context) {
+    TypedValue typedValue = new TypedValue();
+    context.getTheme().resolveAttribute(R.attr.colorOutline, typedValue, true);
+    return ColorUtils.blendARGB(getColorBg(context), typedValue.data, 0.4f);
+  }
+
+  public static int getColorHighlight(Context context) {
+    return getColorAttr(context, R.attr.colorSecondary, 0.09f);
   }
 }

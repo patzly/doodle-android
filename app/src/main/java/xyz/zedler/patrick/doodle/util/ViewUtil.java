@@ -47,7 +47,6 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.elevation.SurfaceColors;
 import java.util.Arrays;
-import xyz.zedler.patrick.doodle.R;
 
 public class ViewUtil {
 
@@ -182,7 +181,7 @@ public class ViewUtil {
     valueAnimator.addUpdateListener(animation -> {
       cardView.setStrokeColor(
           ColorUtils.blendARGB(
-              ContextCompat.getColor(context, R.color.selector_outline_secondary),
+              ResUtil.getColorOutlineSecondary(context),
               ContextCompat.getColor(context, resId),
               (float) valueAnimator.getAnimatedValue()
           )
@@ -216,7 +215,7 @@ public class ViewUtil {
     ShapeDrawable shape = new ShapeDrawable(rect);
     shape.getPaint().setColor(SurfaceColors.SURFACE_1.getColor(context));
     return new RippleDrawable(
-        ColorStateList.valueOf(ContextCompat.getColor(context, R.color.selector_highlight)),
+        ColorStateList.valueOf(ResUtil.getColorHighlight(context)),
         null,
         new InsetDrawable(
             shape,
@@ -235,9 +234,7 @@ public class ViewUtil {
     ShapeDrawable shape = new ShapeDrawable(rect);
     shape.getPaint().setColor(SurfaceColors.SURFACE_1.getColor(context));
     return new RippleDrawable(
-        ColorStateList.valueOf(ContextCompat.getColor(context, R.color.selector_highlight)),
-        null,
-        shape
+        ColorStateList.valueOf(ResUtil.getColorHighlight(context)), null, shape
     );
   }
 }

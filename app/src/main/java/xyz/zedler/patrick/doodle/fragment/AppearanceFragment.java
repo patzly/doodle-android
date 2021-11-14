@@ -21,6 +21,7 @@ package xyz.zedler.patrick.doodle.fragment;
 
 import android.animation.ValueAnimator;
 import android.app.Activity;
+import android.content.res.ColorStateList;
 import android.content.res.Configuration;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -392,8 +393,8 @@ public class AppearanceFragment extends BaseFragment
     card.setCheckable(true);
     card.setStrokeColor(ResUtil.getColorAttr(activity, R.attr.colorOutline));
     card.setStrokeWidth(SystemUiUtil.dpToPx(activity, 2));
-    card.setRippleColorResource(R.color.selector_highlight);
-    card.setCardBackgroundColor(ResUtil.getBgColor(activity));
+    card.setRippleColor(ColorStateList.valueOf(ResUtil.getColorHighlight(activity)));
+    card.setCardBackgroundColor(ResUtil.getColorBg(activity));
     card.setCheckedIcon(
         ResourcesCompat.getDrawable(
             activity.getResources(), R.drawable.ic_round_check_circle_anim, null

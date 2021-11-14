@@ -716,9 +716,6 @@ public class LiveWallpaperService extends WallpaperService {
         // NullPointerException on many devices!?
         try {
           notifyColorsChanged();
-          // We have to call it again to take any effect, causes a warning...
-          // Is the recall bad for dynamic colors in Android 12?
-          notifyColorsChanged();
         } catch (Exception e) {
           Log.e(TAG, "colorsHaveChanged: ", e);
         }

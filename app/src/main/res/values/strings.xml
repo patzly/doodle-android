@@ -82,11 +82,13 @@
   <string name="appearance_white_text">Force white text with shadow</string>
   <string name="appearance_white_text_description">May affect readability</string>
   <string name="appearance_colors">Extracted colors</string>
-  <string name="appearance_colors_description">Used by the system\'s theming engine</string>
+  <string name="appearance_colors_description">Used for calculating text contrast</string>
+  <string name="appearance_colors_description_dynamic">Used by the system\'s theming engine</string>
   <string name="appearance_colors_primary">Choose primary color</string>
   <string name="appearance_colors_secondary">Choose secondary color</string>
   <string name="appearance_colors_tertiary">Choose tertiary color</string>
-  <string name="appearance_colors_info">On supported devices with Android 12, the three selected colors are used to automatically create a system-wide color theme.</string>
+  <string name="appearance_colors_info">On devices without dynamic color support (Android 11 or lower), only the primary color is used to calculate the launcher text contrast and tinting the recent apps screen\'s background.</string>
+  <string name="appearance_colors_info_dynamic">On devices with Android 12 and dynamic color support, the three selected colors are used to automatically create a system-wide color theme.</string>
 
   <!-- PARALLAX -->
 

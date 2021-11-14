@@ -246,8 +246,8 @@
             android:paddingEnd="16dp"/>
 
           <TextView
+            android:id="@+id/text_appearance_colors_description"
             style="@style/Widget.Doodle.TextView.ListItem.Description"
-            android:text="@string/appearance_colors_description"
             android:paddingStart="0dp"
             android:paddingEnd="16dp"/>
 

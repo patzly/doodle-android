@@ -71,9 +71,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/appearance_colors_info"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp" />
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="16dp" />
+
+      <TextView
+        style="@style/Widget.Doodle.TextView.Paragraph"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/appearance_colors_info_dynamic"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="16dp" />
 
     </LinearLayout>
 

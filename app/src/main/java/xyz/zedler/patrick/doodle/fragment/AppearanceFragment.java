@@ -24,6 +24,7 @@ import android.app.Activity;
 import android.content.res.ColorStateList;
 import android.content.res.Configuration;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -154,7 +155,12 @@ public class AppearanceFragment extends BaseFragment
     );
 
     setUpDesignSelections();
-    if (DynamicColors.isDynamicColorAvailable()) {
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O_MR1) {
+      binding.textAppearanceColorsDescription.setText(
+          DynamicColors.isDynamicColorAvailable()
+              ? R.string.appearance_colors_description_dynamic
+              : R.string.appearance_colors_description
+      );
       setUpColorsContainer();
     } else {
       binding.linearAppearanceColors.setVisibility(View.GONE);
@@ -354,7 +360,7 @@ public class AppearanceFragment extends BaseFragment
           card.setChecked(true);
           currentVariant = variant;
           currentVariantIndex = iFinal;
-          if (DynamicColors.isDynamicColorAvailable()) {
+          if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O_MR1) {
             refreshColors(); // reload theme colors
           }
           getSharedPrefs().edit()
@@ -375,7 +381,7 @@ public class AppearanceFragment extends BaseFragment
         binding.linearAppearanceVariantContainer.addView(card);
       }
     }
-    if (DynamicColors.isDynamicColorAvailable()) {
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O_MR1) {
       refreshColors(); // reload theme colors
     }
   }

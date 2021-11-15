@@ -28,14 +28,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.view.ViewGroup.LayoutParams;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
-import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.view.ContextThemeWrapper;
-import androidx.core.content.res.ResourcesCompat;
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.color.DynamicColors;
 import com.google.android.material.snackbar.Snackbar;
@@ -240,18 +237,11 @@ public class OtherFragment extends BaseFragment
       }
 
       MaterialCardView card = ViewUtil.getSelectionCard(activity);
-      ImageView thumbnail = new ImageView(activity);
-      thumbnail.setLayoutParams(
-          new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT)
-      );
-      thumbnail.setImageDrawable(
-          ResourcesCompat.getDrawable(
-              getResources(),
-              R.drawable.selection_theme,
-              new ContextThemeWrapper(activity, resId).getTheme()
+      card.setCardBackgroundColor(
+          ResUtil.getColorAttr(
+              new ContextThemeWrapper(activity, resId), R.attr.colorPrimaryContainer
           )
       );
-      card.addView(thumbnail);
       card.setOnClickListener(v -> {
         if (!card.isChecked()) {
           ViewUtil.startIcon(card.getCheckedIcon());

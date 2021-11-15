@@ -161,7 +161,7 @@
           android:id="@+id/image_other_theme"
           style="@style/Widget.Doodle.ImageView.ListItem.Icon"
           android:layout_marginEnd="32dp"
-          android:src="@drawable/ic_round_colorize_anim"
+          android:src="@drawable/ic_round_palette_anim"
           tools:ignore="ContentDescription" />
 
         <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">

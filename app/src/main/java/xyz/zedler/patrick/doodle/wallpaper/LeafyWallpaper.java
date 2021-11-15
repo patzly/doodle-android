@@ -88,7 +88,7 @@ public class LeafyWallpaper extends BaseWallpaper {
             "#0d0f1c",
             "#7c413d",
             "#5b71a2",
-            new String[]{"#0d0f1c", "#17152a", "#905750", "#7c413d", "#2a315f", "#5b71a2"},
+            new String[]{"#17152a", "#905750", "#2a315f"},
             false,
             true
         )

@@ -219,11 +219,15 @@ public class AppearanceFragment extends BaseFragment
           ),
           300
       );
+      refreshDarkLightVariant();
+      refreshColors();
       activity.requestThemeRefresh();
     } else if (id == R.id.switch_appearance_follow_system) {
       ViewUtil.startIcon(binding.imageAppearanceFollowSystem);
       performHapticClick();
       getSharedPrefs().edit().putBoolean(PREF.FOLLOW_SYSTEM, isChecked).apply();
+      refreshDarkLightVariant();
+      refreshColors();
       activity.requestThemeRefresh();
     } else if (id == R.id.switch_appearance_white_text) {
       performHapticClick();
@@ -360,9 +364,7 @@ public class AppearanceFragment extends BaseFragment
           card.setChecked(true);
           currentVariant = variant;
           currentVariantIndex = iFinal;
-          if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O_MR1) {
-            refreshColors(); // reload theme colors
-          }
+          refreshColors();
           getSharedPrefs().edit()
               .putInt(Constants.VARIANT_PREFIX + wallpaper.getName(), iFinal)
               .apply();
@@ -381,9 +383,7 @@ public class AppearanceFragment extends BaseFragment
         binding.linearAppearanceVariantContainer.addView(card);
       }
     }
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O_MR1) {
-      refreshColors(); // reload theme colors
-    }
+    refreshColors();
   }
 
   public static MaterialCardView getNewSelectionCard(Activity activity) {
@@ -458,23 +458,13 @@ public class AppearanceFragment extends BaseFragment
         Constants.getThemeColorPref(
             currentWallpaper.getName(), currentVariantIndex, priority, isWallpaperNightMode()
         ),
-        null
+        currentVariant.getColorHex(priority)
     );
     int color;
     if (colorHex != null) {
       color = Color.parseColor(colorHex);
     } else {
-      switch (priority) {
-        case 1:
-          color = currentVariant.getSecondaryColor();
-          break;
-        case 2:
-          color = currentVariant.getTertiaryColor();
-          break;
-        default:
-          color = currentVariant.getPrimaryColor();
-          break;
-      }
+      color = currentVariant.getColor(priority);
     }
     MaterialCardView card
         = (MaterialCardView) binding.linearAppearanceColorsContainer.getChildAt(priority);
@@ -496,9 +486,17 @@ public class AppearanceFragment extends BaseFragment
   }
 
   private void refreshColors() {
-    refreshColor(0, true);
-    refreshColor(1, true);
-    refreshColor(2, true);
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O_MR1) {
+      refreshColor(0, true);
+      refreshColor(1, true);
+      refreshColor(2, true);
+    }
+  }
+
+  private void refreshDarkLightVariant() {
+    currentVariant = isWallpaperNightMode()
+        ? currentWallpaper.getDarkVariants()[currentVariantIndex]
+        : currentWallpaper.getVariants()[currentVariantIndex];
   }
 
   public void setColor(int priority, String color) {

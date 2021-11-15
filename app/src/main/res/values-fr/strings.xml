@@ -72,10 +72,13 @@
   <string name="appearance_white_text">Forcer le texte blanc avec une ombre</string>
   <string name="appearance_white_text_description">Peut affecter la lisibilité</string>
   <string name="appearance_colors">Couleurs extraites</string>
-  <string name="appearance_colors_description">Utilisé par le moteur de thèmes du système</string>
+  <string name="appearance_colors_description">Utilisé pour calculer le contraste du texte</string>
+  <string name="appearance_colors_description_dynamic">Utilisé par le moteur de thèmes du système</string>
   <string name="appearance_colors_primary">Choisissez la couleur primaire</string>
   <string name="appearance_colors_secondary">Choisissez la couleur secondaire</string>
   <string name="appearance_colors_tertiary">Choisissez la couleur tertiaire</string>
+  <string name="appearance_colors_info">Sur les appareils sans prise en charge des couleurs dynamiques (Android 11 ou inférieur), seule la couleur principale est utilisée pour calculer le contraste du texte du lanceur et teinter l\'arrière-plan de l\'écran des applications récentes.</string>
+  <string name="appearance_colors_info_dynamic">Sur les appareils équipés d\'Android 12 ou version ultérieure et prenant en charge les couleurs dynamiques, les trois couleurs sélectionnées sont utilisées pour créer automatiquement un thème de couleurs à l\'échelle du système.</string>
 
   <!-- PARALLAX -->
 
@@ -127,6 +130,8 @@
   <string name="other_gpu_info">L\'accélération matérielle n\'est disponible pour Doodle qu\'à partir d\'Android 8. Les animations de fond d\'écran pourraient donc être un peu saccadées.</string>
   <string name="other_launcher">Masquer l\'icône dans le lanceur d\'applications</string>
   <string name="other_launcher_description">Les paramètres ne seront accessibles que dans le sélecteur de fonds d\'écran animés de votre système</string>
+  <string name="other_theme">Thème de couleur de l\'application</string>
+  <string name="other_theme_description">Essayez un autre look</string>
   <string name="other_reset">Réinitialiser tous les réglages</string>
   <string name="other_reset_description">Fait plus que la désinstallation ne le ferait car les préférences sont stockées à un endroit spécial afin d\'être accessibles directement après le démarrage de l\'appareil</string>
 

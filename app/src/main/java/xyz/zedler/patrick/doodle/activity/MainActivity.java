@@ -50,12 +50,14 @@ import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
 import androidx.navigation.NavController;
 import androidx.navigation.NavDirections;
 import androidx.navigation.fragment.NavHostFragment;
+import com.google.android.material.color.DynamicColors;
 import com.google.android.material.snackbar.Snackbar;
 import java.util.Locale;
 import xyz.zedler.patrick.doodle.BuildConfig;
 import xyz.zedler.patrick.doodle.Constants.ACTION;
 import xyz.zedler.patrick.doodle.Constants.DEF;
 import xyz.zedler.patrick.doodle.Constants.PREF;
+import xyz.zedler.patrick.doodle.Constants.THEME;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.behavior.SystemBarBehavior;
 import xyz.zedler.patrick.doodle.databinding.ActivityMainBinding;
@@ -110,6 +112,23 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     resApp.updateConfiguration(configApp, getResources().getDisplayMetrics());
 
     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
+
+    if (!DynamicColors.isDynamicColorAvailable()) {
+      switch (sharedPrefs.getString(PREF.THEME, DEF.THEME)) {
+        case THEME.YELLOW:
+          setTheme(R.style.Theme_Doodle_Yellow);
+          break;
+        case THEME.GREEN:
+          setTheme(R.style.Theme_Doodle_Green);
+          break;
+        case THEME.BLUE:
+          setTheme(R.style.Theme_Doodle_Blue);
+          break;
+        default:
+          setTheme(R.style.Theme_Doodle_Red);
+          break;
+      }
+    }
 
     super.onCreate(savedInstanceState);
 
@@ -296,12 +315,12 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
   public void restartToApply(long delay) {
     new Handler().postDelayed(() -> {
       Intent intent = new Intent(this, MainActivity.class);
-      intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
       if (isStartedFromLauncher()) {
         intent.addCategory(Intent.CATEGORY_LAUNCHER);
       }
-      startActivity(intent);
       finishAndRemoveTask();
+      startActivity(intent);
+      overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }, delay);
   }
 

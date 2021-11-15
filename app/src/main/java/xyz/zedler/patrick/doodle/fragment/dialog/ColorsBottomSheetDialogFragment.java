@@ -56,13 +56,13 @@ public class ColorsBottomSheetDialogFragment extends BaseBottomSheetDialogFragme
 
     for (int i = 0; i < colors.length; i++) {
       final int iFinal = i;
-      MaterialCardView card = AppearanceFragment.getNewSelectionCard(requireActivity());
+      MaterialCardView card = ViewUtil.getSelectionCard(requireActivity());
       card.setCardBackgroundColor(Color.parseColor(colors[iFinal]));
       card.setOnClickListener(v -> {
         if (!card.isChecked()) {
           ViewUtil.startIcon(card.getCheckedIcon());
           performHapticClick();
-          AppearanceFragment.uncheckAllChildren(binding.linearColorsContainerColors);
+          ViewUtil.uncheckAllChildren(binding.linearColorsContainerColors);
           card.setChecked(true);
           Fragment current = activity.getCurrentFragment();
           if (current instanceof AppearanceFragment) {

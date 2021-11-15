@@ -20,8 +20,6 @@
 package xyz.zedler.patrick.doodle.fragment;
 
 import android.animation.ValueAnimator;
-import android.app.Activity;
-import android.content.res.ColorStateList;
 import android.content.res.Configuration;
 import android.graphics.Color;
 import android.os.Build;
@@ -37,10 +35,8 @@ import android.view.ViewGroup.LayoutParams;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.core.content.res.ResourcesCompat;
 import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.color.DynamicColors;
@@ -54,7 +50,6 @@ import xyz.zedler.patrick.doodle.behavior.ScrollBehavior;
 import xyz.zedler.patrick.doodle.behavior.SystemBarBehavior;
 import xyz.zedler.patrick.doodle.databinding.FragmentAppearanceBinding;
 import xyz.zedler.patrick.doodle.util.ResUtil;
-import xyz.zedler.patrick.doodle.util.SystemUiUtil;
 import xyz.zedler.patrick.doodle.util.ViewUtil;
 import xyz.zedler.patrick.doodle.wallpaper.AnthonyWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.BaseWallpaper;
@@ -266,7 +261,7 @@ public class AppearanceFragment extends BaseFragment
       }
 
       for (BaseWallpaper wallpaper : baseWallpapers) {
-        MaterialCardView card = getNewSelectionCard(activity);
+        MaterialCardView card = ViewUtil.getSelectionCard(activity);
         ImageView thumbnail = new ImageView(activity);
         thumbnail.setLayoutParams(
             new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT)
@@ -278,7 +273,7 @@ public class AppearanceFragment extends BaseFragment
             ViewUtil.startIcon(binding.imageAppearanceWallpaper);
             ViewUtil.startIcon(card.getCheckedIcon());
             performHapticClick();
-            uncheckAllChildren(
+            ViewUtil.uncheckAllChildren(
                 binding.linearAppearanceWallpaperContainerDoodle,
                 binding.linearAppearanceWallpaperContainerMonet,
                 binding.linearAppearanceWallpaperContainerAnna
@@ -338,9 +333,9 @@ public class AppearanceFragment extends BaseFragment
       if (sameCount) {
         MaterialCardView child
             = (MaterialCardView) binding.linearAppearanceVariantContainer.getChildAt(i);
-        card = child != null ? child : getNewSelectionCard(activity);
+        card = child != null ? child : ViewUtil.getSelectionCard(activity);
       } else {
-        card = getNewSelectionCard(activity);
+        card = ViewUtil.getSelectionCard(activity);
       }
 
       if (sameCount) {
@@ -360,7 +355,7 @@ public class AppearanceFragment extends BaseFragment
           ViewUtil.startIcon(binding.imageAppearanceVariant);
           ViewUtil.startIcon(card.getCheckedIcon());
           performHapticClick();
-          uncheckAllChildren(binding.linearAppearanceVariantContainer);
+          ViewUtil.uncheckAllChildren(binding.linearAppearanceVariantContainer);
           card.setChecked(true);
           currentVariant = variant;
           currentVariantIndex = iFinal;
@@ -386,39 +381,11 @@ public class AppearanceFragment extends BaseFragment
     refreshColors();
   }
 
-  public static MaterialCardView getNewSelectionCard(Activity activity) {
-    int size = SystemUiUtil.dpToPx(activity, 48);
-    MaterialCardView card = new MaterialCardView(activity);
-    LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(size, size);
-    if (ResUtil.isLayoutRtl(activity)) {
-      params.leftMargin = SystemUiUtil.dpToPx(activity, 12);
-    } else {
-      params.rightMargin = SystemUiUtil.dpToPx(activity, 12);
-    }
-    card.setLayoutParams(params);
-    card.setCheckable(true);
-    card.setStrokeColor(ResUtil.getColorAttr(activity, R.attr.colorOutline));
-    card.setStrokeWidth(SystemUiUtil.dpToPx(activity, 2));
-    card.setRippleColor(ColorStateList.valueOf(ResUtil.getColorHighlight(activity)));
-    card.setCardBackgroundColor(ResUtil.getColorBg(activity));
-    card.setCheckedIcon(
-        ResourcesCompat.getDrawable(
-            activity.getResources(), R.drawable.ic_round_check_circle_anim, null
-        )
-    );
-    card.setCheckedIconTint(null);
-    card.setCheckedIconSize(size);
-    card.setCheckedIconMargin(0);
-    card.setCardElevation(0);
-    card.setRadius(SystemUiUtil.dpToPx(activity, 16));
-    return card;
-  }
-
   private void setUpColorsContainer() {
     binding.linearAppearanceColorsContainer.removeAllViews();
     for (int i = 0; i < 3; i++) {
       final int iFinal = i;
-      MaterialCardView card = getNewSelectionCard(activity);
+      MaterialCardView card = ViewUtil.getSelectionCard(activity);
       card.setCardBackgroundColor(Color.BLACK);
       card.setOnClickListener(v -> {
         ViewUtil.startIcon(binding.imageAppearanceColors);
@@ -518,16 +485,5 @@ public class AppearanceFragment extends BaseFragment
     }
     int flags = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
     return nightMode && flags == Configuration.UI_MODE_NIGHT_YES;
-  }
-
-  public static void uncheckAllChildren(ViewGroup... viewGroups) {
-    for (ViewGroup viewGroup : viewGroups) {
-      for (int i = 0; i < viewGroup.getChildCount(); i++) {
-        View child = viewGroup.getChildAt(i);
-        if (child instanceof MaterialCardView) {
-          ((MaterialCardView) child).setChecked(false);
-        }
-      }
-    }
   }
 }

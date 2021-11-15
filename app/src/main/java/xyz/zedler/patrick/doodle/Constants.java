@@ -45,6 +45,7 @@ public final class Constants {
     public final static String NIGHT_MODE = "night_mode";
     public final static String FOLLOW_SYSTEM = "follow_system";
     public final static String USE_WHITE_TEXT = "use_white_text";
+    public final static String THEME = "app_theme";
 
     // Parallax
 
@@ -80,6 +81,7 @@ public final class Constants {
     public final static boolean NIGHT_MODE = true;
     public final static boolean FOLLOW_SYSTEM = true;
     public final static boolean USE_WHITE_TEXT = false;
+    public final static String THEME = "red";
     public final static boolean TILT = false;
     public final static int REFRESH_RATE = 30000;
     public final static int ZOOM = 2;
@@ -139,5 +141,13 @@ public final class Constants {
 
     public final static String THEME_CHANGED = "action_theme_changed";
     public final static String SETTINGS_CHANGED = "action_settings_changed";
+  }
+
+  public final static class THEME {
+
+    public final static String GREEN = "green";
+    public final static String YELLOW = "yellow";
+    public final static String RED = "red";
+    public final static String BLUE = "blue";
   }
 }

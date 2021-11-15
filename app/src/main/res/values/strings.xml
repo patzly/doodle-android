@@ -140,6 +140,8 @@
   <string name="other_gpu_info">Hardware acceleration is only available for Doodle starting with Android 8. The wallpaper animations might therefore be a bit jerky.</string>
   <string name="other_launcher">Hide icon in launcher</string>
   <string name="other_launcher_description">Settings will only be accessible in your system\'s live wallpaper picker</string>
+  <string name="other_theme">App color theme</string>
+  <string name="other_theme_description">Try another look</string>
   <string name="other_reset">Reset all settings</string>
   <string name="other_reset_description">Does more than uninstalling would do, because the preferences are stored at a special place as they have to be accessible directly after device startup</string>
 

@@ -29,6 +29,6 @@ public class DoodleApplication extends Application {
   public void onCreate() {
     super.onCreate();
 
-    DynamicColors.applyToActivitiesIfAvailable(this, R.style.Theme_Doodle);
+    DynamicColors.applyToActivitiesIfAvailable(this, R.style.Theme_Doodle_Red);
   }
 }

@@ -21,6 +21,7 @@ package xyz.zedler.patrick.doodle.activity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.LayerDrawable;
 import android.os.Build;
 import android.os.Bundle;
@@ -28,8 +29,13 @@ import android.os.Handler;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.content.res.ResourcesCompat;
+import com.google.android.material.color.DynamicColors;
+import xyz.zedler.patrick.doodle.Constants.DEF;
+import xyz.zedler.patrick.doodle.Constants.PREF;
+import xyz.zedler.patrick.doodle.Constants.THEME;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.behavior.SystemBarBehavior;
+import xyz.zedler.patrick.doodle.util.PrefsUtil;
 import xyz.zedler.patrick.doodle.util.ViewUtil;
 
 @SuppressLint("CustomSplashScreen")
@@ -37,7 +43,28 @@ public class SplashActivity extends AppCompatActivity {
 
   @Override
   public void onCreate(Bundle bundle) {
+    SharedPreferences sharedPrefs = new PrefsUtil(
+        this
+    ).checkForMigrations().getSharedPrefs();
+
     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
+
+    if (!DynamicColors.isDynamicColorAvailable()) {
+      switch (sharedPrefs.getString(PREF.THEME, DEF.THEME)) {
+        case THEME.YELLOW:
+          setTheme(R.style.Theme_Doodle_Yellow);
+          break;
+        case THEME.GREEN:
+          setTheme(R.style.Theme_Doodle_Green);
+          break;
+        case THEME.BLUE:
+          setTheme(R.style.Theme_Doodle_Blue);
+          break;
+        default:
+          setTheme(R.style.Theme_Doodle_Red);
+          break;
+      }
+    }
 
     super.onCreate(bundle);
 

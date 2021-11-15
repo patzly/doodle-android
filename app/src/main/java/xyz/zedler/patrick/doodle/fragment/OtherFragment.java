@@ -28,14 +28,21 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.view.ViewGroup.LayoutParams;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
+import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.view.ContextThemeWrapper;
+import androidx.core.content.res.ResourcesCompat;
+import com.google.android.material.card.MaterialCardView;
+import com.google.android.material.color.DynamicColors;
 import com.google.android.material.snackbar.Snackbar;
 import java.util.Locale;
 import xyz.zedler.patrick.doodle.Constants.DEF;
 import xyz.zedler.patrick.doodle.Constants.PREF;
+import xyz.zedler.patrick.doodle.Constants.THEME;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.activity.MainActivity;
 import xyz.zedler.patrick.doodle.activity.SplashActivity;
@@ -104,6 +111,12 @@ public class OtherFragment extends BaseFragment
     });
 
     binding.textOtherLanguage.setText(getLanguage());
+
+    if (DynamicColors.isDynamicColorAvailable()) {
+      binding.linearOtherTheme.setVisibility(View.GONE);
+    } else {
+      setUpThemeSelection();
+    }
 
     binding.linearOtherGpu.setVisibility(
         Build.VERSION.SDK_INT >= Build.VERSION_CODES.O ? View.VISIBLE : View.GONE
@@ -205,6 +218,55 @@ public class OtherFragment extends BaseFragment
     return code != null
         ? locale.getDisplayName()
         : getString(R.string.other_language_system, locale.getDisplayName());
+  }
+
+  private void setUpThemeSelection() {
+    ViewGroup container = binding.linearOtherThemeContainer;
+    for (int i = 0; i < 4; i++) {
+      String name;
+      int resId;
+      if (i == 1) {
+        name = THEME.YELLOW;
+        resId = R.style.Theme_Doodle_Yellow;
+      } else if (i == 2) {
+        name = THEME.GREEN;
+        resId = R.style.Theme_Doodle_Green;
+      } else if (i == 3) {
+        name = THEME.BLUE;
+        resId = R.style.Theme_Doodle_Blue;
+      } else {
+        name = THEME.RED;
+        resId = R.style.Theme_Doodle_Red;
+      }
+
+      MaterialCardView card = ViewUtil.getSelectionCard(activity);
+      ImageView thumbnail = new ImageView(activity);
+      thumbnail.setLayoutParams(
+          new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT)
+      );
+      thumbnail.setImageDrawable(
+          ResourcesCompat.getDrawable(
+              getResources(),
+              R.drawable.selection_theme,
+              new ContextThemeWrapper(activity, resId).getTheme()
+          )
+      );
+      card.addView(thumbnail);
+      card.setOnClickListener(v -> {
+        if (!card.isChecked()) {
+          ViewUtil.startIcon(card.getCheckedIcon());
+          performHapticClick();
+          ViewUtil.uncheckAllChildren(container);
+          card.setChecked(true);
+          getSharedPrefs().edit().putString(PREF.THEME, name).apply();
+          activity.restartToApply(200);
+        }
+      });
+
+      boolean isSelected = getSharedPrefs().getString(PREF.THEME, DEF.THEME).equals(name);
+      card.setChecked(isSelected);
+      container.addView(card);
+    }
   }
 
   private void setGpuOptionEnabled(boolean enabled) {

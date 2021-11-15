@@ -135,7 +135,7 @@
 
   <style
     name="Widget.Doodle.ExtendedFloatingActionButton"
-    parent="Widget.Material3.ExtendedFloatingActionButton.Tertiary">
+    parent="Widget.Material3.ExtendedFloatingActionButton.Primary">
     <item name="android:textSize">@dimen/m3_sys_typescale_label_large_text_size</item>
     <item name="android:fontFamily">@font/jost_medium</item>
   </style>

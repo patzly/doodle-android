@@ -95,10 +95,12 @@ public class LanguagesBottomSheetDialogFragment extends BaseBottomSheetDialogFra
         fragment.setLanguage(language);
         dismiss();
       } else {
-        activity.restartToApply(100);
+        dismiss();
+        activity.restartToApply(200);
       }
     } else {
-      activity.restartToApply(100);
+      dismiss();
+      activity.restartToApply(200);
     }
 
     getSharedPrefs().edit().putString(Constants.PREF.LANGUAGE, selectedCode).apply();

@@ -78,7 +78,7 @@
   <string name="appearance_colors_secondary">İkincil rengi seç</string>
   <string name="appearance_colors_tertiary">Üçüncül rengi seç</string>
   <string name="appearance_colors_info">Dinamik renk desteği bulunmayan cihazlarda (Android 11 ve altı) geçmiş uygulamalar listesinin arkaplanını renklendirmede ve başlatıcının yazı kontrastını hesaplamada sadece ana renk kullanıldı.</string>
-  <string name="appearance_colors_info_dynamic">Android 12 ve üzeri ya da dinamik renk desteğine sahip cihazlarda, seçilen üç renk otomatik olarak sistem geneli renk teması oluşturur. </string>
+  <string name="appearance_colors_info_dynamic">Android 12 ya da üzeri ve dinamik renk desteğine sahip cihazlarda, sistem genelinde otomatik olarak bir renk teması oluşturmak için seçilen üç renk kullanılır.</string>
 
   <!-- PARALLAX -->
 

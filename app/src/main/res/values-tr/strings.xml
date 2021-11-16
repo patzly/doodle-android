@@ -21,7 +21,7 @@
 
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
-  <string name="wallpaper_description">Fazla güç tüketmeyen, otomatik karanlık moda sahip rengarenk hareketli duvar kağıtları. Daha fazlası için dokunun. </string>
+  <string name="wallpaper_description">Fazla güç tüketmeyen, otomatik karanlık moda sahip rengarenk hareketli duvar kağıtları. Daha fazlasını öğrenmek için dokunun. </string>
   <string name="wallpaper_description_picker">Ana ekranınızda sayfalar arası geçiş yaparken ve cihazınızın kilidini açarken yakınlaştırma ve paralaks efektleriyle harmanlanmış rengarenk şekiller topluluğunu keşfedin.\nDuvar kağıdını kendi stilinize uyacak şekilde kişiselleştirin.</string>
 
   <!-- TITLES -->

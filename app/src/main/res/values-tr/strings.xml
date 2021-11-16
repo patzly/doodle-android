@@ -89,7 +89,7 @@
   <string name="parallax_intensity_description">Sayfa kaydırmada yatay uzaklık ve eğim efekti yoğunluğu </string>
   <string name="parallax_none">Hiçbiri</string>
   <string name="parallax_category_tilt">Eğim efekti</string>
-  <string name="parallax_tilt">Cihazı eğdiğinde hareket ettir</string>
+  <string name="parallax_tilt">Cihazı eğdiğinde hareket eder</string>
   <string name="parallax_tilt_description">Daha fazla pil harcar</string>
   <string name="parallax_refresh_rate">Eğim sensörü yenileme hızı</string>
   <string name="parallax_refresh_rate_description">Çok kısa gecikmeler yakınlaştırma animasyonlarını duraksamalı gösterebilir</string>

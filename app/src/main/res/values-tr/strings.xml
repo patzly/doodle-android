@@ -72,7 +72,7 @@
   <string name="appearance_white_text">Yazıları gölgeli beyaz renge zorla</string>
   <string name="appearance_white_text_description">Okunabilirliğe etkisi olabilir</string>
   <string name="appearance_colors">Çıkartılmış renkler</string>
-  <string name="appearance_colors_description">Yazının kontrastını hesaplamada kullanıldı</string>
+  <string name="appearance_colors_description">Yazının kontrastını hesaplamada kullanılır</string>
   <string name="appearance_colors_description_dynamic">Sistemin tema motoru tarafından kullanılır</string>
   <string name="appearance_colors_primary">Ana rengi seç</string>
   <string name="appearance_colors_secondary">İkincil rengi seç</string>

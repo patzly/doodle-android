@@ -72,10 +72,13 @@
   <string name="appearance_white_text">Yazıları gölgeli beyaz renge zorla</string>
   <string name="appearance_white_text_description">Okunabilirliğe etkisi olabilir</string>
   <string name="appearance_colors">Çıkartılmış renkler</string>
-  <string name="appearance_colors_description">Sistemin tema motoru tarafından kullanılmış </string>
+  <string name="appearance_colors_description">Yazının kontrastını hesaplamada kullanıldı</string>
+  <string name="appearance_colors_description_dynamic">Sistemin tema motoru tarafından kullanıldı</string>
   <string name="appearance_colors_primary">Ana rengi seç</string>
   <string name="appearance_colors_secondary">İkincil rengi seç</string>
   <string name="appearance_colors_tertiary">Üçüncül rengi seç</string>
+  <string name="appearance_colors_info">Dinamik renk desteği bulunmayan cihazlarda (Android 11 ve altı) geçmiş uygulamalar listesinin arkaplanını renklendirmede ve başlatıcının yazı kontrastını hesaplamada sadece ana renk kullanıldı.</string>
+  <string name="appearance_colors_info_dynamic">Android 12 ve üzeri ya da dinamik renk desteğine sahip cihazlarda, seçilen üç renk otomatik olarak sistem geneli renk teması oluşturur. </string>
 
   <!-- PARALLAX -->
 
@@ -127,6 +130,8 @@
   <string name="other_gpu_info">Doodle\'da donanım hızlandırması sadece Android 8 ve üstünde mevcut. Duvar kağıdı animasyonları bu nedenle sarsıntılı olabilir.</string>
   <string name="other_launcher">Başlatıcıda uygulama simgesini gizle</string>
   <string name="other_launcher_description">Duvar kağıdı ayarları yalnızca cihazın canlı duvar kağıdı seçicisinde erişilebilir olacaktır</string>
+  <string name="other_theme">Uygulama rengi teması</string>
+  <string name="other_theme_description">Başka bir görünüm dene </string>
   <string name="other_reset">Tüm ayarları sıfırla </string>
   <string name="other_reset_description">Kaldırmanın yapacağından daha fazlasını yapar, çünkü uygulama ayarları cihaz açılır açılmaz direkt erişilebilir olması gerektiği için özel bir yerde saklanıyor</string>
 

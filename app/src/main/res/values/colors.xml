@@ -54,7 +54,7 @@
   <color name="red_error_20">#680003</color>
   <color name="red_error_10">#410001</color>
 
-  <color name="red_neutral_99">#FCFCFC</color>
+  <color name="red_neutral_99">#FFFAFA</color>
   <color name="red_neutral_90">#FBEEED</color>
   <color name="red_neutral_50">#8f7272</color>
   <color name="red_neutral_20">#362F2F</color>
@@ -96,7 +96,7 @@
   <color name="yellow_error_20">#680003</color>
   <color name="yellow_error_10">#410001</color>
 
-  <color name="yellow_neutral_99">#FFFCF3</color>
+  <color name="yellow_neutral_99">#FFFCF6</color>
   <color name="yellow_neutral_90">#E5E2D9</color>
   <color name="yellow_neutral_50">#797869</color>
   <color name="yellow_neutral_20">#31302B</color>

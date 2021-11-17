@@ -230,6 +230,7 @@ public class LiveWallpaperService extends WallpaperService {
   private interface RefreshListener {
 
     void onRefreshTheme();
+
     void onRefreshSettings();
   }
 
@@ -365,7 +366,7 @@ public class LiveWallpaperService extends WallpaperService {
     public void onSurfaceRedrawNeeded(SurfaceHolder holder) {
       WindowManager window = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
       int screenRotationOld = screenRotation;
-      screenRotation =  window.getDefaultDisplay().getRotation();
+      screenRotation = window.getDefaultDisplay().getRotation();
       if (screenRotation != screenRotationOld) {
         accelerationValues = null;
         updateOffset(true, null);

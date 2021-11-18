@@ -113,6 +113,7 @@
 
         <com.google.android.material.switchmaterial.SwitchMaterial
           android:id="@+id/switch_other_gpu"
+          style="@style/Widget.Doodle.Switch"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_marginStart="16dp" />
@@ -143,6 +144,7 @@
 
         <com.google.android.material.switchmaterial.SwitchMaterial
           android:id="@+id/switch_other_launcher"
+          style="@style/Widget.Doodle.Switch"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_marginStart="16dp" />

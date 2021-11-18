@@ -120,7 +120,7 @@
       <LinearLayout
         android:id="@+id/linear_size_zoom_launcher"
         style="@style/Widget.Doodle.LinearLayout.ListItem.SingleLine.Clickable"
-        android:background="@drawable/ripple_bg_list_item">
+        android:background="@drawable/ripple_list_item_bg">
 
         <ImageView
           android:id="@+id/image_size_zoom_launcher"
@@ -136,6 +136,7 @@
 
         <com.google.android.material.switchmaterial.SwitchMaterial
           android:id="@+id/switch_size_zoom_launcher"
+          style="@style/Widget.Doodle.Switch"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_marginStart="16dp" />
@@ -165,6 +166,7 @@
 
         <com.google.android.material.switchmaterial.SwitchMaterial
           android:id="@+id/switch_size_zoom_system"
+          style="@style/Widget.Doodle.Switch"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_marginStart="16dp" />
@@ -174,7 +176,7 @@
       <LinearLayout
         android:id="@+id/linear_size_zoom_unlock"
         style="@style/Widget.Doodle.LinearLayout.ListItem.SingleLine.Clickable"
-        android:background="@drawable/ripple_bg_list_item">
+        android:background="@drawable/ripple_list_item_bg">
 
         <ImageView
           android:id="@+id/image_size_zoom_unlock"
@@ -196,6 +198,7 @@
 
         <com.google.android.material.switchmaterial.SwitchMaterial
           android:id="@+id/switch_size_zoom_unlock"
+          style="@style/Widget.Doodle.Switch"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_marginStart="16dp" />

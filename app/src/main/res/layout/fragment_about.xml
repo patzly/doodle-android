@@ -147,7 +147,7 @@
       <LinearLayout
         android:id="@+id/linear_about_github"
         style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable"
-        android:background="@drawable/ripple_bg_list_item">
+        android:background="@drawable/ripple_list_item_bg">
 
         <ImageView
           style="@style/Widget.Doodle.ImageView.ListItem.Icon"
@@ -171,7 +171,7 @@
       <LinearLayout
         android:id="@+id/linear_about_translation"
         style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable"
-        android:background="@drawable/ripple_bg_list_item">
+        android:background="@drawable/ripple_list_item_bg">
 
         <ImageView
           style="@style/Widget.Doodle.ImageView.ListItem.Icon"

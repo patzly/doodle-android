@@ -112,6 +112,16 @@
     <item name="android:textAlignment">viewStart</item>
   </style>
 
+  <style name="Widget.Doodle.Switch" parent="Widget.Material3.CompoundButton.Switch">
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_marginStart">16dp</item>
+    <item name="thumbTint">@color/selector_switch_thumb_tint</item>
+    <item name="trackTint">@color/selector_switch_track_tint</item>
+    <item name="track">@drawable/shape_switch_track</item>
+    <item name="android:thumb">@drawable/shape_switch_thumb</item>
+  </style>
+
   <style name="Widget.Doodle.Slider" parent="Widget.Material3.Slider">
     <item name="android:layout_width">match_parent</item>
     <item name="android:layout_height">wrap_content</item>
@@ -157,7 +167,7 @@
     name="Widget.Doodle.LinearLayout.ListItem.Clickable"
     parent="Widget.Doodle.LinearLayout.ListItem">
     <item name="android:clickable">true</item>
-    <item name="android:background">@drawable/ripple_bg_list_item</item>
+    <item name="android:background">@drawable/ripple_list_item_bg</item>
   </style>
 
   <style
@@ -176,14 +186,14 @@
     name="Widget.Doodle.LinearLayout.ListItem.SingleLine.Clickable"
     parent="Widget.Doodle.LinearLayout.ListItem.SingleLine">
     <item name="android:clickable">true</item>
-    <item name="android:background">@drawable/ripple_bg_list_item</item>
+    <item name="android:background">@drawable/ripple_list_item_bg</item>
   </style>
 
   <style
     name="Widget.Doodle.LinearLayout.ListItem.SingleLine.Icon.Clickable"
     parent="Widget.Doodle.LinearLayout.ListItem.SingleLine.Icon">
     <item name="android:clickable">true</item>
-    <item name="android:background">@drawable/ripple_bg_list_item</item>
+    <item name="android:background">@drawable/ripple_list_item_bg</item>
   </style>
 
   <style
@@ -202,14 +212,14 @@
     name="Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable"
     parent="Widget.Doodle.LinearLayout.ListItem.TwoLine">
     <item name="android:clickable">true</item>
-    <item name="android:background">@drawable/ripple_bg_list_item</item>
+    <item name="android:background">@drawable/ripple_list_item_bg</item>
   </style>
 
   <style
     name="Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon.Clickable"
     parent="Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon">
     <item name="android:clickable">true</item>
-    <item name="android:background">@drawable/ripple_bg_list_item</item>
+    <item name="android:background">@drawable/ripple_list_item_bg</item>
   </style>
 
   <style name="Widget.Doodle.LinearLayout.ListItem.TextBox" parent="">

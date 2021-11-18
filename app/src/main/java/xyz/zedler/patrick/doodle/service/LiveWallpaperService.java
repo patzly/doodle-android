@@ -609,7 +609,7 @@ public class LiveWallpaperService extends WallpaperService {
       switch (presence) {
         case USER_PRESENCE.OFF:
           zoomUnlock = 1;
-          zoomLauncher = 1;
+          zoomLauncher = 1; // 0?
           drawFrame(true, null);
           break;
         case USER_PRESENCE.LOCKED:

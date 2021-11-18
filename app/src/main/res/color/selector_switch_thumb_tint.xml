@@ -19,11 +19,17 @@
 
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
 
-  <item
-    android:color="?attr/colorSecondary"
-    android:alpha="0.09"
-    android:state_enabled="true" />
+  <!-- State Disabled -->
+  <!--item
+    android:color="?attr/colorOnSurfaceInverse"
+    android:state_enabled="false" /-->
 
-  <item android:color="@android:color/transparent"/>
+  <!-- State Checked -->
+  <item
+    android:color="?attr/colorOnPrimary"
+    android:state_checked="true" />
+
+  <!-- State Unchecked -->
+  <item android:color="?attr/colorSurfaceVariant" />
 
 </selector>

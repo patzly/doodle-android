@@ -17,13 +17,17 @@
   ~ Copyright (c) 2019-2021 by Patrick Zedler
   -->
 
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
-
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
   <item
-    android:color="?attr/colorSecondary"
-    android:alpha="0.09"
-    android:state_enabled="true" />
-
-  <item android:color="@android:color/transparent"/>
-
-</selector>
+    android:bottom="4dp"
+    android:left="4dp"
+    android:right="4dp"
+    android:top="4dp">
+    <shape android:shape="oval">
+      <solid android:color="#000000" />
+      <size
+        android:width="20dp"
+        android:height="20dp" />
+    </shape>
+  </item>
+</layer-list>

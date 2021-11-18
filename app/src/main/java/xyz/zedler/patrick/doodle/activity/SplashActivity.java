@@ -33,6 +33,7 @@ import com.google.android.material.color.DynamicColors;
 import xyz.zedler.patrick.doodle.Constants.DEF;
 import xyz.zedler.patrick.doodle.Constants.PREF;
 import xyz.zedler.patrick.doodle.Constants.THEME;
+import xyz.zedler.patrick.doodle.Constants.THEME.MODE;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.behavior.SystemBarBehavior;
 import xyz.zedler.patrick.doodle.util.PrefsUtil;
@@ -47,7 +48,19 @@ public class SplashActivity extends AppCompatActivity {
         this
     ).checkForMigrations().getSharedPrefs();
 
-    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
+    int mode;
+    switch (sharedPrefs.getInt(PREF.MODE, MODE.AUTO)) {
+      case MODE.LIGHT:
+        mode = AppCompatDelegate.MODE_NIGHT_NO;
+        break;
+      case MODE.DARK:
+        mode = AppCompatDelegate.MODE_NIGHT_YES;
+        break;
+      default:
+        mode = AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
+        break;
+    }
+    AppCompatDelegate.setDefaultNightMode(mode);
 
     if (!DynamicColors.isDynamicColorAvailable()) {
       switch (sharedPrefs.getString(PREF.THEME, DEF.THEME)) {

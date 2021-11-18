@@ -40,6 +40,7 @@ import java.util.Locale;
 import xyz.zedler.patrick.doodle.Constants.DEF;
 import xyz.zedler.patrick.doodle.Constants.PREF;
 import xyz.zedler.patrick.doodle.Constants.THEME;
+import xyz.zedler.patrick.doodle.Constants.THEME.MODE;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.activity.MainActivity;
 import xyz.zedler.patrick.doodle.activity.SplashActivity;
@@ -50,6 +51,7 @@ import xyz.zedler.patrick.doodle.fragment.dialog.LanguagesBottomSheetDialogFragm
 import xyz.zedler.patrick.doodle.model.Language;
 import xyz.zedler.patrick.doodle.util.LocaleUtil;
 import xyz.zedler.patrick.doodle.util.ResUtil;
+import xyz.zedler.patrick.doodle.util.SystemUiUtil;
 import xyz.zedler.patrick.doodle.util.ViewUtil;
 
 public class OtherFragment extends BaseFragment
@@ -110,7 +112,10 @@ public class OtherFragment extends BaseFragment
     binding.textOtherLanguage.setText(getLanguage());
 
     if (DynamicColors.isDynamicColorAvailable()) {
-      binding.linearOtherTheme.setVisibility(View.GONE);
+      binding.linearOtherThemeContainer.setVisibility(View.GONE);
+      binding.toggleOtherTheme.setPadding(
+          0, SystemUiUtil.dpToPx(activity, 4), 0, 0
+      );
     } else {
       setUpThemeSelection();
     }
@@ -125,6 +130,32 @@ public class OtherFragment extends BaseFragment
             new ComponentName(activity, SplashActivity.class)
         ) == PackageManager.COMPONENT_ENABLED_STATE_DISABLED
     );
+
+    int id;
+    switch (getSharedPrefs().getInt(PREF.MODE, MODE.AUTO)) {
+      case MODE.LIGHT:
+        id = R.id.button_other_theme_light;
+        break;
+      case MODE.DARK:
+        id = R.id.button_other_theme_dark;
+        break;
+      default:
+        id = R.id.button_other_theme_auto;
+        break;
+    }
+    binding.toggleOtherTheme.check(id);
+    binding.toggleOtherTheme.addOnButtonCheckedListener((group, checkedId, isChecked) -> {
+      int pref;
+      if (checkedId == R.id.button_other_theme_light) {
+        pref = MODE.LIGHT;
+      } else if (checkedId == R.id.button_other_theme_dark) {
+        pref = MODE.DARK;
+      } else {
+        pref = MODE.AUTO;
+      }
+      getSharedPrefs().edit().putInt(PREF.MODE, pref).apply();
+      activity.restartToApply(0);
+    });
 
     ViewUtil.setOnClickListeners(
         this,

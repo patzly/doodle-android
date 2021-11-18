@@ -255,7 +255,7 @@ public class ViewUtil {
     card.setLayoutParams(params);
     card.setCheckable(true);
     card.setStrokeColor(ResUtil.getColorAttr(activity, R.attr.colorOutline));
-    card.setStrokeWidth(SystemUiUtil.dpToPx(activity, 2));
+    card.setStrokeWidth(SystemUiUtil.dpToPx(activity, 1));
     card.setRippleColor(ColorStateList.valueOf(ResUtil.getColorHighlight(activity)));
     card.setCardBackgroundColor(ResUtil.getColorBg(activity));
     card.setCheckedIcon(

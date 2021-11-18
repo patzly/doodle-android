@@ -60,7 +60,6 @@
     <item name="android:layout_marginTop">8dp</item>
     <item name="android:layout_marginBottom">8dp</item>
     <item name="android:background">?attr/colorOutline</item>
-    <item name="android:alpha">0.4</item>
   </style>
 
   <style name="Widget.Doodle.ImageView.Icon" parent="">
@@ -81,6 +80,15 @@
     <item name="android:textSize">@dimen/m3_sys_typescale_label_large_text_size</item>
     <item name="android:fontFamily">@font/jost_medium</item>
     <item name="cornerRadius">20dp</item>
+  </style>
+
+  <style
+    name="Widget.Doodle.Button.OutlinedButton"
+    parent="Widget.Material3.Button.OutlinedButton">
+    <item name="android:textSize">@dimen/m3_sys_typescale_label_large_text_size</item>
+    <item name="android:fontFamily">@font/jost_medium</item>
+    <item name="cornerRadius">20dp</item>
+    <item name="rippleColor">@color/selector_highlight</item>
   </style>
 
   <style
@@ -128,6 +136,7 @@
     <item name="android:layout_marginStart">59dp</item>
     <item name="android:layout_marginEnd">14dp</item>
     <item name="android:stepSize">1</item>
+    <item name="thumbElevation">1dp</item>
     <item name="labelStyle">@style/Widget.Doodle.Tooltip</item>
   </style>
 

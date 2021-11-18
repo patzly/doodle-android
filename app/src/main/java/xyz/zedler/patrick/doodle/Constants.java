@@ -45,7 +45,6 @@ public final class Constants {
     public final static String NIGHT_MODE = "night_mode";
     public final static String FOLLOW_SYSTEM = "follow_system";
     public final static String USE_WHITE_TEXT = "use_white_text";
-    public final static String THEME = "app_theme";
 
     // Parallax
 
@@ -69,6 +68,8 @@ public final class Constants {
 
     public final static String LANGUAGE = "language";
     public final static String GPU = "hardware_acceleration";
+    public final static String THEME = "app_theme";
+    public final static String MODE = "mode";
 
     public final static String PREVIEW_RUNNING = "preview_running";
 
@@ -78,26 +79,29 @@ public final class Constants {
 
   public final static class DEF {
 
+    public final static String WALLPAPER = Constants.WALLPAPER.PIXEL;
     public final static boolean NIGHT_MODE = true;
     public final static boolean FOLLOW_SYSTEM = true;
     public final static boolean USE_WHITE_TEXT = false;
-    public final static String THEME = "red";
+
+    public final static int PARALLAX = 1;
     public final static boolean TILT = false;
     public final static int REFRESH_RATE = 30000;
+    public final static int DAMPING = 8;
+    public final static int THRESHOLD = 5;
+
+    public final static float SCALE = 1;
     public final static int ZOOM = 2;
     public final static boolean ZOOM_LAUNCHER = true;
     public final static boolean ZOOM_UNLOCK = true;
     public final static boolean ZOOM_SYSTEM = false;
     public final static int ZOOM_DURATION = 1200;
     public final static int ZOOM_ROTATION = 40;
-    public final static String WALLPAPER = Constants.WALLPAPER.PIXEL;
-    public final static int PARALLAX = 1;
-    public final static int DAMPING = 8;
-    public final static int THRESHOLD = 5;
-    public final static float SCALE = 1;
-    public final static boolean GPU = true;
-    public final static boolean LAUNCHER = false;
+
     public final static String LANGUAGE = null;
+    public final static boolean GPU = true;
+    public final static String THEME = "red";
+    public final static int MODE = Constants.THEME.MODE.AUTO;
   }
 
   public final static class DESIGN {
@@ -144,6 +148,13 @@ public final class Constants {
   }
 
   public final static class THEME {
+
+    public final static class MODE {
+
+      public final static int AUTO = 0;
+      public final static int LIGHT = 1;
+      public final static int DARK = 2;
+    }
 
     public final static String GREEN = "green";
     public final static String YELLOW = "yellow";

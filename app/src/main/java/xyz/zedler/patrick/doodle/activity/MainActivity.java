@@ -58,6 +58,7 @@ import xyz.zedler.patrick.doodle.Constants.ACTION;
 import xyz.zedler.patrick.doodle.Constants.DEF;
 import xyz.zedler.patrick.doodle.Constants.PREF;
 import xyz.zedler.patrick.doodle.Constants.THEME;
+import xyz.zedler.patrick.doodle.Constants.THEME.MODE;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.behavior.SystemBarBehavior;
 import xyz.zedler.patrick.doodle.databinding.ActivityMainBinding;
@@ -111,7 +112,19 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     configApp.setLocale(userLocale);
     resApp.updateConfiguration(configApp, getResources().getDisplayMetrics());
 
-    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
+    int mode;
+    switch (sharedPrefs.getInt(PREF.MODE, MODE.AUTO)) {
+      case MODE.LIGHT:
+        mode = AppCompatDelegate.MODE_NIGHT_NO;
+        break;
+      case MODE.DARK:
+        mode = AppCompatDelegate.MODE_NIGHT_YES;
+        break;
+      default:
+        mode = AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
+        break;
+    }
+    AppCompatDelegate.setDefaultNightMode(mode);
 
     if (!DynamicColors.isDynamicColorAvailable()) {
       switch (sharedPrefs.getString(PREF.THEME, DEF.THEME)) {
@@ -161,6 +174,9 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     SystemBarBehavior.applyBottomInset(binding.fabMain);
 
     isServiceRunning = isWallpaperServiceRunning(true);
+    if (isServiceRunning) {
+      binding.fabMain.setVisibility(View.INVISIBLE);
+    }
 
     useGpuInit = sharedPrefs.getBoolean(PREF.GPU, DEF.GPU);
     useZoomSystemInit = sharedPrefs.getBoolean(PREF.ZOOM_SYSTEM, DEF.ZOOM_SYSTEM);
@@ -256,10 +272,12 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
   }
 
   public int getFabTopEdgeDistance() {
-    return binding.fabMain.getTranslationY() == 0 ? fabTopEdgeDistance : 0;
+    return binding.fabMain.getTranslationY() == 0
+        && binding.fabMain.getVisibility() == View.VISIBLE ? fabTopEdgeDistance : 0;
   }
 
   private void setFabVisibility(boolean visible, boolean animated) {
+    binding.fabMain.setVisibility(View.VISIBLE);
     if (binding == null) {
       return;
     }

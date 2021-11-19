@@ -132,6 +132,9 @@
   <string name="other_launcher_description">Les paramètres ne seront accessibles que dans le sélecteur de fonds d\'écran animés de votre système</string>
   <string name="other_theme">Thème de couleur de l\'application</string>
   <string name="other_theme_description">Essayez un autre look</string>
+  <string name="other_theme_auto">Auto</string>
+  <string name="other_theme_light">Clair</string>
+  <string name="other_theme_dark">Sombre</string>
   <string name="other_reset">Réinitialiser tous les réglages</string>
   <string name="other_reset_description">Fait plus que la désinstallation ne le ferait car les préférences sont stockées à un endroit spécial afin d\'être accessibles directement après le démarrage de l\'appareil</string>
 

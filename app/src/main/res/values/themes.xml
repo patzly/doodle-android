@@ -19,32 +19,31 @@
 
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-  <style name="Base.Doodle" parent="Theme.Material3.DayNight.NoActionBar">
+  <style name="Theme.Doodle" parent="Theme.Material3.DayNight.NoActionBar">
     <item name="android:colorPrimaryDark">?android:attr/colorBackground</item>
     <item name="android:navigationBarColor">?android:attr/colorBackground</item>
 
-    <item name="snackbarTextViewStyle">@style/Widget.Doodle.Snackbar.TextView</item>
-    <item name="snackbarButtonStyle">@style/Widget.Doodle.Button.TextButton.Snackbar</item>
-
     <item name="android:colorControlNormal">?attr/colorOnBackground</item>
     <item name="android:colorControlActivated">?attr/colorSecondary</item>
-    <item name="android:colorControlHighlight">@color/selector_highlight</item>
-    <item name="android:colorEdgeEffect">@color/selector_highlight</item>
-
-    <item name="popupMenuBackground">@drawable/shape_popup_menu</item>
-    <item name="actionOverflowButtonStyle">@style/ThemeOverlay.Doodle.OverFlow</item>
+    <item name="android:colorEdgeEffect">?attr/colorSecondary</item>
 
     <item name="android:fontFamily">@font/jost_book</item>
 
+    <!-- Widget styles -->
+    <item name="snackbarTextViewStyle">@style/Widget.Doodle.Snackbar.TextView</item>
+    <item name="snackbarButtonStyle">@style/Widget.Doodle.Button.TextButton.Snackbar</item>
+
+    <!-- Popup Menu styles -->
+    <item name="popupMenuBackground">@drawable/shape_popup_menu</item>
+    <item name="actionOverflowButtonStyle">@style/ThemeOverlay.Doodle.OverFlow</item>
+
+    <!-- Dialog themes -->
     <item name="bottomSheetDialogTheme">@style/Theme.Doodle.BottomSheetDialog</item>
 
-    <item name="android:windowSplashScreenBackground" tools:targetApi="s">
-      ?android:attr/colorBackground
-    </item>
-    <item name="android:windowSplashScreenAnimatedIcon" tools:targetApi="s">
-      @drawable/splash_logo_anim
-    </item>
-    <item name="android:windowSplashScreenAnimationDuration" tools:targetApi="s">1050</item>
+    <!-- Splash screen -->
+    <item name="android:windowSplashScreenBackground" tools:targetApi="s">?android:attr/colorBackground</item>
+    <item name="android:windowSplashScreenAnimatedIcon" tools:targetApi="s">@drawable/splash_logo_anim</item>
+    <item name="android:windowSplashScreenAnimationDuration" tools:targetApi="s">2050</item>
   </style>
 
   <style name="Theme.Doodle.BottomSheetDialog" parent="ThemeOverlay.Material3.BottomSheetDialog">
@@ -52,7 +51,7 @@
     <item name="android:navigationBarColor">@color/transparent</item>
   </style>
 
-  <style name="Theme.Doodle.Red" parent="Base.Doodle">
+  <style name="Theme.Doodle.Red" parent="Theme.Doodle">
     <item name="colorPrimary">@color/red_primary_40</item>
     <item name="colorOnPrimary">@color/white</item>
     <item name="colorPrimaryContainer">@color/red_primary_90</item>
@@ -88,7 +87,7 @@
     <item name="colorOutline">@color/red_neutral_variant_50</item>
   </style>
 
-  <style name="Theme.Doodle.Yellow" parent="Base.Doodle">
+  <style name="Theme.Doodle.Yellow" parent="Theme.Doodle">
     <item name="colorPrimary">@color/yellow_primary_40</item>
     <item name="colorOnPrimary">@color/white</item>
     <item name="colorPrimaryContainer">@color/yellow_primary_90</item>
@@ -124,7 +123,7 @@
     <item name="colorOutline">@color/yellow_neutral_variant_50</item>
   </style>
 
-  <style name="Theme.Doodle.Green" parent="Base.Doodle">
+  <style name="Theme.Doodle.Green" parent="Theme.Doodle">
     <item name="colorPrimary">@color/green_primary_40</item>
     <item name="colorOnPrimary">@color/white</item>
     <item name="colorPrimaryContainer">@color/green_primary_90</item>
@@ -160,7 +159,7 @@
     <item name="colorOutline">@color/green_neutral_variant_50</item>
   </style>
 
-  <style name="Theme.Doodle.Blue" parent="Base.Doodle">
+  <style name="Theme.Doodle.Blue" parent="Theme.Doodle">
     <item name="colorPrimary">@color/blue_primary_40</item>
     <item name="colorOnPrimary">@color/white</item>
     <item name="colorPrimaryContainer">@color/blue_primary_90</item>

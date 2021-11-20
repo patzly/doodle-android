@@ -9,12 +9,8 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../.gradle/caches/transforms-3/6deaae5b2b9978431e07ce91bde20e7c/transformed/material-1.5.0-alpha05/res/drawable-v23/m3_popupmenu_background_overlay.xml" value="0.3640625" />
-        <entry key="..\:/Users/Patrick/.gradle/caches/transforms-3/6deaae5b2b9978431e07ce91bde20e7c/transformed/material-1.5.0-alpha05/res/drawable-v23/m3_selection_control_ripple.xml" value="0.15833333333333333" />
-        <entry key="..\:/Users/Patrick/.gradle/caches/transforms-3/824ead8930460981144254da800dedea/transformed/appcompat-1.4.0/res/drawable/abc_switch_thumb_material.xml" value="0.1953125" />
         <entry key="..\:/Users/Patrick/.gradle/caches/transforms-3/aabd215579a4ff9e9c3102d950613b7b/transformed/jetified-MonetCompat-0.2.1/res/drawable/background_splash.xml" value="0.1712962962962963" />
-        <entry key="..\:/Users/Patrick/.gradle/caches/transforms-3/b4cf70183e2a163db51855ccd8015fe1/transformed/appcompat-1.3.1/res/drawable/abc_switch_thumb_material.xml" value="0.15833333333333333" />
         <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable-night/ic_round_vending_anim.xml" value="0.16296296296296298" />
-        <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/ic_colorize_black_24dp.xml" value="0.18333333333333332" />
         <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/ic_round_all_directions_anim.xml" value="0.1953125" />
         <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/ic_round_aod.xml" value="0.1953125" />
         <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/ic_round_arrow_back.xml" value="0.1953125" />
@@ -22,7 +18,6 @@
         <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/ic_round_brightness_auto_anim.xml" value="0.1953125" />
         <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/ic_round_check_circle_anim.xml" value="0.1" />
         <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/ic_round_close.xml" value="0.1953125" />
-        <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/ic_round_colorize_anim.xml" value="0.18333333333333332" />
         <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/ic_round_copyright_anim.xml" value="0.1953125" />
         <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/ic_round_dark_mode_to_light_mode_anim.xml" value="0.1953125" />
         <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/ic_round_doodle_anim.xml" value="0.1" />
@@ -55,33 +50,22 @@
         <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/ic_round_zoom_out.xml" value="0.1953125" />
         <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/ripple_bg_list_item.xml" value="0.1953125" />
         <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/ripple_bg_list_item_surface.xml" value="0.1953125" />
-        <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/ripple_bg_switch.xml" value="0.15833333333333333" />
-        <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/ripple_list_item_bg.xml" value="0.15833333333333333" />
-        <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/ripple_switch_fg.xml" value="0.1953125" />
         <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/selection_floral.xml" value="0.1953125" />
         <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/selection_stone.xml" value="0.1953125" />
-        <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/selection_theme.xml" value="0.17685185185185184" />
-        <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/selection_theme2.xml" value="0.17314814814814813" />
-        <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/selector_switch_thumb.xml" value="0.15833333333333333" />
         <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/shape_popup_menu.xml" value="0.1953125" />
-        <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/shape_switch_bg.xml" value="0.15833333333333333" />
-        <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/shape_switch_thumb.xml" value="0.15833333333333333" />
-        <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/shape_switch_track.xml" value="0.15833333333333333" />
         <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/splash_content.xml" value="0.1953125" />
         <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/drawable/splash_logo_anim.xml" value="0.1" />
         <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/layout/activity_main.xml" value="0.1764102564102564" />
         <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/layout/fragment_about.xml" value="0.17916666666666667" />
-        <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/layout/fragment_appearance.xml" value="0.16666666666666666" />
-        <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/layout/fragment_bottomsheet_apply.xml" value="0.17916666666666667" />
+        <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/layout/fragment_appearance.xml" value="0.11775362318840579" />
         <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/layout/fragment_bottomsheet_changelog.xml" value="0.17916666666666667" />
-        <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/layout/fragment_bottomsheet_color.xml" value="0.17916666666666667" />
-        <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/layout/fragment_bottomsheet_colors.xml" value="0.17916666666666667" />
         <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/layout/fragment_bottomsheet_feedback.xml" value="0.17916666666666667" />
         <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/layout/fragment_other.xml" value="0.17916666666666667" />
         <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/layout/fragment_overview.xml" value="0.17916666666666667" />
         <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/layout/fragment_parallax.xml" value="0.1764102564102564" />
         <entry key="..\:/Users/Patrick/AndroidStudioProjects/doodle-android/app/src/main/res/layout/fragment_size.xml" value="0.17916666666666667" />
         <entry key="app/src/main/res/drawable-night/ic_round_vending_anim.xml" value="0.3640625" />
+        <entry key="app/src/main/res/drawable-v31/ic_launcher_foreground.xml" value="0.3640625" />
         <entry key="app/src/main/res/drawable/ic_dada.xml" value="0.3640625" />
         <entry key="app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.3640625" />
         <entry key="app/src/main/res/drawable/ic_palette_black_24dp.xml" value="0.3640625" />
@@ -118,6 +102,7 @@
         <entry key="app/src/main/res/drawable/ic_round_wallpaper_anim.xml" value="0.3640625" />
         <entry key="app/src/main/res/drawable/ic_round_zoom_out.xml" value="0.3640625" />
         <entry key="app/src/main/res/drawable/ripple_bg_list_item.xml" value="0.3640625" />
+        <entry key="app/src/main/res/drawable/ripple_list_item_bg.xml" value="0.21614583333333334" />
         <entry key="app/src/main/res/drawable/selection_fog.xml" value="0.3640625" />
         <entry key="app/src/main/res/drawable/selection_leafy.xml" value="0.3640625" />
         <entry key="app/src/main/res/drawable/selection_monet.xml" value="0.3640625" />
@@ -132,7 +117,9 @@
         <entry key="app/src/main/res/layout/fragment_about.xml" value="0.3484375" />
         <entry key="app/src/main/res/layout/fragment_appearance.xml" value="0.3249150072850899" />
         <entry key="app/src/main/res/layout/fragment_blank.xml" value="0.3484375" />
+        <entry key="app/src/main/res/layout/fragment_bottomsheet_apply.xml" value="0.3484375" />
         <entry key="app/src/main/res/layout/fragment_bottomsheet_changelog.xml" value="0.3484375" />
+        <entry key="app/src/main/res/layout/fragment_bottomsheet_colors.xml" value="0.3484375" />
         <entry key="app/src/main/res/layout/fragment_bottomsheet_feedback.xml" value="0.3484375" />
         <entry key="app/src/main/res/layout/fragment_bottomsheet_list_selection.xml" value="0.3484375" />
         <entry key="app/src/main/res/layout/fragment_bottomsheet_text.xml" value="0.3484375" />
@@ -144,6 +131,8 @@
         <entry key="app/src/main/res/layout/row_language.xml" value="0.3484375" />
         <entry key="app/src/main/res/menu/menu_link.xml" value="0.3484375" />
         <entry key="app/src/main/res/menu/menu_main.xml" value="0.3484375" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.3640625" />
+        <entry key="app/src/main/res/mipmap-anydpi-v31/ic_launcher.xml" value="0.3640625" />
       </map>
     </option>
   </component>

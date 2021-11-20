@@ -552,7 +552,14 @@ public class LiveWallpaperService extends WallpaperService {
       loadWallpaper();
       svgDrawable.setScale(scale);
 
-      colorsHaveChanged();
+      if (VERSION.SDK_INT >= VERSION_CODES.O_MR1) {
+        // NullPointerException on many devices!?
+        try {
+          notifyColorsChanged();
+        } catch (Exception e) {
+          Log.e(TAG, "colorsHaveChanged: ", e);
+        }
+      }
     }
 
     @SuppressWarnings("SuspiciousNameCombination")
@@ -732,17 +739,6 @@ public class LiveWallpaperService extends WallpaperService {
       });
       zoomAnimator.setInterpolator(zoomInterpolator);
       zoomAnimator.setDuration(zoomDuration).start();
-    }
-
-    private void colorsHaveChanged() {
-      if (VERSION.SDK_INT >= VERSION_CODES.O_MR1) {
-        // NullPointerException on many devices!?
-        try {
-          notifyColorsChanged();
-        } catch (Exception e) {
-          Log.e(TAG, "colorsHaveChanged: ", e);
-        }
-      }
     }
   }
 

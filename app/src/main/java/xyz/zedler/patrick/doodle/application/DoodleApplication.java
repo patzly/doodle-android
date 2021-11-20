@@ -21,7 +21,6 @@ package xyz.zedler.patrick.doodle.application;
 
 import android.app.Application;
 import com.google.android.material.color.DynamicColors;
-import xyz.zedler.patrick.doodle.R;
 
 public class DoodleApplication extends Application {
 
@@ -29,6 +28,6 @@ public class DoodleApplication extends Application {
   public void onCreate() {
     super.onCreate();
 
-    DynamicColors.applyToActivitiesIfAvailable(this, R.style.Theme_Doodle_Red);
+    DynamicColors.applyToActivitiesIfAvailable(this);
   }
 }

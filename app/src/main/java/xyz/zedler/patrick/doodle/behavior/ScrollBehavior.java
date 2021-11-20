@@ -23,6 +23,7 @@ import android.animation.ValueAnimator;
 import android.app.Activity;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
@@ -95,7 +96,7 @@ public class ScrollBehavior {
             if (scrollY < pufferSize) {
               new Handler(Looper.getMainLooper()).postDelayed(() -> {
                 if (scrollY > 0) {
-                  this.scrollView.setOverScrollMode(View.OVER_SCROLL_NEVER);
+                  setOverScrollMode(View.OVER_SCROLL_NEVER);
                 }
               }, 1);
             }
@@ -142,7 +143,7 @@ public class ScrollBehavior {
     if (scrollView != null) {
       appBarLayout.setLifted(true);
       tintAppBarLayout(SurfaceColors.SURFACE_2.getColor(activity));
-      scrollView.setOverScrollMode(
+      setOverScrollMode(
           noOverScroll ? View.OVER_SCROLL_NEVER : View.OVER_SCROLL_IF_CONTENT_SCROLLS
       );
     } else if (DEBUG) {
@@ -167,7 +168,7 @@ public class ScrollBehavior {
         if (scrollView.getScrollY() == 0) {
           appBarLayout.setLifted(false);
           tintAppBarLayout(SurfaceColors.SURFACE_0.getColor(activity));
-          scrollView.setOverScrollMode(View.OVER_SCROLL_NEVER);
+          setOverScrollMode(View.OVER_SCROLL_NEVER);
         } else {
           appBarLayout.setLifted(true);
           tintAppBarLayout(SurfaceColors.SURFACE_2.getColor(activity));
@@ -175,7 +176,7 @@ public class ScrollBehavior {
       } else {
         appBarLayout.setLifted(true);
         tintAppBarLayout(SurfaceColors.SURFACE_2.getColor(activity));
-        scrollView.setOverScrollMode(
+        setOverScrollMode(
             noOverScroll
                 ? View.OVER_SCROLL_NEVER
                 : View.OVER_SCROLL_IF_CONTENT_SCROLLS
@@ -245,5 +246,16 @@ public class ScrollBehavior {
       appBarLayout.setBackgroundColor(ResUtil.getColorBg(activity));
     }
     return ((ColorDrawable) appBarLayout.getBackground()).getColor();
+  }
+
+  private void setOverScrollMode(int mode) {
+    if (scrollView == null) {
+      return;
+    }
+    if (Build.VERSION.SDK_INT >= 31) {
+      scrollView.setOverScrollMode(View.OVER_SCROLL_IF_CONTENT_SCROLLS);
+    } else {
+      scrollView.setOverScrollMode(mode);
+    }
   }
 }

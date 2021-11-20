@@ -49,10 +49,9 @@
 
   </LinearLayout>
 
-  <View
-    style="@style/Widget.Doodle.Divider"
-    android:layout_marginTop="0dp"
-    android:layout_marginBottom="0dp" />
+  <com.google.android.material.divider.MaterialDivider
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" />
 
   <androidx.recyclerview.widget.RecyclerView
     android:id="@+id/recycler_list_selection"

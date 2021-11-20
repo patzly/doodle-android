@@ -56,6 +56,7 @@ import java.util.Locale;
 import xyz.zedler.patrick.doodle.BuildConfig;
 import xyz.zedler.patrick.doodle.Constants.ACTION;
 import xyz.zedler.patrick.doodle.Constants.DEF;
+import xyz.zedler.patrick.doodle.Constants.EXTRA;
 import xyz.zedler.patrick.doodle.Constants.PREF;
 import xyz.zedler.patrick.doodle.Constants.THEME;
 import xyz.zedler.patrick.doodle.Constants.THEME.MODE;
@@ -63,7 +64,6 @@ import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.behavior.SystemBarBehavior;
 import xyz.zedler.patrick.doodle.databinding.ActivityMainBinding;
 import xyz.zedler.patrick.doodle.fragment.BaseFragment;
-import xyz.zedler.patrick.doodle.fragment.dialog.ApplyBottomSheetDialogFragment;
 import xyz.zedler.patrick.doodle.fragment.dialog.ChangelogBottomSheetDialogFragment;
 import xyz.zedler.patrick.doodle.fragment.dialog.FeedbackBottomSheetDialogFragment;
 import xyz.zedler.patrick.doodle.service.LiveWallpaperService;
@@ -143,7 +143,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
       }
     }
 
-    super.onCreate(savedInstanceState);
+    Bundle bundle = getIntent().getBundleExtra(EXTRA.INSTANCE_STATE);
+    super.onCreate(bundle != null ? bundle : savedInstanceState);
 
     binding = ActivityMainBinding.inflate(getLayoutInflater());
     setContentView(binding.getRoot());
@@ -187,7 +188,11 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
       return insets;
     });
 
-    binding.fabMain.setRippleColor(ColorStateList.valueOf(ResUtil.getColorAttr(this, R.attr.colorOnTertiaryContainer, 0.07f)));
+    binding.fabMain.setRippleColor(
+        ColorStateList.valueOf(
+            ResUtil.getColorAttr(this, R.attr.colorOnTertiaryContainer, 0.07f)
+        )
+    );
 
     ViewUtil.setOnClickListeners(
         this,
@@ -332,11 +337,15 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 
   public void restartToApply(long delay) {
     new Handler().postDelayed(() -> {
+      Bundle bundle = new Bundle();
+      onSaveInstanceState(bundle);
+      finishAndRemoveTask();
+
       Intent intent = new Intent(this, MainActivity.class);
+      intent.putExtra(EXTRA.INSTANCE_STATE, bundle);
       if (isStartedFromLauncher()) {
         intent.addCategory(Intent.CATEGORY_LAUNCHER);
       }
-      finishAndRemoveTask();
       startActivity(intent);
       overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }, delay);
@@ -351,7 +360,6 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
             getString(R.string.action_continue), view -> {
               performHapticHeavyClick();
               navController.navigate(directions);
-              ViewUtil.showBottomSheet(this, new ApplyBottomSheetDialogFragment());
             }
         )
     );

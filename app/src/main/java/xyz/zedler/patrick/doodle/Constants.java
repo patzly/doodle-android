@@ -147,6 +147,11 @@ public final class Constants {
     public final static String SETTINGS_CHANGED = "action_settings_changed";
   }
 
+  public final static class EXTRA {
+
+    public final static String INSTANCE_STATE = "instance_state";
+  }
+
   public final static class THEME {
 
     public final static class MODE {

@@ -54,14 +54,6 @@
     <item name="titleCentered">true</item>
   </style>
 
-  <style name="Widget.Doodle.Divider" parent="">
-    <item name="android:layout_width">match_parent</item>
-    <item name="android:layout_height">1dp</item>
-    <item name="android:layout_marginTop">8dp</item>
-    <item name="android:layout_marginBottom">8dp</item>
-    <item name="android:background">?attr/colorOutline</item>
-  </style>
-
   <style name="Widget.Doodle.ImageView.Icon" parent="">
     <item name="android:layout_width">24dp</item>
     <item name="android:layout_height">24dp</item>
@@ -79,7 +71,6 @@
     parent="Widget.Material3.Button.UnelevatedButton">
     <item name="android:textSize">@dimen/m3_sys_typescale_label_large_text_size</item>
     <item name="android:fontFamily">@font/jost_medium</item>
-    <item name="cornerRadius">20dp</item>
   </style>
 
   <style
@@ -87,7 +78,6 @@
     parent="Widget.Material3.Button.OutlinedButton">
     <item name="android:textSize">@dimen/m3_sys_typescale_label_large_text_size</item>
     <item name="android:fontFamily">@font/jost_medium</item>
-    <item name="cornerRadius">20dp</item>
     <item name="rippleColor">@color/selector_highlight</item>
   </style>
 
@@ -96,7 +86,6 @@
     parent="Widget.Material3.Button.TextButton">
     <item name="android:textSize">@dimen/m3_sys_typescale_label_large_text_size</item>
     <item name="android:fontFamily">@font/jost_medium</item>
-    <item name="cornerRadius">20dp</item>
   </style>
 
   <style name="Widget.Doodle.Card.Text" parent="@style/Widget.Material3.CardView.Filled">
@@ -275,16 +264,22 @@
     <item name="android:textColor">?attr/colorOnBackground</item>
     <item name="android:textAlignment">viewStart</item>
     <item name="android:fontFamily">@font/jost_book</item>
-  </style>
-
-  <style name="Widget.Doodle.TextView.Paragraph" parent="Widget.Doodle.TextView">
-    <item name="android:justificationMode" tools:targetApi="o">inter_word</item>
     <item name="android:breakStrategy" tools:targetApi="m">high_quality</item>
     <item name="android:hyphenationFrequency" tools:targetApi="m">full</item>
   </style>
 
+  <style name="Widget.Doodle.TextView.Paragraph" parent="Widget.Doodle.TextView">
+    <item name="android:justificationMode" tools:targetApi="o">inter_word</item>
+  </style>
+
   <style name="Widget.Doodle.TextView.Paragraph.Fix" parent="Widget.Doodle.TextView.Paragraph">
     <item name="android:breakStrategy" tools:targetApi="m">simple</item>
+  </style>
+
+  <style
+    name="Widget.Doodle.TextView.Paragraph.Unjustified"
+    parent="Widget.Doodle.TextView.Paragraph">
+    <item name="android:justificationMode" tools:targetApi="o">none</item>
   </style>
 
   <style name="Widget.Doodle.TextView.Toolbar" parent="Widget.Doodle.TextView">

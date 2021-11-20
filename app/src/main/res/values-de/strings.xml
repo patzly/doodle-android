@@ -132,6 +132,9 @@
   <string name="other_launcher_description">Einstellungen nur über Live-Hintergrund-Auswahl des Systems erreichbar</string>
   <string name="other_theme">App-Farben</string>
   <string name="other_theme_description">Probiere einen anderen Look aus!</string>
+  <string name="other_theme_auto">Auto</string>
+  <string name="other_theme_light">Hell</string>
+  <string name="other_theme_dark">Dunkel</string>
   <string name="other_reset">Alle Einstellungen zurücksetzen</string>
   <string name="other_reset_description">Bewirkt mehr als deinstallieren, da die Einstellungen an einem speziellen Ort gespeichert werden, damit sie direkt nach dem Einschalten des Geräts abrufbar sind</string>
 

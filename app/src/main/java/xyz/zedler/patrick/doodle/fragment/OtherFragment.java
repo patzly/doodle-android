@@ -33,6 +33,7 @@ import android.widget.CompoundButton.OnCheckedChangeListener;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.view.ContextThemeWrapper;
+import androidx.core.content.ContextCompat;
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.color.DynamicColors;
 import com.google.android.material.snackbar.Snackbar;
@@ -51,7 +52,6 @@ import xyz.zedler.patrick.doodle.fragment.dialog.LanguagesBottomSheetDialogFragm
 import xyz.zedler.patrick.doodle.model.Language;
 import xyz.zedler.patrick.doodle.util.LocaleUtil;
 import xyz.zedler.patrick.doodle.util.ResUtil;
-import xyz.zedler.patrick.doodle.util.SystemUiUtil;
 import xyz.zedler.patrick.doodle.util.ViewUtil;
 
 public class OtherFragment extends BaseFragment
@@ -111,14 +111,7 @@ public class OtherFragment extends BaseFragment
 
     binding.textOtherLanguage.setText(getLanguage());
 
-    if (DynamicColors.isDynamicColorAvailable()) {
-      binding.linearOtherThemeContainer.setVisibility(View.GONE);
-      binding.toggleOtherTheme.setPadding(
-          0, SystemUiUtil.dpToPx(activity, 4), 0, 0
-      );
-    } else {
-      setUpThemeSelection();
-    }
+    setUpThemeSelection();
 
     binding.linearOtherGpu.setVisibility(
         Build.VERSION.SDK_INT >= Build.VERSION_CODES.O ? View.VISIBLE : View.GONE
@@ -249,11 +242,15 @@ public class OtherFragment extends BaseFragment
   }
 
   private void setUpThemeSelection() {
+    boolean hasDynamic = DynamicColors.isDynamicColorAvailable();
     ViewGroup container = binding.linearOtherThemeContainer;
-    for (int i = 0; i < 4; i++) {
+    for (int i = hasDynamic ? -1 : 0; i < 4; i++) {
       String name;
       int resId;
-      if (i == 1) {
+      if (i == -1) {
+        name = THEME.DYNAMIC;
+        resId = -1;
+      } else if (i == 1) {
         name = THEME.YELLOW;
         resId = R.style.Theme_Doodle_Yellow;
       } else if (i == 2) {
@@ -268,11 +265,12 @@ public class OtherFragment extends BaseFragment
       }
 
       MaterialCardView card = ViewUtil.getSelectionCard(activity);
-      card.setCardBackgroundColor(
-          ResUtil.getColorAttr(
+      int color = Build.VERSION.SDK_INT >= Build.VERSION_CODES.S && i == -1
+          ? ContextCompat.getColor(activity, android.R.color.system_accent1_100)
+          : ResUtil.getColorAttr(
               new ContextThemeWrapper(activity, resId), R.attr.colorPrimaryContainer
-          )
-      );
+          );
+      card.setCardBackgroundColor(color);
       card.setOnClickListener(v -> {
         if (!card.isChecked()) {
           ViewUtil.startIcon(card.getCheckedIcon());

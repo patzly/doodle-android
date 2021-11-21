@@ -161,9 +161,10 @@ public final class Constants {
       public final static int DARK = 2;
     }
 
-    public final static String GREEN = "green";
-    public final static String YELLOW = "yellow";
+    public final static String DYNAMIC = "dynamic";
     public final static String RED = "red";
+    public final static String YELLOW = "yellow";
+    public final static String GREEN = "green";
     public final static String BLUE = "blue";
   }
 }

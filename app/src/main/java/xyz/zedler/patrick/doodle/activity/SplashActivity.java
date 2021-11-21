@@ -62,21 +62,26 @@ public class SplashActivity extends AppCompatActivity {
     }
     AppCompatDelegate.setDefaultNightMode(mode);
 
-    if (!DynamicColors.isDynamicColorAvailable()) {
-      switch (sharedPrefs.getString(PREF.THEME, DEF.THEME)) {
-        case THEME.YELLOW:
-          setTheme(R.style.Theme_Doodle_Yellow);
-          break;
-        case THEME.GREEN:
-          setTheme(R.style.Theme_Doodle_Green);
-          break;
-        case THEME.BLUE:
-          setTheme(R.style.Theme_Doodle_Blue);
-          break;
-        default:
+    switch (sharedPrefs.getString(PREF.THEME, DEF.THEME)) {
+      case THEME.RED:
+        setTheme(R.style.Theme_Doodle_Red);
+        break;
+      case THEME.YELLOW:
+        setTheme(R.style.Theme_Doodle_Yellow);
+        break;
+      case THEME.GREEN:
+        setTheme(R.style.Theme_Doodle_Green);
+        break;
+      case THEME.BLUE:
+        setTheme(R.style.Theme_Doodle_Blue);
+        break;
+      default:
+        if (DynamicColors.isDynamicColorAvailable()) {
+          DynamicColors.applyIfAvailable(this);
+        } else {
           setTheme(R.style.Theme_Doodle_Red);
-          break;
-      }
+        }
+        break;
     }
 
     super.onCreate(bundle);

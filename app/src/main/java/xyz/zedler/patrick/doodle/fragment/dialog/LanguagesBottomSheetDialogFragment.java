@@ -96,11 +96,11 @@ public class LanguagesBottomSheetDialogFragment extends BaseBottomSheetDialogFra
         dismiss();
       } else {
         dismiss();
-        activity.restartToApply(200);
+        activity.restartToApply(150);
       }
     } else {
       dismiss();
-      activity.restartToApply(200);
+      activity.restartToApply(150);
     }
 
     getSharedPrefs().edit().putString(Constants.PREF.LANGUAGE, selectedCode).apply();

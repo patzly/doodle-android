@@ -280,7 +280,7 @@ public class OtherFragment extends BaseFragment
           ViewUtil.uncheckAllChildren(container);
           card.setChecked(true);
           getSharedPrefs().edit().putString(PREF.THEME, name).apply();
-          activity.restartToApply(200);
+          activity.restartToApply(0);
         }
       });
 

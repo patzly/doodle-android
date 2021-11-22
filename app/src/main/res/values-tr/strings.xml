@@ -132,6 +132,9 @@
   <string name="other_launcher_description">Duvar kağıdı ayarları yalnızca cihazın canlı duvar kağıdı seçicisinde erişilebilir olacaktır</string>
   <string name="other_theme">Uygulama rengi teması</string>
   <string name="other_theme_description">Başka bir görünüm dene </string>
+  <string name="other_theme_auto">Otomatik</string>
+  <string name="other_theme_light">Aydınlık</string>
+  <string name="other_theme_dark">Karanlık</string>
   <string name="other_reset">Tüm ayarları sıfırla </string>
   <string name="other_reset_description">Kaldırmanın yapacağından daha fazlasını yapar, çünkü uygulama ayarları cihaz açılır açılmaz direkt erişilebilir olması gerektiği için özel bir yerde saklanıyor</string>
 

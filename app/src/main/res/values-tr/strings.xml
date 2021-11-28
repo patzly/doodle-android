@@ -41,6 +41,7 @@
   <string name="action_close">Kapat</string>
   <string name="action_back">Geri</string>
   <string name="action_open_link">Açık harici websitesi</string>
+  <string name="action_hide">Gizle</string>
   <string name="action_reset">Sıfırla</string>
   <string name="action_continue">Devam et</string>
   <string name="action_open_app_info">Uygulama bilgisini aç</string>
@@ -69,7 +70,7 @@
   <string name="appearance_night_mode_description">Sadece karanlık renkler</string>
   <string name="appearance_follow_system">Sisteme uy</string>
   <string name="appearance_follow_system_description">Cihaz temasını benimse</string>
-  <string name="appearance_white_text">Yazıları gölgeli beyaz renge zorla</string>
+  <string name="appearance_white_text">Beyaz yazıyı zorlamayı dene</string>
   <string name="appearance_white_text_description">Okunabilirliğe etkisi olabilir</string>
   <string name="appearance_colors">Çıkartılmış renkler</string>
   <string name="appearance_colors_description">Yazının kontrastını hesaplamada kullanılır</string>
@@ -154,9 +155,10 @@
 
   <string name="msg_feedback">Başarılı bir uygulama çok zaman gerektirir ve kullanıcılarının geri bildirimlerine dayanır.\n\nHerhangi bir dileğiniz, yorumunuz ya da sorunuz var mı? Benimle iletişime geçin!\nAksi takdirde Play Store\'da güzel bir inceleme için çok mutlu olurdum. </string>
   <string name="msg_share">Bu harika canlı duvar kağıdı uygulamasına göz atın:\nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
+  <string name="msg_hide">Başlatıcıdaki simge gizlensin mi?</string>
   <string name="msg_reset">Tüm ayarlar sıfırlansın mı?</string>
   <string name="msg_force_stop">Değişiklikleri uygulamak için zorunlu durdurma gerekli</string>
-  <string name="msg_apply_changes">Bu ayarı değiştirmek şu anda çalışan duvar kağıdı servisinin yeniden başlamasını gerektirir. Bu otomatik olarak yapılamaz.\nLütfen Doodle\'ı sistem ayarlarından durdurup tekrardan duvar kağıdınız olarak ayarlayın.</string>
+  <string name="msg_apply_changes">Değiştirilen seçenekleri (eninde sonunda) uygulamak için, çalışan duvar kağıdı hizmetinin yeniden başlatılması önerilir. Bu otomatik olarak yapılamaz.\nLütfen sistem ayarlarınızda Doodle\'ı zorla durdurun ve ardından Doodle\'ı duvar kağıdınız olarak tekrar uygulayın. </string>
   <string name="msg_preview_missing">Bir hata meydana geldi, lütfen Doodle Hareketli Duvar Kağıdını manuel olarak seçin </string>
 
   </resources>

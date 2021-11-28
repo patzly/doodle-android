@@ -95,6 +95,10 @@
       app:destination="@id/colorsBottomSheetDialogFragment" />
 
     <action
+      android:id="@+id/action_appearance_to_apply_dialog"
+      app:destination="@id/applyBottomSheetDialogFragment" />
+
+    <action
       android:id="@+id/action_appearance_to_feedback_dialog"
       app:destination="@id/feedbackBottomSheetDialogFragment" />
 

@@ -194,10 +194,7 @@ public class SizeFragment extends BaseFragment
     } else if (id == R.id.switch_size_zoom_system) {
       getSharedPrefs().edit().putBoolean(PREF.ZOOM_SYSTEM, isChecked).apply();
       performHapticClick();
-      if (activity.isWallpaperServiceRunning(false)
-          && isChecked != activity.useZoomSystemInit) {
-        activity.showForceStopRequest(SizeFragmentDirections.actionSizeToApplyDialog());
-      }
+      activity.showForceStopRequest(SizeFragmentDirections.actionSizeToApplyDialog());
     } else if (id == R.id.switch_size_zoom_unlock) {
       getSharedPrefs().edit().putBoolean(PREF.ZOOM_UNLOCK, isChecked).apply();
       activity.requestSettingsRefresh();

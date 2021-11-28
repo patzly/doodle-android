@@ -217,6 +217,11 @@ public class AppearanceFragment extends BaseFragment
       refreshDarkLightVariant();
       refreshColors();
       activity.requestThemeRefresh();
+      if (DynamicColors.isDynamicColorAvailable()) {
+        activity.showForceStopRequest(
+            AppearanceFragmentDirections.actionAppearanceToApplyDialog()
+        );
+      }
     } else if (id == R.id.switch_appearance_follow_system) {
       ViewUtil.startIcon(binding.imageAppearanceFollowSystem);
       performHapticClick();
@@ -224,6 +229,11 @@ public class AppearanceFragment extends BaseFragment
       refreshDarkLightVariant();
       refreshColors();
       activity.requestThemeRefresh();
+      if (DynamicColors.isDynamicColorAvailable()) {
+        activity.showForceStopRequest(
+            AppearanceFragmentDirections.actionAppearanceToApplyDialog()
+        );
+      }
     } else if (id == R.id.switch_appearance_white_text) {
       performHapticClick();
       getSharedPrefs().edit().putBoolean(PREF.USE_WHITE_TEXT, isChecked).apply();
@@ -269,21 +279,27 @@ public class AppearanceFragment extends BaseFragment
         thumbnail.setImageResource(wallpaper.getThumbnailResId());
         card.addView(thumbnail);
         card.setOnClickListener(v -> {
-          if (!card.isChecked()) {
-            ViewUtil.startIcon(binding.imageAppearanceWallpaper);
-            ViewUtil.startIcon(card.getCheckedIcon());
-            performHapticClick();
-            ViewUtil.uncheckAllChildren(
-                binding.linearAppearanceWallpaperContainerDoodle,
-                binding.linearAppearanceWallpaperContainerMonet,
-                binding.linearAppearanceWallpaperContainerAnna
+          if (card.isChecked()) {
+            return;
+          }
+          ViewUtil.startIcon(binding.imageAppearanceWallpaper);
+          ViewUtil.startIcon(card.getCheckedIcon());
+          performHapticClick();
+          ViewUtil.uncheckAllChildren(
+              binding.linearAppearanceWallpaperContainerDoodle,
+              binding.linearAppearanceWallpaperContainerMonet,
+              binding.linearAppearanceWallpaperContainerAnna
+          );
+          card.setChecked(true);
+          int oldCount = currentWallpaper != null ? currentWallpaper.getVariants().length : 0;
+          currentWallpaper = wallpaper;
+          refreshVariantSelection(oldCount, wallpaper, true);
+          getSharedPrefs().edit().putString(PREF.WALLPAPER, wallpaper.getName()).apply();
+          activity.requestThemeRefresh();
+          if (DynamicColors.isDynamicColorAvailable()) {
+            activity.showForceStopRequest(
+                AppearanceFragmentDirections.actionAppearanceToApplyDialog()
             );
-            card.setChecked(true);
-            int oldCount = currentWallpaper != null ? currentWallpaper.getVariants().length : 0;
-            currentWallpaper = wallpaper;
-            refreshVariantSelection(oldCount, wallpaper, true);
-            getSharedPrefs().edit().putString(PREF.WALLPAPER, wallpaper.getName()).apply();
-            activity.requestThemeRefresh();
           }
         });
 
@@ -364,6 +380,11 @@ public class AppearanceFragment extends BaseFragment
               .putInt(Constants.VARIANT_PREFIX + wallpaper.getName(), iFinal)
               .apply();
           activity.requestThemeRefresh();
+          if (DynamicColors.isDynamicColorAvailable()) {
+            activity.showForceStopRequest(
+                AppearanceFragmentDirections.actionAppearanceToApplyDialog()
+            );
+          }
         }
       });
       boolean isSelected = getSharedPrefs().getInt(
@@ -467,14 +488,15 @@ public class AppearanceFragment extends BaseFragment
   }
 
   public void setColor(int priority, String color) {
-    getSharedPrefs().edit().putString(
-        Constants.getThemeColorPref(
-            currentWallpaper.getName(), currentVariantIndex, priority, isWallpaperNightMode()
-        ),
-        color
-    ).apply();
+    String pref = Constants.getThemeColorPref(
+        currentWallpaper.getName(), currentVariantIndex, priority, isWallpaperNightMode()
+    );
+    getSharedPrefs().edit().putString(pref, color).apply();
     refreshColor(priority, true);
     activity.requestThemeRefresh();
+    if (DynamicColors.isDynamicColorAvailable()) {
+      activity.showForceStopRequest(AppearanceFragmentDirections.actionAppearanceToApplyDialog());
+    }
   }
 
   private boolean isWallpaperNightMode() {

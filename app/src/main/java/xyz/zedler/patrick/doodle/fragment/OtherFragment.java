@@ -37,6 +37,7 @@ import androidx.core.content.ContextCompat;
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.color.DynamicColors;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.android.material.snackbar.Snackbar.Callback;
 import java.util.Locale;
 import xyz.zedler.patrick.doodle.Constants.DEF;
 import xyz.zedler.patrick.doodle.Constants.PREF;
@@ -198,25 +199,49 @@ public class OtherFragment extends BaseFragment
     }
   }
 
+  @SuppressLint("ShowToast")
   @Override
   public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
     int id = buttonView.getId();
     if (id == R.id.switch_other_gpu) {
       getSharedPrefs().edit().putBoolean(PREF.GPU, isChecked).apply();
       performHapticClick();
-      if (activity.isWallpaperServiceRunning(false)
-          && isChecked != activity.useGpuInit) {
-        activity.showForceStopRequest(OtherFragmentDirections.actionOtherToApplyDialog());
-      }
+      activity.showForceStopRequest(OtherFragmentDirections.actionOtherToApplyDialog());
     } else if (id == R.id.switch_other_launcher) {
       performHapticClick();
-      activity.getPackageManager().setComponentEnabledSetting(
-          new ComponentName(activity, SplashActivity.class),
-          isChecked
-              ? PackageManager.COMPONENT_ENABLED_STATE_DISABLED
-              : PackageManager.COMPONENT_ENABLED_STATE_ENABLED,
-          PackageManager.DONT_KILL_APP
-      );
+      if (isChecked) {
+        activity.showSnackbar(
+            Snackbar.make(
+                binding.getRoot(), getString(R.string.msg_hide), Snackbar.LENGTH_LONG
+            ).setAction(
+                getString(R.string.action_hide), view -> {
+                  performHapticHeavyClick();
+                  activity.getPackageManager().setComponentEnabledSetting(
+                      new ComponentName(activity, SplashActivity.class),
+                      PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
+                      PackageManager.DONT_KILL_APP
+                  );
+                }
+            ).addCallback(new Callback() {
+              @Override
+              public void onDismissed(Snackbar transientBottomBar, int event) {
+                binding.switchOtherLauncher.setOnCheckedChangeListener(null);
+                binding.switchOtherLauncher.setChecked(
+                    activity.getPackageManager().getComponentEnabledSetting(
+                        new ComponentName(activity, SplashActivity.class)
+                    ) == PackageManager.COMPONENT_ENABLED_STATE_DISABLED
+                );
+                binding.switchOtherLauncher.setOnCheckedChangeListener(OtherFragment.this);
+              }
+            })
+        );
+      } else {
+        activity.getPackageManager().setComponentEnabledSetting(
+            new ComponentName(activity, SplashActivity.class),
+            PackageManager.COMPONENT_ENABLED_STATE_ENABLED,
+            PackageManager.DONT_KILL_APP
+        );
+      }
     }
   }
 
@@ -282,7 +307,13 @@ public class OtherFragment extends BaseFragment
         }
       });
 
-      boolean isSelected = getSharedPrefs().getString(PREF.THEME, DEF.THEME).equals(name);
+      String selected = getSharedPrefs().getString(PREF.THEME, DEF.THEME);
+      boolean isSelected;
+      if (selected.isEmpty()) {
+        isSelected = hasDynamic ? name.equals(THEME.DYNAMIC) : name.equals(THEME.RED);
+      } else {
+        isSelected = selected.equals(name);
+      }
       card.setChecked(isSelected);
       container.addView(card);
     }

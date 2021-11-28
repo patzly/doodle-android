@@ -100,7 +100,7 @@ public final class Constants {
 
     public final static String LANGUAGE = null;
     public final static boolean GPU = true;
-    public final static String THEME = "red";
+    public final static String THEME = "";
     public final static int MODE = Constants.THEME.MODE.AUTO;
   }
 
@@ -150,6 +150,7 @@ public final class Constants {
   public final static class EXTRA {
 
     public final static String INSTANCE_STATE = "instance_state";
+    public final static String SHOW_FORCE_STOP_REQUEST = "show_force_stop_request";
   }
 
   public final static class THEME {

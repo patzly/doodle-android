@@ -1,8 +1,8 @@
 4.3.0:
 - New: another exclusive live wallpaper based on Pixel 6 wallpapers (still more to come!)
 - New: complete implementation of Material Design 3
-- New: dynamic colors in Doodle settings app for supported devices with Android 12+
-- New: app color themes for devices without dynamic color support
+- New: dynamic colors in Doodle settings app for supported devices with Android 12+ (Material You)
+- New: various app color themes for devices without dynamic color support
 - New: option to change language (translated by amazing volunteers on Transifex, thank you all!)
 - New: customizable extracted wallpaper colors for devices with dynamic color support
 - Improved: changed settings are applied to the running wallpaper instantly

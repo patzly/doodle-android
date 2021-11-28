@@ -276,6 +276,7 @@ public class LiveWallpaperService extends WallpaperService {
 
       fps = getFrameRate();
       isPreview = isPreview();
+      sharedPrefs.edit().putBoolean(PREF.PREVIEW_RUNNING, isPreview).apply();
 
       userPresenceListener = this;
       refreshListener = this;
@@ -329,13 +330,13 @@ public class LiveWallpaperService extends WallpaperService {
 
       zoomLauncher = 0;
       // This starts the zoom effect already in wallpaper preview
-      zoomUnlock = 1;
-      animateZoom(0);
+      zoomUnlock = useSystemZoom ? 0 : 1;
+      if (!useSystemZoom) {
+        animateZoom(0);
+      }
 
       setTouchEventsEnabled(false);
       setOffsetNotificationsEnabled(true);
-
-      sharedPrefs.edit().putBoolean(PREF.PREVIEW_RUNNING, isPreview).apply();
     }
 
     @Override

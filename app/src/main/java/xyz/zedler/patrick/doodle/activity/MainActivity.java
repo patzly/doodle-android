@@ -64,6 +64,7 @@ import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.behavior.SystemBarBehavior;
 import xyz.zedler.patrick.doodle.databinding.ActivityMainBinding;
 import xyz.zedler.patrick.doodle.fragment.BaseFragment;
+import xyz.zedler.patrick.doodle.fragment.dialog.ApplyBottomSheetDialogFragment;
 import xyz.zedler.patrick.doodle.fragment.dialog.ChangelogBottomSheetDialogFragment;
 import xyz.zedler.patrick.doodle.fragment.dialog.FeedbackBottomSheetDialogFragment;
 import xyz.zedler.patrick.doodle.service.LiveWallpaperService;
@@ -88,9 +89,6 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
   private boolean isServiceRunning;
   private int fabTopEdgeDistance;
   private int bottomInset;
-
-  public boolean useGpuInit;
-  public boolean useZoomSystemInit;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -165,8 +163,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     );
 
     // Calculate FAB top edge distance to bottom (excluding bottom inset)
-    int height = SystemUiUtil.dpToPx(
-        this, 32) + SystemUiUtil.spToPx(this, 16
+    int height = SystemUiUtil.dpToPx(this, 32) + SystemUiUtil.spToPx(
+        this, 16
     );
     int margin = SystemUiUtil.dpToPx(this, 40);
     fabTopEdgeDistance = height + margin;
@@ -184,8 +182,11 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
       binding.fabMain.setVisibility(View.INVISIBLE);
     }
 
-    useGpuInit = sharedPrefs.getBoolean(PREF.GPU, DEF.GPU);
-    useZoomSystemInit = sharedPrefs.getBoolean(PREF.ZOOM_SYSTEM, DEF.ZOOM_SYSTEM);
+    if (getIntent() != null) {
+      if (getIntent().getBooleanExtra(EXTRA.SHOW_FORCE_STOP_REQUEST, false)) {
+        new Handler().postDelayed(() -> showForceStopRequest(null), 200);
+      }
+    }
 
     ViewCompat.setOnApplyWindowInsetsListener(binding.getRoot(), (v, insets) -> {
       bottomInset = insets.getInsets(Type.systemBars()).bottom;
@@ -246,15 +247,6 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
       }
       performHapticHeavyClick();
     }
-  }
-
-  public void stopLiveWallpaperService() {
-    Intent intent = new Intent(WallpaperManager.ACTION_CHANGE_LIVE_WALLPAPER);
-    intent.putExtra(
-        WallpaperManager.EXTRA_LIVE_WALLPAPER_COMPONENT,
-        new ComponentName(getPackageName(), LiveWallpaperService.class.getCanonicalName())
-    );
-    stopService(intent);
   }
 
   @Override
@@ -337,10 +329,14 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     sharedPrefs.edit().clear().apply();
     requestSettingsRefresh();
     requestThemeRefresh();
-    restartToApply(100);
+    restartToApply(100, true);
   }
 
   public void restartToApply(long delay) {
+    restartToApply(delay, false);
+  }
+
+  public void restartToApply(long delay, boolean showForceStopRequest) {
     new Handler().postDelayed(() -> {
       Bundle bundle = new Bundle();
       onSaveInstanceState(bundle);
@@ -351,6 +347,9 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
       if (isStartedFromLauncher()) {
         intent.addCategory(Intent.CATEGORY_LAUNCHER);
       }
+      if (showForceStopRequest) {
+        intent.putExtra(EXTRA.SHOW_FORCE_STOP_REQUEST, true);
+      }
       startActivity(intent);
       overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }, delay);
@@ -358,13 +357,20 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 
   @SuppressLint("ShowToast")
   public void showForceStopRequest(NavDirections directions) {
+    if (!isWallpaperServiceRunning(true)) {
+      return;
+    }
     showSnackbar(
         Snackbar.make(
             binding.getRoot(), getString(R.string.msg_force_stop), Snackbar.LENGTH_LONG
         ).setAction(
             getString(R.string.action_continue), view -> {
               performHapticHeavyClick();
-              navController.navigate(directions);
+              if (directions != null) {
+                navController.navigate(directions);
+              } else {
+                ViewUtil.showBottomSheet(this, new ApplyBottomSheetDialogFragment());
+              }
             }
         )
     );

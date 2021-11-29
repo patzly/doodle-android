@@ -7,14 +7,26 @@ Patrick Zedler
 es
 JA_Joxquin, nmayorga092
 
+fil
+Tochii
+
 fr
 choukajohn
+
+in
+Phantonym
+
+pt_BR
+mamutal91
 
 ru
 VoicelessCinder, uvdllm
 
 tr
 k2edih
+
+ug
+HushBeg
 
 zh_CN
 Schauding

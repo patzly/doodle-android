@@ -44,14 +44,11 @@
   <string name="action_rate_description">Apoie o desenvolvimento</string>
   <string name="action_github">Doodle Android no GitHub</string>
   <string name="action_github_description">Abra um novo problema</string>
-
   <string name="appearance_night_mode">Modo noturno</string>
   <string name="appearance_night_mode_description">Formas totalmente escuras</string>
   <string name="appearance_follow_system">Seguir sistema</string>
   <string name="appearance_follow_system_description">Adote o tema do dispositivo</string>
-  <string name="appearance_white_text">Use texto branco com sombra em fundos brilhantes</string>
   <string name="appearance_white_text_description">Não recomendado</string>
-
   <string name="parallax_touch_wiz">Parece que o seu iniciador atual é o Samsung TouchWiz, que não oferece suporte à rolagem em segundo plano. Tente um inicializador diferente para habilitar o efeito de paralaxe.\nVocê pode ignorar este aviso se definir outro inicializador como padrão.</string>
   <string name="parallax_intensity">Force Parallax</string>
   <string name="parallax_none">Nenhum</string>
@@ -61,8 +58,6 @@
   <string name="size_zoom_launcher">Diminua o zoom ao abrir as configurações rápidas ou gaveta de aplicativos</string>
   <string name="size_zoom_unlock">Diminuir o zoom na tela de bloqueio</string>
   <string name="other_gpu">Aceleraçao do hardware</string>
-  <string name="other_gpu_description">Desligue se o papel de parede travar. Requer a reinicialização do dispositivo para ter efeito se o papel de parede estiver ativo no momento.</string>
-  <string name="other_gpu_info">A aceleração de hardware está disponível apenas para Doodle a partir do Android 8. As animações de papel de parede podem, portanto, ser um pouco instáveis, especialmente com o segundo papel de parede.</string>
   <string name="other_reset">Redefinir todas as configurações</string>
   <string name="about_version">Versão</string>
   <string name="about_changelog">Changelog</string>

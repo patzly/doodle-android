@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ This file is part of Doodle Android.
+  ~
+  ~ Doodle Android is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Doodle Android is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with Doodle Android. If not, see <http://www.gnu.org/licenses/>.
+  ~
+  ~ Copyright (c) 2019-2021 by Patrick Zedler
+  -->
+
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+
+  <string name="wallpaper_description">Makulay na live wallpapers na may auto dark mode at matipid sa baterya na mga animasyon. I-tap para sa masmadaming impormasyon.</string>
+  <string name="wallpaper_description_picker">I-explore ang makulay na koleksyon ng mga hugis, malinis na may malumay na parallax at zoom effects kapag ikaw ay nag-swipe sa iyong home screens at buksan ang iyong device.\nI-Customize ang iyong wallpaper para sa iyong istilo.</string>
+
+  <!-- TITLES -->
+
+  <string name="title_info">Impormasyon</string>
+  <string name="title_feedback">Puna</string>
+  <string name="title_licenses">Mga lisensya na open source</string>
+
+  <!-- LABELS -->
+
+  <string name="label_ms">%1$sms</string>
+  <string name="label_degrees">%1$sdegrees</string>
+
+  <!-- ACTIONS -->
+
+  <string name="action_close">Isara</string>
+  <string name="action_back">Bumalik</string>
+  <string name="action_reset">I-reset</string>
+  <string name="action_set">Ilagay ang wallpaper</string>
+  <string name="action_send_feedback">Magpadala ng puna</string>
+  <string name="action_share">Ibahagi</string>
+  <string name="action_share_description">Sabihin sa iyong mga kaibigan tungkol sa Doodle</string>
+  <string name="action_email">Magpadala ng e-mail</string>
+  <string name="action_email_description">Makipag-ugnay sa nag-develop</string>
+  <string name="action_rate">I-rate sa Google Play</string>
+  <string name="action_rate_description">Suportahan ang development</string>
+  <string name="action_github">Doodle Android sa GitHub</string>
+  <string name="action_github_description">Magbukas ang bagong isyu</string>
+  <!-- APPEARANCE -->
+
+  <string name="appearance_title">Hitsura</string>
+  <string name="appearance_description">Disenyo at pagpipiliang mga tema</string>
+  <string name="appearance_design">Disenyo</string>
+  <string name="appearance_design_doodle">Koleksyon ng Pixel 4 Doodle</string>
+  <string name="appearance_design_monet">Koleksyon ng Pixel 6 Material You</string>
+  <string name="appearance_design_anna">Live wallpapers ni à l\'Anna Kövecses</string>
+  <string name="appearance_variant">Iba-iba</string>
+  <string name="appearance_night_mode">Night mode</string>
+  <string name="appearance_night_mode_description">Dark na kulay lang</string>
+  <string name="appearance_follow_system">Sundan ang system</string>
+  <string name="appearance_follow_system_description">Hiramin ang tema ng device</string>
+  <string name="appearance_white_text_description">Maaaring makaapekto sa pagbasa</string>
+  <!-- PARALLAX -->
+
+  <string name="parallax_title">Parallax</string>
+  <string name="parallax_description">Swipe at tilt effect</string>
+  </resources>

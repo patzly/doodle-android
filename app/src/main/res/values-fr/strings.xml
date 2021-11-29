@@ -69,7 +69,6 @@
   <string name="appearance_night_mode_description">Couleurs sombres uniquement</string>
   <string name="appearance_follow_system">Suivre le système</string>
   <string name="appearance_follow_system_description">Suivre le thème de l\'appareil</string>
-  <string name="appearance_white_text">Forcer le texte blanc avec une ombre</string>
   <string name="appearance_white_text_description">Peut affecter la lisibilité</string>
   <string name="appearance_colors">Couleurs extraites</string>
   <string name="appearance_colors_description">Utilisé pour calculer le contraste du texte</string>
@@ -156,7 +155,6 @@
   <string name="msg_share">Découvrez cette excellente application de fonds d\'écran animés : \nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
   <string name="msg_reset">Réinitialiser tous les réglages ?</string>
   <string name="msg_force_stop">Arrêt forcé requis pour appliquer les modifications</string>
-  <string name="msg_apply_changes">Modifier cette option nécessite un redémarrage du service de fond d\'écrans en cours d\'exécution. Cela ne peut pas être fait automatiquement.\nVeuillez forcer l\'arrêt de Doodle dans les paramètres de votre système, puis appliquez à nouveau Doodle comme fond d\'écran.</string>
   <string name="msg_preview_missing">Une erreur s\'est produite, veuillez sélectionner manuellement le fond d\'écran animé Doodle</string>
 
   </resources>

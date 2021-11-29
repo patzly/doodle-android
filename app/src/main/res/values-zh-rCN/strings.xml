@@ -51,7 +51,6 @@
   <string name="action_rate_description">支持发展</string>
   <string name="action_github">在GitHub上的Doodle项目</string>
   <string name="action_github_description">去开发一个新的项目</string>
-
   <!-- APPEARANCE -->
 
   <string name="appearance_title">外观</string>
@@ -65,9 +64,7 @@
   <string name="appearance_night_mode_description">只有暗黑色彩</string>
   <string name="appearance_follow_system">跟随系统</string>
   <string name="appearance_follow_system_description">采用自带主题</string>
-  <string name="appearance_white_text">强制带阴影的白色文本</string>
   <string name="appearance_white_text_description">可能会影响到美观</string>
-
   <!-- PARALLAX -->
 
   <string name="parallax_title">视差</string>
@@ -98,7 +95,6 @@
   <string name="size_zoom_description">增加时，图案间距会缩小更多</string>
   <string name="size_zoom_launcher">打开快速设置或应用程序抽屉时缩小</string>
   <string name="size_zoom_system">使用系统提供的缩放效果</string>
-  <string name="size_zoom_system_description">修复启用“倾斜效果”时的抖动缩放动画，需要重新启动墙纸才能生效</string>
   <string name="size_zoom_unlock">在锁屏上缩小</string>
   <string name="size_zoom_unlock_description">如果启用“倾斜效果”，则可能会出现抖动</string>
   <string name="size_zoom_duration">关闭锁定缩放持续时间</string>
@@ -109,10 +105,7 @@
   <!-- OTHER -->
 
   <string name="other_title">其他设置</string>
-  <string name="other_description">渲染和重置</string>
   <string name="other_gpu">硬件加速</string>
-  <string name="other_gpu_description">如果壁纸崩溃，请关闭。如果壁纸当前处于活动状态，则需要重新启动设备才能生效。</string>
-  <string name="other_gpu_info">硬件加速仅适用于从Android 8开始的安卓系统因此，墙纸动画可能有点不稳定，尤其是第二张墙纸。</string>
   <string name="other_launcher">在桌面上隐藏图标</string>
   <string name="other_launcher_description">设置只能在系统的实时壁纸选取器中访问</string>
   <string name="other_reset">重置所有设置</string>
@@ -121,12 +114,10 @@
   <!-- ABOUT -->
 
   <string name="about_title">关于</string>
-  <string name="about_description">开发者信息以及更多</string>
   <string name="about_version">版本</string>
   <string name="about_changelog">变更日志</string>
   <string name="about_changelog_description">更新了什么？</string>
   <string name="about_developer">开发者</string>
-  <string name="about_vending_description">开发者的其它Apps</string>
   <string name="about_github_description">源代码</string>
   <string name="about_translation_description">帮助翻译Doodle</string>
 

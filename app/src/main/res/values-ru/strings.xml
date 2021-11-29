@@ -50,7 +50,6 @@
   <string name="action_rate_description">Поддержать разработку</string>
   <string name="action_github">Doodle Android на GitHub</string>
   <string name="action_github_description">Сообщить о проблеме</string>
-
   <!-- APPEARANCE -->
 
   <string name="appearance_title">Внешний вид</string>
@@ -64,9 +63,7 @@
   <string name="appearance_night_mode_description">Только тёмные цвета</string>
   <string name="appearance_follow_system">Как в системе</string>
   <string name="appearance_follow_system_description">Заимствовать тему устройства</string>
-  <string name="appearance_white_text">Принудительно использовать белый текст с тенью</string>
   <string name="appearance_white_text_description">Может повлиять на читаемость</string>
-
   <!-- PARALLAX -->
 
   <string name="parallax_title">Сдвиг</string>
@@ -96,7 +93,6 @@
   <string name="size_zoom_description">При увеличении камера отдаляется сильнее</string>
   <string name="size_zoom_launcher">Отдалять при открытии шторки уведомлений или меню приложений</string>
   <string name="size_zoom_system">Использовать системный эффект масштабирования</string>
-  <string name="size_zoom_system_description">Исправляет глючную анимацию масштабирования при включенном эффекте наклона. Требует перезагрузки обоев для вступления в силу</string>
   <string name="size_zoom_unlock">Отдалять камеру на экране блокировки</string>
   <string name="size_zoom_unlock_description">Может глючить при включенном эффекте наклона</string>
   <string name="size_zoom_duration">Длительность масштабирования при разблокировке</string>
@@ -107,10 +103,7 @@
   <!-- OTHER -->
 
   <string name="other_title">Прочие настройки</string>
-  <string name="other_description">Отрисовка &amp; сброс</string>
   <string name="other_gpu">Аппаратное ускорение</string>
-  <string name="other_gpu_description">Отключите, если обои вылетают. Требует перезапуска устройства для вступления в силу при установленных обоях</string>
-  <string name="other_gpu_info">Аппаратное ускорение доступно только для Doodle на Android 8 и выше. В связи с этим анимации обоев могут немного глючить, особенно со вторыми обоями</string>
   <string name="other_launcher">Скрыть иконку в лаунчере</string>
   <string name="other_launcher_description">Настройки будут доступны только в системном приложении для установки обоев</string>
   <string name="other_reset">Сбросить все настройки</string>
@@ -119,12 +112,10 @@
   <!-- ABOUT -->
 
   <string name="about_title">О приложении</string>
-  <string name="about_description">Информация о разработчике и прочее</string>
   <string name="about_version">Версия</string>
   <string name="about_changelog">Список изменений</string>
   <string name="about_changelog_description">Что нового?</string>
   <string name="about_developer">Разработчик</string>
-  <string name="about_vending_description">Другие приложения разработчика</string>
   <string name="about_github_description">Исходный код</string>
   <string name="about_translation_description">Помогите перевести Doodle</string>
 

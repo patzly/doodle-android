@@ -1,4 +1,4 @@
-4.3.0:
+5.0.0:
 - New: another exclusive live wallpaper based on Pixel 6 wallpapers (still more to come!)
 - New: complete implementation of Material Design 3
 - New: dynamic colors in Doodle settings app for supported devices with Android 12+ (Material You)

@@ -58,6 +58,7 @@ public class FogWallpaper extends BaseWallpaper {
             "#e6baad",
             "#4c87bf",
             "#eadcc2",
+            new String[]{"#dd865b", "#12333a"},
             true,
             false
         )
@@ -73,6 +74,7 @@ public class FogWallpaper extends BaseWallpaper {
             "#1c1715",
             "#273555",
             "#84504a",
+            new String[]{"#bbb3a3", "#2e555f"},
             false,
             true
         )

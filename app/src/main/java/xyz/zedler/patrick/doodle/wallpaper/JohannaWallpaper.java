@@ -54,6 +54,7 @@ public class JohannaWallpaper extends BaseWallpaper {
             "#fcf4e9",
             "#f8bfa6",
             "#d8e2eb",
+            new String[]{"#a15534", "#87a06d", "#e4c874"},
             true,
             false
         )
@@ -69,6 +70,7 @@ public class JohannaWallpaper extends BaseWallpaper {
             "#32373a",
             "#855642",
             "#5f8393",
+            new String[]{"#754338", "#87a06d", "#a58b2c"},
             false,
             true
         )

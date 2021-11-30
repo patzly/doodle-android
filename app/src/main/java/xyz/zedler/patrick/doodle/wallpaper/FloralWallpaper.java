@@ -72,6 +72,7 @@ public class FloralWallpaper extends BaseWallpaper {
             "#222020",
             "#a6262f",
             "#b4942a",
+            new String[]{"#b4a985", "#483838", "#b3b3b3", "#938c30"},
             false,
             true
         )

@@ -54,6 +54,7 @@ public class MonetWallpaper extends BaseWallpaper {
             "#fcedea",
             "#924642",
             "#fbdeac",
+            new String[]{"#f4b6b0", "#fef9f7"},
             true,
             false
         ),
@@ -62,6 +63,7 @@ public class MonetWallpaper extends BaseWallpaper {
             "#634b67",
             "#dbd870",
             "#ff45c9",
+            new String[]{"#d2b4bb", "#b795c3"},
             false,
             true
         ),
@@ -70,6 +72,7 @@ public class MonetWallpaper extends BaseWallpaper {
             "#f5f4e2",
             "#dbec8c",
             "#caebdf",
+            new String[]{"#bdc984", "#efeac1"},
             true,
             false
         )
@@ -85,6 +88,7 @@ public class MonetWallpaper extends BaseWallpaper {
             "#222020",
             "#9a726e",
             "#dac095",
+            new String[]{"#323131"},
             false,
             true
         ),
@@ -93,6 +97,7 @@ public class MonetWallpaper extends BaseWallpaper {
             "#231f24",
             "#634b67",
             "#c9c767",
+            new String[]{"#695b5e", "#342f2f"},
             false,
             true
         ),
@@ -101,6 +106,7 @@ public class MonetWallpaper extends BaseWallpaper {
             "#171815",
             "#909b5d",
             "#badbd0",
+            new String[]{"#30312c"},
             false,
             true
         )

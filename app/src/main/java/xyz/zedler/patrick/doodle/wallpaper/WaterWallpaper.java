@@ -53,6 +53,7 @@ public class WaterWallpaper extends BaseWallpaper {
             "#e0e0df",
             "#406382",
             "#d0e3ef",
+            new String[]{"#8495a3", "#405967", "#87a2b0", "#6c8caa"},
             true,
             false
         )
@@ -68,6 +69,7 @@ public class WaterWallpaper extends BaseWallpaper {
             "#151718",
             "#476988",
             "#586a73",
+            new String[]{"#87a2b0", "#313232", "#323d43"},
             false,
             true
         )

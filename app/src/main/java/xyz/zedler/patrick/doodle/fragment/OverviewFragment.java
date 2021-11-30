@@ -86,17 +86,19 @@ public class OverviewFragment extends BaseFragment implements OnClickListener {
       }
     });
 
-    boolean startedFromLauncher = activity.isStartedFromLauncher();
+    boolean shouldLogoBeVisible = activity.shouldLogoBeVisibleOnOverviewPage();
 
-    binding.frameOverviewClose.setVisibility(startedFromLauncher ? View.GONE : View.VISIBLE);
-    binding.frameOverviewLogo.setVisibility(startedFromLauncher ? View.VISIBLE : View.GONE);
-    if (startedFromLauncher && Build.VERSION.SDK_INT > Build.VERSION_CODES.M) {
-      binding.appBarOverview.setOnClickListener(v -> {
-        if (viewUtilLogo.isClickEnabled()) {
-          ViewUtil.startIcon(binding.imageOverviewLogo);
-          performHapticClick();
-        }
-      });
+    binding.frameOverviewClose.setVisibility(shouldLogoBeVisible ? View.GONE : View.VISIBLE);
+    binding.frameOverviewLogo.setVisibility(shouldLogoBeVisible ? View.VISIBLE : View.GONE);
+    if (activity.shouldLogoBeVisibleOnOverviewPage()) {
+      if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) {
+        binding.appBarOverview.setOnClickListener(v -> {
+          if (viewUtilLogo.isClickEnabled()) {
+            ViewUtil.startIcon(binding.imageOverviewLogo);
+            performHapticClick();
+          }
+        });
+      }
     } else {
       binding.frameOverviewClose.setOnClickListener(v -> {
         if (getViewUtil().isClickEnabled()) {

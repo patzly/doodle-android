@@ -45,7 +45,7 @@ import xyz.zedler.patrick.doodle.Constants.THEME;
 import xyz.zedler.patrick.doodle.Constants.THEME.MODE;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.activity.MainActivity;
-import xyz.zedler.patrick.doodle.activity.SplashActivity;
+import xyz.zedler.patrick.doodle.activity.LauncherActivity;
 import xyz.zedler.patrick.doodle.behavior.ScrollBehavior;
 import xyz.zedler.patrick.doodle.behavior.SystemBarBehavior;
 import xyz.zedler.patrick.doodle.databinding.FragmentOtherBinding;
@@ -121,7 +121,7 @@ public class OtherFragment extends BaseFragment
 
     binding.switchOtherLauncher.setChecked(
         activity.getPackageManager().getComponentEnabledSetting(
-            new ComponentName(activity, SplashActivity.class)
+            new ComponentName(activity, LauncherActivity.class)
         ) == PackageManager.COMPONENT_ENABLED_STATE_DISABLED
     );
 
@@ -217,7 +217,7 @@ public class OtherFragment extends BaseFragment
                 getString(R.string.action_hide), view -> {
                   performHapticHeavyClick();
                   activity.getPackageManager().setComponentEnabledSetting(
-                      new ComponentName(activity, SplashActivity.class),
+                      new ComponentName(activity, LauncherActivity.class),
                       PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
                       PackageManager.DONT_KILL_APP
                   );
@@ -228,7 +228,7 @@ public class OtherFragment extends BaseFragment
                 binding.switchOtherLauncher.setOnCheckedChangeListener(null);
                 binding.switchOtherLauncher.setChecked(
                     activity.getPackageManager().getComponentEnabledSetting(
-                        new ComponentName(activity, SplashActivity.class)
+                        new ComponentName(activity, LauncherActivity.class)
                     ) == PackageManager.COMPONENT_ENABLED_STATE_DISABLED
                 );
                 binding.switchOtherLauncher.setOnCheckedChangeListener(OtherFragment.this);
@@ -237,7 +237,7 @@ public class OtherFragment extends BaseFragment
         );
       } else {
         activity.getPackageManager().setComponentEnabledSetting(
-            new ComponentName(activity, SplashActivity.class),
+            new ComponentName(activity, LauncherActivity.class),
             PackageManager.COMPONENT_ENABLED_STATE_ENABLED,
             PackageManager.DONT_KILL_APP
         );

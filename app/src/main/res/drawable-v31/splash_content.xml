@@ -19,12 +19,18 @@
   ~ Copyright (c) 2019-2021 by Patrick Zedler
   -->
 
-<wallpaper
-  xmlns:android="http://schemas.android.com/apk/res/android"
+<layer-list
   xmlns:tools="http://schemas.android.com/tools"
-  android:showMetadataInPreview="true"
-  android:thumbnail="@raw/thumbnail"
-  android:author="@string/app_developer"
-  android:description="@string/wallpaper_description_picker"
-  android:settingsActivity="xyz.zedler.patrick.doodle.activity.SettingsActivity"
-  tools:targetApi="n_mr1" />
+  xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <item android:drawable="@android:color/system_neutral1_10" />
+
+  <item
+    android:id="@+id/splash_logo"
+    android:gravity="center"
+    android:width="180dp"
+    android:height="180dp"
+    android:drawable="@drawable/splash_logo_anim"
+    tools:ignore="UnusedAttribute" />
+
+</layer-list>

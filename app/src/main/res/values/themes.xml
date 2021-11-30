@@ -43,7 +43,7 @@
     <!-- Splash screen -->
     <item name="android:windowSplashScreenBackground" tools:targetApi="s">?android:attr/colorBackground</item>
     <item name="android:windowSplashScreenAnimatedIcon" tools:targetApi="s">@drawable/splash_logo_anim</item>
-    <item name="android:windowSplashScreenAnimationDuration" tools:targetApi="s">2050</item>
+    <item name="android:windowSplashScreenAnimationDuration" tools:targetApi="s">1000</item>
   </style>
 
   <style name="Theme.Doodle.BottomSheetDialog" parent="ThemeOverlay.Material3.BottomSheetDialog">

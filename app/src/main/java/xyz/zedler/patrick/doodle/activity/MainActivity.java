@@ -89,9 +89,18 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
   private boolean isServiceRunning;
   private int fabTopEdgeDistance;
   private int bottomInset;
+  private boolean runAsSuperClass;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
+
+    runAsSuperClass = savedInstanceState != null
+        && savedInstanceState.getBoolean(EXTRA.RUN_AS_SUPER_CLASS, false);
+
+    if (runAsSuperClass) {
+      super.onCreate(savedInstanceState);
+      return;
+    }
 
     sharedPrefs = new PrefsUtil(this).checkForMigrations().getSharedPrefs();
 
@@ -146,8 +155,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         break;
     }
 
-    Bundle bundle = getIntent().getBundleExtra(EXTRA.INSTANCE_STATE);
-    super.onCreate(bundle != null ? bundle : savedInstanceState);
+    Bundle bundleInstanceState = getIntent().getBundleExtra(EXTRA.INSTANCE_STATE);
+    super.onCreate(bundleInstanceState != null ? bundleInstanceState : savedInstanceState);
 
     binding = ActivityMainBinding.inflate(getLayoutInflater());
     setContentView(binding.getRoot());
@@ -221,6 +230,10 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
   protected void onResume() {
     super.onResume();
 
+    if (runAsSuperClass) {
+      return;
+    }
+
     boolean isServiceRunningNew = isWallpaperServiceRunning(true);
     if (isServiceRunning != isServiceRunningNew) {
       isServiceRunning = isServiceRunningNew;
@@ -251,18 +264,22 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 
   @Override
   protected void attachBaseContext(Context base) {
-    Locale userLocale = LocaleUtil.getUserLocale(base);
-    Locale.setDefault(userLocale);
-    Resources resources = base.getResources();
-    Configuration configuration = resources.getConfiguration();
-    configuration.setLocale(userLocale);
-    resources.updateConfiguration(configuration, resources.getDisplayMetrics());
-    super.attachBaseContext(base.createConfigurationContext(configuration));
+    if (runAsSuperClass) {
+      super.attachBaseContext(base);
+    } else {
+      Locale userLocale = LocaleUtil.getUserLocale(base);
+      Locale.setDefault(userLocale);
+      Resources resources = base.getResources();
+      Configuration configuration = resources.getConfiguration();
+      configuration.setLocale(userLocale);
+      resources.updateConfiguration(configuration, resources.getDisplayMetrics());
+      super.attachBaseContext(base.createConfigurationContext(configuration));
+    }
   }
 
   @Override
   public void applyOverrideConfiguration(Configuration overrideConfiguration) {
-    if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.N_MR1) {
+    if (!runAsSuperClass && Build.VERSION.SDK_INT <= Build.VERSION_CODES.N_MR1) {
       overrideConfiguration.setLocale(LocaleUtil.getUserLocale(this, sharedPrefs));
     }
     super.applyOverrideConfiguration(overrideConfiguration);
@@ -293,6 +310,10 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     } else {
       binding.fabMain.setTranslationY(visible ? 0 : fabTopEdgeDistance + bottomInset);
     }
+  }
+
+  public boolean shouldLogoBeVisibleOnOverviewPage() {
+    return true;
   }
 
   private void showSnackbar(@StringRes int resId) {
@@ -344,9 +365,6 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 
       Intent intent = new Intent(this, MainActivity.class);
       intent.putExtra(EXTRA.INSTANCE_STATE, bundle);
-      if (isStartedFromLauncher()) {
-        intent.addCategory(Intent.CATEGORY_LAUNCHER);
-      }
       if (showForceStopRequest) {
         intent.putExtra(EXTRA.SHOW_FORCE_STOP_REQUEST, true);
       }
@@ -412,10 +430,6 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         ViewUtil.showBottomSheet(this, new FeedbackBottomSheetDialogFragment());
       }
     }
-  }
-
-  public boolean isStartedFromLauncher() {
-    return getIntent() != null && getIntent().hasCategory(Intent.CATEGORY_LAUNCHER);
   }
 
   public boolean isTouchWiz() {

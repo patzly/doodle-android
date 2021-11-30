@@ -7,6 +7,7 @@
 - New: customizable extracted wallpaper colors for devices with dynamic color support
 - Improved: changed settings are applied to the running wallpaper instantly
 - Improved: restart behavior for applying certain settings
+- Improved: splash screen implementation for Android 12+
 - Fixed: broken buttons in feedback dialog
 
 Please consider translating this app into your language at Transifex. There are only about 100 strings to translate!

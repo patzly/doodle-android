@@ -149,6 +149,7 @@ public final class Constants {
 
   public final static class EXTRA {
 
+    public final static String RUN_AS_SUPER_CLASS = "run_as_super_class";
     public final static String INSTANCE_STATE = "instance_state";
     public final static String SHOW_FORCE_STOP_REQUEST = "show_force_stop_request";
   }

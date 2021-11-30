@@ -31,6 +31,7 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.FrameLayout.LayoutParams;
 import androidx.annotation.NonNull;
+import com.google.android.material.color.DynamicColors;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.databinding.FragmentBottomsheetApplyBinding;
 import xyz.zedler.patrick.doodle.util.ViewUtil;
@@ -45,6 +46,10 @@ public class ApplyBottomSheetDialogFragment extends BaseBottomSheetDialogFragmen
   @Override
   public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle state) {
     binding = FragmentBottomsheetApplyBinding.inflate(inflater, container, false);
+
+    if (DynamicColors.isDynamicColorAvailable()) {
+      binding.textApplyMonet.setVisibility(View.VISIBLE);
+    }
 
     ViewUtil.setOnClickListeners(
         this,

@@ -52,6 +52,17 @@
         android:padding="16dp"
         android:text="@string/msg_apply_changes"/>
 
+      <TextView
+        android:id="@+id/text_apply_monet"
+        style="@style/Widget.Doodle.TextView.Paragraph"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="16dp"
+        android:text="@string/msg_apply_changes_monet"/>
+
       <com.google.android.material.button.MaterialButton
         android:id="@+id/button_apply_open"
         style="@style/Widget.Doodle.Button.UnelevatedButton"

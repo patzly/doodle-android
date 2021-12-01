@@ -350,6 +350,18 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     sharedPrefs.edit().clear().apply();
     requestSettingsRefresh();
     requestThemeRefresh();
+
+    boolean isLauncherIconDisabled = getPackageManager().getComponentEnabledSetting(
+        new ComponentName(this, LauncherActivity.class)
+    ) == PackageManager.COMPONENT_ENABLED_STATE_DISABLED;
+    if (isLauncherIconDisabled) {
+      getPackageManager().setComponentEnabledSetting(
+          new ComponentName(this, LauncherActivity.class),
+          PackageManager.COMPONENT_ENABLED_STATE_ENABLED,
+          0
+      );
+    }
+
     restartToApply(100, true);
   }
 

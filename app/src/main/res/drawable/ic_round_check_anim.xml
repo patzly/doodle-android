@@ -23,24 +23,18 @@
   <aapt:attr name="android:drawable">
     <vector
       android:name="vector"
-      android:width="48dp"
-      android:height="48dp"
-      android:viewportWidth="42"
-      android:viewportHeight="42">
-      <path
-        android:name="circle"
-        android:pathData="M0,0H48V48H0Z"
-        android:fillColor="#303236"
-        android:fillAlpha="0.5"
-        android:strokeWidth="1" />
+      android:width="24dp"
+      android:height="24dp"
+      android:viewportWidth="24"
+      android:viewportHeight="24">
       <group
         android:name="group"
-        android:pivotX="18"
-        android:pivotY="26">
+        android:pivotX="10"
+        android:pivotY="15">
         <path
           android:name="tick"
-          android:pathData="M 17.8 24.905 L 14.3 21.405 C 13.91 21.015 13.29 21.015 12.9 21.405 C 12.51 21.795 12.51 22.415 12.9 22.805 L 17.09 26.995 C 17.48 27.385 18.11 27.385 18.5 26.995 L 29.1 16.405 C 29.49 16.015 29.49 15.395 29.1 15.005 C 28.71 14.615 28.09 14.615 27.7 15.005 Z"
-          android:fillColor="#fff" />
+          android:pathData="M9,16.17L5.53,12.7c-0.39,-0.39 -1.02,-0.39 -1.41,0 -0.39,0.39 -0.39,1.02 0,1.41l4.18,4.18c0.39,0.39 1.02,0.39 1.41,0L20.29,7.71c0.39,-0.39 0.39,-1.02 0,-1.41 -0.39,-0.39 -1.02,-0.39 -1.41,0L9,16.17z"
+          android:fillColor="#ffffff" />
       </group>
     </vector>
   </aapt:attr>

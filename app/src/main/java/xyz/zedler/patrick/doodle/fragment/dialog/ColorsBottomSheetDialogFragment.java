@@ -27,12 +27,13 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout.LayoutParams;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import com.google.android.material.card.MaterialCardView;
+import com.google.android.material.elevation.SurfaceColors;
 import java.util.Objects;
 import xyz.zedler.patrick.doodle.activity.MainActivity;
 import xyz.zedler.patrick.doodle.databinding.FragmentBottomsheetColorsBinding;
 import xyz.zedler.patrick.doodle.fragment.AppearanceFragment;
 import xyz.zedler.patrick.doodle.util.ViewUtil;
+import xyz.zedler.patrick.doodle.view.SelectionCardView;
 
 public class ColorsBottomSheetDialogFragment extends BaseBottomSheetDialogFragment {
 
@@ -56,11 +57,12 @@ public class ColorsBottomSheetDialogFragment extends BaseBottomSheetDialogFragme
 
     for (int i = 0; i < colors.length; i++) {
       final int iFinal = i;
-      MaterialCardView card = ViewUtil.getSelectionCard(requireActivity());
+      SelectionCardView card = new SelectionCardView(activity);
+      card.setOuterCardBackgroundColor(SurfaceColors.SURFACE_2.getColor(activity));
       card.setCardBackgroundColor(Color.parseColor(colors[iFinal]));
       card.setOnClickListener(v -> {
         if (!card.isChecked()) {
-          ViewUtil.startIcon(card.getCheckedIcon());
+          card.startCheckedIcon();
           performHapticClick();
           ViewUtil.uncheckAllChildren(binding.linearColorsContainerColors);
           card.setChecked(true);

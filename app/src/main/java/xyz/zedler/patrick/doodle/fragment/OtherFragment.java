@@ -34,7 +34,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.view.ContextThemeWrapper;
 import androidx.core.content.ContextCompat;
-import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.color.DynamicColors;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.snackbar.Snackbar.Callback;
@@ -44,8 +43,8 @@ import xyz.zedler.patrick.doodle.Constants.PREF;
 import xyz.zedler.patrick.doodle.Constants.THEME;
 import xyz.zedler.patrick.doodle.Constants.THEME.MODE;
 import xyz.zedler.patrick.doodle.R;
-import xyz.zedler.patrick.doodle.activity.MainActivity;
 import xyz.zedler.patrick.doodle.activity.LauncherActivity;
+import xyz.zedler.patrick.doodle.activity.MainActivity;
 import xyz.zedler.patrick.doodle.behavior.ScrollBehavior;
 import xyz.zedler.patrick.doodle.behavior.SystemBarBehavior;
 import xyz.zedler.patrick.doodle.databinding.FragmentOtherBinding;
@@ -54,6 +53,7 @@ import xyz.zedler.patrick.doodle.model.Language;
 import xyz.zedler.patrick.doodle.util.LocaleUtil;
 import xyz.zedler.patrick.doodle.util.ResUtil;
 import xyz.zedler.patrick.doodle.util.ViewUtil;
+import xyz.zedler.patrick.doodle.view.SelectionCardView;
 
 public class OtherFragment extends BaseFragment
     implements OnClickListener, OnCheckedChangeListener {
@@ -289,7 +289,7 @@ public class OtherFragment extends BaseFragment
         resId = R.style.Theme_Doodle_Red;
       }
 
-      MaterialCardView card = ViewUtil.getSelectionCard(activity);
+      SelectionCardView card = new SelectionCardView(activity);
       int color = Build.VERSION.SDK_INT >= Build.VERSION_CODES.S && i == -1
           ? ContextCompat.getColor(activity, android.R.color.system_accent1_100)
           : ResUtil.getColorAttr(
@@ -298,7 +298,7 @@ public class OtherFragment extends BaseFragment
       card.setCardBackgroundColor(color);
       card.setOnClickListener(v -> {
         if (!card.isChecked()) {
-          ViewUtil.startIcon(card.getCheckedIcon());
+          card.startCheckedIcon();
           performHapticClick();
           ViewUtil.uncheckAllChildren(container);
           card.setChecked(true);

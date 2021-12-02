@@ -31,10 +31,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.view.ViewGroup.LayoutParams;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
-import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
@@ -51,6 +49,7 @@ import xyz.zedler.patrick.doodle.behavior.SystemBarBehavior;
 import xyz.zedler.patrick.doodle.databinding.FragmentAppearanceBinding;
 import xyz.zedler.patrick.doodle.util.ResUtil;
 import xyz.zedler.patrick.doodle.util.ViewUtil;
+import xyz.zedler.patrick.doodle.view.SelectionCardView;
 import xyz.zedler.patrick.doodle.wallpaper.AnthonyWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.BaseWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.BaseWallpaper.WallpaperVariant;
@@ -271,19 +270,14 @@ public class AppearanceFragment extends BaseFragment
       }
 
       for (BaseWallpaper wallpaper : baseWallpapers) {
-        MaterialCardView card = ViewUtil.getSelectionCard(activity);
-        ImageView thumbnail = new ImageView(activity);
-        thumbnail.setLayoutParams(
-            new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT)
-        );
-        thumbnail.setImageResource(wallpaper.getThumbnailResId());
-        card.addView(thumbnail);
+        SelectionCardView card = new SelectionCardView(activity);
+        card.setCardImageResource(wallpaper.getThumbnailResId());
         card.setOnClickListener(v -> {
           if (card.isChecked()) {
             return;
           }
           ViewUtil.startIcon(binding.imageAppearanceWallpaper);
-          ViewUtil.startIcon(card.getCheckedIcon());
+          card.startCheckedIcon();
           performHapticClick();
           ViewUtil.uncheckAllChildren(
               binding.linearAppearanceWallpaperContainerDoodle,
@@ -345,13 +339,13 @@ public class AppearanceFragment extends BaseFragment
           : wallpaper.getVariants()[iFinal];
       WallpaperVariant variantLight = wallpaper.getVariants()[iFinal];
 
-      MaterialCardView card;
+      SelectionCardView card;
       if (sameCount) {
-        MaterialCardView child
-            = (MaterialCardView) binding.linearAppearanceVariantContainer.getChildAt(i);
-        card = child != null ? child : ViewUtil.getSelectionCard(activity);
+        SelectionCardView child
+            = (SelectionCardView) binding.linearAppearanceVariantContainer.getChildAt(i);
+        card = child != null ? child : new SelectionCardView(activity);
       } else {
-        card = ViewUtil.getSelectionCard(activity);
+        card = new SelectionCardView(activity);
       }
 
       if (sameCount) {
@@ -369,7 +363,7 @@ public class AppearanceFragment extends BaseFragment
       card.setOnClickListener(v -> {
         if (!card.isChecked()) {
           ViewUtil.startIcon(binding.imageAppearanceVariant);
-          ViewUtil.startIcon(card.getCheckedIcon());
+          card.startCheckedIcon();
           performHapticClick();
           ViewUtil.uncheckAllChildren(binding.linearAppearanceVariantContainer);
           card.setChecked(true);
@@ -406,10 +400,10 @@ public class AppearanceFragment extends BaseFragment
     binding.linearAppearanceColorsContainer.removeAllViews();
     for (int i = 0; i < 3; i++) {
       final int iFinal = i;
-      MaterialCardView card = ViewUtil.getSelectionCard(activity);
+      SelectionCardView card = new SelectionCardView(activity);
       card.setCardBackgroundColor(Color.BLACK);
       card.setOnClickListener(v -> {
-        ViewUtil.startIcon(binding.imageAppearanceColors);
+        card.startCheckedIcon();
         performHapticClick();
         AppearanceFragmentDirections.ActionAppearanceToColorsDialog action
             = AppearanceFragmentDirections.actionAppearanceToColorsDialog();

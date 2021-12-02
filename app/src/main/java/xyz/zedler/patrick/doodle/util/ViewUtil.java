@@ -20,7 +20,6 @@
 package xyz.zedler.patrick.doodle.util;
 
 import android.animation.ValueAnimator;
-import android.app.Activity;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.graphics.drawable.Animatable;
@@ -38,20 +37,17 @@ import android.view.ViewTreeObserver.OnGlobalLayoutListener;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import androidx.annotation.ColorRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
-import androidx.core.content.res.ResourcesCompat;
 import androidx.core.graphics.ColorUtils;
 import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.elevation.SurfaceColors;
 import java.util.Arrays;
-import xyz.zedler.patrick.doodle.R;
 
 public class ViewUtil {
 
@@ -241,34 +237,6 @@ public class ViewUtil {
     return new RippleDrawable(
         ColorStateList.valueOf(ResUtil.getColorHighlight(context)), null, shape
     );
-  }
-
-  public static MaterialCardView getSelectionCard(Activity activity) {
-    int size = SystemUiUtil.dpToPx(activity, 48);
-    MaterialCardView card = new MaterialCardView(activity);
-    LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(size, size);
-    if (ResUtil.isLayoutRtl(activity)) {
-      params.leftMargin = SystemUiUtil.dpToPx(activity, 12);
-    } else {
-      params.rightMargin = SystemUiUtil.dpToPx(activity, 12);
-    }
-    card.setLayoutParams(params);
-    card.setCheckable(true);
-    card.setStrokeColor(ResUtil.getColorAttr(activity, R.attr.colorOutline));
-    card.setStrokeWidth(SystemUiUtil.dpToPx(activity, 1));
-    card.setRippleColor(ColorStateList.valueOf(ResUtil.getColorHighlight(activity)));
-    card.setCardBackgroundColor(ResUtil.getColorBg(activity));
-    card.setCheckedIcon(
-        ResourcesCompat.getDrawable(
-            activity.getResources(), R.drawable.ic_round_check_circle_anim, null
-        )
-    );
-    card.setCheckedIconTint(null);
-    card.setCheckedIconSize(size);
-    card.setCheckedIconMargin(0);
-    card.setCardElevation(0);
-    card.setRadius(SystemUiUtil.dpToPx(activity, 16));
-    return card;
   }
 
   public static void uncheckAllChildren(ViewGroup... viewGroups) {

@@ -28,6 +28,7 @@
   <!-- TITLES -->
 
   <string name="title_info">信息</string>
+  <string name="title_apply_changes">应用更改</string>
   <string name="title_feedback">反馈</string>
   <string name="title_licenses">开放源代码许可证</string>
 
@@ -40,7 +41,11 @@
 
   <string name="action_close">关闭</string>
   <string name="action_back">返回</string>
+  <string name="action_open_link">打开外部网站</string>
+  <string name="action_hide">隐藏</string>
   <string name="action_reset">重置</string>
+  <string name="action_continue">继续</string>
+  <string name="action_open_app_info">打开应用信息</string>
   <string name="action_set">设置壁纸</string>
   <string name="action_send_feedback">发送反馈</string>
   <string name="action_share">分享</string>
@@ -51,6 +56,8 @@
   <string name="action_rate_description">支持发展</string>
   <string name="action_github">在GitHub上的Doodle项目</string>
   <string name="action_github_description">去开发一个新的项目</string>
+  <string name="action_language_select">选择语言</string>
+
   <!-- APPEARANCE -->
 
   <string name="appearance_title">外观</string>
@@ -64,7 +71,17 @@
   <string name="appearance_night_mode_description">只有暗黑色彩</string>
   <string name="appearance_follow_system">跟随系统</string>
   <string name="appearance_follow_system_description">采用自带主题</string>
+  <string name="appearance_white_text">尝试强制使用白色文本</string>
   <string name="appearance_white_text_description">可能会影响到美观</string>
+  <string name="appearance_colors">提取的颜色</string>
+  <string name="appearance_colors_description">用于计算文本对比度</string>
+  <string name="appearance_colors_description_dynamic">被系统的主题引擎使用</string>
+  <string name="appearance_colors_primary">选择主色</string>
+  <string name="appearance_colors_secondary">选择次生色</string>
+  <string name="appearance_colors_tertiary">选择第三次色</string>
+  <string name="appearance_colors_info">在没有动态颜色支持的设备上(Android 11 或更低版本)，只有原色用于计算启动器文本对比度和着色最近应用程序屏幕的背景。</string>
+  <string name="appearance_colors_info_dynamic">在Android 12或更高版本，并支持动态颜色的的设备上，三种选择的颜色将用于自动创建一个系统范围的颜色主题。</string>
+
   <!-- PARALLAX -->
 
   <string name="parallax_title">视差</string>
@@ -95,6 +112,7 @@
   <string name="size_zoom_description">增加时，图案间距会缩小更多</string>
   <string name="size_zoom_launcher">打开快速设置或应用程序抽屉时缩小</string>
   <string name="size_zoom_system">使用系统提供的缩放效果</string>
+  <string name="size_zoom_system_description">可能会修复倾斜效果开启时不平滑的缩放动画</string>
   <string name="size_zoom_unlock">在锁屏上缩小</string>
   <string name="size_zoom_unlock_description">如果启用“倾斜效果”，则可能会出现抖动</string>
   <string name="size_zoom_duration">关闭锁定缩放持续时间</string>
@@ -105,19 +123,33 @@
   <!-- OTHER -->
 
   <string name="other_title">其他设置</string>
+  <string name="other_description">渲染、语言&amp;重置</string>
+  <string name="other_language">语言</string>
+  <string name="other_language_description">非常感谢 Transifex 上所有的翻译志愿者！请访问本项目的 GitHub 页面，了解如何提供帮助使 Doodle Live Wallpapers 可用于您的语言。</string>
+  <string name="other_language_system">系统默认：%1$s</string>
+  <string name="other_language_not_available">不可用</string>
   <string name="other_gpu">硬件加速</string>
+  <string name="other_gpu_description">如壁纸崩溃则关闭</string>
+  <string name="other_gpu_info">硬件加速功能只适用于 Android 8 及以上系统的 Doodle 。壁纸动画因此可能有点不稳定。</string>
   <string name="other_launcher">在桌面上隐藏图标</string>
   <string name="other_launcher_description">设置只能在系统的实时壁纸选取器中访问</string>
+  <string name="other_theme">应用颜色主题</string>
+  <string name="other_theme_description">尝试另一种外观</string>
+  <string name="other_theme_auto">自动</string>
+  <string name="other_theme_light">浅色</string>
+  <string name="other_theme_dark">深色</string>
   <string name="other_reset">重置所有设置</string>
   <string name="other_reset_description">花费的时间比卸载要多，因为首选项存储在一个特殊的位置，我们必须要清除它</string>
 
   <!-- ABOUT -->
 
   <string name="about_title">关于</string>
+  <string name="about_description">开发者信息&amp; 更多</string>
   <string name="about_version">版本</string>
   <string name="about_changelog">变更日志</string>
   <string name="about_changelog_description">更新了什么？</string>
   <string name="about_developer">开发者</string>
+  <string name="about_vending_description">开发者的其它应用</string>
   <string name="about_github_description">源代码</string>
   <string name="about_translation_description">帮助翻译Doodle</string>
 
@@ -127,7 +159,11 @@
 您有任何愿望、评论或问题吗？
 联系我，无论如何，我会很高兴在Play Store回复你。</string>
   <string name="msg_share">查看此酷炫的动态壁纸应用程序:https://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
+  <string name="msg_hide">在启动器中隐藏应用图标？</string>
   <string name="msg_reset">重置所有设置吗？</string>
+  <string name="msg_force_stop">需强制停止才能应用更改</string>
+  <string name="msg_apply_changes">为了(最终)应用改变的选项，建议重新启动正在运行的壁纸服务。这不能自动完成。\n请在系统设置中强制停止 Doodle，然后重新将 Doole 应用为墙纸。</string>
+  <string name="msg_apply_changes_monet">在支持动态颜色的设备上，还需要重新启动将更改的墙纸颜色应用到系统的主题引擎。</string>
   <string name="msg_preview_missing">发生错误，请手动选择Doodle Live墙纸</string>
 
   </resources>

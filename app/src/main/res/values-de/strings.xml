@@ -159,6 +159,7 @@
   <string name="msg_reset">Einstellungen zurücksetzen?</string>
   <string name="msg_force_stop">Erzwungenes Beenden wird benötigt, um die Änderung anzuwenden</string>
   <string name="msg_apply_changes">Um (eventuelle) Änderungen anzuwenden, wird ein Neustart des laufenden Hintergrunds empfohlen. Dies kann nicht automatisch erfolgen.\nBitte beende die App in Deinen Systemeinstellungen und wende Doodle erneut als Live-Hintergrund an.</string>
+  <string name="msg_apply_changes_monet">Auf Geräten mit Unterstützung für dynamische Farbschemas wird auch für die Anwendung von geänderten Hintergrundfarben auf das System ein Neustart benötigt.</string>
   <string name="msg_preview_missing">Es trat ein Fehler auf, bitte wähle den Doodle Live-Hintergrund manuell aus</string>
 
   </resources>

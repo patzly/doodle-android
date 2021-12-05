@@ -41,7 +41,6 @@ public class AnthonyWallpaper extends BaseWallpaper {
   public SvgDrawable getPreparedSvg(SvgDrawable svgDrawable, int variant, boolean isNightMode) {
     svgDrawable.requireObjectById("sheet").isRotatable = true;
     svgDrawable.requireObjectById("rect").isRotatable = true;
-    svgDrawable.requireObjectById("circle_grid").isRotatable = true;
     return svgDrawable;
   }
 

@@ -41,6 +41,7 @@
   <string name="action_close">Fermer</string>
   <string name="action_back">Retour</string>
   <string name="action_open_link">Ouvrir un site web externe</string>
+  <string name="action_hide">Cacher</string>
   <string name="action_reset">Réinitialiser</string>
   <string name="action_continue">Continuer</string>
   <string name="action_open_app_info">Ouvrir les infos sur l\'app</string>
@@ -69,6 +70,7 @@
   <string name="appearance_night_mode_description">Couleurs sombres uniquement</string>
   <string name="appearance_follow_system">Suivre le système</string>
   <string name="appearance_follow_system_description">Suivre le thème de l\'appareil</string>
+  <string name="appearance_white_text">Essayez de forcer le texte en blanc</string>
   <string name="appearance_white_text_description">Peut affecter la lisibilité</string>
   <string name="appearance_colors">Couleurs extraites</string>
   <string name="appearance_colors_description">Utilisé pour calculer le contraste du texte</string>
@@ -153,8 +155,11 @@
 
   <string name="msg_feedback">Une bonne application demande beaucoup de temps et vit des retours de ses utilisateurs.\n\nAvez-vous des souhaits, des commentaires ou des questions ? Contactez-moi !\nSinon, je serais très heureux d\'avoir une bonne critique sur le Play Store.</string>
   <string name="msg_share">Découvrez cette excellente application de fonds d\'écran animés : \nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
+  <string name="msg_hide">Masquer l\'icône dans le lanceur d\'applications ?</string>
   <string name="msg_reset">Réinitialiser tous les réglages ?</string>
   <string name="msg_force_stop">Arrêt forcé requis pour appliquer les modifications</string>
+  <string name="msg_apply_changes">Pour (éventuellement) appliquer les options modifiées, un redémarrage du service de papier peint en cours d\'exécution est recommandé. Cela ne peut pas être fait automatiquement.\nVeuillez forcer l\'arrêt de Doodle dans les paramètres de votre système, puis appliquez à nouveau Doodle comme fond d\'écran.</string>
+  <string name="msg_apply_changes_monet">Sur les appareils prenant en charge les couleurs dynamiques, le redémarrage est également nécessaire pour appliquer les couleurs du fond d\'écran modifié au moteur de thème du système.</string>
   <string name="msg_preview_missing">Une erreur s\'est produite, veuillez sélectionner manuellement le fond d\'écran animé Doodle</string>
 
   </resources>

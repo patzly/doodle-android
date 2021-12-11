@@ -49,25 +49,6 @@ public abstract class BaseWallpaper {
         @NonNull String primary,
         @NonNull String secondary,
         @NonNull String tertiary,
-        boolean isDarkTextSupported,
-        boolean isDarkThemeSupported
-    ) {
-      this(
-          resId,
-          primary,
-          secondary,
-          tertiary,
-          new String[]{"#000000"},
-          isDarkTextSupported,
-          isDarkThemeSupported
-      );
-    }
-
-    public WallpaperVariant(
-        @RawRes int resId,
-        @NonNull String primary,
-        @NonNull String secondary,
-        @NonNull String tertiary,
         @NonNull String[] colors,
         boolean isDarkTextSupported,
         boolean isDarkThemeSupported

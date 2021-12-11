@@ -54,6 +54,7 @@ public class StoneWallpaper extends BaseWallpaper {
             "#e6efd7",
             "#c4d6e4",
             "#b49e5f",
+            new String[]{"#babba0", "#e4e6b4", "#a0a9b2"},
             true,
             false
         )
@@ -69,6 +70,7 @@ public class StoneWallpaper extends BaseWallpaper {
             "#171815",
             "#52482b",
             "#515339",
+            new String[]{"#5e656c"},
             false,
             true
         )

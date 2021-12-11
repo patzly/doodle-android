@@ -53,6 +53,7 @@ public class AnthonyWallpaper extends BaseWallpaper {
             "#b9c1c7",
             "#e1d7cc",
             "#47484a",
+            new String[]{"#e7e9eb", "#000000"},
             true,
             false
         ),
@@ -61,6 +62,7 @@ public class AnthonyWallpaper extends BaseWallpaper {
             "#608ca5",
             "#fccbb5",
             "#fefffe",
+            new String[]{"#496f83", "#181b1c"},
             false,
             true
         )
@@ -75,7 +77,8 @@ public class AnthonyWallpaper extends BaseWallpaper {
             R.raw.wallpaper_anthony1_dark,
             "#212121",
             "#5b5a5a",
-            "#5b5a5a",
+            "#3d3b3c",
+            new String[]{"#6a6966"},
             false,
             true
         ),
@@ -84,6 +87,7 @@ public class AnthonyWallpaper extends BaseWallpaper {
             "#212121",
             "#997c6e",
             "#32393c",
+            new String[]{"#494949", "#aeafae"},
             false,
             true
         )

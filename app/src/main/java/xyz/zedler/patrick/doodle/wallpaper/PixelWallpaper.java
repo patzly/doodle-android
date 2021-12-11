@@ -72,6 +72,7 @@ public class PixelWallpaper extends BaseWallpaper {
             "#e0dcd3",
             "#ffb9a1",
             "#f4e3c9",
+            new String[]{"#f58551", "#ffffff", "#ff6550", "#ffe5c5", "#b5afa1", "#fdea98"},
             true,
             false
         ),
@@ -80,6 +81,7 @@ public class PixelWallpaper extends BaseWallpaper {
             "#f98a6b",
             "#e5e1a3",
             "#bcddba",
+            new String[]{"#f7d2c4"},
             true,
             false
         ),
@@ -88,6 +90,7 @@ public class PixelWallpaper extends BaseWallpaper {
             "#eae5bf",
             "#789f8a",
             "#e06a4e",
+            new String[]{"#deb853", "#ffffff", "#e69986", "#0a373a"},
             true,
             false
         ),
@@ -96,6 +99,7 @@ public class PixelWallpaper extends BaseWallpaper {
             "#fff5ec",
             "#052464",
             "#fe765e",
+            new String[]{"#dadce0"},
             true,
             false
         )
@@ -123,6 +127,7 @@ public class PixelWallpaper extends BaseWallpaper {
             "#272628",
             "#e06a4e",
             "#6c8e7a",
+            new String[]{"#ddc179", "#1d3836", "#0f0f0f"},
             false,
             true
         ),
@@ -131,6 +136,7 @@ public class PixelWallpaper extends BaseWallpaper {
             "#272628",
             "#d4634f",
             "#324b84",
+            new String[]{"#1a294a", "#dfd9d0", "#0f0f0f"},
             false,
             true
         )

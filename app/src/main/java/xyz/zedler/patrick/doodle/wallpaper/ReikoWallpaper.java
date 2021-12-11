@@ -68,6 +68,7 @@ public class ReikoWallpaper extends BaseWallpaper {
             "#cbcbef",
             "#fe7a9a",
             "#abe3e0",
+            new String[]{"#3766fa", "#a0b0fb", "#fec4d9"},
             true,
             false
         ),
@@ -76,6 +77,7 @@ public class ReikoWallpaper extends BaseWallpaper {
             "#fef7ed",
             "#fea31c",
             "#e0342b",
+            new String[]{"#fbc318", "#0a65bb", "#fdcd6c"},
             true,
             false
         )
@@ -91,6 +93,7 @@ public class ReikoWallpaper extends BaseWallpaper {
             "#0e032d",
             "#a181de",
             "#8fe5de",
+            new String[]{"#d8d4fe", "#a0b0fb", "#312073"},
             false,
             true
         ),
@@ -99,6 +102,7 @@ public class ReikoWallpaper extends BaseWallpaper {
             "#0e1f3b",
             "#a0b0fb",
             "#c6433a",
+            new String[]{"#eb902b", "#ecc12f", "#1b3e76", "#0472d2", "#ef4d3d"},
             false,
             true
         )

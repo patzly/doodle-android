@@ -117,9 +117,13 @@ public class SelectionCardView extends MaterialCardView {
   }
 
   public void startCheckedIcon() {
-    LayerDrawable layers = (LayerDrawable) getCheckedIcon();
-    if (layers != null) {
-      ViewUtil.startIcon(layers.findDrawableByLayerId(R.id.icon_selection_check));
+    try {
+      LayerDrawable layers = (LayerDrawable) getCheckedIcon();
+      if (layers != null) {
+        ViewUtil.startIcon(layers.findDrawableByLayerId(R.id.icon_selection_check));
+      }
+    } catch (ClassCastException ignored) {
+      // For API 21 it will be a androidx.core.graphics.drawable.WrappedDrawableApi21
     }
   }
 

@@ -17,20 +17,14 @@
   ~ Copyright (c) 2019-2021 by Patrick Zedler
   -->
 
-<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-  <item>
-    <shape>
-      <solid android:color="?attr/colorSurface"/>
-      <corners android:radius="8dp" />
-    </shape>
-  </item>
-  <item>
-    <shape>
-      <solid android:color="@color/selector_popupmenu_overlay_color"/>
-      <corners android:radius="8dp" />
-      <padding
-        android:bottom="8dp"
-        android:top="8dp"/>
-    </shape>
-  </item>
-</layer-list>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <solid android:color="?attr/colorSurface" />
+
+  <corners android:radius="8dp" />
+
+  <padding
+    android:bottom="8dp"
+    android:top="8dp" />
+
+</shape>

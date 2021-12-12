@@ -1,4 +1,4 @@
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ This file is part of Doodle Android.
   ~
   ~ Doodle Android is free software: you can redistribute it and/or modify
@@ -17,14 +17,20 @@
   ~ Copyright (c) 2019-2021 by Patrick Zedler
   -->
 
-<vector
-  android:autoMirrored="true"
-  android:width="42dp"
-  android:height="42dp"
-  android:viewportHeight="42"
-  android:viewportWidth="42"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-  <path
-    android:fillColor="#ffffff"
-    android:pathData="M18,25.17 L14.53,21.7c-0.39,-0.39 -1.02,-0.39 -1.41,0 -0.39,0.39 -0.39,1.02 0,1.41l4.18,4.18c0.39,0.39 1.02,0.39 1.41,0L29.29,16.71c0.39,-0.39 0.39,-1.02 0,-1.41 -0.39,-0.39 -1.02,-0.39 -1.41,0z" />
-</vector>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+  <item>
+    <shape>
+      <solid android:color="?attr/colorSurface"/>
+      <corners android:radius="8dp" />
+    </shape>
+  </item>
+  <item>
+    <shape>
+      <solid android:color="@color/selector_popupmenu_overlay_color"/>
+      <corners android:radius="8dp" />
+      <padding
+        android:bottom="8dp"
+        android:top="8dp"/>
+    </shape>
+  </item>
+</layer-list>

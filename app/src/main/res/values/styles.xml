@@ -113,10 +113,6 @@
     <item name="android:layout_width">wrap_content</item>
     <item name="android:layout_height">wrap_content</item>
     <item name="android:layout_marginStart">16dp</item>
-    <item name="thumbTint">@color/selector_switch_thumb_tint</item>
-    <item name="trackTint">@color/selector_switch_track_tint</item>
-    <item name="track">@drawable/shape_switch_track</item>
-    <item name="android:thumb">@drawable/shape_switch_thumb</item>
   </style>
 
   <style name="Widget.Doodle.Slider" parent="Widget.Material3.Slider">

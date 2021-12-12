@@ -214,7 +214,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         binding.fabMain
     );
 
-    if (savedInstanceState == null) {
+    if (savedInstanceState == null && bundleInstanceState == null) {
       showChangelogIfUpdated();
       showFeedbackAfterSomeUsage();
     }

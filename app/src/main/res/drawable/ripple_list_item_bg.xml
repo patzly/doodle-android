@@ -21,7 +21,7 @@
 
 <ripple
   xmlns:android="http://schemas.android.com/apk/res/android"
-  android:color="@color/selector_highlight">
+  android:color="?attr/colorSecondaryContainer">
 
   <item
     android:left="8dp"

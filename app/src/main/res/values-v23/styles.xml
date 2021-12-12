@@ -1,4 +1,4 @@
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ This file is part of Doodle Android.
   ~
   ~ Doodle Android is free software: you can redistribute it and/or modify
@@ -17,14 +17,16 @@
   ~ Copyright (c) 2019-2021 by Patrick Zedler
   -->
 
-<vector
-  android:autoMirrored="true"
-  android:width="42dp"
-  android:height="42dp"
-  android:viewportHeight="42"
-  android:viewportWidth="42"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-  <path
-    android:fillColor="#ffffff"
-    android:pathData="M18,25.17 L14.53,21.7c-0.39,-0.39 -1.02,-0.39 -1.41,0 -0.39,0.39 -0.39,1.02 0,1.41l4.18,4.18c0.39,0.39 1.02,0.39 1.41,0L29.29,16.71c0.39,-0.39 0.39,-1.02 0,-1.41 -0.39,-0.39 -1.02,-0.39 -1.41,0z" />
-</vector>
+<resources>
+
+  <style name="Widget.Doodle.Switch" parent="Widget.Material3.CompoundButton.Switch">
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_marginStart">16dp</item>
+    <item name="thumbTint">@color/selector_switch_thumb_tint</item>
+    <item name="trackTint">@color/selector_switch_track_tint</item>
+    <item name="track">@drawable/shape_switch_track</item>
+    <item name="android:thumb">@drawable/shape_switch_thumb</item>
+  </style>
+
+</resources>

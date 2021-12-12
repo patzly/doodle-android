@@ -93,7 +93,7 @@ public class LauncherActivity extends MainActivity {
 
       new SystemBarBehavior(this).setUp();
 
-      if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) {
+      if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
         LayerDrawable splashContent = (LayerDrawable) ResourcesCompat.getDrawable(
             getResources(), R.drawable.splash_content, getTheme()
         );

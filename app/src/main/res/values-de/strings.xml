@@ -72,6 +72,8 @@
   <string name="appearance_follow_system_description">Adaption des Designs</string>
   <string name="appearance_white_text">Versuchen, weißen Text zu erzwingen</string>
   <string name="appearance_white_text_description">Kann die Lesbarkeit beeinträchtigen</string>
+  <string name="appearance_random">Zufälliger Hintergrund</string>
+  <string name="appearance_random_description">Nach jedem Entsperren</string>
   <string name="appearance_colors">Extrahierte Farben</string>
   <string name="appearance_colors_description">Wird zur Berechnung des Textkontrasts verwendet</string>
   <string name="appearance_colors_description_dynamic">Werden von dem Design-Generator des Systems genutzt</string>

@@ -1,5 +1,6 @@
 5.0.1:
 - Fixed: crash caused by compiler
+- Fixed: crash caused by previously stored preferences
 
 Please consider translating this app into your language at Transifex. There are only about 100 strings to translate!
 

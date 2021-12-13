@@ -162,7 +162,11 @@ public class LiveWallpaperService extends WallpaperService {
     variantIndex = sharedPrefs.getInt(
         Constants.VARIANT_PREFIX + wallpaper.getName(), 0
     );
-    if (variantIndex > wallpaper.getVariants().length) {
+    try {
+      variant = wallpaper.getVariants()[variantIndex];
+      variant = wallpaper.getDarkVariants()[variantIndex];
+    } catch (IndexOutOfBoundsException e) {
+      Log.e(TAG, "loadWallpaper: " + e);
       variantIndex = 0;
     }
 

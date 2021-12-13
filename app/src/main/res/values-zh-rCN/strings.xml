@@ -73,6 +73,8 @@
   <string name="appearance_follow_system_description">采用自带主题</string>
   <string name="appearance_white_text">尝试强制使用白色文本</string>
   <string name="appearance_white_text_description">可能会影响到美观</string>
+  <string name="appearance_random">随机的壁纸设计</string>
+  <string name="appearance_random_description">每次屏幕关闭时</string>
   <string name="appearance_colors">提取的颜色</string>
   <string name="appearance_colors_description">用于计算文本对比度</string>
   <string name="appearance_colors_description_dynamic">被系统的主题引擎使用</string>

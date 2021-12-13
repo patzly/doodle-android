@@ -148,6 +148,8 @@ public class AppearanceFragment extends BaseFragment
         getSharedPrefs().getBoolean(PREF.USE_WHITE_TEXT, DEF.USE_WHITE_TEXT)
     );
 
+    binding.switchAppearanceRandom.setChecked(getSharedPrefs().getBoolean(PREF.RANDOM, DEF.RANDOM));
+
     setUpDesignSelections();
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O_MR1) {
       binding.textAppearanceColorsDescription.setText(
@@ -165,14 +167,16 @@ public class AppearanceFragment extends BaseFragment
         // Other
         binding.linearAppearanceNightMode,
         binding.linearAppearanceFollowSystem,
-        binding.linearAppearanceWhiteText
+        binding.linearAppearanceWhiteText,
+        binding.linearAppearanceRandom
     );
 
     ViewUtil.setOnCheckedChangeListeners(
         this,
         binding.switchAppearanceNightMode,
         binding.switchAppearanceFollowSystem,
-        binding.switchAppearanceWhiteText
+        binding.switchAppearanceWhiteText,
+        binding.switchAppearanceRandom
     );
   }
 
@@ -189,6 +193,8 @@ public class AppearanceFragment extends BaseFragment
       }
     } else if (id == R.id.linear_appearance_white_text) {
       binding.switchAppearanceWhiteText.setChecked(!binding.switchAppearanceWhiteText.isChecked());
+    } else if (id == R.id.linear_appearance_random) {
+      binding.switchAppearanceRandom.setChecked(!binding.switchAppearanceRandom.isChecked());
     }
   }
 
@@ -237,6 +243,10 @@ public class AppearanceFragment extends BaseFragment
       performHapticClick();
       getSharedPrefs().edit().putBoolean(PREF.USE_WHITE_TEXT, isChecked).apply();
       activity.requestThemeRefresh();
+    } else if (id == R.id.switch_appearance_random) {
+      performHapticClick();
+      getSharedPrefs().edit().putBoolean(PREF.RANDOM, isChecked).apply();
+      activity.requestSettingsRefresh();
     }
   }
 

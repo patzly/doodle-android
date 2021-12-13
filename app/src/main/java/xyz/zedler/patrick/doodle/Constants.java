@@ -19,6 +19,19 @@
 
 package xyz.zedler.patrick.doodle;
 
+import java.util.Random;
+import xyz.zedler.patrick.doodle.wallpaper.AnthonyWallpaper;
+import xyz.zedler.patrick.doodle.wallpaper.BaseWallpaper;
+import xyz.zedler.patrick.doodle.wallpaper.FloralWallpaper;
+import xyz.zedler.patrick.doodle.wallpaper.FogWallpaper;
+import xyz.zedler.patrick.doodle.wallpaper.JohannaWallpaper;
+import xyz.zedler.patrick.doodle.wallpaper.LeafyWallpaper;
+import xyz.zedler.patrick.doodle.wallpaper.MonetWallpaper;
+import xyz.zedler.patrick.doodle.wallpaper.PixelWallpaper;
+import xyz.zedler.patrick.doodle.wallpaper.ReikoWallpaper;
+import xyz.zedler.patrick.doodle.wallpaper.StoneWallpaper;
+import xyz.zedler.patrick.doodle.wallpaper.WaterWallpaper;
+
 public final class Constants {
 
   public final static String VARIANT_PREFIX = "variant_";
@@ -45,6 +58,7 @@ public final class Constants {
     public final static String NIGHT_MODE = "night_mode";
     public final static String FOLLOW_SYSTEM = "follow_system";
     public final static String USE_WHITE_TEXT = "use_white_text";
+    public final static String RANDOM = "random";
 
     // Parallax
 
@@ -83,6 +97,7 @@ public final class Constants {
     public final static boolean NIGHT_MODE = true;
     public final static boolean FOLLOW_SYSTEM = true;
     public final static boolean USE_WHITE_TEXT = false;
+    public final static boolean RANDOM = false;
 
     public final static int PARALLAX = 1;
     public final static boolean TILT = false;
@@ -102,6 +117,50 @@ public final class Constants {
     public final static boolean GPU = true;
     public final static String THEME = "";
     public final static int MODE = Constants.THEME.MODE.AUTO;
+  }
+
+  public static BaseWallpaper getWallpaper(String wallpaper) {
+    switch (wallpaper) {
+      case WALLPAPER.JOHANNA:
+        return new JohannaWallpaper();
+      case WALLPAPER.REIKO:
+        return new ReikoWallpaper();
+      case WALLPAPER.ANTHONY:
+        return new AnthonyWallpaper();
+      case WALLPAPER.MONET:
+        return new MonetWallpaper();
+      case WALLPAPER.LEAFY:
+        return new LeafyWallpaper();
+      case WALLPAPER.FOG:
+        return new FogWallpaper();
+      case WALLPAPER.STONE:
+        return new StoneWallpaper();
+      case WALLPAPER.FLORAL:
+        return new FloralWallpaper();
+      case WALLPAPER.WATER:
+        return new WaterWallpaper();
+      default:
+        return new PixelWallpaper();
+    }
+  }
+
+  public static BaseWallpaper getRandomWallpaper() {
+    String[] wallpapers = new String[]{
+        WALLPAPER.PIXEL,
+        WALLPAPER.JOHANNA,
+        WALLPAPER.REIKO,
+        WALLPAPER.ANTHONY,
+
+        WALLPAPER.STONE,
+        WALLPAPER.FLORAL,
+        WALLPAPER.WATER,
+        WALLPAPER.MONET,
+
+        WALLPAPER.LEAFY,
+        WALLPAPER.FOG,
+    };
+    int random = new Random().nextInt(wallpapers.length);
+    return getWallpaper(wallpapers[random]);
   }
 
   public final static class DESIGN {

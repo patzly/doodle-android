@@ -4,6 +4,7 @@
 - New: various app color themes for devices without dynamic color support
 - New: option to change language (translated by amazing volunteers on Transifex, thank you all!)
 - New: another exclusive live wallpaper based on Pixel 6 wallpapers (still more to come!)
+- New: option for random wallpaper design every time the display is turned off
 - New: customizable extracted wallpaper colors for devices with dynamic color support
 - Improved: changed settings are applied to the running wallpaper instantly
 - Improved: restart behavior for applying certain settings

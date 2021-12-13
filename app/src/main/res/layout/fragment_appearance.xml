@@ -365,6 +365,37 @@
 
       </LinearLayout>
 
+      <LinearLayout
+        android:id="@+id/linear_appearance_random"
+        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable">
+
+        <ImageView
+          android:id="@+id/image_appearance_random"
+          style="@style/Widget.Doodle.ImageView.ListItem.Icon"
+          android:src="@drawable/ic_round_shuffle"
+          tools:ignore="ContentDescription" />
+
+        <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">
+
+          <TextView
+            style="@style/Widget.Doodle.TextView.ListItem.Title"
+            android:text="@string/appearance_random" />
+
+          <TextView
+            style="@style/Widget.Doodle.TextView.ListItem.Description"
+            android:text="@string/appearance_random_description" />
+
+        </LinearLayout>
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+          android:id="@+id/switch_appearance_random"
+          style="@style/Widget.Doodle.Switch"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="16dp" />
+
+      </LinearLayout>
+
     </LinearLayout>
 
   </androidx.core.widget.NestedScrollView>

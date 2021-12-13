@@ -57,22 +57,11 @@ import xyz.zedler.patrick.doodle.Constants.DEF;
 import xyz.zedler.patrick.doodle.Constants.PREF;
 import xyz.zedler.patrick.doodle.Constants.REQUEST_SOURCE;
 import xyz.zedler.patrick.doodle.Constants.USER_PRESENCE;
-import xyz.zedler.patrick.doodle.Constants.WALLPAPER;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.drawable.SvgDrawable;
 import xyz.zedler.patrick.doodle.util.PrefsUtil;
-import xyz.zedler.patrick.doodle.wallpaper.AnthonyWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.BaseWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.BaseWallpaper.WallpaperVariant;
-import xyz.zedler.patrick.doodle.wallpaper.FloralWallpaper;
-import xyz.zedler.patrick.doodle.wallpaper.FogWallpaper;
-import xyz.zedler.patrick.doodle.wallpaper.JohannaWallpaper;
-import xyz.zedler.patrick.doodle.wallpaper.LeafyWallpaper;
-import xyz.zedler.patrick.doodle.wallpaper.MonetWallpaper;
-import xyz.zedler.patrick.doodle.wallpaper.PixelWallpaper;
-import xyz.zedler.patrick.doodle.wallpaper.ReikoWallpaper;
-import xyz.zedler.patrick.doodle.wallpaper.StoneWallpaper;
-import xyz.zedler.patrick.doodle.wallpaper.WaterWallpaper;
 
 public class LiveWallpaperService extends WallpaperService {
 
@@ -259,6 +248,7 @@ public class LiveWallpaperService extends WallpaperService {
     private boolean isVisible;
     private boolean isNight;
     private boolean useGpu;
+    private boolean useRandom;
     private boolean isListenerRegistered = false;
     private boolean isSurfaceAvailable = false;
     private boolean iconDropConsumed = true;
@@ -462,6 +452,8 @@ public class LiveWallpaperService extends WallpaperService {
     }
 
     private void loadSettings() {
+      useRandom = sharedPrefs.getBoolean(PREF.RANDOM, DEF.RANDOM);
+
       parallax = sharedPrefs.getInt(PREF.PARALLAX, DEF.PARALLAX);
       setOffsetNotificationsEnabled(parallax != 0);
 
@@ -513,37 +505,10 @@ public class LiveWallpaperService extends WallpaperService {
     }
 
     private void loadTheme() {
-      switch (sharedPrefs.getString(PREF.WALLPAPER, DEF.WALLPAPER)) {
-        case WALLPAPER.JOHANNA:
-          wallpaper = new JohannaWallpaper();
-          break;
-        case WALLPAPER.REIKO:
-          wallpaper = new ReikoWallpaper();
-          break;
-        case WALLPAPER.ANTHONY:
-          wallpaper = new AnthonyWallpaper();
-          break;
-        case WALLPAPER.MONET:
-          wallpaper = new MonetWallpaper();
-          break;
-        case WALLPAPER.LEAFY:
-          wallpaper = new LeafyWallpaper();
-          break;
-        case WALLPAPER.FOG:
-          wallpaper = new FogWallpaper();
-          break;
-        case WALLPAPER.STONE:
-          wallpaper = new StoneWallpaper();
-          break;
-        case WALLPAPER.FLORAL:
-          wallpaper = new FloralWallpaper();
-          break;
-        case WALLPAPER.WATER:
-          wallpaper = new WaterWallpaper();
-          break;
-        default:
-          wallpaper = new PixelWallpaper();
-          break;
+      if (useRandom) {
+        wallpaper = Constants.getRandomWallpaper();
+      } else {
+        wallpaper = Constants.getWallpaper(sharedPrefs.getString(PREF.WALLPAPER, DEF.WALLPAPER));
       }
       nightMode = sharedPrefs.getBoolean(PREF.NIGHT_MODE, DEF.NIGHT_MODE);
       followSystem = sharedPrefs.getBoolean(PREF.FOLLOW_SYSTEM, DEF.FOLLOW_SYSTEM);
@@ -616,6 +581,9 @@ public class LiveWallpaperService extends WallpaperService {
     public void onPresenceChange(String presence) {
       switch (presence) {
         case USER_PRESENCE.OFF:
+          if (useRandom) {
+            loadTheme();
+          }
           zoomUnlock = 1;
           zoomLauncher = 1; // 0?
           drawFrame(true, null);

@@ -316,7 +316,7 @@ public class LiveWallpaperService extends WallpaperService {
       useGpu = sharedPrefs.getBoolean(PREF.GPU, DEF.GPU);
 
       loadSettings();
-      loadTheme();
+      loadTheme(useRandom);
 
       zoomLauncher = 0;
       // This starts the zoom effect already in wallpaper preview
@@ -402,7 +402,7 @@ public class LiveWallpaperService extends WallpaperService {
       }
 
       if (isNight != isNightMode()) {
-        loadTheme();
+        loadTheme(useRandom);
       }
 
       isRtl = getResources().getConfiguration().getLayoutDirection() == View.LAYOUT_DIRECTION_RTL;
@@ -504,8 +504,8 @@ public class LiveWallpaperService extends WallpaperService {
       }
     }
 
-    private void loadTheme() {
-      if (useRandom) {
+    private void loadTheme(boolean random) {
+      if (random) {
         wallpaper = Constants.getRandomWallpaper();
       } else {
         wallpaper = Constants.getWallpaper(sharedPrefs.getString(PREF.WALLPAPER, DEF.WALLPAPER));
@@ -582,7 +582,7 @@ public class LiveWallpaperService extends WallpaperService {
       switch (presence) {
         case USER_PRESENCE.OFF:
           if (useRandom) {
-            loadTheme();
+            loadTheme(true);
           }
           zoomUnlock = 1;
           zoomLauncher = 1; // 0?
@@ -605,7 +605,7 @@ public class LiveWallpaperService extends WallpaperService {
 
     @Override
     public void onRefreshTheme() {
-      loadTheme();
+      loadTheme(false);
     }
 
     @Override

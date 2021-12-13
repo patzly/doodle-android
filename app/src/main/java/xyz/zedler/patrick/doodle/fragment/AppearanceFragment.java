@@ -446,12 +446,18 @@ public class AppearanceFragment extends BaseFragment
   }
 
   private void refreshColor(int priority, boolean animated) {
-    String colorHex = getSharedPrefs().getString(
-        Constants.getThemeColorPref(
-            currentWallpaper.getName(), currentVariantIndex, priority, isWallpaperNightMode()
-        ),
-        currentVariant.getColorHex(priority)
-    );
+    if (binding == null || currentWallpaper == null || currentVariant == null) {
+      return;
+    }
+    String colorHex = null;
+    if (getSharedPrefs() != null) {
+      colorHex = getSharedPrefs().getString(
+          Constants.getThemeColorPref(
+              currentWallpaper.getName(), currentVariantIndex, priority, isWallpaperNightMode()
+          ),
+          currentVariant.getColorHex(priority)
+      );
+    }
     int color;
     if (colorHex != null) {
       color = Color.parseColor(colorHex);

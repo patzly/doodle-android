@@ -1,3 +1,8 @@
+5.0.1:
+- Fixed: crash caused by compiler
+
+Please consider translating this app into your language at Transifex. There are only about 100 strings to translate!
+
 5.0.0:
 - New: complete implementation of Material Design 3
 - New: dynamic colors in Doodle settings app for supported devices with Android 12+ (Material You)
@@ -10,8 +15,6 @@
 - Improved: restart behavior for applying certain settings
 - Improved: splash screen implementation for Android 12+
 - Fixed: broken buttons in feedback dialog
-
-Please consider translating this app into your language at Transifex. There are only about 100 strings to translate!
 
 4.2.0:
 - New: exclusive live wallpapers based on leaked Pixel 6 wallpapers

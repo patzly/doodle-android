@@ -14,7 +14,10 @@ fr
 choukajohn
 
 in
-Phantonym
+MDP43140, Phantonym
+
+it
+chunni
 
 pt_BR
 mamutal91

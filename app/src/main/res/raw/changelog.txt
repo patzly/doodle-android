@@ -1,8 +1,13 @@
+5.0.2:
+- New: Italian translation
+- Improved: Indonesian translation
+- Fixed: potential crashes and bugs
+
+Please consider translating this app into your language at Transifex. There are only about 115 strings to translate!
+
 5.0.1:
 - Fixed: crash caused by compiler
 - Fixed: crash caused by previously stored preferences
-
-Please consider translating this app into your language at Transifex. There are only about 100 strings to translate!
 
 5.0.0:
 - New: complete implementation of Material Design 3

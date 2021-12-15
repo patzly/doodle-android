@@ -413,6 +413,9 @@ public class AppearanceFragment extends BaseFragment
       SelectionCardView card = new SelectionCardView(activity);
       card.setCardBackgroundColor(Color.BLACK);
       card.setOnClickListener(v -> {
+        if (binding == null || currentWallpaper == null || currentVariant == null) {
+          return;
+        }
         card.startCheckedIcon();
         performHapticClick();
         AppearanceFragmentDirections.ActionAppearanceToColorsDialog action

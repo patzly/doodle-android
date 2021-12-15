@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ This file is part of Doodle Android.
+  ~
+  ~ Doodle Android is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Doodle Android is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with Doodle Android. If not, see <http://www.gnu.org/licenses/>.
+  ~
+  ~ Copyright (c) 2019-2021 by Patrick Zedler
+  -->
+
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+
+  <string name="wallpaper_description">Sfondi animati vivaci con tema scuro automatico e animazioni efficienti. Tocca per scoprire di più.</string>
+  <string name="wallpaper_description_picker">Esplora una svariata collezione di figure, rifinite con un delicato effetto parallax e zoom quando sblocchi il dispositvo e scorri nella schermata home.\nPersonalizza lo sfondo per abbinarsi al tuo stile.</string>
+
+  <!-- TITLES -->
+
+  <string name="title_info">Informazioni</string>
+  <string name="title_apply_changes">Applica modifiche </string>
+  <string name="title_feedback">Feedback</string>
+  <string name="title_licenses">License open source</string>
+
+  <!-- LABELS -->
+
+  <string name="label_ms">%1$sms</string>
+  <string name="label_degrees">%1$s gradi</string>
+
+  <!-- ACTIONS -->
+
+  <string name="action_close">Chiudi</string>
+  <string name="action_back">Indietro</string>
+  <string name="action_open_link">Apri sito web esterno</string>
+  <string name="action_hide">Nascondi</string>
+  <string name="action_reset">Resetta</string>
+  <string name="action_continue">Continua</string>
+  <string name="action_open_app_info">Apri informazioni sull\'app</string>
+  <string name="action_set">Imposta sfondo</string>
+  <string name="action_send_feedback">Manda un feedback</string>
+  <string name="action_share">Condividi</string>
+  <string name="action_share_description">Parla ai tuoi amici di Doodle</string>
+  <string name="action_email">Manda un\'email</string>
+  <string name="action_email_description">Contatta lo sviluppatore</string>
+  <string name="action_rate">Vota su Google Play</string>
+  <string name="action_rate_description">Supporta lo sviluppo </string>
+  <string name="action_github">Doodle Android su GitHub</string>
+  <string name="action_github_description">Crea un nuovo problema</string>
+  <string name="action_language_select">Scegli la lingua</string>
+
+  <!-- APPEARANCE -->
+
+  <string name="appearance_title">Apparenza</string>
+  <string name="appearance_description">Design &amp; opzioni tema</string>
+  <string name="appearance_design">Design</string>
+  <string name="appearance_design_doodle">Collezione Doodle Pixel 4</string>
+  <string name="appearance_design_monet">Collezione Pixel 6 Material You</string>
+  <string name="appearance_design_anna">Sfondi animati à l\'Anna Kövecses</string>
+  <string name="appearance_variant">Variante</string>
+  <string name="appearance_night_mode">Tema scuro</string>
+  <string name="appearance_night_mode_description">Solo colori scuri</string>
+  <string name="appearance_follow_system">Copia il sistema</string>
+  <string name="appearance_follow_system_description">Adotta il tema del dispositivo</string>
+  <string name="appearance_white_text">Prova a forzare il testo bianco </string>
+  <string name="appearance_white_text_description">Potrebbe affliggere la leggibilità</string>
+  <string name="appearance_colors">Colori estratti </string>
+  <string name="appearance_colors_description">Usato per calcolare il contrasto del testo</string>
+  <string name="appearance_colors_description_dynamic">Usato dal motore di tematizzazione del sistema</string>
+  <string name="appearance_colors_primary">Scegli il colore primario</string>
+  <string name="appearance_colors_secondary">Scegli il colore secondario</string>
+  <string name="appearance_colors_tertiary">Scegli il colore terziario</string>
+  <string name="appearance_colors_info">Su dispositivi che non supportano colori dimamici (Android 11 o inferiore), solo il colore primario sarà usato per calcolare il contrasto delle scritte del launcher e la tinta dello sfondo nella schermata delle app recenti</string>
+  <string name="appearance_colors_info_dynamic">Su dispositivi con Android 12 o maggiore, o che supportano i colori dinamici, i tre colori selezionati verranno usati automaticamente per creare un tema a livello di sistema</string>
+
+  <!-- PARALLAX -->
+
+  <string name="parallax_title">Parallax</string>
+  <string name="parallax_description">Scorrimento &amp; effetto inclinazione</string>
+  <string name="parallax_touch_wiz">Sembra che il tuo lanucher corrente sia Samsung TouchWiz, che non supporta lo scorrimento dello sfondo. Prova un altro launcher per abilitare l\'effetto parallax se non hai l\'opzione sensore inclinazione attivata.\nPuoi ignorare questo messaggio se hai un altro launcher come default. </string>
+  <string name="parallax_intensity">Forza parallax</string>
+  <string name="parallax_intensity_description">Intensità dell\'offset orizzontale sullo scorrimento della pagina e sull\'effetto inclinazione</string>
+  <string name="parallax_none">Nessuno</string>
+  <string name="parallax_category_tilt">Effetto inclinazione</string>
+  <string name="parallax_tilt">Muovi quando il dispositivo viene inclinato</string>
+  <string name="parallax_tilt_description">Usa piu batteria</string>
+  <string name="parallax_refresh_rate">Frequenza di aggiornamento del sensore inclinazione</string>
+  <string name="parallax_refresh_rate_description">Ritardi troppo corti possono rendere lo zoom meno fluido</string>
+  <string name="parallax_damping">Riduzione movimento</string>
+  <string name="parallax_damping_description">Diminuisci per più fluidità</string>
+  <string name="parallax_threshold">Soglia di movimento</string>
+  <string name="parallax_threshold_description">Aumenta per mettere in pausa il rendering continuo su piccoli movimenti</string>
+
+  <!-- SIZE -->
+
+  <string name="size_title">Dimensione figure</string>
+  <string name="size_description">Dimensioni &amp; effetto zoom</string>
+  <string name="size_scale">Dimensioni</string>
+  <string name="size_scale_description">Utile per schermi piu grandi e densità maggiore</string>
+  <string name="size_category_zoom">Effetto zoom</string>
+  <string name="size_zoom">Intensità zoom</string>
+  <string name="size_zoom_description">Quando aumentata, si ingrandisce di più</string>
+  <string name="size_zoom_launcher">Ingrandisci quando apri il pannello impostazioni veloci o l\'app drawer</string>
+  <string name="size_zoom_system">Usa lo zoom provvisto dal sistema</string>
+  <string name="size_zoom_system_description">Puó correggere l\'animazione dello zoom a scatti quando l\'effetto inclinazione è attivo</string>
+  <string name="size_zoom_unlock">Ingrandisci nella schermata di blocco</string>
+  <string name="size_zoom_unlock_description">Potrebbe scattare se l\'effetto tilt è attivo</string>
+  <string name="size_zoom_duration">Sblocca durata zoom</string>
+  <string name="size_zoom_duration_description">Abbassa per animazioni piú veloci</string>
+  <string name="size_zoom_rotation">Ruota delle figure quando ingrandisci </string>
+  </resources>

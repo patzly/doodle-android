@@ -31,6 +31,9 @@
   <string name="title_feedback">Umpan balik</string>
   <string name="title_licenses">Lisensi sumber terbuka</string>
 
+  <!-- LABELS -->
+
+  <string name="label_ms">%1$sms</string>
   <string name="label_degrees">%1$s derajat</string>
 
   <!-- ACTIONS -->

@@ -387,7 +387,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 
   @SuppressLint("ShowToast")
   public void showForceStopRequest(NavDirections directions) {
-    if (!isWallpaperServiceRunning(true)) {
+    if (!isWallpaperServiceRunning(true) || binding == null) {
       return;
     }
     showSnackbar(
@@ -396,7 +396,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         ).setAction(
             getString(R.string.action_continue), view -> {
               performHapticHeavyClick();
-              if (directions != null) {
+              if (directions != null && navController != null) {
                 navController.navigate(directions);
               } else {
                 ViewUtil.showBottomSheet(this, new ApplyBottomSheetDialogFragment());

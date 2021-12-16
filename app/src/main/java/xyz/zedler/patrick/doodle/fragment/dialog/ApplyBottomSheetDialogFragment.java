@@ -76,7 +76,7 @@ public class ApplyBottomSheetDialogFragment extends BaseBottomSheetDialogFragmen
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
       } catch (ActivityNotFoundException e) {
-        Log.e(TAG, "showForceStopRequest: " + e);
+        Log.e(TAG, "showForceStopRequest", e);
         Intent intent = new Intent(Settings.ACTION_MANAGE_APPLICATIONS_SETTINGS);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);

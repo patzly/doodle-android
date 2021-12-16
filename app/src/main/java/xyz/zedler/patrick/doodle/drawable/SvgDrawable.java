@@ -81,7 +81,7 @@ public class SvgDrawable {
     try {
       parse(context.getResources().openRawResource(resId));
     } catch (IOException e) {
-      Log.e(TAG, "Could not open SVG resource: ", e);
+      Log.e(TAG, "Could not open SVG resource", e);
     }
 
     scale = 1;
@@ -200,7 +200,7 @@ public class SvgDrawable {
       parser.next();
       readSvg(parser);
     } catch (XmlPullParserException | IOException e) {
-      Log.e(TAG, "parse: ", e);
+      Log.e(TAG, "parse", e);
     } finally {
       inputStream.close();
     }

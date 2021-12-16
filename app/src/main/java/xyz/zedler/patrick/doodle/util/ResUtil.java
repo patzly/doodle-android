@@ -58,7 +58,7 @@ public class ResUtil {
       text.deleteCharAt(text.length() - 1);
       inputStream.close();
     } catch (Exception e) {
-      Log.e(TAG, "getRawText: ", e);
+      Log.e(TAG, "getRawText", e);
     }
     return text.toString();
   }

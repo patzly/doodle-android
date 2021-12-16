@@ -152,7 +152,7 @@ public class LiveWallpaperService extends WallpaperService {
         unregisterReceiver(presenceReceiver);
         unregisterReceiver(refreshReceiver);
       } catch (Exception e) {
-        Log.e(TAG, "unregisterReceiver: ", e);
+        Log.e(TAG, "unregisterReceiver", e);
       }
       areReceiversRegistered = false;
     }
@@ -166,7 +166,7 @@ public class LiveWallpaperService extends WallpaperService {
       variant = wallpaper.getVariants()[variantIndex];
       variant = wallpaper.getDarkVariants()[variantIndex];
     } catch (IndexOutOfBoundsException e) {
-      Log.e(TAG, "loadWallpaper: " + e);
+      Log.e(TAG, "loadWallpaper", e);
       variantIndex = 0;
     }
 
@@ -527,7 +527,7 @@ public class LiveWallpaperService extends WallpaperService {
         try {
           notifyColorsChanged();
         } catch (Exception e) {
-          Log.e(TAG, "colorsHaveChanged: ", e);
+          Log.e(TAG, "colorsHaveChanged", e);
         }
       }
     }
@@ -661,10 +661,14 @@ public class LiveWallpaperService extends WallpaperService {
           }
         }
       } catch (Exception e) {
-        Log.e(TAG, "drawFrame: unexpected exception: " + e);
+        Log.e(TAG, "drawFrame: unexpected exception", e);
       } finally {
-        if (canvas != null && isSurfaceAvailable) {
-          surfaceHolder.unlockCanvasAndPost(canvas);
+        try {
+          if (canvas != null && isSurfaceAvailable) {
+            surfaceHolder.unlockCanvasAndPost(canvas);
+          }
+        } catch (Exception e) {
+          Log.e(TAG, "drawFrame: unlocking canvas failed", e);
         }
       }
     }

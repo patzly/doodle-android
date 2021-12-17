@@ -97,7 +97,7 @@
   <string name="parallax_tilt_description">会消耗更多的电量</string>
   <string name="parallax_refresh_rate">倾斜传感器刷新率</string>
   <string name="parallax_refresh_rate_description">延迟过短会使缩放动画变慢</string>
-  <string name="parallax_damping">运动阻碍大小</string>
+  <string name="parallax_damping">运动阻尼</string>
   <string name="parallax_damping_description">减少以获得更平滑的效果</string>
   <string name="parallax_threshold">运动阈值</string>
   <string name="parallax_threshold_description">增加以暂停连续渲染，尽管几乎没有移动</string>

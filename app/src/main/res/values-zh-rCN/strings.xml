@@ -165,6 +165,6 @@
   <string name="msg_force_stop">需强制停止才能应用更改</string>
   <string name="msg_apply_changes">为了(最终)应用改变的选项，建议重新启动正在运行的壁纸服务。这不能自动完成。\n请在系统设置中强制停止 Doodle，然后重新将 Doole 应用为墙纸。</string>
   <string name="msg_apply_changes_monet">在支持动态颜色的设备上，还需要重新启动将更改的墙纸颜色应用到系统的主题引擎。</string>
-  <string name="msg_preview_missing">发生错误，请手动选择Doodle Live墙纸</string>
+  <string name="msg_preview_missing">发生错误，请手动选择 Doodle Live 墙纸</string>
 
   </resources>

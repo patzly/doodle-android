@@ -88,8 +88,7 @@
 
   <string name="parallax_title">视差</string>
   <string name="parallax_description">滑动和倾斜效果</string>
-  <string name="parallax_touch_wiz">您当前的启动器似乎是三星TouchWiz，它不支持后台滚动。
-如果您没有倾斜传感器，请尝试其他桌面启动器以启用视差效果</string>
+  <string name="parallax_touch_wiz">您当前的启动器似乎是三星TouchWiz，它不支持后台滚动。如果您没有倾斜传感器，请尝试其他桌面启动器以启用视差效果。\n如果您将另一个启动器设置为默认，可以忽略此警告。</string>
   <string name="parallax_intensity">视差强度</string>
   <string name="parallax_intensity_description">页面滑动和倾斜效果强度上的水平偏移</string>
   <string name="parallax_none">无</string>

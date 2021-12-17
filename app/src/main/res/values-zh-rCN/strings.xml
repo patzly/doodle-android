@@ -141,7 +141,7 @@
   <string name="other_theme_light">浅色</string>
   <string name="other_theme_dark">深色</string>
   <string name="other_reset">重置所有设置</string>
-  <string name="other_reset_description">花费的时间比卸载要多，因为首选项存储在一个特殊的位置，我们必须要清除它</string>
+  <string name="other_reset_description">重置比单纯卸载要麻烦，因为首选项存储在一个特殊的地方，必须在设备启动后可直接访问</string>
 
   <!-- ABOUT -->
 

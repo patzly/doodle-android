@@ -110,7 +110,7 @@
   <string name="size_scale_description">适用于大屏幕和密度</string>
   <string name="size_category_zoom">缩放效果</string>
   <string name="size_zoom">缩放强度</string>
-  <string name="size_zoom_description">增加时，图案间距会缩小更多</string>
+  <string name="size_zoom_description">增加后，相机变焦更多</string>
   <string name="size_zoom_launcher">打开快速设置或应用程序抽屉时缩小</string>
   <string name="size_zoom_system">使用系统提供的缩放效果</string>
   <string name="size_zoom_system_description">可能会修复倾斜效果开启时不平滑的缩放动画</string>

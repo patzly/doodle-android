@@ -105,7 +105,7 @@
   <!-- SIZE -->
 
   <string name="size_title">形状尺寸</string>
-  <string name="size_description">规模和缩放效果</string>
+  <string name="size_description">尺寸和缩放效果</string>
   <string name="size_scale">规模</string>
   <string name="size_scale_description">适用于大屏幕和密度</string>
   <string name="size_category_zoom">变焦效果</string>

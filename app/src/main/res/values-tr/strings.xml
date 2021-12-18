@@ -72,6 +72,8 @@
   <string name="appearance_follow_system_description">Cihaz temasını benimse</string>
   <string name="appearance_white_text">Beyaz yazıyı zorlamayı dene</string>
   <string name="appearance_white_text_description">Okunabilirliğe etkisi olabilir</string>
+  <string name="appearance_random">Rastgele duvar kağıdı dizaynı</string>
+  <string name="appearance_random_description">Ekran her kapandığında </string>
   <string name="appearance_colors">Çıkartılmış renkler</string>
   <string name="appearance_colors_description">Yazının kontrastını hesaplamada kullanılır</string>
   <string name="appearance_colors_description_dynamic">Sistemin tema motoru tarafından kullanılır</string>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ This file is part of Doodle Android.
+  ~
+  ~ Doodle Android is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Doodle Android is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with Doodle Android. If not, see <http://www.gnu.org/licenses/>.
+  ~
+  ~ Copyright (c) 2019-2021 by Patrick Zedler
+  -->
+
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+
+  <string name="wallpaper_description">Imagini de fundal live colorate cu mod întunecat automat și animații fluide fără consum al bateriei. Atingeți pentru a afla mai multe.</string>
+  <string name="wallpaper_description_picker">Explorați o colecție forme colorate, rafinată cu efecte delicate de tip parallax și zoom atunci când glisați în ecranul principal sau când deblocați device-ul.\nCustomizează-ți wallpaper-ul pentru a se potrivi cu propriul tău stil.</string>
+
+  <!-- TITLES -->
+
+  <string name="title_info">Informații</string>
+  <string name="title_apply_changes">Aplică modificările</string>
+  <string name="title_feedback">Păreri</string>
+  <string name="title_licenses">Licențe open source</string>
+
+  <!-- ACTIONS -->
+
+  <string name="action_close">Închide</string>
+  <string name="action_back">Înapoi</string>
+  <string name="action_open_link">Deschide în website</string>
+  <string name="action_hide">Ascunde</string>
+  <string name="action_reset">Reset</string>
+  <string name="action_continue">Continuă</string>
+  <string name="action_open_app_info">Deschide informații despre aplicație</string>
+  <string name="action_set">Setează wallpaper-ul</string>
+  <string name="action_send_feedback">Trimite-ne părerea ta</string>
+  <string name="action_share">Distribuie</string>
+  <string name="action_share_description">Spune-le amicilor tăi despre Doodle</string>
+  <string name="action_email">Trimite email</string>
+  <string name="action_email_description">Contactează dezvoltatorul</string>
+  <string name="action_rate">Evaluați-ne pe Google Play</string>
+  <string name="action_rate_description">Suportă dezvoltarea acestei aplicații</string>
+  <string name="action_github">Doodle Android pe GitHub</string>
+  <string name="action_github_description">Deschide o problemă nouă</string>
+  <string name="action_language_select">Selectează limba</string>
+
+  <!-- APPEARANCE -->
+
+  <string name="appearance_title">Aspect</string>
+  <string name="appearance_description">Design și teme</string>
+  <string name="appearance_design">Design</string>
+  <string name="appearance_design_doodle">Colecția Pixel 4 Doodle</string>
+  <string name="appearance_design_monet">Colecția Pixel 6 Doodle</string>
+  <string name="appearance_design_anna">Wallpapere live l\'Anna Kövecses</string>
+  <string name="appearance_variant">Variante</string>
+  <string name="appearance_night_mode">Modul de noapte</string>
+  <string name="appearance_night_mode_description">Doar culori întunecate</string>
+  <string name="appearance_follow_system">Urmărește tema sistemului</string>
+  <string name="appearance_follow_system_description">Adoptează tema device-ului</string>
+  <string name="appearance_white_text">Forțează textul să fie alb</string>
+  <string name="appearance_white_text_description">Poate afecta lizibilitatea</string>
+  <string name="appearance_random">Design wallpaper la întâmplare</string>
+  <string name="appearance_random_description">De fiecare dată când ecranul este oprit</string>
+  <string name="appearance_colors">Culori extrase</string>
+  <string name="appearance_colors_description">Folosit pentru calcularea contrastului textului</string>
+  <string name="appearance_colors_primary">Alege culoarea primară</string>
+  <string name="appearance_colors_secondary">Alege culoarea secundară</string>
+  <string name="appearance_colors_tertiary">Alegeți culoarea terțiară</string>
+  <string name="appearance_colors_info">Pentru device-urile fără suport de culori dinamice (Android 11 sau mai mic), numai culoarea primară este utilizată pentru a calcula contrastul textului din launcher și a tentei din fundalul aplicațiilor recente.</string>
+  <string name="appearance_colors_info_dynamic">Pentru device-urile cu Android 12 sau mai mare cu suport pentru culori dinamice, sunt trei culori selectate automat create de system-ide color theme.</string>
+
+  <!-- PARALLAX -->
+
+  <string name="parallax_title">Parallax</string>
+  <string name="parallax_description">Glisare și efect tilt</string>
+  <string name="parallax_touch_wiz">Se pare că launcher-ul tău curent este Samsung TouchWiz, care nu suportă scrolarea background-ului. Te rugam să încerci alt launcher pentru a permite efectul parallax daca nu ai opțiunea de tilt pornită.\n Poți igonora această avertizare dacă ai alt launcher prestablilit.</string>
+  <string name="parallax_intensity">Puterea efectului parallax</string>
+  <string name="parallax_intensity_description">Offset orizontal la glisarea paginii și intensitatea efectului de înclinare</string>
+  <string name="parallax_none">Nimic</string>
+  <string name="parallax_category_tilt">Efect tilt</string>
+  <string name="parallax_tilt">Mișcare la înclinarea device-ului</string>
+  <string name="parallax_tilt_description">Consumă mai multă baterie</string>
+  <string name="parallax_refresh_rate">Rata de refresh a senzorului de înclinare</string>
+  <string name="parallax_refresh_rate_description">Întrârzierile scurte pot face animația să decaleze</string>
+  <string name="parallax_damping_description">Scade pentru o fluiditate mai mare</string>
+  <!-- SIZE -->
+
+  <string name="size_title">Mărime forme</string>
+  <string name="size_scale">Mărime</string>
+  <string name="size_category_zoom">Efect zoom</string>
+  <string name="size_zoom">Intensitate zoom</string>
+  <!-- OTHER -->
+
+  <string name="other_title">Alte opțiuni</string>
+  <string name="other_language">Limbă</string>
+  <string name="other_language_not_available">Nu este valabil</string>
+  <string name="other_gpu">Accelerare hardware</string>
+  <string name="other_gpu_description">Oprește dacă wallpaper-ul dă crash</string>
+  <string name="other_launcher">Ascunde iconița din launcher</string>
+  <string name="other_theme">Aplică culoarea temei</string>
+  <string name="other_theme_description">Încearcă alt look</string>
+  <string name="other_theme_auto">Automată</string>
+  <string name="other_theme_light">Luminoasă</string>
+  <string name="other_theme_dark">Întunecată</string>
+  <string name="other_reset">Resetează toate setările</string>
+  <!-- ABOUT -->
+
+  <string name="about_title">Despre</string>
+  <string name="about_description">Informații dezvoltator și mai multe</string>
+  <string name="about_version">Versiune</string>
+  <string name="about_changelog_description">Ce este nou?</string>
+  <string name="about_developer">Dezvoltator</string>
+  <string name="about_vending_description">Mai multe aplicații de la dezvoltator</string>
+  <string name="about_github_description">Codul sursă</string>
+  <string name="about_translation_description">Ajută la traducerea Doodle</string>
+
+  <string name="msg_hide">Ascundeți iconița din launcher?</string>
+  <string name="msg_reset">Resetați toate setările?</string>
+  </resources>

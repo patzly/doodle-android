@@ -1,6 +1,5 @@
 5.0.2:
-- New: Italian translation
-- Improved: Indonesian translation
+- New: Dutch, Indonesian & Italian translations
 - Fixed: potential crashes and bugs
 
 Please consider translating this app into your language at Transifex. There are only about 115 strings to translate!

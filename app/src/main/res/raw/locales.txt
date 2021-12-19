@@ -19,8 +19,14 @@ MDP43140, Phantonym
 it
 chunni
 
+nl
+Joeke
+
 pt_BR
 mamutal91
+
+ro
+d4rk7355608
 
 ru
 VoicelessCinder, uvdllm

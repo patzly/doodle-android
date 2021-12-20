@@ -20,6 +20,7 @@
 package xyz.zedler.patrick.doodle.fragment;
 
 import android.animation.ValueAnimator;
+import android.annotation.SuppressLint;
 import android.content.res.Configuration;
 import android.graphics.Color;
 import android.os.Build;
@@ -38,6 +39,7 @@ import androidx.annotation.Nullable;
 import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.color.DynamicColors;
+import com.google.android.material.snackbar.Snackbar;
 import xyz.zedler.patrick.doodle.Constants;
 import xyz.zedler.patrick.doodle.Constants.DEF;
 import xyz.zedler.patrick.doodle.Constants.PREF;
@@ -73,6 +75,7 @@ public class AppearanceFragment extends BaseFragment
   private BaseWallpaper currentWallpaper;
   private WallpaperVariant currentVariant;
   private int currentVariantIndex;
+  private boolean randomWallpaper;
 
   @Override
   public View onCreateView(
@@ -148,7 +151,8 @@ public class AppearanceFragment extends BaseFragment
         getSharedPrefs().getBoolean(PREF.USE_WHITE_TEXT, DEF.USE_WHITE_TEXT)
     );
 
-    binding.switchAppearanceRandom.setChecked(getSharedPrefs().getBoolean(PREF.RANDOM, DEF.RANDOM));
+    randomWallpaper = getSharedPrefs().getBoolean(PREF.RANDOM, DEF.RANDOM);
+    binding.switchAppearanceRandom.setChecked(randomWallpaper);
 
     setUpDesignSelections();
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O_MR1) {
@@ -245,14 +249,14 @@ public class AppearanceFragment extends BaseFragment
       activity.requestThemeRefresh();
     } else if (id == R.id.switch_appearance_random) {
       performHapticClick();
+      randomWallpaper = isChecked;
       getSharedPrefs().edit().putBoolean(PREF.RANDOM, isChecked).apply();
       activity.requestSettingsRefresh();
-      if (!isChecked) {
-        activity.requestThemeRefresh();
-      }
+      activity.requestThemeRefresh();
     }
   }
 
+  @SuppressLint("ShowToast")
   private void setUpDesignSelections() {
     BaseWallpaper[] baseWallpapers;
     ViewGroup container;
@@ -286,6 +290,16 @@ public class AppearanceFragment extends BaseFragment
         SelectionCardView card = new SelectionCardView(activity);
         card.setCardImageResource(wallpaper.getThumbnailResId());
         card.setOnClickListener(v -> {
+          if (randomWallpaper) {
+            activity.showSnackbar(
+                Snackbar.make(
+                    binding.getRoot(), getString(R.string.msg_random_warning), Snackbar.LENGTH_LONG
+                ).setAction(
+                    getString(R.string.action_deactivate),
+                    view -> binding.switchAppearanceRandom.setChecked(false)
+                )
+            );
+          }
           if (card.isChecked()) {
             return;
           }

@@ -449,7 +449,7 @@ public class LiveWallpaperService extends WallpaperService {
       return super.onCommand(action, x, y, z, extras, resultRequested);
     }
 
-    protected void notifyIconDropped(int x, int y) {
+    private void notifyIconDropped(int x, int y) {
       if (!iconDropConsumed) {
         iconDropConsumed = true;
       }

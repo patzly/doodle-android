@@ -1,8 +1,11 @@
+5.0.3:
+- Fixed: random wallpaper option not working correctly
+
+Please consider translating this app into your language at Transifex. There are only about 115 strings to translate!
+
 5.0.2:
 - New: Dutch, Indonesian & Italian translations
 - Fixed: potential crashes and bugs
-
-Please consider translating this app into your language at Transifex. There are only about 115 strings to translate!
 
 5.0.1:
 - Fixed: crash caused by compiler

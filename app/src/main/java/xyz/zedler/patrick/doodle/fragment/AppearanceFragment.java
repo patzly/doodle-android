@@ -247,6 +247,9 @@ public class AppearanceFragment extends BaseFragment
       performHapticClick();
       getSharedPrefs().edit().putBoolean(PREF.RANDOM, isChecked).apply();
       activity.requestSettingsRefresh();
+      if (!isChecked) {
+        activity.requestThemeRefresh();
+      }
     }
   }
 

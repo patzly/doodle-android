@@ -43,6 +43,7 @@
   <string name="action_open_link">Externe Website öffnen</string>
   <string name="action_hide">Verbergen</string>
   <string name="action_reset">Zurücksetzen</string>
+  <string name="action_deactivate">Deaktivieren</string>
   <string name="action_continue">Fortfahren</string>
   <string name="action_open_app_info">App-Info öffnen</string>
   <string name="action_set">Hintergrund festlegen</string>
@@ -158,6 +159,7 @@
   <string name="msg_feedback">Eine tolle App kostet viel Zeit und lebt von der Rückmeldung ihrer Nutzer.\n\nHast du Wünsche, Anmerkungen oder Fragen? Dann lass es mich wissen!\nAnsonsten freue ich mich über eine nette Bewertung im Play Store.</string>
   <string name="msg_share">Schau dir mal diese coole Live-Wallpaper-App an: \nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
   <string name="msg_hide">App-Icon verbergen?</string>
+  <string name="msg_random_warning">Zufälliges Hintergrunddesign ist noch aktiviert!</string>
   <string name="msg_reset">Einstellungen zurücksetzen?</string>
   <string name="msg_force_stop">Erzwungenes Beenden wird benötigt, um die Änderung anzuwenden</string>
   <string name="msg_apply_changes">Um (eventuelle) Änderungen anzuwenden, wird ein Neustart des laufenden Hintergrunds empfohlen. Dies kann nicht automatisch erfolgen.\nBitte beende die App in Deinen Systemeinstellungen und wende Doodle erneut als Live-Hintergrund an.</string>

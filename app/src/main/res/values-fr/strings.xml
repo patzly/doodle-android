@@ -43,6 +43,7 @@
   <string name="action_open_link">Ouvrir un site web externe</string>
   <string name="action_hide">Cacher</string>
   <string name="action_reset">Réinitialiser</string>
+  <string name="action_deactivate">Désactiver</string>
   <string name="action_continue">Continuer</string>
   <string name="action_open_app_info">Ouvrir les infos sur l\'app</string>
   <string name="action_set">Définir le papier peint</string>
@@ -158,6 +159,7 @@
   <string name="msg_feedback">Une bonne application demande beaucoup de temps et vit des retours de ses utilisateurs.\n\nAvez-vous des souhaits, des commentaires ou des questions ? Contactez-moi !\nSinon, je serais très heureux d\'avoir une bonne critique sur le Play Store.</string>
   <string name="msg_share">Découvrez cette excellente application de fonds d\'écran animés : \nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
   <string name="msg_hide">Masquer l\'icône dans le lanceur d\'applications ?</string>
+  <string name="msg_random_warning">La forme de papier peint aléatoire est toujours active !</string>
   <string name="msg_reset">Réinitialiser tous les réglages ?</string>
   <string name="msg_force_stop">Arrêt forcé requis pour appliquer les modifications</string>
   <string name="msg_apply_changes">Pour (éventuellement) appliquer les options modifiées, un redémarrage du service de papier peint en cours d\'exécution est recommandé. Cela ne peut pas être fait automatiquement.\nVeuillez forcer l\'arrêt de Doodle dans les paramètres de votre système, puis appliquez à nouveau Doodle comme fond d\'écran.</string>

@@ -38,7 +38,7 @@ import xyz.zedler.patrick.doodle.util.ViewUtil;
 
 public class TextBottomSheetDialogFragment extends BaseBottomSheetDialogFragment {
 
-  private final static String TAG = "TextBottomSheet";
+  private static final String TAG = "TextBottomSheet";
 
   private FragmentBottomsheetTextBinding binding;
 

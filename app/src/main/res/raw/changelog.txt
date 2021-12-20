@@ -1,4 +1,5 @@
 5.0.3:
+- New: additional purple app theme
 - Fixed: random wallpaper option not working correctly
 
 Please consider translating this app into your language at Transifex. There are only about 115 strings to translate!

@@ -41,7 +41,7 @@ import xyz.zedler.patrick.doodle.util.ViewUtil;
 public class FeedbackBottomSheetDialogFragment extends BaseBottomSheetDialogFragment
     implements OnClickListener {
 
-  private final static String TAG = "FeedbackBottomSheet";
+  private static final String TAG = "FeedbackBottomSheet";
 
   private FragmentBottomsheetFeedbackBinding binding;
 

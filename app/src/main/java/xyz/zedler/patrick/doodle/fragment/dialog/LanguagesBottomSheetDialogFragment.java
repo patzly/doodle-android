@@ -40,7 +40,7 @@ import xyz.zedler.patrick.doodle.util.SystemUiUtil;
 public class LanguagesBottomSheetDialogFragment extends BaseBottomSheetDialogFragment
     implements LanguageAdapter.LanguageAdapterListener {
 
-  private final static String TAG = "LanguagesBottomSheet";
+  private static final String TAG = "LanguagesBottomSheet";
 
   private FragmentBottomsheetListSelectionBinding binding;
   private MainActivity activity;

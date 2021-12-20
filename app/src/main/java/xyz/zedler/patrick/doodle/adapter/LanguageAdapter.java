@@ -36,7 +36,7 @@ import xyz.zedler.patrick.doodle.util.ViewUtil;
 
 public class LanguageAdapter extends RecyclerView.Adapter<LanguageAdapter.ViewHolder> {
 
-  private final static String TAG = LanguageAdapter.class.getSimpleName();
+  private static final String TAG = LanguageAdapter.class.getSimpleName();
 
   private final List<Language> languages;
   private final String selectedCode;

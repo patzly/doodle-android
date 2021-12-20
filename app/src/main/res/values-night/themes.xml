@@ -163,4 +163,40 @@
     <item name="colorOutline">@color/blue_neutral_variant_60</item>
   </style>
 
+  <style name="Theme.Doodle.Purple" parent="Theme.Doodle">
+    <item name="colorPrimary">@color/purple_primary_80</item>
+    <item name="colorOnPrimary">@color/purple_primary_20</item>
+    <item name="colorPrimaryContainer">@color/purple_primary_30</item>
+    <item name="colorOnPrimaryContainer">@color/purple_primary_90</item>
+    <item name="colorPrimaryInverse">@color/purple_primary_40</item>
+
+    <item name="colorSecondary">@color/purple_secondary_80</item>
+    <item name="colorOnSecondary">@color/purple_secondary_20</item>
+    <item name="colorSecondaryContainer">@color/purple_secondary_30</item>
+    <item name="colorOnSecondaryContainer">@color/purple_secondary_90</item>
+
+    <item name="colorTertiary">@color/purple_tertiary_80</item>
+    <item name="colorOnTertiary">@color/purple_tertiary_20</item>
+    <item name="colorTertiaryContainer">@color/purple_tertiary_30</item>
+    <item name="colorOnTertiaryContainer">@color/purple_tertiary_90</item>
+
+    <item name="colorError">@color/purple_error_80</item>
+    <item name="colorOnError">@color/purple_error_20</item>
+    <item name="colorErrorContainer">@color/purple_error_30</item>
+    <item name="colorOnErrorContainer">@color/purple_error_80</item>
+
+    <item name="android:colorBackground">@color/purple_neutral_10</item>
+    <item name="colorOnBackground">@color/purple_neutral_90</item>
+
+    <item name="colorSurface">@color/purple_neutral_10</item>
+    <item name="colorOnSurface">@color/purple_neutral_90</item>
+    <item name="colorSurfaceInverse">@color/purple_neutral_90</item>
+    <item name="colorOnSurfaceInverse">@color/purple_neutral_20</item>
+
+    <item name="colorSurfaceVariant">@color/purple_neutral_variant_30</item>
+    <item name="colorOnSurfaceVariant">@color/purple_neutral_variant_80</item>
+
+    <item name="colorOutline">@color/purple_neutral_variant_60</item>
+  </style>
+
 </resources>

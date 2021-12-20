@@ -53,10 +53,10 @@ import xyz.zedler.patrick.doodle.util.SystemUiUtil;
 
 public class SvgDrawable {
 
-  private final static String TAG = SvgDrawable.class.getSimpleName();
-  private final static boolean DEBUG = false;
+  private static final String TAG = SvgDrawable.class.getSimpleName();
+  private static final boolean DEBUG = false;
 
-  private final static boolean ENABLE_IMAGES = true;
+  private static final boolean ENABLE_IMAGES = true;
 
   private final List<SvgObject> objects;
   private final List<String> ids;
@@ -941,21 +941,21 @@ public class SvgDrawable {
 
   public static class SvgObject {
 
-    public final static String TYPE_NONE = "none";
-    public final static String TYPE_GROUP = "g";
-    public final static String TYPE_PATH = "path";
-    public final static String TYPE_RECT = "rect";
-    public final static String TYPE_CIRCLE = "circle";
-    public final static String TYPE_ELLIPSE = "ellipse";
-    public final static String TYPE_IMAGE = "image";
+    public static final String TYPE_NONE = "none";
+    public static final String TYPE_GROUP = "g";
+    public static final String TYPE_PATH = "path";
+    public static final String TYPE_RECT = "rect";
+    public static final String TYPE_CIRCLE = "circle";
+    public static final String TYPE_ELLIPSE = "ellipse";
+    public static final String TYPE_IMAGE = "image";
     // stroke line cap
-    public final static String LINE_CAP_BUTT = "butt";
-    public final static String LINE_CAP_ROUND = "round";
-    public final static String LINE_CAP_SQUARE = "square";
+    public static final String LINE_CAP_BUTT = "butt";
+    public static final String LINE_CAP_ROUND = "round";
+    public static final String LINE_CAP_SQUARE = "square";
     // stroke line join
-    public final static String LINE_JOIN_ROUND = "round";
-    public final static String LINE_JOIN_BEVEL = "bevel";
-    public final static String LINE_JOIN_MITER = "miter";
+    public static final String LINE_JOIN_ROUND = "round";
+    public static final String LINE_JOIN_BEVEL = "bevel";
+    public static final String LINE_JOIN_MITER = "miter";
 
     public String id;
     public final String type;

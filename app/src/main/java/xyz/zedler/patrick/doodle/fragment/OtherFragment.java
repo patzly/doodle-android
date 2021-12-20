@@ -269,7 +269,7 @@ public class OtherFragment extends BaseFragment
   private void setUpThemeSelection() {
     boolean hasDynamic = DynamicColors.isDynamicColorAvailable();
     ViewGroup container = binding.linearOtherThemeContainer;
-    for (int i = hasDynamic ? -1 : 0; i < 4; i++) {
+    for (int i = hasDynamic ? -1 : 0; i < 5; i++) {
       String name;
       int resId;
       if (i == -1) {
@@ -284,6 +284,9 @@ public class OtherFragment extends BaseFragment
       } else if (i == 3) {
         name = THEME.BLUE;
         resId = R.style.Theme_Doodle_Blue;
+      } else if (i == 4) {
+        name = THEME.PURPLE;
+        resId = R.style.Theme_Doodle_Purple;
       } else {
         name = THEME.RED;
         resId = R.style.Theme_Doodle_Red;

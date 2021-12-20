@@ -51,7 +51,7 @@ import java.util.Arrays;
 
 public class ViewUtil {
 
-  private final static String TAG = ViewUtil.class.getSimpleName();
+  private static final String TAG = ViewUtil.class.getSimpleName();
 
   private long lastClick;
   private long idle = 500;

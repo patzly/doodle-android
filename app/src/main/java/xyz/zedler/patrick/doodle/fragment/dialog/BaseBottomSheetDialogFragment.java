@@ -48,7 +48,7 @@ import xyz.zedler.patrick.doodle.util.ViewUtil;
 
 public class BaseBottomSheetDialogFragment extends BottomSheetDialogFragment {
 
-  private final static String TAG = "BaseBottomSheet";
+  private static final String TAG = "BaseBottomSheet";
 
   private MainActivity activity;
   private Dialog dialog;

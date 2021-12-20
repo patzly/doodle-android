@@ -36,7 +36,7 @@ import xyz.zedler.patrick.doodle.util.SystemUiUtil;
 
 public class SystemBarBehavior {
 
-  private final static String TAG = SystemBarBehavior.class.getSimpleName();
+  private static final String TAG = SystemBarBehavior.class.getSimpleName();
 
   private final Activity activity;
   private final Window window;

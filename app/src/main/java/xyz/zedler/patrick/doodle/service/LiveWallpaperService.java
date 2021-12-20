@@ -65,7 +65,7 @@ import xyz.zedler.patrick.doodle.wallpaper.BaseWallpaper.WallpaperVariant;
 
 public class LiveWallpaperService extends WallpaperService {
 
-  private final static String TAG = LiveWallpaperService.class.getSimpleName();
+  private static final String TAG = LiveWallpaperService.class.getSimpleName();
 
   // All things where we need a context or the service's context are done in this Service class
   // All other things should be done in the inner Engine class

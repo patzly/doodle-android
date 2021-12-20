@@ -76,6 +76,9 @@ public class LauncherActivity extends MainActivity {
         case THEME.BLUE:
           setTheme(R.style.Theme_Doodle_Blue);
           break;
+        case THEME.PURPLE:
+          setTheme(R.style.Theme_Doodle_Purple);
+          break;
         default:
           if (DynamicColors.isDynamicColorAvailable()) {
             DynamicColors.applyIfAvailable(this);

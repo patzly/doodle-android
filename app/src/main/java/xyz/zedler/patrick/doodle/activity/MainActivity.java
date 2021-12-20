@@ -77,7 +77,7 @@ import xyz.zedler.patrick.doodle.util.ViewUtil;
 
 public class MainActivity extends AppCompatActivity implements OnClickListener {
 
-  private final static String TAG = MainActivity.class.getSimpleName();
+  private static final String TAG = MainActivity.class.getSimpleName();
 
   private ActivityMainBinding binding;
   private NavController navController;
@@ -145,6 +145,9 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         break;
       case THEME.BLUE:
         setTheme(R.style.Theme_Doodle_Blue);
+        break;
+      case THEME.PURPLE:
+        setTheme(R.style.Theme_Doodle_Purple);
         break;
       default:
         if (DynamicColors.isDynamicColorAvailable()) {

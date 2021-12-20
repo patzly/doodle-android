@@ -37,7 +37,7 @@ import xyz.zedler.patrick.doodle.view.SelectionCardView;
 
 public class ColorsBottomSheetDialogFragment extends BaseBottomSheetDialogFragment {
 
-  private final static String TAG = "ColorsBottomSheet";
+  private static final String TAG = "ColorsBottomSheet";
 
   private FragmentBottomsheetColorsBinding binding;
   private MainActivity activity;

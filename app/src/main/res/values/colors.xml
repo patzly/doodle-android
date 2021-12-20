@@ -192,4 +192,46 @@
   <color name="blue_neutral_variant_50">#71787E</color>
   <color name="blue_neutral_variant_30">#41484D</color>
 
+  <!-- PURPLE -->
+
+  <color name="purple_primary_90">#EADDFF</color>
+  <color name="purple_primary_80">#D0BCFF</color>
+  <color name="purple_primary_40">#6750A4</color>
+  <color name="purple_primary_30">#4F378B</color>
+  <color name="purple_primary_20">#381E72</color>
+  <color name="purple_primary_10">#21005D</color>
+
+  <color name="purple_secondary_90">#E8DEF8</color>
+  <color name="purple_secondary_80">#CCC2DC</color>
+  <color name="purple_secondary_40">#625B71</color>
+  <color name="purple_secondary_30">#4A4458</color>
+  <color name="purple_secondary_20">#332D41</color>
+  <color name="purple_secondary_10">#1D192B</color>
+
+  <color name="purple_tertiary_90">#FFD8E4</color>
+  <color name="purple_tertiary_80">#EFB8C8</color>
+  <color name="purple_tertiary_40">#7D5260</color>
+  <color name="purple_tertiary_30">#633B48</color>
+  <color name="purple_tertiary_20">#492532</color>
+  <color name="purple_tertiary_10">#31111D</color>
+
+  <color name="purple_error_90">#F9DEDC</color>
+  <color name="purple_error_80">#F2B8B5</color>
+  <color name="purple_error_40">#B3261E</color>
+  <color name="purple_error_30">#8C1D18</color>
+  <color name="purple_error_20">#601410</color>
+  <color name="purple_error_10">#410E0B</color>
+
+  <color name="purple_neutral_99">#FFFBFE</color>
+  <color name="purple_neutral_90">#E6E1E5</color>
+  <color name="purple_neutral_50">#8f7272</color>
+  <color name="purple_neutral_20">#2E3133</color>
+  <color name="purple_neutral_10">#1C1B1F</color>
+
+  <color name="purple_neutral_variant_90">#E7E0EC</color>
+  <color name="purple_neutral_variant_80">#CAC4D0</color>
+  <color name="purple_neutral_variant_60">#938F99</color>
+  <color name="purple_neutral_variant_50">#79747E</color>
+  <color name="purple_neutral_variant_30">#49454F</color>
+
 </resources>

@@ -44,7 +44,7 @@ import xyz.zedler.patrick.doodle.R;
 
 public class ResUtil {
 
-  private final static String TAG = ResUtil.class.getSimpleName();
+  private static final String TAG = ResUtil.class.getSimpleName();
 
   @NonNull
   public static String getRawText(Context context, @RawRes int resId) {

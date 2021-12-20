@@ -39,7 +39,7 @@ import xyz.zedler.patrick.doodle.util.ViewUtil;
 public class ApplyBottomSheetDialogFragment extends BaseBottomSheetDialogFragment
     implements OnClickListener {
 
-  private final static String TAG = "ApplyBottomSheet";
+  private static final String TAG = "ApplyBottomSheet";
 
   private FragmentBottomsheetApplyBinding binding;
 

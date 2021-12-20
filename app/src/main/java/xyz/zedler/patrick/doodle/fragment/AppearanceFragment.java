@@ -66,7 +66,7 @@ import xyz.zedler.patrick.doodle.wallpaper.WaterWallpaper;
 public class AppearanceFragment extends BaseFragment
     implements OnClickListener, OnCheckedChangeListener {
 
-  private final static String TAG = AppearanceFragment.class.getSimpleName();
+  private static final String TAG = AppearanceFragment.class.getSimpleName();
 
   private FragmentAppearanceBinding binding;
   private MainActivity activity;

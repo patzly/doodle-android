@@ -30,7 +30,7 @@ import xyz.zedler.patrick.doodle.Constants.PREF;
 
 public class PrefsUtil {
 
-  private final static String TAG = PrefsUtil.class.getSimpleName();
+  private static final String TAG = PrefsUtil.class.getSimpleName();
 
   private final Context context;
   private SharedPreferences sharedPrefs;

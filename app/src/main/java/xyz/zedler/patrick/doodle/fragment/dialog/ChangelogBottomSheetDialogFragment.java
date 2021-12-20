@@ -33,7 +33,7 @@ import xyz.zedler.patrick.doodle.util.ResUtil;
 
 public class ChangelogBottomSheetDialogFragment extends BaseBottomSheetDialogFragment {
 
-  private final static String TAG = "ChangelogBottomSheet";
+  private static final String TAG = "ChangelogBottomSheet";
 
   private FragmentBottomsheetChangelogBinding binding;
 

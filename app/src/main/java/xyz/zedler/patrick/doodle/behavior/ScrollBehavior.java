@@ -39,8 +39,8 @@ import xyz.zedler.patrick.doodle.util.ResUtil;
 
 public class ScrollBehavior {
 
-  private final static String TAG = ScrollBehavior.class.getSimpleName();
-  private final static boolean DEBUG = false;
+  private static final String TAG = ScrollBehavior.class.getSimpleName();
+  private static final boolean DEBUG = false;
 
   private static final int STATE_SCROLLED_DOWN = 1;
   private static final int STATE_SCROLLED_UP = 2;

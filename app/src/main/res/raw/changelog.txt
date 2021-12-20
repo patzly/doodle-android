@@ -1,8 +1,8 @@
 5.0.3:
 - New: additional purple app theme
-- Fixed: random wallpaper option not working correctly
+- Improved: random wallpaper option
 
-Please consider translating this app into your language at Transifex. There are only about 115 strings to translate!
+Please consider translating this app into your language at Transifex. There are only 117 strings to translate!
 
 5.0.2:
 - New: Dutch, Indonesian & Italian translations

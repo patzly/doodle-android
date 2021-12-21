@@ -211,6 +211,7 @@ public final class Constants {
     public static final String RUN_AS_SUPER_CLASS = "run_as_super_class";
     public static final String INSTANCE_STATE = "instance_state";
     public static final String SHOW_FORCE_STOP_REQUEST = "show_force_stop_request";
+    public static final String SCROLL_POSITION = "scroll_position";
   }
 
   public static final class THEME {

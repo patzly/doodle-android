@@ -39,6 +39,7 @@ import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.snackbar.Snackbar.Callback;
 import java.util.Locale;
 import xyz.zedler.patrick.doodle.Constants.DEF;
+import xyz.zedler.patrick.doodle.Constants.EXTRA;
 import xyz.zedler.patrick.doodle.Constants.PREF;
 import xyz.zedler.patrick.doodle.Constants.THEME;
 import xyz.zedler.patrick.doodle.Constants.THEME.MODE;
@@ -148,7 +149,7 @@ public class OtherFragment extends BaseFragment
         pref = MODE.AUTO;
       }
       getSharedPrefs().edit().putInt(PREF.MODE, pref).apply();
-      activity.restartToApply(0);
+      activity.restartToApply(0, getInstanceState(), false);
     });
 
     ViewUtil.setOnClickListeners(
@@ -193,6 +194,7 @@ public class OtherFragment extends BaseFragment
               getString(R.string.action_reset), view -> {
                 performHapticHeavyClick();
                 activity.reset();
+                activity.restartToApply(100, getInstanceState(), true);
               }
           )
       );
@@ -306,7 +308,7 @@ public class OtherFragment extends BaseFragment
           ViewUtil.uncheckAllChildren(container);
           card.setChecked(true);
           getSharedPrefs().edit().putString(PREF.THEME, name).apply();
-          activity.restartToApply(0);
+          activity.restartToApply(100, getInstanceState(), false);
         }
       });
 
@@ -320,6 +322,14 @@ public class OtherFragment extends BaseFragment
       card.setChecked(isSelected);
       container.addView(card);
     }
+
+    Bundle bundleInstanceState = activity.getIntent().getBundleExtra(EXTRA.INSTANCE_STATE);
+    if (bundleInstanceState != null) {
+      binding.scrollHorizOtherTheme.scrollTo(
+          bundleInstanceState.getInt(EXTRA.SCROLL_POSITION, 0),
+          0
+      );
+    }
   }
 
   private void setGpuOptionEnabled(boolean enabled) {
@@ -330,5 +340,13 @@ public class OtherFragment extends BaseFragment
     binding.switchOtherGpu.setEnabled(enabled);
     binding.linearOtherGpu.setAlpha(enabled ? 1 : 0.5f);
     binding.cardOtherGpu.setVisibility(enabled ? View.GONE : View.VISIBLE);
+  }
+
+  private Bundle getInstanceState() {
+    Bundle bundle = new Bundle();
+    if (binding != null) {
+      bundle.putInt(EXTRA.SCROLL_POSITION, binding.scrollHorizOtherTheme.getScrollX());
+    }
+    return bundle;
   }
 }

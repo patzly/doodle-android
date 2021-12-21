@@ -364,17 +364,14 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
           0
       );
     }
-
-    restartToApply(100, true);
   }
 
   public void restartToApply(long delay) {
-    restartToApply(delay, false);
+    restartToApply(delay, new Bundle(), false);
   }
 
-  public void restartToApply(long delay, boolean showForceStopRequest) {
+  public void restartToApply(long delay, @NonNull Bundle bundle, boolean showForceStopRequest) {
     new Handler().postDelayed(() -> {
-      Bundle bundle = new Bundle();
       onSaveInstanceState(bundle);
       finishAndRemoveTask();
 

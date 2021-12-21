@@ -1,6 +1,7 @@
-5.0.3:
+5.1.0:
 - New: additional purple app theme
 - Improved: random wallpaper option
+- Improved: app theme selection
 
 Please consider translating this app into your language at Transifex. There are only 117 strings to translate!
 

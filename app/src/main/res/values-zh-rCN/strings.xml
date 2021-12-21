@@ -44,6 +44,7 @@
   <string name="action_open_link">打开外部网站</string>
   <string name="action_hide">隐藏</string>
   <string name="action_reset">重置</string>
+  <string name="action_deactivate">取消激活</string>
   <string name="action_continue">继续</string>
   <string name="action_open_app_info">打开应用信息</string>
   <string name="action_set">设置壁纸</string>
@@ -161,6 +162,7 @@
 联系我，无论如何，我会很高兴在Play Store回复你。</string>
   <string name="msg_share">查看此酷炫的动态壁纸应用程序:https://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
   <string name="msg_hide">在启动器中隐藏应用图标？</string>
+  <string name="msg_random_warning">随机壁纸设计仍处于活动状态！</string>
   <string name="msg_reset">重置所有设置吗？</string>
   <string name="msg_force_stop">需强制停止才能应用更改</string>
   <string name="msg_apply_changes">为了(最终)应用改变的选项，建议重新启动正在运行的壁纸服务。这不能自动完成。\n请在系统设置中强制停止 Doodle，然后重新将 Doole 应用为墙纸。</string>

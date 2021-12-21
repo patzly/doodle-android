@@ -434,6 +434,7 @@ public class AppearanceFragment extends BaseFragment
           return;
         }
         card.startCheckedIcon();
+        ViewUtil.startIcon(binding.imageAppearanceColors);
         performHapticClick();
         AppearanceFragmentDirections.ActionAppearanceToColorsDialog action
             = AppearanceFragmentDirections.actionAppearanceToColorsDialog();
@@ -532,6 +533,9 @@ public class AppearanceFragment extends BaseFragment
     activity.requestThemeRefresh();
     if (DynamicColors.isDynamicColorAvailable()) {
       activity.showForceStopRequest(AppearanceFragmentDirections.actionAppearanceToApplyDialog());
+    }
+    if (binding != null) {
+      ViewUtil.startIcon(binding.imageAppearanceColors);
     }
   }
 

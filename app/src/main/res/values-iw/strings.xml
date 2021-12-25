@@ -21,9 +21,8 @@
 
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
-  <string name="wallpaper_description">רקעים חיים מגוונים עם מצב לילה אוטומטי ואנימציות חסכוניות בחשמל
-הקישו כדי ללמוד יותר</string>
-  <string name="wallpaper_description_picker">חיקרו קולקצייה של צורות מגוונות,מלוטשות עם פרלקסה עדינה ואפקטי זום כשאר גוללים את דף הבית ופותחים את המכשיר.
+  <string name="wallpaper_description">רקעים חיים מגוונים עם מצב לילה אוטומטי ואנימציות חסכוניות בחשמל. הקישו כדי ללמוד יותר</string>
+  <string name="wallpaper_description_picker">חיקרו קולקצייה של צורות מגוונות,מלוטשות עם פרלקסה עדינה ואפקטי זום כאשר גוללים את דף הבית ופותחים את המכשיר.
 עצבו את הרקע שיתאים לסגנון שלכם</string>
 
   <!-- TITLES -->
@@ -35,8 +34,8 @@
 
   <!-- LABELS -->
 
-  <string name="label_ms">ms</string>
-  <string name="label_degrees">מעלות</string>
+  <string name="label_ms">ms%1$s</string>
+  <string name="label_degrees">מעלות%1$s</string>
 
   <!-- ACTIONS -->
 
@@ -65,13 +64,13 @@
   <string name="appearance_title">מראה</string>
   <string name="appearance_description">עיצוב ואפשרויות ערכת נושא</string>
   <string name="appearance_design">עיצוב</string>
-  <string name="appearance_design_doodle">קולקציית דודל פיקסל 4</string>
+  <string name="appearance_design_doodle">פיקסל 4 קולקציית דודל </string>
   <string name="appearance_design_monet">פיקסל 6 קולקציית מטיריאל ייחודי</string>
   <string name="appearance_design_anna">רקעים חיים מאנה קובקסס</string>
   <string name="appearance_variant">סוג</string>
   <string name="appearance_night_mode">מצב לילה</string>
   <string name="appearance_night_mode_description">רק צבעים כהים</string>
-  <string name="appearance_follow_system">לפי הגדרות מערכת</string>
+  <string name="appearance_follow_system">לפי הגדרות המערכת</string>
   <string name="appearance_follow_system_description">אימוץ ערכת נושא של המערכת</string>
   <string name="appearance_white_text">ניסיון להכריח טקסט לבן</string>
   <string name="appearance_white_text_description">עלול להשפיע על הקריאה</string>
@@ -83,7 +82,7 @@
   <string name="appearance_colors_primary">בחירת צבעים ראשיים</string>
   <string name="appearance_colors_secondary">בחירת צבעים משניים</string>
   <string name="appearance_colors_tertiary">בחירת צבעים שלישיים</string>
-  <string name="appearance_colors_info">במכשיר ללא תמיכה בצבעים דינמיים(אנדרואיד 11 ומטה), רק הצבעים הראשיים משומשים לחישוב ניגודיות הטקסט בלאנצ\'ר וצבע הרקע של מסך האפליקציות האחרונות</string>
+  <string name="appearance_colors_info">במכשיר ללא תמיכה בצבעים דינמיים(אנדרואיד 11 ומטה), רק הצבעים הראשיים משומשים לחישוב ניגודיות הטקסט בלאנצ\'ר וצבע הרקע במסך האפליקציות האחרונות</string>
   <string name="appearance_colors_info_dynamic">במכשיר עם אנדרואיד 12 ומעלה ותמיכה בצבעים דינמיים,שלושת הצבעים הנבחרים משומשים כדי ליצור אוטומטית ערכת נושא צבעונית לכלל המערכת</string>
 
   <!-- PARALLAX -->
@@ -100,7 +99,7 @@
   <string name="parallax_tilt_description">צורך יותר בטריה</string>
   <string name="parallax_refresh_rate">קצב ריענון של חיישן ההטיה</string>
   <string name="parallax_refresh_rate_description">השעייה לזמנים קצרים עלולה לגרום לאנימציות לא חלקות</string>
-  <string name="parallax_damping">שיכוך תזוזה</string>
+  <string name="parallax_damping">שיכוך התזוזה</string>
   <string name="parallax_damping_description">הנמיכו בשביל תוצאה חלקה יותר</string>
   <string name="parallax_threshold">גבול התזוזה</string>
   <string name="parallax_threshold_description">הגבירו כדי לעצור רינדור מתמשך למרות תזוזה נמוכה</string>
@@ -131,7 +130,7 @@
   <string name="other_language">שפה</string>
   <string name="other_language_description">תודות רבות לכל מי שהתנדב לתרגם בTransifex!
 בבקשה בקרו בעמוד הGitHub של הפרוייקט כדי ללמוד כיצד אתם יכולים לעזור לתרגם את דודל לשפה שלכם</string>
-  <string name="other_language_system">ברירת מחדל של המערכת</string>
+  <string name="other_language_system">ברירת מחדל של המערכת%1$s</string>
   <string name="other_language_not_available">לא זמין</string>
   <string name="other_gpu">האצת חומרה</string>
   <string name="other_gpu_description">כיבוי אם הרקע קורס</string>
@@ -161,8 +160,9 @@
   <!-- MESSAGES -->
 
   <string name="msg_feedback">אפליקציה טובה דורשת המון זמן,וחיה מהמשוב של משתמשיה 
+
 יש לכם אילו משאלות,תגובות או שאלות? צרו עימי קשר!
-אם לא אני מאד אשמח אם תשאירו ביקורת נחמדה בחנות האפליקציות</string>
+אם לא..אני מאד אשמח אם תשאירו ביקורת נחמדה בחנות האפליקציות</string>
   <string name="msg_share">קבלו איזו אפליקצית רקעים מגניבה:play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
   <string name="msg_hide">לחביא את האייקון בלאנצ\'ר?</string>
   <string name="msg_random_warning">עיצוב רקע רנדומלי עדיין פועל!</string>

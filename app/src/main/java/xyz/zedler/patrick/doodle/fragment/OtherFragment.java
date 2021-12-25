@@ -304,6 +304,7 @@ public class OtherFragment extends BaseFragment
       card.setOnClickListener(v -> {
         if (!card.isChecked()) {
           card.startCheckedIcon();
+          ViewUtil.startIcon(binding.imageOtherTheme);
           performHapticClick();
           ViewUtil.uncheckAllChildren(container);
           card.setChecked(true);

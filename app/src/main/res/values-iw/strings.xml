@@ -75,7 +75,7 @@
   <string name="appearance_white_text">ניסיון להכריח טקסט לבן</string>
   <string name="appearance_white_text_description">עלול להשפיע על הקריאה</string>
   <string name="appearance_random">עיצוב רקע רנדומלי</string>
-  <string name="appearance_random_description">כל זמן שהמסך מכובה</string>
+  <string name="appearance_random_description">כל הזמן שהמסך מתכבה</string>
   <string name="appearance_colors">בחירת צבעים</string>
   <string name="appearance_colors_description">משמש לחישוב ניגודיות טקסט</string>
   <string name="appearance_colors_description_dynamic">משומש על ידי ערכת הנושא של המערכת</string>

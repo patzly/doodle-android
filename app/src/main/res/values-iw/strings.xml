@@ -110,7 +110,7 @@
   <string name="size_description">גודל ואפקט זום</string>
   <string name="size_scale">גודל</string>
   <string name="size_scale_description">יעיל בשביל מסכים גדולים וצפופים</string>
-  <string name="size_category_zoom">אפקט זום</string>
+  <string name="size_category_zoom">אפקט הזום</string>
   <string name="size_zoom">חוזק הזום</string>
   <string name="size_zoom_description">כשמוגבר,המצלמה עושה יותר זום החוצה</string>
   <string name="size_zoom_launcher">זום החוצה כשפותחים הגדרות מהירות או את מגירת האפליקציות</string>

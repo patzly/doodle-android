@@ -2,6 +2,7 @@
 - New: additional purple app theme
 - Improved: random wallpaper option
 - Improved: app theme selection
+- Improved: app colors
 - Fixed: unchanged text contrast when switching dark mode in an app
 
 Please consider translating this app into your language at Transifex. There are only 117 strings to translate!

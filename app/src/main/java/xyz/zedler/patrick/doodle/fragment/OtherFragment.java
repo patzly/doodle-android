@@ -53,6 +53,7 @@ import xyz.zedler.patrick.doodle.fragment.dialog.LanguagesBottomSheetDialogFragm
 import xyz.zedler.patrick.doodle.model.Language;
 import xyz.zedler.patrick.doodle.util.LocaleUtil;
 import xyz.zedler.patrick.doodle.util.ResUtil;
+import xyz.zedler.patrick.doodle.util.SystemUiUtil;
 import xyz.zedler.patrick.doodle.util.ViewUtil;
 import xyz.zedler.patrick.doodle.view.SelectionCardView;
 
@@ -296,7 +297,12 @@ public class OtherFragment extends BaseFragment
 
       SelectionCardView card = new SelectionCardView(activity);
       int color = Build.VERSION.SDK_INT >= Build.VERSION_CODES.S && i == -1
-          ? ContextCompat.getColor(activity, android.R.color.system_accent1_100)
+          ? ContextCompat.getColor(
+              activity,
+              SystemUiUtil.isDarkModeActive(activity)
+                  ? android.R.color.system_accent1_700
+                  : android.R.color.system_accent1_100
+          )
           : ResUtil.getColorAttr(
               new ContextThemeWrapper(activity, resId), R.attr.colorPrimaryContainer
           );
@@ -328,7 +334,7 @@ public class OtherFragment extends BaseFragment
     if (bundleInstanceState != null) {
       binding.scrollHorizOtherTheme.scrollTo(
           bundleInstanceState.getInt(EXTRA.SCROLL_POSITION, 0),
-          0
+           0
       );
     }
   }

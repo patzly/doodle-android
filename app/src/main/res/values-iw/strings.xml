@@ -71,7 +71,7 @@
   <string name="appearance_night_mode">מצב לילה</string>
   <string name="appearance_night_mode_description">רק צבעים כהים</string>
   <string name="appearance_follow_system">לפי הגדרות המערכת</string>
-  <string name="appearance_follow_system_description">אימוץ ערכת נושא של המערכת</string>
+  <string name="appearance_follow_system_description">אימוץ ערכת נושא מהמערכת</string>
   <string name="appearance_white_text">ניסיון להכריח טקסט לבן</string>
   <string name="appearance_white_text_description">עלול להשפיע על הקריאה</string>
   <string name="appearance_random">עיצוב רקע רנדומלי</string>

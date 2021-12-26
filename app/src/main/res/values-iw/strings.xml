@@ -43,7 +43,7 @@
   <string name="action_back">חזרה</string>
   <string name="action_open_link">פתיחה באתר חיצוני</string>
   <string name="action_hide">להחביא</string>
-  <string name="action_reset">לאפס</string>
+  <string name="action_reset">איפוס</string>
   <string name="action_deactivate">להשבית</string>
   <string name="action_continue">להמשיך</string>
   <string name="action_open_app_info">פתיחת מידע על האפליקציה</string>

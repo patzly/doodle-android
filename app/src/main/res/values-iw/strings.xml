@@ -143,7 +143,7 @@
   <string name="other_theme_light">בהיר</string>
   <string name="other_theme_dark">כהה</string>
   <string name="other_reset">איפוס כל ההגדרות</string>
-  <string name="other_reset_description">עושה יותר ממה שמחיקה תעשה,בגלל שהעדפות נשמרות במקום מיוחד בגלל שהן צריכות להיות נגישות מיד לאחר הפעלת המכשיר</string>
+  <string name="other_reset_description">עושה יותר ממה שמחיקה תעשה,משום שהעדפות נשמרות במקום מיוחד בגלל שהן צריכות להיות נגישות מיד לאחר הפעלת המכשיר</string>
 
   <!-- ABOUT -->
 

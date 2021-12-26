@@ -1,9 +1,11 @@
 5.1.0:
+- New: Hebrew translation
 - New: additional purple app theme
 - Improved: random wallpaper option
 - Improved: app theme selection
 - Improved: app colors
-- Fixed: unchanged text contrast when switching dark mode in an app
+- Improved: automatic Google Drive backup of current preferences disabled (not helpful when switching to a new phone and annoying when reinstalling the app)
+- Fixed: unchanged text contrast when switching dark mode inside an app
 
 Please consider translating this app into your language at Transifex. There are only 117 strings to translate!
 

@@ -21,7 +21,7 @@
 
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
-  <string name="wallpaper_description">רקעים חיים מגוונים עם מצב לילה אוטומטי ואנימציות חסכוניות בחשמל. הקישו כדי ללמוד יותר</string>
+  <string name="wallpaper_description">רקעים חיים ומגוונים עם מצב לילה אוטומטי ואנימציות חסכוניות בחשמל. הקישו כדי ללמוד יותר</string>
   <string name="wallpaper_description_picker">חיקרו קולקצייה של צורות מגוונות,מלוטשות עם פרלקסה עדינה ואפקטי זום כאשר גוללים את דף הבית ופותחים את המכשיר.
 עצבו את הרקע שיתאים לסגנון שלכם</string>
 

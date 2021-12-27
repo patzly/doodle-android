@@ -29,6 +29,7 @@ import xyz.zedler.patrick.doodle.wallpaper.LeafyWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.MonetWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.PixelWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.ReikoWallpaper;
+import xyz.zedler.patrick.doodle.wallpaper.SandWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.StoneWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.WaterWallpaper;
 
@@ -137,6 +138,8 @@ public final class Constants {
         return new StoneWallpaper();
       case WALLPAPER.FLORAL:
         return new FloralWallpaper();
+      case WALLPAPER.SAND:
+        return new SandWallpaper();
       case WALLPAPER.WATER:
         return new WaterWallpaper();
       default:
@@ -154,6 +157,7 @@ public final class Constants {
         WALLPAPER.STONE,
         WALLPAPER.FLORAL,
         WALLPAPER.WATER,
+        WALLPAPER.SAND,
         WALLPAPER.MONET,
 
         WALLPAPER.LEAFY,
@@ -180,6 +184,7 @@ public final class Constants {
     public static final String STONE = "stone";
     public static final String FLORAL = "floral";
     public static final String WATER = "water";
+    public static final String SAND = "sand";
     public static final String MONET = "monet";
 
     public static final String LEAFY = "leafy";

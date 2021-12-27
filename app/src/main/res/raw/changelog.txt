@@ -1,4 +1,5 @@
 5.1.0:
+- New: Another sandy Pixel 6 wallpaper
 - New: Hebrew translation
 - New: additional purple app theme
 - Improved: random wallpaper option

@@ -62,6 +62,7 @@ import xyz.zedler.patrick.doodle.wallpaper.LeafyWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.MonetWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.PixelWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.ReikoWallpaper;
+import xyz.zedler.patrick.doodle.wallpaper.SandWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.StoneWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.WaterWallpaper;
 
@@ -275,6 +276,7 @@ public class AppearanceFragment extends BaseFragment
             new WaterWallpaper(),
             new StoneWallpaper(),
             new FloralWallpaper(),
+            new SandWallpaper(),
             new MonetWallpaper()
         };
         container = binding.linearAppearanceWallpaperContainerMonet;

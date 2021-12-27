@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?><!--
+<?xml version="1.0" encoding="utf-8"?>
+<!--
   ~ This file is part of Doodle Android.
   ~
   ~ Doodle Android is free software: you can redistribute it and/or modify
@@ -19,21 +20,15 @@
 
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-  <style name="Widget.Doodle.Snackbar.TextView" parent="Widget.Material3.Snackbar.TextView">
-    <item name="android:textColor">?attr/colorSurfaceVariant</item>
-  </style>
+  <!-- For languages not supported by Jost*, the system font will be used as fallback.
+       If the system font is used, the medium variant of Jost* won't be replaced by a medium/bold
+       variant of the system font, so we have to configure these texts to be styled bold for these
+       locales with textStyle="bold".
+       Untranslated text (names or untranslated strings) with textStyle set to bold will look like
+       the medium variant of Jost*, so there is no extra attention needed for e.g. the app bar.
+       Affected languages: Chinese, Hebrew, Uighur -->
 
-  <style
-    name="Widget.Doodle.Button.TextButton.Snackbar"
-    parent="Widget.Material3.Button.TextButton.Snackbar">
-    <item name="android:fontFamily">@font/jost_medium</item>
-    <item name="android:textSize">@dimen/m3_sys_typescale_label_large_text_size</item>
-    <item name="cornerRadius">8dp</item>
-  </style>
-
-  <style name="ThemeOverlay.Doodle.OverFlow" parent="Widget.AppCompat.ActionButton.Overflow">
-    <item name="android:tint">?attr/colorOnSurfaceVariant</item>
-  </style>
+  <!-- Toolbar -->
 
   <style
     name="Widget.Doodle.Toolbar"
@@ -54,6 +49,30 @@
     <item name="titleCentered">true</item>
   </style>
 
+  <style name="ThemeOverlay.Doodle.OverFlow" parent="Widget.AppCompat.ActionButton.Overflow">
+    <item name="android:tint">?attr/colorOnSurfaceVariant</item>
+  </style>
+
+  <!-- Snackbar -->
+
+  <style name="Widget.Doodle.Snackbar.TextView" parent="Widget.Material3.Snackbar.TextView">
+    <item name="android:textColor">?attr/colorSurfaceVariant</item>
+  </style>
+
+  <style
+    name="Base.Doodle.Button.TextButton.Snackbar"
+    parent="Widget.Material3.Button.TextButton.Snackbar">
+    <item name="cornerRadius">8dp</item>
+  </style>
+
+  <style
+    name="Widget.Doodle.Button.TextButton.Snackbar"
+    parent="Base.Doodle.Button.TextButton.Snackbar">
+    <item name="android:fontFamily">@font/jost_medium</item>
+  </style>
+
+  <!-- ImageView (icons) -->
+
   <style name="Widget.Doodle.ImageView.Icon" parent="">
     <item name="android:layout_width">24dp</item>
     <item name="android:layout_height">24dp</item>
@@ -66,27 +85,33 @@
     <item name="android:layout_gravity">center</item>
   </style>
 
+  <!-- Button -->
+
   <style
     name="Widget.Doodle.Button.UnelevatedButton"
     parent="Widget.Material3.Button.UnelevatedButton">
-    <item name="android:textSize">@dimen/m3_sys_typescale_label_large_text_size</item>
     <item name="android:fontFamily">@font/jost_medium</item>
   </style>
 
   <style
-    name="Widget.Doodle.Button.OutlinedButton"
+    name="Base.Doodle.Button.OutlinedButton"
     parent="Widget.Material3.Button.OutlinedButton">
-    <item name="android:textSize">@dimen/m3_sys_typescale_label_large_text_size</item>
-    <item name="android:fontFamily">@font/jost_medium</item>
     <item name="rippleColor">@color/selector_highlight</item>
+  </style>
+
+  <style
+    name="Widget.Doodle.Button.OutlinedButton"
+    parent="Base.Doodle.Button.OutlinedButton">
+    <item name="android:fontFamily">@font/jost_medium</item>
   </style>
 
   <style
     name="Widget.Doodle.Button.TextButton"
     parent="Widget.Material3.Button.TextButton">
-    <item name="android:textSize">@dimen/m3_sys_typescale_label_large_text_size</item>
     <item name="android:fontFamily">@font/jost_medium</item>
   </style>
+
+  <!-- CardView -->
 
   <style name="Widget.Doodle.Card.Text" parent="@style/Widget.Material3.CardView.Filled">
     <item name="android:layout_width">match_parent</item>
@@ -100,6 +125,8 @@
     <item name="rippleColor">@color/selector_highlight</item>
   </style>
 
+  <!-- CheckBox -->
+
   <style name="Widget.Doodle.CheckBox" parent="Widget.Material3.CompoundButton.CheckBox">
     <item name="android:layout_width">match_parent</item>
     <item name="android:layout_height">wrap_content</item>
@@ -109,11 +136,15 @@
     <item name="android:textAlignment">viewStart</item>
   </style>
 
+  <!-- Switch -->
+
   <style name="Widget.Doodle.Switch" parent="Widget.Material3.CompoundButton.Switch">
     <item name="android:layout_width">wrap_content</item>
     <item name="android:layout_height">wrap_content</item>
     <item name="android:layout_marginStart">16dp</item>
   </style>
+
+  <!-- Slider -->
 
   <style name="Widget.Doodle.Slider" parent="Widget.Material3.Slider">
     <item name="android:layout_width">match_parent</item>
@@ -124,6 +155,8 @@
     <item name="thumbElevation">1dp</item>
     <item name="labelStyle">@style/Widget.Doodle.Tooltip</item>
   </style>
+
+  <!-- Tooltip -->
 
   <style name="Widget.Doodle.Tooltip" parent="Widget.Material3.Tooltip">
     <item name="android:textColor">?attr/colorOnTertiaryContainer</item>
@@ -137,14 +170,15 @@
     <item name="cornerSize">8dp</item>
   </style>
 
+  <!-- ExtendedFloatingActionButton -->
+
   <style
     name="Widget.Doodle.ExtendedFloatingActionButton"
     parent="Widget.Material3.ExtendedFloatingActionButton.Primary">
-    <item name="android:textSize">@dimen/m3_sys_typescale_label_large_text_size</item>
     <item name="android:fontFamily">@font/jost_medium</item>
   </style>
 
-  <!-- LIST -->
+  <!-- LinearLayout (lists) -->
 
   <style name="Widget.Doodle.LinearLayout.ListItem" parent="">
     <item name="android:layout_width">match_parent</item>
@@ -229,6 +263,8 @@
     <item name="android:layout_weight">1</item>
   </style>
 
+  <!-- ImageView (lists) -->
+
   <style name="Widget.Doodle.ImageView.ListItem.Icon" parent="">
     <item name="android:layout_width">24dp</item>
     <item name="android:layout_height">24dp</item>
@@ -252,7 +288,7 @@
     <item name="android:layout_marginEnd">0dp</item>
   </style>
 
-  <!-- TEXT -->
+  <!-- TextView -->
 
   <style name="Widget.Doodle.TextView" parent="Widget.MaterialComponents.TextView">
     <item name="android:textSize">@dimen/m3_sys_typescale_body_large_text_size</item>
@@ -278,22 +314,31 @@
     <item name="android:justificationMode" tools:targetApi="o">none</item>
   </style>
 
-  <style name="Widget.Doodle.TextView.Toolbar" parent="Widget.Doodle.TextView">
+  <style name="Base.Doodle.TextView.Toolbar" parent="Widget.Doodle.TextView">
     <item name="android:textSize">@dimen/m3_sys_typescale_title_large_text_size</item>
-    <item name="android:fontFamily">@font/jost_medium</item>
     <item name="android:singleLine">true</item>
     <item name="android:textColor">?attr/colorOnSurface</item>
   </style>
 
-  <style name="Widget.Doodle.TextView.Category" parent="Widget.Doodle.TextView">
+  <style name="Widget.Doodle.TextView.Toolbar" parent="Base.Doodle.TextView.Toolbar">
+    <!-- Untranslated text like the app name doesn't need medium font if the system font is used
+    as fallback because they will already appear medium with the textStyle attribute set to bold
+    for these locales. -->
+    <item name="android:fontFamily">@font/jost_medium</item>
+  </style>
+
+  <style name="Base.Doodle.TextView.Category" parent="Widget.Doodle.TextView">
     <item name="android:layout_width">wrap_content</item>
     <item name="android:layout_height">wrap_content</item>
     <item name="android:layout_marginStart">72dp</item>
     <item name="android:paddingTop">10dp</item>
     <item name="android:paddingBottom">3dp</item>
-    <item name="android:fontFamily">@font/jost_medium</item>
     <item name="android:textSize">@dimen/m3_sys_typescale_title_medium_text_size</item>
     <item name="android:textColor">?attr/colorSecondary</item>
+  </style>
+
+  <style name="Widget.Doodle.TextView.Category" parent="Base.Doodle.TextView.Category">
+    <item name="android:fontFamily">@font/jost_medium</item>
   </style>
 
   <style name="Widget.Doodle.TextView.ListItem.OverLine" parent="Widget.Doodle.TextView">
@@ -318,6 +363,8 @@
     <item name="android:layout_height">wrap_content</item>
     <item name="android:alpha">0.5</item>
   </style>
+
+  <!-- TextAppearance -->
 
   <style name="TextAppearance.Doodle.Toolbar.Title" parent="TextAppearance.Material3.TitleLarge">
     <item name="fontFamily">@font/jost_medium</item>

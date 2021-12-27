@@ -146,6 +146,9 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
       case THEME.BLUE:
         setTheme(R.style.Theme_Doodle_Blue);
         break;
+      case THEME.GOOGLE:
+        setTheme(R.style.Theme_Doodle_Google);
+        break;
       case THEME.PURPLE:
         setTheme(R.style.Theme_Doodle_Purple);
         break;
@@ -153,7 +156,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         if (DynamicColors.isDynamicColorAvailable()) {
           DynamicColors.applyIfAvailable(this);
         } else {
-          setTheme(R.style.Theme_Doodle_Red);
+          setTheme(R.style.Theme_Doodle_Google);
         }
         break;
     }

@@ -272,12 +272,15 @@ public class OtherFragment extends BaseFragment
   private void setUpThemeSelection() {
     boolean hasDynamic = DynamicColors.isDynamicColorAvailable();
     ViewGroup container = binding.linearOtherThemeContainer;
-    for (int i = hasDynamic ? -1 : 0; i < 5; i++) {
+    for (int i = hasDynamic ? -1 : 0; i < 6; i++) {
       String name;
       int resId;
       if (i == -1) {
         name = THEME.DYNAMIC;
         resId = -1;
+      } else if (i == 0) {
+        name = THEME.RED;
+        resId = R.style.Theme_Doodle_Red;
       } else if (i == 1) {
         name = THEME.YELLOW;
         resId = R.style.Theme_Doodle_Yellow;
@@ -288,11 +291,14 @@ public class OtherFragment extends BaseFragment
         name = THEME.BLUE;
         resId = R.style.Theme_Doodle_Blue;
       } else if (i == 4) {
+        name = THEME.GOOGLE;
+        resId = R.style.Theme_Doodle_Google;
+      } else if (i == 5) {
         name = THEME.PURPLE;
         resId = R.style.Theme_Doodle_Purple;
       } else {
-        name = THEME.RED;
-        resId = R.style.Theme_Doodle_Red;
+        name = THEME.GOOGLE;
+        resId = R.style.Theme_Doodle_Google;
       }
 
       SelectionCardView card = new SelectionCardView(activity);
@@ -322,7 +328,7 @@ public class OtherFragment extends BaseFragment
       String selected = getSharedPrefs().getString(PREF.THEME, DEF.THEME);
       boolean isSelected;
       if (selected.isEmpty()) {
-        isSelected = hasDynamic ? name.equals(THEME.DYNAMIC) : name.equals(THEME.RED);
+        isSelected = hasDynamic ? name.equals(THEME.DYNAMIC) : name.equals(THEME.GOOGLE);
       } else {
         isSelected = selected.equals(name);
       }

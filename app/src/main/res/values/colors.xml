@@ -192,6 +192,48 @@
   <color name="blue_neutral_variant_50">#71787E</color>
   <color name="blue_neutral_variant_30">#41484D</color>
 
+  <!-- GOOGLE BLUE -->
+
+  <color name="google_primary_90">#D6E2FF</color>
+  <color name="google_primary_80">#AAC7FF</color>
+  <color name="google_primary_40">#005BC1</color>
+  <color name="google_primary_30">#004494</color>
+  <color name="google_primary_20">#002E69</color>
+  <color name="google_primary_10">#001A42</color>
+
+  <color name="google_secondary_90">@color/google_primary_90</color>
+  <color name="google_secondary_80">@color/google_primary_80</color>
+  <color name="google_secondary_40">@color/google_primary_40</color>
+  <color name="google_secondary_30">@color/google_primary_30</color>
+  <color name="google_secondary_20">@color/google_primary_20</color>
+  <color name="google_secondary_10">@color/google_primary_10</color>
+
+  <color name="google_tertiary_90">@color/google_primary_90</color>
+  <color name="google_tertiary_80">@color/google_primary_80</color>
+  <color name="google_tertiary_40">@color/google_primary_40</color>
+  <color name="google_tertiary_30">@color/google_primary_30</color>
+  <color name="google_tertiary_20">@color/google_primary_20</color>
+  <color name="google_tertiary_10">@color/google_primary_10</color>
+
+  <color name="google_error_90">#FFDAD4</color>
+  <color name="google_error_80">#FFB4A9</color>
+  <color name="google_error_40">#BA1B1B</color>
+  <color name="google_error_30">#930006</color>
+  <color name="google_error_20">#680003</color>
+  <color name="google_error_10">#410001</color>
+
+  <color name="google_neutral_99">#F2F0F4</color>
+  <color name="google_neutral_90">#E4E2E6</color>
+  <color name="google_neutral_50">#8f7272</color>
+  <color name="google_neutral_20">#2F3034</color>
+  <color name="google_neutral_10">#1B1B1D</color>
+
+  <color name="google_neutral_variant_90">#E1E2EC</color>
+  <color name="google_neutral_variant_80">#C4C6D0</color>
+  <color name="google_neutral_variant_60">#8E9099</color>
+  <color name="google_neutral_variant_50">#74777F</color>
+  <color name="google_neutral_variant_30">#44474F</color>
+
   <!-- PURPLE -->
 
   <color name="purple_primary_90">#EADDFF</color>

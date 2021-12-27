@@ -27,13 +27,16 @@
   <!-- TITLES -->
 
   <string name="title_info">Información</string>
+  <string name="title_apply_changes">Aplicar cambios</string>
   <string name="title_feedback">Feedback</string>
   <string name="title_licenses">Licencias de código abierto</string>
 
   <!-- ACTIONS -->
 
   <string name="action_close">Cerrar</string>
+  <string name="action_hide">Ocultar </string>
   <string name="action_reset">Restablecer</string>
+  <string name="action_continue">Continuar</string>
   <string name="action_set">Aplicar</string>
   <string name="action_send_feedback">Enviar comentarios</string>
   <string name="action_share">Compartir</string>
@@ -44,15 +47,26 @@
   <string name="action_rate_description">Apoyar el desarrollo</string>
   <string name="action_github">Doodle Android en GitHub</string>
   <string name="action_github_description">Open a new issue</string>
+  <string name="action_language_select">Seleccionar idioma</string>
+
   <!-- APPEARANCE -->
 
   <string name="appearance_title">Apariencia</string>
+  <string name="appearance_design_doodle">Colección del Pixel 4 Doodle</string>
+  <string name="appearance_design_monet">Colección del Pixel 6 Material You</string>
   <string name="appearance_variant">Variante</string>
   <string name="appearance_night_mode">Modo nocturno</string>
   <string name="appearance_night_mode_description">Formas completamente oscuras</string>
   <string name="appearance_follow_system">Seguir sistema</string>
   <string name="appearance_follow_system_description">Adoptar el tema del dispositivo</string>
   <string name="appearance_white_text_description">Puede afectar la legibilidad</string>
+  <string name="appearance_colors">Colores extraídos</string>
+  <string name="appearance_colors_primary">Elegir color primario</string>
+  <string name="appearance_colors_secondary">Elegir color secundario </string>
+  <string name="appearance_colors_tertiary">Elegir color terceario</string>
+  <string name="appearance_colors_info">En dispositivos sin soporte de color dinámico (Android 11 o inferior), solo se usa el color primario para calcular el contraste del texto del lanzador y teñir el fondo de la pantalla de aplicaciones recientes.</string>
+  <string name="appearance_colors_info_dynamic">En dispositivos con Android 12 o superior y compatibilidad con colores dinámicos, los tres colores seleccionados se utilizan para crear automáticamente un tema de color en todo el sistema.</string>
+
   <string name="parallax_touch_wiz">Parece que su lanzador actual es Samsung TouchWiz, que no admite el desplazamiento en segundo plano. Prueba con un lanzador diferente para habilitar el efecto de paralaje si no tienes habilitada la opción del sensor de inclinación.\nPuedes ignorar esta advertencia si configuras otro lanzador como predeterminado.</string>
   <string name="parallax_intensity">Fuerza de paralaje</string>
   <string name="parallax_none">Ninguno</string>
@@ -60,6 +74,9 @@
   <string name="parallax_tilt_description">Consume mas batería</string>
   <string name="parallax_refresh_rate">Frecuencia de actualización del sensor de inclinación</string>
   <string name="parallax_refresh_rate_description">Los retrasos demasiado cortos pueden hacer que las animaciones de zoom se retrasen</string>
+  <!-- SIZE -->
+
+  <string name="size_title">Tamaño de las figuras</string>
   <string name="size_scale">Tamaño de la forma</string>
   <string name="size_scale_description">Útil para pantallas grandes</string>
   <string name="size_category_zoom">Efectos de zoom</string>
@@ -71,10 +88,18 @@
   <!-- OTHER -->
 
   <string name="other_title">Otras opciones</string>
+  <string name="other_language">Idioma</string>
+  <string name="other_language_description">¡Muchas gracias a todos los traductores voluntarios de Transifex! Visite la página de GitHub del proyecto para saber cómo puede ayudar a que Doodle Live Wallpapers esté disponible para su idioma.</string>
+  <string name="other_language_not_available">No disponible</string>
   <string name="other_gpu">Aceleracion por hardware</string>
   <string name="other_launcher">Ocultar icono en el lanzador</string>
   <string name="other_launcher_description">Solo se podrá acceder a la configuración en el selector de fondos de pantalla de su sistema</string>
+  <string name="other_theme_auto">Automático</string>
+  <string name="other_theme_light">Claro</string>
+  <string name="other_theme_dark">Oscuro</string>
   <string name="other_reset">Restablecer todos los ajustes</string>
+  <string name="other_reset_description">Hace más de lo que haría la desinstalación, porque las preferencias se almacenan en un lugar especial, ya que deben ser accesibles directamente después del inicio del dispositivo.</string>
+
   <string name="about_version">versión</string>
   <string name="about_changelog">Changelog</string>
   <string name="about_changelog_description">Que hay de nuevo?</string>

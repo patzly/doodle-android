@@ -1,10 +1,9 @@
 5.1.0:
 - New: Another sandy Pixel 6 wallpaper
-- New: Hebrew translation
+- New: Danish and Hebrew translations
 - New: additional blue (new default) and purple app themes
 - Improved: random wallpaper option
-- Improved: app theme selection
-- Improved: app colors
+- Improved: app theme selection and app colors
 - Improved: bold text now correctly styled even if system font is used as fallback (Chinese, Hebrew and Uyghur)
 - Improved: automatic Google Drive backup of current preferences disabled (not helpful when switching to a new phone and annoying when reinstalling the app)
 - Fixed: unchanged text contrast when switching dark mode inside an app

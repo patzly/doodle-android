@@ -79,7 +79,7 @@ public class OverviewFragment extends BaseFragment implements OnClickListener {
         return true;
       } else if (id == R.id.action_feedback) {
         performHapticClick();
-        getNavController().navigate(OverviewFragmentDirections.actionOverviewToFeedbackDialog());
+        navigate(OverviewFragmentDirections.actionOverviewToFeedbackDialog());
         return true;
       } else {
         return false;
@@ -127,22 +127,22 @@ public class OverviewFragment extends BaseFragment implements OnClickListener {
           = OverviewFragmentDirections.actionOverviewToTextDialog();
       action.setFile(R.raw.information);
       action.setTitle(R.string.title_info);
-      getNavController().navigate(action);
+      navigate(action);
       performHapticClick();
     } else if (id == R.id.linear_overview_appearance && getViewUtil().isClickEnabled()) {
-      getNavController().navigate(OverviewFragmentDirections.actionOverviewToAppearance());
+      navigate(OverviewFragmentDirections.actionOverviewToAppearance());
       performHapticClick();
     } else if (id == R.id.linear_overview_parallax && getViewUtil().isClickEnabled()) {
-      getNavController().navigate(OverviewFragmentDirections.actionOverviewToParallax());
+      navigate(OverviewFragmentDirections.actionOverviewToParallax());
       performHapticClick();
     } else if (id == R.id.linear_overview_size && getViewUtil().isClickEnabled()) {
-      getNavController().navigate(OverviewFragmentDirections.actionOverviewToSize());
+      navigate(OverviewFragmentDirections.actionOverviewToSize());
       performHapticClick();
     } else if (id == R.id.linear_overview_other && getViewUtil().isClickEnabled()) {
-      getNavController().navigate(OverviewFragmentDirections.actionOverviewToOther());
+      navigate(OverviewFragmentDirections.actionOverviewToOther());
       performHapticClick();
     } else if (id == R.id.linear_overview_about && getViewUtil().isClickEnabled()) {
-      getNavController().navigate(OverviewFragmentDirections.actionOverviewToAbout());
+      navigate(OverviewFragmentDirections.actionOverviewToAbout());
       performHapticClick();
     }
   }

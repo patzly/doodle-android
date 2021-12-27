@@ -35,7 +35,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat.Type;
-import androidx.navigation.NavController;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetBehavior.BottomSheetCallback;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
@@ -304,10 +303,6 @@ public class BaseBottomSheetDialogFragment extends BottomSheetDialogFragment {
 
   public ViewUtil getViewUtil() {
     return viewUtil;
-  }
-
-  public NavController getNavController() {
-    return activity.getNavController();
   }
 
   public void performHapticClick() {

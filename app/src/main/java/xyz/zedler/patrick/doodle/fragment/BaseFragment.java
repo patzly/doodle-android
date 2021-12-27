@@ -23,7 +23,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.NavController;
+import androidx.navigation.NavDirections;
 import xyz.zedler.patrick.doodle.activity.MainActivity;
 import xyz.zedler.patrick.doodle.util.ViewUtil;
 
@@ -48,8 +48,12 @@ public class BaseFragment extends Fragment {
     return viewUtil;
   }
 
-  public NavController getNavController() {
-    return activity.getNavController();
+  public void navigate(NavDirections directions) {
+    activity.navigate(directions);
+  }
+
+  public void navigateUp() {
+    activity.navigateUp();
   }
 
   public void performHapticClick() {

@@ -79,7 +79,7 @@ public class SizeFragment extends BaseFragment
     binding.toolbarSize.setNavigationOnClickListener(v -> {
       if (getViewUtil().isClickEnabled()) {
         performHapticClick();
-        getNavController().navigateUp();
+        navigateUp();
       }
     });
     binding.toolbarSize.setOnMenuItemClickListener(item -> {
@@ -90,7 +90,7 @@ public class SizeFragment extends BaseFragment
         return true;
       } else if (id == R.id.action_feedback) {
         performHapticClick();
-        getNavController().navigate(SizeFragmentDirections.actionSizeToFeedbackDialog());
+        navigate(SizeFragmentDirections.actionSizeToFeedbackDialog());
         return true;
       } else {
         return false;

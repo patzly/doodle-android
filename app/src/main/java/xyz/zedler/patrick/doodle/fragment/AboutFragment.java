@@ -74,7 +74,7 @@ public class AboutFragment extends BaseFragment implements OnClickListener {
     binding.toolbarAbout.setNavigationOnClickListener(v -> {
       if (getViewUtil().isClickEnabled()) {
         performHapticClick();
-        getNavController().navigateUp();
+        navigateUp();
       }
     });
     binding.toolbarAbout.setOnMenuItemClickListener(item -> {
@@ -85,7 +85,7 @@ public class AboutFragment extends BaseFragment implements OnClickListener {
         return true;
       } else if (id == R.id.action_feedback) {
         performHapticClick();
-        getNavController().navigate(AboutFragmentDirections.actionAboutToFeedbackDialog());
+        navigate(AboutFragmentDirections.actionAboutToFeedbackDialog());
         return true;
       } else {
         return false;
@@ -110,7 +110,7 @@ public class AboutFragment extends BaseFragment implements OnClickListener {
     int id = v.getId();
     if (id == R.id.linear_about_changelog && getViewUtil().isClickEnabled()) {
       performHapticClick();
-      getNavController().navigate(AboutFragmentDirections.actionAboutToChangelogDialog());
+      navigate(AboutFragmentDirections.actionAboutToChangelogDialog());
       ViewUtil.startIcon(binding.imageAboutChangelog);
     } else if (id == R.id.linear_about_developer && getViewUtil().isClickEnabled()) {
       performHapticClick();
@@ -165,6 +165,6 @@ public class AboutFragment extends BaseFragment implements OnClickListener {
     action.setFile(file);
     action.setTitle(title);
     action.setLink(link);
-    getNavController().navigate(action);
+    navigate(action);
   }
 }

@@ -36,6 +36,7 @@ import android.content.res.Resources;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import androidx.activity.result.ActivityResultLauncher;
@@ -332,8 +333,24 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     snackbar.setAnchorView(binding.fabMain).show();
   }
 
-  public NavController getNavController() {
-    return navController;
+  public void navigate(NavDirections directions) {
+    if (navController == null || directions == null) {
+      Log.e(TAG, "navigate: controller or direction is null");
+      return;
+    }
+    try {
+      navController.navigate(directions);
+    } catch (IllegalArgumentException e) {
+      Log.e(TAG, "navigate: " + directions, e);
+    }
+  }
+
+  public void navigateUp() {
+    if (navController != null) {
+      navController.navigateUp();
+    } else {
+      Log.e(TAG, "navigateUp: controller is null");
+    }
   }
 
   public SharedPreferences getSharedPrefs() {
@@ -400,7 +417,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
             getString(R.string.action_continue), view -> {
               performHapticHeavyClick();
               if (directions != null && navController != null) {
-                navController.navigate(directions);
+                navigate(directions);
               } else {
                 ViewUtil.showBottomSheet(this, new ApplyBottomSheetDialogFragment());
               }

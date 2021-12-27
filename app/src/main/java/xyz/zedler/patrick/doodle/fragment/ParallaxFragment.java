@@ -78,7 +78,7 @@ public class ParallaxFragment extends BaseFragment
     binding.toolbarParallax.setNavigationOnClickListener(v -> {
       if (getViewUtil().isClickEnabled()) {
         performHapticClick();
-        getNavController().navigateUp();
+        navigateUp();
       }
     });
     binding.toolbarParallax.setOnMenuItemClickListener(item -> {
@@ -89,7 +89,7 @@ public class ParallaxFragment extends BaseFragment
         return true;
       } else if (id == R.id.action_feedback) {
         performHapticClick();
-        getNavController().navigate(ParallaxFragmentDirections.actionParallaxToFeedbackDialog());
+        navigate(ParallaxFragmentDirections.actionParallaxToFeedbackDialog());
         return true;
       } else {
         return false;

@@ -24,6 +24,7 @@ import android.content.ComponentName;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -60,6 +61,8 @@ import xyz.zedler.patrick.doodle.view.SelectionCardView;
 public class OtherFragment extends BaseFragment
     implements OnClickListener, OnCheckedChangeListener {
 
+  private static final String TAG = OtherFragment.class.getSimpleName();
+
   private FragmentOtherBinding binding;
   private MainActivity activity;
 
@@ -94,7 +97,7 @@ public class OtherFragment extends BaseFragment
     binding.toolbarOther.setNavigationOnClickListener(v -> {
       if (getViewUtil().isClickEnabled()) {
         performHapticClick();
-        getNavController().navigateUp();
+        navigateUp();
       }
     });
     binding.toolbarOther.setOnMenuItemClickListener(item -> {
@@ -105,7 +108,7 @@ public class OtherFragment extends BaseFragment
         return true;
       } else if (id == R.id.action_feedback) {
         performHapticClick();
-        getNavController().navigate(OtherFragmentDirections.actionOtherToFeedbackDialog());
+        navigate(OtherFragmentDirections.actionOtherToFeedbackDialog());
         return true;
       } else {
         return false;
@@ -228,13 +231,20 @@ public class OtherFragment extends BaseFragment
             ).addCallback(new Callback() {
               @Override
               public void onDismissed(Snackbar transientBottomBar, int event) {
-                binding.switchOtherLauncher.setOnCheckedChangeListener(null);
-                binding.switchOtherLauncher.setChecked(
-                    activity.getPackageManager().getComponentEnabledSetting(
-                        new ComponentName(activity, LauncherActivity.class)
-                    ) == PackageManager.COMPONENT_ENABLED_STATE_DISABLED
-                );
-                binding.switchOtherLauncher.setOnCheckedChangeListener(OtherFragment.this);
+                if (binding == null || activity == null) {
+                  return;
+                }
+                try {
+                  binding.switchOtherLauncher.setOnCheckedChangeListener(null);
+                  binding.switchOtherLauncher.setChecked(
+                      activity.getPackageManager().getComponentEnabledSetting(
+                          new ComponentName(activity, LauncherActivity.class)
+                      ) == PackageManager.COMPONENT_ENABLED_STATE_DISABLED
+                  );
+                  binding.switchOtherLauncher.setOnCheckedChangeListener(OtherFragment.this);
+                } catch (NullPointerException e) {
+                  Log.e(TAG, "onDismissed: error when the snackbar was dismissed", e);
+                }
               }
             })
         );

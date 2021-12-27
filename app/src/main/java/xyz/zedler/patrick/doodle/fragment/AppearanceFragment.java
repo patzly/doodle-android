@@ -109,7 +109,7 @@ public class AppearanceFragment extends BaseFragment
     binding.toolbarAppearance.setNavigationOnClickListener(v -> {
       if (getViewUtil().isClickEnabled()) {
         performHapticClick();
-        getNavController().navigateUp();
+        navigateUp();
       }
     });
     binding.toolbarAppearance.setOnMenuItemClickListener(item -> {
@@ -120,9 +120,7 @@ public class AppearanceFragment extends BaseFragment
         return true;
       } else if (id == R.id.action_feedback) {
         performHapticClick();
-        getNavController().navigate(
-            AppearanceFragmentDirections.actionAppearanceToFeedbackDialog()
-        );
+        navigate(AppearanceFragmentDirections.actionAppearanceToFeedbackDialog());
         return true;
       } else {
         return false;
@@ -461,7 +459,7 @@ public class AppearanceFragment extends BaseFragment
             )
         );
         action.setPriority(iFinal);
-        getNavController().navigate(action);
+        navigate(action);
       });
       binding.linearAppearanceColorsContainer.addView(card);
       refreshColor(iFinal, false);

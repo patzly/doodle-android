@@ -131,6 +131,7 @@
       </LinearLayout>
 
       <LinearLayout
+        android:id="@+id/linear_parallax_refresh_rate"
         style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine"
         android:paddingBottom="0dp">
 
@@ -162,6 +163,7 @@
         android:stepSize="5000" />
 
       <LinearLayout
+        android:id="@+id/linear_parallax_damping"
         style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine"
         android:paddingBottom="0dp">
 
@@ -193,6 +195,7 @@
         android:stepSize="1" />
 
       <LinearLayout
+        android:id="@+id/linear_parallax_threshold"
         style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine"
         android:paddingBottom="0dp">
 

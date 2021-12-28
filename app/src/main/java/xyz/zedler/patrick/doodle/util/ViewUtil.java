@@ -249,4 +249,21 @@ public class ViewUtil {
       }
     }
   }
+
+  public static void setEnabled(boolean enabled, View... views) {
+    for (View view : views) {
+      view.setEnabled(enabled);
+    }
+  }
+
+  public static void setEnabledAlpha(boolean enabled, boolean animated, View... views) {
+    for (View view : views) {
+      view.setEnabled(enabled);
+      if (animated) {
+        view.animate().alpha(enabled ? 1 : 0.5f).setDuration(200).start();
+      } else {
+        view.setAlpha(enabled ? 1 : 0.5f);
+      }
+    }
+  }
 }

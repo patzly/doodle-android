@@ -116,6 +116,20 @@ public class ParallaxFragment extends BaseFragment
 
     binding.switchParallaxTilt.setChecked(getSharedPrefs().getBoolean(PREF.TILT, DEF.TILT));
 
+    ViewUtil.setEnabledAlpha(
+        binding.switchParallaxTilt.isChecked(),
+        false,
+        binding.linearParallaxRefreshRate,
+        binding.linearParallaxDamping,
+        binding.linearParallaxThreshold
+    );
+    ViewUtil.setEnabled(
+        binding.switchParallaxTilt.isChecked(),
+        binding.sliderParallaxRefreshRate,
+        binding.sliderParallaxDamping,
+        binding.sliderParallaxThreshold
+    );
+
     binding.sliderParallaxRefreshRate.setValue(
         getSharedPrefs().getInt(PREF.REFRESH_RATE, DEF.REFRESH_RATE)
     );
@@ -175,6 +189,19 @@ public class ParallaxFragment extends BaseFragment
       activity.requestSettingsRefresh();
       performHapticClick();
       ViewUtil.startIcon(binding.imageParallaxTilt);
+      ViewUtil.setEnabledAlpha(
+          isChecked,
+          true,
+          binding.linearParallaxRefreshRate,
+          binding.linearParallaxDamping,
+          binding.linearParallaxThreshold
+      );
+      ViewUtil.setEnabled(
+          isChecked,
+          binding.sliderParallaxRefreshRate,
+          binding.sliderParallaxDamping,
+          binding.sliderParallaxThreshold
+      );
     }
   }
 

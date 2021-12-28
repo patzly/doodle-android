@@ -120,8 +120,11 @@ public class SizeFragment extends BaseFragment
     );
 
     binding.linearSizeZoomSystem.setVisibility(launcherZoom);
-    binding.linearSizeZoomSystem.setEnabled(binding.switchSizeZoomLauncher.isChecked());
-    binding.linearSizeZoomSystem.setAlpha(binding.switchSizeZoomLauncher.isChecked() ? 1 : 0.5f);
+    ViewUtil.setEnabledAlpha(
+        binding.switchSizeZoomLauncher.isChecked(),
+        false,
+        binding.linearSizeZoomSystem
+    );
     binding.switchSizeZoomSystem.setChecked(
         getSharedPrefs().getBoolean(PREF.ZOOM_SYSTEM, DEF.ZOOM_SYSTEM)
     );
@@ -189,8 +192,7 @@ public class SizeFragment extends BaseFragment
       activity.requestSettingsRefresh();
       performHapticClick();
       binding.switchSizeZoomSystem.setEnabled(isChecked);
-      binding.linearSizeZoomSystem.setEnabled(isChecked);
-      binding.linearSizeZoomSystem.animate().alpha(isChecked ? 1 : 0.5f).setDuration(200).start();
+      ViewUtil.setEnabledAlpha(isChecked, true, binding.linearSizeZoomSystem);
     } else if (id == R.id.switch_size_zoom_system) {
       getSharedPrefs().edit().putBoolean(PREF.ZOOM_SYSTEM, isChecked).apply();
       performHapticClick();

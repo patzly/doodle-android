@@ -154,6 +154,7 @@
     <item name="android:stepSize">1</item>
     <item name="thumbElevation">1dp</item>
     <item name="labelStyle">@style/Widget.Doodle.Tooltip</item>
+    <item name="trackColorInactive">@color/selector_slider_inactive_track_color</item>
   </style>
 
   <!-- Tooltip -->

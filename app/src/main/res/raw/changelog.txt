@@ -7,7 +7,7 @@
 - Improved: bold text now correctly styled even if system font is used as fallback (Chinese, Hebrew and Uyghur)
 - Improved: automatic Google Drive backup of current preferences disabled (not helpful when switching to a new phone and annoying when reinstalling the app)
 - Fixed: unchanged text contrast when switching dark mode inside an app
-- Fixed: prevent some crashes
+- Fixed: hopefully some crashes
 
 Please consider translating this app into your language at Transifex. There are only 117 strings to translate!
 

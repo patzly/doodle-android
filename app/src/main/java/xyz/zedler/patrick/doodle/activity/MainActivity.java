@@ -333,6 +333,10 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     snackbar.setAnchorView(binding.fabMain).show();
   }
 
+  public Snackbar getSnackbar(@StringRes int resId, int duration) {
+    return Snackbar.make(binding.fragmentMainNavHost, getString(resId), duration);
+  }
+
   public void navigate(NavDirections directions) {
     if (navController == null || directions == null) {
       Log.e(TAG, "navigate: controller or direction is null");
@@ -411,8 +415,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
       return;
     }
     showSnackbar(
-        Snackbar.make(
-            binding.getRoot(), getString(R.string.msg_force_stop), Snackbar.LENGTH_LONG
+        getSnackbar(
+            R.string.msg_force_stop, Snackbar.LENGTH_LONG
         ).setAction(
             getString(R.string.action_continue), view -> {
               performHapticHeavyClick();

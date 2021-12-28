@@ -192,8 +192,8 @@ public class OtherFragment extends BaseFragment
       ViewUtil.startIcon(binding.imageOtherReset);
       performHapticClick();
       activity.showSnackbar(
-          Snackbar.make(
-              binding.getRoot(), getString(R.string.msg_reset), Snackbar.LENGTH_LONG
+          activity.getSnackbar(
+              R.string.msg_reset, Snackbar.LENGTH_LONG
           ).setAction(
               getString(R.string.action_reset), view -> {
                 performHapticHeavyClick();
@@ -217,8 +217,8 @@ public class OtherFragment extends BaseFragment
       performHapticClick();
       if (isChecked) {
         activity.showSnackbar(
-            Snackbar.make(
-                binding.getRoot(), getString(R.string.msg_hide), Snackbar.LENGTH_LONG
+            activity.getSnackbar(
+                R.string.msg_hide, Snackbar.LENGTH_LONG
             ).setAction(
                 getString(R.string.action_hide), view -> {
                   performHapticHeavyClick();

@@ -292,8 +292,8 @@ public class AppearanceFragment extends BaseFragment
         card.setOnClickListener(v -> {
           if (randomWallpaper) {
             activity.showSnackbar(
-                Snackbar.make(
-                    binding.getRoot(), getString(R.string.msg_random_warning), Snackbar.LENGTH_LONG
+                activity.getSnackbar(
+                    R.string.msg_random_warning, Snackbar.LENGTH_LONG
                 ).setAction(
                     getString(R.string.action_deactivate),
                     view -> binding.switchAppearanceRandom.setChecked(false)

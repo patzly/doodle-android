@@ -201,12 +201,12 @@
   <color name="google_primary_20">#002E69</color>
   <color name="google_primary_10">#001A42</color>
 
-  <color name="google_secondary_90">@color/google_primary_90</color>
-  <color name="google_secondary_80">@color/google_primary_80</color>
-  <color name="google_secondary_40">@color/google_primary_40</color>
-  <color name="google_secondary_30">@color/google_primary_30</color>
-  <color name="google_secondary_20">@color/google_primary_20</color>
-  <color name="google_secondary_10">@color/google_primary_10</color>
+  <color name="google_secondary_90">#DAE2F9</color>
+  <color name="google_secondary_80">#BEC6DC</color>
+  <color name="google_secondary_40">#565E71</color>
+  <color name="google_secondary_30">#3F4759</color>
+  <color name="google_secondary_20">#283041</color>
+  <color name="google_secondary_10">#131C2C</color>
 
   <color name="google_tertiary_90">@color/google_primary_90</color>
   <color name="google_tertiary_80">@color/google_primary_80</color>

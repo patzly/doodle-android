@@ -592,7 +592,7 @@ public class LiveWallpaperService extends WallpaperService {
             loadTheme(true);
           }
           zoomUnlock = 1;
-          zoomLauncher = 1; // 0?
+          zoomLauncher = 0; // 0?
           drawFrame(true, null);
           break;
         case USER_PRESENCE.LOCKED:

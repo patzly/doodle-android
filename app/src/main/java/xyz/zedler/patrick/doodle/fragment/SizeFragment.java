@@ -112,6 +112,16 @@ public class SizeFragment extends BaseFragment
         value -> String.format(Locale.getDefault(), "%.0f", value)
     );
 
+    binding.sliderSizeZoomRotation.setValue(
+        getSharedPrefs().getInt(PREF.ZOOM_ROTATION, DEF.ZOOM_ROTATION)
+    );
+    binding.sliderSizeZoomRotation.addOnChangeListener(this);
+    binding.sliderSizeZoomRotation.setLabelFormatter(
+        value -> getString(
+            R.string.label_degrees, String.format(Locale.getDefault(), "%.0f", value)
+        )
+    );
+
     int launcherZoom = Build.VERSION.SDK_INT >= Build.VERSION_CODES.R ? View.VISIBLE : View.GONE;
     binding.linearSizeZoomLauncher.setVisibility(launcherZoom);
     binding.switchSizeZoomLauncher.setChecked(
@@ -149,16 +159,6 @@ public class SizeFragment extends BaseFragment
     binding.sliderSizeZoomDuration.setLabelFormatter(
         value -> getString(
             R.string.label_ms, String.format(Locale.getDefault(), "%.0f", value)
-        )
-    );
-
-    binding.sliderSizeZoomRotation.setValue(
-        getSharedPrefs().getInt(PREF.ZOOM_ROTATION, DEF.ZOOM_ROTATION)
-    );
-    binding.sliderSizeZoomRotation.addOnChangeListener(this);
-    binding.sliderSizeZoomRotation.setLabelFormatter(
-        value -> getString(
-            R.string.label_degrees, String.format(Locale.getDefault(), "%.0f", value)
         )
     );
 
@@ -228,14 +228,14 @@ public class SizeFragment extends BaseFragment
       ViewUtil.startIcon(binding.imageSizeZoom);
       activity.requestSettingsRefresh();
       performHapticClick();
-    } else if (id == R.id.slider_size_zoom_duration) {
-      getSharedPrefs().edit().putInt(PREF.ZOOM_DURATION, (int) value).apply();
-      ViewUtil.startIcon(binding.imageSizeZoomDuration);
-      activity.requestSettingsRefresh();
-      performHapticClick();
     } else if (id == R.id.slider_size_zoom_rotation) {
       getSharedPrefs().edit().putInt(PREF.ZOOM_ROTATION, (int) value).apply();
       ViewUtil.startIcon(binding.imageSizeZoomRotation);
+      activity.requestSettingsRefresh();
+      performHapticClick();
+    } else if (id == R.id.slider_size_zoom_duration) {
+      getSharedPrefs().edit().putInt(PREF.ZOOM_DURATION, (int) value).apply();
+      ViewUtil.startIcon(binding.imageSizeZoomDuration);
       activity.requestSettingsRefresh();
       performHapticClick();
     }

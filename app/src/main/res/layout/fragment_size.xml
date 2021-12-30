@@ -118,9 +118,43 @@
         android:stepSize="1" />
 
       <LinearLayout
+        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine"
+        android:paddingBottom="0dp">
+
+        <ImageView
+          android:id="@+id/image_size_zoom_rotation"
+          style="@style/Widget.Doodle.ImageView.ListItem.Icon"
+          android:src="@drawable/ic_round_autorenew_anim"
+          tools:ignore="ContentDescription" />
+
+        <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
+
+          <TextView
+            style="@style/Widget.Doodle.TextView.ListItem.Title"
+            android:text="@string/size_zoom_rotation" />
+
+          <TextView
+            style="@style/Widget.Doodle.TextView.ListItem.Description"
+            android:text="@string/size_zoom_rotation_description" />
+
+        </LinearLayout>
+
+      </LinearLayout>
+
+      <com.google.android.material.slider.Slider
+        android:id="@+id/slider_size_zoom_rotation"
+        style="@style/Widget.Doodle.Slider"
+        android:valueFrom="0"
+        android:valueTo="100"
+        android:stepSize="20" />
+
+      <TextView
+        style="@style/Widget.Doodle.TextView.Category"
+        android:text="@string/size_category_launcher" />
+
+      <LinearLayout
         android:id="@+id/linear_size_zoom_launcher"
-        style="@style/Widget.Doodle.LinearLayout.ListItem.SingleLine.Clickable"
-        android:background="@drawable/ripple_list_item_bg">
+        style="@style/Widget.Doodle.LinearLayout.ListItem.SingleLine.Clickable">
 
         <ImageView
           android:id="@+id/image_size_zoom_launcher"
@@ -128,11 +162,17 @@
           android:src="@drawable/ic_round_aod"
           tools:ignore="ContentDescription" />
 
-        <TextView
-          style="@style/Widget.Doodle.TextView.ListItem.Title"
-          android:layout_width="0dp"
-          android:layout_weight="1"
-          android:text="@string/size_zoom_launcher" />
+        <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">
+
+          <TextView
+            style="@style/Widget.Doodle.TextView.ListItem.Title"
+            android:text="@string/size_zoom_launcher" />
+
+          <TextView
+            style="@style/Widget.Doodle.TextView.ListItem.Description"
+            android:text="@string/size_zoom_launcher_description" />
+
+        </LinearLayout>
 
         <com.google.android.material.switchmaterial.SwitchMaterial
           android:id="@+id/switch_size_zoom_launcher"
@@ -145,14 +185,16 @@
 
       <LinearLayout
         android:id="@+id/linear_size_zoom_system"
-        style="@style/Widget.Doodle.LinearLayout.ListItem.SingleLine.Clickable"
-        android:layout_marginStart="48dp"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp">
+        style="@style/Widget.Doodle.LinearLayout.ListItem.SingleLine.Clickable">
+
+        <ImageView
+          android:id="@+id/image_size_zoom_system"
+          style="@style/Widget.Doodle.ImageView.ListItem.Icon"
+          android:src="@drawable/ic_round_settings_suggest"
+          tools:ignore="ContentDescription" />
 
         <LinearLayout
-          style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch"
-          android:layout_marginStart="8dp">
+          style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">
 
           <TextView
             style="@style/Widget.Doodle.TextView.ListItem.Title"
@@ -173,10 +215,13 @@
 
       </LinearLayout>
 
+      <TextView
+        style="@style/Widget.Doodle.TextView.Category"
+        android:text="@string/size_category_unlock" />
+
       <LinearLayout
         android:id="@+id/linear_size_zoom_unlock"
-        style="@style/Widget.Doodle.LinearLayout.ListItem.SingleLine.Clickable"
-        android:background="@drawable/ripple_list_item_bg">
+        style="@style/Widget.Doodle.LinearLayout.ListItem.SingleLine.Clickable">
 
         <ImageView
           android:id="@+id/image_size_zoom_unlock"
@@ -235,37 +280,6 @@
         android:valueFrom="500"
         android:valueTo="1500"
         android:stepSize="100" />
-
-      <LinearLayout
-        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine"
-        android:paddingBottom="0dp">
-
-        <ImageView
-          android:id="@+id/image_size_zoom_rotation"
-          style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-          android:src="@drawable/ic_round_autorenew_anim"
-          tools:ignore="ContentDescription" />
-
-        <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
-
-          <TextView
-            style="@style/Widget.Doodle.TextView.ListItem.Title"
-            android:text="@string/size_zoom_rotation" />
-
-          <TextView
-            style="@style/Widget.Doodle.TextView.ListItem.Description"
-            android:text="@string/size_zoom_rotation_description" />
-
-        </LinearLayout>
-
-      </LinearLayout>
-
-      <com.google.android.material.slider.Slider
-        android:id="@+id/slider_size_zoom_rotation"
-        style="@style/Widget.Doodle.Slider"
-        android:valueFrom="0"
-        android:valueTo="100"
-        android:stepSize="20" />
 
     </LinearLayout>
 

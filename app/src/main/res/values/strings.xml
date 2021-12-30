@@ -124,7 +124,7 @@
   <string name="size_zoom_description">When increased, the camera zooms out more</string>
   <string name="size_zoom_launcher">Zoom out when opening quick settings or app drawer</string>
   <string name="size_zoom_system">Use system-provided zoom effect</string>
-  <string name="size_zoom_system_description">Might fix jerky zoom animation when tilt effect is turned on</string>
+  <string name="size_zoom_system_description">Might fix jerky zoom animation when tilt effect is turned on, available only on some devices</string>
   <string name="size_zoom_unlock">Zoom out on lockscreen</string>
   <string name="size_zoom_unlock_description">Might be jerky if tilt effect is turned on</string>
   <string name="size_zoom_duration">Unlock zoom duration</string>

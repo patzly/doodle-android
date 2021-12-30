@@ -113,22 +113,30 @@ public class SizeFragment extends BaseFragment
     );
 
     int launcherZoom = Build.VERSION.SDK_INT >= Build.VERSION_CODES.R ? View.VISIBLE : View.GONE;
-
     binding.linearSizeZoomLauncher.setVisibility(launcherZoom);
     binding.switchSizeZoomLauncher.setChecked(
         getSharedPrefs().getBoolean(PREF.ZOOM_LAUNCHER, DEF.ZOOM_LAUNCHER)
     );
 
-    binding.linearSizeZoomSystem.setVisibility(launcherZoom);
-    ViewUtil.setEnabledAlpha(
-        binding.switchSizeZoomLauncher.isChecked(),
-        false,
-        binding.linearSizeZoomSystem
-    );
-    binding.switchSizeZoomSystem.setChecked(
-        getSharedPrefs().getBoolean(PREF.ZOOM_SYSTEM, DEF.ZOOM_SYSTEM)
-    );
-    binding.switchSizeZoomSystem.setEnabled(binding.switchSizeZoomLauncher.isChecked());
+    boolean systemZoomAvailable = Build.VERSION.SDK_INT == Build.VERSION_CODES.R;
+    int systemZoom = systemZoomAvailable ? View.VISIBLE : View.GONE;
+    // only available on Android 11
+    if (!systemZoomAvailable && getSharedPrefs().getBoolean(PREF.ZOOM_SYSTEM, DEF.ZOOM_SYSTEM)) {
+      // Turn off previously enabled
+      getSharedPrefs().edit().putBoolean(PREF.ZOOM_SYSTEM, false).apply();
+    }
+    binding.linearSizeZoomSystem.setVisibility(systemZoom);
+    if (systemZoomAvailable) {
+      ViewUtil.setEnabledAlpha(
+          binding.switchSizeZoomLauncher.isChecked(),
+          false,
+          binding.linearSizeZoomSystem
+      );
+      binding.switchSizeZoomSystem.setChecked(
+          getSharedPrefs().getBoolean(PREF.ZOOM_SYSTEM, DEF.ZOOM_SYSTEM)
+      );
+      binding.switchSizeZoomSystem.setEnabled(binding.switchSizeZoomLauncher.isChecked());
+    }
 
     binding.switchSizeZoomUnlock.setChecked(
         getSharedPrefs().getBoolean(PREF.ZOOM_UNLOCK, DEF.ZOOM_UNLOCK)

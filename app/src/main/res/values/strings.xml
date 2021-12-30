@@ -54,6 +54,7 @@
   <string name="action_hide">Hide</string>
   <string name="action_reset">Reset</string>
   <string name="action_deactivate">Deactivate</string>
+  <string name="action_select_all">Select all</string>
   <string name="action_continue">Continue</string>
   <string name="action_open_app_info">Open app info</string>
   <string name="action_set">Set wallpaper</string>
@@ -172,6 +173,7 @@
   <string name="msg_feedback">A great app requires a lot of time and lives from the feedback of its users.\n\nDo you have any wishes, comments or questions? Contact me!\nOtherwise I would be very happy about a nice review in the Play Store.</string>
   <string name="msg_share">Check out this cool live wallpaper app: \nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
   <string name="msg_hide">Hide icon in launcher?</string>
+  <string name="msg_random">All selected designs will be used</string>
   <string name="msg_random_warning">Random wallpaper design is still active!</string>
   <string name="msg_reset">Reset all settings?</string>
   <string name="msg_force_stop">Forced stop required to apply changes</string>

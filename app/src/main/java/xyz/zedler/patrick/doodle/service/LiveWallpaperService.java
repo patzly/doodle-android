@@ -510,7 +510,10 @@ public class LiveWallpaperService extends WallpaperService {
 
     private void loadTheme(boolean random) {
       if (random) {
-        wallpaper = Constants.getRandomWallpaper();
+        String previous = wallpaper != null ? wallpaper.getName() : "";
+        wallpaper = Constants.getRandomWallpaper(
+            sharedPrefs.getStringSet(PREF.RANDOM_LIST, DEF.RANDOM_LIST), previous
+        );
       } else {
         wallpaper = Constants.getWallpaper(sharedPrefs.getString(PREF.WALLPAPER, DEF.WALLPAPER));
       }

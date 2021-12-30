@@ -2,7 +2,7 @@
 - New: another sandy Pixel 6 wallpaper
 - New: Danish and Hebrew translations
 - New: additional blue (new default) and purple app themes
-- Improved: random wallpaper option
+- Improved: random wallpaper option now lets you select your favourite designs
 - Improved: app theme selection and app colors
 - Improved: dynamic colors in app icon (Android 12+)
 - Improved: splash screen on Android 12+
@@ -11,6 +11,7 @@
 - Improved: disabled options in parallax section now greyed out
 - Fixed: unchanged text contrast when switching dark mode inside an app
 - Fixed: wrong animation on Android 12+ when app theme or language were changed
+- Fixed: random wallpapers not working as expected
 - Fixed: hopefully some crashes
 
 Please consider translating this app into your language at Transifex. There are only 117 strings to translate!

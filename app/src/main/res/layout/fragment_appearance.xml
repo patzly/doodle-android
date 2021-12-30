@@ -184,6 +184,7 @@
         android:text="@string/appearance_variant" />
 
       <LinearLayout
+        android:id="@+id/linear_appearance_variant"
         style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon"
         android:paddingTop="0dp"
         android:paddingBottom="0dp"

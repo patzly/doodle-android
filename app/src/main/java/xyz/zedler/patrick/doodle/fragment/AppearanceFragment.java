@@ -40,6 +40,10 @@ import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.color.DynamicColors;
 import com.google.android.material.snackbar.Snackbar;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
 import xyz.zedler.patrick.doodle.Constants;
 import xyz.zedler.patrick.doodle.Constants.DEF;
 import xyz.zedler.patrick.doodle.Constants.PREF;
@@ -77,6 +81,8 @@ public class AppearanceFragment extends BaseFragment
   private WallpaperVariant currentVariant;
   private int currentVariantIndex;
   private boolean randomWallpaper;
+  private Set<String> randomList = new HashSet<>();
+  private final HashMap<String, SelectionCardView> designSelections = new HashMap<>();
 
   @Override
   public View onCreateView(
@@ -152,8 +158,19 @@ public class AppearanceFragment extends BaseFragment
 
     randomWallpaper = getSharedPrefs().getBoolean(PREF.RANDOM, DEF.RANDOM);
     binding.switchAppearanceRandom.setChecked(randomWallpaper);
+    ViewUtil.setEnabledAlpha(
+        !randomWallpaper,
+        false,
+        binding.linearAppearanceVariant,
+        binding.linearAppearanceColors
+    );
 
     setUpDesignSelections();
+    randomList = getSharedPrefs().getStringSet(PREF.RANDOM_LIST, DEF.RANDOM_LIST);
+    if (randomWallpaper) {
+      refreshDesignSelections();
+    }
+
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O_MR1) {
       binding.textAppearanceColorsDescription.setText(
           DynamicColors.isDynamicColorAvailable()
@@ -249,9 +266,37 @@ public class AppearanceFragment extends BaseFragment
     } else if (id == R.id.switch_appearance_random) {
       performHapticClick();
       randomWallpaper = isChecked;
+      refreshDesignSelections();
+      ViewUtil.setEnabledAlpha(
+          !isChecked, true, binding.linearAppearanceVariant, binding.linearAppearanceColors
+      );
       getSharedPrefs().edit().putBoolean(PREF.RANDOM, isChecked).apply();
       activity.requestSettingsRefresh();
       activity.requestThemeRefresh();
+      if (isChecked) {
+        Snackbar snackbar = activity.getSnackbar(
+            R.string.msg_random, Snackbar.LENGTH_LONG
+        );
+        if (randomList.size() < Constants.getAllWallpapers().length) {
+          snackbar.setAction(
+              getString(R.string.action_select_all),
+              view -> {
+                if (binding == null) {
+                  return;
+                }
+                randomList = new HashSet<>(Arrays.asList(Constants.getAllWallpapers()));
+                refreshDesignSelections();
+                if (!randomWallpaper) {
+                  binding.switchAppearanceRandom.setChecked(true);
+                } else {
+                  activity.requestSettingsRefresh();
+                  activity.requestThemeRefresh();
+                }
+              }
+          );
+        }
+        activity.showSnackbar(snackbar);
+      }
     }
   }
 
@@ -286,54 +331,105 @@ public class AppearanceFragment extends BaseFragment
         container = binding.linearAppearanceWallpaperContainerAnna;
       }
 
-      for (BaseWallpaper wallpaper : baseWallpapers) {
+      for (int wallpaperIndex = 0; wallpaperIndex < baseWallpapers.length; wallpaperIndex++) {
+        BaseWallpaper wallpaper = baseWallpapers[wallpaperIndex];
+
         SelectionCardView card = new SelectionCardView(activity);
         card.setCardImageResource(wallpaper.getThumbnailResId());
         card.setOnClickListener(v -> {
           if (randomWallpaper) {
-            activity.showSnackbar(
-                activity.getSnackbar(
-                    R.string.msg_random_warning, Snackbar.LENGTH_LONG
-                ).setAction(
-                    getString(R.string.action_deactivate),
-                    view -> binding.switchAppearanceRandom.setChecked(false)
-                )
+            card.setChecked(!card.isChecked());
+            if (card.isChecked()) {
+              randomList.add(wallpaper.getName());
+            } else {
+              randomList.remove(wallpaper.getName());
+            }
+            getSharedPrefs().edit().putStringSet(PREF.RANDOM_LIST, randomList).apply();
+            ViewUtil.startIcon(binding.imageAppearanceWallpaper);
+            card.startCheckedIcon();
+            performHapticClick();
+          } else {
+            if (card.isChecked()) {
+              return;
+            }
+            ViewUtil.startIcon(binding.imageAppearanceWallpaper);
+            card.startCheckedIcon();
+            performHapticClick();
+            ViewUtil.uncheckAllChildren(
+                binding.linearAppearanceWallpaperContainerDoodle,
+                binding.linearAppearanceWallpaperContainerMonet,
+                binding.linearAppearanceWallpaperContainerAnna
             );
-          }
-          if (card.isChecked()) {
-            return;
-          }
-          ViewUtil.startIcon(binding.imageAppearanceWallpaper);
-          card.startCheckedIcon();
-          performHapticClick();
-          ViewUtil.uncheckAllChildren(
-              binding.linearAppearanceWallpaperContainerDoodle,
-              binding.linearAppearanceWallpaperContainerMonet,
-              binding.linearAppearanceWallpaperContainerAnna
-          );
-          card.setChecked(true);
-          int oldCount = currentWallpaper != null ? currentWallpaper.getVariants().length : 0;
-          currentWallpaper = wallpaper;
-          refreshVariantSelection(oldCount, wallpaper, true);
-          getSharedPrefs().edit().putString(PREF.WALLPAPER, wallpaper.getName()).apply();
-          activity.requestThemeRefresh();
-          if (DynamicColors.isDynamicColorAvailable()) {
-            activity.showForceStopRequest(
-                AppearanceFragmentDirections.actionAppearanceToApplyDialog()
-            );
+            card.setChecked(true);
+            int oldCount = currentWallpaper != null ? currentWallpaper.getVariants().length : 0;
+            currentWallpaper = wallpaper;
+            refreshVariantSelection(oldCount, wallpaper, true);
+            getSharedPrefs().edit().putString(PREF.WALLPAPER, wallpaper.getName()).apply();
+            activity.requestThemeRefresh();
+            if (DynamicColors.isDynamicColorAvailable()) {
+              activity.showForceStopRequest(
+                  AppearanceFragmentDirections.actionAppearanceToApplyDialog()
+              );
+            }
           }
         });
 
-        boolean isSelected = getSharedPrefs().getString(
-            PREF.WALLPAPER, WALLPAPER.PIXEL
-        ).equals(wallpaper.getName());
-        card.setChecked(isSelected);
-        if (isSelected) {
-          int oldCount = currentWallpaper != null ? currentWallpaper.getVariants().length : 0;
-          currentWallpaper = wallpaper;
-          refreshVariantSelection(oldCount, wallpaper, false);
+        if (randomWallpaper) {
+          if (randomList.contains(wallpaper.getName())) {
+            card.setChecked(true);
+          }
+          if (wallpaperIndex == baseWallpapers.length - 1) {
+            // Choose last selected wallpaper for variant selection setup
+            int oldCount = currentWallpaper != null ? currentWallpaper.getVariants().length : 0;
+            currentWallpaper = wallpaper;
+            refreshVariantSelection(oldCount, wallpaper, false);
+          }
+        } else {
+          boolean isSelected = getSharedPrefs().getString(
+              PREF.WALLPAPER, WALLPAPER.PIXEL
+          ).equals(wallpaper.getName());
+          card.setChecked(isSelected);
+          if (isSelected) {
+            int oldCount = currentWallpaper != null ? currentWallpaper.getVariants().length : 0;
+            currentWallpaper = wallpaper;
+            refreshVariantSelection(oldCount, wallpaper, false);
+          }
         }
+
         container.addView(card);
+        designSelections.put(wallpaper.getName(), card);
+      }
+
+      if (randomWallpaper) {
+        int oldCount = currentWallpaper != null ? currentWallpaper.getVariants().length : 0;
+        currentWallpaper = Constants.getWallpaper(
+            getSharedPrefs().getString(PREF.WALLPAPER, DEF.WALLPAPER)
+        );
+        refreshVariantSelection(oldCount, currentWallpaper, false);
+      }
+    }
+  }
+
+  private void refreshDesignSelections() {
+    ViewUtil.uncheckAllChildren(
+        binding.linearAppearanceWallpaperContainerDoodle,
+        binding.linearAppearanceWallpaperContainerMonet,
+        binding.linearAppearanceWallpaperContainerAnna
+    );
+    if (randomWallpaper) {
+      for (String element : randomList) {
+        SelectionCardView card = designSelections.get(element);
+        if (card != null) {
+          card.setChecked(true);
+        }
+      }
+    } else {
+      if (currentWallpaper == null) {
+        return;
+      }
+      SelectionCardView card = designSelections.get(currentWallpaper.getName());
+      if (card != null) {
+        card.setChecked(true);
       }
     }
   }
@@ -388,7 +484,16 @@ public class AppearanceFragment extends BaseFragment
         card.setCardBackgroundColor(variantLight.getPrimaryColor());
       }
       card.setOnClickListener(v -> {
-        if (!card.isChecked()) {
+        if (randomWallpaper) {
+          activity.showSnackbar(
+              activity.getSnackbar(
+                  R.string.msg_random_warning, Snackbar.LENGTH_LONG
+              ).setAction(
+                  getString(R.string.action_deactivate),
+                  view -> binding.switchAppearanceRandom.setChecked(false)
+              )
+          );
+        } else if (!card.isChecked()) {
           ViewUtil.startIcon(binding.imageAppearanceVariant);
           card.startCheckedIcon();
           performHapticClick();
@@ -431,6 +536,17 @@ public class AppearanceFragment extends BaseFragment
       card.setCardBackgroundColor(Color.BLACK);
       card.setOnClickListener(v -> {
         if (binding == null || currentWallpaper == null || currentVariant == null) {
+          return;
+        }
+        if (randomWallpaper) {
+          activity.showSnackbar(
+              activity.getSnackbar(
+                  R.string.msg_random_warning, Snackbar.LENGTH_LONG
+              ).setAction(
+                  getString(R.string.action_deactivate),
+                  view -> binding.switchAppearanceRandom.setChecked(false)
+              )
+          );
           return;
         }
         card.startCheckedIcon();

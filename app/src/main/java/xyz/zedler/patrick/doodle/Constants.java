@@ -19,7 +19,10 @@
 
 package xyz.zedler.patrick.doodle;
 
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Random;
+import java.util.Set;
 import xyz.zedler.patrick.doodle.wallpaper.AnthonyWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.BaseWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.FloralWallpaper;
@@ -60,6 +63,7 @@ public final class Constants {
     public static final String FOLLOW_SYSTEM = "follow_system";
     public static final String USE_WHITE_TEXT = "use_white_text";
     public static final String RANDOM = "random";
+    public static final String RANDOM_LIST = "random_list";
 
     // Parallax
 
@@ -99,6 +103,9 @@ public final class Constants {
     public static final boolean FOLLOW_SYSTEM = true;
     public static final boolean USE_WHITE_TEXT = false;
     public static final boolean RANDOM = false;
+    public static final Set<String> RANDOM_LIST = new HashSet<>(
+        Arrays.asList(Constants.getAllWallpapers())
+    );
 
     public static final int PARALLAX = 1;
     public static final boolean TILT = false;
@@ -147,8 +154,20 @@ public final class Constants {
     }
   }
 
-  public static BaseWallpaper getRandomWallpaper() {
-    String[] wallpapers = new String[]{
+  public static BaseWallpaper getRandomWallpaper(Set<String> selection, String previous) {
+    String[] wallpapers = selection.toArray(new String[0]);
+    Random randomizer = new Random();
+    BaseWallpaper chosen = getWallpaper(wallpapers[randomizer.nextInt(wallpapers.length)]);
+    if (wallpapers.length > 1) {
+      while (chosen.getName().equals(previous)) {
+        chosen = getWallpaper(wallpapers[randomizer.nextInt(wallpapers.length)]);
+      }
+    }
+    return chosen;
+  }
+
+  public static String[] getAllWallpapers() {
+    return new String[]{
         WALLPAPER.PIXEL,
         WALLPAPER.JOHANNA,
         WALLPAPER.REIKO,
@@ -163,8 +182,6 @@ public final class Constants {
         WALLPAPER.LEAFY,
         WALLPAPER.FOG,
     };
-    int random = new Random().nextInt(wallpapers.length);
-    return getWallpaper(wallpapers[random]);
   }
 
   public static final class DESIGN {

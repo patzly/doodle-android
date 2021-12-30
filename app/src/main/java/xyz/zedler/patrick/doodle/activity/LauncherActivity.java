@@ -19,6 +19,10 @@
 
 package xyz.zedler.patrick.doodle.activity;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.drawable.LayerDrawable;
@@ -44,6 +48,22 @@ public class LauncherActivity extends MainActivity {
   public void onCreate(Bundle bundle) {
     if (Build.VERSION.SDK_INT >= 31) {
       super.onCreate(bundle);
+      getSplashScreen().setOnExitAnimationListener(view -> {
+        AnimatorSet set = new AnimatorSet();
+        set.playTogether(
+            ObjectAnimator.ofFloat(view, "alpha", 0),
+            ObjectAnimator.ofFloat(view.getIconView(), "alpha", 0)
+        );
+        set.setDuration(400);
+        set.setStartDelay(550);
+        set.addListener(new AnimatorListenerAdapter() {
+          @Override
+          public void onAnimationEnd(Animator animation, boolean isReverse) {
+            view.remove();
+          }
+        });
+        set.start();
+      });
     } else {
       SharedPreferences sharedPrefs = new PrefsUtil(this)
           .checkForMigrations()

@@ -21,20 +21,32 @@
 
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
-  <string name="wallpaper_description">Papel de parede animado colorido com modo de escurecimento automático e animações com eficiência energética. Toque para saber mais.</string>
+  <string name="wallpaper_description">Papeis de parede animados e coloridos com modo noturno automático e animações com eficiência energética. Toque para saber mais.</string>
   <string name="wallpaper_description_picker">Explore uma coleção colorida de formas, refinadas com efeitos suaves de paralaxe e zoom quando você desliza pelas telas iniciais e desbloqueia o telefone.\nPersonalize o papel de parede para combinar com seu próprio estilo.</string>
 
   <!-- TITLES -->
 
   <string name="title_info">Informação</string>
+  <string name="title_apply_changes">Aplicar mudanças</string>
   <string name="title_feedback">Comentários</string>
   <string name="title_licenses">Licenças de código aberto</string>
+
+  <!-- LABELS -->
+
+  <string name="label_ms">%1$sms</string>
+  <string name="label_degrees">%1$sgraus</string>
 
   <!-- ACTIONS -->
 
   <string name="action_close">Fechar</string>
+  <string name="action_back">Voltar</string>
+  <string name="action_open_link">Abrir em browser</string>
+  <string name="action_hide">Esconder</string>
   <string name="action_reset">Redefinir</string>
-  <string name="action_set">Definir</string>
+  <string name="action_deactivate">Desativar</string>
+  <string name="action_continue">Continuar</string>
+  <string name="action_open_app_info">Abrir informações do aplicativo</string>
+  <string name="action_set">Definir papel de parede</string>
   <string name="action_send_feedback">Enviar comentários</string>
   <string name="action_share">Compartilhar</string>
   <string name="action_share_description">Conte aos seus amigos sobre o Doodle</string>
@@ -44,28 +56,114 @@
   <string name="action_rate_description">Apoie o desenvolvimento</string>
   <string name="action_github">Doodle Android no GitHub</string>
   <string name="action_github_description">Abra um novo problema</string>
+  <string name="action_language_select">Selecionar idioma</string>
+
+  <!-- APPEARANCE -->
+
+  <string name="appearance_title">Aparencia</string>
+  <string name="appearance_description">Opções de tema &amp; design</string>
+  <string name="appearance_design">Design</string>
+  <string name="appearance_design_doodle">Coleção Doodle de Pixel 4</string>
+  <string name="appearance_design_monet">Coleção Material You de Pixel 6</string>
+  <string name="appearance_design_anna">Papeis de parede à l\'Anna Kövecses</string>
+  <string name="appearance_variant">Variante</string>
   <string name="appearance_night_mode">Modo noturno</string>
-  <string name="appearance_night_mode_description">Formas totalmente escuras</string>
+  <string name="appearance_night_mode_description">Apenas cores escuras</string>
   <string name="appearance_follow_system">Seguir sistema</string>
-  <string name="appearance_follow_system_description">Adote o tema do dispositivo</string>
-  <string name="appearance_white_text_description">Não recomendado</string>
-  <string name="parallax_touch_wiz">Parece que o seu iniciador atual é o Samsung TouchWiz, que não oferece suporte à rolagem em segundo plano. Tente um inicializador diferente para habilitar o efeito de paralaxe.\nVocê pode ignorar este aviso se definir outro inicializador como padrão.</string>
+  <string name="appearance_follow_system_description">Adotar o tema do dispositivo</string>
+  <string name="appearance_white_text">Tentar forçar texto branco</string>
+  <string name="appearance_white_text_description">Pode afetar legibilidade</string>
+  <string name="appearance_random">Papel de parede randomizado</string>
+  <string name="appearance_random_description">Sempre que a tela for desligada</string>
+  <string name="appearance_colors">Cores extraidas</string>
+  <string name="appearance_colors_description">Utilizado para calcular contraste do texto</string>
+  <string name="appearance_colors_description_dynamic">Utilizado pelo mecanismo de temas do sistema</string>
+  <string name="appearance_colors_primary">Escolher cor primária</string>
+  <string name="appearance_colors_secondary">Escolher cor secundária</string>
+  <string name="appearance_colors_tertiary">Escolher cor terciária</string>
+  <string name="appearance_colors_info">Em dispositivos sem suporte a cores dinâmicas (Android 11 ou mais antigo), apenas a cor primária é utilizada para calcular o contraste do texto do inicializador e o tingimento no fundo da tela de aplicativos recentes.</string>
+  <string name="appearance_colors_info_dynamic">Em dispositivos com Android 12 ou mais recente e suporte a cores dinâmicas, as três cores selecionadas são utilizadas para criar um tema de cores para o sistema.</string>
+
+  <!-- PARALLAX -->
+
+  <string name="parallax_title">Paralaxe</string>
+  <string name="parallax_description">Efeito de inclinação &amp; arrasto</string>
+  <string name="parallax_touch_wiz">Parece que o seu inicializador atual é o Samsung TouchWiz, que não oferece suporte à rolagem em segundo plano. Tente um inicializador diferente para habilitar o efeito de paralaxe.\nVocê pode ignorar este aviso caso tenha definido outro inicializador como padrão.</string>
   <string name="parallax_intensity">Force Parallax</string>
+  <string name="parallax_intensity_description">Deslocamento horizontal ao arrastar paginas e intensidade do efeito de inclinação</string>
   <string name="parallax_none">Nenhum</string>
+  <string name="parallax_category_tilt">Efeito de inclinação</string>
+  <string name="parallax_tilt">Movimentar quando o dispositivo for inclinado</string>
+  <string name="parallax_tilt_description">Consume mais bateria</string>
+  <string name="parallax_refresh_rate">Taxa de atualização do sensor de inclinação</string>
+  <string name="parallax_refresh_rate_description">Intervalos muito curtos podem tornar animações de zoom travadas</string>
+  <string name="parallax_damping">Amortecimento de movimento</string>
+  <string name="parallax_damping_description">Diminua para mais suavidade</string>
+  <string name="parallax_threshold">Movimento mínimo</string>
+  <string name="parallax_threshold_description">Aumente para pausar renderização mesmo com movimentação baixa</string>
+
+  <!-- SIZE -->
+
+  <string name="size_title">Tamanho e formato</string>
+  <string name="size_description">Effeitos de zoom &amp; tamanho</string>
   <string name="size_scale">Tamanho da forma</string>
   <string name="size_scale_description">Útil para telas grandes</string>
+  <string name="size_category_zoom">Efeito de zoom</string>
+  <string name="size_zoom">Intensidade de zoom</string>
   <string name="size_zoom_description">Quando aumentado, a câmera diminui mais o zoom</string>
   <string name="size_zoom_launcher">Diminua o zoom ao abrir as configurações rápidas ou gaveta de aplicativos</string>
+  <string name="size_zoom_system">Usar efeito de zoom do sistema</string>
+  <string name="size_zoom_system_description">Pode consertar animações de zoom travadas quando efeito de inclinação está ligado</string>
   <string name="size_zoom_unlock">Diminuir o zoom na tela de bloqueio</string>
-  <string name="other_gpu">Aceleraçao do hardware</string>
+  <string name="size_zoom_unlock_description">Pode ser travado se efeito de inclinação estiver ligado</string>
+  <string name="size_zoom_duration">Destravar duração do zoom</string>
+  <string name="size_zoom_duration_description">Diminua para animações mais rápidas</string>
+  <string name="size_zoom_rotation">Rotacionar alguns objetos quando aplicar zoom</string>
+  <string name="size_zoom_rotation_description">Maior angulo de rotação em graus</string>
+
+  <!-- OTHER -->
+
+  <string name="other_title">Outras opções</string>
+  <string name="other_description">Renderização, idioma &amp; redefinir</string>
+  <string name="other_language">Idioma</string>
+  <string name="other_language_description">Muitos agradecimentos a todos os tradutores voluntários de Transifex! Por favor, visite a página do GitHub do projeto para saber como ajudar a tornar o Doodle Live Wallpapers disponível no seu idioma.</string>
+  <string name="other_language_system">Padrão do sistema: %1$s</string>
+  <string name="other_language_not_available">Não disponível</string>
+  <string name="other_gpu">Aceleraçao de hardware</string>
+  <string name="other_gpu_description">Desligará se o papel de parede deixar de funcionar</string>
+  <string name="other_gpu_info">Aceleração de Hardware no Doodle só está disponível para Android 8 ou mais recente. As animações do papel de parede podem ser mais travadas em versões antigas.</string>
+  <string name="other_launcher">Esconder ícone em inicializador</string>
+  <string name="other_launcher_description">Configurações só serão acessíveis no seletor de papel de parede do seu sistema</string>
+  <string name="other_theme">Cor tema do aplicativo</string>
+  <string name="other_theme_description">Teste outros visuais</string>
+  <string name="other_theme_auto">Automático</string>
+  <string name="other_theme_light">Claro</string>
+  <string name="other_theme_dark">Escuro</string>
   <string name="other_reset">Redefinir todas as configurações</string>
+  <string name="other_reset_description">Faz mais que somente desinstalar, já que as preferencias são guardadas em um lugar especial para serem acessiveis diretamente depois da inicialização do dispositivo</string>
+
+  <!-- ABOUT -->
+
+  <string name="about_title">Sobre</string>
+  <string name="about_description">Informações do desenvolvedor &amp; mais</string>
   <string name="about_version">Versão</string>
   <string name="about_changelog">Changelog</string>
   <string name="about_changelog_description">O que há de novo?</string>
   <string name="about_developer">Desenvolvedor</string>
+  <string name="about_vending_description">Outros aplicativos do mesmo desenvolvedor</string>
+  <string name="about_github_description">Código fonte</string>
+  <string name="about_translation_description">Ajude a traduzir o Doodle</string>
+
   <!-- MESSAGES -->
 
-  <string name="msg_feedback">Um ótimo aplicativo requer muito tempo e vive do feedback de seus usuários.\n\nVocê tem algum desejo, comentário ou pergunta? Contacte-me!\nCaso contrário, ficaria muito satisfeito com uma boa crítica na Play Store.</string>
+  <string name="msg_feedback">Um ótimo aplicativo requer muito tempo e vive dos comentários de seus usuários.\n\nVocê tem algum desejo, comentário ou pergunta? Contacte-me!\nCaso contrário, ficaria muito satisfeito com uma boa crítica na Play Store.</string>
   <string name="msg_share">Confira este aplicativo legal de papel de parede ao vivo: \nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
+  <string name="msg_hide">Esconder ícone em inicializador?</string>
+  <string name="msg_random_warning">Papel de parede aleatório ainda está ativo</string>
   <string name="msg_reset">Redefinir todas as configurações?</string>
+  <string name="msg_force_stop">Parada forçada é necessária para aplicar as mudanças</string>
+  <string name="msg_apply_changes">Para (eventualmente) aplicar as configurações modificadas é recomendado reiniciar o  serviço de papel de parede. Isso não poe ser feito automáticamente.\nPor favor, encerre o Doodle nas configurações do seu sistema, então, aplique Doodle como seu papel de parede novamente.</string>
+  <string name="msg_apply_changes_monet">Em dispositivos com supore para cores dinâmicas, é necessário reiniciar para aplicar as mudanças às cores do papel de parede ao mecanismo de temas do sistema.</string>
+  <string name="msg_preview_missing">Ocorreu um erro, por favor selecione o Doodle Live Wallpaper manualmente</string>
+
   </resources>

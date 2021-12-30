@@ -28,8 +28,8 @@
   <item
     android:id="@+id/splash_logo"
     android:gravity="center"
-    android:width="180dp"
-    android:height="180dp"
+    android:width="250dp"
+    android:height="250dp"
     android:drawable="@drawable/splash_logo_anim"
     tools:ignore="UnusedAttribute" />
 

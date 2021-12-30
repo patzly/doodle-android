@@ -397,14 +397,18 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
   public void restartToApply(long delay, @NonNull Bundle bundle, boolean showForceStopRequest) {
     new Handler().postDelayed(() -> {
       onSaveInstanceState(bundle);
-      finishAndRemoveTask();
-
+      if (Build.VERSION.SDK_INT < Build.VERSION_CODES.S) {
+        finish();
+      }
       Intent intent = new Intent(this, MainActivity.class);
       intent.putExtra(EXTRA.INSTANCE_STATE, bundle);
       if (showForceStopRequest) {
         intent.putExtra(EXTRA.SHOW_FORCE_STOP_REQUEST, true);
       }
       startActivity(intent);
+      if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+        finish();
+      }
       overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }, delay);
   }

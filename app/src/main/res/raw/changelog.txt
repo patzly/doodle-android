@@ -4,6 +4,7 @@
 - New: additional blue (new default) and purple app themes
 - Improved: random wallpaper option
 - Improved: app theme selection and app colors
+- Improved: dynamic colors in app icon (Android 12+)
 - Improved: bold text now correctly styled even if system font is used as fallback (Chinese, Hebrew and Uyghur)
 - Improved: automatic Google Drive backup of current preferences disabled (not helpful when switching to a new phone and annoying when reinstalling the app)
 - Improved: disabled options in parallax section now greyed out

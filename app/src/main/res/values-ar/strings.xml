@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ This file is part of Doodle Android.
+  ~
+  ~ Doodle Android is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Doodle Android is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with Doodle Android. If not, see <http://www.gnu.org/licenses/>.
+  ~
+  ~ Copyright (c) 2019-2021 by Patrick Zedler
+  -->
+
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+
+  <string name="wallpaper_description">خلفيات متحركه ملونة مع الوضع المظلم التلقائي والرسوم المتحركة الموفرة للطاقة.  انقر لمعرفة المزيد.</string>
+  <string name="wallpaper_description_picker">استكشف مجموعة ملونة من الأشكال ، تم اختيارها من خلال اختلاف المنظر اللطيف وتأثيرات التكبير و التصغير عند التمرير عبر الشاشة الرئيسية وإلغاء قفل جهازك. و خصص الخلفية لتلائم أسلوبك الخاص.</string>
+
+  <!-- TITLES -->
+
+  <string name="title_info">معلومات</string>
+  <string name="title_apply_changes">تطبيق التغيرات</string>
+  <string name="title_feedback">الآراء</string>
+  <string name="title_licenses">تراخيص مفتوحة المصدر</string>
+
+  <!-- LABELS -->
+
+  <string name="label_ms">٪ 1 $ رسالة قصيرة</string>
+  <!-- ACTIONS -->
+
+  <string name="action_close">إغلاق</string>
+  <string name="action_back">رجوع</string>
+  <string name="action_open_link">فتح موقع خارجي</string>
+  <string name="action_hide">إخفاء</string>
+  <string name="action_reset">أعاده ضبط</string>
+  <string name="action_deactivate">تعطيل</string>
+  <string name="action_select_all">تحديد الكل</string>
+  <string name="action_continue">إكمال</string>
+  <string name="action_open_app_info">فتح معلومات التطبيق</string>
+  <string name="action_set">تعين كخلفية</string>
+  <string name="action_send_feedback">أرسل رائيك</string>
+  <string name="action_share">مشاركه</string>
+  <string name="action_share_description">أخبر أصدقائك عن Doodle</string>
+  <string name="action_email">إرسال بريد إلكتروني</string>
+  <string name="action_email_description">تواصل مع المطور</string>
+  <string name="action_rate">قيم على متجر التطبيقات</string>
+  <string name="action_rate_description">ادعم المطورين</string>
+  <string name="action_github">Doodle اندرويد على GitHub</string>
+  <string name="action_github_description">افتح عددًا جديدًا</string>
+  <string name="action_language_select">اختار اللغه</string>
+
+  <!-- APPEARANCE -->
+
+  <string name="appearance_title">المظهر الخارجي</string>
+  <string name="appearance_description">التصميم و خيارات الألوان</string>
+  <string name="appearance_design">التصميم</string>
+  <string name="appearance_design_doodle">مجموعه doodle غوغل بكسل 4</string>
+  </resources>

@@ -60,7 +60,6 @@
   <!-- APPEARANCE -->
 
   <string name="appearance_title">Udseende</string>
-  <string name="appearance_description">Design &amp; temaindstillinger</string>
   <string name="appearance_design">Design</string>
   <string name="appearance_design_doodle">Pixel 4 Doodle Samling</string>
   <string name="appearance_design_monet">Pixel 6 Material You Samling</string>
@@ -100,13 +99,12 @@
   <string name="size_category_zoom">Zoom-effekt</string>
   <string name="size_zoom">Zoom-intensitet</string>
   <string name="size_zoom_description">Når den øges, zoomer kameraet mere ud</string>
+  <string name="size_zoom_rotation">Rotér nogle figurer, mens der zoomes</string>
+  <string name="size_zoom_rotation_description">Maksimal rotation i grader</string>
   <string name="size_zoom_system">Brug systemets zoom-effekt</string>
-  <string name="size_zoom_system_description">Løser muligvis en rykkende zoom-animation, når hældningseffekten er slået til</string>
   <string name="size_zoom_unlock">Zoom ud på låseskærmen</string>
   <string name="size_zoom_unlock_description">Kan være rykkende, hvis hældningseffekten er slået til</string>
   <string name="size_zoom_duration_description">Nedsæt for hurtigere animation</string>
-  <string name="size_zoom_rotation">Rotér nogle figurer, mens der zoomes</string>
-  <string name="size_zoom_rotation_description">Maksimal rotation i grader</string>
 
   <!-- OTHER -->
 

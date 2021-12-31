@@ -4,7 +4,7 @@ All you have to do is to long-click the app name ;-)
 - New: another sandy Pixel 6 wallpaper
 - New: random wallpaper option now lets you select your favourite designs
 - New: Arabic, Danish and Hebrew translations
-- New: additional blue (new default) and purple app themes
+- New: additional blue and purple app themes
 - New: animation damping option for zoom effect on home screen (may be helpful if the zoom animation is jerky)
 - Improved: app theme selection and app colors
 - Improved: dynamic colors in app icon (Android 12+)

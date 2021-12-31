@@ -141,7 +141,7 @@ public class ParallaxFragment extends BaseFragment
     );
 
     binding.sliderParallaxDamping.setValue(
-        getSharedPrefs().getInt(PREF.DAMPING, DEF.DAMPING)
+        getSharedPrefs().getInt(PREF.DAMPING_TILT, DEF.DAMPING_TILT)
     );
     binding.sliderParallaxDamping.addOnChangeListener(this);
     binding.sliderParallaxDamping.setLabelFormatter(
@@ -222,7 +222,7 @@ public class ParallaxFragment extends BaseFragment
       activity.requestSettingsRefresh();
       performHapticClick();
     } else if (id == R.id.slider_parallax_damping) {
-      getSharedPrefs().edit().putInt(PREF.DAMPING, (int) value).apply();
+      getSharedPrefs().edit().putInt(PREF.DAMPING_TILT, (int) value).apply();
       ViewUtil.startIcon(binding.imageParallaxDamping);
       activity.requestSettingsRefresh();
       performHapticClick();

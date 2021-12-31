@@ -1,19 +1,20 @@
 5.1.0:
 - New: another sandy Pixel 6 wallpaper
+- New: random wallpaper option now lets you select your favourite designs
 - New: Danish and Hebrew translations
 - New: additional blue (new default) and purple app themes
-- Improved: random wallpaper option now lets you select your favourite designs
+- New: animation damping option for zoom effect on home screen
 - Improved: app theme selection and app colors
 - Improved: dynamic colors in app icon (Android 12+)
 - Improved: splash screen on Android 12+
-- Improved: bold text now correctly styled even if system font is used as fallback (Chinese, Hebrew and Uyghur)
+- Improved: bold text now correctly styled even if system font is used as fallback (currently Chinese, Hebrew and Uyghur)
 - Improved: automatic Google Drive backup of current preferences disabled (not helpful when switching to a new phone and annoying when reinstalling the app)
 - Improved: disabled options in parallax section now greyed out
-- Improved: hide system-provided zoom option on non-Android-11 devices as this was removed in Android 12
+- Improved: hide system-provided zoom option on non-Android-11 devices as it was removed in Android 12
 - Improved: shape size settings structure and icons
 - Fixed: unchanged text contrast when switching dark mode inside an app
 - Fixed: wrong animation on Android 12+ when app theme or language were changed
-- Fixed: random wallpapers not working as expected
+- Fixed: random wallpaper option not working as expected
 - Fixed: hopefully some crashes
 
 Please consider translating this app into your language at Transifex. There are only 117 strings to translate!

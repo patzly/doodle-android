@@ -70,18 +70,20 @@ public final class Constants {
     public static final String PARALLAX = "parallax";
     public static final String TILT = "tilt";
     public static final String REFRESH_RATE = "refresh_rate";
-    public static final String DAMPING = "damping";
+    public static final String DAMPING_TILT = "damping_tilt";
     public static final String THRESHOLD = "threshold";
 
     // Size
 
     public static final String SCALE = "size";
     public static final String ZOOM = "zoom";
-    public static final String ZOOM_LAUNCHER = "zoom_launcher";
-    public static final String ZOOM_UNLOCK = "zoom_unlock";
-    public static final String ZOOM_SYSTEM = "zoom_system";
-    public static final String ZOOM_DURATION = "zoom_duration";
     public static final String ZOOM_ROTATION = "zoom_rotation";
+    public static final String ZOOM_LAUNCHER = "zoom_launcher";
+    public static final String USE_ZOOM_DAMPING = "use_zoom_damping";
+    public static final String DAMPING_ZOOM = "damping_zoom";
+    public static final String ZOOM_SYSTEM = "zoom_system";
+    public static final String ZOOM_UNLOCK = "zoom_unlock";
+    public static final String ZOOM_DURATION = "zoom_duration";
 
     // Other
 
@@ -110,16 +112,18 @@ public final class Constants {
     public static final int PARALLAX = 1;
     public static final boolean TILT = false;
     public static final int REFRESH_RATE = 30000;
-    public static final int DAMPING = 8;
+    public static final int DAMPING_TILT = 8;
     public static final int THRESHOLD = 5;
 
     public static final float SCALE = 1;
     public static final int ZOOM = 2;
-    public static final boolean ZOOM_LAUNCHER = true;
-    public static final boolean ZOOM_UNLOCK = true;
-    public static final boolean ZOOM_SYSTEM = false;
-    public static final int ZOOM_DURATION = 1200;
     public static final int ZOOM_ROTATION = 40;
+    public static final boolean ZOOM_LAUNCHER = true;
+    public static final boolean USE_ZOOM_DAMPING = false;
+    public static final int DAMPING_ZOOM = 12;
+    public static final boolean ZOOM_SYSTEM = false;
+    public static final boolean ZOOM_UNLOCK = true;
+    public static final int ZOOM_DURATION = 1200;
 
     public static final String LANGUAGE = null;
     public static final boolean GPU = true;

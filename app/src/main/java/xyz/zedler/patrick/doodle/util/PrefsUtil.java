@@ -91,6 +91,9 @@ public class PrefsUtil {
       }
     }
 
+    // damping to damping_tilt
+    migrateInteger("damping", PREF.DAMPING_TILT, DEF.DAMPING_TILT);
+
     // variant is stored in a new way
 
     if (sharedPrefs.contains(PREF.VARIANT_PIXEL)) {

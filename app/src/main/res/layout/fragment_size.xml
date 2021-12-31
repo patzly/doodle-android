@@ -184,6 +184,59 @@
       </LinearLayout>
 
       <LinearLayout
+        android:id="@+id/linear_size_zoom_damping"
+        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable"
+        android:orientation="vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="14dp"
+        android:paddingBottom="0dp">
+
+        <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="horizontal"
+          android:layout_marginEnd="2dp"
+          android:gravity="center_vertical">
+
+          <ImageView
+            android:id="@+id/image_size_zoom_damping"
+            style="@style/Widget.Doodle.ImageView.ListItem.Icon"
+            android:src="@drawable/ic_round_animation_anim"
+            tools:ignore="ContentDescription" />
+
+          <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">
+
+            <TextView
+              style="@style/Widget.Doodle.TextView.ListItem.Title"
+              android:text="@string/size_zoom_damping" />
+
+            <TextView
+              style="@style/Widget.Doodle.TextView.ListItem.Description"
+              android:text="@string/size_zoom_damping_description" />
+
+          </LinearLayout>
+
+          <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/switch_size_zoom_damping"
+            style="@style/Widget.Doodle.Switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp" />
+
+        </LinearLayout>
+
+        <com.google.android.material.slider.Slider
+          android:id="@+id/slider_size_zoom_damping"
+          style="@style/Widget.Doodle.Slider"
+          android:layout_marginStart="43dp"
+          android:layout_marginEnd="0dp"
+          android:valueFrom="5"
+          android:valueTo="15"
+          android:stepSize="1" />
+
+      </LinearLayout>
+
+      <LinearLayout
         android:id="@+id/linear_size_zoom_system"
         style="@style/Widget.Doodle.LinearLayout.ListItem.SingleLine.Clickable">
 

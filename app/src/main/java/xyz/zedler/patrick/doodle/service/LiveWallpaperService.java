@@ -241,7 +241,8 @@ public class LiveWallpaperService extends WallpaperService {
     private int parallax;
     private int zoomRotation;
     private int zoomDuration;
-    private int damping;
+    private int dampingTilt, dampingZoom;
+    private boolean useZoomDamping;
     private boolean isTiltEnabled;
     private float tiltX, tiltY;
     private int screenRotation;
@@ -279,7 +280,7 @@ public class LiveWallpaperService extends WallpaperService {
         @Override
         public void onSensorChanged(SensorEvent event) {
           if (isVisible && isTiltEnabled) {
-            accelerationValues = lowPass(event.values, accelerationValues);
+            accelerationValues = lowPassAcceleration(event.values, accelerationValues);
             tiltX = accelerationValues[0];
             tiltY = -accelerationValues[1];
 
@@ -462,7 +463,9 @@ public class LiveWallpaperService extends WallpaperService {
       setOffsetNotificationsEnabled(parallax != 0);
 
       isTiltEnabled = sharedPrefs.getBoolean(PREF.TILT, DEF.TILT);
-      damping = sharedPrefs.getInt(PREF.DAMPING, DEF.DAMPING);
+      dampingTilt = sharedPrefs.getInt(PREF.DAMPING_TILT, DEF.DAMPING_TILT);
+      dampingZoom = sharedPrefs.getInt(PREF.DAMPING_ZOOM, DEF.DAMPING_ZOOM);
+      useZoomDamping = sharedPrefs.getBoolean(PREF.USE_ZOOM_DAMPING, DEF.USE_ZOOM_DAMPING);
       tiltThreshold = sharedPrefs.getInt(PREF.THRESHOLD, DEF.THRESHOLD);
       if (isTiltEnabled && !isListenerRegistered) {
         sensorManager.registerListener(
@@ -581,7 +584,11 @@ public class LiveWallpaperService extends WallpaperService {
     public void onZoomChanged(float zoom) {
       if (!useSystemZoom) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R && zoomIntensity > 0) {
-          zoomLauncher = zoomInterpolator.getInterpolation(zoom);
+          if (useZoomDamping) {
+            zoomLauncher = lowPassZoom(zoom, zoomLauncher);
+          } else {
+            zoomLauncher = zoomInterpolator.getInterpolation(zoom);
+          }
           drawFrame(false, REQUEST_SOURCE.ZOOM_LAUNCHER);
         }
       }
@@ -698,14 +705,18 @@ public class LiveWallpaperService extends WallpaperService {
       }
     }
 
-    private float[] lowPass(float[] input, float[] output) {
+    private float[] lowPassAcceleration(float[] input, float[] output) {
       if (output == null) {
         return input.clone();
       }
-      for (int i = 0; i < 2; i++) {
-        output[i] = output[i] + (damping / 100f) * (input[i] - output[i]);
+      for (int i = 0; i < input.length; i++) {
+        output[i] = output[i] + (dampingTilt / 100f) * (input[i] - output[i]);
       }
       return output;
+    }
+
+    private float lowPassZoom(float input, float output) {
+      return (output + (dampingZoom / 100f) * (input - output)) * input;
     }
 
     private void animateZoom(float valueTo) {

@@ -53,7 +53,6 @@
   <!-- APPEARANCE -->
 
   <string name="appearance_title">Внешний вид</string>
-  <string name="appearance_description">Дизайн и настройки темы</string>
   <string name="appearance_design">Дизайн</string>
   <string name="appearance_design_doodle">Pixel 4 Doodle Collection</string>
   <string name="appearance_design_monet">Pixel 6 Material You Collection</string>
@@ -86,19 +85,19 @@
 
   <string name="size_title">Размер форм</string>
   <string name="size_description">Масштаб и эффект масштабирования</string>
+  <string name="size_category_zoom">Эффект масштабирования</string>
   <string name="size_scale">Масштаб</string>
   <string name="size_scale_description">Полезно для экранов больших и малых размеров</string>
-  <string name="size_category_zoom">Эффект масштабирования</string>
   <string name="size_zoom">Интенсивность масштабирования</string>
   <string name="size_zoom_description">При увеличении камера отдаляется сильнее</string>
+  <string name="size_zoom_rotation">Поворачивать некоторые формы при масштабировании</string>
+  <string name="size_zoom_rotation_description">Максимальный поворот в градусах</string>
   <string name="size_zoom_launcher">Отдалять при открытии шторки уведомлений или меню приложений</string>
   <string name="size_zoom_system">Использовать системный эффект масштабирования</string>
   <string name="size_zoom_unlock">Отдалять камеру на экране блокировки</string>
   <string name="size_zoom_unlock_description">Может глючить при включенном эффекте наклона</string>
   <string name="size_zoom_duration">Длительность масштабирования при разблокировке</string>
   <string name="size_zoom_duration_description">Понизьте для ускорения анимации</string>
-  <string name="size_zoom_rotation">Поворачивать некоторые формы при масштабировании</string>
-  <string name="size_zoom_rotation_description">Максимальный поворот в градусах</string>
 
   <!-- OTHER -->
 

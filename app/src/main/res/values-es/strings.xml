@@ -77,9 +77,9 @@
   <!-- SIZE -->
 
   <string name="size_title">Tamaño de las figuras</string>
+  <string name="size_category_zoom">Efectos de zoom</string>
   <string name="size_scale">Tamaño de la forma</string>
   <string name="size_scale_description">Útil para pantallas grandes</string>
-  <string name="size_category_zoom">Efectos de zoom</string>
   <string name="size_zoom">Intensidad del zoom</string>
   <string name="size_zoom_description">Cuando se aumenta, la cámara se aleja más</string>
   <string name="size_zoom_launcher">Alejar al abrir la configuración rápida o el cajón de aplicaciones</string>

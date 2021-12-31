@@ -44,6 +44,7 @@
   <string name="action_hide">Verbergen</string>
   <string name="action_reset">Zurücksetzen</string>
   <string name="action_deactivate">Deaktivieren</string>
+  <string name="action_select_all">Alle auswählen</string>
   <string name="action_continue">Fortfahren</string>
   <string name="action_open_app_info">App-Info öffnen</string>
   <string name="action_set">Hintergrund festlegen</string>
@@ -98,7 +99,7 @@
   <string name="parallax_refresh_rate">Aktualisierungsrate des Neigungs-Sensors</string>
   <string name="parallax_refresh_rate_description">Zu kurze Abstände können die Zoom-Animationen beeinträchtigen</string>
   <string name="parallax_damping">Bewegungsdämpfung</string>
-  <string name="parallax_damping_description">Verringern für stärker geglättete Bewegungen</string>
+  <string name="parallax_damping_description">Verringern für weichere Bewegungen</string>
   <string name="parallax_threshold">Bewegungsschwelle</string>
   <string name="parallax_threshold_description">Erhöhen, um das kontinuierliche Rendern trotz kleiner Bewegungen zu pausieren</string>
 
@@ -106,20 +107,25 @@
 
   <string name="size_title">Größe der Formen</string>
   <string name="size_description">Skalierung &amp; Zoom-Effekt</string>
+  <string name="size_category_zoom">Zoom-Effekt</string>
+  <string name="size_category_launcher">Zoom auf dem Homescreen</string>
+  <string name="size_category_unlock">Zoom auf dem Sperrbildschirm</string>
   <string name="size_scale">Skalierung</string>
   <string name="size_scale_description">Nützlich für große Displays und Auflösungen</string>
-  <string name="size_category_zoom">Zoom-Effekt</string>
   <string name="size_zoom">Zoomstärke</string>
   <string name="size_zoom_description">Je höher, desto weiter wird herausgezoomt</string>
+  <string name="size_zoom_rotation">Drehen ausgewählter Formen während des Zoomens</string>
+  <string name="size_zoom_rotation_description">Maximale Drehung in Grad</string>
   <string name="size_zoom_launcher">Beim Öffnen der Schnelleinstellungen oder des App-Drawers herauszoomen</string>
+  <string name="size_zoom_launcher_description">Ist auf manchen Geräten nicht verfügbar</string>
+  <string name="size_zoom_damping">Animationsglättung</string>
+  <string name="size_zoom_damping_description">Aktivieren und verringern für weicheres Zoomen</string>
   <string name="size_zoom_system">Zoom-Effekt des Systems nutzen</string>
-  <string name="size_zoom_system_description">Kann die ruckelige Zoom-Animation bei eingeschaltetem Neigungs-Effekt beheben</string>
+  <string name="size_zoom_system_description">Kann die ruckelige Zoom-Animation bei eingeschaltetem Neigungs-Effekt beheben, nur auf manchen Geräten verfügbar</string>
   <string name="size_zoom_unlock">Auf dem Sperrbildschirm herauszoomen</string>
   <string name="size_zoom_unlock_description">Eventuell ruckelig, wenn der Neigungs-Effekt eingeschaltet ist</string>
   <string name="size_zoom_duration">Zoom-Dauer beim Entsperren</string>
   <string name="size_zoom_duration_description">Verringern für schnellere Animationen</string>
-  <string name="size_zoom_rotation">Drehen ausgewählter Formen während des Zoomens</string>
-  <string name="size_zoom_rotation_description">Maximale Drehung in Grad</string>
 
   <!-- OTHER -->
 
@@ -159,6 +165,7 @@
   <string name="msg_feedback">Eine tolle App kostet viel Zeit und lebt von der Rückmeldung ihrer Nutzer.\n\nHast du Wünsche, Anmerkungen oder Fragen? Dann lass es mich wissen!\nAnsonsten freue ich mich über eine nette Bewertung im Play Store.</string>
   <string name="msg_share">Schau dir mal diese coole Live-Wallpaper-App an: \nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
   <string name="msg_hide">App-Icon verbergen?</string>
+  <string name="msg_random">Es werden alle ausgewählten Designs benutzt</string>
   <string name="msg_random_warning">Zufälliges Hintergrunddesign ist noch aktiviert!</string>
   <string name="msg_reset">Einstellungen zurücksetzen?</string>
   <string name="msg_force_stop">Erzwungenes Beenden wird benötigt, um die Änderung anzuwenden</string>

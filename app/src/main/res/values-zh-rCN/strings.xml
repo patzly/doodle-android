@@ -45,6 +45,7 @@
   <string name="action_hide">隐藏</string>
   <string name="action_reset">重置</string>
   <string name="action_deactivate">取消激活</string>
+  <string name="action_select_all">选择全部</string>
   <string name="action_continue">继续</string>
   <string name="action_open_app_info">打开应用信息</string>
   <string name="action_set">设置壁纸</string>
@@ -62,7 +63,7 @@
   <!-- APPEARANCE -->
 
   <string name="appearance_title">外观</string>
-  <string name="appearance_description">设计和主题设置</string>
+  <string name="appearance_description">设计和颜色选项</string>
   <string name="appearance_design">设计</string>
   <string name="appearance_design_doodle">Pixel 4 涂鸦集锦</string>
   <string name="appearance_design_monet">Pixel 6 Material You 集锦</string>
@@ -107,20 +108,25 @@
 
   <string name="size_title">形状尺寸</string>
   <string name="size_description">尺寸和缩放效果</string>
+  <string name="size_category_zoom">变焦效果</string>
+  <string name="size_category_launcher">启动器缩放</string>
+  <string name="size_category_unlock">锁屏缩放</string>
   <string name="size_scale">尺寸</string>
   <string name="size_scale_description">适用于大屏幕和密度</string>
-  <string name="size_category_zoom">变焦效果</string>
   <string name="size_zoom">变焦强度</string>
   <string name="size_zoom_description">增加后，相机变焦更多</string>
+  <string name="size_zoom_rotation">缩放时旋转某些形状</string>
+  <string name="size_zoom_rotation_description">以度为单位的最大旋转</string>
   <string name="size_zoom_launcher">打开快速设置或应用程序抽屉时缩小</string>
+  <string name="size_zoom_launcher_description">在某些设备上可能不可用</string>
+  <string name="size_zoom_damping">动画阻尼</string>
+  <string name="size_zoom_damping_description">激活和减少更平滑的缩放</string>
   <string name="size_zoom_system">使用系统提供的缩放效果</string>
-  <string name="size_zoom_system_description">可能会修复倾斜效果开启时不平滑的缩放动画</string>
+  <string name="size_zoom_system_description">可能会修复开启倾斜效果时抖动的缩放动画，只有在某些设备上可用</string>
   <string name="size_zoom_unlock">在锁屏上缩小</string>
   <string name="size_zoom_unlock_description">如果启用“倾斜效果”，则可能会出现抖动</string>
   <string name="size_zoom_duration">关闭锁定缩放持续时间</string>
   <string name="size_zoom_duration_description">减少速度以获得更快的动画效果</string>
-  <string name="size_zoom_rotation">缩放时旋转某些形状</string>
-  <string name="size_zoom_rotation_description">以度为单位的最大旋转</string>
 
   <!-- OTHER -->
 
@@ -162,6 +168,7 @@
 联系我，无论如何，我会很高兴在Play Store回复你。</string>
   <string name="msg_share">查看此酷炫的动态壁纸应用程序:https://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
   <string name="msg_hide">在启动器中隐藏应用图标？</string>
+  <string name="msg_random">将使用所有选中的设计</string>
   <string name="msg_random_warning">随机壁纸设计仍处于活动状态！</string>
   <string name="msg_reset">重置所有设置吗？</string>
   <string name="msg_force_stop">需强制停止才能应用更改</string>

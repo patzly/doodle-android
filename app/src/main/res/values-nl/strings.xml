@@ -60,7 +60,6 @@
   <!-- APPEARANCE -->
 
   <string name="appearance_title">Uiterlijk</string>
-  <string name="appearance_description">Ontwerp &amp; thema opties</string>
   <string name="appearance_design">Ontwerp</string>
   <string name="appearance_design_doodle">Pixel 4 Doodle Collectie</string>
   <string name="appearance_design_monet">Pixel 6 Material You Collectie</string>
@@ -105,20 +104,19 @@
 
   <string name="size_title">Vorm grootte</string>
   <string name="size_description">Schaal &amp; zoom effect</string>
+  <string name="size_category_zoom">Zoom effect</string>
   <string name="size_scale">Schaal</string>
   <string name="size_scale_description">Handig voor grote schermen en dichtheden</string>
-  <string name="size_category_zoom">Zoom effect</string>
   <string name="size_zoom">Zoom intensiteit</string>
   <string name="size_zoom_description">Wanneer verhoogd, zoomt de camera meer uit</string>
+  <string name="size_zoom_rotation">Roteer sommige vormen tijdens zoomen</string>
+  <string name="size_zoom_rotation_description">Maximale rotatie in graden</string>
   <string name="size_zoom_launcher">Uitzoomen bij openen van snelle instellingen of app lade.</string>
   <string name="size_zoom_system">Gebruik het zoomeffect van het systeem</string>
-  <string name="size_zoom_system_description">Kan schokkerige zoom animatie wanneer kantel effect is ingeschakeld verhelpen</string>
   <string name="size_zoom_unlock">Uitzoomen op vergrendelscherm</string>
   <string name="size_zoom_unlock_description">Kan schokkerig zijn als kantel effect ingeschakeld is</string>
   <string name="size_zoom_duration">Ontgrendel zoom duur</string>
   <string name="size_zoom_duration_description">Verminder voor snellere animatie</string>
-  <string name="size_zoom_rotation">Roteer sommige vormen tijdens zoomen</string>
-  <string name="size_zoom_rotation_description">Maximale rotatie in graden</string>
 
   <!-- OTHER -->
 

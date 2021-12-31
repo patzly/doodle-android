@@ -23,6 +23,7 @@ import androidx.annotation.NonNull;
 import xyz.zedler.patrick.doodle.Constants.WALLPAPER;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.drawable.SvgDrawable;
+import xyz.zedler.patrick.doodle.drawable.SvgDrawable.SvgObject;
 
 public class SandWallpaper extends BaseWallpaper {
 
@@ -39,6 +40,11 @@ public class SandWallpaper extends BaseWallpaper {
 
   @Override
   public SvgDrawable getPreparedSvg(SvgDrawable svgDrawable, int variant, boolean isNightMode) {
+    SvgObject leaves = svgDrawable.requireObjectById("leaves");
+    leaves.isRotatable = true;
+    leaves.pivotOffsetX = 600;
+    leaves.pivotOffsetY = 100;
+
     svgDrawable.requireObjectById("star").isRotatable = true;
     svgDrawable.requireObjectById("quad").isRotatable = true;
     return svgDrawable;

@@ -34,6 +34,8 @@
   <!-- LABELS -->
 
   <string name="label_ms">٪ 1 $ رسالة قصيرة</string>
+  <string name="label_degrees">درجات  \'%1$s\'</string>
+
   <!-- ACTIONS -->
 
   <string name="action_close">إغلاق</string>
@@ -63,4 +65,113 @@
   <string name="appearance_description">التصميم و خيارات الألوان</string>
   <string name="appearance_design">التصميم</string>
   <string name="appearance_design_doodle">مجموعه doodle غوغل بكسل 4</string>
+  <string name="appearance_design_monet">مجموعه material you غوغل بكسل 6</string>
+  <string name="appearance_design_anna">خلفيات متحركه في Anna Kövecses</string>
+  <string name="appearance_variant">متغير</string>
+  <string name="appearance_night_mode">الوضع الليلي</string>
+  <string name="appearance_night_mode_description">الألوان الداكنة فقط</string>
+  <string name="appearance_follow_system">اتباع النظام</string>
+  <string name="appearance_follow_system_description">اعتماد مظهر الجهاز</string>
+  <string name="appearance_white_text">حاول جعل الخط أبيض</string>
+  <string name="appearance_white_text_description">قد يؤثر على قابلية القراءة</string>
+  <string name="appearance_random">تصميم خلفية عشوائية</string>
+  <string name="appearance_random_description">في كل مرة يتم فيها إيقاف تشغيل الشاشة</string>
+  <string name="appearance_colors">الألوان المستخرجة</string>
+  <string name="appearance_colors_description">يستخدم لحساب تباين النص</string>
+  <string name="appearance_colors_description_dynamic">يستخدمه محرك السمات الخاص بالنظام</string>
+  <string name="appearance_colors_primary">اختر اللون الأساسي</string>
+  <string name="appearance_colors_secondary">اختر لونًا ثانويًا</string>
+  <string name="appearance_colors_tertiary">اختر اللون الثالث</string>
+  <string name="appearance_colors_info">على الأجهزة التي لا تدعم دعم الألوان الديناميكية (Android 11 أو أقل) ، يتم استخدام اللون الأساسي فقط لحساب تباين نص المشغل وتلوين خلفية شاشة التطبيقات الحديثة.</string>
+  <string name="appearance_colors_info_dynamic">على الأجهزة التي تعمل بنظام Android 12 أو أعلى ودعم الألوان الديناميكية ، يتم استخدام الألوان الثلاثة المحددة لإنشاء سمة ألوان على مستوى النظام تلقائيًا.</string>
+
+  <!-- PARALLAX -->
+
+  <string name="parallax_title">المنظر</string>
+  <string name="parallax_description">تأثير السحب و تأثير الأماله</string>
+  <string name="parallax_touch_wiz">يبدو أن المشغل الحالي لديك هو Samsung TouchWiz ، والذي لا يدعم التمرير في الخلفية.  الرجاء تجربة مشغل آخر لتمكين تأثير المنظر إذا لم يكن لديك خيار مستشعر الإمالة ممكّنًا. او يمكنك تجاهل هذا التحذير إذا قمت بتعيين مشغل آخر كإعداد افتراضي.</string>
+  <string name="parallax_intensity">قوة المنظر</string>
+  <string name="parallax_intensity_description">إزاحة أفقية عند تمرير الصفحة وشدة تأثير الإمالة</string>
+  <string name="parallax_none">لا أحد</string>
+  <string name="parallax_category_tilt">تأثير الميل</string>
+  <string name="parallax_tilt">تحرك عند إمالة الجهاز</string>
+  <string name="parallax_tilt_description">يستهلك المزيد من البطارية</string>
+  <string name="parallax_refresh_rate">معدل تحديث مستشعر الاماله</string>
+  <string name="parallax_refresh_rate_description">يمكن أن تؤدي التأخيرات القصيرة جدًا إلى تأخر حركات التكبير و التصغير</string>
+  <string name="parallax_damping">التخميد بل الحركه</string>
+  <string name="parallax_damping_description">تقليل لمزيد من النعومة</string>
+  <string name="parallax_threshold">معالجه الصور او قيمه العتبه</string>
+  <string name="parallax_threshold_description">زيادة الإيقاف المؤقت للعرض المستمر على الرغم من قلة الحركة</string>
+
+  <!-- SIZE -->
+
+  <string name="size_title">حجم الشكل</string>
+  <string name="size_description">تأثير التكبير و تأثير الحجم</string>
+  <string name="size_category_zoom">تأثير التكبير</string>
+  <string name="size_category_launcher">تكبير القاذفه</string>
+  <string name="size_category_unlock">تكبير شاشة القفل</string>
+  <string name="size_scale">الحجم</string>
+  <string name="size_scale_description">مناسب للشاشات الكبيرة</string>
+  <string name="size_zoom">شده التكبير</string>
+  <string name="size_zoom_description">عند الزيادة ، تقوم الكاميرا بالتصغير أكثر</string>
+  <string name="size_zoom_rotation">تدوير بعض الاشياء أثناء التكبير</string>
+  <string name="size_zoom_rotation_description">أقصى دوران بالدرجات</string>
+  <string name="size_zoom_launcher">التصغير عند فتح الإعدادات السريعة أو درج التطبيق</string>
+  <string name="size_zoom_launcher_description">قد تكون غير متوفرة على بعض الأجهزة</string>
+  <string name="size_zoom_damping">الرسوم المتحركة للتخميد</string>
+  <string name="size_zoom_damping_description">قم بالتفعيل والتقليل من أجل تكبير أكثر سلاسة</string>
+  <string name="size_zoom_system">استخدم تأثير التكبير الذي يوفره النظام</string>
+  <string name="size_zoom_system_description">قد يتم إصلاح حركة التكبير و التصغير المتقطعة عند تشغيل تأثير الإمالة ، وهو متاح فقط في بعض الأجهزة</string>
+  <string name="size_zoom_unlock">التصغير على شاشة القفل</string>
+  <string name="size_zoom_unlock_description">قد يكون متشنجًا إذا تم تشغيل تأثير الإمالة</string>
+  <string name="size_zoom_duration">فتح مدة التكبير</string>
+  <string name="size_zoom_duration_description">قلل لحركه اسرع</string>
+
+  <!-- OTHER -->
+
+  <string name="other_title">خيارات أخرى</string>
+  <string name="other_description">استعاده اللغه</string>
+  <string name="other_language">اللغه</string>
+  <string name="other_language_description">شكراً جزيلاً لجميع المترجمين المتطوعين في Transifex!  يرجى زيارة صفحة المشروع على GitHub لمعرفة كيف يمكنك المساعدة في جعل Doodle Live Wallpapers متاحًا للغتك.</string>
+  <string name="other_language_system">System default: 
+ \'%1$s\' </string>
+  <string name="other_language_not_available">غير متاح</string>
+  <string name="other_gpu">تسريع الأجهزة</string>
+  <string name="other_gpu_description">قم بإيقاف تشغيله في حالة تعطل خلفية الشاشة</string>
+  <string name="other_gpu_info">تسريع الأجهزة متاح فقط لـ Doodle بدءًا من Android 8. وبالتالي قد تكون الرسوم المتحركة للخلفية متقطعة بعض الشيء.</string>
+  <string name="other_launcher">اخفاء الايقونه في الشاشه الرئيسيه</string>
+  <string name="other_launcher_description">لن يمكن الوصول إلى الإعدادات إلا من خلال منتقي الخلفية الحية لنظامك</string>
+  <string name="other_theme">سمه التطبيق</string>
+  <string name="other_theme_description">جرب شكل آخر</string>
+  <string name="other_theme_auto">تلقائي</string>
+  <string name="other_theme_light">فاتح</string>
+  <string name="other_theme_dark">داكن</string>
+  <string name="other_reset">استعاده الاعدادات</string>
+  <string name="other_reset_description"> عند إلغاء التثبيت ، لأن التفضيلات مخزنة في مكان خاص حيث يجب أن تكون متاحة مباشرة بعد بدء تشغيل الجهاز</string>
+
+  <!-- ABOUT -->
+
+  <string name="about_title">عن</string>
+  <string name="about_description">معلومات عن المطور</string>
+  <string name="about_version">الاصدار</string>
+  <string name="about_changelog">التغيير</string>
+  <string name="about_changelog_description">ما الجديد</string>
+  <string name="about_developer">المطور</string>
+  <string name="about_vending_description">المزيد من التطبيقات لهذا المطور</string>
+  <string name="about_github_description">مصدر الرمز</string>
+  <string name="about_translation_description">ساعد في ترجمة doodle</string>
+
+  <!-- MESSAGES -->
+
+  <string name="msg_feedback">يتطلب التطبيق الرائع الكثير من الوقت والحيوية من تعليقات المستخدمين هل لديك أي رغبات أو تعليقات أو أسئلة؟  اتصل بي!  سأكون سعيدًا جدًا بمراجعة لطيفة في متجر Play.</string>
+  <string name="msg_share">جرب هذا التطبيق الرائع nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
+  <string name="msg_hide">إخفاء الرمز في المشغل</string>
+  <string name="msg_random">سيتم استخدام جميع التصاميم المختارة</string>
+  <string name="msg_random_warning">تصميم خلفية عشوائي لا يزال نشطًا!</string>
+  <string name="msg_reset">استعاده كل الاعدادات</string>
+  <string name="msg_force_stop">الإيقاف الاجباري مطلوب لتطبيق التغييرات</string>
+  <string name="msg_apply_changes">لتطبيق الخيارات التي تم تغييرها (في النهاية) ، يوصى بإعادة تشغيل خدمة الخلفية قيد التشغيل.  لا يمكن القيام بذلك تلقائيًا. \ n الرجاء فرض إيقاف رسومات الشعار المبتكرة في إعدادات النظام ثم تطبيق رسومات الشعار المبتكرة كخلفية للشاشة مرة أخرى.</string>
+  <string name="msg_apply_changes_monet">على الأجهزة التي تدعم اللون الديناميكي ، يلزم أيضًا إعادة التشغيل لتطبيق ألوان الخلفية المتغيرة على محرك السمات الخاص بالنظام</string>
+  <string name="msg_preview_missing">حدث خطأ ، يرجى تحديد Doodle Live Wallpaper يدويًا</string>
+
   </resources>

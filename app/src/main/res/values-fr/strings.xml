@@ -61,7 +61,6 @@
   <!-- APPEARANCE -->
 
   <string name="appearance_title">Apparence</string>
-  <string name="appearance_description">Style et options du thème</string>
   <string name="appearance_design">Style</string>
   <string name="appearance_design_doodle">Collection de Doodle Pixel 4</string>
   <string name="appearance_design_monet">Collection Material You Pixel 6</string>
@@ -106,20 +105,19 @@
 
   <string name="size_title">Taille de la forme</string>
   <string name="size_description">Échelle et effets de zoom</string>
+  <string name="size_category_zoom">Effet de zoom</string>
   <string name="size_scale">Échelle</string>
   <string name="size_scale_description">Utile pour les grands écrans et les densités élevées</string>
-  <string name="size_category_zoom">Effet de zoom</string>
   <string name="size_zoom">Intensité du zoom</string>
   <string name="size_zoom_description">Lorsqu\'elle est augmentée, la caméra effectue un zoom arrière plus important</string>
+  <string name="size_zoom_rotation">Faire pivoter certaines formes tout en zoomant</string>
+  <string name="size_zoom_rotation_description">Rotation maximale en degrés</string>
   <string name="size_zoom_launcher">Effectuer un zoom arrière lors de l\'ouverture des paramètres rapides ou du tiroir d\'applications</string>
   <string name="size_zoom_system">Utiliser l\'effet de zoom fourni par le système</string>
-  <string name="size_zoom_system_description">Peut corriger l\'animation de zoom saccadée lorsque l\'effet d\'inclinaison est activé</string>
   <string name="size_zoom_unlock">Zoom arrière sur l\'écran de verrouillage</string>
   <string name="size_zoom_unlock_description">Peut être saccadé si l\'effet d\'inclinaison est activé</string>
   <string name="size_zoom_duration">Durée du zoom au déverrouillage</string>
   <string name="size_zoom_duration_description">Diminuer pour une animation plus rapide</string>
-  <string name="size_zoom_rotation">Faire pivoter certaines formes tout en zoomant</string>
-  <string name="size_zoom_rotation_description">Rotation maximale en degrés</string>
 
   <!-- OTHER -->
 

@@ -55,7 +55,6 @@
   <!-- APPEARANCE -->
 
   <string name="appearance_title">Aspect</string>
-  <string name="appearance_description">Design și teme</string>
   <string name="appearance_design">Design</string>
   <string name="appearance_design_doodle">Colecția Pixel 4 Doodle</string>
   <string name="appearance_design_monet">Colecția Pixel 6 Doodle</string>
@@ -94,8 +93,8 @@
   <!-- SIZE -->
 
   <string name="size_title">Mărime forme</string>
-  <string name="size_scale">Mărime</string>
   <string name="size_category_zoom">Efect zoom</string>
+  <string name="size_scale">Mărime</string>
   <string name="size_zoom">Intensitate zoom</string>
   <!-- OTHER -->
 

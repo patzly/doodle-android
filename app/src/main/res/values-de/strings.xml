@@ -62,7 +62,7 @@
   <!-- APPEARANCE -->
 
   <string name="appearance_title">Aussehen</string>
-  <string name="appearance_description">Design &amp; Theme-Optionen</string>
+  <string name="appearance_description">Design &amp; Farboptionen</string>
   <string name="appearance_design">Design</string>
   <string name="appearance_design_doodle">Pixel 4 Doodle-Kollektion</string>
   <string name="appearance_design_monet">Pixel 6 Material-You-Kollektion</string>

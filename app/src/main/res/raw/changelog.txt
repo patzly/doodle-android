@@ -14,6 +14,7 @@ All you have to do is to long-click the app name ;-)
 - Improved: disabled options in parallax section now greyed out
 - Improved: hide system-provided zoom option on non-Android-11 devices as it was removed in Android 12
 - Improved: shape size settings structure and icons
+- Improved: thumbnail for system wallpaper picker
 - Fixed: unchanged text contrast when switching dark mode inside an app
 - Fixed: wrong animation on Android 12+ when app theme or language were changed
 - Fixed: random wallpaper option not working as expected

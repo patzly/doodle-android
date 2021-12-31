@@ -62,7 +62,6 @@
   <!-- APPEARANCE -->
 
   <string name="appearance_title">מראה</string>
-  <string name="appearance_description">עיצוב ואפשרויות ערכת נושא</string>
   <string name="appearance_design">עיצוב</string>
   <string name="appearance_design_doodle">פיקסל 4 קולקציית דודל </string>
   <string name="appearance_design_monet">פיקסל 6 קולקציית מטיריאל ייחודי</string>
@@ -108,20 +107,19 @@
 
   <string name="size_title">גודל הצורה</string>
   <string name="size_description">גודל ואפקט זום</string>
+  <string name="size_category_zoom">אפקט הזום</string>
   <string name="size_scale">גודל</string>
   <string name="size_scale_description">יעיל בשביל מסכים גדולים וצפופים</string>
-  <string name="size_category_zoom">אפקט הזום</string>
   <string name="size_zoom">חוזק הזום</string>
   <string name="size_zoom_description">כשמוגבר,המצלמה עושה יותר זום החוצה</string>
+  <string name="size_zoom_rotation">סיבוב חלק מהצורות בזמן הזום</string>
+  <string name="size_zoom_rotation_description">הטייה מירבית במעלות</string>
   <string name="size_zoom_launcher">זום החוצה כשפותחים הגדרות מהירות או את מגירת האפליקציות</string>
   <string name="size_zoom_system">שימוש באפקט הזום שמסופק על ידי המערכת</string>
-  <string name="size_zoom_system_description">יכול לתקן אנימציית זום מעוותת כשאפקט ההטיה פועל</string>
   <string name="size_zoom_unlock">זום החוצה במסך נעילה</string>
   <string name="size_zoom_unlock_description">אולי יהיה מעוות במקצת אם אפקט ההטיה פועל</string>
   <string name="size_zoom_duration">פתיחת משך הזום</string>
   <string name="size_zoom_duration_description">הנמיכו בשביל אנימציות מהירות</string>
-  <string name="size_zoom_rotation">סיבוב חלק מהצורות בזמן הזום</string>
-  <string name="size_zoom_rotation_description">הטייה מירבית במעלות</string>
 
   <!-- OTHER -->
 

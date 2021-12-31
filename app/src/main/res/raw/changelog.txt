@@ -17,7 +17,7 @@
 - Fixed: random wallpaper option not working as expected
 - Fixed: hopefully some crashes
 
-Please consider translating this app into your language at Transifex. There are only 117 strings to translate!
+Please consider translating this app into your language at Transifex. There are only 124 strings to translate!
 
 5.0.2:
 - New: Dutch, Indonesian & Italian translations

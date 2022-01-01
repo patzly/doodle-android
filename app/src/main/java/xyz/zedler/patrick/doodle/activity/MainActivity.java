@@ -213,15 +213,14 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 
     binding.fabMain.setRippleColor(
         ColorStateList.valueOf(
-            ResUtil.getColorAttr(this, R.attr.colorOnTertiaryContainer, 0.07f)
+            ResUtil.getColorAttr(this, R.attr.colorOnPrimaryContainer, 0.07f)
         )
     );
 
     ViewUtil.setOnClickListeners(this, binding.fabMain);
 
     if (savedInstanceState == null && bundleInstanceState == null) {
-      showChangelogIfUpdated();
-      showFeedbackAfterSomeUsage();
+      showInitialBottomSheets();
     }
   }
 
@@ -448,7 +447,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     return false;
   }
 
-  private void showChangelogIfUpdated() {
+  private void showInitialBottomSheets() {
+    // Changelog
     int versionNew = BuildConfig.VERSION_CODE;
     int versionOld = sharedPrefs.getInt(PREF.LAST_VERSION, 0);
     if (versionOld == 0) {
@@ -457,9 +457,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
       sharedPrefs.edit().putInt(PREF.LAST_VERSION, versionNew).apply();
       ViewUtil.showBottomSheet(this, new ChangelogBottomSheetDialogFragment());
     }
-  }
 
-  private void showFeedbackAfterSomeUsage() {
+    // Feedback
     int feedbackCount = sharedPrefs.getInt(PREF.FEEDBACK_POP_UP_COUNT, 1);
     if (feedbackCount > 0) {
       if (feedbackCount < 5) {

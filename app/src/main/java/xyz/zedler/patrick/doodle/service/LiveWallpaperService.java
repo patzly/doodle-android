@@ -532,9 +532,9 @@ public class LiveWallpaperService extends WallpaperService {
         // NullPointerException on many devices!?
         try {
           notifyColorsChanged();
-          if (VERSION.SDK_INT < VERSION_CODES.S) {
+          /*if (VERSION.SDK_INT < VERSION_CODES.S) {
             notifyColorsChanged();
-          }
+          }*/
         } catch (Exception e) {
           Log.e(TAG, "colorsHaveChanged", e);
         }

@@ -90,7 +90,7 @@
   <string name="parallax_none">Nessuno</string>
   <string name="parallax_category_tilt">Effetto inclinazione</string>
   <string name="parallax_tilt">Muovi quando il dispositivo viene inclinato</string>
-  <string name="parallax_tilt_description">Usa piu batteria</string>
+  <string name="parallax_tilt_description">Utilizza più batteria</string>
   <string name="parallax_refresh_rate">Frequenza di aggiornamento del sensore inclinazione</string>
   <string name="parallax_refresh_rate_description">Ritardi troppo corti possono rendere lo zoom meno fluido</string>
   <string name="parallax_damping">Riduzione movimento</string>
@@ -104,7 +104,7 @@
   <string name="size_description">Dimensioni &amp; effetto zoom</string>
   <string name="size_category_zoom">Effetto zoom</string>
   <string name="size_scale">Dimensioni</string>
-  <string name="size_scale_description">Utile per schermi piu grandi e densità maggiore</string>
+  <string name="size_scale_description">Utile per schermi più grandi e densità maggiore</string>
   <string name="size_zoom">Intensità zoom</string>
   <string name="size_zoom_description">Quando aumentata, si ingrandisce di più</string>
   <string name="size_zoom_rotation">Ruota delle figure quando ingrandisci </string>

@@ -33,7 +33,7 @@
 
   <!-- LABELS -->
 
-  <string name="label_ms">٪ 1 $ رسالة قصيرة</string>
+  <string name="label_ms">%1$s رسالة قصيرة</string>
   <string name="label_degrees">درجات  \'%1$s\'</string>
 
   <!-- ACTIONS -->

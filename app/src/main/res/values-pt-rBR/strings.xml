@@ -21,7 +21,7 @@
 
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
-  <string name="wallpaper_description">Papeis de parede animados e coloridos com modo noturno automático e animações com eficiência energética. Toque para saber mais.</string>
+  <string name="wallpaper_description">Papéis de parede animados e coloridos com modo noturno automático e animações com eficiência energética. Toque para saber mais.</string>
   <string name="wallpaper_description_picker">Explore uma coleção colorida de formas, refinadas com efeitos suaves de paralaxe e zoom quando você desliza pelas telas iniciais e desbloqueia o telefone.\nPersonalize o papel de parede para combinar com seu próprio estilo.</string>
 
   <!-- TITLES -->
@@ -60,11 +60,11 @@
 
   <!-- APPEARANCE -->
 
-  <string name="appearance_title">Aparencia</string>
+  <string name="appearance_title">Aparência</string>
   <string name="appearance_design">Design</string>
   <string name="appearance_design_doodle">Coleção Doodle de Pixel 4</string>
   <string name="appearance_design_monet">Coleção Material You de Pixel 6</string>
-  <string name="appearance_design_anna">Papeis de parede à l\'Anna Kövecses</string>
+  <string name="appearance_design_anna">Papéis de parede à l\'Anna Kövecses</string>
   <string name="appearance_variant">Variante</string>
   <string name="appearance_night_mode">Modo noturno</string>
   <string name="appearance_night_mode_description">Apenas cores escuras</string>
@@ -111,7 +111,7 @@
   <string name="size_zoom">Intensidade de zoom</string>
   <string name="size_zoom_description">Quando aumentado, a câmera diminui mais o zoom</string>
   <string name="size_zoom_rotation">Rotacionar alguns objetos quando aplicar zoom</string>
-  <string name="size_zoom_rotation_description">Maior angulo de rotação em graus</string>
+  <string name="size_zoom_rotation_description">Maior ângulo de rotação em graus</string>
   <string name="size_zoom_launcher">Diminua o zoom ao abrir as configurações rápidas ou gaveta de aplicativos</string>
   <string name="size_zoom_system">Usar efeito de zoom do sistema</string>
   <string name="size_zoom_unlock">Diminuir o zoom na tela de bloqueio</string>
@@ -138,7 +138,7 @@
   <string name="other_theme_light">Claro</string>
   <string name="other_theme_dark">Escuro</string>
   <string name="other_reset">Redefinir todas as configurações</string>
-  <string name="other_reset_description">Faz mais que somente desinstalar, já que as preferencias são guardadas em um lugar especial para serem acessiveis diretamente depois da inicialização do dispositivo</string>
+  <string name="other_reset_description">Faz mais que somente desinstalar, já que as preferencias são guardadas em um lugar especial para serem acessíveis diretamente depois da inicialização do dispositivo</string>
 
   <!-- ABOUT -->
 

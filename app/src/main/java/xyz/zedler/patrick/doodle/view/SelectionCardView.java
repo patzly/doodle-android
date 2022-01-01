@@ -43,7 +43,7 @@ public class SelectionCardView extends MaterialCardView {
 
     final int outerRadius = SystemUiUtil.dpToPx(context, 16);
     final int outerPadding = SystemUiUtil.dpToPx(context, 16);
-    final int innerSize = SystemUiUtil.dpToPx(context, 42);
+    final int innerSize = SystemUiUtil.dpToPx(context, 48);
     final int strokeWidth = SystemUiUtil.dpToPx(context, 1);
 
     // OUTER CARD (this)

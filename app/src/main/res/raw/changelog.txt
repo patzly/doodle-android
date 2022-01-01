@@ -2,6 +2,7 @@
 All you have to do is to long-click the app name ;-)
 
 - Improved: larger wallpaper design selection thumbnails
+- Fixed: revert a change from the last version that probably caused always-dark status bar on some devices
 - Fixed: some crashes and bugs
 
 Please consider translating this app into your language at Transifex. There are only 124 strings to translate!

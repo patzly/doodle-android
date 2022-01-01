@@ -4,127 +4,21 @@
   id="svg8"
   version="1.1"
   viewBox="0 0 1080 1920">
-  <defs id="defs2">
-    <mask
-      id="mask918"
-      maskUnits="userSpaceOnUse">
-      <path
-        id="path920"
-        fill="#fff"
-        fill-opacity="1"
-        stroke="none"
-        stroke-linecap="butt"
-        stroke-linejoin="miter"
-        stroke-opacity="1"
-        stroke-width=".9"
-        d="M866 299.7c-235.3-79.4-434.6 72-548.5 18-113.8-54 97.4-740.3 704.2-530.4 606.8 209.9 363.6 850.8 233.8 830-129.9-20.7-154.4-238.2-389.6-317.6Z" />
-    </mask>
-    <mask
-      id="mask881"
-      maskUnits="userSpaceOnUse">
-      <path
-        id="path883"
-        fill="#fff"
-        fill-opacity="1"
-        stroke-linecap="round"
-        stroke-width=".2"
-        d="M-882.6 2438.4c-174.6 0-196.5-142-320-265.4-123.4-123.5-265.4-145.4-265.4-320s142-196.5 265.4-320c123.5-123.4 145.4-265.4 320-265.4s196.5 142 320 265.4c123.4 123.5 265.4 145.4 265.4 320s-142 196.5-265.4 320c-123.5 123.4-145.4 265.4-320 265.4z"
-        opacity="1"
-        transform="rotate(10.6 8636 11356.7) scale(1.44805)" />
-    </mask>
-    <mask
-      id="mask1505"
-      maskUnits="userSpaceOnUse">
-      <path
-        id="path1507"
-        fill="#fff"
-        fill-opacity="1"
-        stroke="none"
-        stroke-linecap="butt"
-        stroke-linejoin="miter"
-        stroke-opacity="1"
-        stroke-width="1"
-        d="M-198.7 543c-97.2 68.3-210.3 60-281.9 166.3-71.6 106.3 104 245 275 277.3 171 32.3 330.4-106.3 337.3-224.1 7-117.9-16.3-440.1-330.4-219.5z"
-        opacity="1" />
-    </mask>
-    <mask
-      id="mask873"
-      maskUnits="userSpaceOnUse">
-      <path
-        id="path875"
-        fill="#fff"
-        fill-opacity="1"
-        stroke="none"
-        stroke-dasharray="none"
-        stroke-linecap="butt"
-        stroke-linejoin="miter"
-        stroke-miterlimit="4"
-        stroke-opacity="1"
-        stroke-width="3.6"
-        d="M-1215.8 738.4c-44.4 93.8-160.3 75.4-142.6 147.3 37.4 151.6 596.3 125.7 710-155.6 89-219.8-365.5-494.4-523.1-337.5-129 128.4 28.3 192.4-44.3 345.8z" />
-    </mask>
-    <mask
-      id="mask10543"
-      maskUnits="userSpaceOnUse">
-      <path
-        id="path10545"
-        fill="#fff"
-        fill-opacity="1"
-        stroke="none"
-        stroke-linecap="butt"
-        stroke-linejoin="miter"
-        stroke-opacity="1"
-        stroke-width="1"
-        d="M-305.5 1015.2c185.7 55.8 280.8 233.3 313.2 340.1 32.4 106.8 118.2 198.3 128 263 9.6 64.9 4 181.6-121.3 214-125.4 32.3-291.7 17.7-369.5-8.3-77.8-25.9-205.9-118.5-283.7-283.8-77.7-165.3 10.2-301.2 101-385.5 95.5-88.7 144-166 232.3-139.5z" />
-    </mask>
-    <mask
-      id="mask11501"
-      maskUnits="userSpaceOnUse">
-      <path
-        id="path11503"
-        fill="#fff"
-        fill-opacity="1"
-        stroke="none"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        d="M-739.4 1106.7c-17.6 17.6-49 50-72.1 59.5-23 9.5-68 8.9-93 8.9s-70 .6-93.1-9c-23-9.5-54.5-41.8-72.1-59.4-17.7-17.7-50-49-59.5-72.1-9.5-23-9-68.1-9-93 0-25-.5-70 9-93.1 9.6-23 41.8-54.5 59.5-72.1 17.6-17.7 49-50 72.1-59.5 23-9.6 68-9 93-9s70-.6 93.1 9c23 9.5 54.5 41.8 72.1 59.5 17.7 17.6 50 49 59.5 72 9.5 23.1 9 68.2 9 93.1 0 25 .5 70-9 93-9.6 23.1-41.8 54.5-59.5 72.2z"
-        transform="matrix(.97629 .42585 -.42585 .97629 763 440.7)" />
-    </mask>
-  </defs>
   <rect
     id="rect833"
     width="1080"
     height="1920"
     x="0"
     y="0"
-    fill="#212221"
-    fill-opacity="1"
-    stroke="none"
-    stroke-dasharray="none"
-    stroke-linecap="square"
-    stroke-linejoin="round"
-    stroke-miterlimit="4"
-    stroke-width="0" />
+    fill="#212221" />
   <path
     id="path961"
     fill="#41413f"
-    fill-opacity="1"
-    stroke="none"
-    stroke-linecap="butt"
-    stroke-linejoin="miter"
-    stroke-opacity="1"
-    stroke-width="1"
     d="M224.5 330.1c-308 12.1-662.6 445.5-608.7 822.5 57.6 402.2 1514.3 641.1 1851.7 369.8C1804.9 1251 623.9 385.7 285.3 333.4c-20-3-40.3-4-60.8-3.3z" />
   <path
-    id="path5546"
+    id="quad"
     fill="#545350"
-    fill-opacity="1"
-    stroke="none"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    stroke-width="2"
-    d="M661-362.8c-58.2-.8-113.8 16-171.3 71.1-153.2 147.2-32.7 292-37 504.4-4.2 212.4-130.4 352.3 16.8 505.5 147.1 153.2 292 32.7 504.4 37 212.4 4.2 352.3 130.4 505.5-16.7 153.2-147.2 32.6-292 37-504.4 4.2-212.4 130.4-352.3-16.8-505.5-147.1-153.2-292-32.7-504.4-37-132.7-2.6-237.2-53-334.2-54.4z" />
+    d="M655.14-280.85c-58.24-.85-113.82 15.89-171.27 71.08C330.68-62.61 451.2 82.26 446.93 294.64c-4.26 212.39-130.49 352.31 16.67 505.5 147.16 153.2 292.04 32.68 504.42 36.94 212.38 4.27 352.3 130.5 505.5-16.67 153.19-147.16 32.68-292.04 36.94-504.42 4.26-212.38 130.5-352.3-16.67-505.5-147.16-153.19-292.04-32.67-504.42-36.94-132.74-2.66-237.17-52.97-334.23-54.4z" />
   <path
     id="path859"
     fill="#545350"

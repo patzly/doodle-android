@@ -28,6 +28,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -167,6 +168,9 @@ public class AppearanceFragment extends BaseFragment
 
     setUpDesignSelections();
     randomList = getSharedPrefs().getStringSet(PREF.RANDOM_LIST, DEF.RANDOM_LIST);
+
+    // TODO: If the wallpaper is not applied and the app restarted, the selection is somehow undone
+    // and set to an previous selection which is never stored anymore???
     if (randomWallpaper) {
       refreshDesignSelections();
     }
@@ -338,6 +342,9 @@ public class AppearanceFragment extends BaseFragment
         card.setCardImageResource(wallpaper.getThumbnailResId());
         card.setOnClickListener(v -> {
           if (randomWallpaper) {
+            if (card.isChecked() && randomList.size() == 1) {
+              return;
+            }
             card.setChecked(!card.isChecked());
             if (card.isChecked()) {
               randomList.add(wallpaper.getName());

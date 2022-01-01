@@ -159,12 +159,17 @@ public final class Constants {
   }
 
   public static BaseWallpaper getRandomWallpaper(Set<String> selection, String previous) {
-    String[] wallpapers = selection.toArray(new String[0]);
-    Random randomizer = new Random();
-    BaseWallpaper chosen = getWallpaper(wallpapers[randomizer.nextInt(wallpapers.length)]);
-    if (wallpapers.length > 1) {
-      while (chosen.getName().equals(previous)) {
-        chosen = getWallpaper(wallpapers[randomizer.nextInt(wallpapers.length)]);
+    BaseWallpaper chosen;
+    if (selection.isEmpty()) {
+      chosen = getWallpaper(previous != null && !previous.isEmpty() ? previous : DEF.WALLPAPER);
+    } else {
+      String[] wallpapers = selection.toArray(new String[0]);
+      Random randomizer = new Random();
+      chosen = getWallpaper(wallpapers[randomizer.nextInt(wallpapers.length)]);
+      if (wallpapers.length > 1) {
+        while (chosen.getName().equals(previous)) {
+          chosen = getWallpaper(wallpapers[randomizer.nextInt(wallpapers.length)]);
+        }
       }
     }
     return chosen;

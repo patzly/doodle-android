@@ -55,9 +55,9 @@ public class AlphaModifier implements ParticleModifier {
     } else if (milliseconds > mEndTime) {
       particle.mAlpha = mFinalValue;
     } else {
-      float interpolaterdValue = mInterpolator
+      float interpolatedValue = mInterpolator
           .getInterpolation((milliseconds - mStartTime) * 1f / mDuration);
-      particle.mAlpha = (int) (mInitialValue + mValueIncrement * interpolaterdValue);
+      particle.mAlpha = (int) (mInitialValue + mValueIncrement * interpolatedValue);
     }
   }
 

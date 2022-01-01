@@ -56,7 +56,6 @@
 
   <color name="red_neutral_99">#FFFAFA</color>
   <color name="red_neutral_90">#FBEEED</color>
-  <color name="red_neutral_50">#8f7272</color>
   <color name="red_neutral_20">#362F2F</color>
   <color name="red_neutral_10">#211A1A</color>
 
@@ -98,7 +97,6 @@
 
   <color name="yellow_neutral_99">#FFFCF6</color>
   <color name="yellow_neutral_90">#E5E2D9</color>
-  <color name="yellow_neutral_50">#797869</color>
   <color name="yellow_neutral_20">#31302B</color>
   <color name="yellow_neutral_10">#1C1C16</color>
 
@@ -140,7 +138,6 @@
 
   <color name="green_neutral_99">#FDFDF6</color>
   <color name="green_neutral_90">#E3E3DC</color>
-  <color name="green_neutral_50">#74796E</color>
   <color name="green_neutral_20">#2F312C</color>
   <color name="green_neutral_10">#1A1C18</color>
 
@@ -182,7 +179,6 @@
 
   <color name="blue_neutral_99">#FBFCFF</color>
   <color name="blue_neutral_90">#E1E2E5</color>
-  <color name="blue_neutral_50">#8f7272</color>
   <color name="blue_neutral_20">#2E3133</color>
   <color name="blue_neutral_10">#191C1E</color>
 
@@ -224,7 +220,6 @@
 
   <color name="google_neutral_99">#F2F0F4</color>
   <color name="google_neutral_90">#E4E2E6</color>
-  <color name="google_neutral_50">#8f7272</color>
   <color name="google_neutral_20">#2F3034</color>
   <color name="google_neutral_10">#1B1B1D</color>
 
@@ -266,7 +261,6 @@
 
   <color name="purple_neutral_99">#FFFBFE</color>
   <color name="purple_neutral_90">#E6E1E5</color>
-  <color name="purple_neutral_50">#8f7272</color>
   <color name="purple_neutral_20">#2E3133</color>
   <color name="purple_neutral_10">#1C1B1F</color>
 

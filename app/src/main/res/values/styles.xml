@@ -309,12 +309,6 @@
     <item name="android:breakStrategy" tools:targetApi="m">simple</item>
   </style>
 
-  <style
-    name="Widget.Doodle.TextView.Paragraph.Unjustified"
-    parent="Widget.Doodle.TextView.Paragraph">
-    <item name="android:justificationMode" tools:targetApi="o">none</item>
-  </style>
-
   <style name="Base.Doodle.TextView.Toolbar" parent="Widget.Doodle.TextView">
     <item name="android:textSize">@dimen/m3_sys_typescale_title_large_text_size</item>
     <item name="android:singleLine">true</item>

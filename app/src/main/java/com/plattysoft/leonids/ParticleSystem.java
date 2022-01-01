@@ -22,6 +22,7 @@ package com.plattysoft.leonids;
 import android.animation.Animator;
 import android.animation.Animator.AnimatorListener;
 import android.animation.ValueAnimator;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -34,6 +35,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Interpolator;
 import android.view.animation.LinearInterpolator;
+import androidx.core.content.res.ResourcesCompat;
 import com.plattysoft.leonids.initializers.AccelerationInitializer;
 import com.plattysoft.leonids.initializers.ParticleInitializer;
 import com.plattysoft.leonids.initializers.RotationInitializer;
@@ -163,8 +165,13 @@ public class ParticleSystem {
    * @param timeToLive    The time to live for the particles
    */
   public ParticleSystem(Activity a, int maxParticles, int drawableRedId, long timeToLive) {
-    this(a, maxParticles, a.getResources().getDrawable(drawableRedId), timeToLive,
-        android.R.id.content);
+    this(
+        a,
+        maxParticles,
+        ResourcesCompat.getDrawable(a.getResources(), drawableRedId, null),
+        timeToLive,
+        android.R.id.content
+    );
   }
 
   /**
@@ -179,7 +186,13 @@ public class ParticleSystem {
    */
   public ParticleSystem(Activity a, int maxParticles, int drawableRedId, long timeToLive,
       int parentViewId) {
-    this(a, maxParticles, a.getResources().getDrawable(drawableRedId), timeToLive, parentViewId);
+    this(
+        a,
+        maxParticles,
+        ResourcesCompat.getDrawable(a.getResources(), drawableRedId, null),
+        timeToLive,
+        parentViewId
+    );
   }
 
   /**
@@ -642,6 +655,7 @@ public class ParticleSystem {
     mAnimator.start();
   }
 
+  @SuppressLint("RtlHardcoded")
   private void configureEmitter(View emitter, int gravity) {
     // It works with an emission range
     int[] location = new int[2];

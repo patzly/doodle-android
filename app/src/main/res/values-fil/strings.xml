@@ -21,12 +21,13 @@
 
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
-  <string name="wallpaper_description">Makulay na live wallpapers na may auto dark mode at matipid sa baterya na mga animasyon. I-tap para sa masmadaming impormasyon.</string>
+  <string name="wallpaper_description">Makulay na live wallpapers na may auto dark mode at matipid sa baterya na mga animasyon. I-tap para sa mas madaming impormasyon.</string>
   <string name="wallpaper_description_picker">I-explore ang makulay na koleksyon ng mga hugis, malinis na may malumay na parallax at zoom effects kapag ikaw ay nag-swipe sa iyong home screens at buksan ang iyong device.\nI-Customize ang iyong wallpaper para sa iyong istilo.</string>
 
   <!-- TITLES -->
 
   <string name="title_info">Impormasyon</string>
+  <string name="title_apply_changes">Ilapat ang mga pagbabago</string>
   <string name="title_feedback">Puna</string>
   <string name="title_licenses">Mga lisensya na open source</string>
 
@@ -39,7 +40,13 @@
 
   <string name="action_close">Isara</string>
   <string name="action_back">Bumalik</string>
+  <string name="action_open_link">Buksan ang panlabas na website</string>
+  <string name="action_hide">Itago</string>
   <string name="action_reset">I-reset</string>
+  <string name="action_deactivate">I-deactivate</string>
+  <string name="action_select_all">Piliin lahat</string>
+  <string name="action_continue">Magpatuloy</string>
+  <string name="action_open_app_info">Buksan ang impormasyon ng app</string>
   <string name="action_set">Ilagay ang wallpaper</string>
   <string name="action_send_feedback">Magpadala ng puna</string>
   <string name="action_share">Ibahagi</string>
@@ -50,9 +57,12 @@
   <string name="action_rate_description">Suportahan ang development</string>
   <string name="action_github">Doodle Android sa GitHub</string>
   <string name="action_github_description">Magbukas ang bagong isyu</string>
+  <string name="action_language_select">Pumili ng wika</string>
+
   <!-- APPEARANCE -->
 
   <string name="appearance_title">Hitsura</string>
+  <string name="appearance_description">Disenyo at opsyon sa kulay</string>
   <string name="appearance_design">Disenyo</string>
   <string name="appearance_design_doodle">Koleksyon ng Pixel 4 Doodle</string>
   <string name="appearance_design_monet">Koleksyon ng Pixel 6 Material You</string>
@@ -62,9 +72,105 @@
   <string name="appearance_night_mode_description">Dark na kulay lang</string>
   <string name="appearance_follow_system">Sundan ang system</string>
   <string name="appearance_follow_system_description">Hiramin ang tema ng device</string>
+  <string name="appearance_white_text">Subukang pilitin ang puting text</string>
   <string name="appearance_white_text_description">Maaaring makaapekto sa pagbasa</string>
+  <string name="appearance_random">Random na disenyo ng wallpaper</string>
+  <string name="appearance_random_description">Sa tuwing ang display ay naka-off</string>
+  <string name="appearance_colors">Mga nakuhang kulay</string>
+  <string name="appearance_colors_description">Ginagamit para kalkulahin ang pagkakaiba ng text</string>
+  <string name="appearance_colors_description_dynamic">Ginamit ng theming engine ng system</string>
+  <string name="appearance_colors_primary">Piliin ang pangunahing kulay</string>
+  <string name="appearance_colors_secondary">Pumili ang sekondaryang kulay</string>
+  <string name="appearance_colors_tertiary">Piliin ang tersiyaryang kulay</string>
+  <string name="appearance_colors_info">Sa mga device na walang suporta sa dynamic na kulay (Android 11 o mas mababang bersyon), ang pangunahing kulay lamang ang ginagamit para kalkulahin ang kaibahan ng text sa launcher at pagtinting sa background ng screen ng kamakailang ginamit na mga app.</string>
+  <string name="appearance_colors_info_dynamic">Sa mga device na Android 12 o mas mataas na bersyon at dynamic na suporta sa kulay, ginagamit ang tatlong napiling kulay upang awtomatikong gumawa ng tema ng kulay sa buong system.</string>
+
   <!-- PARALLAX -->
 
   <string name="parallax_title">Parallax</string>
   <string name="parallax_description">Swipe at tilt effect</string>
+  <string name="parallax_touch_wiz">Mukhang ang iyong kasalukuyang launcher ay Samsung TouchWiz, na hindi sinusuportahan ang pag-scroll ng background. Mangyaring sumubok ng ibang launcher upang paganahin ang parallax effect kung hindi mo pinagana ang opsyon ng tilt sensor. Maaari mong balewalain ang babalang ito kung nagtakda ka na ng isa pang launcher bilang default.</string>
+  <string name="parallax_intensity">Lakas ng parallax</string>
+  <string name="parallax_intensity_description">Pahalang na offset sa page swipe at intensidad ng tilt effect </string>
+  <string name="parallax_none">Wala</string>
+  <string name="parallax_category_tilt">Epekto ng pag-tilt</string>
+  <string name="parallax_tilt">Gumalaw kapag itini-tilt ang device</string>
+  <string name="parallax_tilt_description">Kumukunsumo ng mas maraming baterya</string>
+  <string name="parallax_refresh_rate">Refresh rate ng tilt sensor</string>
+  <string name="parallax_refresh_rate_description">Ang masyadong maikling delays ay maaaring magdulot ng lag sa animasyon ng zoom</string>
+  <string name="parallax_damping">Damping ng motion</string>
+  <string name="parallax_damping_description">Bawasan para sa mas maraming smoothness</string>
+  <string name="parallax_threshold">Threshold ng paggalaw</string>
+  <string name="parallax_threshold_description">Dagdagan upang i-pause ang tuluy-tuloy na pag-render sa kabila ng kaunting paggalaw</string>
+
+  <!-- SIZE -->
+
+  <string name="size_title">Sukat ng hugis</string>
+  <string name="size_description">Sukat at epekto ng zoom</string>
+  <string name="size_category_zoom">Epekto ng zoom</string>
+  <string name="size_category_launcher">Zoom ng launcher</string>
+  <string name="size_category_unlock">Zoom ng lockscreen</string>
+  <string name="size_scale">Sukat</string>
+  <string name="size_scale_description">Makatutulong para sa malalaking screen at densidad</string>
+  <string name="size_zoom">Intensidad ng zoom</string>
+  <string name="size_zoom_description">Kapag dinagdagan, ang camera ay mas nagzo-zoom out </string>
+  <string name="size_zoom_rotation">I-rotate ang ilang mga hugis habang nagzo-zoom</string>
+  <string name="size_zoom_rotation_description">Pinakamataas na rotation sa degrees</string>
+  <string name="size_zoom_launcher">I-zoom out kapag binubuksan ang quick settings o app drawer</string>
+  <string name="size_zoom_launcher_description">Maaaring hindi available sa ilang mga device</string>
+  <string name="size_zoom_damping">Damping ng animasyon</string>
+  <string name="size_zoom_damping_description">I-activate at bawasan para sa mas smooth na pag-zoom</string>
+  <string name="size_zoom_system">Gamitin ang system-provided na epekto ng zoom</string>
+  <string name="size_zoom_system_description">Maaaring ayusin ang jerky na animasyon ng zoom kapag ang tilt effect ay naka-on, available lamang sa ilang mga devices</string>
+  <string name="size_zoom_unlock">Mag-zoom out sa lockscreen</string>
+  <string name="size_zoom_unlock_description">Maaaring maging jerky kung ang epekto ng tilt ay naka-on</string>
+  <string name="size_zoom_duration">I-unlock ang tagal ng zoom</string>
+  <string name="size_zoom_duration_description">Bawasan para sa mas mabilis na animasyon</string>
+
+  <!-- OTHER -->
+
+  <string name="other_title">Iba pang mga opsyon</string>
+  <string name="other_description">Pag-render, wika, at pag-reset</string>
+  <string name="other_language">Wika</string>
+  <string name="other_language_description">Maraming salamat sa lahat ng mga boluntaryong tagasalin sa Transifex! Pakibisita ang page ng proyekto sa Github upang malaman kung paano ka makakatulong na gawing available ang Doodle Live Wallpapers para sa iyong wika.</string>
+  <string name="other_language_system">Default ng system:</string>
+  <string name="other_language_not_available">Hindi available</string>
+  <string name="other_gpu">Hardware acceleration</string>
+  <string name="other_gpu_description">I-off kung nag-crash ang wallpaper</string>
+  <string name="other_gpu_info">Ang hardware acceleration ay available lamang para sa Doodle simula sa Android 8. Samakatuwid, ang mga animasyon ng wallpaper ay maaaring medyo ma-lag.</string>
+  <string name="other_launcher">Itago ang icon sa launcher</string>
+  <string name="other_launcher_description">Maa-access lang ang mga setting sa tagapili ng live na wallpaper ng iyong system</string>
+  <string name="other_theme">Color theme ng app</string>
+  <string name="other_theme_description">Subukan ang iba pang anyo</string>
+  <string name="other_theme_auto">Auto</string>
+  <string name="other_theme_light">Liwanag</string>
+  <string name="other_theme_dark">Madilim</string>
+  <string name="other_reset">I-reset ang lahat ng settings</string>
+  <string name="other_reset_description">Higit pa sa gagawin ng pag-uninstall, dahil ang mga kagustuhan ay nakalagay sa isang espesyal na lugar dahil dapat silang direktang ma-access pagkatapos ng pag-start ng device</string>
+
+  <!-- ABOUT -->
+
+  <string name="about_title">Tungkol sa...</string>
+  <string name="about_description">Impormasyon tungkol sa developer at marami pang iba</string>
+  <string name="about_version">Bersyon</string>
+  <string name="about_changelog">Changelog</string>
+  <string name="about_changelog_description">Anong bago?</string>
+  <string name="about_developer">Nag-develop</string>
+  <string name="about_vending_description">Higit pang mga app ng developer</string>
+  <string name="about_github_description">Source code</string>
+  <string name="about_translation_description">Tulungang i-translate ang Doodle</string>
+
+  <!-- MESSAGES -->
+
+  <string name="msg_feedback">Ang isang mahusay na app ay nangangailangan ng maraming oras at buhay mula sa feedback ng mga gumagamit nito. Mayroon ka bang anumang mga nais, komento o tanong? Makipag-ugnayan sa akin! Kung hindi, matutuwa ako tungkol sa isang magandang pagsusuri sa Play Store.</string>
+  <string name="msg_share">Tingnan ang cool na live wallpaper app na ito: \nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
+  <string name="msg_hide">Itago ang icon sa launcher?</string>
+  <string name="msg_random">Gagamitin ang lahat ng napiling disenyo</string>
+  <string name="msg_random_warning">Ang random na disenyo ng wallpaper ay nanatiling aktibo!</string>
+  <string name="msg_reset">I-reset ang lahat ng settings?</string>
+  <string name="msg_force_stop">Kailangan ng forced stop upang ilapat ang lahat ng mga pagbabago</string>
+  <string name="msg_apply_changes">Upang mailapat (sa kalaunan) ang mga nabago na mga opsyon, inirerekomenda ang pag-restart ng tumatakbong wallpaper service. Hindi ito awtomatikong magagawa. Mangyaring i-force-stop ang Doodle sa iyong system settings at pagkatapos ay ilapat muli ang Doodle bilang iyong wallpaper.</string>
+  <string name="msg_apply_changes_monet">Sa mga device na mayroong suporta sa dynamic na kulay, kinakailangan din ang pag-restart upang ilapat ang mga binagong kulay ng wallpaper sa theming engine ng system.</string>
+  <string name="msg_preview_missing">May naganap na error, mangyaring piliin nang manu-mano ang Doodle Live Wallpaper</string>
+
   </resources>

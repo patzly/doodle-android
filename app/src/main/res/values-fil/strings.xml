@@ -52,7 +52,7 @@
   <string name="action_share">Ibahagi</string>
   <string name="action_share_description">Sabihin sa iyong mga kaibigan tungkol sa Doodle</string>
   <string name="action_email">Magpadala ng e-mail</string>
-  <string name="action_email_description">Makipag-ugnay sa nag-develop</string>
+  <string name="action_email_description">Makipag-ugnayan sa nag-develop</string>
   <string name="action_rate">I-rate sa Google Play</string>
   <string name="action_rate_description">Suportahan ang development</string>
   <string name="action_github">Doodle Android sa GitHub</string>

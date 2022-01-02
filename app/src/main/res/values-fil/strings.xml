@@ -56,7 +56,7 @@
   <string name="action_rate">I-rate sa Google Play</string>
   <string name="action_rate_description">Suportahan ang development</string>
   <string name="action_github">Doodle Android sa GitHub</string>
-  <string name="action_github_description">Magbukas ang bagong isyu</string>
+  <string name="action_github_description">Magbukas ng bagong isyu</string>
   <string name="action_language_select">Pumili ng wika</string>
 
   <!-- APPEARANCE -->

@@ -22,7 +22,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
   <string name="wallpaper_description">Makulay na live wallpapers na may auto dark mode at matipid sa baterya na mga animasyon. I-tap para sa mas madaming impormasyon.</string>
-  <string name="wallpaper_description_picker">I-explore ang makulay na koleksyon ng mga hugis, malinis na may malumay na parallax at zoom effects kapag ikaw ay nag-swipe sa iyong home screens at buksan ang iyong device.\nI-Customize ang iyong wallpaper para sa iyong istilo.</string>
+  <string name="wallpaper_description_picker">Tuklasin ang makulay na koleksyon ng mga hugis, malinis na may malumay na parallax at zoom effects kapag ikaw ay nag-swipe sa iyong home screens at buksan ang iyong device.\nI-Customize ang iyong wallpaper para sa iyong istilo.</string>
 
   <!-- TITLES -->
 

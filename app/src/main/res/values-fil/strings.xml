@@ -78,7 +78,7 @@
   <string name="appearance_random_description">Sa tuwing ang display ay naka-off</string>
   <string name="appearance_colors">Mga nakuhang kulay</string>
   <string name="appearance_colors_description">Ginagamit para kalkulahin ang pagkakaiba ng text</string>
-  <string name="appearance_colors_description_dynamic">Ginamit ng theming engine ng system</string>
+  <string name="appearance_colors_description_dynamic">Ginagamit ng theming engine ng system</string>
   <string name="appearance_colors_primary">Piliin ang pangunahing kulay</string>
   <string name="appearance_colors_secondary">Pumili ang sekondaryang kulay</string>
   <string name="appearance_colors_tertiary">Piliin ang tersiyaryang kulay</string>

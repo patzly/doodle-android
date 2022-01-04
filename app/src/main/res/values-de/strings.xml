@@ -108,7 +108,7 @@
   <string name="size_title">Größe der Formen</string>
   <string name="size_description">Skalierung &amp; Zoom-Effekt</string>
   <string name="size_category_zoom">Zoom-Effekt</string>
-  <string name="size_category_launcher">Zoom auf dem Homescreen</string>
+  <string name="size_category_launcher">Zoom auf Startbildschirm</string>
   <string name="size_category_unlock">Zoom auf Sperrbildschirm</string>
   <string name="size_scale">Skalierung</string>
   <string name="size_scale_description">Nützlich für große Displays und Auflösungen</string>

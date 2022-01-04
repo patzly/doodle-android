@@ -21,12 +21,15 @@ package xyz.zedler.patrick.doodle.view;
 
 import android.content.Context;
 import android.content.res.ColorStateList;
+import android.graphics.drawable.Drawable;
 import android.graphics.drawable.LayerDrawable;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
+import androidx.core.content.res.ResourcesCompat;
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.elevation.SurfaceColors;
 import xyz.zedler.patrick.doodle.R;
@@ -37,6 +40,7 @@ import xyz.zedler.patrick.doodle.util.ViewUtil;
 public class SelectionCardView extends MaterialCardView {
 
   private final MaterialCardView innerCard;
+  private final FrameLayout innerFrame;
 
   public SelectionCardView(Context context) {
     super(context);
@@ -44,7 +48,6 @@ public class SelectionCardView extends MaterialCardView {
     final int outerRadius = SystemUiUtil.dpToPx(context, 16);
     final int outerPadding = SystemUiUtil.dpToPx(context, 16);
     final int innerSize = SystemUiUtil.dpToPx(context, 48);
-    final int strokeWidth = SystemUiUtil.dpToPx(context, 1);
 
     // OUTER CARD (this)
 
@@ -67,8 +70,8 @@ public class SelectionCardView extends MaterialCardView {
     setCheckable(true);
     setCheckedIconResource(R.drawable.shape_selection_check);
     setCheckedIconTint(null);
-    setCheckedIconSize(innerSize - strokeWidth * 2);
-    setCheckedIconMargin(outerPadding + strokeWidth);
+    setCheckedIconSize(innerSize);
+    setCheckedIconMargin(outerPadding);
 
     // INNER CARD
 
@@ -76,9 +79,18 @@ public class SelectionCardView extends MaterialCardView {
     innerCard = new MaterialCardView(context);
     innerCard.setLayoutParams(innerParams);
     innerCard.setRadius(innerSize / 2f);
-    innerCard.setStrokeWidth(strokeWidth);
-    innerCard.setStrokeColor(ResUtil.getColorAttr(context, R.attr.colorOutline));
+    innerCard.setStrokeWidth(0);
     innerCard.setCheckable(false);
+
+    // We add the stroke manually because the card stroke is not exactly 1dp like dividers
+    innerFrame = new FrameLayout(getContext());
+    innerFrame.setLayoutParams(
+        new ViewGroup.LayoutParams(
+            ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT
+        )
+    );
+    innerFrame.addView(getStroke());
+    innerCard.addView(innerFrame);
 
     addView(innerCard);
   }
@@ -101,19 +113,16 @@ public class SelectionCardView extends MaterialCardView {
   }
 
   public void setCardImageResource(@DrawableRes int resId) {
-    ImageView image;
-    if (innerCard.getChildCount() == 0) {
-      image = new ImageView(getContext());
-      image.setLayoutParams(
-          new ViewGroup.LayoutParams(
-              ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT
-          )
-      );
-      innerCard.addView(image);
-    } else {
-      image = (ImageView) innerCard.getChildAt(0);
-    }
+    innerFrame.removeAllViews();
+    ImageView image = new ImageView(getContext());
+    image.setLayoutParams(
+        new ViewGroup.LayoutParams(
+            ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT
+        )
+    );
     image.setImageResource(resId);
+    innerFrame.addView(image);
+    innerFrame.addView(getStroke());
   }
 
   public void startCheckedIcon() {
@@ -129,5 +138,22 @@ public class SelectionCardView extends MaterialCardView {
 
   public void setOuterCardBackgroundColor(int color) {
     super.setCardBackgroundColor(color);
+  }
+
+  private ImageView getStroke() {
+    ImageView stroke = new ImageView(getContext());
+    stroke.setLayoutParams(
+        new ViewGroup.LayoutParams(
+            ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT
+        )
+    );
+    Drawable drawable = ResourcesCompat.getDrawable(
+        getResources(), R.drawable.shape_selection_card_stroke, null
+    );
+    if (drawable != null) {
+      drawable.setTint(ResUtil.getColorAttr(getContext(), R.attr.colorOutline));
+    }
+    stroke.setImageDrawable(drawable);
+    return stroke;
   }
 }

@@ -253,7 +253,7 @@ public class ScrollBehavior {
       return;
     }
     if (Build.VERSION.SDK_INT >= 31) {
-      scrollView.setOverScrollMode(View.OVER_SCROLL_IF_CONTENT_SCROLLS);
+      scrollView.setOverScrollMode(View.OVER_SCROLL_ALWAYS);
     } else {
       scrollView.setOverScrollMode(mode);
     }

@@ -31,6 +31,8 @@
   <string name="title_feedback">Păreri</string>
   <string name="title_licenses">Licențe open source</string>
 
+  <string name="label_degrees">%1$s grade</string>
+
   <!-- ACTIONS -->
 
   <string name="action_close">Închide</string>
@@ -38,6 +40,8 @@
   <string name="action_open_link">Deschide în website</string>
   <string name="action_hide">Ascunde</string>
   <string name="action_reset">Reset</string>
+  <string name="action_deactivate">Dezactivează</string>
+  <string name="action_select_all">Selectează tot.</string>
   <string name="action_continue">Continuă</string>
   <string name="action_open_app_info">Deschide informații despre aplicație</string>
   <string name="action_set">Setează wallpaper-ul</string>
@@ -55,6 +59,7 @@
   <!-- APPEARANCE -->
 
   <string name="appearance_title">Aspect</string>
+  <string name="appearance_description">Design și opțiuni de culoare</string>
   <string name="appearance_design">Design</string>
   <string name="appearance_design_doodle">Colecția Pixel 4 Doodle</string>
   <string name="appearance_design_monet">Colecția Pixel 6 Doodle</string>
@@ -89,16 +94,25 @@
   <string name="parallax_tilt_description">Consumă mai multă baterie</string>
   <string name="parallax_refresh_rate">Rata de refresh a senzorului de înclinare</string>
   <string name="parallax_refresh_rate_description">Întrârzierile scurte pot face animația să decaleze</string>
+  <string name="parallax_damping">Amortizarea mișcării</string>
   <string name="parallax_damping_description">Scade pentru o fluiditate mai mare</string>
+  <string name="parallax_threshold">Pragul de mișcare</string>
   <!-- SIZE -->
 
   <string name="size_title">Mărime forme</string>
   <string name="size_category_zoom">Efect zoom</string>
+  <string name="size_category_launcher">Zoom în launcher</string>
+  <string name="size_category_unlock">Zoom în ecranul de blocare</string>
   <string name="size_scale">Mărime</string>
   <string name="size_zoom">Intensitate zoom</string>
+  <string name="size_zoom_unlock">Zoom out în ecranul de pornire</string>
+  <string name="size_zoom_duration">Deblochează durata zoom-ului</string>
+  <string name="size_zoom_duration_description">Scade pentru o animație mai rapidă</string>
+
   <!-- OTHER -->
 
   <string name="other_title">Alte opțiuni</string>
+  <string name="other_description">Randare, limbă și resetare</string>
   <string name="other_language">Limbă</string>
   <string name="other_language_not_available">Nu este valabil</string>
   <string name="other_gpu">Accelerare hardware</string>
@@ -115,6 +129,7 @@
   <string name="about_title">Despre</string>
   <string name="about_description">Informații dezvoltator și mai multe</string>
   <string name="about_version">Versiune</string>
+  <string name="about_changelog">Lista cu noutăți</string>
   <string name="about_changelog_description">Ce este nou?</string>
   <string name="about_developer">Dezvoltator</string>
   <string name="about_vending_description">Mai multe aplicații de la dezvoltator</string>

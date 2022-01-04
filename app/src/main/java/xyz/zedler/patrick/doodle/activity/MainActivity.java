@@ -69,7 +69,6 @@ import xyz.zedler.patrick.doodle.fragment.dialog.ApplyBottomSheetDialogFragment;
 import xyz.zedler.patrick.doodle.fragment.dialog.ChangelogBottomSheetDialogFragment;
 import xyz.zedler.patrick.doodle.fragment.dialog.FeedbackBottomSheetDialogFragment;
 import xyz.zedler.patrick.doodle.service.LiveWallpaperService;
-import xyz.zedler.patrick.doodle.util.ConfettiUtil;
 import xyz.zedler.patrick.doodle.util.HapticUtil;
 import xyz.zedler.patrick.doodle.util.LocaleUtil;
 import xyz.zedler.patrick.doodle.util.PrefsUtil;
@@ -467,10 +466,6 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         ViewUtil.showBottomSheet(this, new FeedbackBottomSheetDialogFragment());
       }
     }
-  }
-
-  public void explode() {
-    ConfettiUtil.explode(this, binding.viewMainEmitter);
   }
 
   public boolean isTouchWiz() {

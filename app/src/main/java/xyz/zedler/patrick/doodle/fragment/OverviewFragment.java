@@ -107,11 +107,6 @@ public class OverviewFragment extends BaseFragment implements OnClickListener {
         }
       });
     }
-    binding.appBarOverview.setOnLongClickListener(v -> {
-      activity.explode();
-      performHapticHeavyClick();
-      return true;
-    });
 
     ViewUtil.setOnClickListeners(
         this,

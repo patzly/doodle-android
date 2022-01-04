@@ -43,11 +43,4 @@
     app:layout_anchor="@id/fragment_main_nav_host"
     app:layout_anchorGravity="bottom|center_horizontal" />
 
-  <View
-    android:id="@+id/view_main_emitter"
-    android:layout_width="1dp"
-    android:layout_height="1dp"
-    android:layout_gravity="center_horizontal|bottom"
-    android:translationY="16dp" />
-
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

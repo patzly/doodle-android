@@ -27,6 +27,7 @@ import androidx.preference.PreferenceManager;
 import java.util.Objects;
 import xyz.zedler.patrick.doodle.Constants.DEF;
 import xyz.zedler.patrick.doodle.Constants.PREF;
+import xyz.zedler.patrick.doodle.drawable.SvgDrawable;
 
 public class PrefsUtil {
 
@@ -65,7 +66,7 @@ public class PrefsUtil {
     // size is stored in a new way
     if (sharedPrefs.contains(PREF.SCALE)) {
       try {
-        sharedPrefs.getFloat(PREF.SCALE, DEF.SCALE);
+        sharedPrefs.getFloat(PREF.SCALE, SvgDrawable.getDefaultScale(context));
       } catch (Exception e) {
         removePreference(PREF.SCALE);
       }

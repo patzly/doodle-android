@@ -492,7 +492,9 @@ public class LiveWallpaperService extends WallpaperService {
         isListenerRegistered = false;
       }
 
-      scale = sharedPrefs.getFloat(PREF.SCALE, DEF.SCALE);
+      scale = sharedPrefs.getFloat(
+          PREF.SCALE, SvgDrawable.getDefaultScale(LiveWallpaperService.this)
+      );
       if (svgDrawable != null) {
         svgDrawable.setScale(scale);
       }

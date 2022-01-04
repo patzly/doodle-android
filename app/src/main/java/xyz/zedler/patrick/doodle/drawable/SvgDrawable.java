@@ -43,11 +43,13 @@ import androidx.annotation.RawRes;
 import androidx.core.graphics.ColorUtils;
 import java.io.IOException;
 import java.io.InputStream;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
+import xyz.zedler.patrick.doodle.Constants.DEF;
 import xyz.zedler.patrick.doodle.parser.PathParser;
 import xyz.zedler.patrick.doodle.util.SystemUiUtil;
 
@@ -73,7 +75,7 @@ public class SvgDrawable {
   private final Random random;
 
   public SvgDrawable(Context context, @RawRes int resId) {
-    pixelUnit = SystemUiUtil.dpToPx(context, 1) * 0.33f;
+    pixelUnit = getPixelUnit(context);
 
     objects = new ArrayList<>();
     ids = new ArrayList<>();
@@ -95,6 +97,10 @@ public class SvgDrawable {
     paintDebug.setStyle(Style.STROKE);
     paintDebug.setStrokeCap(Cap.ROUND);
     paintDebug.setColor(Color.CYAN);
+  }
+
+  private static float getPixelUnit(Context context) {
+    return SystemUiUtil.dpToPx(context, 1) * 0.33f;
   }
 
   @Nullable
@@ -181,6 +187,27 @@ public class SvgDrawable {
       } else {
         object.zoomRotation = 0;
       }
+    }
+  }
+
+  public static float getDefaultScale(Context context) {
+    try {
+      int screenWidth = SystemUiUtil.getDisplayWidth(context);
+      int screenHeight = SystemUiUtil.getDisplayHeight(context);
+      float displayWidth = Math.min(screenWidth, screenHeight);
+      Log.i(TAG, "getDefaultScale: displayWidth = " + displayWidth);
+      float circleWidth = 300 * getPixelUnit(context);
+      Log.i(TAG, "getDefaultScale: circleWidth = " + circleWidth);
+      float currentRatio = circleWidth / displayWidth;
+      Log.i(TAG, "getDefaultScale: currentRatio = " + currentRatio);
+      float originalRatio = 0.2777f;
+      float scale = (1 - (currentRatio / originalRatio)) + 1.2f;
+      Log.i(TAG, "getDefaultScale: scale = " + scale);
+      return BigDecimal.valueOf(scale).setScale(
+          1, BigDecimal.ROUND_HALF_DOWN
+      ).floatValue();
+    } catch (Exception e) {
+      return DEF.SCALE;
     }
   }
 

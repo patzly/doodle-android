@@ -39,6 +39,7 @@ import xyz.zedler.patrick.doodle.activity.MainActivity;
 import xyz.zedler.patrick.doodle.behavior.ScrollBehavior;
 import xyz.zedler.patrick.doodle.behavior.SystemBarBehavior;
 import xyz.zedler.patrick.doodle.databinding.FragmentSizeBinding;
+import xyz.zedler.patrick.doodle.drawable.SvgDrawable;
 import xyz.zedler.patrick.doodle.util.ResUtil;
 import xyz.zedler.patrick.doodle.util.ViewUtil;
 
@@ -97,7 +98,9 @@ public class SizeFragment extends BaseFragment
       }
     });
 
-    binding.sliderSizeScale.setValue(getSharedPrefs().getFloat(PREF.SCALE, DEF.SCALE) * 10);
+    binding.sliderSizeScale.setValue(
+        getSharedPrefs().getFloat(PREF.SCALE, SvgDrawable.getDefaultScale(activity)) * 10
+    );
     binding.sliderSizeScale.addOnChangeListener(this);
     binding.sliderSizeScale.setLabelFormatter(value -> {
       float scale = value / 10f;

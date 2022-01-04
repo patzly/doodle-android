@@ -1,5 +1,6 @@
 5.1.1:
 - Improved: wallpaper design selection thumbnails
+- Improved: default shape scale now based on display size and density
 - Fixed: revert a change from last version that probably caused always-dark status bar on some devices
 - Fixed: some crashes and bugs
 

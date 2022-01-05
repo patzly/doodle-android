@@ -60,6 +60,7 @@ import xyz.zedler.patrick.doodle.Constants.USER_PRESENCE;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.drawable.SvgDrawable;
 import xyz.zedler.patrick.doodle.util.PrefsUtil;
+import xyz.zedler.patrick.doodle.util.SensorUtil;
 import xyz.zedler.patrick.doodle.wallpaper.BaseWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.BaseWallpaper.WallpaperVariant;
 
@@ -243,6 +244,7 @@ public class LiveWallpaperService extends WallpaperService {
     private int zoomDuration;
     private int dampingTilt, dampingZoom;
     private boolean useZoomDamping;
+    private boolean hasAccelerometer;
     private boolean isTiltEnabled;
     private float tiltX, tiltY;
     private int screenRotation;
@@ -319,6 +321,8 @@ public class LiveWallpaperService extends WallpaperService {
 
       // Load this only once on creation, else it would cause a crash caused by OpenGL
       useGpu = sharedPrefs.getBoolean(PREF.GPU, DEF.GPU);
+
+      hasAccelerometer = SensorUtil.hasAccelerometer(LiveWallpaperService.this);
 
       loadSettings();
       loadTheme(useRandom);
@@ -467,21 +471,21 @@ public class LiveWallpaperService extends WallpaperService {
       dampingZoom = sharedPrefs.getInt(PREF.DAMPING_ZOOM, DEF.DAMPING_ZOOM);
       useZoomDamping = sharedPrefs.getBoolean(PREF.USE_ZOOM_DAMPING, DEF.USE_ZOOM_DAMPING);
       tiltThreshold = sharedPrefs.getInt(PREF.THRESHOLD, DEF.THRESHOLD);
-      if (isTiltEnabled && !isListenerRegistered) {
+      if (hasAccelerometer && isTiltEnabled && !isListenerRegistered) {
         sensorManager.registerListener(
             sensorListener,
-            sensorManager.getSensorList(Sensor.TYPE_ACCELEROMETER).get(0),
+            SensorUtil.getAccelerometer(LiveWallpaperService.this),
             // SENSOR_DELAY_GAME = 20000
             // SENSOR_DELAY_UI = 66667
             sharedPrefs.getInt(PREF.REFRESH_RATE, DEF.REFRESH_RATE)
         );
         isListenerRegistered = true;
-      } else if (isTiltEnabled) {
+      } else if (hasAccelerometer && isTiltEnabled) {
         sensorManager.unregisterListener(sensorListener);
         isListenerRegistered = false;
         sensorManager.registerListener(
             sensorListener,
-            sensorManager.getSensorList(Sensor.TYPE_ACCELEROMETER).get(0),
+            SensorUtil.getAccelerometer(LiveWallpaperService.this),
             // SENSOR_DELAY_GAME = 20000
             // SENSOR_DELAY_UI = 66667
             sharedPrefs.getInt(PREF.REFRESH_RATE, DEF.REFRESH_RATE)

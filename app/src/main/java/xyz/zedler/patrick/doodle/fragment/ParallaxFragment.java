@@ -40,6 +40,7 @@ import xyz.zedler.patrick.doodle.behavior.ScrollBehavior;
 import xyz.zedler.patrick.doodle.behavior.SystemBarBehavior;
 import xyz.zedler.patrick.doodle.databinding.FragmentParallaxBinding;
 import xyz.zedler.patrick.doodle.util.ResUtil;
+import xyz.zedler.patrick.doodle.util.SensorUtil;
 import xyz.zedler.patrick.doodle.util.ViewUtil;
 
 public class ParallaxFragment extends BaseFragment
@@ -113,6 +114,10 @@ public class ParallaxFragment extends BaseFragment
         return String.valueOf((int) value);
       }
     });
+
+    binding.linearParallaxTiltContainer.setVisibility(
+        SensorUtil.hasAccelerometer(activity) ? View.VISIBLE : View.GONE
+    );
 
     binding.switchParallaxTilt.setChecked(getSharedPrefs().getBoolean(PREF.TILT, DEF.TILT));
 

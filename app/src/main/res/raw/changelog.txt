@@ -1,6 +1,7 @@
 5.1.1:
 - Improved: wallpaper design selection thumbnails
 - Improved: default shape scale now based on display size and density
+- Improved: hide tilt effect options if device has no acceleration sensor
 - Fixed: revert a change from last version that probably caused always-dark status bar on some devices (hopefully this was the reason)
 - Fixed: some crashes and bugs
 

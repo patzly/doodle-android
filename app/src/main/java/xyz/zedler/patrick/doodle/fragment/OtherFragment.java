@@ -119,10 +119,22 @@ public class OtherFragment extends BaseFragment
 
     setUpThemeSelection();
 
-    binding.linearOtherGpu.setVisibility(
-        Build.VERSION.SDK_INT >= Build.VERSION_CODES.O ? View.VISIBLE : View.GONE
+    ViewUtil.setEnabledAlpha(
+        Build.VERSION.SDK_INT >= Build.VERSION_CODES.O,
+        false,
+        binding.linearOtherGpu
     );
-    binding.switchOtherGpu.setChecked(getSharedPrefs().getBoolean(PREF.GPU, DEF.GPU));
+    ViewUtil.setEnabled(
+        Build.VERSION.SDK_INT >= Build.VERSION_CODES.O,
+        binding.switchOtherGpu
+    );
+    binding.cardOtherGpu.setVisibility(
+        Build.VERSION.SDK_INT >= Build.VERSION_CODES.O ? View.GONE : View.VISIBLE
+    );
+    binding.switchOtherGpu.setChecked(
+        Build.VERSION.SDK_INT >= Build.VERSION_CODES.O
+            && getSharedPrefs().getBoolean(PREF.GPU, DEF.GPU)
+    );
 
     binding.switchOtherLauncher.setChecked(
         activity.getPackageManager().getComponentEnabledSetting(
@@ -168,8 +180,6 @@ public class OtherFragment extends BaseFragment
         binding.switchOtherGpu,
         binding.switchOtherLauncher
     );
-
-    setGpuOptionEnabled(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O);
   }
 
   @SuppressLint("ShowToast")
@@ -353,16 +363,6 @@ public class OtherFragment extends BaseFragment
            0
       );
     }
-  }
-
-  private void setGpuOptionEnabled(boolean enabled) {
-    if (enabled) {
-      binding.linearOtherGpu.setOnClickListener(this);
-    }
-    binding.linearOtherGpu.setEnabled(enabled);
-    binding.switchOtherGpu.setEnabled(enabled);
-    binding.linearOtherGpu.setAlpha(enabled ? 1 : 0.5f);
-    binding.cardOtherGpu.setVisibility(enabled ? View.GONE : View.VISIBLE);
   }
 
   private Bundle getInstanceState() {

@@ -133,7 +133,7 @@
   <string name="other_description">Pag-render, wika, at pag-reset</string>
   <string name="other_language">Wika</string>
   <string name="other_language_description">Maraming salamat sa lahat ng mga boluntaryong tagasalin sa Transifex! Pakibisita ang page ng proyekto sa Github upang malaman kung paano ka makakatulong na gawing available ang Doodle Live Wallpapers para sa iyong wika.</string>
-  <string name="other_language_system">Default ng system:</string>
+  <string name="other_language_system">Default ng system: %1$s</string>
   <string name="other_language_not_available">Hindi available</string>
   <string name="other_gpu">Hardware acceleration</string>
   <string name="other_gpu_description">I-off kung nag-crash ang wallpaper</string>

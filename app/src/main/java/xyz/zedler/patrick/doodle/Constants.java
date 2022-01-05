@@ -19,6 +19,7 @@
 
 package xyz.zedler.patrick.doodle;
 
+import android.util.Log;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Random;
@@ -37,6 +38,8 @@ import xyz.zedler.patrick.doodle.wallpaper.StoneWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.WaterWallpaper;
 
 public final class Constants {
+
+  private static final String TAG = Constants.class.getSimpleName();
 
   public static final String VARIANT_PREFIX = "variant_";
   public static final String COLOR_PREFIX = "color_";
@@ -164,12 +167,17 @@ public final class Constants {
       chosen = getWallpaper(previous != null && !previous.isEmpty() ? previous : DEF.WALLPAPER);
     } else {
       String[] wallpapers = selection.toArray(new String[0]);
-      Random randomizer = new Random();
-      chosen = getWallpaper(wallpapers[randomizer.nextInt(wallpapers.length)]);
-      if (wallpapers.length > 1) {
-        while (chosen.getName().equals(previous)) {
-          chosen = getWallpaper(wallpapers[randomizer.nextInt(wallpapers.length)]);
+      try {
+        Random randomizer = new Random();
+        chosen = getWallpaper(wallpapers[randomizer.nextInt(wallpapers.length)]);
+        if (wallpapers.length > 1) {
+          while (chosen.getName().equals(previous)) {
+            chosen = getWallpaper(wallpapers[randomizer.nextInt(wallpapers.length)]);
+          }
         }
+      } catch (IllegalArgumentException e) {
+        Log.e(TAG, "getRandomWallpaper: ", e);
+        chosen = getWallpaper(DEF.WALLPAPER);
       }
     }
     return chosen;

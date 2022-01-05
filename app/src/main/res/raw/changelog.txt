@@ -1,4 +1,5 @@
 5.1.1:
+- New: AMOLED app theme (only with one static accent color due to internal reasons)
 - Improved: wallpaper design selection thumbnails
 - Improved: default shape scale now based on display size and density
 - Improved: hide tilt effect options if device has no acceleration sensor

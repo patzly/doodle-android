@@ -269,5 +269,6 @@ public final class Constants {
     public static final String BLUE = "blue";
     public static final String GOOGLE = "google";
     public static final String PURPLE = "purple";
+    public static final String AMOLED = "amoled";
   }
 }

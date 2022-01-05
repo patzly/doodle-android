@@ -22,6 +22,7 @@ package xyz.zedler.patrick.doodle.fragment;
 import android.annotation.SuppressLint;
 import android.content.ComponentName;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -292,7 +293,7 @@ public class OtherFragment extends BaseFragment
   private void setUpThemeSelection() {
     boolean hasDynamic = DynamicColors.isDynamicColorAvailable();
     ViewGroup container = binding.linearOtherThemeContainer;
-    for (int i = hasDynamic ? -1 : 0; i < 6; i++) {
+    for (int i = hasDynamic ? -1 : 0; i < 7; i++) {
       String name;
       int resId;
       if (i == -1) {
@@ -316,6 +317,9 @@ public class OtherFragment extends BaseFragment
       } else if (i == 5) {
         name = THEME.PURPLE;
         resId = R.style.Theme_Doodle_Purple;
+      } else if (i == 6) {
+        name = THEME.AMOLED;
+        resId = R.style.Theme_Doodle_Amoled;
       } else {
         name = THEME.GOOGLE;
         resId = R.style.Theme_Doodle_Google;
@@ -332,6 +336,10 @@ public class OtherFragment extends BaseFragment
           : ResUtil.getColorAttr(
               new ContextThemeWrapper(activity, resId), R.attr.colorPrimaryContainer
           );
+      if (i == 6) {
+        // Amoled theme selection card
+        color = Color.BLACK;
+      }
       card.setCardBackgroundColor(color);
       card.setOnClickListener(v -> {
         if (!card.isChecked()) {

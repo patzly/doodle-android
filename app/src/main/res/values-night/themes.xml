@@ -235,4 +235,40 @@
     <item name="colorOutline">@color/purple_neutral_variant_60</item>
   </style>
 
+  <style name="Theme.Doodle.Amoled" parent="Theme.Doodle">
+    <item name="colorPrimary">@color/google_primary_80</item>
+    <item name="colorOnPrimary">@color/google_primary_20</item>
+    <item name="colorPrimaryContainer">@color/google_primary_30</item>
+    <item name="colorOnPrimaryContainer">@color/google_primary_90</item>
+    <item name="colorPrimaryInverse">@color/google_primary_40</item>
+
+    <item name="colorSecondary">@color/google_secondary_80</item>
+    <item name="colorOnSecondary">@color/google_secondary_20</item>
+    <item name="colorSecondaryContainer">@color/google_secondary_30</item>
+    <item name="colorOnSecondaryContainer">@color/google_secondary_90</item>
+
+    <item name="colorTertiary">@color/blue_tertiary_80</item>
+    <item name="colorOnTertiary">@color/blue_tertiary_20</item>
+    <item name="colorTertiaryContainer">@color/blue_tertiary_30</item>
+    <item name="colorOnTertiaryContainer">@color/blue_tertiary_90</item>
+
+    <item name="colorError">@color/google_error_80</item>
+    <item name="colorOnError">@color/google_error_20</item>
+    <item name="colorErrorContainer">@color/google_error_30</item>
+    <item name="colorOnErrorContainer">@color/google_error_80</item>
+
+    <item name="android:colorBackground">@color/black</item>
+    <item name="colorOnBackground">@color/google_neutral_90</item>
+
+    <item name="colorSurface">@color/black</item>
+    <item name="colorOnSurface">@color/google_neutral_90</item>
+    <item name="colorSurfaceInverse">@color/google_neutral_90</item>
+    <item name="colorOnSurfaceInverse">@color/google_neutral_20</item>
+
+    <item name="colorSurfaceVariant">@color/google_neutral_variant_30</item>
+    <item name="colorOnSurfaceVariant">@color/google_neutral_variant_80</item>
+
+    <item name="colorOutline">@color/google_neutral_variant_60</item>
+  </style>
+
 </resources>

@@ -35,7 +35,7 @@ android {
         minSdkVersion 21
         targetSdkVersion 31
         versionCode 35
-        versionName "5.1.1"
+        versionName "5.2.0"
     }
 
     applicationVariants.all { variant ->

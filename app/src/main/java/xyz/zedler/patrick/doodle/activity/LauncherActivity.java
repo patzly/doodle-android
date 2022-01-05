@@ -23,8 +23,11 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.graphics.drawable.LayerDrawable;
 import android.os.Build;
 import android.os.Bundle;
@@ -69,19 +72,31 @@ public class LauncherActivity extends MainActivity {
           .checkForMigrations()
           .getSharedPrefs();
 
-      int mode;
+      // DARK MODE
+
+      int modeNight;
+      int uiMode = getResources().getConfiguration().uiMode;
       switch (sharedPrefs.getInt(PREF.MODE, MODE.AUTO)) {
         case MODE.LIGHT:
-          mode = AppCompatDelegate.MODE_NIGHT_NO;
+          modeNight = AppCompatDelegate.MODE_NIGHT_NO;
+          uiMode = Configuration.UI_MODE_NIGHT_NO;
           break;
         case MODE.DARK:
-          mode = AppCompatDelegate.MODE_NIGHT_YES;
+          modeNight = AppCompatDelegate.MODE_NIGHT_YES;
+          uiMode = Configuration.UI_MODE_NIGHT_YES;
           break;
         default:
-          mode = AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
+          modeNight = AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
           break;
       }
-      AppCompatDelegate.setDefaultNightMode(mode);
+      AppCompatDelegate.setDefaultNightMode(modeNight);
+      // Apply config to resources
+      Resources resBase = getBaseContext().getResources();
+      Configuration configBase = resBase.getConfiguration();
+      configBase.uiMode = uiMode;
+      resBase.updateConfiguration(configBase, resBase.getDisplayMetrics());
+
+      // THEME
 
       switch (sharedPrefs.getString(PREF.THEME, DEF.THEME)) {
         case THEME.RED:
@@ -135,6 +150,38 @@ public class LauncherActivity extends MainActivity {
         startNewMainActivity();
       }
     }
+  }
+
+  @Override
+  protected void attachBaseContext(Context base) {
+    if (Build.VERSION.SDK_INT >= 31) {
+      super.attachBaseContext(base);
+      return;
+    }
+    SharedPreferences sharedPrefs = new PrefsUtil(base).checkForMigrations().getSharedPrefs();
+    // Night mode
+    int modeNight;
+    int uiMode = base.getResources().getConfiguration().uiMode;
+    switch (sharedPrefs.getInt(PREF.MODE, MODE.AUTO)) {
+      case MODE.LIGHT:
+        modeNight = AppCompatDelegate.MODE_NIGHT_NO;
+        uiMode = Configuration.UI_MODE_NIGHT_NO;
+        break;
+      case MODE.DARK:
+        modeNight = AppCompatDelegate.MODE_NIGHT_YES;
+        uiMode = Configuration.UI_MODE_NIGHT_YES;
+        break;
+      default:
+        modeNight = AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
+        break;
+    }
+    AppCompatDelegate.setDefaultNightMode(modeNight);
+    // Apply config to resources
+    Resources resources = base.getResources();
+    Configuration config = resources.getConfiguration();
+    config.uiMode = uiMode;
+    resources.updateConfiguration(config, resources.getDisplayMetrics());
+    super.attachBaseContext(base.createConfigurationContext(config));
   }
 
   private void startNewMainActivity() {

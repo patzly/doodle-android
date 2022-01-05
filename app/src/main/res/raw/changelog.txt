@@ -3,6 +3,7 @@
 - Improved: default shape scale now based on display size and density
 - Improved: hide tilt effect options if device has no acceleration sensor
 - Fixed: revert a change from last version that probably caused always-dark status bar on some devices (hopefully this was the reason)
+- Fixed: app theme dark mode switching on Android 12
 - Fixed: some crashes and bugs
 
 Please consider translating this app into your language at Transifex. There are only 124 strings to translate!

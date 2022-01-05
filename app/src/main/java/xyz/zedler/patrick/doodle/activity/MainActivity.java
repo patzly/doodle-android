@@ -109,30 +109,40 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 
     Locale userLocale = LocaleUtil.getUserLocale(this, sharedPrefs);
     Locale.setDefault(userLocale);
+
+    // NIGHT MODE
+
+    int modeNight;
+    int uiMode = getResources().getConfiguration().uiMode;
+    switch (sharedPrefs.getInt(PREF.MODE, MODE.AUTO)) {
+      case MODE.LIGHT:
+        modeNight = AppCompatDelegate.MODE_NIGHT_NO;
+        uiMode = Configuration.UI_MODE_NIGHT_NO;
+        break;
+      case MODE.DARK:
+        modeNight = AppCompatDelegate.MODE_NIGHT_YES;
+        uiMode = Configuration.UI_MODE_NIGHT_YES;
+        break;
+      default:
+        modeNight = AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
+        break;
+    }
+    AppCompatDelegate.setDefaultNightMode(modeNight);
+
+    // APPLY CONFIG TO RESOURCES
+
     // base
     Resources resBase = getBaseContext().getResources();
     Configuration configBase = resBase.getConfiguration();
     configBase.setLocale(userLocale);
+    configBase.uiMode = uiMode;
     resBase.updateConfiguration(configBase, resBase.getDisplayMetrics());
     // app
     Resources resApp = getApplicationContext().getResources();
     Configuration configApp = resApp.getConfiguration();
     configApp.setLocale(userLocale);
+    // Don't set uiMode here, won't let FOLLOW_SYSTEM apply correctly
     resApp.updateConfiguration(configApp, getResources().getDisplayMetrics());
-
-    int mode;
-    switch (sharedPrefs.getInt(PREF.MODE, MODE.AUTO)) {
-      case MODE.LIGHT:
-        mode = AppCompatDelegate.MODE_NIGHT_NO;
-        break;
-      case MODE.DARK:
-        mode = AppCompatDelegate.MODE_NIGHT_YES;
-        break;
-      default:
-        mode = AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
-        break;
-    }
-    AppCompatDelegate.setDefaultNightMode(mode);
 
     switch (sharedPrefs.getString(PREF.THEME, DEF.THEME)) {
       case THEME.RED:
@@ -270,13 +280,34 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     if (runAsSuperClass) {
       super.attachBaseContext(base);
     } else {
-      Locale userLocale = LocaleUtil.getUserLocale(base);
+      SharedPreferences sharedPrefs = new PrefsUtil(base).checkForMigrations().getSharedPrefs();
+      // Language
+      Locale userLocale = LocaleUtil.getUserLocale(base, sharedPrefs);
       Locale.setDefault(userLocale);
+      // Night mode
+      int modeNight;
+      int uiMode = base.getResources().getConfiguration().uiMode;
+      switch (sharedPrefs.getInt(PREF.MODE, MODE.AUTO)) {
+        case MODE.LIGHT:
+          modeNight = AppCompatDelegate.MODE_NIGHT_NO;
+          uiMode = Configuration.UI_MODE_NIGHT_NO;
+          break;
+        case MODE.DARK:
+          modeNight = AppCompatDelegate.MODE_NIGHT_YES;
+          uiMode = Configuration.UI_MODE_NIGHT_YES;
+          break;
+        default:
+          modeNight = AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
+          break;
+      }
+      AppCompatDelegate.setDefaultNightMode(modeNight);
+      // Apply config to resources
       Resources resources = base.getResources();
-      Configuration configuration = resources.getConfiguration();
-      configuration.setLocale(userLocale);
-      resources.updateConfiguration(configuration, resources.getDisplayMetrics());
-      super.attachBaseContext(base.createConfigurationContext(configuration));
+      Configuration config = resources.getConfiguration();
+      config.setLocale(userLocale);
+      config.uiMode = uiMode;
+      resources.updateConfiguration(config, resources.getDisplayMetrics());
+      super.attachBaseContext(base.createConfigurationContext(config));
     }
   }
 

@@ -35,20 +35,20 @@
           <path
             android:name="path_5"
             android:pathData="M 9 8 C 5.146 8 2 11.146 2 15 C 2 18.854 5.146 22 9 22 C 12.854 22 16 18.854 16 15 C 16 11.146 12.854 8 9 8 Z M 9 10 C 11.773 10 14 12.227 14 15 C 14 17.773 11.773 20 9 20 C 6.227 20 4 17.773 4 15 C 4 12.227 6.227 10 9 10 Z"
-            android:fillColor="#ff2a2a"
+            android:fillColor="#000000"
             android:strokeWidth="1" />
         </group>
       </group>
       <path
         android:name="path_6"
         android:pathData="M 12 5 C 8.146 5 5 8.146 5 12 C 5 15.854 8.146 19 12 19 C 15.854 19 19 15.854 19 12 C 19 8.146 15.854 5 12 5 Z M 12 7 C 14.773 7 17 9.227 17 12 C 17 14.773 14.773 17 12 17 C 9.227 17 7 14.773 7 12 C 7 9.227 9.227 7 12 7 Z"
-        android:fillColor="#800000"
+        android:fillColor="#000000"
         android:strokeWidth="1" />
       <group android:name="group_2">
         <path
           android:name="path_7"
           android:pathData="M 15 2 C 11.146 2 8 5.146 8 9 C 8 12.854 11.146 16 15 16 C 18.854 16 22 12.854 22 9 C 22 5.146 18.854 2 15 2 Z M 15 4 C 17.773 4 20 6.227 20 9 C 20 11.773 17.773 14 15 14 C 12.227 14 10 11.773 10 9 C 10 6.227 12.227 4 15 4 Z"
-          android:fillColor="#e9afaf"
+          android:fillColor="#000000"
           android:strokeWidth="1" />
       </group>
     </vector>

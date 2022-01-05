@@ -57,10 +57,6 @@ public class LocaleUtil {
     }
   }
 
-  public static Locale getUserLocale(Context context) {
-    return getUserLocale(context, new PrefsUtil(context).checkForMigrations().getSharedPrefs());
-  }
-
   public static List<Language> getLanguages(Context context) {
     List<Language> languages = new ArrayList<>();
     String localesRaw = ResUtil.getRawText(context, R.raw.locales);

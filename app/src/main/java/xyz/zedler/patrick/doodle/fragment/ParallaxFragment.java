@@ -20,7 +20,6 @@
 package xyz.zedler.patrick.doodle.fragment;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -55,12 +54,8 @@ public class ParallaxFragment extends BaseFragment
   public View onCreateView(
       @NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState
   ) {
-    try {
-      binding = FragmentParallaxBinding.inflate(inflater, container, false);
-    } catch (Exception e) {
-      // NumberFormatException and NotFoundException on Android 5?
-      Log.e(TAG, "onCreateView: ", e);
-    }
+    // NumberFormatException and NotFoundException on Android 5?
+    binding = FragmentParallaxBinding.inflate(inflater, container, false);
     return binding.getRoot();
   }
 

@@ -125,15 +125,15 @@ public class ResUtil {
   }
 
   public static int getColorBg(Context context) {
-    TypedValue typedValue = new TypedValue();
-    context.getTheme().resolveAttribute(android.R.attr.colorBackground, typedValue, true);
-    return typedValue.data;
+    return getColorAttr(context, android.R.attr.colorBackground);
+  }
+
+  public static int getColorOutline(Context context) {
+    return getColorAttr(context, R.attr.colorOutline);
   }
 
   public static int getColorOutlineSecondary(Context context) {
-    TypedValue typedValue = new TypedValue();
-    context.getTheme().resolveAttribute(R.attr.colorOutline, typedValue, true);
-    return ColorUtils.blendARGB(getColorBg(context), typedValue.data, 0.4f);
+    return getColorAttr(context, R.attr.colorOutline, 0.4f);
   }
 
   public static int getColorHighlight(Context context) {

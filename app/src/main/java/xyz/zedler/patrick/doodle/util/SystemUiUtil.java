@@ -39,14 +39,8 @@ import androidx.annotation.NonNull;
 public class SystemUiUtil {
 
   public static final int SCRIM = 0x55000000;
-  public static final int SCRIM_OPAQUE = 0xFFAAAAAA;
-  public static final int SCRIM_DARK = 0xB31E1F22;
   public static final int SCRIM_DARK_DIALOG = 0xFF0c0c0e;
-  public static final int SCRIM_DARK_DIALOG_DIVIDER = 0xFF202020;
-  public static final int SCRIM_DARK_SURFACE = 0xB3303030;
-  public static final int SCRIM_LIGHT = 0xB3FFFFFF;
   public static final int SCRIM_LIGHT_DIALOG = 0xFF666666;
-  public static final int SCRIM_LIGHT_DIALOG_DIVIDER = 0xFF555555;
 
   public static void layoutEdgeToEdge(Window window) {
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {

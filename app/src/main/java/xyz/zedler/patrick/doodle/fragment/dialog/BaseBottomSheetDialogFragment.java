@@ -33,6 +33,7 @@ import android.view.ViewTreeObserver;
 import android.view.Window;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.graphics.ColorUtils;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat.Type;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
@@ -42,6 +43,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.google.android.material.elevation.SurfaceColors;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.activity.MainActivity;
+import xyz.zedler.patrick.doodle.util.ResUtil;
 import xyz.zedler.patrick.doodle.util.SystemUiUtil;
 import xyz.zedler.patrick.doodle.util.ViewUtil;
 
@@ -225,6 +227,8 @@ public class BaseBottomSheetDialogFragment extends BottomSheetDialogFragment {
         SystemUiUtil.isOrientationPortrait(requireContext()) || insetBottom > 0;
     boolean isDarkModeActive = SystemUiUtil.isDarkModeActive(requireContext());
 
+    int colorScrim = ColorUtils.setAlphaComponent(backgroundColor, (int) (0.7f * 255));
+
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) { // 29
       window.setStatusBarColor(Color.TRANSPARENT);
       if (SystemUiUtil.isNavigationModeGesture(requireContext())) {
@@ -233,50 +237,30 @@ public class BaseBottomSheetDialogFragment extends BottomSheetDialogFragment {
       } else {
         lightNavBar = !isDarkModeActive && isOrientationPortraitOrNavAtBottom;
         if (isOrientationPortraitOrNavAtBottom) {
-          window.setNavigationBarColor(
-              isDarkModeActive
-                  ? SystemUiUtil.SCRIM_DARK_SURFACE
-                  : SystemUiUtil.SCRIM_LIGHT
-          );
+          window.setNavigationBarColor(colorScrim);
         } else {
           window.setNavigationBarColor(
               isDarkModeActive ? SystemUiUtil.SCRIM_DARK_DIALOG : SystemUiUtil.SCRIM_LIGHT_DIALOG
           );
-          window.setNavigationBarDividerColor(
-              isDarkModeActive
-                  ? SystemUiUtil.SCRIM_DARK_DIALOG_DIVIDER
-                  : SystemUiUtil.SCRIM_LIGHT_DIALOG_DIVIDER
-          );
+          window.setNavigationBarDividerColor(ResUtil.getColorOutlineSecondary(activity));
         }
       }
     } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) { // 28
       window.setStatusBarColor(Color.TRANSPARENT);
       lightNavBar = !isDarkModeActive && isOrientationPortraitOrNavAtBottom;
       if (isOrientationPortraitOrNavAtBottom) {
-        window.setNavigationBarColor(
-            isDarkModeActive
-                ? SystemUiUtil.SCRIM_DARK_SURFACE
-                : SystemUiUtil.SCRIM_LIGHT
-        );
+        window.setNavigationBarColor(colorScrim);
       } else {
         window.setNavigationBarColor(
             isDarkModeActive ? SystemUiUtil.SCRIM_DARK_DIALOG : SystemUiUtil.SCRIM_LIGHT_DIALOG
         );
-        window.setNavigationBarDividerColor(
-            isDarkModeActive
-                ? SystemUiUtil.SCRIM_DARK_DIALOG_DIVIDER
-                : SystemUiUtil.SCRIM_LIGHT_DIALOG_DIVIDER
-        );
+        window.setNavigationBarDividerColor(ResUtil.getColorOutlineSecondary(activity));
       }
     } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) { // 26
       window.setStatusBarColor(Color.TRANSPARENT);
       lightNavBar = !isDarkModeActive && isOrientationPortraitOrNavAtBottom;
       if (isOrientationPortraitOrNavAtBottom) {
-        window.setNavigationBarColor(
-            isDarkModeActive
-                ? SystemUiUtil.SCRIM_DARK_SURFACE
-                : SystemUiUtil.SCRIM_LIGHT
-        );
+        window.setNavigationBarColor(colorScrim);
       } else {
         window.setNavigationBarColor(
             isDarkModeActive ? SystemUiUtil.SCRIM_DARK_DIALOG : SystemUiUtil.SCRIM_LIGHT_DIALOG
@@ -284,11 +268,7 @@ public class BaseBottomSheetDialogFragment extends BottomSheetDialogFragment {
       }
     } else  { // down to 21
       if (isOrientationPortraitOrNavAtBottom) {
-        window.setNavigationBarColor(
-            isDarkModeActive
-                ? SystemUiUtil.SCRIM_DARK_SURFACE
-                : SystemUiUtil.SCRIM
-        );
+        window.setNavigationBarColor(isDarkModeActive ? colorScrim : SystemUiUtil.SCRIM);
       } else {
         window.setNavigationBarColor(
             isDarkModeActive ? SystemUiUtil.SCRIM_DARK_DIALOG : SystemUiUtil.SCRIM_LIGHT_DIALOG
@@ -314,9 +294,5 @@ public class BaseBottomSheetDialogFragment extends BottomSheetDialogFragment {
   }
 
   public void applyBottomInset(int bottom) {
-  }
-
-  public int getBackgroundColor() {
-    return backgroundColor;
   }
 }

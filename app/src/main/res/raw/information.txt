@@ -1,24 +1,20 @@
-These live wallpapers are based on the original Doodle live wallpaper collection of the Google Pixel 4, extended with additional wallpapers.
-They are completely rewritten, nothing except the look is taken from the original.
+These live wallpapers are based on the original Doodle live wallpaper collection of the Google Pixel 4, extended with additional (doodle-like) wallpapers from Pixel 6 and Chrome OS.
+They are completely recreated from scratch, nothing except the look is taken from the original.
 
-Advantages over the original:
+<b>Advantages over the original:</b>
 - Permanent animation (when tilting the device) is optional and customizable
 - No battery-hungry 3D engine
-- Additional color variants and more live wallpapers to come
 - Support for Android 11 zoom effect and Android 12 color extraction (Material You)
 - Optional zoom effect when unlocking the device
 - Suitable for less powerful devices with power-efficient and optional animations
 - Improved text contrast (dark text for light themes instead of white text with shadow)
 - Also suitable for larger devices like tablets (scaling option available)
 - Many additional customization options
-- Tiny installation size
 
-If you see no movement, you probably have only one home screen page and tilt effect disabled. Drag an app icon to the right edge to add another page, then swipe between them. Parallax effect only occurs during page swipe or when tilt effect is enabled.
-
-You need to turn on background scrolling in your launcher's settings if you have disabled it before to make parallax effect on page swipe work.
-Some launchers don't support background scrolling at all, like Samsung's TouchWiz. As a solution, please try installing another launcher.
-
-On Samsung devices with Android 11 the zoom effect when you pull down quick settings might be unavailable.
-
-When the option "Move when tilting the device" is turned on, the wallpaper is rendered continuously, which can cause your battery to drain faster.
-Nevertheless the option is implemented battery-friendly: if your device does not move, the continuous rendering is automatically paused (the threshold is adjustable).
+<b>Troubleshooting:</b>
+- Parallax on page swipe doesn't work? You need to turn on background scrolling in your launcher's settings if you have disabled it before.
+- "Set wallpaper" button disappears after applying the wallpaper? You only have to apply it once, select another design in the appearance section to change it.
+- Changed wallpaper colors not updating on Android 12? You need to force-stop Doodle in system settings and apply it as wallpaper again (required everytime colors have changed).
+- Parallax/zoom animations stop after closing Doodle settings? This seems like a bug of MIUI, if you instead apply the wallpaper in your system's wallpaper picker it should work.
+- Wallpaper not applied to lockscreen? Try searching for your device's name and this question on the Internet to get possible answers.
+- You don't want the wallpaper be applied to your lockscreen? That's sadly not possible for live wallpapers.

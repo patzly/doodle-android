@@ -25,6 +25,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -79,7 +80,9 @@ public class TextBottomSheetDialogFragment extends BaseBottomSheetDialogFragment
       binding.toolbarText.setTitleCentered(true);
     }
 
-    binding.textText.setText(ResUtil.getRawText(requireContext(), args.getFile()));
+    String text = ResUtil.getRawText(requireContext(), args.getFile());
+    text = text.replaceAll("\n", "<br/>");
+    binding.textText.setText(Html.fromHtml(text));
 
     return binding.getRoot();
   }

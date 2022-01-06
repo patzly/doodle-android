@@ -62,6 +62,7 @@
   <!-- APPEARANCE -->
 
   <string name="appearance_title">Görünüm</string>
+  <string name="appearance_description">Tasarım &amp; renk seçenekleri</string>
   <string name="appearance_design">Tasarım</string>
   <string name="appearance_design_doodle">Pixel 4 Doodle Koleksiyonu</string>
   <string name="appearance_design_monet">Pixel 6 Material You Koleksiyonu</string>
@@ -107,6 +108,8 @@
   <string name="size_title">Şekil boyutu</string>
   <string name="size_description">Ölçek &amp; Yakınlaştırma efekti</string>
   <string name="size_category_zoom">Yakınlaştırma efekti</string>
+  <string name="size_category_launcher">Başlatıcı yakınlaştırması</string>
+  <string name="size_category_unlock">Kilit ekranı yakınlaştırması</string>
   <string name="size_scale">Ölçek</string>
   <string name="size_scale_description">Büyük ekranlar ve yüksek yoğunluklar için kullanışlı</string>
   <string name="size_zoom">Yakınlaştırma yoğunluğu</string>
@@ -114,7 +117,11 @@
   <string name="size_zoom_rotation">Yakınlaştırma efekti sırasında bazı şekiller hareket eder</string>
   <string name="size_zoom_rotation_description">Derece cinsinden maksimum dönüş </string>
   <string name="size_zoom_launcher">Hızlı erişim menüsü ya da uygulama çekmecesi açıldığında uzaklaştır</string>
+  <string name="size_zoom_launcher_description">Bazı cihazlarda mevcut olmayabilir</string>
+  <string name="size_zoom_damping">Animasyon yumuşatma</string>
+  <string name="size_zoom_damping_description">Daha yumuşak yakınlaştırma efekti için aktif edip azaltın</string>
   <string name="size_zoom_system">Sistem tarafından sağlanan yakınlaştırma efektini kullan</string>
+  <string name="size_zoom_system_description">Eğim efekti etkinken sarsıntılı yakınlaştırma efektini düzeltebilir, sadece bazı cihazlarda kullanılabilir</string>
   <string name="size_zoom_unlock">Kilit ekranında uzaklaş</string>
   <string name="size_zoom_unlock_description">Eğim efekti açıldığında sarsıntılı sonuç verebilir</string>
   <string name="size_zoom_duration">Yakınlaştırma süresinin kilidini aç </string>
@@ -158,6 +165,7 @@
   <string name="msg_feedback">Başarılı bir uygulama çok zaman gerektirir ve kullanıcılarının geri bildirimlerine dayanır.\n\nHerhangi bir dileğiniz, yorumunuz ya da sorunuz var mı? Benimle iletişime geçin!\nAksi takdirde Play Store\'da güzel bir inceleme için çok mutlu olurdum. </string>
   <string name="msg_share">Bu harika canlı duvar kağıdı uygulamasına göz atın:\nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
   <string name="msg_hide">Başlatıcıdaki simge gizlensin mi?</string>
+  <string name="msg_random">Seçili tüm tasarımlar kullanılacak</string>
   <string name="msg_random_warning">Rastgele duvar kağıdı tasarımı hâlâ aktif!</string>
   <string name="msg_reset">Tüm ayarlar sıfırlansın mı?</string>
   <string name="msg_force_stop">Değişiklikleri uygulamak için zorunlu durdurma gerekli</string>

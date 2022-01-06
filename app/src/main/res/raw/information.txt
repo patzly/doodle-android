@@ -2,6 +2,7 @@ These live wallpapers are based on the original Doodle live wallpaper collection
 They are completely recreated from scratch, nothing except the look is taken from the original.
 
 <b>Advantages over the original:</b>
+
 - Permanent animation (when tilting the device) is optional and customizable
 - No battery-hungry 3D engine
 - Support for Android 11 zoom effect and Android 12 color extraction (Material You)
@@ -12,9 +13,21 @@ They are completely recreated from scratch, nothing except the look is taken fro
 - Many additional customization options
 
 <b>Troubleshooting:</b>
-- Parallax on page swipe doesn't work? You need to turn on background scrolling in your launcher's settings if you have disabled it before.
-- "Set wallpaper" button disappears after applying the wallpaper? You only have to apply it once, select another design in the appearance section to change it.
-- Changed wallpaper colors not updating on Android 12? You need to force-stop Doodle in system settings and apply it as wallpaper again (required everytime colors have changed).
-- Parallax/zoom animations stop after closing Doodle settings? This seems like a bug of MIUI, if you instead apply the wallpaper in your system's wallpaper picker it should work.
-- Wallpaper not applied to lockscreen? Try searching for your device's name and this question on the Internet to get possible answers.
-- You don't want the wallpaper be applied to your lockscreen? That's sadly not possible for live wallpapers.
+
+Parallax on page swipe doesn't work?
+You need to turn on background scrolling in your launcher's settings if you have disabled it before.
+
+"Set wallpaper" button disappears after applying the wallpaper?
+You only have to apply it once, select another design in the appearance section to change it.
+
+Changed wallpaper colors not updating on Android 12?
+You need to force-stop Doodle in system settings and apply it as wallpaper again (required everytime colors have changed).
+
+Parallax/zoom animations stop after closing Doodle settings?
+This seems like a bug of MIUI, if you instead apply the wallpaper in your system's wallpaper picker it should work.
+
+Wallpaper not applied to lockscreen?
+Try searching for your device's name and this question on the Internet to get possible answers.
+
+You don't want the wallpaper be applied to your lockscreen?
+That's sadly not possible for live wallpapers.

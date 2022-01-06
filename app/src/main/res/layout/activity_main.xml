@@ -40,7 +40,6 @@
     android:layout_height="wrap_content"
     android:text="@string/action_set"
     android:layout_marginBottom="24dp"
-    app:layout_anchor="@id/fragment_main_nav_host"
-    app:layout_anchorGravity="bottom|center_horizontal" />
+    android:layout_gravity="bottom|center_horizontal" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

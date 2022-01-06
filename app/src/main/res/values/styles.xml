@@ -121,7 +121,7 @@
     <item name="android:layout_marginBottom">8dp</item>
     <item name="contentPadding">16dp</item>
     <item name="cardElevation">0dp</item>
-    <item name="cardCornerRadius">12dp</item>
+    <item name="cardCornerRadius">16dp</item>
     <item name="rippleColor">@color/selector_highlight</item>
   </style>
 

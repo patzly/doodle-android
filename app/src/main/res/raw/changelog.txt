@@ -1,9 +1,9 @@
 5.2.0:
-- New: default shape scale based on display size and density (reset all options to get it)
+- New: default shape scale based on display size and density (reset all options to let Doodle calculate the default shape scale)
 - New: FAQ in info section (tap info card on start page)
 - New: black (AMOLED) app theme (only with one static accent color due to internal reasons)
 - Improved: wallpaper design selection thumbnails
-- Improved: method to determine if wallpaper is currently applied or button should be visible
+- Improved: method to determine if wallpaper is currently applied
 - Improved: tilt effect options hidden if device has no acceleration sensor
 - Improved: system bars appearance for older Android versions
 - Fixed: revert a change from last version that caused always-dark status bar on some devices (hopefully this was the reason)

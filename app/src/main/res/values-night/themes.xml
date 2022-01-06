@@ -260,7 +260,7 @@
     <item name="android:colorBackground">@color/black</item>
     <item name="colorOnBackground">@color/google_neutral_90</item>
 
-    <item name="colorSurface">@color/black</item>
+    <item name="colorSurface">@color/google_neutral_5</item>
     <item name="colorOnSurface">@color/google_neutral_90</item>
     <item name="colorSurfaceInverse">@color/google_neutral_90</item>
     <item name="colorOnSurfaceInverse">@color/google_neutral_20</item>

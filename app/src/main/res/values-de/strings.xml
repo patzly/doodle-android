@@ -153,7 +153,7 @@
   <string name="about_title">Über</string>
   <string name="about_description">Informationen über den Entwickler &amp; mehr</string>
   <string name="about_version">Version</string>
-  <string name="about_changelog">Changelog</string>
+  <string name="about_changelog">Änderungen</string>
   <string name="about_changelog_description">Was ist neu?</string>
   <string name="about_developer">Entwickler</string>
   <string name="about_vending_description">Weitere Apps des Entwicklers</string>

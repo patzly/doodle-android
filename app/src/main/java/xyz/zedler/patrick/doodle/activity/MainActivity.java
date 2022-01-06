@@ -333,10 +333,10 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
   }
 
   private void setFabVisibility(boolean visible, boolean animated) {
-    binding.fabMain.setVisibility(View.VISIBLE);
     if (binding == null) {
       return;
     }
+    binding.fabMain.setVisibility(View.VISIBLE);
     if (animated) {
       binding.fabMain.animate()
           .translationY(visible ? 0 : fabTopEdgeDistance + bottomInset)
@@ -468,7 +468,10 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     ActivityManager manager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
     if (manager != null) {
       for (RunningServiceInfo service : manager.getRunningServices(Integer.MAX_VALUE)) {
-        if (LiveWallpaperService.class.getName().equals(service.service.getClassName())) {
+        if (service == null || service.service == null) {
+          continue;
+        }
+        if (service.service.getClassName().equals(LiveWallpaperService.class.getName())) {
           if (requireMain) {
             return !sharedPrefs.getBoolean(PREF.PREVIEW_RUNNING, false);
           } else {

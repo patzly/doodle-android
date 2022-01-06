@@ -30,4 +30,4 @@ Wallpaper not applied to lockscreen?
 Try searching for your device's name and this question on the Internet to get possible answers.
 
 You don't want the wallpaper be applied to your lockscreen?
-That's sadly not possible for live wallpapers.
+If your device doesn't give you the option to apply it only to your home screen, then this is not possible on your device.

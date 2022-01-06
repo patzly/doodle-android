@@ -37,6 +37,8 @@ import xyz.zedler.patrick.doodle.util.ViewUtil;
 
 public class OverviewFragment extends BaseFragment implements OnClickListener {
 
+  private static final String TAG = OverviewFragment.class.getSimpleName();
+
   private FragmentOverviewBinding binding;
   private MainActivity activity;
   private ViewUtil viewUtilLogo;

@@ -71,6 +71,9 @@ public class LiveWallpaperService extends WallpaperService {
   // All things where we need a context or the service's context are done in this Service class
   // All other things should be done in the inner Engine class
 
+  private static LiveWallpaperService serviceInstance = null;
+  private static UserAwareEngine nonPreviewEngineInstance = null;
+
   private SharedPreferences sharedPrefs;
   // Wallpaper
   private SvgDrawable svgDrawable;
@@ -85,6 +88,19 @@ public class LiveWallpaperService extends WallpaperService {
   private RefreshListener refreshListener;
   private BroadcastReceiver presenceReceiver, refreshReceiver;
   private SensorManager sensorManager;
+
+  @Override
+  public void onCreate() {
+    super.onCreate();
+    serviceInstance = this;
+  }
+
+  @Override
+  public void onDestroy() {
+    super.onDestroy();
+    serviceInstance = null;
+    unregisterReceivers();
+  }
 
   @Override
   public Engine onCreateEngine() {
@@ -124,10 +140,23 @@ public class LiveWallpaperService extends WallpaperService {
     return new UserAwareEngine();
   }
 
-  @Override
-  public void onDestroy() {
-    unregisterReceivers();
-    super.onDestroy();
+  public static boolean isMainEngineRunning() {
+    try {
+      // If instance was not cleared but the service was destroyed an exception will be thrown
+      if (serviceInstance != null && serviceInstance.ping()) {
+        return nonPreviewEngineInstance != null
+            && nonPreviewEngineInstance.ping();
+      } else {
+        return false;
+      }
+    } catch (Exception e) {
+      // destroyed/not-started
+      return false;
+    }
+  }
+
+  private boolean ping() {
+    return true;
   }
 
   private void registerReceivers() {
@@ -260,7 +289,6 @@ public class LiveWallpaperService extends WallpaperService {
     private boolean isSurfaceAvailable = false;
     private boolean iconDropConsumed = true;
     private boolean isRtl = false;
-    private boolean isPreview = false;
     private float fps;
     private final TimeInterpolator zoomInterpolator = new FastOutSlowInInterpolator();
     private ValueAnimator zoomAnimator;
@@ -271,9 +299,11 @@ public class LiveWallpaperService extends WallpaperService {
     public void onCreate(SurfaceHolder surfaceHolder) {
       super.onCreate(surfaceHolder);
 
+      if (!isPreview()) {
+        nonPreviewEngineInstance = this;
+      }
+
       fps = getFrameRate();
-      isPreview = isPreview();
-      sharedPrefs.edit().putBoolean(PREF.PREVIEW_RUNNING, isPreview).apply();
 
       userPresenceListener = this;
       refreshListener = this;
@@ -340,6 +370,9 @@ public class LiveWallpaperService extends WallpaperService {
 
     @Override
     public void onDestroy() {
+      if (!isPreview()) {
+        nonPreviewEngineInstance = null;
+      }
       if (zoomAnimator != null) {
         zoomAnimator.cancel();
         zoomAnimator.removeAllUpdateListeners();
@@ -349,7 +382,6 @@ public class LiveWallpaperService extends WallpaperService {
         sensorManager.unregisterListener(sensorListener);
         isListenerRegistered = false;
       }
-      sharedPrefs.edit().putBoolean(PREF.PREVIEW_RUNNING, false).apply();
     }
 
     @Override
@@ -389,6 +421,10 @@ public class LiveWallpaperService extends WallpaperService {
       } else {
         return super.onComputeColors();
       }
+    }
+
+    public boolean ping() {
+      return true;
     }
 
     private int getThemeColor(int priority, boolean isNightMode) {
@@ -434,7 +470,7 @@ public class LiveWallpaperService extends WallpaperService {
         int xPixels,
         int yPixels
     ) {
-      if (isRtl && !isPreview) {
+      if (isRtl && !isPreview()) {
         offsetX = xOffset - 1;
       } else {
         offsetX = xOffset;

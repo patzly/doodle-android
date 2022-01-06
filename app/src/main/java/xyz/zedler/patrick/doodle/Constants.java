@@ -95,8 +95,6 @@ public final class Constants {
     public static final String THEME = "app_theme";
     public static final String MODE = "mode";
 
-    public static final String PREVIEW_RUNNING = "preview_running";
-
     public static final String LAST_VERSION = "last_version";
     public static final String FEEDBACK_POP_UP_COUNT = "feedback_pop_up_count";
   }

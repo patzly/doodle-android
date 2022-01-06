@@ -3,6 +3,7 @@
 - New: FAQ in info section (tap info card on start page)
 - New: black (AMOLED) app theme (only with one static accent color due to internal reasons)
 - Improved: wallpaper design selection thumbnails
+- Improved: method to determine if wallpaper is currently applied or button should be visible
 - Improved: tilt effect options hidden if device has no acceleration sensor
 - Improved: system bars appearance for older Android versions
 - Fixed: revert a change from last version that caused always-dark status bar on some devices (hopefully this was the reason)

@@ -21,8 +21,6 @@ package xyz.zedler.patrick.doodle.activity;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.app.ActivityManager;
-import android.app.ActivityManager.RunningServiceInfo;
 import android.app.WallpaperManager;
 import android.content.ActivityNotFoundException;
 import android.content.ComponentName;
@@ -206,7 +204,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 
     SystemBarBehavior.applyBottomInset(binding.fabMain);
 
-    isServiceRunning = isWallpaperServiceRunning(true);
+    isServiceRunning = LiveWallpaperService.isMainEngineRunning();
     if (isServiceRunning) {
       binding.fabMain.setVisibility(View.INVISIBLE);
     }
@@ -250,7 +248,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
       return;
     }
 
-    boolean isServiceRunningNew = isWallpaperServiceRunning(true);
+    boolean isServiceRunningNew = LiveWallpaperService.isMainEngineRunning();
     if (isServiceRunning != isServiceRunningNew) {
       isServiceRunning = isServiceRunningNew;
       setFabVisibility(!isServiceRunning, true);
@@ -445,7 +443,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 
   @SuppressLint("ShowToast")
   public void showForceStopRequest(NavDirections directions) {
-    if (!isWallpaperServiceRunning(true) || binding == null) {
+    if (!LiveWallpaperService.isMainEngineRunning() || binding == null) {
       return;
     }
     showSnackbar(
@@ -462,25 +460,6 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
             }
         )
     );
-  }
-
-  public boolean isWallpaperServiceRunning(boolean requireMain) {
-    ActivityManager manager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
-    if (manager != null) {
-      for (RunningServiceInfo service : manager.getRunningServices(Integer.MAX_VALUE)) {
-        if (service == null || service.service == null) {
-          continue;
-        }
-        if (service.service.getClassName().equals(LiveWallpaperService.class.getName())) {
-          if (requireMain) {
-            return !sharedPrefs.getBoolean(PREF.PREVIEW_RUNNING, false);
-          } else {
-            return true;
-          }
-        }
-      }
-    }
-    return false;
   }
 
   private void showInitialBottomSheets() {

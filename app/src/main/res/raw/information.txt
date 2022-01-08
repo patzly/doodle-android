@@ -21,7 +21,7 @@ You need to turn on background scrolling in your launcher's settings if you have
 This is intended, you only have to apply it once. Select another wallpaper design in the appearance section to change it.
 
 Changed wallpaper colors not updating on Android 12?
-You need to turn off your screen. The next time you turn it back on, the new colors should be applied to the whole system. It might require some interaction with the device for the home screen widgets to also update its colors.
+You need to turn off your screen. The next time you turn it back on, the new colors should be applied to the whole system. It might require some interaction with the device for the home screen widgets to also update their colors.
 
 Parallax/zoom animations stop after closing Doodle settings?
 This seems like a bug of MIUI 12.5, if you instead apply the wallpaper in your system's wallpaper picker it should work.

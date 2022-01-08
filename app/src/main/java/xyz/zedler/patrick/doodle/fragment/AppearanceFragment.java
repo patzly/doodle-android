@@ -53,6 +53,7 @@ import xyz.zedler.patrick.doodle.activity.MainActivity;
 import xyz.zedler.patrick.doodle.behavior.ScrollBehavior;
 import xyz.zedler.patrick.doodle.behavior.SystemBarBehavior;
 import xyz.zedler.patrick.doodle.databinding.FragmentAppearanceBinding;
+import xyz.zedler.patrick.doodle.service.LiveWallpaperService;
 import xyz.zedler.patrick.doodle.util.ResUtil;
 import xyz.zedler.patrick.doodle.util.ViewUtil;
 import xyz.zedler.patrick.doodle.view.SelectionCardView;
@@ -245,11 +246,7 @@ public class AppearanceFragment extends BaseFragment
       refreshDarkLightVariant();
       refreshColors();
       activity.requestThemeRefresh();
-      if (DynamicColors.isDynamicColorAvailable()) {
-        activity.showForceStopRequest(
-            AppearanceFragmentDirections.actionAppearanceToApplyDialog()
-        );
-      }
+      showMonetInfoIfRequired();
     } else if (id == R.id.switch_appearance_follow_system) {
       ViewUtil.startIcon(binding.imageAppearanceFollowSystem);
       performHapticClick();
@@ -257,11 +254,7 @@ public class AppearanceFragment extends BaseFragment
       refreshDarkLightVariant();
       refreshColors();
       activity.requestThemeRefresh();
-      if (DynamicColors.isDynamicColorAvailable()) {
-        activity.showForceStopRequest(
-            AppearanceFragmentDirections.actionAppearanceToApplyDialog()
-        );
-      }
+      showMonetInfoIfRequired();
     } else if (id == R.id.switch_appearance_white_text) {
       performHapticClick();
       getSharedPrefs().edit().putBoolean(PREF.USE_WHITE_TEXT, isChecked).apply();
@@ -372,11 +365,7 @@ public class AppearanceFragment extends BaseFragment
             refreshVariantSelection(oldCount, wallpaper, true);
             getSharedPrefs().edit().putString(PREF.WALLPAPER, wallpaper.getName()).apply();
             activity.requestThemeRefresh();
-            if (DynamicColors.isDynamicColorAvailable()) {
-              activity.showForceStopRequest(
-                  AppearanceFragmentDirections.actionAppearanceToApplyDialog()
-              );
-            }
+            showMonetInfoIfRequired();
           }
         });
 
@@ -512,11 +501,7 @@ public class AppearanceFragment extends BaseFragment
               .putInt(Constants.VARIANT_PREFIX + wallpaper.getName(), iFinal)
               .apply();
           activity.requestThemeRefresh();
-          if (DynamicColors.isDynamicColorAvailable()) {
-            activity.showForceStopRequest(
-                AppearanceFragmentDirections.actionAppearanceToApplyDialog()
-            );
-          }
+          showMonetInfoIfRequired();
         }
       });
       boolean isSelected = getSharedPrefs().getInt(
@@ -646,6 +631,14 @@ public class AppearanceFragment extends BaseFragment
     }
   }
 
+  private void showMonetInfoIfRequired() {
+    if (activity == null || binding == null || !DynamicColors.isDynamicColorAvailable()
+        || !LiveWallpaperService.isMainEngineRunning()) {
+      return;
+    }
+    activity.showSnackbar(activity.getSnackbar(R.string.msg_apply_colors, Snackbar.LENGTH_LONG));
+  }
+
   public void setColor(int priority, String color) {
     String pref = Constants.getThemeColorPref(
         currentWallpaper.getName(), currentVariantIndex, priority, isWallpaperNightMode()
@@ -653,9 +646,7 @@ public class AppearanceFragment extends BaseFragment
     getSharedPrefs().edit().putString(pref, color).apply();
     refreshColor(priority, true);
     activity.requestThemeRefresh();
-    if (DynamicColors.isDynamicColorAvailable()) {
-      activity.showForceStopRequest(AppearanceFragmentDirections.actionAppearanceToApplyDialog());
-    }
+    showMonetInfoIfRequired();
     if (binding != null) {
       ViewUtil.startIcon(binding.imageAppearanceColors);
     }

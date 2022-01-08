@@ -37,6 +37,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.view.ContextThemeWrapper;
 import androidx.core.content.ContextCompat;
 import com.google.android.material.color.DynamicColors;
+import com.google.android.material.snackbar.BaseTransientBottomBar.BaseCallback;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.snackbar.Snackbar.Callback;
 import java.util.Locale;
@@ -120,21 +121,15 @@ public class OtherFragment extends BaseFragment
 
     setUpThemeSelection();
 
-    ViewUtil.setEnabledAlpha(
-        Build.VERSION.SDK_INT >= Build.VERSION_CODES.O,
-        false,
-        binding.linearOtherGpu
-    );
-    ViewUtil.setEnabled(
-        Build.VERSION.SDK_INT >= Build.VERSION_CODES.O,
-        binding.switchOtherGpu
-    );
-    binding.cardOtherGpu.setVisibility(
-        Build.VERSION.SDK_INT >= Build.VERSION_CODES.O ? View.GONE : View.VISIBLE
-    );
+    boolean gpuOptionEnabled = Build.VERSION.SDK_INT >= Build.VERSION_CODES.O;
+    ViewUtil.setEnabledAlpha(gpuOptionEnabled, false, binding.linearOtherGpu);
+    ViewUtil.setEnabled(gpuOptionEnabled, binding.switchOtherGpu);
+    binding.cardOtherGpu.setVisibility(gpuOptionEnabled ? View.GONE : View.VISIBLE);
+    if (gpuOptionEnabled) {
+      binding.linearOtherGpu.setOnClickListener(this);
+    }
     binding.switchOtherGpu.setChecked(
-        Build.VERSION.SDK_INT >= Build.VERSION_CODES.O
-            && getSharedPrefs().getBoolean(PREF.GPU, DEF.GPU)
+        gpuOptionEnabled && getSharedPrefs().getBoolean(PREF.GPU, DEF.GPU)
     );
 
     binding.switchOtherLauncher.setChecked(
@@ -193,11 +188,9 @@ public class OtherFragment extends BaseFragment
       ViewUtil.showBottomSheet(activity, new LanguagesBottomSheetDialogFragment());
     } else if (id == R.id.linear_other_gpu) {
       ViewUtil.startIcon(binding.imageOtherGpu);
-      performHapticClick();
       binding.switchOtherGpu.setChecked(!binding.switchOtherGpu.isChecked());
     } else if (id == R.id.linear_other_launcher) {
       ViewUtil.startIcon(binding.imageOtherLauncher);
-      performHapticClick();
       binding.switchOtherLauncher.setChecked(!binding.switchOtherLauncher.isChecked());
     } else if (id == R.id.linear_other_reset && getViewUtil().isClickEnabled()) {
       ViewUtil.startIcon(binding.imageOtherReset);
@@ -242,7 +235,8 @@ public class OtherFragment extends BaseFragment
             ).addCallback(new Callback() {
               @Override
               public void onDismissed(Snackbar transientBottomBar, int event) {
-                if (binding == null || activity == null) {
+                if (binding == null || activity == null
+                    || event == BaseCallback.DISMISS_EVENT_CONSECUTIVE) {
                   return;
                 }
                 try {

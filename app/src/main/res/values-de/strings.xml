@@ -173,7 +173,7 @@
   <string name="msg_force_stop">Erzwungenes Beenden wird benötigt, um die Änderung anzuwenden</string>
   <string name="msg_apply_colors">Geänderte Farben werden im System beim nächsten Ausschalten des Displays übernommen</string>
   <string name="msg_apply_changes">Um (eventuelle) Änderungen anzuwenden, wird ein Neustart des laufenden Hintergrunds empfohlen. Dies kann nicht automatisch erfolgen.\nBitte beende die App in Deinen Systemeinstellungen und wende Doodle erneut als Live-Hintergrund an.</string>
-  <string name="msg_set_wallpaper">Falls die Animationen des Hintergrunds stoppen, sobald du diese App schließt, solltest du die Hintergrundauswahl deines Systems öffnen, um Doodle dort auszuwählen.\nAnsonsten kannst du Doodle direkt als Hintergrund festlegen.</string>
+  <string name="msg_set_wallpaper">Falls die Animationen des Hintergrunds stoppen, sobald du diese App schließt, solltest du stattdessen die Hintergrundauswahl deines Systems öffnen, um Doodle dort auszuwählen.\nAnsonsten kannst du Doodle direkt als Hintergrund festlegen.</string>
   <string name="msg_preview_missing">Es trat ein Fehler auf, bitte wähle den Doodle Live-Hintergrund manuell aus</string>
   <string name="msg_picker_missing">Hintergrundauswahl konnte nicht geöffnet werden, bitte installiere erst eine App dafür</string>
 

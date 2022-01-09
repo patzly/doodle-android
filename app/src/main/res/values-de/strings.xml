@@ -48,6 +48,8 @@
   <string name="action_continue">Fortfahren</string>
   <string name="action_open_app_info">App-Info öffnen</string>
   <string name="action_set">Hintergrund festlegen</string>
+  <string name="action_set_directly">Direkt festlegen</string>
+  <string name="action_open_picker">Auswahl öffnen</string>
   <string name="action_send_feedback">Feedback senden</string>
   <string name="action_share">Teilen</string>
   <string name="action_share_description">Freunden von Doodle erzählen</string>
@@ -171,6 +173,8 @@
   <string name="msg_force_stop">Erzwungenes Beenden wird benötigt, um die Änderung anzuwenden</string>
   <string name="msg_apply_colors">Geänderte Farben werden im System beim nächsten Ausschalten des Displays übernommen</string>
   <string name="msg_apply_changes">Um (eventuelle) Änderungen anzuwenden, wird ein Neustart des laufenden Hintergrunds empfohlen. Dies kann nicht automatisch erfolgen.\nBitte beende die App in Deinen Systemeinstellungen und wende Doodle erneut als Live-Hintergrund an.</string>
+  <string name="msg_set_wallpaper">Falls die Animationen des Hintergrunds stoppen, sobald du diese App schließt, solltest du die Hintergrundauswahl deines Systems öffnen, um Doodle dort auszuwählen.\nAnsonsten kannst du Doodle direkt als Hintergrund festlegen.</string>
   <string name="msg_preview_missing">Es trat ein Fehler auf, bitte wähle den Doodle Live-Hintergrund manuell aus</string>
+  <string name="msg_picker_missing">Hintergrundauswahl konnte nicht geöffnet werden, bitte installiere erst eine App dafür</string>
 
   </resources>

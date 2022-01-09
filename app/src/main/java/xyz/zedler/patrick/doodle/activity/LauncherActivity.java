@@ -187,6 +187,11 @@ public class LauncherActivity extends MainActivity {
     super.attachBaseContext(base.createConfigurationContext(config));
   }
 
+  @Override
+  public boolean shouldLogoBeVisibleOnOverviewPage() {
+    return true;
+  }
+
   private void startNewMainActivity() {
     Intent intent = new Intent(this, MainActivity.class);
     intent.addCategory(Intent.CATEGORY_LAUNCHER);

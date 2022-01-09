@@ -66,6 +66,7 @@ import xyz.zedler.patrick.doodle.fragment.BaseFragment;
 import xyz.zedler.patrick.doodle.fragment.dialog.ApplyBottomSheetDialogFragment;
 import xyz.zedler.patrick.doodle.fragment.dialog.ChangelogBottomSheetDialogFragment;
 import xyz.zedler.patrick.doodle.fragment.dialog.FeedbackBottomSheetDialogFragment;
+import xyz.zedler.patrick.doodle.fragment.dialog.SetBottomSheetDialogFragment;
 import xyz.zedler.patrick.doodle.service.LiveWallpaperService;
 import xyz.zedler.patrick.doodle.util.HapticUtil;
 import xyz.zedler.patrick.doodle.util.LocaleUtil;
@@ -261,17 +262,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
   public void onClick(View v) {
     int id = v.getId();
     if (id == R.id.fab_main && viewUtil.isClickEnabled()) {
-      try {
-        Intent intent = new Intent(WallpaperManager.ACTION_CHANGE_LIVE_WALLPAPER);
-        intent.putExtra(
-            WallpaperManager.EXTRA_LIVE_WALLPAPER_COMPONENT,
-            new ComponentName(getPackageName(), LiveWallpaperService.class.getCanonicalName())
-        );
-        intent.putExtra("SET_LOCKSCREEN_WALLPAPER", true);
-        wallpaperPickerLauncher.launch(intent);
-      } catch (ActivityNotFoundException e) {
-        showSnackbar(R.string.msg_preview_missing);
-      }
+      ViewUtil.showBottomSheet(this, new SetBottomSheetDialogFragment());
       performHapticHeavyClick();
     }
   }
@@ -347,11 +338,25 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     }
   }
 
+  public void setWallpaperDirectly() {
+    try {
+      Intent intent = new Intent(WallpaperManager.ACTION_CHANGE_LIVE_WALLPAPER);
+      intent.putExtra(
+          WallpaperManager.EXTRA_LIVE_WALLPAPER_COMPONENT,
+          new ComponentName(getPackageName(), LiveWallpaperService.class.getCanonicalName())
+      );
+      intent.putExtra("SET_LOCKSCREEN_WALLPAPER", true);
+      wallpaperPickerLauncher.launch(intent);
+    } catch (ActivityNotFoundException e) {
+      showSnackbar(R.string.msg_preview_missing);
+    }
+  }
+
   public boolean shouldLogoBeVisibleOnOverviewPage() {
     return true;
   }
 
-  private void showSnackbar(@StringRes int resId) {
+  public void showSnackbar(@StringRes int resId) {
     showSnackbar(
         Snackbar.make(binding.fragmentMainNavHost, getString(resId), Snackbar.LENGTH_LONG)
     );

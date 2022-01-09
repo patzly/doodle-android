@@ -12,7 +12,7 @@
 - Fixed: app theme dark mode switching on Android 12
 - Fixed: some crashes and bugs
 
-Please consider translating this app into your language at Transifex. There are only 124 strings to translate!
+Please consider translating this app into your language at Transifex.
 
 5.1.0:
 - New: another sandy Pixel 6 wallpaper

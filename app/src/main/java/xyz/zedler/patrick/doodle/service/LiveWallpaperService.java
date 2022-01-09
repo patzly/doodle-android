@@ -75,38 +75,38 @@ public class LiveWallpaperService extends WallpaperService {
   private static UserAwareEngine nonPreviewEngineInstance = null;
 
   private SharedPreferences sharedPrefs;
-  // Wallpaper
   private SvgDrawable svgDrawable;
   private BaseWallpaper wallpaper;
   private WallpaperVariant variant;
   private int variantIndex;
   private boolean nightMode, followSystem;
-  // User presence
+  private BroadcastReceiver receiver;
   private String presence;
-  private boolean areReceiversRegistered = false;
+  private boolean isReceiverRegistered = false;
   private UserPresenceListener userPresenceListener;
   private RefreshListener refreshListener;
-  private BroadcastReceiver presenceReceiver, refreshReceiver;
   private SensorManager sensorManager;
 
   @Override
   public void onCreate() {
     super.onCreate();
+
     serviceInstance = this;
   }
 
   @Override
   public void onDestroy() {
     super.onDestroy();
+
     serviceInstance = null;
-    unregisterReceivers();
+    unregisterReceiver();
   }
 
   @Override
   public Engine onCreateEngine() {
     sharedPrefs = new PrefsUtil(this).checkForMigrations().getSharedPrefs();
 
-    presenceReceiver = new BroadcastReceiver() {
+    receiver = new BroadcastReceiver() {
       public void onReceive(Context context, Intent intent) {
         switch (intent.getAction()) {
           case Intent.ACTION_USER_PRESENT:
@@ -118,20 +118,20 @@ public class LiveWallpaperService extends WallpaperService {
           case Intent.ACTION_SCREEN_ON:
             setUserPresence(isKeyguardLocked() ? USER_PRESENCE.LOCKED : USER_PRESENCE.UNLOCKED);
             break;
+          case ACTION.THEME_CHANGED:
+            if (refreshListener != null) {
+              refreshListener.onRefreshTheme();
+            }
+            break;
+          case ACTION.SETTINGS_CHANGED:
+            if (refreshListener != null) {
+              refreshListener.onRefreshSettings();
+            }
+            break;
         }
       }
     };
-    refreshReceiver = new BroadcastReceiver() {
-      public void onReceive(Context context, Intent intent) {
-        String action = intent.getAction();
-        if (refreshListener != null && action.equals(ACTION.THEME_CHANGED)) {
-          refreshListener.onRefreshTheme();
-        } else if (refreshListener != null && action.equals(ACTION.SETTINGS_CHANGED)) {
-          refreshListener.onRefreshSettings();
-        }
-      }
-    };
-    registerReceivers();
+    registerReceiver();
 
     setUserPresence(isKeyguardLocked() ? USER_PRESENCE.LOCKED : USER_PRESENCE.UNLOCKED);
 
@@ -159,32 +159,27 @@ public class LiveWallpaperService extends WallpaperService {
     return true;
   }
 
-  private void registerReceivers() {
-    if (!areReceiversRegistered) {
-      areReceiversRegistered = true;
-
-      IntentFilter filterPresence = new IntentFilter();
-      filterPresence.addAction(Intent.ACTION_USER_PRESENT);
-      filterPresence.addAction(Intent.ACTION_SCREEN_OFF);
-      filterPresence.addAction(Intent.ACTION_SCREEN_ON);
-      registerReceiver(presenceReceiver, filterPresence);
-
-      IntentFilter filterRefresh = new IntentFilter();
-      filterRefresh.addAction(ACTION.THEME_CHANGED);
-      filterRefresh.addAction(ACTION.SETTINGS_CHANGED);
-      registerReceiver(refreshReceiver, filterRefresh);
+  private void registerReceiver() {
+    if (!isReceiverRegistered) {
+      IntentFilter filter = new IntentFilter();
+      filter.addAction(Intent.ACTION_USER_PRESENT);
+      filter.addAction(Intent.ACTION_SCREEN_OFF);
+      filter.addAction(Intent.ACTION_SCREEN_ON);
+      filter.addAction(ACTION.THEME_CHANGED);
+      filter.addAction(ACTION.SETTINGS_CHANGED);
+      registerReceiver(receiver, filter);
+      isReceiverRegistered = true;
     }
   }
 
-  private void unregisterReceivers() {
-    if (areReceiversRegistered) {
+  private void unregisterReceiver() {
+    if (isReceiverRegistered) {
       try {
-        unregisterReceiver(presenceReceiver);
-        unregisterReceiver(refreshReceiver);
+        unregisterReceiver(receiver);
       } catch (Exception e) {
         Log.e(TAG, "unregisterReceiver", e);
       }
-      areReceiversRegistered = false;
+      isReceiverRegistered = false;
     }
   }
 
@@ -543,14 +538,7 @@ public class LiveWallpaperService extends WallpaperService {
       isZoomUnlockEnabled = sharedPrefs.getBoolean(PREF.ZOOM_UNLOCK, DEF.ZOOM_UNLOCK);
       useSystemZoom = sharedPrefs.getBoolean(PREF.ZOOM_SYSTEM, DEF.ZOOM_SYSTEM);
       zoomDuration = sharedPrefs.getInt(PREF.ZOOM_DURATION, DEF.ZOOM_DURATION);
-
       zoomRotation = sharedPrefs.getInt(PREF.ZOOM_ROTATION, DEF.ZOOM_ROTATION);
-
-      if (isZoomUnlockEnabled) {
-        registerReceivers();
-      } else {
-        unregisterReceivers();
-      }
     }
 
     private void loadTheme(boolean random) {
@@ -638,6 +626,9 @@ public class LiveWallpaperService extends WallpaperService {
 
     @Override
     public void onPresenceChange(String presence) {
+      if (!isZoomUnlockEnabled) {
+        return;
+      }
       switch (presence) {
         case USER_PRESENCE.OFF:
           if (useRandom) {

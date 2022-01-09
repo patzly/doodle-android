@@ -49,6 +49,8 @@
   <string name="action_continue">继续</string>
   <string name="action_open_app_info">打开应用信息</string>
   <string name="action_set">设置壁纸</string>
+  <string name="action_set_directly">直接设置</string>
+  <string name="action_open_picker">打开壁纸选择器</string>
   <string name="action_send_feedback">发送反馈</string>
   <string name="action_share">分享</string>
   <string name="action_share_description">把Doodle告诉你的朋友们</string>
@@ -174,6 +176,8 @@
   <string name="msg_force_stop">需强制停止才能应用更改</string>
   <string name="msg_apply_colors">更改的颜色将在你下次关闭屏幕时应用到系统</string>
   <string name="msg_apply_changes">为了(最终)应用改变的选项，建议重新启动正在运行的壁纸服务。这不能自动完成。\n请在系统设置中强制停止 Doodle，然后重新将 Doole 应用为墙纸。</string>
+  <string name="msg_set_wallpaper">如果你在关闭此应用时，遇到一个使壁纸动画出现异常的问题，请选择你系统的壁纸选择器来选择 Doodle。\n否则，你也可以直接设置。</string>
   <string name="msg_preview_missing">发生错误，请手动选择 Doodle Live 墙纸</string>
+  <string name="msg_picker_missing">无法打开壁纸选择器，请安装一个 live 壁纸选择器，然后再试一次。</string>
 
   </resources>

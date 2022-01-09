@@ -10,6 +10,7 @@
 - Fixed: revert a change from last version that caused always-dark status bar on some devices (hopefully this was the reason)
 - Fixed: provide a possible solution for MIUI bug that stops wallpaper animation (shown when you tap on "Set wallpaper")
 - Fixed: app theme dark mode switching on Android 12
+- Fixed: unwanted horizontal position changes of bottom messages and big button when switching between app sections
 - Fixed: some crashes and bugs
 
 Please consider translating this app into your language at Transifex.

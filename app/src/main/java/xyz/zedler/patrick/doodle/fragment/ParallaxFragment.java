@@ -55,6 +55,7 @@ public class ParallaxFragment extends BaseFragment
       @NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState
   ) {
     // NumberFormatException and NotFoundException on Android 5?
+    // TODO: Probably fixed (AnimatedVectorDrawable path was broken broken)
     binding = FragmentParallaxBinding.inflate(inflater, container, false);
     return binding.getRoot();
   }

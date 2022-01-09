@@ -478,11 +478,18 @@ public class LiveWallpaperService extends WallpaperService {
         final String action, final int x, final int y, final int z, final Bundle extras,
         final boolean resultRequested
     ) {
-      if (action.equals(WallpaperManager.COMMAND_DROP)) {
-        iconDropConsumed = false;
-        notifyIconDropped(x, y);
+      switch (action) {
+        case WallpaperManager.COMMAND_DROP:
+          iconDropConsumed = false;
+          notifyIconDropped(x, y);
+          break;
+        case WallpaperManager.COMMAND_TAP:
+        case "android.wallpaper.wakingup":
+        case "android.wallpaper.goingtosleep":
+        case "android.wallpaper.reapply":
+          break;
       }
-      return super.onCommand(action, x, y, z, extras, resultRequested);
+      return null;
     }
 
     private void notifyIconDropped(int x, int y) {

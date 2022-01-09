@@ -24,7 +24,7 @@
 
   <style
     name="Widget.Doodle.Button.TextButton.Snackbar"
-    parent="Base.Doodle.Button.TextButton.Snackbar">
+    parent="Widget.Material3.Button.TextButton.Snackbar">
     <item name="android:textStyle">bold</item>
   </style>
 

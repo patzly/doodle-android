@@ -26,7 +26,7 @@
        locales with textStyle="bold".
        Untranslated text (names or untranslated strings) with textStyle set to bold will look like
        the medium variant of Jost*, so there is no extra attention needed for e.g. the app bar.
-       Affected languages: Chinese, Hebrew, Uighur -->
+       Affected languages: Arab, Chinese, Hebrew, Uighur -->
 
   <!-- Toolbar -->
 
@@ -60,14 +60,8 @@
   </style>
 
   <style
-    name="Base.Doodle.Button.TextButton.Snackbar"
-    parent="Widget.Material3.Button.TextButton.Snackbar">
-    <item name="cornerRadius">8dp</item>
-  </style>
-
-  <style
     name="Widget.Doodle.Button.TextButton.Snackbar"
-    parent="Base.Doodle.Button.TextButton.Snackbar">
+    parent="Widget.Material3.Button.TextButton.Snackbar">
     <item name="android:fontFamily">@font/jost_medium</item>
   </style>
 

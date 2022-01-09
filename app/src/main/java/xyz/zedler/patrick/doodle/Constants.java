@@ -165,17 +165,18 @@ public final class Constants {
       chosen = getWallpaper(previous != null && !previous.isEmpty() ? previous : DEF.WALLPAPER);
     } else {
       String[] wallpapers = selection.toArray(new String[0]);
-      try {
-        Random randomizer = new Random();
-        chosen = getWallpaper(wallpapers[randomizer.nextInt(wallpapers.length)]);
-        if (wallpapers.length > 1) {
-          while (chosen.getName().equals(previous)) {
+      if (wallpapers.length == 1) {
+        chosen = getWallpaper(wallpapers[0]);
+      } else {
+        try {
+          Random randomizer = new Random();
+          do {
             chosen = getWallpaper(wallpapers[randomizer.nextInt(wallpapers.length)]);
-          }
+          } while (chosen.getName().equals(previous));
+        } catch (IllegalArgumentException e) {
+          Log.e(TAG, "getRandomWallpaper: ", e);
+          chosen = getWallpaper(DEF.WALLPAPER);
         }
-      } catch (IllegalArgumentException e) {
-        Log.e(TAG, "getRandomWallpaper: ", e);
-        chosen = getWallpaper(DEF.WALLPAPER);
       }
     }
     return chosen;

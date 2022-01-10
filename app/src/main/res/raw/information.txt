@@ -1,4 +1,4 @@
-These live wallpapers are based on the original Doodle live wallpaper collection of the Google Pixel 4, extended with additional (doodle-like) wallpapers from Pixel 6 and Chrome OS.
+These live wallpapers are based on the original Doodle live wallpaper collection of the Google Pixel 4, extended with additional wallpapers from Pixel 6 and Chrome OS.
 They are completely recreated from scratch, nothing except the look is taken from the original.
 
 <b>Advantages over the original:</b>
@@ -31,3 +31,10 @@ Try searching for your device's name and this question on the Internet to get po
 
 You don't want the wallpaper to be applied to your lockscreen?
 If your device doesn't display you the option to apply it only to your home screen, then this is not supported by your device.
+
+<b>Not enough options?</b>
+
+There won't be many more wallpapers added to this app in the future. Doodle is about doodle-styled, flat-shaped (non-3D) original Google Pixel wallpapers, these criteria are not met by many of them out there.
+Every wallpaper design available in this app required days or weeks to implement, it's not as easy as you might think (shape extraction, dark version creation, optimization for parallax rendering and much more).
+When I find enough time beside university, I will expand the Material You collection and the collection of wallpapers by Anna Kövecses.
+So please be patient and watch HowToMen, an amazing tech YouTube channel for Android fans, while waiting for the next update!

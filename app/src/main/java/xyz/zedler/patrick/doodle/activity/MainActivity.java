@@ -424,17 +424,23 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
   }
 
   public void restartToApply(long delay) {
-    restartToApply(delay, new Bundle(), false);
+    restartToApply(delay, new Bundle(), false, true);
   }
 
-  public void restartToApply(long delay, @NonNull Bundle bundle, boolean showForceStopRequest) {
+  public void restartToApply(
+      long delay, @NonNull Bundle bundle, boolean showForceStopRequest, boolean restoreState
+  ) {
     new Handler().postDelayed(() -> {
-      onSaveInstanceState(bundle);
+      if (restoreState) {
+        onSaveInstanceState(bundle);
+      }
       if (Build.VERSION.SDK_INT < Build.VERSION_CODES.S) {
         finish();
       }
       Intent intent = new Intent(this, MainActivity.class);
-      intent.putExtra(EXTRA.INSTANCE_STATE, bundle);
+      if (restoreState) {
+        intent.putExtra(EXTRA.INSTANCE_STATE, bundle);
+      }
       if (showForceStopRequest) {
         intent.putExtra(EXTRA.SHOW_FORCE_STOP_REQUEST, true);
       }

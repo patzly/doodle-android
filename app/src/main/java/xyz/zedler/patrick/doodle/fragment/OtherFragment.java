@@ -161,7 +161,7 @@ public class OtherFragment extends BaseFragment
         pref = MODE.AUTO;
       }
       getSharedPrefs().edit().putInt(PREF.MODE, pref).apply();
-      activity.restartToApply(0, getInstanceState(), false);
+      activity.restartToApply(0, getInstanceState(), false, true);
     });
 
     ViewUtil.setOnClickListeners(
@@ -202,7 +202,9 @@ public class OtherFragment extends BaseFragment
               getString(R.string.action_reset), view -> {
                 performHapticHeavyClick();
                 activity.reset();
-                activity.restartToApply(100, getInstanceState(), true);
+                activity.restartToApply(
+                    100, getInstanceState(), true, false
+                );
               }
           )
       );
@@ -343,7 +345,9 @@ public class OtherFragment extends BaseFragment
           ViewUtil.uncheckAllChildren(container);
           card.setChecked(true);
           getSharedPrefs().edit().putString(PREF.THEME, name).apply();
-          activity.restartToApply(100, getInstanceState(), false);
+          activity.restartToApply(
+              100, getInstanceState(), false, true
+          );
         }
       });
 

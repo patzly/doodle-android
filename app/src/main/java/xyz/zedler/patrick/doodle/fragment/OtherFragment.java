@@ -54,6 +54,7 @@ import xyz.zedler.patrick.doodle.behavior.SystemBarBehavior;
 import xyz.zedler.patrick.doodle.databinding.FragmentOtherBinding;
 import xyz.zedler.patrick.doodle.fragment.dialog.LanguagesBottomSheetDialogFragment;
 import xyz.zedler.patrick.doodle.model.Language;
+import xyz.zedler.patrick.doodle.service.LiveWallpaperService;
 import xyz.zedler.patrick.doodle.util.LocaleUtil;
 import xyz.zedler.patrick.doodle.util.ResUtil;
 import xyz.zedler.patrick.doodle.util.SystemUiUtil;
@@ -203,7 +204,10 @@ public class OtherFragment extends BaseFragment
                 performHapticHeavyClick();
                 activity.reset();
                 activity.restartToApply(
-                    100, getInstanceState(), true, false
+                    100,
+                    getInstanceState(),
+                    LiveWallpaperService.isMainEngineRunning(),
+                    false
                 );
               }
           )

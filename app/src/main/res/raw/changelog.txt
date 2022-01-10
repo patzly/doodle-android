@@ -2,7 +2,7 @@
 - New: default shape scale based on display size and density (reset all options to let Doodle calculate the default shape scale)
 - New: FAQ in info section (tap info card on start page)
 - New: black (AMOLED) app theme (only with one static accent color due to internal reasons)
-- Improved: wallpaper design selection thumbnails
+- Improved: wallpaper design selection thumbnails and overview page appearance
 - Improved: method to determine if wallpaper is currently applied
 - Improved: tilt effect options hidden if device has no acceleration sensor
 - Improved: wallpaper restart NOT required to apply changed colors on Android 12 (my fault, turning off screen is enough)

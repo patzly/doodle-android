@@ -180,8 +180,7 @@
 
       <LinearLayout
         android:id="@+id/linear_overview_parallax"
-        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon.Clickable"
-        android:layout_marginTop="8dp">
+        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon.Clickable">
 
         <ImageView
           android:id="@+id/image_overview_parallax"
@@ -210,8 +209,7 @@
 
       <LinearLayout
         android:id="@+id/linear_overview_size"
-        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon.Clickable"
-        android:layout_marginTop="8dp">
+        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon.Clickable">
 
         <ImageView
           android:id="@+id/image_overview_size"
@@ -240,8 +238,7 @@
 
       <LinearLayout
         android:id="@+id/linear_overview_other"
-        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon.Clickable"
-        android:layout_marginTop="8dp">
+        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon.Clickable">
 
         <ImageView
           android:id="@+id/image_overview_other"
@@ -270,8 +267,7 @@
 
       <LinearLayout
         android:id="@+id/linear_overview_about"
-        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon.Clickable"
-        android:layout_marginTop="8dp">
+        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon.Clickable">
 
         <ImageView
           android:id="@+id/image_overview_about"

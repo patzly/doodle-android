@@ -38,7 +38,7 @@ ro
 d4rk7355608
 
 ru
-VoicelessCinder, uvdllm
+VoicelessCinder, SergeyKodolov, uvdllm
 
 tr
 k2edih

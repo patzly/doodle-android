@@ -161,7 +161,5 @@
   <string name="msg_reset">Redefinir todas as configurações?</string>
   <string name="msg_force_stop">Parada forçada é necessária para aplicar as mudanças</string>
   <string name="msg_apply_changes">Para (eventualmente) aplicar as configurações modificadas é recomendado reiniciar o  serviço de papel de parede. Isso não poe ser feito automáticamente.\nPor favor, encerre o Doodle nas configurações do seu sistema, então, aplique Doodle como seu papel de parede novamente.</string>
-  <string name="msg_apply_changes_monet">Em dispositivos com supore para cores dinâmicas, é necessário reiniciar para aplicar as mudanças às cores do papel de parede ao mecanismo de temas do sistema.</string>
   <string name="msg_preview_missing">Ocorreu um erro, por favor selecione o Doodle Live Wallpaper manualmente</string>
-
   </resources>

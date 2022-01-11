@@ -159,7 +159,5 @@
   <string name="msg_reset">Reset alle instellingen?</string>
   <string name="msg_force_stop">Forceer stoppen verreist om wijzigingen toe te passen</string>
   <string name="msg_apply_changes">Om (eventueel) gewijzigde opties toe te passen, wordt een herstart van de lopende achtergrond service aanbevolen. Dit kan niet automatisch worden gedaan.\nGelieve Doodle geforceerd te stoppen in je systeeminstellingen en vervolgens Doodle opnieuw toe te passen als je achtergrond.</string>
-  <string name="msg_apply_changes_monet">Op apparaten met ondersteuning voor dynamische kleuren, is het herstarten ook vereist om de veranderde achtergrond kleuren toe te passen bij het thema engine van het systeem.</string>
   <string name="msg_preview_missing">Er ging iets mis, selecteer Doodle Live Achtergrond alsjeblieft handmatig</string>
-
   </resources>

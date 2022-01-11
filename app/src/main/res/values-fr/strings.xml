@@ -161,7 +161,5 @@
   <string name="msg_reset">Réinitialiser tous les réglages ?</string>
   <string name="msg_force_stop">Arrêt forcé requis pour appliquer les modifications</string>
   <string name="msg_apply_changes">Pour (éventuellement) appliquer les options modifiées, un redémarrage du service de papier peint en cours d\'exécution est recommandé. Cela ne peut pas être fait automatiquement.\nVeuillez forcer l\'arrêt de Doodle dans les paramètres de votre système, puis appliquez à nouveau Doodle comme fond d\'écran.</string>
-  <string name="msg_apply_changes_monet">Sur les appareils prenant en charge les couleurs dynamiques, le redémarrage est également nécessaire pour appliquer les couleurs du fond d\'écran modifié au moteur de thème du système.</string>
   <string name="msg_preview_missing">Une erreur s\'est produite, veuillez sélectionner manuellement le fond d\'écran animé Doodle</string>
-
   </resources>

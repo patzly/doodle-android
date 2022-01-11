@@ -498,7 +498,6 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         ViewUtil.showBottomSheet(this, new FeedbackBottomSheetDialogFragment());
       }
     }
-    ViewUtil.showBottomSheet(this, new FeedbackBottomSheetDialogFragment());
   }
 
   public boolean isTouchWiz() {

@@ -170,7 +170,5 @@
   <string name="msg_reset">Tüm ayarlar sıfırlansın mı?</string>
   <string name="msg_force_stop">Değişiklikleri uygulamak için zorunlu durdurma gerekli</string>
   <string name="msg_apply_changes">Değiştirilen seçenekleri (eninde sonunda) uygulamak için, çalışan duvar kağıdı hizmetinin yeniden başlatılması önerilir. Bu otomatik olarak yapılamaz.\nLütfen sistem ayarlarınızda Doodle\'ı zorla durdurun ve ardından Doodle\'ı duvar kağıdınız olarak tekrar uygulayın. </string>
-  <string name="msg_apply_changes_monet">Dinamik renk desteğine sahip cihazlarda, değiştirilen duvar kağıdı renklerini sistemin yerel tema motoruna uygulamak için yeniden başlatma gereklidir. </string>
   <string name="msg_preview_missing">Bir hata meydana geldi, lütfen Doodle Hareketli Duvar Kağıdını manuel olarak seçin </string>
-
   </resources>

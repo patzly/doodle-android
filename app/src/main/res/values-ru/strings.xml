@@ -27,6 +27,7 @@
   <!-- TITLES -->
 
   <string name="title_info">Информация </string>
+  <string name="title_apply_changes">Применить изменения</string>
   <string name="title_feedback">Обратная связь</string>
   <string name="title_licenses">Лицензии открытого ПО</string>
 
@@ -39,8 +40,15 @@
 
   <string name="action_close">Закрыть</string>
   <string name="action_back">Назад</string>
+  <string name="action_open_link">Открыть внешний веб-сайт</string>
+  <string name="action_hide">Скрыть</string>
   <string name="action_reset">Сброс</string>
+  <string name="action_deactivate">Деактивировать</string>
+  <string name="action_select_all">Выбрать все</string>
+  <string name="action_continue">Продолжить</string>
+  <string name="action_open_app_info">Открыть информацию о приложении</string>
   <string name="action_set">Установить обои</string>
+  <string name="action_open_picker">Откройте средство выбора обоев</string>
   <string name="action_send_feedback">Отправить отзыв</string>
   <string name="action_share">Поделиться</string>
   <string name="action_share_description">Рассказать друзьям о Doodle</string>
@@ -50,9 +58,12 @@
   <string name="action_rate_description">Поддержать разработку</string>
   <string name="action_github">Doodle Android на GitHub</string>
   <string name="action_github_description">Сообщить о проблеме</string>
+  <string name="action_language_select">Выбрать язык</string>
+
   <!-- APPEARANCE -->
 
   <string name="appearance_title">Внешний вид</string>
+  <string name="appearance_description">Дизайн и цветовые настройки</string>
   <string name="appearance_design">Дизайн</string>
   <string name="appearance_design_doodle">Pixel 4 Doodle Collection</string>
   <string name="appearance_design_monet">Pixel 6 Material You Collection</string>
@@ -62,7 +73,19 @@
   <string name="appearance_night_mode_description">Только тёмные цвета</string>
   <string name="appearance_follow_system">Как в системе</string>
   <string name="appearance_follow_system_description">Заимствовать тему устройства</string>
+  <string name="appearance_white_text">Принудительно использовать белый текст</string>
   <string name="appearance_white_text_description">Может повлиять на читаемость</string>
+  <string name="appearance_random">Случайный дизайн обоев</string>
+  <string name="appearance_random_description">Каждый раз, когда дисплей выключается</string>
+  <string name="appearance_colors">Извлеченные цвета</string>
+  <string name="appearance_colors_description">Используется для расчета контрастности текста</string>
+  <string name="appearance_colors_description_dynamic">Используется системным движком тем</string>
+  <string name="appearance_colors_primary">Выбрать основной цвет</string>
+  <string name="appearance_colors_secondary">Выбрать дополнительный цвет</string>
+  <string name="appearance_colors_tertiary">Выбрать второй дополнительный цвет</string>
+  <string name="appearance_colors_info">На устройствах без поддержки динамического цвета (Android 11 или ниже) только основной цвет используется для расчета контрастности текста лаунчера и окрашивания фона экрана последних приложений.</string>
+  <string name="appearance_colors_info_dynamic">На устройствах с Android 12 или выше и поддержкой динамического цвета три выбранных цвета используются для автоматического создания общесистемной цветовой темы.</string>
+
   <!-- PARALLAX -->
 
   <string name="parallax_title">Сдвиг</string>
@@ -86,6 +109,8 @@
   <string name="size_title">Размер форм</string>
   <string name="size_description">Масштаб и эффект масштабирования</string>
   <string name="size_category_zoom">Эффект масштабирования</string>
+  <string name="size_category_launcher">Приближение в лаунчере</string>
+  <string name="size_category_unlock">Приближение на экране блокировки</string>
   <string name="size_scale">Масштаб</string>
   <string name="size_scale_description">Полезно для экранов больших и малых размеров</string>
   <string name="size_zoom">Интенсивность масштабирования</string>
@@ -93,7 +118,11 @@
   <string name="size_zoom_rotation">Поворачивать некоторые формы при масштабировании</string>
   <string name="size_zoom_rotation_description">Максимальный поворот в градусах</string>
   <string name="size_zoom_launcher">Отдалять при открытии шторки уведомлений или меню приложений</string>
+  <string name="size_zoom_launcher_description">Может быть недоступен на некоторых устройствах</string>
+  <string name="size_zoom_damping">Затухание анимации</string>
+  <string name="size_zoom_damping_description">Активируйте и уменьшайте масштаб для более плавного масштабирования</string>
   <string name="size_zoom_system">Использовать системный эффект масштабирования</string>
+  <string name="size_zoom_system_description">Может быть исправлена анимация резкого увеличения при включенном эффекте наклона, доступная только на некоторых устройствах</string>
   <string name="size_zoom_unlock">Отдалять камеру на экране блокировки</string>
   <string name="size_zoom_unlock_description">Может глючить при включенном эффекте наклона</string>
   <string name="size_zoom_duration">Длительность масштабирования при разблокировке</string>
@@ -102,28 +131,48 @@
   <!-- OTHER -->
 
   <string name="other_title">Прочие настройки</string>
+  <string name="other_description">Отрисовка, язык и сброс</string>
+  <string name="other_language">Язык приложения</string>
+  <string name="other_language_description">Большое спасибо всем переводчикам-добровольцам Transifex! Пожалуйста, посетите страницу проекта на GitHub, чтобы узнать, как вы можете помочь сделать живые обои Doodle доступными для вашего языка.</string>
+  <string name="other_language_system">Системное значение по умолчанию: %1$s</string>
+  <string name="other_language_not_available">Недоступно</string>
   <string name="other_gpu">Аппаратное ускорение</string>
+  <string name="other_gpu_description">Выключите, если возникают сбои обоев</string>
+  <string name="other_gpu_info">Аппаратное ускорение доступно только для Doodle, начиная с Android 8. Поэтому анимация обоев может быть немного отрывистой.</string>
   <string name="other_launcher">Скрыть иконку в лаунчере</string>
   <string name="other_launcher_description">Настройки будут доступны только в системном приложении для установки обоев</string>
+  <string name="other_theme">Цветы темы приложения</string>
+  <string name="other_theme_auto">Автоматическая</string>
+  <string name="other_theme_light">Светлая</string>
+  <string name="other_theme_dark">Темная</string>
   <string name="other_reset">Сбросить все настройки</string>
   <string name="other_reset_description">Делает больше, чем сделало бы удаление приложения, потому что настройки хранятся в особом месте, ведь они должны быть доступны сразу после запуска устройства</string>
 
   <!-- ABOUT -->
 
   <string name="about_title">О приложении</string>
+  <string name="about_description">Информация о разработчике и прочее</string>
   <string name="about_version">Версия</string>
   <string name="about_changelog">Список изменений</string>
   <string name="about_changelog_description">Что нового?</string>
   <string name="about_developer">Разработчик</string>
+  <string name="about_vending_description">Больше приложений от разработчика</string>
   <string name="about_github_description">Исходный код</string>
   <string name="about_translation_description">Помогите перевести Doodle</string>
 
   <!-- MESSAGES -->
 
   <string name="msg_feedback">Отличное приложение требует больших затрат времени и живёт благодаря отзывам её пользователей.\n\nУ вас есть какие-нибудь пожелания, комментарии или вопросы? Свяжитесь со мной!\nНу и мне было бы очень приятно от положительного отзыва в Play Store.</string>
-  <string name="msg_share">Попробуйте это классное приложение с живыми обоями:
-\nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
+  <string name="msg_share">Попробуйте это классное приложение с живыми обоями:\nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
+  <string name="msg_hide">Скрыть значок в лаунчере?</string>
+  <string name="msg_random">Будут использованы все выбранные дизайны</string>
+  <string name="msg_random_warning">Случайный дизайн обоев все еще активен!</string>
   <string name="msg_reset">Сбросить все настройки?</string>
+  <string name="msg_force_stop">Принудительная остановка, необходимая для внесения изменений</string>
+  <string name="msg_apply_colors">Измененные цвета будут применены к системе при следующем выключении экрана</string>
+  <string name="msg_apply_changes">Чтобы применить измененные параметры, рекомендуется перезапустить запущенную службу обоев. Это не может быть сделано автоматически.\nПожалуйста, принудительно остановите Doodle в настройках вашей системы, а затем снова примените Doodle в качестве обоев.</string>
+  <string name="msg_set_wallpaper">Если вы столкнулись с проблемой, которая нарушает анимацию обоев при закрытии этого приложения, пожалуйста, выберите средство выбора обоев в вашей системе, чтобы выбрать Doodle.\nКроме того, вы можете установить его напрямую.</string>
   <string name="msg_preview_missing">Произошла ошибка. Пожалуйста, выберите живые обои Doodle вручную</string>
+  <string name="msg_picker_missing">Не удается открыть средство выбора обоев, пожалуйста, установите средство выбора живых обоев и попробуйте еще раз.</string>
 
   </resources>

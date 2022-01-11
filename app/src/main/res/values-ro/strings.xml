@@ -97,14 +97,22 @@
   <string name="parallax_damping">Amortizarea mișcării</string>
   <string name="parallax_damping_description">Scade pentru o fluiditate mai mare</string>
   <string name="parallax_threshold">Pragul de mișcare</string>
+  <string name="parallax_threshold_description">Crește pentru a întrerupe redarea continuă în ciuda mișcării mici</string>
+
   <!-- SIZE -->
 
   <string name="size_title">Mărime forme</string>
+  <string name="size_description">Scală efect zoom</string>
   <string name="size_category_zoom">Efect zoom</string>
   <string name="size_category_launcher">Zoom în launcher</string>
   <string name="size_category_unlock">Zoom în ecranul de blocare</string>
   <string name="size_scale">Mărime</string>
+  <string name="size_scale_description">Folositor pentru ecrane cu densitate mai mare</string>
   <string name="size_zoom">Intensitate zoom</string>
+  <string name="size_zoom_description">Când zoom-ul este mărit, camera face zoom out mai mult</string>
+  <string name="size_zoom_rotation">Rotește unele forme în timpul zoom-ului</string>
+  <string name="size_zoom_damping">Amortizarea animației</string>
+  <string name="size_zoom_system">Folosește efectul de zoom al sistemului</string>
   <string name="size_zoom_unlock">Zoom out în ecranul de pornire</string>
   <string name="size_zoom_duration">Deblochează durata zoom-ului</string>
   <string name="size_zoom_duration_description">Scade pentru o animație mai rapidă</string>
@@ -137,5 +145,9 @@
   <string name="about_translation_description">Ajută la traducerea Doodle</string>
 
   <string name="msg_hide">Ascundeți iconița din launcher?</string>
+  <string name="msg_random">Toate design-urile selectate vor fi folosite</string>
+  <string name="msg_random_warning">Designul de fundal aleatoriu este încă activ!</string>
   <string name="msg_reset">Resetați toate setările?</string>
+  <string name="msg_force_stop">Oprirea forțată este necesară pentru a aplica modificările</string>
+  <string name="msg_preview_missing">A apărut o eroare, selectați manual wallpaper-ul Doodle Live</string>
   </resources>

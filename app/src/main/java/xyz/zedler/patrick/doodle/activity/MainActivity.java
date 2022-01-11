@@ -34,6 +34,7 @@ import android.content.res.Resources;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -212,7 +213,9 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 
     if (getIntent() != null) {
       if (getIntent().getBooleanExtra(EXTRA.SHOW_FORCE_STOP_REQUEST, false)) {
-        new Handler().postDelayed(() -> showForceStopRequest(null), 200);
+        new Handler(Looper.getMainLooper()).postDelayed(
+            () -> showForceStopRequest(null), 200
+        );
       }
     }
 
@@ -231,7 +234,9 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     ViewUtil.setOnClickListeners(this, binding.fabMain);
 
     if (savedInstanceState == null && bundleInstanceState == null) {
-      showInitialBottomSheets();
+      new Handler(Looper.getMainLooper()).postDelayed(
+          this::showInitialBottomSheets, Build.VERSION.SDK_INT >= 31 ? 950 : 0
+      );
     }
   }
 
@@ -430,7 +435,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
   public void restartToApply(
       long delay, @NonNull Bundle bundle, boolean showForceStopRequest, boolean restoreState
   ) {
-    new Handler().postDelayed(() -> {
+    new Handler(Looper.getMainLooper()).postDelayed(() -> {
       if (restoreState) {
         onSaveInstanceState(bundle);
       }
@@ -493,6 +498,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         ViewUtil.showBottomSheet(this, new FeedbackBottomSheetDialogFragment());
       }
     }
+    ViewUtil.showBottomSheet(this, new FeedbackBottomSheetDialogFragment());
   }
 
   public boolean isTouchWiz() {

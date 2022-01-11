@@ -37,4 +37,5 @@ If your device doesn't display you the option to apply it only to your home scre
 There won't be many more wallpapers added to this app in the future. Doodle is about doodle-styled, flat-shaped (non-3D) original Google Pixel wallpapers, these criteria are not met by many of them out there.
 Every wallpaper design available in this app required days or weeks to implement, it's not as easy as you might think (shape extraction, dark version creation, optimization for parallax rendering and much more).
 When I find enough time beside university, I will expand the Material You collection and the collection of wallpapers by Anna Kövecses.
+
 So please be patient and watch HowToMen, an amazing tech YouTube channel for Android fans, while waiting for the next update!

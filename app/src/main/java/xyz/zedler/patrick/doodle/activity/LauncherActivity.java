@@ -32,6 +32,7 @@ import android.graphics.drawable.LayerDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.content.res.ResourcesCompat;
 import com.google.android.material.color.DynamicColors;
@@ -51,6 +52,7 @@ public class LauncherActivity extends MainActivity {
   public void onCreate(Bundle bundle) {
     if (Build.VERSION.SDK_INT >= 31) {
       super.onCreate(bundle);
+
       getSplashScreen().setOnExitAnimationListener(view -> {
         AnimatorSet set = new AnimatorSet();
         set.playTogether(
@@ -145,7 +147,7 @@ public class LauncherActivity extends MainActivity {
         try {
           assert splashContent != null;
           ViewUtil.startIcon(splashContent.findDrawableByLayerId(R.id.splash_logo));
-          new Handler(getMainLooper()).postDelayed(this::startNewMainActivity, 900);
+          new Handler(Looper.getMainLooper()).postDelayed(this::startNewMainActivity, 900);
         } catch (Exception e) {
           startNewMainActivity();
         }

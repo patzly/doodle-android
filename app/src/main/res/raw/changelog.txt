@@ -5,7 +5,7 @@
 - Improved: wallpaper design selection thumbnails and overview page appearance
 - Improved: method to determine if wallpaper is currently applied
 - Improved: tilt effect options hidden if device has no acceleration sensor
-- Improved: wallpaper restart NOT required to apply changed colors on Android 12 (my fault, turning off screen is enough)
+- Improved: wallpaper restart not required to apply changed colors on Android 12 (my fault, turning off screen is enough)
 - Improved: system bars appearance for older Android versions
 - Fixed: revert a change from last version that caused always-dark status bar on some devices (hopefully this was the reason)
 - Fixed: provide a possible solution for MIUI bug that stops wallpaper animation (shown when you tap on "Set wallpaper")

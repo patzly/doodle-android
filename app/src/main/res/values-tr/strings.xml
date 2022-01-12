@@ -48,6 +48,8 @@
   <string name="action_continue">Devam et</string>
   <string name="action_open_app_info">Uygulama bilgisini aç</string>
   <string name="action_set">Duvar kağıdı olarak ayarla</string>
+  <string name="action_set_directly">Doğrudan uygula</string>
+  <string name="action_open_picker">Duvar kağıdı seçicisini aç</string>
   <string name="action_send_feedback">Geri bildirim gönder</string>
   <string name="action_share">Paylaş</string>
   <string name="action_share_description">Doodle\'ı arkadaşlarına anlat</string>
@@ -169,6 +171,10 @@
   <string name="msg_random_warning">Rastgele duvar kağıdı tasarımı hâlâ aktif!</string>
   <string name="msg_reset">Tüm ayarlar sıfırlansın mı?</string>
   <string name="msg_force_stop">Değişiklikleri uygulamak için zorunlu durdurma gerekli</string>
+  <string name="msg_apply_colors">Ekranı sonraki sefer kapadığınızda seçili renkler sisteme uygulanacaktır</string>
   <string name="msg_apply_changes">Değiştirilen seçenekleri (eninde sonunda) uygulamak için, çalışan duvar kağıdı hizmetinin yeniden başlatılması önerilir. Bu otomatik olarak yapılamaz.\nLütfen sistem ayarlarınızda Doodle\'ı zorla durdurun ve ardından Doodle\'ı duvar kağıdınız olarak tekrar uygulayın. </string>
+  <string name="msg_set_wallpaper">Uygulamayı kapadığınızda arka plan animasyonunu bozan bir hata ile karşılaşırsanız, lütfen sisteminizin duvar kağıdı seçicisini Doodle olarak seçin.\nAksi halde duvar kağıdını doğrudan ayarlayabilirsiniz.</string>
   <string name="msg_preview_missing">Bir hata meydana geldi, lütfen Doodle Hareketli Duvar Kağıdını manuel olarak seçin </string>
+  <string name="msg_picker_missing">Duvar kağıdı seçicisini açamıyoruz, lütfen hareketli duvar kağıdı seçicisi kurup tekrar deneyin.</string>
+
   </resources>

@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ This file is part of Doodle Android.
+  ~
+  ~ Doodle Android is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Doodle Android is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with Doodle Android. If not, see <http://www.gnu.org/licenses/>.
+  ~
+  ~ Copyright (c) 2019-2022 by Patrick Zedler
+  -->
+
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+
+  <string name="wallpaper_description">Barevné živé tapety s automatickým tmavým režimem a animacemi, které jsou šetrné k baterce telefonu. Tapněte a dozvíte se víc.</string>
+  <string name="wallpaper_description_picker">Prozkoumejte barevné shluky tvarů, vylepšené o jenmý parallax efekt a zoom když budete procházet skrze vaše domovské obrazovky a odemykat telefon.\nUpravte si tapetu, aby odpovídala plně vašemu stylu.</string>
+
+  <!-- TITLES -->
+
+  <string name="title_info">Informace</string>
+  <string name="title_apply_changes">Aplikovat změny</string>
+  <string name="title_feedback">Zpětná vazba</string>
+  <string name="title_licenses">Licence open source</string>
+
+  <!-- LABELS -->
+
+  <string name="label_ms">%1$sms</string>
+  <string name="label_degrees">%1$s stupňů</string>
+
+  <!-- ACTIONS -->
+
+  <string name="action_close">Zavřít</string>
+  <string name="action_back">Zpět</string>
+  <string name="action_open_link">Otevřít externí web</string>
+  <string name="action_hide">Skrýt</string>
+  <string name="action_reset">Obnovit</string>
+  <string name="action_deactivate">Deaktivovat</string>
+  <string name="action_select_all">Vybrat vše</string>
+  <string name="action_continue">Pokračovat</string>
+  <string name="action_open_app_info">Otevřít informace o aplikaci</string>
+  <string name="action_set">Nastavit tapetu</string>
+  <string name="action_set_directly">Nastavit hned</string>
+  <string name="action_open_picker">Otevřít výběr tapety</string>
+  <string name="action_send_feedback">Odeslat zpětnou vazbu</string>
+  <string name="action_share">Sdílet</string>
+  <string name="action_share_description">Řekněte přátelům o aplikaci Doodle</string>
+  <string name="action_email">Poslat email</string>
+  <string name="action_email_description">Kontaktujte vývojáře</string>
+  <string name="action_rate">Ohodnotit na Google Play</string>
+  <string name="action_rate_description">Podpořte vývoj aplikace</string>
+  <string name="action_github">Doodle Android na GitHubu</string>
+  <string name="action_github_description">Otevřít issue</string>
+  <string name="action_language_select">Vyberte jazyk</string>
+
+  <!-- APPEARANCE -->
+
+  <string name="appearance_title">Vzhled</string>
+  <string name="appearance_description">Design &amp; barvy</string>
+  <string name="appearance_design">Design</string>
+  <string name="appearance_design_doodle">Kolekce inspirovaná Pixelem 4</string>
+  <string name="appearance_design_monet">Kolekce inspirovaná Pixelem 6 a Material You</string>
+  <string name="appearance_design_anna">Živé tapety od l\'Anna Kövecses</string>
+  <string name="appearance_variant">Varianta</string>
+  <string name="appearance_night_mode">Tmavý režim</string>
+  <string name="appearance_night_mode_description">Pouze tmavé barvy</string>
+  <string name="appearance_follow_system">Barvy systému</string>
+  <string name="appearance_follow_system_description">Adaptovat se na barevný režim systému</string>
+  <string name="appearance_white_text">Pokusit se vnutit bílý text</string>
+  <string name="appearance_white_text_description">Může ovlivnit čitelnost</string>
+  <string name="appearance_random">Náhodný design tapety</string>
+  <string name="appearance_random_description">Pokaždé, když se vypne display</string>
+  <string name="appearance_colors">Extrahované barvy</string>
+  <string name="appearance_colors_description">Použité pro výpočet barevného kontrastu</string>
+  <string name="appearance_colors_description_dynamic">Využívané pro nastavování barevného režimu</string>
+  <string name="appearance_colors_primary">Vyberte hlavní barvu</string>
+  <string name="appearance_colors_secondary">Vybrat druhotnou barvu</string>
+  <string name="appearance_colors_tertiary">Vybrat doplňkovou barvu</string>
+  <string name="appearance_colors_info">Na zařízeních bez možnosti využít dynamické barvy (verze Android 11 a níž), bude pro výpočet kontrastu textu a odstínu pozadí obrazovek pro aplikace využita pouze primární barva.</string>
+  <string name="appearance_colors_info_dynamic">V zařízeních se systémem Android 12 nebo vyšším a podporou dynamických barev se tři vybrané barvy použijí k automatickému vytvoření celosystémového barevného motivu.</string>
+
+  <!-- PARALLAX -->
+
+  <string name="parallax_title">Parallax efekt</string>
+  <string name="parallax_description">Swipe &amp; a efekt při naklánění</string>
+  <string name="parallax_touch_wiz">Zdá se, že váš současný launcher je Samsung TouchWiz, který nepodporuje scrollování na pozadí. Pokud nemáte povolenou možnost gyroskopu, zkuste použít jiný launcher, abyste zapnuli efekt parallaxu.\nToto upozornění můžete ignorovat, pokud jste jako výchozí nastavili jiný launcher.</string>
+  <string name="parallax_intensity">Síla efektu parallax</string>
+  <string name="parallax_intensity_description">Vodorovný posun při přejetí stránky a intenzita efektu naklonění</string>
+  <string name="parallax_none">Žádný</string>
+  <string name="parallax_category_tilt">Efekt při naklonění</string>
+  <string name="parallax_tilt">Pohyb při naklápění zařízení</string>
+  <string name="parallax_tilt_description">Spotřebovává víc baterie</string>
+  <string name="parallax_refresh_rate">Obnovovací frekvence snímače náklonu</string>
+  <string name="parallax_refresh_rate_description">Příliš krátké prodlevy mohou způsobit zpoždění animací zoomu.</string>
+  <string name="parallax_damping">Tlumení pohybu</string>
+  <string name="parallax_damping_description">Snížit pro větší hladkost</string>
+  <string name="parallax_threshold">Práh detekce pohybu</string>
+  <string name="parallax_threshold_description">Zvyšte pro pozastavení nepřetržitého vykreslování navzdory malým pohybům</string>
+
+  <!-- SIZE -->
+
+  <string name="size_title">Velikost tvarů</string>
+  <string name="size_description">Rozměry &amp; zoom efekt</string>
+  <string name="size_category_zoom">Zoom efekt</string>
+  <string name="size_category_launcher">Zoom launcheru</string>
+  <string name="size_category_unlock">Zoom na zamykací obrazovce</string>
+  <string name="size_scale">Zvětšení</string>
+  <string name="size_scale_description">Užitečné pro větší obrazovky</string>
+  <string name="size_zoom">Intenzita zoom efektu</string>
+  <string name="size_zoom_description">Při zvýšení se náhled více oddálí</string>
+  <string name="size_zoom_rotation">Otáčení některých tvarů při zoomování</string>
+  <string name="size_zoom_rotation_description">Maximální rotace ve stupních</string>
+  <string name="size_zoom_launcher">Oddálení při otevření nastavení nebo obrazovky aplikací.</string>
+  <string name="size_zoom_launcher_description">Nemusí být dostupné na všech zařízeních</string>
+  <string name="size_zoom_damping">Tlumení animace</string>
+  <string name="size_zoom_damping_description">Aktivujte a snížte pro plynulejší zoomování</string>
+  <string name="size_zoom_system">Použij efekt přiblížení poskytovaný systémem</string>
+  <string name="size_zoom_system_description">Možná oprava trhavé animace zoomu při zapnutém efektu náklonu, dostupná pouze na některých zařízeních.</string>
+  <string name="size_zoom_unlock">Oddálení na zamykací obrazovce</string>
+  <string name="size_zoom_unlock_description">Pokud je zapnutý efekt náklonu, může být trhavé.</string>
+  <string name="size_zoom_duration">Odemknout trvání zoomu</string>
+  <string name="size_zoom_duration_description">Snižte pro rychlejší animace</string>
+
+  <!-- OTHER -->
+
+  <string name="other_title">Další možnosti</string>
+  <string name="other_description">Vykreslování, jazyk &amp; obnovení</string>
+  <string name="other_language">Jazyk</string>
+  <string name="other_language_description">Děkujeme všem dobrovolným překladatelům na Transifexu! Navštivte prosím stránku projektu na GitHubu, kde se dozvíte, jak můžete pomoci zpřístupnit Doodle Live Wallpapers pro váš jazyk.</string>
+  <string name="other_language_system">Výchozí systému: %1$s</string>
+  <string name="other_language_not_available">Nedostupný</string>
+  <string name="other_gpu">Hadrwarová akcelerace</string>
+  <string name="other_gpu_description">Vypněte, pokud máte s tapetou problémy</string>
+  <string name="other_gpu_info">Hardwarová akcelerace je pro Doodle dostupná až od systému Android 8. Animace tapet proto mohou být trochu trhané.</string>
+  <string name="other_launcher">Skrýt ikonu v launcheru.</string>
+  <string name="other_launcher_description">Nastavení budou přístupná pouze ve výběru živé tapety v systému.</string>
+  <string name="other_theme">Barevný režim aplikace</string>
+  <string name="other_theme_description">Vyzkoušejte jiný vzhled</string>
+  <string name="other_theme_auto">Automaticky</string>
+  <string name="other_theme_light">Světlý</string>
+  <string name="other_theme_dark">Tmavý</string>
+  <string name="other_reset">Obnovit všechna nastavení</string>
+  <string name="other_reset_description">Dělá víc, než by udělalo odinstalování, protože předvolby jsou uloženy na zvláštním místě, kde musí být přístupné přímo po spuštění zařízení.</string>
+
+  <!-- ABOUT -->
+
+  <string name="about_title">O aplikaci</string>
+  <string name="about_description">Informace o vývojáři &amp; další</string>
+  <string name="about_version">Verze</string>
+  <string name="about_changelog">Seznam změn</string>
+  <string name="about_changelog_description">Změny a novinky v aplikaci.</string>
+  <string name="about_developer">Vývojář</string>
+  <string name="about_vending_description">Více aplikací od vývojáře</string>
+  <string name="about_github_description">Zdrojový kód</string>
+  <string name="about_translation_description">Pomozte přeložit Doodle</string>
+
+  <!-- MESSAGES -->
+
+  <string name="msg_feedback">Skvělá aplikace vyžaduje spoustu času a žije zpětnou vazbou od svých uživatelů.\n\nMáte nějaká přání, připomínky nebo dotazy? Kontaktujte mě!\nJinak bych byl moc rád za pěknou recenzi v Obchodě Google Play.</string>
+  <string name="msg_share">Podívejte se na tuhle cool aplikaci na živé tapety: \nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
+  <string name="msg_hide">Skrýt ikonu v launcheru?</string>
+  <string name="msg_random">Všechny vybrané návrhy budou použity</string>
+  <string name="msg_random_warning">Náhodný design tapety se zatím stále používá!</string>
+  <string name="msg_reset">Obnovit všechna nastavení?</string>
+  <string name="msg_force_stop">Vynucené zastavení nutné k provedení změn</string>
+  <string name="msg_apply_colors">Změněné barvy se do systému aplikují při příštím vypnutí obrazovky.</string>
+  <string name="msg_apply_changes">Pro použití (případně) změněných možností se doporučuje restartovat spuštěnou službu tapety. To nelze provést automaticky.\nProsím, zastavte službu Doodle v nastavení systému a poté ji znovu použijte jako tapetu</string>
+  <string name="msg_set_wallpaper">Pokud narazíte na problém, který přeruší animaci tapety při zavření této aplikace, zvolte prosím výběr tapety v systému a vyberte Doodle.\nJinak si ji můžete nastavit přímo.</string>
+  <string name="msg_preview_missing">Došlo k chybě, nastave prosím Doodle Live Wallpaper manuálně</string>
+  <string name="msg_picker_missing">Nelze otevřít nástroj pro výběr tapet, nainstalujte si prosím nástroj pro výběr živých tapet a zkuste to znovu.</string>
+
+  </resources>

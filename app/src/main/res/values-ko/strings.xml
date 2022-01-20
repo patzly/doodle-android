@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ This file is part of Doodle Android.
+  ~
+  ~ Doodle Android is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Doodle Android is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with Doodle Android. If not, see <http://www.gnu.org/licenses/>.
+  ~
+  ~ Copyright (c) 2019-2022 by Patrick Zedler
+  -->
+
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+
+  <string name="wallpaper_description">다채로운 색상과 자동 다크 모드, 그리고 배터리 낭비가 없는 애니메이션까지. 탭하여 알아보세요.</string>
+  <string name="wallpaper_description_picker">다채로운 색상의 도형들이 홈화면에서 스와이프하거나 기기를 잠금해제할 때 부드러운 기울임과 확대 효과를 경험해보세요./n당신의 스타일을 맞춰 배경화면을 맞춤설정 해볼 수도 있습니다.</string>
+
+  <!-- TITLES -->
+
+  <string name="title_info">정보</string>
+  <string name="title_apply_changes">변경사항 적용</string>
+  <string name="title_feedback">피드백</string>
+  <string name="title_licenses">오픈소스 라이선스</string>
+
+  <!-- LABELS -->
+
+  <string name="label_ms">%1$sms</string>
+  <string name="label_degrees">%1$s도</string>
+
+  <!-- ACTIONS -->
+
+  <string name="action_close">닫기</string>
+  <string name="action_back">뒤로 이동</string>
+  <string name="action_open_link">외부 웹사이트 열기</string>
+  <string name="action_hide">숨기기</string>
+  <string name="action_reset">초기화</string>
+  <string name="action_deactivate">비활성화</string>
+  <string name="action_select_all">모두 선택</string>
+  <string name="action_continue">계속</string>
+  <string name="action_open_app_info">앱 정보 화면 열기</string>
+  <string name="action_set">배경화면 설정</string>
+  <string name="action_set_directly">바로 설정하기</string>
+  <string name="action_open_picker">배경화면 선택기 열기</string>
+  <string name="action_send_feedback">피드백 보내기</string>
+  <string name="action_share">공유</string>
+  <string name="action_share_description">Doodle에 대해 주변인들에게 알려주세요</string>
+  <string name="action_email">이메일 보내기</string>
+  <string name="action_email_description">개발자에게 문의하기</string>
+  <string name="action_rate">Play 스토어에 평점 남기기</string>
+  <string name="action_rate_description">개발을 지원해주세요</string>
+  <string name="action_github">Doodle Android on GitHub</string>
+  <string name="action_github_description">새로운 문제 보고</string>
+  <string name="action_language_select">언어 선택</string>
+
+  <!-- APPEARANCE -->
+
+  <string name="appearance_title">모양새</string>
+  <string name="appearance_description">디자인 &amp; 색상 옵션</string>
+  <string name="appearance_design">디자인</string>
+  <string name="appearance_design_doodle">픽셀 4 Doodle 컬렉션</string>
+  <string name="appearance_design_monet">픽셀 6 Material You 컬렉션</string>
+  <string name="appearance_variant">옵션</string>
+  <string name="appearance_night_mode">다크 모드</string>
+  <string name="appearance_night_mode_description">어두운 색상들만</string>
+  <string name="appearance_follow_system">시스템 색상 적용</string>
+  <string name="appearance_follow_system_description">기기 테마 적용</string>
+  <string name="appearance_white_text">하얀색 텍스트 강제적용</string>
+  <string name="appearance_white_text_description">시인성에 문제가 발생할 수 있음</string>
+  <string name="appearance_random">배경화면 디자인을 무작위로 적용</string>
+  <string name="appearance_random_description">화면이 꺼져있을 때마다</string>
+  <string name="appearance_colors">추출된 색상</string>
+  <string name="appearance_colors_description">텍스트 대비를 계산하기 위해 사용됨</string>
+  <string name="appearance_colors_description_dynamic">시스템의 테마 엔진을 사용함</string>
+  <string name="appearance_colors_primary">주 색상 선택</string>
+  <string name="appearance_colors_secondary">보조 색상(두 번째) 선택</string>
+  <string name="appearance_colors_tertiary">보조 색상(세 번째) 선택</string>
+  <string name="appearance_colors_info">다이내믹 색상 기능이 지원되지 않는 기기들에서는(안드로이드 11 이하) 주 색상만이 런처 텍스트 색상 대비 계산과 최근 앱 화면의 배경 틴트에 사용됩니다.</string>
+  <string name="appearance_colors_info_dynamic">다이내믹 색상 지원이 가능하고 안드로이드 12 이상인 기기들에서는 선택된 세가지 색상들이 시스템 전체에 적용되는 테마를 생성하기 위해 사용됩니다.</string>
+
+  <!-- PARALLAX -->
+
+  <string name="parallax_title">기울임 효과</string>
+  <string name="parallax_description">스와이프 &amp; 기울임 효과</string>
+  <string name="parallax_touch_wiz">배경화면 스크롤을 지원하지 않는 삼성 TouchWiz 런처를 이용중인 것 같습니다. 기울임 센서 옵션이 활성화되어 있지 않다면 기울임 효과를 활성화하기 위해 다른 런처를 사용해주세요. \n다른 런처를 기본으로 설정했다면 이 경고를 무시하셔도 됩니다.</string>
+  <string name="parallax_intensity">기울임 효과 강도</string>
+  <string name="parallax_none">없음</string>
+  </resources>

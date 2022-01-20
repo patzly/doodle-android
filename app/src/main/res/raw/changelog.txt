@@ -1,3 +1,6 @@
+5.2.1:
+- Improved: updated translations
+
 5.2.0:
 - New: default shape scale based on display size and density (reset all options to let Doodle calculate the default shape scale)
 - New: FAQ in info section (tap info card on start page)

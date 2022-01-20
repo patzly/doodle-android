@@ -43,9 +43,13 @@
   <string name="action_open_link">Open externe website</string>
   <string name="action_hide">Verberg</string>
   <string name="action_reset">Reset</string>
+  <string name="action_deactivate">Deactiveer</string>
+  <string name="action_select_all">Selecteer alles</string>
   <string name="action_continue">Doorgaan</string>
   <string name="action_open_app_info">Open app info</string>
   <string name="action_set">Stel achtergrond in</string>
+  <string name="action_set_directly">Kies direct</string>
+  <string name="action_open_picker">Open achtergrond kiezer</string>
   <string name="action_send_feedback">Verstuur feedback</string>
   <string name="action_share">Deel</string>
   <string name="action_share_description">Vertel je vrienden over Doodle</string>
@@ -60,6 +64,7 @@
   <!-- APPEARANCE -->
 
   <string name="appearance_title">Uiterlijk</string>
+  <string name="appearance_description">Ontwerp &amp; kleur opties</string>
   <string name="appearance_design">Ontwerp</string>
   <string name="appearance_design_doodle">Pixel 4 Doodle Collectie</string>
   <string name="appearance_design_monet">Pixel 6 Material You Collectie</string>
@@ -105,6 +110,8 @@
   <string name="size_title">Vorm grootte</string>
   <string name="size_description">Schaal &amp; zoom effect</string>
   <string name="size_category_zoom">Zoom effect</string>
+  <string name="size_category_launcher">Startscherm zoom</string>
+  <string name="size_category_unlock">Vergrendelscherm zoom</string>
   <string name="size_scale">Schaal</string>
   <string name="size_scale_description">Handig voor grote schermen en dichtheden</string>
   <string name="size_zoom">Zoom intensiteit</string>
@@ -112,6 +119,9 @@
   <string name="size_zoom_rotation">Roteer sommige vormen tijdens zoomen</string>
   <string name="size_zoom_rotation_description">Maximale rotatie in graden</string>
   <string name="size_zoom_launcher">Uitzoomen bij openen van snelle instellingen of app lade.</string>
+  <string name="size_zoom_launcher_description">Mogelijk niet beschikbaar op sommige apparaten</string>
+  <string name="size_zoom_damping">Animatiedemping</string>
+  <string name="size_zoom_damping_description">Activeer en verlaag voor een zachtere zoom</string>
   <string name="size_zoom_system">Gebruik het zoomeffect van het systeem</string>
   <string name="size_zoom_unlock">Uitzoomen op vergrendelscherm</string>
   <string name="size_zoom_unlock_description">Kan schokkerig zijn als kantel effect ingeschakeld is</string>
@@ -156,8 +166,13 @@
   <string name="msg_feedback">Een geweldige app vergt veel tijd en leeft van de feedback van zijn gebruikers.\n\nHeb je wensen, opmerkingen of vragen? Neem contact op met mij!\nAnders zou ik erg blij zijn met een mooie recensie in de Play Store.</string>
   <string name="msg_share">Kijk eens naar deze coole live achtergrond app: \nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
   <string name="msg_hide">Verberg icoon in startscherm?</string>
+  <string name="msg_random">Alle geselecteerde ontwerpen zullen worden gebruikt</string>
+  <string name="msg_random_warning">Willekeurig achtergrond ontwerp is nog steeds actief!</string>
   <string name="msg_reset">Reset alle instellingen?</string>
   <string name="msg_force_stop">Forceer stoppen verreist om wijzigingen toe te passen</string>
+  <string name="msg_apply_colors">Veranderde kleuren zullen de volgende keer je scherm uit zet worden toegepast in het systeem</string>
   <string name="msg_apply_changes">Om (eventueel) gewijzigde opties toe te passen, wordt een herstart van de lopende achtergrond service aanbevolen. Dit kan niet automatisch worden gedaan.\nGelieve Doodle geforceerd te stoppen in je systeeminstellingen en vervolgens Doodle opnieuw toe te passen als je achtergrond.</string>
   <string name="msg_preview_missing">Er ging iets mis, selecteer Doodle Live Achtergrond alsjeblieft handmatig</string>
+  <string name="msg_picker_missing">Kan achtergrond kiezer niet openen, installeer alsjeblieft een live achtergrond kiezer en probeer het opnieuw.</string>
+
   </resources>

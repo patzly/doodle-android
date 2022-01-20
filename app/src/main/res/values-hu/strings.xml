@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ This file is part of Doodle Android.
+  ~
+  ~ Doodle Android is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Doodle Android is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with Doodle Android. If not, see <http://www.gnu.org/licenses/>.
+  ~
+  ~ Copyright (c) 2019-2022 by Patrick Zedler
+  -->
+
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+
+  <string name="wallpaper_description">Színes elő hattérképek automatikus sötét móddal és energiatakarékos animációkkal. Koppints ide hogy megtudj többet. </string>
+  <string name="wallpaper_description_picker">Fedezd fel geometriai alakok színes kollekcióját, gyengéd parallaxissal és zoom effektekkel kifinomítva a készülék feloldásakor és az oldalak között lapozáskor.\nVáltoztasd meg a hátteret, hogy illjen a saját stílusodhoz.</string>
+
+  <!-- TITLES -->
+
+  <string name="title_info">Információ</string>
+  <string name="title_apply_changes">Változtatások mentése</string>
+  <string name="title_feedback">Visszajelzés</string>
+  <string name="title_licenses">Nyílt forráskódú licenszek</string>
+
+  <!-- LABELS -->
+
+  <string name="label_ms">%1$sms</string>
+  <string name="label_degrees">%1$sfok</string>
+
+  <!-- ACTIONS -->
+
+  <string name="action_close">Bezárás</string>
+  <string name="action_back">Vissza</string>
+  <string name="action_open_link">Külső weboldal megnyitása</string>
+  <string name="action_hide">Elrejtés</string>
+  <string name="action_reset">Visszaállítás</string>
+  <string name="action_deactivate">Deaktiválás</string>
+  <string name="action_select_all">Összes kijelölése</string>
+  <string name="action_continue">Tovább</string>
+  <string name="action_open_app_info">Alkalmazás adatainak megnyitása</string>
+  <string name="action_set">Háttérkép beállítása</string>
+  <string name="action_set_directly">Közvetlen beállítás</string>
+  <string name="action_open_picker">Háttérkép választó megnyitása</string>
+  <string name="action_send_feedback">Visszajelzés küldése</string>
+  <string name="action_share">Megosztás</string>
+  <string name="action_share_description">Mesélj a barátaidnak a Doodle-ről</string>
+  <string name="action_email">Email küldése</string>
+  <string name="action_email_description">Lépj kapcsolatba a fejlesztővel</string>
+  <string name="action_rate">Értékeld Google Play-en</string>
+  <string name="action_rate_description">Támogasd a fejlesztést</string>
+  <string name="action_github">Doodle Android GitHub-on</string>
+  <string name="action_language_select">Nyelv kiválasztása</string>
+
+  <!-- APPEARANCE -->
+
+  <string name="appearance_title">Megjelenés</string>
+  <string name="appearance_design">Design</string>
+  <string name="appearance_design_doodle">Pixel 4 Doodle Kollekció</string>
+  <string name="appearance_design_monet">Pixel 6 Material You Kollekció</string>
+  <string name="appearance_design_anna">Élő háttérképek à l\'Anna Kövecses</string>
+  <string name="appearance_variant">Változat</string>
+  <string name="appearance_night_mode">Sötét mód</string>
+  <string name="appearance_night_mode_description">Csakis sötét színek</string>
+  <string name="appearance_follow_system">Rendszer követése</string>
+  <string name="appearance_follow_system_description">A készülék színtemájának átvétele</string>
+  <string name="appearance_white_text">Fehér betűszín eröltetése</string>
+  <string name="appearance_white_text_description">Befolyásolhatja az olvashatóságot</string>
+  <string name="appearance_random">Véletlenszerű háttérkép design</string>
+  <string name="appearance_random_description">Minden alkalommal, amikor a kijelző kikapcsolódik</string>
+  <string name="appearance_colors">Kivont színek</string>
+  <string name="appearance_colors_description">Szöveg kontrasztjának kiszámítására használt</string>
+  <string name="appearance_colors_description_dynamic">A rendszer tematikus motorja által használt</string>
+  <string name="appearance_colors_primary">Elsődleges szín kiválasztása</string>
+  <string name="appearance_colors_secondary">Másodlagos szín kiválasztása</string>
+  <string name="appearance_colors_tertiary">Harmadlagos szín kiválasztása</string>
+  <string name="appearance_colors_info">A dinamikus színtámogatással nem rendelkező eszközökön (Android 11 vagy régebbi verziók) csak az elsődleges szín használt a launcher szövegének kontrasztjának kiszámításához és a legutóbbi alkalmazások képernyőjének hátterének színezéséhez.</string>
+  <string name="appearance_colors_info_dynamic">Az Android 12 vagy újabb verzióval és a dinamikus színtámogatással rendelkező eszközökön a három kiválasztott szín automatikusan rendszerszintű színtémát hoz létre.</string>
+
+  <!-- PARALLAX -->
+
+  <string name="parallax_title">Parallaxis</string>
+  <string name="parallax_description">Csúsztatás &amp; billenő effektus</string>
+  <string name="parallax_touch_wiz">Úgy tűnik, hogy a jelenlegi launch-ered a Samsung TouchWiz, amely nem támogatja a háttérkép görgetést. Kérünk, próbálj meg egy másik launcher-t a parallaxis effektus engedélyezéséhez, ha nincs engedélyezve a dőlésérzékelő opció.\nHa másik launcher-t állít be alapértelmezettként, figyelmen kívül hagyhatod ezt a figyelmeztetést.</string>
+  <string name="parallax_intensity">Parallaxis erőssége</string>
+  </resources>

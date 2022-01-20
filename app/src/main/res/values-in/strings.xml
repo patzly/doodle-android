@@ -49,6 +49,7 @@
   <string name="action_open_app_info">Buka info aplikasi</string>
   <string name="action_set">Atur wallpaper</string>
   <string name="action_set_directly">Atur lansung</string>
+  <string name="action_open_picker">Buka pemilih wallpaper</string>
   <string name="action_send_feedback">Kirim masukan</string>
   <string name="action_share">Bagikan</string>
   <string name="action_share_description">Beri tahu teman-temanmu tentang Doodle</string>
@@ -118,6 +119,7 @@
   <string name="size_zoom_rotation">Rotasi beberapa bentuk saat memperbesar</string>
   <string name="size_zoom_rotation_description">Rotasi maksimum dalam degree</string>
   <string name="size_zoom_launcher">Perkecil saat membuka pengaturan cepat atau laci aplikasi</string>
+  <string name="size_zoom_launcher_description">Mungkin tidak tersedia di beberapa perangkat</string>
   <string name="size_zoom_system">Gunakan efek zoom yang disediakan sistem</string>
   <string name="size_zoom_unlock">Perkecil di lockscreen</string>
   <string name="size_zoom_unlock_description">Mungkin jerky jika efek tilt dihidupkan</string>

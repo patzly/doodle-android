@@ -44,9 +44,12 @@
   <string name="action_hide">Esconder</string>
   <string name="action_reset">Redefinir</string>
   <string name="action_deactivate">Desativar</string>
+  <string name="action_select_all">Selecionar todos</string>
   <string name="action_continue">Continuar</string>
   <string name="action_open_app_info">Abrir informações do aplicativo</string>
   <string name="action_set">Definir papel de parede</string>
+  <string name="action_set_directly">Definir diretamente</string>
+  <string name="action_open_picker">Abrir seletor de papel de parede</string>
   <string name="action_send_feedback">Enviar comentários</string>
   <string name="action_share">Compartilhar</string>
   <string name="action_share_description">Conte aos seus amigos sobre o Doodle</string>
@@ -61,6 +64,7 @@
   <!-- APPEARANCE -->
 
   <string name="appearance_title">Aparência</string>
+  <string name="appearance_description">Design &amp; opções de cor</string>
   <string name="appearance_design">Design</string>
   <string name="appearance_design_doodle">Coleção Doodle de Pixel 4</string>
   <string name="appearance_design_monet">Coleção Material You de Pixel 6</string>
@@ -106,6 +110,8 @@
   <string name="size_title">Tamanho e formato</string>
   <string name="size_description">Effeitos de zoom &amp; tamanho</string>
   <string name="size_category_zoom">Efeito de zoom</string>
+  <string name="size_category_launcher">Zoom do inicializador</string>
+  <string name="size_category_unlock">Zoom da tela de bloqueio</string>
   <string name="size_scale">Tamanho da forma</string>
   <string name="size_scale_description">Útil para telas grandes</string>
   <string name="size_zoom">Intensidade de zoom</string>
@@ -113,7 +119,11 @@
   <string name="size_zoom_rotation">Rotacionar alguns objetos quando aplicar zoom</string>
   <string name="size_zoom_rotation_description">Maior ângulo de rotação em graus</string>
   <string name="size_zoom_launcher">Diminua o zoom ao abrir as configurações rápidas ou gaveta de aplicativos</string>
+  <string name="size_zoom_launcher_description">Pode estar indisponível em certos dispositivos</string>
+  <string name="size_zoom_damping">Amortecimento de animações</string>
+  <string name="size_zoom_damping_description">Ative e diminua para zoom mais suave</string>
   <string name="size_zoom_system">Usar efeito de zoom do sistema</string>
+  <string name="size_zoom_system_description">Pode corrigir animação travada quando o efeito de inclinação está ligado, disponível apenas em alguns dispostivos</string>
   <string name="size_zoom_unlock">Diminuir o zoom na tela de bloqueio</string>
   <string name="size_zoom_unlock_description">Pode ser travado se efeito de inclinação estiver ligado</string>
   <string name="size_zoom_duration">Destravar duração do zoom</string>
@@ -157,9 +167,14 @@
   <string name="msg_feedback">Um ótimo aplicativo requer muito tempo e vive dos comentários de seus usuários.\n\nVocê tem algum desejo, comentário ou pergunta? Contacte-me!\nCaso contrário, ficaria muito satisfeito com uma boa crítica na Play Store.</string>
   <string name="msg_share">Confira este aplicativo legal de papel de parede ao vivo: \nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
   <string name="msg_hide">Esconder ícone em inicializador?</string>
+  <string name="msg_random">Todos os designs selecionados serão utilizados</string>
   <string name="msg_random_warning">Papel de parede aleatório ainda está ativo</string>
   <string name="msg_reset">Redefinir todas as configurações?</string>
   <string name="msg_force_stop">Parada forçada é necessária para aplicar as mudanças</string>
+  <string name="msg_apply_colors">Cores selecionadas serão aplicadas ao sistema na próxima vez que você desligar a tela</string>
   <string name="msg_apply_changes">Para (eventualmente) aplicar as configurações modificadas é recomendado reiniciar o  serviço de papel de parede. Isso não poe ser feito automáticamente.\nPor favor, encerre o Doodle nas configurações do seu sistema, então, aplique Doodle como seu papel de parede novamente.</string>
+  <string name="msg_set_wallpaper">Se encontrar algum problema que quebre a animação do papel de parede quando fechar esse aplicativo, selecione o Doodle pelo seletor de papel de parede do sistema.\nCaso contrário, pode usar o Doodle diretamente.</string>
   <string name="msg_preview_missing">Ocorreu um erro, por favor selecione o Doodle Live Wallpaper manualmente</string>
+  <string name="msg_picker_missing">Não foi possível abrir o seletor de papel de parede, por favor instale um seletor de papeis de parede animados e tente novamente.</string>
+
   </resources>

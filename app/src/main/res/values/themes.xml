@@ -17,9 +17,9 @@
   ~ Copyright (c) 2019-2022 by Patrick Zedler
   -->
 
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
 
-  <style name="Theme.Doodle" parent="Theme.Material3.DayNight.NoActionBar">
+  <style name="Base.Doodle" parent="Theme.Material3.DayNight.NoActionBar">
     <item name="android:colorPrimaryDark">?android:attr/colorBackground</item>
     <item name="android:navigationBarColor">?android:attr/colorBackground</item>
 
@@ -39,12 +39,9 @@
 
     <!-- Dialog themes -->
     <item name="bottomSheetDialogTheme">@style/Theme.Doodle.BottomSheetDialog</item>
-
-    <!-- Splash screen -->
-    <item name="android:windowSplashScreenBackground" tools:targetApi="s">?android:attr/colorBackground</item>
-    <item name="android:windowSplashScreenAnimatedIcon" tools:targetApi="s">@drawable/splash_logo_anim</item>
-    <item name="android:windowSplashScreenAnimationDuration" tools:targetApi="s">950</item>
   </style>
+
+  <style name="Theme.Doodle" parent="Base.Doodle" />
 
   <style name="Theme.Doodle.BottomSheetDialog" parent="ThemeOverlay.Material3.BottomSheetDialog">
     <item name="enableEdgeToEdge">true</item>

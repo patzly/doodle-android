@@ -1,5 +1,6 @@
 5.2.1:
 - Improved: updated translations
+- Improved: splash screen background color on Android 12
 
 5.2.0:
 - New: default shape scale based on display size and density (reset all options to let Doodle calculate the default shape scale)

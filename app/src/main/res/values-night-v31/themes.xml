@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ This file is part of Doodle Android.
   ~
   ~ Doodle Android is free software: you can redistribute it and/or modify
@@ -19,18 +17,12 @@
   ~ Copyright (c) 2019-2022 by Patrick Zedler
   -->
 
-<layer-list
-  xmlns:tools="http://schemas.android.com/tools"
-  xmlns:android="http://schemas.android.com/apk/res/android">
+<resources>
 
-  <item android:drawable="@android:color/system_neutral1_900" />
+  <style name="Theme.Doodle" parent="Base.Doodle">
+    <item name="android:windowSplashScreenBackground">@android:color/system_neutral1_900</item>
+    <item name="android:windowSplashScreenAnimatedIcon">@drawable/splash_logo_anim</item>
+    <item name="android:windowSplashScreenAnimationDuration">970</item>
+  </style>
 
-  <item
-    android:id="@+id/splash_logo"
-    android:gravity="center"
-    android:width="180dp"
-    android:height="180dp"
-    android:drawable="@drawable/splash_logo_anim"
-    tools:ignore="UnusedAttribute" />
-
-</layer-list>
+</resources>

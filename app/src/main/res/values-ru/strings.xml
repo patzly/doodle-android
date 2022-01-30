@@ -153,7 +153,7 @@
   <!-- ABOUT -->
 
   <string name="about_title">О приложении</string>
-  <string name="about_description">Информация о разработчике и прочее</string>
+  <string name="about_description">Сведения о разработчике и остальном</string>
   <string name="about_version">Версия</string>
   <string name="about_changelog">Список изменений</string>
   <string name="about_changelog_description">Что нового?</string>

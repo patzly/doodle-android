@@ -148,7 +148,7 @@
   <string name="other_theme_light">Светлая</string>
   <string name="other_theme_dark">Темная</string>
   <string name="other_reset">Сбросить все настройки</string>
-  <string name="other_reset_description">Делает больше, чем сделало бы удаление приложения, потому что настройки хранятся в особом месте, ведь они должны быть доступны сразу после запуска устройства</string>
+  <string name="other_reset_description">Опция полезнее обычного удаления приложения, поскольку настройки хранятся в особом месте, чтобы применяться сразу после запуска устройства</string>
 
   <!-- ABOUT -->
 

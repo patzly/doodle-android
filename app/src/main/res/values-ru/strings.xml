@@ -144,7 +144,7 @@
   <string name="other_launcher_description">Настройки будут доступны только в системном приложении для установки обоев</string>
   <string name="other_theme">Тема приложения</string>
   <string name="other_theme_description">Опробуйте другую комбинацию</string>
-  <string name="other_theme_auto">Автоматическая</string>
+  <string name="other_theme_auto">Автомат.</string>
   <string name="other_theme_light">Светлая</string>
   <string name="other_theme_dark">Темная</string>
   <string name="other_reset">Сбросить все настройки</string>

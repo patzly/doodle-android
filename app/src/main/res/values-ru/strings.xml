@@ -166,7 +166,7 @@
 
   <string name="msg_feedback">Хорошее приложение отнимает много времени и существует благодаря своим пользователям.\n\nУ вас есть какие-нибудь пожелания, комментарии или вопросы? Свяжитесь со мной!\nТакже я был бы признателен за положительный отзыв в Play Маркете.</string>
   <string name="msg_share">Зацени эти крутые живые обои: \nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
-  <string name="msg_hide">Скрыть значок в лаунчере?</string>
+  <string name="msg_hide">Скрыть значок с рабочего стола?</string>
   <string name="msg_random">Будут использованы все выбранные дизайны</string>
   <string name="msg_random_warning">Случайный дизайн обоев все еще активен!</string>
   <string name="msg_reset">Сбросить все настройки?</string>

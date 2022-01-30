@@ -132,7 +132,7 @@
   <!-- OTHER -->
 
   <string name="other_title">Другие настройки</string>
-  <string name="other_description">Отрисовка, язык и сброс</string>
+  <string name="other_description">Отрисовка, язык и сброс настроек</string>
   <string name="other_language">Язык приложения</string>
   <string name="other_language_description">Большое спасибо всем переводчикам-добровольцам Transifex! Пожалуйста, посетите страницу проекта на GitHub, чтобы узнать, как вы можете помочь сделать живые обои Doodle доступными для вашего языка.</string>
   <string name="other_language_system">%1$s (по умолчанию)</string>

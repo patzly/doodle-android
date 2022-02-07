@@ -44,9 +44,12 @@
   <string name="action_hide">Cacher</string>
   <string name="action_reset">Réinitialiser</string>
   <string name="action_deactivate">Désactiver</string>
+  <string name="action_select_all">Tout sélectionner</string>
   <string name="action_continue">Continuer</string>
   <string name="action_open_app_info">Ouvrir les infos sur l\'app</string>
   <string name="action_set">Définir le papier peint</string>
+  <string name="action_set_directly">Définir directement</string>
+  <string name="action_open_picker">Ouvrir le sélecteur de papier peint</string>
   <string name="action_send_feedback">Envoyer des commentaires</string>
   <string name="action_share">Partager</string>
   <string name="action_share_description">Parlez de Doodle à vos amis</string>
@@ -61,6 +64,7 @@
   <!-- APPEARANCE -->
 
   <string name="appearance_title">Apparence</string>
+  <string name="appearance_description">Options de style & couleur</string>
   <string name="appearance_design">Style</string>
   <string name="appearance_design_doodle">Collection de Doodle Pixel 4</string>
   <string name="appearance_design_monet">Collection Material You Pixel 6</string>
@@ -106,6 +110,8 @@
   <string name="size_title">Taille de la forme</string>
   <string name="size_description">Échelle et effets de zoom</string>
   <string name="size_category_zoom">Effet de zoom</string>
+  <string name="size_category_launcher">Zoom de l\'écran d\'accueil</string>
+  <string name="size_category_unlock">Zoom de l\'écran de verrouillage</string>
   <string name="size_scale">Échelle</string>
   <string name="size_scale_description">Utile pour les grands écrans et les densités élevées</string>
   <string name="size_zoom">Intensité du zoom</string>
@@ -113,7 +119,11 @@
   <string name="size_zoom_rotation">Faire pivoter certaines formes tout en zoomant</string>
   <string name="size_zoom_rotation_description">Rotation maximale en degrés</string>
   <string name="size_zoom_launcher">Effectuer un zoom arrière lors de l\'ouverture des paramètres rapides ou du tiroir d\'applications</string>
+  <string name="size_zoom_launcher_description">Peut être indisponible sur certains appareils</string>
+  <string name="size_zoom_damping">Atténuation de l\'animation</string>
+  <string name="size_zoom_damping_description">Activer et diminuer pour zoomer de manière plus fluide</string>
   <string name="size_zoom_system">Utiliser l\'effet de zoom fourni par le système</string>
+  <string name="size_zoom_system_description">Peut corriger les saccades de l\'animation de zoom quand l\'effet d\'inclinaison est actif, disponible uniquement sur certains appareils</string>
   <string name="size_zoom_unlock">Zoom arrière sur l\'écran de verrouillage</string>
   <string name="size_zoom_unlock_description">Peut être saccadé si l\'effet d\'inclinaison est activé</string>
   <string name="size_zoom_duration">Durée du zoom au déverrouillage</string>
@@ -157,9 +167,14 @@
   <string name="msg_feedback">Une bonne application demande beaucoup de temps et vit des retours de ses utilisateurs.\n\nAvez-vous des souhaits, des commentaires ou des questions ? Contactez-moi !\nSinon, je serais très heureux d\'avoir une bonne critique sur le Play Store.</string>
   <string name="msg_share">Découvrez cette excellente application de fonds d\'écran animés : \nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
   <string name="msg_hide">Masquer l\'icône dans le lanceur d\'applications ?</string>
+  <string name="msg_random">Tous les styles sélectionnés seront utilisés</string>
   <string name="msg_random_warning">Le motif de fond d\'écran aléatoire est toujours actif !</string>
   <string name="msg_reset">Réinitialiser tous les réglages ?</string>
   <string name="msg_force_stop">Arrêt forcé requis pour appliquer les modifications</string>
+  <string name="msg_apply_colors">Les couleurs modifiées seront appliquées au système la prochaine fois que vous éteindrez l\'écran</string>
   <string name="msg_apply_changes">Pour (éventuellement) appliquer les options modifiées, un redémarrage du service de papier peint en cours d\'exécution est recommandé. Cela ne peut pas être fait automatiquement.\nVeuillez forcer l\'arrêt de Doodle dans les paramètres de votre système, puis appliquez à nouveau Doodle comme fond d\'écran.</string>
+  <string name="msg_set_wallpaper">Si vous rencontrez un problème qui casse l\'animation du papier peint en fermant cette application, veuillez choisir Doodle dans le sélectionneur de papier peint de votre système.\nDans le cas contraire vous pouvez le définir directement.</string>
   <string name="msg_preview_missing">Une erreur s\'est produite, veuillez sélectionner manuellement le fond d\'écran animé Doodle</string>
+  <string name="msg_picker_missing">Impossible d\'ouvrir le sélecteur de papier peint, veuillez installer un sélecteur de papier peint animé et réessayez.</string>
+
   </resources>

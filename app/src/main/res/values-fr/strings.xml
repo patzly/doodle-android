@@ -173,7 +173,7 @@
   <string name="msg_force_stop">Arrêt forcé requis pour appliquer les modifications</string>
   <string name="msg_apply_colors">Les couleurs modifiées seront appliquées au système la prochaine fois que vous éteindrez l\'écran</string>
   <string name="msg_apply_changes">Pour (éventuellement) appliquer les options modifiées, un redémarrage du service de papier peint en cours d\'exécution est recommandé. Cela ne peut pas être fait automatiquement.\nVeuillez forcer l\'arrêt de Doodle dans les paramètres de votre système, puis appliquez à nouveau Doodle comme fond d\'écran.</string>
-  <string name="msg_set_wallpaper">Si vous rencontrez un problème qui casse l\'animation du papier peint en fermant cette application, veuillez choisir Doodle dans le sélectionneur de papier peint de votre système.\nDans le cas contraire vous pouvez le définir directement.</string>
+  <string name="msg_set_wallpaper">Si vous rencontrez un problème qui casse l\'animation du papier peint en fermant cette application, veuillez choisir Doodle dans le sélecteur de papier peint de votre système.\nDans le cas contraire vous pouvez le définir directement.</string>
   <string name="msg_preview_missing">Une erreur s\'est produite, veuillez sélectionner manuellement le fond d\'écran animé Doodle</string>
   <string name="msg_picker_missing">Impossible d\'ouvrir le sélecteur de papier peint, veuillez installer un sélecteur de papier peint animé et réessayez.</string>
 

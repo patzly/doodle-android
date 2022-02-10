@@ -370,7 +370,7 @@ public class OtherFragment extends BaseFragment
     if (bundleInstanceState != null) {
       binding.scrollHorizOtherTheme.scrollTo(
           bundleInstanceState.getInt(EXTRA.SCROLL_POSITION, 0),
-           0
+          0
       );
     }
   }

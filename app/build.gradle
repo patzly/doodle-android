@@ -44,10 +44,15 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled true
-            proguardFiles {
-                getDefaultProguardFile('proguard-android-optimize.txt')
-                'proguard-rules.pro'
+            postprocessing {
+                removeUnusedCode true
+                removeUnusedResources true
+                obfuscate false
+                optimizeCode true
+                proguardFiles {
+                    getDefaultProguardFile('proguard-android-optimize.txt')
+                    'proguard-rules.pro'
+                }
             }
             debuggable false
         }
@@ -62,8 +67,8 @@ android {
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.4.1'
     implementation 'androidx.preference:preference:1.2.0'
-    implementation 'androidx.navigation:navigation-fragment:2.5.0-alpha01'
-    implementation 'androidx.navigation:navigation-ui:2.5.0-alpha01'
+    implementation 'androidx.navigation:navigation-fragment:2.4.1'
+    implementation 'androidx.navigation:navigation-ui:2.4.1'
 
     implementation 'com.google.android.material:material:1.6.0-alpha02'
 }

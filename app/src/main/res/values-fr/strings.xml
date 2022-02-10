@@ -64,7 +64,7 @@
   <!-- APPEARANCE -->
 
   <string name="appearance_title">Apparence</string>
-  <string name="appearance_description">Options de style & couleur</string>
+  <string name="appearance_description">Options de style et couleur</string>
   <string name="appearance_design">Style</string>
   <string name="appearance_design_doodle">Collection de Doodle Pixel 4</string>
   <string name="appearance_design_monet">Collection Material You Pixel 6</string>

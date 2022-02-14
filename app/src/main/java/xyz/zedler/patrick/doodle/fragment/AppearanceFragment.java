@@ -620,15 +620,14 @@ public class AppearanceFragment extends BaseFragment
   }
 
   private void refreshDarkLightVariant() {
-    try {
-      currentVariant = isWallpaperNightMode()
-          ? currentWallpaper.getDarkVariants()[currentVariantIndex]
-          : currentWallpaper.getVariants()[currentVariantIndex];
-    } catch (IndexOutOfBoundsException e) {
-      currentVariant = isWallpaperNightMode()
-          ? currentWallpaper.getDarkVariants()[0]
-          : currentWallpaper.getVariants()[0];
+    int index = currentVariantIndex;
+    if (index >= currentWallpaper.getVariants().length
+        || index >= currentWallpaper.getDarkVariants().length) {
+      index = 0;
     }
+    currentVariant = isWallpaperNightMode()
+        ? currentWallpaper.getDarkVariants()[index]
+        : currentWallpaper.getVariants()[index];
   }
 
   private void showMonetInfoIfRequired() {

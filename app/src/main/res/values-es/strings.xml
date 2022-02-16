@@ -34,10 +34,17 @@
   <!-- ACTIONS -->
 
   <string name="action_close">Cerrar</string>
+  <string name="action_back">Atrás</string>
+  <string name="action_open_link">Abrir sitio web externo </string>
   <string name="action_hide">Ocultar </string>
   <string name="action_reset">Restablecer</string>
+  <string name="action_deactivate">Desactivado</string>
+  <string name="action_select_all">Seleccionar todo</string>
   <string name="action_continue">Continuar</string>
+  <string name="action_open_app_info">Abrir información de la app</string>
   <string name="action_set">Aplicar</string>
+  <string name="action_set_directly">Establecerlo directamente</string>
+  <string name="action_open_picker"> Abrir selector de fondos de pantalla</string>
   <string name="action_send_feedback">Enviar comentarios</string>
   <string name="action_share">Compartir</string>
   <string name="action_share_description">Cuéntales a tus amigos sobre Doodle</string>
@@ -92,6 +99,7 @@
   <string name="other_language_description">¡Muchas gracias a todos los traductores voluntarios de Transifex! Visite la página de GitHub del proyecto para saber cómo puede ayudar a que Doodle Live Wallpapers esté disponible para su idioma.</string>
   <string name="other_language_not_available">No disponible</string>
   <string name="other_gpu">Aceleracion por hardware</string>
+  <string name="other_gpu_info">La aceleración de hardware solo está disponible para Doodle a partir de Android 8. Por lo tanto, las animaciones del fondo de pantalla pueden ser un poco entrecortadas.</string>
   <string name="other_launcher">Ocultar icono en el lanzador</string>
   <string name="other_launcher_description">Solo se podrá acceder a la configuración en el selector de fondos de pantalla de su sistema</string>
   <string name="other_theme_auto">Automático</string>
@@ -111,5 +119,11 @@
   <string name="msg_feedback">Una gran aplicación requiere mucho tiempo y vive de los comentarios de sus usuarios.\n\n¿Tienes algún deseo, comentario o pregunta? ¡Contáctame!\nDe lo contrario, estaría muy feliz con una buena reseña en Play Store.</string>
   <string name="msg_share">Echa un vistazo a esta fantástica aplicación de fondos de pantalla animados: \nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
   <string name="msg_reset">Restablecer todos los ajustes?</string>
+  <string name="msg_force_stop">Se requiere forzar detencion para aplicar los cambios</string>
+  <string name="msg_apply_colors">Los colores modificados se aplicarán al sistema la próxima vez que apague la pantalla</string>
+  <string name="msg_apply_changes">Para aplicar (eventualmente) las opciones modificadas, se recomienda reiniciar el servicio de fondo de pantalla en ejecución.  Esto no se puede hacer automáticamente.  Fuerza la detención de Doodle en la configuración de tu sistema y luego vuelve a aplicar Doodle como fondo de pantalla.</string>
+  <string name="msg_set_wallpaper">Si encuentra un problema que interrumpe la animación del fondo de pantalla al cerrar esta aplicación, elija el selector de fondo de pantalla de su sistema para seleccionar Doodle.  De lo contrario, puede configurarlo directamente.</string>
   <string name="msg_preview_missing">Se produjo un error, seleccione Doodle Live Wallpaper manualmente</string>
+  <string name="msg_picker_missing">No se puede abrir la selección de fondos de pantalla, instale un selector de fondos de pantalla en vivo y vuelva a intentarlo.</string>
+
   </resources>

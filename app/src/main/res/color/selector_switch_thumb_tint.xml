@@ -26,7 +26,7 @@
 
   <!-- State Checked -->
   <item
-    android:color="?attr/colorOnPrimary"
+    android:color="?attr/colorPrimaryContainer"
     android:state_checked="true" />
 
   <!-- State Unchecked -->

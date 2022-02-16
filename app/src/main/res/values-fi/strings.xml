@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ This file is part of Doodle Android.
+  ~
+  ~ Doodle Android is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Doodle Android is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with Doodle Android. If not, see <http://www.gnu.org/licenses/>.
+  ~
+  ~ Copyright (c) 2019-2022 by Patrick Zedler
+  -->
+
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+
+  <!-- TITLES -->
+
+  <string name="title_info">Tietoja</string>
+  <string name="title_apply_changes">Ota muutokset käyttöön</string>
+  <string name="title_feedback">Palaute</string>
+  <string name="title_licenses">Avoimen lähdekoodin lisenssit</string>
+
+  <!-- LABELS -->
+
+  <string name="label_ms">%1$sms</string>
+  <string name="label_degrees">%1$s astetta</string>
+
+  <!-- ACTIONS -->
+
+  <string name="action_close">Sulje</string>
+  <string name="action_back">Takaisin</string>
+  <string name="action_open_link">Avaa ulkoinen verkkosivusto</string>
+  <string name="action_hide">Piilota</string>
+  <string name="action_reset">Nollaa</string>
+  <string name="action_deactivate">Poista käytöstä</string>
+  <string name="action_select_all">Valitse kaikki</string>
+  <string name="action_continue">Jatka</string>
+  <string name="action_open_app_info">Avaa sovellustiedot</string>
+  <string name="action_set">Aseta taustakuva</string>
+  <string name="action_set_directly">Aseta suoraan</string>
+  <string name="action_open_picker">Avaa taustakuvan valitsin</string>
+  <string name="action_send_feedback">Lähetä palautetta</string>
+  <string name="action_share">Jaa</string>
+  <string name="action_share_description">Kerro ystävillesi Doodlesta</string>
+  <string name="action_email">Lähetä sähköpostia</string>
+  <string name="action_email_description">Ota yhteyttä kehittäjään</string>
+  <string name="action_rate">Arvostele Play Kaupassa</string>
+  <string name="action_rate_description">Tue kehitystä</string>
+  <string name="action_github">Doodle Android Githubissa</string>
+  <string name="action_language_select">Valitse kieli</string>
+
+  <!-- APPEARANCE -->
+
+  <string name="appearance_title">Ulkonäkö</string>
+  <string name="appearance_description">Tyyli- ja värivaihtoehdot</string>
+  <string name="appearance_design">Tyyli</string>
+  <string name="appearance_design_doodle">Pixel 4 Doodle -kokoelma</string>
+  <string name="appearance_design_monet">Pixel 6 Material You -kokoelma</string>
+  <string name="appearance_design_anna">Anna Kövecsesin elävät taustakuvat</string>
+  <string name="appearance_variant">Variaatio</string>
+  <string name="appearance_night_mode">Yötila</string>
+  <string name="appearance_night_mode_description">Vain tummia värejä</string>
+  <string name="appearance_follow_system">Seuraa järjestelmän asetusta</string>
+  <string name="appearance_follow_system_description">Käytä laitteen teemaa</string>
+  <string name="appearance_white_text">Yritä pakottaa valkoinen teksti</string>
+  <string name="appearance_white_text_description">Voi vaikuttaa luettavuuteen</string>
+  <string name="appearance_random">Satunnainen taustakuvan tyyli</string>
+  <string name="appearance_random_description">Aina kun näyttö sammutetaan</string>
+  <string name="appearance_colors">Poimitut värit</string>
+  <string name="appearance_colors_description">Käytetään tekstin kontrastin laskemiseen</string>
+  <string name="appearance_colors_description_dynamic">Laitteen teemajärjestelmän käyttämä</string>
+  <string name="appearance_colors_primary">Valitse ensimmäinen väri</string>
+  <string name="appearance_colors_secondary">Valitse toinen väri</string>
+  <string name="appearance_colors_tertiary">Valitse kolmas väri</string>
+  <!-- PARALLAX -->
+
+  <string name="parallax_title">Parallaksi</string>
+  <string name="parallax_none">Ei mitään</string>
+  <string name="parallax_tilt_description">Käyttää enemmän akkua</string>
+  <!-- SIZE -->
+
+  <string name="size_title">Muodon koko</string>
+  <string name="size_scale">Koko</string>
+  <!-- OTHER -->
+
+  <string name="other_title">Muut asetukset</string>
+  <string name="other_language">Kieli</string>
+  <string name="other_language_not_available">Ei saatavilla</string>
+  <string name="other_gpu">Laitteistokiihdytys</string>
+  <string name="other_theme">Sovelluksen väriteema</string>
+  <string name="other_theme_auto">Automaattinen</string>
+  <string name="other_theme_light">Vaalea</string>
+  <string name="other_theme_dark">Tumma</string>
+  <string name="other_reset">Nollaa kaikki asetukset</string>
+  <!-- ABOUT -->
+
+  <string name="about_title">Tietoja</string>
+  <string name="about_version">Versio</string>
+  <string name="about_changelog">Muutosloki</string>
+  <string name="about_developer">Kehittäjä</string>
+  <string name="about_github_description">Lähdekoodi</string>
+  <string name="about_translation_description">Auta Doodlen kääntämisessä</string>
+
+  </resources>

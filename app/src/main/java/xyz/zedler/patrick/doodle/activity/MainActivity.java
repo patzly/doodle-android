@@ -87,6 +87,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
   private HapticUtil hapticUtil;
   private ActivityResultLauncher<Intent> wallpaperPickerLauncher;
   private NavHostFragment navHost;
+  private Locale localeUser;
   private boolean isServiceRunning;
   private int fabTopEdgeDistance;
   private int bottomInset;
@@ -107,8 +108,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 
     // LANGUAGE
 
-    Locale userLocale = LocaleUtil.getUserLocale(this, sharedPrefs);
-    Locale.setDefault(userLocale);
+    localeUser = LocaleUtil.getUserLocale(this, sharedPrefs);
+    Locale.setDefault(localeUser);
 
     // NIGHT MODE
 
@@ -134,13 +135,13 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     // base
     Resources resBase = getBaseContext().getResources();
     Configuration configBase = resBase.getConfiguration();
-    configBase.setLocale(userLocale);
+    configBase.setLocale(localeUser);
     configBase.uiMode = uiMode;
     resBase.updateConfiguration(configBase, resBase.getDisplayMetrics());
     // app
     Resources resApp = getApplicationContext().getResources();
     Configuration configApp = resApp.getConfiguration();
-    configApp.setLocale(userLocale);
+    configApp.setLocale(localeUser);
     // Don't set uiMode here, won't let FOLLOW_SYSTEM apply correctly
     resApp.updateConfiguration(configApp, getResources().getDisplayMetrics());
 
@@ -397,6 +398,10 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 
   public SharedPreferences getSharedPrefs() {
     return sharedPrefs;
+  }
+
+  public Locale getLocale() {
+    return localeUser != null ? localeUser : Locale.getDefault();
   }
 
   public void requestSettingsRefresh() {

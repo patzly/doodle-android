@@ -31,7 +31,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import com.google.android.material.slider.Slider;
 import com.google.android.material.slider.Slider.OnChangeListener;
-import java.util.Locale;
 import xyz.zedler.patrick.doodle.Constants.DEF;
 import xyz.zedler.patrick.doodle.Constants.PREF;
 import xyz.zedler.patrick.doodle.R;
@@ -105,14 +104,14 @@ public class SizeFragment extends BaseFragment
     binding.sliderSizeScale.setLabelFormatter(value -> {
       float scale = value / 10f;
       return String.format(
-          Locale.getDefault(), scale == 1 || scale == 2 ? "×%.0f" : "×%.1f", scale
+          activity.getLocale(), scale == 1 || scale == 2 ? "×%.0f" : "×%.1f", scale
       );
     });
 
     binding.sliderSizeZoom.setValue(getSharedPrefs().getInt(PREF.ZOOM, DEF.ZOOM));
     binding.sliderSizeZoom.addOnChangeListener(this);
     binding.sliderSizeZoom.setLabelFormatter(
-        value -> String.format(Locale.getDefault(), "%.0f", value)
+        value -> String.format(activity.getLocale(), "%.0f", value)
     );
 
     binding.sliderSizeZoomRotation.setValue(
@@ -121,7 +120,7 @@ public class SizeFragment extends BaseFragment
     binding.sliderSizeZoomRotation.addOnChangeListener(this);
     binding.sliderSizeZoomRotation.setLabelFormatter(
         value -> getString(
-            R.string.label_degrees, String.format(Locale.getDefault(), "%.0f", value)
+            R.string.label_degrees, String.format(activity.getLocale(), "%.0f", value)
         )
     );
 
@@ -140,7 +139,7 @@ public class SizeFragment extends BaseFragment
     );
     binding.sliderSizeZoomDamping.addOnChangeListener(this);
     binding.sliderSizeZoomDamping.setLabelFormatter(
-        value -> String.format(Locale.getDefault(), "%.0f", value)
+        value -> String.format(activity.getLocale(), "%.0f", value)
     );
 
     boolean systemZoomAvailable = Build.VERSION.SDK_INT == Build.VERSION_CODES.R;
@@ -175,7 +174,7 @@ public class SizeFragment extends BaseFragment
     binding.sliderSizeZoomDuration.addOnChangeListener(this);
     binding.sliderSizeZoomDuration.setLabelFormatter(
         value -> getString(
-            R.string.label_ms, String.format(Locale.getDefault(), "%.0f", value)
+            R.string.label_ms, String.format(activity.getLocale(), "%.0f", value)
         )
     );
 

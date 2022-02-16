@@ -30,7 +30,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import com.google.android.material.slider.Slider;
 import com.google.android.material.slider.Slider.OnChangeListener;
-import java.util.Locale;
 import xyz.zedler.patrick.doodle.Constants.DEF;
 import xyz.zedler.patrick.doodle.Constants.PREF;
 import xyz.zedler.patrick.doodle.R;
@@ -137,7 +136,8 @@ public class ParallaxFragment extends BaseFragment
     binding.sliderParallaxRefreshRate.addOnChangeListener(this);
     binding.sliderParallaxRefreshRate.setLabelFormatter(
         value -> getString(
-            R.string.label_ms, String.format(Locale.getDefault(), "%.0f", value / 1000)
+            R.string.label_ms,
+            String.format(activity.getLocale(), "%.0f", value / 1000)
         )
     );
 
@@ -146,7 +146,7 @@ public class ParallaxFragment extends BaseFragment
     );
     binding.sliderParallaxDamping.addOnChangeListener(this);
     binding.sliderParallaxDamping.setLabelFormatter(
-        value -> String.format(Locale.getDefault(), "%.0f", value)
+        value -> String.format(activity.getLocale(), "%.0f", value)
     );
 
     binding.sliderParallaxThreshold.setValue(
@@ -154,7 +154,7 @@ public class ParallaxFragment extends BaseFragment
     );
     binding.sliderParallaxThreshold.addOnChangeListener(this);
     binding.sliderParallaxThreshold.setLabelFormatter(
-        value -> String.format(Locale.getDefault(), "%.0f", value)
+        value -> String.format(activity.getLocale(), "%.0f", value)
     );
 
     ViewUtil.setOnClickListeners(

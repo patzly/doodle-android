@@ -37,7 +37,6 @@ import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
 import android.view.View;
-import android.view.View.OnClickListener;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
@@ -76,7 +75,7 @@ import xyz.zedler.patrick.doodle.util.ResUtil;
 import xyz.zedler.patrick.doodle.util.SystemUiUtil;
 import xyz.zedler.patrick.doodle.util.ViewUtil;
 
-public class MainActivity extends AppCompatActivity implements OnClickListener {
+public class MainActivity extends AppCompatActivity {
 
   private static final String TAG = MainActivity.class.getSimpleName();
 
@@ -232,7 +231,17 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         )
     );
 
-    ViewUtil.setOnClickListeners(this, binding.fabMain);
+    binding.fabMain.setOnClickListener(v -> {
+      if (viewUtil.isClickEnabled()) {
+        setWallpaperDirectly();
+        performHapticHeavyClick();
+      }
+    });
+    binding.fabMain.setOnLongClickListener(v -> {
+      ViewUtil.showBottomSheet(this, new SetBottomSheetDialogFragment());
+      performHapticHeavyClick();
+      return true;
+    });
 
     if (savedInstanceState == null && bundleInstanceState == null) {
       new Handler(Looper.getMainLooper()).postDelayed(
@@ -262,15 +271,6 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     }
 
     hapticUtil.setEnabled(HapticUtil.areSystemHapticsTurnedOn(this));
-  }
-
-  @Override
-  public void onClick(View v) {
-    int id = v.getId();
-    if (id == R.id.fab_main && viewUtil.isClickEnabled()) {
-      ViewUtil.showBottomSheet(this, new SetBottomSheetDialogFragment());
-      performHapticHeavyClick();
-    }
   }
 
   @Override

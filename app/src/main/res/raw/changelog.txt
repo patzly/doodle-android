@@ -1,6 +1,7 @@
 5.2.1:
 - New: Finnish translation
 - Improved: splash screen background color on Android 12
+- Improved: workaround for broken wallpaper animation available with long-tap on main button
 - Fixed: dark status bar icons on dark wallpapers on some devices (finally, thanks Vivek!)
 
 Please consider translating this app into your language at Transifex.

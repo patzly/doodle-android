@@ -162,7 +162,9 @@ public class OtherFragment extends BaseFragment
         pref = MODE.AUTO;
       }
       getSharedPrefs().edit().putInt(PREF.MODE, pref).apply();
-      activity.restartToApply(0, getInstanceState(), false, true);
+      activity.restartToApply(
+          100, getInstanceState(), false, true
+      );
     });
 
     ViewUtil.setOnClickListeners(

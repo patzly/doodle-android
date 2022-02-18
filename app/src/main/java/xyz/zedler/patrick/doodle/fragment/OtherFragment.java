@@ -153,6 +153,9 @@ public class OtherFragment extends BaseFragment
     }
     binding.toggleOtherTheme.check(id);
     binding.toggleOtherTheme.addOnButtonCheckedListener((group, checkedId, isChecked) -> {
+      if (!isChecked) {
+        return;
+      }
       int pref;
       if (checkedId == R.id.button_other_theme_light) {
         pref = MODE.LIGHT;
@@ -163,7 +166,7 @@ public class OtherFragment extends BaseFragment
       }
       getSharedPrefs().edit().putInt(PREF.MODE, pref).apply();
       activity.restartToApply(
-          100, getInstanceState(), false, true
+          0, getInstanceState(), false, true
       );
     });
 

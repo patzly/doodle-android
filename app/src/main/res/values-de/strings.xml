@@ -95,6 +95,8 @@
   <string name="parallax_intensity">Parallax-Stärke</string>
   <string name="parallax_intensity_description">Horizontaler Versatz beim Wechseln zwischen Startbildschirmen und Intensität des Neigungs-Effekts</string>
   <string name="parallax_none">Aus</string>
+  <string name="parallax_swipe_power_save">Energiesparmodus beachten</string>
+  <string name="parallax_swipe_power_save_description">Parallax-Effekt pausieren, wenn der Energiesparmodus aktiv ist</string>
   <string name="parallax_category_tilt">Neigungs-Effekt</string>
   <string name="parallax_tilt">Auf Neigung des Gerätes reagieren</string>
   <string name="parallax_tilt_description">Verbraucht mehr Akku</string>
@@ -104,6 +106,7 @@
   <string name="parallax_damping_description">Verringern für weichere Bewegungen</string>
   <string name="parallax_threshold">Bewegungsschwelle</string>
   <string name="parallax_threshold_description">Erhöhen, um das kontinuierliche Rendern trotz kleiner Bewegungen zu pausieren</string>
+  <string name="parallax_tilt_power_save_description">Neigungs-Effekt pausieren, wenn der Energiesparmodus aktiv ist</string>
 
   <!-- SIZE -->
 
@@ -118,6 +121,7 @@
   <string name="size_zoom_description">Je höher, desto weiter wird herausgezoomt</string>
   <string name="size_zoom_rotation">Drehen ausgewählter Formen während des Zoomens</string>
   <string name="size_zoom_rotation_description">Maximale Drehung in Grad</string>
+  <string name="size_zoom_power_save_description">Zoom-Effekt pausieren, wenn der Energiesparmodus aktiv ist</string>
   <string name="size_zoom_launcher">Beim Öffnen der Schnelleinstellungen oder des App-Drawers herauszoomen</string>
   <string name="size_zoom_launcher_description">Ist auf manchen Geräten nicht verfügbar</string>
   <string name="size_zoom_damping">Animationsglättung</string>

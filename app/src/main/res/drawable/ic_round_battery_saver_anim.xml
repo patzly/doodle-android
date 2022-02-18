@@ -1,0 +1,58 @@
+<!--
+  ~ This file is part of Doodle Android.
+  ~
+  ~ Doodle Android is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Doodle Android is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with Doodle Android. If not, see <http://www.gnu.org/licenses/>.
+  ~
+  ~ Copyright (c) 2019-2022 by Patrick Zedler
+  -->
+
+<animated-vector
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:aapt="http://schemas.android.com/aapt">
+  <aapt:attr name="android:drawable">
+    <vector
+      android:name="vector"
+      android:width="24dp"
+      android:height="24dp"
+      android:viewportWidth="24"
+      android:viewportHeight="24">
+      <path
+        android:name="battery"
+        android:pathData="M 11 2 C 10.45 2 10 2.45 10 3 L 10 4 L 8 4 C 7.45 4 7 4.45 7 5 L 7 21 C 7 21.55 7.45 22 8 22 L 16 22 C 16.55 22 17 21.55 17 21 L 17 5 C 17 4.45 16.55 4 16 4 L 14 4 L 14 3 C 14 2.45 13.55 2 13 2 L 11 2 Z M 12 9 C 13.06 9 14.079 9.422 14.828 10.172 C 15.578 10.921 16 11.94 16 13 C 16 14.06 15.578 15.079 14.828 15.828 C 14.079 16.578 13.06 17 12 17 C 10.94 17 9.921 16.578 9.172 15.828 C 8.422 15.079 8 14.06 8 13 C 8 11.94 8.422 10.921 9.172 10.172 C 9.921 9.422 10.94 9 12 9 Z"
+        android:fillColor="#000000"
+        android:strokeWidth="1" />
+      <group
+        android:name="group"
+        android:pivotX="12"
+        android:pivotY="13">
+        <path
+          android:name="plus"
+          android:pathData="M 12 8 C 10.674 8 9.402 8.527 8.464 9.464 C 7.527 10.402 7 11.674 7 13 C 7 14.326 7.527 15.598 8.464 16.536 C 9.402 17.473 10.674 18 12 18 C 13.326 18 14.598 17.473 15.536 16.536 C 16.473 15.598 17 14.326 17 13 C 17 11.674 16.473 10.402 15.536 9.464 C 14.598 8.527 13.326 8 12 8 Z M 12 10 C 12.55 10 13 10.45 13 11 L 13 12 L 14 12 C 14.55 12 15 12.45 15 13 C 15 13.55 14.55 14 14 14 L 13 14 L 13 15 C 13 15.55 12.55 16 12 16 C 11.45 16 11 15.55 11 15 L 11 14 L 10 14 C 9.45 14 9 13.55 9 13 C 9 12.45 9.45 12 10 12 L 11 12 L 11 11 C 11 10.45 11.45 10 12 10 Z"
+          android:fillColor="#000000"
+          android:strokeWidth="1" />
+      </group>
+    </vector>
+  </aapt:attr>
+  <target android:name="group">
+    <aapt:attr name="android:animation">
+      <objectAnimator
+        android:propertyName="rotation"
+        android:duration="300"
+        android:valueFrom="0"
+        android:valueTo="180"
+        android:valueType="floatType"
+        android:interpolator="@android:interpolator/fast_out_slow_in" />
+    </aapt:attr>
+  </target>
+</animated-vector>

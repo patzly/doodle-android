@@ -110,24 +110,34 @@ public class ParallaxFragment extends BaseFragment
       }
     });
 
+    binding.switchParallaxSwipePowerSave.setChecked(
+        getSharedPrefs().getBoolean(PREF.POWER_SAVE_SWIPE, DEF.POWER_SAVE_SWIPE)
+    );
+
     binding.linearParallaxTiltContainer.setVisibility(
         SensorUtil.hasAccelerometer(activity) ? View.VISIBLE : View.GONE
     );
 
     binding.switchParallaxTilt.setChecked(getSharedPrefs().getBoolean(PREF.TILT, DEF.TILT));
 
+    binding.switchParallaxTiltPowerSave.setChecked(
+        getSharedPrefs().getBoolean(PREF.POWER_SAVE_TILT, DEF.POWER_SAVE_TILT)
+    );
+
     ViewUtil.setEnabledAlpha(
         binding.switchParallaxTilt.isChecked(),
         false,
         binding.linearParallaxRefreshRate,
         binding.linearParallaxDamping,
-        binding.linearParallaxThreshold
+        binding.linearParallaxThreshold,
+        binding.linearParallaxTiltPowerSave
     );
     ViewUtil.setEnabled(
         binding.switchParallaxTilt.isChecked(),
         binding.sliderParallaxRefreshRate,
         binding.sliderParallaxDamping,
-        binding.sliderParallaxThreshold
+        binding.sliderParallaxThreshold,
+        binding.switchParallaxTiltPowerSave
     );
 
     binding.sliderParallaxRefreshRate.setValue(
@@ -159,33 +169,51 @@ public class ParallaxFragment extends BaseFragment
 
     ViewUtil.setOnClickListeners(
         this,
-        binding.linearParallaxTilt
+        binding.linearParallaxSwipePowerSave,
+        binding.linearParallaxTilt,
+        binding.linearParallaxTiltPowerSave
     );
 
     ViewUtil.setOnCheckedChangeListeners(
         this,
-        binding.switchParallaxTilt
+        binding.switchParallaxSwipePowerSave,
+        binding.switchParallaxTilt,
+        binding.switchParallaxTiltPowerSave
     );
   }
 
   @Override
   public void onResume() {
     super.onResume();
+
     binding.cardParallaxTouchWiz.setVisibility(activity.isTouchWiz() ? View.VISIBLE : View.GONE);
   }
 
   @Override
   public void onClick(View v) {
     int id = v.getId();
-    if (id == R.id.linear_parallax_tilt) {
+    if (id == R.id.linear_parallax_swipe_power_save) {
+      binding.switchParallaxSwipePowerSave.setChecked(
+          !binding.switchParallaxSwipePowerSave.isChecked()
+      );
+    } else if (id == R.id.linear_parallax_tilt) {
       binding.switchParallaxTilt.setChecked(!binding.switchParallaxTilt.isChecked());
+    } else if (id == R.id.linear_parallax_tilt_power_save) {
+      binding.switchParallaxTiltPowerSave.setChecked(
+          !binding.switchParallaxTiltPowerSave.isChecked()
+      );
     }
   }
 
   @Override
   public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
     int id = buttonView.getId();
-    if (id == R.id.switch_parallax_tilt) {
+    if (id == R.id.switch_parallax_swipe_power_save) {
+      getSharedPrefs().edit().putBoolean(PREF.POWER_SAVE_SWIPE, isChecked).apply();
+      activity.requestSettingsRefresh();
+      performHapticClick();
+      ViewUtil.startIcon(binding.imageParallaxSwipePowerSave);
+    } else if (id == R.id.switch_parallax_tilt) {
       getSharedPrefs().edit().putBoolean(PREF.TILT, isChecked).apply();
       activity.requestSettingsRefresh();
       performHapticClick();
@@ -195,14 +223,21 @@ public class ParallaxFragment extends BaseFragment
           true,
           binding.linearParallaxRefreshRate,
           binding.linearParallaxDamping,
-          binding.linearParallaxThreshold
+          binding.linearParallaxThreshold,
+          binding.linearParallaxTiltPowerSave
       );
       ViewUtil.setEnabled(
           isChecked,
           binding.sliderParallaxRefreshRate,
           binding.sliderParallaxDamping,
-          binding.sliderParallaxThreshold
+          binding.sliderParallaxThreshold,
+          binding.switchParallaxTiltPowerSave
       );
+    } else if (id == R.id.switch_parallax_tilt_power_save) {
+      getSharedPrefs().edit().putBoolean(PREF.POWER_SAVE_TILT, isChecked).apply();
+      activity.requestSettingsRefresh();
+      performHapticClick();
+      ViewUtil.startIcon(binding.imageParallaxTiltPowerSave);
     }
   }
 

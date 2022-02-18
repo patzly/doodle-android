@@ -105,6 +105,8 @@
   <string name="parallax_intensity">Parallax strength</string>
   <string name="parallax_intensity_description">Horizontal offset on page swipe and tilt effect intensity</string>
   <string name="parallax_none">None</string>
+  <string name="parallax_swipe_power_save">Respect battery saver</string>
+  <string name="parallax_swipe_power_save_description">Pause page swipe animation when battery saver is enabled</string>
   <string name="parallax_category_tilt">Tilt effect</string>
   <string name="parallax_tilt">Move when tilting the device</string>
   <string name="parallax_tilt_description">Consumes more battery</string>
@@ -114,6 +116,7 @@
   <string name="parallax_damping_description">Decrease for more smoothness</string>
   <string name="parallax_threshold">Movement threshold</string>
   <string name="parallax_threshold_description">Increase to pause continuous rendering despite little movement</string>
+  <string name="parallax_tilt_power_save_description">Pause tilt effect when battery saver is enabled</string>
 
   <!-- SIZE -->
 
@@ -128,6 +131,7 @@
   <string name="size_zoom_description">When increased, the camera zooms out more</string>
   <string name="size_zoom_rotation">Rotate some shapes while zooming</string>
   <string name="size_zoom_rotation_description">Maximum rotation in degrees</string>
+  <string name="size_zoom_power_save_description">Pause zoom effect when battery saver is enabled</string>
   <string name="size_zoom_launcher">Zoom out when opening quick settings or app drawer</string>
   <string name="size_zoom_launcher_description">Might be unavailable on some devices</string>
   <string name="size_zoom_damping">Animation damping</string>

@@ -71,16 +71,19 @@ public final class Constants {
     // Parallax
 
     public static final String PARALLAX = "parallax";
+    public static final String POWER_SAVE_SWIPE = "power_save_swipe";
     public static final String TILT = "tilt";
     public static final String REFRESH_RATE = "refresh_rate";
     public static final String DAMPING_TILT = "damping_tilt";
     public static final String THRESHOLD = "threshold";
+    public static final String POWER_SAVE_TILT = "power_save_tilt";
 
     // Size
 
     public static final String SCALE = "size";
     public static final String ZOOM = "zoom";
     public static final String ZOOM_ROTATION = "zoom_rotation";
+    public static final String POWER_SAVE_ZOOM = "power_save_zoom";
     public static final String ZOOM_LAUNCHER = "zoom_launcher";
     public static final String USE_ZOOM_DAMPING = "use_zoom_damping";
     public static final String DAMPING_ZOOM = "damping_zoom";
@@ -111,14 +114,17 @@ public final class Constants {
     );
 
     public static final int PARALLAX = 1;
+    public static final boolean POWER_SAVE_SWIPE = false;
     public static final boolean TILT = false;
     public static final int REFRESH_RATE = 30000;
     public static final int DAMPING_TILT = 8;
     public static final int THRESHOLD = 5;
+    public static final boolean POWER_SAVE_TILT = true;
 
     public static final float SCALE = 1;
     public static final int ZOOM = 2;
     public static final int ZOOM_ROTATION = 40;
+    public static final boolean POWER_SAVE_ZOOM = false;
     public static final boolean ZOOM_LAUNCHER = true;
     public static final boolean USE_ZOOM_DAMPING = false;
     public static final int DAMPING_ZOOM = 12;

@@ -40,6 +40,7 @@ import android.os.Build;
 import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
 import android.os.Bundle;
+import android.os.PowerManager;
 import android.os.SystemClock;
 import android.service.wallpaper.WallpaperService;
 import android.util.Log;
@@ -80,12 +81,14 @@ public class LiveWallpaperService extends WallpaperService {
   private WallpaperVariant variant;
   private int variantIndex;
   private boolean nightMode, followSystem;
+  private boolean isPowerSaveMode;
   private BroadcastReceiver receiver;
   private String presence;
   private boolean isReceiverRegistered = false;
   private UserPresenceListener userPresenceListener;
   private RefreshListener refreshListener;
   private SensorManager sensorManager;
+  private PowerManager powerManager;
 
   @Override
   public void onCreate() {
@@ -118,6 +121,9 @@ public class LiveWallpaperService extends WallpaperService {
           case Intent.ACTION_SCREEN_ON:
             setUserPresence(isKeyguardLocked() ? USER_PRESENCE.LOCKED : USER_PRESENCE.UNLOCKED);
             break;
+          case PowerManager.ACTION_POWER_SAVE_MODE_CHANGED:
+            isPowerSaveMode = powerManager.isPowerSaveMode();
+            break;
           case ACTION.THEME_CHANGED:
             if (refreshListener != null) {
               refreshListener.onRefreshTheme();
@@ -136,6 +142,8 @@ public class LiveWallpaperService extends WallpaperService {
     setUserPresence(isKeyguardLocked() ? USER_PRESENCE.LOCKED : USER_PRESENCE.UNLOCKED);
 
     sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+    powerManager = (PowerManager) getSystemService(Context.POWER_SERVICE);
+    isPowerSaveMode = powerManager.isPowerSaveMode();
 
     return new UserAwareEngine();
   }
@@ -165,6 +173,7 @@ public class LiveWallpaperService extends WallpaperService {
       filter.addAction(Intent.ACTION_USER_PRESENT);
       filter.addAction(Intent.ACTION_SCREEN_OFF);
       filter.addAction(Intent.ACTION_SCREEN_ON);
+      filter.addAction(PowerManager.ACTION_POWER_SAVE_MODE_CHANGED);
       filter.addAction(ACTION.THEME_CHANGED);
       filter.addAction(ACTION.SETTINGS_CHANGED);
       registerReceiver(receiver, filter);
@@ -238,6 +247,11 @@ public class LiveWallpaperService extends WallpaperService {
     }
   }
 
+  private float getFrameRate() {
+    WindowManager windowManager = ((WindowManager) getSystemService(Context.WINDOW_SERVICE));
+    return windowManager != null ? windowManager.getDefaultDisplay().getRefreshRate() : 60;
+  }
+
   private interface UserPresenceListener {
 
     void onPresenceChange(String presence);
@@ -246,7 +260,6 @@ public class LiveWallpaperService extends WallpaperService {
   private interface RefreshListener {
 
     void onRefreshTheme();
-
     void onRefreshSettings();
   }
 
@@ -282,6 +295,7 @@ public class LiveWallpaperService extends WallpaperService {
     private boolean isSurfaceAvailable = false;
     private boolean iconDropConsumed = true;
     private boolean isRtl = false;
+    private boolean powerSaveSwipe, powerSaveTilt, powerSaveZoom;
     private float fps;
     private final TimeInterpolator zoomInterpolator = new FastOutSlowInInterpolator();
     private ValueAnimator zoomAnimator;
@@ -304,7 +318,7 @@ public class LiveWallpaperService extends WallpaperService {
       sensorListener = new SensorEventListener() {
         @Override
         public void onSensorChanged(SensorEvent event) {
-          if (isVisible && isTiltEnabled) {
+          if (isVisible && isTiltEnabled && animTilt()) {
             accelerationValues = lowPassAcceleration(event.values, accelerationValues);
             tiltX = accelerationValues[0];
             tiltY = -accelerationValues[1];
@@ -468,7 +482,9 @@ public class LiveWallpaperService extends WallpaperService {
       } else {
         offsetX = xOffset;
       }
-      updateOffset(true, null);
+      if (animSwipe()) {
+        updateOffset(true, null);
+      }
     }
 
     @Override
@@ -544,6 +560,10 @@ public class LiveWallpaperService extends WallpaperService {
       useSystemZoom = sharedPrefs.getBoolean(PREF.ZOOM_SYSTEM, DEF.ZOOM_SYSTEM);
       zoomDuration = sharedPrefs.getInt(PREF.ZOOM_DURATION, DEF.ZOOM_DURATION);
       zoomRotation = sharedPrefs.getInt(PREF.ZOOM_ROTATION, DEF.ZOOM_ROTATION);
+
+      powerSaveSwipe = sharedPrefs.getBoolean(PREF.POWER_SAVE_SWIPE, DEF.POWER_SAVE_SWIPE);
+      powerSaveTilt = sharedPrefs.getBoolean(PREF.POWER_SAVE_TILT, DEF.POWER_SAVE_TILT);
+      powerSaveZoom = sharedPrefs.getBoolean(PREF.POWER_SAVE_ZOOM, DEF.POWER_SAVE_ZOOM);
     }
 
     private void loadTheme(boolean random) {
@@ -612,13 +632,13 @@ public class LiveWallpaperService extends WallpaperService {
      */
     public boolean shouldZoomOutWallpaper() {
       // Return true and clear onZoomChanged if we don't want a custom zoom animation
-      return isZoomLauncherEnabled && useSystemZoom;
+      return isZoomLauncherEnabled && useSystemZoom && animZoom();
     }
 
     @Override
     public void onZoomChanged(float zoom) {
       if (!useSystemZoom) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R && zoomIntensity > 0) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R && zoomIntensity > 0 && animZoom()) {
           if (useZoomDamping) {
             zoomLauncher = lowPassZoom(zoom, zoomLauncher);
           } else {
@@ -631,24 +651,27 @@ public class LiveWallpaperService extends WallpaperService {
 
     @Override
     public void onPresenceChange(String presence) {
-      if (!isZoomUnlockEnabled) {
-        return;
-      }
       switch (presence) {
         case USER_PRESENCE.OFF:
           if (useRandom) {
             loadTheme(true);
           }
-          zoomUnlock = 1;
-          zoomLauncher = 0; // 0?
-          drawFrame(true, null);
+          if (isZoomUnlockEnabled && animZoom()) {
+            zoomUnlock = 1;
+            zoomLauncher = 0; // 1 or 0?
+          }
+          if (useRandom || (isZoomUnlockEnabled && animZoom())) {
+            drawFrame(true, null);
+          }
           break;
         case USER_PRESENCE.LOCKED:
-          zoomLauncher = 0;
-          animateZoom(0.5f);
+          if (isZoomUnlockEnabled && animZoom()) {
+            zoomLauncher = 0;
+            animateZoom(0.5f);
+          }
           break;
         case USER_PRESENCE.UNLOCKED:
-          if (isVisible) {
+          if (isVisible && animZoom()) {
             animateZoom(0);
           } else {
             zoomUnlock = 0;
@@ -772,10 +795,17 @@ public class LiveWallpaperService extends WallpaperService {
       zoomAnimator.setInterpolator(zoomInterpolator);
       zoomAnimator.setDuration(zoomDuration).start();
     }
-  }
 
-  private float getFrameRate() {
-    WindowManager windowManager = ((WindowManager) getSystemService(Context.WINDOW_SERVICE));
-    return windowManager != null ? windowManager.getDefaultDisplay().getRefreshRate() : 60;
+    private boolean animSwipe() {
+      return !(isPowerSaveMode && powerSaveSwipe);
+    }
+
+    private boolean animTilt() {
+      return !(isPowerSaveMode && powerSaveTilt);
+    }
+
+    private boolean animZoom() {
+      return !(isPowerSaveMode && powerSaveZoom);
+    }
   }
 }

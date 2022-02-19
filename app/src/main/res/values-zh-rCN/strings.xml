@@ -96,6 +96,8 @@
   <string name="parallax_intensity">视差强度</string>
   <string name="parallax_intensity_description">页面滑动和倾斜效果强度上的水平偏移</string>
   <string name="parallax_none">无</string>
+  <string name="parallax_swipe_power_save">遵循节电器设置</string>
+  <string name="parallax_swipe_power_save_description">当开启节电时，暂停页面滑动动画</string>
   <string name="parallax_category_tilt">倾斜效果</string>
   <string name="parallax_tilt">倾斜设备时图案移动</string>
   <string name="parallax_tilt_description">会消耗更多的电量</string>
@@ -105,6 +107,7 @@
   <string name="parallax_damping_description">减少以获得更平滑的效果</string>
   <string name="parallax_threshold">运动阈值</string>
   <string name="parallax_threshold_description">增加以暂停连续渲染，尽管几乎没有移动</string>
+  <string name="parallax_tilt_power_save_description">当开启节电时，暂停倾斜效果</string>
 
   <!-- SIZE -->
 
@@ -119,6 +122,7 @@
   <string name="size_zoom_description">增加后，相机变焦更多</string>
   <string name="size_zoom_rotation">缩放时旋转某些形状</string>
   <string name="size_zoom_rotation_description">以度为单位的最大旋转</string>
+  <string name="size_zoom_power_save_description">当开启节电时，暂停缩放效果</string>
   <string name="size_zoom_launcher">打开快速设置或应用程序抽屉时缩小</string>
   <string name="size_zoom_launcher_description">在某些设备上可能不可用</string>
   <string name="size_zoom_damping">动画阻尼</string>

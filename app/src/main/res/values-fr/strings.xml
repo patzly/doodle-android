@@ -104,7 +104,6 @@
   <string name="parallax_damping_description">Diminuer pour plus de fluidité</string>
   <string name="parallax_threshold">Seuil de mouvement</string>
   <string name="parallax_threshold_description">Augmenter afin de suspendre le rendu continu lorsque les mouvements sont faibles</string>
-
   <!-- SIZE -->
 
   <string name="size_title">Taille de la forme</string>

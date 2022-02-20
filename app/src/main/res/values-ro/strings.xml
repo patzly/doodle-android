@@ -98,7 +98,6 @@
   <string name="parallax_damping_description">Scade pentru o fluiditate mai mare</string>
   <string name="parallax_threshold">Pragul de mișcare</string>
   <string name="parallax_threshold_description">Crește pentru a întrerupe redarea continuă în ciuda mișcării mici</string>
-
   <!-- SIZE -->
 
   <string name="size_title">Mărime forme</string>

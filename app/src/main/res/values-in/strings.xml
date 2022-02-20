@@ -104,7 +104,6 @@
   <string name="parallax_damping_description">Turunkan untuk lebih mulus</string>
   <string name="parallax_threshold">Ambang batas gerakan</string>
   <string name="parallax_threshold_description">Naikkan untuk jeda rendering terus-menerus meskipun sedikit gerakan</string>
-
   <!-- SIZE -->
 
   <string name="size_title">Ukuran bentuk</string>

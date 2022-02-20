@@ -1,6 +1,9 @@
+• New: another autumnal Pixel 6 wallpaper!
+• New: battery saver options for page swipe animation, tilt and zoom effects
 • New: Finnish translation
 • Improved: splash screen background color on Android 12
-- Improved: workaround for broken wallpaper animation available with long-tap on main button
+• Improved: workaround for broken wallpaper animation available with long-tap instead of single-tap on main button
 • Fixed: dark status bar icons on dark wallpapers on some devices (finally, thanks Vivek!)
+• Fixed: random wallpaper not refreshing when lockscreen zoom was turned off
 
 Please consider translating this app into your language at Transifex. There are only 124 strings to translate!

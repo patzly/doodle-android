@@ -104,7 +104,6 @@
   <string name="parallax_damping_description">Snížit pro větší hladkost</string>
   <string name="parallax_threshold">Práh detekce pohybu</string>
   <string name="parallax_threshold_description">Zvyšte pro pozastavení nepřetržitého vykreslování navzdory malým pohybům</string>
-
   <!-- SIZE -->
 
   <string name="size_title">Velikost tvarů</string>

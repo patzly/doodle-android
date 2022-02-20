@@ -97,7 +97,6 @@
   <string name="parallax_damping_description">Diminuisci per più fluidità</string>
   <string name="parallax_threshold">Soglia di movimento</string>
   <string name="parallax_threshold_description">Aumenta per mettere in pausa il rendering continuo su piccoli movimenti</string>
-
   <!-- SIZE -->
 
   <string name="size_title">Dimensione figure</string>

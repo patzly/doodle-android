@@ -102,7 +102,6 @@
   <string name="parallax_damping_description">تقليل لمزيد من النعومة</string>
   <string name="parallax_threshold">معالجه الصور او قيمه العتبه</string>
   <string name="parallax_threshold_description">زيادة الإيقاف المؤقت للعرض المستمر على الرغم من قلة الحركة</string>
-
   <!-- SIZE -->
 
   <string name="size_title">حجم الشكل</string>

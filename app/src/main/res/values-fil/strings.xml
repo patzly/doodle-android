@@ -102,7 +102,6 @@
   <string name="parallax_damping_description">Bawasan para sa mas maraming smoothness</string>
   <string name="parallax_threshold">Threshold ng paggalaw</string>
   <string name="parallax_threshold_description">Dagdagan upang i-pause ang tuluy-tuloy na pag-render sa kabila ng kaunting paggalaw</string>
-
   <!-- SIZE -->
 
   <string name="size_title">Sukat ng hugis</string>

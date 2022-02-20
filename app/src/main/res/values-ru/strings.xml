@@ -104,7 +104,6 @@
   <string name="parallax_damping_description">Понизьте для большей плавности</string>
   <string name="parallax_threshold">Порог движения</string>
   <string name="parallax_threshold_description">Повысьте, чтобы приостановить отрисовку во время слабого движения</string>
-
   <!-- SIZE -->
 
   <string name="size_title">Размер фигур</string>

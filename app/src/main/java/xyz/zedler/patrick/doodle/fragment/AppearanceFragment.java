@@ -58,6 +58,7 @@ import xyz.zedler.patrick.doodle.util.ResUtil;
 import xyz.zedler.patrick.doodle.util.ViewUtil;
 import xyz.zedler.patrick.doodle.view.SelectionCardView;
 import xyz.zedler.patrick.doodle.wallpaper.AnthonyWallpaper;
+import xyz.zedler.patrick.doodle.wallpaper.AutumnWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.BaseWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.BaseWallpaper.WallpaperVariant;
 import xyz.zedler.patrick.doodle.wallpaper.FloralWallpaper;
@@ -312,9 +313,10 @@ public class AppearanceFragment extends BaseFragment
         container = binding.linearAppearanceWallpaperContainerDoodle;
       } else if (i == 1) {
         baseWallpapers = new BaseWallpaper[]{
-            new WaterWallpaper(),
-            new StoneWallpaper(),
             new FloralWallpaper(),
+            new AutumnWallpaper(),
+            new StoneWallpaper(),
+            new WaterWallpaper(),
             new SandWallpaper(),
             new MonetWallpaper()
         };

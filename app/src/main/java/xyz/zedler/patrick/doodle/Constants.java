@@ -25,6 +25,7 @@ import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
 import xyz.zedler.patrick.doodle.wallpaper.AnthonyWallpaper;
+import xyz.zedler.patrick.doodle.wallpaper.AutumnWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.BaseWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.FloralWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.FogWallpaper;
@@ -156,6 +157,8 @@ public final class Constants {
         return new StoneWallpaper();
       case WALLPAPER.FLORAL:
         return new FloralWallpaper();
+      case WALLPAPER.AUTUMN:
+        return new AutumnWallpaper();
       case WALLPAPER.SAND:
         return new SandWallpaper();
       case WALLPAPER.WATER:
@@ -197,6 +200,7 @@ public final class Constants {
 
         WALLPAPER.STONE,
         WALLPAPER.FLORAL,
+        WALLPAPER.AUTUMN,
         WALLPAPER.WATER,
         WALLPAPER.SAND,
         WALLPAPER.MONET,
@@ -222,6 +226,7 @@ public final class Constants {
 
     public static final String STONE = "stone";
     public static final String FLORAL = "floral";
+    public static final String AUTUMN = "autumn";
     public static final String WATER = "water";
     public static final String SAND = "sand";
     public static final String MONET = "monet";

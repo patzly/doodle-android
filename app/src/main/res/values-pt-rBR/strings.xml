@@ -104,7 +104,6 @@
   <string name="parallax_damping_description">Diminua para mais suavidade</string>
   <string name="parallax_threshold">Movimento mínimo</string>
   <string name="parallax_threshold_description">Aumente para pausar renderização mesmo com movimentação baixa</string>
-
   <!-- SIZE -->
 
   <string name="size_title">Tamanho e formato</string>

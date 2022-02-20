@@ -104,7 +104,6 @@
   <string name="parallax_damping_description">Daha fazla pürüzsüzlük için azaltın</string>
   <string name="parallax_threshold">Hareket sınırı</string>
   <string name="parallax_threshold_description">Ufak harekete rağmen sürekli işleyişi duraklatmak için arttırın</string>
-
   <!-- SIZE -->
 
   <string name="size_title">Şekil boyutu</string>

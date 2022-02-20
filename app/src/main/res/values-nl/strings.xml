@@ -104,7 +104,6 @@
   <string name="parallax_damping_description">Verminder voor meer zachtheid</string>
   <string name="parallax_threshold">Bewegingsdrempel</string>
   <string name="parallax_threshold_description">Vergroot om blijvende rendering ondanks nauwelijks beweging te pauzeren</string>
-
   <!-- SIZE -->
 
   <string name="size_title">Vorm grootte</string>

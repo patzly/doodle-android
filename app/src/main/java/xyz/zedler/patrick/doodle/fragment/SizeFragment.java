@@ -184,6 +184,7 @@ public class SizeFragment extends BaseFragment
 
     ViewUtil.setOnClickListeners(
         this,
+        binding.frameSizeScaleReset,
         binding.linearSizeZoomPowerSave,
         binding.linearSizeZoomLauncher,
         binding.linearSizeZoomDamping,
@@ -204,7 +205,18 @@ public class SizeFragment extends BaseFragment
   @Override
   public void onClick(View v) {
     int id = v.getId();
-    if (id == R.id.linear_size_zoom_power_save) {
+    if (id == R.id.frame_size_scale_reset) {
+      float def = SvgDrawable.getDefaultScale(activity);
+      float scaleOld = binding.sliderSizeScale.getValue();
+      float scaleNew = def * 10;
+      binding.sliderSizeScale.setValue(scaleNew);
+      getSharedPrefs().edit().putFloat(PREF.SCALE, def).apply();
+      if (scaleNew != scaleOld) {
+        activity.requestSettingsRefresh();
+      }
+      performHapticClick();
+      ViewUtil.startIcon(binding.imageSizeScaleReset);
+    } else if (id == R.id.linear_size_zoom_power_save) {
       binding.switchSizeZoomPowerSave.setChecked(
           !binding.switchSizeZoomPowerSave.isChecked()
       );

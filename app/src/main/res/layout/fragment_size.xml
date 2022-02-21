@@ -53,7 +53,8 @@
 
       <LinearLayout
         style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine"
-        android:paddingBottom="0dp">
+        android:paddingBottom="0dp"
+        android:minHeight="100dp">
 
         <ImageView
           android:id="@+id/image_size_scale"
@@ -61,7 +62,7 @@
           android:src="@drawable/ic_round_filter_center_focus_anim"
           tools:ignore="ContentDescription" />
 
-        <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
+        <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">
 
           <TextView
             style="@style/Widget.Doodle.TextView.ListItem.Title"
@@ -72,6 +73,23 @@
             android:text="@string/size_scale_description" />
 
         </LinearLayout>
+
+        <FrameLayout
+          android:id="@+id/frame_size_scale_reset"
+          android:layout_width="48dp"
+          android:layout_height="48dp"
+          android:background="?attr/actionBarItemBackground">
+
+          <ImageView
+            android:id="@+id/image_size_scale_reset"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_round_settings_backup_restore_anim"
+            app:tint="?attr/colorOnSurfaceVariant"
+            tools:ignore="ContentDescription" />
+
+        </FrameLayout>
 
       </LinearLayout>
 

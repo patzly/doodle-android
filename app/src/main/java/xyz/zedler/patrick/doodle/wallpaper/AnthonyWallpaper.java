@@ -65,6 +65,15 @@ public class AnthonyWallpaper extends BaseWallpaper {
             new String[]{"#496f83", "#181b1c"},
             false,
             true
+        ),
+        new WallpaperVariant(
+            R.raw.wallpaper_anthony3,
+            "#282a36",
+            "#ffb86c",
+            "#ff79c6",
+            new String[]{"#f1fa8c", "#6272a4", "#8be9fd", "#50fa7b", "#bd93f9", "#ff5555"},
+            false,
+            true
         )
     };
   }
@@ -88,6 +97,15 @@ public class AnthonyWallpaper extends BaseWallpaper {
             "#997c6e",
             "#32393c",
             new String[]{"#494949", "#aeafae"},
+            false,
+            true
+        ),
+        new WallpaperVariant(
+            R.raw.wallpaper_anthony3_dark,
+            "#282a36",
+            "#ffb86c",
+            "#ff79c6",
+            new String[]{"#f1fa8c", "#6272a4", "#8be9fd", "#50fa7b", "#bd93f9", "#ff5555"},
             false,
             true
         )

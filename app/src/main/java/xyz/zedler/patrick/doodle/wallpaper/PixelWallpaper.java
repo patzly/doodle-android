@@ -102,6 +102,15 @@ public class PixelWallpaper extends BaseWallpaper {
             new String[]{"#dadce0"},
             true,
             false
+        ),
+        new WallpaperVariant(
+            R.raw.wallpaper_pixel6,
+            "#282a36",
+            "#ffb86c",
+            "#ff79c6",
+            new String[]{"#f1fa8c", "#6272a4", "#8be9fd", "#50fa7b", "#bd93f9", "#ff5555"},
+            false,
+            true
         )
     };
   }
@@ -137,6 +146,15 @@ public class PixelWallpaper extends BaseWallpaper {
             "#d4634f",
             "#324b84",
             new String[]{"#1a294a", "#dfd9d0", "#0f0f0f"},
+            false,
+            true
+        ),
+        new WallpaperVariant(
+            R.raw.wallpaper_pixel6,
+            "#282a36",
+            "#ffb86c",
+            "#ff79c6",
+            new String[]{"#f1fa8c", "#6272a4", "#8be9fd", "#50fa7b", "#bd93f9", "#ff5555"},
             false,
             true
         )

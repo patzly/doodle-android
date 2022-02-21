@@ -43,18 +43,16 @@ public class ReikoWallpaper extends BaseWallpaper {
 
   @Override
   public SvgDrawable getPreparedSvg(SvgDrawable svgDrawable, int variant, boolean isNightMode) {
-    if (isNightMode) {
-      if (variant == 0) {
-        setKidneyGradientReiko(svgDrawable, "#a0b0fb", "#d8d4fe");
-      } else if (variant == 1) {
+    if (variant == 0) {
+      setKidneyGradientReiko(svgDrawable, "#a0b0fb", "#d8d4fe");
+    } else if (variant == 1) {
+      if (isNightMode) {
         setKidneyGradientReiko(svgDrawable, "#eb902b", "#ecc12f");
-      }
-    } else {
-      if (variant == 0) {
-        setKidneyGradientReiko(svgDrawable, "#a0b0fb", "#d8d4fe");
-      } else if (variant == 1) {
+      } else {
         setKidneyGradientReiko(svgDrawable, "#ff931e", "#fbc318");
       }
+    } else if (variant == 2) {
+      setKidneyGradientReiko(svgDrawable, "#44475a", "#6272a4");
     }
     return svgDrawable;
   }
@@ -80,6 +78,15 @@ public class ReikoWallpaper extends BaseWallpaper {
             new String[]{"#fbc318", "#0a65bb", "#fdcd6c"},
             true,
             false
+        ),
+        new WallpaperVariant(
+            R.raw.wallpaper_reiko3,
+            "#282a36",
+            "#ff79c6",
+            "#8be9fd",
+            new String[]{"#bd93f9", "#f1fa8c", "#ffb86c", "#6272a4", "#50fa7b", "#ff5555"},
+            false,
+            true
         )
     };
   }
@@ -103,6 +110,15 @@ public class ReikoWallpaper extends BaseWallpaper {
             "#a0b0fb",
             "#c6433a",
             new String[]{"#eb902b", "#ecc12f", "#1b3e76", "#0472d2", "#ef4d3d"},
+            false,
+            true
+        ),
+        new WallpaperVariant(
+            R.raw.wallpaper_reiko3,
+            "#282a36",
+            "#ff79c6",
+            "#8be9fd",
+            new String[]{"#bd93f9", "#f1fa8c", "#ffb86c", "#6272a4", "#50fa7b", "#ff5555"},
             false,
             true
         )

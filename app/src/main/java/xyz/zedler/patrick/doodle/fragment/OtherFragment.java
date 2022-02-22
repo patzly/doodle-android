@@ -52,7 +52,6 @@ import xyz.zedler.patrick.doodle.activity.MainActivity;
 import xyz.zedler.patrick.doodle.behavior.ScrollBehavior;
 import xyz.zedler.patrick.doodle.behavior.SystemBarBehavior;
 import xyz.zedler.patrick.doodle.databinding.FragmentOtherBinding;
-import xyz.zedler.patrick.doodle.fragment.dialog.LanguagesBottomSheetDialogFragment;
 import xyz.zedler.patrick.doodle.model.Language;
 import xyz.zedler.patrick.doodle.service.LiveWallpaperService;
 import xyz.zedler.patrick.doodle.util.LocaleUtil;
@@ -191,7 +190,7 @@ public class OtherFragment extends BaseFragment
     if (id == R.id.linear_other_language) {
       ViewUtil.startIcon(binding.imageOtherLanguage);
       performHapticClick();
-      ViewUtil.showBottomSheet(activity, new LanguagesBottomSheetDialogFragment());
+      navigate(OtherFragmentDirections.actionOtherToLanguagesDialog());
     } else if (id == R.id.linear_other_gpu) {
       ViewUtil.startIcon(binding.imageOtherGpu);
       binding.switchOtherGpu.setChecked(!binding.switchOtherGpu.isChecked());

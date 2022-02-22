@@ -139,6 +139,10 @@
     tools:layout="@layout/fragment_other">
 
     <action
+      android:id="@+id/action_other_to_languages_dialog"
+      app:destination="@id/languagesBottomSheetDialogFragment" />
+
+    <action
       android:id="@+id/action_other_to_feedback_dialog"
       app:destination="@id/feedbackBottomSheetDialogFragment" />
 
@@ -204,6 +208,11 @@
     android:id="@+id/applyBottomSheetDialogFragment"
     android:name="xyz.zedler.patrick.doodle.fragment.dialog.ApplyBottomSheetDialogFragment"
     android:label="dialog_apply" />
+
+  <dialog
+    android:id="@+id/languagesBottomSheetDialogFragment"
+    android:name="xyz.zedler.patrick.doodle.fragment.dialog.LanguagesBottomSheetDialogFragment"
+    android:label="dialog_languages" />
 
   <dialog
     android:id="@+id/colorsBottomSheetDialogFragment"

@@ -233,14 +233,9 @@ public class MainActivity extends AppCompatActivity {
 
     binding.fabMain.setOnClickListener(v -> {
       if (viewUtil.isClickEnabled()) {
-        setWallpaperDirectly();
+        ViewUtil.showBottomSheet(this, new SetBottomSheetDialogFragment());
         performHapticHeavyClick();
       }
-    });
-    binding.fabMain.setOnLongClickListener(v -> {
-      ViewUtil.showBottomSheet(this, new SetBottomSheetDialogFragment());
-      performHapticHeavyClick();
-      return true;
     });
 
     if (savedInstanceState == null && bundleInstanceState == null) {

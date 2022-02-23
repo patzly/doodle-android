@@ -95,6 +95,8 @@
   <string name="parallax_intensity">Сила сдвига</string>
   <string name="parallax_intensity_description">Горизонтальный сдвиг при пролистывании страницы и интенсивность эффекта наклона</string>
   <string name="parallax_none">Ничего</string>
+  <string name="parallax_swipe_power_save">Учитывать режим энергосбережения</string>
+  <string name="parallax_swipe_power_save_description">Приостановить анимацию пролистывания страницы в режиме энергосбережения</string>
   <string name="parallax_category_tilt">Эффект наклона</string>
   <string name="parallax_tilt">Двигать фигуры при наклоне устройства</string>
   <string name="parallax_tilt_description">Потребляет больше энергии</string>
@@ -104,6 +106,8 @@
   <string name="parallax_damping_description">Понизьте для большей плавности</string>
   <string name="parallax_threshold">Порог движения</string>
   <string name="parallax_threshold_description">Повысьте, чтобы приостановить отрисовку во время слабого движения</string>
+  <string name="parallax_tilt_power_save_description">Приостановить эффект наклона в режиме энергосбережения</string>
+
   <!-- SIZE -->
 
   <string name="size_title">Размер фигур</string>
@@ -117,6 +121,7 @@
   <string name="size_zoom_description">При увеличении камера отдаляется сильнее</string>
   <string name="size_zoom_rotation">Вращать некоторые фигуры во время приближения</string>
   <string name="size_zoom_rotation_description">Максимальный поворот в градусах</string>
+  <string name="size_zoom_power_save_description">Приостановить эффект приближения в режиме энергосбережения</string>
   <string name="size_zoom_launcher">Отдалять при открытии шторки уведомлений или меню приложений</string>
   <string name="size_zoom_launcher_description">Может не поддерживаться некоторыми устройствами</string>
   <string name="size_zoom_damping">Затухание анимации</string>

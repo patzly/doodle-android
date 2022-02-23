@@ -27,8 +27,8 @@ public class Language {
   private final String translators;
   private final String name;
 
-  public Language(String codeDomainTranslators) {
-    String[] parts = codeDomainTranslators.split("\n");
+  public Language(String codeTranslators) {
+    String[] parts = codeTranslators.split("\n");
     code = parts[0];
     translators = parts[1];
     name = LocaleUtil.getLocaleFromCode(code).getDisplayName(LocaleUtil.getDeviceLocale());

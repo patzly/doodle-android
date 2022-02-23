@@ -78,7 +78,7 @@ public class LauncherActivity extends MainActivity {
 
       int modeNight;
       int uiMode = getResources().getConfiguration().uiMode;
-      switch (sharedPrefs.getInt(PREF.MODE, MODE.AUTO)) {
+      switch (sharedPrefs.getInt(PREF.MODE, DEF.MODE)) {
         case MODE.LIGHT:
           modeNight = AppCompatDelegate.MODE_NIGHT_NO;
           uiMode = Configuration.UI_MODE_NIGHT_NO;

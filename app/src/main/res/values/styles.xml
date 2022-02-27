@@ -287,7 +287,7 @@
   <!-- TextView -->
 
   <style name="Widget.Doodle.TextView" parent="Widget.MaterialComponents.TextView">
-    <item name="android:textSize">@dimen/m3_sys_typescale_body_large_text_size</item>
+    <item name="android:textAppearance">?attr/textAppearanceBodyLarge</item>
     <item name="android:lineSpacingExtra">-1.5sp</item>
     <item name="android:textColor">?attr/colorOnBackground</item>
     <item name="android:textAlignment">viewStart</item>
@@ -305,7 +305,7 @@
   </style>
 
   <style name="Base.Doodle.TextView.Toolbar" parent="Widget.Doodle.TextView">
-    <item name="android:textSize">@dimen/m3_sys_typescale_title_large_text_size</item>
+    <item name="android:textAppearance">?attr/textAppearanceTitleLarge</item>
     <item name="android:singleLine">true</item>
     <item name="android:textColor">?attr/colorOnSurface</item>
   </style>
@@ -323,7 +323,7 @@
     <item name="android:layout_marginStart">72dp</item>
     <item name="android:paddingTop">10dp</item>
     <item name="android:paddingBottom">3dp</item>
-    <item name="android:textSize">@dimen/m3_sys_typescale_title_medium_text_size</item>
+    <item name="android:textAppearance">?attr/textAppearanceTitleMedium</item>
     <item name="android:textColor">?attr/colorSecondary</item>
   </style>
 
@@ -335,16 +335,18 @@
     <item name="android:layout_width">match_parent</item>
     <item name="android:layout_height">wrap_content</item>
     <item name="android:maxLines">2</item>
-    <item name="android:textSize">@dimen/m3_sys_typescale_body_small_text_size</item>
     <item name="android:letterSpacing">0.1</item>
     <item name="android:textStyle">bold</item>
     <item name="android:textAllCaps">true</item>
     <item name="android:alpha">0.5</item>
+    <item name="android:textAppearance">?attr/textAppearanceBodySmall</item>
   </style>
 
   <style name="Widget.Doodle.TextView.ListItem.Title" parent="Widget.Doodle.TextView">
     <item name="android:layout_width">match_parent</item>
     <item name="android:layout_height">wrap_content</item>
+    <!-- <item name="android:textAppearance">?attr/textAppearanceTitleLarge</item> -->
+    <!-- Too large, instead use slightly smaller custom size -->
     <item name="android:textSize">18sp</item>
   </style>
 

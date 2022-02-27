@@ -31,7 +31,7 @@ import xyz.zedler.patrick.doodle.Constants;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.activity.MainActivity;
 import xyz.zedler.patrick.doodle.adapter.LanguageAdapter;
-import xyz.zedler.patrick.doodle.databinding.FragmentBottomsheetListSelectionBinding;
+import xyz.zedler.patrick.doodle.databinding.FragmentBottomsheetLanguagesBinding;
 import xyz.zedler.patrick.doodle.fragment.OtherFragment;
 import xyz.zedler.patrick.doodle.model.Language;
 import xyz.zedler.patrick.doodle.util.LocaleUtil;
@@ -42,14 +42,14 @@ public class LanguagesBottomSheetDialogFragment extends BaseBottomSheetDialogFra
 
   private static final String TAG = "LanguagesBottomSheet";
 
-  private FragmentBottomsheetListSelectionBinding binding;
+  private FragmentBottomsheetLanguagesBinding binding;
   private MainActivity activity;
 
   @Override
   public View onCreateView(@NonNull LayoutInflater inflater,
       ViewGroup container,
       Bundle savedInstanceState) {
-    binding = FragmentBottomsheetListSelectionBinding.inflate(
+    binding = FragmentBottomsheetLanguagesBinding.inflate(
         inflater, container, false
     );
 
@@ -58,14 +58,14 @@ public class LanguagesBottomSheetDialogFragment extends BaseBottomSheetDialogFra
         Constants.PREF.LANGUAGE, Constants.DEF.LANGUAGE
     );
 
-    binding.textListSelectionTitle.setText(getString(R.string.action_language_select));
-    binding.textListSelectionDescription.setText(getString(R.string.other_language_description));
-    binding.textListSelectionDescription.setVisibility(View.VISIBLE);
+    binding.textLanguagesTitle.setText(getString(R.string.action_language_select));
+    binding.textLanguagesDescription.setText(getString(R.string.other_language_description));
+    binding.textLanguagesDescription.setVisibility(View.VISIBLE);
 
-    binding.recyclerListSelection.setLayoutManager(
+    binding.recyclerLanguages.setLayoutManager(
         new LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
     );
-    binding.recyclerListSelection.setAdapter(
+    binding.recyclerLanguages.setAdapter(
         new LanguageAdapter(LocaleUtil.getLanguages(activity), selectedCode, this)
     );
 
@@ -108,7 +108,7 @@ public class LanguagesBottomSheetDialogFragment extends BaseBottomSheetDialogFra
 
   @Override
   public void applyBottomInset(int bottom) {
-    binding.recyclerListSelection.setPadding(
+    binding.recyclerLanguages.setPadding(
         0, SystemUiUtil.dpToPx(requireContext(), 8),
         0, SystemUiUtil.dpToPx(requireContext(), 8) + bottom
     );

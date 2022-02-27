@@ -50,9 +50,6 @@ import androidx.navigation.NavController;
 import androidx.navigation.NavDirections;
 import androidx.navigation.fragment.NavHostFragment;
 import com.google.android.material.color.DynamicColors;
-import com.google.android.material.color.DynamicColorsOptions;
-import com.google.android.material.color.HarmonizedColors;
-import com.google.android.material.color.HarmonizedColorsOptions;
 import com.google.android.material.snackbar.Snackbar;
 import java.util.Locale;
 import xyz.zedler.patrick.doodle.BuildConfig;
@@ -171,13 +168,7 @@ public class MainActivity extends AppCompatActivity {
         break;
       default:
         if (DynamicColors.isDynamicColorAvailable()) {
-          DynamicColors.applyIfAvailable(
-              new DynamicColorsOptions.Builder(this).setOnAppliedCallback(activity ->
-                  HarmonizedColors.applyIfAvailable(
-                      HarmonizedColorsOptions.createMaterialDefaults(activity)
-                  )
-              ).build()
-          );
+          DynamicColors.applyIfAvailable(this);
         } else {
           setTheme(R.style.Theme_Doodle_Google);
         }

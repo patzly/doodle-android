@@ -36,6 +36,9 @@ import android.os.Looper;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.content.res.ResourcesCompat;
 import com.google.android.material.color.DynamicColors;
+import com.google.android.material.color.DynamicColorsOptions;
+import com.google.android.material.color.HarmonizedColors;
+import com.google.android.material.color.HarmonizedColorsOptions;
 import xyz.zedler.patrick.doodle.Constants.DEF;
 import xyz.zedler.patrick.doodle.Constants.EXTRA;
 import xyz.zedler.patrick.doodle.Constants.PREF;
@@ -124,7 +127,13 @@ public class LauncherActivity extends MainActivity {
           break;
         default:
           if (DynamicColors.isDynamicColorAvailable()) {
-            DynamicColors.applyIfAvailable(this);
+            DynamicColors.applyIfAvailable(
+                new DynamicColorsOptions.Builder(this).setOnAppliedCallback(activity ->
+                    HarmonizedColors.applyIfAvailable(
+                        HarmonizedColorsOptions.createMaterialDefaults(activity)
+                    )
+                ).build()
+            );
           } else {
             setTheme(R.style.Theme_Doodle_Google);
           }

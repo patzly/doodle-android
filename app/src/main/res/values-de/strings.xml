@@ -73,7 +73,7 @@
   <string name="appearance_variant">Variation</string>
   <string name="appearance_night_mode">Nachtmodus</string>
   <string name="appearance_night_mode_description">Abgedunkelte Farben</string>
-  <string name="appearance_night_mode_on">An</string>
+  <string name="appearance_night_mode_on">Ein</string>
   <string name="appearance_night_mode_off">Aus</string>
   <string name="appearance_follow_system">System folgen</string>
   <string name="appearance_follow_system_description">Adaption des Designs</string>

@@ -372,7 +372,7 @@
 
       <TextView
         style="@style/Widget.Doodle.TextView.Category"
-        android:text="@string/appearance_auto_change" />
+        android:text="@string/other_title" />
 
       <LinearLayout
         android:id="@+id/linear_appearance_random"

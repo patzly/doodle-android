@@ -21,12 +21,13 @@ import android.os.Bundle;
 import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatDialogFragment;
 
 /**
  * Modal bottom sheet. This is a version of {@link androidx.fragment.app.DialogFragment} that shows
  * a bottom sheet using {@link CustomBottomSheetDialog} instead of a floating dialog.
  */
-public class CustomBottomSheetDialogFragment extends BottomSheetDialogFragment {
+public class CustomBottomSheetDialogFragment extends AppCompatDialogFragment {
 
   /**
    * Tracks if we are waiting for a dismissAllowingStateLoss or a regular dismiss once the

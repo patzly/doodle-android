@@ -25,8 +25,6 @@ import android.graphics.Color;
 import android.graphics.drawable.PaintDrawable;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
@@ -51,13 +49,10 @@ public class BaseBottomSheetDialogFragment extends CustomBottomSheetDialogFragme
 
   private static final String TAG = "BaseBottomSheet";
 
-  private static final String EXTRA_EXPANDED = "expanded";
-
   private MainActivity activity;
   private Dialog dialog;
   private View decorView;
   private ViewUtil viewUtil;
-  private boolean isExpanded;
   private boolean lightNavBar;
   private int backgroundColor;
 
@@ -89,9 +84,6 @@ public class BaseBottomSheetDialogFragment extends CustomBottomSheetDialogFragme
               return;
             }
 
-            container.setClipChildren(false);
-            container.setClipToPadding(false);
-
             backgroundColor = SurfaceColors.SURFACE_1.getColor(activity);
             PaintDrawable background = new PaintDrawable(backgroundColor);
             int radius = SystemUiUtil.dpToPx(requireContext(), 16);
@@ -104,8 +96,8 @@ public class BaseBottomSheetDialogFragment extends CustomBottomSheetDialogFragme
                 + SystemUiUtil.dpToPx(activity, 64) // height of bottom sheet top bar
             );
 
-            boolean keepBelowStatusBar =
-                SystemUiUtil.getDisplayWidth(requireContext()) > behavior.getMaxWidth();
+            boolean isFullWidth =
+                behavior.getMaxWidth() >= SystemUiUtil.getDisplayWidth(requireContext());
 
             ViewCompat.setOnApplyWindowInsetsListener(decorView, (view, insets) -> {
               int insetTop = insets.getInsets(Type.systemBars()).top;
@@ -120,71 +112,25 @@ public class BaseBottomSheetDialogFragment extends CustomBottomSheetDialogFragme
 
               applyBottomInset(insetBottom);
 
+              if (!isFullWidth) {
+                // Don't let the sheet go below the status bar
+                container.setPadding(0, insetTop, 0, 0);
+              }
+
               behavior.addBottomSheetCallback(new BottomSheetCallback() {
                 @Override
                 public void onStateChanged(@NonNull View bottomSheet, int newState) {
-                  isExpanded = newState == CustomBottomSheetBehavior.STATE_EXPANDED;
-
-                  if (bottomSheet.getTop() < insetTop) {
-                    if (!keepBelowStatusBar) {
-                      float fraction = (float) bottomSheet.getTop() / (float) insetTop;
-                      setCornerRadius(background, radius * fraction);
-                    }
-                  } else if (bottomSheet.getTop() != 0) {
-                    if (!keepBelowStatusBar) {
-                      setCornerRadius(background, radius);
-                    }
-                  }
-                  if (keepBelowStatusBar) {
-                    // Undo padding applied by BottomSheetBehavior and add container padding
-                    sheet.setPadding(0, 0, 0, 0);
-                    container.setPadding(
-                        0, insetTop, 0, 0
-                    );
-                  }
-                  removeWeirdBottomPadding(sheet);
+                  updateCornerRadii(bottomSheet, insetTop, isFullWidth, radius, background);
                 }
 
                 @Override
                 public void onSlide(@NonNull View bottomSheet, float slideOffset) {
-                  if (bottomSheet.getTop() < insetTop) {
-                    if (!keepBelowStatusBar) {
-                      float fraction = (float) bottomSheet.getTop() / (float) insetTop;
-                      setCornerRadius(background, radius * fraction);
-                    }
-                  } else if (bottomSheet.getTop() != 0) {
-                    if (!keepBelowStatusBar) {
-                      setCornerRadius(background, radius);
-                    }
-                  }
-                  if (keepBelowStatusBar) {
-                    // Undo padding applied by BottomSheetBehavior and add container padding
-                    sheet.setPadding(0, 0, 0, 0);
-                    container.setPadding(
-                        0, insetTop, 0, 0
-                    );
-                  }
-                  removeWeirdBottomPadding(sheet);
+                  updateCornerRadii(bottomSheet, insetTop, isFullWidth, radius, background);
                 }
               });
-              if (isExpanded && !keepBelowStatusBar) {
-                // Layout behind status bar if it was there before screen rotation
-                sheet.setPadding(
-                    sheet.getPaddingLeft(),
-                    insetTop - sheet.getTop(),
-                    sheet.getPaddingRight(),
-                    0
-                );
-              }
-              // Ugly, but we have to remove the padding after it is applied by the behavior
-              new Handler(Looper.getMainLooper()).postDelayed(
-                  () -> removeWeirdBottomPadding(sheet, container),
-                  10
-              );
+
               return insets;
             });
-
-            removeWeirdBottomPadding(sheet, container);
 
             if (decorView.getViewTreeObserver().isAlive()) {
               ViewUtil.removeOnGlobalLayoutListener(decorView, this);
@@ -195,28 +141,14 @@ public class BaseBottomSheetDialogFragment extends CustomBottomSheetDialogFragme
     return dialog;
   }
 
-  @Override
-  public void onSaveInstanceState(@NonNull Bundle outState) {
-    super.onSaveInstanceState(outState);
-    outState.putBoolean(EXTRA_EXPANDED, isExpanded);
-  }
-
-  @Override
-  public void onViewStateRestored(@Nullable Bundle savedInstanceState) {
-    super.onViewStateRestored(savedInstanceState);
-    if (savedInstanceState != null) {
-      isExpanded = savedInstanceState.getBoolean(EXTRA_EXPANDED, false);
-    }
-  }
-
-  /**
-   * Fix weird behavior of BottomSheetBehavior Bottom padding is applied although we have turned
-   * that off in the theme... We have to apply it manually to the scroll content container, so we
-   * remove it here again
-   */
-  private void removeWeirdBottomPadding(View... views) {
-    for (View view : views) {
-      view.setPadding(0, view.getPaddingTop(), 0, 0);
+  private void updateCornerRadii(
+      View bottomSheet, int insetTop, boolean isFullWidth, int radius, PaintDrawable background
+  ) {
+    if (bottomSheet.getTop() < insetTop && isFullWidth) {
+      float fraction = (float) bottomSheet.getTop() / (float) insetTop;
+      setCornerRadius(background, radius * fraction);
+    } else if (bottomSheet.getTop() != 0 && isFullWidth) {
+      setCornerRadius(background, radius);
     }
   }
 

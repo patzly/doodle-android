@@ -32,6 +32,7 @@ import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.view.WindowInsetsController;
 import android.view.WindowManager.LayoutParams;
 import android.widget.FrameLayout;
 import androidx.annotation.LayoutRes;
@@ -47,6 +48,7 @@ import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.material.R;
 import com.google.android.material.bottomsheet.CustomBottomSheetBehavior.BottomSheetCallback;
 import com.google.android.material.shape.MaterialShapeDrawable;
+import xyz.zedler.patrick.doodle.util.SystemUiUtil;
 
 /**
  * Base class for {@link android.app.Dialog}s styled as a bottom sheet.
@@ -236,8 +238,10 @@ public class CustomBottomSheetDialog extends AppCompatDialog {
   /** Creates the container layout which must exist to find the behavior */
   private FrameLayout ensureContainerAndBehavior() {
     if (container == null) {
-      container =
-          (FrameLayout) View.inflate(getContext(), xyz.zedler.patrick.doodle.R.layout.design_bottom_sheet_dialog, null);
+      container = (FrameLayout) View.inflate(
+          getContext(),
+          xyz.zedler.patrick.doodle.R.layout.design_bottom_sheet_dialog, null
+      );
 
       coordinator = (CoordinatorLayout) container.findViewById(R.id.coordinator);
       bottomSheet = (FrameLayout) container.findViewById(R.id.design_bottom_sheet);
@@ -367,6 +371,7 @@ public class CustomBottomSheetDialog extends AppCompatDialog {
     private final boolean lightBottomSheet;
     private final boolean lightStatusBar;
     private final WindowInsetsCompat insetsCompat;
+    private final boolean isFullWidth;
 
     private EdgeToEdgeCallback(
         @NonNull final View bottomSheet, @NonNull WindowInsetsCompat insetsCompat) {
@@ -375,15 +380,22 @@ public class CustomBottomSheetDialog extends AppCompatDialog {
           VERSION.SDK_INT >= VERSION_CODES.M
               && (bottomSheet.getSystemUiVisibility() & SYSTEM_UI_FLAG_LIGHT_STATUS_BAR) != 0;
 
+      CustomBottomSheetBehavior<FrameLayout> behavior
+          = CustomBottomSheetBehavior.from((FrameLayout) bottomSheet);
+
       // Try to find the background color to automatically change the status bar icons so they will
       // still be visible when the bottomsheet slides underneath the status bar.
       ColorStateList backgroundTint;
-      MaterialShapeDrawable msd = CustomBottomSheetBehavior.from(bottomSheet).getMaterialShapeDrawable();
+      MaterialShapeDrawable msd = behavior.getMaterialShapeDrawable();
       if (msd != null) {
         backgroundTint = msd.getFillColor();
       } else {
         backgroundTint = ViewCompat.getBackgroundTintList(bottomSheet);
       }
+
+      isFullWidth = behavior.getMaxWidth() >= SystemUiUtil.getDisplayWidth(
+          bottomSheet.getContext()
+      );
 
       if (backgroundTint != null) {
         // First check for a tint
@@ -413,7 +425,7 @@ public class CustomBottomSheetDialog extends AppCompatDialog {
     }
 
     private void setPaddingForPosition(View bottomSheet) {
-      if (bottomSheet.getTop() < insetsCompat.getSystemWindowInsetTop()) {
+      if (bottomSheet.getTop() < insetsCompat.getSystemWindowInsetTop() && isFullWidth) {
         // If the bottomsheet is light, we should set light status bar so the icons are visible
         // since the bottomsheet is now under the status bar.
         setLightStatusBar(bottomSheet, lightBottomSheet);
@@ -422,7 +434,8 @@ public class CustomBottomSheetDialog extends AppCompatDialog {
             bottomSheet.getPaddingLeft(),
             (insetsCompat.getSystemWindowInsetTop() - bottomSheet.getTop()),
             bottomSheet.getPaddingRight(),
-            bottomSheet.getPaddingBottom());
+            0
+        );
       } else if (bottomSheet.getTop() != 0) {
         // Reset the status bar icons to the original color because the bottomsheet is not under the
         // status bar.
@@ -431,13 +444,19 @@ public class CustomBottomSheetDialog extends AppCompatDialog {
             bottomSheet.getPaddingLeft(),
             0,
             bottomSheet.getPaddingRight(),
-            bottomSheet.getPaddingBottom());
+            0
+        );
       }
     }
   }
 
   public static void setLightStatusBar(@NonNull View view, boolean isLight) {
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+      view.getWindowInsetsController().setSystemBarsAppearance(
+          isLight ? WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS : 0,
+          WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS
+      );
+    } else if (Build.VERSION.SDK_INT >= VERSION_CODES.M) {
       int flags = view.getSystemUiVisibility();
       if (isLight) {
         flags |= View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR;

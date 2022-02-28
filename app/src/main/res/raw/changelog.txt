@@ -1,3 +1,6 @@
+5.4.0:
+- Improved: dialog appearance on large screens
+
 5.3.0:
 - New: another autumnal Pixel 6 Material You wallpaper!
 - New: additional Dracula theme color variants in the Pixel 4 Doodle collection

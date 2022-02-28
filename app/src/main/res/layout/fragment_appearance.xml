@@ -221,7 +221,7 @@
 
       <TextView
         style="@style/Widget.Doodle.TextView.Category"
-        android:text="@string/other_title" />
+        android:text="@string/appearance_colors_category" />
 
       <LinearLayout
         android:id="@+id/linear_appearance_colors"
@@ -276,62 +276,66 @@
       </LinearLayout>
 
       <LinearLayout
-        android:id="@+id/linear_appearance_night_mode"
-        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable">
+        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon"
+        android:paddingTop="12dp"
+        android:paddingBottom="0dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="0dp">
 
         <ImageView
           android:id="@+id/image_appearance_night_mode"
           style="@style/Widget.Doodle.ImageView.ListItem.Icon"
+          android:layout_marginEnd="32dp"
           tools:ignore="ContentDescription" />
 
         <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">
 
           <TextView
             style="@style/Widget.Doodle.TextView.ListItem.Title"
-            android:text="@string/appearance_night_mode" />
+            android:text="@string/appearance_night_mode"
+            android:paddingStart="0dp"
+            android:paddingEnd="16dp"/>
 
           <TextView
             style="@style/Widget.Doodle.TextView.ListItem.Description"
-            android:text="@string/appearance_night_mode_description" />
+            android:text="@string/appearance_night_mode_description"
+            android:paddingStart="0dp"
+            android:paddingEnd="16dp"/>
+
+          <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/toggle_appearance_night_mode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="16dp"
+            app:singleSelection="true"
+            app:selectionRequired="true">
+
+            <Button
+              android:id="@+id/button_appearance_night_mode_auto"
+              style="@style/Widget.Doodle.Button.OutlinedButton"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="@string/other_theme_auto" />
+
+            <Button
+              android:id="@+id/button_appearance_night_mode_on"
+              style="@style/Widget.Doodle.Button.OutlinedButton"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="@string/appearance_night_mode_on" />
+
+            <Button
+              android:id="@+id/button_appearance_night_mode_off"
+              style="@style/Widget.Doodle.Button.OutlinedButton"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="@string/appearance_night_mode_off" />
+
+          </com.google.android.material.button.MaterialButtonToggleGroup>
 
         </LinearLayout>
-
-        <com.google.android.material.switchmaterial.SwitchMaterial
-          android:id="@+id/switch_appearance_night_mode"
-          style="@style/Widget.Doodle.Switch"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content" />
-
-      </LinearLayout>
-
-      <LinearLayout
-        android:id="@+id/linear_appearance_follow_system"
-        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable">
-
-        <ImageView
-          android:id="@+id/image_appearance_follow_system"
-          style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-          android:src="@drawable/ic_round_brightness_auto_anim"
-          tools:ignore="ContentDescription" />
-
-        <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">
-
-          <TextView
-            style="@style/Widget.Doodle.TextView.ListItem.Title"
-            android:text="@string/appearance_follow_system" />
-
-          <TextView
-            style="@style/Widget.Doodle.TextView.ListItem.Description"
-            android:text="@string/appearance_follow_system_description" />
-
-        </LinearLayout>
-
-        <com.google.android.material.switchmaterial.SwitchMaterial
-          android:id="@+id/switch_appearance_follow_system"
-          style="@style/Widget.Doodle.Switch"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_marginStart="16dp" />
 
       </LinearLayout>
 
@@ -365,6 +369,10 @@
           android:layout_marginStart="16dp" />
 
       </LinearLayout>
+
+      <TextView
+        style="@style/Widget.Doodle.TextView.Category"
+        android:text="@string/appearance_auto_change" />
 
       <LinearLayout
         android:id="@+id/linear_appearance_random"

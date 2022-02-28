@@ -83,12 +83,13 @@
   <string name="appearance_variant">Variant</string>
   <string name="appearance_night_mode">Night mode</string>
   <string name="appearance_night_mode_description">Only dark colors</string>
+  <string name="appearance_night_mode_on">On</string>
+  <string name="appearance_night_mode_off">Off</string>
   <string name="appearance_follow_system">Follow system</string>
   <string name="appearance_follow_system_description">Adopt device theme</string>
   <string name="appearance_white_text">Try to force white text</string>
   <string name="appearance_white_text_description">May affect readability</string>
-  <string name="appearance_random">Random wallpaper design</string>
-  <string name="appearance_random_description">Every time the display is turned off</string>
+  <string name="appearance_colors_category">Colors</string>
   <string name="appearance_colors">Extracted colors</string>
   <string name="appearance_colors_description">Used for calculating text contrast</string>
   <string name="appearance_colors_description_dynamic">Used by the system\'s theming engine</string>
@@ -97,6 +98,9 @@
   <string name="appearance_colors_tertiary">Choose tertiary color</string>
   <string name="appearance_colors_info">On devices without dynamic color support (Android 11 or lower), only the primary color is used to calculate the launcher text contrast and tinting the recent apps screen\'s background.</string>
   <string name="appearance_colors_info_dynamic">On devices with Android 12 or higher and dynamic color support, the three selected colors are used to automatically create a system-wide color theme.</string>
+  <string name="appearance_auto_change">Automatic changing</string>
+  <string name="appearance_random">Random wallpaper design</string>
+  <string name="appearance_random_description">Every time the display is turned off</string>
 
   <!-- PARALLAX -->
 

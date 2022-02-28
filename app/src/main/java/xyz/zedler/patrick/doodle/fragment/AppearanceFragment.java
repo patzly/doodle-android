@@ -46,6 +46,7 @@ import java.util.HashSet;
 import java.util.Set;
 import xyz.zedler.patrick.doodle.Constants;
 import xyz.zedler.patrick.doodle.Constants.DEF;
+import xyz.zedler.patrick.doodle.Constants.NIGHT_MODE;
 import xyz.zedler.patrick.doodle.Constants.PREF;
 import xyz.zedler.patrick.doodle.Constants.WALLPAPER;
 import xyz.zedler.patrick.doodle.R;
@@ -82,6 +83,7 @@ public class AppearanceFragment extends BaseFragment
   private BaseWallpaper currentWallpaper;
   private WallpaperVariant currentVariant;
   private int currentVariantIndex;
+  private boolean isWallpaperNightMode;
   private boolean randomWallpaper;
   private Set<String> randomList = new HashSet<>();
   private final HashMap<String, SelectionCardView> designSelections = new HashMap<>();
@@ -139,21 +141,55 @@ public class AppearanceFragment extends BaseFragment
       return true;
     });
 
-    binding.switchAppearanceNightMode.setChecked(
-        getSharedPrefs().getBoolean(PREF.NIGHT_MODE, DEF.NIGHT_MODE)
-    );
+    int id;
+    switch (getSharedPrefs().getInt(PREF.NIGHT_MODE, DEF.NIGHT_MODE)) {
+      case NIGHT_MODE.ON:
+        id = R.id.button_appearance_night_mode_on;
+        break;
+      case NIGHT_MODE.OFF:
+        id = R.id.button_appearance_night_mode_off;
+        break;
+      default:
+        id = R.id.button_appearance_night_mode_auto;
+        break;
+    }
+    binding.toggleAppearanceNightMode.check(id);
+    binding.toggleAppearanceNightMode.addOnButtonCheckedListener((group, checkedId, isChecked) -> {
+      if (!isChecked) {
+        return;
+      }
+      int pref;
+      if (checkedId == R.id.button_appearance_night_mode_on) {
+        pref = NIGHT_MODE.ON;
+      } else if (checkedId == R.id.button_appearance_night_mode_off) {
+        pref = NIGHT_MODE.OFF;
+      } else {
+        pref = NIGHT_MODE.AUTO;
+      }
+      getSharedPrefs().edit().putInt(PREF.NIGHT_MODE, pref).apply();
+      activity.requestThemeRefresh();
+      refreshDarkLightVariant();
+      refreshColors();
+      performHapticClick();
 
-    binding.switchAppearanceFollowSystem.setChecked(
-        getSharedPrefs().getBoolean(PREF.FOLLOW_SYSTEM, DEF.FOLLOW_SYSTEM)
-    );
-    binding.switchAppearanceFollowSystem.setEnabled(binding.switchAppearanceNightMode.isChecked());
-    binding.linearAppearanceFollowSystem.setEnabled(binding.switchAppearanceNightMode.isChecked());
-    binding.linearAppearanceFollowSystem.setAlpha(
-        binding.switchAppearanceNightMode.isChecked() ? 1 : 0.5f
-    );
-
+      boolean isNewWallpaperNightMode = isWallpaperNightMode();
+      if (isWallpaperNightMode != isNewWallpaperNightMode) {
+        showMonetInfoIfRequired();
+        ViewUtil.startIcon(binding.imageAppearanceNightMode);
+        new Handler(Looper.getMainLooper()).postDelayed(
+            () -> binding.imageAppearanceNightMode.setImageResource(
+                isNewWallpaperNightMode
+                    ? R.drawable.ic_round_dark_mode_to_light_mode_anim
+                    : R.drawable.ic_round_light_mode_to_dark_mode_anim
+            ),
+            300
+        );
+        isWallpaperNightMode = isNewWallpaperNightMode;
+      }
+    });
+    isWallpaperNightMode = isWallpaperNightMode();
     binding.imageAppearanceNightMode.setImageResource(
-        getSharedPrefs().getBoolean(PREF.NIGHT_MODE, DEF.NIGHT_MODE)
+        isWallpaperNightMode
             ? R.drawable.ic_round_dark_mode_to_light_mode_anim
             : R.drawable.ic_round_light_mode_to_dark_mode_anim
     );
@@ -194,16 +230,12 @@ public class AppearanceFragment extends BaseFragment
     ViewUtil.setOnClickListeners(
         this,
         // Other
-        binding.linearAppearanceNightMode,
-        binding.linearAppearanceFollowSystem,
         binding.linearAppearanceWhiteText,
         binding.linearAppearanceRandom
     );
 
     ViewUtil.setOnCheckedChangeListeners(
         this,
-        binding.switchAppearanceNightMode,
-        binding.switchAppearanceFollowSystem,
         binding.switchAppearanceWhiteText,
         binding.switchAppearanceRandom
     );
@@ -212,15 +244,7 @@ public class AppearanceFragment extends BaseFragment
   @Override
   public void onClick(View v) {
     int id = v.getId();
-    if (id == R.id.linear_appearance_night_mode) {
-      binding.switchAppearanceNightMode.setChecked(!binding.switchAppearanceNightMode.isChecked());
-    } else if (id == R.id.linear_appearance_follow_system) {
-      if (binding.switchAppearanceNightMode.isChecked()) {
-        binding.switchAppearanceFollowSystem.setChecked(
-            !binding.switchAppearanceFollowSystem.isChecked()
-        );
-      }
-    } else if (id == R.id.linear_appearance_white_text) {
+    if (id == R.id.linear_appearance_white_text) {
       binding.switchAppearanceWhiteText.setChecked(!binding.switchAppearanceWhiteText.isChecked());
     } else if (id == R.id.linear_appearance_random) {
       binding.switchAppearanceRandom.setChecked(!binding.switchAppearanceRandom.isChecked());
@@ -230,37 +254,7 @@ public class AppearanceFragment extends BaseFragment
   @Override
   public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
     int id = buttonView.getId();
-    if (id == R.id.switch_appearance_night_mode) {
-      ViewUtil.startIcon(binding.imageAppearanceNightMode);
-      performHapticClick();
-      binding.switchAppearanceFollowSystem.setEnabled(isChecked);
-      binding.linearAppearanceFollowSystem.setEnabled(isChecked);
-      binding.linearAppearanceFollowSystem.animate()
-          .alpha(isChecked ? 1 : 0.5f)
-          .setDuration(200)
-          .start();
-      getSharedPrefs().edit().putBoolean(PREF.NIGHT_MODE, isChecked).apply();
-      new Handler(Looper.getMainLooper()).postDelayed(
-          () -> binding.imageAppearanceNightMode.setImageResource(
-              isChecked
-                  ? R.drawable.ic_round_dark_mode_to_light_mode_anim
-                  : R.drawable.ic_round_light_mode_to_dark_mode_anim
-          ),
-          300
-      );
-      refreshDarkLightVariant();
-      refreshColors();
-      activity.requestThemeRefresh();
-      showMonetInfoIfRequired();
-    } else if (id == R.id.switch_appearance_follow_system) {
-      ViewUtil.startIcon(binding.imageAppearanceFollowSystem);
-      performHapticClick();
-      getSharedPrefs().edit().putBoolean(PREF.FOLLOW_SYSTEM, isChecked).apply();
-      refreshDarkLightVariant();
-      refreshColors();
-      activity.requestThemeRefresh();
-      showMonetInfoIfRequired();
-    } else if (id == R.id.switch_appearance_white_text) {
+    if (id == R.id.switch_appearance_white_text) {
       performHapticClick();
       getSharedPrefs().edit().putBoolean(PREF.USE_WHITE_TEXT, isChecked).apply();
       activity.requestThemeRefresh();
@@ -658,12 +652,11 @@ public class AppearanceFragment extends BaseFragment
   }
 
   private boolean isWallpaperNightMode() {
-    boolean nightMode = getSharedPrefs().getBoolean(PREF.NIGHT_MODE, DEF.NIGHT_MODE);
-    boolean followSystem = getSharedPrefs().getBoolean(PREF.FOLLOW_SYSTEM, DEF.FOLLOW_SYSTEM);
-    if (nightMode && !followSystem) {
+    int nightMode = getSharedPrefs().getInt(PREF.NIGHT_MODE, DEF.NIGHT_MODE);
+    if (nightMode == NIGHT_MODE.ON) {
       return true;
     }
     int flags = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
-    return nightMode && flags == Configuration.UI_MODE_NIGHT_YES;
+    return nightMode == NIGHT_MODE.AUTO && flags == Configuration.UI_MODE_NIGHT_YES;
   }
 }

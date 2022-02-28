@@ -26,6 +26,7 @@ import android.util.Log;
 import androidx.preference.PreferenceManager;
 import java.util.Objects;
 import xyz.zedler.patrick.doodle.Constants.DEF;
+import xyz.zedler.patrick.doodle.Constants.NIGHT_MODE;
 import xyz.zedler.patrick.doodle.Constants.PREF;
 import xyz.zedler.patrick.doodle.drawable.SvgDrawable;
 
@@ -125,6 +126,28 @@ public class PrefsUtil {
         removePreference(PREF.VARIANT_ANTHONY);
       }
     }
+
+    // night mode is stored in a new way, follow system no longer needed
+    if (sharedPrefs.contains(PREF.NIGHT_MODE)) {
+      try {
+        sharedPrefs.getInt(PREF.NIGHT_MODE, DEF.NIGHT_MODE);
+      } catch (Exception e) {
+        boolean isNight = sharedPrefs.getBoolean(PREF.NIGHT_MODE, true);
+        boolean followSystem = sharedPrefs.getBoolean("follow_system", true);
+        removePreference(PREF.NIGHT_MODE);
+        removePreference("follow_system");
+        int nightModeNew;
+        if (isNight && followSystem) {
+          nightModeNew = NIGHT_MODE.AUTO;
+        } else if (isNight) {
+          nightModeNew = NIGHT_MODE.ON;
+        } else {
+          nightModeNew = NIGHT_MODE.OFF;
+        }
+        sharedPrefs.edit().putInt(PREF.NIGHT_MODE, nightModeNew).apply();
+      }
+    }
+
     return this;
   }
 

@@ -1,7 +1,10 @@
 5.4.0:
 - Improved: new help dialog accessible from top right menus
+- Improved: simplified night mode option in appearance settings
 - Improved: dialog appearance on large screens
-- Improved: info in help section instead of
+- Improved: workaround for MIUI issue replaced by info in help dialog, since workaround didn't work
+
+Please consider translating this app into your language at Transifex.
 
 5.3.0:
 - New: another autumnal Pixel 6 Material You wallpaper!
@@ -12,8 +15,6 @@
 - Improved: splash screen background color on Android 12
 - Fixed: dark status bar icons on dark wallpapers on some devices (finally, thanks Vivek!)
 - Fixed: random wallpaper not refreshing when lockscreen zoom was turned off
-
-Please consider translating this app into your language at Transifex.
 
 5.2.0:
 - New: default shape scale based on display size and density (reset all options to let Doodle calculate the default shape scale)

@@ -55,6 +55,7 @@ import java.util.List;
 import xyz.zedler.patrick.doodle.Constants;
 import xyz.zedler.patrick.doodle.Constants.ACTION;
 import xyz.zedler.patrick.doodle.Constants.DEF;
+import xyz.zedler.patrick.doodle.Constants.NIGHT_MODE;
 import xyz.zedler.patrick.doodle.Constants.PREF;
 import xyz.zedler.patrick.doodle.Constants.REQUEST_SOURCE;
 import xyz.zedler.patrick.doodle.Constants.USER_PRESENCE;
@@ -80,7 +81,7 @@ public class LiveWallpaperService extends WallpaperService {
   private BaseWallpaper wallpaper;
   private WallpaperVariant variant;
   private int variantIndex;
-  private boolean nightMode, followSystem;
+  private int nightMode;
   private boolean isPowerSaveMode;
   private BroadcastReceiver receiver;
   private String presence;
@@ -226,11 +227,11 @@ public class LiveWallpaperService extends WallpaperService {
   }
 
   private boolean isNightMode() {
-    if (nightMode && !followSystem) {
+    if (nightMode == NIGHT_MODE.ON) {
       return true;
     }
     int flags = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
-    return nightMode && flags == Configuration.UI_MODE_NIGHT_YES;
+    return nightMode == NIGHT_MODE.AUTO && flags == Configuration.UI_MODE_NIGHT_YES;
   }
 
   private boolean isKeyguardLocked() {
@@ -575,8 +576,7 @@ public class LiveWallpaperService extends WallpaperService {
       } else {
         wallpaper = Constants.getWallpaper(sharedPrefs.getString(PREF.WALLPAPER, DEF.WALLPAPER));
       }
-      nightMode = sharedPrefs.getBoolean(PREF.NIGHT_MODE, DEF.NIGHT_MODE);
-      followSystem = sharedPrefs.getBoolean(PREF.FOLLOW_SYSTEM, DEF.FOLLOW_SYSTEM);
+      nightMode = sharedPrefs.getInt(PREF.NIGHT_MODE, DEF.NIGHT_MODE);
       useWhiteText = sharedPrefs.getBoolean(PREF.USE_WHITE_TEXT, DEF.USE_WHITE_TEXT);
       isNight = isNightMode();
 

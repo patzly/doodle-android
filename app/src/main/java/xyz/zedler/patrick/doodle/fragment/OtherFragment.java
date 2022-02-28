@@ -143,7 +143,7 @@ public class OtherFragment extends BaseFragment
     );
 
     int id;
-    switch (getSharedPrefs().getInt(PREF.MODE, MODE.AUTO)) {
+    switch (getSharedPrefs().getInt(PREF.MODE, DEF.MODE)) {
       case MODE.LIGHT:
         id = R.id.button_other_theme_light;
         break;
@@ -168,6 +168,7 @@ public class OtherFragment extends BaseFragment
         pref = MODE.AUTO;
       }
       getSharedPrefs().edit().putInt(PREF.MODE, pref).apply();
+      performHapticClick();
       activity.restartToApply(
           0, getInstanceState(), false, true
       );

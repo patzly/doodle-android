@@ -52,44 +52,37 @@ public class SystemUiUtil {
     }
   }
 
-  public static void setLightNavigationBar(Window window) {
+  public static void setLightNavigationBar(@NonNull View view, boolean isLight) {
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-      window.getInsetsController().setSystemBarsAppearance(
-          WindowInsetsController.APPEARANCE_LIGHT_NAVIGATION_BARS,
+      view.getWindowInsetsController().setSystemBarsAppearance(
+          isLight ? WindowInsetsController.APPEARANCE_LIGHT_NAVIGATION_BARS : 0,
           WindowInsetsController.APPEARANCE_LIGHT_NAVIGATION_BARS
       );
-    } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-      View decorView = window.getDecorView();
-      decorView.setSystemUiVisibility(
-          decorView.getSystemUiVisibility() | View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR
-      );
+    } else if (Build.VERSION.SDK_INT >= VERSION_CODES.O) {
+      int flags = view.getSystemUiVisibility();
+      if (isLight) {
+        flags |= View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR;
+      } else {
+        flags &= ~View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR;
+      }
+      view.setSystemUiVisibility(flags);
     }
   }
 
-  public static void setLightNavigationBar(Window window, View view) {
+  public static void setLightStatusBar(@NonNull View view, boolean isLight) {
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-      window.getInsetsController().setSystemBarsAppearance(
-          WindowInsetsController.APPEARANCE_LIGHT_NAVIGATION_BARS,
-          WindowInsetsController.APPEARANCE_LIGHT_NAVIGATION_BARS
-      );
-    } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-      view.setSystemUiVisibility(
-          view.getSystemUiVisibility() | View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR
-      );
-    }
-  }
-
-  public static void setLightStatusBar(Window window) {
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-      window.getInsetsController().setSystemBarsAppearance(
-          WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS,
+      view.getWindowInsetsController().setSystemBarsAppearance(
+          isLight ? WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS : 0,
           WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS
       );
     } else if (Build.VERSION.SDK_INT >= VERSION_CODES.M) {
-      final View decorView = window.getDecorView();
-      decorView.setSystemUiVisibility(
-          decorView.getSystemUiVisibility() | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
-      );
+      int flags = view.getSystemUiVisibility();
+      if (isLight) {
+        flags |= View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR;
+      } else {
+        flags &= ~View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR;
+      }
+      view.setSystemUiVisibility(flags);
     }
   }
 

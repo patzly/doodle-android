@@ -234,14 +234,14 @@ public class SystemBarBehavior {
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) { // 29
       window.setStatusBarColor(Color.TRANSPARENT);
       if (!isDarkModeActive) {
-        SystemUiUtil.setLightStatusBar(window);
+        SystemUiUtil.setLightStatusBar(window.getDecorView(), true);
       }
       if (SystemUiUtil.isNavigationModeGesture(activity)) {
         window.setNavigationBarColor(Color.TRANSPARENT);
         window.setNavigationBarContrastEnforced(true);
       } else {
         if (!isDarkModeActive) {
-          SystemUiUtil.setLightNavigationBar(window);
+          SystemUiUtil.setLightNavigationBar(window.getDecorView(), true);
         }
         if (isOrientationPortrait) {
           window.setNavigationBarColor(
@@ -255,8 +255,8 @@ public class SystemBarBehavior {
     } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) { // 28
       window.setStatusBarColor(Color.TRANSPARENT);
       if (!isDarkModeActive) {
-        SystemUiUtil.setLightStatusBar(window);
-        SystemUiUtil.setLightNavigationBar(window);
+        SystemUiUtil.setLightStatusBar(window.getDecorView(), true);
+        SystemUiUtil.setLightNavigationBar(window.getDecorView(), true);
       }
       if (isOrientationPortrait) {
         window.setNavigationBarColor(isScrollable ? colorScrim : Color.TRANSPARENT);
@@ -267,12 +267,12 @@ public class SystemBarBehavior {
     } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) { // 26
       window.setStatusBarColor(Color.TRANSPARENT);
       if (!isDarkModeActive) {
-        SystemUiUtil.setLightStatusBar(window);
+        SystemUiUtil.setLightStatusBar(window.getDecorView(), true);
       }
       if (isOrientationPortrait) {
         window.setNavigationBarColor(isScrollable ? colorScrim : Color.TRANSPARENT);
         if (!isDarkModeActive) {
-          SystemUiUtil.setLightNavigationBar(window);
+          SystemUiUtil.setLightNavigationBar(window.getDecorView(), true);
         }
       } else {
         window.setNavigationBarColor(isDarkModeActive ? Color.BLACK : SystemUiUtil.SCRIM);
@@ -280,7 +280,7 @@ public class SystemBarBehavior {
     } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) { // 23
       window.setStatusBarColor(Color.TRANSPARENT);
       if (!isDarkModeActive) {
-        SystemUiUtil.setLightStatusBar(window);
+        SystemUiUtil.setLightStatusBar(window.getDecorView(), true);
       }
       if (isOrientationPortrait) {
         window.setNavigationBarColor(

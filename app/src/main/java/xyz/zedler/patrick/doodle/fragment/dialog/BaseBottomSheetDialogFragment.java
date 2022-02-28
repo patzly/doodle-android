@@ -107,7 +107,7 @@ public class BaseBottomSheetDialogFragment extends CustomBottomSheetDialogFragme
 
               if (lightNavBar) {
                 // Below API 30 it does not work for non-gesture if we take the normal method
-                SystemUiUtil.setLightNavigationBar(dialog.getWindow(), sheet);
+                SystemUiUtil.setLightNavigationBar(sheet, true);
               }
 
               applyBottomInset(insetBottom);

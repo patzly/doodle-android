@@ -84,10 +84,11 @@
 
   <string name="parallax_title">Parallaksi</string>
   <string name="parallax_none">Ei mitään</string>
+  <string name="parallax_swipe_power_save">Tottele virransäästäjää</string>
   <string name="parallax_tilt_description">Käyttää enemmän akkua</string>
   <!-- SIZE -->
 
-  <string name="size_title">Muodon koko</string>
+  <string name="size_title">Muoto ja koko</string>
   <string name="size_scale">Koko</string>
   <!-- OTHER -->
 

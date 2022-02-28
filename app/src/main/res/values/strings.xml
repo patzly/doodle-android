@@ -60,6 +60,7 @@
   <string name="action_set">Set wallpaper</string>
   <string name="action_set_directly">Set directly</string>
   <string name="action_open_picker">Open wallpaper picker</string>
+  <string name="action_help">Help</string>
   <string name="action_send_feedback">Send feedback</string>
   <string name="action_share">Share</string>
   <string name="action_share_description">Tell your friends about Doodle</string>

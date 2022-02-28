@@ -79,17 +79,17 @@ public class AboutFragment extends BaseFragment implements OnClickListener {
     });
     binding.toolbarAbout.setOnMenuItemClickListener(item -> {
       int id = item.getItemId();
-      if (id == R.id.action_share) {
+      if (id == R.id.action_feedback) {
+        navigate(AboutFragmentDirections.actionAboutToFeedbackDialog());
+        performHapticClick();
+      } else if (id == R.id.action_help) {
+        showText(R.raw.help, R.string.action_help, 0);
+        performHapticClick();
+      } else if (id == R.id.action_share) {
         ResUtil.share(activity, R.string.msg_share);
         performHapticClick();
-        return true;
-      } else if (id == R.id.action_feedback) {
-        performHapticClick();
-        navigate(AboutFragmentDirections.actionAboutToFeedbackDialog());
-        return true;
-      } else {
-        return false;
       }
+      return true;
     });
 
     ViewUtil.setOnClickListeners(
@@ -137,13 +137,13 @@ public class AboutFragment extends BaseFragment implements OnClickListener {
     } else if (id == R.id.linear_about_license_jost && getViewUtil().isClickEnabled()) {
       performHapticClick();
       ViewUtil.startIcon(binding.imageAboutLicenseJost);
-      showLicense(R.raw.license_ofl, R.string.license_jost, R.string.license_jost_link);
+      showText(R.raw.license_ofl, R.string.license_jost, R.string.license_jost_link);
     } else if (
         id == R.id.linear_about_license_material_components && getViewUtil().isClickEnabled()
     ) {
       performHapticClick();
       ViewUtil.startIcon(binding.imageAboutLicenseMaterialComponents);
-      showLicense(
+      showText(
           R.raw.license_apache,
           R.string.license_material_components,
           R.string.license_material_components_link
@@ -151,7 +151,7 @@ public class AboutFragment extends BaseFragment implements OnClickListener {
     } else if (id == R.id.linear_about_license_material_icons && getViewUtil().isClickEnabled()) {
       performHapticClick();
       ViewUtil.startIcon(binding.imageAboutLicenseMaterialIcons);
-      showLicense(
+      showText(
           R.raw.license_apache,
           R.string.license_material_icons,
           R.string.license_material_icons_link
@@ -159,7 +159,7 @@ public class AboutFragment extends BaseFragment implements OnClickListener {
     }
   }
 
-  private void showLicense(@RawRes int file, @StringRes int title, @StringRes int link) {
+  private void showText(@RawRes int file, @StringRes int title, @StringRes int link) {
     AboutFragmentDirections.ActionAboutToTextDialog action
         = AboutFragmentDirections.actionAboutToTextDialog();
     action.setFile(file);

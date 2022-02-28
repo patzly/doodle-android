@@ -87,17 +87,21 @@ public class ParallaxFragment extends BaseFragment
     });
     binding.toolbarParallax.setOnMenuItemClickListener(item -> {
       int id = item.getItemId();
-      if (id == R.id.action_share) {
+      if (id == R.id.action_feedback) {
+        navigate(ParallaxFragmentDirections.actionParallaxToFeedbackDialog());
+        performHapticClick();
+      } else if (id == R.id.action_help) {
+        ParallaxFragmentDirections.ActionParallaxToTextDialog action
+            = ParallaxFragmentDirections.actionParallaxToTextDialog();
+        action.setFile(R.raw.help);
+        action.setTitle(R.string.action_help);
+        navigate(action);
+        performHapticClick();
+      } else if (id == R.id.action_share) {
         ResUtil.share(activity, R.string.msg_share);
         performHapticClick();
-        return true;
-      } else if (id == R.id.action_feedback) {
-        performHapticClick();
-        navigate(ParallaxFragmentDirections.actionParallaxToFeedbackDialog());
-        return true;
-      } else {
-        return false;
       }
+      return true;
     });
 
     binding.sliderParallaxIntensity.setValue(getSharedPrefs().getInt(PREF.PARALLAX, DEF.PARALLAX));

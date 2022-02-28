@@ -122,17 +122,21 @@ public class AppearanceFragment extends BaseFragment
     });
     binding.toolbarAppearance.setOnMenuItemClickListener(item -> {
       int id = item.getItemId();
-      if (id == R.id.action_share) {
+      if (id == R.id.action_feedback) {
+        navigate(AppearanceFragmentDirections.actionAppearanceToFeedbackDialog());
+        performHapticClick();
+      } else if (id == R.id.action_help) {
+        AppearanceFragmentDirections.ActionAppearanceToTextDialog action
+            = AppearanceFragmentDirections.actionAppearanceToTextDialog();
+        action.setFile(R.raw.help);
+        action.setTitle(R.string.action_help);
+        navigate(action);
+        performHapticClick();
+      } else if (id == R.id.action_share) {
         ResUtil.share(activity, R.string.msg_share);
         performHapticClick();
-        return true;
-      } else if (id == R.id.action_feedback) {
-        performHapticClick();
-        navigate(AppearanceFragmentDirections.actionAppearanceToFeedbackDialog());
-        return true;
-      } else {
-        return false;
       }
+      return true;
     });
 
     binding.switchAppearanceNightMode.setChecked(

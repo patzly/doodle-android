@@ -27,6 +27,8 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RawRes;
+import androidx.annotation.StringRes;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.activity.MainActivity;
 import xyz.zedler.patrick.doodle.behavior.ScrollBehavior;
@@ -75,17 +77,17 @@ public class OverviewFragment extends BaseFragment implements OnClickListener {
 
     binding.toolbarOverview.setOnMenuItemClickListener(item -> {
       int id = item.getItemId();
-      if (id == R.id.action_share) {
+      if (id == R.id.action_feedback) {
+        navigate(OverviewFragmentDirections.actionOverviewToFeedbackDialog());
+        performHapticClick();
+      } else if (id == R.id.action_help) {
+        showText(R.raw.help, R.string.action_help);
+        performHapticClick();
+      } else if (id == R.id.action_share) {
         ResUtil.share(activity, R.string.msg_share);
         performHapticClick();
-        return true;
-      } else if (id == R.id.action_feedback) {
-        performHapticClick();
-        navigate(OverviewFragmentDirections.actionOverviewToFeedbackDialog());
-        return true;
-      } else {
-        return false;
       }
+      return true;
     });
 
     boolean shouldLogoBeVisible = activity.shouldLogoBeVisibleOnOverviewPage();
@@ -125,11 +127,7 @@ public class OverviewFragment extends BaseFragment implements OnClickListener {
   public void onClick(View v) {
     int id = v.getId();
     if (id == R.id.card_overview_info && getViewUtil().isClickEnabled()) {
-      OverviewFragmentDirections.ActionOverviewToTextDialog action
-          = OverviewFragmentDirections.actionOverviewToTextDialog();
-      action.setFile(R.raw.information);
-      action.setTitle(R.string.title_info);
-      navigate(action);
+      showText(R.raw.information, R.string.title_info);
       performHapticClick();
     } else if (id == R.id.linear_overview_appearance && getViewUtil().isClickEnabled()) {
       navigate(OverviewFragmentDirections.actionOverviewToAppearance());
@@ -147,5 +145,13 @@ public class OverviewFragment extends BaseFragment implements OnClickListener {
       navigate(OverviewFragmentDirections.actionOverviewToAbout());
       performHapticClick();
     }
+  }
+
+  private void showText(@RawRes int file, @StringRes int title) {
+    OverviewFragmentDirections.ActionOverviewToTextDialog action
+        = OverviewFragmentDirections.actionOverviewToTextDialog();
+    action.setFile(file);
+    action.setTitle(title);
+    navigate(action);
   }
 }

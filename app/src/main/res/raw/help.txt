@@ -1,0 +1,28 @@
+<b>Parallax on page swipe doesn't work?</b>
+You need to turn on background scrolling in your launcher's settings if you have disabled it before.
+
+<b>"Set wallpaper" button disappears after applying the wallpaper?</b>
+This is intended, you only have to apply it once. Select another wallpaper design in the appearance section to change it.
+
+<b>Changed wallpaper colors not updating on Android 12?</b>
+You need to turn off your screen. The next time you turn it back on, the new colors should be applied to the whole system. It might require some interaction with the device for the home screen widgets to also update their colors.
+
+<b>Parallax/zoom animations stop after closing Doodle settings?</b>
+This seems like a bug of MIUI 12.5. If you instead apply the wallpaper in your system's wallpaper picker it should work. You can open your system's wallpaper picker with a long-tap on an empty place on your home screen.
+
+<b>Wallpaper is crashing?</b>
+Please turn off hardware acceleration in "Other options" and try it again. Some devices seem to have issues with hardware accelerated rendering.
+
+<b>Wallpaper not applied to lockscreen?</b>
+If your device doesn't display you the option to apply it to your lockscreen, then this is not supported by your device. Try searching for your device's name and this question on the Internet to get possible solutions.
+
+<b>You don't want the wallpaper to be applied to your lockscreen?</b>
+If your device doesn't display you the option to apply it only to your home screen, then this is not supported by your device.
+
+<b>Custom shapes like on Pixel 4 are not available for Doodle collection?</b>
+This feature is not supported by this app. The rendering method doesn't support dynamic changes like custom shapes, a replication of this feature would be way too time consuming.
+
+<b>Not enough options?</b>
+There won't be many more wallpapers added to this app in the future. Doodle is about doodle-styled, flat-shaped (non-3D) original Google Pixel wallpapers (with a few exceptions), these criteria are not met by many of them out there.
+Every wallpaper design available in this app required days or weeks to implement, it's not as easy as you might think (shape extraction, dark version creation, optimization for parallax rendering and much more).
+When I find enough time beside university, I will expand the Material You collection and the collection of wallpapers by Anna Kövecses.

@@ -104,17 +104,21 @@ public class OtherFragment extends BaseFragment
     });
     binding.toolbarOther.setOnMenuItemClickListener(item -> {
       int id = item.getItemId();
-      if (id == R.id.action_share) {
+      if (id == R.id.action_feedback) {
+        navigate(OtherFragmentDirections.actionOtherToFeedbackDialog());
+        performHapticClick();
+      } else if (id == R.id.action_help) {
+        OtherFragmentDirections.ActionOtherToTextDialog action
+            = OtherFragmentDirections.actionOtherToTextDialog();
+        action.setFile(R.raw.help);
+        action.setTitle(R.string.action_help);
+        navigate(action);
+        performHapticClick();
+      } else if (id == R.id.action_share) {
         ResUtil.share(activity, R.string.msg_share);
         performHapticClick();
-        return true;
-      } else if (id == R.id.action_feedback) {
-        performHapticClick();
-        navigate(OtherFragmentDirections.actionOtherToFeedbackDialog());
-        return true;
-      } else {
-        return false;
       }
+      return true;
     });
 
     binding.textOtherLanguage.setText(getLanguage());

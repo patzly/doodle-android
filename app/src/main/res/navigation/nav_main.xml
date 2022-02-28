@@ -95,8 +95,8 @@
       app:destination="@id/colorsBottomSheetDialogFragment" />
 
     <action
-      android:id="@+id/action_appearance_to_apply_dialog"
-      app:destination="@id/applyBottomSheetDialogFragment" />
+      android:id="@+id/action_appearance_to_text_dialog"
+      app:destination="@id/textBottomSheetDialogFragment" />
 
     <action
       android:id="@+id/action_appearance_to_feedback_dialog"
@@ -111,6 +111,10 @@
     tools:layout="@layout/fragment_parallax">
 
     <action
+      android:id="@+id/action_parallax_to_text_dialog"
+      app:destination="@id/textBottomSheetDialogFragment" />
+
+    <action
       android:id="@+id/action_parallax_to_feedback_dialog"
       app:destination="@id/feedbackBottomSheetDialogFragment" />
 
@@ -121,6 +125,10 @@
     android:name="xyz.zedler.patrick.doodle.fragment.SizeFragment"
     android:label="fragment_size"
     tools:layout="@layout/fragment_size">
+
+    <action
+      android:id="@+id/action_size_to_text_dialog"
+      app:destination="@id/textBottomSheetDialogFragment" />
 
     <action
       android:id="@+id/action_size_to_feedback_dialog"
@@ -137,6 +145,10 @@
     android:name="xyz.zedler.patrick.doodle.fragment.OtherFragment"
     android:label="fragment_other"
     tools:layout="@layout/fragment_other">
+
+    <action
+      android:id="@+id/action_other_to_text_dialog"
+      app:destination="@id/textBottomSheetDialogFragment" />
 
     <action
       android:id="@+id/action_other_to_languages_dialog"

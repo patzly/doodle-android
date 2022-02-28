@@ -1,6 +1,7 @@
 5.4.0:
 - Improved: new help dialog accessible from top right menus
 - Improved: dialog appearance on large screens
+- Improved: info in help section instead of
 
 5.3.0:
 - New: another autumnal Pixel 6 Material You wallpaper!

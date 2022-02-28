@@ -66,7 +66,6 @@ import xyz.zedler.patrick.doodle.fragment.BaseFragment;
 import xyz.zedler.patrick.doodle.fragment.dialog.ApplyBottomSheetDialogFragment;
 import xyz.zedler.patrick.doodle.fragment.dialog.ChangelogBottomSheetDialogFragment;
 import xyz.zedler.patrick.doodle.fragment.dialog.FeedbackBottomSheetDialogFragment;
-import xyz.zedler.patrick.doodle.fragment.dialog.SetBottomSheetDialogFragment;
 import xyz.zedler.patrick.doodle.service.LiveWallpaperService;
 import xyz.zedler.patrick.doodle.util.HapticUtil;
 import xyz.zedler.patrick.doodle.util.LocaleUtil;
@@ -233,7 +232,17 @@ public class MainActivity extends AppCompatActivity {
 
     binding.fabMain.setOnClickListener(v -> {
       if (viewUtil.isClickEnabled()) {
-        ViewUtil.showBottomSheet(this, new SetBottomSheetDialogFragment());
+        try {
+          Intent intent = new Intent(WallpaperManager.ACTION_CHANGE_LIVE_WALLPAPER);
+          intent.putExtra(
+              WallpaperManager.EXTRA_LIVE_WALLPAPER_COMPONENT,
+              new ComponentName(getPackageName(), LiveWallpaperService.class.getCanonicalName())
+          );
+          intent.putExtra("SET_LOCKSCREEN_WALLPAPER", true);
+          wallpaperPickerLauncher.launch(intent);
+        } catch (ActivityNotFoundException e) {
+          showSnackbar(R.string.msg_preview_missing);
+        }
         performHapticHeavyClick();
       }
     });
@@ -336,20 +345,6 @@ public class MainActivity extends AppCompatActivity {
           .start();
     } else {
       binding.fabMain.setTranslationY(visible ? 0 : fabTopEdgeDistance + bottomInset);
-    }
-  }
-
-  public void setWallpaperDirectly() {
-    try {
-      Intent intent = new Intent(WallpaperManager.ACTION_CHANGE_LIVE_WALLPAPER);
-      intent.putExtra(
-          WallpaperManager.EXTRA_LIVE_WALLPAPER_COMPONENT,
-          new ComponentName(getPackageName(), LiveWallpaperService.class.getCanonicalName())
-      );
-      intent.putExtra("SET_LOCKSCREEN_WALLPAPER", true);
-      wallpaperPickerLauncher.launch(intent);
-    } catch (ActivityNotFoundException e) {
-      showSnackbar(R.string.msg_preview_missing);
     }
   }
 

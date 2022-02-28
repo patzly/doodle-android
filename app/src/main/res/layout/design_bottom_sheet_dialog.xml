@@ -47,7 +47,7 @@
       android:layout_height="wrap_content"
       android:layout_gravity="center_horizontal|top"
       android:maxWidth="640dp"
-      app:layout_behavior="com.google.android.material.bottomsheet.CustomBottomSheetBehavior"
+      app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
       app:behavior_saveFlags="all"
       app:paddingBottomSystemWindowInsets="false" />
 

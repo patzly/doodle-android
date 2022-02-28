@@ -34,8 +34,8 @@ import androidx.annotation.Nullable;
 import androidx.core.graphics.ColorUtils;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat.Type;
-import com.google.android.material.bottomsheet.CustomBottomSheetBehavior;
-import com.google.android.material.bottomsheet.CustomBottomSheetBehavior.BottomSheetCallback;
+import com.google.android.material.bottomsheet.BottomSheetBehavior;
+import com.google.android.material.bottomsheet.BottomSheetBehavior.BottomSheetCallback;
 import com.google.android.material.bottomsheet.CustomBottomSheetDialog;
 import com.google.android.material.bottomsheet.CustomBottomSheetDialogFragment;
 import com.google.android.material.elevation.SurfaceColors;
@@ -90,7 +90,7 @@ public class BaseBottomSheetDialogFragment extends CustomBottomSheetDialogFragme
             setCornerRadius(background, radius);
             sheet.setBackground(background);
 
-            CustomBottomSheetBehavior<View> behavior = CustomBottomSheetBehavior.from(sheet);
+            BottomSheetBehavior<View> behavior = BottomSheetBehavior.from(sheet);
             behavior.setPeekHeight(
                 SystemUiUtil.getDisplayHeight(requireContext()) / 2
                 + SystemUiUtil.dpToPx(activity, 64) // height of bottom sheet top bar

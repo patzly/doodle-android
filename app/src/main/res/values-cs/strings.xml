@@ -95,6 +95,8 @@
   <string name="parallax_intensity">Síla efektu parallax</string>
   <string name="parallax_intensity_description">Vodorovný posun při přejetí stránky a intenzita efektu naklonění</string>
   <string name="parallax_none">Žádný</string>
+  <string name="parallax_swipe_power_save">Respektovat spořič baterie</string>
+  <string name="parallax_swipe_power_save_description">Přerušit animaci swipnutí mezi stránkami, pokud je zapnut spořič baterie</string>
   <string name="parallax_category_tilt">Efekt při naklonění</string>
   <string name="parallax_tilt">Pohyb při naklápění zařízení</string>
   <string name="parallax_tilt_description">Spotřebovává víc baterie</string>
@@ -104,6 +106,8 @@
   <string name="parallax_damping_description">Snížit pro větší hladkost</string>
   <string name="parallax_threshold">Práh detekce pohybu</string>
   <string name="parallax_threshold_description">Zvyšte pro pozastavení nepřetržitého vykreslování navzdory malým pohybům</string>
+  <string name="parallax_tilt_power_save_description">Přerušit efekt naklánění, pokud je zapnut spořič baterie</string>
+
   <!-- SIZE -->
 
   <string name="size_title">Velikost tvarů</string>
@@ -117,6 +121,7 @@
   <string name="size_zoom_description">Při zvýšení se náhled více oddálí</string>
   <string name="size_zoom_rotation">Otáčení některých tvarů při zoomování</string>
   <string name="size_zoom_rotation_description">Maximální rotace ve stupních</string>
+  <string name="size_zoom_power_save_description">Přerušit zoom efekt, pokud je zapnut spořič baterie</string>
   <string name="size_zoom_launcher">Oddálení při otevření nastavení nebo obrazovky aplikací.</string>
   <string name="size_zoom_launcher_description">Nemusí být dostupné na všech zařízeních</string>
   <string name="size_zoom_damping">Tlumení animace</string>

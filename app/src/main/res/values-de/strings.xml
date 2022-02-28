@@ -73,12 +73,13 @@
   <string name="appearance_variant">Variation</string>
   <string name="appearance_night_mode">Nachtmodus</string>
   <string name="appearance_night_mode_description">Abgedunkelte Farben</string>
+  <string name="appearance_night_mode_on">An</string>
+  <string name="appearance_night_mode_off">Aus</string>
   <string name="appearance_follow_system">System folgen</string>
   <string name="appearance_follow_system_description">Adaption des Designs</string>
   <string name="appearance_white_text">Versuchen, weißen Text zu erzwingen</string>
   <string name="appearance_white_text_description">Kann die Lesbarkeit beeinträchtigen</string>
-  <string name="appearance_random">Zufälliges Hintergrunddesign</string>
-  <string name="appearance_random_description">Bei jedem Ausschalten des Displays</string>
+  <string name="appearance_colors_category">Farben</string>
   <string name="appearance_colors">Extrahierte Farben</string>
   <string name="appearance_colors_description">Wird zur Berechnung des Textkontrasts verwendet</string>
   <string name="appearance_colors_description_dynamic">Werden von dem Design-Generator des Systems genutzt</string>
@@ -87,6 +88,8 @@
   <string name="appearance_colors_tertiary">Tertiäre Farbe auswählen</string>
   <string name="appearance_colors_info">Auf Geräten ohne Unterstützung für dynamische Farbschemas (Android 11 oder niedriger) wird nur die Primärfarbe verwendet, um den Textkontrast des Launchers zu berechnen und den Hintergrund des „Letzte Apps“-Bildschirms einzufärben.</string>
   <string name="appearance_colors_info_dynamic">Auf Geräten mit Android 12 oder höher und Unterstützung für dynamische Farbschemas werden die drei ausgewählten Farben verwendet, um automatisch ein systemweites Farbschema zu erstellen.</string>
+  <string name="appearance_random">Zufälliges Hintergrunddesign</string>
+  <string name="appearance_random_description">Bei jedem Ausschalten des Displays</string>
 
   <!-- PARALLAX -->
 

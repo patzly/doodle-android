@@ -51,6 +51,7 @@
   <string name="action_set">设置壁纸</string>
   <string name="action_set_directly">直接设置</string>
   <string name="action_open_picker">打开壁纸选择器</string>
+  <string name="action_help">帮助</string>
   <string name="action_send_feedback">发送反馈</string>
   <string name="action_share">分享</string>
   <string name="action_share_description">把Doodle告诉你的朋友们</string>
@@ -73,12 +74,13 @@
   <string name="appearance_variant">其它种类</string>
   <string name="appearance_night_mode">夜间模式</string>
   <string name="appearance_night_mode_description">只有暗黑色彩</string>
+  <string name="appearance_night_mode_on">开</string>
+  <string name="appearance_night_mode_off">关</string>
   <string name="appearance_follow_system">跟随系统</string>
   <string name="appearance_follow_system_description">采用自带主题</string>
   <string name="appearance_white_text">尝试强制使用白色文本</string>
   <string name="appearance_white_text_description">可能会影响到可读性</string>
-  <string name="appearance_random">随机的壁纸设计</string>
-  <string name="appearance_random_description">每次屏幕关闭时</string>
+  <string name="appearance_colors_category">颜色</string>
   <string name="appearance_colors">提取的颜色</string>
   <string name="appearance_colors_description">用于计算文本对比度</string>
   <string name="appearance_colors_description_dynamic">被系统的主题引擎使用</string>
@@ -87,6 +89,8 @@
   <string name="appearance_colors_tertiary">选择第三次色</string>
   <string name="appearance_colors_info">在没有动态颜色支持的设备上(Android 11 或更低版本)，只有主色用于计算启动器文本对比度和着色最近应用程序屏幕的背景。</string>
   <string name="appearance_colors_info_dynamic">在装有 Android 12 或更高版本系统，并支持动态颜色的的设备上，三种选择的颜色将用于自动创建一个系统范围的颜色主题。</string>
+  <string name="appearance_random">随机的壁纸设计</string>
+  <string name="appearance_random_description">每次屏幕关闭时</string>
 
   <!-- PARALLAX -->
 
@@ -182,6 +186,5 @@
   <string name="msg_apply_changes">为了(最终)应用改变的选项，建议重新启动正在运行的壁纸服务。这不能自动完成。\n请在系统设置中强制停止 Doodle，然后重新将 Doole 应用为墙纸。</string>
   <string name="msg_set_wallpaper">如果你在关闭此应用时，遇到一个使壁纸动画出现异常的问题，请选择你系统的壁纸选择器来选择 Doodle。\n否则，你也可以直接设置。</string>
   <string name="msg_preview_missing">发生错误，请手动选择 Doodle Live 墙纸</string>
-  <string name="msg_picker_missing">无法打开壁纸选择器，请安装一个动态壁纸选择器，然后再试一次。</string>
 
   </resources>

@@ -86,18 +86,16 @@ public class SizeFragment extends BaseFragment
       int id = item.getItemId();
       if (id == R.id.action_feedback) {
         navigate(SizeFragmentDirections.actionSizeToFeedbackDialog());
-        performHapticClick();
       } else if (id == R.id.action_help) {
         SizeFragmentDirections.ActionSizeToTextDialog action
             = SizeFragmentDirections.actionSizeToTextDialog();
         action.setFile(R.raw.help);
         action.setTitle(R.string.action_help);
         navigate(action);
-        performHapticClick();
       } else if (id == R.id.action_share) {
         ResUtil.share(activity, R.string.msg_share);
-        performHapticClick();
       }
+      performHapticClick();
       return true;
     });
 

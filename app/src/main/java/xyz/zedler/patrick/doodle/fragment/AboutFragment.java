@@ -81,19 +81,18 @@ public class AboutFragment extends BaseFragment implements OnClickListener {
       int id = item.getItemId();
       if (id == R.id.action_feedback) {
         navigate(AboutFragmentDirections.actionAboutToFeedbackDialog());
-        performHapticClick();
       } else if (id == R.id.action_help) {
         showText(R.raw.help, R.string.action_help, 0);
-        performHapticClick();
       } else if (id == R.id.action_share) {
         ResUtil.share(activity, R.string.msg_share);
-        performHapticClick();
       }
+      performHapticClick();
       return true;
     });
 
     ViewUtil.setOnClickListeners(
         this,
+        binding.linearAboutVersion,
         binding.linearAboutChangelog,
         binding.linearAboutDeveloper,
         binding.linearAboutVending,
@@ -108,12 +107,12 @@ public class AboutFragment extends BaseFragment implements OnClickListener {
   @Override
   public void onClick(View v) {
     int id = v.getId();
-    if (id == R.id.linear_about_changelog && getViewUtil().isClickEnabled()) {
-      performHapticClick();
+    if (id == R.id.linear_about_version) {
+      ViewUtil.startIcon(binding.imageAboutVersion);
+    } else if (id == R.id.linear_about_changelog && getViewUtil().isClickEnabled()) {
       navigate(AboutFragmentDirections.actionAboutToChangelogDialog());
       ViewUtil.startIcon(binding.imageAboutChangelog);
     } else if (id == R.id.linear_about_developer && getViewUtil().isClickEnabled()) {
-      performHapticClick();
       ViewUtil.startIcon(binding.imageAboutDeveloper);
       new Handler(Looper.getMainLooper()).postDelayed(
           () -> startActivity(
@@ -121,7 +120,6 @@ public class AboutFragment extends BaseFragment implements OnClickListener {
           ), 300
       );
     } else if (id == R.id.linear_about_vending && getViewUtil().isClickEnabled()) {
-      performHapticClick();
       ViewUtil.startIcon(binding.imageAboutVending);
       new Handler(Looper.getMainLooper()).postDelayed(
           () -> startActivity(
@@ -129,19 +127,15 @@ public class AboutFragment extends BaseFragment implements OnClickListener {
           ), 300
       );
     } else if (id == R.id.linear_about_github && getViewUtil().isClickEnabled()) {
-      performHapticClick();
       startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.app_github))));
     } else if (id == R.id.linear_about_translation && getViewUtil().isClickEnabled()) {
-      performHapticClick();
       startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.app_translate))));
     } else if (id == R.id.linear_about_license_jost && getViewUtil().isClickEnabled()) {
-      performHapticClick();
       ViewUtil.startIcon(binding.imageAboutLicenseJost);
       showText(R.raw.license_ofl, R.string.license_jost, R.string.license_jost_link);
     } else if (
         id == R.id.linear_about_license_material_components && getViewUtil().isClickEnabled()
     ) {
-      performHapticClick();
       ViewUtil.startIcon(binding.imageAboutLicenseMaterialComponents);
       showText(
           R.raw.license_apache,
@@ -149,7 +143,6 @@ public class AboutFragment extends BaseFragment implements OnClickListener {
           R.string.license_material_components_link
       );
     } else if (id == R.id.linear_about_license_material_icons && getViewUtil().isClickEnabled()) {
-      performHapticClick();
       ViewUtil.startIcon(binding.imageAboutLicenseMaterialIcons);
       showText(
           R.raw.license_apache,
@@ -157,6 +150,7 @@ public class AboutFragment extends BaseFragment implements OnClickListener {
           R.string.license_material_icons_link
       );
     }
+    performHapticClick();
   }
 
   private void showText(@RawRes int file, @StringRes int title, @StringRes int link) {

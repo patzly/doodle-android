@@ -33,7 +33,6 @@ import android.widget.FrameLayout.LayoutParams;
 import androidx.annotation.NonNull;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.databinding.FragmentBottomsheetTextBinding;
-import xyz.zedler.patrick.doodle.util.HapticUtil;
 import xyz.zedler.patrick.doodle.util.ResUtil;
 import xyz.zedler.patrick.doodle.util.ViewUtil;
 
@@ -50,9 +49,6 @@ public class TextBottomSheetDialogFragment extends BaseBottomSheetDialogFragment
     TextBottomSheetDialogFragmentArgs args
         = TextBottomSheetDialogFragmentArgs.fromBundle(getArguments());
 
-    ViewUtil viewUtil = new ViewUtil();
-    HapticUtil hapticUtil = new HapticUtil(binding.getRoot());
-
     binding.toolbarText.setTitle(getString(args.getTitle()));
 
     String link = args.getLink() != 0 ? getString(args.getLink()) : null;
@@ -65,8 +61,8 @@ public class TextBottomSheetDialogFragment extends BaseBottomSheetDialogFragment
       );
       binding.toolbarText.setOnMenuItemClickListener(item -> {
         int id = item.getItemId();
-        if (id == R.id.action_open_link && viewUtil.isClickEnabled()) {
-          hapticUtil.click();
+        if (id == R.id.action_open_link && getViewUtil().isClickEnabled()) {
+          performHapticClick();
           ViewUtil.startIcon(item.getIcon());
           new Handler(Looper.getMainLooper()).postDelayed(
               () -> startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(link))), 500

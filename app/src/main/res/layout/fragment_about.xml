@@ -51,11 +51,14 @@
       android:paddingBottom="8dp"
       android:orientation="vertical">
 
-      <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine">
+      <LinearLayout
+        android:id="@+id/linear_about_version"
+        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon.Clickable">
 
         <ImageView
+          android:id="@+id/image_about_version"
           style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-          android:src="@drawable/ic_round_info_outline"
+          android:src="@drawable/ic_round_info_outline_anim"
           tools:ignore="ContentDescription" />
 
         <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
@@ -74,7 +77,7 @@
 
       <LinearLayout
         android:id="@+id/linear_about_changelog"
-        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable">
+        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon.Clickable">
 
         <ImageView
           android:id="@+id/image_about_changelog"
@@ -98,7 +101,7 @@
 
       <LinearLayout
         android:id="@+id/linear_about_developer"
-        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable">
+        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon.Clickable">
 
         <ImageView
           android:id="@+id/image_about_developer"
@@ -122,7 +125,7 @@
 
       <LinearLayout
         android:id="@+id/linear_about_vending"
-        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable">
+        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon.Clickable">
 
         <ImageView
           android:id="@+id/image_about_vending"
@@ -146,7 +149,7 @@
 
       <LinearLayout
         android:id="@+id/linear_about_github"
-        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable"
+        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon.Clickable"
         android:background="@drawable/ripple_list_item_bg">
 
         <ImageView
@@ -170,7 +173,7 @@
 
       <LinearLayout
         android:id="@+id/linear_about_translation"
-        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable"
+        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon.Clickable"
         android:background="@drawable/ripple_list_item_bg">
 
         <ImageView
@@ -198,7 +201,7 @@
 
       <LinearLayout
         android:id="@+id/linear_about_license_jost"
-        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable">
+        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon.Clickable">
 
         <ImageView
           android:id="@+id/image_about_license_jost"
@@ -222,7 +225,7 @@
 
       <LinearLayout
         android:id="@+id/linear_about_license_material_components"
-        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable">
+        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon.Clickable">
 
         <ImageView
           android:id="@+id/image_about_license_material_components"
@@ -246,7 +249,7 @@
 
       <LinearLayout
         android:id="@+id/linear_about_license_material_icons"
-        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable">
+        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon.Clickable">
 
         <ImageView
           android:id="@+id/image_about_license_material_icons"

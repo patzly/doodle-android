@@ -79,14 +79,12 @@ public class OverviewFragment extends BaseFragment implements OnClickListener {
       int id = item.getItemId();
       if (id == R.id.action_feedback) {
         navigate(OverviewFragmentDirections.actionOverviewToFeedbackDialog());
-        performHapticClick();
       } else if (id == R.id.action_help) {
         showText(R.raw.help, R.string.action_help);
-        performHapticClick();
       } else if (id == R.id.action_share) {
         ResUtil.share(activity, R.string.msg_share);
-        performHapticClick();
       }
+      performHapticClick();
       return true;
     });
 

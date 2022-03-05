@@ -30,8 +30,6 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.annotation.RawRes;
-import androidx.annotation.StringRes;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.activity.MainActivity;
 import xyz.zedler.patrick.doodle.behavior.ScrollBehavior;
@@ -80,9 +78,9 @@ public class AboutFragment extends BaseFragment implements OnClickListener {
     binding.toolbarAbout.setOnMenuItemClickListener(item -> {
       int id = item.getItemId();
       if (id == R.id.action_feedback) {
-        navigate(AboutFragmentDirections.actionAboutToFeedbackDialog());
+        activity.showFeedbackBottomSheet();
       } else if (id == R.id.action_help) {
-        showText(R.raw.help, R.string.action_help, 0);
+        activity.showTextBottomSheet(R.raw.help, R.string.action_help);
       } else if (id == R.id.action_share) {
         ResUtil.share(activity, R.string.msg_share);
       }
@@ -110,7 +108,7 @@ public class AboutFragment extends BaseFragment implements OnClickListener {
     if (id == R.id.linear_about_version) {
       ViewUtil.startIcon(binding.imageAboutVersion);
     } else if (id == R.id.linear_about_changelog && getViewUtil().isClickEnabled()) {
-      navigate(AboutFragmentDirections.actionAboutToChangelogDialog());
+      activity.showChangelogBottomSheet();
       ViewUtil.startIcon(binding.imageAboutChangelog);
     } else if (id == R.id.linear_about_developer && getViewUtil().isClickEnabled()) {
       ViewUtil.startIcon(binding.imageAboutDeveloper);
@@ -132,33 +130,26 @@ public class AboutFragment extends BaseFragment implements OnClickListener {
       startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.app_translate))));
     } else if (id == R.id.linear_about_license_jost && getViewUtil().isClickEnabled()) {
       ViewUtil.startIcon(binding.imageAboutLicenseJost);
-      showText(R.raw.license_ofl, R.string.license_jost, R.string.license_jost_link);
+      activity.showTextBottomSheet(
+          R.raw.license_ofl, R.string.license_jost, R.string.license_jost_link
+      );
     } else if (
         id == R.id.linear_about_license_material_components && getViewUtil().isClickEnabled()
     ) {
       ViewUtil.startIcon(binding.imageAboutLicenseMaterialComponents);
-      showText(
+      activity.showTextBottomSheet(
           R.raw.license_apache,
           R.string.license_material_components,
           R.string.license_material_components_link
       );
     } else if (id == R.id.linear_about_license_material_icons && getViewUtil().isClickEnabled()) {
       ViewUtil.startIcon(binding.imageAboutLicenseMaterialIcons);
-      showText(
+      activity.showTextBottomSheet(
           R.raw.license_apache,
           R.string.license_material_icons,
           R.string.license_material_icons_link
       );
     }
     performHapticClick();
-  }
-
-  private void showText(@RawRes int file, @StringRes int title, @StringRes int link) {
-    AboutFragmentDirections.ActionAboutToTextDialog action
-        = AboutFragmentDirections.actionAboutToTextDialog();
-    action.setFile(file);
-    action.setTitle(title);
-    action.setLink(link);
-    navigate(action);
   }
 }

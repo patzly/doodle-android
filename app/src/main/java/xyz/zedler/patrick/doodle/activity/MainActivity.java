@@ -40,6 +40,7 @@ import android.view.View;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
+import androidx.annotation.RawRes;
 import androidx.annotation.StringRes;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
@@ -62,13 +63,12 @@ import xyz.zedler.patrick.doodle.Constants.EXTRA;
 import xyz.zedler.patrick.doodle.Constants.PREF;
 import xyz.zedler.patrick.doodle.Constants.THEME;
 import xyz.zedler.patrick.doodle.Constants.THEME.MODE;
+import xyz.zedler.patrick.doodle.NavMainDirections;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.behavior.SystemBarBehavior;
 import xyz.zedler.patrick.doodle.databinding.ActivityMainBinding;
 import xyz.zedler.patrick.doodle.fragment.BaseFragment;
 import xyz.zedler.patrick.doodle.fragment.dialog.ApplyBottomSheetDialogFragment;
-import xyz.zedler.patrick.doodle.fragment.dialog.ChangelogBottomSheetDialogFragment;
-import xyz.zedler.patrick.doodle.fragment.dialog.FeedbackBottomSheetDialogFragment;
 import xyz.zedler.patrick.doodle.service.LiveWallpaperService;
 import xyz.zedler.patrick.doodle.util.HapticUtil;
 import xyz.zedler.patrick.doodle.util.LocaleUtil;
@@ -460,7 +460,7 @@ public class MainActivity extends AppCompatActivity {
       if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
         finish();
       }
-      overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+      overridePendingTransition(R.anim.fade_in_restart, R.anim.fade_out_restart);
     }, delay);
   }
 
@@ -493,7 +493,7 @@ public class MainActivity extends AppCompatActivity {
       sharedPrefs.edit().putInt(PREF.LAST_VERSION, versionNew).apply();
     } else if (versionOld != versionNew) {
       sharedPrefs.edit().putInt(PREF.LAST_VERSION, versionNew).apply();
-      ViewUtil.showBottomSheet(this, new ChangelogBottomSheetDialogFragment());
+      showChangelogBottomSheet();
     }
 
     // Feedback
@@ -502,9 +502,32 @@ public class MainActivity extends AppCompatActivity {
       if (feedbackCount < 5) {
         sharedPrefs.edit().putInt(PREF.FEEDBACK_POP_UP_COUNT, feedbackCount + 1).apply();
       } else {
-        ViewUtil.showBottomSheet(this, new FeedbackBottomSheetDialogFragment());
+        showFeedbackBottomSheet();
       }
     }
+  }
+
+  public void showTextBottomSheet(@RawRes int file, @StringRes int title) {
+    showTextBottomSheet(file, title, 0);
+  }
+
+  public void showTextBottomSheet(@RawRes int file, @StringRes int title, @StringRes int link) {
+    NavMainDirections.ActionGlobalTextDialog action
+        = NavMainDirections.actionGlobalTextDialog();
+    action.setTitle(title);
+    action.setFile(file);
+    if (link != 0) {
+      action.setLink(link);
+    }
+    navigate(action);
+  }
+
+  public void showFeedbackBottomSheet() {
+    navigate(NavMainDirections.actionGlobalFeedbackDialog());
+  }
+
+  public void showChangelogBottomSheet() {
+    navigate(NavMainDirections.actionGlobalChangelogDialog());
   }
 
   public boolean isTouchWiz() {

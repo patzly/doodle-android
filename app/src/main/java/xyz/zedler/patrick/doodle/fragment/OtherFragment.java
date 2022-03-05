@@ -46,6 +46,7 @@ import xyz.zedler.patrick.doodle.Constants.EXTRA;
 import xyz.zedler.patrick.doodle.Constants.PREF;
 import xyz.zedler.patrick.doodle.Constants.THEME;
 import xyz.zedler.patrick.doodle.Constants.THEME.MODE;
+import xyz.zedler.patrick.doodle.NavMainDirections;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.activity.LauncherActivity;
 import xyz.zedler.patrick.doodle.activity.MainActivity;
@@ -105,13 +106,9 @@ public class OtherFragment extends BaseFragment
     binding.toolbarOther.setOnMenuItemClickListener(item -> {
       int id = item.getItemId();
       if (id == R.id.action_feedback) {
-        navigate(OtherFragmentDirections.actionOtherToFeedbackDialog());
+        activity.showFeedbackBottomSheet();
       } else if (id == R.id.action_help) {
-        OtherFragmentDirections.ActionOtherToTextDialog action
-            = OtherFragmentDirections.actionOtherToTextDialog();
-        action.setFile(R.raw.help);
-        action.setTitle(R.string.action_help);
-        navigate(action);
+        activity.showTextBottomSheet(R.raw.help, R.string.action_help);
       } else if (id == R.id.action_share) {
         ResUtil.share(activity, R.string.msg_share);
       }
@@ -229,7 +226,7 @@ public class OtherFragment extends BaseFragment
     if (id == R.id.switch_other_gpu) {
       getSharedPrefs().edit().putBoolean(PREF.GPU, isChecked).apply();
       performHapticClick();
-      activity.showForceStopRequest(OtherFragmentDirections.actionOtherToApplyDialog());
+      activity.showForceStopRequest(NavMainDirections.actionGlobalApplyDialog());
     } else if (id == R.id.switch_other_launcher) {
       performHapticClick();
       if (isChecked) {

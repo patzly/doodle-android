@@ -33,6 +33,7 @@ import com.google.android.material.slider.Slider;
 import com.google.android.material.slider.Slider.OnChangeListener;
 import xyz.zedler.patrick.doodle.Constants.DEF;
 import xyz.zedler.patrick.doodle.Constants.PREF;
+import xyz.zedler.patrick.doodle.NavMainDirections;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.activity.MainActivity;
 import xyz.zedler.patrick.doodle.behavior.ScrollBehavior;
@@ -85,13 +86,9 @@ public class SizeFragment extends BaseFragment
     binding.toolbarSize.setOnMenuItemClickListener(item -> {
       int id = item.getItemId();
       if (id == R.id.action_feedback) {
-        navigate(SizeFragmentDirections.actionSizeToFeedbackDialog());
+        activity.showFeedbackBottomSheet();
       } else if (id == R.id.action_help) {
-        SizeFragmentDirections.ActionSizeToTextDialog action
-            = SizeFragmentDirections.actionSizeToTextDialog();
-        action.setFile(R.raw.help);
-        action.setTitle(R.string.action_help);
-        navigate(action);
+        activity.showTextBottomSheet(R.raw.help, R.string.action_help);
       } else if (id == R.id.action_share) {
         ResUtil.share(activity, R.string.msg_share);
       }
@@ -259,7 +256,7 @@ public class SizeFragment extends BaseFragment
       getSharedPrefs().edit().putBoolean(PREF.ZOOM_SYSTEM, isChecked).apply();
       performHapticClick();
       setZoomDampingEnabled(!isChecked, true);
-      activity.showForceStopRequest(SizeFragmentDirections.actionSizeToApplyDialog());
+      activity.showForceStopRequest(NavMainDirections.actionGlobalApplyDialog());
     } else if (id == R.id.switch_size_zoom_unlock) {
       getSharedPrefs().edit().putBoolean(PREF.ZOOM_UNLOCK, isChecked).apply();
       activity.requestSettingsRefresh();

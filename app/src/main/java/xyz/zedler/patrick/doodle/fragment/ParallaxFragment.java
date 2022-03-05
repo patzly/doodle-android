@@ -88,13 +88,9 @@ public class ParallaxFragment extends BaseFragment
     binding.toolbarParallax.setOnMenuItemClickListener(item -> {
       int id = item.getItemId();
       if (id == R.id.action_feedback) {
-        navigate(ParallaxFragmentDirections.actionParallaxToFeedbackDialog());
+        activity.showFeedbackBottomSheet();
       } else if (id == R.id.action_help) {
-        ParallaxFragmentDirections.ActionParallaxToTextDialog action
-            = ParallaxFragmentDirections.actionParallaxToTextDialog();
-        action.setFile(R.raw.help);
-        action.setTitle(R.string.action_help);
-        navigate(action);
+        activity.showTextBottomSheet(R.raw.help, R.string.action_help);
       } else if (id == R.id.action_share) {
         ResUtil.share(activity, R.string.msg_share);
       }

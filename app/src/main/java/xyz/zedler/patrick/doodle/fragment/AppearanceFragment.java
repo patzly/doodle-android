@@ -125,13 +125,9 @@ public class AppearanceFragment extends BaseFragment
     binding.toolbarAppearance.setOnMenuItemClickListener(item -> {
       int id = item.getItemId();
       if (id == R.id.action_feedback) {
-        navigate(AppearanceFragmentDirections.actionAppearanceToFeedbackDialog());
+        activity.showFeedbackBottomSheet();
       } else if (id == R.id.action_help) {
-        AppearanceFragmentDirections.ActionAppearanceToTextDialog action
-            = AppearanceFragmentDirections.actionAppearanceToTextDialog();
-        action.setFile(R.raw.help);
-        action.setTitle(R.string.action_help);
-        navigate(action);
+        activity.showTextBottomSheet(R.raw.help, R.string.action_help);
       } else if (id == R.id.action_share) {
         ResUtil.share(activity, R.string.msg_share);
       }

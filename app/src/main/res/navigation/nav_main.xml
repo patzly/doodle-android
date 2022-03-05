@@ -21,7 +21,7 @@
   xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto"
   xmlns:tools="http://schemas.android.com/tools"
-  android:id="@+id/navigation_main"
+  android:id="@+id/nav_main"
   app:startDestination="@id/overviewFragment">
 
   <fragment
@@ -70,18 +70,6 @@
       app:popEnterAnim="@anim/anim_enter_start"
       app:popExitAnim="@anim/anim_exit_end" />
 
-    <action
-      android:id="@+id/action_overview_to_text_dialog"
-      app:destination="@id/textBottomSheetDialogFragment" />
-
-    <action
-      android:id="@+id/action_overview_to_feedback_dialog"
-      app:destination="@id/feedbackBottomSheetDialogFragment" />
-
-    <action
-      android:id="@+id/action_overview_to_changelog_dialog"
-      app:destination="@id/changelogBottomSheetDialogFragment" />
-
   </fragment>
 
   <fragment
@@ -94,14 +82,6 @@
       android:id="@+id/action_appearance_to_colors_dialog"
       app:destination="@id/colorsBottomSheetDialogFragment" />
 
-    <action
-      android:id="@+id/action_appearance_to_text_dialog"
-      app:destination="@id/textBottomSheetDialogFragment" />
-
-    <action
-      android:id="@+id/action_appearance_to_feedback_dialog"
-      app:destination="@id/feedbackBottomSheetDialogFragment" />
-
   </fragment>
 
   <fragment
@@ -110,14 +90,6 @@
     android:label="fragment_parallax"
     tools:layout="@layout/fragment_parallax">
 
-    <action
-      android:id="@+id/action_parallax_to_text_dialog"
-      app:destination="@id/textBottomSheetDialogFragment" />
-
-    <action
-      android:id="@+id/action_parallax_to_feedback_dialog"
-      app:destination="@id/feedbackBottomSheetDialogFragment" />
-
   </fragment>
 
   <fragment
@@ -125,18 +97,6 @@
     android:name="xyz.zedler.patrick.doodle.fragment.SizeFragment"
     android:label="fragment_size"
     tools:layout="@layout/fragment_size">
-
-    <action
-      android:id="@+id/action_size_to_text_dialog"
-      app:destination="@id/textBottomSheetDialogFragment" />
-
-    <action
-      android:id="@+id/action_size_to_feedback_dialog"
-      app:destination="@id/feedbackBottomSheetDialogFragment" />
-
-    <action
-      android:id="@+id/action_size_to_apply_dialog"
-      app:destination="@id/applyBottomSheetDialogFragment" />
 
   </fragment>
 
@@ -147,20 +107,8 @@
     tools:layout="@layout/fragment_other">
 
     <action
-      android:id="@+id/action_other_to_text_dialog"
-      app:destination="@id/textBottomSheetDialogFragment" />
-
-    <action
       android:id="@+id/action_other_to_languages_dialog"
       app:destination="@id/languagesBottomSheetDialogFragment" />
-
-    <action
-      android:id="@+id/action_other_to_feedback_dialog"
-      app:destination="@id/feedbackBottomSheetDialogFragment" />
-
-    <action
-      android:id="@+id/action_other_to_apply_dialog"
-      app:destination="@id/applyBottomSheetDialogFragment" />
 
   </fragment>
 
@@ -169,18 +117,6 @@
     android:name="xyz.zedler.patrick.doodle.fragment.AboutFragment"
     android:label="fragment_about"
     tools:layout="@layout/fragment_about" >
-
-    <action
-      android:id="@+id/action_about_to_feedback_dialog"
-      app:destination="@id/feedbackBottomSheetDialogFragment" />
-
-    <action
-      android:id="@+id/action_about_to_text_dialog"
-      app:destination="@id/textBottomSheetDialogFragment" />
-
-    <action
-      android:id="@+id/action_about_to_changelog_dialog"
-      app:destination="@id/changelogBottomSheetDialogFragment" />
 
   </fragment>
 
@@ -253,5 +189,21 @@
       android:defaultValue="@null" />
 
   </dialog>
+
+  <action
+    android:id="@+id/action_global_text_dialog"
+    app:destination="@id/textBottomSheetDialogFragment"/>
+
+  <action
+    android:id="@+id/action_global_changelog_dialog"
+    app:destination="@id/changelogBottomSheetDialogFragment" />
+
+  <action
+    android:id="@+id/action_global_feedback_dialog"
+    app:destination="@id/feedbackBottomSheetDialogFragment" />
+
+  <action
+    android:id="@+id/action_global_apply_dialog"
+    app:destination="@id/applyBottomSheetDialogFragment" />
 
 </navigation>

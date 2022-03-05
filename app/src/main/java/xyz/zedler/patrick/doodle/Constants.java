@@ -279,10 +279,11 @@ public final class Constants {
 
     public static final String DYNAMIC = "dynamic";
     public static final String RED = "red";
+    public static final String ORANGE = "orange";
     public static final String YELLOW = "yellow";
     public static final String GREEN = "green";
+    public static final String TEAL = "teal";
     public static final String BLUE = "blue";
-    public static final String GOOGLE = "google";
     public static final String PURPLE = "purple";
     public static final String AMOLED = "amoled";
   }

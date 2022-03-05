@@ -20,7 +20,6 @@
 package xyz.zedler.patrick.doodle.fragment.dialog;
 
 import android.content.Intent;
-import android.content.res.ColorStateList;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -54,10 +53,8 @@ public class TextBottomSheetDialogFragment extends BaseBottomSheetDialogFragment
     String link = args.getLink() != 0 ? getString(args.getLink()) : null;
     if (link != null) {
       binding.toolbarText.inflateMenu(R.menu.menu_link);
-      binding.toolbarText.getMenu().findItem(R.id.action_open_link).getIcon().setTintList(
-          ColorStateList.valueOf(
-              ResUtil.getColorAttr(requireContext(), R.attr.colorOnSurfaceVariant)
-          )
+      ResUtil.tintMenuItemIcon(
+          requireContext(), binding.toolbarText.getMenu().findItem(R.id.action_open_link)
       );
       binding.toolbarText.setOnMenuItemClickListener(item -> {
         int id = item.getItemId();

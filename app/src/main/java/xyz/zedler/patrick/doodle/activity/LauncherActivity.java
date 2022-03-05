@@ -104,17 +104,20 @@ public class LauncherActivity extends MainActivity {
         case THEME.RED:
           setTheme(R.style.Theme_Doodle_Red);
           break;
+        case THEME.ORANGE:
+          setTheme(R.style.Theme_Doodle_Orange);
+          break;
         case THEME.YELLOW:
           setTheme(R.style.Theme_Doodle_Yellow);
           break;
         case THEME.GREEN:
           setTheme(R.style.Theme_Doodle_Green);
           break;
+        case THEME.TEAL:
+          setTheme(R.style.Theme_Doodle_Teal);
+          break;
         case THEME.BLUE:
           setTheme(R.style.Theme_Doodle_Blue);
-          break;
-        case THEME.GOOGLE:
-          setTheme(R.style.Theme_Doodle_Google);
           break;
         case THEME.PURPLE:
           setTheme(R.style.Theme_Doodle_Purple);
@@ -126,7 +129,7 @@ public class LauncherActivity extends MainActivity {
           if (DynamicColors.isDynamicColorAvailable()) {
             DynamicColors.applyIfAvailable(this);
           } else {
-            setTheme(R.style.Theme_Doodle_Google);
+            setTheme(R.style.Theme_Doodle_Blue);
           }
           break;
       }

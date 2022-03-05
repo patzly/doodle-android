@@ -21,6 +21,7 @@ package xyz.zedler.patrick.doodle.util;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.ColorStateList;
 import android.os.Build;
 import android.text.Html;
 import android.text.Spannable;
@@ -30,6 +31,7 @@ import android.text.Spanned;
 import android.text.style.BulletSpan;
 import android.util.Log;
 import android.util.TypedValue;
+import android.view.MenuItem;
 import android.view.View;
 import androidx.annotation.AttrRes;
 import androidx.annotation.NonNull;
@@ -138,5 +140,14 @@ public class ResUtil {
 
   public static int getColorHighlight(Context context) {
     return getColorAttr(context, R.attr.colorSecondary, 0.09f);
+  }
+
+  public static void tintMenuItemIcon(Context context, MenuItem item) {
+    if (item == null || item.getIcon() == null) {
+      return;
+    }
+    item.getIcon().setTintList(
+        ColorStateList.valueOf(ResUtil.getColorAttr(context, R.attr.colorOnSurfaceVariant))
+    );
   }
 }

@@ -50,6 +50,9 @@ import androidx.navigation.NavController;
 import androidx.navigation.NavDirections;
 import androidx.navigation.fragment.NavHostFragment;
 import com.google.android.material.color.DynamicColors;
+import com.google.android.material.color.DynamicColorsOptions;
+import com.google.android.material.color.HarmonizedColors;
+import com.google.android.material.color.HarmonizedColorsOptions;
 import com.google.android.material.snackbar.Snackbar;
 import java.util.Locale;
 import xyz.zedler.patrick.doodle.BuildConfig;
@@ -147,17 +150,20 @@ public class MainActivity extends AppCompatActivity {
       case THEME.RED:
         setTheme(R.style.Theme_Doodle_Red);
         break;
+      case THEME.ORANGE:
+        setTheme(R.style.Theme_Doodle_Orange);
+        break;
       case THEME.YELLOW:
         setTheme(R.style.Theme_Doodle_Yellow);
         break;
       case THEME.GREEN:
         setTheme(R.style.Theme_Doodle_Green);
         break;
+      case THEME.TEAL:
+        setTheme(R.style.Theme_Doodle_Teal);
+        break;
       case THEME.BLUE:
         setTheme(R.style.Theme_Doodle_Blue);
-        break;
-      case THEME.GOOGLE:
-        setTheme(R.style.Theme_Doodle_Google);
         break;
       case THEME.PURPLE:
         setTheme(R.style.Theme_Doodle_Purple);
@@ -167,9 +173,15 @@ public class MainActivity extends AppCompatActivity {
         break;
       default:
         if (DynamicColors.isDynamicColorAvailable()) {
-          DynamicColors.applyIfAvailable(this);
+          DynamicColors.applyIfAvailable(
+              new DynamicColorsOptions.Builder(this).setOnAppliedCallback(
+                  activity -> HarmonizedColors.applyIfAvailable(
+                      HarmonizedColorsOptions.createMaterialDefaults(activity)
+                  )
+              ).build()
+          );
         } else {
-          setTheme(R.style.Theme_Doodle_Google);
+          setTheme(R.style.Theme_Doodle_Blue);
         }
         break;
     }

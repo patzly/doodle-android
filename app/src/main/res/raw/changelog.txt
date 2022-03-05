@@ -1,4 +1,5 @@
 5.4.0:
+- New: clearly yellow app color theme
 - Improved: new help dialog accessible from top right menus
 - Improved: simplified night mode option in appearance settings
 - Improved: dialog appearance on large screens

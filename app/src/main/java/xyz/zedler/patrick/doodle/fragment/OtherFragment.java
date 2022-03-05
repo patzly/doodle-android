@@ -300,7 +300,7 @@ public class OtherFragment extends BaseFragment
   private void setUpThemeSelection() {
     boolean hasDynamic = DynamicColors.isDynamicColorAvailable();
     ViewGroup container = binding.linearOtherThemeContainer;
-    for (int i = hasDynamic ? -1 : 0; i < 7; i++) {
+    for (int i = hasDynamic ? -1 : 0; i < 8; i++) {
       String name;
       int resId;
       if (i == -1) {
@@ -310,26 +310,29 @@ public class OtherFragment extends BaseFragment
         name = THEME.RED;
         resId = R.style.Theme_Doodle_Red;
       } else if (i == 1) {
+        name = THEME.ORANGE;
+        resId = R.style.Theme_Doodle_Orange;
+      } else if (i == 2) {
         name = THEME.YELLOW;
         resId = R.style.Theme_Doodle_Yellow;
-      } else if (i == 2) {
+      } else if (i == 3) {
         name = THEME.GREEN;
         resId = R.style.Theme_Doodle_Green;
-      } else if (i == 3) {
+      } else if (i == 4) {
+        name = THEME.TEAL;
+        resId = R.style.Theme_Doodle_Teal;
+      } else if (i == 5) {
         name = THEME.BLUE;
         resId = R.style.Theme_Doodle_Blue;
-      } else if (i == 4) {
-        name = THEME.GOOGLE;
-        resId = R.style.Theme_Doodle_Google;
-      } else if (i == 5) {
+      } else if (i == 6) {
         name = THEME.PURPLE;
         resId = R.style.Theme_Doodle_Purple;
-      } else if (i == 6) {
+      } else if (i == 7) {
         name = THEME.AMOLED;
         resId = R.style.Theme_Doodle_Amoled;
       } else {
-        name = THEME.GOOGLE;
-        resId = R.style.Theme_Doodle_Google;
+        name = THEME.BLUE;
+        resId = R.style.Theme_Doodle_Blue;
       }
 
       SelectionCardView card = new SelectionCardView(activity);
@@ -365,7 +368,7 @@ public class OtherFragment extends BaseFragment
       String selected = getSharedPrefs().getString(PREF.THEME, DEF.THEME);
       boolean isSelected;
       if (selected.isEmpty()) {
-        isSelected = hasDynamic ? name.equals(THEME.DYNAMIC) : name.equals(THEME.GOOGLE);
+        isSelected = hasDynamic ? name.equals(THEME.DYNAMIC) : name.equals(THEME.BLUE);
       } else {
         isSelected = selected.equals(name);
       }

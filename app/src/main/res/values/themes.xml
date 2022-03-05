@@ -84,6 +84,42 @@
     <item name="colorOutline">@color/red_neutral_variant_50</item>
   </style>
 
+  <style name="Theme.Doodle.Orange" parent="Theme.Doodle">
+    <item name="colorPrimary">@color/orange_primary_40</item>
+    <item name="colorOnPrimary">@color/white</item>
+    <item name="colorPrimaryContainer">@color/orange_primary_90</item>
+    <item name="colorOnPrimaryContainer">@color/orange_primary_10</item>
+    <item name="colorPrimaryInverse">@color/orange_primary_80</item>
+
+    <item name="colorSecondary">@color/orange_secondary_40</item>
+    <item name="colorOnSecondary">@color/white</item>
+    <item name="colorSecondaryContainer">@color/orange_secondary_90</item>
+    <item name="colorOnSecondaryContainer">@color/orange_secondary_10</item>
+
+    <item name="colorTertiary">@color/orange_tertiary_40</item>
+    <item name="colorOnTertiary">@color/white</item>
+    <item name="colorTertiaryContainer">@color/orange_tertiary_90</item>
+    <item name="colorOnTertiaryContainer">@color/orange_tertiary_10</item>
+
+    <item name="colorError">@color/orange_error_40</item>
+    <item name="colorOnError">@color/white</item>
+    <item name="colorErrorContainer">@color/orange_error_90</item>
+    <item name="colorOnErrorContainer">@color/orange_error_10</item>
+
+    <item name="android:colorBackground">@color/orange_neutral_99</item>
+    <item name="colorOnBackground">@color/orange_neutral_10</item>
+
+    <item name="colorSurface">@color/orange_neutral_99</item>
+    <item name="colorOnSurface">@color/orange_neutral_10</item>
+    <item name="colorSurfaceInverse">@color/orange_neutral_20</item>
+    <item name="colorOnSurfaceInverse">@color/orange_neutral_90</item>
+
+    <item name="colorSurfaceVariant">@color/orange_neutral_variant_90</item>
+    <item name="colorOnSurfaceVariant">@color/orange_neutral_variant_30</item>
+
+    <item name="colorOutline">@color/orange_neutral_variant_50</item>
+  </style>
+
   <style name="Theme.Doodle.Yellow" parent="Theme.Doodle">
     <item name="colorPrimary">@color/yellow_primary_40</item>
     <item name="colorOnPrimary">@color/white</item>
@@ -156,6 +192,42 @@
     <item name="colorOutline">@color/green_neutral_variant_50</item>
   </style>
 
+  <style name="Theme.Doodle.Teal" parent="Theme.Doodle">
+    <item name="colorPrimary">@color/teal_primary_40</item>
+    <item name="colorOnPrimary">@color/white</item>
+    <item name="colorPrimaryContainer">@color/teal_primary_90</item>
+    <item name="colorOnPrimaryContainer">@color/teal_primary_10</item>
+    <item name="colorPrimaryInverse">@color/teal_primary_80</item>
+
+    <item name="colorSecondary">@color/teal_secondary_40</item>
+    <item name="colorOnSecondary">@color/white</item>
+    <item name="colorSecondaryContainer">@color/teal_secondary_90</item>
+    <item name="colorOnSecondaryContainer">@color/teal_secondary_10</item>
+
+    <item name="colorTertiary">@color/teal_tertiary_40</item>
+    <item name="colorOnTertiary">@color/white</item>
+    <item name="colorTertiaryContainer">@color/teal_tertiary_90</item>
+    <item name="colorOnTertiaryContainer">@color/teal_tertiary_10</item>
+
+    <item name="colorError">@color/teal_error_40</item>
+    <item name="colorOnError">@color/white</item>
+    <item name="colorErrorContainer">@color/teal_error_90</item>
+    <item name="colorOnErrorContainer">@color/teal_error_10</item>
+
+    <item name="android:colorBackground">@color/teal_neutral_99</item>
+    <item name="colorOnBackground">@color/teal_neutral_10</item>
+
+    <item name="colorSurface">@color/teal_neutral_99</item>
+    <item name="colorOnSurface">@color/teal_neutral_10</item>
+    <item name="colorSurfaceInverse">@color/teal_neutral_20</item>
+    <item name="colorOnSurfaceInverse">@color/teal_neutral_90</item>
+
+    <item name="colorSurfaceVariant">@color/teal_neutral_variant_90</item>
+    <item name="colorOnSurfaceVariant">@color/teal_neutral_variant_30</item>
+
+    <item name="colorOutline">@color/teal_neutral_variant_50</item>
+  </style>
+
   <style name="Theme.Doodle.Blue" parent="Theme.Doodle">
     <item name="colorPrimary">@color/blue_primary_40</item>
     <item name="colorOnPrimary">@color/white</item>
@@ -190,42 +262,6 @@
     <item name="colorOnSurfaceVariant">@color/blue_neutral_variant_30</item>
 
     <item name="colorOutline">@color/blue_neutral_variant_50</item>
-  </style>
-
-  <style name="Theme.Doodle.Google" parent="Theme.Doodle">
-    <item name="colorPrimary">@color/google_primary_40</item>
-    <item name="colorOnPrimary">@color/white</item>
-    <item name="colorPrimaryContainer">@color/google_primary_90</item>
-    <item name="colorOnPrimaryContainer">@color/google_primary_10</item>
-    <item name="colorPrimaryInverse">@color/google_primary_80</item>
-
-    <item name="colorSecondary">@color/google_secondary_40</item>
-    <item name="colorOnSecondary">@color/white</item>
-    <item name="colorSecondaryContainer">@color/google_secondary_90</item>
-    <item name="colorOnSecondaryContainer">@color/google_secondary_10</item>
-
-    <item name="colorTertiary">@color/google_tertiary_40</item>
-    <item name="colorOnTertiary">@color/white</item>
-    <item name="colorTertiaryContainer">@color/google_tertiary_90</item>
-    <item name="colorOnTertiaryContainer">@color/google_tertiary_10</item>
-
-    <item name="colorError">@color/google_error_40</item>
-    <item name="colorOnError">@color/white</item>
-    <item name="colorErrorContainer">@color/google_error_90</item>
-    <item name="colorOnErrorContainer">@color/google_error_10</item>
-
-    <item name="android:colorBackground">@color/google_neutral_99</item>
-    <item name="colorOnBackground">@color/google_neutral_10</item>
-
-    <item name="colorSurface">@color/google_neutral_99</item>
-    <item name="colorOnSurface">@color/google_neutral_10</item>
-    <item name="colorSurfaceInverse">@color/google_neutral_20</item>
-    <item name="colorOnSurfaceInverse">@color/google_neutral_90</item>
-
-    <item name="colorSurfaceVariant">@color/google_neutral_variant_90</item>
-    <item name="colorOnSurfaceVariant">@color/google_neutral_variant_30</item>
-
-    <item name="colorOutline">@color/google_neutral_variant_50</item>
   </style>
 
   <style name="Theme.Doodle.Purple" parent="Theme.Doodle">
@@ -265,39 +301,39 @@
   </style>
 
   <style name="Theme.Doodle.Amoled" parent="Theme.Doodle">
-    <item name="colorPrimary">@color/google_primary_40</item>
+    <item name="colorPrimary">@color/blue_primary_40</item>
     <item name="colorOnPrimary">@color/white</item>
-    <item name="colorPrimaryContainer">@color/google_primary_90</item>
-    <item name="colorOnPrimaryContainer">@color/google_primary_10</item>
-    <item name="colorPrimaryInverse">@color/google_primary_80</item>
+    <item name="colorPrimaryContainer">@color/blue_primary_90</item>
+    <item name="colorOnPrimaryContainer">@color/blue_primary_10</item>
+    <item name="colorPrimaryInverse">@color/blue_primary_80</item>
 
-    <item name="colorSecondary">@color/google_secondary_40</item>
+    <item name="colorSecondary">@color/blue_secondary_40</item>
     <item name="colorOnSecondary">@color/white</item>
-    <item name="colorSecondaryContainer">@color/google_secondary_90</item>
-    <item name="colorOnSecondaryContainer">@color/google_secondary_10</item>
+    <item name="colorSecondaryContainer">@color/blue_secondary_90</item>
+    <item name="colorOnSecondaryContainer">@color/blue_secondary_10</item>
 
     <item name="colorTertiary">@color/blue_tertiary_40</item>
     <item name="colorOnTertiary">@color/white</item>
     <item name="colorTertiaryContainer">@color/blue_tertiary_90</item>
     <item name="colorOnTertiaryContainer">@color/blue_tertiary_10</item>
 
-    <item name="colorError">@color/google_error_40</item>
+    <item name="colorError">@color/blue_error_40</item>
     <item name="colorOnError">@color/white</item>
-    <item name="colorErrorContainer">@color/google_error_90</item>
-    <item name="colorOnErrorContainer">@color/google_error_10</item>
+    <item name="colorErrorContainer">@color/blue_error_90</item>
+    <item name="colorOnErrorContainer">@color/blue_error_10</item>
 
-    <item name="android:colorBackground">@color/google_neutral_99</item>
-    <item name="colorOnBackground">@color/google_neutral_10</item>
+    <item name="android:colorBackground">@color/blue_neutral_99</item>
+    <item name="colorOnBackground">@color/blue_neutral_10</item>
 
-    <item name="colorSurface">@color/google_neutral_99</item>
-    <item name="colorOnSurface">@color/google_neutral_10</item>
-    <item name="colorSurfaceInverse">@color/google_neutral_20</item>
-    <item name="colorOnSurfaceInverse">@color/google_neutral_90</item>
+    <item name="colorSurface">@color/blue_neutral_99</item>
+    <item name="colorOnSurface">@color/blue_neutral_10</item>
+    <item name="colorSurfaceInverse">@color/blue_neutral_20</item>
+    <item name="colorOnSurfaceInverse">@color/blue_neutral_90</item>
 
-    <item name="colorSurfaceVariant">@color/google_neutral_variant_90</item>
-    <item name="colorOnSurfaceVariant">@color/google_neutral_variant_30</item>
+    <item name="colorSurfaceVariant">@color/blue_neutral_variant_90</item>
+    <item name="colorOnSurfaceVariant">@color/blue_neutral_variant_30</item>
 
-    <item name="colorOutline">@color/google_neutral_variant_50</item>
+    <item name="colorOutline">@color/blue_neutral_variant_50</item>
   </style>
 
 </resources>

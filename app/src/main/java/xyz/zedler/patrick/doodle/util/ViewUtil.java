@@ -24,7 +24,7 @@ import android.content.Context;
 import android.content.res.ColorStateList;
 import android.graphics.drawable.Animatable;
 import android.graphics.drawable.Drawable;
-import android.graphics.drawable.InsetDrawable;
+import android.graphics.drawable.LayerDrawable;
 import android.graphics.drawable.RippleDrawable;
 import android.graphics.drawable.ShapeDrawable;
 import android.graphics.drawable.shapes.RoundRectShape;
@@ -214,17 +214,17 @@ public class ViewUtil {
     Arrays.fill(radii, SystemUiUtil.dpToPx(context, 16));
     RoundRectShape rect = new RoundRectShape(radii, null, null);
     ShapeDrawable shape = new ShapeDrawable(rect);
-    shape.getPaint().setColor(SurfaceColors.SURFACE_1.getColor(context));
+    shape.getPaint().setColor(SurfaceColors.SURFACE_3.getColor(context));
+    LayerDrawable layers = new LayerDrawable(new ShapeDrawable[]{shape});
+    layers.setLayerInset(
+        0,
+        SystemUiUtil.dpToPx(context, 8),
+        SystemUiUtil.dpToPx(context, 2),
+        SystemUiUtil.dpToPx(context, 8),
+        SystemUiUtil.dpToPx(context, 2)
+    );
     return new RippleDrawable(
-        ColorStateList.valueOf(ResUtil.getColorHighlight(context)),
-        null,
-        new InsetDrawable(
-            shape,
-            SystemUiUtil.dpToPx(context, 8),
-            SystemUiUtil.dpToPx(context, 2),
-            SystemUiUtil.dpToPx(context, 8),
-            SystemUiUtil.dpToPx(context, 2)
-        )
+        ColorStateList.valueOf(ResUtil.getColorHighlight(context)), null, layers
     );
   }
 
@@ -233,7 +233,7 @@ public class ViewUtil {
     Arrays.fill(radii, SystemUiUtil.dpToPx(context, 16));
     RoundRectShape rect = new RoundRectShape(radii, null, null);
     ShapeDrawable shape = new ShapeDrawable(rect);
-    shape.getPaint().setColor(SurfaceColors.SURFACE_1.getColor(context));
+    shape.getPaint().setColor(SurfaceColors.SURFACE_3.getColor(context));
     return new RippleDrawable(
         ColorStateList.valueOf(ResUtil.getColorHighlight(context)), null, shape
     );

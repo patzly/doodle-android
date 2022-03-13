@@ -306,11 +306,11 @@ public class OtherFragment extends BaseFragment
         name = THEME.RED;
         resId = R.style.Theme_Doodle_Red;
       } else if (i == 1) {
-        name = THEME.ORANGE;
-        resId = R.style.Theme_Doodle_Orange;
-      } else if (i == 2) {
         name = THEME.YELLOW;
         resId = R.style.Theme_Doodle_Yellow;
+      } else if (i == 2) {
+        name = THEME.LIME;
+        resId = R.style.Theme_Doodle_Lime;
       } else if (i == 3) {
         name = THEME.GREEN;
         resId = R.style.Theme_Doodle_Green;

@@ -5,6 +5,7 @@
 - Improved: dialog appearance on large screens
 - Improved: workaround for MIUI issue replaced by info in help dialog, since workaround didn't work
 - Improved: app color theme selection
+- Fixed: potential solution for blank settings pages
 
 Please consider translating this app into your language at Transifex.
 

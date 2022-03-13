@@ -66,87 +66,87 @@
   <color name="red_neutral_variant_50">#857373</color>
   <color name="red_neutral_variant_30">#534343</color>
 
-  <!-- ORANGE -->
-
-  <color name="orange_primary_90">#fce366</color>
-  <color name="orange_primary_80">#dec74d</color>
-  <color name="orange_primary_40">#6e5e00</color>
-  <color name="orange_primary_30">#524600</color>
-  <color name="orange_primary_20">#393000</color>
-  <color name="orange_primary_10">#211b00</color>
-
-  <color name="orange_secondary_90">#ede3bc</color>
-  <color name="orange_secondary_80">#d0c6a1</color>
-  <color name="orange_secondary_40">#655e40</color>
-  <color name="orange_secondary_30">#4d472a</color>
-  <color name="orange_secondary_20">#363116</color>
-  <color name="orange_secondary_10">#201c04</color>
-
-  <color name="orange_tertiary_90">#c4ecd0</color>
-  <color name="orange_tertiary_80">#a8d0b4</color>
-  <color name="orange_tertiary_40">#436650</color>
-  <color name="orange_tertiary_30">#2b4e39</color>
-  <color name="orange_tertiary_20">#133724</color>
-  <color name="orange_tertiary_10">#002110</color>
-
-  <color name="orange_error_90">#ffdacf</color>
-  <color name="orange_error_80">#ffb49d</color>
-  <color name="orange_error_40">#af3001</color>
-  <color name="orange_error_30">#872000</color>
-  <color name="orange_error_20">#601400</color>
-  <color name="orange_error_10">#3b0800</color>
-
-  <color name="orange_neutral_99">#fffbf7</color>
-  <color name="orange_neutral_90">#e7e2d9</color>
-  <color name="orange_neutral_20">#32302a</color>
-  <color name="orange_neutral_10">#1d1b16</color>
-
-  <color name="orange_neutral_variant_90">#e9e2d0</color>
-  <color name="orange_neutral_variant_80">#ccc6b4</color>
-  <color name="orange_neutral_variant_60">#969181</color>
-  <color name="orange_neutral_variant_50">#7c7767</color>
-  <color name="orange_neutral_variant_30">#4b4739</color>
-
   <!-- YELLOW -->
 
-  <color name="yellow_primary_90">#E8E971</color>
-  <color name="yellow_primary_80">#CBCC58</color>
-  <color name="yellow_primary_40">#616200</color>
-  <color name="yellow_primary_30">#494A00</color>
-  <color name="yellow_primary_20">#323200</color>
-  <color name="yellow_primary_10">#1D1D00</color>
+  <color name="yellow_primary_90">#fce366</color>
+  <color name="yellow_primary_80">#dec74d</color>
+  <color name="yellow_primary_40">#6e5e00</color>
+  <color name="yellow_primary_30">#524600</color>
+  <color name="yellow_primary_20">#393000</color>
+  <color name="yellow_primary_10">#211b00</color>
 
-  <color name="yellow_secondary_90">#E6E4BF</color>
-  <color name="yellow_secondary_80">#CAC8A5</color>
-  <color name="yellow_secondary_40">#606042</color>
-  <color name="yellow_secondary_30">#48482D</color>
-  <color name="yellow_secondary_20">#323219</color>
-  <color name="yellow_secondary_10">#1C1D06</color>
+  <color name="yellow_secondary_90">#ede3bc</color>
+  <color name="yellow_secondary_80">#d0c6a1</color>
+  <color name="yellow_secondary_40">#655e40</color>
+  <color name="yellow_secondary_30">#4d472a</color>
+  <color name="yellow_secondary_20">#363116</color>
+  <color name="yellow_secondary_10">#201c04</color>
 
-  <color name="yellow_tertiary_90">#BFEDD9</color>
-  <color name="yellow_tertiary_80">#A4D0BD</color>
-  <color name="yellow_tertiary_40">#3D6657</color>
-  <color name="yellow_tertiary_30">#254E40</color>
-  <color name="yellow_tertiary_20">#0B372A</color>
-  <color name="yellow_tertiary_10">#002117</color>
+  <color name="yellow_tertiary_90">#c4ecd0</color>
+  <color name="yellow_tertiary_80">#a8d0b4</color>
+  <color name="yellow_tertiary_40">#436650</color>
+  <color name="yellow_tertiary_30">#2b4e39</color>
+  <color name="yellow_tertiary_20">#133724</color>
+  <color name="yellow_tertiary_10">#002110</color>
 
-  <color name="yellow_error_90">#ffdbce</color>
-  <color name="yellow_error_80">#ffb59a</color>
-  <color name="yellow_error_40">#aa3701</color>
-  <color name="yellow_error_30">#832600</color>
-  <color name="yellow_error_20">#5d1800</color>
-  <color name="yellow_error_10">#390b00</color>
+  <color name="yellow_error_90">#ffdacf</color>
+  <color name="yellow_error_80">#ffb49d</color>
+  <color name="yellow_error_40">#af3001</color>
+  <color name="yellow_error_30">#872000</color>
+  <color name="yellow_error_20">#601400</color>
+  <color name="yellow_error_10">#3b0800</color>
 
-  <color name="yellow_neutral_99">#fffcf3</color>
-  <color name="yellow_neutral_90">#E5E2D9</color>
-  <color name="yellow_neutral_20">#31302B</color>
-  <color name="yellow_neutral_10">#1C1C16</color>
+  <color name="yellow_neutral_99">#fffbf7</color>
+  <color name="yellow_neutral_90">#e7e2d9</color>
+  <color name="yellow_neutral_20">#32302a</color>
+  <color name="yellow_neutral_10">#1d1b16</color>
 
-  <color name="yellow_neutral_variant_90">#E6E3D1</color>
-  <color name="yellow_neutral_variant_80">#C9C7B6</color>
-  <color name="yellow_neutral_variant_60">#939182</color>
-  <color name="yellow_neutral_variant_50">#797869</color>
-  <color name="yellow_neutral_variant_30">#48473A</color>
+  <color name="yellow_neutral_variant_90">#e9e2d0</color>
+  <color name="yellow_neutral_variant_80">#ccc6b4</color>
+  <color name="yellow_neutral_variant_60">#969181</color>
+  <color name="yellow_neutral_variant_50">#7c7767</color>
+  <color name="yellow_neutral_variant_30">#4b4739</color>
+
+  <!-- LIME -->
+
+  <color name="lime_primary_90">#E8E971</color>
+  <color name="lime_primary_80">#CBCC58</color>
+  <color name="lime_primary_40">#616200</color>
+  <color name="lime_primary_30">#494A00</color>
+  <color name="lime_primary_20">#323200</color>
+  <color name="lime_primary_10">#1D1D00</color>
+
+  <color name="lime_secondary_90">#E6E4BF</color>
+  <color name="lime_secondary_80">#CAC8A5</color>
+  <color name="lime_secondary_40">#606042</color>
+  <color name="lime_secondary_30">#48482D</color>
+  <color name="lime_secondary_20">#323219</color>
+  <color name="lime_secondary_10">#1C1D06</color>
+
+  <color name="lime_tertiary_90">#BFEDD9</color>
+  <color name="lime_tertiary_80">#A4D0BD</color>
+  <color name="lime_tertiary_40">#3D6657</color>
+  <color name="lime_tertiary_30">#254E40</color>
+  <color name="lime_tertiary_20">#0B372A</color>
+  <color name="lime_tertiary_10">#002117</color>
+
+  <color name="lime_error_90">#ffdbce</color>
+  <color name="lime_error_80">#ffb59a</color>
+  <color name="lime_error_40">#aa3701</color>
+  <color name="lime_error_30">#832600</color>
+  <color name="lime_error_20">#5d1800</color>
+  <color name="lime_error_10">#390b00</color>
+
+  <color name="lime_neutral_99">#fffcf3</color>
+  <color name="lime_neutral_90">#E5E2D9</color>
+  <color name="lime_neutral_20">#31302B</color>
+  <color name="lime_neutral_10">#1C1C16</color>
+
+  <color name="lime_neutral_variant_90">#E6E3D1</color>
+  <color name="lime_neutral_variant_80">#C9C7B6</color>
+  <color name="lime_neutral_variant_60">#939182</color>
+  <color name="lime_neutral_variant_50">#797869</color>
+  <color name="lime_neutral_variant_30">#48473A</color>
 
   <!-- GREEN -->
 

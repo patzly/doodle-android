@@ -55,42 +55,6 @@
     <item name="colorOutline">@color/red_neutral_variant_60</item>
   </style>
 
-  <style name="Theme.Doodle.Orange" parent="Theme.Doodle">
-    <item name="colorPrimary">@color/orange_primary_80</item>
-    <item name="colorOnPrimary">@color/orange_primary_20</item>
-    <item name="colorPrimaryContainer">@color/orange_primary_30</item>
-    <item name="colorOnPrimaryContainer">@color/orange_primary_90</item>
-    <item name="colorPrimaryInverse">@color/orange_primary_40</item>
-
-    <item name="colorSecondary">@color/orange_secondary_80</item>
-    <item name="colorOnSecondary">@color/orange_secondary_20</item>
-    <item name="colorSecondaryContainer">@color/orange_secondary_30</item>
-    <item name="colorOnSecondaryContainer">@color/orange_secondary_90</item>
-
-    <item name="colorTertiary">@color/orange_tertiary_80</item>
-    <item name="colorOnTertiary">@color/orange_tertiary_20</item>
-    <item name="colorTertiaryContainer">@color/orange_tertiary_30</item>
-    <item name="colorOnTertiaryContainer">@color/orange_tertiary_90</item>
-
-    <item name="colorError">@color/orange_error_80</item>
-    <item name="colorOnError">@color/orange_error_20</item>
-    <item name="colorErrorContainer">@color/orange_error_30</item>
-    <item name="colorOnErrorContainer">@color/orange_error_80</item>
-
-    <item name="android:colorBackground">@color/orange_neutral_10</item>
-    <item name="colorOnBackground">@color/orange_neutral_90</item>
-
-    <item name="colorSurface">@color/orange_neutral_10</item>
-    <item name="colorOnSurface">@color/orange_neutral_90</item>
-    <item name="colorSurfaceInverse">@color/orange_neutral_90</item>
-    <item name="colorOnSurfaceInverse">@color/orange_neutral_20</item>
-
-    <item name="colorSurfaceVariant">@color/orange_neutral_variant_30</item>
-    <item name="colorOnSurfaceVariant">@color/orange_neutral_variant_80</item>
-
-    <item name="colorOutline">@color/orange_neutral_variant_60</item>
-  </style>
-
   <style name="Theme.Doodle.Yellow" parent="Theme.Doodle">
     <item name="colorPrimary">@color/yellow_primary_80</item>
     <item name="colorOnPrimary">@color/yellow_primary_20</item>
@@ -125,6 +89,42 @@
     <item name="colorOnSurfaceVariant">@color/yellow_neutral_variant_80</item>
 
     <item name="colorOutline">@color/yellow_neutral_variant_60</item>
+  </style>
+
+  <style name="Theme.Doodle.Lime" parent="Theme.Doodle">
+    <item name="colorPrimary">@color/lime_primary_80</item>
+    <item name="colorOnPrimary">@color/lime_primary_20</item>
+    <item name="colorPrimaryContainer">@color/lime_primary_30</item>
+    <item name="colorOnPrimaryContainer">@color/lime_primary_90</item>
+    <item name="colorPrimaryInverse">@color/lime_primary_40</item>
+
+    <item name="colorSecondary">@color/lime_secondary_80</item>
+    <item name="colorOnSecondary">@color/lime_secondary_20</item>
+    <item name="colorSecondaryContainer">@color/lime_secondary_30</item>
+    <item name="colorOnSecondaryContainer">@color/lime_secondary_90</item>
+
+    <item name="colorTertiary">@color/lime_tertiary_80</item>
+    <item name="colorOnTertiary">@color/lime_tertiary_20</item>
+    <item name="colorTertiaryContainer">@color/lime_tertiary_30</item>
+    <item name="colorOnTertiaryContainer">@color/lime_tertiary_90</item>
+
+    <item name="colorError">@color/lime_error_80</item>
+    <item name="colorOnError">@color/lime_error_20</item>
+    <item name="colorErrorContainer">@color/lime_error_30</item>
+    <item name="colorOnErrorContainer">@color/lime_error_80</item>
+
+    <item name="android:colorBackground">@color/lime_neutral_10</item>
+    <item name="colorOnBackground">@color/lime_neutral_90</item>
+
+    <item name="colorSurface">@color/lime_neutral_10</item>
+    <item name="colorOnSurface">@color/lime_neutral_90</item>
+    <item name="colorSurfaceInverse">@color/lime_neutral_90</item>
+    <item name="colorOnSurfaceInverse">@color/lime_neutral_20</item>
+
+    <item name="colorSurfaceVariant">@color/lime_neutral_variant_30</item>
+    <item name="colorOnSurfaceVariant">@color/lime_neutral_variant_80</item>
+
+    <item name="colorOutline">@color/lime_neutral_variant_60</item>
   </style>
 
   <style name="Theme.Doodle.Green" parent="Theme.Doodle">

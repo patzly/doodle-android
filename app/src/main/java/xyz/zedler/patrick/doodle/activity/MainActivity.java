@@ -150,11 +150,11 @@ public class MainActivity extends AppCompatActivity {
       case THEME.RED:
         setTheme(R.style.Theme_Doodle_Red);
         break;
-      case THEME.ORANGE:
-        setTheme(R.style.Theme_Doodle_Orange);
-        break;
       case THEME.YELLOW:
         setTheme(R.style.Theme_Doodle_Yellow);
+        break;
+      case THEME.LIME:
+        setTheme(R.style.Theme_Doodle_Lime);
         break;
       case THEME.GREEN:
         setTheme(R.style.Theme_Doodle_Green);

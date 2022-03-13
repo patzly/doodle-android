@@ -34,7 +34,7 @@
         <path
           android:name="tick"
           android:pathData="M9,16.17L5.53,12.7c-0.39,-0.39 -1.02,-0.39 -1.41,0 -0.39,0.39 -0.39,1.02 0,1.41l4.18,4.18c0.39,0.39 1.02,0.39 1.41,0L20.29,7.71c0.39,-0.39 0.39,-1.02 0,-1.41 -0.39,-0.39 -1.02,-0.39 -1.41,0L9,16.17z"
-          android:fillColor="#ffffff" />
+          android:fillColor="#000000" />
       </group>
     </vector>
   </aapt:attr>

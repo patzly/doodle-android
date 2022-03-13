@@ -69,7 +69,9 @@ public class SelectionCardView extends MaterialCardView {
     setStrokeWidth(0);
     setCheckable(true);
     setCheckedIconResource(R.drawable.shape_selection_check);
-    setCheckedIconTint(null);
+    setCheckedIconTint(
+        ColorStateList.valueOf(ResUtil.getColorAttr(context, R.attr.colorOnPrimaryContainer))
+    );
     setCheckedIconSize(innerSize);
     setCheckedIconMargin(outerPadding);
 

@@ -22,7 +22,6 @@ package xyz.zedler.patrick.doodle.fragment;
 import android.annotation.SuppressLint;
 import android.content.ComponentName;
 import android.content.pm.PackageManager;
-import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -333,19 +332,21 @@ public class OtherFragment extends BaseFragment
       }
 
       SelectionCardView card = new SelectionCardView(activity);
-      int color = Build.VERSION.SDK_INT >= Build.VERSION_CODES.S && i == -1
-          ? ContextCompat.getColor(
-              activity,
-              SystemUiUtil.isDarkModeActive(activity)
-                  ? android.R.color.system_accent1_700
-                  : android.R.color.system_accent1_100
-          )
-          : ResUtil.getColorAttr(
-              new ContextThemeWrapper(activity, resId), R.attr.colorPrimaryContainer
-          );
-      if (i == 6) {
+      int color;
+      if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S && i == -1) {
+        color = ContextCompat.getColor(
+            activity,
+            SystemUiUtil.isDarkModeActive(activity)
+                ? android.R.color.system_accent1_700
+                : android.R.color.system_accent1_100
+        );
+      } else if (i == 7) {
         // Amoled theme selection card
-        color = Color.BLACK;
+        color = SystemUiUtil.isDarkModeActive(activity) ? 0x484848 : 0xe3e3e3;
+      } else {
+        color = ResUtil.getColorAttr(
+            new ContextThemeWrapper(activity, resId), R.attr.colorPrimaryContainer
+        );
       }
       card.setCardBackgroundColor(color);
       card.setOnClickListener(v -> {

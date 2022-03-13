@@ -4,6 +4,7 @@
 - Improved: simplified night mode option in appearance settings
 - Improved: dialog appearance on large screens
 - Improved: workaround for MIUI issue replaced by info in help dialog, since workaround didn't work
+- Improved: app color theme selection
 
 Please consider translating this app into your language at Transifex.
 

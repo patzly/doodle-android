@@ -33,42 +33,42 @@
     <action
       android:id="@+id/action_overview_to_appearance"
       app:destination="@id/appearanceFragment"
-      app:enterAnim="@anim/anim_enter_end"
-      app:exitAnim="@anim/anim_exit_start"
-      app:popEnterAnim="@anim/anim_enter_start"
-      app:popExitAnim="@anim/anim_exit_end" />
+      app:enterAnim="@anim/enter_end"
+      app:exitAnim="@anim/exit_start"
+      app:popEnterAnim="@anim/enter_start"
+      app:popExitAnim="@anim/exit_end" />
 
     <action
       android:id="@+id/action_overview_to_parallax"
       app:destination="@id/parallaxFragment"
-      app:enterAnim="@anim/anim_enter_end"
-      app:exitAnim="@anim/anim_exit_start"
-      app:popEnterAnim="@anim/anim_enter_start"
-      app:popExitAnim="@anim/anim_exit_end" />
+      app:enterAnim="@anim/enter_end"
+      app:exitAnim="@anim/exit_start"
+      app:popEnterAnim="@anim/enter_start"
+      app:popExitAnim="@anim/exit_end" />
 
     <action
       android:id="@+id/action_overview_to_size"
       app:destination="@id/sizeFragment"
-      app:enterAnim="@anim/anim_enter_end"
-      app:exitAnim="@anim/anim_exit_start"
-      app:popEnterAnim="@anim/anim_enter_start"
-      app:popExitAnim="@anim/anim_exit_end" />
+      app:enterAnim="@anim/enter_end"
+      app:exitAnim="@anim/exit_start"
+      app:popEnterAnim="@anim/enter_start"
+      app:popExitAnim="@anim/exit_end" />
 
     <action
       android:id="@+id/action_overview_to_other"
       app:destination="@id/otherFragment"
-      app:enterAnim="@anim/anim_enter_end"
-      app:exitAnim="@anim/anim_exit_start"
-      app:popEnterAnim="@anim/anim_enter_start"
-      app:popExitAnim="@anim/anim_exit_end" />
+      app:enterAnim="@anim/enter_end"
+      app:exitAnim="@anim/exit_start"
+      app:popEnterAnim="@anim/enter_start"
+      app:popExitAnim="@anim/exit_end" />
 
     <action
       android:id="@+id/action_overview_to_about"
       app:destination="@id/aboutFragment"
-      app:enterAnim="@anim/anim_enter_end"
-      app:exitAnim="@anim/anim_exit_start"
-      app:popEnterAnim="@anim/anim_enter_start"
-      app:popExitAnim="@anim/anim_exit_end" />
+      app:enterAnim="@anim/enter_end"
+      app:exitAnim="@anim/exit_start"
+      app:popEnterAnim="@anim/enter_start"
+      app:popExitAnim="@anim/exit_end" />
 
   </fragment>
 

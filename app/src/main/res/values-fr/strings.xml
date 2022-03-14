@@ -50,6 +50,7 @@
   <string name="action_set">Définir le papier peint</string>
   <string name="action_set_directly">Définir directement</string>
   <string name="action_open_picker">Ouvrir le sélecteur de papier peint</string>
+  <string name="action_help">Aide</string>
   <string name="action_send_feedback">Envoyer des commentaires</string>
   <string name="action_share">Partager</string>
   <string name="action_share_description">Parlez de Doodle à vos amis</string>
@@ -72,12 +73,13 @@
   <string name="appearance_variant">Variantes</string>
   <string name="appearance_night_mode">Mode nuit</string>
   <string name="appearance_night_mode_description">Couleurs sombres uniquement</string>
+  <string name="appearance_night_mode_on">Activé</string>
+  <string name="appearance_night_mode_off">Désactivé</string>
   <string name="appearance_follow_system">Suivre le système</string>
   <string name="appearance_follow_system_description">Suivre le thème de l\'appareil</string>
   <string name="appearance_white_text">Essayez de forcer le texte en blanc</string>
   <string name="appearance_white_text_description">Peut affecter la lisibilité</string>
-  <string name="appearance_random">Motif du fond d\'écran aléatoire</string>
-  <string name="appearance_random_description">Chaque fois que l\'écran est éteint</string>
+  <string name="appearance_colors_category">Couleurs</string>
   <string name="appearance_colors">Couleurs extraites</string>
   <string name="appearance_colors_description">Utilisé pour calculer le contraste du texte</string>
   <string name="appearance_colors_description_dynamic">Utilisé par le moteur de thèmes du système</string>
@@ -86,6 +88,8 @@
   <string name="appearance_colors_tertiary">Choisissez la couleur tertiaire</string>
   <string name="appearance_colors_info">Sur les appareils sans prise en charge des couleurs dynamiques (Android 11 ou inférieur), seule la couleur principale est utilisée pour calculer le contraste du texte du lanceur et teinter l\'arrière-plan de l\'écran des applications récentes.</string>
   <string name="appearance_colors_info_dynamic">Sur les appareils équipés d\'Android 12 ou version ultérieure et prenant en charge les couleurs dynamiques, les trois couleurs sélectionnées sont utilisées pour créer automatiquement un thème de couleurs à l\'échelle du système.</string>
+  <string name="appearance_random">Motif du fond d\'écran aléatoire</string>
+  <string name="appearance_random_description">Chaque fois que l\'écran est éteint</string>
 
   <!-- PARALLAX -->
 
@@ -95,6 +99,8 @@
   <string name="parallax_intensity">Intensité de parallaxe</string>
   <string name="parallax_intensity_description">Décalage horizontal lors du balayage et intensité de l\'effet d\'inclinaison</string>
   <string name="parallax_none">Aucun</string>
+  <string name="parallax_swipe_power_save">Respecter l\'économiseur de batterie</string>
+  <string name="parallax_swipe_power_save_description">Mettre en pause l\'animation de balayage quand l\'économiseur de batterie est activé</string>
   <string name="parallax_category_tilt">Effet d\'inclinaison</string>
   <string name="parallax_tilt">Bouger lors de l\'inclinaison de l\'appareil</string>
   <string name="parallax_tilt_description">Consomme davantage de batterie</string>
@@ -104,6 +110,8 @@
   <string name="parallax_damping_description">Diminuer pour plus de fluidité</string>
   <string name="parallax_threshold">Seuil de mouvement</string>
   <string name="parallax_threshold_description">Augmenter afin de suspendre le rendu continu lorsque les mouvements sont faibles</string>
+  <string name="parallax_tilt_power_save_description">Mettre en pause l\'effet d\'inclinaison quand l\'économiseur de batterie est activé</string>
+
   <!-- SIZE -->
 
   <string name="size_title">Taille de la forme</string>
@@ -117,6 +125,7 @@
   <string name="size_zoom_description">Lorsqu\'elle est augmentée, la caméra effectue un zoom arrière plus important</string>
   <string name="size_zoom_rotation">Faire pivoter certaines formes tout en zoomant</string>
   <string name="size_zoom_rotation_description">Rotation maximale en degrés</string>
+  <string name="size_zoom_power_save_description">Mettre en pause l\'effet de zoom quand l\'économiseur de batterie est activé</string>
   <string name="size_zoom_launcher">Effectuer un zoom arrière lors de l\'ouverture des paramètres rapides ou du tiroir d\'applications</string>
   <string name="size_zoom_launcher_description">Peut être indisponible sur certains appareils</string>
   <string name="size_zoom_damping">Atténuation de l\'animation</string>
@@ -174,6 +183,5 @@
   <string name="msg_apply_changes">Pour (éventuellement) appliquer les options modifiées, un redémarrage du service de papier peint en cours d\'exécution est recommandé. Cela ne peut pas être fait automatiquement.\nVeuillez forcer l\'arrêt de Doodle dans les paramètres de votre système, puis appliquez à nouveau Doodle comme fond d\'écran.</string>
   <string name="msg_set_wallpaper">Si vous rencontrez un problème qui casse l\'animation du papier peint en fermant cette application, veuillez choisir Doodle dans le sélecteur de papier peint de votre système.\nDans le cas contraire vous pouvez le définir directement.</string>
   <string name="msg_preview_missing">Une erreur s\'est produite, veuillez sélectionner manuellement le fond d\'écran animé Doodle</string>
-  <string name="msg_picker_missing">Impossible d\'ouvrir le sélecteur de papier peint, veuillez installer un sélecteur de papier peint animé et réessayez.</string>
 
   </resources>

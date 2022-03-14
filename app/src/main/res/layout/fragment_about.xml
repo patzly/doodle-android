@@ -43,235 +43,245 @@
     android:layout_height="match_parent"
     android:layout_marginTop="?attr/actionBarSize">
 
-    <LinearLayout
-      android:id="@+id/linear_about_container"
+    <androidx.constraintlayout.widget.ConstraintLayout
       android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:paddingTop="8dp"
-      android:paddingBottom="8dp"
-      android:orientation="vertical">
+      android:layout_height="wrap_content">
 
       <LinearLayout
-        android:id="@+id/linear_about_version"
-        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon.Clickable">
+        android:id="@+id/linear_about_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_max="@dimen/max_content_width"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
-        <ImageView
-          android:id="@+id/image_about_version"
-          style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-          android:src="@drawable/ic_round_info_outline_anim"
-          tools:ignore="ContentDescription" />
+        <LinearLayout
+          android:id="@+id/linear_about_version"
+          style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon.Clickable">
 
-        <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
+          <ImageView
+            android:id="@+id/image_about_version"
+            style="@style/Widget.Doodle.ImageView.ListItem.Icon"
+            android:src="@drawable/ic_round_info_outline_anim"
+            tools:ignore="ContentDescription" />
 
-          <TextView
-            style="@style/Widget.Doodle.TextView.ListItem.OverLine"
-            android:text="@string/about_version" />
+          <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
 
-          <TextView
-            style="@style/Widget.Doodle.TextView.ListItem.Title"
-            android:text="@string/versionName" />
+            <TextView
+              style="@style/Widget.Doodle.TextView.ListItem.OverLine"
+              android:text="@string/about_version" />
+
+            <TextView
+              style="@style/Widget.Doodle.TextView.ListItem.Title"
+              android:text="@string/versionName" />
+
+          </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+          android:id="@+id/linear_about_changelog"
+          style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon.Clickable">
+
+          <ImageView
+            android:id="@+id/image_about_changelog"
+            style="@style/Widget.Doodle.ImageView.ListItem.Icon"
+            android:src="@drawable/ic_round_history_anim"
+            tools:ignore="ContentDescription" />
+
+          <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
+
+            <TextView
+              style="@style/Widget.Doodle.TextView.ListItem.Title"
+              android:text="@string/about_changelog" />
+
+            <TextView
+              style="@style/Widget.Doodle.TextView.ListItem.Description"
+              android:text="@string/about_changelog_description" />
+
+          </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+          android:id="@+id/linear_about_developer"
+          style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon.Clickable">
+
+          <ImageView
+            android:id="@+id/image_about_developer"
+            style="@style/Widget.Doodle.ImageView.ListItem.Icon"
+            android:src="@drawable/ic_round_person_anim"
+            tools:ignore="ContentDescription" />
+
+          <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
+
+            <TextView
+              style="@style/Widget.Doodle.TextView.ListItem.OverLine"
+              android:text="@string/about_developer" />
+
+            <TextView
+              style="@style/Widget.Doodle.TextView.ListItem.Title"
+              android:text="@string/app_developer" />
+
+          </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+          android:id="@+id/linear_about_vending"
+          style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon.Clickable">
+
+          <ImageView
+            android:id="@+id/image_about_vending"
+            style="@style/Widget.Doodle.ImageView.ListItem.Icon.Colored"
+            android:src="@drawable/ic_round_vending_anim"
+            tools:ignore="ContentDescription" />
+
+          <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
+
+            <TextView
+              style="@style/Widget.Doodle.TextView.ListItem.OverLine"
+              android:text="@string/about_vending" />
+
+            <TextView
+              style="@style/Widget.Doodle.TextView.ListItem.Title"
+              android:text="@string/about_vending_description" />
+
+          </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+          android:id="@+id/linear_about_github"
+          style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon.Clickable"
+          android:background="@drawable/ripple_list_item_bg">
+
+          <ImageView
+            style="@style/Widget.Doodle.ImageView.ListItem.Icon"
+            android:src="@drawable/ic_round_github"
+            tools:ignore="ContentDescription" />
+
+          <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
+
+            <TextView
+              style="@style/Widget.Doodle.TextView.ListItem.OverLine"
+              android:text="@string/about_github" />
+
+            <TextView
+              style="@style/Widget.Doodle.TextView.ListItem.Title"
+              android:text="@string/about_github_description" />
+
+          </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+          android:id="@+id/linear_about_translation"
+          style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon.Clickable"
+          android:background="@drawable/ripple_list_item_bg">
+
+          <ImageView
+            style="@style/Widget.Doodle.ImageView.ListItem.Icon"
+            android:src="@drawable/ic_round_translate"
+            tools:ignore="ContentDescription" />
+
+          <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
+
+            <TextView
+              style="@style/Widget.Doodle.TextView.ListItem.OverLine"
+              android:text="@string/about_translation" />
+
+            <TextView
+              style="@style/Widget.Doodle.TextView.ListItem.Title"
+              android:text="@string/about_translation_description" />
+
+          </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+          style="@style/Widget.Doodle.TextView.Category"
+          android:text="@string/title_licenses" />
+
+        <LinearLayout
+          android:id="@+id/linear_about_license_jost"
+          style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon.Clickable">
+
+          <ImageView
+            android:id="@+id/image_about_license_jost"
+            style="@style/Widget.Doodle.ImageView.ListItem.Icon"
+            android:src="@drawable/ic_round_copyright_anim"
+            tools:ignore="ContentDescription" />
+
+          <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
+
+            <TextView
+              style="@style/Widget.Doodle.TextView.ListItem.Title"
+              android:text="@string/license_jost" />
+
+            <TextView
+              style="@style/Widget.Doodle.TextView.ListItem.Description"
+              android:text="@string/license_jost_author" />
+
+          </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+          android:id="@+id/linear_about_license_material_components"
+          style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon.Clickable">
+
+          <ImageView
+            android:id="@+id/image_about_license_material_components"
+            style="@style/Widget.Doodle.ImageView.ListItem.Icon"
+            android:src="@drawable/ic_round_copyright_anim"
+            tools:ignore="ContentDescription" />
+
+          <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
+
+            <TextView
+              style="@style/Widget.Doodle.TextView.ListItem.Title"
+              android:text="@string/license_material_components" />
+
+            <TextView
+              style="@style/Widget.Doodle.TextView.ListItem.Description"
+              android:text="@string/license_author_google" />
+
+          </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+          android:id="@+id/linear_about_license_material_icons"
+          style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon.Clickable">
+
+          <ImageView
+            android:id="@+id/image_about_license_material_icons"
+            style="@style/Widget.Doodle.ImageView.ListItem.Icon"
+            android:src="@drawable/ic_round_copyright_anim"
+            tools:ignore="ContentDescription" />
+
+          <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
+
+            <TextView
+              style="@style/Widget.Doodle.TextView.ListItem.Title"
+              android:text="@string/license_material_icons" />
+
+            <TextView
+              style="@style/Widget.Doodle.TextView.ListItem.Description"
+              android:text="@string/license_author_google" />
+
+          </LinearLayout>
 
         </LinearLayout>
 
       </LinearLayout>
 
-      <LinearLayout
-        android:id="@+id/linear_about_changelog"
-        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon.Clickable">
-
-        <ImageView
-          android:id="@+id/image_about_changelog"
-          style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-          android:src="@drawable/ic_round_history_anim"
-          tools:ignore="ContentDescription" />
-
-        <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
-
-          <TextView
-            style="@style/Widget.Doodle.TextView.ListItem.Title"
-            android:text="@string/about_changelog" />
-
-          <TextView
-            style="@style/Widget.Doodle.TextView.ListItem.Description"
-            android:text="@string/about_changelog_description" />
-
-        </LinearLayout>
-
-      </LinearLayout>
-
-      <LinearLayout
-        android:id="@+id/linear_about_developer"
-        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon.Clickable">
-
-        <ImageView
-          android:id="@+id/image_about_developer"
-          style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-          android:src="@drawable/ic_round_person_anim"
-          tools:ignore="ContentDescription" />
-
-        <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
-
-          <TextView
-            style="@style/Widget.Doodle.TextView.ListItem.OverLine"
-            android:text="@string/about_developer" />
-
-          <TextView
-            style="@style/Widget.Doodle.TextView.ListItem.Title"
-            android:text="@string/app_developer" />
-
-        </LinearLayout>
-
-      </LinearLayout>
-
-      <LinearLayout
-        android:id="@+id/linear_about_vending"
-        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon.Clickable">
-
-        <ImageView
-          android:id="@+id/image_about_vending"
-          style="@style/Widget.Doodle.ImageView.ListItem.Icon.Colored"
-          android:src="@drawable/ic_round_vending_anim"
-          tools:ignore="ContentDescription" />
-
-        <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
-
-          <TextView
-            style="@style/Widget.Doodle.TextView.ListItem.OverLine"
-            android:text="@string/about_vending" />
-
-          <TextView
-            style="@style/Widget.Doodle.TextView.ListItem.Title"
-            android:text="@string/about_vending_description" />
-
-        </LinearLayout>
-
-      </LinearLayout>
-
-      <LinearLayout
-        android:id="@+id/linear_about_github"
-        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon.Clickable"
-        android:background="@drawable/ripple_list_item_bg">
-
-        <ImageView
-          style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-          android:src="@drawable/ic_round_github"
-          tools:ignore="ContentDescription" />
-
-        <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
-
-          <TextView
-            style="@style/Widget.Doodle.TextView.ListItem.OverLine"
-            android:text="@string/about_github" />
-
-          <TextView
-            style="@style/Widget.Doodle.TextView.ListItem.Title"
-            android:text="@string/about_github_description" />
-
-        </LinearLayout>
-
-      </LinearLayout>
-
-      <LinearLayout
-        android:id="@+id/linear_about_translation"
-        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon.Clickable"
-        android:background="@drawable/ripple_list_item_bg">
-
-        <ImageView
-          style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-          android:src="@drawable/ic_round_translate"
-          tools:ignore="ContentDescription" />
-
-        <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
-
-          <TextView
-            style="@style/Widget.Doodle.TextView.ListItem.OverLine"
-            android:text="@string/about_translation" />
-
-          <TextView
-            style="@style/Widget.Doodle.TextView.ListItem.Title"
-            android:text="@string/about_translation_description" />
-
-        </LinearLayout>
-
-      </LinearLayout>
-
-      <TextView
-        style="@style/Widget.Doodle.TextView.Category"
-        android:text="@string/title_licenses" />
-
-      <LinearLayout
-        android:id="@+id/linear_about_license_jost"
-        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon.Clickable">
-
-        <ImageView
-          android:id="@+id/image_about_license_jost"
-          style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-          android:src="@drawable/ic_round_copyright_anim"
-          tools:ignore="ContentDescription" />
-
-        <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
-
-          <TextView
-            style="@style/Widget.Doodle.TextView.ListItem.Title"
-            android:text="@string/license_jost" />
-
-          <TextView
-            style="@style/Widget.Doodle.TextView.ListItem.Description"
-            android:text="@string/license_jost_author" />
-
-        </LinearLayout>
-
-      </LinearLayout>
-
-      <LinearLayout
-        android:id="@+id/linear_about_license_material_components"
-        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon.Clickable">
-
-        <ImageView
-          android:id="@+id/image_about_license_material_components"
-          style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-          android:src="@drawable/ic_round_copyright_anim"
-          tools:ignore="ContentDescription" />
-
-        <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
-
-          <TextView
-            style="@style/Widget.Doodle.TextView.ListItem.Title"
-            android:text="@string/license_material_components" />
-
-          <TextView
-            style="@style/Widget.Doodle.TextView.ListItem.Description"
-            android:text="@string/license_author_google" />
-
-        </LinearLayout>
-
-      </LinearLayout>
-
-      <LinearLayout
-        android:id="@+id/linear_about_license_material_icons"
-        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon.Clickable">
-
-        <ImageView
-          android:id="@+id/image_about_license_material_icons"
-          style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-          android:src="@drawable/ic_round_copyright_anim"
-          tools:ignore="ContentDescription" />
-
-        <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
-
-          <TextView
-            style="@style/Widget.Doodle.TextView.ListItem.Title"
-            android:text="@string/license_material_icons" />
-
-          <TextView
-            style="@style/Widget.Doodle.TextView.ListItem.Description"
-            android:text="@string/license_author_google" />
-
-        </LinearLayout>
-
-      </LinearLayout>
-
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
   </androidx.core.widget.NestedScrollView>
 

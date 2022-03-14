@@ -43,224 +43,234 @@
     android:layout_height="match_parent"
     android:layout_marginTop="?attr/actionBarSize">
 
-    <LinearLayout
-      android:id="@+id/linear_other_container"
+    <androidx.constraintlayout.widget.ConstraintLayout
       android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:paddingTop="8dp"
-      android:paddingBottom="8dp"
-      android:orientation="vertical">
+      android:layout_height="wrap_content">
 
       <LinearLayout
-        android:id="@+id/linear_other_language"
-        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon.Clickable">
+        android:id="@+id/linear_other_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_max="@dimen/max_content_width"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
-        <ImageView
-          android:id="@+id/image_other_language"
-          style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-          android:src="@drawable/ic_round_language_anim"
-          tools:ignore="ContentDescription" />
+        <LinearLayout
+          android:id="@+id/linear_other_language"
+          style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon.Clickable">
 
-        <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
+          <ImageView
+            android:id="@+id/image_other_language"
+            style="@style/Widget.Doodle.ImageView.ListItem.Icon"
+            android:src="@drawable/ic_round_language_anim"
+            tools:ignore="ContentDescription" />
 
-          <TextView
-            style="@style/Widget.Doodle.TextView.ListItem.Title"
-            android:text="@string/other_language" />
+          <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
 
-          <TextView
-            android:id="@+id/text_other_language"
-            style="@style/Widget.Doodle.TextView.ListItem.Description"
-            android:text="@string/other_language_system" />
+            <TextView
+              style="@style/Widget.Doodle.TextView.ListItem.Title"
+              android:text="@string/other_language" />
+
+            <TextView
+              android:id="@+id/text_other_language"
+              style="@style/Widget.Doodle.TextView.ListItem.Description"
+              android:text="@string/other_language_system" />
+
+          </LinearLayout>
 
         </LinearLayout>
 
-      </LinearLayout>
+        <LinearLayout
+          style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon"
+          android:paddingTop="12dp"
+          android:paddingBottom="0dp"
+          android:paddingStart="16dp"
+          android:paddingEnd="0dp">
 
-      <LinearLayout
-        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon"
-        android:paddingTop="12dp"
-        android:paddingBottom="0dp"
-        android:paddingStart="16dp"
-        android:paddingEnd="0dp">
+          <ImageView
+            android:id="@+id/image_other_theme"
+            style="@style/Widget.Doodle.ImageView.ListItem.Icon"
+            android:layout_marginEnd="32dp"
+            android:src="@drawable/ic_round_palette_anim"
+            tools:ignore="ContentDescription" />
 
-        <ImageView
-          android:id="@+id/image_other_theme"
-          style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-          android:layout_marginEnd="32dp"
-          android:src="@drawable/ic_round_palette_anim"
-          tools:ignore="ContentDescription" />
+          <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">
 
-        <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">
+            <TextView
+              style="@style/Widget.Doodle.TextView.ListItem.Title"
+              android:text="@string/other_theme"
+              android:paddingStart="0dp"
+              android:paddingEnd="16dp"/>
+
+            <TextView
+              android:id="@+id/text_appearance_colors_description"
+              style="@style/Widget.Doodle.TextView.ListItem.Description"
+              android:text="@string/other_theme_description"
+              android:paddingStart="0dp"
+              android:paddingEnd="16dp"/>
+
+            <HorizontalScrollView
+              android:id="@+id/scroll_horiz_other_theme"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:scrollbars="none"
+              android:overScrollMode="ifContentScrolls">
+
+              <LinearLayout
+                android:id="@+id/linear_other_theme_container"
+                style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingStart="0dp"
+                android:paddingEnd="12dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp" />
+
+            </HorizontalScrollView>
+
+            <com.google.android.material.button.MaterialButtonToggleGroup
+              android:id="@+id/toggle_other_theme"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginBottom="8dp"
+              android:layout_marginEnd="16dp"
+              app:singleSelection="true"
+              app:selectionRequired="true">
+
+              <Button
+                android:id="@+id/button_other_theme_auto"
+                style="@style/Widget.Doodle.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/other_theme_auto" />
+
+              <Button
+                android:id="@+id/button_other_theme_light"
+                style="@style/Widget.Doodle.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/other_theme_light" />
+
+              <Button
+                android:id="@+id/button_other_theme_dark"
+                style="@style/Widget.Doodle.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/other_theme_dark" />
+
+            </com.google.android.material.button.MaterialButtonToggleGroup>
+
+          </LinearLayout>
+
+        </LinearLayout>
+
+        <com.google.android.material.card.MaterialCardView
+          android:id="@+id/card_other_gpu"
+          style="@style/Widget.Doodle.Card.Text"
+          android:layout_marginTop="8dp">
 
           <TextView
-            style="@style/Widget.Doodle.TextView.ListItem.Title"
-            android:text="@string/other_theme"
-            android:paddingStart="0dp"
-            android:paddingEnd="16dp"/>
-
-          <TextView
-            android:id="@+id/text_appearance_colors_description"
-            style="@style/Widget.Doodle.TextView.ListItem.Description"
-            android:text="@string/other_theme_description"
-            android:paddingStart="0dp"
-            android:paddingEnd="16dp"/>
-
-          <HorizontalScrollView
-            android:id="@+id/scroll_horiz_other_theme"
+            style="@style/Widget.Doodle.TextView.Paragraph"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:scrollbars="none"
-            android:overScrollMode="ifContentScrolls">
+            android:text="@string/other_gpu_info" />
 
-            <LinearLayout
-              android:id="@+id/linear_other_theme_container"
-              style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:orientation="horizontal"
-              android:paddingStart="0dp"
-              android:paddingEnd="12dp"
-              android:paddingTop="8dp"
-              android:paddingBottom="8dp" />
+        </com.google.android.material.card.MaterialCardView>
 
-          </HorizontalScrollView>
+        <LinearLayout
+          android:id="@+id/linear_other_gpu"
+          style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable">
 
-          <com.google.android.material.button.MaterialButtonToggleGroup
-            android:id="@+id/toggle_other_theme"
+          <ImageView
+            android:id="@+id/image_other_gpu"
+            style="@style/Widget.Doodle.ImageView.ListItem.Icon.Colored"
+            android:src="@drawable/ic_round_memory"
+            tools:ignore="ContentDescription" />
+
+          <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">
+
+            <TextView
+              style="@style/Widget.Doodle.TextView.ListItem.Title"
+              android:text="@string/other_gpu" />
+
+            <TextView
+              style="@style/Widget.Doodle.TextView.ListItem.Description"
+              android:text="@string/other_gpu_description" />
+
+          </LinearLayout>
+
+          <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/switch_other_gpu"
+            style="@style/Widget.Doodle.Switch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="16dp"
-            app:singleSelection="true"
-            app:selectionRequired="true">
+            android:layout_marginStart="16dp" />
 
-            <Button
-              android:id="@+id/button_other_theme_auto"
-              style="@style/Widget.Doodle.Button.OutlinedButton"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:text="@string/other_theme_auto" />
+        </LinearLayout>
 
-            <Button
-              android:id="@+id/button_other_theme_light"
-              style="@style/Widget.Doodle.Button.OutlinedButton"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:text="@string/other_theme_light" />
+        <LinearLayout
+          android:id="@+id/linear_other_launcher"
+          style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable">
 
-            <Button
-              android:id="@+id/button_other_theme_dark"
-              style="@style/Widget.Doodle.Button.OutlinedButton"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:text="@string/other_theme_dark" />
+          <ImageView
+            android:id="@+id/image_other_launcher"
+            style="@style/Widget.Doodle.ImageView.ListItem.Icon"
+            android:src="@drawable/ic_round_visibility_off"
+            tools:ignore="ContentDescription" />
 
-          </com.google.android.material.button.MaterialButtonToggleGroup>
+          <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">
+
+            <TextView
+              style="@style/Widget.Doodle.TextView.ListItem.Title"
+              android:text="@string/other_launcher" />
+
+            <TextView
+              style="@style/Widget.Doodle.TextView.ListItem.Description"
+              android:text="@string/other_launcher_description" />
+
+          </LinearLayout>
+
+          <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/switch_other_launcher"
+            style="@style/Widget.Doodle.Switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+          android:id="@+id/linear_other_reset"
+          style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon.Clickable">
+
+          <ImageView
+            android:id="@+id/image_other_reset"
+            style="@style/Widget.Doodle.ImageView.ListItem.Icon"
+            android:src="@drawable/ic_round_settings_backup_restore_anim"
+            tools:ignore="ContentDescription" />
+
+          <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
+
+            <TextView
+              style="@style/Widget.Doodle.TextView.ListItem.Title"
+              android:text="@string/other_reset" />
+
+            <TextView
+              style="@style/Widget.Doodle.TextView.ListItem.Description"
+              android:text="@string/other_reset_description" />
+
+          </LinearLayout>
 
         </LinearLayout>
 
       </LinearLayout>
 
-      <com.google.android.material.card.MaterialCardView
-        android:id="@+id/card_other_gpu"
-        style="@style/Widget.Doodle.Card.Text"
-        android:layout_marginTop="8dp">
-
-        <TextView
-          style="@style/Widget.Doodle.TextView.Paragraph"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:text="@string/other_gpu_info" />
-
-      </com.google.android.material.card.MaterialCardView>
-
-      <LinearLayout
-        android:id="@+id/linear_other_gpu"
-        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable">
-
-        <ImageView
-          android:id="@+id/image_other_gpu"
-          style="@style/Widget.Doodle.ImageView.ListItem.Icon.Colored"
-          android:src="@drawable/ic_round_memory"
-          tools:ignore="ContentDescription" />
-
-        <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">
-
-          <TextView
-            style="@style/Widget.Doodle.TextView.ListItem.Title"
-            android:text="@string/other_gpu" />
-
-          <TextView
-            style="@style/Widget.Doodle.TextView.ListItem.Description"
-            android:text="@string/other_gpu_description" />
-
-        </LinearLayout>
-
-        <com.google.android.material.switchmaterial.SwitchMaterial
-          android:id="@+id/switch_other_gpu"
-          style="@style/Widget.Doodle.Switch"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_marginStart="16dp" />
-
-      </LinearLayout>
-
-      <LinearLayout
-        android:id="@+id/linear_other_launcher"
-        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable">
-
-        <ImageView
-          android:id="@+id/image_other_launcher"
-          style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-          android:src="@drawable/ic_round_visibility_off"
-          tools:ignore="ContentDescription" />
-
-        <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">
-
-          <TextView
-            style="@style/Widget.Doodle.TextView.ListItem.Title"
-            android:text="@string/other_launcher" />
-
-          <TextView
-            style="@style/Widget.Doodle.TextView.ListItem.Description"
-            android:text="@string/other_launcher_description" />
-
-        </LinearLayout>
-
-        <com.google.android.material.switchmaterial.SwitchMaterial
-          android:id="@+id/switch_other_launcher"
-          style="@style/Widget.Doodle.Switch"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_marginStart="16dp" />
-
-      </LinearLayout>
-
-      <LinearLayout
-        android:id="@+id/linear_other_reset"
-        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon.Clickable">
-
-        <ImageView
-          android:id="@+id/image_other_reset"
-          style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-          android:src="@drawable/ic_round_settings_backup_restore_anim"
-          tools:ignore="ContentDescription" />
-
-        <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
-
-          <TextView
-            style="@style/Widget.Doodle.TextView.ListItem.Title"
-            android:text="@string/other_reset" />
-
-          <TextView
-            style="@style/Widget.Doodle.TextView.ListItem.Description"
-            android:text="@string/other_reset_description" />
-
-        </LinearLayout>
-
-      </LinearLayout>
-
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
   </androidx.core.widget.NestedScrollView>
 

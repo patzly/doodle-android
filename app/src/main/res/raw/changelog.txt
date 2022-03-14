@@ -2,7 +2,7 @@
 - New: clearly yellow app color theme
 - Improved: new help dialog accessible from top right menus
 - Improved: simplified night mode option in appearance settings
-- Improved: dialog appearance on large screens
+- Improved: layout and dialog appearance on large screens
 - Improved: workaround for MIUI issue replaced by info in help dialog, since workaround didn't work
 - Improved: app color theme selection
 - Fixed: potential solution for blank settings pages

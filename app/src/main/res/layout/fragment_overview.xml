@@ -101,200 +101,210 @@
     android:layout_height="match_parent"
     android:layout_marginTop="?attr/actionBarSize">
 
-    <LinearLayout
-      android:id="@+id/linear_overview_container"
+    <androidx.constraintlayout.widget.ConstraintLayout
       android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:paddingTop="16dp"
-      android:paddingBottom="8dp"
-      android:orientation="vertical">
-
-      <com.google.android.material.card.MaterialCardView
-        android:id="@+id/card_overview_info"
-        style="@style/Widget.Doodle.Card.Text">
-
-        <TextView
-          style="@style/Widget.Doodle.TextView.Paragraph"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:textColor="?attr/colorOnSurfaceVariant"
-          android:text="@string/wallpaper_description" />
-
-      </com.google.android.material.card.MaterialCardView>
-
-      <com.google.android.material.card.MaterialCardView
-        android:id="@+id/card_overview_touch_wiz"
-        style="@style/Widget.Doodle.Card.Text"
-        android:visibility="gone">
-
-        <TextView
-          style="@style/Widget.Doodle.TextView.Paragraph"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:text="@string/parallax_touch_wiz" />
-
-      </com.google.android.material.card.MaterialCardView>
-
-      <com.google.android.material.card.MaterialCardView
-        android:id="@+id/card_overview_gpu"
-        style="@style/Widget.Doodle.Card.Text"
-        android:visibility="gone">
-
-        <TextView
-          style="@style/Widget.Doodle.TextView.Paragraph"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:text="@string/other_gpu_info" />
-
-      </com.google.android.material.card.MaterialCardView>
+      android:layout_height="wrap_content">
 
       <LinearLayout
-        android:id="@+id/linear_overview_appearance"
-        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon.Clickable"
-        android:layout_marginTop="8dp">
+        android:id="@+id/linear_overview_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingTop="16dp"
+        android:paddingBottom="8dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_max="@dimen/max_content_width"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
-        <ImageView
-          android:id="@+id/image_overview_appearance"
-          style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-          android:src="@drawable/ic_round_palette_anim"
-          tools:ignore="ContentDescription" />
-
-        <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">
+        <com.google.android.material.card.MaterialCardView
+          android:id="@+id/card_overview_info"
+          style="@style/Widget.Doodle.Card.Text">
 
           <TextView
-            style="@style/Widget.Doodle.TextView.ListItem.Title"
-            android:text="@string/appearance_title" />
+            style="@style/Widget.Doodle.TextView.Paragraph"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="?attr/colorOnSurfaceVariant"
+            android:text="@string/wallpaper_description" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+          android:id="@+id/card_overview_touch_wiz"
+          style="@style/Widget.Doodle.Card.Text"
+          android:visibility="gone">
 
           <TextView
-            style="@style/Widget.Doodle.TextView.ListItem.Description"
-            android:text="@string/appearance_description" />
+            style="@style/Widget.Doodle.TextView.Paragraph"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/parallax_touch_wiz" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+          android:id="@+id/card_overview_gpu"
+          style="@style/Widget.Doodle.Card.Text"
+          android:visibility="gone">
+
+          <TextView
+            style="@style/Widget.Doodle.TextView.Paragraph"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/other_gpu_info" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <LinearLayout
+          android:id="@+id/linear_overview_appearance"
+          style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon.Clickable"
+          android:layout_marginTop="8dp">
+
+          <ImageView
+            android:id="@+id/image_overview_appearance"
+            style="@style/Widget.Doodle.ImageView.ListItem.Icon"
+            android:src="@drawable/ic_round_palette_anim"
+            tools:ignore="ContentDescription" />
+
+          <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">
+
+            <TextView
+              style="@style/Widget.Doodle.TextView.ListItem.Title"
+              android:text="@string/appearance_title" />
+
+            <TextView
+              style="@style/Widget.Doodle.TextView.ListItem.Description"
+              android:text="@string/appearance_description" />
+
+          </LinearLayout>
+
+          <ImageView
+            style="@style/Widget.Doodle.ImageView.ListItem.Icon.End"
+            android:src="@drawable/ic_round_navigate_next"
+            tools:ignore="ContentDescription" />
 
         </LinearLayout>
 
-        <ImageView
-          style="@style/Widget.Doodle.ImageView.ListItem.Icon.End"
-          android:src="@drawable/ic_round_navigate_next"
-          tools:ignore="ContentDescription" />
+        <LinearLayout
+          android:id="@+id/linear_overview_parallax"
+          style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon.Clickable">
 
-      </LinearLayout>
+          <ImageView
+            android:id="@+id/image_overview_parallax"
+            style="@style/Widget.Doodle.ImageView.ListItem.Icon"
+            android:src="@drawable/ic_round_swap_horiz_anim"
+            tools:ignore="ContentDescription" />
 
-      <LinearLayout
-        android:id="@+id/linear_overview_parallax"
-        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon.Clickable">
+          <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">
 
-        <ImageView
-          android:id="@+id/image_overview_parallax"
-          style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-          android:src="@drawable/ic_round_swap_horiz_anim"
-          tools:ignore="ContentDescription" />
+            <TextView
+              style="@style/Widget.Doodle.TextView.ListItem.Title"
+              android:text="@string/parallax_title" />
 
-        <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">
+            <TextView
+              style="@style/Widget.Doodle.TextView.ListItem.Description"
+              android:text="@string/parallax_description" />
 
-          <TextView
-            style="@style/Widget.Doodle.TextView.ListItem.Title"
-            android:text="@string/parallax_title" />
+          </LinearLayout>
 
-          <TextView
-            style="@style/Widget.Doodle.TextView.ListItem.Description"
-            android:text="@string/parallax_description" />
-
-        </LinearLayout>
-
-        <ImageView
-          style="@style/Widget.Doodle.ImageView.ListItem.Icon.End"
-          android:src="@drawable/ic_round_navigate_next"
-          tools:ignore="ContentDescription" />
-
-      </LinearLayout>
-
-      <LinearLayout
-        android:id="@+id/linear_overview_size"
-        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon.Clickable">
-
-        <ImageView
-          android:id="@+id/image_overview_size"
-          style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-          android:src="@drawable/ic_round_filter_center_focus_anim"
-          tools:ignore="ContentDescription" />
-
-        <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">
-
-          <TextView
-            style="@style/Widget.Doodle.TextView.ListItem.Title"
-            android:text="@string/size_title" />
-
-          <TextView
-            style="@style/Widget.Doodle.TextView.ListItem.Description"
-            android:text="@string/size_description" />
+          <ImageView
+            style="@style/Widget.Doodle.ImageView.ListItem.Icon.End"
+            android:src="@drawable/ic_round_navigate_next"
+            tools:ignore="ContentDescription" />
 
         </LinearLayout>
 
-        <ImageView
-          style="@style/Widget.Doodle.ImageView.ListItem.Icon.End"
-          android:src="@drawable/ic_round_navigate_next"
-          tools:ignore="ContentDescription" />
+        <LinearLayout
+          android:id="@+id/linear_overview_size"
+          style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon.Clickable">
 
-      </LinearLayout>
+          <ImageView
+            android:id="@+id/image_overview_size"
+            style="@style/Widget.Doodle.ImageView.ListItem.Icon"
+            android:src="@drawable/ic_round_filter_center_focus_anim"
+            tools:ignore="ContentDescription" />
 
-      <LinearLayout
-        android:id="@+id/linear_overview_other"
-        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon.Clickable">
+          <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">
 
-        <ImageView
-          android:id="@+id/image_overview_other"
-          style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-          android:src="@drawable/ic_round_settings"
-          tools:ignore="ContentDescription" />
+            <TextView
+              style="@style/Widget.Doodle.TextView.ListItem.Title"
+              android:text="@string/size_title" />
 
-        <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">
+            <TextView
+              style="@style/Widget.Doodle.TextView.ListItem.Description"
+              android:text="@string/size_description" />
 
-          <TextView
-            style="@style/Widget.Doodle.TextView.ListItem.Title"
-            android:text="@string/other_title" />
+          </LinearLayout>
 
-          <TextView
-            style="@style/Widget.Doodle.TextView.ListItem.Description"
-            android:text="@string/other_description" />
-
-        </LinearLayout>
-
-        <ImageView
-          style="@style/Widget.Doodle.ImageView.ListItem.Icon.End"
-          android:src="@drawable/ic_round_navigate_next"
-          tools:ignore="ContentDescription" />
-
-      </LinearLayout>
-
-      <LinearLayout
-        android:id="@+id/linear_overview_about"
-        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon.Clickable">
-
-        <ImageView
-          android:id="@+id/image_overview_about"
-          style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-          android:src="@drawable/ic_round_info_outline_anim"
-          tools:ignore="ContentDescription" />
-
-        <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">
-
-          <TextView
-            style="@style/Widget.Doodle.TextView.ListItem.Title"
-            android:text="@string/about_title" />
-
-          <TextView
-            style="@style/Widget.Doodle.TextView.ListItem.Description"
-            android:text="@string/about_description" />
+          <ImageView
+            style="@style/Widget.Doodle.ImageView.ListItem.Icon.End"
+            android:src="@drawable/ic_round_navigate_next"
+            tools:ignore="ContentDescription" />
 
         </LinearLayout>
 
-        <ImageView
-          style="@style/Widget.Doodle.ImageView.ListItem.Icon.End"
-          android:src="@drawable/ic_round_navigate_next"
-          tools:ignore="ContentDescription" />
+        <LinearLayout
+          android:id="@+id/linear_overview_other"
+          style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon.Clickable">
+
+          <ImageView
+            android:id="@+id/image_overview_other"
+            style="@style/Widget.Doodle.ImageView.ListItem.Icon"
+            android:src="@drawable/ic_round_settings"
+            tools:ignore="ContentDescription" />
+
+          <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">
+
+            <TextView
+              style="@style/Widget.Doodle.TextView.ListItem.Title"
+              android:text="@string/other_title" />
+
+            <TextView
+              style="@style/Widget.Doodle.TextView.ListItem.Description"
+              android:text="@string/other_description" />
+
+          </LinearLayout>
+
+          <ImageView
+            style="@style/Widget.Doodle.ImageView.ListItem.Icon.End"
+            android:src="@drawable/ic_round_navigate_next"
+            tools:ignore="ContentDescription" />
+
+        </LinearLayout>
+
+        <LinearLayout
+          android:id="@+id/linear_overview_about"
+          style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon.Clickable">
+
+          <ImageView
+            android:id="@+id/image_overview_about"
+            style="@style/Widget.Doodle.ImageView.ListItem.Icon"
+            android:src="@drawable/ic_round_info_outline_anim"
+            tools:ignore="ContentDescription" />
+
+          <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">
+
+            <TextView
+              style="@style/Widget.Doodle.TextView.ListItem.Title"
+              android:text="@string/about_title" />
+
+            <TextView
+              style="@style/Widget.Doodle.TextView.ListItem.Description"
+              android:text="@string/about_description" />
+
+          </LinearLayout>
+
+          <ImageView
+            style="@style/Widget.Doodle.ImageView.ListItem.Icon.End"
+            android:src="@drawable/ic_round_navigate_next"
+            tools:ignore="ContentDescription" />
+
+        </LinearLayout>
 
       </LinearLayout>
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
   </androidx.core.widget.NestedScrollView>
 

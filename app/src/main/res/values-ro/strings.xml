@@ -31,6 +31,9 @@
   <string name="title_feedback">Păreri</string>
   <string name="title_licenses">Licențe open source</string>
 
+  <!-- LABELS -->
+
+  <string name="label_ms">%1$sms</string>
   <string name="label_degrees">%1$s grade</string>
 
   <!-- ACTIONS -->
@@ -45,6 +48,9 @@
   <string name="action_continue">Continuă</string>
   <string name="action_open_app_info">Deschide informații despre aplicație</string>
   <string name="action_set">Setează wallpaper-ul</string>
+  <string name="action_set_directly">Setează direct</string>
+  <string name="action_open_picker">Deschide wallpaper picker</string>
+  <string name="action_help">Ajutor</string>
   <string name="action_send_feedback">Trimite-ne părerea ta</string>
   <string name="action_share">Distribuie</string>
   <string name="action_share_description">Spune-le amicilor tăi despre Doodle</string>
@@ -67,19 +73,23 @@
   <string name="appearance_variant">Variante</string>
   <string name="appearance_night_mode">Modul de noapte</string>
   <string name="appearance_night_mode_description">Doar culori întunecate</string>
+  <string name="appearance_night_mode_on">Pornit</string>
+  <string name="appearance_night_mode_off">Oprit</string>
   <string name="appearance_follow_system">Urmărește tema sistemului</string>
   <string name="appearance_follow_system_description">Adoptează tema device-ului</string>
   <string name="appearance_white_text">Forțează textul să fie alb</string>
   <string name="appearance_white_text_description">Poate afecta lizibilitatea</string>
-  <string name="appearance_random">Design wallpaper la întâmplare</string>
-  <string name="appearance_random_description">De fiecare dată când ecranul este oprit</string>
+  <string name="appearance_colors_category">Culori</string>
   <string name="appearance_colors">Culori extrase</string>
   <string name="appearance_colors_description">Folosit pentru calcularea contrastului textului</string>
+  <string name="appearance_colors_description_dynamic">Folosit de motorul de tematică al sistemului</string>
   <string name="appearance_colors_primary">Alege culoarea primară</string>
   <string name="appearance_colors_secondary">Alege culoarea secundară</string>
   <string name="appearance_colors_tertiary">Alegeți culoarea terțiară</string>
   <string name="appearance_colors_info">Pentru device-urile fără suport de culori dinamice (Android 11 sau mai mic), numai culoarea primară este utilizată pentru a calcula contrastul textului din launcher și a tentei din fundalul aplicațiilor recente.</string>
   <string name="appearance_colors_info_dynamic">Pentru device-urile cu Android 12 sau mai mare cu suport pentru culori dinamice, sunt trei culori selectate automat create de system-ide color theme.</string>
+  <string name="appearance_random">Design wallpaper la întâmplare</string>
+  <string name="appearance_random_description">De fiecare dată când ecranul este oprit</string>
 
   <!-- PARALLAX -->
 
@@ -89,6 +99,8 @@
   <string name="parallax_intensity">Puterea efectului parallax</string>
   <string name="parallax_intensity_description">Offset orizontal la glisarea paginii și intensitatea efectului de înclinare</string>
   <string name="parallax_none">Nimic</string>
+  <string name="parallax_swipe_power_save">Respectă economisitul de baterie</string>
+  <string name="parallax_swipe_power_save_description">Întrerupeți animația de glisare a paginii când economisirea bateriei este activată</string>
   <string name="parallax_category_tilt">Efect tilt</string>
   <string name="parallax_tilt">Mișcare la înclinarea device-ului</string>
   <string name="parallax_tilt_description">Consumă mai multă baterie</string>
@@ -98,6 +110,8 @@
   <string name="parallax_damping_description">Scade pentru o fluiditate mai mare</string>
   <string name="parallax_threshold">Pragul de mișcare</string>
   <string name="parallax_threshold_description">Crește pentru a întrerupe redarea continuă în ciuda mișcării mici</string>
+  <string name="parallax_tilt_power_save_description">Întrerupeți efectul de înclinare când economisirea bateriei este activată</string>
+
   <!-- SIZE -->
 
   <string name="size_title">Mărime forme</string>
@@ -110,9 +124,16 @@
   <string name="size_zoom">Intensitate zoom</string>
   <string name="size_zoom_description">Când zoom-ul este mărit, camera face zoom out mai mult</string>
   <string name="size_zoom_rotation">Rotește unele forme în timpul zoom-ului</string>
+  <string name="size_zoom_rotation_description">Rotația maximă în grade</string>
+  <string name="size_zoom_power_save_description">Întrerupeți animația de zoom a paginii când economisirea bateriei este activată</string>
+  <string name="size_zoom_launcher">Zoom out când deschideți setările rapide sau app drawer-ul</string>
+  <string name="size_zoom_launcher_description">Ar putea fi indisponibil pe unele dispozitive</string>
   <string name="size_zoom_damping">Amortizarea animației</string>
+  <string name="size_zoom_damping_description">Activează și scade penru un zoom persistent</string>
   <string name="size_zoom_system">Folosește efectul de zoom al sistemului</string>
+  <string name="size_zoom_system_description">S-ar putea să remedieze animația cu zoom sacadat când efectul de înclinare este activat, disponibil numai pe unele dispozitive</string>
   <string name="size_zoom_unlock">Zoom out în ecranul de pornire</string>
+  <string name="size_zoom_unlock_description">Poate fi sacadat dacă efectul de înclinare este activat</string>
   <string name="size_zoom_duration">Deblochează durata zoom-ului</string>
   <string name="size_zoom_duration_description">Scade pentru o animație mai rapidă</string>
 
@@ -121,16 +142,22 @@
   <string name="other_title">Alte opțiuni</string>
   <string name="other_description">Randare, limbă și resetare</string>
   <string name="other_language">Limbă</string>
+  <string name="other_language_description">Multe mulțumiri către toți voluntarii de pe Transifex! Vă rog vizitați proiectul pe GitHub pentru a vedea cum să ajutați aplicația Doodle Live Wallpaper pentru limba dumneavoastră.</string>
+  <string name="other_language_system">Implicit din sistem: %1$s</string>
   <string name="other_language_not_available">Nu este valabil</string>
   <string name="other_gpu">Accelerare hardware</string>
   <string name="other_gpu_description">Oprește dacă wallpaper-ul dă crash</string>
+  <string name="other_gpu_info">Accelerația hardware este disponibilă pentru Doodle începând cu Android 8. Prin urmare, animațiile de fundal ar putea fi puțin sacadate</string>
   <string name="other_launcher">Ascunde iconița din launcher</string>
+  <string name="other_launcher_description">Setările vor fi accesibile în wallpaper picker-ul sistemului</string>
   <string name="other_theme">Aplică culoarea temei</string>
   <string name="other_theme_description">Încearcă alt look</string>
   <string name="other_theme_auto">Automată</string>
   <string name="other_theme_light">Luminoasă</string>
   <string name="other_theme_dark">Întunecată</string>
   <string name="other_reset">Resetează toate setările</string>
+  <string name="other_reset_description">Face mai mult decât ar face dezinstalarea, deoarece preferințele sunt stocate într-un loc special, deoarece trebuie să fie accesibile direct după pornirea dispozitivului</string>
+
   <!-- ABOUT -->
 
   <string name="about_title">Despre</string>
@@ -143,10 +170,18 @@
   <string name="about_github_description">Codul sursă</string>
   <string name="about_translation_description">Ajută la traducerea Doodle</string>
 
+  <!-- MESSAGES -->
+
+  <string name="msg_feedback">O aplicație grozavă are nevoie de mult timp si feedback de la utilizatori.\n\nAveți vreun gând, comentariu sau întrebare pentru noi? Contactați-ne!\nÎn acest caz vom fi fericiți să vedem niște review-uri super în Magazinul Google Play.</string>
+  <string name="msg_share">Vedeți aici această aplicație de wallpapere: \nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
   <string name="msg_hide">Ascundeți iconița din launcher?</string>
   <string name="msg_random">Toate design-urile selectate vor fi folosite</string>
   <string name="msg_random_warning">Designul de fundal aleatoriu este încă activ!</string>
   <string name="msg_reset">Resetați toate setările?</string>
   <string name="msg_force_stop">Oprirea forțată este necesară pentru a aplica modificările</string>
+  <string name="msg_apply_colors">Culorile schunbate vor fi aplicate următoarea dată când porniți ecranul.</string>
+  <string name="msg_apply_changes">Pentru a aplica (eventual) opțiunile modificate, se recomandă repornirea serviciului de imagine de fundal.  Acest lucru nu se poate face automat.\nOpriți forțat Doodle-ul în setările sistemului și apoi aplicați Doodle-ul ca fundal din nou.</string>
+  <string name="msg_set_wallpaper">Dacă întâmpinați o problemă care întrerupe animația de fundal atunci când închideți această aplicație, alegeți selectorul de imagini de fundal al sistemului dvs. pentru a selecta Doodle.\nÎn caz contrar, îl puteți seta direct.</string>
   <string name="msg_preview_missing">A apărut o eroare, selectați manual wallpaper-ul Doodle Live</string>
+
   </resources>

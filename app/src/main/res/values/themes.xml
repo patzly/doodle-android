@@ -84,7 +84,7 @@
     <item name="colorOutline">@color/red_neutral_variant_50</item>
   </style>
 
-  <style name="Theme.Doodle.lime" parent="Theme.Doodle">
+  <style name="Theme.Doodle.Yellow" parent="Theme.Doodle">
     <item name="colorPrimary">@color/yellow_primary_40</item>
     <item name="colorOnPrimary">@color/white</item>
     <item name="colorPrimaryContainer">@color/yellow_primary_90</item>

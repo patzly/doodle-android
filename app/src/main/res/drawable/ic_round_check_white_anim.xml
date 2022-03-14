@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><!--
+<!--
   ~ This file is part of Doodle Android.
   ~
   ~ Doodle Android is free software: you can redistribute it and/or modify
@@ -17,25 +17,14 @@
   ~ Copyright (c) 2019-2022 by Patrick Zedler
   -->
 
-<layer-list
+<vector
+  android:autoMirrored="true"
+  android:width="42dp"
+  android:height="42dp"
+  android:viewportHeight="42"
+  android:viewportWidth="42"
   xmlns:android="http://schemas.android.com/apk/res/android">
-
-  <item
-    android:left="1dp"
-    android:right="1dp"
-    android:top="1dp"
-    android:bottom="1dp">
-    <shape android:shape="oval">
-      <solid android:color="#00000000" />
-      <size
-        android:width="48dp"
-        android:height="48dp" />
-    </shape>
-  </item>
-
-  <item
-    android:id="@+id/icon_selection_check"
-    android:gravity="center"
-    android:drawable="@drawable/ic_round_check_anim" />
-
-</layer-list>
+  <path
+    android:fillColor="#ffffff"
+    android:pathData="M18,25.17 L14.53,21.7c-0.39,-0.39 -1.02,-0.39 -1.41,0 -0.39,0.39 -0.39,1.02 0,1.41l4.18,4.18c0.39,0.39 1.02,0.39 1.41,0L29.29,16.71c0.39,-0.39 0.39,-1.02 0,-1.41 -0.39,-0.39 -1.02,-0.39 -1.41,0z" />
+</vector>

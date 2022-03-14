@@ -325,6 +325,7 @@ public class AppearanceFragment extends BaseFragment
         BaseWallpaper wallpaper = baseWallpapers[wallpaperIndex];
 
         SelectionCardView card = new SelectionCardView(activity);
+        card.setScrimEnabled(true);
         card.setCardImageResource(wallpaper.getThumbnailResId());
         card.setOnClickListener(v -> {
           if (randomWallpaper) {
@@ -459,6 +460,7 @@ public class AppearanceFragment extends BaseFragment
       } else {
         card = new SelectionCardView(activity);
       }
+      card.setScrimEnabled(true);
 
       if (sameCount) {
         ValueAnimator animator = ValueAnimator.ofArgb(
@@ -518,6 +520,7 @@ public class AppearanceFragment extends BaseFragment
     for (int i = 0; i < 3; i++) {
       final int iFinal = i;
       SelectionCardView card = new SelectionCardView(activity);
+      card.setScrimEnabled(true);
       card.setCardBackgroundColor(Color.BLACK);
       card.setOnClickListener(v -> {
         if (binding == null || currentWallpaper == null || currentVariant == null) {

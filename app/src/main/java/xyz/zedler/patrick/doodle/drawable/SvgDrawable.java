@@ -195,14 +195,10 @@ public class SvgDrawable {
       int screenWidth = SystemUiUtil.getDisplayWidth(context);
       int screenHeight = SystemUiUtil.getDisplayHeight(context);
       float displayWidth = Math.min(screenWidth, screenHeight);
-      Log.i(TAG, "getDefaultScale: displayWidth = " + displayWidth);
       float circleWidth = 300 * getPixelUnit(context);
-      Log.i(TAG, "getDefaultScale: circleWidth = " + circleWidth);
       float currentRatio = circleWidth / displayWidth;
-      Log.i(TAG, "getDefaultScale: currentRatio = " + currentRatio);
       float originalRatio = 0.2777f;
       float scale = (1 - (currentRatio / originalRatio)) + 1.2f;
-      Log.i(TAG, "getDefaultScale: scale = " + scale);
       return BigDecimal.valueOf(scale).setScale(
           1, BigDecimal.ROUND_HALF_DOWN
       ).floatValue();

@@ -69,9 +69,7 @@ public class SelectionCardView extends MaterialCardView {
     setStrokeWidth(0);
     setCheckable(true);
     setCheckedIconResource(R.drawable.shape_selection_check);
-    setCheckedIconTint(
-        ColorStateList.valueOf(ResUtil.getColorAttr(context, R.attr.colorOnPrimaryContainer))
-    );
+    setCheckedIconTint(null);
     setCheckedIconSize(innerSize);
     setCheckedIconMargin(outerPadding);
 
@@ -140,6 +138,17 @@ public class SelectionCardView extends MaterialCardView {
 
   public void setOuterCardBackgroundColor(int color) {
     super.setCardBackgroundColor(color);
+  }
+
+  public void setScrimEnabled(boolean enabled) {
+    setCheckedIconResource(
+        enabled ? R.drawable.shape_selection_check_scrim : R.drawable.shape_selection_check
+    );
+    if (!enabled) {
+      setCheckedIconTint(
+          ColorStateList.valueOf(ResUtil.getColorAttr(getContext(), R.attr.colorOnPrimaryContainer))
+      );
+    }
   }
 
   private ImageView getStroke() {

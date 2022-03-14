@@ -57,7 +57,7 @@ Translations which reached a completion level of 80% will be included in release
 
 ## License
 
-Copyright &copy; 2019-2021 Patrick Zedler. All rights reserved.
+Copyright &copy; 2019-2022 Patrick Zedler. All rights reserved.
 
 [GNU General Public License version 3](https://www.gnu.org/licenses/gpl.txt)
 

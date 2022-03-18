@@ -21,9 +21,6 @@
 
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
-  <string name="wallpaper_description">Fazla güç tüketmeyen, otomatik karanlık moda sahip rengarenk hareketli duvar kağıtları. Daha fazlasını öğrenmek için dokunun. </string>
-  <string name="wallpaper_description_picker">Ana ekranınızda sayfalar arası geçiş yaparken ve cihazınızın kilidini açarken yakınlaştırma ve paralaks efektleriyle harmanlanmış rengarenk şekiller topluluğunu keşfedin.\nDuvar kağıdını kendi stilinize uyacak şekilde kişiselleştirin.</string>
-
   <!-- TITLES -->
 
   <string name="title_info">Bilgi</string>
@@ -76,8 +73,6 @@
   <string name="appearance_follow_system_description">Cihaz temasını benimse</string>
   <string name="appearance_white_text">Beyaz yazıyı zorlamayı dene</string>
   <string name="appearance_white_text_description">Okunabilirliğe etkisi olabilir</string>
-  <string name="appearance_random">Rastgele duvar kağıdı tasarımı </string>
-  <string name="appearance_random_description">Ekran her kapandığında </string>
   <string name="appearance_colors">Çıkartılmış renkler</string>
   <string name="appearance_colors_description">Yazının kontrastını hesaplamada kullanılır</string>
   <string name="appearance_colors_description_dynamic">Sistemin tema motoru tarafından kullanılır</string>
@@ -86,6 +81,8 @@
   <string name="appearance_colors_tertiary">Üçüncül rengi seç</string>
   <string name="appearance_colors_info">Dinamik renk desteği bulunmayan cihazlarda (Android 11 ve altı) geçmiş uygulamalar ekranının arkaplanını renklendirmede ve başlatıcının yazı kontrastını hesaplamada sadece ana renk kullanılır.</string>
   <string name="appearance_colors_info_dynamic">Android 12 ya da üzeri ve dinamik renk desteğine sahip cihazlarda, sistem genelinde otomatik olarak bir renk teması oluşturmak için seçilen üç renk kullanılır.</string>
+  <string name="appearance_random">Rastgele duvar kağıdı tasarımı </string>
+  <string name="appearance_random_description">Ekran her kapandığında </string>
 
   <!-- PARALLAX -->
 
@@ -174,6 +171,5 @@
   <string name="msg_apply_changes">Değiştirilen seçenekleri (eninde sonunda) uygulamak için, çalışan duvar kağıdı hizmetinin yeniden başlatılması önerilir. Bu otomatik olarak yapılamaz.\nLütfen sistem ayarlarınızda Doodle\'ı zorla durdurun ve ardından Doodle\'ı duvar kağıdınız olarak tekrar uygulayın. </string>
   <string name="msg_set_wallpaper">Uygulamayı kapadığınızda arka plan animasyonunu bozan bir hata ile karşılaşırsanız, lütfen sisteminizin duvar kağıdı seçicisini Doodle olarak seçin.\nAksi halde duvar kağıdını doğrudan ayarlayabilirsiniz.</string>
   <string name="msg_preview_missing">Bir hata meydana geldi, lütfen Doodle Hareketli Duvar Kağıdını manuel olarak seçin </string>
-  <string name="msg_picker_missing">Duvar kağıdı seçicisini açamıyoruz, lütfen hareketli duvar kağıdı seçicisi kurup tekrar deneyin.</string>
 
   </resources>

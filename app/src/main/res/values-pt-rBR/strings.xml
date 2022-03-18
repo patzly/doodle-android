@@ -45,8 +45,6 @@
   <string name="action_continue">Continuar</string>
   <string name="action_open_app_info">Abrir informações do aplicativo</string>
   <string name="action_set">Definir papel de parede</string>
-  <string name="action_set_directly">Definir diretamente</string>
-  <string name="action_open_picker">Abrir seletor de papel de parede</string>
   <string name="action_send_feedback">Enviar comentários</string>
   <string name="action_share">Compartilhar</string>
   <string name="action_share_description">Conte aos seus amigos sobre o Doodle</string>

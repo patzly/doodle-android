@@ -21,9 +21,6 @@
 
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
-  <string name="wallpaper_description">Fondos de pantalla animados coloridos con modo oscuro automático y animaciones de bajo consumo. Toque para obtener más información.</string>
-  <string name="wallpaper_description_picker">Explora una colección colorida de formas, refinadas con suaves efectos de paralaje y zoom cuando pasas el dedo por las pantallas de inicio y desbloqueas el teléfono.\nPersonaliza el fondo de pantalla para que combine con tu propio estilo.</string>
-
   <!-- TITLES -->
 
   <string name="title_info">Información</string>
@@ -73,7 +70,6 @@
   <string name="appearance_colors_tertiary">Elegir color terceario</string>
   <string name="appearance_colors_info">En dispositivos sin soporte de color dinámico (Android 11 o inferior), solo se usa el color primario para calcular el contraste del texto del lanzador y teñir el fondo de la pantalla de aplicaciones recientes.</string>
   <string name="appearance_colors_info_dynamic">En dispositivos con Android 12 o superior y compatibilidad con colores dinámicos, los tres colores seleccionados se utilizan para crear automáticamente un tema de color en todo el sistema.</string>
-
   <string name="parallax_touch_wiz">Parece que su lanzador actual es Samsung TouchWiz, que no admite el desplazamiento en segundo plano. Prueba con un lanzador diferente para habilitar el efecto de paralaje si no tienes habilitada la opción del sensor de inclinación.\nPuedes ignorar esta advertencia si configuras otro lanzador como predeterminado.</string>
   <string name="parallax_intensity">Fuerza de paralaje</string>
   <string name="parallax_none">Ninguno</string>
@@ -124,6 +120,5 @@
   <string name="msg_apply_changes">Para aplicar (eventualmente) las opciones modificadas, se recomienda reiniciar el servicio de fondo de pantalla en ejecución.  Esto no se puede hacer automáticamente.  Fuerza la detención de Doodle en la configuración de tu sistema y luego vuelve a aplicar Doodle como fondo de pantalla.</string>
   <string name="msg_set_wallpaper">Si encuentra un problema que interrumpe la animación del fondo de pantalla al cerrar esta aplicación, elija el selector de fondo de pantalla de su sistema para seleccionar Doodle.  De lo contrario, puede configurarlo directamente.</string>
   <string name="msg_preview_missing">Se produjo un error, seleccione Doodle Live Wallpaper manualmente</string>
-  <string name="msg_picker_missing">No se puede abrir la selección de fondos de pantalla, instale un selector de fondos de pantalla en vivo y vuelva a intentarlo.</string>
 
   </resources>

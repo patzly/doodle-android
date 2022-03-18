@@ -22,6 +22,7 @@ package com.google.android.material.bottomsheet;
 import static android.view.View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR;
 import static com.google.android.material.color.MaterialColors.isColorLight;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
@@ -256,6 +257,7 @@ public class CustomBottomSheetDialog extends AppCompatDialog {
     return container;
   }
 
+  @SuppressLint("ClickableViewAccessibility")
   private View wrapInBottomSheet(
       int layoutResId, @Nullable View view, @Nullable ViewGroup.LayoutParams params) {
     ensureContainerAndBehavior();

@@ -94,6 +94,7 @@ public class MainActivity extends AppCompatActivity {
   private int bottomInset;
   private boolean runAsSuperClass;
 
+  @SuppressLint("AppBundleLocaleChanges")
   @Override
   protected void onCreate(Bundle savedInstanceState) {
 

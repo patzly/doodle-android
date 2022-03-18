@@ -21,9 +21,6 @@
 
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
-  <string name="wallpaper_description">Sfondi animati vivaci con tema scuro automatico e animazioni efficienti. Tocca per scoprire di più.</string>
-  <string name="wallpaper_description_picker">Esplora una svariata collezione di figure, rifinite con un delicato effetto parallax e zoom quando sblocchi il dispositvo e scorri nella schermata home.\nPersonalizza lo sfondo per abbinarsi al tuo stile.</string>
-
   <!-- TITLES -->
 
   <string name="title_info">Informazioni</string>
@@ -79,7 +76,6 @@
   <string name="appearance_colors_tertiary">Scegli il colore terziario</string>
   <string name="appearance_colors_info">Su dispositivi che non supportano colori dimamici (Android 11 o inferiore), solo il colore primario sarà usato per calcolare il contrasto delle scritte del launcher e la tinta dello sfondo nella schermata delle app recenti</string>
   <string name="appearance_colors_info_dynamic">Su dispositivi con Android 12 o maggiore, o che supportano i colori dinamici, i tre colori selezionati verranno usati automaticamente per creare un tema a livello di sistema</string>
-
   <!-- PARALLAX -->
 
   <string name="parallax_title">Parallax</string>

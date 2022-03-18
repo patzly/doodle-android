@@ -45,8 +45,6 @@
   <string name="action_continue">Continuă</string>
   <string name="action_open_app_info">Deschide informații despre aplicație</string>
   <string name="action_set">Setează wallpaper-ul</string>
-  <string name="action_set_directly">Setează direct</string>
-  <string name="action_open_picker">Deschide wallpaper picker</string>
   <string name="action_help">Ajutor</string>
   <string name="action_send_feedback">Trimite-ne părerea ta</string>
   <string name="action_share">Distribuie</string>

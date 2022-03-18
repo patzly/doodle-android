@@ -21,9 +21,6 @@
 
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
-  <string name="wallpaper_description">خلفيات متحركه ملونة مع الوضع المظلم التلقائي والرسوم المتحركة الموفرة للطاقة.  انقر لمعرفة المزيد.</string>
-  <string name="wallpaper_description_picker">استكشف مجموعة ملونة من الأشكال ، تم اختيارها من خلال اختلاف المنظر اللطيف وتأثيرات التكبير و التصغير عند التمرير عبر الشاشة الرئيسية وإلغاء قفل جهازك. و خصص الخلفية لتلائم أسلوبك الخاص.</string>
-
   <!-- TITLES -->
 
   <string name="title_info">معلومات</string>
@@ -74,8 +71,6 @@
   <string name="appearance_follow_system_description">اعتماد مظهر الجهاز</string>
   <string name="appearance_white_text">حاول جعل الخط أبيض</string>
   <string name="appearance_white_text_description">قد يؤثر على قابلية القراءة</string>
-  <string name="appearance_random">تصميم خلفية عشوائية</string>
-  <string name="appearance_random_description">في كل مرة يتم فيها إيقاف تشغيل الشاشة</string>
   <string name="appearance_colors">الألوان المستخرجة</string>
   <string name="appearance_colors_description">يستخدم لحساب تباين النص</string>
   <string name="appearance_colors_description_dynamic">يستخدمه محرك السمات الخاص بالنظام</string>
@@ -84,6 +79,8 @@
   <string name="appearance_colors_tertiary">اختر اللون الثالث</string>
   <string name="appearance_colors_info">على الأجهزة التي لا تدعم دعم الألوان الديناميكية (Android 11 أو أقل) ، يتم استخدام اللون الأساسي فقط لحساب تباين نص المشغل وتلوين خلفية شاشة التطبيقات الحديثة.</string>
   <string name="appearance_colors_info_dynamic">على الأجهزة التي تعمل بنظام Android 12 أو أعلى ودعم الألوان الديناميكية ، يتم استخدام الألوان الثلاثة المحددة لإنشاء سمة ألوان على مستوى النظام تلقائيًا.</string>
+  <string name="appearance_random">تصميم خلفية عشوائية</string>
+  <string name="appearance_random_description">في كل مرة يتم فيها إيقاف تشغيل الشاشة</string>
 
   <!-- PARALLAX -->
 
@@ -171,4 +168,5 @@
   <string name="msg_force_stop">الإيقاف الاجباري مطلوب لتطبيق التغييرات</string>
   <string name="msg_apply_changes">لتطبيق الخيارات التي تم تغييرها (في النهاية) ، يوصى بإعادة تشغيل خدمة الخلفية قيد التشغيل.  لا يمكن القيام بذلك تلقائيًا. \ n الرجاء فرض إيقاف رسومات الشعار المبتكرة في إعدادات النظام ثم تطبيق رسومات الشعار المبتكرة كخلفية للشاشة مرة أخرى.</string>
   <string name="msg_preview_missing">حدث خطأ ، يرجى تحديد Doodle Live Wallpaper يدويًا</string>
+
   </resources>

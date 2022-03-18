@@ -21,9 +21,6 @@
 
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
-  <string name="wallpaper_description">Barevné živé tapety s automatickým tmavým režimem a animacemi, které jsou šetrné k baterce telefonu. Tapněte a dozvíte se víc.</string>
-  <string name="wallpaper_description_picker">Prozkoumejte barevné shluky tvarů, vylepšené o jenmý parallax efekt a zoom když budete procházet skrze vaše domovské obrazovky a odemykat telefon.\nUpravte si tapetu, aby odpovídala plně vašemu stylu.</string>
-
   <!-- TITLES -->
 
   <string name="title_info">Informace</string>
@@ -76,8 +73,6 @@
   <string name="appearance_follow_system_description">Adaptovat se na barevný režim systému</string>
   <string name="appearance_white_text">Pokusit se vnutit bílý text</string>
   <string name="appearance_white_text_description">Může ovlivnit čitelnost</string>
-  <string name="appearance_random">Náhodný design tapety</string>
-  <string name="appearance_random_description">Pokaždé, když se vypne display</string>
   <string name="appearance_colors">Extrahované barvy</string>
   <string name="appearance_colors_description">Použité pro výpočet barevného kontrastu</string>
   <string name="appearance_colors_description_dynamic">Využívané pro nastavování barevného režimu</string>
@@ -86,6 +81,8 @@
   <string name="appearance_colors_tertiary">Vybrat doplňkovou barvu</string>
   <string name="appearance_colors_info">Na zařízeních bez možnosti využít dynamické barvy (verze Android 11 a níž), bude pro výpočet kontrastu textu a odstínu pozadí obrazovek pro aplikace využita pouze primární barva.</string>
   <string name="appearance_colors_info_dynamic">V zařízeních se systémem Android 12 nebo vyšším a podporou dynamických barev se tři vybrané barvy použijí k automatickému vytvoření celosystémového barevného motivu.</string>
+  <string name="appearance_random">Náhodný design tapety</string>
+  <string name="appearance_random_description">Pokaždé, když se vypne display</string>
 
   <!-- PARALLAX -->
 
@@ -179,6 +176,5 @@
   <string name="msg_apply_changes">Pro použití (případně) změněných možností se doporučuje restartovat spuštěnou službu tapety. To nelze provést automaticky.\nProsím, zastavte službu Doodle v nastavení systému a poté ji znovu použijte jako tapetu</string>
   <string name="msg_set_wallpaper">Pokud narazíte na problém, který přeruší animaci tapety při zavření této aplikace, zvolte prosím výběr tapety v systému a vyberte Doodle.\nJinak si ji můžete nastavit přímo.</string>
   <string name="msg_preview_missing">Došlo k chybě, nastave prosím Doodle Live Wallpaper manuálně</string>
-  <string name="msg_picker_missing">Nelze otevřít nástroj pro výběr tapet, nainstalujte si prosím nástroj pro výběr živých tapet a zkuste to znovu.</string>
 
   </resources>

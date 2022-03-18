@@ -112,7 +112,7 @@ public final class Constants {
         Arrays.asList(Constants.getAllWallpapers())
     );
 
-    public static final int PARALLAX = 1;
+    public static final int PARALLAX = 2;
     public static final boolean POWER_SAVE_SWIPE = false;
     public static final boolean TILT = false;
     public static final int REFRESH_RATE = 30000;

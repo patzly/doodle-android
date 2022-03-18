@@ -186,12 +186,14 @@
         <com.google.android.material.card.MaterialCardView
           android:id="@+id/card_other_gpu"
           style="@style/Widget.Doodle.Card.Text"
-          android:layout_marginTop="8dp">
+          android:layout_marginTop="8dp"
+          app:cardBackgroundColor="?attr/colorErrorContainer">
 
           <TextView
             style="@style/Widget.Doodle.TextView.Paragraph"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="?attr/colorOnErrorContainer"
             android:text="@string/other_gpu_info" />
 
         </com.google.android.material.card.MaterialCardView>

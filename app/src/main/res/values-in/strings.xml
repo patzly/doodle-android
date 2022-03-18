@@ -45,8 +45,6 @@
   <string name="action_continue">Lanjutkan</string>
   <string name="action_open_app_info">Buka info aplikasi</string>
   <string name="action_set">Atur wallpaper</string>
-  <string name="action_set_directly">Atur lansung</string>
-  <string name="action_open_picker">Buka pemilih wallpaper</string>
   <string name="action_send_feedback">Kirim masukan</string>
   <string name="action_share">Bagikan</string>
   <string name="action_share_description">Beri tahu teman-temanmu tentang Doodle</string>

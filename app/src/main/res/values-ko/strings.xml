@@ -45,8 +45,6 @@
   <string name="action_continue">계속</string>
   <string name="action_open_app_info">앱 정보 화면 열기</string>
   <string name="action_set">배경화면 설정</string>
-  <string name="action_set_directly">바로 설정하기</string>
-  <string name="action_open_picker">배경화면 선택기 열기</string>
   <string name="action_send_feedback">피드백 보내기</string>
   <string name="action_share">공유</string>
   <string name="action_share_description">Doodle에 대해 주변인들에게 알려주세요</string>

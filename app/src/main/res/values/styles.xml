@@ -82,14 +82,23 @@
   <!-- Button -->
 
   <style
-    name="Widget.Doodle.Button.UnelevatedButton"
+    name="Base.Doodle.Button.UnelevatedButton"
     parent="Widget.Material3.Button.UnelevatedButton">
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:layout_height">wrap_content</item>
+  </style>
+
+  <style
+    name="Widget.Doodle.Button.UnelevatedButton"
+    parent="Base.Doodle.Button.UnelevatedButton">
     <item name="android:fontFamily">@font/jost_medium</item>
   </style>
 
   <style
     name="Base.Doodle.Button.OutlinedButton"
     parent="Widget.Material3.Button.OutlinedButton">
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:layout_height">wrap_content</item>
     <item name="rippleColor">@color/selector_highlight</item>
   </style>
 
@@ -100,8 +109,16 @@
   </style>
 
   <style
-    name="Widget.Doodle.Button.TextButton"
+    name="Base.Doodle.Button.TextButton"
     parent="Widget.Material3.Button.TextButton">
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:fontFamily">@font/jost_medium</item>
+  </style>
+
+  <style
+    name="Widget.Doodle.Button.TextButton"
+    parent="Base.Doodle.Button.TextButton">
     <item name="android:fontFamily">@font/jost_medium</item>
   </style>
 

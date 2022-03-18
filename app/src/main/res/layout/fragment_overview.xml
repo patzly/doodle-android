@@ -120,15 +120,41 @@
         app:layout_constraintEnd_toEndOf="parent">
 
         <com.google.android.material.card.MaterialCardView
-          android:id="@+id/card_overview_info"
           style="@style/Widget.Doodle.Card.Text">
 
-          <TextView
-            style="@style/Widget.Doodle.TextView.Paragraph"
+          <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="?attr/colorOnSurfaceVariant"
-            android:text="@string/wallpaper_description" />
+            android:orientation="vertical">
+
+            <TextView
+              style="@style/Widget.Doodle.TextView.Paragraph"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginBottom="12dp"
+              android:textColor="?attr/colorOnSurfaceVariant"
+              android:text="@string/wallpaper_description" />
+
+            <LinearLayout
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:orientation="horizontal"
+              android:layout_gravity="center_horizontal">
+
+              <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_overview_info"
+                style="@style/Widget.Doodle.Button.UnelevatedButton"
+                android:text="@string/action_learn_more" />
+
+              <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_overview_help"
+                style="@style/Widget.Doodle.Button.UnelevatedButton"
+                android:layout_marginStart="8dp"
+                android:text="@string/action_help" />
+
+            </LinearLayout>
+
+          </LinearLayout>
 
         </com.google.android.material.card.MaterialCardView>
 

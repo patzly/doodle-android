@@ -32,7 +32,7 @@
 
   <style
     name="Widget.Doodle.Button.UnelevatedButton"
-    parent="Widget.Material3.Button.UnelevatedButton">
+    parent="Base.Doodle.Button.UnelevatedButton">
     <item name="android:textStyle">bold</item>
   </style>
 
@@ -44,7 +44,7 @@
 
   <style
     name="Widget.Doodle.Button.TextButton"
-    parent="Widget.Material3.Button.TextButton">
+    parent="Base.Doodle.Button.TextButton">
     <item name="android:textStyle">bold</item>
   </style>
 

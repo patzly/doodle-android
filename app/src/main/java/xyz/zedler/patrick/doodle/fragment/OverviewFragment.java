@@ -22,6 +22,7 @@ package xyz.zedler.patrick.doodle.fragment;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
@@ -85,6 +86,10 @@ public class OverviewFragment extends BaseFragment implements OnClickListener {
       performHapticClick();
       return true;
     });
+    MenuItem itemHelp = binding.toolbarOverview.getMenu().findItem(R.id.action_help);
+    if (itemHelp != null) {
+      itemHelp.setVisible(false);
+    }
 
     boolean shouldLogoBeVisible = activity.shouldLogoBeVisibleOnOverviewPage();
 
@@ -110,7 +115,8 @@ public class OverviewFragment extends BaseFragment implements OnClickListener {
 
     ViewUtil.setOnClickListeners(
         this,
-        binding.cardOverviewInfo,
+        binding.buttonOverviewInfo,
+        binding.buttonOverviewHelp,
         binding.linearOverviewAppearance,
         binding.linearOverviewParallax,
         binding.linearOverviewSize,
@@ -122,8 +128,11 @@ public class OverviewFragment extends BaseFragment implements OnClickListener {
   @Override
   public void onClick(View v) {
     int id = v.getId();
-    if (id == R.id.card_overview_info && getViewUtil().isClickEnabled()) {
+    if (id == R.id.button_overview_info && getViewUtil().isClickEnabled()) {
       activity.showTextBottomSheet(R.raw.information, R.string.title_info);
+      performHapticClick();
+    } else if (id == R.id.button_overview_help && getViewUtil().isClickEnabled()) {
+      activity.showTextBottomSheet(R.raw.help, R.string.action_help);
       performHapticClick();
     } else if (id == R.id.linear_overview_appearance && getViewUtil().isClickEnabled()) {
       navigate(OverviewFragmentDirections.actionOverviewToAppearance());

@@ -173,6 +173,10 @@ public class MainActivity extends AppCompatActivity {
         break;
       default:
         if (DynamicColors.isDynamicColorAvailable()) {
+          // TODO: next MDC version:
+          //  HarmonizedColors.applyToContextIfAvailable(
+          //      activity, HarmonizedColorsOptions.createMaterialDefaults()
+          //  )
           DynamicColors.applyIfAvailable(
               new DynamicColorsOptions.Builder(this).setOnAppliedCallback(
                   activity -> HarmonizedColors.applyIfAvailable(

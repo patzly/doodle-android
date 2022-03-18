@@ -31,8 +31,8 @@
   <string name="app_github" translatable="false">https://github.com/patzly/doodle-android/</string>
   <string name="app_translate" translatable="false">https://www.transifex.com/patzly/doodle-android/</string>
 
-  <string name="wallpaper_description">Colorful live wallpapers with auto dark mode and power-efficient animations. Tap to learn more.</string>
-  <string name="wallpaper_description_picker">Explore a colorful collection of shapes, refined with gentle parallax and zoom effects when you swipe through your home screens and unlock your device.\nCustomize the wallpaper to match your own style.</string>
+  <string name="wallpaper_description">Colorful live wallpaper with auto dark mode and power-efficient animations. Customize it to your needs!</string>
+  <string name="wallpaper_description_picker">Explore a colorful collection of shapes, refined with gentle parallax and zoom effects when you swipe through your home screens and unlock your device.\nCustomize the wallpaper to match your own style!</string>
 
   <!-- TITLES -->
 
@@ -60,6 +60,7 @@
   <string name="action_set">Set wallpaper</string>
   <string name="action_set_directly">Set directly</string>
   <string name="action_open_picker">Open wallpaper picker</string>
+  <string name="action_learn_more">Learn more</string>
   <string name="action_help">Help</string>
   <string name="action_send_feedback">Send feedback</string>
   <string name="action_share">Share</string>

@@ -45,8 +45,6 @@
   <string name="action_continue">继续</string>
   <string name="action_open_app_info">打开应用信息</string>
   <string name="action_set">设置壁纸</string>
-  <string name="action_set_directly">直接设置</string>
-  <string name="action_open_picker">打开壁纸选择器</string>
   <string name="action_help">帮助</string>
   <string name="action_send_feedback">发送反馈</string>
   <string name="action_share">分享</string>

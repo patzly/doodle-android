@@ -21,9 +21,6 @@
 
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
-  <string name="wallpaper_description">Des fonds d\'écran animés et colorés, un mode sombre automatique et des animations économes en énergie. Appuyez pour en savoir plus.</string>
-  <string name="wallpaper_description_picker">Explorez une collection de formes colorées, raffinées avec des effets de parallaxe et de zoom lorsque vous faites défiler vos écrans d\'accueil et déverrouillez votre appareil.\nPersonnalisez le fond d\'écran pour qu\'il corresponde à votre propre style.</string>
-
   <!-- TITLES -->
 
   <string name="title_info">Informations</string>

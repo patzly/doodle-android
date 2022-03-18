@@ -21,9 +21,6 @@
 
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
-  <string name="wallpaper_description">Papéis de parede animados e coloridos com modo noturno automático e animações com eficiência energética. Toque para saber mais.</string>
-  <string name="wallpaper_description_picker">Explore uma coleção colorida de formas, refinadas com efeitos suaves de paralaxe e zoom quando você desliza pelas telas iniciais e desbloqueia o telefone.\nPersonalize o papel de parede para combinar com seu próprio estilo.</string>
-
   <!-- TITLES -->
 
   <string name="title_info">Informação</string>
@@ -76,8 +73,6 @@
   <string name="appearance_follow_system_description">Adotar o tema do dispositivo</string>
   <string name="appearance_white_text">Tentar forçar texto branco</string>
   <string name="appearance_white_text_description">Pode afetar legibilidade</string>
-  <string name="appearance_random">Papel de parede randomizado</string>
-  <string name="appearance_random_description">Sempre que a tela for desligada</string>
   <string name="appearance_colors">Cores extraidas</string>
   <string name="appearance_colors_description">Utilizado para calcular contraste do texto</string>
   <string name="appearance_colors_description_dynamic">Utilizado pelo mecanismo de temas do sistema</string>
@@ -86,6 +81,8 @@
   <string name="appearance_colors_tertiary">Escolher cor terciária</string>
   <string name="appearance_colors_info">Em dispositivos sem suporte a cores dinâmicas (Android 11 ou mais antigo), apenas a cor primária é utilizada para calcular o contraste do texto do inicializador e o tingimento no fundo da tela de aplicativos recentes.</string>
   <string name="appearance_colors_info_dynamic">Em dispositivos com Android 12 ou mais recente e suporte a cores dinâmicas, as três cores selecionadas são utilizadas para criar um tema de cores para o sistema.</string>
+  <string name="appearance_random">Papel de parede randomizado</string>
+  <string name="appearance_random_description">Sempre que a tela for desligada</string>
 
   <!-- PARALLAX -->
 
@@ -174,6 +171,5 @@
   <string name="msg_apply_changes">Para (eventualmente) aplicar as configurações modificadas é recomendado reiniciar o  serviço de papel de parede. Isso não poe ser feito automáticamente.\nPor favor, encerre o Doodle nas configurações do seu sistema, então, aplique Doodle como seu papel de parede novamente.</string>
   <string name="msg_set_wallpaper">Se encontrar algum problema que quebre a animação do papel de parede quando fechar esse aplicativo, selecione o Doodle pelo seletor de papel de parede do sistema.\nCaso contrário, pode usar o Doodle diretamente.</string>
   <string name="msg_preview_missing">Ocorreu um erro, por favor selecione o Doodle Live Wallpaper manualmente</string>
-  <string name="msg_picker_missing">Não foi possível abrir o seletor de papel de parede, por favor instale um seletor de papeis de parede animados e tente novamente.</string>
 
   </resources>

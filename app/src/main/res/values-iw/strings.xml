@@ -21,10 +21,6 @@
 
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
-  <string name="wallpaper_description">רקעים חיים ומגוונים עם מצב לילה אוטומטי ואנימציות חסכוניות בחשמל. הקישו כדי ללמוד יותר</string>
-  <string name="wallpaper_description_picker">חיקרו קולקצייה של צורות מגוונות,מלוטשות עם פרלקסה עדינה ואפקטי זום כאשר גוללים את דף הבית ופותחים את המכשיר.
-עצבו את הרקע שיתאים לסגנון שלכם</string>
-
   <!-- TITLES -->
 
   <string name="title_info">מידע</string>
@@ -73,8 +69,6 @@
   <string name="appearance_follow_system_description">אימוץ ערכת נושא מהמערכת</string>
   <string name="appearance_white_text">ניסיון להכריח טקסט לבן</string>
   <string name="appearance_white_text_description">עלול להשפיע על הקריאה</string>
-  <string name="appearance_random">עיצוב רקע רנדומלי</string>
-  <string name="appearance_random_description">כל הזמן שהמסך מתכבה</string>
   <string name="appearance_colors">בחירת צבעים</string>
   <string name="appearance_colors_description">משמש לחישוב ניגודיות טקסט</string>
   <string name="appearance_colors_description_dynamic">משומש על ידי ערכת הנושא של המערכת</string>
@@ -83,6 +77,8 @@
   <string name="appearance_colors_tertiary">בחירת צבעים שלישיים</string>
   <string name="appearance_colors_info">במכשיר ללא תמיכה בצבעים דינמיים(אנדרואיד 11 ומטה), רק הצבעים הראשיים משומשים לחישוב ניגודיות הטקסט בלאנצ\'ר וצבע הרקע במסך האפליקציות האחרונות</string>
   <string name="appearance_colors_info_dynamic">במכשיר עם אנדרואיד 12 ומעלה ותמיכה בצבעים דינמיים,שלושת הצבעים הנבחרים משומשים כדי ליצור אוטומטית ערכת נושא צבעונית לכלל המערכת</string>
+  <string name="appearance_random">עיצוב רקע רנדומלי</string>
+  <string name="appearance_random_description">כל הזמן שהמסך מתכבה</string>
 
   <!-- PARALLAX -->
 
@@ -168,4 +164,5 @@
   <string name="msg_apply_changes">כדי להחיל(בסופו של דבר)שינוי באפשרויות,מומלץ להפעיל מחדש את השירות שמריץ רקעים.זה לא יכול להעשות אוטומטית
 בבקשה הכריחו עצירה של דודל בהגדרות מערכת ואז החילו את דודל כרקע</string>
   <string name="msg_preview_missing">צצה שגיאה,בבקשה ביחרו את דודל רקע חי באופן ידני</string>
+
   </resources>

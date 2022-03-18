@@ -21,9 +21,6 @@
 
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
-  <string name="wallpaper_description">Live wallpaper penuh warna dengan mode gelap otomatis dan animasi yang hemat daya. Ketuk untuk pelajari lebih lanjut.</string>
-  <string name="wallpaper_description_picker">Jelajahi koleksi bentuk-bentuk yang penuh warna, disempurnakan dengan efek paralaks dan zoom saat anda menggeser di layar utama dan membuka layar kunci perangkat. Sesuaikan wallpaper agar sesuai dengan gaya anda sendiri.</string>
-
   <!-- TITLES -->
 
   <string name="title_info">Informasi</string>
@@ -76,8 +73,6 @@
   <string name="appearance_follow_system_description">Ikuti tema perangkat</string>
   <string name="appearance_white_text">Coba paksa teks putih</string>
   <string name="appearance_white_text_description">Dapat mempengaruhi keterbacaan</string>
-  <string name="appearance_random">Desain wallpaper acak</string>
-  <string name="appearance_random_description">Setiap kali layar dimatikan</string>
   <string name="appearance_colors">Warna terekstrak</string>
   <string name="appearance_colors_description">Digunakan untuk menghitung kontras teks</string>
   <string name="appearance_colors_description_dynamic">Digunakan oleh mesin tema sistem</string>
@@ -86,6 +81,8 @@
   <string name="appearance_colors_tertiary">Pilih warna tersier</string>
   <string name="appearance_colors_info">Pada perangkat tanpa dukungan warna dinamis (Android 11 atau lebih rendah), hanya warna primer yang digunakan untuk menghitung kontras teks peluncur dan mewarnai latar belakang layar aplikasi terbaru.</string>
   <string name="appearance_colors_info_dynamic">Pada perangkat dengan Android 12 atau dukungan warna yang lebih tinggi dan dinamis, tiga warna yang dipilih digunakan untuk secara otomatis membuat tema warna system-wide.</string>
+  <string name="appearance_random">Desain wallpaper acak</string>
+  <string name="appearance_random_description">Setiap kali layar dimatikan</string>
 
   <!-- PARALLAX -->
 
@@ -167,4 +164,5 @@
   <string name="msg_force_stop">Paksa berhenti diminta untuk menerapkan perubahan</string>
   <string name="msg_apply_changes">Untuk menerapkan (akhirnya) opsi yang diubah restart dari layanan wallpaper yang sedang berjalan direkomendasikan. Ini tidak dapat dilakukan secara otomatis. Silahkan paksa-berhenti Doodle di pengaturan sistem Anda dan kemudian terapkan Doodle sebagai wallpaper Anda lagi</string>
   <string name="msg_preview_missing">Terjadi kesalahan, silakan pilih Doodle Live Wallpaper secara manual</string>
+
   </resources>

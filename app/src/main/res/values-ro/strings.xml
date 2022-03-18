@@ -21,9 +21,6 @@
 
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
-  <string name="wallpaper_description">Imagini de fundal live colorate cu mod întunecat automat și animații fluide fără consum al bateriei. Atingeți pentru a afla mai multe.</string>
-  <string name="wallpaper_description_picker">Explorați o colecție forme colorate, rafinată cu efecte delicate de tip parallax și zoom atunci când glisați în ecranul principal sau când deblocați device-ul.\nCustomizează-ți wallpaper-ul pentru a se potrivi cu propriul tău stil.</string>
-
   <!-- TITLES -->
 
   <string name="title_info">Informații</string>

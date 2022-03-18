@@ -21,10 +21,6 @@
 
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
-  <string name="wallpaper_description">多彩的动态壁纸，具有自动黑暗模式和节能动画。点击了解更多信息。</string>
-  <string name="wallpaper_description_picker">探索丰富多彩的形状集合，当您在主屏幕上滑动并解锁设备时，通过柔和的视觉差和缩放效果进行优化。
-自定义墙纸以找到适合您自己的风格</string>
-
   <!-- TITLES -->
 
   <string name="title_info">信息</string>

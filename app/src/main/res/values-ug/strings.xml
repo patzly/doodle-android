@@ -21,9 +21,6 @@
 
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
-  <string name="wallpaper_description">رەڭدار ھەرىكەتچان تام قەغىزى، ئاپتوماتىك قاراڭغۇ ئەندىزىسى ۋە ئېنېرگىيە تېجەيدىغان كارتونلار . چېكىپ تېخىمۇ كۆپ ئۇچۇرلارنى چۈشىنىڭ. </string>
-  <string name="wallpaper_description_picker">رەڭدار شەكىللەر توپلانغان ،سىز باش ئېكراننى سىيرىغاندا قۇلۇپ ئاچقاندا كۆرۈش سېزىمى ، ھەرىكھەرىكەت  ئۈنۈملىرى ئەلالاشتۇرۇلىدۇ.قىنى   ئۆزىڭىزنىڭ خاس  ئۇسلۇبىنى تېپىڭ </string>
-
   <!-- TITLES -->
 
   <string name="title_info">ئۇچۇر </string>
@@ -98,4 +95,5 @@
   <string name="msg_share">دۇبلىنىڭ بۇ قارام تەگلىك  دېتالدىن  ھوزۇرلىنىڭ 序:https://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
   <string name="msg_reset">بارلىق تەڭشەشنى قايتا تەڭشەمسىز؟</string>
   <string name="msg_preview_missing">خاتالىق كۆرۈلدى. قول ئارقىلىق دوبلى فىلىم تەگلىكىنى تاللاڭ </string>
+
   </resources>

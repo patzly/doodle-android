@@ -72,14 +72,15 @@
   <string name="appearance_follow_system_description">Käytä laitteen teemaa</string>
   <string name="appearance_white_text">Yritä pakottaa valkoinen teksti</string>
   <string name="appearance_white_text_description">Voi vaikuttaa luettavuuteen</string>
-  <string name="appearance_random">Satunnainen taustakuvan tyyli</string>
-  <string name="appearance_random_description">Aina kun näyttö sammutetaan</string>
   <string name="appearance_colors">Poimitut värit</string>
   <string name="appearance_colors_description">Käytetään tekstin kontrastin laskemiseen</string>
   <string name="appearance_colors_description_dynamic">Laitteen teemajärjestelmän käyttämä</string>
   <string name="appearance_colors_primary">Valitse ensimmäinen väri</string>
   <string name="appearance_colors_secondary">Valitse toinen väri</string>
   <string name="appearance_colors_tertiary">Valitse kolmas väri</string>
+  <string name="appearance_random">Satunnainen taustakuvan tyyli</string>
+  <string name="appearance_random_description">Aina kun näyttö sammutetaan</string>
+
   <!-- PARALLAX -->
 
   <string name="parallax_title">Parallaksi</string>

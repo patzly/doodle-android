@@ -21,9 +21,6 @@
 
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
-  <string name="wallpaper_description">Makulay na live wallpapers na may auto dark mode at matipid sa baterya na mga animasyon. I-tap para sa mas madaming impormasyon.</string>
-  <string name="wallpaper_description_picker">Tuklasin ang makulay na koleksyon ng mga hugis, malinis na may malumay na parallax at zoom effects kapag ikaw ay nag-swipe sa iyong home screens at buksan ang iyong device.\nI-Customize ang iyong wallpaper para sa iyong istilo.</string>
-
   <!-- TITLES -->
 
   <string name="title_info">Impormasyon</string>
@@ -74,8 +71,6 @@
   <string name="appearance_follow_system_description">Hiramin ang tema ng device</string>
   <string name="appearance_white_text">Subukang pilitin ang puting text</string>
   <string name="appearance_white_text_description">Maaaring makaapekto sa pagbasa</string>
-  <string name="appearance_random">Random na disenyo ng wallpaper</string>
-  <string name="appearance_random_description">Sa tuwing ang display ay naka-off</string>
   <string name="appearance_colors">Mga nakuhang kulay</string>
   <string name="appearance_colors_description">Ginagamit para kalkulahin ang pagkakaiba ng text</string>
   <string name="appearance_colors_description_dynamic">Ginagamit ng theming engine ng system</string>
@@ -84,6 +79,8 @@
   <string name="appearance_colors_tertiary">Piliin ang tersiyaryang kulay</string>
   <string name="appearance_colors_info">Sa mga device na walang suporta sa dynamic na kulay (Android 11 o mas mababang bersyon), ang pangunahing kulay lamang ang ginagamit para kalkulahin ang kaibahan ng text sa launcher at pagtinting sa background ng screen ng kamakailang ginamit na mga app.</string>
   <string name="appearance_colors_info_dynamic">Sa mga device na Android 12 o mas mataas na bersyon at dynamic na suporta sa kulay, ginagamit ang tatlong napiling kulay upang awtomatikong gumawa ng tema ng kulay sa buong system.</string>
+  <string name="appearance_random">Random na disenyo ng wallpaper</string>
+  <string name="appearance_random_description">Sa tuwing ang display ay naka-off</string>
 
   <!-- PARALLAX -->
 
@@ -170,4 +167,5 @@
   <string name="msg_force_stop">Kailangan ng forced stop upang ilapat ang lahat ng mga pagbabago</string>
   <string name="msg_apply_changes">Upang mailapat (sa kalaunan) ang mga nabago na mga opsyon, inirerekomenda ang pag-restart ng tumatakbong wallpaper service. Hindi ito awtomatikong magagawa. Mangyaring i-force-stop ang Doodle sa iyong system settings at pagkatapos ay ilapat muli ang Doodle bilang iyong wallpaper.</string>
   <string name="msg_preview_missing">May naganap na error, mangyaring piliin nang manu-mano ang Doodle Live Wallpaper</string>
+
   </resources>

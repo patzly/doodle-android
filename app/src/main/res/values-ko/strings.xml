@@ -21,9 +21,6 @@
 
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
-  <string name="wallpaper_description">다채로운 색상과 자동 다크 모드, 그리고 배터리 낭비가 없는 애니메이션까지. 탭하여 알아보세요.</string>
-  <string name="wallpaper_description_picker">다채로운 색상의 도형들이 홈화면에서 스와이프하거나 기기를 잠금해제할 때 부드러운 기울임과 확대 효과를 경험해보세요./n당신의 스타일을 맞춰 배경화면을 맞춤설정 해볼 수도 있습니다.</string>
-
   <!-- TITLES -->
 
   <string name="title_info">정보</string>
@@ -75,8 +72,6 @@
   <string name="appearance_follow_system_description">기기 테마 적용</string>
   <string name="appearance_white_text">하얀색 텍스트 강제적용</string>
   <string name="appearance_white_text_description">시인성에 문제가 발생할 수 있음</string>
-  <string name="appearance_random">배경화면 디자인을 무작위로 적용</string>
-  <string name="appearance_random_description">화면이 꺼져있을 때마다</string>
   <string name="appearance_colors">추출된 색상</string>
   <string name="appearance_colors_description">텍스트 대비를 계산하기 위해 사용됨</string>
   <string name="appearance_colors_description_dynamic">시스템의 테마 엔진을 사용함</string>
@@ -85,6 +80,8 @@
   <string name="appearance_colors_tertiary">보조 색상(세 번째) 선택</string>
   <string name="appearance_colors_info">다이내믹 색상 기능이 지원되지 않는 기기들에서는(안드로이드 11 이하) 주 색상만이 런처 텍스트 색상 대비 계산과 최근 앱 화면의 배경 틴트에 사용됩니다.</string>
   <string name="appearance_colors_info_dynamic">다이내믹 색상 지원이 가능하고 안드로이드 12 이상인 기기들에서는 선택된 세가지 색상들이 시스템 전체에 적용되는 테마를 생성하기 위해 사용됩니다.</string>
+  <string name="appearance_random">배경화면 디자인을 무작위로 적용</string>
+  <string name="appearance_random_description">화면이 꺼져있을 때마다</string>
 
   <!-- PARALLAX -->
 

@@ -21,9 +21,6 @@
 
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
-  <string name="wallpaper_description">Farverige live baggrunde med automatisk mørk tilstand og strømbesparende animationer. Tryk for at få flere oplysninger.</string>
-  <string name="wallpaper_description_picker">Udforsk en farverig samling af former, der er raffineret med blide parallaks- og zoomeffekter, når du swiper gennem dine startskærme og låser din enhed op.\nTilpas baggrunden til at matche din egen stil.</string>
-
   <!-- TITLES -->
 
   <string name="title_info">Information</string>
@@ -71,8 +68,6 @@
   <string name="appearance_follow_system_description">Brug temaet fra enheden</string>
   <string name="appearance_white_text">Prøv at tvinge hvid tekst</string>
   <string name="appearance_white_text_description">Kan påvirke læsbarheden</string>
-  <string name="appearance_random">Tilfældigt baggrundsdesign</string>
-  <string name="appearance_random_description">Hver gang skærmen slukkes</string>
   <string name="appearance_colors">Udtrukne farver</string>
   <string name="appearance_colors_description">Anvendes til beregning af tekstkontrast</string>
   <string name="appearance_colors_description_dynamic">Bruges af systemets tematiseringssystem</string>
@@ -80,6 +75,8 @@
   <string name="appearance_colors_secondary">Vælg sekundær farve</string>
   <string name="appearance_colors_tertiary">Vælg tertiær farve</string>
   <string name="appearance_colors_info_dynamic">På enheder med Android 12 eller nyere og understøttelse af dynamiske farver bruges de tre valgte farver til automatisk at oprette et farvetema som dækker hele systemet.</string>
+  <string name="appearance_random">Tilfældigt baggrundsdesign</string>
+  <string name="appearance_random_description">Hver gang skærmen slukkes</string>
 
   <!-- PARALLAX -->
 

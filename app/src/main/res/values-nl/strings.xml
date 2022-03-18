@@ -21,9 +21,6 @@
 
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
-  <string name="wallpaper_description">Kleurrijke live achtergronden met auto donkere modus en energiezuinige animaties. Tik voor meer informatie.</string>
-  <string name="wallpaper_description_picker">Ontdek een kleurrijke collectie vormen, verfijnd met zachte parallax- en zoomeffecten wanneer u door uw startschermen veegt en uw apparaat ontgrendelt.\nPas de achtergrond aan je eigen stijl aan.</string>
-
   <!-- TITLES -->
 
   <string name="title_info">Informatie</string>
@@ -76,8 +73,6 @@
   <string name="appearance_follow_system_description">Neem apparaat thema over</string>
   <string name="appearance_white_text">Probeer witte tekst te forceren</string>
   <string name="appearance_white_text_description">Kan leesbaarheid beïnvloeden</string>
-  <string name="appearance_random">Willekeurig achtergrond ontwerp</string>
-  <string name="appearance_random_description">Telkens als het scherm wordt uitgezet</string>
   <string name="appearance_colors">Geëxtraheerde kleuren</string>
   <string name="appearance_colors_description">Gebruikt voor het berekenen van tekst contrast</string>
   <string name="appearance_colors_description_dynamic">Gebruikt door het thema engine van het Systeem</string>
@@ -86,6 +81,8 @@
   <string name="appearance_colors_tertiary">Kies tertiaire kleur</string>
   <string name="appearance_colors_info">Op apparaten zonder ondersteuning voor dynamische kleuren (Android 11 of lager), wordt alleen de primaire kleur gebruikt om het contrast van startscherm tekst en de tint van de achtergrond van het recente apps scherm te berekenen.</string>
   <string name="appearance_colors_info_dynamic">Op apparaten met Android 12 of hoger en ondersteuning voor dynamische kleuren, worden de drie geselecteerde kleuren automatisch gebruikt om een systeem-breed kleur thema te creëren.</string>
+  <string name="appearance_random">Willekeurig achtergrond ontwerp</string>
+  <string name="appearance_random_description">Telkens als het scherm wordt uitgezet</string>
 
   <!-- PARALLAX -->
 
@@ -172,6 +169,5 @@
   <string name="msg_apply_colors">Veranderde kleuren zullen de volgende keer je scherm uit zet worden toegepast in het systeem</string>
   <string name="msg_apply_changes">Om (eventueel) gewijzigde opties toe te passen, wordt een herstart van de lopende achtergrond service aanbevolen. Dit kan niet automatisch worden gedaan.\nGelieve Doodle geforceerd te stoppen in je systeeminstellingen en vervolgens Doodle opnieuw toe te passen als je achtergrond.</string>
   <string name="msg_preview_missing">Er ging iets mis, selecteer Doodle Live Achtergrond alsjeblieft handmatig</string>
-  <string name="msg_picker_missing">Kan achtergrond kiezer niet openen, installeer alsjeblieft een live achtergrond kiezer en probeer het opnieuw.</string>
 
   </resources>

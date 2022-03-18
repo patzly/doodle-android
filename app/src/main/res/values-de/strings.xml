@@ -48,8 +48,6 @@
   <string name="action_continue">Fortfahren</string>
   <string name="action_open_app_info">App-Info öffnen</string>
   <string name="action_set">Hintergrund festlegen</string>
-  <string name="action_set_directly">Direkt festlegen</string>
-  <string name="action_open_picker">Auswahl öffnen</string>
   <string name="action_learn_more">Mehr erfahren</string>
   <string name="action_help">Hilfe</string>
   <string name="action_send_feedback">Feedback senden</string>

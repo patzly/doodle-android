@@ -45,8 +45,6 @@
   <string name="action_continue">Continuer</string>
   <string name="action_open_app_info">Ouvrir les infos sur l\'app</string>
   <string name="action_set">Définir le papier peint</string>
-  <string name="action_set_directly">Définir directement</string>
-  <string name="action_open_picker">Ouvrir le sélecteur de papier peint</string>
   <string name="action_help">Aide</string>
   <string name="action_send_feedback">Envoyer des commentaires</string>
   <string name="action_share">Partager</string>

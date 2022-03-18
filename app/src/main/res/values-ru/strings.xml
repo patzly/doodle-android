@@ -45,8 +45,6 @@
   <string name="action_continue">Продолжить</string>
   <string name="action_open_app_info">Сведения о приложении</string>
   <string name="action_set">Установить как обои</string>
-  <string name="action_set_directly">Напрямую</string>
-  <string name="action_open_picker">Открыть каталог живых обоев</string>
   <string name="action_help">Справка</string>
   <string name="action_send_feedback">Отправить отзыв</string>
   <string name="action_share">Поделиться</string>

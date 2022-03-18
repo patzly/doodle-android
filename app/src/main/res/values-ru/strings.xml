@@ -21,9 +21,6 @@
 
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
-  <string name="wallpaper_description">Красочные живые обои с автоматической темной темой и экономно потребляющими батарею анимациями. Нажмите, чтобы узнать больше.</string>
-  <string name="wallpaper_description_picker">Откройте для себя красочную подборку форм, дополненных плавными эффектами сдвига и приближения при пролистывании экранов рабочего стола и выходе из экрана блокировки.\nНастройте обои на свой вкус.</string>
-
   <!-- TITLES -->
 
   <string name="title_info">Информация </string>

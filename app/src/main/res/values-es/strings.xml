@@ -40,8 +40,6 @@
   <string name="action_continue">Continuar</string>
   <string name="action_open_app_info">Abrir información de la app</string>
   <string name="action_set">Aplicar</string>
-  <string name="action_set_directly">Establecerlo directamente</string>
-  <string name="action_open_picker"> Abrir selector de fondos de pantalla</string>
   <string name="action_send_feedback">Enviar comentarios</string>
   <string name="action_share">Compartir</string>
   <string name="action_share_description">Cuéntales a tus amigos sobre Doodle</string>

@@ -21,7 +21,7 @@
 
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
-  <string name="wallpaper_description">Ein farbenfroher Live-Hintergrund mit Nachtmodus und akku-effizienten Animationen. Passe es an deine Bedürfnisse an!</string>
+  <string name="wallpaper_description">Ein farbenfroher Live-Hintergrund mit Nachtmodus und akku-effizienten Animationen. Passe ihn an deine Bedürfnisse an!</string>
   <string name="wallpaper_description_picker">Entdecke eine farbenfrohe Sammlung von Formen, verfeinert mit sanften Parallax- und Zoom-Effekten beim Wechseln zwischen deinen Startbildschirmen und Entsperren deines Geräts.\nPasse den Hintergrund mit mehreren Optionen an deinen eigenen Stil an!</string>
 
   <!-- TITLES -->

@@ -45,8 +45,6 @@
   <string name="action_continue">Devam et</string>
   <string name="action_open_app_info">Uygulama bilgisini aç</string>
   <string name="action_set">Duvar kağıdı olarak ayarla</string>
-  <string name="action_set_directly">Doğrudan uygula</string>
-  <string name="action_open_picker">Duvar kağıdı seçicisini aç</string>
   <string name="action_send_feedback">Geri bildirim gönder</string>
   <string name="action_share">Paylaş</string>
   <string name="action_share_description">Doodle\'ı arkadaşlarına anlat</string>

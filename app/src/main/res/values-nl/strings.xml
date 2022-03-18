@@ -45,8 +45,6 @@
   <string name="action_continue">Doorgaan</string>
   <string name="action_open_app_info">Open app info</string>
   <string name="action_set">Stel achtergrond in</string>
-  <string name="action_set_directly">Kies direct</string>
-  <string name="action_open_picker">Open achtergrond kiezer</string>
   <string name="action_send_feedback">Verstuur feedback</string>
   <string name="action_share">Deel</string>
   <string name="action_share_description">Vertel je vrienden over Doodle</string>

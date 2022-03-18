@@ -21,9 +21,6 @@
 
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
-  <string name="wallpaper_description">Színes elő hattérképek automatikus sötét móddal és energiatakarékos animációkkal. Koppints ide hogy megtudj többet. </string>
-  <string name="wallpaper_description_picker">Fedezd fel geometriai alakok színes kollekcióját, gyengéd parallaxissal és zoom effektekkel kifinomítva a készülék feloldásakor és az oldalak között lapozáskor.\nVáltoztasd meg a hátteret, hogy illjen a saját stílusodhoz.</string>
-
   <!-- TITLES -->
 
   <string name="title_info">Információ</string>
@@ -74,8 +71,6 @@
   <string name="appearance_follow_system_description">A készülék színtemájának átvétele</string>
   <string name="appearance_white_text">Fehér betűszín eröltetése</string>
   <string name="appearance_white_text_description">Befolyásolhatja az olvashatóságot</string>
-  <string name="appearance_random">Véletlenszerű háttérkép design</string>
-  <string name="appearance_random_description">Minden alkalommal, amikor a kijelző kikapcsolódik</string>
   <string name="appearance_colors">Kivont színek</string>
   <string name="appearance_colors_description">Szöveg kontrasztjának kiszámítására használt</string>
   <string name="appearance_colors_description_dynamic">A rendszer tematikus motorja által használt</string>
@@ -84,6 +79,8 @@
   <string name="appearance_colors_tertiary">Harmadlagos szín kiválasztása</string>
   <string name="appearance_colors_info">A dinamikus színtámogatással nem rendelkező eszközökön (Android 11 vagy régebbi verziók) csak az elsődleges szín használt a launcher szövegének kontrasztjának kiszámításához és a legutóbbi alkalmazások képernyőjének hátterének színezéséhez.</string>
   <string name="appearance_colors_info_dynamic">Az Android 12 vagy újabb verzióval és a dinamikus színtámogatással rendelkező eszközökön a három kiválasztott szín automatikusan rendszerszintű színtémát hoz létre.</string>
+  <string name="appearance_random">Véletlenszerű háttérkép design</string>
+  <string name="appearance_random_description">Minden alkalommal, amikor a kijelző kikapcsolódik</string>
 
   <!-- PARALLAX -->
 

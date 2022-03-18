@@ -45,8 +45,6 @@
   <string name="action_continue">Pokračovat</string>
   <string name="action_open_app_info">Otevřít informace o aplikaci</string>
   <string name="action_set">Nastavit tapetu</string>
-  <string name="action_set_directly">Nastavit hned</string>
-  <string name="action_open_picker">Otevřít výběr tapety</string>
   <string name="action_send_feedback">Odeslat zpětnou vazbu</string>
   <string name="action_share">Sdílet</string>
   <string name="action_share_description">Řekněte přátelům o aplikaci Doodle</string>

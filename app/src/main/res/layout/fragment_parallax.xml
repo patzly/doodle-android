@@ -44,16 +44,18 @@
     android:layout_marginTop="?attr/actionBarSize">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+      android:id="@+id/coordinator_parallax_container"
       android:layout_width="match_parent"
       android:layout_height="wrap_content">
 
       <LinearLayout
-        android:id="@+id/linear_parallax_container"
+        android:id="@+id/linear_parallax_container_card"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:paddingTop="16dp"
-        android:paddingBottom="8dp"
         android:orientation="vertical"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintWidth_max="@dimen/max_content_width"
         app:layout_constraintStart_toStartOf="parent"
@@ -71,6 +73,19 @@
             android:text="@string/parallax_touch_wiz" />
 
         </com.google.android.material.card.MaterialCardView>
+
+      </LinearLayout>
+
+      <LinearLayout
+        android:id="@+id/linear_parallax_container_items"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingBottom="8dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/linear_parallax_container_card"
+        app:layout_constraintWidth_max="@dimen/max_content_width"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
         <LinearLayout
           style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine"

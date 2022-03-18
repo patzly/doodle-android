@@ -108,7 +108,7 @@ public class AppearanceFragment extends BaseFragment
 
     SystemBarBehavior systemBarBehavior = new SystemBarBehavior(activity);
     systemBarBehavior.setAppBar(binding.appBarAppearance);
-    systemBarBehavior.setScroll(binding.scrollAppearance, binding.linearAppearanceContainer);
+    systemBarBehavior.setScroll(binding.scrollAppearance, binding.coordinatorAppearanceContainer);
     systemBarBehavior.setAdditionalBottomInset(activity.getFabTopEdgeDistance());
     systemBarBehavior.setUp();
 
@@ -116,6 +116,7 @@ public class AppearanceFragment extends BaseFragment
         binding.appBarAppearance, binding.scrollAppearance, true
     );
 
+    ViewUtil.centerToolbarTitleOnLargeScreens(binding.toolbarAppearance);
     binding.toolbarAppearance.setNavigationOnClickListener(v -> {
       if (getViewUtil().isClickEnabled()) {
         performHapticClick();

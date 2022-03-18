@@ -102,15 +102,17 @@
     android:layout_marginTop="?attr/actionBarSize">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+      android:id="@+id/coordinator_overview_container"
       android:layout_width="match_parent"
       android:layout_height="wrap_content">
 
       <LinearLayout
-        android:id="@+id/linear_overview_container"
+        android:id="@+id/linear_overview_container_cards"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:paddingTop="16dp"
-        android:paddingBottom="8dp"
         android:orientation="vertical"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintWidth_max="@dimen/max_content_width"
@@ -130,31 +132,18 @@
 
         </com.google.android.material.card.MaterialCardView>
 
-        <com.google.android.material.card.MaterialCardView
-          android:id="@+id/card_overview_touch_wiz"
-          style="@style/Widget.Doodle.Card.Text"
-          android:visibility="gone">
+      </LinearLayout>
 
-          <TextView
-            style="@style/Widget.Doodle.TextView.Paragraph"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/parallax_touch_wiz" />
-
-        </com.google.android.material.card.MaterialCardView>
-
-        <com.google.android.material.card.MaterialCardView
-          android:id="@+id/card_overview_gpu"
-          style="@style/Widget.Doodle.Card.Text"
-          android:visibility="gone">
-
-          <TextView
-            style="@style/Widget.Doodle.TextView.Paragraph"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/other_gpu_info" />
-
-        </com.google.android.material.card.MaterialCardView>
+      <LinearLayout
+        android:id="@+id/linear_overview_container_items"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingBottom="8dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/linear_overview_container_cards"
+        app:layout_constraintWidth_max="@dimen/max_content_width"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
         <LinearLayout
           android:id="@+id/linear_overview_appearance"

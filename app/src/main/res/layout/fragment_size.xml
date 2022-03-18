@@ -44,14 +44,14 @@
     android:layout_marginTop="?attr/actionBarSize">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+      android:id="@+id/coordinator_size_container"
       android:layout_width="match_parent"
       android:layout_height="wrap_content">
 
       <LinearLayout
-        android:id="@+id/linear_size_container"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:paddingTop="16dp"
+        android:paddingTop="8dp"
         android:paddingBottom="8dp"
         android:orientation="vertical"
         app:layout_constraintTop_toTopOf="parent"
@@ -61,8 +61,7 @@
 
         <LinearLayout
           style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine"
-          android:paddingBottom="0dp"
-          android:minHeight="100dp">
+          android:paddingBottom="0dp">
 
           <ImageView
             android:id="@+id/image_size_scale"

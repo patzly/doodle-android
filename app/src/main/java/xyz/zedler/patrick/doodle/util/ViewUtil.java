@@ -22,6 +22,7 @@ package xyz.zedler.patrick.doodle.util;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.res.ColorStateList;
+import android.content.res.Resources;
 import android.graphics.drawable.Animatable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.LayerDrawable;
@@ -44,10 +45,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.ColorUtils;
 import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
+import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.elevation.SurfaceColors;
 import java.util.Arrays;
+import xyz.zedler.patrick.doodle.R;
 
 public class ViewUtil {
 
@@ -205,6 +208,13 @@ public class ViewUtil {
         cardView.setChecked(checked);
       }
     }
+  }
+
+  public static void centerToolbarTitleOnLargeScreens(MaterialToolbar toolbar) {
+    Resources resources = toolbar.getContext().getResources();
+    int maxWidth = resources.getDimensionPixelSize(R.dimen.max_content_width);
+    boolean isFullWidth = maxWidth >= SystemUiUtil.getDisplayWidth(toolbar.getContext());
+    toolbar.setTitleCentered(!isFullWidth);
   }
 
   // Ripple background for surface list items

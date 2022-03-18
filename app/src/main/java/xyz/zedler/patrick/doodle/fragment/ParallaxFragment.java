@@ -71,7 +71,7 @@ public class ParallaxFragment extends BaseFragment
 
     SystemBarBehavior systemBarBehavior = new SystemBarBehavior(activity);
     systemBarBehavior.setAppBar(binding.appBarParallax);
-    systemBarBehavior.setScroll(binding.scrollParallax, binding.linearParallaxContainer);
+    systemBarBehavior.setScroll(binding.scrollParallax, binding.coordinatorParallaxContainer);
     systemBarBehavior.setAdditionalBottomInset(activity.getFabTopEdgeDistance());
     systemBarBehavior.setUp();
 
@@ -79,6 +79,7 @@ public class ParallaxFragment extends BaseFragment
         binding.appBarParallax, binding.scrollParallax, true
     );
 
+    ViewUtil.centerToolbarTitleOnLargeScreens(binding.toolbarParallax);
     binding.toolbarParallax.setNavigationOnClickListener(v -> {
       if (getViewUtil().isClickEnabled()) {
         performHapticClick();

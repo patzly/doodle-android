@@ -88,7 +88,7 @@ public class OtherFragment extends BaseFragment
 
     SystemBarBehavior systemBarBehavior = new SystemBarBehavior(activity);
     systemBarBehavior.setAppBar(binding.appBarOther);
-    systemBarBehavior.setScroll(binding.scrollOther, binding.linearOtherContainer);
+    systemBarBehavior.setScroll(binding.scrollOther, binding.coordinatorOtherContainer);
     systemBarBehavior.setAdditionalBottomInset(activity.getFabTopEdgeDistance());
     systemBarBehavior.setUp();
 
@@ -96,6 +96,7 @@ public class OtherFragment extends BaseFragment
         binding.appBarOther, binding.scrollOther, true
     );
 
+    ViewUtil.centerToolbarTitleOnLargeScreens(binding.toolbarOther);
     binding.toolbarOther.setNavigationOnClickListener(v -> {
       if (getViewUtil().isClickEnabled()) {
         performHapticClick();

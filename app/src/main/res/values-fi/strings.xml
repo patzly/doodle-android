@@ -45,8 +45,6 @@
   <string name="action_continue">Jatka</string>
   <string name="action_open_app_info">Avaa sovellustiedot</string>
   <string name="action_set">Aseta taustakuva</string>
-  <string name="action_set_directly">Aseta suoraan</string>
-  <string name="action_open_picker">Avaa taustakuvan valitsin</string>
   <string name="action_send_feedback">Lähetä palautetta</string>
   <string name="action_share">Jaa</string>
   <string name="action_share_description">Kerro ystävillesi Doodlesta</string>

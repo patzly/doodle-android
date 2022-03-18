@@ -45,8 +45,6 @@
   <string name="action_continue">Tovább</string>
   <string name="action_open_app_info">Alkalmazás adatainak megnyitása</string>
   <string name="action_set">Háttérkép beállítása</string>
-  <string name="action_set_directly">Közvetlen beállítás</string>
-  <string name="action_open_picker">Háttérkép választó megnyitása</string>
   <string name="action_send_feedback">Visszajelzés küldése</string>
   <string name="action_share">Megosztás</string>
   <string name="action_share_description">Mesélj a barátaidnak a Doodle-ről</string>

@@ -21,6 +21,9 @@
 
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
+  <string name="wallpaper_description">多彩的动态壁纸，具有自动黑暗模式和节能动画。根据你的需要定制它！</string>
+  <string name="wallpaper_description_picker">当你在主屏幕上滑动和解锁设备时，你会发现一系列色彩丰富的形状，带有柔和的视差和缩放效果。\n定制壁纸来匹配您自己的风格！</string>
+
   <!-- TITLES -->
 
   <string name="title_info">信息</string>
@@ -45,6 +48,7 @@
   <string name="action_continue">继续</string>
   <string name="action_open_app_info">打开应用信息</string>
   <string name="action_set">设置壁纸</string>
+  <string name="action_learn_more">了解更多</string>
   <string name="action_help">帮助</string>
   <string name="action_send_feedback">发送反馈</string>
   <string name="action_share">分享</string>

@@ -21,6 +21,9 @@
 
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
+  <string name="wallpaper_description">Fond d\'écran animé et coloré avec mode sombre automatique et des animations économes en énergie. Personnalisez-le selon vos besoins !</string>
+  <string name="wallpaper_description_picker">Explorez une collection colorée de formes, affinées avec de légers effets de parallaxe et de zoom lorsque vous faites défiler vos écrans d\'accueil et déverrouillez votre appareil.\nPersonnalisez le fond d\'écran pour qu\'il corresponde à votre propre style !</string>
+
   <!-- TITLES -->
 
   <string name="title_info">Informations</string>
@@ -45,6 +48,7 @@
   <string name="action_continue">Continuer</string>
   <string name="action_open_app_info">Ouvrir les infos sur l\'app</string>
   <string name="action_set">Définir le papier peint</string>
+  <string name="action_learn_more">En apprendre davantage</string>
   <string name="action_help">Aide</string>
   <string name="action_send_feedback">Envoyer des commentaires</string>
   <string name="action_share">Partager</string>

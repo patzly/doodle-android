@@ -34,8 +34,8 @@ android {
         applicationId "xyz.zedler.patrick.doodle"
         minSdkVersion 21
         targetSdkVersion 31
-        versionCode 36
-        versionName "5.3.0"
+        versionCode 37
+        versionName "5.4.0"
     }
 
     applicationVariants.all { variant ->
@@ -70,5 +70,5 @@ dependencies {
     implementation 'androidx.navigation:navigation-fragment:2.4.1'
     implementation 'androidx.navigation:navigation-ui:2.4.1'
 
-    implementation 'com.google.android.material:material:1.6.0-alpha03'
+    implementation 'com.google.android.material:material:1.6.0-beta01'
 }

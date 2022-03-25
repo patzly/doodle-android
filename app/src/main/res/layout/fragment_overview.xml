@@ -120,7 +120,10 @@
         app:layout_constraintEnd_toEndOf="parent">
 
         <com.google.android.material.card.MaterialCardView
-          style="@style/Widget.Doodle.Card.Text">
+          style="@style/Widget.Doodle.Card.Text"
+          app:contentPaddingBottom="8dp"
+          app:contentPaddingLeft="0dp"
+          app:contentPaddingRight="0dp">
 
           <LinearLayout
             android:layout_width="match_parent"
@@ -131,7 +134,9 @@
               style="@style/Widget.Doodle.TextView.Paragraph"
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
-              android:layout_marginBottom="12dp"
+              android:layout_marginStart="16dp"
+              android:layout_marginEnd="16dp"
+              android:layout_marginBottom="4dp"
               android:textColor="?attr/colorOnSurfaceVariant"
               android:text="@string/wallpaper_description" />
 
@@ -139,16 +144,17 @@
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:orientation="horizontal"
-              android:layout_gravity="center_horizontal">
+              android:layout_gravity="end"
+              android:layout_marginEnd="12dp">
 
               <com.google.android.material.button.MaterialButton
                 android:id="@+id/button_overview_info"
-                style="@style/Widget.Doodle.Button.UnelevatedButton"
+                style="@style/Widget.Doodle.Button.TextButton"
                 android:text="@string/action_learn_more" />
 
               <com.google.android.material.button.MaterialButton
                 android:id="@+id/button_overview_help"
-                style="@style/Widget.Doodle.Button.UnelevatedButton"
+                style="@style/Widget.Doodle.Button.TextButton"
                 android:layout_marginStart="8dp"
                 android:text="@string/action_help" />
 

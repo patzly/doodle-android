@@ -1,7 +1,7 @@
 5.4.0:
 - New: clearly yellow app color theme
-- New: Czech translation
-- Improved: new help dialog accessible from top right menus
+- New: Czech and Lithuanian translations
+- Improved: new help dialog accessible from top right menus and overview screen
 - Improved: simplified night mode option in appearance settings
 - Improved: app layout and dialog appearance on large screens
 - Improved: workaround for MIUI issue replaced by info in help dialog, since workaround didn't work

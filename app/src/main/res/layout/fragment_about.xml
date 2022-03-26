@@ -96,11 +96,11 @@
           <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
 
             <TextView
-              style="@style/Widget.Doodle.TextView.ListItem.Title"
+              style="@style/Widget.Doodle.TextView.ListItem.OverLine"
               android:text="@string/about_changelog" />
 
             <TextView
-              style="@style/Widget.Doodle.TextView.ListItem.Description"
+              style="@style/Widget.Doodle.TextView.ListItem.Title"
               android:text="@string/about_changelog_description" />
 
           </LinearLayout>
@@ -198,6 +198,31 @@
             <TextView
               style="@style/Widget.Doodle.TextView.ListItem.Title"
               android:text="@string/about_translation_description" />
+
+          </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+          android:id="@+id/linear_about_privacy"
+          style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon.Clickable"
+          android:background="@drawable/ripple_list_item_bg">
+
+          <ImageView
+            android:id="@+id/image_about_privacy"
+            style="@style/Widget.Doodle.ImageView.ListItem.Icon.Colored"
+            android:src="@drawable/ic_round_policy_anim"
+            tools:ignore="ContentDescription" />
+
+          <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
+
+            <TextView
+              style="@style/Widget.Doodle.TextView.ListItem.OverLine"
+              android:text="@string/about_privacy" />
+
+            <TextView
+              style="@style/Widget.Doodle.TextView.ListItem.Title"
+              android:text="@string/about_privacy_description" />
 
           </LinearLayout>
 

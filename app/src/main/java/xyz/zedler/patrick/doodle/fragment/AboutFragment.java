@@ -97,6 +97,7 @@ public class AboutFragment extends BaseFragment implements OnClickListener {
         binding.linearAboutVending,
         binding.linearAboutGithub,
         binding.linearAboutTranslation,
+        binding.linearAboutPrivacy,
         binding.linearAboutLicenseJost,
         binding.linearAboutLicenseMaterialComponents,
         binding.linearAboutLicenseMaterialIcons
@@ -129,6 +130,13 @@ public class AboutFragment extends BaseFragment implements OnClickListener {
       startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.app_github))));
     } else if (id == R.id.linear_about_translation && getViewUtil().isClickEnabled()) {
       startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.app_translate))));
+    } else if (id == R.id.linear_about_privacy && getViewUtil().isClickEnabled()) {
+      ViewUtil.startIcon(binding.imageAboutPrivacy);
+      new Handler(Looper.getMainLooper()).postDelayed(
+          () -> startActivity(
+              new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.app_privacy)))
+          ), 300
+      );
     } else if (id == R.id.linear_about_license_jost && getViewUtil().isClickEnabled()) {
       ViewUtil.startIcon(binding.imageAboutLicenseJost);
       activity.showTextBottomSheet(

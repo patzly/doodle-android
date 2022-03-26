@@ -1,6 +1,7 @@
 5.4.0:
 - New: clearly yellow app color theme
 - New: Czech and Lithuanian translations
+- New: privacy policy link in about section
 - Improved: new help dialog accessible from top right menus and overview screen
 - Improved: simplified night mode option in appearance settings
 - Improved: app layout and dialog appearance on large screens

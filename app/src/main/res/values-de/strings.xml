@@ -168,6 +168,8 @@
   <string name="about_vending_description">Weitere Apps des Entwicklers</string>
   <string name="about_github_description">Quellcode</string>
   <string name="about_translation_description">Hilf mit, Doodle in deine Sprache zu übersetzen</string>
+  <string name="about_privacy">Datenschutzerklärung</string>
+  <string name="about_privacy_description">Wie werden deine Daten verarbeitet?</string>
 
   <!-- MESSAGES -->
 

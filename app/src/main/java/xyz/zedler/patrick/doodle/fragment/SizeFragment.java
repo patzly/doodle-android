@@ -69,7 +69,7 @@ public class SizeFragment extends BaseFragment
 
     SystemBarBehavior systemBarBehavior = new SystemBarBehavior(activity);
     systemBarBehavior.setAppBar(binding.appBarSize);
-    systemBarBehavior.setScroll(binding.scrollSize, binding.coordinatorSizeContainer);
+    systemBarBehavior.setScroll(binding.scrollSize, binding.constraintSize);
     systemBarBehavior.setAdditionalBottomInset(activity.getFabTopEdgeDistance());
     systemBarBehavior.setUp();
 

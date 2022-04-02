@@ -77,10 +77,7 @@ public class LanguageAdapter extends RecyclerView.Adapter<LanguageAdapter.ViewHo
 
   @SuppressLint("ClickableViewAccessibility")
   @Override
-  public void onBindViewHolder(
-      @NonNull final ViewHolder holder,
-      int position
-  ) {
+  public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
     holder.binding.frameLanguageContainer.setBackground(
         ViewUtil.getRippleBgListItemSurfaceRecyclerItem(holder.binding.getRoot().getContext())
     );

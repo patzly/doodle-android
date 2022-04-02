@@ -44,7 +44,7 @@
     android:layout_marginTop="?attr/actionBarSize">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-      android:id="@+id/coordinator_appearance_container"
+      android:id="@+id/constraint_appearance"
       android:layout_width="match_parent"
       android:layout_height="wrap_content">
 

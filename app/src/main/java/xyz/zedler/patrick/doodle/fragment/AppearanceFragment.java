@@ -108,7 +108,7 @@ public class AppearanceFragment extends BaseFragment
 
     SystemBarBehavior systemBarBehavior = new SystemBarBehavior(activity);
     systemBarBehavior.setAppBar(binding.appBarAppearance);
-    systemBarBehavior.setScroll(binding.scrollAppearance, binding.coordinatorAppearanceContainer);
+    systemBarBehavior.setScroll(binding.scrollAppearance, binding.constraintAppearance);
     systemBarBehavior.setAdditionalBottomInset(activity.getFabTopEdgeDistance());
     systemBarBehavior.setUp();
 

@@ -88,7 +88,7 @@ public class OtherFragment extends BaseFragment
 
     SystemBarBehavior systemBarBehavior = new SystemBarBehavior(activity);
     systemBarBehavior.setAppBar(binding.appBarOther);
-    systemBarBehavior.setScroll(binding.scrollOther, binding.coordinatorOtherContainer);
+    systemBarBehavior.setScroll(binding.scrollOther, binding.constraintOther);
     systemBarBehavior.setAdditionalBottomInset(activity.getFabTopEdgeDistance());
     systemBarBehavior.setUp();
 

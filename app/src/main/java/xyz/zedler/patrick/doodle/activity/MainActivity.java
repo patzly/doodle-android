@@ -368,7 +368,7 @@ public class MainActivity extends AppCompatActivity {
 
   public void showSnackbar(@StringRes int resId) {
     showSnackbar(
-        Snackbar.make(binding.fragmentMainNavHost, getString(resId), Snackbar.LENGTH_LONG)
+        Snackbar.make(binding.coordinatorMain, getString(resId), Snackbar.LENGTH_LONG)
     );
   }
 
@@ -377,7 +377,7 @@ public class MainActivity extends AppCompatActivity {
   }
 
   public Snackbar getSnackbar(@StringRes int resId, int duration) {
-    return Snackbar.make(binding.fragmentMainNavHost, getString(resId), duration);
+    return Snackbar.make(binding.coordinatorMain, getString(resId), duration);
   }
 
   public void navigate(NavDirections directions) {

@@ -21,6 +21,9 @@
 
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
+  <string name="wallpaper_description">Otomatik karanlık moda sahip fazla güç tüketmeyen renkli duvar kağıtları. İhtiyacınıza göre özelleştirin.</string>
+  <string name="wallpaper_description_picker">Ana ekranlarınızda gezinirken ve cihazınızın kilidini açarken hafif paralaks ve yakınlaştırma efektleriyle harmanlanmış renkli şekil koleksiyonlarını keşfedin.\nStilinize göre duvar kağıdını özelleştirin!</string>
+
   <!-- TITLES -->
 
   <string name="title_info">Bilgi</string>
@@ -45,6 +48,8 @@
   <string name="action_continue">Devam et</string>
   <string name="action_open_app_info">Uygulama bilgisini aç</string>
   <string name="action_set">Duvar kağıdı olarak ayarla</string>
+  <string name="action_learn_more">Daha fazlasını öğrenin</string>
+  <string name="action_help">Yardım</string>
   <string name="action_send_feedback">Geri bildirim gönder</string>
   <string name="action_share">Paylaş</string>
   <string name="action_share_description">Doodle\'ı arkadaşlarına anlat</string>
@@ -67,10 +72,13 @@
   <string name="appearance_variant">Biçim</string>
   <string name="appearance_night_mode">Karanlık Modu</string>
   <string name="appearance_night_mode_description">Sadece karanlık renkler</string>
+  <string name="appearance_night_mode_on">Açık</string>
+  <string name="appearance_night_mode_off">Kapalı</string>
   <string name="appearance_follow_system">Sisteme uy</string>
   <string name="appearance_follow_system_description">Cihaz temasını benimse</string>
   <string name="appearance_white_text">Beyaz yazıyı zorlamayı dene</string>
   <string name="appearance_white_text_description">Okunabilirliğe etkisi olabilir</string>
+  <string name="appearance_colors_category">Renkler</string>
   <string name="appearance_colors">Çıkartılmış renkler</string>
   <string name="appearance_colors_description">Yazının kontrastını hesaplamada kullanılır</string>
   <string name="appearance_colors_description_dynamic">Sistemin tema motoru tarafından kullanılır</string>
@@ -90,6 +98,8 @@
   <string name="parallax_intensity">Paralaks gücü</string>
   <string name="parallax_intensity_description">Sayfa kaydırmada yatay uzaklık ve eğim efekti yoğunluğu </string>
   <string name="parallax_none">Hiçbiri</string>
+  <string name="parallax_swipe_power_save">Güç tasarruf modunu önceliğe al</string>
+  <string name="parallax_swipe_power_save_description">Güç tasarruf modu etkinken sayfa kaydırma animasyonunu duraklat</string>
   <string name="parallax_category_tilt">Eğim efekti</string>
   <string name="parallax_tilt">Cihazı eğdiğinde hareket eder</string>
   <string name="parallax_tilt_description">Daha fazla pil harcar</string>
@@ -99,6 +109,8 @@
   <string name="parallax_damping_description">Daha fazla pürüzsüzlük için azaltın</string>
   <string name="parallax_threshold">Hareket sınırı</string>
   <string name="parallax_threshold_description">Ufak harekete rağmen sürekli işleyişi duraklatmak için arttırın</string>
+  <string name="parallax_tilt_power_save_description">Güç tasarruf modu etkinken eğme efektini duraklat</string>
+
   <!-- SIZE -->
 
   <string name="size_title">Şekil boyutu</string>
@@ -112,6 +124,7 @@
   <string name="size_zoom_description">Arttırıldığında kamera daha fazla uzaklaşır</string>
   <string name="size_zoom_rotation">Yakınlaştırma efekti sırasında bazı şekiller hareket eder</string>
   <string name="size_zoom_rotation_description">Derece cinsinden maksimum dönüş </string>
+  <string name="size_zoom_power_save_description">Güç tasarruf modu etkinken yakınlaştırma efektini duraklat</string>
   <string name="size_zoom_launcher">Hızlı erişim menüsü ya da uygulama çekmecesi açıldığında uzaklaştır</string>
   <string name="size_zoom_launcher_description">Bazı cihazlarda mevcut olmayabilir</string>
   <string name="size_zoom_damping">Animasyon yumuşatma</string>
@@ -155,6 +168,8 @@
   <string name="about_vending_description">Geliştiriciden daha fazla uygulama</string>
   <string name="about_github_description">Kaynak kodu</string>
   <string name="about_translation_description">Doodle\'ı çevirmeye yardım et</string>
+  <string name="about_privacy">Gizlilik politikası </string>
+  <string name="about_privacy_description">Verileriniz nasıl işleniyor?</string>
 
   <!-- MESSAGES -->
 

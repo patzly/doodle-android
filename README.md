@@ -43,10 +43,7 @@ The app is not just a copy of the original wallpapers, it's a complete rewrite w
 
 ## Compatibility
 
-Doodle Android requires at least Android 6 Marshmallow on your device. The app will work properly on devices without any Google service installed.
-
-You need to turn on background scrolling in your launcher's settings if you have disabled it before to make parallax effect work without the tilt effect enabled.
-Some launchers don't support background scrolling at all, like Samsung's TouchWiz. As a solution, please try installing another launcher.
+Doodle Android requires at least Android 5.1 Lollipop on your device. The app will work properly on devices without any Google service installed.
 
 ## Contribution
 

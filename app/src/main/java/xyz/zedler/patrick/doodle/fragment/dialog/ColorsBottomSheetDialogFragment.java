@@ -60,6 +60,7 @@ public class ColorsBottomSheetDialogFragment extends BaseBottomSheetDialogFragme
       SelectionCardView card = new SelectionCardView(activity);
       card.setOuterCardBackgroundColor(SurfaceColors.SURFACE_5.getColor(activity));
       card.setCardBackgroundColor(Color.parseColor(colors[iFinal]));
+      card.setScrimEnabled(false, true);
       card.setOnClickListener(v -> {
         if (!card.isChecked()) {
           card.startCheckedIcon();

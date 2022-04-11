@@ -333,7 +333,7 @@ public class OtherFragment extends BaseFragment
       }
 
       SelectionCardView card = new SelectionCardView(activity);
-      card.setScrimEnabled(false);
+      card.setScrimEnabled(false, false);
       int color;
       if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S && i == -1) {
         color = ContextCompat.getColor(

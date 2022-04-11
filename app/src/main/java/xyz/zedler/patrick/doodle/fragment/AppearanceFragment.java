@@ -326,7 +326,7 @@ public class AppearanceFragment extends BaseFragment
         BaseWallpaper wallpaper = baseWallpapers[wallpaperIndex];
 
         SelectionCardView card = new SelectionCardView(activity);
-        card.setScrimEnabled(true);
+        card.setScrimEnabled(true, false);
         card.setCardImageResource(wallpaper.getThumbnailResId());
         card.setOnClickListener(v -> {
           if (randomWallpaper) {
@@ -461,19 +461,23 @@ public class AppearanceFragment extends BaseFragment
       } else {
         card = new SelectionCardView(activity);
       }
-      card.setScrimEnabled(true);
 
       if (sameCount) {
         ValueAnimator animator = ValueAnimator.ofArgb(
             card.getCardBackgroundColor().getDefaultColor(), variantLight.getPrimaryColor()
         );
         animator.addUpdateListener(
-            animation -> card.setCardBackgroundColor((int) animation.getAnimatedValue()));
+            animation -> {
+              card.setCardBackgroundColor((int) animation.getAnimatedValue());
+              card.setScrimEnabled(false, true);
+            }
+        );
         animator.setDuration(300);
         animator.setInterpolator(new FastOutSlowInInterpolator());
         animator.start();
       } else {
         card.setCardBackgroundColor(variantLight.getPrimaryColor());
+        card.setScrimEnabled(false, true);
       }
       card.setOnClickListener(v -> {
         if (randomWallpaper) {
@@ -521,7 +525,7 @@ public class AppearanceFragment extends BaseFragment
     for (int i = 0; i < 3; i++) {
       final int iFinal = i;
       SelectionCardView card = new SelectionCardView(activity);
-      card.setScrimEnabled(true);
+      card.setScrimEnabled(true, false);
       card.setCardBackgroundColor(Color.BLACK);
       card.setOnClickListener(v -> {
         if (binding == null || currentWallpaper == null || currentVariant == null) {

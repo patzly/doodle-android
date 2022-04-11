@@ -31,6 +31,8 @@ import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
 import androidx.core.content.res.ResourcesCompat;
 import com.google.android.material.card.MaterialCardView;
+import com.google.android.material.color.ColorRoles;
+import com.google.android.material.color.MaterialColors;
 import com.google.android.material.elevation.SurfaceColors;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.util.ResUtil;
@@ -140,11 +142,15 @@ public class SelectionCardView extends MaterialCardView {
     super.setCardBackgroundColor(color);
   }
 
-  public void setScrimEnabled(boolean enabled) {
+  public void setScrimEnabled(boolean enabled, boolean ensureContrast) {
     setCheckedIconResource(
         enabled ? R.drawable.shape_selection_check_scrim : R.drawable.shape_selection_check
     );
-    if (!enabled) {
+    if (!enabled && ensureContrast) {
+      int bg = getCardBackgroundColor().getDefaultColor();
+      ColorRoles roles = MaterialColors.getColorRoles(bg, MaterialColors.isColorLight(bg));
+      setCheckedIconTint(ColorStateList.valueOf(roles.getOnAccentContainer()));
+    } else if (!enabled) {
       setCheckedIconTint(
           ColorStateList.valueOf(ResUtil.getColorAttr(getContext(), R.attr.colorOnPrimaryContainer))
       );

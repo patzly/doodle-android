@@ -43,7 +43,7 @@ The app is not just a copy of the original wallpapers, it's a complete rewrite w
 
 ## Compatibility
 
-Doodle Android requires at least Android 5.1 Lollipop on your device. The app will work properly on devices without any Google service installed.
+Doodle Android requires at least Android 5.0 Lollipop on your device. The app will work properly on devices without any Google service installed.
 
 ## Contribution
 

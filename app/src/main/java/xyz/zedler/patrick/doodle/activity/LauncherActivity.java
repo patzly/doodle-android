@@ -40,7 +40,6 @@ import xyz.zedler.patrick.doodle.Constants.DEF;
 import xyz.zedler.patrick.doodle.Constants.EXTRA;
 import xyz.zedler.patrick.doodle.Constants.PREF;
 import xyz.zedler.patrick.doodle.Constants.THEME;
-import xyz.zedler.patrick.doodle.Constants.THEME.MODE;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.behavior.SystemBarBehavior;
 import xyz.zedler.patrick.doodle.util.PrefsUtil;
@@ -76,19 +75,14 @@ public class LauncherActivity extends MainActivity {
 
       // DARK MODE
 
-      int modeNight;
+      int modeNight = sharedPrefs.getInt(PREF.MODE, DEF.MODE);
       int uiMode = getResources().getConfiguration().uiMode;
-      switch (sharedPrefs.getInt(PREF.MODE, DEF.MODE)) {
-        case MODE.LIGHT:
-          modeNight = AppCompatDelegate.MODE_NIGHT_NO;
+      switch (modeNight) {
+        case AppCompatDelegate.MODE_NIGHT_NO:
           uiMode = Configuration.UI_MODE_NIGHT_NO;
           break;
-        case MODE.DARK:
-          modeNight = AppCompatDelegate.MODE_NIGHT_YES;
+        case AppCompatDelegate.MODE_NIGHT_YES:
           uiMode = Configuration.UI_MODE_NIGHT_YES;
-          break;
-        default:
-          modeNight = AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
           break;
       }
       AppCompatDelegate.setDefaultNightMode(modeNight);
@@ -168,19 +162,14 @@ public class LauncherActivity extends MainActivity {
     }
     SharedPreferences sharedPrefs = new PrefsUtil(base).checkForMigrations().getSharedPrefs();
     // Night mode
-    int modeNight;
+    int modeNight = sharedPrefs.getInt(PREF.MODE, DEF.MODE);
     int uiMode = base.getResources().getConfiguration().uiMode;
-    switch (sharedPrefs.getInt(PREF.MODE, MODE.AUTO)) {
-      case MODE.LIGHT:
-        modeNight = AppCompatDelegate.MODE_NIGHT_NO;
+    switch (modeNight) {
+      case AppCompatDelegate.MODE_NIGHT_NO:
         uiMode = Configuration.UI_MODE_NIGHT_NO;
         break;
-      case MODE.DARK:
-        modeNight = AppCompatDelegate.MODE_NIGHT_YES;
+      case AppCompatDelegate.MODE_NIGHT_YES:
         uiMode = Configuration.UI_MODE_NIGHT_YES;
-        break;
-      default:
-        modeNight = AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
         break;
     }
     AppCompatDelegate.setDefaultNightMode(modeNight);

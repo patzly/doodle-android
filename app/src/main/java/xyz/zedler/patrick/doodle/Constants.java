@@ -20,6 +20,7 @@
 package xyz.zedler.patrick.doodle;
 
 import android.util.Log;
+import androidx.appcompat.app.AppCompatDelegate;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Random;
@@ -134,7 +135,7 @@ public final class Constants {
     public static final String LANGUAGE = null;
     public static final boolean GPU = true;
     public static final String THEME = "";
-    public static final int MODE = Constants.THEME.MODE.AUTO;
+    public static final int MODE = AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
   }
 
   public static BaseWallpaper getWallpaper(String wallpaper) {
@@ -269,13 +270,6 @@ public final class Constants {
   }
 
   public static final class THEME {
-
-    public static final class MODE {
-
-      public static final int AUTO = 0;
-      public static final int LIGHT = 1;
-      public static final int DARK = 2;
-    }
 
     public static final String DYNAMIC = "dynamic";
     public static final String RED = "red";

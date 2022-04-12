@@ -168,7 +168,6 @@
   <string name="about_vending_description">Plus d\'applications du même développeur</string>
   <string name="about_github_description">Code source</string>
   <string name="about_translation_description">Aider à traduire Doodle</string>
-
   <!-- MESSAGES -->
 
   <string name="msg_feedback">Une bonne application demande beaucoup de temps et vit des retours de ses utilisateurs.\n\nAvez-vous des souhaits, des commentaires ou des questions ? Contactez-moi !\nSinon, je serais très heureux d\'avoir une bonne critique sur le Play Store.</string>

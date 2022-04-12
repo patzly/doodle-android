@@ -130,7 +130,6 @@
   <string name="about_vending_description">Flere apps fra udvikleren</string>
   <string name="about_github_description">Kildekode</string>
   <string name="about_translation_description">Hjælp med at oversætte Doodle</string>
-
   <!-- MESSAGES -->
 
   <string name="msg_feedback">En god app kræver en masse tid og lever af brugernes feedback.\n\nHar du ønsker, kommentarer eller spørgsmål? Kontakt mig!\nEllers ville jeg være meget glad for en god anmeldelse i Play Store.</string>

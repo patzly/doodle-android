@@ -45,6 +45,7 @@
   <string name="action_continue">Continuă</string>
   <string name="action_open_app_info">Deschide informații despre aplicație</string>
   <string name="action_set">Setează wallpaper-ul</string>
+  <string name="action_learn_more">Află mai multe</string>
   <string name="action_help">Ajutor</string>
   <string name="action_send_feedback">Trimite-ne părerea ta</string>
   <string name="action_share">Distribuie</string>
@@ -164,6 +165,8 @@
   <string name="about_vending_description">Mai multe aplicații de la dezvoltator</string>
   <string name="about_github_description">Codul sursă</string>
   <string name="about_translation_description">Ajută la traducerea Doodle</string>
+  <string name="about_privacy">Politica de Confidențialitate</string>
+  <string name="about_privacy_description">Cum sunt prelucrate datele dvs.?</string>
 
   <!-- MESSAGES -->
 

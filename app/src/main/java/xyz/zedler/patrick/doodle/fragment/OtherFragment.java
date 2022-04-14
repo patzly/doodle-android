@@ -297,7 +297,8 @@ public class OtherFragment extends BaseFragment
   private void setUpThemeSelection() {
     boolean hasDynamic = DynamicColors.isDynamicColorAvailable();
     ViewGroup container = binding.linearOtherThemeContainer;
-    for (int i = hasDynamic ? -1 : 0; i < 8; i++) {
+    int colorsCount = 8;
+    for (int i = hasDynamic ? -1 : 0; i <= colorsCount; i++) {
       String name;
       int resId;
       if (i == -1) {
@@ -316,15 +317,18 @@ public class OtherFragment extends BaseFragment
         name = THEME.GREEN;
         resId = R.style.Theme_Doodle_Green;
       } else if (i == 4) {
+        name = THEME.TURQUOISE;
+        resId = R.style.Theme_Doodle_Turquoise;
+      } else if (i == 5) {
         name = THEME.TEAL;
         resId = R.style.Theme_Doodle_Teal;
-      } else if (i == 5) {
+      } else if (i == 6) {
         name = THEME.BLUE;
         resId = R.style.Theme_Doodle_Blue;
-      } else if (i == 6) {
+      } else if (i == 7) {
         name = THEME.PURPLE;
         resId = R.style.Theme_Doodle_Purple;
-      } else if (i == 7) {
+      } else if (i == 8) {
         name = THEME.AMOLED;
         resId = R.style.Theme_Doodle_Amoled;
       } else {
@@ -342,7 +346,7 @@ public class OtherFragment extends BaseFragment
                 ? android.R.color.system_accent1_700
                 : android.R.color.system_accent1_100
         );
-      } else if (i == 7) {
+      } else if (i == colorsCount) {
         // Amoled theme selection card
         color = SystemUiUtil.isDarkModeActive(activity) ? 0x484848 : 0xe3e3e3;
       } else {

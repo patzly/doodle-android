@@ -1,5 +1,5 @@
 5.4.0:
-- New: clearly yellow app color theme
+- New: yellow and turquoise app color themes
 - New: Czech and Lithuanian translations
 - New: privacy policy link in about section
 - Improved: new help dialog accessible from top right menus and overview screen

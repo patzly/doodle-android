@@ -276,6 +276,7 @@ public final class Constants {
     public static final String YELLOW = "yellow";
     public static final String LIME = "lime";
     public static final String GREEN = "green";
+    public static final String TURQUOISE = "turquoise";
     public static final String TEAL = "teal";
     public static final String BLUE = "blue";
     public static final String PURPLE = "purple";

@@ -163,6 +163,42 @@
     <item name="colorOutline">@color/green_neutral_variant_60</item>
   </style>
 
+  <style name="Theme.Doodle.Turquoise" parent="Theme.Doodle">
+    <item name="colorPrimary">@color/turquoise_primary_80</item>
+    <item name="colorOnPrimary">@color/turquoise_primary_20</item>
+    <item name="colorPrimaryContainer">@color/turquoise_primary_30</item>
+    <item name="colorOnPrimaryContainer">@color/turquoise_primary_90</item>
+    <item name="colorPrimaryInverse">@color/turquoise_primary_40</item>
+
+    <item name="colorSecondary">@color/turquoise_secondary_80</item>
+    <item name="colorOnSecondary">@color/turquoise_secondary_20</item>
+    <item name="colorSecondaryContainer">@color/turquoise_secondary_30</item>
+    <item name="colorOnSecondaryContainer">@color/turquoise_secondary_90</item>
+
+    <item name="colorTertiary">@color/turquoise_tertiary_80</item>
+    <item name="colorOnTertiary">@color/turquoise_tertiary_20</item>
+    <item name="colorTertiaryContainer">@color/turquoise_tertiary_30</item>
+    <item name="colorOnTertiaryContainer">@color/turquoise_tertiary_90</item>
+
+    <item name="colorError">@color/turquoise_error_80</item>
+    <item name="colorOnError">@color/turquoise_error_20</item>
+    <item name="colorErrorContainer">@color/turquoise_error_30</item>
+    <item name="colorOnErrorContainer">@color/turquoise_error_80</item>
+
+    <item name="android:colorBackground">@color/turquoise_neutral_10</item>
+    <item name="colorOnBackground">@color/turquoise_neutral_90</item>
+
+    <item name="colorSurface">@color/turquoise_neutral_10</item>
+    <item name="colorOnSurface">@color/turquoise_neutral_90</item>
+    <item name="colorSurfaceInverse">@color/turquoise_neutral_90</item>
+    <item name="colorOnSurfaceInverse">@color/turquoise_neutral_20</item>
+
+    <item name="colorSurfaceVariant">@color/turquoise_neutral_variant_30</item>
+    <item name="colorOnSurfaceVariant">@color/turquoise_neutral_variant_80</item>
+
+    <item name="colorOutline">@color/turquoise_neutral_variant_60</item>
+  </style>
+
   <style name="Theme.Doodle.Teal" parent="Theme.Doodle">
     <item name="colorPrimary">@color/teal_primary_80</item>
     <item name="colorOnPrimary">@color/teal_primary_20</item>

@@ -189,6 +189,47 @@
   <color name="green_neutral_variant_50">#74796E</color>
   <color name="green_neutral_variant_30">#43493E</color>
 
+  <!-- TURQUOISE -->
+
+  <color name="turquoise_primary_90">#7DF8D6</color>
+  <color name="turquoise_primary_80">#5EDBBA</color>
+  <color name="turquoise_primary_40">#006B55</color>
+  <color name="turquoise_primary_30">#005140</color>
+  <color name="turquoise_primary_20">#00382B</color>
+  <color name="turquoise_primary_10">#002019</color>
+
+  <color name="turquoise_secondary_90">#CEE9DE</color>
+  <color name="turquoise_secondary_80">#B2CCC2</color>
+  <color name="turquoise_secondary_40">#4B635B</color>
+  <color name="turquoise_secondary_30">#344C44</color>
+  <color name="turquoise_secondary_20">#1D352E</color>
+  <color name="turquoise_secondary_10">#072019</color>
+
+  <color name="turquoise_tertiary_90">#C4E7FF</color>
+  <color name="turquoise_tertiary_80">#A9CBE2</color>
+  <color name="turquoise_tertiary_40">#416276</color>
+  <color name="turquoise_tertiary_30">#294B5E</color>
+  <color name="turquoise_tertiary_20">#0E3446</color>
+  <color name="turquoise_tertiary_10">#001E2D</color>
+
+  <color name="turquoise_error_90">#FFDAD4</color>
+  <color name="turquoise_error_80">#FFB4A9</color>
+  <color name="turquoise_error_40">#BA1B1B</color>
+  <color name="turquoise_error_30">#930006</color>
+  <color name="turquoise_error_20">#680003</color>
+  <color name="turquoise_error_10">#410001</color>
+
+  <color name="turquoise_neutral_99">#FBFDFA</color>
+  <color name="turquoise_neutral_90">#E0E3E0</color>
+  <color name="turquoise_neutral_20">#2D312F</color>
+  <color name="turquoise_neutral_10">#191C1B</color>
+
+  <color name="turquoise_neutral_variant_90">#DAE5DF</color>
+  <color name="turquoise_neutral_variant_80">#BFC9C4</color>
+  <color name="turquoise_neutral_variant_60">#89938E</color>
+  <color name="turquoise_neutral_variant_50">#707975</color>
+  <color name="turquoise_neutral_variant_30">#3F4945</color>
+
   <!-- TEAL -->
 
   <color name="teal_primary_90">#C5E7FF</color>

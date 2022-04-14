@@ -107,6 +107,9 @@ public class LauncherActivity extends MainActivity {
         case THEME.GREEN:
           setTheme(R.style.Theme_Doodle_Green);
           break;
+        case THEME.TURQUOISE:
+          setTheme(R.style.Theme_Doodle_Turquoise);
+          break;
         case THEME.TEAL:
           setTheme(R.style.Theme_Doodle_Teal);
           break;

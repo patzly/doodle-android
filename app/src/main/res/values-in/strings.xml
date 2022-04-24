@@ -21,6 +21,7 @@
 
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
+  <string name="wallpaper_description">Live Wallpaper penuh warna dengan mode gelap otomatis dan animasi yang hemat daya. kustomisasi sesuai kebutuhan</string>
   <!-- TITLES -->
 
   <string name="title_info">Informasi</string>
@@ -45,6 +46,7 @@
   <string name="action_continue">Lanjutkan</string>
   <string name="action_open_app_info">Buka info aplikasi</string>
   <string name="action_set">Atur wallpaper</string>
+  <string name="action_help">Bantuan</string>
   <string name="action_send_feedback">Kirim masukan</string>
   <string name="action_share">Bagikan</string>
   <string name="action_share_description">Beri tahu teman-temanmu tentang Doodle</string>

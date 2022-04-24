@@ -1,0 +1,43 @@
+<!--
+  ~ This file is part of Doodle Android.
+  ~
+  ~ Doodle Android is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Doodle Android is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with Doodle Android. If not, see <http://www.gnu.org/licenses/>.
+  ~
+  ~ Copyright (c) 2019-2022 by Patrick Zedler
+  -->
+
+<vector
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:width="24dp"
+  android:height="24dp"
+  android:viewportWidth="24"
+  android:viewportHeight="24">
+  <path
+    android:pathData="M-0.0001,0h24.0001v24.0001h-24.0001z"
+    android:strokeLineJoin="round"
+    android:strokeWidth="6.58606"
+    android:fillColor="#000000"
+    android:strokeColor="#00000000"
+    android:strokeLineCap="round" />
+  <path
+    android:pathData="M3.998,0C3.9714,0.6943 4.2393,1.2131 4.4727,1.543C4.7295,1.906 4.9007,2.0827 4.9629,2.6035C5.0251,3.1241 4.9006,3.3367 4.7363,3.75C4.5721,4.1633 4.4155,4.8071 4.7012,5.5645C4.9866,6.322 5.5296,6.7022 5.9258,6.9043C6.322,7.1064 6.5566,7.1831 6.8535,7.6152C7.1505,8.0474 7.1389,8.2941 7.1855,8.7363C7.2322,9.1786 7.3932,9.8214 7.998,10.3594C8.6028,10.8974 9.2604,10.9818 9.7051,10.9766C10.1498,10.9714 10.3917,10.9311 10.8555,11.1758C11.3193,11.4205 11.4231,11.6437 11.6699,12.0137C11.9167,12.3836 12.359,12.8789 13.1445,13.0742C13.9301,13.2696 14.552,13.0394 14.9434,12.8281C15.3347,12.6168 15.5306,12.4677 16.0547,12.4688C16.5792,12.4698 16.7756,12.6192 17.166,12.832C17.5565,13.0449 18.1766,13.278 18.9629,13.0859C19.7493,12.8938 20.1931,12.4022 20.4414,12.0332C20.6897,11.6643 20.795,11.4401 21.2598,11.1973C21.7247,10.9544 21.9675,10.9969 22.4121,11.0039C22.8272,11.0104 23.4281,10.9337 24,10.4883L24,7.502C23.8093,7.9582 23.7762,8.3655 23.7461,8.6406C23.7046,9.0197 23.7188,9.1459 23.3262,9.4922C22.9335,9.8386 22.8109,9.8087 22.4297,9.8027C22.0485,9.7967 21.42,9.7604 20.7031,10.1348C19.9864,10.5092 19.6582,11.0451 19.4453,11.3613C19.2324,11.6776 19.1865,11.7956 18.6777,11.9199C18.1692,12.0441 18.0751,11.9618 17.7402,11.7793C17.4054,11.5968 16.8653,11.2712 16.0566,11.2695C15.2482,11.2678 14.7085,11.5903 14.373,11.7715C14.0376,11.9526 13.9417,12.0365 13.4336,11.9102C12.9255,11.7838 12.8796,11.6648 12.668,11.3477C12.4564,11.0305 12.1312,10.4926 11.416,10.1152C10.7007,9.7379 10.0708,9.7729 9.6895,9.7773C9.3081,9.7818 9.1859,9.8108 8.7949,9.4629C8.4037,9.1149 8.4189,8.9905 8.3789,8.6113C8.3389,8.2322 8.2998,7.6019 7.8418,6.9355C7.3838,6.2692 6.8104,6.0092 6.4707,5.8359C6.131,5.6627 6.0088,5.6306 5.8242,5.1406C5.6395,4.6508 5.7108,4.5457 5.8516,4.1914C5.9924,3.8371 6.2502,3.2638 6.1543,2.4609C6.0584,1.658 5.6734,1.1609 5.4531,0.8496C5.2444,0.5546 5.154,0.4512 5.1992,0L3.998,0z"
+    android:strokeLineJoin="round"
+    android:fillColor="#804c43"
+    android:strokeLineCap="round" />
+  <path
+    android:pathData="M0.7715,12.0313C0.5129,12.0275 0.2553,12.0297 0,12.0371L0,13.2363C0.0059,13.2361 0.0116,13.2365 0.0176,13.2363C3.9034,13.1203 8.3606,14.413 12.3457,16.8496C15.6055,18.8425 18.1974,21.367 19.9414,24L21.3633,24C19.5167,20.9564 16.6404,18.0697 12.9707,15.8262C9.0686,13.4403 4.739,12.0882 0.7715,12.0313z"
+    android:strokeLineJoin="round"
+    android:fillColor="#4a4a4a"
+    android:strokeLineCap="round" />
+</vector>

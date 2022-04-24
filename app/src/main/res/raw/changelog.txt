@@ -1,4 +1,5 @@
 5.4.0:
+- New: wallpaper with Android 12 setup design of Pixel 6
 - New: yellow and turquoise app color themes
 - New: Czech and Lithuanian translations
 - New: privacy policy link in about section

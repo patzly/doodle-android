@@ -33,6 +33,7 @@ import xyz.zedler.patrick.doodle.wallpaper.FogWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.JohannaWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.LeafyWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.MonetWallpaper;
+import xyz.zedler.patrick.doodle.wallpaper.OrioleWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.PixelWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.ReikoWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.SandWallpaper;
@@ -148,6 +149,8 @@ public final class Constants {
         return new AnthonyWallpaper();
       case WALLPAPER.MONET:
         return new MonetWallpaper();
+      case WALLPAPER.ORIOLE:
+        return new OrioleWallpaper();
       case WALLPAPER.LEAFY:
         return new LeafyWallpaper();
       case WALLPAPER.FOG:
@@ -203,6 +206,7 @@ public final class Constants {
         WALLPAPER.WATER,
         WALLPAPER.SAND,
         WALLPAPER.MONET,
+        WALLPAPER.ORIOLE,
 
         WALLPAPER.LEAFY,
         WALLPAPER.FOG,
@@ -229,6 +233,7 @@ public final class Constants {
     public static final String WATER = "water";
     public static final String SAND = "sand";
     public static final String MONET = "monet";
+    public static final String ORIOLE = "oriole";
 
     public static final String LEAFY = "leafy";
     public static final String FOG = "fog";

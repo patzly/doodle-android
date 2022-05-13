@@ -31,6 +31,16 @@
   <!-- Toolbar -->
 
   <style
+    name="Widget.Doodle.CollapsingToolbar"
+    parent="@style/Widget.Material3.CollapsingToolbar.Large">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">?attr/collapsingToolbarLayoutLargeSize</item>
+    <item name="layout_scrollFlags">scroll|exitUntilCollapsed|snap</item>
+    <item name="collapsedTitleTextAppearance">@style/TextAppearance.Doodle.Toolbar.Title</item>
+    <item name="expandedTitleTextAppearance">@style/TextAppearance.Doodle.HeadlineMedium</item>
+  </style>
+
+  <style
     name="Widget.Doodle.Toolbar"
     parent="@style/Widget.Material3.Toolbar.OnSurface">
     <item name="android:layout_width">match_parent</item>
@@ -375,6 +385,14 @@
 
   <style name="TextAppearance.Doodle.Toolbar.Title" parent="TextAppearance.Material3.TitleLarge">
     <item name="fontFamily">@font/jost_medium</item>
+  </style>
+
+  <style name="TextAppearance.Doodle.HeadlineMedium" parent="TextAppearance.Material3.HeadlineMedium">
+    <item name="fontFamily">@font/jost_book</item>
+  </style>
+
+  <style name="TextAppearance.Doodle.TitleLarge" parent="TextAppearance.Material3.TitleLarge">
+    <item name="fontFamily">@font/jost_book</item>
   </style>
 
   <style name="TextAppearance.Doodle.Tooltip" parent="TextAppearance.MaterialComponents.Tooltip">

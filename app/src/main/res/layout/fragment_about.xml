@@ -30,11 +30,14 @@
     android:layout_height="wrap_content">
 
     <com.google.android.material.appbar.CollapsingToolbarLayout
-      style="@style/Widget.Doodle.CollapsingToolbar">
+      android:id="@+id/collapsing_about"
+      style="@style/Widget.Doodle.CollapsingToolbar"
+      app:expandedTitleMarginStart="16dp">
 
       <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar_about"
         style="@style/Widget.Doodle.Toolbar.Back"
+        android:elevation="0dp"
         app:title="@string/about_title"
         app:menu="@menu/menu_main"
         app:layout_collapseMode="pin" />

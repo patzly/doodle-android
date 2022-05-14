@@ -48,6 +48,7 @@ public class SystemBarBehavior {
   private NestedScrollView scrollView;
   private ViewGroup scrollContent;
   private boolean applyAppBarInsetOnContainer;
+  private boolean applyStatusBarInsetOnContainer;
   private boolean hasScrollView;
   private boolean isScrollable;
   private int addBottomInset;
@@ -60,6 +61,7 @@ public class SystemBarBehavior {
     SystemUiUtil.layoutEdgeToEdge(window);
 
     applyAppBarInsetOnContainer = true;
+    applyStatusBarInsetOnContainer = true;
     hasScrollView = false;
     isScrollable = false;
   }
@@ -93,11 +95,10 @@ public class SystemBarBehavior {
     // TOP INSET
     if (appBarLayout != null) {
       ViewCompat.setOnApplyWindowInsetsListener(appBarLayout, (v, insets) -> {
+        int statusBarInset = insets.getInsets(Type.systemBars()).top;
+
         // STATUS BAR INSET
-        appBarLayout.setPadding(
-            0, insets.getInsets(Type.systemBars()).top, 0,
-            appBarLayout.getPaddingBottom()
-        );
+        appBarLayout.setPadding(0, statusBarInset, 0, appBarLayout.getPaddingBottom());
         appBarLayout.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED);
 
         // APP BAR INSET
@@ -107,9 +108,10 @@ public class SystemBarBehavior {
           params.topMargin = appBarLayout.getMeasuredHeight();
           container.setLayoutParams(params);
         } else if (container != null) {
+          //
           container.setPadding(
               container.getPaddingLeft(),
-              containerPaddingTop + insets.getInsets(Type.systemBars()).top,
+              containerPaddingTop + (applyStatusBarInsetOnContainer ? statusBarInset : 0),
               container.getPaddingRight(),
               container.getPaddingBottom()
           );
@@ -119,10 +121,14 @@ public class SystemBarBehavior {
     } else if (container != null) {
       // if no app bar exists, status bar inset is applied to container
       ViewCompat.setOnApplyWindowInsetsListener(container, (v, insets) -> {
+        int statusBarInset = applyStatusBarInsetOnContainer
+            ? insets.getInsets(Type.systemBars()).top
+            : 0;
+
         // STATUS BAR INSET
         container.setPadding(
             container.getPaddingLeft(),
-            containerPaddingTop + insets.getInsets(Type.systemBars()).top,
+            containerPaddingTop + statusBarInset,
             container.getPaddingRight(),
             container.getPaddingBottom()
         );
@@ -213,6 +219,10 @@ public class SystemBarBehavior {
 
   public void applyAppBarInsetOnContainer(boolean apply) {
     applyAppBarInsetOnContainer = apply;
+  }
+
+  public void applyStatusBarInsetOnContainer(boolean apply) {
+    applyStatusBarInsetOnContainer = apply;
   }
 
   public static void applyBottomInset(@NonNull View view) {

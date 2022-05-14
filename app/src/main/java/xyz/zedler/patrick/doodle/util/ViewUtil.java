@@ -32,8 +32,10 @@ import android.graphics.drawable.shapes.RoundRectShape;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 import android.view.ViewTreeObserver.OnGlobalLayoutListener;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.CompoundButton;
@@ -45,6 +47,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.ColorUtils;
 import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
+import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.google.android.material.card.MaterialCardView;
@@ -210,11 +213,47 @@ public class ViewUtil {
     }
   }
 
+  public interface OnWidthListener {
+
+    void onWidth(int width);
+  }
+
+  public static void calculateWidth(@NonNull View view, OnWidthListener listener) {
+    view.getViewTreeObserver().addOnGlobalLayoutListener(
+        new ViewTreeObserver.OnGlobalLayoutListener() {
+          @Override
+          public void onGlobalLayout() {
+            if (listener != null) {
+              listener.onWidth(view.getMeasuredWidth());
+            }
+            if (view.getViewTreeObserver().isAlive()) {
+              view.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+            }
+          }
+        });
+  }
+
   public static void centerToolbarTitleOnLargeScreens(MaterialToolbar toolbar) {
-    Resources resources = toolbar.getContext().getResources();
-    int maxWidth = resources.getDimensionPixelSize(R.dimen.max_content_width);
-    boolean isFullWidth = maxWidth >= SystemUiUtil.getDisplayWidth(toolbar.getContext());
-    toolbar.setTitleCentered(!isFullWidth);
+    calculateWidth(toolbar, width -> {
+      Resources resources = toolbar.getContext().getResources();
+      int maxWidth = resources.getDimensionPixelSize(R.dimen.max_content_width);
+      boolean isFullWidth = maxWidth >= width;
+      toolbar.setTitleCentered(!isFullWidth);
+    });
+  }
+
+  public static void styleExpandedToolbarOnLargeScreens(CollapsingToolbarLayout ctl) {
+    calculateWidth(ctl, width -> {
+      // is full width
+      Resources resources = ctl.getContext().getResources();
+      int maxWidth = resources.getDimensionPixelSize(R.dimen.max_content_width);
+      boolean isFullWidth = maxWidth >= width;
+      // expanded margin start
+      int margin = isFullWidth ? 0 : (width - maxWidth) / 2;
+      ctl.setExpandedTitleMarginStart(SystemUiUtil.dpToPx(ctl.getContext(), 16) + margin);
+      // expanded margin start
+      ctl.setCollapsedTitleGravity(isFullWidth ? Gravity.START : Gravity.CENTER_HORIZONTAL);
+    });
   }
 
   // Ripple background for surface list items

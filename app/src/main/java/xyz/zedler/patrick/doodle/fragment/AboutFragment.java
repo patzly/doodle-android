@@ -32,6 +32,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.activity.MainActivity;
+import xyz.zedler.patrick.doodle.behavior.ScrollBehavior;
+import xyz.zedler.patrick.doodle.behavior.SystemBarBehavior;
 import xyz.zedler.patrick.doodle.databinding.FragmentAboutBinding;
 import xyz.zedler.patrick.doodle.util.ResUtil;
 import xyz.zedler.patrick.doodle.util.ViewUtil;
@@ -59,15 +61,19 @@ public class AboutFragment extends BaseFragment implements OnClickListener {
   public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
     activity = (MainActivity) requireActivity();
 
-    /*SystemBarBehavior systemBarBehavior = new SystemBarBehavior(activity);
+    SystemBarBehavior systemBarBehavior = new SystemBarBehavior(activity);
     systemBarBehavior.setAppBar(binding.appBarAbout);
+    systemBarBehavior.applyAppBarInsetOnContainer(false);
+    systemBarBehavior.applyStatusBarInsetOnContainer(false);
     systemBarBehavior.setScroll(binding.scrollAbout, binding.constraintAbout);
     systemBarBehavior.setAdditionalBottomInset(activity.getFabTopEdgeDistance());
-    systemBarBehavior.setUp();*/
+    systemBarBehavior.setUp();
 
-    //new ScrollBehavior(activity).setUpScroll(binding.appBarAbout, binding.scrollAbout, true);
+    new ScrollBehavior(activity).setUpScroll(binding.appBarAbout, binding.scrollAbout, true);
 
-    ViewUtil.centerToolbarTitleOnLargeScreens(binding.toolbarAbout);
+    // ViewUtil.centerToolbarTitleOnLargeScreens(binding.toolbarAbout);
+    ViewUtil.styleExpandedToolbarOnLargeScreens(binding.collapsingAbout);
+
     binding.toolbarAbout.setNavigationOnClickListener(v -> {
       if (getViewUtil().isClickEnabled()) {
         performHapticClick();

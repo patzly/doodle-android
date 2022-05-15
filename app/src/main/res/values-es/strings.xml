@@ -179,7 +179,7 @@
   <string name="msg_random">Todos los diseños seleccionados serán usados</string>
   <string name="msg_random_warning">¡Todavía está activo el diseño aleatorio de fondo de pantalla!</string>
   <string name="msg_reset">¿Restablecer todos los ajustes?</string>
-  <string name="msg_force_stop">Se requiere forzar detencion para aplicar los cambios</string>
+  <string name="msg_force_stop">Se requiere forzar la detención para aplicar los cambios</string>
   <string name="msg_apply_colors">Los colores modificados se aplicarán al sistema la próxima vez que apague la pantalla</string>
   <string name="msg_apply_changes">Para aplicar (eventualmente) las opciones modificadas, se recomienda reiniciar el servicio de fondo de pantalla en ejecución.  Esto no se puede hacer automáticamente.  Fuerza la detención de Doodle en la configuración de tu sistema y luego vuelve a aplicar Doodle como fondo de pantalla.</string>
   <string name="msg_set_wallpaper">Si encuentra un problema que interrumpe la animación del fondo de pantalla al cerrar esta aplicación, elija el selector de fondo de pantalla de su sistema para seleccionar Doodle.  De lo contrario, puede configurarlo directamente.</string>

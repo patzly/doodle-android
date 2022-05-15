@@ -63,15 +63,15 @@ public class AboutFragment extends BaseFragment implements OnClickListener {
 
     SystemBarBehavior systemBarBehavior = new SystemBarBehavior(activity);
     systemBarBehavior.setAppBar(binding.appBarAbout);
-    systemBarBehavior.applyAppBarInsetOnContainer(false);
-    systemBarBehavior.applyStatusBarInsetOnContainer(false);
     systemBarBehavior.setScroll(binding.scrollAbout, binding.constraintAbout);
     systemBarBehavior.setAdditionalBottomInset(activity.getFabTopEdgeDistance());
     systemBarBehavior.setUp();
 
-    new ScrollBehavior(activity).setUpScroll(binding.appBarAbout, binding.scrollAbout, true);
+    new ScrollBehavior(activity).setUpScroll(
+        binding.appBarAbout, binding.scrollAbout, true
+    );
 
-    ViewUtil.styleExpandedToolbarOnLargeScreens(binding.collapsingAbout);
+    ViewUtil.centerToolbarTitleOnLargeScreens(binding.toolbarAbout);
 
     binding.toolbarAbout.setNavigationOnClickListener(v -> {
       if (getViewUtil().isClickEnabled()) {

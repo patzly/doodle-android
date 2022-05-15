@@ -175,7 +175,7 @@
 
   <string name="msg_feedback">Una gran aplicación requiere mucho tiempo y vive de los comentarios de sus usuarios.\n\n¿Tienes algún deseo, comentario o pregunta? ¡Contáctame!\nDe lo contrario, estaría muy feliz con una buena reseña en Play Store.</string>
   <string name="msg_share">Echa un vistazo a esta fantástica aplicación de fondos de pantalla animados: \nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
-  <string name="msg_hide">¿Ocultar el ícono en el lanzador?</string>
+  <string name="msg_hide">¿Ocultar icono en el lanzador?</string>
   <string name="msg_random">Todos los diseños seleccionados serán usados</string>
   <string name="msg_random_warning">¡Todavía está activo el diseño aleatorio de fondo de pantalla!</string>
   <string name="msg_reset">¿Restablecer todos los ajustes?</string>

@@ -163,7 +163,7 @@
   <string name="about_description">Información del desarrollador y más</string>
   <string name="about_version">versión</string>
   <string name="about_changelog">Notas de versión</string>
-  <string name="about_changelog_description">Que hay de nuevo?</string>
+  <string name="about_changelog_description">¿Qué hay de nuevo?</string>
   <string name="about_developer">Desarrollador</string>
   <string name="about_vending_description">Más aplicaciones del desarrollador</string>
   <string name="about_github_description">Código fuente</string>

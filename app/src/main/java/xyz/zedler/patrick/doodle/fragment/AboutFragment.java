@@ -71,7 +71,6 @@ public class AboutFragment extends BaseFragment implements OnClickListener {
 
     new ScrollBehavior(activity).setUpScroll(binding.appBarAbout, binding.scrollAbout, true);
 
-    // ViewUtil.centerToolbarTitleOnLargeScreens(binding.toolbarAbout);
     ViewUtil.styleExpandedToolbarOnLargeScreens(binding.collapsingAbout);
 
     binding.toolbarAbout.setNavigationOnClickListener(v -> {

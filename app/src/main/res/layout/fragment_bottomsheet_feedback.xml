@@ -51,7 +51,7 @@
         style="@style/Widget.Doodle.TextView.Paragraph"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="12dp"
         android:text="@string/msg_feedback"
         android:paddingStart="16dp"
         android:paddingEnd="16dp" />

@@ -369,12 +369,9 @@
 
           </LinearLayout>
 
-          <com.google.android.material.switchmaterial.SwitchMaterial
+          <com.google.android.material.materialswitch.MaterialSwitch
             android:id="@+id/switch_appearance_white_text"
-            style="@style/Widget.Doodle.Switch"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp" />
+            style="@style/Widget.Doodle.Switch" />
 
         </LinearLayout>
 
@@ -404,12 +401,9 @@
 
           </LinearLayout>
 
-          <com.google.android.material.switchmaterial.SwitchMaterial
+          <com.google.android.material.materialswitch.MaterialSwitch
             android:id="@+id/switch_appearance_random"
-            style="@style/Widget.Doodle.Switch"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp" />
+            style="@style/Widget.Doodle.Switch" />
 
         </LinearLayout>
 

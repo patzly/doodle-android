@@ -1,3 +1,8 @@
+5.4.1:
+- Improved: refreshed toggle switch style in settings
+
+Please consider translating this app into your language at Transifex.
+
 5.4.0:
 - New: wallpaper with Android 12 setup design of Pixel 6
 - New: yellow and turquoise app color themes
@@ -9,8 +14,6 @@
 - Improved: workaround for MIUI issue replaced by info in help dialog, since workaround didn't work
 - Improved: app color theme selection
 - Fixed: potential solution for blank settings pages
-
-Please consider translating this app into your language at Transifex.
 
 5.3.0:
 - New: another autumnal Pixel 6 Material You wallpaper!

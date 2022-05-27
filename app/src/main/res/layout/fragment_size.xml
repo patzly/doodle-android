@@ -195,12 +195,9 @@
 
           </LinearLayout>
 
-          <com.google.android.material.switchmaterial.SwitchMaterial
+          <com.google.android.material.materialswitch.MaterialSwitch
             android:id="@+id/switch_size_zoom_power_save"
-            style="@style/Widget.Doodle.Switch"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp" />
+            style="@style/Widget.Doodle.Switch" />
 
         </LinearLayout>
 
@@ -230,12 +227,9 @@
 
           </LinearLayout>
 
-          <com.google.android.material.switchmaterial.SwitchMaterial
+          <com.google.android.material.materialswitch.MaterialSwitch
             android:id="@+id/switch_size_zoom_launcher"
-            style="@style/Widget.Doodle.Switch"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp" />
+            style="@style/Widget.Doodle.Switch" />
 
         </LinearLayout>
 
@@ -272,12 +266,9 @@
 
             </LinearLayout>
 
-            <com.google.android.material.switchmaterial.SwitchMaterial
+            <com.google.android.material.materialswitch.MaterialSwitch
               android:id="@+id/switch_size_zoom_damping"
-              style="@style/Widget.Doodle.Switch"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:layout_marginStart="16dp" />
+              style="@style/Widget.Doodle.Switch" />
 
           </LinearLayout>
 
@@ -315,12 +306,9 @@
 
           </LinearLayout>
 
-          <com.google.android.material.switchmaterial.SwitchMaterial
+          <com.google.android.material.materialswitch.MaterialSwitch
             android:id="@+id/switch_size_zoom_system"
-            style="@style/Widget.Doodle.Switch"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp" />
+            style="@style/Widget.Doodle.Switch" />
 
         </LinearLayout>
 
@@ -350,12 +338,9 @@
 
           </LinearLayout>
 
-          <com.google.android.material.switchmaterial.SwitchMaterial
+          <com.google.android.material.materialswitch.MaterialSwitch
             android:id="@+id/switch_size_zoom_unlock"
-            style="@style/Widget.Doodle.Switch"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp" />
+            style="@style/Widget.Doodle.Switch" />
 
         </LinearLayout>
 

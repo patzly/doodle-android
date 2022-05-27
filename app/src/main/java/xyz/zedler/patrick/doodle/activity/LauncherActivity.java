@@ -124,7 +124,7 @@ public class LauncherActivity extends MainActivity {
           break;
         default:
           if (DynamicColors.isDynamicColorAvailable()) {
-            DynamicColors.applyIfAvailable(this);
+            DynamicColors.applyToActivityIfAvailable(this);
           } else {
             setTheme(R.style.Theme_Doodle_Blue);
           }

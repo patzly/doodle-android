@@ -142,12 +142,9 @@
 
           </LinearLayout>
 
-          <com.google.android.material.switchmaterial.SwitchMaterial
+          <com.google.android.material.materialswitch.MaterialSwitch
             android:id="@+id/switch_parallax_swipe_power_save"
-            style="@style/Widget.Doodle.Switch"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp" />
+            style="@style/Widget.Doodle.Switch" />
 
         </LinearLayout>
 
@@ -183,12 +180,9 @@
 
             </LinearLayout>
 
-            <com.google.android.material.switchmaterial.SwitchMaterial
+            <com.google.android.material.materialswitch.MaterialSwitch
               android:id="@+id/switch_parallax_tilt"
-              style="@style/Widget.Doodle.Switch"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:layout_marginStart="16dp" />
+              style="@style/Widget.Doodle.Switch" />
 
           </LinearLayout>
 
@@ -310,12 +304,9 @@
 
             </LinearLayout>
 
-            <com.google.android.material.switchmaterial.SwitchMaterial
+            <com.google.android.material.materialswitch.MaterialSwitch
               android:id="@+id/switch_parallax_tilt_power_save"
-              style="@style/Widget.Doodle.Switch"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:layout_marginStart="16dp" />
+              style="@style/Widget.Doodle.Switch" />
 
           </LinearLayout>
 

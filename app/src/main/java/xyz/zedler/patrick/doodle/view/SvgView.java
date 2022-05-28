@@ -17,26 +17,33 @@
  * Copyright (c) 2019-2022 by Patrick Zedler
  */
 
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
+package xyz.zedler.patrick.doodle.view;
 
-buildscript {
-    repositories {
-        google()
-        mavenCentral()
-    }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:7.2.1'
-        classpath 'androidx.navigation:navigation-safe-args-gradle-plugin:2.4.2'
-    }
-}
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.View;
+import androidx.annotation.RawRes;
+import xyz.zedler.patrick.doodle.drawable.SvgDrawable;
 
-allprojects {
-    repositories {
-        google()
-        mavenCentral()
-    }
-}
+public class SvgView extends View {
 
-task clean(type: Delete) {
-    delete rootProject.buildDir
+  SvgDrawable drawable;
+
+  public SvgView(Context context) {
+    super(context);
+  }
+
+  @Override
+  protected void onDraw(Canvas canvas) {
+    if (drawable != null) {
+      drawable.draw(canvas);
+    }
+  }
+
+  public void setSvg(@RawRes int resId) {
+    drawable = new SvgDrawable(getContext(), resId);
+    drawable.setScale(SvgDrawable.getDefaultScale(getContext()));
+
+    invalidate();
+  }
 }

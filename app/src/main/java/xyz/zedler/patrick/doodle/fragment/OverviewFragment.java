@@ -132,7 +132,9 @@ public class OverviewFragment extends BaseFragment implements OnClickListener {
       activity.showTextBottomSheet(R.raw.information, R.string.title_info);
       performHapticClick();
     } else if (id == R.id.button_overview_help && getViewUtil().isClickEnabled()) {
-      activity.showTextBottomSheet(R.raw.help, R.string.action_help);
+      // activity.showTextBottomSheet(R.raw.help, R.string.action_help);
+      // TODO: remove this test
+      // startActivity(new Intent(activity, TestActivity.class));
       performHapticClick();
     } else if (id == R.id.linear_overview_appearance && getViewUtil().isClickEnabled()) {
       navigate(OverviewFragmentDirections.actionOverviewToAppearance());

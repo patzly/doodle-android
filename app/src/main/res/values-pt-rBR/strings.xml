@@ -21,6 +21,9 @@
 
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
+  <string name="wallpaper_description">Papel de parede colorido ao vivo com modo escuro automático e animações com baixo consumo de energia. Personalize-o de acordo com suas necessidades!</string>
+  <string name="wallpaper_description_picker">Explore uma coleção colorida de formas, refinadas com efeitos suaves de paralaxe e zoom ao deslizar pelas telas iniciais e desbloquear o dispositivo.\nPersonalize o papel de parede para combinar com seu próprio estilo!</string>
+
   <!-- TITLES -->
 
   <string name="title_info">Informação</string>
@@ -45,6 +48,8 @@
   <string name="action_continue">Continuar</string>
   <string name="action_open_app_info">Abrir informações do aplicativo</string>
   <string name="action_set">Definir papel de parede</string>
+  <string name="action_learn_more">Saiba mais</string>
+  <string name="action_help">Ajuda</string>
   <string name="action_send_feedback">Enviar comentários</string>
   <string name="action_share">Compartilhar</string>
   <string name="action_share_description">Conte aos seus amigos sobre o Doodle</string>
@@ -71,6 +76,7 @@
   <string name="appearance_follow_system_description">Adotar o tema do dispositivo</string>
   <string name="appearance_white_text">Tentar forçar texto branco</string>
   <string name="appearance_white_text_description">Pode afetar legibilidade</string>
+  <string name="appearance_colors_category">Cores</string>
   <string name="appearance_colors">Cores extraidas</string>
   <string name="appearance_colors_description">Utilizado para calcular contraste do texto</string>
   <string name="appearance_colors_description_dynamic">Utilizado pelo mecanismo de temas do sistema</string>
@@ -90,6 +96,8 @@
   <string name="parallax_intensity">Force Parallax</string>
   <string name="parallax_intensity_description">Deslocamento horizontal ao arrastar paginas e intensidade do efeito de inclinação</string>
   <string name="parallax_none">Nenhum</string>
+  <string name="parallax_swipe_power_save">Respeite o economizador de bateria</string>
+  <string name="parallax_swipe_power_save_description">Pausar a animação de deslizar a página quando a economia de bateria estiver ativada</string>
   <string name="parallax_category_tilt">Efeito de inclinação</string>
   <string name="parallax_tilt">Movimentar quando o dispositivo for inclinado</string>
   <string name="parallax_tilt_description">Consume mais bateria</string>
@@ -99,6 +107,8 @@
   <string name="parallax_damping_description">Diminua para mais suavidade</string>
   <string name="parallax_threshold">Movimento mínimo</string>
   <string name="parallax_threshold_description">Aumente para pausar renderização mesmo com movimentação baixa</string>
+  <string name="parallax_tilt_power_save_description">Pausar o efeito de inclinação quando a economia de bateria está ativada</string>
+
   <!-- SIZE -->
 
   <string name="size_title">Tamanho e formato</string>
@@ -112,6 +122,7 @@
   <string name="size_zoom_description">Quando aumentado, a câmera diminui mais o zoom</string>
   <string name="size_zoom_rotation">Rotacionar alguns objetos quando aplicar zoom</string>
   <string name="size_zoom_rotation_description">Maior ângulo de rotação em graus</string>
+  <string name="size_zoom_power_save_description">Pausar o efeito de zoom quando a economia de bateria está ativada</string>
   <string name="size_zoom_launcher">Diminua o zoom ao abrir as configurações rápidas ou gaveta de aplicativos</string>
   <string name="size_zoom_launcher_description">Pode estar indisponível em certos dispositivos</string>
   <string name="size_zoom_damping">Amortecimento de animações</string>
@@ -155,6 +166,9 @@
   <string name="about_vending_description">Outros aplicativos do mesmo desenvolvedor</string>
   <string name="about_github_description">Código fonte</string>
   <string name="about_translation_description">Ajude a traduzir o Doodle</string>
+  <string name="about_privacy">Política de Privacidade</string>
+  <string name="about_privacy_description">Como seus dados são processados?</string>
+
   <!-- MESSAGES -->
 
   <string name="msg_feedback">Um ótimo aplicativo requer muito tempo e vive dos comentários de seus usuários.\n\nVocê tem algum desejo, comentário ou pergunta? Contacte-me!\nCaso contrário, ficaria muito satisfeito com uma boa crítica na Play Store.</string>

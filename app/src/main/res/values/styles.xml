@@ -65,6 +65,10 @@
 
   <!-- Snackbar -->
 
+  <style name="Widget.Doodle.Snackbar" parent="Widget.Material3.Snackbar">
+    <item name="shapeAppearance">?attr/shapeAppearanceCornerMedium</item>
+  </style>
+
   <style name="Widget.Doodle.Snackbar.TextView" parent="Widget.Material3.Snackbar.TextView">
     <item name="android:textColor">?attr/colorSurfaceVariant</item>
   </style>

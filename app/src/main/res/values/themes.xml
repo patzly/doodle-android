@@ -30,6 +30,7 @@
     <item name="android:fontFamily">@font/jost_book</item>
 
     <!-- Widget styles -->
+    <item name="snackbarStyle">@style/Widget.Doodle.Snackbar</item>
     <item name="snackbarTextViewStyle">@style/Widget.Doodle.Snackbar.TextView</item>
     <item name="snackbarButtonStyle">@style/Widget.Doodle.Button.TextButton.Snackbar</item>
 

@@ -17,10 +17,8 @@
   ~ Copyright (c) 2019-2022 by Patrick Zedler
   -->
 
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
 
   <dimen name="max_content_width">640dp</dimen>
-
-  <dimen name="mtrl_snackbar_background_corner_radius" tools:ignore="PrivateResource">16dp</dimen>
 
 </resources>

@@ -47,10 +47,11 @@ import androidx.appcompat.app.AppCompatDialog;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.core.view.AccessibilityDelegateCompat;
 import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.core.view.WindowInsetsCompat.Type;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.material.R;
-import com.google.android.material.bottomsheet.BottomSheetBehavior.BottomSheetCallback;
 import com.google.android.material.shape.MaterialShapeDrawable;
 import xyz.zedler.patrick.doodle.util.SystemUiUtil;
 
@@ -80,7 +81,7 @@ public class CustomBottomSheetDialog extends AppCompatDialog {
   boolean cancelable = true;
   private boolean canceledOnTouchOutside = true;
   private boolean canceledOnTouchOutsideSet;
-  private BottomSheetCallback edgeToEdgeCallback;
+  private EdgeToEdgeCallback edgeToEdgeCallback;
 
   public CustomBottomSheetDialog(@NonNull Context context) {
     this(context, 0);
@@ -166,12 +167,7 @@ public class CustomBottomSheetDialog extends AppCompatDialog {
       if (coordinator != null) {
         coordinator.setFitsSystemWindows(!drawEdgeToEdge);
       }
-      if (drawEdgeToEdge) {
-        // Automatically set up edge to edge flags if we should be drawing edge to edge.
-        int edgeToEdgeFlags =
-            View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_LAYOUT_STABLE;
-        window.getDecorView().setSystemUiVisibility(edgeToEdgeFlags);
-      }
+      WindowCompat.setDecorFitsSystemWindows(window, !drawEdgeToEdge);
     }
   }
 
@@ -240,28 +236,27 @@ public class CustomBottomSheetDialog extends AppCompatDialog {
   }
 
   /** Creates the container layout which must exist to find the behavior */
-  private FrameLayout ensureContainerAndBehavior() {
+  private void ensureContainerAndBehavior() {
     if (container == null) {
       container = (FrameLayout) View.inflate(
           getContext(),
           xyz.zedler.patrick.doodle.R.layout.dialog_custom_bottom_sheet, null
       );
 
-      coordinator = (CoordinatorLayout) container.findViewById(R.id.coordinator);
-      bottomSheet = (FrameLayout) container.findViewById(R.id.design_bottom_sheet);
+      coordinator = container.findViewById(R.id.coordinator);
+      bottomSheet = container.findViewById(R.id.design_bottom_sheet);
 
       behavior = BottomSheetBehavior.from(bottomSheet);
       behavior.addBottomSheetCallback(bottomSheetCallback);
       behavior.setHideable(cancelable);
     }
-    return container;
   }
 
   @SuppressLint("ClickableViewAccessibility")
   private View wrapInBottomSheet(
       int layoutResId, @Nullable View view, @Nullable ViewGroup.LayoutParams params) {
     ensureContainerAndBehavior();
-    CoordinatorLayout coordinator = (CoordinatorLayout) container.findViewById(R.id.coordinator);
+    CoordinatorLayout coordinator = container.findViewById(R.id.coordinator);
     if (layoutResId != 0 && view == null) {
       view = getLayoutInflater().inflate(layoutResId, coordinator, false);
     }
@@ -381,15 +376,13 @@ public class CustomBottomSheetDialog extends AppCompatDialog {
     private EdgeToEdgeCallback(
         @NonNull final View bottomSheet, @NonNull WindowInsetsCompat insetsCompat) {
       this.insetsCompat = insetsCompat;
-      lightStatusBar =
-          VERSION.SDK_INT >= VERSION_CODES.M
-              && (bottomSheet.getSystemUiVisibility() & SYSTEM_UI_FLAG_LIGHT_STATUS_BAR) != 0;
+      lightStatusBar = VERSION.SDK_INT >= VERSION_CODES.M
+          && (bottomSheet.getSystemUiVisibility() & SYSTEM_UI_FLAG_LIGHT_STATUS_BAR) != 0;
 
-      BottomSheetBehavior<FrameLayout> behavior
-          = BottomSheetBehavior.from((FrameLayout) bottomSheet);
+      BottomSheetBehavior<View> behavior = BottomSheetBehavior.from(bottomSheet);
 
       // Try to find the background color to automatically change the status bar icons so they will
-      // still be visible when the bottomsheet slides underneath the status bar.
+      // still be visible when the bottomSheet slides underneath the status bar.
       ColorStateList backgroundTint;
       MaterialShapeDrawable msd = behavior.getMaterialShapeDrawable();
       if (msd != null) {
@@ -429,21 +422,20 @@ public class CustomBottomSheetDialog extends AppCompatDialog {
       setPaddingForPosition(bottomSheet);
     }
 
-    @SuppressWarnings("deprecation")
     private void setPaddingForPosition(View bottomSheet) {
-      if (bottomSheet.getTop() < insetsCompat.getSystemWindowInsetTop() && isFullWidth) {
-        // If the bottomsheet is light, we should set light status bar so the icons are visible
-        // since the bottomsheet is now under the status bar.
+      if (bottomSheet.getTop() < insetsCompat.getInsets(Type.systemBars()).top && isFullWidth) {
+        // If the bottomSheet is light, we should set light status bar so the icons are visible
+        // since the bottomSheet is now under the status bar.
         setLightStatusBar(bottomSheet, lightBottomSheet);
         // Smooth transition into status bar when drawing edge to edge.
         bottomSheet.setPadding(
             bottomSheet.getPaddingLeft(),
-            (insetsCompat.getSystemWindowInsetTop() - bottomSheet.getTop()),
+            insetsCompat.getInsets(Type.systemBars()).top - bottomSheet.getTop(),
             bottomSheet.getPaddingRight(),
             0
         );
       } else if (bottomSheet.getTop() != 0) {
-        // Reset the status bar icons to the original color because the bottomsheet is not under the
+        // Reset the status bar icons to the original color because the bottomSheet is not under the
         // status bar.
         setLightStatusBar(bottomSheet, lightStatusBar);
         bottomSheet.setPadding(

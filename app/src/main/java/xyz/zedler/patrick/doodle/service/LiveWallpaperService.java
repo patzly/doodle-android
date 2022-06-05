@@ -96,18 +96,7 @@ public class LiveWallpaperService extends WallpaperService {
     super.onCreate();
 
     serviceInstance = this;
-  }
 
-  @Override
-  public void onDestroy() {
-    super.onDestroy();
-
-    serviceInstance = null;
-    unregisterReceiver();
-  }
-
-  @Override
-  public Engine onCreateEngine() {
     sharedPrefs = new PrefsUtil(this).checkForMigrations().getSharedPrefs();
 
     receiver = new BroadcastReceiver() {
@@ -139,7 +128,18 @@ public class LiveWallpaperService extends WallpaperService {
       }
     };
     registerReceiver();
+  }
 
+  @Override
+  public void onDestroy() {
+    super.onDestroy();
+
+    serviceInstance = null;
+    unregisterReceiver();
+  }
+
+  @Override
+  public Engine onCreateEngine() {
     setUserPresence(isKeyguardLocked() ? USER_PRESENCE.LOCKED : USER_PRESENCE.UNLOCKED);
 
     sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
@@ -268,6 +268,7 @@ public class LiveWallpaperService extends WallpaperService {
 
   class UserAwareEngine extends Engine implements UserPresenceListener, RefreshListener {
 
+    private Context context;
     private boolean useWhiteText;
     private int zoomIntensity;
     private boolean isZoomLauncherEnabled, isZoomUnlockEnabled;
@@ -306,6 +307,8 @@ public class LiveWallpaperService extends WallpaperService {
     @Override
     public void onCreate(SurfaceHolder surfaceHolder) {
       super.onCreate(surfaceHolder);
+
+      context = LiveWallpaperService.this;
 
       if (!isPreview()) {
         nonPreviewEngineInstance = this;
@@ -360,7 +363,7 @@ public class LiveWallpaperService extends WallpaperService {
       // Load this only once on creation, else it would cause a crash caused by OpenGL
       useGpu = sharedPrefs.getBoolean(PREF.GPU, DEF.GPU);
 
-      hasAccelerometer = SensorUtil.hasAccelerometer(LiveWallpaperService.this);
+      hasAccelerometer = SensorUtil.hasAccelerometer(context);
 
       loadSettings();
       loadTheme(useRandom);
@@ -527,7 +530,7 @@ public class LiveWallpaperService extends WallpaperService {
       if (hasAccelerometer && isTiltEnabled && !isListenerRegistered) {
         sensorManager.registerListener(
             sensorListener,
-            SensorUtil.getAccelerometer(LiveWallpaperService.this),
+            SensorUtil.getAccelerometer(context),
             // SENSOR_DELAY_GAME = 20000
             // SENSOR_DELAY_UI = 66667
             sharedPrefs.getInt(PREF.REFRESH_RATE, DEF.REFRESH_RATE)
@@ -538,7 +541,7 @@ public class LiveWallpaperService extends WallpaperService {
         isListenerRegistered = false;
         sensorManager.registerListener(
             sensorListener,
-            SensorUtil.getAccelerometer(LiveWallpaperService.this),
+            SensorUtil.getAccelerometer(context),
             // SENSOR_DELAY_GAME = 20000
             // SENSOR_DELAY_UI = 66667
             sharedPrefs.getInt(PREF.REFRESH_RATE, DEF.REFRESH_RATE)
@@ -550,7 +553,7 @@ public class LiveWallpaperService extends WallpaperService {
       }
 
       scale = sharedPrefs.getFloat(
-          PREF.SCALE, SvgDrawable.getDefaultScale(LiveWallpaperService.this)
+          PREF.SCALE, SvgDrawable.getDefaultScale(context)
       );
       if (svgDrawable != null) {
         svgDrawable.setScale(scale);

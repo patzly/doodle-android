@@ -44,6 +44,7 @@ import androidx.core.graphics.ColorUtils;
 import java.io.IOException;
 import java.io.InputStream;
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -199,9 +200,7 @@ public class SvgDrawable {
       float currentRatio = circleWidth / displayWidth;
       float originalRatio = 0.2777f;
       float scale = (1 - (currentRatio / originalRatio)) + 1.2f;
-      return BigDecimal.valueOf(scale).setScale(
-          1, BigDecimal.ROUND_HALF_DOWN
-      ).floatValue();
+      return BigDecimal.valueOf(scale).setScale(1, RoundingMode.HALF_DOWN).floatValue();
     } catch (Exception e) {
       return DEF.SCALE;
     }
@@ -216,7 +215,7 @@ public class SvgDrawable {
   }
 
   private void parse(InputStream inputStream) throws IOException {
-    try {
+    try (inputStream) {
       XmlPullParser parser = Xml.newPullParser();
       parser.setFeature(XmlPullParser.FEATURE_PROCESS_NAMESPACES, ENABLE_IMAGES);
       parser.setInput(inputStream, null);
@@ -224,8 +223,6 @@ public class SvgDrawable {
       readSvg(parser);
     } catch (XmlPullParserException | IOException e) {
       Log.e(TAG, "parse", e);
-    } finally {
-      inputStream.close();
     }
   }
 

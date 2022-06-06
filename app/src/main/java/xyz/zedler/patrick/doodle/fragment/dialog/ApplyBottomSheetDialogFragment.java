@@ -27,16 +27,12 @@ import android.provider.Settings;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.FrameLayout.LayoutParams;
 import androidx.annotation.NonNull;
-import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.databinding.FragmentBottomsheetApplyBinding;
-import xyz.zedler.patrick.doodle.util.ViewUtil;
 
-public class ApplyBottomSheetDialogFragment extends BaseBottomSheetDialogFragment
-    implements OnClickListener {
+public class ApplyBottomSheetDialogFragment extends BaseBottomSheetDialogFragment {
 
   private static final String TAG = "ApplyBottomSheet";
 
@@ -46,24 +42,7 @@ public class ApplyBottomSheetDialogFragment extends BaseBottomSheetDialogFragmen
   public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle state) {
     binding = FragmentBottomsheetApplyBinding.inflate(inflater, container, false);
 
-    ViewUtil.setOnClickListeners(
-        this,
-        binding.buttonApplyOpen
-    );
-
-    return binding.getRoot();
-  }
-
-  @Override
-  public void onDestroy() {
-    super.onDestroy();
-    binding = null;
-  }
-
-  @Override
-  public void onClick(View v) {
-    int id = v.getId();
-    if (id == R.id.button_apply_open && getViewUtil().isClickEnabled()) {
+    binding.buttonApplyOpen.setOnClickListener(v -> {
       performHapticClick();
       try {
         Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
@@ -76,7 +55,15 @@ public class ApplyBottomSheetDialogFragment extends BaseBottomSheetDialogFragmen
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
       }
-    }
+    });
+
+    return binding.getRoot();
+  }
+
+  @Override
+  public void onDestroy() {
+    super.onDestroy();
+    binding = null;
   }
 
   @Override

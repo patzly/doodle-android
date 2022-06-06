@@ -520,7 +520,8 @@ public class LiveWallpaperService extends WallpaperService {
       useRandom = sharedPrefs.getBoolean(PREF.RANDOM, DEF.RANDOM);
 
       parallax = sharedPrefs.getInt(PREF.PARALLAX, DEF.PARALLAX);
-      setOffsetNotificationsEnabled(parallax != 0);
+      // disables zooming so this should not be disabled
+      // setOffsetNotificationsEnabled(parallax != 0);
 
       isTiltEnabled = sharedPrefs.getBoolean(PREF.TILT, DEF.TILT);
       dampingTilt = sharedPrefs.getInt(PREF.DAMPING_TILT, DEF.DAMPING_TILT);

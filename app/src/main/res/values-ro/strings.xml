@@ -21,6 +21,9 @@
 
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
+  <string name="wallpaper_description">Imagini de fundal colorate cu mod întunecat automat și animații eficiente. Personalizați-le cum doriți!</string>
+  <string name="wallpaper_description_picker">Explorați o colecție colorată de forme, rafinată cu efecte blânde de paralax și zoom atunci când treceți prin ecranele de acasă și deblocați dispozitivul.\n Customizați wallpaperul în funcție de stilul dvs.</string>
+
   <!-- TITLES -->
 
   <string name="title_info">Informații</string>

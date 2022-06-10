@@ -55,7 +55,6 @@ import xyz.zedler.patrick.doodle.behavior.ScrollBehavior;
 import xyz.zedler.patrick.doodle.behavior.SystemBarBehavior;
 import xyz.zedler.patrick.doodle.databinding.FragmentAppearanceBinding;
 import xyz.zedler.patrick.doodle.service.LiveWallpaperService;
-import xyz.zedler.patrick.doodle.util.ResUtil;
 import xyz.zedler.patrick.doodle.util.ViewUtil;
 import xyz.zedler.patrick.doodle.view.SelectionCardView;
 import xyz.zedler.patrick.doodle.wallpaper.AnthonyWallpaper;
@@ -118,24 +117,8 @@ public class AppearanceFragment extends BaseFragment
     );
 
     ViewUtil.centerToolbarTitleOnLargeScreens(binding.toolbarAppearance);
-    binding.toolbarAppearance.setNavigationOnClickListener(v -> {
-      if (getViewUtil().isClickEnabled()) {
-        performHapticClick();
-        navigateUp();
-      }
-    });
-    binding.toolbarAppearance.setOnMenuItemClickListener(item -> {
-      int id = item.getItemId();
-      if (id == R.id.action_feedback) {
-        activity.showFeedbackBottomSheet();
-      } else if (id == R.id.action_help) {
-        activity.showTextBottomSheet(R.raw.help, R.string.action_help);
-      } else if (id == R.id.action_share) {
-        ResUtil.share(activity, R.string.msg_share);
-      }
-      performHapticClick();
-      return true;
-    });
+    binding.toolbarAppearance.setNavigationOnClickListener(getNavigationOnClickListener());
+    binding.toolbarAppearance.setOnMenuItemClickListener(getOnMenuItemClickListener());
 
     int id;
     switch (getSharedPrefs().getInt(PREF.NIGHT_MODE, DEF.NIGHT_MODE)) {

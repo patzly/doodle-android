@@ -97,24 +97,8 @@ public class OtherFragment extends BaseFragment
     );
 
     ViewUtil.centerToolbarTitleOnLargeScreens(binding.toolbarOther);
-    binding.toolbarOther.setNavigationOnClickListener(v -> {
-      if (getViewUtil().isClickEnabled()) {
-        performHapticClick();
-        navigateUp();
-      }
-    });
-    binding.toolbarOther.setOnMenuItemClickListener(item -> {
-      int id = item.getItemId();
-      if (id == R.id.action_feedback) {
-        activity.showFeedbackBottomSheet();
-      } else if (id == R.id.action_help) {
-        activity.showTextBottomSheet(R.raw.help, R.string.action_help);
-      } else if (id == R.id.action_share) {
-        ResUtil.share(activity, R.string.msg_share);
-      }
-      performHapticClick();
-      return true;
-    });
+    binding.toolbarOther.setNavigationOnClickListener(getNavigationOnClickListener());
+    binding.toolbarOther.setOnMenuItemClickListener(getOnMenuItemClickListener());
 
     binding.textOtherLanguage.setText(getLanguage());
 
@@ -183,7 +167,6 @@ public class OtherFragment extends BaseFragment
     );
   }
 
-  @SuppressLint("ShowToast")
   @Override
   public void onClick(View v) {
     int id = v.getId();
@@ -197,7 +180,7 @@ public class OtherFragment extends BaseFragment
     } else if (id == R.id.linear_other_launcher) {
       ViewUtil.startIcon(binding.imageOtherLauncher);
       binding.switchOtherLauncher.setChecked(!binding.switchOtherLauncher.isChecked());
-    } else if (id == R.id.linear_other_reset && getViewUtil().isClickEnabled()) {
+    } else if (id == R.id.linear_other_reset && getViewUtil().isClickEnabled(id)) {
       ViewUtil.startIcon(binding.imageOtherReset);
       performHapticClick();
       activity.showSnackbar(

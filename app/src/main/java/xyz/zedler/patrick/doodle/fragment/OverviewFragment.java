@@ -33,7 +33,6 @@ import xyz.zedler.patrick.doodle.activity.MainActivity;
 import xyz.zedler.patrick.doodle.behavior.ScrollBehavior;
 import xyz.zedler.patrick.doodle.behavior.SystemBarBehavior;
 import xyz.zedler.patrick.doodle.databinding.FragmentOverviewBinding;
-import xyz.zedler.patrick.doodle.util.ResUtil;
 import xyz.zedler.patrick.doodle.util.ViewUtil;
 
 public class OverviewFragment extends BaseFragment implements OnClickListener {
@@ -74,18 +73,7 @@ public class OverviewFragment extends BaseFragment implements OnClickListener {
         binding.appBarOverview, binding.scrollOverview, true
     );
 
-    binding.toolbarOverview.setOnMenuItemClickListener(item -> {
-      int id = item.getItemId();
-      if (id == R.id.action_feedback) {
-        activity.showFeedbackBottomSheet();
-      } else if (id == R.id.action_help) {
-        activity.showTextBottomSheet(R.raw.help, R.string.action_help);
-      } else if (id == R.id.action_share) {
-        ResUtil.share(activity, R.string.msg_share);
-      }
-      performHapticClick();
-      return true;
-    });
+    binding.toolbarOverview.setOnMenuItemClickListener(getOnMenuItemClickListener());
     MenuItem itemHelp = binding.toolbarOverview.getMenu().findItem(R.id.action_help);
     if (itemHelp != null) {
       itemHelp.setVisible(false);
@@ -98,7 +86,7 @@ public class OverviewFragment extends BaseFragment implements OnClickListener {
     if (activity.shouldLogoBeVisibleOnOverviewPage()) {
       if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) {
         binding.appBarOverview.setOnClickListener(v -> {
-          if (viewUtilLogo.isClickEnabled()) {
+          if (viewUtilLogo.isClickEnabled(v.getId())) {
             ViewUtil.startIcon(binding.imageOverviewLogo);
             performHapticClick();
           }
@@ -106,7 +94,7 @@ public class OverviewFragment extends BaseFragment implements OnClickListener {
       }
     } else {
       binding.frameOverviewClose.setOnClickListener(v -> {
-        if (getViewUtil().isClickEnabled()) {
+        if (getViewUtil().isClickEnabled(v.getId())) {
           performHapticClick();
           activity.finish();
         }
@@ -128,28 +116,25 @@ public class OverviewFragment extends BaseFragment implements OnClickListener {
   @Override
   public void onClick(View v) {
     int id = v.getId();
-    if (id == R.id.button_overview_info && getViewUtil().isClickEnabled()) {
+    if (getViewUtil().isClickDisabled(id)) {
+      return;
+    }
+    performHapticClick();
+
+    if (id == R.id.button_overview_info) {
       activity.showTextBottomSheet(R.raw.information, R.string.title_info);
-      performHapticClick();
-    } else if (id == R.id.button_overview_help && getViewUtil().isClickEnabled()) {
+    } else if (id == R.id.button_overview_help) {
       activity.showTextBottomSheet(R.raw.help, R.string.action_help);
-      // startActivity(new Intent(activity, TestActivity.class));
-      performHapticClick();
-    } else if (id == R.id.linear_overview_appearance && getViewUtil().isClickEnabled()) {
+    } else if (id == R.id.linear_overview_appearance) {
       navigate(OverviewFragmentDirections.actionOverviewToAppearance());
-      performHapticClick();
-    } else if (id == R.id.linear_overview_parallax && getViewUtil().isClickEnabled()) {
+    } else if (id == R.id.linear_overview_parallax) {
       navigate(OverviewFragmentDirections.actionOverviewToParallax());
-      performHapticClick();
-    } else if (id == R.id.linear_overview_size && getViewUtil().isClickEnabled()) {
+    } else if (id == R.id.linear_overview_size) {
       navigate(OverviewFragmentDirections.actionOverviewToSize());
-      performHapticClick();
-    } else if (id == R.id.linear_overview_other && getViewUtil().isClickEnabled()) {
+    } else if (id == R.id.linear_overview_other) {
       navigate(OverviewFragmentDirections.actionOverviewToOther());
-      performHapticClick();
-    } else if (id == R.id.linear_overview_about && getViewUtil().isClickEnabled()) {
+    } else if (id == R.id.linear_overview_about) {
       navigate(OverviewFragmentDirections.actionOverviewToAbout());
-      performHapticClick();
     }
   }
 }

@@ -53,36 +53,66 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.elevation.SurfaceColors;
 import java.util.Arrays;
+import java.util.Iterator;
+import java.util.LinkedList;
 import xyz.zedler.patrick.doodle.R;
 
 public class ViewUtil {
 
   private static final String TAG = ViewUtil.class.getSimpleName();
 
-  private long lastClick;
-  private long idle = 500;
+  private final long idle;
+  private final LinkedList<Timestamp> timestamps;
+
+  private static class Timestamp {
+
+    private final int id;
+    private long time;
+
+    public Timestamp(int id, long time) {
+      this.id = id;
+      this.time = time;
+    }
+  }
 
   // Prevent multiple clicks
 
-  public ViewUtil() {
-    lastClick = 0;
-  }
-
   public ViewUtil(long minClickIdle) {
-    lastClick = 0;
     idle = minClickIdle;
+    timestamps = new LinkedList<>();
   }
 
-  public boolean isClickDisabled() {
-    if (SystemClock.elapsedRealtime() - lastClick < idle) {
-      return true;
+  public ViewUtil() {
+    idle = 500;
+    timestamps = new LinkedList<>();
+  }
+
+  public boolean isClickDisabled(int id) {
+    for (int i = 0; i < timestamps.size(); i++) {
+      if (timestamps.get(i).id == id) {
+        if (SystemClock.elapsedRealtime() - timestamps.get(i).time < idle) {
+          return true;
+        } else {
+          timestamps.get(i).time = SystemClock.elapsedRealtime();
+          return false;
+        }
+      }
     }
-    lastClick = SystemClock.elapsedRealtime();
+    timestamps.add(new Timestamp(id, SystemClock.elapsedRealtime()));
     return false;
   }
 
-  public boolean isClickEnabled() {
-    return !isClickDisabled();
+  public boolean isClickEnabled(int id) {
+    return !isClickDisabled(id);
+  }
+
+  public void cleanUp() {
+    for (Iterator<Timestamp> iterator = timestamps.iterator(); iterator.hasNext(); ) {
+      Timestamp timestamp = iterator.next();
+      if (SystemClock.elapsedRealtime() - timestamp.time > idle) {
+        iterator.remove();
+      }
+    }
   }
 
   // Show keyboard for EditText

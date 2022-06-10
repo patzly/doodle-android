@@ -24,12 +24,12 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout.LayoutParams;
 import androidx.annotation.NonNull;
+import androidx.core.text.HtmlCompat;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.databinding.FragmentBottomsheetTextBinding;
 import xyz.zedler.patrick.doodle.util.ResUtil;
@@ -58,7 +58,7 @@ public class TextBottomSheetDialogFragment extends BaseBottomSheetDialogFragment
       );
       binding.toolbarText.setOnMenuItemClickListener(item -> {
         int id = item.getItemId();
-        if (id == R.id.action_open_link && getViewUtil().isClickEnabled()) {
+        if (id == R.id.action_open_link && getViewUtil().isClickEnabled(id)) {
           performHapticClick();
           ViewUtil.startIcon(item.getIcon());
           new Handler(Looper.getMainLooper()).postDelayed(
@@ -75,7 +75,7 @@ public class TextBottomSheetDialogFragment extends BaseBottomSheetDialogFragment
 
     String text = ResUtil.getRawText(requireContext(), args.getFile());
     text = text.replaceAll("\n", "<br/>");
-    binding.textText.setText(Html.fromHtml(text));
+    binding.textText.setText(HtmlCompat.fromHtml(text, HtmlCompat.FROM_HTML_MODE_LEGACY));
 
     return binding.getRoot();
   }

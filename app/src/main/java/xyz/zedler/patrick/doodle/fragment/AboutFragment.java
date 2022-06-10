@@ -35,7 +35,6 @@ import xyz.zedler.patrick.doodle.activity.MainActivity;
 import xyz.zedler.patrick.doodle.behavior.ScrollBehavior;
 import xyz.zedler.patrick.doodle.behavior.SystemBarBehavior;
 import xyz.zedler.patrick.doodle.databinding.FragmentAboutBinding;
-import xyz.zedler.patrick.doodle.util.ResUtil;
 import xyz.zedler.patrick.doodle.util.ViewUtil;
 
 public class AboutFragment extends BaseFragment implements OnClickListener {
@@ -73,24 +72,8 @@ public class AboutFragment extends BaseFragment implements OnClickListener {
 
     ViewUtil.centerToolbarTitleOnLargeScreens(binding.toolbarAbout);
 
-    binding.toolbarAbout.setNavigationOnClickListener(v -> {
-      if (getViewUtil().isClickEnabled()) {
-        performHapticClick();
-        navigateUp();
-      }
-    });
-    binding.toolbarAbout.setOnMenuItemClickListener(item -> {
-      int id = item.getItemId();
-      if (id == R.id.action_feedback) {
-        activity.showFeedbackBottomSheet();
-      } else if (id == R.id.action_help) {
-        activity.showTextBottomSheet(R.raw.help, R.string.action_help);
-      } else if (id == R.id.action_share) {
-        ResUtil.share(activity, R.string.msg_share);
-      }
-      performHapticClick();
-      return true;
-    });
+    binding.toolbarAbout.setNavigationOnClickListener(getNavigationOnClickListener());
+    binding.toolbarAbout.setOnMenuItemClickListener(getOnMenuItemClickListener());
 
     ViewUtil.setOnClickListeners(
         this,
@@ -110,51 +93,54 @@ public class AboutFragment extends BaseFragment implements OnClickListener {
   @Override
   public void onClick(View v) {
     int id = v.getId();
+    if (getViewUtil().isClickDisabled(id)) {
+      return;
+    }
+    performHapticClick();
+
     if (id == R.id.linear_about_version) {
       ViewUtil.startIcon(binding.imageAboutVersion);
-    } else if (id == R.id.linear_about_changelog && getViewUtil().isClickEnabled()) {
+    } else if (id == R.id.linear_about_changelog) {
       activity.showChangelogBottomSheet();
       ViewUtil.startIcon(binding.imageAboutChangelog);
-    } else if (id == R.id.linear_about_developer && getViewUtil().isClickEnabled()) {
+    } else if (id == R.id.linear_about_developer) {
       ViewUtil.startIcon(binding.imageAboutDeveloper);
       new Handler(Looper.getMainLooper()).postDelayed(
           () -> startActivity(
               new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.app_website)))
           ), 300
       );
-    } else if (id == R.id.linear_about_vending && getViewUtil().isClickEnabled()) {
+    } else if (id == R.id.linear_about_vending) {
       ViewUtil.startIcon(binding.imageAboutVending);
       new Handler(Looper.getMainLooper()).postDelayed(
           () -> startActivity(
               new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.app_vending)))
           ), 300
       );
-    } else if (id == R.id.linear_about_github && getViewUtil().isClickEnabled()) {
+    } else if (id == R.id.linear_about_github) {
       startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.app_github))));
-    } else if (id == R.id.linear_about_translation && getViewUtil().isClickEnabled()) {
+    } else if (id == R.id.linear_about_translation) {
       startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.app_translate))));
-    } else if (id == R.id.linear_about_privacy && getViewUtil().isClickEnabled()) {
+    } else if (id == R.id.linear_about_privacy) {
       ViewUtil.startIcon(binding.imageAboutPrivacy);
       new Handler(Looper.getMainLooper()).postDelayed(
           () -> startActivity(
               new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.app_privacy)))
           ), 300
       );
-    } else if (id == R.id.linear_about_license_jost && getViewUtil().isClickEnabled()) {
+    } else if (id == R.id.linear_about_license_jost) {
       ViewUtil.startIcon(binding.imageAboutLicenseJost);
       activity.showTextBottomSheet(
           R.raw.license_ofl, R.string.license_jost, R.string.license_jost_link
       );
-    } else if (
-        id == R.id.linear_about_license_material_components && getViewUtil().isClickEnabled()
-    ) {
+    } else if (id == R.id.linear_about_license_material_components) {
       ViewUtil.startIcon(binding.imageAboutLicenseMaterialComponents);
       activity.showTextBottomSheet(
           R.raw.license_apache,
           R.string.license_material_components,
           R.string.license_material_components_link
       );
-    } else if (id == R.id.linear_about_license_material_icons && getViewUtil().isClickEnabled()) {
+    } else if (id == R.id.linear_about_license_material_icons) {
       ViewUtil.startIcon(binding.imageAboutLicenseMaterialIcons);
       activity.showTextBottomSheet(
           R.raw.license_apache,
@@ -162,6 +148,5 @@ public class AboutFragment extends BaseFragment implements OnClickListener {
           R.string.license_material_icons_link
       );
     }
-    performHapticClick();
   }
 }

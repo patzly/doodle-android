@@ -40,7 +40,6 @@ import xyz.zedler.patrick.doodle.behavior.ScrollBehavior;
 import xyz.zedler.patrick.doodle.behavior.SystemBarBehavior;
 import xyz.zedler.patrick.doodle.databinding.FragmentSizeBinding;
 import xyz.zedler.patrick.doodle.drawable.SvgDrawable;
-import xyz.zedler.patrick.doodle.util.ResUtil;
 import xyz.zedler.patrick.doodle.util.ViewUtil;
 
 public class SizeFragment extends BaseFragment
@@ -78,24 +77,8 @@ public class SizeFragment extends BaseFragment
     );
 
     ViewUtil.centerToolbarTitleOnLargeScreens(binding.toolbarSize);
-    binding.toolbarSize.setNavigationOnClickListener(v -> {
-      if (getViewUtil().isClickEnabled()) {
-        performHapticClick();
-        navigateUp();
-      }
-    });
-    binding.toolbarSize.setOnMenuItemClickListener(item -> {
-      int id = item.getItemId();
-      if (id == R.id.action_feedback) {
-        activity.showFeedbackBottomSheet();
-      } else if (id == R.id.action_help) {
-        activity.showTextBottomSheet(R.raw.help, R.string.action_help);
-      } else if (id == R.id.action_share) {
-        ResUtil.share(activity, R.string.msg_share);
-      }
-      performHapticClick();
-      return true;
-    });
+    binding.toolbarSize.setNavigationOnClickListener(getNavigationOnClickListener());
+    binding.toolbarSize.setOnMenuItemClickListener(getOnMenuItemClickListener());
 
     binding.sliderSizeScale.setValue(
         getSharedPrefs().getFloat(PREF.SCALE, SvgDrawable.getDefaultScale(activity)) * 10

@@ -242,19 +242,20 @@ public class MainActivity extends AppCompatActivity {
     );
 
     binding.fabMain.setOnClickListener(v -> {
-      if (viewUtil.isClickEnabled()) {
-        try {
-          Intent intent = new Intent(WallpaperManager.ACTION_CHANGE_LIVE_WALLPAPER);
-          intent.putExtra(
-              WallpaperManager.EXTRA_LIVE_WALLPAPER_COMPONENT,
-              new ComponentName(getPackageName(), LiveWallpaperService.class.getCanonicalName())
-          );
-          intent.putExtra("SET_LOCKSCREEN_WALLPAPER", true);
-          wallpaperPickerLauncher.launch(intent);
-        } catch (ActivityNotFoundException e) {
-          showSnackbar(R.string.msg_preview_missing);
-        }
-        performHapticHeavyClick();
+      if (viewUtil.isClickDisabled(v.getId())) {
+        return;
+      }
+      performHapticClick();
+      try {
+        Intent intent = new Intent(WallpaperManager.ACTION_CHANGE_LIVE_WALLPAPER);
+        intent.putExtra(
+            WallpaperManager.EXTRA_LIVE_WALLPAPER_COMPONENT,
+            new ComponentName(getPackageName(), LiveWallpaperService.class.getCanonicalName())
+        );
+        intent.putExtra("SET_LOCKSCREEN_WALLPAPER", true);
+        wallpaperPickerLauncher.launch(intent);
+      } catch (ActivityNotFoundException e) {
+        showSnackbar(R.string.msg_preview_missing);
       }
     });
 
@@ -458,7 +459,6 @@ public class MainActivity extends AppCompatActivity {
     }, delay);
   }
 
-  @SuppressLint("ShowToast")
   public void showForceStopRequest(NavDirections directions) {
     if (!LiveWallpaperService.isMainEngineRunning() || binding == null) {
       return;

@@ -103,6 +103,8 @@ public class LanguagesBottomSheetDialogFragment extends BaseBottomSheetDialogFra
       activity.restartToApply(150);
     }
 
+    performHapticClick();
+
     getSharedPrefs().edit().putString(Constants.PREF.LANGUAGE, selectedCode).apply();
   }
 

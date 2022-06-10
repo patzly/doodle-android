@@ -91,9 +91,13 @@ public class FeedbackBottomSheetDialogFragment extends BaseBottomSheetDialogFrag
   @Override
   public void onClick(View v) {
     int id = v.getId();
-    if (id == R.id.linear_feedback_rate && getViewUtil().isClickEnabled()) {
+    if (getViewUtil().isClickDisabled(id)) {
+      return;
+    }
+    performHapticClick();
+
+    if (id == R.id.linear_feedback_rate) {
       ViewUtil.startIcon(binding.imageFeedbackRate);
-      performHapticClick();
       Uri uri = Uri.parse(
           "market://details?id=" + requireActivity().getApplicationContext().getPackageName()
       );
@@ -113,8 +117,7 @@ public class FeedbackBottomSheetDialogFragment extends BaseBottomSheetDialogFrag
         }
         dismiss();
       }, 400);
-    } else if (id == R.id.linear_feedback_email && getViewUtil().isClickEnabled()) {
-      performHapticClick();
+    } else if (id == R.id.linear_feedback_email) {
       Intent intent = new Intent(Intent.ACTION_SENDTO);
       intent.setData(
           Uri.parse(
@@ -125,12 +128,10 @@ public class FeedbackBottomSheetDialogFragment extends BaseBottomSheetDialogFrag
       );
       startActivity(Intent.createChooser(intent, getString(R.string.action_send_feedback)));
       dismiss();
-    } else if (id == R.id.linear_feedback_github && getViewUtil().isClickEnabled()) {
-      performHapticClick();
+    } else if (id == R.id.linear_feedback_github) {
       startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.app_github))));
       dismiss();
-    } else if (id == R.id.linear_feedback_share && getViewUtil().isClickEnabled()) {
-      performHapticClick();
+    } else if (id == R.id.linear_feedback_share) {
       ResUtil.share(requireContext(), R.string.msg_share);
       dismiss();
     }

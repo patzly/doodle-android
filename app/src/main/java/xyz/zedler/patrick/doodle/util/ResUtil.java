@@ -23,7 +23,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.os.Build;
-import android.text.Html;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
@@ -39,6 +38,7 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RawRes;
 import androidx.annotation.StringRes;
 import androidx.core.graphics.ColorUtils;
+import androidx.core.text.HtmlCompat;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -104,7 +104,9 @@ public class ResUtil {
         line = line.replaceAll("\n", "<br/>");
       }
 
-      Spannable spannable = new SpannableString(Html.fromHtml(line));
+      Spannable spannable = new SpannableString(
+          HtmlCompat.fromHtml(line, HtmlCompat.FROM_HTML_MODE_LEGACY)
+      );
       spannable.setSpan(bulletSpan, 0, spannable.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
       builder.append(spannable);
     }

@@ -43,17 +43,19 @@ public class ApplyBottomSheetDialogFragment extends BaseBottomSheetDialogFragmen
     binding = FragmentBottomsheetApplyBinding.inflate(inflater, container, false);
 
     binding.buttonApplyOpen.setOnClickListener(v -> {
-      performHapticClick();
-      try {
-        Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
-        intent.setData(Uri.parse("package:" + requireContext().getPackageName()));
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(intent);
-      } catch (ActivityNotFoundException e) {
-        Log.e(TAG, "showForceStopRequest", e);
-        Intent intent = new Intent(Settings.ACTION_MANAGE_APPLICATIONS_SETTINGS);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(intent);
+      if (getViewUtil().isClickEnabled(v.getId())) {
+        performHapticClick();
+        try {
+          Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+          intent.setData(Uri.parse("package:" + requireContext().getPackageName()));
+          intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+          startActivity(intent);
+        } catch (ActivityNotFoundException e) {
+          Log.e(TAG, "showForceStopRequest", e);
+          Intent intent = new Intent(Settings.ACTION_MANAGE_APPLICATIONS_SETTINGS);
+          intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+          startActivity(intent);
+        }
       }
     });
 

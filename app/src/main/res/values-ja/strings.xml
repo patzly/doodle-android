@@ -155,7 +155,7 @@
   <string name="other_theme_light">Light</string>
   <string name="other_theme_dark">Dark</string>
   <string name="other_reset">すべての設定をリセットする</string>
-  <string name="other_reset_description">あなたの設定はデバイスが起動したときにすぐにアクセスできるよう特別な部分に保存されているため、トラブル対処のためには再インストールよりも効果的です</string>
+  <string name="other_reset_description">あなたの設定はデバイスが起動したときにすぐにアクセスできるよう特殊な個所に保存されているため、トラブル対処のためには再インストールよりも効果的です</string>
 
   <!-- ABOUT -->
 

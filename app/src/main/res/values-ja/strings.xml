@@ -148,7 +148,7 @@
   <string name="other_gpu_description">壁紙のクラッシュが起きてしまう場合はこちらをOFFにしてみてください</string>
   <string name="other_gpu_info">Doodle が使用するハードウェア・アクセラレーションは Android 8 から利用できるようになったものです。壁紙のアニメーションに少しカクつきが出るかもしれません</string>
   <string name="other_launcher">ホームアプリ内に Doodle のアイコンを表示しない</string>
-  <string name="other_launcher_description">このアプリの設定画面へはシステムの Live Wallparer Picker（使うライブ壁紙を選択決定する画面）からしかアクセスできなくなります</string>
+  <string name="other_launcher_description">このアプリの設定画面へはシステムの Live Wallparer Pickerからしかアクセスできなくなります</string>
   <string name="other_theme">アプリのテーマカラー</string>
   <string name="other_theme_description">見た目を変えてみませんか？</string>
   <string name="other_theme_auto">Auto</string>

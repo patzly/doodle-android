@@ -130,7 +130,7 @@
   <string name="size_zoom_damping">アニメーションの減衰量</string>
   <string name="size_zoom_damping_description">ズーム動作をもっと滑らかにしたい場合は、この設定を有効にして値を小さくしてください</string>
   <string name="size_zoom_system">システム内蔵のズーム効果を利用する</string>
-  <string name="size_zoom_system_description">チルト効果を有効にするとズームアニメーションがカクつく場合、それを改善できるかもしれません。ただし、利用できるデバイスは限られています</string>
+  <string name="size_zoom_system_description">チルト効果を有効にするとズームアニメーションがカクつく場合にそれを改善できるかもしれません。ただし、利用できるデバイスは限られています</string>
   <string name="size_zoom_unlock">ロック画面でズームアウトする</string>
   <string name="size_zoom_unlock_description">チルト効果を有効にするとアニメーションがカクつくかもしれません</string>
   <string name="size_zoom_duration">ロック解除時のズーム時間の長さ</string>

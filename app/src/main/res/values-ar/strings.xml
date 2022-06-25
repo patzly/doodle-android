@@ -21,6 +21,9 @@
 
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
+  <string name="wallpaper_description">خلفية متحركة ملونة مع الوضع المظلم التلقائي والرسوم المتحركة الموفرة للطاقة. قم بتخصيصه حسب احتياجاتك</string>
+  <string name="wallpaper_description_picker">استكشف مجموعة ملونة من الأشكال ، تم تحسينها باستخدام تأثيرات المنظر والتكبير اللطيفة عند التمرير عبر الشاشات الرئيسية وإلغاء قفل جهازك. \ n قم بتخصيص الخلفية لتتناسب مع أسلوبك الخاص</string>
+
   <!-- TITLES -->
 
   <string name="title_info">معلومات</string>
@@ -45,6 +48,8 @@
   <string name="action_continue">إكمال</string>
   <string name="action_open_app_info">فتح معلومات التطبيق</string>
   <string name="action_set">تعين كخلفية</string>
+  <string name="action_learn_more">تعلم اكثر</string>
+  <string name="action_help">مساعدة</string>
   <string name="action_send_feedback">أرسل رائيك</string>
   <string name="action_share">مشاركه</string>
   <string name="action_share_description">أخبر أصدقائك عن Doodle</string>
@@ -67,10 +72,13 @@
   <string name="appearance_variant">متغير</string>
   <string name="appearance_night_mode">الوضع الليلي</string>
   <string name="appearance_night_mode_description">الألوان الداكنة فقط</string>
+  <string name="appearance_night_mode_on">تمام</string>
+  <string name="appearance_night_mode_off">مب تمام</string>
   <string name="appearance_follow_system">اتباع النظام</string>
   <string name="appearance_follow_system_description">اعتماد مظهر الجهاز</string>
   <string name="appearance_white_text">حاول جعل الخط أبيض</string>
   <string name="appearance_white_text_description">قد يؤثر على قابلية القراءة</string>
+  <string name="appearance_colors_category">الألوان</string>
   <string name="appearance_colors">الألوان المستخرجة</string>
   <string name="appearance_colors_description">يستخدم لحساب تباين النص</string>
   <string name="appearance_colors_description_dynamic">يستخدمه محرك السمات الخاص بالنظام</string>
@@ -90,6 +98,8 @@
   <string name="parallax_intensity">قوة المنظر</string>
   <string name="parallax_intensity_description">إزاحة أفقية عند تمرير الصفحة وشدة تأثير الإمالة</string>
   <string name="parallax_none">لا أحد</string>
+  <string name="parallax_swipe_power_save">احترام موفر البطارية</string>
+  <string name="parallax_swipe_power_save_description">إيقاف الرسوم المتحركة لسحب الصفحة مؤقتًا عند تمكين توفير شحن البطارية</string>
   <string name="parallax_category_tilt">تأثير الميل</string>
   <string name="parallax_tilt">تحرك عند إمالة الجهاز</string>
   <string name="parallax_tilt_description">يستهلك المزيد من البطارية</string>
@@ -99,6 +109,8 @@
   <string name="parallax_damping_description">تقليل لمزيد من النعومة</string>
   <string name="parallax_threshold">معالجه الصور او قيمه العتبه</string>
   <string name="parallax_threshold_description">زيادة الإيقاف المؤقت للعرض المستمر على الرغم من قلة الحركة</string>
+  <string name="parallax_tilt_power_save_description">إيقاف تأثير الإمالة مؤقتًا عند تمكين توفير شحن البطارية</string>
+
   <!-- SIZE -->
 
   <string name="size_title">حجم الشكل</string>
@@ -112,6 +124,7 @@
   <string name="size_zoom_description">عند الزيادة ، تقوم الكاميرا بالتصغير أكثر</string>
   <string name="size_zoom_rotation">تدوير بعض الاشياء أثناء التكبير</string>
   <string name="size_zoom_rotation_description">أقصى دوران بالدرجات</string>
+  <string name="size_zoom_power_save_description">أوقف مؤقتًا تأثير التكبير عند تمكين توفير شحن البطارية</string>
   <string name="size_zoom_launcher">التصغير عند فتح الإعدادات السريعة أو درج التطبيق</string>
   <string name="size_zoom_launcher_description">قد تكون غير متوفرة على بعض الأجهزة</string>
   <string name="size_zoom_damping">الرسوم المتحركة للتخميد</string>
@@ -156,6 +169,9 @@
   <string name="about_vending_description">المزيد من التطبيقات لهذا المطور</string>
   <string name="about_github_description">مصدر الرمز</string>
   <string name="about_translation_description">ساعد في ترجمة doodle</string>
+  <string name="about_privacy">سياسة الخصوصية</string>
+  <string name="about_privacy_description">كيف تتم معالجة بياناتي؟</string>
+
   <!-- MESSAGES -->
 
   <string name="msg_feedback">يتطلب التطبيق الرائع الكثير من الوقت والحيوية من تعليقات المستخدمين هل لديك أي رغبات أو تعليقات أو أسئلة؟  اتصل بي!  سأكون سعيدًا جدًا بمراجعة لطيفة في متجر Play.</string>
@@ -165,7 +181,9 @@
   <string name="msg_random_warning">تصميم خلفية عشوائي لا يزال نشطًا!</string>
   <string name="msg_reset">استعاده كل الاعدادات</string>
   <string name="msg_force_stop">الإيقاف الاجباري مطلوب لتطبيق التغييرات</string>
+  <string name="msg_apply_colors">سيتم تطبيق الألوان التي تم تغييرها على النظام في المرة التالية التي تقوم فيها بإيقاف تشغيل الشاشة</string>
   <string name="msg_apply_changes">لتطبيق الخيارات التي تم تغييرها (في النهاية) ، يوصى بإعادة تشغيل خدمة الخلفية قيد التشغيل.  لا يمكن القيام بذلك تلقائيًا. \ n الرجاء فرض إيقاف رسومات الشعار المبتكرة في إعدادات النظام ثم تطبيق رسومات الشعار المبتكرة كخلفية للشاشة مرة أخرى.</string>
+  <string name="msg_set_wallpaper">إذا واجهت مشكلة تعطل الرسوم المتحركة للخلفية عند إغلاق هذا التطبيق ، فالرجاء اختيار منتقي خلفية النظام لتحديد Doodle. وإلا يمكنك تعيينه مباشرة</string>
   <string name="msg_preview_missing">حدث خطأ ، يرجى تحديد Doodle Live Wallpaper يدويًا</string>
 
   </resources>

@@ -17,7 +17,10 @@ The app is not just a copy of the original wallpapers, it's a complete rewrite w
 
 ## Screenshots
 
-<a href="assets/screen1.png"><img src="assets/screen1.png" width="150px"/></a><a href="assets/screen2.png"><img src="assets/screen2.png" width="150px"/></a><a href="assets/screen3.png"><img src="assets/screen3.png" width="150px"/></a><a href="assets/screen4.png"><img src="assets/screen4.png" width="150px"/></a>
+<a href="https://raw.githubusercontent.com/patzly/doodle-android/master/assets/screen1.png"><img src="assets/screen1.png" width="150px"/></a>
+<a href="https://raw.githubusercontent.com/patzly/doodle-android/master/assets/screen2.png"><img src="assets/screen2.png" width="150px"/></a>
+<a href="https://raw.githubusercontent.com/patzly/doodle-android/master/assets/screen3.png"><img src="assets/screen3.png" width="150px"/></a>
+<a href="https://raw.githubusercontent.com/patzly/doodle-android/master/assets/screen4.png"><img src="assets/screen4.png" width="150px"/></a>
 
 ## Features
 

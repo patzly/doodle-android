@@ -21,6 +21,9 @@
 
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
+  <string name="wallpaper_description">Kleurrijk live achtergrond met auto donkere modus en energiezuinige animaties. Pas het aan naar uw benodigdheden!</string>
+  <string name="wallpaper_description_picker">Ontdek een kleurrijke collectie vormen, verfijnd met zachte parallax- en zoomeffecten wanneer u door uw startschermen veegt en uw apparaat ontgrendelt.\nPas de achtergrond aan je eigen stijl aan!</string>
+
   <!-- TITLES -->
 
   <string name="title_info">Informatie</string>
@@ -45,6 +48,8 @@
   <string name="action_continue">Doorgaan</string>
   <string name="action_open_app_info">Open app info</string>
   <string name="action_set">Stel achtergrond in</string>
+  <string name="action_learn_more">Meer info</string>
+  <string name="action_help">Hulp</string>
   <string name="action_send_feedback">Verstuur feedback</string>
   <string name="action_share">Deel</string>
   <string name="action_share_description">Vertel je vrienden over Doodle</string>
@@ -67,10 +72,13 @@
   <string name="appearance_variant">Variant</string>
   <string name="appearance_night_mode">Nacht modus</string>
   <string name="appearance_night_mode_description">Alleen donkere kleuren</string>
+  <string name="appearance_night_mode_on">Aan</string>
+  <string name="appearance_night_mode_off">Uit</string>
   <string name="appearance_follow_system">Volg systeem</string>
   <string name="appearance_follow_system_description">Neem apparaat thema over</string>
   <string name="appearance_white_text">Probeer witte tekst te forceren</string>
   <string name="appearance_white_text_description">Kan leesbaarheid beïnvloeden</string>
+  <string name="appearance_colors_category">Kleuren</string>
   <string name="appearance_colors">Geëxtraheerde kleuren</string>
   <string name="appearance_colors_description">Gebruikt voor het berekenen van tekst contrast</string>
   <string name="appearance_colors_description_dynamic">Gebruikt door het thema engine van het Systeem</string>
@@ -90,6 +98,8 @@
   <string name="parallax_intensity">Parallax sterkte</string>
   <string name="parallax_intensity_description">Horizontale afwijking bij vegen en kantelen van pagina\'s intensiteit</string>
   <string name="parallax_none">Geen</string>
+  <string name="parallax_swipe_power_save">Respecteer batterijbesparing</string>
+  <string name="parallax_swipe_power_save_description">Pauzeer pagina veeg animatie wanneer batterijbesparing ingeschakeld is</string>
   <string name="parallax_category_tilt">Kantel effect</string>
   <string name="parallax_tilt">Bewegen wanneer het apparaat wordt gekanteld</string>
   <string name="parallax_tilt_description">Verbruikt meer batterij</string>
@@ -99,6 +109,8 @@
   <string name="parallax_damping_description">Verminder voor meer zachtheid</string>
   <string name="parallax_threshold">Bewegingsdrempel</string>
   <string name="parallax_threshold_description">Vergroot om blijvende rendering ondanks nauwelijks beweging te pauzeren</string>
+  <string name="parallax_tilt_power_save_description">Pauzeer kantel effect wanneer batterijbesparing ingeschakeld is</string>
+
   <!-- SIZE -->
 
   <string name="size_title">Vorm grootte</string>
@@ -112,11 +124,13 @@
   <string name="size_zoom_description">Wanneer verhoogd, zoomt de camera meer uit</string>
   <string name="size_zoom_rotation">Roteer sommige vormen tijdens zoomen</string>
   <string name="size_zoom_rotation_description">Maximale rotatie in graden</string>
+  <string name="size_zoom_power_save_description">Pauzeer zoom effect wanneer batterijbesparing ingeschakeld is</string>
   <string name="size_zoom_launcher">Uitzoomen bij openen van snelle instellingen of app lade.</string>
   <string name="size_zoom_launcher_description">Mogelijk niet beschikbaar op sommige apparaten</string>
   <string name="size_zoom_damping">Animatiedemping</string>
   <string name="size_zoom_damping_description">Activeer en verlaag voor een zachtere zoom</string>
   <string name="size_zoom_system">Gebruik het zoomeffect van het systeem</string>
+  <string name="size_zoom_system_description">Kan schokkerige zoom animatie wanneer kantel effect is ingeschakeld verhelpen, alleen beschikbaar op sommige apparaten</string>
   <string name="size_zoom_unlock">Uitzoomen op vergrendelscherm</string>
   <string name="size_zoom_unlock_description">Kan schokkerig zijn als kantel effect ingeschakeld is</string>
   <string name="size_zoom_duration">Ontgrendel zoom duur</string>
@@ -154,6 +168,9 @@
   <string name="about_vending_description">Meer apps door de ontwikkelaar</string>
   <string name="about_github_description">Bron code</string>
   <string name="about_translation_description">Help Doodle te vertalen</string>
+  <string name="about_privacy">Privacybeleid</string>
+  <string name="about_privacy_description">Hoe worden je gegevens verwerkt?</string>
+
   <!-- MESSAGES -->
 
   <string name="msg_feedback">Een geweldige app vergt veel tijd en leeft van de feedback van zijn gebruikers.\n\nHeb je wensen, opmerkingen of vragen? Neem contact op met mij!\nAnders zou ik erg blij zijn met een mooie recensie in de Play Store.</string>
@@ -165,6 +182,7 @@
   <string name="msg_force_stop">Forceer stoppen verreist om wijzigingen toe te passen</string>
   <string name="msg_apply_colors">Veranderde kleuren zullen de volgende keer je scherm uit zet worden toegepast in het systeem</string>
   <string name="msg_apply_changes">Om (eventueel) gewijzigde opties toe te passen, wordt een herstart van de lopende achtergrond service aanbevolen. Dit kan niet automatisch worden gedaan.\nGelieve Doodle geforceerd te stoppen in je systeeminstellingen en vervolgens Doodle opnieuw toe te passen als je achtergrond.</string>
+  <string name="msg_set_wallpaper">Als u tegen een probleem aan loopt dat ervoor zorgt dat de achtergrond animatie stopt bij het sluiten van de app, gebruik dan de achtergrond kiezer van het systeem om Doodle te selecteren.\nAnders kan het direct ingesteld worden.</string>
   <string name="msg_preview_missing">Er ging iets mis, selecteer Doodle Live Achtergrond alsjeblieft handmatig</string>
 
   </resources>

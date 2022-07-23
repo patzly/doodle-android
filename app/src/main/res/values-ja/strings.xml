@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ This file is part of Doodle Android.
+  ~
+  ~ Doodle Android is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Doodle Android is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with Doodle Android. If not, see <http://www.gnu.org/licenses/>.
+  ~
+  ~ Copyright (c) 2019-2022 by Patrick Zedler
+  -->
+
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+
+  <string name="wallpaper_description">ダークモードに自動対応、バッテリーにも優しいカラフルなライブ壁紙です。あなたの使い方に合わせたカスタマイズが可能です。</string>
+  <string name="wallpaper_description_picker">いろんな形状のカラフルな図形が、ホーム画面をスワイプしたりスマホのロック解除をするたびにフワッと奥行きを感じさせるパララックスな動きをしたりズームしたりして目を愉しませてくれます。\nあなたらしい壁紙を作ってみましょう。</string>
+
+  <!-- TITLES -->
+
+  <string name="title_info">情報</string>
+  <string name="title_apply_changes">変更を適用</string>
+  <string name="title_feedback">フィードバック</string>
+  <string name="title_licenses">オープンソースライセンス</string>
+
+  <!-- LABELS -->
+
+  <string name="label_ms">%1$sms</string>
+  <string name="label_degrees">%1$s°</string>
+
+  <!-- ACTIONS -->
+
+  <string name="action_close">閉じる</string>
+  <string name="action_back">戻る</string>
+  <string name="action_open_link">ウェブサイトを開く</string>
+  <string name="action_hide">隠す</string>
+  <string name="action_reset">リセット</string>
+  <string name="action_deactivate">無効にする</string>
+  <string name="action_select_all">すべてを選択</string>
+  <string name="action_continue">続行</string>
+  <string name="action_open_app_info">アプリの情報を見る</string>
+  <string name="action_set">壁紙として設定</string>
+  <string name="action_learn_more">詳細</string>
+  <string name="action_help">ヘルプ</string>
+  <string name="action_send_feedback">フィードバックを送る</string>
+  <string name="action_share">シェア</string>
+  <string name="action_share_description">Doodleアプリのことを友達に教える</string>
+  <string name="action_email">メールを送る</string>
+  <string name="action_email_description">開発者に連絡する</string>
+  <string name="action_rate">プレイストアでアプリを評価する</string>
+  <string name="action_rate_description">アプリの開発を応援する</string>
+  <string name="action_github">GitHub の Doodle Android のページ</string>
+  <string name="action_github_description">GitHub に Issue を提起する</string>
+  <string name="action_language_select">使用する言語を選択</string>
+
+  <!-- APPEARANCE -->
+
+  <string name="appearance_title">外観</string>
+  <string name="appearance_description">デザインと色の設定</string>
+  <string name="appearance_design">デザイン</string>
+  <string name="appearance_design_doodle">Pixel 4 Doodle Collection</string>
+  <string name="appearance_design_monet">Pixel 6 Material You Collection</string>
+  <string name="appearance_design_anna">Live wallpapers à l\'Anna Kövecses</string>
+  <string name="appearance_variant">色のバリエーション</string>
+  <string name="appearance_night_mode">ナイトモード</string>
+  <string name="appearance_night_mode_description">暗めの色だけを選択対象にします</string>
+  <string name="appearance_night_mode_on">On</string>
+  <string name="appearance_night_mode_off">Off</string>
+  <string name="appearance_follow_system">システムの設定に従う</string>
+  <string name="appearance_follow_system_description">デバイスのテーマ設定を適用する</string>
+  <string name="appearance_white_text">可能なら文字を白色で表示する</string>
+  <string name="appearance_white_text_description">文字の読みやすさが変わるかもしれません</string>
+  <string name="appearance_colors_category">色の設定</string>
+  <string name="appearance_colors">壁紙内で使われている色</string>
+  <string name="appearance_colors_description">選択した色を元に文字のコントラストを決定します</string>
+  <string name="appearance_colors_description_dynamic">選択した色をシステムのテーマ設定に適用します</string>
+  <string name="appearance_colors_primary">カラー１を選ぶ</string>
+  <string name="appearance_colors_secondary">カラー２を選ぶ</string>
+  <string name="appearance_colors_tertiary">カラー３を選ぶ</string>
+  <string name="appearance_colors_info">ダイナミック・カラーの機能がない（Android 11 までの）デバイスでは、カラー１のみがホームアプリ内の文字コントラストの調整と「アプリ履歴」画面の背景の色合いに使用されます</string>
+  <string name="appearance_colors_info_dynamic">ダイナミック・カラーが機能する Android 12 以降のデバイスでは、選択した３つすべての色が使用され、自動的にシステム全体のテーマカラーとして適用されます</string>
+  <string name="appearance_random">ランダムに壁紙のデザインを変更する</string>
+  <string name="appearance_random_description">画面OFFからONにするたびに変更します</string>
+
+  <!-- PARALLAX -->
+
+  <string name="parallax_title">パララックス（視差効果）</string>
+  <string name="parallax_description">スワイプやチルト（傾き）に反応します</string>
+  <string name="parallax_touch_wiz">Samsung の TouchWiz をデフォルトのホームアプリとしてお使いでしょうか。TouchWiz は背景のスクロールに対応していないため、パララックスが機能しません。この機能を使うには別のランチャーを導入し、チルトセンサーが無効になっている場合は有効に切り替えてみてください_n違うランチャーをお使いであれば、この説明は無視してかまいません</string>
+  <string name="parallax_intensity">パララックス効果の大きさ</string>
+  <string name="parallax_intensity_description">ページのスワイプやチルトの強さに対する水平方向へのオフセット量</string>
+  <string name="parallax_none">なし</string>
+  <string name="parallax_swipe_power_save">バッテリーセーバーを優先する</string>
+  <string name="parallax_swipe_power_save_description">バッテリーセーバー発動時にスワイプに対するアニメーションを停止します</string>
+  <string name="parallax_category_tilt">チルトイフェクト</string>
+  <string name="parallax_tilt">デバイスを傾けた時に図形を動かす</string>
+  <string name="parallax_tilt_description">バッテリー消費が増えます</string>
+  <string name="parallax_refresh_rate">チルトセンサーをリフレッシュする間隔</string>
+  <string name="parallax_refresh_rate_description">間隔を短くしすぎるとズームのアニメーションのラグが気になるかもしれません</string>
+  <string name="parallax_damping">モーションの減衰量</string>
+  <string name="parallax_damping_description">値が小さいほどモーションが滑らかになります</string>
+  <string name="parallax_threshold">動作の閾値</string>
+  <string name="parallax_threshold_description">値が大きいほど小さな動きには反応しにくくなります</string>
+  <string name="parallax_tilt_power_save_description">バッテリーセーバー発動時にチルト効果を停止します</string>
+
+  <!-- SIZE -->
+
+  <string name="size_title">図形のサイズ</string>
+  <string name="size_description">スケーリングやズーム効果の設定</string>
+  <string name="size_category_zoom">ズーム効果</string>
+  <string name="size_category_launcher">ホーム画面でのズーム</string>
+  <string name="size_category_unlock">ロック画面でのズーム</string>
+  <string name="size_scale">スケーリング</string>
+  <string name="size_scale_description">大画面や画素密度が高いデバイスで役に立つでしょう</string>
+  <string name="size_zoom">ズームの大きさ</string>
+  <string name="size_zoom_description">値が大きいほど大きくズームアウトします</string>
+  <string name="size_zoom_rotation">ズームの際に図形を回転させる</string>
+  <string name="size_zoom_rotation_description">回転の最大角度を設定します</string>
+  <string name="size_zoom_power_save_description">バッテリーセーバー発動時にズーム効果を停止します</string>
+  <string name="size_zoom_launcher">クイック設定パネルやアプリドロワーを開く際にズームアウトします</string>
+  <string name="size_zoom_launcher_description">デバイスによっては機能しないかもしれません</string>
+  <string name="size_zoom_damping">アニメーションの減衰量</string>
+  <string name="size_zoom_damping_description">ズーム動作をもっと滑らかにしたい場合は、この設定を有効にして値を小さくしてください</string>
+  <string name="size_zoom_system">システム内蔵のズーム効果を利用する</string>
+  <string name="size_zoom_system_description">チルト効果を有効にするとズームアニメーションがカクつく場合にそれを改善できるかもしれません。ただし、利用できるデバイスは限られています</string>
+  <string name="size_zoom_unlock">ロック画面でズームアウトする</string>
+  <string name="size_zoom_unlock_description">チルト効果を有効にするとアニメーションがカクつくかもしれません</string>
+  <string name="size_zoom_duration">ロック解除時のズーム時間の長さ</string>
+  <string name="size_zoom_duration_description">値を小さくすると早いアニメーションになります</string>
+
+  <!-- OTHER -->
+
+  <string name="other_title">その他の設定</string>
+  <string name="other_description">レンダリングや言語の設定、リセット</string>
+  <string name="other_language">使用する言語</string>
+  <string name="other_language_description">Transifex で翻訳作業を行ってくれたボランティアの翻訳者のみなさん、ほんとうにありがとう！「Doodle Live Wallpapers を自分の言葉でも使えるようにしたい」という方はぜひ GitHub のこのプロジェクトのページにいらしてください。そちらで翻訳に参加する方法を説明しています</string>
+  <string name="other_language_system">システムのデフォルト: %1$s</string>
+  <string name="other_language_not_available">利用できません</string>
+  <string name="other_gpu">ハードウェアによるアクセラレーション</string>
+  <string name="other_gpu_description">壁紙のクラッシュが起きてしまう場合はこちらをOFFにしてみてください</string>
+  <string name="other_gpu_info">Doodle が使用するハードウェア・アクセラレーションは Android 8 から利用できるようになったものです。壁紙のアニメーションに少しカクつきが出るかもしれません</string>
+  <string name="other_launcher">ホームアプリ内に Doodle のアイコンを表示しない</string>
+  <string name="other_launcher_description">このアプリの設定画面へはシステムの Live Wallparer Pickerからしかアクセスできなくなります</string>
+  <string name="other_theme">アプリのテーマカラー</string>
+  <string name="other_theme_description">見た目を変えてみませんか？</string>
+  <string name="other_theme_auto">Auto</string>
+  <string name="other_theme_light">Light</string>
+  <string name="other_theme_dark">Dark</string>
+  <string name="other_reset">すべての設定をリセットする</string>
+  <string name="other_reset_description">あなたの設定はデバイスが起動したときにすぐにアクセスできるよう特殊な個所に保存されているため、トラブル対処のためには再インストールよりも効果的です</string>
+
+  <!-- ABOUT -->
+
+  <string name="about_title">このアプリについて</string>
+  <string name="about_description">開発者に関する情報など</string>
+  <string name="about_version">バージョン</string>
+  <string name="about_changelog">変更履歴</string>
+  <string name="about_changelog_description">ここが新しくなりました</string>
+  <string name="about_developer">開発者</string>
+  <string name="about_vending_description">この開発者による他のアプリ</string>
+  <string name="about_github_description">ソースコード</string>
+  <string name="about_translation_description">Doodle の翻訳を手伝う</string>
+  <string name="about_privacy">プライバシーポリシー</string>
+  <string name="about_privacy_description">あなたのデータの取り扱いかた</string>
+
+  <!-- MESSAGES -->
+
+  <string name="msg_feedback">優れたアプリにはたくさんの時間とユーザーからのフィードバックが与えてくれるたくさんの活力が必要です\n\nこのアプリに関して要望や感想、質問などがあればご連絡ください\nPlay Store に良いレビューをいただければそれも大変うれしいです</string>
+  <string name="msg_share">このよさげなライブ壁紙アプリを見てみる:\nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
+  <string name="msg_hide">ホームアプリからアイコンを隠します。よろしいですか？</string>
+  <string name="msg_random">選択されたすべてのデザインを使用します</string>
+  <string name="msg_random_warning">現在は壁紙のデザインをランダムに表示する設定になっています</string>
+  <string name="msg_reset">すべての設定をリセットします。よろしいですか？</string>
+  <string name="msg_force_stop">変更を適用するにはいったん動作を停止する必要があります</string>
+  <string name="msg_apply_colors">次に画面をOFFにするまで色の変更はシステムには適用されません</string>
+  <string name="msg_apply_changes">設定の変更を（完全に）適用するために壁紙のサービスを再起動したほうがよいでしょう。再起動は自動的には行われません\nいったんシステム設定で Doodle を強制停止し、あらためて Doodle を壁紙として設定しなおしてください</string>
+  <string name="msg_set_wallpaper">　このアプリを閉じたら壁紙のアニメーションがおかしくなってしまうときは、システムの壁紙設定画面で Doodle を壁紙として選択してください/nアプリから直接設定することもできます</string>
+  <string name="msg_preview_missing">エラーが発生しました。手動で Doodle Live Wallpaper を選択してください</string>
+
+  </resources>

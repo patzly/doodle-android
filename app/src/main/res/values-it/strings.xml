@@ -186,7 +186,7 @@ https://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
   <string name="msg_reset">Ripristinare tutte le impostazioni?</string>
   <string name="msg_force_stop">Chiusura forzata richiesta per applicare i cambiamenti</string>
   <string name="msg_apply_colors">I nuovi colori verranno applicati al sistema la prossima volta che spegnerai lo schermo</string>
-  <string name="msg_apply_changes">Per applicare le nuove opzioni si raccomanda un riavvio del servizio dello sfondo. Il riavvio non può essere effettuato automaticamente.
+  <string name="msg_apply_changes">Per applicare (eventualmente) le nuove opzioni si raccomanda un riavvio del servizio dello sfondo. Il riavvio non può essere effettuato automaticamente.
 Per favore forza la chiusura di Doodle nelle tue impostazioni di sistema e riapplica Doodle come sfondo.</string>
   <string name="msg_set_wallpaper">Se incontri qualsiasi problema che interrompe l\'animazione dello sfondo quando chiudi quela app, per favore applicala come sfondo attraverso il selettore sfondo del tuo sistema.
 In alternativa, puoi impostarla direttamente da qui come sfondo.</string>

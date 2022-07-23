@@ -26,7 +26,7 @@
        locales with textStyle="bold".
        Untranslated text (names or untranslated strings) with textStyle set to bold will look like
        the medium variant of Jost*, so there is no extra attention needed for e.g. the app bar.
-       Affected languages: Arab, Chinese, Hebrew, Uighur -->
+       Affected languages: Arab, Chinese, Hebrew, Japanese, Uighur -->
 
   <!-- Toolbar -->
 
@@ -73,6 +73,7 @@
     <item name="android:textColor">?attr/colorSurfaceVariant</item>
   </style>
 
+  <!-- Localized style, no empty base style needed -->
   <style
     name="Widget.Doodle.Button.TextButton.Snackbar"
     parent="Widget.Material3.Button.TextButton.Snackbar">
@@ -95,6 +96,7 @@
 
   <!-- Button -->
 
+  <!-- Base style -->
   <style
     name="Base.Doodle.Button.UnelevatedButton"
     parent="Widget.Material3.Button.UnelevatedButton">
@@ -102,12 +104,14 @@
     <item name="android:layout_height">wrap_content</item>
   </style>
 
+  <!-- Localized style -->
   <style
     name="Widget.Doodle.Button.UnelevatedButton"
     parent="Base.Doodle.Button.UnelevatedButton">
     <item name="android:fontFamily">@font/jost_medium</item>
   </style>
 
+  <!-- Base style -->
   <style
     name="Base.Doodle.Button.OutlinedButton"
     parent="Widget.Material3.Button.OutlinedButton">
@@ -116,20 +120,22 @@
     <item name="rippleColor">@color/selector_highlight</item>
   </style>
 
+  <!-- Localized style -->
   <style
     name="Widget.Doodle.Button.OutlinedButton"
     parent="Base.Doodle.Button.OutlinedButton">
     <item name="android:fontFamily">@font/jost_medium</item>
   </style>
 
+  <!-- Base style -->
   <style
     name="Base.Doodle.Button.TextButton"
     parent="Widget.Material3.Button.TextButton">
     <item name="android:layout_width">wrap_content</item>
     <item name="android:layout_height">wrap_content</item>
-    <item name="android:fontFamily">@font/jost_medium</item>
   </style>
 
+  <!-- Localized style -->
   <style
     name="Widget.Doodle.Button.TextButton"
     parent="Base.Doodle.Button.TextButton">
@@ -197,6 +203,7 @@
 
   <!-- ExtendedFloatingActionButton -->
 
+  <!-- Localized style, no empty base style needed -->
   <style
     name="Widget.Doodle.ExtendedFloatingActionButton"
     parent="Widget.Material3.ExtendedFloatingActionButton.Primary">
@@ -333,12 +340,14 @@
     <item name="android:breakStrategy" tools:targetApi="m">simple</item>
   </style>
 
+  <!-- Base style -->
   <style name="Base.Doodle.TextView.Toolbar" parent="Widget.Doodle.TextView">
     <item name="android:textAppearance">?attr/textAppearanceTitleLarge</item>
     <item name="android:singleLine">true</item>
     <item name="android:textColor">?attr/colorOnSurface</item>
   </style>
 
+  <!-- Localized style -->
   <style name="Widget.Doodle.TextView.Toolbar" parent="Base.Doodle.TextView.Toolbar">
     <!-- Untranslated text like the app name doesn't need medium font if the system font is used
     as fallback because they will already appear medium with the textStyle attribute set to bold
@@ -346,6 +355,7 @@
     <item name="android:fontFamily">@font/jost_medium</item>
   </style>
 
+  <!-- Base style -->
   <style name="Base.Doodle.TextView.Category" parent="Widget.Doodle.TextView">
     <item name="android:layout_width">wrap_content</item>
     <item name="android:layout_height">wrap_content</item>
@@ -356,6 +366,7 @@
     <item name="android:textColor">?attr/colorSecondary</item>
   </style>
 
+  <!-- Localized style -->
   <style name="Widget.Doodle.TextView.Category" parent="Base.Doodle.TextView.Category">
     <item name="android:fontFamily">@font/jost_medium</item>
   </style>
@@ -387,6 +398,7 @@
 
   <!-- TextAppearance -->
 
+  <!-- Localized style, no empty base style needed -->
   <style name="TextAppearance.Doodle.Toolbar.Title" parent="TextAppearance.Material3.TitleLarge">
     <item name="fontFamily">@font/jost_medium</item>
   </style>

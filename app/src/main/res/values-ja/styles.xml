@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ This file is part of Doodle Android.
+  ~
+  ~ Doodle Android is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Doodle Android is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with Doodle Android. If not, see <http://www.gnu.org/licenses/>.
+  ~
+  ~ Copyright (c) 2019-2022 by Patrick Zedler
+  -->
+
+<resources>
+
+  <!-- Snackbar -->
+
+  <style
+    name="Widget.Doodle.Button.TextButton.Snackbar"
+    parent="Widget.Material3.Button.TextButton.Snackbar">
+    <item name="android:textStyle">bold</item>
+  </style>
+
+  <!-- Button -->
+
+  <style
+    name="Widget.Doodle.Button.UnelevatedButton"
+    parent="Base.Doodle.Button.UnelevatedButton">
+    <item name="android:textStyle">bold</item>
+  </style>
+
+  <style
+    name="Widget.Doodle.Button.OutlinedButton"
+    parent="Base.Doodle.Button.OutlinedButton">
+    <item name="android:textStyle">bold</item>
+  </style>
+
+  <style
+    name="Widget.Doodle.Button.TextButton"
+    parent="Base.Doodle.Button.TextButton">
+    <item name="android:textStyle">bold</item>
+  </style>
+
+  <!-- ExtendedFloatingActionButton -->
+
+  <style
+    name="Widget.Doodle.ExtendedFloatingActionButton"
+    parent="Widget.Material3.ExtendedFloatingActionButton.Primary">
+    <item name="android:textStyle">bold</item>
+  </style>
+
+  <!-- TextView -->
+
+  <style name="Widget.Doodle.TextView.Toolbar" parent="Base.Doodle.TextView.Toolbar">
+    <item name="android:textStyle">bold</item>
+  </style>
+
+  <style name="Widget.Doodle.TextView.Category" parent="Base.Doodle.TextView.Category">
+    <item name="android:textStyle">bold</item>
+  </style>
+
+  <!-- TextAppearance -->
+
+  <style name="TextAppearance.Doodle.Toolbar.Title" parent="TextAppearance.Material3.TitleLarge">
+    <item name="android:textStyle">bold</item>
+  </style>
+
+</resources>

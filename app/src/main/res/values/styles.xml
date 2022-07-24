@@ -393,7 +393,7 @@
   <style name="Widget.Doodle.TextView.ListItem.Description" parent="Widget.Doodle.TextView">
     <item name="android:layout_width">match_parent</item>
     <item name="android:layout_height">wrap_content</item>
-    <item name="android:alpha">0.5</item>
+    <item name="android:alpha">0.6</item>
   </style>
 
   <!-- TextAppearance -->

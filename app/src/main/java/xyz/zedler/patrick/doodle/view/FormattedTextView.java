@@ -203,15 +203,6 @@ public class FormattedTextView extends LinearLayout {
 
     linearLayout.addView(frameLayout);
     linearLayout.addView(textView);
-
-    // Long texts are not translated
-    /*if (ResUtil.isLayoutRtl(context)) {
-      linearLayout.addView(textView);
-      linearLayout.addView(frameLayout);
-    } else {
-      linearLayout.addView(frameLayout);
-      linearLayout.addView(textView);
-    }*/
     return linearLayout;
   }
 

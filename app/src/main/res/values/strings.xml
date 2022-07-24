@@ -25,12 +25,12 @@
 
   <string name="app_name" translatable="false">Doodle</string>
   <string name="app_developer" translatable="false">Patrick Zedler</string>
-  <string name="app_mail" translatable="false">patrick@zedler.xyz</string>
-  <string name="app_website" translatable="false">https://patrick.zedler.xyz</string>
+  <string name="app_mail" translatable="false">mail@patrickzedler.com</string>
+  <string name="app_website" translatable="false">https://patrickzedler.com</string>
   <string name="app_vending" translatable="false">http://play.google.com/store/apps/dev?id=8122479227040208191</string>
   <string name="app_github" translatable="false">https://github.com/patzly/doodle-android/</string>
   <string name="app_translate" translatable="false">https://www.transifex.com/patzly/doodle-android/</string>
-  <string name="app_privacy" translatable="false">https://patrick.zedler.xyz/doodle/privacy-policy-doodle/</string>
+  <string name="app_privacy" translatable="false">https://patrickzedler.com/doodle/privacy-policy-doodle/</string>
 
   <string name="wallpaper_description">Colorful live wallpaper with auto dark mode and power-efficient animations. Customize it to your needs!</string>
   <string name="wallpaper_description_picker">Explore a colorful collection of shapes, refined with gentle parallax and zoom effects when you swipe through your home screens and unlock your device.\nCustomize the wallpaper to match your own style!</string>

@@ -348,11 +348,11 @@
         </LinearLayout>
 
         <LinearLayout
-          android:id="@+id/linear_appearance_white_text"
+          android:id="@+id/linear_appearance_light_text"
           style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable">
 
           <ImageView
-            android:id="@+id/image_appearance_white_text"
+            android:id="@+id/image_appearance_light_text"
             style="@style/Widget.Doodle.ImageView.ListItem.Icon"
             android:src="@drawable/ic_round_filter_b_and_w"
             tools:ignore="ContentDescription" />
@@ -361,16 +361,44 @@
 
             <TextView
               style="@style/Widget.Doodle.TextView.ListItem.Title"
-              android:text="@string/appearance_white_text" />
+              android:text="@string/appearance_light_text" />
 
             <TextView
               style="@style/Widget.Doodle.TextView.ListItem.Description"
-              android:text="@string/appearance_white_text_description" />
+              android:text="@string/appearance_light_text_description" />
 
           </LinearLayout>
 
           <com.google.android.material.materialswitch.MaterialSwitch
-            android:id="@+id/switch_appearance_white_text"
+            android:id="@+id/switch_appearance_light_text"
+            style="@style/Widget.Doodle.Switch" />
+
+        </LinearLayout>
+
+        <LinearLayout
+          android:id="@+id/linear_appearance_dark_text"
+          style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable">
+
+          <ImageView
+            android:id="@+id/image_appearance_dark_text"
+            style="@style/Widget.Doodle.ImageView.ListItem.Icon"
+            android:src="@drawable/ic_round_filter_b_and_w"
+            tools:ignore="ContentDescription" />
+
+          <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">
+
+            <TextView
+              style="@style/Widget.Doodle.TextView.ListItem.Title"
+              android:text="@string/appearance_dark_text" />
+
+            <TextView
+              style="@style/Widget.Doodle.TextView.ListItem.Description"
+              android:text="@string/appearance_dark_text_description" />
+
+          </LinearLayout>
+
+          <com.google.android.material.materialswitch.MaterialSwitch
+            android:id="@+id/switch_appearance_dark_text"
             style="@style/Widget.Doodle.Switch" />
 
         </LinearLayout>

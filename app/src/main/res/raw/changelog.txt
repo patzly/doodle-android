@@ -1,6 +1,7 @@
 ## 5.4.1
 
 - New: Japanese translation
+- Improved: toggle logic for launcher text color
 - Improved: refreshed toggle switch style in settings
 - Improved: changelog style and help text appearance
 

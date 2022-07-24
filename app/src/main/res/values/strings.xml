@@ -87,8 +87,10 @@
   <string name="appearance_night_mode_off">Off</string>
   <string name="appearance_follow_system">Follow system</string>
   <string name="appearance_follow_system_description">Adopt device theme</string>
-  <string name="appearance_white_text">Try to force white text</string>
-  <string name="appearance_white_text_description">May affect readability</string>
+  <string name="appearance_light_text">Always use white text</string>
+  <string name="appearance_light_text_description">Instead of dark text on bright background</string>
+  <string name="appearance_dark_text">Use dark text</string>
+  <string name="appearance_dark_text_description">Only when background is bright enough</string>
   <string name="appearance_colors_category">Colors</string>
   <string name="appearance_colors">Extracted colors</string>
   <string name="appearance_colors_description">Used for calculating text contrast</string>

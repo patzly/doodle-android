@@ -269,7 +269,7 @@ public class LiveWallpaperService extends WallpaperService {
   class UserAwareEngine extends Engine implements UserPresenceListener, RefreshListener {
 
     private Context context;
-    private boolean useWhiteText;
+    private boolean darkText, lightText;
     private int zoomIntensity;
     private boolean isZoomLauncherEnabled, isZoomUnlockEnabled;
     private float zoomLauncher;
@@ -427,7 +427,7 @@ public class LiveWallpaperService extends WallpaperService {
             getThemeColor(0, isNightMode),
             getThemeColor(1, isNightMode),
             getThemeColor(2, isNightMode),
-            !isNightMode() && useWhiteText
+            darkText, lightText
         );
       } else {
         return super.onComputeColors();
@@ -581,7 +581,10 @@ public class LiveWallpaperService extends WallpaperService {
         wallpaper = Constants.getWallpaper(sharedPrefs.getString(PREF.WALLPAPER, DEF.WALLPAPER));
       }
       nightMode = sharedPrefs.getInt(PREF.NIGHT_MODE, DEF.NIGHT_MODE);
-      useWhiteText = sharedPrefs.getBoolean(PREF.USE_WHITE_TEXT, DEF.USE_WHITE_TEXT);
+
+      darkText = sharedPrefs.getBoolean(PREF.USE_DARK_TEXT, DEF.USE_DARK_TEXT);
+      lightText = sharedPrefs.getBoolean(PREF.FORCE_LIGHT_TEXT, DEF.FORCE_LIGHT_TEXT);
+
       isNight = isNightMode();
 
       loadWallpaper();

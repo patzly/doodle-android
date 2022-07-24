@@ -24,6 +24,7 @@ import android.annotation.SuppressLint;
 import android.content.res.Configuration;
 import android.graphics.Color;
 import android.os.Build;
+import android.os.Build.VERSION;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -173,9 +174,19 @@ public class AppearanceFragment extends BaseFragment
             : R.drawable.ic_round_light_mode_to_dark_mode_anim
     );
 
-    binding.switchAppearanceWhiteText.setChecked(
-        getSharedPrefs().getBoolean(PREF.USE_WHITE_TEXT, DEF.USE_WHITE_TEXT)
+    binding.switchAppearanceDarkText.setChecked(
+        getSharedPrefs().getBoolean(PREF.USE_DARK_TEXT, DEF.USE_DARK_TEXT)
     );
+    binding.switchAppearanceLightText.setChecked(
+        getSharedPrefs().getBoolean(PREF.FORCE_LIGHT_TEXT, DEF.FORCE_LIGHT_TEXT)
+    );
+    if (VERSION.SDK_INT >= 31) {
+      binding.linearAppearanceDarkText.setVisibility(View.VISIBLE);
+      binding.linearAppearanceLightText.setVisibility(View.GONE);
+    } else {
+      binding.linearAppearanceDarkText.setVisibility(View.GONE);
+      binding.linearAppearanceLightText.setVisibility(View.VISIBLE);
+    }
 
     randomWallpaper = getSharedPrefs().getBoolean(PREF.RANDOM, DEF.RANDOM);
     binding.switchAppearanceRandom.setChecked(randomWallpaper);
@@ -209,13 +220,15 @@ public class AppearanceFragment extends BaseFragment
     ViewUtil.setOnClickListeners(
         this,
         // Other
-        binding.linearAppearanceWhiteText,
+        binding.linearAppearanceDarkText,
+        binding.linearAppearanceLightText,
         binding.linearAppearanceRandom
     );
 
     ViewUtil.setOnCheckedChangeListeners(
         this,
-        binding.switchAppearanceWhiteText,
+        binding.switchAppearanceDarkText,
+        binding.switchAppearanceLightText,
         binding.switchAppearanceRandom
     );
   }
@@ -223,8 +236,14 @@ public class AppearanceFragment extends BaseFragment
   @Override
   public void onClick(View v) {
     int id = v.getId();
-    if (id == R.id.linear_appearance_white_text) {
-      binding.switchAppearanceWhiteText.setChecked(!binding.switchAppearanceWhiteText.isChecked());
+    if (id == R.id.linear_appearance_dark_text) {
+      binding.switchAppearanceDarkText.setChecked(
+          !binding.switchAppearanceDarkText.isChecked()
+      );
+    } else if (id == R.id.linear_appearance_light_text) {
+      binding.switchAppearanceLightText.setChecked(
+          !binding.switchAppearanceLightText.isChecked()
+      );
     } else if (id == R.id.linear_appearance_random) {
       binding.switchAppearanceRandom.setChecked(!binding.switchAppearanceRandom.isChecked());
     }
@@ -233,10 +252,16 @@ public class AppearanceFragment extends BaseFragment
   @Override
   public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
     int id = buttonView.getId();
-    if (id == R.id.switch_appearance_white_text) {
-      performHapticClick();
-      getSharedPrefs().edit().putBoolean(PREF.USE_WHITE_TEXT, isChecked).apply();
+    if (id == R.id.switch_appearance_dark_text) {
+      getSharedPrefs().edit().putBoolean(PREF.USE_DARK_TEXT, isChecked).apply();
       activity.requestThemeRefresh();
+      performHapticClick();
+      ViewUtil.startIcon(binding.imageAppearanceDarkText);
+    } else if (id == R.id.switch_appearance_light_text) {
+      getSharedPrefs().edit().putBoolean(PREF.FORCE_LIGHT_TEXT, isChecked).apply();
+      activity.requestThemeRefresh();
+      performHapticClick();
+      ViewUtil.startIcon(binding.imageAppearanceLightText);
     } else if (id == R.id.switch_appearance_random) {
       performHapticClick();
       randomWallpaper = isChecked;

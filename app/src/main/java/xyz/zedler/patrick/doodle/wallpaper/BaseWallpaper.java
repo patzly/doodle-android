@@ -109,11 +109,11 @@ public abstract class BaseWallpaper {
 
     @RequiresApi(api = VERSION_CODES.O_MR1)
     public WallpaperColors getWallpaperColors(
-        int primary, int secondary, int tertiary, boolean useWhiteText
+        int primary, int secondary, int tertiary, boolean darkText, boolean lightText
     ) {
       if (VERSION.SDK_INT >= 31) {
         int hints = 0;
-        if (!useWhiteText && isDarkTextSupported) {
+        if (isDarkTextSupported && darkText) {
           hints |= WallpaperColors.HINT_SUPPORTS_DARK_TEXT;
         }
         if (isDarkThemeSupported) {
@@ -126,7 +126,7 @@ public abstract class BaseWallpaper {
             hints
         );
       } else {
-        if (useWhiteText) {
+        if (lightText) {
           float[] hsl = new float[3];
           ColorUtils.colorToHSL(primary, hsl);
           hsl[2] = 0.7f;

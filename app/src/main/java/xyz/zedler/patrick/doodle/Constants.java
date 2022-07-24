@@ -66,7 +66,8 @@ public final class Constants {
     public static final String VARIANT_ANTHONY = "variant_anthony";
 
     public static final String NIGHT_MODE = "night_mode";
-    public static final String USE_WHITE_TEXT = "use_white_text";
+    public static final String USE_DARK_TEXT = "dark_text";
+    public static final String FORCE_LIGHT_TEXT = "light_text";
     public static final String RANDOM = "random";
     public static final String RANDOM_LIST = "random_list";
 
@@ -108,7 +109,8 @@ public final class Constants {
 
     public static final String WALLPAPER = Constants.WALLPAPER.PIXEL;
     public static final int NIGHT_MODE = -1;
-    public static final boolean USE_WHITE_TEXT = false;
+    public static final boolean USE_DARK_TEXT = true;
+    public static final boolean FORCE_LIGHT_TEXT = false;
     public static final boolean RANDOM = false;
     public static final Set<String> RANDOM_LIST = new HashSet<>(
         Arrays.asList(Constants.getAllWallpapers())

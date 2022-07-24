@@ -76,8 +76,10 @@
   <string name="appearance_night_mode_off">关</string>
   <string name="appearance_follow_system">跟随系统</string>
   <string name="appearance_follow_system_description">采用自带主题</string>
-  <string name="appearance_white_text">尝试强制使用白色文本</string>
-  <string name="appearance_white_text_description">可能会影响到可读性</string>
+  <string name="appearance_light_text">在浅色背景上始终使用白色文本</string>
+  <string name="appearance_light_text_description">而不是深色文本</string>
+  <string name="appearance_dark_text">使用深色文本</string>
+  <string name="appearance_dark_text_description">仅当背景不够亮时</string>
   <string name="appearance_colors_category">颜色</string>
   <string name="appearance_colors">提取的颜色</string>
   <string name="appearance_colors_description">用于计算文本对比度</string>

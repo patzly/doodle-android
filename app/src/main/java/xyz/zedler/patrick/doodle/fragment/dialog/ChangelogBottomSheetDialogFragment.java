@@ -24,32 +24,29 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout.LayoutParams;
-import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import xyz.zedler.patrick.doodle.R;
-import xyz.zedler.patrick.doodle.databinding.FragmentBottomsheetChangelogBinding;
+import xyz.zedler.patrick.doodle.databinding.FragmentBottomsheetTextBinding;
 import xyz.zedler.patrick.doodle.util.ResUtil;
 
 public class ChangelogBottomSheetDialogFragment extends BaseBottomSheetDialogFragment {
 
   private static final String TAG = "ChangelogBottomSheet";
 
-  private FragmentBottomsheetChangelogBinding binding;
+  private FragmentBottomsheetTextBinding binding;
 
   @Nullable
   @Override
   public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle state) {
-    binding = FragmentBottomsheetChangelogBinding.inflate(inflater, container, false);
+    binding = FragmentBottomsheetTextBinding.inflate(inflater, container, false);
 
-    binding.textChangelog.setText(
-        ResUtil.getBulletList(
-            getContext(),
-            "- ",
-            ResUtil.getRawText(requireContext(), R.raw.changelog),
-            "New:", "Improved:", "Fixed:"
-        ),
-        TextView.BufferType.SPANNABLE
+    binding.toolbarText.setTitle(R.string.about_changelog);
+    binding.toolbarText.setTitleCentered(true);
+
+    binding.formattedText.setText(
+        ResUtil.getRawText(requireContext(), R.raw.changelog),
+        "New:", "Improved:", "Fixed:"
     );
 
     return binding.getRoot();
@@ -65,7 +62,7 @@ public class ChangelogBottomSheetDialogFragment extends BaseBottomSheetDialogFra
   public void applyBottomInset(int bottom) {
     LayoutParams params = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
     params.setMargins(0, 0, 0, bottom);
-    binding.textChangelog.setLayoutParams(params);
+    binding.formattedText.setLayoutParams(params);
   }
 
   @NonNull

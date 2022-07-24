@@ -21,7 +21,6 @@
 
 <LinearLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="wrap_content"
   android:orientation="vertical">
@@ -39,15 +38,10 @@
     android:layout_height="wrap_content"
     android:scrollbars="none">
 
-    <TextView
-      android:id="@+id/text_text"
-      style="@style/Widget.Doodle.TextView.Paragraph"
+    <xyz.zedler.patrick.doodle.view.FormattedTextView
+      android:id="@+id/formatted_text"
       android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:gravity="left"
-      android:textAlignment="gravity"
-      android:padding="16dp"
-      tools:ignore="RtlHardcoded" />
+      android:layout_height="wrap_content" />
 
   </androidx.core.widget.NestedScrollView>
 

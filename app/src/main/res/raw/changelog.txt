@@ -1,10 +1,13 @@
-5.4.1:
+## 5.4.1
+
 - New: Japanese translation
 - Improved: refreshed toggle switch style in settings
+- Improved: changelog style and help text appearance
 
-Please consider translating this app into your language at Transifex.
+? Please consider translating this app into your language at Transifex.
 
-5.4.0:
+## 5.4.0
+
 - New: wallpaper with Android 12 setup design of Pixel 6
 - New: yellow and turquoise app color themes
 - New: Czech and Lithuanian translations
@@ -16,7 +19,8 @@ Please consider translating this app into your language at Transifex.
 - Improved: app color theme selection
 - Fixed: potential solution for blank settings pages
 
-5.3.0:
+## 5.3.0
+
 - New: another autumnal Pixel 6 Material You wallpaper!
 - New: additional Dracula theme color variants in the Pixel 4 Doodle collection
 - New: battery saver options for page swipe animation, tilt and zoom effects
@@ -26,7 +30,8 @@ Please consider translating this app into your language at Transifex.
 - Fixed: dark status bar icons on dark wallpapers on some devices (finally, thanks Vivek!)
 - Fixed: random wallpaper not refreshing when lockscreen zoom was turned off
 
-5.2.0:
+## 5.2.0
+
 - New: default shape scale based on display size and density (reset all options to let Doodle calculate the default shape scale)
 - New: FAQ in info section (tap info card on start page)
 - New: black (AMOLED) app theme (only with one static accent color due to internal reasons)
@@ -41,7 +46,8 @@ Please consider translating this app into your language at Transifex.
 - Fixed: unwanted horizontal position changes of bottom messages and big button when switching between app sections
 - Fixed: some crashes and bugs
 
-5.1.0:
+## 5.1.0
+
 - New: another sandy Pixel 6 wallpaper
 - New: random wallpaper option now lets you select your favourite designs
 - New: Arabic, Danish and Hebrew translations
@@ -61,15 +67,18 @@ Please consider translating this app into your language at Transifex.
 - Fixed: random wallpaper option not working as expected
 - Fixed: hopefully some crashes
 
-5.0.2:
+## 5.0.2
+
 - New: Dutch, Indonesian & Italian translations
 - Fixed: potential crashes and bugs
 
-5.0.1:
+## 5.0.1
+
 - Fixed: crash caused by compiler
 - Fixed: crash caused by previously stored preferences
 
-5.0.0:
+## 5.0.0
+
 - New: complete implementation of Material Design 3
 - New: dynamic colors in Doodle settings app for supported devices with Android 12+ (Material You)
 - New: various app color themes for devices without dynamic color support
@@ -82,13 +91,15 @@ Please consider translating this app into your language at Transifex.
 - Improved: splash screen implementation for Android 12+
 - Fixed: broken buttons in feedback dialog
 
-4.2.0:
+## 4.2.0
+
 - New: exclusive live wallpapers based on leaked Pixel 6 wallpapers
 - New: another live wallpaper based on an artwork by Anna Kövecses
 - Improved: shape rotation
 - Fixed: wrong tilt effect direction in landscape mode
 
-4.1.0:
+## 4.1.0
+
 - New: live wallpaper based on a static Chrome OS wallpaper by Anna Kövecses
 - New: support for Android versions down to Android 5.1
 - Improved: Material You wallpaper variants
@@ -96,7 +107,8 @@ Please consider translating this app into your language at Transifex.
 - Improved: start page layout and wallpaper selection
 - Improved: splash screen on Android 12
 
-4.0.0:
+## 4.0.0
+
 - New: completely rewritten and reorganized settings app
 - New: "Material You"-inspired wallpaper
 - New: Android 12 wallpaper color support (not tested yet, please report related issues on GitHub (doodle-android) if you have Android 12 Beta installed)
@@ -109,34 +121,40 @@ Please consider translating this app into your language at Transifex.
 - Fixed: incorrect zoom on lockscreen
 - Fixed: non-gesture navigation bar color in dialogs for Android 11 and higher
 
-3.5.1:
+## 3.5.1
+
 - New: option to set tilt sensor refresh rate (useful if tilt caused lags with zoom animations)
 - Fixed: skipped frames in zoom animation when unlocking immediately
 - Fixed: SET button not disabled if settings app is opened from wallpaper preview
 
-3.5.0:
+## 3.5.0
+
 - New: option for hiding app icon in launcher
 - Fixed: annoying shape offset in shape groups when zoomed out
 - Fixed: settings reset option
 
-3.4.1:
+## 3.4.1
+
 - Improved: acceleration sensor listener will now only be registered if the option is turned on
 - Improved: information and warnings
 - Fixed: wallpaper frame jump after switching the tilt sensor option on or off
 - Fixed: potential wallpaper crashes
 
-3.4.0:
+## 3.4.0
+
 - New: optional parallax effect when tilting the device
 - New: Brazilian Portuguese translation (big thanks to Alexandre!)
 - Improved: descriptions of options and information
 - Fixed: potential wallpaper and app crashes
 
-3.3.0:
+## 3.3.0
+
 - New: option to force white text with shadow on bright backgrounds
 - Improved: haptic feedback in settings only enabled if system vibrations are turned on
 - Improved: confirmation of settings reset
 
-3.2.0:
+## 3.2.0
+
 - New: additional color variants
 - New: option to reset all settings (reinstalling Doodle would not clean them as they are stored at a special place)
 - Improved: wallpaper thumbnail
@@ -147,27 +165,32 @@ Please consider translating this app into your language at Transifex.
 - Fixed: GPU icon in settings
 - Fixed: corner radius of selection circles for older Android versions
 
-3.1.0:
+## 3.1.0
+
 - New: switch to turn off hardware acceleration (only useful if the wallpaper crashes)
 - Improved: wallpaper and theme selection appearance
 - Improved: text of warnings
 - Fixed: hopefully some crashes
 
-3.0.1:
+## 3.0.1
+
 - Improved: text and descriptions
 
-3.0.0:
+## 3.0.0
+
 - New: completely rewritten rendering engine (much more efficient and faster)
 - New: "organic" doodle wallpaper
 - New: hardware acceleration for devices with Android 8 and higher
 - Improved: settings style and layout
 
-2.6.1:
+## 2.6.1
+
 - Improved: applying preferences unrelated to color or size now is more efficient
 - Fixed: preferences were sometimes not applied to wallpaper
 - Fixed: a few potential crashes
 
-2.6.0:
+## 2.6.0
+
 - New: zoom-in animation when unlocking
 - New: changelog is shown after update
 - New: feedback and GitHub link in app
@@ -178,19 +201,22 @@ Please consider translating this app into your language at Transifex.
 - Fixed: dark mode not adopting from system
 - Fixed: laggy animations after resizing shapes in settings
 
-2.5.0:
+## 2.5.0
+
 - New: support for zoom effect on Android 11
 - Improved: show warning when default launcher is TouchWiz
 - Improved: sliders for customization
 - Improved: haptic feedback in settings
 - Improved: animation efficiency by using frame rate of the device
 
-2.4.0:
+## 2.4.0
+
 - New: haptic feedback in settings
 - Improved: settings interface
 - Fixed: crash on boot caused by missing access to preferences
 
-2.3.0:
+## 2.3.0
+
 - New: Jost* typeface
 - New: animated splash screen in settings
 - New: immersive fullscreen experience in settings
@@ -202,14 +228,17 @@ Please consider translating this app into your language at Transifex.
 - Improved: internal cleanup
 - Fixed: color changes not being applied to launcher
 
-2.2.0:
+## 2.2.0
+
 - Improved: app icon
 - Improved: internal cleanup
 
-2.1.2:
+## 2.1.2
+
 - Improved: settings update
 - Fixed: theme selection
 
-2.1.1:
+## 2.1.1
+
 - Improved: description and appearance
 - Fixed: interface style

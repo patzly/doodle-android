@@ -22,23 +22,15 @@ package xyz.zedler.patrick.doodle.util;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.ColorStateList;
-import android.os.Build;
-import android.text.Spannable;
-import android.text.SpannableString;
-import android.text.SpannableStringBuilder;
-import android.text.Spanned;
-import android.text.style.BulletSpan;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.MenuItem;
 import android.view.View;
 import androidx.annotation.AttrRes;
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.annotation.RawRes;
 import androidx.annotation.StringRes;
 import androidx.core.graphics.ColorUtils;
-import androidx.core.text.HtmlCompat;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -70,47 +62,6 @@ public class ResUtil {
     intent.putExtra(Intent.EXTRA_TEXT, context.getString(resId));
     intent.setType("text/plain");
     context.startActivity(Intent.createChooser(intent, null));
-  }
-
-  public static CharSequence getBulletList(
-      Context context, String prefixToReplace, @Nullable String text, String... highlights
-  ) {
-    if (context == null || text == null) {
-      return null;
-    }
-
-    int color = getColorAttr(context, R.attr.colorOnSurface);
-    int margin = SystemUiUtil.spToPx(context, 6);
-
-    String[] lines = text.split("\n");
-    SpannableStringBuilder builder = new SpannableStringBuilder();
-    for (int i = 0; i < lines.length; i++) {
-      String line = lines[i] + (i < lines.length - 1 ? "\n" : "");
-      if (!line.startsWith(prefixToReplace)) {
-        builder.append(line);
-        continue;
-      }
-      line = line.substring(prefixToReplace.length());
-
-      BulletSpan bulletSpan;
-      if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
-        bulletSpan = new BulletSpan(margin, color, SystemUiUtil.spToPx(context, 2));
-      } else {
-        bulletSpan = new BulletSpan(margin, color);
-      }
-
-      for (String highlight : highlights) {
-        line = line.replaceAll(highlight, "<b>" + highlight + "</b>");
-        line = line.replaceAll("\n", "<br/>");
-      }
-
-      Spannable spannable = new SpannableString(
-          HtmlCompat.fromHtml(line, HtmlCompat.FROM_HTML_MODE_LEGACY)
-      );
-      spannable.setSpan(bulletSpan, 0, spannable.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
-      builder.append(spannable);
-    }
-    return builder;
   }
 
   public static boolean isLayoutRtl(Context context) {

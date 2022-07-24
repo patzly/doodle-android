@@ -29,7 +29,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout.LayoutParams;
 import androidx.annotation.NonNull;
-import androidx.core.text.HtmlCompat;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.databinding.FragmentBottomsheetTextBinding;
 import xyz.zedler.patrick.doodle.util.ResUtil;
@@ -73,9 +72,7 @@ public class TextBottomSheetDialogFragment extends BaseBottomSheetDialogFragment
       binding.toolbarText.setTitleCentered(true);
     }
 
-    String text = ResUtil.getRawText(requireContext(), args.getFile());
-    text = text.replaceAll("\n", "<br/>");
-    binding.textText.setText(HtmlCompat.fromHtml(text, HtmlCompat.FROM_HTML_MODE_LEGACY));
+    binding.formattedText.setText(ResUtil.getRawText(requireContext(), args.getFile()));
 
     return binding.getRoot();
   }
@@ -90,7 +87,7 @@ public class TextBottomSheetDialogFragment extends BaseBottomSheetDialogFragment
   public void applyBottomInset(int bottom) {
     LayoutParams params = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
     params.setMargins(0, 0, 0, bottom);
-    binding.textText.setLayoutParams(params);
+    binding.formattedText.setLayoutParams(params);
   }
 
   @NonNull

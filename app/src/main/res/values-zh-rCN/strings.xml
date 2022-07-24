@@ -79,7 +79,7 @@
   <string name="appearance_light_text">在浅色背景上始终使用白色文本</string>
   <string name="appearance_light_text_description">而不是深色文本</string>
   <string name="appearance_dark_text">使用深色文本</string>
-  <string name="appearance_dark_text_description">仅当背景不够亮时</string>
+  <string name="appearance_dark_text_description">（仅在背景够亮时）</string>
   <string name="appearance_colors_category">颜色</string>
   <string name="appearance_colors">提取的颜色</string>
   <string name="appearance_colors_description">用于计算文本对比度</string>

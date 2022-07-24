@@ -521,7 +521,12 @@ public class MainActivity extends AppCompatActivity {
   }
 
   public void showChangelogBottomSheet() {
-    navigate(NavMainDirections.actionGlobalChangelogDialog());
+    NavMainDirections.ActionGlobalTextDialog action
+        = NavMainDirections.actionGlobalTextDialog();
+    action.setTitle(R.string.about_changelog);
+    action.setFile(R.raw.changelog);
+    action.setHighlights(new String[]{"New:", "Improved:", "Fixed:"});
+    navigate(action);
   }
 
   public boolean isTouchWiz() {

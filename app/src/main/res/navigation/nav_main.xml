@@ -140,17 +140,18 @@
       app:argType="reference"
       android:defaultValue="0" />
 
+    <argument
+      android:name="highlights"
+      app:argType="string[]"
+      app:nullable="true"
+      android:defaultValue="@null" />
+
   </dialog>
 
   <dialog
     android:id="@+id/feedbackBottomSheetDialogFragment"
     android:name="xyz.zedler.patrick.doodle.fragment.dialog.FeedbackBottomSheetDialogFragment"
     android:label="dialog_feedback" />
-
-  <dialog
-    android:id="@+id/changelogBottomSheetDialogFragment"
-    android:name="xyz.zedler.patrick.doodle.fragment.dialog.ChangelogBottomSheetDialogFragment"
-    android:label="dialog_changelog" />
 
   <dialog
     android:id="@+id/applyBottomSheetDialogFragment"
@@ -193,10 +194,6 @@
   <action
     android:id="@+id/action_global_text_dialog"
     app:destination="@id/textBottomSheetDialogFragment"/>
-
-  <action
-    android:id="@+id/action_global_changelog_dialog"
-    app:destination="@id/changelogBottomSheetDialogFragment" />
 
   <action
     android:id="@+id/action_global_feedback_dialog"

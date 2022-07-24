@@ -72,7 +72,11 @@ public class TextBottomSheetDialogFragment extends BaseBottomSheetDialogFragment
       binding.toolbarText.setTitleCentered(true);
     }
 
-    binding.formattedText.setText(ResUtil.getRawText(requireContext(), args.getFile()));
+    String[] highlights = args.getHighlights();
+    if (highlights == null) {
+      highlights = new String[]{};
+    }
+    binding.formattedText.setText(ResUtil.getRawText(requireContext(), args.getFile()), highlights);
 
     return binding.getRoot();
   }

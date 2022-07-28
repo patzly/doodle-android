@@ -182,7 +182,7 @@ public class FormattedTextView extends LinearLayout {
     frameLayout.addView(textViewHeight);
 
     TextView textView = new TextView(
-        context, null, 0, R.style.Widget_Doodle_TextView_Paragraph
+        context, null, 0, R.style.Widget_Doodle_TextView
     );
     LinearLayout.LayoutParams paramsText = new LinearLayout.LayoutParams(
         0, ViewGroup.LayoutParams.WRAP_CONTENT

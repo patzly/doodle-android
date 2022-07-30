@@ -186,9 +186,12 @@
             android:id="@+id/image_overview_appearance"
             style="@style/Widget.Doodle.ImageView.ListItem.Icon"
             android:src="@drawable/ic_round_palette_anim"
+            android:layout_marginEnd="16dp"
             tools:ignore="ContentDescription" />
 
-          <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">
+          <LinearLayout
+            style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch"
+            android:layout_marginStart="16dp">
 
             <TextView
               style="@style/Widget.Doodle.TextView.ListItem.Title"
@@ -201,6 +204,7 @@
           </LinearLayout>
 
           <ImageView
+            android:id="@+id/image_overview_appearance_arrow"
             style="@style/Widget.Doodle.ImageView.ListItem.Icon.End"
             android:src="@drawable/ic_round_navigate_next"
             tools:ignore="ContentDescription" />
@@ -215,9 +219,12 @@
             android:id="@+id/image_overview_parallax"
             style="@style/Widget.Doodle.ImageView.ListItem.Icon"
             android:src="@drawable/ic_round_swap_horiz_anim"
+            android:layout_marginEnd="16dp"
             tools:ignore="ContentDescription" />
 
-          <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">
+          <LinearLayout
+            style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch"
+            android:layout_marginStart="16dp">
 
             <TextView
               style="@style/Widget.Doodle.TextView.ListItem.Title"
@@ -230,6 +237,7 @@
           </LinearLayout>
 
           <ImageView
+            android:id="@+id/image_overview_parallax_arrow"
             style="@style/Widget.Doodle.ImageView.ListItem.Icon.End"
             android:src="@drawable/ic_round_navigate_next"
             tools:ignore="ContentDescription" />
@@ -244,9 +252,12 @@
             android:id="@+id/image_overview_size"
             style="@style/Widget.Doodle.ImageView.ListItem.Icon"
             android:src="@drawable/ic_round_filter_center_focus_anim"
+            android:layout_marginEnd="16dp"
             tools:ignore="ContentDescription" />
 
-          <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">
+          <LinearLayout
+            style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch"
+            android:layout_marginStart="16dp">
 
             <TextView
               style="@style/Widget.Doodle.TextView.ListItem.Title"
@@ -259,6 +270,7 @@
           </LinearLayout>
 
           <ImageView
+            android:id="@+id/image_overview_size_arrow"
             style="@style/Widget.Doodle.ImageView.ListItem.Icon.End"
             android:src="@drawable/ic_round_navigate_next"
             tools:ignore="ContentDescription" />
@@ -273,9 +285,12 @@
             android:id="@+id/image_overview_other"
             style="@style/Widget.Doodle.ImageView.ListItem.Icon"
             android:src="@drawable/ic_round_settings"
+            android:layout_marginEnd="16dp"
             tools:ignore="ContentDescription" />
 
-          <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">
+          <LinearLayout
+            style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch"
+            android:layout_marginStart="16dp">
 
             <TextView
               style="@style/Widget.Doodle.TextView.ListItem.Title"
@@ -288,6 +303,7 @@
           </LinearLayout>
 
           <ImageView
+            android:id="@+id/image_overview_other_arrow"
             style="@style/Widget.Doodle.ImageView.ListItem.Icon.End"
             android:src="@drawable/ic_round_navigate_next"
             tools:ignore="ContentDescription" />
@@ -302,9 +318,12 @@
             android:id="@+id/image_overview_about"
             style="@style/Widget.Doodle.ImageView.ListItem.Icon"
             android:src="@drawable/ic_round_info_outline_anim"
+            android:layout_marginEnd="16dp"
             tools:ignore="ContentDescription" />
 
-          <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">
+          <LinearLayout
+            style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch"
+            android:layout_marginStart="16dp">
 
             <TextView
               style="@style/Widget.Doodle.TextView.ListItem.Title"
@@ -317,6 +336,7 @@
           </LinearLayout>
 
           <ImageView
+            android:id="@+id/image_overview_about_arrow"
             style="@style/Widget.Doodle.ImageView.ListItem.Icon.End"
             android:src="@drawable/ic_round_navigate_next"
             tools:ignore="ContentDescription" />

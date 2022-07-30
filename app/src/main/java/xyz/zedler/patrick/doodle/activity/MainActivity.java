@@ -46,6 +46,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat.Type;
+import androidx.fragment.app.Fragment;
 import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
 import androidx.navigation.NavController;
 import androidx.navigation.NavDirections;
@@ -67,6 +68,7 @@ import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.behavior.SystemBarBehavior;
 import xyz.zedler.patrick.doodle.databinding.ActivityMainBinding;
 import xyz.zedler.patrick.doodle.fragment.BaseFragment;
+import xyz.zedler.patrick.doodle.fragment.TwoPaneFragment;
 import xyz.zedler.patrick.doodle.fragment.dialog.ApplyBottomSheetDialogFragment;
 import xyz.zedler.patrick.doodle.service.LiveWallpaperService;
 import xyz.zedler.patrick.doodle.util.HapticUtil;
@@ -231,6 +233,14 @@ public class MainActivity extends AppCompatActivity {
 
     ViewCompat.setOnApplyWindowInsetsListener(binding.getRoot(), (v, insets) -> {
       bottomInset = insets.getInsets(Type.systemBars()).bottom;
+
+      if (isSinglePane()) {
+        binding.fabMain.setLeft(
+            (int) (binding.getRoot().getPivotX() - binding.fabMain.getWidth() / 2f));
+      } else {
+        binding.fabMain.setLeft((int) (getListPaneCenter() - binding.fabMain.getWidth() / 2f));
+      }
+
       setFabVisibility(!isServiceRunning, false);
       return insets;
     });
@@ -527,6 +537,31 @@ public class MainActivity extends AppCompatActivity {
     action.setFile(R.raw.changelog);
     action.setHighlights(new String[]{"New:", "Improved:", "Fixed:"});
     navigate(action);
+  }
+
+  public boolean isSinglePane() {
+    if (getCurrentFragment() instanceof TwoPaneFragment) {
+      TwoPaneFragment current = (TwoPaneFragment) getCurrentFragment();
+      return current.isSinglePane();
+    } else {
+      return true;
+    }
+  }
+
+  public float getListPaneCenter() {
+    if (getCurrentFragment() instanceof TwoPaneFragment) {
+      TwoPaneFragment current = (TwoPaneFragment) getCurrentFragment();
+      return current.getListCenter();
+    } else {
+      return 0;
+    }
+  }
+
+  public void openDetails(Class<? extends Fragment> fragment) {
+    if (getCurrentFragment() instanceof TwoPaneFragment) {
+      TwoPaneFragment current = (TwoPaneFragment) getCurrentFragment();
+      current.openDetails(fragment);
+    }
   }
 
   public boolean isTouchWiz() {

@@ -28,11 +28,11 @@ import android.os.Build.VERSION;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import androidx.annotation.NonNull;
@@ -107,11 +107,27 @@ public class AppearanceFragment extends BaseFragment
   public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
     activity = (MainActivity) requireActivity();
 
-    SystemBarBehavior systemBarBehavior = new SystemBarBehavior(activity);
-    systemBarBehavior.setAppBar(binding.appBarAppearance);
-    systemBarBehavior.setScroll(binding.scrollAppearance, binding.constraintAppearance);
-    systemBarBehavior.setAdditionalBottomInset(activity.getFabTopEdgeDistance());
-    systemBarBehavior.setUp();
+    binding.appBarAppearance.getViewTreeObserver().addOnGlobalLayoutListener(
+        new ViewTreeObserver.OnGlobalLayoutListener() {
+          @Override
+          public void onGlobalLayout() {
+            binding.appBarAppearance.setVisibility(
+                activity.isSinglePane() ? View.VISIBLE : View.GONE
+            );
+
+            SystemBarBehavior systemBarBehavior = new SystemBarBehavior(activity);
+            systemBarBehavior.setAppBar(binding.appBarAppearance);
+            systemBarBehavior.setScroll(binding.scrollAppearance, binding.constraintAppearance);
+            systemBarBehavior.setAdditionalBottomInset(activity.getFabTopEdgeDistance());
+            systemBarBehavior.setUp();
+
+            if (binding.appBarAppearance.getViewTreeObserver().isAlive()) {
+              binding.appBarAppearance.getViewTreeObserver().removeOnGlobalLayoutListener(
+                  this
+              );
+            }
+          }
+        });
 
     new ScrollBehavior(activity).setUpScroll(
         binding.appBarAppearance, binding.scrollAppearance, true
@@ -555,7 +571,7 @@ public class AppearanceFragment extends BaseFragment
         card.startCheckedIcon();
         ViewUtil.startIcon(binding.imageAppearanceColors);
         performHapticClick();
-        AppearanceFragmentDirections.ActionAppearanceToColorsDialog action
+        /*AppearanceFragmentDirections.ActionAppearanceToColorsDialog action
             = AppearanceFragmentDirections.actionAppearanceToColorsDialog();
         switch (iFinal) {
           case 1:
@@ -578,7 +594,7 @@ public class AppearanceFragment extends BaseFragment
             )
         );
         action.setPriority(iFinal);
-        navigate(action);
+        navigate(action);*/
       });
       binding.linearAppearanceColorsContainer.addView(card);
       refreshColor(iFinal, false);

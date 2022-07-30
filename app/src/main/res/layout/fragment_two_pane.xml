@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ This file is part of Doodle Android.
+  ~
+  ~ Doodle Android is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Doodle Android is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with Doodle Android. If not, see <http://www.gnu.org/licenses/>.
+  ~
+  ~ Copyright (c) 2019-2022 by Patrick Zedler
+  -->
+
+<androidx.slidingpanelayout.widget.SlidingPaneLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:id="@+id/sliding_pane"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+
+  <FrameLayout
+    android:layout_width="400dp"
+    android:layout_height="match_parent"
+    android:layout_gravity="start"
+    android:paddingStart="0dp"
+    android:paddingEnd="8dp"
+    android:background="#000">
+
+    <com.google.android.material.card.MaterialCardView
+      android:id="@+id/card_list_pane"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      app:cardCornerRadius="0dp"
+      app:strokeWidth="0dp">
+
+      <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragment_list_pane"
+        android:name="xyz.zedler.patrick.doodle.fragment.OverviewFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+  </FrameLayout>
+
+  <FrameLayout
+    android:layout_width="400dp"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    android:paddingStart="8dp"
+    android:paddingEnd="0dp"
+    android:background="#000">
+
+    <com.google.android.material.card.MaterialCardView
+      android:id="@+id/card_detail_pane"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      app:cardCornerRadius="0dp"
+      app:strokeWidth="0dp">
+
+      <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragment_detail_pane"
+        android:name="xyz.zedler.patrick.doodle.fragment.AppearanceFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+  </FrameLayout>
+
+</androidx.slidingpanelayout.widget.SlidingPaneLayout>

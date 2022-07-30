@@ -105,7 +105,18 @@ public class SystemBarBehavior {
         if (container != null && applyAppBarInsetOnContainer) {
           ViewGroup.MarginLayoutParams params
               = (ViewGroup.MarginLayoutParams) container.getLayoutParams();
-          params.topMargin = appBarLayout.getMeasuredHeight();
+          if (appBarLayout.getVisibility() == View.VISIBLE) {
+            params.topMargin = appBarLayout.getMeasuredHeight();
+          } else {
+            params.topMargin = 0;
+            View container = hasScrollView ? scrollContent : this.container;
+            container.setPadding(
+                container.getPaddingLeft(),
+                containerPaddingTop + (applyStatusBarInsetOnContainer ? statusBarInset : 0),
+                container.getPaddingRight(),
+                container.getPaddingBottom()
+            );
+          }
           container.setLayoutParams(params);
         } else if (container != null) {
           //

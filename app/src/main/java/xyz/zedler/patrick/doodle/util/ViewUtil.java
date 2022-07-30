@@ -329,6 +329,12 @@ public class ViewUtil {
     }
   }
 
+  public static void setVisibility(int visibility, View... views) {
+    for (View view : views) {
+      view.setVisibility(visibility);
+    }
+  }
+
   public static void setEnabled(boolean enabled, View... views) {
     for (View view : views) {
       view.setEnabled(enabled);
@@ -343,6 +349,12 @@ public class ViewUtil {
       } else {
         view.setAlpha(enabled ? 1 : 0.5f);
       }
+    }
+  }
+
+  public static void setBackgroundResource(int resId, View... views) {
+    for (View view : views) {
+      view.setBackgroundResource(resId);
     }
   }
 }

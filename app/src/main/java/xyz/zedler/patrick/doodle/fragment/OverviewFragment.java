@@ -111,6 +111,31 @@ public class OverviewFragment extends BaseFragment implements OnClickListener {
         binding.linearOverviewOther,
         binding.linearOverviewAbout
     );
+
+    ViewUtil.setVisibility(
+        View.GONE,
+        binding.imageOverviewAppearance,
+        binding.imageOverviewParallax,
+        binding.imageOverviewSize,
+        binding.imageOverviewOther,
+        binding.imageOverviewAbout,
+        binding.imageOverviewAppearanceArrow,
+        binding.imageOverviewParallaxArrow,
+        binding.imageOverviewSizeArrow,
+        binding.imageOverviewOtherArrow,
+        binding.imageOverviewAboutArrow
+    );
+
+    ViewUtil.setBackgroundResource(
+        R.drawable.ripple_list_item_bg_no_icon,
+        binding.linearOverviewAppearance,
+        binding.linearOverviewParallax,
+        binding.linearOverviewSize,
+        binding.linearOverviewOther,
+        binding.linearOverviewAbout
+    );
+
+    binding.linearOverviewAppearance.setBackgroundResource(R.drawable.shape_list_item_bg_selected);
   }
 
   @Override
@@ -126,15 +151,17 @@ public class OverviewFragment extends BaseFragment implements OnClickListener {
     } else if (id == R.id.button_overview_help) {
       activity.showTextBottomSheet(R.raw.help, R.string.action_help);
     } else if (id == R.id.linear_overview_appearance) {
-      navigate(OverviewFragmentDirections.actionOverviewToAppearance());
+      activity.openDetails(AppearanceFragment.class);
+      //navigate(OverviewFragmentDirections.actionOverviewToAppearance());
     } else if (id == R.id.linear_overview_parallax) {
-      navigate(OverviewFragmentDirections.actionOverviewToParallax());
+      activity.openDetails(ParallaxFragment.class);
+      //navigate(OverviewFragmentDirections.actionOverviewToParallax());
     } else if (id == R.id.linear_overview_size) {
-      navigate(OverviewFragmentDirections.actionOverviewToSize());
+      //navigate(OverviewFragmentDirections.actionOverviewToSize());
     } else if (id == R.id.linear_overview_other) {
-      navigate(OverviewFragmentDirections.actionOverviewToOther());
+      //navigate(OverviewFragmentDirections.actionOverviewToOther());
     } else if (id == R.id.linear_overview_about) {
-      navigate(OverviewFragmentDirections.actionOverviewToAbout());
+      //navigate(OverviewFragmentDirections.actionOverviewToAbout());
     }
   }
 }

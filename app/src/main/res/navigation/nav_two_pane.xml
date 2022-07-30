@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ This file is part of Doodle Android.
+  ~
+  ~ Doodle Android is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Doodle Android is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with Doodle Android. If not, see <http://www.gnu.org/licenses/>.
+  ~
+  ~ Copyright (c) 2019-2022 by Patrick Zedler
+  -->
+
+<navigation
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/nav_two_pane"
+  app:startDestination="@id/appearanceFragment">
+
+  <fragment
+    android:id="@+id/appearanceFragment"
+    android:name="xyz.zedler.patrick.doodle.fragment.AppearanceFragment"
+    android:label="fragment_appearance"
+    tools:layout="@layout/fragment_appearance">
+
+    <action
+      android:id="@+id/action_appearance_to_colors_dialog"
+      app:destination="@id/colorsBottomSheetDialogFragment" />
+
+  </fragment>
+
+  <fragment
+    android:id="@+id/parallaxFragment"
+    android:name="xyz.zedler.patrick.doodle.fragment.ParallaxFragment"
+    android:label="fragment_parallax"
+    tools:layout="@layout/fragment_parallax" />
+
+  <fragment
+    android:id="@+id/sizeFragment"
+    android:name="xyz.zedler.patrick.doodle.fragment.SizeFragment"
+    android:label="fragment_size"
+    tools:layout="@layout/fragment_size" />
+
+  <fragment
+    android:id="@+id/otherFragment"
+    android:name="xyz.zedler.patrick.doodle.fragment.OtherFragment"
+    android:label="fragment_other"
+    tools:layout="@layout/fragment_other">
+
+    <action
+      android:id="@+id/action_other_to_languages_dialog"
+      app:destination="@id/languagesBottomSheetDialogFragment" />
+
+  </fragment>
+
+  <fragment
+    android:id="@+id/aboutFragment"
+    android:name="xyz.zedler.patrick.doodle.fragment.AboutFragment"
+    android:label="fragment_about"
+    tools:layout="@layout/fragment_about" />
+
+</navigation>

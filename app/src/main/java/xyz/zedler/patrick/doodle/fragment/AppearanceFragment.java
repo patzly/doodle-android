@@ -21,7 +21,11 @@ package xyz.zedler.patrick.doodle.fragment;
 
 import android.animation.ValueAnimator;
 import android.annotation.SuppressLint;
+import android.app.WallpaperManager;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Build.VERSION;
@@ -29,6 +33,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -41,6 +46,7 @@ import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.color.DynamicColors;
 import com.google.android.material.snackbar.Snackbar;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -55,7 +61,9 @@ import xyz.zedler.patrick.doodle.activity.MainActivity;
 import xyz.zedler.patrick.doodle.behavior.ScrollBehavior;
 import xyz.zedler.patrick.doodle.behavior.SystemBarBehavior;
 import xyz.zedler.patrick.doodle.databinding.FragmentAppearanceBinding;
+import xyz.zedler.patrick.doodle.drawable.SvgDrawable;
 import xyz.zedler.patrick.doodle.service.LiveWallpaperService;
+import xyz.zedler.patrick.doodle.util.SystemUiUtil;
 import xyz.zedler.patrick.doodle.util.ViewUtil;
 import xyz.zedler.patrick.doodle.view.SelectionCardView;
 import xyz.zedler.patrick.doodle.wallpaper.AnthonyWallpaper;
@@ -120,6 +128,60 @@ public class AppearanceFragment extends BaseFragment
     ViewUtil.centerToolbarTitleOnLargeScreens(binding.toolbarAppearance);
     binding.toolbarAppearance.setNavigationOnClickListener(getNavigationOnClickListener());
     binding.toolbarAppearance.setOnMenuItemClickListener(getOnMenuItemClickListener());
+
+    binding.buttonAppearanceSetStatic.setOnClickListener(v -> {
+      WallpaperManager manager = WallpaperManager.getInstance(activity);
+      SharedPreferences sharedPrefs = getSharedPrefs();
+      BaseWallpaper wallpaper = Constants.getWallpaper(
+          sharedPrefs.getString(PREF.WALLPAPER, DEF.WALLPAPER)
+      );
+      int variantIndex = sharedPrefs.getInt(
+          Constants.VARIANT_PREFIX + wallpaper.getName(), 0
+      );
+      // This method is more efficient
+      if (variantIndex >= wallpaper.getVariants().length
+          || variantIndex >= wallpaper.getDarkVariants().length) {
+        variantIndex = 0;
+      }
+
+      WallpaperVariant variant;
+      SvgDrawable svgDrawable;
+      if (isWallpaperNightMode()) {
+        variant = wallpaper.getDarkVariants()[variantIndex];
+        svgDrawable = wallpaper.getPreparedSvg(
+            new SvgDrawable(activity, variant.getSvgResId()), variantIndex, true
+        );
+      } else {
+        variant = wallpaper.getVariants()[variantIndex];
+        svgDrawable = wallpaper.getPreparedSvg(
+            new SvgDrawable(activity, variant.getSvgResId()), variantIndex, false
+        );
+      }
+      if (svgDrawable == null) {
+        // Prevent NullPointerExceptions
+        svgDrawable = wallpaper.getPreparedSvg(
+            new SvgDrawable(activity, R.raw.wallpaper_pixel1), 1, false
+        );
+      }
+
+      float scale = getSharedPrefs().getFloat(
+          PREF.SCALE, SvgDrawable.getDefaultScale(getContext())
+      );
+      svgDrawable.setScale(scale);
+
+      Bitmap bitmap = Bitmap.createBitmap(
+          SystemUiUtil.getDisplayWidth(activity),
+          SystemUiUtil.getDisplayHeight(activity),
+          Bitmap.Config.ARGB_8888
+      );
+      Canvas canvas = new Canvas(bitmap);
+      svgDrawable.draw(canvas);
+      try {
+        manager.setBitmap(bitmap);
+      } catch (IOException e) {
+        Log.e(TAG, "onViewCreated: ", e);
+      }
+    });
 
     int id;
     switch (getSharedPrefs().getInt(PREF.NIGHT_MODE, DEF.NIGHT_MODE)) {
@@ -230,6 +292,17 @@ public class AppearanceFragment extends BaseFragment
         binding.switchAppearanceDarkText,
         binding.switchAppearanceLightText,
         binding.switchAppearanceRandom
+    );
+  }
+
+  @Override
+  public void onResume() {
+    super.onResume();
+
+    binding.cardAppearanceOneUi.setVisibility(
+        activity.isTouchWizOrOneUiHome() && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S
+            ? View.VISIBLE
+            : View.GONE
     );
   }
 

@@ -213,39 +213,43 @@ public class OtherFragment extends BaseFragment
     } else if (id == R.id.switch_other_launcher) {
       performHapticClick();
       if (isChecked) {
-        activity.showSnackbar(
-            activity.getSnackbar(
-                R.string.msg_hide, Snackbar.LENGTH_LONG
-            ).setAction(
-                getString(R.string.action_hide), view -> {
-                  performHapticHeavyClick();
-                  activity.getPackageManager().setComponentEnabledSetting(
-                      new ComponentName(activity, LauncherActivity.class),
-                      PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
-                      PackageManager.DONT_KILL_APP
-                  );
-                }
-            ).addCallback(new Callback() {
-              @Override
-              public void onDismissed(Snackbar transientBottomBar, int event) {
-                if (binding == null || activity == null
-                    || event == BaseCallback.DISMISS_EVENT_CONSECUTIVE) {
-                  return;
-                }
-                try {
-                  binding.switchOtherLauncher.setOnCheckedChangeListener(null);
-                  binding.switchOtherLauncher.setChecked(
-                      activity.getPackageManager().getComponentEnabledSetting(
-                          new ComponentName(activity, LauncherActivity.class)
-                      ) == PackageManager.COMPONENT_ENABLED_STATE_DISABLED
-                  );
-                  binding.switchOtherLauncher.setOnCheckedChangeListener(OtherFragment.this);
-                } catch (NullPointerException e) {
-                  Log.e(TAG, "onDismissed: error when the snackbar was dismissed", e);
-                }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+          activity.showSnackbar(R.string.other_launcher_unsupported);
+          binding.switchOtherLauncher.setOnCheckedChangeListener(null);
+          binding.switchOtherLauncher.setChecked(false);
+          binding.switchOtherLauncher.setOnCheckedChangeListener(this);
+        } else {
+          Snackbar snackbar = activity.getSnackbar(R.string.msg_hide, Snackbar.LENGTH_LONG);
+          snackbar.setAction(getString(R.string.action_hide), view -> {
+            performHapticHeavyClick();
+            activity.getPackageManager().setComponentEnabledSetting(
+                new ComponentName(activity, LauncherActivity.class),
+                PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
+                PackageManager.DONT_KILL_APP
+            );
+          });
+          snackbar.addCallback(new Callback() {
+            @Override
+            public void onDismissed(Snackbar transientBottomBar, int event) {
+              if (binding == null || activity == null
+                  || event == BaseCallback.DISMISS_EVENT_CONSECUTIVE) {
+                return;
               }
-            })
-        );
+              try {
+                binding.switchOtherLauncher.setOnCheckedChangeListener(null);
+                binding.switchOtherLauncher.setChecked(
+                    activity.getPackageManager().getComponentEnabledSetting(
+                        new ComponentName(activity, LauncherActivity.class)
+                    ) == PackageManager.COMPONENT_ENABLED_STATE_DISABLED
+                );
+                binding.switchOtherLauncher.setOnCheckedChangeListener(OtherFragment.this);
+              } catch (NullPointerException e) {
+                Log.e(TAG, "onDismissed: error when the snackbar was dismissed", e);
+              }
+            }
+          });
+          activity.showSnackbar(snackbar);
+        }
       } else {
         activity.getPackageManager().setComponentEnabledSetting(
             new ComponentName(activity, LauncherActivity.class),

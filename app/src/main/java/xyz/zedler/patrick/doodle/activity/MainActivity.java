@@ -192,7 +192,7 @@ public class MainActivity extends AppCompatActivity {
     setContentView(binding.getRoot());
 
     viewUtil = new ViewUtil();
-    hapticUtil = new HapticUtil(binding.getRoot());
+    hapticUtil = new HapticUtil(this);
 
     wallpaperPickerLauncher = registerForActivityResult(
         new ActivityResultContracts.StartActivityForResult(),
@@ -529,7 +529,7 @@ public class MainActivity extends AppCompatActivity {
     navigate(action);
   }
 
-  public boolean isTouchWiz() {
+  public boolean isTouchWizOrOneUiHome() {
     PackageManager localPackageManager = getPackageManager();
     Intent intent = new Intent("android.intent.action.MAIN");
     intent.addCategory("android.intent.category.HOME");

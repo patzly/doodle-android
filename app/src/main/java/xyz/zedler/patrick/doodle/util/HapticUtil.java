@@ -20,43 +20,96 @@
 package xyz.zedler.patrick.doodle.util;
 
 import android.content.Context;
+import android.os.Build;
 import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.VibrationEffect;
+import android.os.VibrationEffect.Composition;
+import android.os.Vibrator;
 import android.provider.Settings;
-import android.view.HapticFeedbackConstants;
-import android.view.View;
 
 public class HapticUtil {
 
+  private final Vibrator vibrator;
   private boolean enabled;
-  private final View view;
 
-  public HapticUtil(View view) {
-    this.view = view;
-    setEnabled(true);
+  public static final long TICK = 13;
+  public static final long CLICK = 20;
+  public static final long HEAVY = 50;
+
+  public HapticUtil(Context context) {
+    vibrator = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
+    enabled = hasVibrator();
+  }
+
+  public void vibrate(long duration) {
+    if (!enabled) {
+      return;
+    }
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+      vibrator.vibrate(VibrationEffect.createOneShot(duration, VibrationEffect.DEFAULT_AMPLITUDE));
+    } else {
+      vibrator.vibrate(duration);
+    }
+  }
+
+  private void vibrate(int effectId) {
+    if (enabled && Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+      vibrator.vibrate(VibrationEffect.createPredefined(effectId));
+    }
+  }
+
+  public void tick() {
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+      vibrate(VibrationEffect.EFFECT_TICK);
+    } else {
+      vibrate(TICK);
+    }
   }
 
   public void click() {
-    if (enabled) {
-      view.performHapticFeedback(
-          VERSION.SDK_INT >= VERSION_CODES.M
-              ? HapticFeedbackConstants.CONTEXT_CLICK
-              : HapticFeedbackConstants.KEYBOARD_TAP,
-          HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING
-      );
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+      vibrate(VibrationEffect.EFFECT_CLICK);
+    } else {
+      vibrate(CLICK);
+    }
+  }
+
+  public void doubleClick() {
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+      vibrate(VibrationEffect.EFFECT_DOUBLE_CLICK);
+    } else {
+      vibrate(CLICK);
+      new Handler(Looper.getMainLooper()).postDelayed(() -> vibrate(CLICK), 100);
     }
   }
 
   public void heavyClick() {
-    if (enabled) {
-      view.performHapticFeedback(
-          HapticFeedbackConstants.LONG_PRESS, HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+      vibrate(VibrationEffect.EFFECT_HEAVY_CLICK);
+    } else {
+      vibrate(HEAVY);
+    }
+  }
+
+  public void explode() {
+    if (enabled && VERSION.SDK_INT >= VERSION_CODES.R) {
+      vibrator.vibrate(
+          VibrationEffect.startComposition().addPrimitive(Composition.PRIMITIVE_SLOW_RISE).compose()
       );
+    } else {
+      heavyClick();
     }
   }
 
   public void setEnabled(boolean enabled) {
-    this.enabled = enabled;
+    this.enabled = enabled && hasVibrator();
+  }
+
+  public boolean hasVibrator() {
+    return vibrator.hasVibrator();
   }
 
   public static boolean areSystemHapticsTurnedOn(Context context) {

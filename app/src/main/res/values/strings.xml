@@ -71,11 +71,13 @@
   <string name="action_github">Doodle Android on GitHub</string>
   <string name="action_github_description">Open a new issue</string>
   <string name="action_language_select">Select language</string>
+  <string name="action_set_static">Set static wallpaper</string>
 
   <!-- APPEARANCE -->
 
   <string name="appearance_title">Appearance</string>
   <string name="appearance_description">Design &amp; color options</string>
+  <string name="appearance_one_ui">Samsung\'s unfavorable implementation of dynamic colors fully ignores colors provided by live wallpaper apps like Doodle.\nTo apply the colors to your system, set the current design as a static background below to let the system fetch the colors, then re-apply it as live wallpaper.</string>
   <string name="appearance_design">Design</string>
   <string name="appearance_design_doodle">Pixel 4 Doodle Collection</string>
   <string name="appearance_design_monet">Pixel 6 Material You Collection</string>
@@ -162,6 +164,7 @@
   <string name="other_gpu_info">Hardware acceleration is only available for Doodle starting with Android 8. The wallpaper animations might therefore be a bit jerky.</string>
   <string name="other_launcher">Hide icon in launcher</string>
   <string name="other_launcher_description">Settings will only be accessible in your system\'s live wallpaper picker</string>
+  <string name="other_launcher_unsupported">This feature is not supported anymore due to system restrictions</string>
   <string name="other_theme">App color theme</string>
   <string name="other_theme_description">Try another look</string>
   <string name="other_theme_auto">Auto</string>

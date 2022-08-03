@@ -60,11 +60,13 @@
   <string name="action_github">GitHub 上的 Doodle Android</string>
   <string name="action_github_description">提出问题</string>
   <string name="action_language_select">选择语言</string>
+  <string name="action_set_static">设置静态壁纸</string>
 
   <!-- APPEARANCE -->
 
   <string name="appearance_title">外观</string>
   <string name="appearance_description">设计和颜色选项</string>
+  <string name="appearance_one_ui">三星手机糟糕的动态色彩实现完全忽略 Doodle 等壁纸应用提供的颜色。\n要将色彩应用到你的手机，请在下方将当前设计设置为“静态背景”让系统获取颜色，接着重新将它应用为“动态壁纸”</string>
   <string name="appearance_design">设计</string>
   <string name="appearance_design_doodle">Pixel 4 涂鸦集锦</string>
   <string name="appearance_design_monet">Pixel 6 Material You 集锦</string>
@@ -151,6 +153,7 @@
   <string name="other_gpu_info">硬件加速功能只适用于 Android 8 及以上系统的 Doodle 。壁纸动画因此可能有点不稳定。</string>
   <string name="other_launcher">在桌面上隐藏图标</string>
   <string name="other_launcher_description">设置只能在系统的实时壁纸选取器中访问</string>
+  <string name="other_launcher_unsupported">由于系统限制，本应用不再支持此功能</string>
   <string name="other_theme">应用颜色主题</string>
   <string name="other_theme_description">尝试另一种外观</string>
   <string name="other_theme_auto">自动</string>

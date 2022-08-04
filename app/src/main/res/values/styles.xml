@@ -322,7 +322,7 @@
 
   <!-- TextView -->
 
-  <style name="Widget.Doodle.TextView" parent="Widget.MaterialComponents.TextView">
+  <style name="Base.Doodle.TextView" parent="Widget.MaterialComponents.TextView">
     <item name="android:textAppearance">?attr/textAppearanceBodyLarge</item>
     <item name="android:lineSpacingExtra">-1.5sp</item>
     <item name="android:textColor">?attr/colorOnBackground</item>
@@ -331,6 +331,10 @@
     <item name="android:breakStrategy" tools:targetApi="m">high_quality</item>
     <item name="android:hyphenationFrequency" tools:targetApi="m">full</item>
     <item name="android:lineBreakWordStyle" tools:targetApi="33">phrase</item>
+  </style>
+
+  <style name="Widget.Doodle.TextView" parent="Base.Doodle.TextView">
+    <item name="android:hyphenationFrequency" tools:targetApi="m">full</item>
   </style>
 
   <style name="Widget.Doodle.TextView.Paragraph" parent="Widget.Doodle.TextView">

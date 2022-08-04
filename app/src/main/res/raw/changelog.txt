@@ -2,12 +2,13 @@
 
 - New: workaround for Samsung's unfavorable implementation of dynamic colors on Android 12+ (appearance section)
 - New: Japanese translation
-- New: predictive back gesture test for Android 13
+- New: themed app icon on Android 13
+- New: predictive back gesture on Android 13 (experimental)
 - Improved: toggle logic for launcher text color
 - Improved: refreshed toggle switch style in settings
 - Improved: changelog style and help text appearance
 - Improved: changed method for haptic effects in settings app
-- Improved: Japanese text wrapping for Android 13
+- Improved: text wrapping for Japanese on Android 13
 
 ? Please consider translating this app into your language at Transifex.
 

@@ -2,6 +2,7 @@
 
 - New: workaround for Samsung's unfavorable implementation of dynamic colors on Android 12+ (appearance section)
 - New: Japanese translation
+- New: predictive back gesture test for Android 13
 - Improved: toggle logic for launcher text color
 - Improved: refreshed toggle switch style in settings
 - Improved: changelog style and help text appearance

@@ -7,6 +7,7 @@
 - Improved: refreshed toggle switch style in settings
 - Improved: changelog style and help text appearance
 - Improved: changed method for haptic effects in settings app
+- Improved: Japanese text wrapping for Android 13
 
 ? Please consider translating this app into your language at Transifex.
 

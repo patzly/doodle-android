@@ -330,6 +330,7 @@
     <item name="android:fontFamily">@font/jost_book</item>
     <item name="android:breakStrategy" tools:targetApi="m">high_quality</item>
     <item name="android:hyphenationFrequency" tools:targetApi="m">full</item>
+    <item name="android:lineBreakWordStyle" tools:targetApi="33">phrase</item>
   </style>
 
   <style name="Widget.Doodle.TextView.Paragraph" parent="Widget.Doodle.TextView">

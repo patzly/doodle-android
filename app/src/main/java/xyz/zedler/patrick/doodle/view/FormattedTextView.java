@@ -150,8 +150,8 @@ public class FormattedTextView extends LinearLayout {
 
     View viewBullet = new View(context);
     FrameLayout.LayoutParams paramsBullet = new FrameLayout.LayoutParams(bulletSize, bulletSize);
-    paramsBullet.rightMargin = SystemUiUtil.dpToPx(context, 8);
-    paramsBullet.leftMargin = SystemUiUtil.dpToPx(context, 8);
+    paramsBullet.rightMargin = SystemUiUtil.dpToPx(context, 6);
+    paramsBullet.leftMargin = SystemUiUtil.dpToPx(context, 6);
     paramsBullet.gravity = Gravity.CENTER_VERTICAL;
     viewBullet.setLayoutParams(paramsBullet);
 

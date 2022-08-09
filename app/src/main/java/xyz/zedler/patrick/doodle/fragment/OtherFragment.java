@@ -25,18 +25,21 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
+import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.view.ContextThemeWrapper;
 import androidx.core.content.ContextCompat;
 import com.google.android.material.color.DynamicColors;
+import com.google.android.material.divider.MaterialDivider;
 import com.google.android.material.snackbar.BaseTransientBottomBar.BaseCallback;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.snackbar.Snackbar.Callback;
@@ -365,6 +368,25 @@ public class OtherFragment extends BaseFragment
       }
       card.setChecked(isSelected);
       container.addView(card);
+
+      if (hasDynamic && i == -1) {
+        MaterialDivider divider = new MaterialDivider(activity);
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
+            SystemUiUtil.dpToPx(activity, 1), SystemUiUtil.dpToPx(activity, 40)
+        );
+        int marginLeft, marginRight;
+        if (ResUtil.isLayoutRtl(activity)) {
+          marginLeft = SystemUiUtil.dpToPx(activity, 8);
+          marginRight = SystemUiUtil.dpToPx(activity, 4);
+        } else {
+          marginLeft = SystemUiUtil.dpToPx(activity, 4);
+          marginRight = SystemUiUtil.dpToPx(activity, 8);
+        }
+        layoutParams.setMargins(marginLeft, 0, marginRight, 0);
+        layoutParams.gravity = Gravity.CENTER_VERTICAL;
+        divider.setLayoutParams(layoutParams);
+        container.addView(divider);
+      }
     }
 
     Bundle bundleInstanceState = activity.getIntent().getBundleExtra(EXTRA.INSTANCE_STATE);

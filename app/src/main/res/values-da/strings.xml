@@ -53,7 +53,6 @@
   <string name="action_rate_description">Støt udviklingen</string>
   <string name="action_github">Doodle Android på GitHub</string>
   <string name="action_language_select">Vælg sprog</string>
-
   <!-- APPEARANCE -->
 
   <string name="appearance_title">Udseende</string>
@@ -66,8 +65,6 @@
   <string name="appearance_night_mode_description">Kun mørke farver</string>
   <string name="appearance_follow_system">Følg systemet</string>
   <string name="appearance_follow_system_description">Brug temaet fra enheden</string>
-  <string name="appearance_white_text">Prøv at tvinge hvid tekst</string>
-  <string name="appearance_white_text_description">Kan påvirke læsbarheden</string>
   <string name="appearance_colors">Udtrukne farver</string>
   <string name="appearance_colors_description">Anvendes til beregning af tekstkontrast</string>
   <string name="appearance_colors_description_dynamic">Bruges af systemets tematiseringssystem</string>
@@ -108,8 +105,7 @@
   <string name="other_title">Andre indstillinger</string>
   <string name="other_language">Sprog</string>
   <string name="other_language_description">Mange tak til alle de frivillige oversættere hos Transifex! Besøg projektets GitHub-side for at se, hvordan du kan hjælpe med at gøre Doodle Live Wallpapers tilgængelig på dit sprog.</string>
-  <string name="other_language_system">Systemets standard: %1$s</string>
-  <string name="other_language_not_available">Ikke tilgængelig</string>
+  <string name="other_language_system">Følg systemet</string>
   <string name="other_gpu">Hardwareacceleration</string>
   <string name="other_gpu_description">Slå fra, hvis baggrunden holdt op med at fungere</string>
   <string name="other_gpu_info">Hardwareacceleration er kun tilgængelig for Doodle fra og med Android 8. Baggrundsanimationerne kan derfor være en smule ustabile.</string>

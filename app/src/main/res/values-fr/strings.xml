@@ -60,7 +60,6 @@
   <string name="action_github">Doodle Android sur GitHub</string>
   <string name="action_github_description">Signaler un problème</string>
   <string name="action_language_select">Sélectionner la langue</string>
-
   <!-- APPEARANCE -->
 
   <string name="appearance_title">Apparence</string>
@@ -76,8 +75,6 @@
   <string name="appearance_night_mode_off">Désactivé</string>
   <string name="appearance_follow_system">Suivre le système</string>
   <string name="appearance_follow_system_description">Suivre le thème de l\'appareil</string>
-  <string name="appearance_white_text">Essayez de forcer le texte en blanc</string>
-  <string name="appearance_white_text_description">Peut affecter la lisibilité</string>
   <string name="appearance_colors_category">Couleurs</string>
   <string name="appearance_colors">Couleurs extraites</string>
   <string name="appearance_colors_description">Utilisé pour calculer le contraste du texte</string>
@@ -142,8 +139,7 @@
   <string name="other_description">Rendu, langue et réinitialisation</string>
   <string name="other_language">Langue</string>
   <string name="other_language_description">Un grand merci à tous les traducteurs bénévoles de Transifex ! Veuillez visiter la page GitHub du projet pour savoir comment vous pouvez aider à rendre Doodle disponible dans votre langue.</string>
-  <string name="other_language_system">Par défaut système : %1$s</string>
-  <string name="other_language_not_available">Indisponible</string>
+  <string name="other_language_system">Suivre le système</string>
   <string name="other_gpu">Accélération matérielle</string>
   <string name="other_gpu_description">Désactiver si le fond d\'écran se bloque</string>
   <string name="other_gpu_info">L\'accélération matérielle n\'est disponible pour Doodle qu\'à partir d\'Android 8. Les animations de fond d\'écran pourraient donc être un peu saccadées.</string>

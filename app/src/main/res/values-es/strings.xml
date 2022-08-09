@@ -60,7 +60,6 @@
   <string name="action_github">Doodle Android en GitHub</string>
   <string name="action_github_description">Abrir un nuevo problema</string>
   <string name="action_language_select">Seleccionar idioma</string>
-
   <!-- APPEARANCE -->
 
   <string name="appearance_title">Apariencia</string>
@@ -76,8 +75,6 @@
   <string name="appearance_night_mode_off">Apagado</string>
   <string name="appearance_follow_system">Seguir sistema</string>
   <string name="appearance_follow_system_description">Adoptar el tema del dispositivo</string>
-  <string name="appearance_white_text">Intentar forzar texto blanco</string>
-  <string name="appearance_white_text_description">Puede afectar la legibilidad</string>
   <string name="appearance_colors_category">Colores</string>
   <string name="appearance_colors">Colores extraídos</string>
   <string name="appearance_colors_description">Usado para calcular el contraste del texto</string>
@@ -142,8 +139,7 @@
   <string name="other_description">Renderizado, idioma y restablecimiento</string>
   <string name="other_language">Idioma</string>
   <string name="other_language_description">¡Muchas gracias a todos los traductores voluntarios de Transifex! Visite la página de GitHub del proyecto para saber cómo puede ayudar a que Doodle Live Wallpapers esté disponible para su idioma.</string>
-  <string name="other_language_system">Predeterminado del sistema: %1$s</string>
-  <string name="other_language_not_available">No disponible</string>
+  <string name="other_language_system">Seguir sistema</string>
   <string name="other_gpu">Aceleración por hardware</string>
   <string name="other_gpu_description">Desactivar si el fondo de pantalla da errores</string>
   <string name="other_gpu_info">La aceleración de hardware solo está disponible para Doodle a partir de Android 8. Por lo tanto, las animaciones del fondo de pantalla pueden ser un poco entrecortadas.</string>

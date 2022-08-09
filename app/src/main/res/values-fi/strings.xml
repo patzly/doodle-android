@@ -54,7 +54,6 @@
   <string name="action_rate_description">Tue kehitystä</string>
   <string name="action_github">Doodle Android Githubissa</string>
   <string name="action_language_select">Valitse kieli</string>
-
   <!-- APPEARANCE -->
 
   <string name="appearance_title">Ulkonäkö</string>
@@ -68,8 +67,6 @@
   <string name="appearance_night_mode_description">Vain tummia värejä</string>
   <string name="appearance_follow_system">Seuraa järjestelmän asetusta</string>
   <string name="appearance_follow_system_description">Käytä laitteen teemaa</string>
-  <string name="appearance_white_text">Yritä pakottaa valkoinen teksti</string>
-  <string name="appearance_white_text_description">Voi vaikuttaa luettavuuteen</string>
   <string name="appearance_colors">Poimitut värit</string>
   <string name="appearance_colors_description">Käytetään tekstin kontrastin laskemiseen</string>
   <string name="appearance_colors_description_dynamic">Laitteen teemajärjestelmän käyttämä</string>
@@ -93,7 +90,7 @@
 
   <string name="other_title">Muut asetukset</string>
   <string name="other_language">Kieli</string>
-  <string name="other_language_not_available">Ei saatavilla</string>
+  <string name="other_language_system">Seuraa järjestelmän asetusta</string>
   <string name="other_gpu">Laitteistokiihdytys</string>
   <string name="other_theme">Sovelluksen väriteema</string>
   <string name="other_theme_auto">Automaattinen</string>

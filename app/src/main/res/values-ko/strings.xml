@@ -55,7 +55,6 @@
   <string name="action_github">Doodle Android on GitHub</string>
   <string name="action_github_description">새로운 문제 보고</string>
   <string name="action_language_select">언어 선택</string>
-
   <!-- APPEARANCE -->
 
   <string name="appearance_title">모양새</string>
@@ -68,8 +67,6 @@
   <string name="appearance_night_mode_description">어두운 색상들만</string>
   <string name="appearance_follow_system">시스템 색상 적용</string>
   <string name="appearance_follow_system_description">기기 테마 적용</string>
-  <string name="appearance_white_text">하얀색 텍스트 강제적용</string>
-  <string name="appearance_white_text_description">시인성에 문제가 발생할 수 있음</string>
   <string name="appearance_colors">추출된 색상</string>
   <string name="appearance_colors_description">텍스트 대비를 계산하기 위해 사용됨</string>
   <string name="appearance_colors_description_dynamic">시스템의 테마 엔진을 사용함</string>
@@ -88,4 +85,5 @@
   <string name="parallax_touch_wiz">배경화면 스크롤을 지원하지 않는 삼성 TouchWiz 런처를 이용중인 것 같습니다. 기울임 센서 옵션이 활성화되어 있지 않다면 기울임 효과를 활성화하기 위해 다른 런처를 사용해주세요. \n다른 런처를 기본으로 설정했다면 이 경고를 무시하셔도 됩니다.</string>
   <string name="parallax_intensity">기울임 효과 강도</string>
   <string name="parallax_none">없음</string>
+  <string name="other_language_system">시스템 색상 적용</string>
   </resources>

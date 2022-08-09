@@ -60,7 +60,6 @@
   <string name="action_github">Doodle اندرويد على GitHub</string>
   <string name="action_github_description">افتح عددًا جديدًا</string>
   <string name="action_language_select">اختار اللغه</string>
-
   <!-- APPEARANCE -->
 
   <string name="appearance_title">المظهر الخارجي</string>
@@ -76,8 +75,6 @@
   <string name="appearance_night_mode_off">مب تمام</string>
   <string name="appearance_follow_system">اتباع النظام</string>
   <string name="appearance_follow_system_description">اعتماد مظهر الجهاز</string>
-  <string name="appearance_white_text">حاول جعل الخط أبيض</string>
-  <string name="appearance_white_text_description">قد يؤثر على قابلية القراءة</string>
   <string name="appearance_colors_category">الألوان</string>
   <string name="appearance_colors">الألوان المستخرجة</string>
   <string name="appearance_colors_description">يستخدم لحساب تباين النص</string>
@@ -142,9 +139,7 @@
   <string name="other_description">استعاده اللغه</string>
   <string name="other_language">اللغه</string>
   <string name="other_language_description">شكراً جزيلاً لجميع المترجمين المتطوعين في Transifex!  يرجى زيارة صفحة المشروع على GitHub لمعرفة كيف يمكنك المساعدة في جعل Doodle Live Wallpapers متاحًا للغتك.</string>
-  <string name="other_language_system">System default: 
- \'%1$s\' </string>
-  <string name="other_language_not_available">غير متاح</string>
+  <string name="other_language_system">اتباع النظام</string>
   <string name="other_gpu">تسريع الأجهزة</string>
   <string name="other_gpu_description">قم بإيقاف تشغيله في حالة تعطل خلفية الشاشة</string>
   <string name="other_gpu_info">تسريع الأجهزة متاح فقط لـ Doodle بدءًا من Android 8. وبالتالي قد تكون الرسوم المتحركة للخلفية متقطعة بعض الشيء.</string>

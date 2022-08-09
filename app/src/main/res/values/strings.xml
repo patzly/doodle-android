@@ -77,7 +77,7 @@
 
   <string name="appearance_title">Appearance</string>
   <string name="appearance_description">Design &amp; color options</string>
-  <string name="appearance_one_ui">Samsung\'s unfavorable implementation of dynamic colors fully ignores colors provided by live wallpaper apps like Doodle.\nTo apply the colors to your system, set the current design as a static background below to let the system fetch the colors, then re-apply it as live wallpaper.</string>
+  <string name="appearance_one_ui">Samsung\'s unfavorable implementation of dynamic colors in One UI 4.1 fully ignores colors provided by live wallpaper apps like Doodle.\nTo apply the colors to your system, set the current design as a static background below to let the system fetch the colors, then re-apply it as live wallpaper.</string>
   <string name="appearance_design">Design</string>
   <string name="appearance_design_doodle">Pixel 4 Doodle Collection</string>
   <string name="appearance_design_monet">Pixel 6 Material You Collection</string>
@@ -97,6 +97,7 @@
   <string name="appearance_colors">Extracted colors</string>
   <string name="appearance_colors_description">Used for calculating text contrast</string>
   <string name="appearance_colors_description_dynamic">Used by the system\'s theming engine</string>
+  <string name="appearance_colors_description_one_ui">As mentioned above, the provided colors of live wallpapers are ignored by One UI.</string>
   <string name="appearance_colors_primary">Choose primary color</string>
   <string name="appearance_colors_secondary">Choose secondary color</string>
   <string name="appearance_colors_tertiary">Choose tertiary color</string>

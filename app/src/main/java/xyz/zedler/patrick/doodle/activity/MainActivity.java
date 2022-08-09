@@ -546,7 +546,7 @@ public class MainActivity extends AppCompatActivity {
     navigate(action);
   }
 
-  public boolean isTouchWizOrOneUiHome() {
+  public boolean isLauncherTouchWiz() {
     PackageManager localPackageManager = getPackageManager();
     Intent intent = new Intent("android.intent.action.MAIN");
     intent.addCategory("android.intent.category.HOME");
@@ -554,6 +554,21 @@ public class MainActivity extends AppCompatActivity {
         intent, PackageManager.MATCH_DEFAULT_ONLY
     ).activityInfo.packageName;
     return launcher != null && launcher.equals("com.sec.android.app.launcher");
+  }
+
+  @SuppressWarnings("deprecation")
+  public boolean isOneUiWithDynamicColors() {
+    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.S) {
+      return false;
+    } else {
+      PackageManager localPackageManager = getPackageManager();
+      Intent intent = new Intent("android.intent.action.MAIN");
+      intent.addCategory("android.intent.category.HOME");
+      String launcher = localPackageManager.resolveActivity(
+          intent, PackageManager.MATCH_SYSTEM_ONLY
+      ).activityInfo.packageName;
+      return launcher != null && launcher.equals("com.sec.android.app.launcher");
+    }
   }
 
   public void performHapticClick() {

@@ -169,7 +169,7 @@ public class ParallaxFragment extends BaseFragment
     super.onResume();
 
     binding.cardParallaxTouchWiz.setVisibility(
-        activity.isTouchWizOrOneUiHome() ? View.VISIBLE : View.GONE
+        activity.isLauncherTouchWiz() ? View.VISIBLE : View.GONE
     );
   }
 

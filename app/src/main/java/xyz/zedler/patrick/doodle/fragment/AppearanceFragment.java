@@ -63,6 +63,7 @@ import xyz.zedler.patrick.doodle.behavior.SystemBarBehavior;
 import xyz.zedler.patrick.doodle.databinding.FragmentAppearanceBinding;
 import xyz.zedler.patrick.doodle.drawable.SvgDrawable;
 import xyz.zedler.patrick.doodle.service.LiveWallpaperService;
+import xyz.zedler.patrick.doodle.util.ResUtil;
 import xyz.zedler.patrick.doodle.util.SystemUiUtil;
 import xyz.zedler.patrick.doodle.util.ViewUtil;
 import xyz.zedler.patrick.doodle.view.SelectionCardView;
@@ -128,6 +129,9 @@ public class AppearanceFragment extends BaseFragment
     ViewUtil.centerToolbarTitleOnLargeScreens(binding.toolbarAppearance);
     binding.toolbarAppearance.setNavigationOnClickListener(getNavigationOnClickListener());
     binding.toolbarAppearance.setOnMenuItemClickListener(getOnMenuItemClickListener());
+
+    boolean isOneUiWithDynamicColors = activity.isOneUiWithDynamicColors();
+    binding.cardAppearanceOneUi.setVisibility(isOneUiWithDynamicColors ? View.VISIBLE : View.GONE);
 
     binding.buttonAppearanceSetStatic.setOnClickListener(v -> {
       WallpaperManager manager = WallpaperManager.getInstance(activity);
@@ -269,11 +273,21 @@ public class AppearanceFragment extends BaseFragment
     }
 
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O_MR1) {
-      binding.textAppearanceColorsDescription.setText(
-          DynamicColors.isDynamicColorAvailable()
-              ? R.string.appearance_colors_description_dynamic
-              : R.string.appearance_colors_description
-      );
+      if (isOneUiWithDynamicColors) {
+        binding.textAppearanceColorsDescription.setText(
+            R.string.appearance_colors_description_one_ui
+        );
+        binding.textAppearanceColorsDescription.setTextColor(
+            ResUtil.getColorAttr(activity, R.attr.colorError)
+        );
+        binding.textAppearanceColorsDescription.setAlpha(1);
+      } else {
+        binding.textAppearanceColorsDescription.setText(
+            DynamicColors.isDynamicColorAvailable()
+                ? R.string.appearance_colors_description_dynamic
+                : R.string.appearance_colors_description
+        );
+      }
       setUpColorsContainer();
     } else {
       binding.linearAppearanceColors.setVisibility(View.GONE);
@@ -292,17 +306,6 @@ public class AppearanceFragment extends BaseFragment
         binding.switchAppearanceDarkText,
         binding.switchAppearanceLightText,
         binding.switchAppearanceRandom
-    );
-  }
-
-  @Override
-  public void onResume() {
-    super.onResume();
-
-    binding.cardAppearanceOneUi.setVisibility(
-        activity.isTouchWizOrOneUiHome() && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S
-            ? View.VISIBLE
-            : View.GONE
     );
   }
 

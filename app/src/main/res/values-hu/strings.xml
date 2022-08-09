@@ -54,7 +54,6 @@
   <string name="action_rate_description">Támogasd a fejlesztést</string>
   <string name="action_github">Doodle Android GitHub-on</string>
   <string name="action_language_select">Nyelv kiválasztása</string>
-
   <!-- APPEARANCE -->
 
   <string name="appearance_title">Megjelenés</string>
@@ -67,8 +66,6 @@
   <string name="appearance_night_mode_description">Csakis sötét színek</string>
   <string name="appearance_follow_system">Rendszer követése</string>
   <string name="appearance_follow_system_description">A készülék színtemájának átvétele</string>
-  <string name="appearance_white_text">Fehér betűszín eröltetése</string>
-  <string name="appearance_white_text_description">Befolyásolhatja az olvashatóságot</string>
   <string name="appearance_colors">Kivont színek</string>
   <string name="appearance_colors_description">Szöveg kontrasztjának kiszámítására használt</string>
   <string name="appearance_colors_description_dynamic">A rendszer tematikus motorja által használt</string>
@@ -86,4 +83,5 @@
   <string name="parallax_description">Csúsztatás &amp; billenő effektus</string>
   <string name="parallax_touch_wiz">Úgy tűnik, hogy a jelenlegi launch-ered a Samsung TouchWiz, amely nem támogatja a háttérkép görgetést. Kérünk, próbálj meg egy másik launcher-t a parallaxis effektus engedélyezéséhez, ha nincs engedélyezve a dőlésérzékelő opció.\nHa másik launcher-t állít be alapértelmezettként, figyelmen kívül hagyhatod ezt a figyelmeztetést.</string>
   <string name="parallax_intensity">Parallaxis erőssége</string>
+  <string name="other_language_system">Rendszer követése</string>
   </resources>

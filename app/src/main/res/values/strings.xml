@@ -157,8 +157,8 @@
   <string name="other_description">Rendering, language &amp; reset</string>
   <string name="other_language">Language</string>
   <string name="other_language_description">Many thanks to all the volunteer translators at Transifex! Please visit the project\'s GitHub page to learn how you can help make Doodle Live Wallpapers available for your language.</string>
-  <string name="other_language_system">System default: %1$s</string>
-  <string name="other_language_not_available">Not available</string>
+  <string name="other_language_system">Follow system</string>
+  <string name="other_language_system_description">English if translation is not available</string>
   <string name="other_gpu">Hardware acceleration</string>
   <string name="other_gpu_description">Turn off if the wallpaper crashes</string>
   <string name="other_gpu_info">Hardware acceleration is only available for Doodle starting with Android 8. The wallpaper animations might therefore be a bit jerky.</string>

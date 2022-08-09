@@ -24,6 +24,7 @@ import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Build;
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -51,7 +52,7 @@ public class LocaleUtil {
       return getNearestSupportedLocale(context, getDeviceLocale());
     }
     try {
-      return LocaleUtil.getLocaleFromCode(code);
+      return getLocaleFromCode(code);
     } catch (Exception e) {
       return getNearestSupportedLocale(context, getDeviceLocale());
     }
@@ -74,12 +75,19 @@ public class LocaleUtil {
     return languages;
   }
 
-  public static Locale getLocaleFromCode(String languageCode) {
-    String[] codeParts = languageCode.split("_");
-    if (codeParts.length > 1) {
-      return new Locale(codeParts[0], codeParts[1]);
-    } else {
-      return new Locale(languageCode);
+  public static Locale getLocaleFromCode(@Nullable String languageCode) {
+    if (languageCode == null) {
+      return Locale.getDefault();
+    }
+    try {
+      String[] codeParts = languageCode.split("-");
+      if (codeParts.length > 1) {
+        return new Locale(codeParts[0], codeParts[1]);
+      } else {
+        return new Locale(languageCode);
+      }
+    } catch (Exception e) {
+      return Locale.getDefault();
     }
   }
 
@@ -111,5 +119,13 @@ public class LocaleUtil {
       languageHashMap.put(language.getCode(), language);
     }
     return languageHashMap;
+  }
+
+  public static String getCodeFromLocale(@NonNull Locale locale) {
+    if (locale.getVariant().isEmpty()) {
+      return locale.getLanguage();
+    } else {
+      return locale.getLanguage() + "-" + locale.getVariant();
+    }
   }
 }

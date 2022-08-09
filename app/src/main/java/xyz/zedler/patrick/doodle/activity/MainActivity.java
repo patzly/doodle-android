@@ -19,7 +19,6 @@
 
 package xyz.zedler.patrick.doodle.activity;
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.WallpaperManager;
 import android.content.ActivityNotFoundException;
@@ -44,6 +43,7 @@ import androidx.annotation.RawRes;
 import androidx.annotation.StringRes;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
+import androidx.core.os.LocaleListCompat;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat.Type;
 import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
@@ -93,7 +93,6 @@ public class MainActivity extends AppCompatActivity {
   private int bottomInset;
   private boolean runAsSuperClass;
 
-  @SuppressLint("AppBundleLocaleChanges")
   @Override
   protected void onCreate(Bundle savedInstanceState) {
 
@@ -109,8 +108,20 @@ public class MainActivity extends AppCompatActivity {
 
     // LANGUAGE
 
-    localeUser = LocaleUtil.getUserLocale(this, sharedPrefs);
-    Locale.setDefault(localeUser);
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+      String languageCode = sharedPrefs.getString(PREF.LANGUAGE, DEF.LANGUAGE);
+      if (languageCode != null) {
+        // Language selected
+        localeUser = LocaleUtil.getLocaleFromCode(languageCode);
+        AppCompatDelegate.setApplicationLocales(LocaleListCompat.forLanguageTags(languageCode));
+      } else {
+        // Follow system
+        AppCompatDelegate.setApplicationLocales(LocaleListCompat.getEmptyLocaleList());
+      }
+    } else {
+      localeUser = LocaleUtil.getUserLocale(this, sharedPrefs);
+      Locale.setDefault(localeUser);
+    }
 
     // NIGHT MODE
 
@@ -131,13 +142,17 @@ public class MainActivity extends AppCompatActivity {
     // base
     Resources resBase = getBaseContext().getResources();
     Configuration configBase = resBase.getConfiguration();
-    configBase.setLocale(localeUser);
+    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU) {
+      configBase.setLocale(localeUser);
+    }
     configBase.uiMode = uiMode;
     resBase.updateConfiguration(configBase, resBase.getDisplayMetrics());
     // app
     Resources resApp = getApplicationContext().getResources();
     Configuration configApp = resApp.getConfiguration();
-    configApp.setLocale(localeUser);
+    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU) {
+      configApp.setLocale(localeUser);
+    }
     // Don't set uiMode here, won't let FOLLOW_SYSTEM apply correctly
     resApp.updateConfiguration(configApp, getResources().getDisplayMetrics());
 
@@ -297,7 +312,9 @@ public class MainActivity extends AppCompatActivity {
       SharedPreferences sharedPrefs = new PrefsUtil(base).checkForMigrations().getSharedPrefs();
       // Language
       Locale userLocale = LocaleUtil.getUserLocale(base, sharedPrefs);
-      Locale.setDefault(userLocale);
+      if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU) {
+        Locale.setDefault(userLocale);
+      }
       // Night mode
       int modeNight = sharedPrefs.getInt(PREF.MODE, DEF.MODE);
       int uiMode = base.getResources().getConfiguration().uiMode;
@@ -313,7 +330,9 @@ public class MainActivity extends AppCompatActivity {
       // Apply config to resources
       Resources resources = base.getResources();
       Configuration config = resources.getConfiguration();
-      config.setLocale(userLocale);
+      if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU) {
+        config.setLocale(userLocale);
+      }
       config.uiMode = uiMode;
       resources.updateConfiguration(config, resources.getDisplayMetrics());
       super.attachBaseContext(base.createConfigurationContext(config));
@@ -360,9 +379,7 @@ public class MainActivity extends AppCompatActivity {
   }
 
   public void showSnackbar(@StringRes int resId) {
-    showSnackbar(
-        Snackbar.make(binding.coordinatorMain, getString(resId), Snackbar.LENGTH_LONG)
-    );
+    showSnackbar(Snackbar.make(binding.coordinatorMain, getString(resId), Snackbar.LENGTH_LONG));
   }
 
   public void showSnackbar(Snackbar snackbar) {

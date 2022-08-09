@@ -49,7 +49,7 @@ nojuscat
 nl
 Joeke
 
-pt_BR
+pt-BR
 lurig, mamutal91
 
 ro
@@ -64,5 +64,5 @@ k2edih
 ug
 HushBeg
 
-zh_CN
+zh-CN
 Schauding, spice2wolf

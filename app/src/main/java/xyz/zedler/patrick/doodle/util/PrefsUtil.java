@@ -148,6 +148,16 @@ public class PrefsUtil {
       }
     }
 
+    // language is now stored with "-" instead of "_"
+    if (sharedPrefs.contains(PREF.LANGUAGE)) {
+      String language = sharedPrefs.getString(PREF.LANGUAGE, DEF.LANGUAGE);
+      if (language != null && language.contains("_")) {
+        sharedPrefs.edit()
+            .putString(PREF.LANGUAGE, language.replace("_", "-"))
+            .apply();
+      }
+    }
+
     return this;
   }
 

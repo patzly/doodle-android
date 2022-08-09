@@ -38,12 +38,14 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.view.ContextThemeWrapper;
 import androidx.core.content.ContextCompat;
+import androidx.core.os.LocaleListCompat;
 import com.google.android.material.color.DynamicColors;
 import com.google.android.material.divider.MaterialDivider;
 import com.google.android.material.snackbar.BaseTransientBottomBar.BaseCallback;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.snackbar.Snackbar.Callback;
 import java.util.Locale;
+import java.util.Objects;
 import xyz.zedler.patrick.doodle.Constants.DEF;
 import xyz.zedler.patrick.doodle.Constants.EXTRA;
 import xyz.zedler.patrick.doodle.Constants.PREF;
@@ -268,20 +270,26 @@ public class OtherFragment extends BaseFragment
         ? LocaleUtil.getLocaleFromCode(language.getCode())
         : LocaleUtil.getNearestSupportedLocale(activity, LocaleUtil.getDeviceLocale());
     binding.textOtherLanguage.setText(
-        language != null
-            ? locale.getDisplayName()
-            : getString(R.string.other_language_system, locale.getDisplayName())
+        language != null ? locale.getDisplayName() : getString(R.string.other_language_system)
     );
   }
 
-  public String getLanguage() {
-    String code = getSharedPrefs().getString(PREF.LANGUAGE, DEF.LANGUAGE);
-    Locale locale = code != null
-        ? LocaleUtil.getLocaleFromCode(code)
-        : LocaleUtil.getNearestSupportedLocale(activity, LocaleUtil.getDeviceLocale());
-    return code != null
-        ? locale.getDisplayName()
-        : getString(R.string.other_language_system, locale.getDisplayName());
+  private String getLanguage() {
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+      LocaleListCompat locales = AppCompatDelegate.getApplicationLocales();
+      if (!locales.isEmpty()) {
+        Locale locale = locales.get(0);
+        return Objects.requireNonNullElseGet(locale, Locale::getDefault).getDisplayName();
+      } else {
+        return getString(R.string.other_language_system);
+      }
+    } else {
+      String code = getSharedPrefs().getString(PREF.LANGUAGE, DEF.LANGUAGE);
+      Locale locale = code != null
+          ? LocaleUtil.getLocaleFromCode(code)
+          : LocaleUtil.getNearestSupportedLocale(activity, LocaleUtil.getDeviceLocale());
+      return code != null ? locale.getDisplayName() : getString(R.string.other_language_system);
+    }
   }
 
   private void setUpThemeSelection() {

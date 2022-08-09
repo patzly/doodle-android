@@ -60,11 +60,13 @@
   <string name="action_github">Doodle Android auf GitHub</string>
   <string name="action_github_description">Neues Issue öffnen</string>
   <string name="action_language_select">Sprache auswählen</string>
+  <string name="action_set_static">Statischen Hintergrund festlegen</string>
 
   <!-- APPEARANCE -->
 
   <string name="appearance_title">Aussehen</string>
   <string name="appearance_description">Design &amp; Farboptionen</string>
+  <string name="appearance_one_ui">Samsungs mangelhafte Implementierung dynamischer Farben in One UI 4.1 ignoriert die von Live-Hintergrund-Apps wie Doodle bereitgestellten Farben vollständig. Um die Farben auf Ihr System anzuwenden, legen Sie unten das aktuelle Design als statischen Hintergrund fest, damit das System die Farben abrufen kann, und wenden Sie es dann erneut als Live-Hintergrund an.</string>
   <string name="appearance_design">Design</string>
   <string name="appearance_design_doodle">Pixel 4 Doodle-Kollektion</string>
   <string name="appearance_design_monet">Pixel 6 Material-You-Kollektion</string>
@@ -84,6 +86,7 @@
   <string name="appearance_colors">Extrahierte Farben</string>
   <string name="appearance_colors_description">Wird zur Berechnung des Textkontrasts verwendet</string>
   <string name="appearance_colors_description_dynamic">Werden von dem Design-Generator des Systems genutzt</string>
+  <string name="appearance_colors_description_one_ui">Wie oben beschrieben, ignoriert One UI die von Live-Hintergründen bereitgestellten Farben</string>
   <string name="appearance_colors_primary">Primäre Farbe auswählen</string>
   <string name="appearance_colors_secondary">Sekundäre Farbe auswählen</string>
   <string name="appearance_colors_tertiary">Tertiäre Farbe auswählen</string>
@@ -144,13 +147,14 @@
   <string name="other_description">Rendering, Sprache &amp; Reset</string>
   <string name="other_language">Sprache</string>
   <string name="other_language_description">Vielen Dank an alle freiwilligen Übersetzer*innen bei Transifex! Besuche die GitHub-Seite dieses Projekts, um zu erfahren, wie Du helfen kannst, Doodle Live Hintergründe für Deine Sprache verfügbar zu machen.</string>
-  <string name="other_language_system">Systemstandard: %1$s</string>
-  <string name="other_language_not_available">Nicht verfügbar</string>
+  <string name="other_language_system">Systemstandard</string>
+  <string name="other_language_system_description">Englisch, wenn Übersetzung nicht verfügbar</string>
   <string name="other_gpu">Hardware-Beschleunigung</string>
   <string name="other_gpu_description">Ausschalten, wenn der Hintergrund abstürzt</string>
   <string name="other_gpu_info">Hardware-Beschleunigung ist für Doodle erst ab Android 8 verfügbar. Die Animationen könnten deshalb etwas ruckelig sein.</string>
   <string name="other_launcher">App-Icon verbergen</string>
   <string name="other_launcher_description">Einstellungen nur über Live-Hintergrund-Auswahl des Systems erreichbar</string>
+  <string name="other_launcher_unsupported">Diese Funktion wird aufgrund von Systembeschränkungen nicht mehr unterstützt</string>
   <string name="other_theme">App-Farben</string>
   <string name="other_theme_description">Probiere einen anderen Look aus!</string>
   <string name="other_theme_auto">Auto</string>

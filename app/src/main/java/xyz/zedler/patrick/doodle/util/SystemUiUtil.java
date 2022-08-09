@@ -110,7 +110,7 @@ public class SystemUiUtil {
 
   public static int dpToPx(@NonNull Context context, @Dimension(unit = Dimension.DP) float dp) {
     Resources r = context.getResources();
-    return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, r.getDisplayMetrics());
+    return Math.round(dp * r.getDisplayMetrics().density);
   }
 
   public static int spToPx(@NonNull Context context, @Dimension(unit = Dimension.SP) float sp) {

@@ -60,7 +60,6 @@
   <string name="action_github">Doodle Android op GitHub</string>
   <string name="action_github_description">Open een nieuw probleem</string>
   <string name="action_language_select">Selecteer taal</string>
-
   <!-- APPEARANCE -->
 
   <string name="appearance_title">Uiterlijk</string>
@@ -76,8 +75,6 @@
   <string name="appearance_night_mode_off">Uit</string>
   <string name="appearance_follow_system">Volg systeem</string>
   <string name="appearance_follow_system_description">Neem apparaat thema over</string>
-  <string name="appearance_white_text">Probeer witte tekst te forceren</string>
-  <string name="appearance_white_text_description">Kan leesbaarheid beïnvloeden</string>
   <string name="appearance_colors_category">Kleuren</string>
   <string name="appearance_colors">Geëxtraheerde kleuren</string>
   <string name="appearance_colors_description">Gebruikt voor het berekenen van tekst contrast</string>
@@ -142,8 +139,7 @@
   <string name="other_description">Rendering, taal &amp; resetten</string>
   <string name="other_language">Taal</string>
   <string name="other_language_description">Hartelijk dank aan alle vrijwillige vertalers bij Transifex! Bezoek de GitHub pagina van het project om te zien hoe jij kunt helpen Doodle Live Wallpapers beschikbaar te maken voor jouw taal.</string>
-  <string name="other_language_system">System standaard: %1$s</string>
-  <string name="other_language_not_available">Niet beschikbaar</string>
+  <string name="other_language_system">Volg systeem</string>
   <string name="other_gpu">Hardware acceleratie</string>
   <string name="other_gpu_description">Zet uit als de achtergrond crasht</string>
   <string name="other_gpu_info">Hardware acceleratie is alleen beschikbaar voor Doodle vanaf Android 8. De achtergrond animaties kunnen daarom een beetje schokkerig zijn.</string>

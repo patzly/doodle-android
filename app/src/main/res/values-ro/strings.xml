@@ -60,7 +60,6 @@
   <string name="action_github">Doodle Android pe GitHub</string>
   <string name="action_github_description">Deschide o problemă nouă</string>
   <string name="action_language_select">Selectează limba</string>
-
   <!-- APPEARANCE -->
 
   <string name="appearance_title">Aspect</string>
@@ -76,8 +75,6 @@
   <string name="appearance_night_mode_off">Oprit</string>
   <string name="appearance_follow_system">Urmărește tema sistemului</string>
   <string name="appearance_follow_system_description">Adoptează tema device-ului</string>
-  <string name="appearance_white_text">Forțează textul să fie alb</string>
-  <string name="appearance_white_text_description">Poate afecta lizibilitatea</string>
   <string name="appearance_colors_category">Culori</string>
   <string name="appearance_colors">Culori extrase</string>
   <string name="appearance_colors_description">Folosit pentru calcularea contrastului textului</string>
@@ -142,8 +139,7 @@
   <string name="other_description">Randare, limbă și resetare</string>
   <string name="other_language">Limbă</string>
   <string name="other_language_description">Multe mulțumiri către toți voluntarii de pe Transifex! Vă rog vizitați proiectul pe GitHub pentru a vedea cum să ajutați aplicația Doodle Live Wallpaper pentru limba dumneavoastră.</string>
-  <string name="other_language_system">Implicit din sistem: %1$s</string>
-  <string name="other_language_not_available">Nu este valabil</string>
+  <string name="other_language_system">Urmărește tema sistemului</string>
   <string name="other_gpu">Accelerare hardware</string>
   <string name="other_gpu_description">Oprește dacă wallpaper-ul dă crash</string>
   <string name="other_gpu_info">Accelerația hardware este disponibilă pentru Doodle începând cu Android 8. Prin urmare, animațiile de fundal ar putea fi puțin sacadate</string>

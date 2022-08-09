@@ -66,7 +66,7 @@
 
   <string name="appearance_title">外观</string>
   <string name="appearance_description">设计和颜色选项</string>
-  <string name="appearance_one_ui">三星手机糟糕的动态色彩实现完全忽略 Doodle 等壁纸应用提供的颜色。\n要将色彩应用到你的手机，请在下方将当前设计设置为“静态背景”让系统获取颜色，接着重新将它应用为“动态壁纸”</string>
+  <string name="appearance_one_ui">三星手机 One UI 4.1 版本糟糕的动态色彩实现完全忽略 Doodle 等动态壁纸应用提供的颜色。\n 要将色彩应用到你的系统，请在下方将当前设计设置为 “静态背景” 让系统获取颜色，接着重新将它应用为 “动态壁纸”</string>
   <string name="appearance_design">设计</string>
   <string name="appearance_design_doodle">Pixel 4 涂鸦集锦</string>
   <string name="appearance_design_monet">Pixel 6 Material You 集锦</string>
@@ -86,6 +86,7 @@
   <string name="appearance_colors">提取的颜色</string>
   <string name="appearance_colors_description">用于计算文本对比度</string>
   <string name="appearance_colors_description_dynamic">被系统的主题引擎使用</string>
+  <string name="appearance_colors_description_one_ui">如上所诉，动态壁纸提供的颜色被 One UI 忽略</string>
   <string name="appearance_colors_primary">选择主色</string>
   <string name="appearance_colors_secondary">选择次生色</string>
   <string name="appearance_colors_tertiary">选择第三次色</string>
@@ -146,8 +147,8 @@
   <string name="other_description">渲染、语言&amp;重置</string>
   <string name="other_language">语言</string>
   <string name="other_language_description">非常感谢 Transifex 上所有的翻译志愿者！请访问本项目的 GitHub 页面，了解如何提供帮助使 Doodle Live Wallpapers 可用于您的语言。</string>
-  <string name="other_language_system">系统默认：%1$s</string>
-  <string name="other_language_not_available">不可用</string>
+  <string name="other_language_system">跟随系统</string>
+  <string name="other_language_system_description">如其他语言不可用将使用英语</string>
   <string name="other_gpu">硬件加速</string>
   <string name="other_gpu_description">如壁纸崩溃则关闭</string>
   <string name="other_gpu_info">硬件加速功能只适用于 Android 8 及以上系统的 Doodle 。壁纸动画因此可能有点不稳定。</string>

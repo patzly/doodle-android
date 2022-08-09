@@ -60,7 +60,6 @@
   <string name="action_github">„Doodle“ skirta „Android“ „GitHub\'e“</string>
   <string name="action_github_description">Atidaryti naują problemą</string>
   <string name="action_language_select">Pasirink kalbą </string>
-
   <!-- APPEARANCE -->
 
   <string name="appearance_title">Pritaikymas</string>
@@ -76,8 +75,6 @@
   <string name="appearance_night_mode_off">Išjungta</string>
   <string name="appearance_follow_system">Sekti sistemą</string>
   <string name="appearance_follow_system_description">Priimti įrenginio tema</string>
-  <string name="appearance_white_text">Bandyti priversti baltą tekstą</string>
-  <string name="appearance_white_text_description">Gali pakeisti skaitomumą </string>
   <string name="appearance_colors_category">Spalvos</string>
   <string name="appearance_colors">Išpakuotos spalvos</string>
   <string name="appearance_colors_description">Naudota teksto kontrastas apskaičiuoti</string>
@@ -142,8 +139,7 @@
   <string name="other_description">Vaizdavimas, kalba; paleidimas iš naujo</string>
   <string name="other_language">Kalba</string>
   <string name="other_language_description">Didelis Ačiū visiems savanorių vertėjams platformoj „Transifex“! Prašau peržiūrėk šio projekto „GitHub\'o“ puslapyje kad sužinotum kaip gali padėti „Doodle Live Wallpapers“ kad būtų pasiekiama tavo kalboj.</string>
-  <string name="other_language_system">Numatyta sistemos: %1$s</string>
-  <string name="other_language_not_available">Nepasiekiama</string>
+  <string name="other_language_system">Sekti sistemą</string>
   <string name="other_gpu">Įrenginio pagreitis </string>
   <string name="other_gpu_description">Išjungti jei paveikslas užstringa</string>
   <string name="other_gpu_info">Įrenginio pagreitis yra tik pasiekiama „Doodle“ prasidedančiu su „Android 8“  </string>

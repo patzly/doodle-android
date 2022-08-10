@@ -413,7 +413,7 @@ public class AppearanceFragment extends BaseFragment
 
         SelectionCardView card = new SelectionCardView(activity);
         card.setScrimEnabled(true, false);
-        card.setCardImageResource(wallpaper.getThumbnailResId());
+        card.setCardImageResource(wallpaper.getThumbnailResId(), false);
         card.setOnClickListener(v -> {
           if (randomWallpaper) {
             if (card.isChecked() && randomList.size() == 1) {
@@ -726,11 +726,21 @@ public class AppearanceFragment extends BaseFragment
     activity.showSnackbar(activity.getSnackbar(R.string.msg_apply_colors, Snackbar.LENGTH_LONG));
   }
 
-  public void setColor(int priority, String color) {
+  public String getColor(int priority, boolean custom) {
     String pref = Constants.getThemeColorPref(
-        currentWallpaper.getName(), currentVariantIndex, priority, isWallpaperNightMode()
+      currentWallpaper.getName(), currentVariantIndex, priority, isWallpaperNightMode()
+    ) + (custom ? "_custom" : "");
+    return getSharedPrefs().getString(pref, "#000000");
+  }
+
+  public void setColor(int priority, String color, boolean custom) {
+    String pref = Constants.getThemeColorPref(
+      currentWallpaper.getName(), currentVariantIndex, priority, isWallpaperNightMode()
     );
     getSharedPrefs().edit().putString(pref, color).apply();
+    if (custom)  {
+      getSharedPrefs().edit().putString(pref + "_custom", color).apply();
+    }
     refreshColor(priority, true);
     activity.requestThemeRefresh();
     showMonetInfoIfRequired();

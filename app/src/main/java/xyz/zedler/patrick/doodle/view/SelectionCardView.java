@@ -21,12 +21,15 @@ package xyz.zedler.patrick.doodle.view;
 
 import android.content.Context;
 import android.content.res.ColorStateList;
+import android.graphics.drawable.Drawable;
 import android.graphics.drawable.LayerDrawable;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
+import androidx.core.content.res.ResourcesCompat;
+
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.color.ColorRoles;
 import com.google.android.material.color.MaterialColors;
@@ -99,7 +102,7 @@ public class SelectionCardView extends MaterialCardView {
     }
   }
 
-  public void setCardImageResource(@DrawableRes int resId) {
+  public void setCardImageResource(@DrawableRes int resId, boolean tint) {
     innerCard.removeAllViews();
     ImageView image = new ImageView(getContext());
     image.setLayoutParams(
@@ -107,6 +110,13 @@ public class SelectionCardView extends MaterialCardView {
             ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT
         )
     );
+    Drawable drawable = ResourcesCompat.getDrawable(
+            getResources(), resId, null
+    );
+    if (tint && drawable != null) {
+      drawable.setTint(ResUtil.getColorAttr(getContext(), R.attr.colorOutline));
+    }
+    image.setImageDrawable(drawable);
     image.setImageResource(resId);
     innerCard.addView(image);
   }

@@ -19,6 +19,7 @@
 
 package xyz.zedler.patrick.doodle.fragment.dialog;
 
+import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -27,13 +28,22 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout.LayoutParams;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+
+import com.google.android.material.color.ColorRoles;
+import com.google.android.material.color.MaterialColors;
 import com.google.android.material.elevation.SurfaceColors;
 import java.util.Objects;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicInteger;
+
+import xyz.zedler.patrick.doodle.Constants;
+import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.activity.MainActivity;
 import xyz.zedler.patrick.doodle.databinding.FragmentBottomsheetColorsBinding;
 import xyz.zedler.patrick.doodle.fragment.AppearanceFragment;
 import xyz.zedler.patrick.doodle.util.ViewUtil;
 import xyz.zedler.patrick.doodle.view.SelectionCardView;
+import yuku.ambilwarna.AmbilWarnaDialog;
 
 public class ColorsBottomSheetDialogFragment extends BaseBottomSheetDialogFragment {
 
@@ -69,7 +79,7 @@ public class ColorsBottomSheetDialogFragment extends BaseBottomSheetDialogFragme
           card.setChecked(true);
           Fragment current = activity.getCurrentFragment();
           if (current instanceof AppearanceFragment) {
-            ((AppearanceFragment) current).setColor(args.getPriority(), colors[iFinal]);
+            ((AppearanceFragment) current).setColor(args.getPriority(), colors[iFinal], false);
           }
         }
       });
@@ -77,6 +87,50 @@ public class ColorsBottomSheetDialogFragment extends BaseBottomSheetDialogFragme
       card.setChecked(isSelected);
       binding.linearColorsContainerColors.addView(card);
     }
+
+    SelectionCardView card = new SelectionCardView(activity);
+    card.setOuterCardBackgroundColor(SurfaceColors.SURFACE_5.getColor(activity));
+    AtomicInteger color = new AtomicInteger();
+    Fragment current = activity.getCurrentFragment();
+    if (current instanceof AppearanceFragment) {
+      String colorCode = ((AppearanceFragment) current).getColor(args.getPriority(), true);
+      System.out.println(colorCode);
+      color.set(Color.parseColor(colorCode));
+      card.setCardBackgroundColor(color.get());
+    }
+    ColorRoles roles = MaterialColors.getColorRoles(color.get(), MaterialColors.isColorLight(color.get()));
+    ColorStateList.valueOf(roles.getOnAccentContainer());
+    card.setCardImageResource(R.drawable.ic_round_add_color, true);
+    card.setScrimEnabled(false, true);
+    card.setOnClickListener(v -> {
+      performHapticClick();
+      AmbilWarnaDialog dialog = new AmbilWarnaDialog(activity, color.get(), new AmbilWarnaDialog.OnAmbilWarnaListener() {
+        @Override
+        public void onOk(AmbilWarnaDialog dialog, int colorCode) {
+          colorCode = colorCode & 0xFFFFFF;
+          color.set(colorCode);
+          String colorString = String.format("#%06X", colorCode);
+          card.setCardBackgroundColor(Color.parseColor(colorString));
+          card.startCheckedIcon();
+          performHapticClick();
+          ViewUtil.uncheckAllChildren(binding.linearColorsContainerColors);
+          card.setChecked(true);
+          Fragment current = activity.getCurrentFragment();
+          if (current instanceof AppearanceFragment) {
+            ((AppearanceFragment) current).setColor(args.getPriority(), colorString, true);
+          }
+        }
+
+        @Override public void onCancel(AmbilWarnaDialog dialog) {}
+      });
+
+      dialog.show();
+    });
+    boolean isSelected = Objects.equals(
+      args.getSelection(), String.format("#%06X", (color.get() & 0xFFFFFF))
+    );
+    card.setChecked(isSelected);
+    binding.linearColorsContainerColors.addView(card);
 
     return binding.getRoot();
   }

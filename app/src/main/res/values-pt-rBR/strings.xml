@@ -60,7 +60,6 @@
   <string name="action_github">Doodle Android no GitHub</string>
   <string name="action_github_description">Abra um novo problema</string>
   <string name="action_language_select">Selecionar idioma</string>
-
   <!-- APPEARANCE -->
 
   <string name="appearance_title">Aparência</string>
@@ -74,8 +73,6 @@
   <string name="appearance_night_mode_description">Apenas cores escuras</string>
   <string name="appearance_follow_system">Seguir sistema</string>
   <string name="appearance_follow_system_description">Adotar o tema do dispositivo</string>
-  <string name="appearance_white_text">Tentar forçar texto branco</string>
-  <string name="appearance_white_text_description">Pode afetar legibilidade</string>
   <string name="appearance_colors_category">Cores</string>
   <string name="appearance_colors">Cores extraidas</string>
   <string name="appearance_colors_description">Utilizado para calcular contraste do texto</string>
@@ -140,8 +137,7 @@
   <string name="other_description">Renderização, idioma &amp; redefinir</string>
   <string name="other_language">Idioma</string>
   <string name="other_language_description">Muitos agradecimentos a todos os tradutores voluntários de Transifex! Por favor, visite a página do GitHub do projeto para saber como ajudar a tornar o Doodle Live Wallpapers disponível no seu idioma.</string>
-  <string name="other_language_system">Padrão do sistema: %1$s</string>
-  <string name="other_language_not_available">Não disponível</string>
+  <string name="other_language_system">Seguir sistema</string>
   <string name="other_gpu">Aceleraçao de hardware</string>
   <string name="other_gpu_description">Desligará se o papel de parede deixar de funcionar</string>
   <string name="other_gpu_info">Aceleração de Hardware no Doodle só está disponível para Android 8 ou mais recente. As animações do papel de parede podem ser mais travadas em versões antigas.</string>

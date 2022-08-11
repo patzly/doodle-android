@@ -54,7 +54,6 @@
   <string name="action_github">דודל אנדרואיד בgithub</string>
   <string name="action_github_description">דיווח על בעיה</string>
   <string name="action_language_select">בחירת שפה</string>
-
   <!-- APPEARANCE -->
 
   <string name="appearance_title">מראה</string>
@@ -67,8 +66,6 @@
   <string name="appearance_night_mode_description">רק צבעים כהים</string>
   <string name="appearance_follow_system">לפי הגדרות המערכת</string>
   <string name="appearance_follow_system_description">אימוץ ערכת נושא מהמערכת</string>
-  <string name="appearance_white_text">ניסיון להכריח טקסט לבן</string>
-  <string name="appearance_white_text_description">עלול להשפיע על הקריאה</string>
   <string name="appearance_colors">בחירת צבעים</string>
   <string name="appearance_colors_description">משמש לחישוב ניגודיות טקסט</string>
   <string name="appearance_colors_description_dynamic">משומש על ידי ערכת הנושא של המערכת</string>
@@ -123,8 +120,7 @@
   <string name="other_language">שפה</string>
   <string name="other_language_description">תודות רבות לכל מי שהתנדב לתרגם בTransifex!
 בבקשה בקרו בעמוד הGitHub של הפרוייקט כדי ללמוד כיצד אתם יכולים לעזור לתרגם את דודל לשפה שלכם</string>
-  <string name="other_language_system">ברירת מחדל של המערכת%1$s</string>
-  <string name="other_language_not_available">לא זמין</string>
+  <string name="other_language_system">לפי הגדרות המערכת</string>
   <string name="other_gpu">האצת חומרה</string>
   <string name="other_gpu_description">כיבוי אם הרקע קורס</string>
   <string name="other_gpu_info">האצת חומרה זמינה רק כאשר דודל מופעל באנדרואיד 8.כתוצאה מזה אנימציות הרקע עלולות להיות מעוותות</string>

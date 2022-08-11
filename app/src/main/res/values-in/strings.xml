@@ -57,7 +57,6 @@
   <string name="action_github">Doodle Android di GitHub</string>
   <string name="action_github_description">Buka sebuah isu baru</string>
   <string name="action_language_select">Pilih bahasa</string>
-
   <!-- APPEARANCE -->
 
   <string name="appearance_title">Tampilan</string>
@@ -71,8 +70,6 @@
   <string name="appearance_night_mode_description">Hanya warna gelap</string>
   <string name="appearance_follow_system">Ikuti sistem</string>
   <string name="appearance_follow_system_description">Ikuti tema perangkat</string>
-  <string name="appearance_white_text">Coba paksa teks putih</string>
-  <string name="appearance_white_text_description">Dapat mempengaruhi keterbacaan</string>
   <string name="appearance_colors">Warna terekstrak</string>
   <string name="appearance_colors_description">Digunakan untuk menghitung kontras teks</string>
   <string name="appearance_colors_description_dynamic">Digunakan oleh mesin tema sistem</string>
@@ -128,8 +125,7 @@
   <string name="other_description">Rendering, bahasa &amp; atur-ulang</string>
   <string name="other_language">Bahasa</string>
   <string name="other_language_description">Terima kasih banyak kepada semua penerjemah sukarelawan di Transifex! Silakan kunjungi halaman GitHub proyek untuk mempelajari bagaimana Anda dapat membantu membuat Wallpaper Live Doodle tersedia untuk bahasa Anda.</string>
-  <string name="other_language_system">Bawaan sistem: %1$s</string>
-  <string name="other_language_not_available">Tidak tersedia</string>
+  <string name="other_language_system">Ikuti sistem</string>
   <string name="other_gpu">Akselerasi perangkat keras</string>
   <string name="other_gpu_description">Matikan jika wallpaper crash</string>
   <string name="other_gpu_info">Akselerasi perangkat keras hanya tersedia untuk Doodle dimulai dengan Android 8. Oleh karena itu animasi wallpaper mungkin agak tersentak.</string>

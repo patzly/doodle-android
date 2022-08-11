@@ -163,6 +163,7 @@ public class AppearanceFragment extends BaseFragment
       }
       if (svgDrawable == null) {
         // Prevent NullPointerExceptions
+        // test
         svgDrawable = wallpaper.getPreparedSvg(
             new SvgDrawable(activity, "wallpaper_pixel1"), 1, false
         );

@@ -50,7 +50,7 @@ public class JohannaWallpaper extends BaseWallpaper {
   public WallpaperVariant[] getVariants() {
     return new WallpaperVariant[]{
         new WallpaperVariant(
-            "wallpaper_johanna1",
+            R.raw.wallpaper_johanna1,
             "#fcf4e9",
             "#f8bfa6",
             "#d8e2eb",
@@ -66,7 +66,7 @@ public class JohannaWallpaper extends BaseWallpaper {
   public WallpaperVariant[] getDarkVariants() {
     return new WallpaperVariant[]{
         new WallpaperVariant(
-            "wallpaper_johanna1_dark",
+            R.raw.wallpaper_johanna1_dark,
             "#32373a",
             "#855642",
             "#5f8393",

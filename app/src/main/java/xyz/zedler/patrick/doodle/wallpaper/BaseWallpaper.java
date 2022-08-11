@@ -26,6 +26,7 @@ import android.graphics.Color;
 import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
 import androidx.annotation.NonNull;
+import androidx.annotation.RawRes;
 import androidx.annotation.RequiresApi;
 import androidx.core.graphics.ColorUtils;
 import java.util.Arrays;
@@ -35,7 +36,7 @@ public abstract class BaseWallpaper {
 
   public static class WallpaperVariant {
 
-    private final String filename;
+    private final int svgResId;
     private final String primaryColor;
     private final String secondaryColor;
     private final String tertiaryColor;
@@ -44,7 +45,7 @@ public abstract class BaseWallpaper {
     private final boolean isDarkThemeSupported;
 
     public WallpaperVariant(
-        String filename,
+        @RawRes int resId,
         @NonNull String primary,
         @NonNull String secondary,
         @NonNull String tertiary,
@@ -52,7 +53,7 @@ public abstract class BaseWallpaper {
         boolean isDarkTextSupported,
         boolean isDarkThemeSupported
     ) {
-      this.filename = filename;
+      svgResId = resId;
       primaryColor = primary;
       secondaryColor = secondary;
       tertiaryColor = tertiary;
@@ -61,8 +62,8 @@ public abstract class BaseWallpaper {
       this.isDarkThemeSupported = isDarkThemeSupported;
     }
 
-    public String getSvgFilename() {
-      return filename;
+    public int getSvgResId() {
+      return svgResId;
     }
 
     public int getColor(int priority) {

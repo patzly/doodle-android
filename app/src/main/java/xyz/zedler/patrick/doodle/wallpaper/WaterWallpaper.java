@@ -49,7 +49,7 @@ public class WaterWallpaper extends BaseWallpaper {
   public WallpaperVariant[] getVariants() {
     return new WallpaperVariant[]{
         new WallpaperVariant(
-            "wallpaper_water",
+            R.raw.wallpaper_water,
             "#e0e0df",
             "#406382",
             "#d0e3ef",
@@ -65,7 +65,7 @@ public class WaterWallpaper extends BaseWallpaper {
   public WallpaperVariant[] getDarkVariants() {
     return new WallpaperVariant[]{
         new WallpaperVariant(
-            "wallpaper_water_dark",
+            R.raw.wallpaper_water_dark,
             "#151718",
             "#476988",
             "#586a73",

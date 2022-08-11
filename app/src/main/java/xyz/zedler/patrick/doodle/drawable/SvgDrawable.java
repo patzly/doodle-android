@@ -39,6 +39,7 @@ import android.util.Xml;
 import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RawRes;
 import androidx.core.graphics.ColorUtils;
 import java.io.IOException;
 import java.io.InputStream;
@@ -74,16 +75,16 @@ public class SvgDrawable {
   private PointF pointF;
   private final Random random;
 
-  public SvgDrawable(Context context, String filename) {
+  public SvgDrawable(Context context, @RawRes int resId) {
     pixelUnit = getPixelUnit(context);
 
     objects = new ArrayList<>();
     ids = new ArrayList<>();
 
     try {
-      parse(context.getAssets().open(filename + ".svg"));
+      parse(context.getResources().openRawResource(resId));
     } catch (IOException e) {
-      Log.e(TAG, "Could not open SVG asset", e);
+      Log.e(TAG, "Could not open SVG resource", e);
     }
 
     scale = 1;

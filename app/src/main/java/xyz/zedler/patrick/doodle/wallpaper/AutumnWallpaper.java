@@ -59,7 +59,7 @@ public class AutumnWallpaper extends BaseWallpaper {
   public WallpaperVariant[] getVariants() {
     return new WallpaperVariant[]{
         new WallpaperVariant(
-            "wallpaper_autumn",
+            R.raw.wallpaper_autumn,
             "#f3e7c8",
             "#ead373",
             "#b07029",
@@ -75,7 +75,7 @@ public class AutumnWallpaper extends BaseWallpaper {
   public WallpaperVariant[] getDarkVariants() {
     return new WallpaperVariant[]{
         new WallpaperVariant(
-            "wallpaper_autumn_dark",
+            R.raw.wallpaper_autumn_dark,
             "#151718",
             "#ead373",
             "#b07029",

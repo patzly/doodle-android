@@ -50,7 +50,7 @@ public class MonetWallpaper extends BaseWallpaper {
   public WallpaperVariant[] getVariants() {
     return new WallpaperVariant[]{
         new WallpaperVariant(
-            "wallpaper_monet1",
+            R.raw.wallpaper_monet1,
             "#fcedea",
             "#924642",
             "#fbdeac",
@@ -59,7 +59,7 @@ public class MonetWallpaper extends BaseWallpaper {
             false
         ),
         new WallpaperVariant(
-            "wallpaper_monet2",
+            R.raw.wallpaper_monet2,
             "#634b67",
             "#dbd870",
             "#ff45c9",
@@ -68,7 +68,7 @@ public class MonetWallpaper extends BaseWallpaper {
             true
         ),
         new WallpaperVariant(
-            "wallpaper_monet3",
+            R.raw.wallpaper_monet3,
             "#f5f4e2",
             "#dbec8c",
             "#caebdf",
@@ -84,7 +84,7 @@ public class MonetWallpaper extends BaseWallpaper {
   public WallpaperVariant[] getDarkVariants() {
     return new WallpaperVariant[]{
         new WallpaperVariant(
-            "wallpaper_monet1_dark",
+            R.raw.wallpaper_monet1_dark,
             "#222020",
             "#9a726e",
             "#dac095",
@@ -93,7 +93,7 @@ public class MonetWallpaper extends BaseWallpaper {
             true
         ),
         new WallpaperVariant(
-            "wallpaper_monet2_dark",
+            R.raw.wallpaper_monet2_dark,
             "#231f24",
             "#634b67",
             "#c9c767",
@@ -102,7 +102,7 @@ public class MonetWallpaper extends BaseWallpaper {
             true
         ),
         new WallpaperVariant(
-            "wallpaper_monet3_dark",
+            R.raw.wallpaper_monet3_dark,
             "#171815",
             "#909b5d",
             "#badbd0",

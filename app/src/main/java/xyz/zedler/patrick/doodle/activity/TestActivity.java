@@ -25,6 +25,7 @@ import android.view.WindowManager;
 import android.widget.LinearLayout;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.behavior.SystemBarBehavior;
 import xyz.zedler.patrick.doodle.view.SvgView;
 
@@ -48,6 +49,6 @@ public class TestActivity extends AppCompatActivity {
         WindowManager.LayoutParams.FLAG_FULLSCREEN
     );
 
-    svg.setSvg("wallpaper_floral");
+    svg.setSvg(R.raw.wallpaper_floral);
   }
 }

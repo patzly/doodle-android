@@ -49,7 +49,7 @@ public class OrioleWallpaper extends BaseWallpaper {
   public WallpaperVariant[] getVariants() {
     return new WallpaperVariant[]{
         new WallpaperVariant(
-            "wallpaper_oriole1",
+            R.raw.wallpaper_oriole1,
             "#ffad8d",
             "#ffc7b2",
             "#392d28",
@@ -58,7 +58,7 @@ public class OrioleWallpaper extends BaseWallpaper {
             false
         ),
         new WallpaperVariant(
-            "wallpaper_oriole2",
+            R.raw.wallpaper_oriole2,
             "#bdd0ff",
             "#e3ecff",
             "#2e2e2e",
@@ -67,7 +67,7 @@ public class OrioleWallpaper extends BaseWallpaper {
             false
         ),
         new WallpaperVariant(
-            "wallpaper_oriole3",
+            R.raw.wallpaper_oriole3,
             "#adff90",
             "#d6ffb2",
             "#1b1e1b",
@@ -83,7 +83,7 @@ public class OrioleWallpaper extends BaseWallpaper {
   public WallpaperVariant[] getDarkVariants() {
     return new WallpaperVariant[]{
         new WallpaperVariant(
-            "wallpaper_oriole1_dark",
+            R.raw.wallpaper_oriole1_dark,
             "#d88071",
             "#ffad8d",
             "#4a4a4a",
@@ -92,7 +92,7 @@ public class OrioleWallpaper extends BaseWallpaper {
             true
         ),
         new WallpaperVariant(
-            "wallpaper_oriole2_dark",
+            R.raw.wallpaper_oriole2_dark,
             "#434380",
             "#bdd0ff",
             "#363c4a",
@@ -101,7 +101,7 @@ public class OrioleWallpaper extends BaseWallpaper {
             true
         ),
         new WallpaperVariant(
-            "wallpaper_oriole3_dark",
+            R.raw.wallpaper_oriole3_dark,
             "#44885d",
             "#adff90",
             "#444a44",

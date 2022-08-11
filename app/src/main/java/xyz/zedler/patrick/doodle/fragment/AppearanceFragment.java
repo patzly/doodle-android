@@ -153,18 +153,18 @@ public class AppearanceFragment extends BaseFragment
       if (isWallpaperNightMode()) {
         variant = wallpaper.getDarkVariants()[variantIndex];
         svgDrawable = wallpaper.getPreparedSvg(
-            new SvgDrawable(activity, variant.getSvgResId()), variantIndex, true
+            new SvgDrawable(activity, variant.getSvgFilename()), variantIndex, true
         );
       } else {
         variant = wallpaper.getVariants()[variantIndex];
         svgDrawable = wallpaper.getPreparedSvg(
-            new SvgDrawable(activity, variant.getSvgResId()), variantIndex, false
+            new SvgDrawable(activity, variant.getSvgFilename()), variantIndex, false
         );
       }
       if (svgDrawable == null) {
         // Prevent NullPointerExceptions
         svgDrawable = wallpaper.getPreparedSvg(
-            new SvgDrawable(activity, R.raw.wallpaper_pixel1), 1, false
+            new SvgDrawable(activity, "wallpaper_pixel1"), 1, false
         );
       }
 

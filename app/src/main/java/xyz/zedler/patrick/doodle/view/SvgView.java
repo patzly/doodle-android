@@ -22,7 +22,6 @@ package xyz.zedler.patrick.doodle.view;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.view.View;
-import androidx.annotation.RawRes;
 import xyz.zedler.patrick.doodle.drawable.SvgDrawable;
 
 public class SvgView extends View {
@@ -40,8 +39,8 @@ public class SvgView extends View {
     }
   }
 
-  public void setSvg(@RawRes int resId) {
-    drawable = new SvgDrawable(getContext(), resId);
+  public void setSvg(String filename) {
+    drawable = new SvgDrawable(getContext(), filename);
     drawable.setScale(SvgDrawable.getDefaultScale(getContext()));
 
     invalidate();

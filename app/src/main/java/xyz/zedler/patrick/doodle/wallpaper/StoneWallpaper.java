@@ -50,7 +50,7 @@ public class StoneWallpaper extends BaseWallpaper {
   public WallpaperVariant[] getVariants() {
     return new WallpaperVariant[]{
         new WallpaperVariant(
-            R.raw.wallpaper_stone,
+            "wallpaper_stone",
             "#e6efd7",
             "#c4d6e4",
             "#b49e5f",
@@ -66,7 +66,7 @@ public class StoneWallpaper extends BaseWallpaper {
   public WallpaperVariant[] getDarkVariants() {
     return new WallpaperVariant[]{
         new WallpaperVariant(
-            R.raw.wallpaper_stone_dark,
+            "wallpaper_stone_dark",
             "#171815",
             "#52482b",
             "#515339",

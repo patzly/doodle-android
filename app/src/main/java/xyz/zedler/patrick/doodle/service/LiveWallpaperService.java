@@ -59,7 +59,6 @@ import xyz.zedler.patrick.doodle.Constants.NIGHT_MODE;
 import xyz.zedler.patrick.doodle.Constants.PREF;
 import xyz.zedler.patrick.doodle.Constants.REQUEST_SOURCE;
 import xyz.zedler.patrick.doodle.Constants.USER_PRESENCE;
-import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.drawable.SvgDrawable;
 import xyz.zedler.patrick.doodle.util.PrefsUtil;
 import xyz.zedler.patrick.doodle.util.SensorUtil;
@@ -206,19 +205,19 @@ public class LiveWallpaperService extends WallpaperService {
     if (isNightMode()) {
       variant = wallpaper.getDarkVariants()[variantIndex];
       svgDrawable = wallpaper.getPreparedSvg(
-          new SvgDrawable(this, variant.getSvgResId()), variantIndex, true
+          new SvgDrawable(this, variant.getSvgFilename()), variantIndex, true
       );
     } else {
       variant = wallpaper.getVariants()[variantIndex];
       svgDrawable = wallpaper.getPreparedSvg(
-          new SvgDrawable(this, variant.getSvgResId()), variantIndex, false
+          new SvgDrawable(this, variant.getSvgFilename()), variantIndex, false
       );
     }
 
     if (svgDrawable == null) {
       // Prevent NullPointerExceptions
       svgDrawable = wallpaper.getPreparedSvg(
-          new SvgDrawable(this, R.raw.wallpaper_pixel1), 1, false
+          new SvgDrawable(this, "wallpaper_pixel1"), 1, false
       );
     }
     if (wallpaper.isDepthStatic()) {

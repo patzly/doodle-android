@@ -62,7 +62,7 @@ public class ReikoWallpaper extends BaseWallpaper {
   public WallpaperVariant[] getVariants() {
     return new WallpaperVariant[]{
         new WallpaperVariant(
-            R.raw.wallpaper_reiko1,
+            "wallpaper_reiko1",
             "#cbcbef",
             "#fe7a9a",
             "#abe3e0",
@@ -71,7 +71,7 @@ public class ReikoWallpaper extends BaseWallpaper {
             false
         ),
         new WallpaperVariant(
-            R.raw.wallpaper_reiko2,
+            "wallpaper_reiko2",
             "#fef7ed",
             "#fea31c",
             "#e0342b",
@@ -80,7 +80,7 @@ public class ReikoWallpaper extends BaseWallpaper {
             false
         ),
         new WallpaperVariant(
-            R.raw.wallpaper_reiko3,
+            "wallpaper_reiko3",
             "#282a36",
             "#ff79c6",
             "#8be9fd",
@@ -96,7 +96,7 @@ public class ReikoWallpaper extends BaseWallpaper {
   public WallpaperVariant[] getDarkVariants() {
     return new WallpaperVariant[]{
         new WallpaperVariant(
-            R.raw.wallpaper_reiko1_dark,
+            "wallpaper_reiko1_dark",
             "#0e032d",
             "#a181de",
             "#8fe5de",
@@ -105,7 +105,7 @@ public class ReikoWallpaper extends BaseWallpaper {
             true
         ),
         new WallpaperVariant(
-            R.raw.wallpaper_reiko2_dark,
+            "wallpaper_reiko2_dark",
             "#0e1f3b",
             "#a0b0fb",
             "#c6433a",
@@ -114,7 +114,7 @@ public class ReikoWallpaper extends BaseWallpaper {
             true
         ),
         new WallpaperVariant(
-            R.raw.wallpaper_reiko3,
+            "wallpaper_reiko3",
             "#282a36",
             "#ff79c6",
             "#8be9fd",

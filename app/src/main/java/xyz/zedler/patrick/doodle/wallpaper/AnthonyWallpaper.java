@@ -49,7 +49,7 @@ public class AnthonyWallpaper extends BaseWallpaper {
   public WallpaperVariant[] getVariants() {
     return new WallpaperVariant[]{
         new WallpaperVariant(
-            R.raw.wallpaper_anthony1,
+            "wallpaper_anthony1",
             "#b9c1c7",
             "#e1d7cc",
             "#47484a",
@@ -58,7 +58,7 @@ public class AnthonyWallpaper extends BaseWallpaper {
             false
         ),
         new WallpaperVariant(
-            R.raw.wallpaper_anthony2,
+            "wallpaper_anthony2",
             "#608ca5",
             "#fccbb5",
             "#fefffe",
@@ -67,7 +67,7 @@ public class AnthonyWallpaper extends BaseWallpaper {
             true
         ),
         new WallpaperVariant(
-            R.raw.wallpaper_anthony3,
+            "wallpaper_anthony3",
             "#282a36",
             "#ffb86c",
             "#ff79c6",
@@ -83,7 +83,7 @@ public class AnthonyWallpaper extends BaseWallpaper {
   public WallpaperVariant[] getDarkVariants() {
     return new WallpaperVariant[]{
         new WallpaperVariant(
-            R.raw.wallpaper_anthony1_dark,
+            "wallpaper_anthony1_dark",
             "#212121",
             "#5b5a5a",
             "#3d3b3c",
@@ -92,7 +92,7 @@ public class AnthonyWallpaper extends BaseWallpaper {
             true
         ),
         new WallpaperVariant(
-            R.raw.wallpaper_anthony2_dark,
+            "wallpaper_anthony2_dark",
             "#212121",
             "#997c6e",
             "#32393c",
@@ -101,7 +101,7 @@ public class AnthonyWallpaper extends BaseWallpaper {
             true
         ),
         new WallpaperVariant(
-            R.raw.wallpaper_anthony3_dark,
+            "wallpaper_anthony3_dark",
             "#282a36",
             "#ffb86c",
             "#ff79c6",

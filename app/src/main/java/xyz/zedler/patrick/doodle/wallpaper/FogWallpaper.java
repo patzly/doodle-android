@@ -54,7 +54,7 @@ public class FogWallpaper extends BaseWallpaper {
   public WallpaperVariant[] getVariants() {
     return new WallpaperVariant[]{
         new WallpaperVariant(
-            R.raw.wallpaper_fog,
+            "wallpaper_fog",
             "#e6baad",
             "#4c87bf",
             "#eadcc2",
@@ -70,7 +70,7 @@ public class FogWallpaper extends BaseWallpaper {
   public WallpaperVariant[] getDarkVariants() {
     return new WallpaperVariant[]{
         new WallpaperVariant(
-            R.raw.wallpaper_fog_dark,
+            "wallpaper_fog_dark",
             "#1c1715",
             "#273555",
             "#84504a",

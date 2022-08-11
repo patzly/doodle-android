@@ -55,7 +55,7 @@ public class SandWallpaper extends BaseWallpaper {
   public WallpaperVariant[] getVariants() {
     return new WallpaperVariant[]{
         new WallpaperVariant(
-            R.raw.wallpaper_sand,
+            "wallpaper_sand",
             "#f4f5f4",
             "#8e8b89",
             "#ded7cc",
@@ -71,7 +71,7 @@ public class SandWallpaper extends BaseWallpaper {
   public WallpaperVariant[] getDarkVariants() {
     return new WallpaperVariant[]{
         new WallpaperVariant(
-            R.raw.wallpaper_sand_dark,
+            "wallpaper_sand_dark",
             "#212221",
             "#cccecd",
             "#545350",

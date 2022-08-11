@@ -56,7 +56,7 @@ public class PixelWallpaper extends BaseWallpaper {
   public WallpaperVariant[] getVariants() {
     return new WallpaperVariant[]{
         new WallpaperVariant(
-            R.raw.wallpaper_pixel1,
+            "wallpaper_pixel1",
             "#232323",
             "#f2c5b1",
             "#bdd6bd",
@@ -68,7 +68,7 @@ public class PixelWallpaper extends BaseWallpaper {
             true
         ),
         new WallpaperVariant(
-            R.raw.wallpaper_pixel2,
+            "wallpaper_pixel2",
             "#e0dcd3",
             "#ffb9a1",
             "#f4e3c9",
@@ -77,7 +77,7 @@ public class PixelWallpaper extends BaseWallpaper {
             false
         ),
         new WallpaperVariant(
-            R.raw.wallpaper_pixel3,
+            "wallpaper_pixel3",
             "#f98a6b",
             "#e5e1a3",
             "#bcddba",
@@ -86,7 +86,7 @@ public class PixelWallpaper extends BaseWallpaper {
             false
         ),
         new WallpaperVariant(
-            R.raw.wallpaper_pixel4,
+            "wallpaper_pixel4",
             "#eae5bf",
             "#789f8a",
             "#e06a4e",
@@ -95,7 +95,7 @@ public class PixelWallpaper extends BaseWallpaper {
             false
         ),
         new WallpaperVariant(
-            R.raw.wallpaper_pixel5,
+            "wallpaper_pixel5",
             "#fff5ec",
             "#052464",
             "#fe765e",
@@ -104,7 +104,7 @@ public class PixelWallpaper extends BaseWallpaper {
             false
         ),
         new WallpaperVariant(
-            R.raw.wallpaper_pixel6,
+            "wallpaper_pixel6",
             "#282a36",
             "#ffb86c",
             "#ff79c6",
@@ -119,7 +119,7 @@ public class PixelWallpaper extends BaseWallpaper {
   @Override
   public WallpaperVariant[] getDarkVariants() {
     WallpaperVariant pixelOriginalDark = new WallpaperVariant(
-        R.raw.wallpaper_pixel123_dark,
+        "wallpaper_pixel123_dark",
         "#272628",
         "#ff9052",
         "#bdd6bd",
@@ -132,7 +132,7 @@ public class PixelWallpaper extends BaseWallpaper {
         pixelOriginalDark,
         pixelOriginalDark,
         new WallpaperVariant(
-            R.raw.wallpaper_pixel4_dark,
+            "wallpaper_pixel4_dark",
             "#272628",
             "#e06a4e",
             "#6c8e7a",
@@ -141,7 +141,7 @@ public class PixelWallpaper extends BaseWallpaper {
             true
         ),
         new WallpaperVariant(
-            R.raw.wallpaper_pixel5_dark,
+            "wallpaper_pixel5_dark",
             "#272628",
             "#d4634f",
             "#324b84",
@@ -150,7 +150,7 @@ public class PixelWallpaper extends BaseWallpaper {
             true
         ),
         new WallpaperVariant(
-            R.raw.wallpaper_pixel6,
+            "wallpaper_pixel6",
             "#282a36",
             "#ffb86c",
             "#ff79c6",

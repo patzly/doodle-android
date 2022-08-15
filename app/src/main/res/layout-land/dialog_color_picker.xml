@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ This file is part of Doodle Android.
+  ~
+  ~ Doodle Android is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Doodle Android is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with Doodle Android. If not, see <http://www.gnu.org/licenses/>.
+  ~
+  ~ Copyright (c) 2019-2022 by Patrick Zedler
+  -->
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:orientation="horizontal"
+  android:clipToPadding="false"
+  android:clipChildren="false"
+  android:paddingLeft="24dp"
+  android:paddingRight="24dp"
+  android:paddingTop="16dp">
+
+  <LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_gravity="center_vertical"
+    android:gravity="center"
+    android:layout_marginEnd="16dp">
+
+    <com.google.android.material.card.MaterialCardView
+      android:id="@+id/card_color_picker_color_old"
+      android:layout_width="40dp"
+      android:layout_height="40dp"
+      app:cardCornerRadius="20dp"
+      app:strokeColor="?attr/colorOutline"
+      app:cardBackgroundColor="#faa" />
+
+    <ImageView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:paddingTop="4dp"
+      android:paddingBottom="4dp"
+      android:src="@drawable/ic_round_expand_more"
+      app:tint="?attr/colorOnSurfaceVariant" />
+
+    <com.google.android.material.card.MaterialCardView
+      android:id="@+id/card_color_picker_color_new"
+      android:layout_width="40dp"
+      android:layout_height="40dp"
+      app:cardCornerRadius="20dp"
+      app:strokeColor="?attr/colorOutline"
+      app:cardBackgroundColor="#aaf" />
+
+  </LinearLayout>
+
+  <FrameLayout
+    android:layout_width="0dp"
+    android:layout_height="@dimen/color_picker_hsv_height"
+    android:layout_weight="1"
+    android:clipChildren="false">
+
+    <com.google.android.material.card.MaterialCardView
+      android:id="@+id/card_color_picker_square_container"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      app:cardCornerRadius="16dp"
+      app:strokeColor="?attr/colorOutline">
+
+      <xyz.zedler.patrick.doodle.view.ColorPickerSquareView
+        android:id="@+id/card_color_picker_square"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/color_picker_hsv_height" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+      android:id="@+id/card_color_picker_target"
+      android:layout_width="22dp"
+      android:layout_height="22dp"
+      app:cardCornerRadius="11dp"
+      app:strokeColor="?attr/colorOutline"
+      app:cardBackgroundColor="?attr/colorTertiaryContainer" />
+
+  </FrameLayout>
+
+  <FrameLayout
+    android:layout_width="wrap_content"
+    android:layout_height="@dimen/color_picker_hsv_height">
+
+    <com.google.android.material.card.MaterialCardView
+      android:layout_width="32dp"
+      android:layout_height="match_parent"
+      android:layout_marginStart="16dp"
+      app:cardCornerRadius="16dp"
+      app:strokeColor="?attr/colorOutline">
+
+      <ImageView
+        android:id="@+id/image_color_picker_hue"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/image_color_picker_hue" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <ImageView
+      android:id="@+id/image_color_picker_cursor"
+      android:layout_width="32dp"
+      android:layout_height="32dp"
+      android:layout_marginStart="2dp"
+      android:src="@drawable/ic_round_drag_pointer" />
+
+  </FrameLayout>
+
+</LinearLayout>

@@ -39,6 +39,7 @@
     <item name="actionOverflowButtonStyle">@style/ThemeOverlay.Doodle.OverFlow</item>
 
     <!-- Dialog themes -->
+    <item name="materialAlertDialogTheme">@style/ThemeOverlay.Doodle.AlertDialog</item>
     <item name="bottomSheetDialogTheme">@style/Theme.Doodle.BottomSheetDialog</item>
   </style>
 

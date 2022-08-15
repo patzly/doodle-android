@@ -1,7 +1,8 @@
-## 5.4.1
+## 5.5.0
 
 - New: workaround for Samsung's unfavorable implementation of dynamic colors on Android 12+ (appearance section)
 - New: system app language selection on Android 13
+- New: custom color selection for wallpaper colors
 - New: Japanese translation
 - New: themed app icon on Android 13
 - Improved: toggle logic for launcher text color

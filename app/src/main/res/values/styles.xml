@@ -28,6 +28,12 @@
        the medium variant of Jost*, so there is no extra attention needed for e.g. the app bar.
        Affected languages: Arab, Chinese, Hebrew, Japanese, Uighur -->
 
+  <style name="ThemeOverlay.Doodle.AlertDialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+    <item name="android:backgroundDimAmount">0.7</item>
+    <item name="buttonBarPositiveButtonStyle">@style/Widget.Doodle.Button.TextButton.Dialog</item>
+    <item name="buttonBarNegativeButtonStyle">@style/Widget.Doodle.Button.TextButton.Dialog</item>
+  </style>
+
   <!-- Toolbar -->
 
   <style
@@ -139,6 +145,13 @@
   <style
     name="Widget.Doodle.Button.TextButton"
     parent="Base.Doodle.Button.TextButton">
+    <item name="android:fontFamily">@font/jost_medium</item>
+  </style>
+
+  <!-- Localized style, no empty base style needed -->
+  <style
+    name="Widget.Doodle.Button.TextButton.Dialog"
+    parent="Widget.Material3.Button.TextButton.Dialog">
     <item name="android:fontFamily">@font/jost_medium</item>
   </style>
 

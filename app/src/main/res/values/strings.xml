@@ -49,6 +49,8 @@
 
   <!-- ACTIONS -->
 
+  <string name="action_cancel">Cancel</string>
+  <string name="action_apply">Apply</string>
   <string name="action_close">Close</string>
   <string name="action_back">Back</string>
   <string name="action_open_link">Open external website</string>
@@ -101,6 +103,7 @@
   <string name="appearance_colors_primary">Choose primary color</string>
   <string name="appearance_colors_secondary">Choose secondary color</string>
   <string name="appearance_colors_tertiary">Choose tertiary color</string>
+  <string name="appearance_colors_custom">Select custom color</string>
   <string name="appearance_colors_info">On devices without dynamic color support (Android 11 or lower), only the primary color is used to calculate the launcher text contrast and tinting the recent apps screen\'s background.</string>
   <string name="appearance_colors_info_dynamic">On devices with Android 12 or higher and dynamic color support, the three selected colors are used to automatically create a system-wide color theme.</string>
   <string name="appearance_random">Random wallpaper design</string>

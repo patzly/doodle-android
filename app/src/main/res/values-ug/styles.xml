@@ -48,6 +48,12 @@
     <item name="android:textStyle">bold</item>
   </style>
 
+  <style
+    name="Widget.Doodle.Button.TextButton.Dialog"
+    parent="Widget.Material3.Button.TextButton.Dialog">
+    <item name="android:textStyle">bold</item>
+  </style>
+
   <!-- ExtendedFloatingActionButton -->
 
   <style

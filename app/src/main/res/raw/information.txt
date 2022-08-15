@@ -1,4 +1,5 @@
 These live wallpapers are based on the original Doodle live wallpaper collection of the Google Pixel 4 and the leaked (but never officially released) Material You static wallpaper collection of the Pixel 6, extended with additional wallpapers from Chrome OS.
+
 They are completely recreated from scratch, nothing except the look is taken from the original.
 
 ### Advantages over the original

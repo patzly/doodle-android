@@ -670,6 +670,7 @@ public class LiveWallpaperService extends WallpaperService {
           if (useRandom || (isZoomUnlockEnabled && animZoom())) {
             drawFrame(true, null);
           }
+          System.gc();
           break;
         case USER_PRESENCE.LOCKED:
           if (isZoomUnlockEnabled && animZoom()) {

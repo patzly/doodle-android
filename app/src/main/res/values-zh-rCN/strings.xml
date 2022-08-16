@@ -38,6 +38,8 @@
 
   <!-- ACTIONS -->
 
+  <string name="action_cancel">取消</string>
+  <string name="action_apply">应用</string>
   <string name="action_close">关闭</string>
   <string name="action_back">返回</string>
   <string name="action_open_link">打开外部网站</string>
@@ -90,6 +92,7 @@
   <string name="appearance_colors_primary">选择主色</string>
   <string name="appearance_colors_secondary">选择次生色</string>
   <string name="appearance_colors_tertiary">选择第三次色</string>
+  <string name="appearance_colors_custom">选择自定义颜色</string>
   <string name="appearance_colors_info">在没有动态颜色支持的设备上(Android 11 或更低版本)，只有主色用于计算启动器文本对比度和着色最近应用程序屏幕的背景。</string>
   <string name="appearance_colors_info_dynamic">在装有 Android 12 或更高版本系统，并支持动态颜色的的设备上，三种选择的颜色将用于自动创建一个系统范围的颜色主题。</string>
   <string name="appearance_random">随机的壁纸设计</string>

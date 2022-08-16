@@ -48,15 +48,15 @@ public class ColorPickerDialog {
   private final float[] currentColorHsv = new float[3];
   private final int alpha;
 
-  public interface OnApplyListener {
+  public interface OnSelectListener {
 
-    void onApply(ColorPickerDialog dialog, int color);
+    void onSelect(ColorPickerDialog dialog, int color);
 
     void onCancel();
   }
 
   @SuppressLint("ClickableViewAccessibility")
-  public ColorPickerDialog(final Context context, int color, OnApplyListener listener) {
+  public ColorPickerDialog(final Context context, int color, OnSelectListener listener) {
     this.context = context;
 
     // remove alpha
@@ -136,9 +136,9 @@ public class ColorPickerDialog {
     // if back button is used, call back our listener.
     dialog = new MaterialAlertDialogBuilder(context)
         .setTitle(R.string.appearance_colors_custom)
-        .setPositiveButton(R.string.action_apply, (dialog, which) -> {
+        .setPositiveButton(R.string.action_select, (dialog, which) -> {
           if (listener != null) {
-            listener.onApply(this, getColor());
+            listener.onSelect(this, getColor());
           }
         }).setNegativeButton(R.string.action_cancel, (dialog, which) -> {
           if (listener != null) {

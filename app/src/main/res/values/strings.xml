@@ -50,7 +50,7 @@
   <!-- ACTIONS -->
 
   <string name="action_cancel">Cancel</string>
-  <string name="action_apply">Apply</string>
+  <string name="action_select">Select</string>
   <string name="action_close">Close</string>
   <string name="action_back">Back</string>
   <string name="action_open_link">Open external website</string>

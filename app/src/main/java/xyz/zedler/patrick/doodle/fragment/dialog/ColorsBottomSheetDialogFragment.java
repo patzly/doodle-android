@@ -35,7 +35,7 @@ import java.util.Objects;
 import xyz.zedler.patrick.doodle.activity.MainActivity;
 import xyz.zedler.patrick.doodle.databinding.FragmentBottomsheetColorsBinding;
 import xyz.zedler.patrick.doodle.fragment.AppearanceFragment;
-import xyz.zedler.patrick.doodle.fragment.dialog.ColorPickerDialog.OnApplyListener;
+import xyz.zedler.patrick.doodle.fragment.dialog.ColorPickerDialog.OnSelectListener;
 import xyz.zedler.patrick.doodle.util.ResUtil;
 import xyz.zedler.patrick.doodle.util.SystemUiUtil;
 import xyz.zedler.patrick.doodle.util.ViewUtil;
@@ -116,9 +116,9 @@ public class ColorsBottomSheetDialogFragment extends BaseBottomSheetDialogFragme
     }
     card.setOnClickListener(v -> {
       performHapticClick();
-      OnApplyListener listener = new OnApplyListener() {
+      OnSelectListener listener = new OnSelectListener() {
         @Override
-        public void onApply(ColorPickerDialog dialog, int color) {
+        public void onSelect(ColorPickerDialog dialog, int color) {
           color = color & 0xFFFFFF;
           colorCustom = color;
           String colorString = String.format("#%06X", color);

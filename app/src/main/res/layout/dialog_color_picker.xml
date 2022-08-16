@@ -60,7 +60,7 @@
         android:layout_height="22dp"
         app:cardCornerRadius="11dp"
         app:strokeColor="?attr/colorOutline"
-        app:cardBackgroundColor="?attr/colorTertiaryContainer" />
+        app:cardBackgroundColor="?attr/colorPrimaryContainer" />
 
     </FrameLayout>
 

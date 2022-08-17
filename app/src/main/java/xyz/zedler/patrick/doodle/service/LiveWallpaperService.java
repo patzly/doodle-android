@@ -21,6 +21,7 @@ package xyz.zedler.patrick.doodle.service;
 
 import android.animation.TimeInterpolator;
 import android.animation.ValueAnimator;
+import android.annotation.SuppressLint;
 import android.app.KeyguardManager;
 import android.app.WallpaperColors;
 import android.app.WallpaperManager;
@@ -74,6 +75,7 @@ public class LiveWallpaperService extends WallpaperService {
   // All other things should be done in the inner Engine class
 
   private static LiveWallpaperService serviceInstance = null;
+  @SuppressLint("StaticFieldLeak")
   private static UserAwareEngine nonPreviewEngineInstance = null;
 
   private SharedPreferences sharedPrefs;

@@ -493,7 +493,6 @@ public class SvgDrawable {
   }
 
   private void drawPath(Canvas canvas, SvgObject object, SvgObject parentGroup) {
-
     canvas.save();
 
     float scale = getFinalScale(object, parentGroup);

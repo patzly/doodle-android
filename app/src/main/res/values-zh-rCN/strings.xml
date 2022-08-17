@@ -39,7 +39,7 @@
   <!-- ACTIONS -->
 
   <string name="action_cancel">取消</string>
-  <string name="action_apply">应用</string>
+  <string name="action_select">选择</string>
   <string name="action_close">关闭</string>
   <string name="action_back">返回</string>
   <string name="action_open_link">打开外部网站</string>

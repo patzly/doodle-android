@@ -36,8 +36,6 @@
   <string name="label_ms">%1$s رسالة قصيرة</string>
   <string name="label_degrees">درجات  \'%1$s\'</string>
 
-  <!-- ACTIONS -->
-
   <string name="action_close">إغلاق</string>
   <string name="action_back">رجوع</string>
   <string name="action_open_link">فتح موقع خارجي</string>

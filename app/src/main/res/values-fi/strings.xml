@@ -33,8 +33,6 @@
   <string name="label_ms">%1$sms</string>
   <string name="label_degrees">%1$s astetta</string>
 
-  <!-- ACTIONS -->
-
   <string name="action_close">Sulje</string>
   <string name="action_back">Takaisin</string>
   <string name="action_open_link">Avaa ulkoinen verkkosivusto</string>

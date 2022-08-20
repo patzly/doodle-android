@@ -36,8 +36,6 @@
   <string name="label_ms">%1$sms</string>
   <string name="label_degrees">%1$s grade</string>
 
-  <!-- ACTIONS -->
-
   <string name="action_close">Închide</string>
   <string name="action_back">Înapoi</string>
   <string name="action_open_link">Deschide în website</string>

@@ -33,8 +33,6 @@
   <string name="label_ms">%1$sms</string>
   <string name="label_degrees">%1$s도</string>
 
-  <!-- ACTIONS -->
-
   <string name="action_close">닫기</string>
   <string name="action_back">뒤로 이동</string>
   <string name="action_open_link">외부 웹사이트 열기</string>

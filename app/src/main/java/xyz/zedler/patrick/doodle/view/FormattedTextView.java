@@ -27,13 +27,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 import androidx.annotation.Nullable;
+import androidx.appcompat.view.ContextThemeWrapper;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.core.text.HtmlCompat;
 import androidx.core.widget.TextViewCompat;
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.divider.MaterialDivider;
+import com.google.android.material.textview.MaterialTextView;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.util.ResUtil;
 import xyz.zedler.patrick.doodle.util.SystemUiUtil;
@@ -89,9 +90,11 @@ public class FormattedTextView extends LinearLayout {
     setPadding(padding, padding, padding, 0);
   }
 
-  private TextView getParagraph(String text) {
-    TextView textView = new TextView(
-        context, null, 0, R.style.Widget_Doodle_TextView_Paragraph
+  private MaterialTextView getParagraph(String text) {
+    MaterialTextView textView = new MaterialTextView(
+        new ContextThemeWrapper(context, R.style.Widget_Doodle_TextView_Paragraph),
+        null,
+        0
     );
     textView.setLayoutParams(getVerticalLayoutParams(16));
     textView.setTextColor(ResUtil.getColorAttr(context, R.attr.colorOnBackground));
@@ -99,9 +102,9 @@ public class FormattedTextView extends LinearLayout {
     return textView;
   }
 
-  private TextView getHeadline(int h, String title) {
-    TextView textView = new TextView(
-        context, null, 0, R.style.Widget_Doodle_TextView
+  private MaterialTextView getHeadline(int h, String title) {
+    MaterialTextView textView = new MaterialTextView(
+        new ContextThemeWrapper(context, R.style.Widget_Doodle_TextView), null, 0
     );
     textView.setLayoutParams(getVerticalLayoutParams(16));
     textView.setText(HtmlCompat.fromHtml(title, HtmlCompat.FROM_HTML_MODE_LEGACY));
@@ -161,8 +164,8 @@ public class FormattedTextView extends LinearLayout {
     shape.setColor(ResUtil.getColorAttr(context, R.attr.colorOnBackground));
     viewBullet.setBackground(shape);
 
-    TextView textViewHeight = new TextView(
-        context, null, 0, R.style.Widget_Doodle_TextView
+    MaterialTextView textViewHeight = new MaterialTextView(
+        new ContextThemeWrapper(context, R.style.Widget_Doodle_TextView), null, 0
     );
     textViewHeight.setLayoutParams(
         new LinearLayout.LayoutParams(
@@ -181,8 +184,8 @@ public class FormattedTextView extends LinearLayout {
     frameLayout.addView(viewBullet);
     frameLayout.addView(textViewHeight);
 
-    TextView textView = new TextView(
-        context, null, 0, R.style.Widget_Doodle_TextView
+    MaterialTextView textView = new MaterialTextView(
+        new ContextThemeWrapper(context, R.style.Widget_Doodle_TextView), null, 0
     );
     LinearLayout.LayoutParams paramsText = new LinearLayout.LayoutParams(
         0, ViewGroup.LayoutParams.WRAP_CONTENT
@@ -221,7 +224,7 @@ public class FormattedTextView extends LinearLayout {
     cardView.setStrokeWidth(0);
     cardView.setRadius(padding);
 
-    TextView textView = getParagraph(text);
+    MaterialTextView textView = getParagraph(text);
     textView.setLayoutParams(getVerticalLayoutParams(0));
     textView.setTextColor(colorOnSurface);
     cardView.addView(textView);

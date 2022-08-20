@@ -337,16 +337,18 @@
 
   <style name="Base.Doodle.TextView" parent="Widget.MaterialComponents.TextView">
     <item name="android:textAppearance">?attr/textAppearanceBodyLarge</item>
-    <item name="android:lineSpacingExtra">-1.5sp</item>
     <item name="android:textColor">?attr/colorOnBackground</item>
     <item name="android:textAlignment">viewStart</item>
     <item name="android:fontFamily">@font/jost_book</item>
     <item name="android:breakStrategy" tools:targetApi="m">high_quality</item>
     <item name="android:hyphenationFrequency" tools:targetApi="m">full</item>
     <item name="android:lineBreakWordStyle" tools:targetApi="33">phrase</item>
+    <item name="lineHeight">24sp</item>
+    <item name="android:lineHeight" tools:targetApi="p">24sp</item>
   </style>
 
   <style name="Widget.Doodle.TextView" parent="Base.Doodle.TextView">
+    <!-- Overridden in v33 with fullFast -->
     <item name="android:hyphenationFrequency" tools:targetApi="m">full</item>
   </style>
 

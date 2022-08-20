@@ -36,8 +36,6 @@
   <string name="label_ms">%1$s мс</string>
   <string name="label_degrees">%1$s° </string>
 
-  <!-- ACTIONS -->
-
   <string name="action_close">Закрыть</string>
   <string name="action_back">Назад</string>
   <string name="action_open_link">Открыть внешнюю ссылку</string>
@@ -60,7 +58,6 @@
   <string name="action_github">Doodle Android на GitHub</string>
   <string name="action_github_description">Сообщить о проблеме</string>
   <string name="action_language_select">Выбрать язык</string>
-
   <!-- APPEARANCE -->
 
   <string name="appearance_title">Внешний вид</string>
@@ -76,8 +73,6 @@
   <string name="appearance_night_mode_off">Откл.</string>
   <string name="appearance_follow_system">Как в системе</string>
   <string name="appearance_follow_system_description">Придерживаться темы устройства</string>
-  <string name="appearance_white_text">Оставлять текст белым</string>
-  <string name="appearance_white_text_description">Может сказаться на разборчивости</string>
   <string name="appearance_colors_category">Цвета</string>
   <string name="appearance_colors">Палитра цветов</string>
   <string name="appearance_colors_description">Используется для расчета контрастности текста</string>
@@ -142,8 +137,7 @@
   <string name="other_description">Отрисовка, язык и сброс настроек</string>
   <string name="other_language">Язык приложения</string>
   <string name="other_language_description">Большое спасибо всем переводчикам-добровольцам Transifex! Пожалуйста, посетите страницу проекта на GitHub, чтобы узнать, как вы можете помочь сделать живые обои Doodle доступными для вашего языка.</string>
-  <string name="other_language_system">%1$s (по умолчанию)</string>
-  <string name="other_language_not_available">Недоступно</string>
+  <string name="other_language_system">Как в системе</string>
   <string name="other_gpu">Аппаратное ускорение</string>
   <string name="other_gpu_description">Выключите, если возникают сбои обоев</string>
   <string name="other_gpu_info">Аппаратное ускорение доступно для Doodle только начиная с Android 8. Поэтому анимация обоев может быть немного дёрганой.</string>

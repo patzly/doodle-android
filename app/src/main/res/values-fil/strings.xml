@@ -33,8 +33,6 @@
   <string name="label_ms">%1$sms</string>
   <string name="label_degrees">%1$sdegrees</string>
 
-  <!-- ACTIONS -->
-
   <string name="action_close">Isara</string>
   <string name="action_back">Bumalik</string>
   <string name="action_open_link">Buksan ang panlabas na website</string>
@@ -55,7 +53,6 @@
   <string name="action_github">Doodle Android sa GitHub</string>
   <string name="action_github_description">Magbukas ng bagong isyu</string>
   <string name="action_language_select">Pumili ng wika</string>
-
   <!-- APPEARANCE -->
 
   <string name="appearance_title">Hitsura</string>
@@ -69,8 +66,6 @@
   <string name="appearance_night_mode_description">Dark na kulay lang</string>
   <string name="appearance_follow_system">Sundan ang system</string>
   <string name="appearance_follow_system_description">Hiramin ang tema ng device</string>
-  <string name="appearance_white_text">Subukang pilitin ang puting text</string>
-  <string name="appearance_white_text_description">Maaaring makaapekto sa pagbasa</string>
   <string name="appearance_colors">Mga nakuhang kulay</string>
   <string name="appearance_colors_description">Ginagamit para kalkulahin ang pagkakaiba ng text</string>
   <string name="appearance_colors_description_dynamic">Ginagamit ng theming engine ng system</string>
@@ -129,8 +124,7 @@
   <string name="other_description">Pag-render, wika, at pag-reset</string>
   <string name="other_language">Wika</string>
   <string name="other_language_description">Maraming salamat sa lahat ng mga boluntaryong tagasalin sa Transifex! Pakibisita ang page ng proyekto sa Github upang malaman kung paano ka makakatulong na gawing available ang Doodle Live Wallpapers para sa iyong wika.</string>
-  <string name="other_language_system">Default ng system: %1$s</string>
-  <string name="other_language_not_available">Hindi available</string>
+  <string name="other_language_system">Sundan ang system</string>
   <string name="other_gpu">Hardware acceleration</string>
   <string name="other_gpu_description">I-off kung nag-crash ang wallpaper</string>
   <string name="other_gpu_info">Ang hardware acceleration ay available lamang para sa Doodle simula sa Android 8. Samakatuwid, ang mga animasyon ng wallpaper ay maaaring medyo ma-lag.</string>

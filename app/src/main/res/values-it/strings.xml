@@ -37,8 +37,6 @@ Personalizza lo sfondo in base al tuo stile!</string>
   <string name="label_ms">%1$sms</string>
   <string name="label_degrees">%1$s gradi</string>
 
-  <!-- ACTIONS -->
-
   <string name="action_close">Chiudi</string>
   <string name="action_back">Indietro</string>
   <string name="action_open_link">Apri sito web esterno</string>

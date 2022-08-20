@@ -36,8 +36,6 @@
   <string name="label_ms">%1$sms</string>
   <string name="label_degrees">1%1$s laipsnių</string>
 
-  <!-- ACTIONS -->
-
   <string name="action_close">Uždaryti</string>
   <string name="action_back">Grįžti</string>
   <string name="action_open_link">Atverti išorine svetainę</string>

@@ -47,6 +47,7 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Random;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -69,11 +70,14 @@ public class SvgDrawable {
   private float zoom;
   private final float pixelUnit;
   private float svgWidth, svgHeight;
-  private final Paint paint, paintDebug;
+  private final Paint paint, paintIntersection, paintDebug;
   private int backgroundColor;
   private final RectF rectF;
   private PointF pointF;
   private final Random random;
+  private final Path pathTransformed, pathIntersected;
+  private final Matrix matrixCanvas;
+  private final Matrix matrixPathTransformation;
 
   public SvgDrawable(Context context, @RawRes int resId) {
     pixelUnit = getPixelUnit(context);
@@ -90,8 +94,15 @@ public class SvgDrawable {
     scale = 1;
 
     paint = new Paint();
+    paintIntersection = new Paint(Paint.ANTI_ALIAS_FLAG);
     rectF = new RectF();
     random = new Random();
+
+    pathTransformed = new Path();
+    pathIntersected = new Path();
+
+    matrixCanvas = new Matrix();
+    matrixPathTransformation = new Matrix();
 
     paintDebug = new Paint(Paint.ANTI_ALIAS_FLAG);
     paintDebug.setStrokeWidth(SystemUiUtil.dpToPx(context, 4));
@@ -283,9 +294,13 @@ public class SvgDrawable {
   private void drawObject(Canvas canvas, SvgObject object, SvgObject parentGroup) {
     float zoomRotation = object.isRotatable ? object.zoomRotation * zoom : 0;
     boolean hasPivotOffset = object.pivotOffsetX != 0 || object.pivotOffsetY != 0;
-    if (!object.isInGroup && (object.rotation != 0 || zoomRotation != 0)) {
+    boolean canvasTransformed = !object.isInGroup && (object.rotation != 0 || zoomRotation != 0);
+    if (canvasTransformed) {
       canvas.save();
-      if ((object.rotation != 0 || zoomRotation != 0) && !hasPivotOffset) {
+    }
+
+    if (!object.isInGroup && (object.rotation != 0 || zoomRotation != 0)) {
+      if (!hasPivotOffset) {
         // Even for groups this rotation is required
         canvas.rotate(
             object.rotation + zoomRotation,
@@ -334,7 +349,7 @@ public class SvgDrawable {
         }
         break;
     }
-    if (!object.isInGroup && (object.rotation != 0 || zoomRotation != 0)) {
+    if (canvasTransformed) {
       canvas.restore();
     }
   }
@@ -494,6 +509,10 @@ public class SvgDrawable {
 
   private void drawPath(Canvas canvas, SvgObject object, SvgObject parentGroup) {
     canvas.save();
+    matrixCanvas.reset();
+
+    // TODO: find fix for different behavior of matrix transformation compared to canvas operations
+    boolean isPathIntersected = object.willBeIntersected || !object.intersections.isEmpty();
 
     float scale = getFinalScale(object, parentGroup);
     pointF = getFinalCenter(canvas, object, parentGroup);
@@ -508,20 +527,41 @@ public class SvgDrawable {
     float px = object.isInGroup ? parentGroup.cxFinal - dx : pointF.x - dx;
     float py = object.isInGroup ? parentGroup.cyFinal - dy : pointF.y - dy;
 
+    if (!object.isInGroup && object.willBeIntersected) {
+      // store further canvas transformations in pathTransformed for later intersection
+      matrixPathTransformation.reset();
+      matrixPathTransformation.postTranslate(dx, dy);
+      matrixPathTransformation.postScale(scale, scale, px, py);
+      object.pathTransformed.reset();
+      object.pathTransformed.addPath(object.path, matrixPathTransformation);
+    }
+
     if (object.isInGroup) {
       float elevation = parentGroup.elevation;
       float xCompensate = ((px + dx) - pointF.x) * (this.scale - 1) * (1 - zoom * elevation);
       float yCompensate = ((py + dy) - pointF.y) * (this.scale - 1) * (1 - zoom * elevation);
-      canvas.translate(dx + xCompensate, dy + yCompensate);
+      if (isPathIntersected) {
+        matrixCanvas.postTranslate(dx + xCompensate, dy + yCompensate);
+      } else {
+        canvas.translate(dx + xCompensate, dy + yCompensate);
+      }
     } else {
-      canvas.translate(dx, dy);
+      if (isPathIntersected) {
+        matrixCanvas.postTranslate(dx, dy);
+      } else {
+        canvas.translate(dx, dy);
+      }
     }
 
     if (DEBUG) { // draw scaling pivot point
       canvas.drawPoint(px, py, getDebugPaint(Color.BLUE));
     }
 
-    canvas.scale(scale, scale, px, py);
+    if (isPathIntersected) {
+      matrixCanvas.postScale(scale, scale, px, py);
+    } else {
+      canvas.scale(scale, scale, px, py);
+    }
 
     if (object.isInGroup) {
       // fixes child path offset when zoomed out
@@ -529,7 +569,15 @@ public class SvgDrawable {
       float elevation = parentGroup.elevation;
       float xCompensate = ((px + dx) - pointF.x) * (1 - (this.scale - 1)) * (zoom * elevation);
       float yCompensate = ((py + dy) - pointF.y) * (1 - (this.scale - 1)) * (zoom * elevation);
-      canvas.translate(-xCompensate, -yCompensate);
+      if (isPathIntersected) {
+        matrixCanvas.postTranslate(-xCompensate, -yCompensate);
+      } else {
+        canvas.translate(-xCompensate, -yCompensate);
+      }
+    }
+
+    if (isPathIntersected) {
+      canvas.concat(matrixCanvas);
     }
 
     // start with fill and repeat with stroke if both are set
@@ -543,6 +591,26 @@ public class SvgDrawable {
     }
 
     canvas.restore();
+
+    if (!object.isInGroup && !object.intersections.isEmpty()) {
+      for (PathIntersection intersection : object.intersections) {
+        SvgObject other = findObjectById(intersection.id);
+        if (other != null && other.willBeIntersected && other.pathTransformed != null) {
+          // transform object.path with recent canvas transformations
+          pathTransformed.reset();
+          pathTransformed.addPath(object.path, matrixCanvas);
+          // intersect transformed object.path with other.pathTransformed
+          pathIntersected.op(pathTransformed, other.pathTransformed, Path.Op.INTERSECT);
+          paintIntersection.setColor(intersection.color);
+          canvas.drawPath(pathIntersected, paintIntersection);
+
+          if (DEBUG) {
+            canvas.drawPath(other.pathTransformed, getDebugPaint(Color.BLUE));
+            canvas.drawPath(pathTransformed, getDebugPaint(Color.RED));
+          }
+        }
+      }
+    }
   }
 
   private void readRect(XmlPullParser parser, SvgObject parentGroup)
@@ -1006,6 +1074,9 @@ public class SvgDrawable {
 
     // PATH
     public Path path;
+    public boolean willBeIntersected = false;
+    public Path pathTransformed = new Path();
+    public List<PathIntersection> intersections = new ArrayList<>();
 
     // RECT/IMAGE
     public float width, height;
@@ -1016,8 +1087,19 @@ public class SvgDrawable {
     public float cx, cy;
     public float r;
 
-    public SvgObject(String type) {
+    public SvgObject(@NonNull String type) {
       this.type = type;
+    }
+
+    public void addPathIntersection(String id, String color) {
+      if (isInGroup || type.equals(TYPE_GROUP)) {
+        Log.e(TAG, "addPathIntersection: operation does not support groups or children");
+        return;
+      }
+      PathIntersection intersection = new PathIntersection(id, color);
+      if (!intersections.contains(intersection)) {
+        intersections.add(intersection);
+      }
     }
 
     @NonNull
@@ -1055,7 +1137,7 @@ public class SvgDrawable {
     }
   }
 
-  private int parseColor(String value) {
+  private static int parseColor(String value) {
     if (value != null && !value.isEmpty() && !value.equals("#00000000") && !value.equals("none")) {
       try {
         return Color.parseColor(value);
@@ -1138,5 +1220,32 @@ public class SvgDrawable {
   private Paint getDebugPaint(@ColorInt int color) {
     paintDebug.setColor(color);
     return paintDebug;
+  }
+
+  private static class PathIntersection {
+    final String id;
+    final int color;
+
+    public PathIntersection(@NonNull String id, @NonNull String color) {
+      this.id = id;
+      this.color = parseColor(color);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+      if (this == o) {
+        return true;
+      }
+      if (!(o instanceof PathIntersection)) {
+        return false;
+      }
+      PathIntersection that = (PathIntersection) o;
+      return color == that.color && id.equals(that.id);
+    }
+
+    @Override
+    public int hashCode() {
+      return Objects.hash(id, color);
+    }
   }
 }

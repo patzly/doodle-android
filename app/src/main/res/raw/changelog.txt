@@ -1,5 +1,6 @@
 ## 5.5.0
 
+- New: complex shape intersecting for a new wallpaper based on another artwork by Anna Kövecses
 - New: workaround for Samsung's unfavorable implementation of dynamic colors on Android 12+ (appearance section)
 - New: system app language selection on Android 13
 - New: custom color selection for wallpaper colors

@@ -73,6 +73,7 @@ import xyz.zedler.patrick.doodle.wallpaper.BaseWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.BaseWallpaper.WallpaperVariant;
 import xyz.zedler.patrick.doodle.wallpaper.FloralWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.FogWallpaper;
+import xyz.zedler.patrick.doodle.wallpaper.LeavesWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.JohannaWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.LeafyWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.MonetWallpaper;
@@ -403,7 +404,8 @@ public class AppearanceFragment extends BaseFragment
       } else {
         baseWallpapers = new BaseWallpaper[]{
             new LeafyWallpaper(),
-            new FogWallpaper()
+            new FogWallpaper(),
+            new LeavesWallpaper()
         };
         container = binding.linearAppearanceWallpaperContainerAnna;
       }

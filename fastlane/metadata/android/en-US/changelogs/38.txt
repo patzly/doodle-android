@@ -1,0 +1,10 @@
+• New: complex shape intersecting for a new wallpaper based on another artwork by Anna Kövecses
+• New: workaround for Samsung's unfavorable implementation of dynamic colors on Android 12+ (appearance section)
+• New: system app language selection on Android 13
+• New: custom color selection for wallpaper colors
+• New: Japanese translation
+• New: themed app icon on Android 13
+• Improved: toggle logic for launcher text color
+• Improved: refreshed toggle switch style in settings
+• Improved: changelog style and help/license text appearance
+• Improved: changed method for haptic effects in settings app

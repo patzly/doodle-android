@@ -30,6 +30,7 @@ import xyz.zedler.patrick.doodle.wallpaper.AutumnWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.BaseWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.FloralWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.FogWallpaper;
+import xyz.zedler.patrick.doodle.wallpaper.LeavesWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.JohannaWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.LeafyWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.MonetWallpaper;
@@ -167,6 +168,8 @@ public final class Constants {
         return new SandWallpaper();
       case WALLPAPER.WATER:
         return new WaterWallpaper();
+      case WALLPAPER.LEAVES:
+        return new LeavesWallpaper();
       default:
         return new PixelWallpaper();
     }
@@ -212,6 +215,8 @@ public final class Constants {
 
         WALLPAPER.LEAFY,
         WALLPAPER.FOG,
+
+        WALLPAPER.LEAVES
     };
   }
 
@@ -239,6 +244,7 @@ public final class Constants {
 
     public static final String LEAFY = "leafy";
     public static final String FOG = "fog";
+    public static final String LEAVES = "leaves";
   }
 
   public static final class NIGHT_MODE {

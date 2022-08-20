@@ -36,8 +36,6 @@
   <string name="label_ms">%1$sms</string>
   <string name="label_degrees">%1$s°</string>
 
-  <!-- ACTIONS -->
-
   <string name="action_close">閉じる</string>
   <string name="action_back">戻る</string>
   <string name="action_open_link">ウェブサイトを開く</string>

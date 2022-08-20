@@ -33,8 +33,6 @@
   <string name="label_ms">%1$sms</string>
   <string name="label_degrees">%1$s grader</string>
 
-  <!-- ACTIONS -->
-
   <string name="action_close">Luk</string>
   <string name="action_back">Tilbage</string>
   <string name="action_open_link">Åbn ekstern webside</string>

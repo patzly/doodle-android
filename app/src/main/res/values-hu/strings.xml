@@ -33,8 +33,6 @@
   <string name="label_ms">%1$sms</string>
   <string name="label_degrees">%1$sfok</string>
 
-  <!-- ACTIONS -->
-
   <string name="action_close">Bezárás</string>
   <string name="action_back">Vissza</string>
   <string name="action_open_link">Külső weboldal megnyitása</string>

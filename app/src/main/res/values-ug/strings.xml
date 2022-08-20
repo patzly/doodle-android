@@ -32,8 +32,6 @@
   <string name="label_ms">%1$sمىللىسېكۇنت </string>
   <string name="label_degrees">%1$s گىرادۇس </string>
 
-  <!-- ACTIONS -->
-
   <string name="action_close">تاقا</string>
   <string name="action_back">قايتىش </string>
   <string name="action_reset">قايتا تەڭشەش </string>
@@ -59,7 +57,6 @@
   <string name="appearance_night_mode_description">پەقەت تۇتۇق رەڭلەر </string>
   <string name="appearance_follow_system">سىستېمىغا ئەگىشىدۇ </string>
   <string name="appearance_follow_system_description">ئۆزىدىكى ئۇسلۇبنى ئىشىلتىش</string>
-  <string name="appearance_white_text_description">گۈزەللىك تۇيغۇڭىزغا تەسىر كۆرسىتىشى مۇمكىن</string>
   <!-- PARALLAX -->
 
   <string name="parallax_title">پاراللاكس </string>
@@ -79,6 +76,7 @@
 
   <string name="other_title">باشقا تەڭشەك </string>
   <string name="other_language">تىللار</string>
+  <string name="other_language_system">سىستېمىغا ئەگىشىدۇ </string>
   <string name="other_gpu">قاتتىق دېتال تېزلىتىش</string>
   <string name="other_launcher">ئۈستەل يۈزىدە سىنبەلگەمنى كۆرسەتمە</string>
   <string name="other_reset">بارلىق تەڭشەشنى قايتا تەڭشەش</string>

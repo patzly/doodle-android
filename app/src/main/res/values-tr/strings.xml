@@ -36,8 +36,6 @@
   <string name="label_ms">%1$smilisaniye</string>
   <string name="label_degrees">%1$s derece</string>
 
-  <!-- ACTIONS -->
-
   <string name="action_close">Kapat</string>
   <string name="action_back">Geri</string>
   <string name="action_open_link">Açık harici websitesi</string>
@@ -60,7 +58,6 @@
   <string name="action_github">GitHub\'da Doodle Android</string>
   <string name="action_github_description">Yeni bir yardım talebi oluştur</string>
   <string name="action_language_select">Dil seç</string>
-
   <!-- APPEARANCE -->
 
   <string name="appearance_title">Görünüm</string>
@@ -76,8 +73,6 @@
   <string name="appearance_night_mode_off">Kapalı</string>
   <string name="appearance_follow_system">Sisteme uy</string>
   <string name="appearance_follow_system_description">Cihaz temasını benimse</string>
-  <string name="appearance_white_text">Beyaz yazıyı zorlamayı dene</string>
-  <string name="appearance_white_text_description">Okunabilirliğe etkisi olabilir</string>
   <string name="appearance_colors_category">Renkler</string>
   <string name="appearance_colors">Çıkartılmış renkler</string>
   <string name="appearance_colors_description">Yazının kontrastını hesaplamada kullanılır</string>
@@ -142,8 +137,7 @@
   <string name="other_description">İşleyici, dil &amp; sıfırlama</string>
   <string name="other_language">Dil</string>
   <string name="other_language_description">Transifex\'teki tüm gönüllü çevirmenlere çokça teşekkürler! Doodle Canlı Duvar Kağıtlarının kendi dilinizde kullanıma sunulmasına nasıl yardımcı olabileceğinizi öğrenmek için lütfen projenin GitHub sayfasını ziyaret edin.</string>
-  <string name="other_language_system">Sistem varsayılanı: %1$s</string>
-  <string name="other_language_not_available">Mevcut değil</string>
+  <string name="other_language_system">Sisteme uy</string>
   <string name="other_gpu">Donanım hızlandırması</string>
   <string name="other_gpu_description">Eğer duvar kağıdı çöküyorsa kapatın</string>
   <string name="other_gpu_info">Doodle\'da donanım hızlandırması sadece Android 8 ve üstünde mevcut. Duvar kağıdı animasyonları bu nedenle sarsıntılı olabilir.</string>

@@ -33,8 +33,6 @@
   <string name="label_ms">%1$sms</string>
   <string name="label_degrees">%1$s stupňů</string>
 
-  <!-- ACTIONS -->
-
   <string name="action_close">Zavřít</string>
   <string name="action_back">Zpět</string>
   <string name="action_open_link">Otevřít externí web</string>

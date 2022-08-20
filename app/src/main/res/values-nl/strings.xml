@@ -36,8 +36,6 @@
   <string name="label_ms">%1$sms</string>
   <string name="label_degrees">%1$s graden</string>
 
-  <!-- ACTIONS -->
-
   <string name="action_close">Sluit</string>
   <string name="action_back">Terug</string>
   <string name="action_open_link">Open externe website</string>

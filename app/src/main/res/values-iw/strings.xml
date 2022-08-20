@@ -33,8 +33,6 @@
   <string name="label_ms">ms%1$s</string>
   <string name="label_degrees">מעלות%1$s</string>
 
-  <!-- ACTIONS -->
-
   <string name="action_close">סגירה</string>
   <string name="action_back">חזרה</string>
   <string name="action_open_link">פתיחה באתר חיצוני</string>

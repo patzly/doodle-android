@@ -27,6 +27,7 @@
     android:name="android.software.live_wallpaper"
     android:required="true" />
 
+  <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
   <uses-permission android:name="android.permission.VIBRATE" />
   <uses-permission android:name="android.permission.SET_WALLPAPER" />
 
@@ -78,6 +79,19 @@
         android:name="android.service.wallpaper"
         android:resource="@xml/wallpaper" />
     </service>
+
+    <receiver
+      android:name=".receiver.DailyReceiver"
+      android:enabled="true" />
+
+    <receiver
+      android:name=".receiver.BootReceiver"
+      android:enabled="false"
+      android:exported="true">
+      <intent-filter>
+        <action android:name="android.intent.action.BOOT_COMPLETED" />
+      </intent-filter>
+    </receiver>
 
   </application>
 

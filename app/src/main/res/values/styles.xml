@@ -223,6 +223,67 @@
     <item name="android:fontFamily">@font/jost_medium</item>
   </style>
 
+  <!-- TimePicker -->
+
+  <style name="ThemeOverlay.Doodle.TimePicker" parent="ThemeOverlay.Material3.MaterialTimePicker">
+    <item name="materialTimePickerStyle">@style/Widget.Doodle.TimePicker</item>
+    <item name="chipStyle">@style/Widget.Doodle.TimePicker.Display</item>
+    <item name="textInputStyle">@style/Widget.Doodle.TimePicker.Display.TextInputLayout</item>
+    <item name="materialDisplayDividerStyle">@style/Widget.Doodle.TimePicker.Display.Divider</item>
+    <item name="materialTimePickerTitleStyle">@style/TextAppearance.Doodle.TimePicker.Title</item>
+    <item name="materialButtonStyle">@style/Widget.Doodle.Button.TextButton.Dialog.Flush</item>
+  </style>
+
+  <style name="Widget.Doodle.TimePicker" parent="Widget.Material3.MaterialTimePicker">
+    <item name="shapeAppearance">?attr/shapeAppearanceCornerLarge</item>
+  </style>
+
+  <style
+    name="TextAppearance.Doodle.TimePicker.Title"
+    parent="TextAppearance.Material3.MaterialTimePicker.Title">
+    <item name="fontFamily">@font/jost_medium</item>
+  </style>
+
+  <style
+    name="Widget.Doodle.TimePicker.Display"
+    parent="Widget.Material3.MaterialTimePicker.Display">
+    <item name="android:textAppearance">@style/TextAppearance.Doodle.TimePicker.DisplayLarge</item>
+    <item name="shapeAppearanceOverlay">?attr/shapeAppearanceCornerLarge</item>
+  </style>
+
+  <style
+    name="TextAppearance.Doodle.TimePicker.DisplayLarge"
+    parent="TextAppearance.Material3.DisplayLarge">
+    <item name="fontFamily">@font/jost_book</item>
+  </style>
+
+  <style
+    name="Widget.Doodle.TimePicker.Display.Divider"
+    parent="Widget.Material3.MaterialTimePicker.Display.Divider">
+    <item name="android:textAppearance">@style/TextAppearance.Doodle.TimePicker.HeadlineMedium</item>
+  </style>
+
+  <style
+    name="TextAppearance.Doodle.TimePicker.HeadlineMedium"
+    parent="TextAppearance.Material3.HeadlineMedium">
+    <item name="fontFamily">@font/jost_book</item>
+  </style>
+
+  <style
+    name="Widget.Doodle.TimePicker.Display.TextInputLayout"
+    parent="Widget.Material3.MaterialTimePicker.Display.TextInputLayout">
+    <item name="boxCornerRadiusTopStart">16dp</item>
+    <item name="boxCornerRadiusTopEnd">16dp</item>
+    <item name="boxCornerRadiusBottomStart">16dp</item>
+    <item name="boxCornerRadiusBottomEnd">16dp</item>
+  </style>
+
+  <style
+    name="Widget.Doodle.Button.TextButton.Dialog.Flush"
+    parent="Widget.Material3.Button.TextButton.Dialog.Flush">
+    <item name="android:fontFamily">@font/jost_medium</item>
+  </style>
+
   <!-- LinearLayout (lists) -->
 
   <style name="Widget.Doodle.LinearLayout.ListItem" parent="">
@@ -417,6 +478,11 @@
   </style>
 
   <!-- TextAppearance -->
+
+  <!-- Localized style, no empty base style needed -->
+  <style name="TextAppearance.Doodle.LabelLarge" parent="TextAppearance.Material3.LabelLarge">
+    <item name="fontFamily">@font/jost_medium</item>
+  </style>
 
   <!-- Localized style, no empty base style needed -->
   <style name="TextAppearance.Doodle.Toolbar.Title" parent="TextAppearance.Material3.TitleLarge">

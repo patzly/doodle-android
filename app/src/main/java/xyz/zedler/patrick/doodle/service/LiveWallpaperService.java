@@ -58,6 +58,7 @@ import xyz.zedler.patrick.doodle.Constants.ACTION;
 import xyz.zedler.patrick.doodle.Constants.DEF;
 import xyz.zedler.patrick.doodle.Constants.NIGHT_MODE;
 import xyz.zedler.patrick.doodle.Constants.PREF;
+import xyz.zedler.patrick.doodle.Constants.RANDOM;
 import xyz.zedler.patrick.doodle.Constants.REQUEST_SOURCE;
 import xyz.zedler.patrick.doodle.Constants.USER_PRESENCE;
 import xyz.zedler.patrick.doodle.R;
@@ -294,12 +295,12 @@ public class LiveWallpaperService extends WallpaperService {
     private boolean isVisible;
     private boolean isNight;
     private boolean useGpu;
-    private boolean useRandom;
     private boolean isListenerRegistered = false;
     private boolean isSurfaceAvailable = false;
     private boolean iconDropConsumed = true;
     private boolean isRtl = false;
     private boolean powerSaveSwipe, powerSaveTilt, powerSaveZoom;
+    private String randomMode = RANDOM.OFF;
     private float fps;
     private final TimeInterpolator zoomInterpolator = new FastOutSlowInInterpolator();
     private ValueAnimator zoomAnimator;
@@ -368,7 +369,7 @@ public class LiveWallpaperService extends WallpaperService {
       hasAccelerometer = SensorUtil.hasAccelerometer(context);
 
       loadSettings();
-      loadTheme(useRandom);
+      loadTheme(!randomMode.equals(RANDOM.OFF));
 
       zoomLauncher = 0;
       // This starts the zoom effect already in wallpaper preview
@@ -460,7 +461,7 @@ public class LiveWallpaperService extends WallpaperService {
       }
 
       if (isNight != isNightMode()) {
-        loadTheme(useRandom);
+        loadTheme(!randomMode.equals(RANDOM.OFF));
       }
 
       isRtl = getResources().getConfiguration().getLayoutDirection() == View.LAYOUT_DIRECTION_RTL;
@@ -519,7 +520,7 @@ public class LiveWallpaperService extends WallpaperService {
     }
 
     private void loadSettings() {
-      useRandom = sharedPrefs.getBoolean(PREF.RANDOM, DEF.RANDOM);
+      randomMode = sharedPrefs.getString(PREF.RANDOM, DEF.RANDOM);
 
       parallax = sharedPrefs.getInt(PREF.PARALLAX, DEF.PARALLAX);
       // disables zooming so this should not be disabled
@@ -662,6 +663,15 @@ public class LiveWallpaperService extends WallpaperService {
     public void onPresenceChange(String presence) {
       switch (presence) {
         case USER_PRESENCE.OFF:
+          boolean useRandom = false;
+          if (randomMode.equals(RANDOM.SCREEN_OFF)) {
+            useRandom = true;
+          } else if (randomMode.equals(RANDOM.DAILY)) {
+            if (sharedPrefs.getBoolean(PREF.CHANGE_DAILY_NOW, false)) {
+              useRandom = true;
+              sharedPrefs.edit().putBoolean(PREF.CHANGE_DAILY_NOW, false).apply();
+            }
+          }
           if (useRandom) {
             loadTheme(true);
           }

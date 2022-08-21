@@ -20,7 +20,6 @@
 package xyz.zedler.patrick.doodle.fragment;
 
 import android.animation.ValueAnimator;
-import android.annotation.SuppressLint;
 import android.app.WallpaperManager;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
@@ -33,6 +32,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.text.TextUtils;
+import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -43,18 +43,28 @@ import android.widget.CompoundButton.OnCheckedChangeListener;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
+import com.google.android.material.button.MaterialButtonToggleGroup;
+import com.google.android.material.button.MaterialButtonToggleGroup.OnButtonCheckedListener;
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.color.DynamicColors;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.android.material.timepicker.MaterialTimePicker;
+import com.google.android.material.timepicker.TimeFormat;
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Locale;
 import java.util.Set;
 import xyz.zedler.patrick.doodle.Constants;
 import xyz.zedler.patrick.doodle.Constants.DEF;
 import xyz.zedler.patrick.doodle.Constants.NIGHT_MODE;
 import xyz.zedler.patrick.doodle.Constants.PREF;
+import xyz.zedler.patrick.doodle.Constants.RANDOM;
 import xyz.zedler.patrick.doodle.Constants.WALLPAPER;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.activity.MainActivity;
@@ -63,6 +73,7 @@ import xyz.zedler.patrick.doodle.behavior.SystemBarBehavior;
 import xyz.zedler.patrick.doodle.databinding.FragmentAppearanceBinding;
 import xyz.zedler.patrick.doodle.drawable.SvgDrawable;
 import xyz.zedler.patrick.doodle.service.LiveWallpaperService;
+import xyz.zedler.patrick.doodle.util.DailyUtil;
 import xyz.zedler.patrick.doodle.util.ResUtil;
 import xyz.zedler.patrick.doodle.util.SystemUiUtil;
 import xyz.zedler.patrick.doodle.util.ViewUtil;
@@ -73,9 +84,9 @@ import xyz.zedler.patrick.doodle.wallpaper.BaseWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.BaseWallpaper.WallpaperVariant;
 import xyz.zedler.patrick.doodle.wallpaper.FloralWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.FogWallpaper;
-import xyz.zedler.patrick.doodle.wallpaper.LeavesWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.JohannaWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.LeafyWallpaper;
+import xyz.zedler.patrick.doodle.wallpaper.LeavesWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.MonetWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.OrioleWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.PixelWallpaper;
@@ -85,7 +96,7 @@ import xyz.zedler.patrick.doodle.wallpaper.StoneWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.WaterWallpaper;
 
 public class AppearanceFragment extends BaseFragment
-    implements OnClickListener, OnCheckedChangeListener {
+    implements OnClickListener, OnCheckedChangeListener, OnButtonCheckedListener {
 
   private static final String TAG = AppearanceFragment.class.getSimpleName();
 
@@ -95,9 +106,11 @@ public class AppearanceFragment extends BaseFragment
   private WallpaperVariant currentVariant;
   private int currentVariantIndex;
   private boolean isWallpaperNightMode;
-  private boolean randomWallpaper;
+  private String randomMode;
   private Set<String> randomList = new HashSet<>();
   private final HashMap<String, SelectionCardView> designSelections = new HashMap<>();
+  private DailyUtil dailyUtil;
+  private java.text.DateFormat dateFormatPref, dateFormatDisplay;
 
   @Override
   public View onCreateView(
@@ -126,6 +139,10 @@ public class AppearanceFragment extends BaseFragment
     new ScrollBehavior(activity).setUpScroll(
         binding.appBarAppearance, binding.scrollAppearance, true
     );
+
+    dailyUtil = new DailyUtil(activity);
+    dateFormatPref = new SimpleDateFormat("HH:mm", Locale.GERMAN);
+    dateFormatDisplay = DateFormat.getTimeFormat(activity);
 
     ViewUtil.centerToolbarTitleOnLargeScreens(binding.toolbarAppearance);
     binding.toolbarAppearance.setNavigationOnClickListener(getNavigationOnClickListener());
@@ -188,52 +205,20 @@ public class AppearanceFragment extends BaseFragment
       }
     });
 
-    int id;
+    int idNightMode;
     switch (getSharedPrefs().getInt(PREF.NIGHT_MODE, DEF.NIGHT_MODE)) {
       case NIGHT_MODE.ON:
-        id = R.id.button_appearance_night_mode_on;
+        idNightMode = R.id.button_appearance_night_mode_on;
         break;
       case NIGHT_MODE.OFF:
-        id = R.id.button_appearance_night_mode_off;
+        idNightMode = R.id.button_appearance_night_mode_off;
         break;
       default:
-        id = R.id.button_appearance_night_mode_auto;
+        idNightMode = R.id.button_appearance_night_mode_auto;
         break;
     }
-    binding.toggleAppearanceNightMode.check(id);
-    binding.toggleAppearanceNightMode.addOnButtonCheckedListener((group, checkedId, isChecked) -> {
-      if (!isChecked) {
-        return;
-      }
-      int pref;
-      if (checkedId == R.id.button_appearance_night_mode_on) {
-        pref = NIGHT_MODE.ON;
-      } else if (checkedId == R.id.button_appearance_night_mode_off) {
-        pref = NIGHT_MODE.OFF;
-      } else {
-        pref = NIGHT_MODE.AUTO;
-      }
-      getSharedPrefs().edit().putInt(PREF.NIGHT_MODE, pref).apply();
-      activity.requestThemeRefresh();
-      refreshDarkLightVariant();
-      refreshColors();
-      performHapticClick();
-
-      boolean isNewWallpaperNightMode = isWallpaperNightMode();
-      if (isWallpaperNightMode != isNewWallpaperNightMode) {
-        showMonetInfoIfRequired();
-        ViewUtil.startIcon(binding.imageAppearanceNightMode);
-        new Handler(Looper.getMainLooper()).postDelayed(
-            () -> binding.imageAppearanceNightMode.setImageResource(
-                isNewWallpaperNightMode
-                    ? R.drawable.ic_round_dark_mode_to_light_mode_anim
-                    : R.drawable.ic_round_light_mode_to_dark_mode_anim
-            ),
-            300
-        );
-        isWallpaperNightMode = isNewWallpaperNightMode;
-      }
-    });
+    binding.toggleAppearanceNightMode.check(idNightMode);
+    binding.toggleAppearanceNightMode.addOnButtonCheckedListener(this);
     isWallpaperNightMode = isWallpaperNightMode();
     binding.imageAppearanceNightMode.setImageResource(
         isWallpaperNightMode
@@ -255,21 +240,45 @@ public class AppearanceFragment extends BaseFragment
       binding.linearAppearanceLightText.setVisibility(View.VISIBLE);
     }
 
-    randomWallpaper = getSharedPrefs().getBoolean(PREF.RANDOM, DEF.RANDOM);
-    binding.switchAppearanceRandom.setChecked(randomWallpaper);
+    randomMode = getSharedPrefs().getString(PREF.RANDOM, DEF.RANDOM);
     ViewUtil.setEnabledAlpha(
-        !randomWallpaper,
+        randomMode.equals(RANDOM.OFF),
         false,
         binding.linearAppearanceVariant,
         binding.linearAppearanceColors
     );
 
+    int idRandomMode;
+    switch (randomMode) {
+      case RANDOM.SCREEN_OFF:
+        idRandomMode = R.id.button_appearance_random_screen_off;
+        break;
+      case RANDOM.DAILY:
+        idRandomMode = R.id.button_appearance_random_daily;
+        break;
+      default:
+        idRandomMode = R.id.button_appearance_random_off;
+        break;
+    }
+    binding.toggleAppearanceRandom.check(idRandomMode);
+    binding.toggleAppearanceRandom.addOnButtonCheckedListener(this);
+
+    String time = getSharedPrefs().getString(PREF.DAILY_TIME, DEF.DAILY_TIME);
+    try {
+      Date date = dateFormatPref.parse(time);
+      if (date != null) {
+        time = dateFormatDisplay.format(date);
+      }
+    } catch (ParseException e) {
+      Log.e(TAG, "onViewCreated: " + e);
+    }
+    binding.chipAppearanceRandomTime.setText(getString(R.string.appearance_random_time, time));
+    binding.chipAppearanceRandomTime.setEnabled(randomMode.equals(RANDOM.DAILY));
+
     setUpDesignSelections();
     randomList = getSharedPrefs().getStringSet(PREF.RANDOM_LIST, DEF.RANDOM_LIST);
 
-    // TODO: If the wallpaper is not applied and the app restarted, the selection is somehow undone
-    // and set to an previous selection which is never stored anymore???
-    if (randomWallpaper) {
+    if (!randomMode.equals(RANDOM.OFF)) {
       refreshDesignSelections();
     }
 
@@ -299,14 +308,13 @@ public class AppearanceFragment extends BaseFragment
         // Other
         binding.linearAppearanceDarkText,
         binding.linearAppearanceLightText,
-        binding.linearAppearanceRandom
+        binding.chipAppearanceRandomTime
     );
 
     ViewUtil.setOnCheckedChangeListeners(
         this,
         binding.switchAppearanceDarkText,
-        binding.switchAppearanceLightText,
-        binding.switchAppearanceRandom
+        binding.switchAppearanceLightText
     );
   }
 
@@ -321,8 +329,9 @@ public class AppearanceFragment extends BaseFragment
       binding.switchAppearanceLightText.setChecked(
           !binding.switchAppearanceLightText.isChecked()
       );
-    } else if (id == R.id.linear_appearance_random) {
-      binding.switchAppearanceRandom.setChecked(!binding.switchAppearanceRandom.isChecked());
+    } else if (id == R.id.chip_appearance_random_time) {
+      openTimePicker();
+      performHapticClick();
     }
   }
 
@@ -339,20 +348,72 @@ public class AppearanceFragment extends BaseFragment
       activity.requestThemeRefresh();
       performHapticClick();
       ViewUtil.startIcon(binding.imageAppearanceLightText);
-    } else if (id == R.id.switch_appearance_random) {
-      performHapticClick();
-      randomWallpaper = isChecked;
-      refreshDesignSelections();
-      ViewUtil.setEnabledAlpha(
-          !isChecked, true, binding.linearAppearanceVariant, binding.linearAppearanceColors
-      );
-      getSharedPrefs().edit().putBoolean(PREF.RANDOM, isChecked).apply();
+    }
+  }
+
+  @Override
+  public void onButtonChecked(MaterialButtonToggleGroup group, int checkedId, boolean isChecked) {
+    if (!isChecked) {
+      return;
+    }
+    performHapticClick();
+    ViewUtil.startIcon(binding.imageAppearanceRandom);
+    if (group.getId() == R.id.toggle_appearance_night_mode) {
+      int pref;
+      if (checkedId == R.id.button_appearance_night_mode_on) {
+        pref = NIGHT_MODE.ON;
+      } else if (checkedId == R.id.button_appearance_night_mode_off) {
+        pref = NIGHT_MODE.OFF;
+      } else {
+        pref = NIGHT_MODE.AUTO;
+      }
+      getSharedPrefs().edit().putInt(PREF.NIGHT_MODE, pref).apply();
+      activity.requestThemeRefresh();
+      refreshDarkLightVariant();
+      refreshColors();
+      boolean isNewWallpaperNightMode = isWallpaperNightMode();
+      if (isWallpaperNightMode != isNewWallpaperNightMode) {
+        showMonetInfoIfRequired();
+        ViewUtil.startIcon(binding.imageAppearanceNightMode);
+        new Handler(Looper.getMainLooper()).postDelayed(
+            () -> binding.imageAppearanceNightMode.setImageResource(
+                isNewWallpaperNightMode
+                    ? R.drawable.ic_round_dark_mode_to_light_mode_anim
+                    : R.drawable.ic_round_light_mode_to_dark_mode_anim
+            ),
+            300
+        );
+        isWallpaperNightMode = isNewWallpaperNightMode;
+      }
+    } else if (group.getId() == R.id.toggle_appearance_random) {
+      if (checkedId == R.id.button_appearance_random_screen_off) {
+        randomMode = RANDOM.SCREEN_OFF;
+      } else if (checkedId == R.id.button_appearance_random_daily) {
+        randomMode = RANDOM.DAILY;
+      } else {
+        randomMode = RANDOM.OFF;
+      }
+      SharedPreferences.Editor editor = getSharedPrefs().edit();
+      editor.putString(PREF.RANDOM, randomMode);
+      if (randomMode.equals(RANDOM.DAILY)) {
+        editor.putBoolean(PREF.CHANGE_DAILY_NOW, true);
+      }
+      editor.apply();
+
+      dailyUtil.setDailyEnabled(randomMode.equals(RANDOM.DAILY));
       activity.requestSettingsRefresh();
       activity.requestThemeRefresh();
-      if (isChecked) {
-        Snackbar snackbar = activity.getSnackbar(
-            R.string.msg_random, Snackbar.LENGTH_LONG
-        );
+
+      refreshDesignSelections();
+      ViewUtil.setEnabledAlpha(
+          randomMode.equals(RANDOM.OFF),
+          true,
+          binding.linearAppearanceVariant,
+          binding.linearAppearanceColors
+      );
+      binding.chipAppearanceRandomTime.setEnabled(randomMode.equals(RANDOM.DAILY));
+      if (!randomMode.equals(RANDOM.OFF)) {
+        Snackbar snackbar = activity.getSnackbar(R.string.msg_random, Snackbar.LENGTH_LONG);
         if (randomList.size() < Constants.getAllWallpapers().length) {
           snackbar.setAction(
               getString(R.string.action_select_all),
@@ -361,10 +422,9 @@ public class AppearanceFragment extends BaseFragment
                   return;
                 }
                 randomList = new HashSet<>(Arrays.asList(Constants.getAllWallpapers()));
+                getSharedPrefs().edit().putStringSet(PREF.RANDOM_LIST, randomList).apply();
                 refreshDesignSelections();
-                if (!randomWallpaper) {
-                  binding.switchAppearanceRandom.setChecked(true);
-                } else {
+                if (!randomMode.equals(RANDOM.OFF)) {
                   activity.requestSettingsRefresh();
                   activity.requestThemeRefresh();
                 }
@@ -376,7 +436,6 @@ public class AppearanceFragment extends BaseFragment
     }
   }
 
-  @SuppressLint("ShowToast")
   private void setUpDesignSelections() {
     BaseWallpaper[] baseWallpapers;
     ViewGroup container;
@@ -417,7 +476,7 @@ public class AppearanceFragment extends BaseFragment
         card.setScrimEnabled(true, false);
         card.setCardImageResource(wallpaper.getThumbnailResId(), false);
         card.setOnClickListener(v -> {
-          if (randomWallpaper) {
+          if (!randomMode.equals(RANDOM.OFF)) {
             if (card.isChecked() && randomList.size() == 1) {
               return;
             }
@@ -453,7 +512,7 @@ public class AppearanceFragment extends BaseFragment
           }
         });
 
-        if (randomWallpaper) {
+        if (!randomMode.equals(RANDOM.OFF)) {
           if (randomList.contains(wallpaper.getName())) {
             card.setChecked(true);
           }
@@ -479,7 +538,7 @@ public class AppearanceFragment extends BaseFragment
         designSelections.put(wallpaper.getName(), card);
       }
 
-      if (randomWallpaper) {
+      if (!randomMode.equals(RANDOM.OFF)) {
         int oldCount = currentWallpaper != null ? currentWallpaper.getVariants().length : 0;
         currentWallpaper = Constants.getWallpaper(
             getSharedPrefs().getString(PREF.WALLPAPER, DEF.WALLPAPER)
@@ -495,7 +554,7 @@ public class AppearanceFragment extends BaseFragment
         binding.linearAppearanceWallpaperContainerMonet,
         binding.linearAppearanceWallpaperContainerAnna
     );
-    if (randomWallpaper) {
+    if (!randomMode.equals(RANDOM.OFF)) {
       for (String element : randomList) {
         SelectionCardView card = designSelections.get(element);
         if (card != null) {
@@ -568,13 +627,13 @@ public class AppearanceFragment extends BaseFragment
         card.setScrimEnabled(false, true);
       }
       card.setOnClickListener(v -> {
-        if (randomWallpaper) {
+        if (!randomMode.equals(RANDOM.OFF)) {
           activity.showSnackbar(
               activity.getSnackbar(
                   R.string.msg_random_warning, Snackbar.LENGTH_LONG
               ).setAction(
                   getString(R.string.action_deactivate),
-                  view -> binding.switchAppearanceRandom.setChecked(false)
+                  view -> binding.toggleAppearanceRandom.check(R.id.button_appearance_random_off)
               )
           );
         } else if (!card.isChecked()) {
@@ -619,13 +678,13 @@ public class AppearanceFragment extends BaseFragment
         if (binding == null || currentWallpaper == null || currentVariant == null) {
           return;
         }
-        if (randomWallpaper) {
+        if (!randomMode.equals(RANDOM.OFF)) {
           activity.showSnackbar(
               activity.getSnackbar(
                   R.string.msg_random_warning, Snackbar.LENGTH_LONG
               ).setAction(
                   getString(R.string.action_deactivate),
-                  view -> binding.switchAppearanceRandom.setChecked(false)
+                  view -> binding.toggleAppearanceRandom.check(R.id.button_appearance_random_off)
               )
           );
           return;
@@ -749,6 +808,45 @@ public class AppearanceFragment extends BaseFragment
     if (binding != null) {
       ViewUtil.startIcon(binding.imageAppearanceColors);
     }
+  }
+
+  private void openTimePicker() {
+    Calendar calendar = Calendar.getInstance();
+    String time = getSharedPrefs().getString(PREF.DAILY_TIME, DEF.DAILY_TIME);
+    try {
+      Date date = dateFormatPref.parse(time);
+      if (date != null) {
+        calendar.setTime(date);
+      }
+    } catch (ParseException e) {
+      Log.e(TAG, "openTimePicker: " + e);
+    }
+    MaterialTimePicker picker = new MaterialTimePicker.Builder()
+        .setTimeFormat(
+            DateFormat.is24HourFormat(activity) ? TimeFormat.CLOCK_24H : TimeFormat.CLOCK_12H
+        )
+        .setHour(calendar.get(Calendar.HOUR_OF_DAY))
+        .setMinute(calendar.get(Calendar.MINUTE))
+        .setTheme(R.style.ThemeOverlay_Doodle_TimePicker)
+        .build();
+    picker.show(activity.getSupportFragmentManager(), "time");
+    picker.addOnPositiveButtonClickListener(view -> {
+      activity.performHapticClick();
+      calendar.setTimeInMillis(System.currentTimeMillis());
+      calendar.set(Calendar.HOUR_OF_DAY, picker.getHour());
+      calendar.set(Calendar.MINUTE, picker.getMinute());
+      calendar.set(Calendar.SECOND, 0);
+      String timeNew = dateFormatPref.format(calendar.getTime());
+      getSharedPrefs().edit().putString(PREF.DAILY_TIME, timeNew).apply();
+      dailyUtil.scheduleReminder(timeNew);
+      if (binding != null) {
+        binding.chipAppearanceRandomTime.setText(
+            getString(R.string.appearance_random_time, dateFormatDisplay.format(calendar.getTime()))
+        );
+        ViewUtil.startIcon(binding.imageAppearanceRandom);
+      }
+    });
+    picker.addOnNegativeButtonClickListener(view -> activity.performHapticClick());
   }
 
   private boolean isWallpaperNightMode() {

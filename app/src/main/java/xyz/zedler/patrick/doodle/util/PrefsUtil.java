@@ -158,6 +158,15 @@ public class PrefsUtil {
       }
     }
 
+    // random mode is stored as string with different modes
+    if (sharedPrefs.contains(PREF.RANDOM)) {
+      try {
+        sharedPrefs.getString(PREF.RANDOM, DEF.RANDOM);
+      } catch (ClassCastException e) {
+        removePreference(PREF.RANDOM);
+      }
+    }
+
     return this;
   }
 

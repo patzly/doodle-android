@@ -30,9 +30,9 @@ import xyz.zedler.patrick.doodle.wallpaper.AutumnWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.BaseWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.FloralWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.FogWallpaper;
-import xyz.zedler.patrick.doodle.wallpaper.LeavesWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.JohannaWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.LeafyWallpaper;
+import xyz.zedler.patrick.doodle.wallpaper.LeavesWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.MonetWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.OrioleWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.PixelWallpaper;
@@ -71,6 +71,8 @@ public final class Constants {
     public static final String FORCE_LIGHT_TEXT = "light_text";
     public static final String RANDOM = "random";
     public static final String RANDOM_LIST = "random_list";
+    public final static String DAILY_TIME = "daily_time";
+    public final static String CHANGE_DAILY_NOW = "change_daily_now";
 
     // Parallax
 
@@ -112,10 +114,11 @@ public final class Constants {
     public static final int NIGHT_MODE = -1;
     public static final boolean USE_DARK_TEXT = true;
     public static final boolean FORCE_LIGHT_TEXT = false;
-    public static final boolean RANDOM = false;
+    public static final String RANDOM = Constants.RANDOM.OFF;
     public static final Set<String> RANDOM_LIST = new HashSet<>(
         Arrays.asList(Constants.getAllWallpapers())
     );
+    public final static String DAILY_TIME = "3:00";
 
     public static final int PARALLAX = 2;
     public static final boolean POWER_SAVE_SWIPE = false;
@@ -144,30 +147,33 @@ public final class Constants {
 
   public static BaseWallpaper getWallpaper(String wallpaper) {
     switch (wallpaper) {
+      // DOODLE
       case WALLPAPER.JOHANNA:
         return new JohannaWallpaper();
       case WALLPAPER.REIKO:
         return new ReikoWallpaper();
       case WALLPAPER.ANTHONY:
         return new AnthonyWallpaper();
-      case WALLPAPER.MONET:
-        return new MonetWallpaper();
-      case WALLPAPER.ORIOLE:
-        return new OrioleWallpaper();
-      case WALLPAPER.LEAFY:
-        return new LeafyWallpaper();
-      case WALLPAPER.FOG:
-        return new FogWallpaper();
-      case WALLPAPER.STONE:
-        return new StoneWallpaper();
+      // MATERIAL YOU
       case WALLPAPER.FLORAL:
         return new FloralWallpaper();
       case WALLPAPER.AUTUMN:
         return new AutumnWallpaper();
-      case WALLPAPER.SAND:
-        return new SandWallpaper();
+      case WALLPAPER.STONE:
+        return new StoneWallpaper();
       case WALLPAPER.WATER:
         return new WaterWallpaper();
+      case WALLPAPER.SAND:
+        return new SandWallpaper();
+      case WALLPAPER.MONET:
+        return new MonetWallpaper();
+      case WALLPAPER.ORIOLE:
+        return new OrioleWallpaper();
+      // KÖVECSES
+      case WALLPAPER.LEAFY:
+        return new LeafyWallpaper();
+      case WALLPAPER.FOG:
+        return new FogWallpaper();
       case WALLPAPER.LEAVES:
         return new LeavesWallpaper();
       default:
@@ -205,9 +211,9 @@ public final class Constants {
         WALLPAPER.REIKO,
         WALLPAPER.ANTHONY,
 
-        WALLPAPER.STONE,
         WALLPAPER.FLORAL,
         WALLPAPER.AUTUMN,
+        WALLPAPER.STONE,
         WALLPAPER.WATER,
         WALLPAPER.SAND,
         WALLPAPER.MONET,
@@ -215,7 +221,6 @@ public final class Constants {
 
         WALLPAPER.LEAFY,
         WALLPAPER.FOG,
-
         WALLPAPER.LEAVES
     };
   }
@@ -252,6 +257,13 @@ public final class Constants {
     public static final int AUTO = -1;
     public static final int ON = 1;
     public static final int OFF = 0;
+  }
+
+  public static final class RANDOM {
+
+    public static final String OFF = "off";
+    public static final String DAILY = "daily";
+    public static final String SCREEN_OFF = "screen_off";
   }
 
   public static final class USER_PRESENCE {

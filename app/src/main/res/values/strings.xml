@@ -107,7 +107,10 @@
   <string name="appearance_colors_info">On devices without dynamic color support (Android 11 or lower), only the primary color is used to calculate the launcher text contrast and tinting the recent apps screen\'s background.</string>
   <string name="appearance_colors_info_dynamic">On devices with Android 12 or higher and dynamic color support, the three selected colors are used to automatically create a system-wide color theme.</string>
   <string name="appearance_random">Random wallpaper design</string>
-  <string name="appearance_random_description">Every time the display is turned off</string>
+  <string name="appearance_random_description">Select the trigger below</string>
+  <string name="appearance_random_screen_off">Screen off</string>
+  <string name="appearance_random_daily">Daily</string>
+  <string name="appearance_random_time">Time of change: %1$s</string>
 
   <!-- PARALLAX -->
 

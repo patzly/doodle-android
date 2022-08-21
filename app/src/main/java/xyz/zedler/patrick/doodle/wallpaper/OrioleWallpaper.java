@@ -71,7 +71,7 @@ public class OrioleWallpaper extends BaseWallpaper {
             "#adff90",
             "#d6ffb2",
             "#1b1e1b",
-            new String[]{},
+            new String[]{"#b3eaa0"},
             true,
             false
         )

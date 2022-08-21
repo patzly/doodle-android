@@ -49,12 +49,12 @@ public class LeavesWallpaper extends BaseWallpaper {
     blue.willBeIntersected = true;
 
     SvgObject yellow = svgDrawable.requireObjectById("yellow");
-    yellow.addPathIntersection("blue", "#2f366c");
+    yellow.addPathIntersection("blue", isNightMode ? "#353a6c" : "#2f366c");
     yellow.willBeIntersected = true;
 
     SvgObject orange = svgDrawable.requireObjectById("orange");
-    orange.addPathIntersection("yellow", isNightMode ? "#d07965" : "#f48e77");
-    orange.addPathIntersection("blue", "#2f366c");
+    orange.addPathIntersection("yellow", isNightMode ? "#bb6551" : "#f48e77");
+    orange.addPathIntersection("blue", isNightMode ? "#353a6c" : "#2f366c");
 
     return svgDrawable;
   }
@@ -81,10 +81,10 @@ public class LeavesWallpaper extends BaseWallpaper {
     return new WallpaperVariant[]{
         new WallpaperVariant(
             R.raw.wallpaper_leaves_dark,
-            "#c49d52",
-            "#e99d7b",
-            "#6f8fae",
-            new String[]{"#f3e3cc", "#f0a775", "#f6bdac", "#2f366c"},
+            "#bf9951",
+            "#3e74a7",
+            "#bb6551",
+            new String[]{"#272628", "#c58457", "#a18078", "#353a6c"},
             false,
             true
         )

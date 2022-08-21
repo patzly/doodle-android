@@ -63,6 +63,7 @@
   <string name="action_github_description">Neues Issue öffnen</string>
   <string name="action_language_select">Sprache auswählen</string>
   <string name="action_set_static">Statischen Hintergrund festlegen</string>
+  <string name="action_change_time">Uhrzeit ändern</string>
 
   <!-- APPEARANCE -->
 
@@ -96,7 +97,9 @@
   <string name="appearance_colors_info">Auf Geräten ohne Unterstützung für dynamische Farbschemas (Android 11 oder niedriger) wird nur die Primärfarbe verwendet, um den Textkontrast des Launchers zu berechnen und den Hintergrund des „Letzte Apps“-Bildschirms einzufärben.</string>
   <string name="appearance_colors_info_dynamic">Auf Geräten mit Android 12 oder höher und Unterstützung für dynamische Farbschemas werden die drei ausgewählten Farben verwendet, um automatisch ein systemweites Farbschema zu erstellen.</string>
   <string name="appearance_random">Zufälliges Hintergrunddesign</string>
-  <string name="appearance_random_description">Bei jedem Ausschalten des Displays</string>
+  <string name="appearance_random_description">Auslöser unten wählen</string>
+  <string name="appearance_random_screen_off">Bildschirm aus</string>
+  <string name="appearance_random_daily">Täglich um %1$s Uhr</string>
 
   <!-- PARALLAX -->
 

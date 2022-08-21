@@ -1,4 +1,5 @@
-• New: complex shape intersecting for a new wallpaper based on another artwork by Anna Kövecses
+• New: complex shape intersecting for a new colorful wallpaper based on another artwork by Anna Kövecses
+• New: option for a daily random wallpaper design
 • New: workaround for Samsung's unfavorable implementation of dynamic colors on Android 12+ (appearance section)
 • New: system app language selection on Android 13
 • New: custom color selection for wallpaper colors
@@ -8,3 +9,4 @@
 • Improved: refreshed toggle switch style in settings
 • Improved: changelog style and help/license text appearance
 • Improved: changed method for haptic effects in settings app
+• Fixed: selection for random design option not stored

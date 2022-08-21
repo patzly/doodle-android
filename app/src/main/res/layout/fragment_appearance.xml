@@ -356,40 +356,48 @@
 
             <HorizontalScrollView
               android:layout_width="match_parent"
-              android:layout_height="wrap_content">
+              android:layout_height="wrap_content"
+              android:scrollbars="none"
+              android:overScrollMode="ifContentScrolls">
 
-              <com.google.android.material.button.MaterialButtonToggleGroup
-                android:id="@+id/toggle_appearance_night_mode"
+              <FrameLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="16dp"
-                app:singleSelection="true"
-                app:selectionRequired="true">
+                android:layout_height="wrap_content">
 
-                <Button
-                  android:id="@+id/button_appearance_night_mode_auto"
-                  style="@style/Widget.Doodle.Button.OutlinedButton"
+                <com.google.android.material.button.MaterialButtonToggleGroup
+                  android:id="@+id/toggle_appearance_night_mode"
                   android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
-                  android:text="@string/other_theme_auto" />
+                  android:layout_marginTop="8dp"
+                  android:layout_marginBottom="8dp"
+                  android:layout_marginEnd="16dp"
+                  app:singleSelection="true"
+                  app:selectionRequired="true">
 
-                <Button
-                  android:id="@+id/button_appearance_night_mode_on"
-                  style="@style/Widget.Doodle.Button.OutlinedButton"
-                  android:layout_width="wrap_content"
-                  android:layout_height="wrap_content"
-                  android:text="@string/appearance_night_mode_on" />
+                  <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_appearance_night_mode_auto"
+                    style="@style/Widget.Doodle.Button.OutlinedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/other_theme_auto" />
 
-                <Button
-                  android:id="@+id/button_appearance_night_mode_off"
-                  style="@style/Widget.Doodle.Button.OutlinedButton"
-                  android:layout_width="wrap_content"
-                  android:layout_height="wrap_content"
-                  android:text="@string/appearance_night_mode_off" />
+                  <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_appearance_night_mode_on"
+                    style="@style/Widget.Doodle.Button.OutlinedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/appearance_night_mode_on" />
 
-              </com.google.android.material.button.MaterialButtonToggleGroup>
+                  <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_appearance_night_mode_off"
+                    style="@style/Widget.Doodle.Button.OutlinedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/appearance_night_mode_off" />
+
+                </com.google.android.material.button.MaterialButtonToggleGroup>
+
+              </FrameLayout>
 
             </HorizontalScrollView>
 
@@ -482,52 +490,71 @@
               android:paddingStart="0dp"
               android:paddingEnd="16dp" />
 
-            <HorizontalScrollView
+            <LinearLayout
               android:layout_width="match_parent"
-              android:layout_height="wrap_content">
+              android:layout_height="wrap_content"
+              android:orientation="horizontal"
+              android:layout_marginTop="8dp"
+              android:layout_marginBottom="4dp">
 
-              <com.google.android.material.button.MaterialButtonToggleGroup
-                android:id="@+id/toggle_appearance_random"
-                android:layout_width="wrap_content"
+              <com.google.android.material.divider.MaterialDivider
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:visibility="gone" />
+
+              <HorizontalScrollView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                app:singleSelection="true"
-                app:selectionRequired="true">
+                android:scrollbars="none"
+                android:overScrollMode="ifContentScrolls">
 
-                <Button
-                  android:id="@+id/button_appearance_random_off"
-                  style="@style/Widget.Doodle.Button.OutlinedButton"
+                <FrameLayout
                   android:layout_width="wrap_content"
-                  android:layout_height="wrap_content"
-                  android:text="@string/appearance_night_mode_off" />
+                  android:layout_height="wrap_content">
 
-                <Button
-                  android:id="@+id/button_appearance_random_screen_off"
-                  style="@style/Widget.Doodle.Button.OutlinedButton"
-                  android:layout_width="wrap_content"
-                  android:layout_height="wrap_content"
-                  android:text="@string/appearance_random_screen_off" />
+                  <com.google.android.material.button.MaterialButtonToggleGroup
+                    android:id="@+id/toggle_appearance_random"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    app:singleSelection="true"
+                    app:selectionRequired="true">
 
-                <Button
-                  android:id="@+id/button_appearance_random_daily"
-                  style="@style/Widget.Doodle.Button.OutlinedButton"
-                  android:layout_width="wrap_content"
-                  android:layout_height="wrap_content"
-                  android:text="@string/appearance_random_daily" />
+                    <com.google.android.material.button.MaterialButton
+                      android:id="@+id/button_appearance_random_off"
+                      style="@style/Widget.Doodle.Button.OutlinedButton"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="@string/appearance_night_mode_off" />
 
-              </com.google.android.material.button.MaterialButtonToggleGroup>
+                    <com.google.android.material.button.MaterialButton
+                      android:id="@+id/button_appearance_random_daily"
+                      style="@style/Widget.Doodle.Button.OutlinedButton"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="@string/appearance_random_daily" />
 
-            </HorizontalScrollView>
+                    <com.google.android.material.button.MaterialButton
+                      android:id="@+id/button_appearance_random_screen_off"
+                      style="@style/Widget.Doodle.Button.OutlinedButton"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="@string/appearance_random_screen_off" />
 
-            <com.google.android.material.chip.Chip
-              android:id="@+id/chip_appearance_random_time"
-              style="@style/Widget.Material3.Chip.Assist"
+                  </com.google.android.material.button.MaterialButtonToggleGroup>
+
+                </FrameLayout>
+
+              </HorizontalScrollView>
+
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+              android:id="@+id/button_appearance_random_time"
+              style="@style/Widget.Doodle.Button.UnelevatedButton"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
-              android:text="@string/appearance_random_time"
-              android:textAppearance="@style/TextAppearance.Doodle.LabelLarge"
-              app:ensureMinTouchTargetSize="true"/>
+              android:text="@string/action_change_time" />
 
           </LinearLayout>
 

@@ -250,11 +250,11 @@ public class AppearanceFragment extends BaseFragment
 
     int idRandomMode;
     switch (randomMode) {
-      case RANDOM.SCREEN_OFF:
-        idRandomMode = R.id.button_appearance_random_screen_off;
-        break;
       case RANDOM.DAILY:
         idRandomMode = R.id.button_appearance_random_daily;
+        break;
+      case RANDOM.SCREEN_OFF:
+        idRandomMode = R.id.button_appearance_random_screen_off;
         break;
       default:
         idRandomMode = R.id.button_appearance_random_off;
@@ -272,8 +272,8 @@ public class AppearanceFragment extends BaseFragment
     } catch (ParseException e) {
       Log.e(TAG, "onViewCreated: " + e);
     }
-    binding.chipAppearanceRandomTime.setText(getString(R.string.appearance_random_time, time));
-    binding.chipAppearanceRandomTime.setEnabled(randomMode.equals(RANDOM.DAILY));
+    binding.buttonAppearanceRandomDaily.setText(getString(R.string.appearance_random_daily, time));
+    binding.buttonAppearanceRandomTime.setEnabled(randomMode.equals(RANDOM.DAILY));
 
     setUpDesignSelections();
     randomList = getSharedPrefs().getStringSet(PREF.RANDOM_LIST, DEF.RANDOM_LIST);
@@ -308,7 +308,7 @@ public class AppearanceFragment extends BaseFragment
         // Other
         binding.linearAppearanceDarkText,
         binding.linearAppearanceLightText,
-        binding.chipAppearanceRandomTime
+        binding.buttonAppearanceRandomTime
     );
 
     ViewUtil.setOnCheckedChangeListeners(
@@ -329,7 +329,7 @@ public class AppearanceFragment extends BaseFragment
       binding.switchAppearanceLightText.setChecked(
           !binding.switchAppearanceLightText.isChecked()
       );
-    } else if (id == R.id.chip_appearance_random_time) {
+    } else if (id == R.id.button_appearance_random_time) {
       openTimePicker();
       performHapticClick();
     }
@@ -386,10 +386,10 @@ public class AppearanceFragment extends BaseFragment
         isWallpaperNightMode = isNewWallpaperNightMode;
       }
     } else if (group.getId() == R.id.toggle_appearance_random) {
-      if (checkedId == R.id.button_appearance_random_screen_off) {
-        randomMode = RANDOM.SCREEN_OFF;
-      } else if (checkedId == R.id.button_appearance_random_daily) {
+      if (checkedId == R.id.button_appearance_random_daily) {
         randomMode = RANDOM.DAILY;
+      } else if (checkedId == R.id.button_appearance_random_screen_off) {
+        randomMode = RANDOM.SCREEN_OFF;
       } else {
         randomMode = RANDOM.OFF;
       }
@@ -411,7 +411,7 @@ public class AppearanceFragment extends BaseFragment
           binding.linearAppearanceVariant,
           binding.linearAppearanceColors
       );
-      binding.chipAppearanceRandomTime.setEnabled(randomMode.equals(RANDOM.DAILY));
+      binding.buttonAppearanceRandomTime.setEnabled(randomMode.equals(RANDOM.DAILY));
       if (!randomMode.equals(RANDOM.OFF)) {
         Snackbar snackbar = activity.getSnackbar(R.string.msg_random, Snackbar.LENGTH_LONG);
         if (randomList.size() < Constants.getAllWallpapers().length) {
@@ -844,8 +844,10 @@ public class AppearanceFragment extends BaseFragment
       getSharedPrefs().edit().putString(PREF.DAILY_TIME, timeNew).apply();
       dailyUtil.scheduleReminder(timeNew);
       if (binding != null) {
-        binding.chipAppearanceRandomTime.setText(
-            getString(R.string.appearance_random_time, dateFormatDisplay.format(calendar.getTime()))
+        binding.buttonAppearanceRandomDaily.setText(
+            getString(
+                R.string.appearance_random_daily, dateFormatDisplay.format(calendar.getTime())
+            )
         );
         ViewUtil.startIcon(binding.imageAppearanceRandom);
       }

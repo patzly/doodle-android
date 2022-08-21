@@ -74,6 +74,7 @@
   <string name="action_github_description">Open a new issue</string>
   <string name="action_language_select">Select language</string>
   <string name="action_set_static">Set static wallpaper</string>
+  <string name="action_change_time">Change time</string>
 
   <!-- APPEARANCE -->
 
@@ -109,8 +110,7 @@
   <string name="appearance_random">Random wallpaper design</string>
   <string name="appearance_random_description">Select the trigger below</string>
   <string name="appearance_random_screen_off">Screen off</string>
-  <string name="appearance_random_daily">Daily</string>
-  <string name="appearance_random_time">Time of change: %1$s</string>
+  <string name="appearance_random_daily">Daily at %1$s</string>
 
   <!-- PARALLAX -->
 

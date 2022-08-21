@@ -135,39 +135,47 @@
 
             <HorizontalScrollView
               android:layout_width="match_parent"
-              android:layout_height="wrap_content">
+              android:layout_height="wrap_content"
+              android:scrollbars="none"
+              android:overScrollMode="ifContentScrolls">
 
-              <com.google.android.material.button.MaterialButtonToggleGroup
-                android:id="@+id/toggle_other_theme"
+              <FrameLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="16dp"
-                app:singleSelection="true"
-                app:selectionRequired="true">
+                android:layout_height="wrap_content">
 
-                <Button
-                  android:id="@+id/button_other_theme_auto"
-                  style="@style/Widget.Doodle.Button.OutlinedButton"
+                <com.google.android.material.button.MaterialButtonToggleGroup
+                  android:id="@+id/toggle_other_theme"
                   android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
-                  android:text="@string/other_theme_auto" />
+                  android:layout_marginBottom="8dp"
+                  android:layout_marginEnd="16dp"
+                  app:singleSelection="true"
+                  app:selectionRequired="true">
 
-                <Button
-                  android:id="@+id/button_other_theme_light"
-                  style="@style/Widget.Doodle.Button.OutlinedButton"
-                  android:layout_width="wrap_content"
-                  android:layout_height="wrap_content"
-                  android:text="@string/other_theme_light" />
+                  <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_other_theme_auto"
+                    style="@style/Widget.Doodle.Button.OutlinedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/other_theme_auto" />
 
-                <Button
-                  android:id="@+id/button_other_theme_dark"
-                  style="@style/Widget.Doodle.Button.OutlinedButton"
-                  android:layout_width="wrap_content"
-                  android:layout_height="wrap_content"
-                  android:text="@string/other_theme_dark" />
+                  <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_other_theme_light"
+                    style="@style/Widget.Doodle.Button.OutlinedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/other_theme_light" />
 
-              </com.google.android.material.button.MaterialButtonToggleGroup>
+                  <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_other_theme_dark"
+                    style="@style/Widget.Doodle.Button.OutlinedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/other_theme_dark" />
+
+                </com.google.android.material.button.MaterialButtonToggleGroup>
+
+              </FrameLayout>
 
             </HorizontalScrollView>
 

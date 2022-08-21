@@ -2,13 +2,19 @@
 
 You need to turn on background scrolling in your launcher's settings if you have disabled it before.
 
+#### Wallpaper animation stops working in MIUI?
+
+This is a bug in MIUI caused by its aggressive app killing strategies. As a workaround you can close Doodle without applying the wallpaper, find Doodle in the Google Wallpapers app under the live wallpaper section and try to apply it from there.
+
 #### "Set wallpaper" button disappears after applying the wallpaper?
 
 This is intended, you only have to apply it once. Select another wallpaper design in the appearance section to change it.
 
 #### Changed wallpaper colors not updating on Android 12?
 
-You need to turn off your screen. The next time you turn it back on, the new colors should be applied to the whole system. It might require some interaction with the device for the home screen widgets to also update their colors.
+You need to turn off your screen. The next time you turn it back on, the new colors should be applied to the whole system.
+
+If it still doesn't work, you probably have Samsung's One UI or another custom skin. Dynamic colors for live wallpapers are still not supported by Samsung, but Doodle provides you a workaround in the appearance section.
 
 #### Parallax/zoom animations stop after closing Doodle settings?
 

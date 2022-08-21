@@ -95,12 +95,16 @@ public class AboutFragment extends BaseFragment implements OnClickListener {
     int id = v.getId();
     if (getViewUtil().isClickDisabled(id)) {
       return;
-    }
-    performHapticClick();
-
-    if (id == R.id.linear_about_version) {
+    } else if (id == R.id.linear_about_version) {
+      activity.performHapticExplosion();
       ViewUtil.startIcon(binding.imageAboutVersion);
-    } else if (id == R.id.linear_about_changelog) {
+      return;
+    } else {
+      performHapticClick();
+    }
+
+    if (id == R.id.linear_about_changelog) {
+      performHapticClick();
       activity.showChangelogBottomSheet();
       ViewUtil.startIcon(binding.imageAboutChangelog);
     } else if (id == R.id.linear_about_developer) {

@@ -578,4 +578,8 @@ public class MainActivity extends AppCompatActivity {
   public void performHapticHeavyClick() {
     hapticUtil.heavyClick();
   }
+
+  public void performHapticExplosion() {
+    hapticUtil.explode();
+  }
 }

@@ -180,7 +180,11 @@ public class LiveWallpaperService extends WallpaperService {
       filter.addAction(PowerManager.ACTION_POWER_SAVE_MODE_CHANGED);
       filter.addAction(ACTION.THEME_CHANGED);
       filter.addAction(ACTION.SETTINGS_CHANGED);
-      registerReceiver(receiver, filter);
+      try {
+        registerReceiver(receiver, filter);
+      } catch (Exception e) {
+        Log.e(TAG, "unregisterReceiver", e);
+      }
       isReceiverRegistered = true;
     }
   }

@@ -589,6 +589,9 @@ public class AppearanceFragment extends BaseFragment
   }
 
   private void replaceVariantContainer(BaseWallpaper wallpaper, boolean sameCount) {
+    if (binding == null) {
+      return;
+    }
     if (!sameCount) {
       binding.linearAppearanceVariantContainer.removeAllViews();
     }
@@ -613,12 +616,10 @@ public class AppearanceFragment extends BaseFragment
         ValueAnimator animator = ValueAnimator.ofArgb(
             card.getCardBackgroundColor().getDefaultColor(), variantLight.getPrimaryColor()
         );
-        animator.addUpdateListener(
-            animation -> {
-              card.setCardBackgroundColor((int) animation.getAnimatedValue());
-              card.setScrimEnabled(false, true);
-            }
-        );
+        animator.addUpdateListener(animation -> {
+          card.setCardBackgroundColor((int) animation.getAnimatedValue());
+          card.setScrimEnabled(false, true);
+        });
         animator.setDuration(300);
         animator.setInterpolator(new FastOutSlowInInterpolator());
         animator.start();
@@ -632,8 +633,11 @@ public class AppearanceFragment extends BaseFragment
               activity.getSnackbar(
                   R.string.msg_random_warning, Snackbar.LENGTH_LONG
               ).setAction(
-                  getString(R.string.action_deactivate),
-                  view -> binding.toggleAppearanceRandom.check(R.id.button_appearance_random_off)
+                  getString(R.string.action_deactivate), view -> {
+                    if (binding != null) {
+                      binding.toggleAppearanceRandom.check(R.id.button_appearance_random_off);
+                    }
+                  }
               )
           );
         } else if (!card.isChecked()) {

@@ -63,6 +63,7 @@
   <string name="action_github_description">提出问题</string>
   <string name="action_language_select">选择语言</string>
   <string name="action_set_static">设置静态壁纸</string>
+  <string name="action_change_time">更改时间</string>
 
   <!-- APPEARANCE -->
 
@@ -96,7 +97,9 @@
   <string name="appearance_colors_info">在没有动态颜色支持的设备上(Android 11 或更低版本)，只有主色用于计算启动器文本对比度和着色最近应用程序屏幕的背景。</string>
   <string name="appearance_colors_info_dynamic">在装有 Android 12 或更高版本系统，并支持动态颜色的的设备上，三种选择的颜色将用于自动创建一个系统范围的颜色主题。</string>
   <string name="appearance_random">随机的壁纸设计</string>
-  <string name="appearance_random_description">每次屏幕关闭时</string>
+  <string name="appearance_random_description">选择下方触发器</string>
+  <string name="appearance_random_screen_off">关闭屏幕</string>
+  <string name="appearance_random_daily">每天的 %1$s</string>
 
   <!-- PARALLAX -->
 

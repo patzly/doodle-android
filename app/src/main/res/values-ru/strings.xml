@@ -83,8 +83,6 @@
   <string name="appearance_colors_info">На устройствах без поддержки палитры на основе цвета обоев (Android 11 и ниже) только основной цвет применяется для расчета контрастности текста на рабочем столе и покраски фона экрана недавних приложений.</string>
   <string name="appearance_colors_info_dynamic">На устройствах с Android 12 и выше (с поддержкой палитры на основе цвета обоев) три выбранных цвета используются в формировании автоматической цветовой темы по всей системе.</string>
   <string name="appearance_random">Случайный дизайн обоев</string>
-  <string name="appearance_random_description">После каждого выключения экрана</string>
-
   <!-- PARALLAX -->
 
   <string name="parallax_title">Сдвиг</string>

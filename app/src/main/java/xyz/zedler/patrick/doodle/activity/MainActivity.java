@@ -424,16 +424,16 @@ public class MainActivity extends AppCompatActivity {
     sendBroadcast(intent);
   }
 
-  public void requestThemeRefresh() {
+  public void requestThemeRefresh(boolean designMayHaveChanged) {
     Intent intent = new Intent();
-    intent.setAction(ACTION.THEME_CHANGED);
+    intent.setAction(designMayHaveChanged ? ACTION.DESIGN_AND_THEME_CHANGED : ACTION.THEME_CHANGED);
     sendBroadcast(intent);
   }
 
   public void reset() {
     sharedPrefs.edit().clear().apply();
     requestSettingsRefresh();
-    requestThemeRefresh();
+    requestThemeRefresh(true);
 
     boolean isLauncherIconDisabled = getPackageManager().getComponentEnabledSetting(
         new ComponentName(this, LauncherActivity.class)

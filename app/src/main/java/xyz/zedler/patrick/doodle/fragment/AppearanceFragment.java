@@ -340,12 +340,12 @@ public class AppearanceFragment extends BaseFragment
     int id = buttonView.getId();
     if (id == R.id.switch_appearance_dark_text) {
       getSharedPrefs().edit().putBoolean(PREF.USE_DARK_TEXT, isChecked).apply();
-      activity.requestThemeRefresh();
+      activity.requestThemeRefresh(false);
       performHapticClick();
       ViewUtil.startIcon(binding.imageAppearanceDarkText);
     } else if (id == R.id.switch_appearance_light_text) {
       getSharedPrefs().edit().putBoolean(PREF.FORCE_LIGHT_TEXT, isChecked).apply();
-      activity.requestThemeRefresh();
+      activity.requestThemeRefresh(false);
       performHapticClick();
       ViewUtil.startIcon(binding.imageAppearanceLightText);
     }
@@ -368,7 +368,7 @@ public class AppearanceFragment extends BaseFragment
         pref = NIGHT_MODE.AUTO;
       }
       getSharedPrefs().edit().putInt(PREF.NIGHT_MODE, pref).apply();
-      activity.requestThemeRefresh();
+      activity.requestThemeRefresh(false);
       refreshDarkLightVariant();
       refreshColors();
       boolean isNewWallpaperNightMode = isWallpaperNightMode();
@@ -402,7 +402,7 @@ public class AppearanceFragment extends BaseFragment
 
       dailyUtil.setDailyEnabled(randomMode.equals(RANDOM.DAILY));
       activity.requestSettingsRefresh();
-      activity.requestThemeRefresh();
+      activity.requestThemeRefresh(true);
 
       refreshDesignSelections();
       ViewUtil.setEnabledAlpha(
@@ -426,7 +426,7 @@ public class AppearanceFragment extends BaseFragment
                 refreshDesignSelections();
                 if (!randomMode.equals(RANDOM.OFF)) {
                   activity.requestSettingsRefresh();
-                  activity.requestThemeRefresh();
+                  activity.requestThemeRefresh(true);
                 }
               }
           );
@@ -487,6 +487,7 @@ public class AppearanceFragment extends BaseFragment
               randomList.remove(wallpaper.getName());
             }
             getSharedPrefs().edit().putStringSet(PREF.RANDOM_LIST, randomList).apply();
+            activity.requestThemeRefresh(true);
             ViewUtil.startIcon(binding.imageAppearanceWallpaper);
             card.startCheckedIcon();
             performHapticClick();
@@ -507,7 +508,7 @@ public class AppearanceFragment extends BaseFragment
             currentWallpaper = wallpaper;
             refreshVariantSelection(oldCount, wallpaper, true);
             getSharedPrefs().edit().putString(PREF.WALLPAPER, wallpaper.getName()).apply();
-            activity.requestThemeRefresh();
+            activity.requestThemeRefresh(true);
             showMonetInfoIfRequired();
           }
         });
@@ -652,7 +653,7 @@ public class AppearanceFragment extends BaseFragment
           getSharedPrefs().edit()
               .putInt(Constants.VARIANT_PREFIX + wallpaper.getName(), iFinal)
               .apply();
-          activity.requestThemeRefresh();
+          activity.requestThemeRefresh(false);
           showMonetInfoIfRequired();
         }
       });
@@ -807,7 +808,7 @@ public class AppearanceFragment extends BaseFragment
       getSharedPrefs().edit().putString(pref + "_custom", color).apply();
     }
     refreshColor(priority, true);
-    activity.requestThemeRefresh();
+    activity.requestThemeRefresh(false);
     showMonetInfoIfRequired();
     if (binding != null) {
       ViewUtil.startIcon(binding.imageAppearanceColors);

@@ -1,3 +1,10 @@
+## 5.5.1
+
+- Improved: syncing of wallpaper design preferences when wallpaper is active
+- Improved: random wallpaper design options
+- Improved: disabled auto backup of settings through Google Drive because different devices require different configurations
+- Fixed: new random wallpaper design when toggling dark mode
+
 ## 5.5.0
 
 - New: complex shape intersecting for a new colorful wallpaper based on another artwork by Anna Kövecses

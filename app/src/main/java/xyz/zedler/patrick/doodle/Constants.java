@@ -282,6 +282,7 @@ public final class Constants {
 
   public static final class ACTION {
 
+    public static final String DESIGN_AND_THEME_CHANGED = "action_design_and_theme_changed";
     public static final String THEME_CHANGED = "action_theme_changed";
     public static final String SETTINGS_CHANGED = "action_settings_changed";
   }

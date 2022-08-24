@@ -77,8 +77,6 @@
   <string name="appearance_colors_info">Pada perangkat tanpa dukungan warna dinamis (Android 11 atau lebih rendah), hanya warna primer yang digunakan untuk menghitung kontras teks peluncur dan mewarnai latar belakang layar aplikasi terbaru.</string>
   <string name="appearance_colors_info_dynamic">Pada perangkat dengan Android 12 atau dukungan warna yang lebih tinggi dan dinamis, tiga warna yang dipilih digunakan untuk secara otomatis membuat tema warna system-wide.</string>
   <string name="appearance_random">Desain wallpaper acak</string>
-  <string name="appearance_random_description">Setiap kali layar dimatikan</string>
-
   <!-- PARALLAX -->
 
   <string name="parallax_title">Paralaks</string>

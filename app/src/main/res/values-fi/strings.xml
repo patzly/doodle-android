@@ -72,8 +72,6 @@
   <string name="appearance_colors_secondary">Valitse toinen väri</string>
   <string name="appearance_colors_tertiary">Valitse kolmas väri</string>
   <string name="appearance_random">Satunnainen taustakuvan tyyli</string>
-  <string name="appearance_random_description">Aina kun näyttö sammutetaan</string>
-
   <!-- PARALLAX -->
 
   <string name="parallax_title">Parallaksi</string>

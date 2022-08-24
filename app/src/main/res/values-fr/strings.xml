@@ -83,8 +83,6 @@
   <string name="appearance_colors_info">Sur les appareils sans prise en charge des couleurs dynamiques (Android 11 ou inférieur), seule la couleur principale est utilisée pour calculer le contraste du texte du lanceur et teinter l\'arrière-plan de l\'écran des applications récentes.</string>
   <string name="appearance_colors_info_dynamic">Sur les appareils équipés d\'Android 12 ou version ultérieure et prenant en charge les couleurs dynamiques, les trois couleurs sélectionnées sont utilisées pour créer automatiquement un thème de couleurs à l\'échelle du système.</string>
   <string name="appearance_random">Motif du fond d\'écran aléatoire</string>
-  <string name="appearance_random_description">Chaque fois que l\'écran est éteint</string>
-
   <!-- PARALLAX -->
 
   <string name="parallax_title">Parallaxe</string>

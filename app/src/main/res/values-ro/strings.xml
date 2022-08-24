@@ -83,8 +83,6 @@
   <string name="appearance_colors_info">Pentru device-urile fără suport de culori dinamice (Android 11 sau mai mic), numai culoarea primară este utilizată pentru a calcula contrastul textului din launcher și a tentei din fundalul aplicațiilor recente.</string>
   <string name="appearance_colors_info_dynamic">Pentru device-urile cu Android 12 sau mai mare cu suport pentru culori dinamice, sunt trei culori selectate automat create de system-ide color theme.</string>
   <string name="appearance_random">Design wallpaper la întâmplare</string>
-  <string name="appearance_random_description">De fiecare dată când ecranul este oprit</string>
-
   <!-- PARALLAX -->
 
   <string name="parallax_title">Parallax</string>

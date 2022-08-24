@@ -84,8 +84,6 @@ Personalizza lo sfondo in base al tuo stile!</string>
   <string name="appearance_colors_info">Su dispositivi che non supportano colori dimamici (Android 11 o inferiore), solo il colore primario sarà usato per calcolare il contrasto delle scritte del launcher e la tinta dello sfondo nella schermata delle app recenti</string>
   <string name="appearance_colors_info_dynamic">Su dispositivi con Android 12 o maggiore, o che supportano i colori dinamici, i tre colori selezionati verranno usati automaticamente per creare un tema a livello di sistema</string>
   <string name="appearance_random">Sfondo casuale</string>
-  <string name="appearance_random_description">Ogni volta che il display viene spento</string>
-
   <!-- PARALLAX -->
 
   <string name="parallax_title">Parallax</string>

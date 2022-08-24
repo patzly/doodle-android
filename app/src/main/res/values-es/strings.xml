@@ -83,8 +83,6 @@
   <string name="appearance_colors_info">En dispositivos sin soporte de color dinámico (Android 11 o inferior), solo se usa el color primario para calcular el contraste del texto del lanzador y teñir el fondo de la pantalla de aplicaciones recientes.</string>
   <string name="appearance_colors_info_dynamic">En dispositivos con Android 12 o superior y compatibilidad con colores dinámicos, los tres colores seleccionados se utilizan para crear automáticamente un tema de color en todo el sistema.</string>
   <string name="appearance_random">Diseño aleatorio de fondo de pantalla</string>
-  <string name="appearance_random_description">Cada vez que la pantalla se apague</string>
-
   <!-- PARALLAX -->
 
   <string name="parallax_title">Paralaje</string>

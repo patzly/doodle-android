@@ -83,8 +83,6 @@
   <string name="appearance_colors_info">ダイナミック・カラーの機能がない（Android 11 までの）デバイスでは、カラー１のみがホームアプリ内の文字コントラストの調整と「アプリ履歴」画面の背景の色合いに使用されます</string>
   <string name="appearance_colors_info_dynamic">ダイナミック・カラーが機能する Android 12 以降のデバイスでは、選択した３つすべての色が使用され、自動的にシステム全体のテーマカラーとして適用されます</string>
   <string name="appearance_random">ランダムに壁紙のデザインを変更する</string>
-  <string name="appearance_random_description">画面OFFからONにするたびに変更します</string>
-
   <!-- PARALLAX -->
 
   <string name="parallax_title">パララックス（視差効果）</string>

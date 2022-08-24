@@ -83,8 +83,6 @@
   <string name="appearance_colors_info">على الأجهزة التي لا تدعم دعم الألوان الديناميكية (Android 11 أو أقل) ، يتم استخدام اللون الأساسي فقط لحساب تباين نص المشغل وتلوين خلفية شاشة التطبيقات الحديثة.</string>
   <string name="appearance_colors_info_dynamic">على الأجهزة التي تعمل بنظام Android 12 أو أعلى ودعم الألوان الديناميكية ، يتم استخدام الألوان الثلاثة المحددة لإنشاء سمة ألوان على مستوى النظام تلقائيًا.</string>
   <string name="appearance_random">تصميم خلفية عشوائية</string>
-  <string name="appearance_random_description">في كل مرة يتم فيها إيقاف تشغيل الشاشة</string>
-
   <!-- PARALLAX -->
 
   <string name="parallax_title">المنظر</string>

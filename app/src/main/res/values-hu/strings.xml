@@ -73,8 +73,6 @@
   <string name="appearance_colors_info">A dinamikus színtámogatással nem rendelkező eszközökön (Android 11 vagy régebbi verziók) csak az elsődleges szín használt a launcher szövegének kontrasztjának kiszámításához és a legutóbbi alkalmazások képernyőjének hátterének színezéséhez.</string>
   <string name="appearance_colors_info_dynamic">Az Android 12 vagy újabb verzióval és a dinamikus színtámogatással rendelkező eszközökön a három kiválasztott szín automatikusan rendszerszintű színtémát hoz létre.</string>
   <string name="appearance_random">Véletlenszerű háttérkép design</string>
-  <string name="appearance_random_description">Minden alkalommal, amikor a kijelző kikapcsolódik</string>
-
   <!-- PARALLAX -->
 
   <string name="parallax_title">Parallaxis</string>

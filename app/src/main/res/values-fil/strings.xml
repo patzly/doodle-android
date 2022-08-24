@@ -75,8 +75,6 @@
   <string name="appearance_colors_info">Sa mga device na walang suporta sa dynamic na kulay (Android 11 o mas mababang bersyon), ang pangunahing kulay lamang ang ginagamit para kalkulahin ang kaibahan ng text sa launcher at pagtinting sa background ng screen ng kamakailang ginamit na mga app.</string>
   <string name="appearance_colors_info_dynamic">Sa mga device na Android 12 o mas mataas na bersyon at dynamic na suporta sa kulay, ginagamit ang tatlong napiling kulay upang awtomatikong gumawa ng tema ng kulay sa buong system.</string>
   <string name="appearance_random">Random na disenyo ng wallpaper</string>
-  <string name="appearance_random_description">Sa tuwing ang display ay naka-off</string>
-
   <!-- PARALLAX -->
 
   <string name="parallax_title">Parallax</string>

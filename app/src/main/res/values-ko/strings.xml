@@ -74,8 +74,6 @@
   <string name="appearance_colors_info">다이내믹 색상 기능이 지원되지 않는 기기들에서는(안드로이드 11 이하) 주 색상만이 런처 텍스트 색상 대비 계산과 최근 앱 화면의 배경 틴트에 사용됩니다.</string>
   <string name="appearance_colors_info_dynamic">다이내믹 색상 지원이 가능하고 안드로이드 12 이상인 기기들에서는 선택된 세가지 색상들이 시스템 전체에 적용되는 테마를 생성하기 위해 사용됩니다.</string>
   <string name="appearance_random">배경화면 디자인을 무작위로 적용</string>
-  <string name="appearance_random_description">화면이 꺼져있을 때마다</string>
-
   <!-- PARALLAX -->
 
   <string name="parallax_title">기울임 효과</string>

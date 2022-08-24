@@ -81,8 +81,6 @@
   <string name="appearance_colors_info">Em dispositivos sem suporte a cores dinâmicas (Android 11 ou mais antigo), apenas a cor primária é utilizada para calcular o contraste do texto do inicializador e o tingimento no fundo da tela de aplicativos recentes.</string>
   <string name="appearance_colors_info_dynamic">Em dispositivos com Android 12 ou mais recente e suporte a cores dinâmicas, as três cores selecionadas são utilizadas para criar um tema de cores para o sistema.</string>
   <string name="appearance_random">Papel de parede randomizado</string>
-  <string name="appearance_random_description">Sempre que a tela for desligada</string>
-
   <!-- PARALLAX -->
 
   <string name="parallax_title">Paralaxe</string>

@@ -73,8 +73,6 @@
   <string name="appearance_colors_info">במכשיר ללא תמיכה בצבעים דינמיים(אנדרואיד 11 ומטה), רק הצבעים הראשיים משומשים לחישוב ניגודיות הטקסט בלאנצ\'ר וצבע הרקע במסך האפליקציות האחרונות</string>
   <string name="appearance_colors_info_dynamic">במכשיר עם אנדרואיד 12 ומעלה ותמיכה בצבעים דינמיים,שלושת הצבעים הנבחרים משומשים כדי ליצור אוטומטית ערכת נושא צבעונית לכלל המערכת</string>
   <string name="appearance_random">עיצוב רקע רנדומלי</string>
-  <string name="appearance_random_description">כל הזמן שהמסך מתכבה</string>
-
   <!-- PARALLAX -->
 
   <string name="parallax_title">פרלקסה</string>

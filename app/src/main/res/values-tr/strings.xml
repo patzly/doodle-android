@@ -83,8 +83,6 @@
   <string name="appearance_colors_info">Dinamik renk desteği bulunmayan cihazlarda (Android 11 ve altı) geçmiş uygulamalar ekranının arkaplanını renklendirmede ve başlatıcının yazı kontrastını hesaplamada sadece ana renk kullanılır.</string>
   <string name="appearance_colors_info_dynamic">Android 12 ya da üzeri ve dinamik renk desteğine sahip cihazlarda, sistem genelinde otomatik olarak bir renk teması oluşturmak için seçilen üç renk kullanılır.</string>
   <string name="appearance_random">Rastgele duvar kağıdı tasarımı </string>
-  <string name="appearance_random_description">Ekran her kapandığında </string>
-
   <!-- PARALLAX -->
 
   <string name="parallax_title">Paralaks</string>

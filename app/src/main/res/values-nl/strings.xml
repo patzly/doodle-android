@@ -83,8 +83,6 @@
   <string name="appearance_colors_info">Op apparaten zonder ondersteuning voor dynamische kleuren (Android 11 of lager), wordt alleen de primaire kleur gebruikt om het contrast van startscherm tekst en de tint van de achtergrond van het recente apps scherm te berekenen.</string>
   <string name="appearance_colors_info_dynamic">Op apparaten met Android 12 of hoger en ondersteuning voor dynamische kleuren, worden de drie geselecteerde kleuren automatisch gebruikt om een systeem-breed kleur thema te creëren.</string>
   <string name="appearance_random">Willekeurig achtergrond ontwerp</string>
-  <string name="appearance_random_description">Telkens als het scherm wordt uitgezet</string>
-
   <!-- PARALLAX -->
 
   <string name="parallax_title">Parallax</string>

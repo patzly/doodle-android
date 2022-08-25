@@ -72,8 +72,6 @@ Personalizza lo sfondo in base al tuo stile!</string>
   <string name="appearance_night_mode_description">Solo colori scuri</string>
   <string name="appearance_night_mode_on">On</string>
   <string name="appearance_night_mode_off">Off</string>
-  <string name="appearance_follow_system">Copia il sistema</string>
-  <string name="appearance_follow_system_description">Adotta il tema del dispositivo</string>
   <string name="appearance_colors_category">Colori</string>
   <string name="appearance_colors">Colori estratti </string>
   <string name="appearance_colors_description">Usato per calcolare il contrasto del testo</string>
@@ -180,8 +178,6 @@ https://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
   <string name="msg_apply_colors">I nuovi colori verranno applicati al sistema la prossima volta che spegnerai lo schermo</string>
   <string name="msg_apply_changes">Per applicare (eventualmente) le nuove opzioni si raccomanda un riavvio del servizio dello sfondo. Il riavvio non può essere effettuato automaticamente.
 Per favore forza la chiusura di Doodle nelle tue impostazioni di sistema e riapplica Doodle come sfondo.</string>
-  <string name="msg_set_wallpaper">Se incontri qualsiasi problema che interrompe l\'animazione dello sfondo quando chiudi quela app, per favore applicala come sfondo attraverso il selettore sfondo del tuo sistema.
-In alternativa, puoi impostarla direttamente da qui come sfondo.</string>
   <string name="msg_preview_missing">Si è verificato un errore, per favore seleziona Doodle Live Wallpaper manualmente</string>
 
   </resources>

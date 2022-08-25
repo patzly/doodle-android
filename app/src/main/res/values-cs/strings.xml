@@ -64,8 +64,6 @@
   <string name="appearance_variant">Varianta</string>
   <string name="appearance_night_mode">Tmavý režim</string>
   <string name="appearance_night_mode_description">Pouze tmavé barvy</string>
-  <string name="appearance_follow_system">Barvy systému</string>
-  <string name="appearance_follow_system_description">Adaptovat se na barevný režim systému</string>
   <string name="appearance_colors">Extrahované barvy</string>
   <string name="appearance_colors_description">Použité pro výpočet barevného kontrastu</string>
   <string name="appearance_colors_description_dynamic">Využívané pro nastavování barevného režimu</string>
@@ -163,7 +161,6 @@
   <string name="msg_force_stop">Vynucené zastavení nutné k provedení změn</string>
   <string name="msg_apply_colors">Změněné barvy se do systému aplikují při příštím vypnutí obrazovky.</string>
   <string name="msg_apply_changes">Pro použití (případně) změněných možností se doporučuje restartovat spuštěnou službu tapety. To nelze provést automaticky.\nProsím, zastavte službu Doodle v nastavení systému a poté ji znovu použijte jako tapetu</string>
-  <string name="msg_set_wallpaper">Pokud narazíte na problém, který přeruší animaci tapety při zavření této aplikace, zvolte prosím výběr tapety v systému a vyberte Doodle.\nJinak si ji můžete nastavit přímo.</string>
   <string name="msg_preview_missing">Došlo k chybě, nastave prosím Doodle Live Wallpaper manuálně</string>
 
   </resources>

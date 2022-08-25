@@ -63,8 +63,6 @@
   <string name="appearance_variant">옵션</string>
   <string name="appearance_night_mode">다크 모드</string>
   <string name="appearance_night_mode_description">어두운 색상들만</string>
-  <string name="appearance_follow_system">시스템 색상 적용</string>
-  <string name="appearance_follow_system_description">기기 테마 적용</string>
   <string name="appearance_colors">추출된 색상</string>
   <string name="appearance_colors_description">텍스트 대비를 계산하기 위해 사용됨</string>
   <string name="appearance_colors_description_dynamic">시스템의 테마 엔진을 사용함</string>

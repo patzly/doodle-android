@@ -71,8 +71,6 @@
   <string name="appearance_night_mode_description">Tik tamsios spalvos</string>
   <string name="appearance_night_mode_on">Įjungta</string>
   <string name="appearance_night_mode_off">Išjungta</string>
-  <string name="appearance_follow_system">Sekti sistemą</string>
-  <string name="appearance_follow_system_description">Priimti įrenginio tema</string>
   <string name="appearance_colors_category">Spalvos</string>
   <string name="appearance_colors">Išpakuotos spalvos</string>
   <string name="appearance_colors_description">Naudota teksto kontrastas apskaičiuoti</string>
@@ -171,7 +169,6 @@
   <string name="msg_force_stop">Reikėjo sustabdyti kad įsigaliotu pakeitimai</string>
   <string name="msg_apply_colors">Pakeistos spalvos bus pateiktos kai kitą kartą išjungsi ekraną</string>
   <string name="msg_apply_changes">Kad taikyti pakeistus parametrus (galiausiai), paleisti iš naujo veikianti paveikslo servisą yra rekomenduojama. Tai negali būti atlikta automatiškai.; Prašau priverstinai sustabdyti „Doodle“ savo sistemos parametrus ir tik tada taikyk savo „Doodle“ paveikslą dar kartą. </string>
-  <string name="msg_set_wallpaper">Jei tu susiduri su problema kuris sulaužo paveikslo animacija kai uždarai programa. prašau nustatyti sistemos paveikslo rinkiklyje „Doodle“ .; Kitaip, tu gali nustatyti tiesiogiai.</string>
   <string name="msg_preview_missing">Iškilo problema, nustatyk „Doodle“ judanti paveikslą rankinių būdų</string>
 
   </resources>

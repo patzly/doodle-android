@@ -55,8 +55,6 @@
   <string name="appearance_variant">باشقا تۈرلەر</string>
   <string name="appearance_night_mode">قاراڭغۇ ھالەت </string>
   <string name="appearance_night_mode_description">پەقەت تۇتۇق رەڭلەر </string>
-  <string name="appearance_follow_system">سىستېمىغا ئەگىشىدۇ </string>
-  <string name="appearance_follow_system_description">ئۆزىدىكى ئۇسلۇبنى ئىشىلتىش</string>
   <!-- PARALLAX -->
 
   <string name="parallax_title">پاراللاكس </string>

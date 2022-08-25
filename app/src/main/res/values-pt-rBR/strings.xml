@@ -69,8 +69,6 @@
   <string name="appearance_variant">Variante</string>
   <string name="appearance_night_mode">Modo noturno</string>
   <string name="appearance_night_mode_description">Apenas cores escuras</string>
-  <string name="appearance_follow_system">Seguir sistema</string>
-  <string name="appearance_follow_system_description">Adotar o tema do dispositivo</string>
   <string name="appearance_colors_category">Cores</string>
   <string name="appearance_colors">Cores extraidas</string>
   <string name="appearance_colors_description">Utilizado para calcular contraste do texto</string>
@@ -172,7 +170,6 @@
   <string name="msg_force_stop">Parada forçada é necessária para aplicar as mudanças</string>
   <string name="msg_apply_colors">Cores selecionadas serão aplicadas ao sistema na próxima vez que você desligar a tela</string>
   <string name="msg_apply_changes">Para (eventualmente) aplicar as configurações modificadas é recomendado reiniciar o  serviço de papel de parede. Isso não poe ser feito automáticamente.\nPor favor, encerre o Doodle nas configurações do seu sistema, então, aplique Doodle como seu papel de parede novamente.</string>
-  <string name="msg_set_wallpaper">Se encontrar algum problema que quebre a animação do papel de parede quando fechar esse aplicativo, selecione o Doodle pelo seletor de papel de parede do sistema.\nCaso contrário, pode usar o Doodle diretamente.</string>
   <string name="msg_preview_missing">Ocorreu um erro, por favor selecione o Doodle Live Wallpaper manualmente</string>
 
   </resources>

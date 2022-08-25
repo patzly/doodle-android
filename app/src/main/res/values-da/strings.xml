@@ -61,8 +61,6 @@
   <string name="appearance_variant">Variant</string>
   <string name="appearance_night_mode">Nattilstand</string>
   <string name="appearance_night_mode_description">Kun mørke farver</string>
-  <string name="appearance_follow_system">Følg systemet</string>
-  <string name="appearance_follow_system_description">Brug temaet fra enheden</string>
   <string name="appearance_colors">Udtrukne farver</string>
   <string name="appearance_colors_description">Anvendes til beregning af tekstkontrast</string>
   <string name="appearance_colors_description_dynamic">Bruges af systemets tematiseringssystem</string>

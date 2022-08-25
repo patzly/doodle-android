@@ -71,8 +71,6 @@
   <string name="appearance_night_mode_description">暗めの色だけを選択対象にします</string>
   <string name="appearance_night_mode_on">On</string>
   <string name="appearance_night_mode_off">Off</string>
-  <string name="appearance_follow_system">システムの設定に従う</string>
-  <string name="appearance_follow_system_description">デバイスのテーマ設定を適用する</string>
   <string name="appearance_colors_category">色の設定</string>
   <string name="appearance_colors">壁紙内で使われている色</string>
   <string name="appearance_colors_description">選択した色を元に文字のコントラストを決定します</string>
@@ -174,7 +172,6 @@
   <string name="msg_force_stop">変更を適用するにはいったん動作を停止する必要があります</string>
   <string name="msg_apply_colors">次に画面をOFFにするまで色の変更はシステムには適用されません</string>
   <string name="msg_apply_changes">設定の変更を（完全に）適用するために壁紙のサービスを再起動したほうがよいでしょう。再起動は自動的には行われません\nいったんシステム設定で Doodle を強制停止し、あらためて Doodle を壁紙として設定しなおしてください</string>
-  <string name="msg_set_wallpaper">　このアプリを閉じたら壁紙のアニメーションがおかしくなってしまうときは、システムの壁紙設定画面で Doodle を壁紙として選択してください/nアプリから直接設定することもできます</string>
   <string name="msg_preview_missing">エラーが発生しました。手動で Doodle Live Wallpaper を選択してください</string>
 
   </resources>

@@ -126,12 +126,12 @@ public class CustomBottomSheetDialog extends AppCompatDialog {
   }
 
   @Override
-  public void setContentView(View view) {
+  public void setContentView(@NonNull View view) {
     super.setContentView(wrapInBottomSheet(0, view, null));
   }
 
   @Override
-  public void setContentView(View view, ViewGroup.LayoutParams params) {
+  public void setContentView(@NonNull View view, ViewGroup.LayoutParams params) {
     super.setContentView(wrapInBottomSheet(0, view, params));
   }
 
@@ -268,10 +268,8 @@ public class CustomBottomSheetDialog extends AppCompatDialog {
             behavior.removeBottomSheetCallback(edgeToEdgeCallback);
           }
 
-          if (insets != null) {
-            edgeToEdgeCallback = new EdgeToEdgeCallback(bottomSheet, insets);
-            behavior.addBottomSheetCallback(edgeToEdgeCallback);
-          }
+          edgeToEdgeCallback = new EdgeToEdgeCallback(bottomSheet, insets);
+          behavior.addBottomSheetCallback(edgeToEdgeCallback);
 
           return insets;
         });
@@ -296,7 +294,7 @@ public class CustomBottomSheetDialog extends AppCompatDialog {
         new AccessibilityDelegateCompat() {
           @Override
           public void onInitializeAccessibilityNodeInfo(
-              View host, @NonNull AccessibilityNodeInfoCompat info) {
+              @NonNull View host, @NonNull AccessibilityNodeInfoCompat info) {
             super.onInitializeAccessibilityNodeInfo(host, info);
             if (cancelable) {
               info.addAction(AccessibilityNodeInfoCompat.ACTION_DISMISS);
@@ -307,7 +305,7 @@ public class CustomBottomSheetDialog extends AppCompatDialog {
           }
 
           @Override
-          public boolean performAccessibilityAction(View host, int action, Bundle args) {
+          public boolean performAccessibilityAction(@NonNull View host, int action, Bundle args) {
             if (action == AccessibilityNodeInfoCompat.ACTION_DISMISS && cancelable) {
               cancel();
               return true;

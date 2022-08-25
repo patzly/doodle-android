@@ -1075,8 +1075,8 @@ public class SvgDrawable {
     // PATH
     public Path path;
     public boolean willBeIntersected = false;
-    public Path pathTransformed = new Path();
-    public List<PathIntersection> intersections = new ArrayList<>();
+    public final Path pathTransformed = new Path();
+    public final List<PathIntersection> intersections = new ArrayList<>();
 
     // RECT/IMAGE
     public float width, height;

@@ -90,8 +90,6 @@
   <string name="appearance_night_mode_description">Only dark colors</string>
   <string name="appearance_night_mode_on">On</string>
   <string name="appearance_night_mode_off">Off</string>
-  <string name="appearance_follow_system">Follow system</string>
-  <string name="appearance_follow_system_description">Adopt device theme</string>
   <string name="appearance_light_text">Always use white text</string>
   <string name="appearance_light_text_description">Instead of dark text on bright background</string>
   <string name="appearance_dark_text">Use dark text</string>
@@ -208,7 +206,6 @@
   <string name="msg_force_stop">Forced stop required to apply changes</string>
   <string name="msg_apply_colors">Changed colors will be applied to the system the next time you turn off the screen</string>
   <string name="msg_apply_changes">To apply (eventually) changed options a restart of the running wallpaper service is recommended. This cannot be done automatically.\nPlease force-stop Doodle in your system settings and then apply Doodle as your wallpaper again.</string>
-  <string name="msg_set_wallpaper">If you encounter an issue that breaks wallpaper animation when closing this app, please choose your system\'s wallpaper picker to select Doodle.\nOtherwise you can set it directly.</string>
   <string name="msg_preview_missing">An error occurred, please select Doodle Live Wallpaper manually</string>
 
   <!-- LICENSES -->

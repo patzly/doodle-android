@@ -19,6 +19,7 @@
 
 package xyz.zedler.patrick.doodle.activity;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.WallpaperManager;
 import android.content.ActivityNotFoundException;
@@ -93,6 +94,7 @@ public class MainActivity extends AppCompatActivity {
   private int bottomInset;
   private boolean runAsSuperClass;
 
+  @SuppressLint("AppBundleLocaleChanges")
   @Override
   protected void onCreate(Bundle savedInstanceState) {
 

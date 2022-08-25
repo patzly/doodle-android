@@ -19,6 +19,7 @@
 
 package xyz.zedler.patrick.doodle.util;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.content.res.Resources;
@@ -94,6 +95,7 @@ public class SystemUiUtil {
   public static boolean isNavigationModeGesture(Context context) {
     final int NAV_GESTURE = 2;
     Resources resources = context.getResources();
+    @SuppressLint("DiscouragedApi")
     int resourceId = resources.getIdentifier(
         "config_navBarInteractionMode", "integer", "android"
     );

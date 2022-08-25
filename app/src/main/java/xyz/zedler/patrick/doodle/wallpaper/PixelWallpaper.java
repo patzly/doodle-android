@@ -150,7 +150,7 @@ public class PixelWallpaper extends BaseWallpaper {
             true
         ),
         new WallpaperVariant(
-            R.raw.wallpaper_pixel6,
+            R.raw.wallpaper_pixel6_dark,
             "#282a36",
             "#ffb86c",
             "#ff79c6",

@@ -32,7 +32,8 @@
     android:paddingLeft="24dp"
     android:paddingRight="24dp"
     android:paddingTop="16dp"
-    android:paddingBottom="16dp">
+    android:paddingBottom="16dp"
+    android:baselineAligned="false">
 
     <FrameLayout
       android:layout_width="0dp"

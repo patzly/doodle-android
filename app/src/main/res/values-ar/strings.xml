@@ -71,8 +71,6 @@
   <string name="appearance_night_mode_description">الألوان الداكنة فقط</string>
   <string name="appearance_night_mode_on">تمام</string>
   <string name="appearance_night_mode_off">مب تمام</string>
-  <string name="appearance_follow_system">اتباع النظام</string>
-  <string name="appearance_follow_system_description">اعتماد مظهر الجهاز</string>
   <string name="appearance_colors_category">الألوان</string>
   <string name="appearance_colors">الألوان المستخرجة</string>
   <string name="appearance_colors_description">يستخدم لحساب تباين النص</string>
@@ -174,7 +172,6 @@
   <string name="msg_force_stop">الإيقاف الاجباري مطلوب لتطبيق التغييرات</string>
   <string name="msg_apply_colors">سيتم تطبيق الألوان التي تم تغييرها على النظام في المرة التالية التي تقوم فيها بإيقاف تشغيل الشاشة</string>
   <string name="msg_apply_changes">لتطبيق الخيارات التي تم تغييرها (في النهاية) ، يوصى بإعادة تشغيل خدمة الخلفية قيد التشغيل.  لا يمكن القيام بذلك تلقائيًا. \ n الرجاء فرض إيقاف رسومات الشعار المبتكرة في إعدادات النظام ثم تطبيق رسومات الشعار المبتكرة كخلفية للشاشة مرة أخرى.</string>
-  <string name="msg_set_wallpaper">إذا واجهت مشكلة تعطل الرسوم المتحركة للخلفية عند إغلاق هذا التطبيق ، فالرجاء اختيار منتقي خلفية النظام لتحديد Doodle. وإلا يمكنك تعيينه مباشرة</string>
   <string name="msg_preview_missing">حدث خطأ ، يرجى تحديد Doodle Live Wallpaper يدويًا</string>
 
   </resources>

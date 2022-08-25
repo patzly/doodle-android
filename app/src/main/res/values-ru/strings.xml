@@ -71,8 +71,6 @@
   <string name="appearance_night_mode_description">Только тёмные цвета</string>
   <string name="appearance_night_mode_on">Вкл.</string>
   <string name="appearance_night_mode_off">Откл.</string>
-  <string name="appearance_follow_system">Как в системе</string>
-  <string name="appearance_follow_system_description">Придерживаться темы устройства</string>
   <string name="appearance_colors_category">Цвета</string>
   <string name="appearance_colors">Палитра цветов</string>
   <string name="appearance_colors_description">Используется для расчета контрастности текста</string>
@@ -174,7 +172,6 @@
   <string name="msg_force_stop">Принудительная остановка, необходимая для внесения изменений</string>
   <string name="msg_apply_colors">Измененные цвета будут применены к системе при следующем выключении экрана</string>
   <string name="msg_apply_changes">Для (окончательного) применения новых параметров рекомендуется перезапустить работающую службу обоев. Этого нельзя сделать автоматически.\nПожалуйста, принудительно остановите Doodle из вашего системного приложения настроек и затем ещё раз установите Doodle в качестве обоев.</string>
-  <string name="msg_set_wallpaper">Если анимация обоев ломается после закрытия этого приложения, тогда используйте системный каталог живых обоев для применения Doodle.\nЕсли нет, то можете установить их напрямую.</string>
   <string name="msg_preview_missing">Произошла ошибка, установите живые обои Doodle вручную</string>
 
   </resources>

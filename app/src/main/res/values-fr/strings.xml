@@ -71,8 +71,6 @@
   <string name="appearance_night_mode_description">Couleurs sombres uniquement</string>
   <string name="appearance_night_mode_on">Activé</string>
   <string name="appearance_night_mode_off">Désactivé</string>
-  <string name="appearance_follow_system">Suivre le système</string>
-  <string name="appearance_follow_system_description">Suivre le thème de l\'appareil</string>
   <string name="appearance_colors_category">Couleurs</string>
   <string name="appearance_colors">Couleurs extraites</string>
   <string name="appearance_colors_description">Utilisé pour calculer le contraste du texte</string>
@@ -171,7 +169,6 @@
   <string name="msg_force_stop">Arrêt forcé requis pour appliquer les modifications</string>
   <string name="msg_apply_colors">Les couleurs modifiées seront appliquées au système la prochaine fois que vous éteindrez l\'écran</string>
   <string name="msg_apply_changes">Pour (éventuellement) appliquer les options modifiées, un redémarrage du service de papier peint en cours d\'exécution est recommandé. Cela ne peut pas être fait automatiquement.\nVeuillez forcer l\'arrêt de Doodle dans les paramètres de votre système, puis appliquez à nouveau Doodle comme fond d\'écran.</string>
-  <string name="msg_set_wallpaper">Si vous rencontrez un problème qui casse l\'animation du papier peint en fermant cette application, veuillez choisir Doodle dans le sélecteur de papier peint de votre système.\nDans le cas contraire vous pouvez le définir directement.</string>
   <string name="msg_preview_missing">Une erreur s\'est produite, veuillez sélectionner manuellement le fond d\'écran animé Doodle</string>
 
   </resources>

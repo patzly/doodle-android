@@ -71,8 +71,6 @@
   <string name="appearance_night_mode_description">Alleen donkere kleuren</string>
   <string name="appearance_night_mode_on">Aan</string>
   <string name="appearance_night_mode_off">Uit</string>
-  <string name="appearance_follow_system">Volg systeem</string>
-  <string name="appearance_follow_system_description">Neem apparaat thema over</string>
   <string name="appearance_colors_category">Kleuren</string>
   <string name="appearance_colors">Geëxtraheerde kleuren</string>
   <string name="appearance_colors_description">Gebruikt voor het berekenen van tekst contrast</string>
@@ -174,7 +172,6 @@
   <string name="msg_force_stop">Forceer stoppen verreist om wijzigingen toe te passen</string>
   <string name="msg_apply_colors">Veranderde kleuren zullen de volgende keer je scherm uit zet worden toegepast in het systeem</string>
   <string name="msg_apply_changes">Om (eventueel) gewijzigde opties toe te passen, wordt een herstart van de lopende achtergrond service aanbevolen. Dit kan niet automatisch worden gedaan.\nGelieve Doodle geforceerd te stoppen in je systeeminstellingen en vervolgens Doodle opnieuw toe te passen als je achtergrond.</string>
-  <string name="msg_set_wallpaper">Als u tegen een probleem aan loopt dat ervoor zorgt dat de achtergrond animatie stopt bij het sluiten van de app, gebruik dan de achtergrond kiezer van het systeem om Doodle te selecteren.\nAnders kan het direct ingesteld worden.</string>
   <string name="msg_preview_missing">Er ging iets mis, selecteer Doodle Live Achtergrond alsjeblieft handmatig</string>
 
   </resources>

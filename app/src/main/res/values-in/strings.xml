@@ -66,8 +66,6 @@
   <string name="appearance_variant">Varian</string>
   <string name="appearance_night_mode">Mode malam</string>
   <string name="appearance_night_mode_description">Hanya warna gelap</string>
-  <string name="appearance_follow_system">Ikuti sistem</string>
-  <string name="appearance_follow_system_description">Ikuti tema perangkat</string>
   <string name="appearance_colors">Warna terekstrak</string>
   <string name="appearance_colors_description">Digunakan untuk menghitung kontras teks</string>
   <string name="appearance_colors_description_dynamic">Digunakan oleh mesin tema sistem</string>

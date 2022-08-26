@@ -1,5 +1,6 @@
 ## 5.5.1
 
+- New: option for sliding transition between settings pages and workaround for bug with blank settings subpages in help dialog
 - Improved: syncing of wallpaper design preferences when wallpaper is active
 - Improved: random wallpaper design options
 - Improved: disabled auto backup of settings through Google Drive because different devices require different configurations

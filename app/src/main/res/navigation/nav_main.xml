@@ -33,42 +33,42 @@
     <action
       android:id="@+id/action_overview_to_appearance"
       app:destination="@id/appearanceFragment"
-      app:enterAnim="@anim/enter_end"
-      app:exitAnim="@anim/exit_start"
-      app:popEnterAnim="@anim/enter_start"
-      app:popExitAnim="@anim/exit_end" />
+      app:enterAnim="@anim/enter_end_fade"
+      app:exitAnim="@anim/exit_start_fade"
+      app:popEnterAnim="@anim/enter_start_fade"
+      app:popExitAnim="@anim/exit_end_fade" />
 
     <action
       android:id="@+id/action_overview_to_parallax"
       app:destination="@id/parallaxFragment"
-      app:enterAnim="@anim/enter_end"
-      app:exitAnim="@anim/exit_start"
-      app:popEnterAnim="@anim/enter_start"
-      app:popExitAnim="@anim/exit_end" />
+      app:enterAnim="@anim/enter_end_fade"
+      app:exitAnim="@anim/exit_start_fade"
+      app:popEnterAnim="@anim/enter_start_fade"
+      app:popExitAnim="@anim/exit_end_fade" />
 
     <action
       android:id="@+id/action_overview_to_size"
       app:destination="@id/sizeFragment"
-      app:enterAnim="@anim/enter_end"
-      app:exitAnim="@anim/exit_start"
-      app:popEnterAnim="@anim/enter_start"
-      app:popExitAnim="@anim/exit_end" />
+      app:enterAnim="@anim/enter_end_fade"
+      app:exitAnim="@anim/exit_start_fade"
+      app:popEnterAnim="@anim/enter_start_fade"
+      app:popExitAnim="@anim/exit_end_fade" />
 
     <action
       android:id="@+id/action_overview_to_other"
       app:destination="@id/otherFragment"
-      app:enterAnim="@anim/enter_end"
-      app:exitAnim="@anim/exit_start"
-      app:popEnterAnim="@anim/enter_start"
-      app:popExitAnim="@anim/exit_end" />
+      app:enterAnim="@anim/enter_end_fade"
+      app:exitAnim="@anim/exit_start_fade"
+      app:popEnterAnim="@anim/enter_start_fade"
+      app:popExitAnim="@anim/exit_end_fade" />
 
     <action
       android:id="@+id/action_overview_to_about"
       app:destination="@id/aboutFragment"
-      app:enterAnim="@anim/enter_end"
-      app:exitAnim="@anim/exit_start"
-      app:popEnterAnim="@anim/enter_start"
-      app:popExitAnim="@anim/exit_end" />
+      app:enterAnim="@anim/enter_end_fade"
+      app:exitAnim="@anim/exit_start_fade"
+      app:popEnterAnim="@anim/enter_start_fade"
+      app:popExitAnim="@anim/exit_end_fade" />
 
   </fragment>
 
@@ -88,17 +88,13 @@
     android:id="@+id/parallaxFragment"
     android:name="xyz.zedler.patrick.doodle.fragment.ParallaxFragment"
     android:label="fragment_parallax"
-    tools:layout="@layout/fragment_parallax">
-
-  </fragment>
+    tools:layout="@layout/fragment_parallax" />
 
   <fragment
     android:id="@+id/sizeFragment"
     android:name="xyz.zedler.patrick.doodle.fragment.SizeFragment"
     android:label="fragment_size"
-    tools:layout="@layout/fragment_size">
-
-  </fragment>
+    tools:layout="@layout/fragment_size" />
 
   <fragment
     android:id="@+id/otherFragment"
@@ -116,9 +112,7 @@
     android:id="@+id/aboutFragment"
     android:name="xyz.zedler.patrick.doodle.fragment.AboutFragment"
     android:label="fragment_about"
-    tools:layout="@layout/fragment_about" >
-
-  </fragment>
+    tools:layout="@layout/fragment_about" />
 
   <dialog
     android:id="@+id/textBottomSheetDialogFragment"

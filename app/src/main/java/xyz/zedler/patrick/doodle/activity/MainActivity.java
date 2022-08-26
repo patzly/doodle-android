@@ -50,6 +50,7 @@ import androidx.core.view.WindowInsetsCompat.Type;
 import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
 import androidx.navigation.NavController;
 import androidx.navigation.NavDirections;
+import androidx.navigation.NavOptions;
 import androidx.navigation.fragment.NavHostFragment;
 import com.google.android.material.color.DynamicColors;
 import com.google.android.material.color.DynamicColorsOptions;
@@ -399,6 +400,24 @@ public class MainActivity extends AppCompatActivity {
     }
     try {
       navController.navigate(directions);
+    } catch (IllegalArgumentException e) {
+      Log.e(TAG, "navigate: " + directions, e);
+    }
+  }
+
+  public void navigateToFragment(NavDirections directions, boolean useSliding) {
+    if (navController == null || directions == null) {
+      Log.e(TAG, "navigate: controller or direction is null");
+      return;
+    }
+    try {
+      NavOptions navOptions = new NavOptions.Builder()
+          .setEnterAnim(useSliding ? R.anim.enter_end_slide : R.anim.enter_end_fade)
+          .setExitAnim(useSliding ? R.anim.exit_start_slide : R.anim.exit_start_fade)
+          .setPopEnterAnim(useSliding ? R.anim.enter_start_slide : R.anim.enter_start_fade)
+          .setPopExitAnim(useSliding ? R.anim.exit_end_slide : R.anim.exit_end_fade)
+          .build();
+      navController.navigate(directions, navOptions);
     } catch (IllegalArgumentException e) {
       Log.e(TAG, "navigate: " + directions, e);
     }

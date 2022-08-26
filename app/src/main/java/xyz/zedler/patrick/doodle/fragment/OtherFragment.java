@@ -19,7 +19,6 @@
 
 package xyz.zedler.patrick.doodle.fragment;
 
-import android.annotation.SuppressLint;
 import android.content.ComponentName;
 import android.content.pm.PackageManager;
 import android.os.Build;
@@ -158,6 +157,15 @@ public class OtherFragment extends BaseFragment
       );
     });
 
+    binding.partialOptionTransition.linearOtherTransition.setOnClickListener(
+        v -> binding.partialOptionTransition.switchOtherTransition.setChecked(
+            !binding.partialOptionTransition.switchOtherTransition.isChecked()
+        )
+    );
+    binding.partialOptionTransition.switchOtherTransition.setChecked(
+        getSharedPrefs().getBoolean(PREF.USE_SLIDING, DEF.USE_SLIDING)
+    );
+
     ViewUtil.setOnClickListeners(
         this,
         binding.linearOtherLanguage,
@@ -168,7 +176,8 @@ public class OtherFragment extends BaseFragment
     ViewUtil.setOnCheckedChangeListeners(
         this,
         binding.switchOtherGpu,
-        binding.switchOtherLauncher
+        binding.switchOtherLauncher,
+        binding.partialOptionTransition.switchOtherTransition
     );
   }
 
@@ -176,18 +185,16 @@ public class OtherFragment extends BaseFragment
   public void onClick(View v) {
     int id = v.getId();
     if (id == R.id.linear_other_language) {
-      ViewUtil.startIcon(binding.imageOtherLanguage);
       performHapticClick();
+      ViewUtil.startIcon(binding.imageOtherLanguage);
       navigate(OtherFragmentDirections.actionOtherToLanguagesDialog());
     } else if (id == R.id.linear_other_gpu) {
-      ViewUtil.startIcon(binding.imageOtherGpu);
       binding.switchOtherGpu.setChecked(!binding.switchOtherGpu.isChecked());
     } else if (id == R.id.linear_other_launcher) {
-      ViewUtil.startIcon(binding.imageOtherLauncher);
       binding.switchOtherLauncher.setChecked(!binding.switchOtherLauncher.isChecked());
     } else if (id == R.id.linear_other_reset && getViewUtil().isClickEnabled(id)) {
-      ViewUtil.startIcon(binding.imageOtherReset);
       performHapticClick();
+      ViewUtil.startIcon(binding.imageOtherReset);
       activity.showSnackbar(
           activity.getSnackbar(
               R.string.msg_reset, Snackbar.LENGTH_LONG
@@ -207,16 +214,16 @@ public class OtherFragment extends BaseFragment
     }
   }
 
-  @SuppressLint("ShowToast")
   @Override
   public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
     int id = buttonView.getId();
+    performHapticClick();
     if (id == R.id.switch_other_gpu) {
+      ViewUtil.startIcon(binding.imageOtherGpu);
       getSharedPrefs().edit().putBoolean(PREF.GPU, isChecked).apply();
-      performHapticClick();
       activity.showForceStopRequest(NavMainDirections.actionGlobalApplyDialog());
     } else if (id == R.id.switch_other_launcher) {
-      performHapticClick();
+      ViewUtil.startIcon(binding.imageOtherLauncher);
       if (isChecked) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
           activity.showSnackbar(R.string.other_launcher_unsupported);
@@ -262,6 +269,9 @@ public class OtherFragment extends BaseFragment
             PackageManager.DONT_KILL_APP
         );
       }
+    } else if (id == R.id.switch_other_transition) {
+      ViewUtil.startIcon(binding.partialOptionTransition.imageOtherTransition);
+      getSharedPrefs().edit().putBoolean(PREF.USE_SLIDING, isChecked).apply();
     }
   }
 

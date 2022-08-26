@@ -103,6 +103,7 @@ public final class Constants {
     public static final String GPU = "hardware_acceleration";
     public static final String THEME = "app_theme";
     public static final String MODE = "mode";
+    public static final String USE_SLIDING = "use_sliding_transition";
 
     public static final String LAST_VERSION = "last_version";
     public static final String FEEDBACK_POP_UP_COUNT = "feedback_pop_up_count";
@@ -143,6 +144,7 @@ public final class Constants {
     public static final boolean GPU = true;
     public static final String THEME = "";
     public static final int MODE = AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
+    public static final boolean USE_SLIDING = false;
   }
 
   public static BaseWallpaper getWallpaper(String wallpaper) {

@@ -20,6 +20,7 @@
 package xyz.zedler.patrick.doodle.view;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.drawable.GradientDrawable;
 import android.util.AttributeSet;
 import android.view.Gravity;
@@ -34,10 +35,15 @@ import androidx.core.text.HtmlCompat;
 import androidx.core.widget.TextViewCompat;
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.divider.MaterialDivider;
+import com.google.android.material.materialswitch.MaterialSwitch;
 import com.google.android.material.textview.MaterialTextView;
+import xyz.zedler.patrick.doodle.Constants.DEF;
+import xyz.zedler.patrick.doodle.Constants.PREF;
 import xyz.zedler.patrick.doodle.R;
+import xyz.zedler.patrick.doodle.util.PrefsUtil;
 import xyz.zedler.patrick.doodle.util.ResUtil;
 import xyz.zedler.patrick.doodle.util.SystemUiUtil;
+import xyz.zedler.patrick.doodle.util.ViewUtil;
 
 public class FormattedTextView extends LinearLayout {
 
@@ -53,6 +59,12 @@ public class FormattedTextView extends LinearLayout {
     super(context, attrs);
     this.context = context;
     init();
+  }
+
+  private void init() {
+    setOrientation(VERTICAL);
+    int padding = SystemUiUtil.dpToPx(context, 16);
+    setPadding(0, padding, 0, 0);
   }
 
   public void setText(String text, String... highlights) {
@@ -78,16 +90,23 @@ public class FormattedTextView extends LinearLayout {
         addView(getMessage(part.substring(2), true));
       } else if (part.startsWith("---")) {
         addView(getDivider());
+      } else if (part.startsWith("OPTION_USE_SLIDING")) {
+        View optionTransition = inflate(context, R.layout.partial_option_transition, null);
+        optionTransition.setBackground(ViewUtil.getRippleBgListItemSurface(context));
+        optionTransition.setLayoutParams(getVerticalLayoutParams(0, 16));
+        MaterialSwitch toggle = optionTransition.findViewById(R.id.switch_other_transition);
+        optionTransition.setOnClickListener(v -> toggle.setChecked(!toggle.isChecked()));
+        SharedPreferences sharedPrefs = new PrefsUtil(context).getSharedPrefs();
+        toggle.setOnCheckedChangeListener((buttonView, isChecked) -> {
+          ViewUtil.startIcon(optionTransition.findViewById(R.id.image_other_transition));
+          sharedPrefs.edit().putBoolean(PREF.USE_SLIDING, isChecked).apply();
+        });
+        toggle.setChecked(sharedPrefs.getBoolean(PREF.USE_SLIDING, DEF.USE_SLIDING));
+        addView(optionTransition);
       } else {
         addView(getParagraph(part));
       }
     }
-  }
-
-  private void init() {
-    setOrientation(VERTICAL);
-    int padding = SystemUiUtil.dpToPx(context, 16);
-    setPadding(padding, padding, padding, 0);
   }
 
   private MaterialTextView getParagraph(String text) {
@@ -96,7 +115,7 @@ public class FormattedTextView extends LinearLayout {
         null,
         0
     );
-    textView.setLayoutParams(getVerticalLayoutParams(16));
+    textView.setLayoutParams(getVerticalLayoutParams(16, 16));
     textView.setTextColor(ResUtil.getColorAttr(context, R.attr.colorOnBackground));
     textView.setText(HtmlCompat.fromHtml(text, HtmlCompat.FROM_HTML_MODE_LEGACY));
     return textView;
@@ -106,7 +125,7 @@ public class FormattedTextView extends LinearLayout {
     MaterialTextView textView = new MaterialTextView(
         new ContextThemeWrapper(context, R.style.Widget_Doodle_TextView), null, 0
     );
-    textView.setLayoutParams(getVerticalLayoutParams(16));
+    textView.setLayoutParams(getVerticalLayoutParams(16, 16));
     textView.setText(HtmlCompat.fromHtml(title, HtmlCompat.FROM_HTML_MODE_LEGACY));
     boolean isMedium = false;
     int resId;
@@ -201,7 +220,7 @@ public class FormattedTextView extends LinearLayout {
 
     LinearLayout linearLayout = new LinearLayout(context);
     linearLayout.setLayoutParams(
-        getVerticalLayoutParams(isLast ? 16 : 8)
+        getVerticalLayoutParams(16, isLast ? 16 : 8)
     );
 
     linearLayout.addView(frameLayout);
@@ -217,7 +236,7 @@ public class FormattedTextView extends LinearLayout {
         context, useErrorColors ? R.attr.colorOnErrorContainer : R.attr.colorOnSurfaceVariant
     );
     MaterialCardView cardView = new MaterialCardView(context);
-    cardView.setLayoutParams(getVerticalLayoutParams(16));
+    cardView.setLayoutParams(getVerticalLayoutParams(16, 16));
     int padding = SystemUiUtil.dpToPx(context, 16);
     cardView.setContentPadding(padding, padding, padding, padding);
     cardView.setCardBackgroundColor(colorSurface);
@@ -225,17 +244,19 @@ public class FormattedTextView extends LinearLayout {
     cardView.setRadius(padding);
 
     MaterialTextView textView = getParagraph(text);
-    textView.setLayoutParams(getVerticalLayoutParams(0));
+    textView.setLayoutParams(getVerticalLayoutParams(0, 0));
     textView.setTextColor(colorOnSurface);
     cardView.addView(textView);
     return cardView;
   }
 
-  private LinearLayout.LayoutParams getVerticalLayoutParams(int bottom) {
+  private LinearLayout.LayoutParams getVerticalLayoutParams(int side, int bottom) {
+    int pxSide = SystemUiUtil.dpToPx(context, side);
+    int pxBottom = SystemUiUtil.dpToPx(context, bottom);
     LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
         ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT
     );
-    layoutParams.setMargins(0, 0, 0, SystemUiUtil.dpToPx(context, bottom));
+    layoutParams.setMargins(pxSide, 0, pxSide, pxBottom);
     return layoutParams;
   }
 }

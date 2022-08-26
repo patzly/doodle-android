@@ -4,7 +4,8 @@ You need to turn on background scrolling in your launcher's settings if you have
 
 #### Wallpaper animations stop working?
 
-This seems like a bug of MIUI 12.5 caused by Xiaomi's aggressive app/service killing strategy. If you instead apply the wallpaper in your system's wallpaper picker or in Google Wallpapers it should work. You can open your system's wallpaper picker with a long-tap on an empty place on your home screen.
+This seems like a bug of MIUI caused by Xiaomi's aggressive app/service killing strategy.
+If you instead download the Google Wallpapers app and search in its live wallpaper section for Doodle, it should work. You should also enable autostart and disable battery saver restrictions for Doodle in your system's settings so that it's not being killed.
 
 #### "Set wallpaper" button disappears after applying the wallpaper?
 

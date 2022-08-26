@@ -164,6 +164,8 @@
   <string name="other_theme_auto">自动</string>
   <string name="other_theme_light">浅色</string>
   <string name="other_theme_dark">深色</string>
+  <string name="other_transition">在设置页面间使用滑动过渡</string>
+  <string name="other_transition_description">而非淡出</string>
   <string name="other_reset">重置所有设置</string>
   <string name="other_reset_description">重置比单纯卸载要麻烦，因为首选项存储在一个特殊的地方，必须在设备启动后可直接访问</string>
 

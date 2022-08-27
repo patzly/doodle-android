@@ -393,12 +393,7 @@ public class AppearanceFragment extends BaseFragment
       } else {
         randomMode = RANDOM.OFF;
       }
-      SharedPreferences.Editor editor = getSharedPrefs().edit();
-      editor.putString(PREF.RANDOM, randomMode);
-      if (randomMode.equals(RANDOM.DAILY)) {
-        editor.putBoolean(PREF.CHANGE_DAILY_NOW, true);
-      }
-      editor.apply();
+      getSharedPrefs().edit().putString(PREF.RANDOM, randomMode).apply();
 
       dailyUtil.setDailyEnabled(randomMode.equals(RANDOM.DAILY));
       activity.requestSettingsRefresh();

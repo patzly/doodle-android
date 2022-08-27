@@ -22,15 +22,13 @@ package xyz.zedler.patrick.doodle.receiver;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import xyz.zedler.patrick.doodle.Constants.PREF;
-import xyz.zedler.patrick.doodle.util.PrefsUtil;
+import xyz.zedler.patrick.doodle.Constants.ACTION;
 
 public class DailyReceiver extends BroadcastReceiver {
 
   public void onReceive(Context context, Intent intent) {
-    new PrefsUtil(context).getSharedPrefs()
-        .edit()
-        .putBoolean(PREF.CHANGE_DAILY_NOW, true)
-        .apply();
+    Intent intentDaily = new Intent();
+    intentDaily.setAction(ACTION.NEW_DAILY);
+    context.sendBroadcast(intentDaily);
   }
 }

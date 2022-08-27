@@ -72,7 +72,6 @@ public final class Constants {
     public static final String RANDOM = "random";
     public static final String RANDOM_LIST = "random_list";
     public final static String DAILY_TIME = "daily_time";
-    public final static String CHANGE_DAILY_NOW = "change_daily_now";
 
     // Parallax
 
@@ -287,6 +286,7 @@ public final class Constants {
     public static final String DESIGN_AND_THEME_CHANGED = "action_design_and_theme_changed";
     public static final String THEME_CHANGED = "action_theme_changed";
     public static final String SETTINGS_CHANGED = "action_settings_changed";
+    public static final String NEW_DAILY = "action_new_daily";
   }
 
   public static final class EXTRA {

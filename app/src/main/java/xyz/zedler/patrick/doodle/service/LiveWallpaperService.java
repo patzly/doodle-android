@@ -53,6 +53,7 @@ import android.view.WindowManager;
 import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import xyz.zedler.patrick.doodle.Constants;
 import xyz.zedler.patrick.doodle.Constants.ACTION;
 import xyz.zedler.patrick.doodle.Constants.DEF;
@@ -88,9 +89,7 @@ public class LiveWallpaperService extends WallpaperService {
   private boolean isPowerSaveMode;
   private BroadcastReceiver receiver;
   private String presence;
-  private boolean isScreenOn;
   private boolean isReceiverRegistered = false;
-  private ScreenStateListener screenStateListener;
   private UserPresenceListener userPresenceListener;
   private RefreshListener refreshListener;
   private SensorManager sensorManager;
@@ -109,15 +108,12 @@ public class LiveWallpaperService extends WallpaperService {
       public void onReceive(Context context, Intent intent) {
         switch (intent.getAction()) {
           case Intent.ACTION_SCREEN_OFF:
-            setScreenState(false);
             setUserPresence(USER_PRESENCE.OFF);
             break;
           case Intent.ACTION_USER_PRESENT:
-            setScreenState(true);
             setUserPresence(USER_PRESENCE.UNLOCKED);
             break;
           case Intent.ACTION_SCREEN_ON:
-            setScreenState(true);
             setUserPresence(isKeyguardLocked() ? USER_PRESENCE.LOCKED : USER_PRESENCE.UNLOCKED);
             break;
           case PowerManager.ACTION_POWER_SAVE_MODE_CHANGED:
@@ -138,6 +134,11 @@ public class LiveWallpaperService extends WallpaperService {
               refreshListener.onRefreshSettings();
             }
             break;
+          case ACTION.NEW_DAILY:
+            if (refreshListener != null) {
+              refreshListener.onRefreshDaily();
+            }
+            break;
         }
       }
     };
@@ -154,7 +155,6 @@ public class LiveWallpaperService extends WallpaperService {
 
   @Override
   public Engine onCreateEngine() {
-    setScreenState(true);
     setUserPresence(isKeyguardLocked() ? USER_PRESENCE.LOCKED : USER_PRESENCE.UNLOCKED);
 
     sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
@@ -194,6 +194,7 @@ public class LiveWallpaperService extends WallpaperService {
       filter.addAction(ACTION.DESIGN_AND_THEME_CHANGED);
       filter.addAction(ACTION.THEME_CHANGED);
       filter.addAction(ACTION.SETTINGS_CHANGED);
+      filter.addAction(ACTION.NEW_DAILY);
       try {
         registerReceiver(receiver, filter);
         isReceiverRegistered = true;
@@ -274,47 +275,26 @@ public class LiveWallpaperService extends WallpaperService {
     }
   }
 
-  private void setScreenState(boolean isScreenOn) {
-    if (isScreenOn == this.isScreenOn) {
-      return;
-    }
-    this.isScreenOn = isScreenOn;
-    if (screenStateListener != null) {
-      screenStateListener.onScreenStateChange(isScreenOn);
-    }
-  }
-
   private float getFrameRate() {
     WindowManager windowManager = ((WindowManager) getSystemService(Context.WINDOW_SERVICE));
     return windowManager != null ? windowManager.getDefaultDisplay().getRefreshRate() : 60;
   }
 
-  /**
-   * Change between three states
-   */
   private interface UserPresenceListener {
 
     void onPresenceChange(String presence);
-  }
-
-  /**
-   * Change between two states (UserPresenceListener also changes when unlocking the lockscreen)
-   */
-  private interface ScreenStateListener {
-
-    void onScreenStateChange(boolean isScreenOn);
   }
 
   private interface RefreshListener {
 
     void onRefreshTheme(boolean designMayHaveChanged);
     void onRefreshSettings();
+    void onRefreshDaily();
   }
 
   // ENGINE ------------------------------------------------------------
 
-  class UserAwareEngine extends Engine
-      implements ScreenStateListener, UserPresenceListener, RefreshListener {
+  class UserAwareEngine extends Engine implements UserPresenceListener, RefreshListener {
 
     private Context context;
     private boolean darkText, lightText;
@@ -345,6 +325,7 @@ public class LiveWallpaperService extends WallpaperService {
     private boolean iconDropConsumed = true;
     private boolean isRtl = false;
     private boolean powerSaveSwipe, powerSaveTilt, powerSaveZoom;
+    private boolean isNewDailyPending = false;
     private String randomMode = RANDOM.OFF;
     private float fps;
     private final TimeInterpolator zoomInterpolator = new FastOutSlowInInterpolator();
@@ -364,7 +345,6 @@ public class LiveWallpaperService extends WallpaperService {
 
       fps = getFrameRate();
 
-      screenStateListener = this;
       userPresenceListener = this;
       refreshListener = this;
 
@@ -707,26 +687,13 @@ public class LiveWallpaperService extends WallpaperService {
     }
 
     @Override
-    public void onScreenStateChange(boolean isScreenOn) {
-      if (isScreenOn && randomMode.equals(RANDOM.DAILY)) {
-        if (sharedPrefs.getBoolean(PREF.CHANGE_DAILY_NOW, false)) {
-          loadTheme(true, true);
-          if (isZoomUnlockEnabled && animZoom()) {
-            zoomUnlock = 1;
-            zoomLauncher = 0; // 1 or 0?
-          }
-          drawFrame(true, null);
-          sharedPrefs.edit().putBoolean(PREF.CHANGE_DAILY_NOW, false).apply();
-        }
-      }
-    }
-
-    @Override
     public void onPresenceChange(String presence) {
       switch (presence) {
         case USER_PRESENCE.OFF:
-          if (randomMode.equals(RANDOM.SCREEN_OFF)) {
+          if (randomMode.equals(RANDOM.SCREEN_OFF) ||
+              (randomMode.equals(RANDOM.DAILY) && isNewDailyPending)) {
             loadTheme(true, true);
+            isNewDailyPending = false;
           }
           if (isZoomUnlockEnabled && animZoom()) {
             zoomUnlock = 1;
@@ -764,7 +731,26 @@ public class LiveWallpaperService extends WallpaperService {
       loadSettings();
     }
 
-    void drawFrame(boolean force, String source) {
+    @Override
+    public void onRefreshDaily() {
+      if (randomMode.equals(RANDOM.DAILY)) {
+        String presence = LiveWallpaperService.this.presence;
+        if (Objects.equals(presence, USER_PRESENCE.OFF)) {
+          loadTheme(true, true);
+          isNewDailyPending = false; // just to make it sure
+          if (isZoomUnlockEnabled && animZoom()) {
+            zoomUnlock = 1;
+            zoomLauncher = 0; // 1 or 0?
+          }
+          drawFrame(true, null);
+          System.gc();
+        } else {
+          isNewDailyPending = true;
+        }
+      }
+    }
+
+    private void drawFrame(boolean force, String source) {
       if (!isDrawingAllowed(force, source)) {
         // Cancel drawing request
         return;

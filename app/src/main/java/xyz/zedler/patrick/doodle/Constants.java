@@ -71,7 +71,8 @@ public final class Constants {
     public static final String FORCE_LIGHT_TEXT = "light_text";
     public static final String RANDOM = "random";
     public static final String RANDOM_LIST = "random_list";
-    public final static String DAILY_TIME = "daily_time";
+    public static final String RANDOM_CURRENT = "random_current_wallpaper";
+    public static final String DAILY_TIME = "daily_time";
 
     // Parallax
 
@@ -118,7 +119,7 @@ public final class Constants {
     public static final Set<String> RANDOM_LIST = new HashSet<>(
         Arrays.asList(Constants.getAllWallpapers())
     );
-    public final static String DAILY_TIME = "3:00";
+    public static final String DAILY_TIME = "3:00";
 
     public static final int PARALLAX = 2;
     public static final boolean POWER_SAVE_SWIPE = false;

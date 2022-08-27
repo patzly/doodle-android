@@ -201,6 +201,9 @@ public class LiveWallpaperService extends WallpaperService {
     }
   }
 
+  /**
+   * Notifies the registered listener about user presence changes
+   */
   private void setUserPresence(String presence) {
     if (presence.equals(userPresence)) {
       return;
@@ -486,6 +489,7 @@ public class LiveWallpaperService extends WallpaperService {
         case USER_PRESENCE.OFF:
           if (randomMode.equals(RANDOM.SCREEN_OFF) ||
               (randomMode.equals(RANDOM.DAILY) && isNewDailyPending)) {
+            sharedPrefs.edit().remove(PREF.RANDOM_CURRENT).apply();
             loadThemeAndDesign(true);
             isNewDailyPending = false;
           }
@@ -520,6 +524,9 @@ public class LiveWallpaperService extends WallpaperService {
 
     @Override
     public void onRefreshTheme(boolean designMightHaveChanged) {
+      if (designMightHaveChanged) {
+        sharedPrefs.edit().remove(PREF.RANDOM_CURRENT).apply();
+      }
       loadTheme(designMightHaveChanged, !randomMode.equals(RANDOM.OFF));
     }
 
@@ -533,6 +540,7 @@ public class LiveWallpaperService extends WallpaperService {
       if (randomMode.equals(RANDOM.DAILY)) {
         String presence = LiveWallpaperService.this.userPresence;
         if (Objects.equals(presence, USER_PRESENCE.OFF)) {
+          sharedPrefs.edit().remove(PREF.RANDOM_CURRENT).apply();
           loadThemeAndDesign(true);
           isNewDailyPending = false; // just to make it sure
           if (isZoomUnlockEnabled && animZoom()) {
@@ -589,10 +597,17 @@ public class LiveWallpaperService extends WallpaperService {
     private void loadTheme(boolean designMightHaveChanged, boolean useRandomDesign) {
       if (designMightHaveChanged) {
         if (useRandomDesign) {
-          String previous = wallpaper != null ? wallpaper.getName() : "";
-          wallpaper = Constants.getRandomWallpaper(
-              sharedPrefs.getStringSet(PREF.RANDOM_LIST, DEF.RANDOM_LIST), previous
-          );
+          String randomCurrent = sharedPrefs.getString(PREF.RANDOM_CURRENT, null);
+          if (randomCurrent != null) {
+            // Don't change design after device restart or after engine changes to non-preview
+            wallpaper = Constants.getWallpaper(randomCurrent);
+          } else {
+            String previous = wallpaper != null ? wallpaper.getName() : "";
+            wallpaper = Constants.getRandomWallpaper(
+                sharedPrefs.getStringSet(PREF.RANDOM_LIST, DEF.RANDOM_LIST), previous
+            );
+            sharedPrefs.edit().putString(PREF.RANDOM_CURRENT, wallpaper.getName()).apply();
+          }
         } else {
           wallpaper = Constants.getWallpaper(sharedPrefs.getString(PREF.WALLPAPER, DEF.WALLPAPER));
         }
@@ -620,7 +635,7 @@ public class LiveWallpaperService extends WallpaperService {
     }
 
     /**
-     * Loads all required preferences for theme components but leave the design untouched.
+     * Loads all required preferences for theme components but leaves the design untouched.
      */
     private void loadThemeOnly() {
       loadTheme(false, false);

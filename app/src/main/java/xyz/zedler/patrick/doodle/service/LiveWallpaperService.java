@@ -24,7 +24,6 @@ import android.animation.ValueAnimator;
 import android.annotation.SuppressLint;
 import android.app.KeyguardManager;
 import android.app.WallpaperColors;
-import android.app.WallpaperManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -40,7 +39,6 @@ import android.hardware.SensorManager;
 import android.os.Build;
 import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
-import android.os.Bundle;
 import android.os.PowerManager;
 import android.os.SystemClock;
 import android.service.wallpaper.WallpaperService;
@@ -322,7 +320,6 @@ public class LiveWallpaperService extends WallpaperService {
     private boolean useGpu;
     private boolean isListenerRegistered = false;
     private boolean isSurfaceAvailable = false;
-    private boolean iconDropConsumed = true;
     private boolean isRtl = false;
     private boolean powerSaveSwipe, powerSaveTilt, powerSaveZoom;
     private boolean isNewDailyPending = false;
@@ -517,31 +514,6 @@ public class LiveWallpaperService extends WallpaperService {
       }
       if (animSwipe()) {
         updateOffset(true, null);
-      }
-    }
-
-    @Override
-    public Bundle onCommand(
-        final String action, final int x, final int y, final int z, final Bundle extras,
-        final boolean resultRequested
-    ) {
-      switch (action) {
-        case WallpaperManager.COMMAND_DROP:
-          iconDropConsumed = false;
-          notifyIconDropped(x, y);
-          break;
-        case WallpaperManager.COMMAND_TAP:
-        case "android.wallpaper.wakingup":
-        case "android.wallpaper.goingtosleep":
-        case "android.wallpaper.reapply":
-          break;
-      }
-      return null;
-    }
-
-    private void notifyIconDropped(int x, int y) {
-      if (!iconDropConsumed) {
-        iconDropConsumed = true;
       }
     }
 

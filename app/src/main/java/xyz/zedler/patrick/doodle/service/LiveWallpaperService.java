@@ -49,8 +49,7 @@ import android.view.SurfaceHolder;
 import android.view.View;
 import android.view.WindowManager;
 import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.LinkedList;
 import java.util.Objects;
 import xyz.zedler.patrick.doodle.Constants;
 import xyz.zedler.patrick.doodle.Constants.ACTION;
@@ -63,7 +62,6 @@ import xyz.zedler.patrick.doodle.Constants.USER_PRESENCE;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.drawable.SvgDrawable;
 import xyz.zedler.patrick.doodle.util.PrefsUtil;
-import xyz.zedler.patrick.doodle.util.SensorUtil;
 import xyz.zedler.patrick.doodle.wallpaper.BaseWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.BaseWallpaper.WallpaperVariant;
 
@@ -71,28 +69,35 @@ public class LiveWallpaperService extends WallpaperService {
 
   private static final String TAG = LiveWallpaperService.class.getSimpleName();
 
-  // All things where we need a context or the service's context are done in this Service class
-  // All other things should be done in the inner Engine class
+  // All things which depend on BroadcastReceiver and global service management are contained
+  // in this outer class because of onDestroy, other stuff should be contained in the inner class
 
   private static LiveWallpaperService serviceInstance = null;
   @SuppressLint("StaticFieldLeak")
   private static UserAwareEngine nonPreviewEngineInstance = null;
 
-  private SharedPreferences sharedPrefs;
-  private SvgDrawable svgDrawable;
-  private BaseWallpaper wallpaper;
-  private WallpaperVariant variant;
-  private int variantIndex;
-  private int nightMode;
-  private boolean isPowerSaveMode;
   private BroadcastReceiver receiver;
-  private String presence;
   private boolean isReceiverRegistered = false;
+
+  private String userPresence;
   private UserPresenceListener userPresenceListener;
   private RefreshListener refreshListener;
-  private SensorManager sensorManager;
+
+  private boolean isPowerSaveMode;
   private PowerManager powerManager;
   private KeyguardManager keyguardManager;
+
+  private interface UserPresenceListener {
+
+    void onPresenceChange(String presence);
+  }
+
+  private interface RefreshListener {
+
+    void onRefreshTheme(boolean designMightHaveChanged);
+    void onRefreshSettings();
+    void onRefreshDaily();
+  }
 
   @Override
   public void onCreate() {
@@ -100,7 +105,10 @@ public class LiveWallpaperService extends WallpaperService {
 
     serviceInstance = this;
 
-    sharedPrefs = new PrefsUtil(this).checkForMigrations().getSharedPrefs();
+    keyguardManager = (KeyguardManager)  getSystemService(Context.KEYGUARD_SERVICE);
+    powerManager = (PowerManager) getSystemService(Context.POWER_SERVICE);
+
+    isPowerSaveMode = powerManager.isPowerSaveMode();
 
     receiver = new BroadcastReceiver() {
       public void onReceive(Context context, Intent intent) {
@@ -108,16 +116,16 @@ public class LiveWallpaperService extends WallpaperService {
           case Intent.ACTION_SCREEN_OFF:
             setUserPresence(USER_PRESENCE.OFF);
             break;
-          case Intent.ACTION_USER_PRESENT:
-            setUserPresence(USER_PRESENCE.UNLOCKED);
-            break;
           case Intent.ACTION_SCREEN_ON:
             setUserPresence(isKeyguardLocked() ? USER_PRESENCE.LOCKED : USER_PRESENCE.UNLOCKED);
+            break;
+          case Intent.ACTION_USER_PRESENT:
+            setUserPresence(USER_PRESENCE.UNLOCKED);
             break;
           case PowerManager.ACTION_POWER_SAVE_MODE_CHANGED:
             isPowerSaveMode = powerManager.isPowerSaveMode();
             break;
-          case ACTION.DESIGN_AND_THEME_CHANGED:
+          case ACTION.THEME_AND_DESIGN_CHANGED:
             if (refreshListener != null) {
               refreshListener.onRefreshTheme(true);
             }
@@ -140,56 +148,14 @@ public class LiveWallpaperService extends WallpaperService {
         }
       }
     };
-    registerReceiver();
-  }
 
-  @Override
-  public void onDestroy() {
-    super.onDestroy();
-
-    serviceInstance = null;
-    unregisterReceiver();
-  }
-
-  @Override
-  public Engine onCreateEngine() {
-    setUserPresence(isKeyguardLocked() ? USER_PRESENCE.LOCKED : USER_PRESENCE.UNLOCKED);
-
-    sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
-    keyguardManager = (KeyguardManager)  getSystemService(Context.KEYGUARD_SERVICE);
-    powerManager = (PowerManager) getSystemService(Context.POWER_SERVICE);
-    isPowerSaveMode = powerManager.isPowerSaveMode();
-
-    return new UserAwareEngine();
-  }
-
-  public static boolean isMainEngineRunning() {
-    try {
-      // If instance was not cleared but the service was destroyed an exception will be thrown
-      if (serviceInstance != null && serviceInstance.ping()) {
-        return nonPreviewEngineInstance != null
-            && nonPreviewEngineInstance.ping();
-      } else {
-        return false;
-      }
-    } catch (Exception e) {
-      // destroyed/not-started
-      return false;
-    }
-  }
-
-  private boolean ping() {
-    return true;
-  }
-
-  private void registerReceiver() {
     if (!isReceiverRegistered) {
       IntentFilter filter = new IntentFilter();
       filter.addAction(Intent.ACTION_USER_PRESENT);
       filter.addAction(Intent.ACTION_SCREEN_OFF);
       filter.addAction(Intent.ACTION_SCREEN_ON);
       filter.addAction(PowerManager.ACTION_POWER_SAVE_MODE_CHANGED);
-      filter.addAction(ACTION.DESIGN_AND_THEME_CHANGED);
+      filter.addAction(ACTION.THEME_AND_DESIGN_CHANGED);
       filter.addAction(ACTION.THEME_CHANGED);
       filter.addAction(ACTION.SETTINGS_CHANGED);
       filter.addAction(ACTION.NEW_DAILY);
@@ -197,63 +163,35 @@ public class LiveWallpaperService extends WallpaperService {
         registerReceiver(receiver, filter);
         isReceiverRegistered = true;
       } catch (Exception e) {
-        Log.e(TAG, "unregisterReceiver", e);
+        Log.e(TAG, "onCreate", e);
       }
     }
   }
 
-  private void unregisterReceiver() {
+  @Override
+  public void onDestroy() {
+    super.onDestroy();
+
     if (isReceiverRegistered) {
       try {
         unregisterReceiver(receiver);
         isReceiverRegistered = false;
       } catch (Exception e) {
-        Log.e(TAG, "unregisterReceiver", e);
+        Log.e(TAG, "onDestroy", e);
       }
     }
+    serviceInstance = null;
   }
 
-  private void loadWallpaper() {
-    variantIndex = sharedPrefs.getInt(
-        Constants.VARIANT_PREFIX + wallpaper.getName(), 0
-    );
-    // This method is more efficient
-    if (variantIndex >= wallpaper.getVariants().length
-        || variantIndex >= wallpaper.getDarkVariants().length) {
-      variantIndex = 0;
-    }
-
-    if (isNightMode()) {
-      variant = wallpaper.getDarkVariants()[variantIndex];
-      svgDrawable = wallpaper.getPreparedSvg(
-          new SvgDrawable(this, variant.getSvgResId()), variantIndex, true
-      );
-    } else {
-      variant = wallpaper.getVariants()[variantIndex];
-      svgDrawable = wallpaper.getPreparedSvg(
-          new SvgDrawable(this, variant.getSvgResId()), variantIndex, false
-      );
-    }
-
-    if (svgDrawable == null) {
-      // Prevent NullPointerExceptions
-      svgDrawable = wallpaper.getPreparedSvg(
-          new SvgDrawable(this, R.raw.wallpaper_pixel1), 1, false
-      );
-    }
-    if (wallpaper.isDepthStatic()) {
-      svgDrawable.applyRelativeElevationToAll(0.2f);
-    }
+  @Override
+  public Engine onCreateEngine() {
+    setUserPresence(isKeyguardLocked() ? USER_PRESENCE.LOCKED : USER_PRESENCE.UNLOCKED);
+    return new UserAwareEngine();
   }
 
-  private boolean isNightMode() {
-    if (nightMode == NIGHT_MODE.ON) {
-      return true;
-    }
-    int flags = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
-    return nightMode == NIGHT_MODE.AUTO && flags == Configuration.UI_MODE_NIGHT_YES;
-  }
-
+  /**
+   * Returns true if the lockscreen is shown to the user
+   */
   private boolean isKeyguardLocked() {
     if (keyguardManager != null) {
       return keyguardManager.isKeyguardLocked();
@@ -264,87 +202,110 @@ public class LiveWallpaperService extends WallpaperService {
   }
 
   private void setUserPresence(String presence) {
-    if (presence.equals(this.presence)) {
+    if (presence.equals(userPresence)) {
       return;
     }
-    this.presence = presence;
+    userPresence = presence;
     if (userPresenceListener != null) {
       userPresenceListener.onPresenceChange(presence);
     }
   }
 
-  private float getFrameRate() {
-    WindowManager windowManager = ((WindowManager) getSystemService(Context.WINDOW_SERVICE));
-    return windowManager != null ? windowManager.getDefaultDisplay().getRefreshRate() : 60;
+  /**
+   * Returns true if a non-preview engine is running, otherwise false
+   */
+  public static boolean isMainEngineRunning() {
+    try {
+      // If instance was not cleared but the service was destroyed an exception will be thrown
+      if (serviceInstance != null && serviceInstance.ping()) {
+        return nonPreviewEngineInstance != null && nonPreviewEngineInstance.ping();
+      }
+      return false;
+    } catch (Exception e) {
+      // destroyed or not started
+      return false;
+    }
   }
 
-  private interface UserPresenceListener {
-
-    void onPresenceChange(String presence);
+  /**
+   * Dummy method to signal that the current instance is running and can be called
+   */
+  private boolean ping() {
+    return true;
   }
 
-  private interface RefreshListener {
+  // ENGINE
 
-    void onRefreshTheme(boolean designMayHaveChanged);
-    void onRefreshSettings();
-    void onRefreshDaily();
-  }
+  private class UserAwareEngine extends Engine implements UserPresenceListener, RefreshListener {
 
-  // ENGINE ------------------------------------------------------------
-
-  class UserAwareEngine extends Engine implements UserPresenceListener, RefreshListener {
+    private static final int MAX_TILT_HISTORY_SIZE = 30;
 
     private Context context;
-    private boolean darkText, lightText;
-    private int zoomIntensity;
-    private boolean isZoomLauncherEnabled, isZoomUnlockEnabled;
-    private float zoomLauncher;
-    private float zoomUnlock;
-    private boolean useSystemZoom;
+    private SharedPreferences sharedPrefs;
+
+    // General rendering
+    private boolean useGpu;
+    private boolean isSurfaceAvailable;
+    private boolean isVisible;
+    private float fps;
+    private int screenRotation;
+
+    // Appearance
+    private SvgDrawable svgDrawable;
+    private BaseWallpaper wallpaper;
+    private WallpaperVariant variant;
+    private int variantIndex;
+    private int nightModePref;
+    private boolean isNightMode;
+    private boolean useDarkText, forceLightText;
+    private String randomMode;
+    private boolean isNewDailyPending;
+
+    // Parallax
+    private int parallaxIntensity;
+    private boolean isRtl;
+    private float offsetX;
+    private boolean isTiltEnabled;
+    private int dampingTilt, tiltThreshold, tiltRefreshRate;
+    private SensorManager sensorManager;
+    private Sensor accelerometer;
+    private SensorEventListener sensorListener;
+    private boolean isSensorListenerRegistered;
+    private float[] accelerationValues;
+    private final LinkedList<Pair<Float, Float>> tiltHistory = new LinkedList<>();
+    private float tiltX, tiltY;
+    private long lastDrawTilt;
+    private boolean powerSaveSwipe, powerSaveTilt;
+
+    // Size
     private float scale;
-    private int parallax;
+    private int zoomIntensity;
+    private float zoomLauncher, zoomUnlock;
+    private boolean useSystemZoom;
+    private boolean isZoomLauncherEnabled, isZoomUnlockEnabled;
     private int zoomRotation;
     private int zoomDuration;
-    private int dampingTilt, dampingZoom;
     private boolean useZoomDamping;
-    private boolean hasAccelerometer;
-    private boolean isTiltEnabled;
-    private float tiltX, tiltY;
-    private int screenRotation;
-    private int tiltThreshold;
-    private float[] accelerationValues;
-    private float offsetX;
-    private long lastDrawZoomLauncher, lastDrawZoomUnlock, lastDrawTilt;
-    private boolean isVisible;
-    private boolean isNight;
-    private boolean useGpu;
-    private boolean isListenerRegistered = false;
-    private boolean isSurfaceAvailable = false;
-    private boolean isRtl = false;
-    private boolean powerSaveSwipe, powerSaveTilt, powerSaveZoom;
-    private boolean isNewDailyPending = false;
-    private String randomMode = RANDOM.OFF;
-    private float fps;
-    private final TimeInterpolator zoomInterpolator = new FastOutSlowInInterpolator();
+    private int dampingZoom;
+    private long lastDrawZoomLauncher, lastDrawZoomUnlock;
+    private boolean powerSaveZoom;
     private ValueAnimator zoomAnimator;
-    private SensorEventListener sensorListener;
-    private final List<Pair<Float, Float>> tiltHistory = new ArrayList<>();
+    private final TimeInterpolator zoomInterpolator = new FastOutSlowInInterpolator();
 
     @Override
     public void onCreate(SurfaceHolder surfaceHolder) {
       super.onCreate(surfaceHolder);
 
-      context = LiveWallpaperService.this;
-
+      setUserPresence(isKeyguardLocked() ? USER_PRESENCE.LOCKED : USER_PRESENCE.UNLOCKED);
       if (!isPreview()) {
         nonPreviewEngineInstance = this;
       }
 
-      fps = getFrameRate();
+      context = LiveWallpaperService.this;
+      sharedPrefs = new PrefsUtil(context).checkForMigrations().getSharedPrefs();
 
-      userPresenceListener = this;
-      refreshListener = this;
-
+      sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+      accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
       sensorListener = new SensorEventListener() {
         @Override
         public void onSensorChanged(SensorEvent event) {
@@ -354,7 +315,7 @@ public class LiveWallpaperService extends WallpaperService {
             tiltY = -accelerationValues[1];
 
             tiltHistory.add(new Pair<>(tiltX, tiltY));
-            while (tiltHistory.size() > 30) {
+            while (tiltHistory.size() > MAX_TILT_HISTORY_SIZE) {
               tiltHistory.remove(0);
             }
 
@@ -382,17 +343,17 @@ public class LiveWallpaperService extends WallpaperService {
         }
 
         @Override
-        public void onAccuracyChanged(Sensor sensor, int accuracy) {
-        }
+        public void onAccuracyChanged(Sensor sensor, int accuracy) {}
       };
+
+      WindowManager windowManager = ((WindowManager) getSystemService(Context.WINDOW_SERVICE));
+      fps = windowManager != null ? windowManager.getDefaultDisplay().getRefreshRate() : 60;
 
       // Load this only once on creation, else it would cause a crash caused by OpenGL
       useGpu = sharedPrefs.getBoolean(PREF.GPU, DEF.GPU);
 
-      hasAccelerometer = SensorUtil.hasAccelerometer(context);
-
       loadSettings();
-      loadTheme(true, !randomMode.equals(RANDOM.OFF));
+      loadThemeAndDesign(!randomMode.equals(RANDOM.OFF));
 
       zoomLauncher = 0;
       // This starts the zoom effect already in wallpaper preview
@@ -400,6 +361,10 @@ public class LiveWallpaperService extends WallpaperService {
       if (!useSystemZoom) {
         animateZoom(0);
       }
+
+      // After all necessary variables have been set
+      userPresenceListener = this;
+      refreshListener = this;
 
       setTouchEventsEnabled(false);
       setOffsetNotificationsEnabled(true);
@@ -415,9 +380,9 @@ public class LiveWallpaperService extends WallpaperService {
         zoomAnimator.removeAllUpdateListeners();
         zoomAnimator = null;
       }
-      if (sensorManager != null && isListenerRegistered) {
+      if (sensorManager != null && isSensorListenerRegistered) {
         sensorManager.unregisterListener(sensorListener);
-        isListenerRegistered = false;
+        isSensorListenerRegistered = false;
       }
     }
 
@@ -453,26 +418,10 @@ public class LiveWallpaperService extends WallpaperService {
             getThemeColor(0, isNightMode),
             getThemeColor(1, isNightMode),
             getThemeColor(2, isNightMode),
-            darkText, lightText
+            useDarkText, forceLightText
         );
       } else {
         return super.onComputeColors();
-      }
-    }
-
-    public boolean ping() {
-      return true;
-    }
-
-    private int getThemeColor(int priority, boolean isNightMode) {
-      String colorHex = sharedPrefs.getString(
-          Constants.getThemeColorPref(wallpaper.getName(), variantIndex, priority, isNightMode),
-          null
-      );
-      if (colorHex != null) {
-        return Color.parseColor(colorHex);
-      } else {
-        return variant.getColor(priority);
       }
     }
 
@@ -483,8 +432,8 @@ public class LiveWallpaperService extends WallpaperService {
         return;
       }
 
-      if (isNight != isNightMode()) {
-        loadTheme(false, !randomMode.equals(RANDOM.OFF));
+      if (isNightMode != isNightMode()) {
+        loadThemeOnly();
       }
 
       isRtl = getResources().getConfiguration().getLayoutDirection() == View.LAYOUT_DIRECTION_RTL;
@@ -517,133 +466,6 @@ public class LiveWallpaperService extends WallpaperService {
       }
     }
 
-    private void loadSettings() {
-      randomMode = sharedPrefs.getString(PREF.RANDOM, DEF.RANDOM);
-
-      parallax = sharedPrefs.getInt(PREF.PARALLAX, DEF.PARALLAX);
-      // disables zooming so this should not be disabled
-      // setOffsetNotificationsEnabled(parallax != 0);
-
-      isTiltEnabled = sharedPrefs.getBoolean(PREF.TILT, DEF.TILT);
-      dampingTilt = sharedPrefs.getInt(PREF.DAMPING_TILT, DEF.DAMPING_TILT);
-      dampingZoom = sharedPrefs.getInt(PREF.DAMPING_ZOOM, DEF.DAMPING_ZOOM);
-      useZoomDamping = sharedPrefs.getBoolean(PREF.USE_ZOOM_DAMPING, DEF.USE_ZOOM_DAMPING);
-      tiltThreshold = sharedPrefs.getInt(PREF.THRESHOLD, DEF.THRESHOLD);
-      if (hasAccelerometer && isTiltEnabled && !isListenerRegistered) {
-        sensorManager.registerListener(
-            sensorListener,
-            SensorUtil.getAccelerometer(context),
-            // SENSOR_DELAY_GAME = 20000
-            // SENSOR_DELAY_UI = 66667
-            sharedPrefs.getInt(PREF.REFRESH_RATE, DEF.REFRESH_RATE)
-        );
-        isListenerRegistered = true;
-      } else if (hasAccelerometer && isTiltEnabled) {
-        sensorManager.unregisterListener(sensorListener);
-        isListenerRegistered = false;
-        sensorManager.registerListener(
-            sensorListener,
-            SensorUtil.getAccelerometer(context),
-            // SENSOR_DELAY_GAME = 20000
-            // SENSOR_DELAY_UI = 66667
-            sharedPrefs.getInt(PREF.REFRESH_RATE, DEF.REFRESH_RATE)
-        );
-        isListenerRegistered = true;
-      } else if (isListenerRegistered) {
-        sensorManager.unregisterListener(sensorListener);
-        isListenerRegistered = false;
-      }
-
-      scale = sharedPrefs.getFloat(
-          PREF.SCALE, SvgDrawable.getDefaultScale(context)
-      );
-      if (svgDrawable != null) {
-        svgDrawable.setScale(scale);
-      }
-      zoomIntensity = sharedPrefs.getInt(PREF.ZOOM, DEF.ZOOM);
-      isZoomLauncherEnabled = sharedPrefs.getBoolean(PREF.ZOOM_LAUNCHER, DEF.ZOOM_LAUNCHER);
-      isZoomUnlockEnabled = sharedPrefs.getBoolean(PREF.ZOOM_UNLOCK, DEF.ZOOM_UNLOCK);
-      useSystemZoom = sharedPrefs.getBoolean(PREF.ZOOM_SYSTEM, DEF.ZOOM_SYSTEM);
-      zoomDuration = sharedPrefs.getInt(PREF.ZOOM_DURATION, DEF.ZOOM_DURATION);
-      zoomRotation = sharedPrefs.getInt(PREF.ZOOM_ROTATION, DEF.ZOOM_ROTATION);
-
-      powerSaveSwipe = sharedPrefs.getBoolean(PREF.POWER_SAVE_SWIPE, DEF.POWER_SAVE_SWIPE);
-      powerSaveTilt = sharedPrefs.getBoolean(PREF.POWER_SAVE_TILT, DEF.POWER_SAVE_TILT);
-      powerSaveZoom = sharedPrefs.getBoolean(PREF.POWER_SAVE_ZOOM, DEF.POWER_SAVE_ZOOM);
-    }
-
-    private void loadTheme(boolean designMayHaveChanged, boolean useRandomWallpaper) {
-      if (designMayHaveChanged) {
-        if (useRandomWallpaper) {
-          String previous = wallpaper != null ? wallpaper.getName() : "";
-          wallpaper = Constants.getRandomWallpaper(
-              sharedPrefs.getStringSet(PREF.RANDOM_LIST, DEF.RANDOM_LIST), previous
-          );
-        } else {
-          wallpaper = Constants.getWallpaper(sharedPrefs.getString(PREF.WALLPAPER, DEF.WALLPAPER));
-        }
-      }
-      nightMode = sharedPrefs.getInt(PREF.NIGHT_MODE, DEF.NIGHT_MODE);
-      isNight = isNightMode();
-
-      darkText = sharedPrefs.getBoolean(PREF.USE_DARK_TEXT, DEF.USE_DARK_TEXT);
-      lightText = sharedPrefs.getBoolean(PREF.FORCE_LIGHT_TEXT, DEF.FORCE_LIGHT_TEXT);
-
-      loadWallpaper();
-      svgDrawable.setScale(scale);
-
-      if (VERSION.SDK_INT >= VERSION_CODES.O_MR1) {
-        // NullPointerException on many devices!?
-        try {
-          notifyColorsChanged();
-          if (VERSION.SDK_INT < VERSION_CODES.S) {
-            notifyColorsChanged();
-          }
-        } catch (Exception e) {
-          Log.e(TAG, "colorsHaveChanged", e);
-        }
-      }
-    }
-
-    @SuppressWarnings("SuspiciousNameCombination")
-    private void updateOffset(boolean force, String source) {
-      float xOffset = parallax != 0 ? offsetX : 0;
-      int tiltFactor = 18 * parallax * (isTiltEnabled ? 1 : 0);
-      float finalTiltX, finalTiltY;
-      switch (screenRotation) {
-        case Surface.ROTATION_90:
-          finalTiltX = tiltY;
-          finalTiltY = -tiltX;
-          break;
-        case Surface.ROTATION_180:
-          finalTiltX = -tiltX;
-          finalTiltY = -tiltY;
-          break;
-        case Surface.ROTATION_270:
-          finalTiltX = -tiltY;
-          finalTiltY = tiltX;
-          break;
-        case Surface.ROTATION_0:
-        default:
-          finalTiltX = tiltX;
-          finalTiltY = tiltY;
-          break;
-      }
-      svgDrawable.setOffset(
-          xOffset * parallax * 100 + finalTiltX * tiltFactor,
-          finalTiltY * tiltFactor
-      );
-      drawFrame(force, source);
-    }
-
-    /**
-     * WallpaperService.Engine#shouldZoomOutWallpaper()
-     */
-    public boolean shouldZoomOutWallpaper() {
-      // Return true and clear onZoomChanged if we don't want a custom zoom animation
-      return isZoomLauncherEnabled && useSystemZoom && animZoom();
-    }
-
     @Override
     public void onZoomChanged(float zoom) {
       if (!useSystemZoom) {
@@ -664,7 +486,7 @@ public class LiveWallpaperService extends WallpaperService {
         case USER_PRESENCE.OFF:
           if (randomMode.equals(RANDOM.SCREEN_OFF) ||
               (randomMode.equals(RANDOM.DAILY) && isNewDailyPending)) {
-            loadTheme(true, true);
+            loadThemeAndDesign(true);
             isNewDailyPending = false;
           }
           if (isZoomUnlockEnabled && animZoom()) {
@@ -674,15 +496,18 @@ public class LiveWallpaperService extends WallpaperService {
           if (!randomMode.equals(RANDOM.OFF) || (isZoomUnlockEnabled && animZoom())) {
             drawFrame(true, null);
           }
+          setTiltListenerRegistered(false);
           System.gc();
           break;
         case USER_PRESENCE.LOCKED:
+          setTiltListenerRegistered(true);
           if (isZoomUnlockEnabled && animZoom()) {
             zoomLauncher = 0;
             animateZoom(0.5f);
           }
           break;
         case USER_PRESENCE.UNLOCKED:
+          setTiltListenerRegistered(true);
           if (isVisible && animZoom()) {
             animateZoom(0);
           } else {
@@ -694,8 +519,8 @@ public class LiveWallpaperService extends WallpaperService {
     }
 
     @Override
-    public void onRefreshTheme(boolean designMayHaveChanged) {
-      loadTheme(designMayHaveChanged, !randomMode.equals(RANDOM.OFF));
+    public void onRefreshTheme(boolean designMightHaveChanged) {
+      loadTheme(designMightHaveChanged, !randomMode.equals(RANDOM.OFF));
     }
 
     @Override
@@ -706,9 +531,9 @@ public class LiveWallpaperService extends WallpaperService {
     @Override
     public void onRefreshDaily() {
       if (randomMode.equals(RANDOM.DAILY)) {
-        String presence = LiveWallpaperService.this.presence;
+        String presence = LiveWallpaperService.this.userPresence;
         if (Objects.equals(presence, USER_PRESENCE.OFF)) {
-          loadTheme(true, true);
+          loadThemeAndDesign(true);
           isNewDailyPending = false; // just to make it sure
           if (isZoomUnlockEnabled && animZoom()) {
             zoomUnlock = 1;
@@ -722,6 +547,131 @@ public class LiveWallpaperService extends WallpaperService {
       }
     }
 
+    /**
+     * Loads all required preferences for the variables of the engine, except theme components.
+     */
+    private void loadSettings() {
+      parallaxIntensity = sharedPrefs.getInt(PREF.PARALLAX, DEF.PARALLAX);
+      // disables zooming so this should not be disabled
+      // setOffsetNotificationsEnabled(parallaxIntensity != 0);
+
+      randomMode = sharedPrefs.getString(PREF.RANDOM, DEF.RANDOM);
+      isTiltEnabled = sharedPrefs.getBoolean(PREF.TILT, DEF.TILT);
+      dampingTilt = sharedPrefs.getInt(PREF.DAMPING_TILT, DEF.DAMPING_TILT);
+      dampingZoom = sharedPrefs.getInt(PREF.DAMPING_ZOOM, DEF.DAMPING_ZOOM);
+      useZoomDamping = sharedPrefs.getBoolean(PREF.USE_ZOOM_DAMPING, DEF.USE_ZOOM_DAMPING);
+      tiltThreshold = sharedPrefs.getInt(PREF.THRESHOLD, DEF.THRESHOLD);
+      tiltRefreshRate = sharedPrefs.getInt(PREF.TILT_REFRESH_RATE, DEF.TILT_REFRESH_RATE);
+
+      // restart tilt listener (if previously enabled) or start it, all only if tilt is enabled
+      setTiltListenerRegistered(false);
+      setTiltListenerRegistered(true);
+
+      scale = sharedPrefs.getFloat(PREF.SCALE, SvgDrawable.getDefaultScale(context));
+      if (svgDrawable != null) {
+        svgDrawable.setScale(scale);
+      }
+      zoomIntensity = sharedPrefs.getInt(PREF.ZOOM, DEF.ZOOM);
+      isZoomLauncherEnabled = sharedPrefs.getBoolean(PREF.ZOOM_LAUNCHER, DEF.ZOOM_LAUNCHER);
+      isZoomUnlockEnabled = sharedPrefs.getBoolean(PREF.ZOOM_UNLOCK, DEF.ZOOM_UNLOCK);
+      useSystemZoom = sharedPrefs.getBoolean(PREF.ZOOM_SYSTEM, DEF.ZOOM_SYSTEM);
+      zoomDuration = sharedPrefs.getInt(PREF.ZOOM_DURATION, DEF.ZOOM_DURATION);
+      zoomRotation = sharedPrefs.getInt(PREF.ZOOM_ROTATION, DEF.ZOOM_ROTATION);
+
+      powerSaveSwipe = sharedPrefs.getBoolean(PREF.POWER_SAVE_SWIPE, DEF.POWER_SAVE_SWIPE);
+      powerSaveTilt = sharedPrefs.getBoolean(PREF.POWER_SAVE_TILT, DEF.POWER_SAVE_TILT);
+      powerSaveZoom = sharedPrefs.getBoolean(PREF.POWER_SAVE_ZOOM, DEF.POWER_SAVE_ZOOM);
+    }
+
+    /**
+     * Loads all required preferences for theme components but reload the design only if necessary.
+     */
+    private void loadTheme(boolean designMightHaveChanged, boolean useRandomDesign) {
+      if (designMightHaveChanged) {
+        if (useRandomDesign) {
+          String previous = wallpaper != null ? wallpaper.getName() : "";
+          wallpaper = Constants.getRandomWallpaper(
+              sharedPrefs.getStringSet(PREF.RANDOM_LIST, DEF.RANDOM_LIST), previous
+          );
+        } else {
+          wallpaper = Constants.getWallpaper(sharedPrefs.getString(PREF.WALLPAPER, DEF.WALLPAPER));
+        }
+      }
+      nightModePref = sharedPrefs.getInt(PREF.NIGHT_MODE, DEF.NIGHT_MODE);
+      isNightMode = isNightMode();
+
+      useDarkText = sharedPrefs.getBoolean(PREF.USE_DARK_TEXT, DEF.USE_DARK_TEXT);
+      forceLightText = sharedPrefs.getBoolean(PREF.FORCE_LIGHT_TEXT, DEF.FORCE_LIGHT_TEXT);
+
+      loadWallpaper();
+      svgDrawable.setScale(scale);
+
+      if (VERSION.SDK_INT >= VERSION_CODES.O_MR1) {
+        // NullPointerException on many devices!?
+        try {
+          notifyColorsChanged();
+          if (VERSION.SDK_INT < VERSION_CODES.S) {
+            notifyColorsChanged();
+          }
+        } catch (Exception e) {
+          Log.e(TAG, "colorsHaveChanged", e);
+        }
+      }
+    }
+
+    /**
+     * Loads all required preferences for theme components but leave the design untouched.
+     */
+    private void loadThemeOnly() {
+      loadTheme(false, false);
+    }
+
+    /**
+     * Loads all required preferences for theme components and design.
+     */
+    private void loadThemeAndDesign(boolean useRandomDesign) {
+      loadTheme(true, useRandomDesign);
+    }
+
+    /**
+     * Fills the wallpaper component with all parts specified by the current theme/design variables.
+     */
+    private void loadWallpaper() {
+      variantIndex = sharedPrefs.getInt(
+          Constants.VARIANT_PREFIX + wallpaper.getName(), 0
+      );
+      // This method is more efficient
+      if (variantIndex >= wallpaper.getVariants().length
+          || variantIndex >= wallpaper.getDarkVariants().length) {
+        variantIndex = 0;
+      }
+
+      if (isNightMode()) {
+        variant = wallpaper.getDarkVariants()[variantIndex];
+        svgDrawable = wallpaper.getPreparedSvg(
+            new SvgDrawable(context, variant.getSvgResId()), variantIndex, true
+        );
+      } else {
+        variant = wallpaper.getVariants()[variantIndex];
+        svgDrawable = wallpaper.getPreparedSvg(
+            new SvgDrawable(context, variant.getSvgResId()), variantIndex, false
+        );
+      }
+
+      if (svgDrawable == null) {
+        // Prevent NullPointerExceptions
+        svgDrawable = wallpaper.getPreparedSvg(
+            new SvgDrawable(context, R.raw.wallpaper_pixel1), 1, false
+        );
+      }
+      if (wallpaper.isDepthStatic()) {
+        svgDrawable.applyRelativeElevationToAll(0.2f);
+      }
+    }
+
+    /**
+     * Draws the final frame onto the surface.
+     */
     private void drawFrame(boolean force, String source) {
       if (!isDrawingAllowed(force, source)) {
         // Cancel drawing request
@@ -778,6 +728,9 @@ public class LiveWallpaperService extends WallpaperService {
       }
     }
 
+    /**
+     * Returns true if drawing is forced or if enough time is passed since th last rendered frame.
+     */
     private boolean isDrawingAllowed(boolean force, String source) {
       if (force || zoomLauncher == 0 || zoomLauncher == 1 || zoomUnlock == 0 || zoomUnlock == 1) {
         return true;
@@ -797,6 +750,58 @@ public class LiveWallpaperService extends WallpaperService {
       }
     }
 
+    /**
+     * Returns true if night mode is activated explicitly by the user or if the UI uses night mode
+     * when the user set it to NIGHT_MODE.AUTO (follow system).
+     */
+    private boolean isNightMode() {
+      if (nightModePref == NIGHT_MODE.ON) {
+        return true;
+      }
+      int flags = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
+      return nightModePref == NIGHT_MODE.AUTO && flags == Configuration.UI_MODE_NIGHT_YES;
+    }
+
+    /**
+     * Returns the associated theme color for the given arguments.
+     *
+     * @param priority Either 0 for primary, 1 for secondary or 2 for tertiary color.
+     * @param isNightMode If the returned color should be from the light or the dark variant.
+     */
+    private int getThemeColor(int priority, boolean isNightMode) {
+      String colorHex = sharedPrefs.getString(
+          Constants.getThemeColorPref(wallpaper.getName(), variantIndex, priority, isNightMode),
+          null
+      );
+      if (colorHex != null) {
+        return Color.parseColor(colorHex);
+      } else {
+        return variant.getColor(priority);
+      }
+    }
+
+    /**
+     * Registers or unregisters the acceleration event listener dependent of the current config.
+     */
+    private void setTiltListenerRegistered(boolean registered) {
+      if (accelerometer == null) {
+        return;
+      }
+      if (registered && !isSensorListenerRegistered && isTiltEnabled) {
+        // SENSOR_DELAY_GAME = 20000
+        // SENSOR_DELAY_UI = 66667
+        sensorManager.registerListener(sensorListener, accelerometer,tiltRefreshRate);
+        isSensorListenerRegistered = true;
+      } else if (!registered && isSensorListenerRegistered) {
+        sensorManager.unregisterListener(sensorListener);
+        isSensorListenerRegistered = false;
+      }
+    }
+
+    /**
+     * Returns an array with the three values from the acceleration sensor, in relation to the
+     * previous values (low pass filter).
+     */
     private float[] lowPassAcceleration(float[] input, float[] output) {
       if (output == null) {
         return input.clone();
@@ -807,10 +812,22 @@ public class LiveWallpaperService extends WallpaperService {
       return output;
     }
 
+    /**
+     * Returns the new zoom amount from input in relation to output, so that the returned value
+     * is always smooth regarding the previous value. Also to hide a jerky animation pause in
+     * Android if quick settings are nearly closed after being opened, the zoom amount tends toward
+     * 0 when input is nearly 0.
+     */
     private float lowPassZoom(float input, float output) {
       return (output + (dampingZoom / 100f) * (input - output)) * input;
     }
 
+    /**
+     * Cancel any running zoom animation and animate zoom from current zoom amount to the given
+     * amount.
+     *
+     * @param valueTo The final zoom amount at the end of the animation, 0 is no zoom, 1 is max.
+     */
     private void animateZoom(float valueTo) {
       if (zoomAnimator != null) {
         zoomAnimator.pause();
@@ -827,16 +844,76 @@ public class LiveWallpaperService extends WallpaperService {
       zoomAnimator.setDuration(zoomDuration).start();
     }
 
+    /**
+     * An overridden method from the Engine class, will not be recognized as overridden but logging
+     * shows that the method is called.
+     * WallpaperService.Engine#shouldZoomOutWallpaper()
+     */
+    public boolean shouldZoomOutWallpaper() {
+      // Return true and clear onZoomChanged if we don't want a custom zoom animation
+      return isZoomLauncherEnabled && useSystemZoom && animZoom();
+    }
+
+    /**
+     * Updates the wallpaper offset according to the current parallax and tilt values.
+     */
+    @SuppressWarnings("SuspiciousNameCombination")
+    private void updateOffset(boolean force, String source) {
+      float xOffset = parallaxIntensity != 0 ? offsetX : 0;
+      int tiltFactor = 18 * parallaxIntensity * (isTiltEnabled ? 1 : 0);
+      float finalTiltX, finalTiltY;
+      switch (screenRotation) {
+        case Surface.ROTATION_90:
+          finalTiltX = tiltY;
+          finalTiltY = -tiltX;
+          break;
+        case Surface.ROTATION_180:
+          finalTiltX = -tiltX;
+          finalTiltY = -tiltY;
+          break;
+        case Surface.ROTATION_270:
+          finalTiltX = -tiltY;
+          finalTiltY = tiltX;
+          break;
+        case Surface.ROTATION_0:
+        default:
+          finalTiltX = tiltX;
+          finalTiltY = tiltY;
+          break;
+      }
+      svgDrawable.setOffset(
+          xOffset * parallaxIntensity * 100 + finalTiltX * tiltFactor,
+          finalTiltY * tiltFactor
+      );
+      drawFrame(force, source);
+    }
+
+    /**
+     * Returns if swipe should either be animated or not depending on battery saver preferences.
+     */
     private boolean animSwipe() {
       return !(isPowerSaveMode && powerSaveSwipe);
     }
 
+    /**
+     * Returns if tilt should either be activated or not depending on battery saver preferences.
+     */
     private boolean animTilt() {
       return !(isPowerSaveMode && powerSaveTilt);
     }
 
+    /**
+     * Returns if zoom should either be animated or not depending on battery saver preferences.
+     */
     private boolean animZoom() {
       return !(isPowerSaveMode && powerSaveZoom);
+    }
+
+    /**
+     * Dummy method to signal that this instance is running and can be called
+     */
+    public boolean ping() {
+      return true;
     }
   }
 }

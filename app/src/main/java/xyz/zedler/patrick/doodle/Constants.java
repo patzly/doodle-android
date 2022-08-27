@@ -78,7 +78,7 @@ public final class Constants {
     public static final String PARALLAX = "parallax";
     public static final String POWER_SAVE_SWIPE = "power_save_swipe";
     public static final String TILT = "tilt";
-    public static final String REFRESH_RATE = "refresh_rate";
+    public static final String TILT_REFRESH_RATE = "refresh_rate";
     public static final String DAMPING_TILT = "damping_tilt";
     public static final String THRESHOLD = "threshold";
     public static final String POWER_SAVE_TILT = "power_save_tilt";
@@ -123,7 +123,7 @@ public final class Constants {
     public static final int PARALLAX = 2;
     public static final boolean POWER_SAVE_SWIPE = false;
     public static final boolean TILT = false;
-    public static final int REFRESH_RATE = 30000;
+    public static final int TILT_REFRESH_RATE = 30000;
     public static final int DAMPING_TILT = 8;
     public static final int THRESHOLD = 5;
     public static final boolean POWER_SAVE_TILT = true;
@@ -283,7 +283,7 @@ public final class Constants {
 
   public static final class ACTION {
 
-    public static final String DESIGN_AND_THEME_CHANGED = "action_design_and_theme_changed";
+    public static final String THEME_AND_DESIGN_CHANGED = "action_theme_and_design_changed";
     public static final String THEME_CHANGED = "action_theme_changed";
     public static final String SETTINGS_CHANGED = "action_settings_changed";
     public static final String NEW_DAILY = "action_new_daily";

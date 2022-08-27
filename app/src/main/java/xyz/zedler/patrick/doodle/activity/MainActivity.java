@@ -445,9 +445,11 @@ public class MainActivity extends AppCompatActivity {
     sendBroadcast(intent);
   }
 
-  public void requestThemeRefresh(boolean designMayHaveChanged) {
+  public void requestThemeRefresh(boolean designMightHaveChanged) {
     Intent intent = new Intent();
-    intent.setAction(designMayHaveChanged ? ACTION.DESIGN_AND_THEME_CHANGED : ACTION.THEME_CHANGED);
+    intent.setAction(
+        designMightHaveChanged ? ACTION.THEME_AND_DESIGN_CHANGED : ACTION.THEME_CHANGED
+    );
     sendBroadcast(intent);
   }
 

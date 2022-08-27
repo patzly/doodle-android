@@ -19,18 +19,7 @@
 
 package xyz.zedler.patrick.doodle.util;
 
-import android.content.Context;
-import android.hardware.Sensor;
-import android.hardware.SensorManager;
-
 public class SensorUtil {
 
-  public static boolean hasAccelerometer(Context context) {
-    return getAccelerometer(context) != null;
-  }
 
-  public static Sensor getAccelerometer(Context context) {
-    SensorManager manager = (SensorManager) context.getSystemService(Context.SENSOR_SERVICE);
-    return manager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-  }
 }

@@ -19,6 +19,9 @@
 
 package xyz.zedler.patrick.doodle.fragment;
 
+import android.content.Context;
+import android.hardware.Sensor;
+import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -37,7 +40,6 @@ import xyz.zedler.patrick.doodle.activity.MainActivity;
 import xyz.zedler.patrick.doodle.behavior.ScrollBehavior;
 import xyz.zedler.patrick.doodle.behavior.SystemBarBehavior;
 import xyz.zedler.patrick.doodle.databinding.FragmentParallaxBinding;
-import xyz.zedler.patrick.doodle.util.SensorUtil;
 import xyz.zedler.patrick.doodle.util.ViewUtil;
 
 public class ParallaxFragment extends BaseFragment
@@ -97,7 +99,7 @@ public class ParallaxFragment extends BaseFragment
     );
 
     binding.linearParallaxTiltContainer.setVisibility(
-        SensorUtil.hasAccelerometer(activity) ? View.VISIBLE : View.GONE
+        hasAccelerometer() ? View.VISIBLE : View.GONE
     );
 
     binding.switchParallaxTilt.setChecked(getSharedPrefs().getBoolean(PREF.TILT, DEF.TILT));
@@ -123,7 +125,7 @@ public class ParallaxFragment extends BaseFragment
     );
 
     binding.sliderParallaxRefreshRate.setValue(
-        getSharedPrefs().getInt(PREF.REFRESH_RATE, DEF.REFRESH_RATE)
+        getSharedPrefs().getInt(PREF.TILT_REFRESH_RATE, DEF.TILT_REFRESH_RATE)
     );
     binding.sliderParallaxRefreshRate.addOnChangeListener(this);
     binding.sliderParallaxRefreshRate.setLabelFormatter(
@@ -237,7 +239,7 @@ public class ParallaxFragment extends BaseFragment
       activity.requestSettingsRefresh();
       performHapticClick();
     } else if (id == R.id.slider_parallax_refresh_rate) {
-      getSharedPrefs().edit().putInt(PREF.REFRESH_RATE, (int) value).apply();
+      getSharedPrefs().edit().putInt(PREF.TILT_REFRESH_RATE, (int) value).apply();
       ViewUtil.startIcon(binding.imageParallaxRefreshRate);
       activity.requestSettingsRefresh();
       performHapticClick();
@@ -252,5 +254,10 @@ public class ParallaxFragment extends BaseFragment
       activity.requestSettingsRefresh();
       performHapticClick();
     }
+  }
+
+  private boolean hasAccelerometer() {
+    SensorManager manager = (SensorManager) activity.getSystemService(Context.SENSOR_SERVICE);
+    return manager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER) != null;
   }
 }

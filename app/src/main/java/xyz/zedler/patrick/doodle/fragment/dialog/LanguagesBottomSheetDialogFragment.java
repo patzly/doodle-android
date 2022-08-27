@@ -115,33 +115,6 @@ public class LanguagesBottomSheetDialogFragment extends BaseBottomSheetDialogFra
       }
       performHapticClick();
     }
-
-    if (Objects.equals(previousCode, selectedCode)) {
-      if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-        // Simply restart to apply language change
-        performHapticClick();
-        dismiss();
-        activity.restartToApply(150);
-      }
-      return;
-    } else if (previousCode == null || selectedCode == null) {
-      Locale localeDevice = LocaleUtil.getNearestSupportedLocale(
-          activity, LocaleUtil.getDeviceLocale()
-      );
-      String codeToCompare = previousCode == null ? selectedCode : previousCode;
-      if (Objects.equals(localeDevice.toString(), codeToCompare)) {
-        OtherFragment fragment = (OtherFragment) activity.getCurrentFragment();
-        fragment.setLanguage(language);
-        dismiss();
-      } else {
-        dismiss();
-        activity.restartToApply(150);
-      }
-    } else {
-      dismiss();
-      activity.restartToApply(150);
-    }
-    performHapticClick();
   }
 
   private String getLanguageCode() {

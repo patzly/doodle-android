@@ -19,7 +19,6 @@
 
 package xyz.zedler.patrick.doodle.model;
 
-import android.os.Build;
 import java.util.Locale;
 import xyz.zedler.patrick.doodle.util.LocaleUtil;
 
@@ -33,12 +32,8 @@ public class Language {
     String[] parts = codeTranslators.split("\n");
     code = parts[0];
     translators = parts[1];
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-      Locale locale = LocaleUtil.getLocaleFromCode(code);
-      name = locale.getDisplayName(locale);
-    } else {
-      name = LocaleUtil.getLocaleFromCode(code).getDisplayName(LocaleUtil.getDeviceLocale());
-    }
+    Locale locale = LocaleUtil.getLocaleFromCode(code);
+    name = locale.getDisplayName(locale);
   }
 
   public String getCode() {

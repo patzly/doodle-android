@@ -275,6 +275,9 @@ public class OtherFragment extends BaseFragment
     }
   }
 
+  /**
+   * Only called in pre-13 Android versions
+   */
   public void setLanguage(Language language) {
     Locale locale = language != null
         ? LocaleUtil.getLocaleFromCode(language.getCode())

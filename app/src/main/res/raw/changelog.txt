@@ -4,7 +4,8 @@
 - Improved: syncing of wallpaper design preferences when wallpaper is active
 - Improved: random wallpaper design options
 - Improved: disabled auto backup of settings through Google Drive because different devices require different configurations
-- Fixed: new random wallpaper design when toggling dark mode
+- Improved: internal cleanup of wallpaper engine, maybe solves some crashes
+- Fixed: changed random wallpaper design when toggling dark mode
 
 ## 5.5.0
 
@@ -105,33 +106,3 @@
 - Improved: restart behavior for applying certain settings
 - Improved: splash screen implementation for Android 12+
 - Fixed: broken buttons in feedback dialog
-
-## 4.2.0
-
-- New: exclusive live wallpapers based on leaked Pixel 6 wallpapers
-- New: another live wallpaper based on an artwork by Anna Kövecses
-- Improved: shape rotation
-- Fixed: wrong tilt effect direction in landscape mode
-
-## 4.1.0
-
-- New: live wallpaper based on a static Chrome OS wallpaper by Anna Kövecses
-- New: support for Android versions down to Android 5.1
-- Improved: Material You wallpaper variants
-- Improved: additional color variant for Doodle collection
-- Improved: start page layout and wallpaper selection
-- Improved: splash screen on Android 12
-
-## 4.0.0
-
-- New: completely rewritten and reorganized settings app
-- New: "Material You"-inspired wallpaper
-- New: Android 12 wallpaper color support (not tested yet, please report related issues on GitHub (doodle-android) if you have Android 12 Beta installed)
-- New: translation via Transifex (less than 90 strings to translate, link in About!)
-- New: optional shape rotation while zooming
-- New: change unlock zoom animation duration
-- New: adjust motion damping intensity and movement threshold for tilt effect
-- Improved: theme selection and internal wallpaper management
-- Improved: RTL layout support
-- Fixed: incorrect zoom on lockscreen
-- Fixed: non-gesture navigation bar color in dialogs for Android 11 and higher

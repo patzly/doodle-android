@@ -120,7 +120,7 @@
               android:layout_marginBottom="8dp">
 
               <HorizontalScrollView
-                android:id="@+id/scroll_other_theme"
+                android:id="@+id/scroll_other_theme1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:scrollbars="none"
@@ -138,7 +138,7 @@
               </HorizontalScrollView>
 
               <com.google.android.material.divider.MaterialDivider
-                android:id="@+id/divider_other_theme"
+                android:id="@+id/divider_other_theme1"
                 android:layout_width="1dp"
                 android:layout_height="match_parent" />
 

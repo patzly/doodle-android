@@ -417,8 +417,12 @@
     <item name="android:justificationMode" tools:targetApi="o">inter_word</item>
   </style>
 
-  <style name="Widget.Doodle.TextView.Paragraph.Fix" parent="Widget.Doodle.TextView.Paragraph">
-    <item name="android:breakStrategy" tools:targetApi="m">simple</item>
+  <style
+    name="Widget.Doodle.TextView.Paragraph.BodyMedium"
+    parent="Widget.Doodle.TextView.Paragraph">
+    <item name="android:textAppearance">?attr/textAppearanceBodyMedium</item>
+    <item name="lineHeight">24sp</item>
+    <item name="android:lineHeight" tools:targetApi="p">24sp</item>
   </style>
 
   <!-- Base style -->

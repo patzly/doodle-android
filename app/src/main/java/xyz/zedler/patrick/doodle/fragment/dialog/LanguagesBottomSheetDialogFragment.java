@@ -63,7 +63,6 @@ public class LanguagesBottomSheetDialogFragment extends BaseBottomSheetDialogFra
 
     binding.textLanguagesTitle.setText(getString(R.string.action_language_select));
     binding.textLanguagesDescription.setText(getString(R.string.other_language_description));
-    binding.textLanguagesDescription.setVisibility(View.VISIBLE);
 
     binding.recyclerLanguages.setLayoutManager(
         new LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)

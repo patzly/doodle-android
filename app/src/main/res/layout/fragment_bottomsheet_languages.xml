@@ -19,8 +19,6 @@
 
 <LinearLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:tools="http://schemas.android.com/tools"
-  xmlns:app="http://schemas.android.com/apk/res-auto"
   android:id="@+id/linear_languages_container"
   android:layout_width="match_parent"
   android:layout_height="wrap_content"
@@ -43,16 +41,11 @@
 
     <TextView
       android:id="@+id/text_languages_description"
-      style="@style/Widget.Doodle.TextView.ListItem.Description"
+      style="@style/Widget.Doodle.TextView.Paragraph.BodyMedium"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:paddingTop="4dp"
-      android:textAppearance="?attr/textAppearanceBodyMedium"
-      android:visibility="gone"
-      android:maxLines="30"
-      android:lineHeight="20sp"
-      app:lineHeight="20sp"
-      tools:targetApi="p" />
+      android:alpha="0.6" />
 
   </LinearLayout>
 

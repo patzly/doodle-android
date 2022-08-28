@@ -68,6 +68,7 @@ import xyz.zedler.patrick.doodle.Constants.RANDOM;
 import xyz.zedler.patrick.doodle.Constants.WALLPAPER;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.activity.MainActivity;
+import xyz.zedler.patrick.doodle.behavior.HorizontalDividerBehavior;
 import xyz.zedler.patrick.doodle.behavior.ScrollBehavior;
 import xyz.zedler.patrick.doodle.behavior.SystemBarBehavior;
 import xyz.zedler.patrick.doodle.databinding.FragmentAppearanceBinding;
@@ -138,6 +139,28 @@ public class AppearanceFragment extends BaseFragment
 
     new ScrollBehavior(activity).setUpScroll(
         binding.appBarAppearance, binding.scrollAppearance, true
+    );
+
+    new HorizontalDividerBehavior(
+        binding.scrollAppearanceWallpaperDoodle, binding.dividerAppearanceWallpaperDoodle
+    );
+    new HorizontalDividerBehavior(
+        binding.scrollAppearanceWallpaperMonet, binding.dividerAppearanceWallpaperMonet
+    );
+    new HorizontalDividerBehavior(
+        binding.scrollAppearanceWallpaperAnna, binding.dividerAppearanceWallpaperAnna
+    );
+    new HorizontalDividerBehavior(
+        binding.scrollAppearanceVariantContainer, binding.dividerAppearanceVariantContainer
+    );
+    new HorizontalDividerBehavior(
+        binding.scrollAppearanceColorsContainer, binding.dividerAppearanceColorsContainer
+    );
+    new HorizontalDividerBehavior(
+        binding.scrollAppearanceNightMode, binding.dividerAppearanceNightMode
+    );
+    new HorizontalDividerBehavior(
+        binding.scrollAppearanceRandom, binding.dividerAppearanceRandom
     );
 
     dailyUtil = new DailyUtil(activity);
@@ -443,7 +466,7 @@ public class AppearanceFragment extends BaseFragment
             new ReikoWallpaper(),
             new AnthonyWallpaper()
         };
-        container = binding.linearAppearanceWallpaperContainerDoodle;
+        container = binding.linearAppearanceWallpaperDoodle;
       } else if (i == 1) {
         baseWallpapers = new BaseWallpaper[]{
             new FloralWallpaper(),
@@ -454,14 +477,14 @@ public class AppearanceFragment extends BaseFragment
             new MonetWallpaper(),
             new OrioleWallpaper()
         };
-        container = binding.linearAppearanceWallpaperContainerMonet;
+        container = binding.linearAppearanceWallpaperMonet;
       } else {
         baseWallpapers = new BaseWallpaper[]{
             new LeafyWallpaper(),
             new FogWallpaper(),
             new LeavesWallpaper()
         };
-        container = binding.linearAppearanceWallpaperContainerAnna;
+        container = binding.linearAppearanceWallpaperAnna;
       }
 
       for (int wallpaperIndex = 0; wallpaperIndex < baseWallpapers.length; wallpaperIndex++) {
@@ -494,9 +517,9 @@ public class AppearanceFragment extends BaseFragment
             card.startCheckedIcon();
             performHapticClick();
             ViewUtil.uncheckAllChildren(
-                binding.linearAppearanceWallpaperContainerDoodle,
-                binding.linearAppearanceWallpaperContainerMonet,
-                binding.linearAppearanceWallpaperContainerAnna
+                binding.linearAppearanceWallpaperDoodle,
+                binding.linearAppearanceWallpaperMonet,
+                binding.linearAppearanceWallpaperAnna
             );
             card.setChecked(true);
             int oldCount = currentWallpaper != null ? currentWallpaper.getVariants().length : 0;
@@ -546,9 +569,9 @@ public class AppearanceFragment extends BaseFragment
 
   private void refreshDesignSelections() {
     ViewUtil.uncheckAllChildren(
-        binding.linearAppearanceWallpaperContainerDoodle,
-        binding.linearAppearanceWallpaperContainerMonet,
-        binding.linearAppearanceWallpaperContainerAnna
+        binding.linearAppearanceWallpaperDoodle,
+        binding.linearAppearanceWallpaperMonet,
+        binding.linearAppearanceWallpaperAnna
     );
     if (!randomMode.equals(RANDOM.OFF)) {
       for (String element : randomList) {

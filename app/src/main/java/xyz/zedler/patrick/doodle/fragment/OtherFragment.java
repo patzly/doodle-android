@@ -53,6 +53,7 @@ import xyz.zedler.patrick.doodle.NavMainDirections;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.activity.LauncherActivity;
 import xyz.zedler.patrick.doodle.activity.MainActivity;
+import xyz.zedler.patrick.doodle.behavior.HorizontalDividerBehavior;
 import xyz.zedler.patrick.doodle.behavior.ScrollBehavior;
 import xyz.zedler.patrick.doodle.behavior.SystemBarBehavior;
 import xyz.zedler.patrick.doodle.databinding.FragmentOtherBinding;
@@ -98,6 +99,13 @@ public class OtherFragment extends BaseFragment
 
     new ScrollBehavior(activity).setUpScroll(
         binding.appBarOther, binding.scrollOther, true
+    );
+
+    new HorizontalDividerBehavior(
+        binding.scrollOtherTheme, binding.dividerOtherTheme
+    );
+    new HorizontalDividerBehavior(
+        binding.scrollOtherTheme2, binding.dividerOtherTheme2
     );
 
     ViewUtil.centerToolbarTitleOnLargeScreens(binding.toolbarOther);
@@ -412,7 +420,7 @@ public class OtherFragment extends BaseFragment
 
     Bundle bundleInstanceState = activity.getIntent().getBundleExtra(EXTRA.INSTANCE_STATE);
     if (bundleInstanceState != null) {
-      binding.scrollHorizOtherTheme.scrollTo(
+      binding.scrollOtherTheme.scrollTo(
           bundleInstanceState.getInt(EXTRA.SCROLL_POSITION, 0),
           0
       );
@@ -422,7 +430,7 @@ public class OtherFragment extends BaseFragment
   private Bundle getInstanceState() {
     Bundle bundle = new Bundle();
     if (binding != null) {
-      bundle.putInt(EXTRA.SCROLL_POSITION, binding.scrollHorizOtherTheme.getScrollX());
+      bundle.putInt(EXTRA.SCROLL_POSITION, binding.scrollOtherTheme.getScrollX());
     }
     return bundle;
   }

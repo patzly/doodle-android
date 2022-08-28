@@ -3,9 +3,10 @@
 - New: option for sliding transition between settings pages and workaround for bug with blank settings subpages in help dialog
 - Improved: syncing of wallpaper design preferences when wallpaper is active
 - Improved: random wallpaper design options
+- Improved: layout borders with dividers for horizontal scroll content in settings
 - Improved: disabled auto backup of settings through Google Drive because different devices require different configurations
-- Improved: internal cleanup of wallpaper engine, maybe solves some crashes
 - Fixed: changed random wallpaper design when toggling dark mode and after device restart
+- Fixed: internal cleanup of wallpaper engine and a few potential crash fixes
 - Fixed: bug in language selection caused by duplicated code
 
 ## 5.5.0

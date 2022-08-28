@@ -130,24 +130,38 @@
               android:paddingStart="0dp"
               android:paddingEnd="16dp"/>
 
-            <HorizontalScrollView
+            <FrameLayout
               android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:scrollbars="none"
-              android:overScrollMode="ifContentScrolls">
+              android:layout_height="wrap_content">
 
-              <LinearLayout
-                android:id="@+id/linear_appearance_wallpaper_container_doodle"
-                style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox"
-                android:layout_width="wrap_content"
+              <HorizontalScrollView
+                android:id="@+id/scroll_appearance_wallpaper_doodle"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingStart="0dp"
-                android:paddingEnd="12dp"
-                android:paddingTop="8dp"
-                android:paddingBottom="8dp" />
+                android:scrollbars="none"
+                android:overScrollMode="ifContentScrolls">
 
-            </HorizontalScrollView>
+                <LinearLayout
+                  android:id="@+id/linear_appearance_wallpaper_doodle"
+                  style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:orientation="horizontal"
+                  android:paddingStart="0dp"
+                  android:paddingEnd="12dp"
+                  android:paddingTop="8dp"
+                  android:paddingBottom="8dp" />
+
+              </HorizontalScrollView>
+
+              <com.google.android.material.divider.MaterialDivider
+                android:id="@+id/divider_appearance_wallpaper_doodle"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp" />
+
+            </FrameLayout>
 
           </LinearLayout>
 
@@ -169,24 +183,38 @@
               android:paddingStart="0dp"
               android:paddingEnd="16dp"/>
 
-            <HorizontalScrollView
+            <FrameLayout
               android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:scrollbars="none"
-              android:overScrollMode="ifContentScrolls">
+              android:layout_height="wrap_content">
 
-              <LinearLayout
-                android:id="@+id/linear_appearance_wallpaper_container_monet"
-                style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox"
-                android:layout_width="wrap_content"
+              <HorizontalScrollView
+                android:id="@+id/scroll_appearance_wallpaper_monet"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingStart="0dp"
-                android:paddingEnd="12dp"
-                android:paddingTop="8dp"
-                android:paddingBottom="8dp" />
+                android:scrollbars="none"
+                android:overScrollMode="ifContentScrolls">
 
-            </HorizontalScrollView>
+                <LinearLayout
+                  android:id="@+id/linear_appearance_wallpaper_monet"
+                  style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:orientation="horizontal"
+                  android:paddingStart="0dp"
+                  android:paddingEnd="12dp"
+                  android:paddingTop="8dp"
+                  android:paddingBottom="8dp" />
+
+              </HorizontalScrollView>
+
+              <com.google.android.material.divider.MaterialDivider
+                android:id="@+id/divider_appearance_wallpaper_monet"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp" />
+
+            </FrameLayout>
 
           </LinearLayout>
 
@@ -208,24 +236,38 @@
               android:paddingStart="0dp"
               android:paddingEnd="16dp"/>
 
-            <HorizontalScrollView
+            <FrameLayout
               android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:scrollbars="none"
-              android:overScrollMode="ifContentScrolls">
+              android:layout_height="wrap_content">
 
-              <LinearLayout
-                android:id="@+id/linear_appearance_wallpaper_container_anna"
-                style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox"
-                android:layout_width="wrap_content"
+              <HorizontalScrollView
+                android:id="@+id/scroll_appearance_wallpaper_anna"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingStart="0dp"
-                android:paddingEnd="12dp"
-                android:paddingTop="8dp"
-                android:paddingBottom="8dp" />
+                android:scrollbars="none"
+                android:overScrollMode="ifContentScrolls">
 
-            </HorizontalScrollView>
+                <LinearLayout
+                  android:id="@+id/linear_appearance_wallpaper_anna"
+                  style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:orientation="horizontal"
+                  android:paddingStart="0dp"
+                  android:paddingEnd="12dp"
+                  android:paddingTop="8dp"
+                  android:paddingBottom="8dp" />
+
+              </HorizontalScrollView>
+
+              <com.google.android.material.divider.MaterialDivider
+                android:id="@+id/divider_appearance_wallpaper_anna"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp" />
+
+            </FrameLayout>
 
           </LinearLayout>
 
@@ -250,24 +292,38 @@
             android:src="@drawable/ic_round_palette_anim"
             tools:ignore="ContentDescription" />
 
-          <HorizontalScrollView
+          <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:scrollbars="none"
-            android:overScrollMode="ifContentScrolls">
+            android:layout_height="wrap_content">
 
-            <LinearLayout
-              android:id="@+id/linear_appearance_variant_container"
-              style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox"
-              android:layout_width="wrap_content"
+            <HorizontalScrollView
+              android:id="@+id/scroll_appearance_variant_container"
+              android:layout_width="match_parent"
               android:layout_height="wrap_content"
-              android:orientation="horizontal"
-              android:paddingStart="0dp"
-              android:paddingEnd="12dp"
-              android:paddingTop="8dp"
-              android:paddingBottom="8dp" />
+              android:scrollbars="none"
+              android:overScrollMode="ifContentScrolls">
 
-          </HorizontalScrollView>
+              <LinearLayout
+                android:id="@+id/linear_appearance_variant_container"
+                style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingStart="0dp"
+                android:paddingEnd="12dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp" />
+
+            </HorizontalScrollView>
+
+            <com.google.android.material.divider.MaterialDivider
+              android:id="@+id/divider_appearance_variant_container"
+              android:layout_width="1dp"
+              android:layout_height="match_parent"
+              android:layout_marginTop="8dp"
+              android:layout_marginBottom="8dp" />
+
+          </FrameLayout>
 
         </LinearLayout>
 
@@ -304,24 +360,38 @@
               android:paddingStart="0dp"
               android:paddingEnd="16dp"/>
 
-            <HorizontalScrollView
+            <FrameLayout
               android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:scrollbars="none"
-              android:overScrollMode="ifContentScrolls">
+              android:layout_height="wrap_content">
 
-              <LinearLayout
-                android:id="@+id/linear_appearance_colors_container"
-                style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox"
-                android:layout_width="wrap_content"
+              <HorizontalScrollView
+                android:id="@+id/scroll_appearance_colors_container"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingStart="0dp"
-                android:paddingEnd="12dp"
-                android:paddingTop="8dp"
-                android:paddingBottom="8dp" />
+                android:scrollbars="none"
+                android:overScrollMode="ifContentScrolls">
 
-            </HorizontalScrollView>
+                <LinearLayout
+                  android:id="@+id/linear_appearance_colors_container"
+                  style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:orientation="horizontal"
+                  android:paddingStart="0dp"
+                  android:paddingEnd="12dp"
+                  android:paddingTop="8dp"
+                  android:paddingBottom="8dp" />
+
+              </HorizontalScrollView>
+
+              <com.google.android.material.divider.MaterialDivider
+                android:id="@+id/divider_appearance_colors_container"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp" />
+
+            </FrameLayout>
 
           </LinearLayout>
 
@@ -354,23 +424,25 @@
               android:paddingStart="0dp"
               android:paddingEnd="16dp"/>
 
-            <HorizontalScrollView
+            <FrameLayout
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
-              android:scrollbars="none"
-              android:overScrollMode="ifContentScrolls">
+              android:layout_marginTop="8dp"
+              android:layout_marginBottom="8dp">
 
-              <FrameLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+              <HorizontalScrollView
+                android:id="@+id/scroll_appearance_night_mode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none"
+                android:overScrollMode="ifContentScrolls">
 
                 <com.google.android.material.button.MaterialButtonToggleGroup
                   android:id="@+id/toggle_appearance_night_mode"
                   android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
-                  android:layout_marginTop="8dp"
-                  android:layout_marginBottom="8dp"
-                  android:layout_marginEnd="16dp"
+                  android:paddingStart="0dp"
+                  android:paddingEnd="16dp"
                   app:singleSelection="true"
                   app:selectionRequired="true">
 
@@ -397,9 +469,16 @@
 
                 </com.google.android.material.button.MaterialButtonToggleGroup>
 
-              </FrameLayout>
+              </HorizontalScrollView>
 
-            </HorizontalScrollView>
+              <com.google.android.material.divider.MaterialDivider
+                android:id="@+id/divider_appearance_night_mode"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp" />
+
+            </FrameLayout>
 
           </LinearLayout>
 
@@ -490,64 +569,61 @@
               android:paddingStart="0dp"
               android:paddingEnd="16dp" />
 
-            <LinearLayout
+            <FrameLayout
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
-              android:orientation="horizontal"
               android:layout_marginTop="8dp"
               android:layout_marginBottom="4dp">
 
-              <com.google.android.material.divider.MaterialDivider
-                android:layout_width="1dp"
-                android:layout_height="match_parent"
-                android:visibility="gone" />
-
               <HorizontalScrollView
+                android:id="@+id/scroll_appearance_random"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:scrollbars="none"
                 android:overScrollMode="ifContentScrolls">
 
-                <FrameLayout
+                <com.google.android.material.button.MaterialButtonToggleGroup
+                  android:id="@+id/toggle_appearance_random"
                   android:layout_width="wrap_content"
-                  android:layout_height="wrap_content">
+                  android:layout_height="wrap_content"
+                  android:paddingStart="0dp"
+                  android:paddingEnd="16dp"
+                  app:singleSelection="true"
+                  app:selectionRequired="true">
 
-                  <com.google.android.material.button.MaterialButtonToggleGroup
-                    android:id="@+id/toggle_appearance_random"
+                  <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_appearance_random_off"
+                    style="@style/Widget.Doodle.Button.OutlinedButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="16dp"
-                    app:singleSelection="true"
-                    app:selectionRequired="true">
+                    android:text="@string/appearance_night_mode_off" />
 
-                    <com.google.android.material.button.MaterialButton
-                      android:id="@+id/button_appearance_random_off"
-                      style="@style/Widget.Doodle.Button.OutlinedButton"
-                      android:layout_width="wrap_content"
-                      android:layout_height="wrap_content"
-                      android:text="@string/appearance_night_mode_off" />
+                  <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_appearance_random_daily"
+                    style="@style/Widget.Doodle.Button.OutlinedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/appearance_random_daily" />
 
-                    <com.google.android.material.button.MaterialButton
-                      android:id="@+id/button_appearance_random_daily"
-                      style="@style/Widget.Doodle.Button.OutlinedButton"
-                      android:layout_width="wrap_content"
-                      android:layout_height="wrap_content"
-                      android:text="@string/appearance_random_daily" />
+                  <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_appearance_random_screen_off"
+                    style="@style/Widget.Doodle.Button.OutlinedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/appearance_random_screen_off" />
 
-                    <com.google.android.material.button.MaterialButton
-                      android:id="@+id/button_appearance_random_screen_off"
-                      style="@style/Widget.Doodle.Button.OutlinedButton"
-                      android:layout_width="wrap_content"
-                      android:layout_height="wrap_content"
-                      android:text="@string/appearance_random_screen_off" />
-
-                  </com.google.android.material.button.MaterialButtonToggleGroup>
-
-                </FrameLayout>
+                </com.google.android.material.button.MaterialButtonToggleGroup>
 
               </HorizontalScrollView>
 
-            </LinearLayout>
+              <com.google.android.material.divider.MaterialDivider
+                android:id="@+id/divider_appearance_random"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp" />
+
+            </FrameLayout>
 
             <com.google.android.material.button.MaterialButton
               android:id="@+id/button_appearance_random_time"

@@ -56,6 +56,7 @@ public class ScrollBehavior {
   private boolean noOverScroll = false;
   private AppBarLayout appBarLayout;
   private NestedScrollView scrollView;
+  private ValueAnimator valueAnimator;
 
   public ScrollBehavior(@NonNull Activity activity) {
     this.activity = activity;
@@ -217,9 +218,7 @@ public class ScrollBehavior {
               return;
             }
             if (scrollView.getViewTreeObserver().isAlive()) {
-              scrollView.getViewTreeObserver().removeOnGlobalLayoutListener(
-                  this
-              );
+              scrollView.getViewTreeObserver().removeOnGlobalLayoutListener(this);
             }
           }
         });
@@ -230,8 +229,12 @@ public class ScrollBehavior {
     if (appBarColor == targetColor) {
       return;
     }
-
-    ValueAnimator valueAnimator = ValueAnimator.ofArgb(appBarColor, targetColor);
+    if (valueAnimator != null) {
+      valueAnimator.pause();
+      valueAnimator.cancel();
+      valueAnimator = null;
+    }
+    valueAnimator = ValueAnimator.ofArgb(appBarColor, targetColor);
     valueAnimator.addUpdateListener(
         animation -> appBarLayout.setBackgroundColor((int) valueAnimator.getAnimatedValue())
     );

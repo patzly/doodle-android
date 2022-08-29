@@ -44,6 +44,7 @@ import android.os.SystemClock;
 import android.service.wallpaper.WallpaperService;
 import android.util.Log;
 import android.util.Pair;
+import android.view.Display;
 import android.view.Surface;
 import android.view.SurfaceHolder;
 import android.view.View;
@@ -252,6 +253,7 @@ public class LiveWallpaperService extends WallpaperService {
     private boolean isVisible;
     private float fps;
     private int screenRotation;
+    private Display display;
 
     // Appearance
     private SvgDrawable svgDrawable;
@@ -349,12 +351,10 @@ public class LiveWallpaperService extends WallpaperService {
         public void onAccuracyChanged(Sensor sensor, int accuracy) {}
       };
 
-      if (VERSION.SDK_INT >= VERSION_CODES.R) {
-        fps = context.getDisplay().getRefreshRate();
-      } else {
-        WindowManager windowManager = ((WindowManager) getSystemService(Context.WINDOW_SERVICE));
-        fps = windowManager != null ? windowManager.getDefaultDisplay().getRefreshRate() : 60;
-      }
+      WindowManager windowManager = ((WindowManager) getSystemService(Context.WINDOW_SERVICE));
+      display = windowManager.getDefaultDisplay();
+      fps = display.getRefreshRate();
+      screenRotation = display.getRotation();
 
       // Load this only once on creation, else it would cause a crash caused by OpenGL
       useGpu = sharedPrefs.getBoolean(PREF.GPU, DEF.GPU);
@@ -405,13 +405,8 @@ public class LiveWallpaperService extends WallpaperService {
 
     @Override
     public void onSurfaceRedrawNeeded(SurfaceHolder holder) {
-      WindowManager window = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
       int screenRotationOld = screenRotation;
-      if (VERSION.SDK_INT >= VERSION_CODES.R) {
-        screenRotation = getDisplay().getRotation();
-      } else {
-        screenRotation = window.getDefaultDisplay().getRotation();
-      }
+      screenRotation = display.getRotation();
       if (screenRotation != screenRotationOld) {
         accelerationValues = null;
         updateOffset(true, null);

@@ -43,12 +43,6 @@ android {
         variant.resValue "string", "versionName", variant.versionName
     }
 
-    allprojects {
-        tasks.withType(JavaCompile) {
-            options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
-        }
-    }
-
     buildTypes {
         release {
             postprocessing {

@@ -441,12 +441,14 @@ public class MainActivity extends AppCompatActivity {
 
   public void requestSettingsRefresh() {
     Intent intent = new Intent();
+    intent.setPackage(getPackageName());
     intent.setAction(ACTION.SETTINGS_CHANGED);
     sendBroadcast(intent);
   }
 
   public void requestThemeRefresh(boolean designMightHaveChanged) {
     Intent intent = new Intent();
+    intent.setPackage(getPackageName());
     intent.setAction(
         designMightHaveChanged ? ACTION.THEME_AND_DESIGN_CHANGED : ACTION.THEME_CHANGED
     );

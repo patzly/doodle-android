@@ -331,6 +331,7 @@ public class CustomBottomSheetDialog extends AppCompatDialog {
     return canceledOnTouchOutside;
   }
 
+  @SuppressLint("PrivateResource")
   private static int getThemeResId(@NonNull Context context, int themeId) {
     if (themeId == 0) {
       // If the provided theme is 0, then retrieve the dialogTheme from our theme

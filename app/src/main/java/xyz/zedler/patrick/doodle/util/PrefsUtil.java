@@ -47,7 +47,7 @@ public class PrefsUtil {
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
       Context deviceContext = context.createDeviceProtectedStorageContext();
       boolean success = deviceContext.moveSharedPreferencesFrom(
-          context, android.preference.PreferenceManager.getDefaultSharedPreferencesName(context)
+          context, context.getPackageName() + "_preferences"
       );
       if (!success) {
         Log.w(TAG, "Failed to migrate shared preferences to storage context");

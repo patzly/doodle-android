@@ -349,8 +349,12 @@ public class LiveWallpaperService extends WallpaperService {
         public void onAccuracyChanged(Sensor sensor, int accuracy) {}
       };
 
-      WindowManager windowManager = ((WindowManager) getSystemService(Context.WINDOW_SERVICE));
-      fps = windowManager != null ? windowManager.getDefaultDisplay().getRefreshRate() : 60;
+      if (VERSION.SDK_INT >= VERSION_CODES.R) {
+        fps = context.getDisplay().getRefreshRate();
+      } else {
+        WindowManager windowManager = ((WindowManager) getSystemService(Context.WINDOW_SERVICE));
+        fps = windowManager != null ? windowManager.getDefaultDisplay().getRefreshRate() : 60;
+      }
 
       // Load this only once on creation, else it would cause a crash caused by OpenGL
       useGpu = sharedPrefs.getBoolean(PREF.GPU, DEF.GPU);
@@ -403,7 +407,11 @@ public class LiveWallpaperService extends WallpaperService {
     public void onSurfaceRedrawNeeded(SurfaceHolder holder) {
       WindowManager window = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
       int screenRotationOld = screenRotation;
-      screenRotation = window.getDefaultDisplay().getRotation();
+      if (VERSION.SDK_INT >= VERSION_CODES.R) {
+        screenRotation = getDisplay().getRotation();
+      } else {
+        screenRotation = window.getDefaultDisplay().getRotation();
+      }
       if (screenRotation != screenRotationOld) {
         accelerationValues = null;
         updateOffset(true, null);

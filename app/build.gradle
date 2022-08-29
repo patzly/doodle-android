@@ -23,6 +23,7 @@ plugins {
 }
 
 android {
+    namespace 'xyz.zedler.patrick.doodle'
     compileSdkVersion 33
     buildToolsVersion '33.0.0'
 
@@ -40,6 +41,12 @@ android {
 
     applicationVariants.all { variant ->
         variant.resValue "string", "versionName", variant.versionName
+    }
+
+    allprojects {
+        tasks.withType(JavaCompile) {
+            options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
+        }
     }
 
     buildTypes {

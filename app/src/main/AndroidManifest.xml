@@ -20,8 +20,7 @@
 
 <manifest
   xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:tools="http://schemas.android.com/tools"
-  package="xyz.zedler.patrick.doodle">
+  xmlns:tools="http://schemas.android.com/tools">
 
   <uses-feature
     android:name="android.software.live_wallpaper"

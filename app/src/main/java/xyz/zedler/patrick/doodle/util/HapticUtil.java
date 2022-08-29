@@ -28,6 +28,7 @@ import android.os.Looper;
 import android.os.VibrationEffect;
 import android.os.VibrationEffect.Composition;
 import android.os.Vibrator;
+import android.os.VibratorManager;
 import android.provider.Settings;
 
 public class HapticUtil {
@@ -40,7 +41,13 @@ public class HapticUtil {
   public static final long HEAVY = 50;
 
   public HapticUtil(Context context) {
-    vibrator = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
+    if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.S) {
+      VibratorManager manager =
+          (VibratorManager) context.getSystemService(Context.VIBRATOR_MANAGER_SERVICE);
+      vibrator = manager.getDefaultVibrator();
+    } else {
+      vibrator = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
+    }
     enabled = hasVibrator();
   }
 

@@ -71,7 +71,7 @@
   <string name="appearance_description">Dizainas ir amp; spalvų pasirinkimai</string>
   <string name="appearance_one_ui">Sukeistas „Samsung“ dinaminių spalvų įdiegimas „One UI 4.1“ visiškai ignoruoja spalvas, kurias teikia tiesioginio ekrano fono programos, pvz., „Doodle“. Norėdami pritaikyti spalvas savo sistemai, nustatykite dabartinį dizainą kaip statinį paveikslą, kad sistema gautų tinkamas spalvas, tada vėl pritaikykite jį kaip tiesioginį ekrano foną.</string>
   <string name="appearance_design">Dizainas</string>
-  <string name="appearance_design_doodle">Pixel 4 Doodle kolekcija</string>
+  <string name="appearance_design_doodle">Pixel 4 \"Doodle\" kolekcija</string>
   <string name="appearance_design_monet">Pixel 6 \"Material You\" Kolekcija</string>
   <string name="appearance_design_anna">Judantys paveikslai à l\'Anna Kövecses</string>
   <string name="appearance_variant">Variantai</string>

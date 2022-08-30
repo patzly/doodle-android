@@ -93,7 +93,7 @@
   <string name="appearance_colors_tertiary">Pasirinkti trečia spalva</string>
   <string name="appearance_colors_custom">Pasirinkti savąja spalvą</string>
   <string name="appearance_colors_info">Įrenginiai kurie nepalaiko dinaminio spalvos palaikymo (Android 11 ir senesnes), tik pirmoji spalva yra naudojama apskaičiuoti namų programos teksto kontrastą ir spalvojamas ką tik naudojimų programų foną.</string>
-  <string name="appearance_colors_info_dynamic">Įrenginiai kurie turi Android 12 ar naujesnę ir palaiko dinamikos spalvas, pasirinktos trys spalvos yra automatiškai sukuriamos plačios sistemos spalvų temą.</string>
+  <string name="appearance_colors_info_dynamic">Įrenginiai kurie turi Android 12 ar naujesnę, palaiko dinamikos spalvas, pasirinktos trys spalvos yra automatiškai sukuriamos plačios sistemos spalvų temą.</string>
   <string name="appearance_random">Bet koks paveikslo dizainas</string>
   <string name="appearance_random_description">Pasirinkite trigerį apačioje </string>
   <string name="appearance_random_screen_off">Ekranas išjungtas</string>

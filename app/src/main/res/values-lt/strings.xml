@@ -103,7 +103,7 @@
 
   <string name="parallax_title">Paralaksas</string>
   <string name="parallax_description">Braukti &amp; pakreipimų efektas</string>
-  <string name="parallax_touch_wiz">Galimai tavo namų programa yra Samsung TouchWiz, kuris nepalaiko fono braukimo. Naudok kita namų programa kad veiktų paralakso efektai jei nesi įsijungęs pasvirimo sensoriaus. Tu gali ignoruoti šį pranešimą jei esi nusistatęs kitą namų programa kaip numatytą.</string>
+  <string name="parallax_touch_wiz">Turbūt tavo namų programa yra Samsung TouchWiz, kuris nepalaiko fono braukimo. Naudok kita namų programa kad veiktų paralakso efektai jei nesi įsijungęs pasvirimo sensoriaus. Tu gali ignoruoti šį pranešimą jei esi nusistatęs kitą namų programa kaip numatytą.</string>
   <string name="parallax_intensity">Paralakso stiprumas</string>
   <string name="parallax_intensity_description">Puslapio braukimo ir pakreipimo intensyvumo horizontalus poslinkis</string>
   <string name="parallax_none">Joks</string>

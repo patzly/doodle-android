@@ -1,0 +1,8 @@
+• New: option for sliding transition between settings pages and workaround for bug with blank settings subpages in help dialog
+• Improved: syncing of wallpaper design preferences when wallpaper is active
+• Improved: random wallpaper design options
+• Improved: custom color selection for extracted colors
+• Improved: disabled auto backup of settings through Google Drive because different devices require different configurations
+• Fixed: changed random wallpaper design when toggling dark mode and after device restart
+• Fixed: internal cleanup of wallpaper engine and a few potential crash fixes
+• Fixed: bug in language selection caused by duplicated code

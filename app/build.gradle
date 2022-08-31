@@ -59,6 +59,12 @@ android {
         }
     }
 
+    bundle {
+        storeArchive {
+            enable true
+        }
+    }
+
     compileOptions {
         sourceCompatibility 11
         targetCompatibility 11

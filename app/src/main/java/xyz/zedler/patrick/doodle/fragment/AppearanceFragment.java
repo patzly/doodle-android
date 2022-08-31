@@ -68,7 +68,6 @@ import xyz.zedler.patrick.doodle.Constants.RANDOM;
 import xyz.zedler.patrick.doodle.Constants.WALLPAPER;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.activity.MainActivity;
-import xyz.zedler.patrick.doodle.behavior.HorizontalDividerBehavior;
 import xyz.zedler.patrick.doodle.behavior.ScrollBehavior;
 import xyz.zedler.patrick.doodle.behavior.SystemBarBehavior;
 import xyz.zedler.patrick.doodle.databinding.FragmentAppearanceBinding;
@@ -139,28 +138,6 @@ public class AppearanceFragment extends BaseFragment
 
     new ScrollBehavior(activity).setUpScroll(
         binding.appBarAppearance, binding.scrollAppearance, true
-    );
-
-    new HorizontalDividerBehavior(
-        binding.scrollAppearanceWallpaperDoodle, binding.dividerAppearanceWallpaperDoodle
-    );
-    new HorizontalDividerBehavior(
-        binding.scrollAppearanceWallpaperMonet, binding.dividerAppearanceWallpaperMonet
-    );
-    new HorizontalDividerBehavior(
-        binding.scrollAppearanceWallpaperAnna, binding.dividerAppearanceWallpaperAnna
-    );
-    new HorizontalDividerBehavior(
-        binding.scrollAppearanceVariantContainer, binding.dividerAppearanceVariantContainer
-    );
-    new HorizontalDividerBehavior(
-        binding.scrollAppearanceColorsContainer, binding.dividerAppearanceColorsContainer
-    );
-    new HorizontalDividerBehavior(
-        binding.scrollAppearanceNightMode, binding.dividerAppearanceNightMode
-    );
-    new HorizontalDividerBehavior(
-        binding.scrollAppearanceRandom, binding.dividerAppearanceRandom
     );
 
     dailyUtil = new DailyUtil(activity);

@@ -4,7 +4,6 @@
 - Improved: syncing of wallpaper design preferences when wallpaper is active
 - Improved: random wallpaper design options
 - Improved: custom color selection for extracted colors
-- Improved: layout borders with dividers for horizontal scroll content in settings
 - Improved: disabled auto backup of settings through Google Drive because different devices require different configurations
 - Fixed: changed random wallpaper design when toggling dark mode and after device restart
 - Fixed: internal cleanup of wallpaper engine and a few potential crash fixes

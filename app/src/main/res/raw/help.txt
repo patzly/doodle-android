@@ -41,6 +41,12 @@ That's a bug on a few devices out there, mostly with Android 8.1 or 9. For a wor
 
 OPTION_USE_SLIDING
 
+#### "Set" button not is missing?
+
+If you tap on "Set wallpaper" and the fullscreen wallpaper preview opens, a "Set" button should be displayed by the system to apply the live wallpaper.
+However, if this button is missing for you, you have one of these devices where the manufacturer has messed up the original Android system.
+Sadly app developers like me are not responsible for such an unnecessary bug and I can't do anything except encouraging you to update your device to a newer, properly working Android version.
+
 #### Not enough options?
 
 There won't be many more wallpapers added to this app in the future. Doodle is about doodle-styled, flat-shaped (non-3D) original Google Pixel wallpapers (with a few exceptions), these criteria are not met by many of them out there.

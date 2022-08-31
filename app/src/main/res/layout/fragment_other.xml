@@ -113,91 +113,66 @@
               android:paddingStart="0dp"
               android:paddingEnd="16dp"/>
 
-            <FrameLayout
+            <HorizontalScrollView
+              android:id="@+id/scroll_other_theme"
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
+              android:scrollbars="none"
+              android:overScrollMode="ifContentScrolls"
               android:layout_marginTop="8dp"
               android:layout_marginBottom="8dp">
 
-              <HorizontalScrollView
-                android:id="@+id/scroll_other_theme1"
-                android:layout_width="match_parent"
+              <LinearLayout
+                android:id="@+id/linear_other_theme_container"
+                style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:scrollbars="none"
-                android:overScrollMode="ifContentScrolls">
+                android:orientation="horizontal"
+                android:paddingStart="0dp"
+                android:paddingEnd="12dp" />
 
-                <LinearLayout
-                  android:id="@+id/linear_other_theme_container"
-                  style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox"
-                  android:layout_width="wrap_content"
-                  android:layout_height="wrap_content"
-                  android:orientation="horizontal"
-                  android:paddingStart="0dp"
-                  android:paddingEnd="12dp" />
+            </HorizontalScrollView>
 
-              </HorizontalScrollView>
-
-              <com.google.android.material.divider.MaterialDivider
-                android:id="@+id/divider_other_theme1"
-                android:layout_width="1dp"
-                android:layout_height="match_parent" />
-
-            </FrameLayout>
-
-            <FrameLayout
+            <HorizontalScrollView
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
+              android:scrollbars="none"
+              android:overScrollMode="ifContentScrolls"
               android:layout_marginBottom="8dp">
 
-              <HorizontalScrollView
-                android:id="@+id/scroll_other_theme2"
-                android:layout_width="match_parent"
+              <com.google.android.material.button.MaterialButtonToggleGroup
+                android:id="@+id/toggle_other_theme"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:scrollbars="none"
-                android:overScrollMode="ifContentScrolls">
+                android:paddingStart="0dp"
+                android:paddingEnd="16dp"
+                app:singleSelection="true"
+                app:selectionRequired="true">
 
-                <com.google.android.material.button.MaterialButtonToggleGroup
-                  android:id="@+id/toggle_other_theme"
+                <com.google.android.material.button.MaterialButton
+                  android:id="@+id/button_other_theme_auto"
+                  style="@style/Widget.Doodle.Button.OutlinedButton"
                   android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
-                  android:paddingStart="0dp"
-                  android:paddingEnd="16dp"
-                  app:singleSelection="true"
-                  app:selectionRequired="true">
+                  android:text="@string/other_theme_auto" />
 
-                  <com.google.android.material.button.MaterialButton
-                    android:id="@+id/button_other_theme_auto"
-                    style="@style/Widget.Doodle.Button.OutlinedButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/other_theme_auto" />
+                <com.google.android.material.button.MaterialButton
+                  android:id="@+id/button_other_theme_light"
+                  style="@style/Widget.Doodle.Button.OutlinedButton"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="@string/other_theme_light" />
 
-                  <com.google.android.material.button.MaterialButton
-                    android:id="@+id/button_other_theme_light"
-                    style="@style/Widget.Doodle.Button.OutlinedButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/other_theme_light" />
+                <com.google.android.material.button.MaterialButton
+                  android:id="@+id/button_other_theme_dark"
+                  style="@style/Widget.Doodle.Button.OutlinedButton"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="@string/other_theme_dark" />
 
-                  <com.google.android.material.button.MaterialButton
-                    android:id="@+id/button_other_theme_dark"
-                    style="@style/Widget.Doodle.Button.OutlinedButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/other_theme_dark" />
+              </com.google.android.material.button.MaterialButtonToggleGroup>
 
-                </com.google.android.material.button.MaterialButtonToggleGroup>
-
-              </HorizontalScrollView>
-
-              <com.google.android.material.divider.MaterialDivider
-                android:id="@+id/divider_other_theme2"
-                android:layout_width="1dp"
-                android:layout_height="match_parent"
-                android:layout_marginTop="4dp"
-                android:layout_marginBottom="4dp" />
-
-            </FrameLayout>
+            </HorizontalScrollView>
 
           </LinearLayout>
 

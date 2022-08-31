@@ -53,7 +53,6 @@ import xyz.zedler.patrick.doodle.NavMainDirections;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.activity.LauncherActivity;
 import xyz.zedler.patrick.doodle.activity.MainActivity;
-import xyz.zedler.patrick.doodle.behavior.HorizontalDividerBehavior;
 import xyz.zedler.patrick.doodle.behavior.ScrollBehavior;
 import xyz.zedler.patrick.doodle.behavior.SystemBarBehavior;
 import xyz.zedler.patrick.doodle.databinding.FragmentOtherBinding;
@@ -100,9 +99,6 @@ public class OtherFragment extends BaseFragment
     new ScrollBehavior(activity).setUpScroll(
         binding.appBarOther, binding.scrollOther, true
     );
-
-    new HorizontalDividerBehavior(binding.scrollOtherTheme1, binding.dividerOtherTheme1);
-    new HorizontalDividerBehavior(binding.scrollOtherTheme2, binding.dividerOtherTheme2);
 
     ViewUtil.centerToolbarTitleOnLargeScreens(binding.toolbarOther);
     binding.toolbarOther.setNavigationOnClickListener(getNavigationOnClickListener());
@@ -416,17 +412,8 @@ public class OtherFragment extends BaseFragment
 
     Bundle bundleInstanceState = activity.getIntent().getBundleExtra(EXTRA.INSTANCE_STATE);
     if (bundleInstanceState != null) {
-      binding.scrollOtherTheme1.scrollTo(
+      binding.scrollOtherTheme.scrollTo(
           bundleInstanceState.getInt(EXTRA.SCROLL_POSITION + 1, 0), 0
-      );
-      binding.dividerOtherTheme1.setAlpha(
-          bundleInstanceState.getFloat(EXTRA.DIVIDER_ALPHA + 1, 0)
-      );
-      binding.scrollOtherTheme2.scrollTo(
-          bundleInstanceState.getInt(EXTRA.SCROLL_POSITION + 2, 0), 0
-      );
-      binding.dividerOtherTheme2.setAlpha(
-          bundleInstanceState.getFloat(EXTRA.DIVIDER_ALPHA + 2, 0)
       );
     }
   }
@@ -434,10 +421,7 @@ public class OtherFragment extends BaseFragment
   private Bundle getInstanceState() {
     Bundle bundle = new Bundle();
     if (binding != null) {
-      bundle.putInt(EXTRA.SCROLL_POSITION + 1, binding.scrollOtherTheme1.getScrollX());
-      bundle.putFloat(EXTRA.DIVIDER_ALPHA + 1, binding.dividerOtherTheme1.getAlpha());
-      bundle.putInt(EXTRA.SCROLL_POSITION + 2, binding.scrollOtherTheme2.getScrollX());
-      bundle.putFloat(EXTRA.DIVIDER_ALPHA + 2, binding.dividerOtherTheme2.getAlpha());
+      bundle.putInt(EXTRA.SCROLL_POSITION + 1, binding.scrollOtherTheme.getScrollX());
     }
     return bundle;
   }

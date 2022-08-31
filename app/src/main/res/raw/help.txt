@@ -41,7 +41,7 @@ That's a bug on a few devices out there, mostly with Android 8.1 or 9. For a wor
 
 OPTION_USE_SLIDING
 
-#### "Set" button not is missing?
+#### "Set" button is missing?
 
 If you tap on "Set wallpaper" and the fullscreen wallpaper preview opens, a "Set" button should be displayed by the system to apply the live wallpaper.
 However, if this button is missing for you, you have one of these devices where the manufacturer has messed up the original Android system.

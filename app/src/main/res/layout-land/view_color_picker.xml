@@ -70,14 +70,13 @@
     android:clipChildren="false">
 
     <com.google.android.material.card.MaterialCardView
-      android:id="@+id/card_color_picker_square_container"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
       app:cardCornerRadius="16dp"
       app:strokeColor="?attr/colorOutline">
 
-      <xyz.zedler.patrick.doodle.view.ColorPickerSquareView
-        android:id="@+id/card_color_picker_square"
+      <xyz.zedler.patrick.doodle.view.ColorLuminanceView
+        android:id="@+id/view_color_picker_luminance"
         android:layout_width="match_parent"
         android:layout_height="@dimen/color_picker_hsv_height" />
 

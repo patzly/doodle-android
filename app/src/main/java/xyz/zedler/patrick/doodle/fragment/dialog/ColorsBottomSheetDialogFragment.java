@@ -21,6 +21,8 @@ package xyz.zedler.patrick.doodle.fragment.dialog;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,17 +30,22 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout.LayoutParams;
 import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.divider.MaterialDivider;
 import com.google.android.material.elevation.SurfaceColors;
 import java.util.Objects;
+import xyz.zedler.patrick.doodle.Constants.EXTRA;
+import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.activity.MainActivity;
 import xyz.zedler.patrick.doodle.databinding.FragmentBottomsheetColorsBinding;
 import xyz.zedler.patrick.doodle.fragment.AppearanceFragment;
-import xyz.zedler.patrick.doodle.fragment.dialog.ColorPickerDialog.OnSelectListener;
 import xyz.zedler.patrick.doodle.util.ResUtil;
 import xyz.zedler.patrick.doodle.util.SystemUiUtil;
 import xyz.zedler.patrick.doodle.util.ViewUtil;
+import xyz.zedler.patrick.doodle.view.ColorPickerView;
 import xyz.zedler.patrick.doodle.view.SelectionCardView;
 
 public class ColorsBottomSheetDialogFragment extends BaseBottomSheetDialogFragment {
@@ -47,21 +54,26 @@ public class ColorsBottomSheetDialogFragment extends BaseBottomSheetDialogFragme
 
   private FragmentBottomsheetColorsBinding binding;
   private MainActivity activity;
-  private ColorPickerDialog dialogColorPicker;
+  private ColorsBottomSheetDialogFragmentArgs args;
+  private AlertDialog dialog;
+  private ColorPickerView colorPicker;
   private int colorCustom;
 
   @Override
   public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle state) {
     binding = FragmentBottomsheetColorsBinding.inflate(inflater, container, false);
+    args = ColorsBottomSheetDialogFragmentArgs.fromBundle(getArguments());
 
     activity = (MainActivity) requireActivity();
-
-    ColorsBottomSheetDialogFragmentArgs args
-        = ColorsBottomSheetDialogFragmentArgs.fromBundle(getArguments());
 
     binding.toolbarColors.setTitle(getString(args.getTitle()));
 
     String[] colors = args.getColors().split(" ");
+    String selection = getSharedPrefs().getString(
+        args.getThemeColorPref(), args.getThemeColorPrefDef()
+    );
+
+    boolean isPresetSelected = false;
 
     for (int i = 0; i < colors.length; i++) {
       int index = i;
@@ -83,8 +95,11 @@ public class ColorsBottomSheetDialogFragment extends BaseBottomSheetDialogFragme
           }
         }
       });
-      boolean isSelected = Objects.equals(args.getSelection(), colors[i]);
+      boolean isSelected = Objects.equals(selection, colors[i]);
       card.setChecked(isSelected);
+      if (!isPresetSelected && isSelected) {
+        isPresetSelected = true;
+      }
       binding.linearColorsContainerColors.addView(card);
     }
 
@@ -116,12 +131,69 @@ public class ColorsBottomSheetDialogFragment extends BaseBottomSheetDialogFragme
     }
     card.setOnClickListener(v -> {
       performHapticClick();
-      OnSelectListener listener = new OnSelectListener() {
-        @Override
-        public void onSelect(ColorPickerDialog dialog, int color) {
-          color = color & 0xFFFFFF;
-          colorCustom = color;
-          String colorString = String.format("#%06X", color);
+      openColorPickerDialog(false, 0);
+    });
+    boolean isSelected = Objects.equals(selection, String.format("#%06X", colorCustom & 0xFFFFFF));
+    if (!isPresetSelected) {
+      // only mark custom color as selected if no preset color matches
+      card.setChecked(isSelected);
+    }
+    binding.linearColorsContainerColors.addView(card);
+
+    return binding.getRoot();
+  }
+
+  @Override
+  public void onDestroy() {
+    super.onDestroy();
+    if (dialog != null) {
+      // Else it throws an leak exception because the context is somehow from the activity
+      dialog.dismiss();
+    }
+    binding = null;
+  }
+
+  @Override
+  public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+    if (savedInstanceState != null) {
+      if (savedInstanceState.getBoolean(EXTRA.PICKER_SHOWING)) {
+        int colorNew = savedInstanceState.getInt(EXTRA.COLOR);
+        new Handler(Looper.getMainLooper()).postDelayed(
+            () -> openColorPickerDialog(true, colorNew), 1
+        );
+      }
+    }
+  }
+
+  @Override
+  public void onSaveInstanceState(@NonNull Bundle outState) {
+    super.onSaveInstanceState(outState);
+    boolean isShowing = dialog != null && dialog.isShowing();
+    outState.putBoolean(EXTRA.PICKER_SHOWING, isShowing);
+    if (isShowing) {
+      outState.putInt(EXTRA.COLOR, colorPicker.getColor());
+    }
+  }
+
+  private void openColorPickerDialog(boolean isSavedState, int colorNew) {
+    colorPicker = new ColorPickerView(activity);
+    if (isSavedState) {
+      colorPicker.setColor(colorCustom, colorNew);
+    } else {
+      colorPicker.setColor(colorCustom);
+    }
+    dialog = new MaterialAlertDialogBuilder(activity)
+        .setTitle(R.string.appearance_colors_custom)
+        .setPositiveButton(R.string.action_select, (dialog, which) -> {
+          if (binding == null) {
+            return;
+          }
+          colorCustom = colorPicker.getColor() & 0xFFFFFF;
+          String colorString = String.format("#%06X", colorCustom);
+          SelectionCardView card =
+              (SelectionCardView) binding.linearColorsContainerColors.getChildAt(
+                  binding.linearColorsContainerColors.getChildCount() - 1
+              );
           card.setCardBackgroundColor(Color.parseColor(colorString));
           card.setScrimEnabled(false, true);
           ViewUtil.uncheckAllChildren(binding.linearColorsContainerColors);
@@ -134,35 +206,11 @@ public class ColorsBottomSheetDialogFragment extends BaseBottomSheetDialogFragme
                 args.getPriority(), colorString, true
             );
           }
-        }
-
-        @Override
-        public void onCancel() {
-          performHapticClick();
-        }
-      };
-      dialogColorPicker = new ColorPickerDialog(requireContext(), colorCustom, listener);
-      dialogColorPicker.show();
-    });
-    boolean isSelected = Objects.equals(
-      args.getSelection(), String.format("#%06X", (colorCustom & 0xFFFFFF))
-    );
-    // TODO: is not selected anymore if custom is new selection after screen rotation
-    card.setChecked(isSelected);
-    binding.linearColorsContainerColors.addView(card);
-
-    return binding.getRoot();
-  }
-
-  @Override
-  public void onDestroy() {
-    super.onDestroy();
-    if (dialogColorPicker != null) {
-      // Else it throws an leak exception because the context is somehow from the activity
-      // TODO: should be still opened after screen rotation
-      dialogColorPicker.dismiss();
-    }
-    binding = null;
+        }).setNegativeButton(R.string.action_cancel, (dialog, which) -> performHapticClick())
+        .setOnCancelListener(dialog -> performHapticClick())
+        .setView(colorPicker)
+        .create();
+    dialog.show();
   }
 
   @Override

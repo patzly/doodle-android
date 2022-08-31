@@ -729,14 +729,12 @@ public class AppearanceFragment extends BaseFragment
             break;
         }
         action.setColors(TextUtils.join(" ", currentVariant.getColors()));
-        action.setSelection(
-            getSharedPrefs().getString(
-                Constants.getThemeColorPref(
-                    currentWallpaper.getName(), currentVariantIndex, iFinal, isWallpaperNightMode()
-                ),
-                currentVariant.getColorHex(iFinal)
+        action.setThemeColorPref(
+            Constants.getThemeColorPref(
+                currentWallpaper.getName(), currentVariantIndex, iFinal, isWallpaperNightMode()
             )
         );
+        action.setThemeColorPrefDef(currentVariant.getColorHex(iFinal));
         action.setPriority(iFinal);
         navigate(action);
       });

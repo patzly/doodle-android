@@ -113,6 +113,9 @@ public class LiveWallpaperService extends WallpaperService {
 
     receiver = new BroadcastReceiver() {
       public void onReceive(Context context, Intent intent) {
+        if (intent == null) {
+          return;
+        }
         switch (intent.getAction()) {
           case Intent.ACTION_SCREEN_OFF:
             setUserPresence(USER_PRESENCE.OFF);
@@ -124,7 +127,9 @@ public class LiveWallpaperService extends WallpaperService {
             setUserPresence(USER_PRESENCE.UNLOCKED);
             break;
           case PowerManager.ACTION_POWER_SAVE_MODE_CHANGED:
-            isPowerSaveMode = powerManager.isPowerSaveMode();
+            if (powerManager != null) {
+              isPowerSaveMode = powerManager.isPowerSaveMode();
+            }
             break;
           case ACTION.THEME_AND_DESIGN_CHANGED:
             if (refreshListener != null) {

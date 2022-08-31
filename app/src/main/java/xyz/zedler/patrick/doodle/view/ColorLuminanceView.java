@@ -19,7 +19,6 @@
 
 package xyz.zedler.patrick.doodle.view;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -32,25 +31,23 @@ import android.graphics.Shader.TileMode;
 import android.util.AttributeSet;
 import android.view.View;
 
-public class ColorPickerSquareView extends View {
+public class ColorLuminanceView extends View {
 
   private Paint paint;
   private Shader luar;
   private final float[] color = {1, 1, 1};
   private boolean hasChanged = true;
 
-  public ColorPickerSquareView(Context context, AttributeSet attrs) {
+  public ColorLuminanceView(Context context) {
+    super(context);
+  }
+
+  public ColorLuminanceView(Context context, AttributeSet attrs) {
     super(context, attrs);
   }
 
-  public ColorPickerSquareView(Context context, AttributeSet attrs, int defStyle) {
-    super(context, attrs, defStyle);
-  }
-
-  @SuppressLint("DrawAllocation")
   @Override
   protected void onDraw(Canvas canvas) {
-    super.onDraw(canvas);
     if (paint == null) {
       paint = new Paint();
       luar = new LinearGradient(

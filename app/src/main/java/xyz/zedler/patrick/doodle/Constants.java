@@ -297,6 +297,8 @@ public final class Constants {
     public static final String SHOW_FORCE_STOP_REQUEST = "show_force_stop_request";
     public static final String SCROLL_POSITION = "scroll_position";
     public static final String DIVIDER_ALPHA = "divider_alpha";
+    public static final String PICKER_SHOWING = "is_picker_showing";
+    public static final String COLOR = "color";
   }
 
   public static final class THEME {

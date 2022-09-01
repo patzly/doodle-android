@@ -1,3 +1,7 @@
+## 5.5.2
+
+- Improved: 2-ring support for 24H clock in daily random time selection
+
 ## 5.5.1
 
 - New: option for sliding transition between settings pages and workaround for bug with blank settings subpages in help dialog

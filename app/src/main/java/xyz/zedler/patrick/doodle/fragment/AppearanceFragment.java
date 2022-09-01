@@ -825,6 +825,7 @@ public class AppearanceFragment extends BaseFragment
         )
         .setHour(calendar.get(Calendar.HOUR_OF_DAY))
         .setMinute(calendar.get(Calendar.MINUTE))
+        .setInputMode(MaterialTimePicker.INPUT_MODE_CLOCK)
         .setTheme(R.style.ThemeOverlay_Doodle_TimePicker)
         .build();
     picker.show(activity.getSupportFragmentManager(), "time");

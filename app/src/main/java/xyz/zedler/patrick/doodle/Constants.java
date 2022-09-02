@@ -280,6 +280,7 @@ public final class Constants {
     public static final String ZOOM_LAUNCHER = "zoom_launcher";
     public static final String ZOOM_UNLOCK = "zoom_unlock";
     public static final String TILT = "tilt";
+    public static final String SWIPE = "swipe";
   }
 
   public static final class ACTION {

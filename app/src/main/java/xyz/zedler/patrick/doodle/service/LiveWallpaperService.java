@@ -284,7 +284,7 @@ public class LiveWallpaperService extends WallpaperService {
     private float[] accelerationValues;
     private final LinkedList<Pair<Float, Float>> tiltHistory = new LinkedList<>();
     private float tiltX, tiltY;
-    private long lastDrawTilt;
+    private long lastDrawSwipe, lastDrawTilt;
     private boolean powerSaveSwipe, powerSaveTilt;
 
     // Size
@@ -473,7 +473,7 @@ public class LiveWallpaperService extends WallpaperService {
         offsetX = xOffset;
       }
       if (animSwipe()) {
-        updateOffset(true, null);
+        updateOffset(false, REQUEST_SOURCE.SWIPE);
       }
     }
 
@@ -735,6 +735,9 @@ public class LiveWallpaperService extends WallpaperService {
               case REQUEST_SOURCE.TILT:
                 lastDrawTilt = SystemClock.elapsedRealtime();
                 break;
+              case REQUEST_SOURCE.SWIPE:
+                lastDrawSwipe = SystemClock.elapsedRealtime();
+                break;
             }
           }
         }
@@ -755,21 +758,33 @@ public class LiveWallpaperService extends WallpaperService {
      * Returns true if drawing is forced or if enough time is passed since th last rendered frame.
      */
     private boolean isDrawingAllowed(boolean force, String source) {
-      if (force || zoomLauncher == 0 || zoomLauncher == 1 || zoomUnlock == 0 || zoomUnlock == 1) {
+      if (force) {
         return true;
       } else if (source != null) {
-        if (source.equals(REQUEST_SOURCE.ZOOM_LAUNCHER)
-            && SystemClock.elapsedRealtime() - lastDrawZoomLauncher < 1000 / fps) {
-          return true;
-        } else if (source.equals(REQUEST_SOURCE.ZOOM_UNLOCK)
-            && SystemClock.elapsedRealtime() - lastDrawZoomUnlock < 1000 / fps) {
-          return true;
-        } else {
-          return source.equals(REQUEST_SOURCE.TILT)
-              && SystemClock.elapsedRealtime() - lastDrawTilt < 1000 / fps;
+        switch (source) {
+          case REQUEST_SOURCE.SWIPE:
+            return SystemClock.elapsedRealtime() - lastDrawSwipe >= 1000 / fps;
+          case REQUEST_SOURCE.TILT:
+            return SystemClock.elapsedRealtime() - lastDrawTilt >= 1000 / fps;
+          case REQUEST_SOURCE.ZOOM_LAUNCHER:
+            if (zoomLauncher == 0 || zoomLauncher == 1) {
+              return true;
+            } else {
+              return SystemClock.elapsedRealtime() - lastDrawZoomLauncher >= 1000 / fps;
+            }
+          case REQUEST_SOURCE.ZOOM_UNLOCK:
+            if (zoomUnlock == 0 || zoomUnlock == 1) {
+              return true;
+            } else {
+              return SystemClock.elapsedRealtime() - lastDrawZoomUnlock >= 1000 / fps;
+            }
+          default:
+            Log.e(TAG, "isDrawingAllowed: source must be constant from REQUEST_SOURCE");
+            return true;
         }
       } else {
-        return false;
+        Log.e(TAG, "isDrawingAllowed: source must be defined if drawing is not forced");
+        return true;
       }
     }
 
@@ -813,7 +828,7 @@ public class LiveWallpaperService extends WallpaperService {
       if (registered && !isSensorListenerRegistered && isTiltEnabled) {
         // SENSOR_DELAY_GAME = 20000
         // SENSOR_DELAY_UI = 66667
-        sensorManager.registerListener(sensorListener, accelerometer,tiltRefreshRate);
+        sensorManager.registerListener(sensorListener, accelerometer, tiltRefreshRate);
         isSensorListenerRegistered = true;
       } else if (!registered && isSensorListenerRegistered) {
         sensorManager.unregisterListener(sensorListener);

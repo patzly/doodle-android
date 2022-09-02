@@ -312,39 +312,51 @@ public class OtherFragment extends BaseFragment
     for (int i = hasDynamic ? -1 : 0; i <= colorsCount; i++) {
       String name;
       int resId;
-      if (i == -1) {
-        name = THEME.DYNAMIC;
-        resId = -1;
-      } else if (i == 0) {
-        name = THEME.RED;
-        resId = R.style.Theme_Doodle_Red;
-      } else if (i == 1) {
-        name = THEME.YELLOW;
-        resId = R.style.Theme_Doodle_Yellow;
-      } else if (i == 2) {
-        name = THEME.LIME;
-        resId = R.style.Theme_Doodle_Lime;
-      } else if (i == 3) {
-        name = THEME.GREEN;
-        resId = R.style.Theme_Doodle_Green;
-      } else if (i == 4) {
-        name = THEME.TURQUOISE;
-        resId = R.style.Theme_Doodle_Turquoise;
-      } else if (i == 5) {
-        name = THEME.TEAL;
-        resId = R.style.Theme_Doodle_Teal;
-      } else if (i == 6) {
-        name = THEME.BLUE;
-        resId = R.style.Theme_Doodle_Blue;
-      } else if (i == 7) {
-        name = THEME.PURPLE;
-        resId = R.style.Theme_Doodle_Purple;
-      } else if (i == 8) {
-        name = THEME.AMOLED;
-        resId = R.style.Theme_Doodle_Amoled;
-      } else {
-        name = THEME.BLUE;
-        resId = R.style.Theme_Doodle_Blue;
+      switch (i) {
+        case -1:
+          name = THEME.DYNAMIC;
+          resId = -1;
+          break;
+        case 0:
+          name = THEME.RED;
+          resId = R.style.Theme_Doodle_Red;
+          break;
+        /*case 1:
+          name = THEME.YELLOW;
+          resId = R.style.Theme_Doodle_Yellow;
+          break;*/
+        case 2:
+          name = THEME.LIME;
+          resId = R.style.Theme_Doodle_Lime;
+          break;
+        case 3:
+          name = THEME.GREEN;
+          resId = R.style.Theme_Doodle_Green;
+          break;
+        case 4:
+          name = THEME.TURQUOISE;
+          resId = R.style.Theme_Doodle_Turquoise;
+          break;
+        case 5:
+          name = THEME.TEAL;
+          resId = R.style.Theme_Doodle_Teal;
+          break;
+        case 6:
+          name = THEME.BLUE;
+          resId = R.style.Theme_Doodle_Blue;
+          break;
+        case 7:
+          name = THEME.PURPLE;
+          resId = R.style.Theme_Doodle_Purple;
+          break;
+        case 8:
+          name = THEME.AMOLED;
+          resId = R.style.Theme_Doodle_Amoled;
+          break;
+        default:
+          name = THEME.YELLOW;
+          resId = R.style.Theme_Doodle_Yellow;
+          break;
       }
 
       SelectionCardView card = new SelectionCardView(activity);
@@ -383,7 +395,7 @@ public class OtherFragment extends BaseFragment
       String selected = getSharedPrefs().getString(PREF.THEME, DEF.THEME);
       boolean isSelected;
       if (selected.isEmpty()) {
-        isSelected = hasDynamic ? name.equals(THEME.DYNAMIC) : name.equals(THEME.BLUE);
+        isSelected = hasDynamic ? name.equals(THEME.DYNAMIC) : name.equals(THEME.YELLOW);
       } else {
         isSelected = selected.equals(name);
       }

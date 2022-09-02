@@ -198,7 +198,7 @@ public class MainActivity extends AppCompatActivity {
               ).build()
           );
         } else {
-          setTheme(R.style.Theme_Doodle_Blue);
+          setTheme(R.style.Theme_Doodle_Yellow);
         }
         break;
     }

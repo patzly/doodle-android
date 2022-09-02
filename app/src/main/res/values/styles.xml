@@ -463,7 +463,7 @@
     <item name="android:letterSpacing">0.1</item>
     <item name="android:textStyle">bold</item>
     <item name="android:textAllCaps">true</item>
-    <item name="android:alpha">0.5</item>
+    <item name="android:alpha">0.61</item>
     <item name="android:textAppearance">?attr/textAppearanceBodySmall</item>
   </style>
 
@@ -478,7 +478,7 @@
   <style name="Widget.Doodle.TextView.ListItem.Description" parent="Widget.Doodle.TextView">
     <item name="android:layout_width">match_parent</item>
     <item name="android:layout_height">wrap_content</item>
-    <item name="android:alpha">0.6</item>
+    <item name="android:alpha">0.61</item>
   </style>
 
   <!-- TextAppearance -->

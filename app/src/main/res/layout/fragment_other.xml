@@ -154,21 +154,24 @@
                   style="@style/Widget.Doodle.Button.OutlinedButton"
                   android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
-                  android:text="@string/other_theme_auto" />
+                  android:text="@string/other_theme_auto"
+                  tools:ignore="TextContrastCheck" />
 
                 <com.google.android.material.button.MaterialButton
                   android:id="@+id/button_other_theme_light"
                   style="@style/Widget.Doodle.Button.OutlinedButton"
                   android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
-                  android:text="@string/other_theme_light" />
+                  android:text="@string/other_theme_light"
+                  tools:ignore="TextContrastCheck" />
 
                 <com.google.android.material.button.MaterialButton
                   android:id="@+id/button_other_theme_dark"
                   style="@style/Widget.Doodle.Button.OutlinedButton"
                   android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
-                  android:text="@string/other_theme_dark" />
+                  android:text="@string/other_theme_dark"
+                  tools:ignore="TextContrastCheck" />
 
               </com.google.android.material.button.MaterialButtonToggleGroup>
 
@@ -244,7 +247,8 @@
 
           <com.google.android.material.materialswitch.MaterialSwitch
             android:id="@+id/switch_other_gpu"
-            style="@style/Widget.Doodle.Switch" />
+            style="@style/Widget.Doodle.Switch"
+            tools:ignore="DuplicateSpeakableTextCheck" />
 
         </LinearLayout>
 

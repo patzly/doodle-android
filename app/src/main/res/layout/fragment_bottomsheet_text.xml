@@ -36,7 +36,8 @@
   <androidx.core.widget.NestedScrollView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:scrollbars="none">
+    android:scrollbars="none"
+    android:importantForAccessibility="no">
 
     <xyz.zedler.patrick.doodle.view.FormattedTextView
       android:id="@+id/formatted_text"

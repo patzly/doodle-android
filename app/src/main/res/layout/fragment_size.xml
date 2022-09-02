@@ -197,7 +197,8 @@
 
           <com.google.android.material.materialswitch.MaterialSwitch
             android:id="@+id/switch_size_zoom_power_save"
-            style="@style/Widget.Doodle.Switch" />
+            style="@style/Widget.Doodle.Switch"
+            tools:ignore="DuplicateSpeakableTextCheck" />
 
         </LinearLayout>
 

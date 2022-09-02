@@ -77,7 +77,6 @@ public class AboutFragment extends BaseFragment implements OnClickListener {
 
     ViewUtil.setOnClickListeners(
         this,
-        binding.linearAboutVersion,
         binding.linearAboutChangelog,
         binding.linearAboutDeveloper,
         binding.linearAboutVending,
@@ -94,10 +93,6 @@ public class AboutFragment extends BaseFragment implements OnClickListener {
   public void onClick(View v) {
     int id = v.getId();
     if (getViewUtil().isClickDisabled(id)) {
-      return;
-    } else if (id == R.id.linear_about_version) {
-      activity.performHapticExplosion();
-      ViewUtil.startIcon(binding.imageAboutVersion);
       return;
     } else {
       performHapticClick();

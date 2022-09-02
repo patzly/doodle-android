@@ -184,7 +184,7 @@ public class OtherFragment extends BaseFragment
   @Override
   public void onClick(View v) {
     int id = v.getId();
-    if (id == R.id.linear_other_language) {
+    if (id == R.id.linear_other_language && getViewUtil().isClickEnabled(id)) {
       performHapticClick();
       ViewUtil.startIcon(binding.imageOtherLanguage);
       navigate(OtherFragmentDirections.actionOtherToLanguagesDialog());

@@ -134,7 +134,8 @@
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
               android:scrollbars="none"
-              android:overScrollMode="ifContentScrolls">
+              android:overScrollMode="ifContentScrolls"
+              android:importantForAccessibility="no">
 
               <LinearLayout
                 android:id="@+id/linear_appearance_wallpaper_doodle"
@@ -173,7 +174,8 @@
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
               android:scrollbars="none"
-              android:overScrollMode="ifContentScrolls">
+              android:overScrollMode="ifContentScrolls"
+              android:importantForAccessibility="no">
 
               <LinearLayout
                 android:id="@+id/linear_appearance_wallpaper_monet"
@@ -212,7 +214,8 @@
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
               android:scrollbars="none"
-              android:overScrollMode="ifContentScrolls">
+              android:overScrollMode="ifContentScrolls"
+              android:importantForAccessibility="no">
 
               <LinearLayout
                 android:id="@+id/linear_appearance_wallpaper_anna"
@@ -254,7 +257,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:scrollbars="none"
-            android:overScrollMode="ifContentScrolls">
+            android:overScrollMode="ifContentScrolls"
+            android:importantForAccessibility="no">
 
             <LinearLayout
               android:id="@+id/linear_appearance_variant_container"
@@ -308,7 +312,8 @@
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
               android:scrollbars="none"
-              android:overScrollMode="ifContentScrolls">
+              android:overScrollMode="ifContentScrolls"
+              android:importantForAccessibility="no">
 
               <LinearLayout
                 android:id="@+id/linear_appearance_colors_container"
@@ -376,21 +381,24 @@
                   style="@style/Widget.Doodle.Button.OutlinedButton"
                   android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
-                  android:text="@string/other_theme_auto" />
+                  android:text="@string/other_theme_auto"
+                  tools:ignore="TextContrastCheck" />
 
                 <com.google.android.material.button.MaterialButton
                   android:id="@+id/button_appearance_night_mode_on"
                   style="@style/Widget.Doodle.Button.OutlinedButton"
                   android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
-                  android:text="@string/appearance_night_mode_on" />
+                  android:text="@string/appearance_night_mode_on"
+                  tools:ignore="TextContrastCheck" />
 
                 <com.google.android.material.button.MaterialButton
                   android:id="@+id/button_appearance_night_mode_off"
                   style="@style/Widget.Doodle.Button.OutlinedButton"
                   android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
-                  android:text="@string/appearance_night_mode_off" />
+                  android:text="@string/appearance_night_mode_off"
+                  tools:ignore="TextContrastCheck" />
 
               </com.google.android.material.button.MaterialButtonToggleGroup>
 

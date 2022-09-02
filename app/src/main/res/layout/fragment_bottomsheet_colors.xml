@@ -50,7 +50,8 @@
         android:layout_height="wrap_content"
         android:scrollbars="none"
         android:overScrollMode="ifContentScrolls"
-        tools:ignore="UselessParent">
+        tools:ignore="UselessParent"
+        android:importantForAccessibility="no">
 
         <LinearLayout
           android:id="@+id/linear_colors_container_colors"

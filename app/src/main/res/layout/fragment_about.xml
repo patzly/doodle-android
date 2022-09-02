@@ -59,12 +59,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <LinearLayout
-          android:id="@+id/linear_about_version"
-          style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon.Clickable">
+        <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon.Clickable">
 
           <ImageView
-            android:id="@+id/image_about_version"
             style="@style/Widget.Doodle.ImageView.ListItem.Icon"
             android:src="@drawable/ic_round_info_outline_anim"
             tools:ignore="ContentDescription" />

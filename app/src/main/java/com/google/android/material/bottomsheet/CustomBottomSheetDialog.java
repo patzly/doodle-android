@@ -240,7 +240,7 @@ public class CustomBottomSheetDialog extends AppCompatDialog {
     if (container == null) {
       container = (FrameLayout) View.inflate(
           getContext(),
-          xyz.zedler.patrick.doodle.R.layout.dialog_custom_bottom_sheet, null
+          xyz.zedler.patrick.doodle.R.layout.dialog_bottom_sheet_custom, null
       );
 
       coordinator = container.findViewById(R.id.coordinator);

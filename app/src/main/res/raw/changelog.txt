@@ -3,6 +3,7 @@
 - New: TODO: separate swipe and tilt effect intensity controls
 - New: TODO: frames-per-second control with optional display dependency
 - Improved: 2-ring support for 24H clock in daily random time selection
+- Improved: unified logo experience
 - Fixed: jerky zoom animation when tilt effect was turned on (finally!)
 
 ## 5.5.1

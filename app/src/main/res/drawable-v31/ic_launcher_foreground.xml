@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <!--
   ~ This file is part of Doodle Android.
   ~
@@ -16,24 +17,20 @@
   ~
   ~ Copyright (c) 2019-2022 by Patrick Zedler
   -->
-
-<vector xmlns:android="http://schemas.android.com/apk/res/android"
-    android:width="108dp"
-    android:height="108dp"
-    android:viewportWidth="108"
-    android:viewportHeight="108">
-  <group android:scaleX="2.475"
-      android:scaleY="2.475"
-      android:translateX="24.3"
-      android:translateY="24.3">
-    <path
-        android:pathData="M15.61,5.1a1.99,1.99 0,0 0,-0.96 2.64,1.99 1.99,0 0,0 2.64,0.97 1.99,1.99 0,0 0,0.96 -2.65,1.99 1.99,0 0,0 -2.64,-0.96zM16.21,6.46a0.5,0.5 0,0 1,0.03 0,0.5 0.5,0 0,1 0.66,0.23 0.5,0.5 0,0 1,-0.24 0.67,0.5 0.5,0 0,1 -0.67,-0.25 0.5,0.5 0,0 1,0.21 -0.65z"
-        android:fillColor="@android:color/system_accent1_600"/>
-    <path
-        android:pathData="M15.95,20.11L10.33,8.03c-0.76,-1.65 -2.37,-2.24 -4.02,-1.47 -1.65,0.76 -2.24,2.37 -1.47,4.02l3.57,7.7a1.3,1.3 0,0 0,1.61 0.58l8.8,-4.09a1.3,1.3 0,0 0,0.58 -1.6l-1.53,-3.3"
-        android:strokeWidth="1.2"
-        android:fillColor="#00000000"
-        android:strokeColor="@android:color/system_neutral1_900"
-        android:strokeLineCap="round"/>
-  </group>
+<vector
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:width="108dp"
+  android:height="108dp"
+  android:viewportWidth="108"
+  android:viewportHeight="108">
+  <path
+    android:pathData="M63.86,74.57 L49.82,44.41C47.93,40.29 43.91,38.82 39.79,40.74 35.66,42.64 34.19,46.66 36.11,50.78l8.91,19.23a3.25,3.25 0,0 0,4.02 1.45L71.02,61.24a3.25,3.25 0,0 0,1.45 -4L68.65,49"
+    android:strokeWidth="2.91667"
+    android:fillColor="#00000000"
+    android:strokeColor="@android:color/system_neutral1_900"
+    android:strokeLineCap="round" />
+  <path
+    android:pathData="m64.59,35.54c-3.04,0 -5.56,2.51 -5.56,5.56 0,3.04 2.51,5.56 5.56,5.56 3.04,0 5.56,-2.51 5.56,-5.56 0,-3.04 -2.51,-5.56 -5.56,-5.56zM64.59,39.62c0.84,0 1.47,0.63 1.47,1.47 0,0.84 -0.64,1.47 -1.47,1.47 -0.84,0 -1.47,-0.63 -1.47,-1.47 0,-0.84 0.63,-1.47 1.47,-1.47z"
+    android:strokeWidth="1.16667"
+    android:fillColor="@android:color/system_accent1_600" />
 </vector>

@@ -59,7 +59,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon.Clickable">
+        <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon">
 
           <ImageView
             style="@style/Widget.Doodle.ImageView.ListItem.Icon"

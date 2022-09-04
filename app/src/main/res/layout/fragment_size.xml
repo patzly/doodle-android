@@ -337,11 +337,49 @@
               style="@style/Widget.Doodle.TextView.ListItem.Description"
               android:text="@string/size_zoom_unlock_description" />
 
+            <HorizontalScrollView
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:scrollbars="none"
+              android:overScrollMode="ifContentScrolls"
+              android:layout_marginTop="8dp"
+              android:layout_marginBottom="8dp">
+
+              <com.google.android.material.button.MaterialButtonToggleGroup
+                android:id="@+id/toggle_size_zoom_unlock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="0dp"
+                android:paddingEnd="16dp"
+                app:singleSelection="true"
+                app:selectionRequired="true">
+
+                <com.google.android.material.button.MaterialButton
+                  android:id="@+id/button_size_zoom_unlock_in"
+                  style="@style/Widget.Doodle.Button.OutlinedButton"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="@string/size_zoom_unlock_in"
+                  tools:ignore="TextContrastCheck" />
+
+                <com.google.android.material.button.MaterialButton
+                  android:id="@+id/button_size_zoom_unlock_out"
+                  style="@style/Widget.Doodle.Button.OutlinedButton"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="@string/size_zoom_unlock_out"
+                  tools:ignore="TextContrastCheck" />
+
+              </com.google.android.material.button.MaterialButtonToggleGroup>
+
+            </HorizontalScrollView>
+
           </LinearLayout>
 
           <com.google.android.material.materialswitch.MaterialSwitch
             android:id="@+id/switch_size_zoom_unlock"
-            style="@style/Widget.Doodle.Switch" />
+            style="@style/Widget.Doodle.Switch"
+            android:layout_marginStart="4dp" />
 
         </LinearLayout>
 

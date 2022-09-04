@@ -564,7 +564,7 @@ public class SvgDrawable {
     }
 
     if (object.isInGroup) {
-      // fixes child path offset when zoomed out
+      // fixes child path offset when zoomed out or in
       // TODO: for scale 1.4-1.7 tiny offset still occurs, find a better fix
       float elevation = parentGroup.elevation;
       float xCompensate = ((px + dx) - pointF.x) * (1 - (this.scale - 1)) * (zoom * elevation);
@@ -595,7 +595,7 @@ public class SvgDrawable {
     if (!object.isInGroup && !object.intersections.isEmpty()) {
       for (PathIntersection intersection : object.intersections) {
         SvgObject other = findObjectById(intersection.id);
-        if (other != null && other.willBeIntersected && other.pathTransformed != null) {
+        if (other != null && other.willBeIntersected) {
           // transform object.path with recent canvas transformations
           pathTransformed.reset();
           pathTransformed.addPath(object.path, matrixCanvas);
@@ -1214,7 +1214,10 @@ public class SvgDrawable {
   }
 
   private float getFinalScale(SvgObject object, SvgObject parentGroup) {
-    return object.isInGroup ? parentGroup.childScale : scale - (zoom * object.elevation);
+    float objectScale = zoom >= 0
+        ? scale - (zoom * object.elevation)
+        : scale + (Math.abs(zoom) * object.elevation);
+    return object.isInGroup ? parentGroup.childScale : objectScale;
   }
 
   private Paint getDebugPaint(@ColorInt int color) {

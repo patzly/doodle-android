@@ -151,9 +151,34 @@ public class SizeFragment extends BaseFragment
         binding.linearSizeZoomDamping.isEnabled() && useZoomDamping
     );
 
-    binding.switchSizeZoomUnlock.setChecked(
-        getSharedPrefs().getBoolean(PREF.ZOOM_UNLOCK, DEF.ZOOM_UNLOCK)
-    );
+    boolean isZoomUnlockEnabled = getSharedPrefs().getBoolean(PREF.ZOOM_UNLOCK, DEF.ZOOM_UNLOCK);
+    binding.switchSizeZoomUnlock.setChecked(isZoomUnlockEnabled);
+    binding.buttonSizeZoomUnlockIn.setEnabled(isZoomUnlockEnabled);
+    binding.buttonSizeZoomUnlockOut.setEnabled(isZoomUnlockEnabled);
+
+    int id;
+    if (getSharedPrefs().getBoolean(PREF.ZOOM_UNLOCK_IN, DEF.ZOOM_UNLOCK_IN)) {
+      id = R.id.button_size_zoom_unlock_in;
+    } else {
+      id = R.id.button_size_zoom_unlock_out;
+    }
+    binding.toggleSizeZoomUnlock.check(id);
+    binding.toggleSizeZoomUnlock.addOnButtonCheckedListener((group, checkedId, isChecked) -> {
+      if (!isChecked) {
+        return;
+      }
+      boolean pref;
+      if (checkedId == R.id.button_size_zoom_unlock_in) {
+        pref = true;
+      } else if (checkedId == R.id.button_size_zoom_unlock_out) {
+        pref = false;
+      } else {
+        pref = false;
+      }
+      getSharedPrefs().edit().putBoolean(PREF.ZOOM_UNLOCK_IN, pref).apply();
+      activity.requestSettingsRefresh();
+      performHapticClick();
+    });
 
     binding.sliderSizeZoomDuration.setValue(
         getSharedPrefs().getInt(PREF.ZOOM_DURATION, DEF.ZOOM_DURATION)
@@ -243,6 +268,8 @@ public class SizeFragment extends BaseFragment
       activity.showForceStopRequest(NavMainDirections.actionGlobalApplyDialog());
     } else if (id == R.id.switch_size_zoom_unlock) {
       getSharedPrefs().edit().putBoolean(PREF.ZOOM_UNLOCK, isChecked).apply();
+      binding.buttonSizeZoomUnlockIn.setEnabled(isChecked);
+      binding.buttonSizeZoomUnlockOut.setEnabled(isChecked);
       activity.requestSettingsRefresh();
       performHapticClick();
     }

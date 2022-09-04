@@ -292,7 +292,7 @@ public class LiveWallpaperService extends WallpaperService {
     private int zoomIntensity;
     private float zoomLauncher, zoomUnlock;
     private boolean useSystemZoom;
-    private boolean isZoomLauncherEnabled, isZoomUnlockEnabled;
+    private boolean isZoomLauncherEnabled, isZoomUnlockEnabled, shouldZoomInWhenLocked;
     private int zoomRotation;
     private int zoomDuration;
     private boolean useZoomDamping;
@@ -369,7 +369,7 @@ public class LiveWallpaperService extends WallpaperService {
 
       zoomLauncher = 0;
       // This starts the zoom effect already in wallpaper preview
-      zoomUnlock = useSystemZoom ? 0 : 1;
+      zoomUnlock = useSystemZoom ? 0 : (shouldZoomInWhenLocked ? -1 : 1);
       if (!useSystemZoom) {
         animateZoom(0);
       }
@@ -511,7 +511,7 @@ public class LiveWallpaperService extends WallpaperService {
             isNewDailyPending = false;
           }
           if (isZoomUnlockEnabled && animZoom()) {
-            zoomUnlock = 1;
+            zoomUnlock = shouldZoomInWhenLocked ? -1 : 1;
             zoomLauncher = 0; // 1 or 0?
           }
           if (!randomMode.equals(RANDOM.OFF) || (isZoomUnlockEnabled && animZoom())) {
@@ -524,7 +524,7 @@ public class LiveWallpaperService extends WallpaperService {
           setTiltListenerRegistered(true);
           if (isZoomUnlockEnabled && animZoom()) {
             zoomLauncher = 0;
-            animateZoom(0.5f);
+            animateZoom(shouldZoomInWhenLocked ? -0.5f : 0.5f);
           }
           break;
         case USER_PRESENCE.UNLOCKED:
@@ -561,7 +561,7 @@ public class LiveWallpaperService extends WallpaperService {
           loadThemeAndDesign(true);
           isNewDailyPending = false; // just to make it sure
           if (isZoomUnlockEnabled && animZoom()) {
-            zoomUnlock = 1;
+            zoomUnlock = shouldZoomInWhenLocked ? -1 : 1;
             zoomLauncher = 0; // 1 or 0?
           }
           drawFrame(true, null);
@@ -599,6 +599,7 @@ public class LiveWallpaperService extends WallpaperService {
       zoomIntensity = sharedPrefs.getInt(PREF.ZOOM, DEF.ZOOM);
       isZoomLauncherEnabled = sharedPrefs.getBoolean(PREF.ZOOM_LAUNCHER, DEF.ZOOM_LAUNCHER);
       isZoomUnlockEnabled = sharedPrefs.getBoolean(PREF.ZOOM_UNLOCK, DEF.ZOOM_UNLOCK);
+      shouldZoomInWhenLocked = sharedPrefs.getBoolean(PREF.ZOOM_UNLOCK_IN, DEF.ZOOM_UNLOCK_IN);
       useSystemZoom = sharedPrefs.getBoolean(PREF.ZOOM_SYSTEM, DEF.ZOOM_SYSTEM);
       zoomDuration = sharedPrefs.getInt(PREF.ZOOM_DURATION, DEF.ZOOM_DURATION);
       zoomRotation = sharedPrefs.getInt(PREF.ZOOM_ROTATION, DEF.ZOOM_ROTATION);
@@ -782,7 +783,7 @@ public class LiveWallpaperService extends WallpaperService {
               return SystemClock.elapsedRealtime() - lastDrawZoomLauncher >= 1000 / fps;
             }
           case REQUEST_SOURCE.ZOOM_UNLOCK:
-            if (zoomUnlock == 0 || zoomUnlock == 1) {
+            if (zoomUnlock == 0 || zoomUnlock == 1 || zoomUnlock == -1) {
               return true;
             } else {
               return SystemClock.elapsedRealtime() - lastDrawZoomUnlock >= 1000 / fps;

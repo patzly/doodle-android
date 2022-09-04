@@ -26,7 +26,6 @@ import android.util.Log;
 import androidx.preference.PreferenceManager;
 import java.util.Objects;
 import xyz.zedler.patrick.doodle.Constants.DEF;
-import xyz.zedler.patrick.doodle.Constants.NIGHT_MODE;
 import xyz.zedler.patrick.doodle.Constants.PREF;
 import xyz.zedler.patrick.doodle.drawable.SvgDrawable;
 
@@ -127,24 +126,12 @@ public class PrefsUtil {
       }
     }
 
-    // night mode is stored in a new way, follow system no longer needed
+    // night mode is now stored as integer, follow system no longer needed
     if (sharedPrefs.contains(PREF.NIGHT_MODE)) {
       try {
         sharedPrefs.getInt(PREF.NIGHT_MODE, DEF.NIGHT_MODE);
-      } catch (Exception e) {
-        boolean isNight = sharedPrefs.getBoolean(PREF.NIGHT_MODE, true);
-        boolean followSystem = sharedPrefs.getBoolean("follow_system", true);
+      } catch (ClassCastException e) {
         removePreference(PREF.NIGHT_MODE);
-        removePreference("follow_system");
-        int nightModeNew;
-        if (isNight && followSystem) {
-          nightModeNew = NIGHT_MODE.AUTO;
-        } else if (isNight) {
-          nightModeNew = NIGHT_MODE.ON;
-        } else {
-          nightModeNew = NIGHT_MODE.OFF;
-        }
-        sharedPrefs.edit().putInt(PREF.NIGHT_MODE, nightModeNew).apply();
       }
     }
 
@@ -158,7 +145,7 @@ public class PrefsUtil {
       }
     }
 
-    // random mode is stored as string with different modes
+    // random mode is now stored as string with different modes
     if (sharedPrefs.contains(PREF.RANDOM)) {
       try {
         sharedPrefs.getString(PREF.RANDOM, DEF.RANDOM);

@@ -95,6 +95,7 @@ public final class Constants {
     public static final String DAMPING_ZOOM = "damping_zoom";
     public static final String ZOOM_SYSTEM = "zoom_system";
     public static final String ZOOM_UNLOCK = "zoom_unlock";
+    public static final String ZOOM_UNLOCK_IN = "zoom_unlock_mode_in";
     public static final String ZOOM_DURATION = "zoom_duration";
 
     // Other
@@ -138,6 +139,7 @@ public final class Constants {
     public static final int DAMPING_ZOOM = 12;
     public static final boolean ZOOM_SYSTEM = false;
     public static final boolean ZOOM_UNLOCK = true;
+    public static final boolean ZOOM_UNLOCK_IN = true;
     public static final int ZOOM_DURATION = 1200;
 
     public static final String LANGUAGE = null;

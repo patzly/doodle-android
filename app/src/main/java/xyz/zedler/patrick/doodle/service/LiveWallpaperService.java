@@ -411,6 +411,10 @@ public class LiveWallpaperService extends WallpaperService {
     @Override
     public void onSurfaceRedrawNeeded(SurfaceHolder holder) {
       int screenRotationOld = screenRotation;
+      if (display == null) {
+        WindowManager windowManager = ((WindowManager) getSystemService(Context.WINDOW_SERVICE));
+        display = windowManager.getDefaultDisplay();
+      }
       screenRotation = display.getRotation();
       if (screenRotation != screenRotationOld) {
         accelerationValues = null;
@@ -447,6 +451,11 @@ public class LiveWallpaperService extends WallpaperService {
         loadThemeOnly();
       }
 
+      if (display == null) {
+        WindowManager windowManager = ((WindowManager) getSystemService(Context.WINDOW_SERVICE));
+        display = windowManager.getDefaultDisplay();
+      }
+      fps = display.getRefreshRate();
       isRtl = getResources().getConfiguration().getLayoutDirection() == View.LAYOUT_DIRECTION_RTL;
 
       if (!wallpaper.isDepthStatic()) {

@@ -51,7 +51,6 @@ import java.util.Objects;
 import java.util.Random;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
-import xyz.zedler.patrick.doodle.Constants.DEF;
 import xyz.zedler.patrick.doodle.parser.PathParser;
 import xyz.zedler.patrick.doodle.util.SystemUiUtil;
 
@@ -213,7 +212,7 @@ public class SvgDrawable {
       float scale = (1 - (currentRatio / originalRatio)) + 1.2f;
       return BigDecimal.valueOf(scale).setScale(1, RoundingMode.HALF_DOWN).floatValue();
     } catch (Exception e) {
-      return DEF.SCALE;
+      return 1; // original size
     }
   }
 

@@ -284,35 +284,6 @@
 
         </LinearLayout>
 
-        <LinearLayout
-          android:id="@+id/linear_size_zoom_system"
-          style="@style/Widget.Doodle.LinearLayout.ListItem.SingleLine.Clickable">
-
-          <ImageView
-            android:id="@+id/image_size_zoom_system"
-            style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-            android:src="@drawable/ic_round_settings_suggest"
-            tools:ignore="ContentDescription" />
-
-          <LinearLayout
-            style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">
-
-            <TextView
-              style="@style/Widget.Doodle.TextView.ListItem.Title"
-              android:text="@string/size_zoom_system" />
-
-            <TextView
-              style="@style/Widget.Doodle.TextView.ListItem.Description"
-              android:text="@string/size_zoom_system_description" />
-
-          </LinearLayout>
-
-          <com.google.android.material.materialswitch.MaterialSwitch
-            android:id="@+id/switch_size_zoom_system"
-            style="@style/Widget.Doodle.Switch" />
-
-        </LinearLayout>
-
         <TextView
           style="@style/Widget.Doodle.TextView.Category"
           android:text="@string/size_category_unlock" />

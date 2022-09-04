@@ -57,6 +57,7 @@ import xyz.zedler.patrick.doodle.Constants.ACTION;
 import xyz.zedler.patrick.doodle.Constants.DEF;
 import xyz.zedler.patrick.doodle.Constants.NIGHT_MODE;
 import xyz.zedler.patrick.doodle.Constants.PREF;
+import xyz.zedler.patrick.doodle.Constants.PRIORITY;
 import xyz.zedler.patrick.doodle.Constants.RANDOM;
 import xyz.zedler.patrick.doodle.Constants.REQUEST_SOURCE;
 import xyz.zedler.patrick.doodle.Constants.USER_PRESENCE;
@@ -291,7 +292,6 @@ public class LiveWallpaperService extends WallpaperService {
     private float scale;
     private int zoomIntensity;
     private float zoomLauncher, zoomUnlock;
-    private boolean useSystemZoom;
     private boolean isZoomLauncherEnabled, isZoomUnlockEnabled, shouldZoomInWhenLocked;
     private int zoomRotation;
     private int zoomDuration;
@@ -369,10 +369,8 @@ public class LiveWallpaperService extends WallpaperService {
 
       zoomLauncher = 0;
       // This starts the zoom effect already in wallpaper preview
-      zoomUnlock = useSystemZoom ? 0 : (shouldZoomInWhenLocked ? -1 : 1);
-      if (!useSystemZoom) {
-        animateZoom(0);
-      }
+      zoomUnlock = shouldZoomInWhenLocked ? -1 : 1;
+      animateZoom(0);
 
       // After all necessary variables have been set
       userPresenceListener = this;
@@ -430,9 +428,9 @@ public class LiveWallpaperService extends WallpaperService {
       if (VERSION.SDK_INT >= VERSION_CODES.O_MR1) {
         boolean isNightMode = isNightMode();
         return variant.getWallpaperColors(
-            getThemeColor(0, isNightMode),
-            getThemeColor(1, isNightMode),
-            getThemeColor(2, isNightMode),
+            getThemeColor(PRIORITY.PRIMARY, isNightMode),
+            getThemeColor(PRIORITY.SECONDARY, isNightMode),
+            getThemeColor(PRIORITY.TERTIARY, isNightMode),
             useDarkText, forceLightText
         );
       } else {
@@ -488,15 +486,13 @@ public class LiveWallpaperService extends WallpaperService {
 
     @Override
     public void onZoomChanged(float zoom) {
-      if (!useSystemZoom) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R && zoomIntensity > 0 && animZoom()) {
-          if (useZoomDamping) {
-            zoomLauncher = lowPassZoom(zoom, zoomLauncher);
-          } else {
-            zoomLauncher = zoomInterpolator.getInterpolation(zoom);
-          }
-          drawFrame(false, REQUEST_SOURCE.ZOOM_LAUNCHER);
+      if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R && zoomIntensity > 0 && animZoom()) {
+        if (useZoomDamping) {
+          zoomLauncher = lowPassZoom(zoom, zoomLauncher);
+        } else {
+          zoomLauncher = zoomInterpolator.getInterpolation(zoom);
         }
+        drawFrame(false, REQUEST_SOURCE.ZOOM_LAUNCHER);
       }
     }
 
@@ -600,7 +596,6 @@ public class LiveWallpaperService extends WallpaperService {
       isZoomLauncherEnabled = sharedPrefs.getBoolean(PREF.ZOOM_LAUNCHER, DEF.ZOOM_LAUNCHER);
       isZoomUnlockEnabled = sharedPrefs.getBoolean(PREF.ZOOM_UNLOCK, DEF.ZOOM_UNLOCK);
       shouldZoomInWhenLocked = sharedPrefs.getBoolean(PREF.ZOOM_UNLOCK_IN, DEF.ZOOM_UNLOCK_IN);
-      useSystemZoom = sharedPrefs.getBoolean(PREF.ZOOM_SYSTEM, DEF.ZOOM_SYSTEM);
       zoomDuration = sharedPrefs.getInt(PREF.ZOOM_DURATION, DEF.ZOOM_DURATION);
       zoomRotation = sharedPrefs.getInt(PREF.ZOOM_ROTATION, DEF.ZOOM_ROTATION);
 
@@ -890,16 +885,6 @@ public class LiveWallpaperService extends WallpaperService {
       });
       zoomAnimator.setInterpolator(zoomInterpolator);
       zoomAnimator.setDuration(zoomDuration).start();
-    }
-
-    /**
-     * An overridden method from the Engine class, will not be recognized as overridden but logging
-     * shows that the method is called.
-     * WallpaperService.Engine#shouldZoomOutWallpaper()
-     */
-    public boolean shouldZoomOutWallpaper() {
-      // Return true and clear onZoomChanged if we don't want a custom zoom animation
-      return isZoomLauncherEnabled && useSystemZoom && animZoom();
     }
 
     /**

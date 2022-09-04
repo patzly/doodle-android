@@ -93,7 +93,6 @@ public final class Constants {
     public static final String ZOOM_LAUNCHER = "zoom_launcher";
     public static final String USE_ZOOM_DAMPING = "use_zoom_damping";
     public static final String DAMPING_ZOOM = "damping_zoom";
-    public static final String ZOOM_SYSTEM = "zoom_system";
     public static final String ZOOM_UNLOCK = "zoom_unlock";
     public static final String ZOOM_UNLOCK_IN = "zoom_unlock_mode_in";
     public static final String ZOOM_DURATION = "zoom_duration";
@@ -130,14 +129,12 @@ public final class Constants {
     public static final int THRESHOLD = 5;
     public static final boolean POWER_SAVE_TILT = true;
 
-    public static final float SCALE = 1;
-    public static final int ZOOM = 2;
+    public static final int ZOOM = 3;
     public static final int ZOOM_ROTATION = 40;
     public static final boolean POWER_SAVE_ZOOM = false;
     public static final boolean ZOOM_LAUNCHER = true;
-    public static final boolean USE_ZOOM_DAMPING = false;
+    public static final boolean USE_ZOOM_DAMPING = true;
     public static final int DAMPING_ZOOM = 12;
-    public static final boolean ZOOM_SYSTEM = false;
     public static final boolean ZOOM_UNLOCK = true;
     public static final boolean ZOOM_UNLOCK_IN = true;
     public static final int ZOOM_DURATION = 1200;
@@ -268,6 +265,13 @@ public final class Constants {
     public static final String OFF = "off";
     public static final String DAILY = "daily";
     public static final String SCREEN_OFF = "screen_off";
+  }
+
+  public static final class PRIORITY {
+
+    public static final int PRIMARY = 0;
+    public static final int SECONDARY = 1;
+    public static final int TERTIARY = 2;
   }
 
   public static final class USER_PRESENCE {

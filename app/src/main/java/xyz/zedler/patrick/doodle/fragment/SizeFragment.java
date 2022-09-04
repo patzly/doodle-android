@@ -33,7 +33,6 @@ import com.google.android.material.slider.Slider;
 import com.google.android.material.slider.Slider.OnChangeListener;
 import xyz.zedler.patrick.doodle.Constants.DEF;
 import xyz.zedler.patrick.doodle.Constants.PREF;
-import xyz.zedler.patrick.doodle.NavMainDirections;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.activity.MainActivity;
 import xyz.zedler.patrick.doodle.behavior.ScrollBehavior;
@@ -129,24 +128,7 @@ public class SizeFragment extends BaseFragment
         value -> String.format(activity.getLocale(), "%.0f", value)
     );
 
-    boolean systemZoomAvailable = Build.VERSION.SDK_INT == Build.VERSION_CODES.R;
-    if (!systemZoomAvailable && getSharedPrefs().getBoolean(PREF.ZOOM_SYSTEM, DEF.ZOOM_SYSTEM)) {
-      // Only available on Android 11, turn off previously enabled
-      getSharedPrefs().edit().putBoolean(PREF.ZOOM_SYSTEM, false).apply();
-    }
-    binding.linearSizeZoomSystem.setVisibility(systemZoomAvailable ? View.VISIBLE : View.GONE);
-    if (systemZoomAvailable) {
-      setZoomSystemEnabled(binding.switchSizeZoomLauncher.isChecked(), false);
-      binding.switchSizeZoomSystem.setChecked(
-          getSharedPrefs().getBoolean(PREF.ZOOM_SYSTEM, DEF.ZOOM_SYSTEM)
-      );
-    }
-
-    setZoomDampingEnabled(
-        binding.switchSizeZoomLauncher.isChecked()
-            && !binding.switchSizeZoomSystem.isChecked(),
-        false
-    );
+    setZoomDampingEnabled(binding.switchSizeZoomLauncher.isChecked(), false);
     binding.sliderSizeZoomDamping.setEnabled(
         binding.linearSizeZoomDamping.isEnabled() && useZoomDamping
     );
@@ -196,7 +178,6 @@ public class SizeFragment extends BaseFragment
         binding.linearSizeZoomPowerSave,
         binding.linearSizeZoomLauncher,
         binding.linearSizeZoomDamping,
-        binding.linearSizeZoomSystem,
         binding.linearSizeZoomUnlock
     );
 
@@ -205,7 +186,6 @@ public class SizeFragment extends BaseFragment
         binding.switchSizeZoomPowerSave,
         binding.switchSizeZoomLauncher,
         binding.switchSizeZoomDamping,
-        binding.switchSizeZoomSystem,
         binding.switchSizeZoomUnlock
     );
   }
@@ -232,8 +212,6 @@ public class SizeFragment extends BaseFragment
       binding.switchSizeZoomLauncher.setChecked(!binding.switchSizeZoomLauncher.isChecked());
     } else if (id == R.id.linear_size_zoom_damping) {
       binding.switchSizeZoomDamping.setChecked(!binding.switchSizeZoomDamping.isChecked());
-    } else if (id == R.id.linear_size_zoom_system && binding.switchSizeZoomLauncher.isChecked()) {
-      binding.switchSizeZoomSystem.setChecked(!binding.switchSizeZoomSystem.isChecked());
     } else if (id == R.id.linear_size_zoom_unlock) {
       binding.switchSizeZoomUnlock.setChecked(!binding.switchSizeZoomUnlock.isChecked());
     }
@@ -251,21 +229,13 @@ public class SizeFragment extends BaseFragment
       getSharedPrefs().edit().putBoolean(PREF.ZOOM_LAUNCHER, isChecked).apply();
       activity.requestSettingsRefresh();
       performHapticClick();
-      setZoomDampingEnabled(
-          isChecked && !binding.switchSizeZoomSystem.isChecked(), true
-      );
-      setZoomSystemEnabled(isChecked, true);
+      setZoomDampingEnabled(isChecked, true);
     } else if (id == R.id.switch_size_zoom_damping) {
       getSharedPrefs().edit().putBoolean(PREF.USE_ZOOM_DAMPING, isChecked).apply();
       activity.requestSettingsRefresh();
       performHapticClick();
       binding.sliderSizeZoomDamping.setEnabled(isChecked);
       ViewUtil.startIcon(binding.imageSizeZoomDamping);
-    } else if (id == R.id.switch_size_zoom_system) {
-      getSharedPrefs().edit().putBoolean(PREF.ZOOM_SYSTEM, isChecked).apply();
-      performHapticClick();
-      setZoomDampingEnabled(!isChecked, true);
-      activity.showForceStopRequest(NavMainDirections.actionGlobalApplyDialog());
     } else if (id == R.id.switch_size_zoom_unlock) {
       getSharedPrefs().edit().putBoolean(PREF.ZOOM_UNLOCK, isChecked).apply();
       binding.buttonSizeZoomUnlockIn.setEnabled(isChecked);
@@ -313,10 +283,5 @@ public class SizeFragment extends BaseFragment
     ViewUtil.setEnabledAlpha(enabled, animated, binding.linearSizeZoomDamping);
     binding.switchSizeZoomDamping.setEnabled(enabled);
     binding.sliderSizeZoomDamping.setEnabled(enabled && binding.switchSizeZoomDamping.isChecked());
-  }
-
-  private void setZoomSystemEnabled(boolean enabled, boolean animated) {
-    ViewUtil.setEnabledAlpha(enabled, animated, binding.linearSizeZoomSystem);
-    binding.switchSizeZoomSystem.setEnabled(enabled);
   }
 }

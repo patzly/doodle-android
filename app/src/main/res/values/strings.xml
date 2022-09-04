@@ -149,8 +149,6 @@
   <string name="size_zoom_launcher_description">Might be unavailable on some devices</string>
   <string name="size_zoom_damping">Animation damping</string>
   <string name="size_zoom_damping_description">Activate and decrease for smoother zooming</string>
-  <string name="size_zoom_system">Use system-provided zoom effect</string>
-  <string name="size_zoom_system_description">Might fix jerky zoom animation when tilt effect is turned on, available only on some devices</string>
   <string name="size_zoom_unlock">Zoom on lockscreen</string>
   <string name="size_zoom_unlock_description">Select the direction below</string>
   <string name="size_zoom_unlock_in">Zoom in</string>

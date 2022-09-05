@@ -259,6 +259,7 @@ public class LiveWallpaperService extends WallpaperService {
     private boolean isVisible;
     private float fps;
     private int screenRotation;
+    private long lastFrameDraw;
     private Display display;
 
     // Appearance
@@ -285,7 +286,6 @@ public class LiveWallpaperService extends WallpaperService {
     private float[] accelerationValues;
     private final LinkedList<Pair<Float, Float>> tiltHistory = new LinkedList<>();
     private float tiltX, tiltY;
-    private long lastDrawSwipe, lastDrawTilt;
     private boolean powerSaveSwipe, powerSaveTilt;
 
     // Size
@@ -297,7 +297,6 @@ public class LiveWallpaperService extends WallpaperService {
     private int zoomDuration;
     private boolean useZoomDamping;
     private int dampingZoom;
-    private long lastDrawZoomLauncher, lastDrawZoomUnlock;
     private boolean powerSaveZoom;
     private ValueAnimator zoomAnimator;
     private final TimeInterpolator zoomInterpolator = new FastOutSlowInInterpolator();
@@ -711,6 +710,8 @@ public class LiveWallpaperService extends WallpaperService {
         // Prevents IllegalStateException when surface is not ready
         return;
       }
+      lastFrameDraw = SystemClock.elapsedRealtime();
+
       final SurfaceHolder surfaceHolder = getSurfaceHolder();
       Canvas canvas = null;
       try {
@@ -726,25 +727,7 @@ public class LiveWallpaperService extends WallpaperService {
           double finalZoomLauncher = isZoomLauncherEnabled ? zoomLauncher * intensity : 0;
           double finalZoomUnlock = isZoomUnlockEnabled ? zoomUnlock * intensity : 0;
           svgDrawable.setZoom((float) (finalZoomLauncher + finalZoomUnlock));
-
           svgDrawable.draw(canvas);
-
-          if (source != null) {
-            switch (source) {
-              case REQUEST_SOURCE.ZOOM_LAUNCHER:
-                lastDrawZoomLauncher = SystemClock.elapsedRealtime();
-                break;
-              case REQUEST_SOURCE.ZOOM_UNLOCK:
-                lastDrawZoomUnlock = SystemClock.elapsedRealtime();
-                break;
-              case REQUEST_SOURCE.TILT:
-                lastDrawTilt = SystemClock.elapsedRealtime();
-                break;
-              case REQUEST_SOURCE.SWIPE:
-                lastDrawSwipe = SystemClock.elapsedRealtime();
-                break;
-            }
-          }
         }
       } catch (Exception e) {
         Log.e(TAG, "drawFrame: unexpected exception", e);
@@ -768,20 +751,19 @@ public class LiveWallpaperService extends WallpaperService {
       } else if (source != null) {
         switch (source) {
           case REQUEST_SOURCE.SWIPE:
-            return SystemClock.elapsedRealtime() - lastDrawSwipe >= 1000 / fps;
           case REQUEST_SOURCE.TILT:
-            return SystemClock.elapsedRealtime() - lastDrawTilt >= 1000 / fps;
+            return SystemClock.elapsedRealtime() - lastFrameDraw >= 1000 / fps;
           case REQUEST_SOURCE.ZOOM_LAUNCHER:
             if (zoomLauncher == 0 || zoomLauncher == 1) {
               return true;
             } else {
-              return SystemClock.elapsedRealtime() - lastDrawZoomLauncher >= 1000 / fps;
+              return SystemClock.elapsedRealtime() - lastFrameDraw >= 1000 / fps;
             }
           case REQUEST_SOURCE.ZOOM_UNLOCK:
             if (zoomUnlock == 0 || zoomUnlock == 1 || zoomUnlock == -1) {
               return true;
             } else {
-              return SystemClock.elapsedRealtime() - lastDrawZoomUnlock >= 1000 / fps;
+              return SystemClock.elapsedRealtime() - lastFrameDraw >= 1000 / fps;
             }
           default:
             Log.e(TAG, "isDrawingAllowed: source must be constant from REQUEST_SOURCE");

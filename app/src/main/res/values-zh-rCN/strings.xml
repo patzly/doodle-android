@@ -185,7 +185,7 @@
 
   <!-- MESSAGES -->
 
-  <string name="msg_feedback">一款优秀的应用需要大量的时间并获取用户的反馈。</string>
+  <string name="msg_feedback">一款优秀的应用需要大量的时间并依赖用户的反馈。</string>
   <string name="msg_feedback_contact">您有什么关于应用的愿望、意见或问题吗? 请随意联系我！\n如果能在Play Store 获得好评，我也会非常高兴。</string>
   <string name="msg_share">查看此酷炫的动态壁纸应用程序:https://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
   <string name="msg_hide">在启动器中隐藏应用图标？</string>

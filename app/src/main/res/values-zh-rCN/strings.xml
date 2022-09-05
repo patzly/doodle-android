@@ -138,10 +138,10 @@
   <string name="size_zoom_launcher_description">在某些设备上可能不可用</string>
   <string name="size_zoom_damping">动画阻尼</string>
   <string name="size_zoom_damping_description">激活和减少更平滑的缩放</string>
-  <string name="size_zoom_system">使用系统提供的缩放效果</string>
-  <string name="size_zoom_system_description">可能会修复开启倾斜效果时抖动的缩放动画，只有在某些设备上可用</string>
-  <string name="size_zoom_unlock">在锁屏上缩小</string>
-  <string name="size_zoom_unlock_description">如果启用“倾斜效果”，则可能会出现抖动</string>
+  <string name="size_zoom_unlock">锁屏缩放</string>
+  <string name="size_zoom_unlock_description">选择下面的方向</string>
+  <string name="size_zoom_unlock_in">放大</string>
+  <string name="size_zoom_unlock_out">缩小</string>
   <string name="size_zoom_duration">关闭锁定缩放持续时间</string>
   <string name="size_zoom_duration_description">减少速度以获得更快的动画效果</string>
 
@@ -185,9 +185,8 @@
 
   <!-- MESSAGES -->
 
-  <string name="msg_feedback">一个好的应用程序需要花费大量的时间和精力来获得用户的好评。
-您有任何愿望、评论或问题吗？
-联系我，无论如何，我会很高兴在Play Store回复你。</string>
+  <string name="msg_feedback">一款优秀的应用需要大量的时间并依赖用户的反馈。</string>
+  <string name="msg_feedback_contact">您有什么关于应用的愿望、意见或问题吗? 请随意联系我！\n如果能在Play Store 获得好评，我也会非常高兴。</string>
   <string name="msg_share">查看此酷炫的动态壁纸应用程序:https://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
   <string name="msg_hide">在启动器中隐藏应用图标？</string>
   <string name="msg_random">将使用所有选中的设计</string>

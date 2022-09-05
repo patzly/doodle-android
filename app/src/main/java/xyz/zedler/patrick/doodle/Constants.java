@@ -76,9 +76,11 @@ public final class Constants {
 
     // Parallax
 
-    public static final String PARALLAX = "parallax";
+    public static final String SWIPE = "swipe";
+    public static final String SWIPE_INTENSITY = "swipe_intensity";
     public static final String POWER_SAVE_SWIPE = "power_save_swipe";
     public static final String TILT = "tilt";
+    public static final String TILT_INTENSITY = "tilt_intensity";
     public static final String TILT_REFRESH_RATE = "refresh_rate";
     public static final String DAMPING_TILT = "damping_tilt";
     public static final String THRESHOLD = "threshold";
@@ -121,9 +123,11 @@ public final class Constants {
     );
     public static final String DAILY_TIME = "3:00";
 
-    public static final int PARALLAX = 2;
+    public static final boolean SWIPE = true;
+    public static final int SWIPE_INTENSITY = 2;
     public static final boolean POWER_SAVE_SWIPE = false;
     public static final boolean TILT = false;
+    public static final int TILT_INTENSITY = 2;
     public static final int TILT_REFRESH_RATE = 30000;
     public static final int DAMPING_TILT = 8;
     public static final int THRESHOLD = 5;

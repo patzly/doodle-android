@@ -46,7 +46,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
       android:id="@+id/constraint_appearance"
       android:layout_width="match_parent"
-      android:layout_height="wrap_content">
+      android:layout_height="wrap_content"
+      android:paddingTop="16dp">
 
       <LinearLayout
         android:id="@+id/linear_appearance_container_card"
@@ -63,7 +64,7 @@
         <com.google.android.material.card.MaterialCardView
           android:id="@+id/card_appearance_one_ui"
           style="@style/Widget.Doodle.Card.Text"
-          android:layout_marginTop="16dp"
+          android:layout_marginBottom="10dp"
           app:cardBackgroundColor="?attr/colorErrorContainer"
           app:contentPaddingBottom="8dp">
 
@@ -105,7 +106,7 @@
 
         <TextView
           style="@style/Widget.Doodle.TextView.Category"
-          android:paddingTop="6dp"
+          android:paddingTop="0dp"
           android:text="@string/appearance_design" />
 
         <LinearLayout

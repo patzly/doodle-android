@@ -72,16 +72,6 @@ public class PrefsUtil {
       }
     }
 
-    // parallax is stored in a new way
-    if (sharedPrefs.contains(PREF.PARALLAX)) {
-      int parallax = sharedPrefs.getInt(PREF.PARALLAX, DEF.PARALLAX);
-      if (parallax >= 0 && parallax <= 3) {
-        sharedPrefs.edit().putInt(PREF.PARALLAX, parallax).apply();
-      } else {
-        removePreference(PREF.PARALLAX);
-      }
-    }
-
     // zoom is stored in a new way
     if (sharedPrefs.contains(PREF.ZOOM)) {
       int zoom = sharedPrefs.getInt(PREF.ZOOM, DEF.ZOOM);

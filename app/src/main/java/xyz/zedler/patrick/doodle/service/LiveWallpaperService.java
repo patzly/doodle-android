@@ -248,6 +248,8 @@ public class LiveWallpaperService extends WallpaperService {
 
   private class UserAwareEngine extends Engine implements UserPresenceListener, RefreshListener {
 
+    private static final int SWIPE_INTENSITY_FACTOR = 100;
+    private static final int TILT_INTENSITY_FACTOR = 5;
     private static final int MAX_TILT_HISTORY_SIZE = 30;
 
     private Context context;
@@ -274,10 +276,10 @@ public class LiveWallpaperService extends WallpaperService {
     private boolean isNewDailyPending;
 
     // Parallax
-    private int parallaxIntensity;
+    private boolean isSwipeEnabled, isTiltEnabled;
+    private int swipeIntensity, tiltIntensity;
     private boolean isRtl;
     private float offsetX;
-    private boolean isTiltEnabled;
     private int dampingTilt, tiltThreshold, tiltRefreshRate;
     private SensorManager sensorManager;
     private Sensor accelerometer;
@@ -571,36 +573,47 @@ public class LiveWallpaperService extends WallpaperService {
      * Loads all required preferences for the variables of the engine, except theme components.
      */
     private void loadSettings() {
-      parallaxIntensity = sharedPrefs.getInt(PREF.PARALLAX, DEF.PARALLAX);
-      // disables zooming so this should not be disabled
-      // setOffsetNotificationsEnabled(parallaxIntensity != 0);
+
+      // APPEARANCE
 
       randomMode = sharedPrefs.getString(PREF.RANDOM, DEF.RANDOM);
+
+      // PARALLAX
+      isSwipeEnabled = sharedPrefs.getBoolean(PREF.SWIPE, DEF.SWIPE);
+      swipeIntensity = sharedPrefs.getInt(PREF.SWIPE_INTENSITY, DEF.SWIPE_INTENSITY);
+      powerSaveSwipe = sharedPrefs.getBoolean(PREF.POWER_SAVE_SWIPE, DEF.POWER_SAVE_SWIPE);
+
       isTiltEnabled = sharedPrefs.getBoolean(PREF.TILT, DEF.TILT);
-      dampingTilt = sharedPrefs.getInt(PREF.DAMPING_TILT, DEF.DAMPING_TILT);
-      dampingZoom = sharedPrefs.getInt(PREF.DAMPING_ZOOM, DEF.DAMPING_ZOOM);
-      useZoomDamping = sharedPrefs.getBoolean(PREF.USE_ZOOM_DAMPING, DEF.USE_ZOOM_DAMPING);
-      tiltThreshold = sharedPrefs.getInt(PREF.THRESHOLD, DEF.THRESHOLD);
+      tiltIntensity = sharedPrefs.getInt(PREF.TILT_INTENSITY, DEF.TILT_INTENSITY);
       tiltRefreshRate = sharedPrefs.getInt(PREF.TILT_REFRESH_RATE, DEF.TILT_REFRESH_RATE);
+      dampingTilt = sharedPrefs.getInt(PREF.DAMPING_TILT, DEF.DAMPING_TILT);
+      tiltThreshold = sharedPrefs.getInt(PREF.THRESHOLD, DEF.THRESHOLD);
+      powerSaveTilt = sharedPrefs.getBoolean(PREF.POWER_SAVE_TILT, DEF.POWER_SAVE_TILT);
+      // disables zooming so this must stay enabled!
+      // setOffsetNotificationsEnabled(parallaxIntensity != 0);
 
       // restart tilt listener (if previously enabled) or start it, all only if tilt is enabled
       setTiltListenerRegistered(false);
       setTiltListenerRegistered(true);
 
+      // SIZE
+
       scale = sharedPrefs.getFloat(PREF.SCALE, SvgDrawable.getDefaultScale(context));
       if (svgDrawable != null) {
         svgDrawable.setScale(scale);
       }
+
       zoomIntensity = sharedPrefs.getInt(PREF.ZOOM, DEF.ZOOM);
+      zoomRotation = sharedPrefs.getInt(PREF.ZOOM_ROTATION, DEF.ZOOM_ROTATION);
+      powerSaveZoom = sharedPrefs.getBoolean(PREF.POWER_SAVE_ZOOM, DEF.POWER_SAVE_ZOOM);
+
       isZoomLauncherEnabled = sharedPrefs.getBoolean(PREF.ZOOM_LAUNCHER, DEF.ZOOM_LAUNCHER);
+      useZoomDamping = sharedPrefs.getBoolean(PREF.USE_ZOOM_DAMPING, DEF.USE_ZOOM_DAMPING);
+      dampingZoom = sharedPrefs.getInt(PREF.DAMPING_ZOOM, DEF.DAMPING_ZOOM);
+
       isZoomUnlockEnabled = sharedPrefs.getBoolean(PREF.ZOOM_UNLOCK, DEF.ZOOM_UNLOCK);
       shouldZoomInWhenLocked = sharedPrefs.getBoolean(PREF.ZOOM_UNLOCK_IN, DEF.ZOOM_UNLOCK_IN);
       zoomDuration = sharedPrefs.getInt(PREF.ZOOM_DURATION, DEF.ZOOM_DURATION);
-      zoomRotation = sharedPrefs.getInt(PREF.ZOOM_ROTATION, DEF.ZOOM_ROTATION);
-
-      powerSaveSwipe = sharedPrefs.getBoolean(PREF.POWER_SAVE_SWIPE, DEF.POWER_SAVE_SWIPE);
-      powerSaveTilt = sharedPrefs.getBoolean(PREF.POWER_SAVE_TILT, DEF.POWER_SAVE_TILT);
-      powerSaveZoom = sharedPrefs.getBoolean(PREF.POWER_SAVE_ZOOM, DEF.POWER_SAVE_ZOOM);
     }
 
     /**
@@ -874,8 +887,9 @@ public class LiveWallpaperService extends WallpaperService {
      */
     @SuppressWarnings("SuspiciousNameCombination")
     private void updateOffset(boolean force, String source) {
-      float xOffset = parallaxIntensity != 0 ? offsetX : 0;
-      int tiltFactor = 18 * parallaxIntensity * (isTiltEnabled ? 1 : 0);
+      float xOffset = isSwipeEnabled ? offsetX * swipeIntensity * SWIPE_INTENSITY_FACTOR : 0;
+
+      int tiltFactor = isTiltEnabled ? tiltIntensity * TILT_INTENSITY_FACTOR : 0;
       float finalTiltX, finalTiltY;
       switch (screenRotation) {
         case Surface.ROTATION_90:
@@ -896,8 +910,9 @@ public class LiveWallpaperService extends WallpaperService {
           finalTiltY = tiltY;
           break;
       }
+
       svgDrawable.setOffset(
-          xOffset * parallaxIntensity * 100 + finalTiltX * tiltFactor,
+          xOffset + finalTiltX * tiltFactor,
           finalTiltY * tiltFactor
       );
       drawFrame(force, source);

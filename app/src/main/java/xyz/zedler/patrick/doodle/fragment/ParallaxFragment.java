@@ -84,32 +84,31 @@ public class ParallaxFragment extends BaseFragment
     binding.toolbarParallax.setNavigationOnClickListener(getNavigationOnClickListener());
     binding.toolbarParallax.setOnMenuItemClickListener(getOnMenuItemClickListener());
 
-    binding.sliderParallaxIntensity.setValue(getSharedPrefs().getInt(PREF.PARALLAX, DEF.PARALLAX));
-    binding.sliderParallaxIntensity.addOnChangeListener(this);
-    binding.sliderParallaxIntensity.setLabelFormatter(value -> {
-      if (value == 0) {
-        return getString(R.string.parallax_none);
-      } else {
-        return String.valueOf((int) value);
-      }
-    });
+    // SWIPING
+
+    boolean isSwipeEnabled = getSharedPrefs().getBoolean(PREF.SWIPE, DEF.SWIPE);
+    binding.switchParallaxSwipe.setChecked(isSwipeEnabled);
+    binding.sliderParallaxSwipe.setEnabled(isSwipeEnabled);
+    binding.sliderParallaxSwipe.setValue(
+        getSharedPrefs().getInt(PREF.SWIPE_INTENSITY, DEF.SWIPE_INTENSITY)
+    );
+    binding.sliderParallaxSwipe.addOnChangeListener(this);
+    binding.sliderParallaxSwipe.setLabelFormatter(value -> String.valueOf((int) value));
 
     binding.switchParallaxSwipePowerSave.setChecked(
         getSharedPrefs().getBoolean(PREF.POWER_SAVE_SWIPE, DEF.POWER_SAVE_SWIPE)
     );
 
+    // TILTING
+
     binding.linearParallaxTiltContainer.setVisibility(
         hasAccelerometer() ? View.VISIBLE : View.GONE
     );
-
-    binding.switchParallaxTilt.setChecked(getSharedPrefs().getBoolean(PREF.TILT, DEF.TILT));
-
-    binding.switchParallaxTiltPowerSave.setChecked(
-        getSharedPrefs().getBoolean(PREF.POWER_SAVE_TILT, DEF.POWER_SAVE_TILT)
-    );
+    boolean isTiltEnabled = getSharedPrefs().getBoolean(PREF.TILT, DEF.TILT);
+    binding.switchParallaxTilt.setChecked(isTiltEnabled);
 
     ViewUtil.setEnabledAlpha(
-        binding.switchParallaxTilt.isChecked(),
+        isTiltEnabled,
         false,
         binding.linearParallaxRefreshRate,
         binding.linearParallaxDamping,
@@ -117,12 +116,19 @@ public class ParallaxFragment extends BaseFragment
         binding.linearParallaxTiltPowerSave
     );
     ViewUtil.setEnabled(
-        binding.switchParallaxTilt.isChecked(),
+        isTiltEnabled,
+        binding.sliderParallaxTilt,
         binding.sliderParallaxRefreshRate,
         binding.sliderParallaxDamping,
         binding.sliderParallaxThreshold,
         binding.switchParallaxTiltPowerSave
     );
+
+    binding.sliderParallaxTilt.setValue(
+        getSharedPrefs().getInt(PREF.TILT_INTENSITY, DEF.TILT_INTENSITY)
+    );
+    binding.sliderParallaxTilt.addOnChangeListener(this);
+    binding.sliderParallaxTilt.setLabelFormatter(value -> String.valueOf((int) value));
 
     binding.sliderParallaxRefreshRate.setValue(
         getSharedPrefs().getInt(PREF.TILT_REFRESH_RATE, DEF.TILT_REFRESH_RATE)
@@ -151,8 +157,13 @@ public class ParallaxFragment extends BaseFragment
         value -> String.format(activity.getLocale(), "%.0f", value)
     );
 
+    binding.switchParallaxTiltPowerSave.setChecked(
+        getSharedPrefs().getBoolean(PREF.POWER_SAVE_TILT, DEF.POWER_SAVE_TILT)
+    );
+
     ViewUtil.setOnClickListeners(
         this,
+        binding.linearParallaxSwipe,
         binding.linearParallaxSwipePowerSave,
         binding.linearParallaxTilt,
         binding.linearParallaxTiltPowerSave
@@ -160,6 +171,7 @@ public class ParallaxFragment extends BaseFragment
 
     ViewUtil.setOnCheckedChangeListeners(
         this,
+        binding.switchParallaxSwipe,
         binding.switchParallaxSwipePowerSave,
         binding.switchParallaxTilt,
         binding.switchParallaxTiltPowerSave
@@ -178,7 +190,9 @@ public class ParallaxFragment extends BaseFragment
   @Override
   public void onClick(View v) {
     int id = v.getId();
-    if (id == R.id.linear_parallax_swipe_power_save) {
+    if (id == R.id.linear_parallax_swipe) {
+      binding.switchParallaxSwipe.setChecked(!binding.switchParallaxSwipe.isChecked());
+    } else if (id == R.id.linear_parallax_swipe_power_save) {
       binding.switchParallaxSwipePowerSave.setChecked(
           !binding.switchParallaxSwipePowerSave.isChecked()
       );
@@ -194,7 +208,13 @@ public class ParallaxFragment extends BaseFragment
   @Override
   public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
     int id = buttonView.getId();
-    if (id == R.id.switch_parallax_swipe_power_save) {
+    if (id == R.id.switch_parallax_swipe) {
+      getSharedPrefs().edit().putBoolean(PREF.SWIPE, isChecked).apply();
+      binding.sliderParallaxSwipe.setEnabled(isChecked);
+      activity.requestSettingsRefresh();
+      performHapticClick();
+      ViewUtil.startIcon(binding.imageParallaxSwipe);
+    } else if (id == R.id.switch_parallax_swipe_power_save) {
       getSharedPrefs().edit().putBoolean(PREF.POWER_SAVE_SWIPE, isChecked).apply();
       activity.requestSettingsRefresh();
       performHapticClick();
@@ -214,6 +234,7 @@ public class ParallaxFragment extends BaseFragment
       );
       ViewUtil.setEnabled(
           isChecked,
+          binding.sliderParallaxTilt,
           binding.sliderParallaxRefreshRate,
           binding.sliderParallaxDamping,
           binding.sliderParallaxThreshold,
@@ -233,9 +254,14 @@ public class ParallaxFragment extends BaseFragment
       return;
     }
     int id = slider.getId();
-    if (id == R.id.slider_parallax_intensity) {
-      getSharedPrefs().edit().putInt(PREF.PARALLAX, (int) value).apply();
-      ViewUtil.startIcon(binding.imageParallaxIntensity);
+    if (id == R.id.slider_parallax_swipe) {
+      getSharedPrefs().edit().putInt(PREF.SWIPE_INTENSITY, (int) value).apply();
+      ViewUtil.startIcon(binding.imageParallaxSwipe);
+      activity.requestSettingsRefresh();
+      performHapticClick();
+    } else if (id == R.id.slider_parallax_tilt) {
+      getSharedPrefs().edit().putInt(PREF.TILT_INTENSITY, (int) value).apply();
+      ViewUtil.startIcon(binding.imageParallaxTilt);
       activity.requestSettingsRefresh();
       performHapticClick();
     } else if (id == R.id.slider_parallax_refresh_rate) {

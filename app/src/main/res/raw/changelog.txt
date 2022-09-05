@@ -1,8 +1,8 @@
 ## 5.5.2
 
 - New: zoom-in effect for lockscreen instead of zoom-out (can be switched in size section)
+- New: separate swipe and tilt effect intensity controls
 - Improved: Android 11 system zoom option removed as the integrated zoom effect is no longer jerky when tilt effect is enabled
-- Improved: TODO: separate swipe and tilt effect intensity controls
 - Improved: 2-ring support for 24H clock in daily random time selection
 - Improved: display refresh rate handling when battery saver is enabled
 - Improved: unified logo experience

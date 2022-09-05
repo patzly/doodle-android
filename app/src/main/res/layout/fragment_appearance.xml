@@ -65,8 +65,8 @@
           android:id="@+id/card_appearance_one_ui"
           style="@style/Widget.Doodle.Card.Text"
           android:layout_marginBottom="10dp"
-          app:cardBackgroundColor="?attr/colorErrorContainer"
-          app:contentPaddingBottom="8dp">
+          app:cardBackgroundColor="?attr/colorSurfaceVariant"
+          app:contentPaddingBottom="12dp">
 
           <LinearLayout
             android:layout_width="match_parent"
@@ -77,14 +77,13 @@
               style="@style/Widget.Doodle.TextView.Paragraph"
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
-              android:layout_marginBottom="4dp"
-              android:textColor="?attr/colorOnErrorContainer"
+              android:layout_marginBottom="8dp"
+              android:textColor="?attr/colorOnSurfaceVariant"
               android:text="@string/appearance_one_ui" />
 
             <com.google.android.material.button.MaterialButton
               android:id="@+id/button_appearance_set_static"
-              style="@style/Widget.Doodle.Button.TextButton"
-              android:textColor="?attr/colorOnErrorContainer"
+              style="@style/Widget.Doodle.Button.OutlinedButton"
               android:layout_gravity="center_horizontal"
               android:text="@string/action_set_static" />
 

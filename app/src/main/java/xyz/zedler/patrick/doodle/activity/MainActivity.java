@@ -298,11 +298,7 @@ public class MainActivity extends AppCompatActivity {
       return;
     }
 
-    boolean isServiceRunningNew = LiveWallpaperService.isMainEngineRunning();
-    if (isServiceRunning != isServiceRunningNew) {
-      isServiceRunning = isServiceRunningNew;
-      setFabVisibility(!isServiceRunning, true);
-    }
+    checkIfServiceIsRunning();
 
     hapticUtil.setEnabled(HapticUtil.areSystemHapticsTurnedOn(this));
   }
@@ -353,6 +349,14 @@ public class MainActivity extends AppCompatActivity {
   @NonNull
   public BaseFragment getCurrentFragment() {
     return (BaseFragment) navHost.getChildFragmentManager().getFragments().get(0);
+  }
+
+  public void checkIfServiceIsRunning() {
+    boolean isServiceRunningNew = LiveWallpaperService.isMainEngineRunning();
+    if (isServiceRunning != isServiceRunningNew) {
+      isServiceRunning = isServiceRunningNew;
+      setFabVisibility(!isServiceRunning, true);
+    }
   }
 
   public int getFabTopEdgeDistance() {

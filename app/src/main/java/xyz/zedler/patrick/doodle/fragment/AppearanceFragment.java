@@ -148,7 +148,7 @@ public class AppearanceFragment extends BaseFragment
     binding.toolbarAppearance.setNavigationOnClickListener(getNavigationOnClickListener());
     binding.toolbarAppearance.setOnMenuItemClickListener(getOnMenuItemClickListener());
 
-    boolean isOneUiWithDynamicColors = activity.isOneUiWithDynamicColors();
+    boolean isOneUiWithDynamicColors = !activity.isOneUiWithDynamicColors();
     binding.cardAppearanceOneUi.setVisibility(isOneUiWithDynamicColors ? View.VISIBLE : View.GONE);
 
     binding.buttonAppearanceSetStatic.setOnClickListener(v -> {
@@ -200,6 +200,9 @@ public class AppearanceFragment extends BaseFragment
       svgDrawable.draw(canvas);
       try {
         manager.setBitmap(bitmap);
+        new Handler(Looper.getMainLooper()).postDelayed(
+            () -> activity.checkIfServiceIsRunning(), 300
+        );
       } catch (IOException e) {
         Log.e(TAG, "onViewCreated: ", e);
       }

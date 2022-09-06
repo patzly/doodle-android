@@ -259,6 +259,7 @@ public class LiveWallpaperService extends WallpaperService {
     private boolean useGpu;
     private boolean isSurfaceAvailable;
     private boolean isVisible;
+    private boolean isPreview;
     private float fps;
     private int screenRotation;
     private long lastFrameDraw;
@@ -279,7 +280,8 @@ public class LiveWallpaperService extends WallpaperService {
     private boolean isSwipeEnabled, isTiltEnabled;
     private int swipeIntensity, tiltIntensity;
     private boolean isRtl;
-    private float offsetX;
+    private float offsetX, lastRawOffsetX;
+    private boolean ignoreOffsetChange;
     private int dampingTilt, tiltThreshold, tiltRefreshRate;
     private SensorManager sensorManager;
     private Sensor accelerometer;
@@ -308,7 +310,8 @@ public class LiveWallpaperService extends WallpaperService {
       super.onCreate(surfaceHolder);
 
       setUserPresence(isKeyguardLocked() ? USER_PRESENCE.LOCKED : USER_PRESENCE.UNLOCKED);
-      if (!isPreview()) {
+      isPreview = isPreview();
+      if (!isPreview) {
         nonPreviewEngineInstance = this;
       }
 
@@ -383,7 +386,7 @@ public class LiveWallpaperService extends WallpaperService {
 
     @Override
     public void onDestroy() {
-      if (!isPreview()) {
+      if (!isPreview) {
         nonPreviewEngineInstance = null;
       }
       if (zoomAnimator != null) {
@@ -468,14 +471,27 @@ public class LiveWallpaperService extends WallpaperService {
 
     @Override
     public void onOffsetsChanged(
-        float xOffset,
-        float yOffset,
-        float xStep,
-        float yStep,
-        int xPixels,
-        int yPixels
+        float xOffset, float yOffset,
+        float xStep, float yStep,
+        int xPixels, int yPixels
     ) {
-      if (isRtl && !isPreview()) {
+      // Method is also called by zoom callback without any changes, now only use changed values
+      if (ignoreOffsetChange) {
+        if (!areFloatsEqual(xOffset, lastRawOffsetX)) { // Real change of offsets
+          ignoreOffsetChange = false;
+        } else { // Further ignore unchanged calls
+          return;
+        }
+      } else if (areFloatsEqual(xOffset, lastRawOffsetX)) {
+        if (xOffset == 0) { // Allow drawing once if 0 to prevent frame jump
+          ignoreOffsetChange = true;
+        } else { // Simply ignore unchanged but not 0
+          return;
+        }
+      }
+      lastRawOffsetX = xOffset;
+
+      if (isRtl && !isPreview) {
         offsetX = xOffset - 1;
       } else {
         offsetX = xOffset;
@@ -915,6 +931,7 @@ public class LiveWallpaperService extends WallpaperService {
           xOffset + finalTiltX * tiltFactor,
           finalTiltY * tiltFactor
       );
+      //Log.i(TAG, "updateOffset: hello x=" + (int)(xOffset + finalTiltX * tiltFactor) + ", y=" + (int)(finalTiltY * tiltFactor));
       drawFrame(force, source);
     }
 
@@ -937,6 +954,13 @@ public class LiveWallpaperService extends WallpaperService {
      */
     private boolean animZoom() {
       return !(isPowerSaveMode && powerSaveZoom);
+    }
+
+    /**
+     * Helper method to test Float equality.
+     */
+    private boolean areFloatsEqual(float a, float b) {
+      return Math.abs(a - b) < 0.000001;
     }
 
     /**

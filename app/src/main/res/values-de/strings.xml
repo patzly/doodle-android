@@ -139,7 +139,7 @@
   <string name="size_zoom_launcher_description">Ist auf manchen Geräten nicht verfügbar</string>
   <string name="size_zoom_damping">Animationsglättung</string>
   <string name="size_zoom_damping_description">Aktivieren und verringern für weicheres Zoomen</string>
-  <string name="size_zoom_unlock">Zoom auf dem Sperrbildschirm</string>
+  <string name="size_zoom_unlock">Auf dem Sperrbildschirm zoomen</string>
   <string name="size_zoom_unlock_description">Unten Richtung auswählen</string>
   <string name="size_zoom_unlock_in">Hineinzoomen</string>
   <string name="size_zoom_unlock_out">Herauszoomen</string>

@@ -103,17 +103,18 @@
 
   <string name="parallax_title">Parallax-Effekt</string>
   <string name="parallax_description">Wischen &amp; Neigung</string>
-  <string name="parallax_touch_wiz">Es scheint, dass dein aktueller Standard-Launcher Samsung TouchWiz ist, welcher kein Hintergrund-Scrolling unterstützt. Probiere einen anderen Launcher aus, um den Parallax-Effekt mit ausgeschalteter Neigungssensor-Option zu ermöglichen.\nDu kannst diese Warnung ignorieren, wenn du einen anderen Standard-Launcher festgelegt hast.</string>
-  <string name="parallax_intensity">Parallax-Stärke</string>
-  <string name="parallax_intensity_description">Horizontaler Versatz beim Wechseln zwischen Startbildschirmen und Intensität des Neigungs-Effekts</string>
-  <string name="parallax_none">Aus</string>
+  <string name="parallax_swipe_category">Swipen</string>
+  <string name="parallax_swipe_touch_wiz">Es scheint, dass dein aktueller Launcher Samsung TouchWiz oder One UI Home ist, welche den Swipe-Effekt nicht unterstützen. Probiere es mit einem anderen Launcher, um ihn zu aktivieren.\nDu kannst diese Warnung ignorieren, wenn du bereits einen anderen Launcher als Standard festgelegt hast.</string>
+  <string name="parallax_swipe">Swipe-Effekt</string>
+  <string name="parallax_swipe_description">Horizontaler Versatz beim Wechseln zwischen Startbildschirmen</string>
   <string name="parallax_swipe_power_save">Energiesparmodus beachten</string>
-  <string name="parallax_swipe_power_save_description">Parallax-Effekt pausieren, wenn der Energiesparmodus aktiv ist</string>
-  <string name="parallax_category_tilt">Neigungs-Effekt</string>
-  <string name="parallax_tilt">Auf Neigung des Gerätes reagieren</string>
-  <string name="parallax_tilt_description">Verbraucht mehr Akku</string>
+  <string name="parallax_swipe_power_save_description">Swipe-Effekt pausieren, wenn der Energiesparmodus aktiv ist</string>
+  <string name="parallax_tilt_category">Neigen</string>
+  <string name="parallax_tilt">Neigungs-Effekt</string>
+  <string name="parallax_tilt_description">Bewegung bei Neigung des Geräts</string>
+  <string name="parallax_tilt_warning">Höherer Akkuverbrauch</string>
   <string name="parallax_refresh_rate">Aktualisierungsrate des Neigungs-Sensors</string>
-  <string name="parallax_refresh_rate_description">Zu kurze Abstände können die Zoom-Animationen beeinträchtigen</string>
+  <string name="parallax_refresh_rate_description">Zu kleine Abstände können die Animationen ruckelig werden lassen</string>
   <string name="parallax_damping">Bewegungsdämpfung</string>
   <string name="parallax_damping_description">Verringern für weichere Bewegungen</string>
   <string name="parallax_threshold">Bewegungsschwelle</string>
@@ -138,10 +139,10 @@
   <string name="size_zoom_launcher_description">Ist auf manchen Geräten nicht verfügbar</string>
   <string name="size_zoom_damping">Animationsglättung</string>
   <string name="size_zoom_damping_description">Aktivieren und verringern für weicheres Zoomen</string>
-  <string name="size_zoom_system">Zoom-Effekt des Systems nutzen</string>
-  <string name="size_zoom_system_description">Kann die ruckelige Zoom-Animation bei eingeschaltetem Neigungs-Effekt beheben, nur auf manchen Geräten verfügbar</string>
-  <string name="size_zoom_unlock">Auf dem Sperrbildschirm herauszoomen</string>
-  <string name="size_zoom_unlock_description">Eventuell ruckelig, wenn der Neigungs-Effekt eingeschaltet ist</string>
+  <string name="size_zoom_unlock">Zoom auf dem Sperrbildschirm</string>
+  <string name="size_zoom_unlock_description">Unten Richtung auswählen</string>
+  <string name="size_zoom_unlock_in">Hineinzoomen</string>
+  <string name="size_zoom_unlock_out">Herauszoomen</string>
   <string name="size_zoom_duration">Zoom-Dauer beim Entsperren</string>
   <string name="size_zoom_duration_description">Verringern für schnellere Animationen</string>
 
@@ -185,7 +186,8 @@
 
   <!-- MESSAGES -->
 
-  <string name="msg_feedback">Eine tolle App kostet viel Zeit und lebt von der Rückmeldung ihrer Nutzer.\n\nHast du Wünsche, Anmerkungen oder Fragen? Dann lass es mich wissen!\nAnsonsten freue ich mich über eine nette Bewertung im Play Store.</string>
+  <string name="msg_feedback">Eine tolle App benötigt viel Zeit und lebt von der Rückmeldung ihrer Nutzer.</string>
+  <string name="msg_feedback_contact">Hast du Wünsche, Anmerkungen oder Fragen? Dann lass es mich wissen!\nAnsonsten freue ich mich über eine nette Bewertung im Play Store.</string>
   <string name="msg_share">Schau dir mal diese coole Live-Wallpaper-App an: \nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
   <string name="msg_hide">App-Icon verbergen?</string>
   <string name="msg_random">Es werden alle ausgewählten Designs benutzt</string>

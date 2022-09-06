@@ -148,7 +148,7 @@ public class AppearanceFragment extends BaseFragment
     binding.toolbarAppearance.setNavigationOnClickListener(getNavigationOnClickListener());
     binding.toolbarAppearance.setOnMenuItemClickListener(getOnMenuItemClickListener());
 
-    boolean isOneUiWithDynamicColors = !activity.isOneUiWithDynamicColors();
+    boolean isOneUiWithDynamicColors = activity.isOneUiWithDynamicColors();
     binding.cardAppearanceOneUi.setVisibility(isOneUiWithDynamicColors ? View.VISIBLE : View.GONE);
 
     binding.buttonAppearanceSetStatic.setOnClickListener(v -> {

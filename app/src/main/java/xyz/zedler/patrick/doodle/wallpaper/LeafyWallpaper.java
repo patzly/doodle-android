@@ -85,9 +85,9 @@ public class LeafyWallpaper extends BaseWallpaper {
     return new WallpaperVariant[]{
         new WallpaperVariant(
             R.raw.wallpaper_leafy_dark,
-            "#0d0f1c",
             "#7c413d",
             "#5b71a2",
+            "#0d0f1c",
             new String[]{"#17152a", "#905750", "#2a315f"},
             false,
             true

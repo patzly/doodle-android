@@ -112,7 +112,7 @@
   <string name="parallax_tilt_category">Neigen</string>
   <string name="parallax_tilt">Neigungs-Effekt</string>
   <string name="parallax_tilt_description">Bewegung bei Neigung des Geräts</string>
-  <string name="parallax_tilt_warning">Höherer Akkuverbrauch</string>
+  <string name="parallax_tilt_warning">Erhöhter Akkuverbrauch</string>
   <string name="parallax_refresh_rate">Aktualisierungsrate des Neigungs-Sensors</string>
   <string name="parallax_refresh_rate_description">Zu kleine Abstände können die Animationen ruckelig werden lassen</string>
   <string name="parallax_damping">Bewegungsdämpfung</string>

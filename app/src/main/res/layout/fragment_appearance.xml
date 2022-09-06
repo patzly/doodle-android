@@ -120,6 +120,7 @@
             android:id="@+id/image_appearance_wallpaper"
             style="@style/Widget.Doodle.ImageView.ListItem.Icon"
             android:src="@drawable/ic_round_wallpaper_anim"
+            android:layout_marginTop="12dp"
             tools:ignore="ContentDescription" />
 
           <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">

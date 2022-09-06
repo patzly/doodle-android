@@ -11,6 +11,10 @@ If you instead download the Google Wallpapers app and search in its live wallpap
 
 This is intended, you only have to apply it once. Select another wallpaper design in the appearance section to change it.
 
+#### Some wallpapers included in random mode are missing in the design selection?
+
+The design selection is scrollable horizontally.
+
 #### Changed wallpaper colors not updating on Android 12?
 
 You need to turn off your screen. The next time you turn it back on, the new colors should be applied to the whole system.

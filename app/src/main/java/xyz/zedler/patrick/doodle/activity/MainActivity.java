@@ -241,9 +241,7 @@ public class MainActivity extends AppCompatActivity {
 
     if (getIntent() != null) {
       if (getIntent().getBooleanExtra(EXTRA.SHOW_FORCE_STOP_REQUEST, false)) {
-        new Handler(Looper.getMainLooper()).postDelayed(
-            () -> showForceStopRequest(null), 200
-        );
+        new Handler(Looper.getMainLooper()).postDelayed(this::showForceStopRequest, 200);
       }
     }
 
@@ -505,7 +503,7 @@ public class MainActivity extends AppCompatActivity {
     }, delay);
   }
 
-  public void showForceStopRequest(NavDirections directions) {
+  public void showForceStopRequest() {
     if (!LiveWallpaperService.isMainEngineRunning() || binding == null) {
       return;
     }
@@ -515,8 +513,8 @@ public class MainActivity extends AppCompatActivity {
         ).setAction(
             getString(R.string.action_continue), view -> {
               performHapticHeavyClick();
-              if (directions != null && navController != null) {
-                navigate(directions);
+              if (navController != null) {
+                navigate(NavMainDirections.actionGlobalApplyDialog());
               } else {
                 ViewUtil.showBottomSheet(this, new ApplyBottomSheetDialogFragment());
               }

@@ -49,7 +49,6 @@ import xyz.zedler.patrick.doodle.Constants.DEF;
 import xyz.zedler.patrick.doodle.Constants.EXTRA;
 import xyz.zedler.patrick.doodle.Constants.PREF;
 import xyz.zedler.patrick.doodle.Constants.THEME;
-import xyz.zedler.patrick.doodle.NavMainDirections;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.activity.LauncherActivity;
 import xyz.zedler.patrick.doodle.activity.MainActivity;
@@ -221,7 +220,7 @@ public class OtherFragment extends BaseFragment
     if (id == R.id.switch_other_gpu) {
       ViewUtil.startIcon(binding.imageOtherGpu);
       getSharedPrefs().edit().putBoolean(PREF.GPU, isChecked).apply();
-      activity.showForceStopRequest(NavMainDirections.actionGlobalApplyDialog());
+      activity.showForceStopRequest();
     } else if (id == R.id.switch_other_launcher) {
       ViewUtil.startIcon(binding.imageOtherLauncher);
       if (isChecked) {

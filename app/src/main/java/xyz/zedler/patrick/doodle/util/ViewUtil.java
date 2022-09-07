@@ -29,15 +29,12 @@ import android.graphics.drawable.LayerDrawable;
 import android.graphics.drawable.RippleDrawable;
 import android.graphics.drawable.ShapeDrawable;
 import android.graphics.drawable.shapes.RoundRectShape;
-import android.os.Bundle;
 import android.os.SystemClock;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
 import android.view.ViewTreeObserver.OnGlobalLayoutListener;
-import android.view.inputmethod.InputMethodManager;
+import android.view.Window;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
 import androidx.annotation.ColorRes;
@@ -46,8 +43,9 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.ColorUtils;
+import androidx.core.view.WindowCompat;
+import androidx.core.view.WindowInsetsCompat.Type;
 import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
-import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.google.android.material.card.MaterialCardView;
@@ -117,14 +115,9 @@ public class ViewUtil {
 
   // Show keyboard for EditText
 
-  public static void requestFocusAndShowKeyboard(@NonNull final View view) {
+  public static void requestFocusAndShowKeyboard(@NonNull Window window, @NonNull View view) {
+    WindowCompat.getInsetsController(window, view).show(Type.ime());
     view.requestFocus();
-    view.post(() -> {
-      InputMethodManager inputMethod = (InputMethodManager) view.getContext().getSystemService(
-          Context.INPUT_METHOD_SERVICE
-      );
-      inputMethod.showSoftInput(view, InputMethodManager.SHOW_IMPLICIT);
-    });
   }
 
   // ClickListeners & OnCheckedChangeListeners
@@ -144,17 +137,28 @@ public class ViewUtil {
     }
   }
 
+  public static void setChecked(boolean checked, MaterialCardView... cardViews) {
+    for (MaterialCardView cardView : cardViews) {
+      if (cardView != null) {
+        cardView.setChecked(checked);
+      }
+    }
+  }
+
+  public static void uncheckAllChildren(ViewGroup... viewGroups) {
+    for (ViewGroup viewGroup : viewGroups) {
+      for (int i = 0; i < viewGroup.getChildCount(); i++) {
+        View child = viewGroup.getChildAt(i);
+        if (child instanceof MaterialCardView) {
+          ((MaterialCardView) child).setChecked(false);
+        }
+      }
+    }
+  }
+
   // BottomSheets
 
   public static void showBottomSheet(AppCompatActivity activity, BottomSheetDialogFragment sheet) {
-    sheet.show(activity.getSupportFragmentManager(), sheet.toString());
-  }
-
-  public static void showBottomSheet(
-      AppCompatActivity activity, BottomSheetDialogFragment sheet, @Nullable Bundle bundle) {
-    if (bundle != null) {
-      sheet.setArguments(bundle);
-    }
     sheet.show(activity.getSupportFragmentManager(), sheet.toString());
   }
 
@@ -233,57 +237,13 @@ public class ViewUtil {
     valueAnimator.setDuration(duration).start();
   }
 
-  // Check MaterialCardViews
-
-  public static void setChecked(boolean checked, MaterialCardView... cardViews) {
-    for (MaterialCardView cardView : cardViews) {
-      if (cardView != null) {
-        cardView.setChecked(checked);
-      }
-    }
-  }
-
-  public interface OnWidthListener {
-
-    void onWidth(int width);
-  }
-
-  public static void calculateWidth(@NonNull View view, OnWidthListener listener) {
-    view.getViewTreeObserver().addOnGlobalLayoutListener(
-        new ViewTreeObserver.OnGlobalLayoutListener() {
-          @Override
-          public void onGlobalLayout() {
-            if (listener != null) {
-              listener.onWidth(view.getMeasuredWidth());
-            }
-            if (view.getViewTreeObserver().isAlive()) {
-              view.getViewTreeObserver().removeOnGlobalLayoutListener(this);
-            }
-          }
-        });
-  }
+  // Toolbar
 
   public static void centerToolbarTitleOnLargeScreens(MaterialToolbar toolbar) {
-    calculateWidth(toolbar, width -> {
-      Resources resources = toolbar.getContext().getResources();
-      int maxWidth = resources.getDimensionPixelSize(R.dimen.max_content_width);
-      boolean isFullWidth = maxWidth >= width;
-      toolbar.setTitleCentered(!isFullWidth);
-    });
-  }
-
-  public static void styleExpandedToolbarOnLargeScreens(CollapsingToolbarLayout ctl) {
-    calculateWidth(ctl, width -> {
-      // is full width
-      Resources resources = ctl.getContext().getResources();
-      int maxWidth = resources.getDimensionPixelSize(R.dimen.max_content_width);
-      boolean isFullWidth = maxWidth >= width;
-      // expanded margin start
-      int margin = isFullWidth ? 0 : (width - maxWidth) / 2;
-      ctl.setExpandedTitleMarginStart(SystemUiUtil.dpToPx(ctl.getContext(), 16) + margin);
-      // expanded margin start
-      ctl.setCollapsedTitleGravity(isFullWidth ? Gravity.START : Gravity.CENTER_HORIZONTAL);
-    });
+    Resources resources = toolbar.getContext().getResources();
+    int maxWidth = resources.getDimensionPixelSize(R.dimen.max_content_width);
+    boolean isFullWidth = maxWidth >= SystemUiUtil.getDisplayWidth(toolbar.getContext());
+    toolbar.setTitleCentered(!isFullWidth);
   }
 
   // Ripple background for surface list items
@@ -316,17 +276,6 @@ public class ViewUtil {
     return new RippleDrawable(
         ColorStateList.valueOf(ResUtil.getColorHighlight(context)), null, shape
     );
-  }
-
-  public static void uncheckAllChildren(ViewGroup... viewGroups) {
-    for (ViewGroup viewGroup : viewGroups) {
-      for (int i = 0; i < viewGroup.getChildCount(); i++) {
-        View child = viewGroup.getChildAt(i);
-        if (child instanceof MaterialCardView) {
-          ((MaterialCardView) child).setChecked(false);
-        }
-      }
-    }
   }
 
   public static void setEnabled(boolean enabled, View... views) {

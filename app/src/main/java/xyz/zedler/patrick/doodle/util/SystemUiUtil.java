@@ -120,37 +120,32 @@ public class SystemUiUtil {
     return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, sp, r.getDisplayMetrics());
   }
 
-  // Display width
+  // Display metrics
 
   public static int getDisplayWidth(Context context) {
-    WindowManager windowManager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-      WindowMetrics windowMetrics = windowManager.getCurrentWindowMetrics();
-      Insets insets = windowMetrics.getWindowInsets().getInsetsIgnoringVisibility(
-          WindowInsets.Type.systemBars()
-      );
-      return windowMetrics.getBounds().width() - insets.left - insets.right;
-    } else {
-      DisplayMetrics displayMetrics = new DisplayMetrics();
-      windowManager.getDefaultDisplay().getMetrics(displayMetrics);
-      return displayMetrics.widthPixels;
-    }
+    return getDisplayMetrics(context, true);
   }
 
-  // Display height
-
   public static int getDisplayHeight(Context context) {
+    return getDisplayMetrics(context, false);
+  }
+
+  private static int getDisplayMetrics(Context context, boolean useWidth) {
     WindowManager windowManager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
       WindowMetrics windowMetrics = windowManager.getCurrentWindowMetrics();
       Insets insets = windowMetrics.getWindowInsets().getInsetsIgnoringVisibility(
           WindowInsets.Type.systemBars()
       );
-      return windowMetrics.getBounds().height() - insets.top - insets.bottom;
+      if (useWidth) {
+        return windowMetrics.getBounds().width() - insets.left - insets.right;
+      } else {
+        return windowMetrics.getBounds().height() - insets.top - insets.bottom;
+      }
     } else {
       DisplayMetrics displayMetrics = new DisplayMetrics();
       windowManager.getDefaultDisplay().getMetrics(displayMetrics);
-      return displayMetrics.heightPixels;
+      return useWidth ? displayMetrics.widthPixels : displayMetrics.heightPixels;
     }
   }
 }

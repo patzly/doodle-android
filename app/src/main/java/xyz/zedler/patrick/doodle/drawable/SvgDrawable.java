@@ -52,7 +52,7 @@ import java.util.Random;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import xyz.zedler.patrick.doodle.parser.PathParser;
-import xyz.zedler.patrick.doodle.util.SystemUiUtil;
+import xyz.zedler.patrick.doodle.util.UiUtil;
 
 public class SvgDrawable {
 
@@ -104,14 +104,14 @@ public class SvgDrawable {
     matrixPathTransformation = new Matrix();
 
     paintDebug = new Paint(Paint.ANTI_ALIAS_FLAG);
-    paintDebug.setStrokeWidth(SystemUiUtil.dpToPx(context, 4));
+    paintDebug.setStrokeWidth(UiUtil.dpToPx(context, 4));
     paintDebug.setStyle(Style.STROKE);
     paintDebug.setStrokeCap(Cap.ROUND);
     paintDebug.setColor(Color.CYAN);
   }
 
   private static float getPixelUnit(Context context) {
-    return SystemUiUtil.dpToPx(context, 1) * 0.33f;
+    return UiUtil.dpToPx(context, 1) * 0.33f;
   }
 
   @Nullable
@@ -203,8 +203,8 @@ public class SvgDrawable {
 
   public static float getDefaultScale(Context context) {
     try {
-      int screenWidth = SystemUiUtil.getDisplayWidth(context);
-      int screenHeight = SystemUiUtil.getDisplayHeight(context);
+      int screenWidth = UiUtil.getDisplayWidth(context);
+      int screenHeight = UiUtil.getDisplayHeight(context);
       float displayWidth = Math.min(screenWidth, screenHeight);
       float circleWidth = 300 * getPixelUnit(context);
       float currentRatio = circleWidth / displayWidth;

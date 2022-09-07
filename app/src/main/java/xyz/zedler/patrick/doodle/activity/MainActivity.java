@@ -75,7 +75,7 @@ import xyz.zedler.patrick.doodle.util.HapticUtil;
 import xyz.zedler.patrick.doodle.util.LocaleUtil;
 import xyz.zedler.patrick.doodle.util.PrefsUtil;
 import xyz.zedler.patrick.doodle.util.ResUtil;
-import xyz.zedler.patrick.doodle.util.SystemUiUtil;
+import xyz.zedler.patrick.doodle.util.UiUtil;
 import xyz.zedler.patrick.doodle.util.ViewUtil;
 
 public class MainActivity extends AppCompatActivity {
@@ -220,10 +220,10 @@ public class MainActivity extends AppCompatActivity {
     );
 
     // Calculate FAB top edge distance to bottom (excluding bottom inset)
-    int height = SystemUiUtil.dpToPx(this, 32) + SystemUiUtil.spToPx(
+    int height = UiUtil.dpToPx(this, 32) + UiUtil.spToPx(
         this, 16
     );
-    int margin = SystemUiUtil.dpToPx(this, 40);
+    int margin = UiUtil.dpToPx(this, 40);
     fabTopEdgeDistance = height + margin;
 
     navHost = (NavHostFragment) getSupportFragmentManager().findFragmentById(

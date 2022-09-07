@@ -36,7 +36,7 @@ import com.google.android.material.color.MaterialColors;
 import com.google.android.material.elevation.SurfaceColors;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.util.ResUtil;
-import xyz.zedler.patrick.doodle.util.SystemUiUtil;
+import xyz.zedler.patrick.doodle.util.UiUtil;
 import xyz.zedler.patrick.doodle.util.ViewUtil;
 
 public class SelectionCardView extends MaterialCardView {
@@ -46,19 +46,19 @@ public class SelectionCardView extends MaterialCardView {
   public SelectionCardView(Context context) {
     super(context);
 
-    final int outerRadius = SystemUiUtil.dpToPx(context, 16);
-    final int outerPadding = SystemUiUtil.dpToPx(context, 16);
-    final int innerSize = SystemUiUtil.dpToPx(context, 48);
+    final int outerRadius = UiUtil.dpToPx(context, 16);
+    final int outerPadding = UiUtil.dpToPx(context, 16);
+    final int innerSize = UiUtil.dpToPx(context, 48);
 
     // OUTER CARD (this)
 
     LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
         LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT
     );
-    if (ResUtil.isLayoutRtl(context)) {
-      params.leftMargin = SystemUiUtil.dpToPx(context, 4);
+    if (UiUtil.isLayoutRtl(context)) {
+      params.leftMargin = UiUtil.dpToPx(context, 4);
     } else {
-      params.rightMargin = SystemUiUtil.dpToPx(context, 4);
+      params.rightMargin = UiUtil.dpToPx(context, 4);
     }
     setLayoutParams(params);
     setContentPadding(outerPadding, outerPadding, outerPadding, outerPadding);
@@ -80,7 +80,7 @@ public class SelectionCardView extends MaterialCardView {
     innerCard = new MaterialCardView(context);
     innerCard.setLayoutParams(innerParams);
     innerCard.setRadius(innerSize / 2f);
-    innerCard.setStrokeWidth(SystemUiUtil.dpToPx(context, 1));
+    innerCard.setStrokeWidth(UiUtil.dpToPx(context, 1));
     innerCard.setCheckable(false);
     addView(innerCard);
   }

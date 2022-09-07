@@ -42,7 +42,7 @@ import xyz.zedler.patrick.doodle.Constants.PREF;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.util.PrefsUtil;
 import xyz.zedler.patrick.doodle.util.ResUtil;
-import xyz.zedler.patrick.doodle.util.SystemUiUtil;
+import xyz.zedler.patrick.doodle.util.UiUtil;
 import xyz.zedler.patrick.doodle.util.ViewUtil;
 
 public class FormattedTextView extends LinearLayout {
@@ -63,7 +63,7 @@ public class FormattedTextView extends LinearLayout {
 
   private void init() {
     setOrientation(VERTICAL);
-    int padding = SystemUiUtil.dpToPx(context, 16);
+    int padding = UiUtil.dpToPx(context, 16);
     setPadding(0, padding, 0, 0);
   }
 
@@ -158,22 +158,22 @@ public class FormattedTextView extends LinearLayout {
   private View getDivider() {
     MaterialDivider divider = new MaterialDivider(context);
     LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
-        SystemUiUtil.dpToPx(context, 56), ViewGroup.LayoutParams.WRAP_CONTENT
+        UiUtil.dpToPx(context, 56), ViewGroup.LayoutParams.WRAP_CONTENT
     );
     layoutParams.setMargins(
-        0, SystemUiUtil.dpToPx(context, 8), 0, SystemUiUtil.dpToPx(context, 24)
+        0, UiUtil.dpToPx(context, 8), 0, UiUtil.dpToPx(context, 24)
     );
     divider.setLayoutParams(layoutParams);
     return divider;
   }
 
   private LinearLayout getBullet(String text, boolean isLast) {
-    int bulletSize = SystemUiUtil.dpToPx(context, 4);
+    int bulletSize = UiUtil.dpToPx(context, 4);
 
     View viewBullet = new View(context);
     FrameLayout.LayoutParams paramsBullet = new FrameLayout.LayoutParams(bulletSize, bulletSize);
-    paramsBullet.rightMargin = SystemUiUtil.dpToPx(context, 6);
-    paramsBullet.leftMargin = SystemUiUtil.dpToPx(context, 6);
+    paramsBullet.rightMargin = UiUtil.dpToPx(context, 6);
+    paramsBullet.leftMargin = UiUtil.dpToPx(context, 6);
     paramsBullet.gravity = Gravity.CENTER_VERTICAL;
     viewBullet.setLayoutParams(paramsBullet);
 
@@ -237,7 +237,7 @@ public class FormattedTextView extends LinearLayout {
     );
     MaterialCardView cardView = new MaterialCardView(context);
     cardView.setLayoutParams(getVerticalLayoutParams(16, 16));
-    int padding = SystemUiUtil.dpToPx(context, 16);
+    int padding = UiUtil.dpToPx(context, 16);
     cardView.setContentPadding(padding, padding, padding, padding);
     cardView.setCardBackgroundColor(colorSurface);
     cardView.setStrokeWidth(0);
@@ -251,8 +251,8 @@ public class FormattedTextView extends LinearLayout {
   }
 
   private LinearLayout.LayoutParams getVerticalLayoutParams(int side, int bottom) {
-    int pxSide = SystemUiUtil.dpToPx(context, side);
-    int pxBottom = SystemUiUtil.dpToPx(context, bottom);
+    int pxSide = UiUtil.dpToPx(context, side);
+    int pxBottom = UiUtil.dpToPx(context, bottom);
     LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
         ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT
     );

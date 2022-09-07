@@ -228,7 +228,7 @@ public class ViewUtil {
           )
       );
       cardView.setStrokeWidth(
-          SystemUiUtil.dpToPx(context, (float) valueAnimator.getAnimatedValue() + 1)
+          UiUtil.dpToPx(context, (float) valueAnimator.getAnimatedValue() + 1)
       );
     });
     valueAnimator.setRepeatMode(ValueAnimator.REVERSE);
@@ -242,7 +242,7 @@ public class ViewUtil {
   public static void centerToolbarTitleOnLargeScreens(MaterialToolbar toolbar) {
     Resources resources = toolbar.getContext().getResources();
     int maxWidth = resources.getDimensionPixelSize(R.dimen.max_content_width);
-    boolean isFullWidth = maxWidth >= SystemUiUtil.getDisplayWidth(toolbar.getContext());
+    boolean isFullWidth = maxWidth >= UiUtil.getDisplayWidth(toolbar.getContext());
     toolbar.setTitleCentered(!isFullWidth);
   }
 
@@ -250,17 +250,17 @@ public class ViewUtil {
 
   public static Drawable getRippleBgListItemSurface(Context context) {
     float[] radii = new float[8];
-    Arrays.fill(radii, SystemUiUtil.dpToPx(context, 16));
+    Arrays.fill(radii, UiUtil.dpToPx(context, 16));
     RoundRectShape rect = new RoundRectShape(radii, null, null);
     ShapeDrawable shape = new ShapeDrawable(rect);
     shape.getPaint().setColor(SurfaceColors.SURFACE_3.getColor(context));
     LayerDrawable layers = new LayerDrawable(new ShapeDrawable[]{shape});
     layers.setLayerInset(
         0,
-        SystemUiUtil.dpToPx(context, 8),
-        SystemUiUtil.dpToPx(context, 2),
-        SystemUiUtil.dpToPx(context, 8),
-        SystemUiUtil.dpToPx(context, 2)
+        UiUtil.dpToPx(context, 8),
+        UiUtil.dpToPx(context, 2),
+        UiUtil.dpToPx(context, 8),
+        UiUtil.dpToPx(context, 2)
     );
     return new RippleDrawable(
         ColorStateList.valueOf(ResUtil.getColorHighlight(context)), null, layers
@@ -269,7 +269,7 @@ public class ViewUtil {
 
   public static Drawable getRippleBgListItemSurfaceRecyclerItem(Context context) {
     float[] radii = new float[8];
-    Arrays.fill(radii, SystemUiUtil.dpToPx(context, 16));
+    Arrays.fill(radii, UiUtil.dpToPx(context, 16));
     RoundRectShape rect = new RoundRectShape(radii, null, null);
     ShapeDrawable shape = new ShapeDrawable(rect);
     shape.getPaint().setColor(SurfaceColors.SURFACE_3.getColor(context));

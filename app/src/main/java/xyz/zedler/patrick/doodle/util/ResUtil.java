@@ -25,7 +25,6 @@ import android.content.res.ColorStateList;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.MenuItem;
-import android.view.View;
 import androidx.annotation.AttrRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.RawRes;
@@ -62,11 +61,6 @@ public class ResUtil {
     intent.putExtra(Intent.EXTRA_TEXT, context.getString(resId));
     intent.setType("text/plain");
     context.startActivity(Intent.createChooser(intent, null));
-  }
-
-  public static boolean isLayoutRtl(Context context) {
-    int direction = context.getResources().getConfiguration().getLayoutDirection();
-    return direction == View.LAYOUT_DIRECTION_RTL;
   }
 
   public static int getColorAttr(Context context, @AttrRes int resId) {

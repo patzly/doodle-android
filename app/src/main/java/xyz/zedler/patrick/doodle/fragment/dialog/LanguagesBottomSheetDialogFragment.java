@@ -41,7 +41,7 @@ import xyz.zedler.patrick.doodle.databinding.FragmentBottomsheetLanguagesBinding
 import xyz.zedler.patrick.doodle.fragment.OtherFragment;
 import xyz.zedler.patrick.doodle.model.Language;
 import xyz.zedler.patrick.doodle.util.LocaleUtil;
-import xyz.zedler.patrick.doodle.util.SystemUiUtil;
+import xyz.zedler.patrick.doodle.util.UiUtil;
 
 public class LanguagesBottomSheetDialogFragment extends BaseBottomSheetDialogFragment
     implements LanguageAdapter.LanguageAdapterListener {
@@ -137,8 +137,8 @@ public class LanguagesBottomSheetDialogFragment extends BaseBottomSheetDialogFra
   @Override
   public void applyBottomInset(int bottom) {
     binding.recyclerLanguages.setPadding(
-        0, SystemUiUtil.dpToPx(requireContext(), 8),
-        0, SystemUiUtil.dpToPx(requireContext(), 8) + bottom
+        0, UiUtil.dpToPx(requireContext(), 8),
+        0, UiUtil.dpToPx(requireContext(), 8) + bottom
     );
   }
 

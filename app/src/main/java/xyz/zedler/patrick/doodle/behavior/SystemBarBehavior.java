@@ -32,7 +32,7 @@ import androidx.core.view.WindowInsetsCompat.Type;
 import androidx.core.widget.NestedScrollView;
 import com.google.android.material.appbar.AppBarLayout;
 import xyz.zedler.patrick.doodle.util.ResUtil;
-import xyz.zedler.patrick.doodle.util.SystemUiUtil;
+import xyz.zedler.patrick.doodle.util.UiUtil;
 
 public class SystemBarBehavior {
 
@@ -58,7 +58,7 @@ public class SystemBarBehavior {
     window = activity.getWindow();
 
     // GOING EDGE TO EDGE
-    SystemUiUtil.layoutEdgeToEdge(window);
+    UiUtil.layoutEdgeToEdge(window);
 
     applyAppBarInsetOnContainer = true;
     applyStatusBarInsetOnContainer = true;
@@ -137,7 +137,7 @@ public class SystemBarBehavior {
     }
 
     // NAV BAR INSET
-    if (SystemUiUtil.isOrientationPortrait(activity) && hasContainer()) {
+    if (UiUtil.isOrientationPortrait(activity) && hasContainer()) {
       View container = hasScrollView ? scrollContent : this.container;
       ViewCompat.setOnApplyWindowInsetsListener(container, (v, insets) -> {
         int paddingBottom = hasScrollView
@@ -152,7 +152,7 @@ public class SystemBarBehavior {
         return insets;
       });
     } else {
-      if (SystemUiUtil.isNavigationModeGesture(activity) && hasContainer()) {
+      if (UiUtil.isNavigationModeGesture(activity) && hasContainer()) {
         View container = hasScrollView ? scrollContent : this.container;
         ViewCompat.setOnApplyWindowInsetsListener(container, (v, insets) -> {
           int paddingBottom = hasScrollView
@@ -236,22 +236,22 @@ public class SystemBarBehavior {
   }
 
   private void updateSystemBars() {
-    boolean isOrientationPortrait = SystemUiUtil.isOrientationPortrait(activity);
-    boolean isDarkModeActive = SystemUiUtil.isDarkModeActive(activity);
+    boolean isOrientationPortrait = UiUtil.isOrientationPortrait(activity);
+    boolean isDarkModeActive = UiUtil.isDarkModeActive(activity);
 
     int colorScrim = ResUtil.getColorAttr(activity, android.R.attr.colorBackground, 0.7f);
 
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) { // 29
       window.setStatusBarColor(Color.TRANSPARENT);
       if (!isDarkModeActive) {
-        SystemUiUtil.setLightStatusBar(window.getDecorView(), true);
+        UiUtil.setLightStatusBar(window.getDecorView(), true);
       }
-      if (SystemUiUtil.isNavigationModeGesture(activity)) {
+      if (UiUtil.isNavigationModeGesture(activity)) {
         window.setNavigationBarColor(Color.TRANSPARENT);
         window.setNavigationBarContrastEnforced(true);
       } else {
         if (!isDarkModeActive) {
-          SystemUiUtil.setLightNavigationBar(window.getDecorView(), true);
+          UiUtil.setLightNavigationBar(window.getDecorView(), true);
         }
         if (isOrientationPortrait) {
           window.setNavigationBarColor(
@@ -265,8 +265,8 @@ public class SystemBarBehavior {
     } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) { // 28
       window.setStatusBarColor(Color.TRANSPARENT);
       if (!isDarkModeActive) {
-        SystemUiUtil.setLightStatusBar(window.getDecorView(), true);
-        SystemUiUtil.setLightNavigationBar(window.getDecorView(), true);
+        UiUtil.setLightStatusBar(window.getDecorView(), true);
+        UiUtil.setLightNavigationBar(window.getDecorView(), true);
       }
       if (isOrientationPortrait) {
         window.setNavigationBarColor(isScrollable ? colorScrim : Color.TRANSPARENT);
@@ -277,33 +277,33 @@ public class SystemBarBehavior {
     } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) { // 26
       window.setStatusBarColor(Color.TRANSPARENT);
       if (!isDarkModeActive) {
-        SystemUiUtil.setLightStatusBar(window.getDecorView(), true);
+        UiUtil.setLightStatusBar(window.getDecorView(), true);
       }
       if (isOrientationPortrait) {
         window.setNavigationBarColor(isScrollable ? colorScrim : Color.TRANSPARENT);
         if (!isDarkModeActive) {
-          SystemUiUtil.setLightNavigationBar(window.getDecorView(), true);
+          UiUtil.setLightNavigationBar(window.getDecorView(), true);
         }
       } else {
-        window.setNavigationBarColor(isDarkModeActive ? Color.BLACK : SystemUiUtil.SCRIM);
+        window.setNavigationBarColor(isDarkModeActive ? Color.BLACK : UiUtil.SCRIM);
       }
     } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) { // 23
       window.setStatusBarColor(Color.TRANSPARENT);
       if (!isDarkModeActive) {
-        SystemUiUtil.setLightStatusBar(window.getDecorView(), true);
+        UiUtil.setLightStatusBar(window.getDecorView(), true);
       }
       if (isOrientationPortrait) {
         window.setNavigationBarColor(
-            isDarkModeActive ? (isScrollable ? colorScrim : Color.TRANSPARENT) : SystemUiUtil.SCRIM
+            isDarkModeActive ? (isScrollable ? colorScrim : Color.TRANSPARENT) : UiUtil.SCRIM
         );
       } else {
-        window.setNavigationBarColor(isDarkModeActive ? colorScrim : SystemUiUtil.SCRIM);
+        window.setNavigationBarColor(isDarkModeActive ? colorScrim : UiUtil.SCRIM);
       }
     } else { // 21
-      window.setStatusBarColor(isDarkModeActive ? Color.TRANSPARENT : SystemUiUtil.SCRIM);
+      window.setStatusBarColor(isDarkModeActive ? Color.TRANSPARENT : UiUtil.SCRIM);
       if (isOrientationPortrait) {
         window.setNavigationBarColor(
-            isDarkModeActive ? (isScrollable ? colorScrim : Color.TRANSPARENT) : SystemUiUtil.SCRIM
+            isDarkModeActive ? (isScrollable ? colorScrim : Color.TRANSPARENT) : UiUtil.SCRIM
         );
       } else {
         window.setNavigationBarColor(Color.BLACK);

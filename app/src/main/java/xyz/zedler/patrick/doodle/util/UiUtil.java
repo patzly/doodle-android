@@ -37,7 +37,7 @@ import android.view.WindowMetrics;
 import androidx.annotation.Dimension;
 import androidx.annotation.NonNull;
 
-public class SystemUiUtil {
+public class UiUtil {
 
   public static final int SCRIM = 0x55000000;
   public static final int SCRIM_DARK_DIALOG = 0xFF0c0c0e;
@@ -106,6 +106,11 @@ public class SystemUiUtil {
   public static boolean isOrientationPortrait(Context context) {
     int orientation = context.getResources().getConfiguration().orientation;
     return orientation == Configuration.ORIENTATION_PORTRAIT;
+  }
+
+  public static boolean isLayoutRtl(Context context) {
+    int direction = context.getResources().getConfiguration().getLayoutDirection();
+    return direction == View.LAYOUT_DIRECTION_RTL;
   }
 
   // Unit conversions

@@ -59,7 +59,7 @@ import xyz.zedler.patrick.doodle.model.Language;
 import xyz.zedler.patrick.doodle.service.LiveWallpaperService;
 import xyz.zedler.patrick.doodle.util.LocaleUtil;
 import xyz.zedler.patrick.doodle.util.ResUtil;
-import xyz.zedler.patrick.doodle.util.SystemUiUtil;
+import xyz.zedler.patrick.doodle.util.UiUtil;
 import xyz.zedler.patrick.doodle.util.ViewUtil;
 import xyz.zedler.patrick.doodle.view.SelectionCardView;
 
@@ -364,13 +364,13 @@ public class OtherFragment extends BaseFragment
       if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S && i == -1) {
         color = ContextCompat.getColor(
             activity,
-            SystemUiUtil.isDarkModeActive(activity)
+            UiUtil.isDarkModeActive(activity)
                 ? android.R.color.system_accent1_700
                 : android.R.color.system_accent1_100
         );
       } else if (i == colorsCount) {
         // Amoled theme selection card
-        color = SystemUiUtil.isDarkModeActive(activity) ? 0x484848 : 0xe3e3e3;
+        color = UiUtil.isDarkModeActive(activity) ? 0x484848 : 0xe3e3e3;
       } else {
         color = ResUtil.getColorAttr(
             new ContextThemeWrapper(activity, resId), R.attr.colorPrimaryContainer
@@ -404,15 +404,15 @@ public class OtherFragment extends BaseFragment
       if (hasDynamic && i == -1) {
         MaterialDivider divider = new MaterialDivider(activity);
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
-            SystemUiUtil.dpToPx(activity, 1), SystemUiUtil.dpToPx(activity, 40)
+            UiUtil.dpToPx(activity, 1), UiUtil.dpToPx(activity, 40)
         );
         int marginLeft, marginRight;
-        if (ResUtil.isLayoutRtl(activity)) {
-          marginLeft = SystemUiUtil.dpToPx(activity, 8);
-          marginRight = SystemUiUtil.dpToPx(activity, 4);
+        if (UiUtil.isLayoutRtl(activity)) {
+          marginLeft = UiUtil.dpToPx(activity, 8);
+          marginRight = UiUtil.dpToPx(activity, 4);
         } else {
-          marginLeft = SystemUiUtil.dpToPx(activity, 4);
-          marginRight = SystemUiUtil.dpToPx(activity, 8);
+          marginLeft = UiUtil.dpToPx(activity, 4);
+          marginRight = UiUtil.dpToPx(activity, 8);
         }
         layoutParams.setMargins(marginLeft, 0, marginRight, 0);
         layoutParams.gravity = Gravity.CENTER_VERTICAL;

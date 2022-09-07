@@ -75,7 +75,7 @@ import xyz.zedler.patrick.doodle.drawable.SvgDrawable;
 import xyz.zedler.patrick.doodle.service.LiveWallpaperService;
 import xyz.zedler.patrick.doodle.util.DailyUtil;
 import xyz.zedler.patrick.doodle.util.ResUtil;
-import xyz.zedler.patrick.doodle.util.SystemUiUtil;
+import xyz.zedler.patrick.doodle.util.UiUtil;
 import xyz.zedler.patrick.doodle.util.ViewUtil;
 import xyz.zedler.patrick.doodle.view.SelectionCardView;
 import xyz.zedler.patrick.doodle.wallpaper.AnthonyWallpaper;
@@ -192,8 +192,8 @@ public class AppearanceFragment extends BaseFragment
       svgDrawable.setScale(scale);
 
       Bitmap bitmap = Bitmap.createBitmap(
-          SystemUiUtil.getDisplayWidth(activity),
-          SystemUiUtil.getDisplayHeight(activity),
+          UiUtil.getDisplayWidth(activity),
+          UiUtil.getDisplayHeight(activity),
           Bitmap.Config.ARGB_8888
       );
       Canvas canvas = new Canvas(bitmap);

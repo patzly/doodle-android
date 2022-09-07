@@ -53,7 +53,7 @@ import androidx.core.view.WindowInsetsCompat.Type;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.material.R;
 import com.google.android.material.shape.MaterialShapeDrawable;
-import xyz.zedler.patrick.doodle.util.SystemUiUtil;
+import xyz.zedler.patrick.doodle.util.UiUtil;
 
 /**
  * Base class for {@link android.app.Dialog}s styled as a bottom sheet.
@@ -390,7 +390,7 @@ public class CustomBottomSheetDialog extends AppCompatDialog {
         backgroundTint = ViewCompat.getBackgroundTintList(bottomSheet);
       }
 
-      isFullWidth = behavior.getMaxWidth() >= SystemUiUtil.getDisplayWidth(
+      isFullWidth = behavior.getMaxWidth() >= UiUtil.getDisplayWidth(
           bottomSheet.getContext()
       );
 

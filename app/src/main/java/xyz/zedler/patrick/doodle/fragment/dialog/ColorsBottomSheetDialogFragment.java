@@ -42,8 +42,7 @@ import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.activity.MainActivity;
 import xyz.zedler.patrick.doodle.databinding.FragmentBottomsheetColorsBinding;
 import xyz.zedler.patrick.doodle.fragment.AppearanceFragment;
-import xyz.zedler.patrick.doodle.util.ResUtil;
-import xyz.zedler.patrick.doodle.util.SystemUiUtil;
+import xyz.zedler.patrick.doodle.util.UiUtil;
 import xyz.zedler.patrick.doodle.util.ViewUtil;
 import xyz.zedler.patrick.doodle.view.ColorPickerView;
 import xyz.zedler.patrick.doodle.view.SelectionCardView;
@@ -105,15 +104,15 @@ public class ColorsBottomSheetDialogFragment extends BaseBottomSheetDialogFragme
 
     MaterialDivider divider = new MaterialDivider(activity);
     LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
-        SystemUiUtil.dpToPx(activity, 1), SystemUiUtil.dpToPx(activity, 40)
+        UiUtil.dpToPx(activity, 1), UiUtil.dpToPx(activity, 40)
     );
     int marginLeft, marginRight;
-    if (ResUtil.isLayoutRtl(activity)) {
-      marginLeft = SystemUiUtil.dpToPx(activity, 8);
-      marginRight = SystemUiUtil.dpToPx(activity, 4);
+    if (UiUtil.isLayoutRtl(activity)) {
+      marginLeft = UiUtil.dpToPx(activity, 8);
+      marginRight = UiUtil.dpToPx(activity, 4);
     } else {
-      marginLeft = SystemUiUtil.dpToPx(activity, 4);
-      marginRight = SystemUiUtil.dpToPx(activity, 8);
+      marginLeft = UiUtil.dpToPx(activity, 4);
+      marginRight = UiUtil.dpToPx(activity, 8);
     }
     layoutParams.setMargins(marginLeft, 0, marginRight, 0);
     layoutParams.gravity = Gravity.CENTER_VERTICAL;

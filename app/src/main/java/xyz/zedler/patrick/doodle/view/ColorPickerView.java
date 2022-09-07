@@ -30,7 +30,7 @@ import android.widget.FrameLayout;
 import androidx.annotation.ColorInt;
 import xyz.zedler.patrick.doodle.databinding.ViewColorPickerBinding;
 import xyz.zedler.patrick.doodle.util.HapticUtil;
-import xyz.zedler.patrick.doodle.util.ResUtil;
+import xyz.zedler.patrick.doodle.util.UiUtil;
 import xyz.zedler.patrick.doodle.util.ViewUtil;
 
 public class ColorPickerView extends FrameLayout {
@@ -55,7 +55,7 @@ public class ColorPickerView extends FrameLayout {
     binding = ViewColorPickerBinding.inflate(
         LayoutInflater.from(context), this, true
     );
-    isRtl = ResUtil.isLayoutRtl(context);
+    isRtl = UiUtil.isLayoutRtl(context);
 
     hapticUtil = new HapticUtil(context);
     hapticUtil.setEnabled(HapticUtil.areSystemHapticsTurnedOn(context));

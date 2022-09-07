@@ -140,7 +140,7 @@
   <string name="size_zoom_damping">动画阻尼</string>
   <string name="size_zoom_damping_description">激活和减少更平滑的缩放</string>
   <string name="size_zoom_unlock">锁屏缩放</string>
-  <string name="size_zoom_unlock_description">选择下面的方向</string>
+  <string name="size_zoom_unlock_description">选择方向</string>
   <string name="size_zoom_unlock_in">放大</string>
   <string name="size_zoom_unlock_out">缩小</string>
   <string name="size_zoom_duration">关闭锁定缩放持续时间</string>

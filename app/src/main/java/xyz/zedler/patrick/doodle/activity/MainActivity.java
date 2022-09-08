@@ -19,7 +19,6 @@
 
 package xyz.zedler.patrick.doodle.activity;
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.WallpaperManager;
 import android.content.ActivityNotFoundException;
@@ -84,21 +83,19 @@ public class MainActivity extends AppCompatActivity {
 
   private ActivityMainBinding binding;
   private NavController navController;
+  private NavHostFragment navHost;
   private SharedPreferences sharedPrefs;
   private ViewUtil viewUtil;
   private HapticUtil hapticUtil;
   private ActivityResultLauncher<Intent> wallpaperPickerLauncher;
-  private NavHostFragment navHost;
   private Locale localeUser;
   private boolean isServiceRunning;
   private int fabTopEdgeDistance;
   private int bottomInset;
   private boolean runAsSuperClass;
 
-  @SuppressLint("AppBundleLocaleChanges")
   @Override
   protected void onCreate(Bundle savedInstanceState) {
-
     runAsSuperClass = savedInstanceState != null
         && savedInstanceState.getBoolean(EXTRA.RUN_AS_SUPER_CLASS, false);
 

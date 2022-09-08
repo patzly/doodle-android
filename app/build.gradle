@@ -37,6 +37,10 @@ android {
         targetSdkVersion 33
         versionCode 40
         versionName "5.5.2"
+        resConfigs(
+                "ar", "cs", "da", "de", "en", "es", "fi", "fil", "fr", "hu", "in", "it", "iw", "ja",
+                "ko", "lt", "nl", "pt-BR", "ro", "ru", "tr", "ug", "zh-CN"
+        )
     }
 
     applicationVariants.all { variant ->
@@ -72,10 +76,10 @@ android {
 }
 
 dependencies {
-    implementation 'androidx.appcompat:appcompat:1.6.0-beta01'
+    implementation 'androidx.appcompat:appcompat:1.6.0-rc01'
     implementation 'androidx.preference:preference:1.2.0'
-    implementation 'androidx.navigation:navigation-fragment:2.5.1'
-    implementation 'androidx.navigation:navigation-ui:2.5.1'
+    implementation 'androidx.navigation:navigation-fragment:2.5.2'
+    implementation 'androidx.navigation:navigation-ui:2.5.2'
 
     implementation 'com.google.android.material:material:1.8.0-alpha01'
 }

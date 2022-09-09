@@ -19,7 +19,6 @@
 
 package xyz.zedler.patrick.doodle.fragment.dialog;
 
-import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,16 +28,10 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.os.LocaleListCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import java.util.Locale;
-import java.util.Objects;
-import xyz.zedler.patrick.doodle.Constants;
-import xyz.zedler.patrick.doodle.Constants.DEF;
-import xyz.zedler.patrick.doodle.Constants.PREF;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.activity.MainActivity;
 import xyz.zedler.patrick.doodle.adapter.LanguageAdapter;
 import xyz.zedler.patrick.doodle.databinding.FragmentBottomsheetLanguagesBinding;
-import xyz.zedler.patrick.doodle.fragment.OtherFragment;
 import xyz.zedler.patrick.doodle.model.Language;
 import xyz.zedler.patrick.doodle.util.LocaleUtil;
 import xyz.zedler.patrick.doodle.util.UiUtil;
@@ -49,17 +42,14 @@ public class LanguagesBottomSheetDialogFragment extends BaseBottomSheetDialogFra
   private static final String TAG = "LanguagesBottomSheet";
 
   private FragmentBottomsheetLanguagesBinding binding;
-  private MainActivity activity;
 
   @Override
   public View onCreateView(@NonNull LayoutInflater inflater,
       ViewGroup container,
       Bundle savedInstanceState) {
-    binding = FragmentBottomsheetLanguagesBinding.inflate(
-        inflater, container, false
-    );
+    binding = FragmentBottomsheetLanguagesBinding.inflate(inflater, container, false);
 
-    activity = (MainActivity) requireActivity();
+    MainActivity activity = (MainActivity) requireActivity();
 
     binding.textLanguagesTitle.setText(getString(R.string.action_language_select));
     binding.textLanguagesDescription.setText(getString(R.string.other_language_description));
@@ -68,7 +58,11 @@ public class LanguagesBottomSheetDialogFragment extends BaseBottomSheetDialogFra
         new LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
     );
     binding.recyclerLanguages.setAdapter(
-        new LanguageAdapter(LocaleUtil.getLanguages(activity), getLanguageCode(), this)
+        new LanguageAdapter(
+            LocaleUtil.getLanguages(activity),
+            LocaleUtil.getLanguageCode(AppCompatDelegate.getApplicationLocales()),
+            this
+        )
     );
 
     return binding.getRoot();
@@ -82,55 +76,13 @@ public class LanguagesBottomSheetDialogFragment extends BaseBottomSheetDialogFra
 
   @Override
   public void onItemRowClicked(@Nullable Language language) {
-    String previousCode = getSharedPrefs().getString(PREF.LANGUAGE, DEF.LANGUAGE);
-    String selectedCode = language != null ? language.getCode() : null;
-    getSharedPrefs().edit().putString(Constants.PREF.LANGUAGE, selectedCode).apply();
-
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-      if (!Objects.equals(previousCode, selectedCode)) {
-        performHapticClick();
-        dismiss();
-        activity.restartToApply(150);
-      }
-    } else {
-      if (Objects.equals(previousCode, selectedCode)) {
-        return;
-      } else if (previousCode == null || selectedCode == null) {
-        Locale localeDevice = LocaleUtil.getNearestSupportedLocale(
-            activity, LocaleUtil.getDeviceLocale()
-        );
-        String codeToCompare = previousCode == null ? selectedCode : previousCode;
-        if (Objects.equals(localeDevice.toString(), codeToCompare)) {
-          OtherFragment fragment = (OtherFragment) activity.getCurrentFragment();
-          fragment.setLanguage(language);
-          dismiss();
-        } else {
-          dismiss();
-          activity.restartToApply(150);
-        }
-      } else {
-        dismiss();
-        activity.restartToApply(150);
-      }
+    String code = language != null ? language.getCode() : null;
+    LocaleListCompat previous = AppCompatDelegate.getApplicationLocales();
+    LocaleListCompat selected = LocaleListCompat.forLanguageTags(code);
+    if (!previous.equals(selected)) {
       performHapticClick();
-    }
-  }
-
-  private String getLanguageCode() {
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-      LocaleListCompat locales = AppCompatDelegate.getApplicationLocales();
-      if (!locales.isEmpty()) {
-        Locale locale = locales.get(0);
-        if (locale != null) {
-          return LocaleUtil.getNearestSupportedLocale(activity, locale).toLanguageTag();
-        } else {
-          return Locale.getDefault().toLanguageTag();
-        }
-      } else {
-        return null;
-      }
-    } else {
-      return getSharedPrefs().getString(PREF.LANGUAGE, DEF.LANGUAGE);
+      dismiss();
+      AppCompatDelegate.setApplicationLocales(selected);
     }
   }
 

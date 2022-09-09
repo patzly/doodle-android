@@ -43,7 +43,6 @@ import androidx.annotation.RawRes;
 import androidx.annotation.StringRes;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
-import androidx.core.os.LocaleListCompat;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat.Type;
 import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
@@ -88,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
   private ViewUtil viewUtil;
   private HapticUtil hapticUtil;
   private ActivityResultLauncher<Intent> wallpaperPickerLauncher;
-  private Locale localeUser;
+  private Locale locale;
   private boolean isServiceRunning;
   private int fabTopEdgeDistance;
   private int bottomInset;
@@ -105,23 +104,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     sharedPrefs = new PrefsUtil(this).checkForMigrations().getSharedPrefs();
-
-    // LANGUAGE
-
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-      String languageCode = sharedPrefs.getString(PREF.LANGUAGE, DEF.LANGUAGE);
-      if (languageCode != null) {
-        // Language selected
-        localeUser = LocaleUtil.getLocaleFromCode(languageCode);
-        AppCompatDelegate.setApplicationLocales(LocaleListCompat.forLanguageTags(languageCode));
-      } else {
-        // Follow system
-        AppCompatDelegate.setApplicationLocales(LocaleListCompat.getEmptyLocaleList());
-      }
-    } else {
-      localeUser = LocaleUtil.getUserLocale(this, sharedPrefs);
-      Locale.setDefault(localeUser);
-    }
 
     // NIGHT MODE
 
@@ -142,17 +124,11 @@ public class MainActivity extends AppCompatActivity {
     // base
     Resources resBase = getBaseContext().getResources();
     Configuration configBase = resBase.getConfiguration();
-    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU) {
-      configBase.setLocale(localeUser);
-    }
     configBase.uiMode = uiMode;
     resBase.updateConfiguration(configBase, resBase.getDisplayMetrics());
     // app
     Resources resApp = getApplicationContext().getResources();
     Configuration configApp = resApp.getConfiguration();
-    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU) {
-      configApp.setLocale(localeUser);
-    }
     // Don't set uiMode here, won't let FOLLOW_SYSTEM apply correctly
     resApp.updateConfiguration(configApp, getResources().getDisplayMetrics());
 
@@ -208,6 +184,8 @@ public class MainActivity extends AppCompatActivity {
 
     viewUtil = new ViewUtil();
     hapticUtil = new HapticUtil(this);
+
+    locale = LocaleUtil.getLocale();
 
     wallpaperPickerLauncher = registerForActivityResult(
         new ActivityResultContracts.StartActivityForResult(),
@@ -304,11 +282,6 @@ public class MainActivity extends AppCompatActivity {
       super.attachBaseContext(base);
     } else {
       SharedPreferences sharedPrefs = new PrefsUtil(base).checkForMigrations().getSharedPrefs();
-      // Language
-      Locale userLocale = LocaleUtil.getUserLocale(base, sharedPrefs);
-      if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU) {
-        Locale.setDefault(userLocale);
-      }
       // Night mode
       int modeNight = sharedPrefs.getInt(PREF.MODE, DEF.MODE);
       int uiMode = base.getResources().getConfiguration().uiMode;
@@ -324,21 +297,10 @@ public class MainActivity extends AppCompatActivity {
       // Apply config to resources
       Resources resources = base.getResources();
       Configuration config = resources.getConfiguration();
-      if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU) {
-        config.setLocale(userLocale);
-      }
       config.uiMode = uiMode;
       resources.updateConfiguration(config, resources.getDisplayMetrics());
       super.attachBaseContext(base.createConfigurationContext(config));
     }
-  }
-
-  @Override
-  public void applyOverrideConfiguration(Configuration overrideConfiguration) {
-    if (!runAsSuperClass && Build.VERSION.SDK_INT <= Build.VERSION_CODES.N_MR1) {
-      overrideConfiguration.setLocale(LocaleUtil.getUserLocale(this, sharedPrefs));
-    }
-    super.applyOverrideConfiguration(overrideConfiguration);
   }
 
   @NonNull
@@ -435,7 +397,7 @@ public class MainActivity extends AppCompatActivity {
   }
 
   public Locale getLocale() {
-    return localeUser != null ? localeUser : Locale.getDefault();
+    return locale;
   }
 
   public void requestSettingsRefresh() {

@@ -20,42 +20,47 @@
 package xyz.zedler.patrick.doodle.util;
 
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Build;
+import android.os.Build.VERSION_CODES;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatDelegate;
+import androidx.core.os.LocaleListCompat;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
-import xyz.zedler.patrick.doodle.Constants;
+import java.util.Objects;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.model.Language;
 
 public class LocaleUtil {
 
-  public static Locale getDeviceLocale() {
-    Locale device;
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-      device = Resources.getSystem().getConfiguration().getLocales().get(0);
-    } else {
-      device = Resources.getSystem().getConfiguration().locale;
-    }
-    return device;
+  public static boolean followsSystem() {
+    return AppCompatDelegate.getApplicationLocales().isEmpty();
   }
 
-  public static Locale getUserLocale(Context context, SharedPreferences sharedPrefs) {
-    String code = sharedPrefs.getString(Constants.PREF.LANGUAGE, Constants.DEF.LANGUAGE);
-    if (code == null) {
-      return getNearestSupportedLocale(context, getDeviceLocale());
+  @NonNull
+  public static Locale getLocale() {
+    if (followsSystem()) {
+      if (Build.VERSION.SDK_INT >= VERSION_CODES.TIRAMISU) {
+        return Locale.getDefault();
+      } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+        return Resources.getSystem().getConfiguration().getLocales().get(0);
+      } else {
+        //noinspection deprecation
+        return Resources.getSystem().getConfiguration().locale;
+      }
+    } else {
+      Locale locale = AppCompatDelegate.getApplicationLocales().get(0);
+      return locale != null ? locale : Locale.getDefault();
     }
-    try {
-      return getLocaleFromCode(code);
-    } catch (Exception e) {
-      return getNearestSupportedLocale(context, getDeviceLocale());
-    }
+  }
+
+  public static String getLocaleName() {
+    Locale locale = getLocale();
+    return locale.getDisplayName(locale);
   }
 
   public static List<Language> getLanguages(Context context) {
@@ -68,11 +73,16 @@ public class LocaleUtil {
     for (String locale : locales) {
       languages.add(new Language(locale));
     }
-    Collections.sort(
-        languages,
-        (item1, item2) -> item1.getName().toLowerCase().compareTo(item2.getName().toLowerCase())
-    );
+    Collections.sort(languages);
     return languages;
+  }
+
+  public static String getLanguageCode(LocaleListCompat locales) {
+    if (!locales.isEmpty()) {
+      return Objects.requireNonNull(locales.get(0)).toLanguageTag();
+    } else {
+      return null;
+    }
   }
 
   public static Locale getLocaleFromCode(@Nullable String languageCode) {
@@ -88,44 +98,6 @@ public class LocaleUtil {
       }
     } catch (Exception e) {
       return Locale.getDefault();
-    }
-  }
-
-  public static Locale getNearestSupportedLocale(Context context, @NonNull Locale input) {
-    final HashMap<String, Language> languageHashMap = getLanguagesHashMap(context);
-    return getNearestSupportedLocale(languageHashMap, input);
-  }
-
-  public static Locale getNearestSupportedLocale(HashMap<String, Language> languageHashMap,
-      @NonNull Locale input) {
-    Language language = languageHashMap.get(input.toString());
-    if (language == null) {
-      language = languageHashMap.get(input.getLanguage());
-    }
-    if (language == null) {
-      return input;
-    } else {
-      try {
-        return getLocaleFromCode(language.getCode());
-      } catch (Exception e) {
-        return input;
-      }
-    }
-  }
-
-  public static HashMap<String, Language> getLanguagesHashMap(Context context) {
-    final HashMap<String, Language> languageHashMap = new HashMap<>();
-    for (Language language : getLanguages(context)) {
-      languageHashMap.put(language.getCode(), language);
-    }
-    return languageHashMap;
-  }
-
-  public static String getCodeFromLocale(@NonNull Locale locale) {
-    if (locale.getVariant().isEmpty()) {
-      return locale.getLanguage();
-    } else {
-      return locale.getLanguage() + "-" + locale.getVariant();
     }
   }
 }

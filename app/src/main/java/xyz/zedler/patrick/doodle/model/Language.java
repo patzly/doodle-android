@@ -22,7 +22,7 @@ package xyz.zedler.patrick.doodle.model;
 import java.util.Locale;
 import xyz.zedler.patrick.doodle.util.LocaleUtil;
 
-public class Language {
+public class Language implements Comparable<Language> {
 
   private final String code;
   private final String translators;
@@ -46,5 +46,10 @@ public class Language {
 
   public String getName() {
     return name;
+  }
+
+  @Override
+  public int compareTo(Language other) {
+    return name.toLowerCase().compareTo(other.getName().toLowerCase());
   }
 }

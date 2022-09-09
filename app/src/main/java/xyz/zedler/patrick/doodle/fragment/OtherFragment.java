@@ -37,14 +37,11 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.view.ContextThemeWrapper;
 import androidx.core.content.ContextCompat;
-import androidx.core.os.LocaleListCompat;
 import com.google.android.material.color.DynamicColors;
 import com.google.android.material.divider.MaterialDivider;
 import com.google.android.material.snackbar.BaseTransientBottomBar.BaseCallback;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.snackbar.Snackbar.Callback;
-import java.util.Locale;
-import java.util.Objects;
 import xyz.zedler.patrick.doodle.Constants.DEF;
 import xyz.zedler.patrick.doodle.Constants.EXTRA;
 import xyz.zedler.patrick.doodle.Constants.PREF;
@@ -55,7 +52,6 @@ import xyz.zedler.patrick.doodle.activity.MainActivity;
 import xyz.zedler.patrick.doodle.behavior.ScrollBehavior;
 import xyz.zedler.patrick.doodle.behavior.SystemBarBehavior;
 import xyz.zedler.patrick.doodle.databinding.FragmentOtherBinding;
-import xyz.zedler.patrick.doodle.model.Language;
 import xyz.zedler.patrick.doodle.service.LiveWallpaperService;
 import xyz.zedler.patrick.doodle.util.LocaleUtil;
 import xyz.zedler.patrick.doodle.util.ResUtil;
@@ -103,7 +99,11 @@ public class OtherFragment extends BaseFragment
     binding.toolbarOther.setNavigationOnClickListener(getNavigationOnClickListener());
     binding.toolbarOther.setOnMenuItemClickListener(getOnMenuItemClickListener());
 
-    binding.textOtherLanguage.setText(getLanguage());
+    binding.textOtherLanguage.setText(
+        LocaleUtil.followsSystem()
+            ? getString(R.string.other_language_system)
+            : LocaleUtil.getLocaleName()
+    );
 
     setUpThemeSelection();
 
@@ -271,36 +271,6 @@ public class OtherFragment extends BaseFragment
     } else if (id == R.id.switch_other_transition) {
       ViewUtil.startIcon(binding.partialOptionTransition.imageOtherTransition);
       getSharedPrefs().edit().putBoolean(PREF.USE_SLIDING, isChecked).apply();
-    }
-  }
-
-  /**
-   * Only called in pre-13 Android versions
-   */
-  public void setLanguage(Language language) {
-    Locale locale = language != null
-        ? LocaleUtil.getLocaleFromCode(language.getCode())
-        : LocaleUtil.getNearestSupportedLocale(activity, LocaleUtil.getDeviceLocale());
-    binding.textOtherLanguage.setText(
-        language != null ? locale.getDisplayName() : getString(R.string.other_language_system)
-    );
-  }
-
-  private String getLanguage() {
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-      LocaleListCompat locales = AppCompatDelegate.getApplicationLocales();
-      if (!locales.isEmpty()) {
-        Locale locale = locales.get(0);
-        return Objects.requireNonNullElseGet(locale, Locale::getDefault).getDisplayName();
-      } else {
-        return getString(R.string.other_language_system);
-      }
-    } else {
-      String code = getSharedPrefs().getString(PREF.LANGUAGE, DEF.LANGUAGE);
-      Locale locale = code != null
-          ? LocaleUtil.getLocaleFromCode(code)
-          : LocaleUtil.getNearestSupportedLocale(activity, LocaleUtil.getDeviceLocale());
-      return code != null ? locale.getDisplayName() : getString(R.string.other_language_system);
     }
   }
 

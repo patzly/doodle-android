@@ -39,7 +39,7 @@ android {
         versionName "5.5.2"
         resConfigs(
                 "ar", "cs", "da", "de", "en", "es", "fi", "fil", "fr", "hu", "in", "it", "iw", "ja",
-                "ko", "lt", "nl", "pt-BR", "ro", "ru", "tr", "ug", "zh-CN"
+                "ko", "lt", "nl", "pt-rBR", "ro", "ru", "tr", "ug", "zh-rCN"
         )
     }
 

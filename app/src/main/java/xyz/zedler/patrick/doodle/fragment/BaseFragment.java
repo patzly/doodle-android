@@ -44,6 +44,12 @@ public class BaseFragment extends Fragment {
     viewUtil = new ViewUtil();
   }
 
+  @Override
+  public void onDestroy() {
+    super.onDestroy();
+    viewUtil.cleanUp();
+  }
+
   public SharedPreferences getSharedPrefs() {
     return activity.getSharedPrefs();
   }

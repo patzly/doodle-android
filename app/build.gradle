@@ -36,7 +36,7 @@ android {
         minSdkVersion 21
         targetSdkVersion 33
         versionCode 40
-        versionName "5.5.2"
+        versionName "5.6.0"
         resConfigs(
                 "ar", "cs", "da", "de", "en", "es", "fi", "fil", "fr", "hu", "in", "it", "iw", "ja",
                 "ko", "lt", "nl", "pt-rBR", "ro", "ru", "tr", "ug", "zh-rCN"

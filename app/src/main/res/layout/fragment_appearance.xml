@@ -83,7 +83,7 @@
 
             <com.google.android.material.button.MaterialButton
               android:id="@+id/button_appearance_set_static"
-              style="@style/Widget.Doodle.Button.OutlinedButton"
+              style="@style/Widget.Doodle.Button.UnelevatedButton"
               android:layout_gravity="center_horizontal"
               android:text="@string/action_set_static" />
 

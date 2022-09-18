@@ -254,6 +254,7 @@ public class LiveWallpaperService extends WallpaperService {
     private boolean isSurfaceAvailable;
     private boolean isVisible;
     private boolean isPreview;
+    private boolean usedGlitchWorkaround;
     private float fps;
     private int screenRotation;
     private long lastFrameDraw;
@@ -361,6 +362,7 @@ public class LiveWallpaperService extends WallpaperService {
       display = windowManager.getDefaultDisplay();
       fps = display.getRefreshRate();
       screenRotation = display.getRotation();
+      usedGlitchWorkaround = false;
 
       timerUtil = new TimerUtil(() -> {
         // refresh random
@@ -511,6 +513,17 @@ public class LiveWallpaperService extends WallpaperService {
           return;
         }
       }
+
+      // workaround for glitch during unlocking, xOffset is 0 in one frame
+      if (offsetX > 0.08 && xOffset == 0) {
+        if (!usedGlitchWorkaround) { // produce frame jump only once
+          usedGlitchWorkaround = true;
+          return;
+        } else {
+          usedGlitchWorkaround = false;
+        }
+      }
+
       lastRawOffsetX = xOffset;
 
       if (isRtl && !isPreview) {
@@ -539,6 +552,7 @@ public class LiveWallpaperService extends WallpaperService {
     public void onPresenceChange(String presence) {
       switch (presence) {
         case USER_PRESENCE.OFF:
+          usedGlitchWorkaround = false; // new unlock anim next time
           if (randomMode.equals(RANDOM.SCREEN_OFF)
               || (randomMode.equals(RANDOM.DAILY) && isNewRandomPending)
               || (randomMode.equals(RANDOM.INTERVAL) && isNewRandomPending)) {
@@ -961,7 +975,6 @@ public class LiveWallpaperService extends WallpaperService {
           xOffset + finalTiltX * tiltFactor,
           finalTiltY * tiltFactor
       );
-      //Log.i(TAG, "updateOffset: hello x=" + (int)(xOffset + finalTiltX * tiltFactor) + ", y=" + (int)(finalTiltY * tiltFactor));
       drawFrame(force, source);
     }
 

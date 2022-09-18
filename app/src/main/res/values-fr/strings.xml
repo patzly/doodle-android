@@ -36,6 +36,10 @@
   <string name="label_ms">%1$sms</string>
   <string name="label_degrees">%1$s degrés</string>
 
+  <!-- ACTIONS -->
+
+  <string name="action_cancel">Annuler</string>
+  <string name="action_select">Sélectionner</string>
   <string name="action_close">Fermer</string>
   <string name="action_back">Retour</string>
   <string name="action_open_link">Ouvrir un site web externe</string>
@@ -58,10 +62,15 @@
   <string name="action_github">Doodle Android sur GitHub</string>
   <string name="action_github_description">Signaler un problème</string>
   <string name="action_language_select">Sélectionner la langue</string>
+  <string name="action_set_static">Définir un fond d\'écran statique</string>
+  <string name="action_change_time">Modifier l\'heure</string>
+  <string name="action_change_interval">Modifier l\'intervalle</string>
+
   <!-- APPEARANCE -->
 
   <string name="appearance_title">Apparence</string>
   <string name="appearance_description">Options de style et couleur</string>
+  <string name="appearance_one_ui">L\'implémentation défavorable des couleurs dynamiques par Samsung dans One UI 4.1 ignore complètement les couleurs fournies par les applications de fond d\'écran dynamique telles que Doodle.\nPour appliquer les couleurs à votre système, définissez ci-dessous le design actuel comme arrière-plan statique pour laisser le système récupérer les couleurs, puis appliquez-le comme fond d\'écran en direct.</string>
   <string name="appearance_design">Style</string>
   <string name="appearance_design_doodle">Collection de Doodle Pixel 4</string>
   <string name="appearance_design_monet">Collection Material You Pixel 6</string>
@@ -71,23 +80,54 @@
   <string name="appearance_night_mode_description">Couleurs sombres uniquement</string>
   <string name="appearance_night_mode_on">Activé</string>
   <string name="appearance_night_mode_off">Désactivé</string>
+  <string name="appearance_light_text">Toujours utiliser du texte blanc</string>
+  <string name="appearance_light_text_description">Au lieu d\'un texte sombre sur fond clair</string>
+  <string name="appearance_dark_text">Utiliser du texte sombre</string>
+  <string name="appearance_dark_text_description">Uniquement lorsque l\'arrière-plan est suffisamment lumineux</string>
   <string name="appearance_colors_category">Couleurs</string>
   <string name="appearance_colors">Couleurs extraites</string>
   <string name="appearance_colors_description">Utilisé pour calculer le contraste du texte</string>
   <string name="appearance_colors_description_dynamic">Utilisé par le moteur de thèmes du système</string>
+  <string name="appearance_colors_description_one_ui">Comme mentionné ci-dessus, les couleurs fournies par les fonds d\'écran animés sont ignorées par One UI</string>
   <string name="appearance_colors_primary">Choisissez la couleur primaire</string>
   <string name="appearance_colors_secondary">Choisissez la couleur secondaire</string>
   <string name="appearance_colors_tertiary">Choisissez la couleur tertiaire</string>
+  <string name="appearance_colors_custom">Sélectionnez une couleur personnalisée</string>
   <string name="appearance_colors_info">Sur les appareils sans prise en charge des couleurs dynamiques (Android 11 ou inférieur), seule la couleur principale est utilisée pour calculer le contraste du texte du lanceur et teinter l\'arrière-plan de l\'écran des applications récentes.</string>
   <string name="appearance_colors_info_dynamic">Sur les appareils équipés d\'Android 12 ou version ultérieure et prenant en charge les couleurs dynamiques, les trois couleurs sélectionnées sont utilisées pour créer automatiquement un thème de couleurs à l\'échelle du système.</string>
   <string name="appearance_random">Motif du fond d\'écran aléatoire</string>
+  <string name="appearance_random_description">Sélectionnez le déclencheur ci-dessous</string>
+  <string name="appearance_random_screen_off">Écran éteint</string>
+  <string name="appearance_random_daily">Tous les jours à %1$s</string>
+  <string name="appearance_random_interval">Sélectionnez l\'intervalle</string>
+  <string name="appearance_random_interval_minutes">Toutes les %1$d minutes</string>
+  <plurals name="appearance_random_interval_hours">
+    <item quantity="one">Toutes les heures</item>
+    <item quantity="many">Toutes les %1$d heures</item>
+    <item quantity="other">Toutes les %1$d heures</item>
+  </plurals>
+  <plurals name="appearance_random_interval_days">
+    <item quantity="one">Tous les jours</item>
+    <item quantity="many">Tous les %1$d jours</item>
+    <item quantity="other">Tous les %1$d jours</item>
+  </plurals>
+
   <!-- PARALLAX -->
 
   <string name="parallax_title">Parallaxe</string>
   <string name="parallax_description">Effet de balayage et d\'inclinaison</string>
+  <string name="parallax_swipe_category">Balayer</string>
+  <string name="parallax_swipe_touch_wiz">Il semblerait que votre lanceur actuel soit Samsung TouchWiz ou One UI Home, qui ne prennent pas en charge l\'effet de balayage. Veuillez essayer un autre lanceur pour l\'activer.\nVous pouvez ignorer cet avertissement si vous avez déjà défini un autre lanceur par défaut.</string>
+  <string name="parallax_swipe">Effet de balayage</string>
+  <string name="parallax_swipe_description">Décalage horizontal lors du balayage de la page</string>
   <string name="parallax_swipe_power_save">Respecter l\'économiseur de batterie</string>
+  <string name="parallax_swipe_power_save_description">Mettre en pause l\'effet de balayage lorsque l\'économiseur de batterie est activé</string>
+  <string name="parallax_tilt_category">Inclinaison</string>
   <string name="parallax_tilt">Effet d\'inclinaison</string>
+  <string name="parallax_tilt_description">Mouvement lors de l\'inclinaison de l\'appareil</string>
+  <string name="parallax_tilt_warning">Consommation de batterie plus élevée</string>
   <string name="parallax_refresh_rate">Taux de rafraîchissement du capteur d\'inclinaison</string>
+  <string name="parallax_refresh_rate_description">Des délais trop courts peuvent ralentir les animations</string>
   <string name="parallax_damping">Amortissement du mouvement</string>
   <string name="parallax_damping_description">Diminuer pour plus de fluidité</string>
   <string name="parallax_threshold">Seuil de mouvement</string>
@@ -112,6 +152,10 @@
   <string name="size_zoom_launcher_description">Peut être indisponible sur certains appareils</string>
   <string name="size_zoom_damping">Atténuation de l\'animation</string>
   <string name="size_zoom_damping_description">Activer et diminuer pour zoomer de manière plus fluide</string>
+  <string name="size_zoom_unlock">Zoom sur l\'écran de verrouillage</string>
+  <string name="size_zoom_unlock_description">Sélectionnez le sens</string>
+  <string name="size_zoom_unlock_in">Zoomer</string>
+  <string name="size_zoom_unlock_out">Dézoomer</string>
   <string name="size_zoom_duration">Durée du zoom au déverrouillage</string>
   <string name="size_zoom_duration_description">Diminuer pour une animation plus rapide</string>
 
@@ -122,16 +166,20 @@
   <string name="other_language">Langue</string>
   <string name="other_language_description">Un grand merci à tous les traducteurs bénévoles de Transifex ! Veuillez visiter la page GitHub du projet pour savoir comment vous pouvez aider à rendre Doodle disponible dans votre langue.</string>
   <string name="other_language_system">Suivre le système</string>
+  <string name="other_language_system_description">Anglais si la traduction n\'est pas disponible</string>
   <string name="other_gpu">Accélération matérielle</string>
   <string name="other_gpu_description">Désactiver si le fond d\'écran se bloque</string>
   <string name="other_gpu_info">L\'accélération matérielle n\'est disponible pour Doodle qu\'à partir d\'Android 8. Les animations de fond d\'écran pourraient donc être un peu saccadées.</string>
   <string name="other_launcher">Masquer l\'icône dans le lanceur d\'applications</string>
   <string name="other_launcher_description">Les paramètres ne seront accessibles que dans le sélecteur de fonds d\'écran animés de votre système</string>
+  <string name="other_launcher_unsupported">Cette fonctionnalité n\'est plus prise en charge en raison de restrictions système</string>
   <string name="other_theme">Thème de couleur de l\'application</string>
   <string name="other_theme_description">Essayez un autre look</string>
   <string name="other_theme_auto">Auto</string>
   <string name="other_theme_light">Clair</string>
   <string name="other_theme_dark">Sombre</string>
+  <string name="other_transition">Utiliser une transition de balayage entre les pages de paramètres</string>
+  <string name="other_transition_description">Au lieu d\'estomper</string>
   <string name="other_reset">Réinitialiser tous les réglages</string>
   <string name="other_reset_description">Fait plus que la désinstallation ne le ferait car les préférences sont stockées à un endroit spécial afin d\'être accessibles directement après le démarrage de l\'appareil</string>
 
@@ -146,6 +194,13 @@
   <string name="about_vending_description">Plus d\'applications du même développeur</string>
   <string name="about_github_description">Code source</string>
   <string name="about_translation_description">Aider à traduire Doodle</string>
+  <string name="about_privacy">Politique de confidentialité</string>
+  <string name="about_privacy_description">Comment vos données sont-elles traitées ?</string>
+
+  <!-- MESSAGES -->
+
+  <string name="msg_feedback">Une bonne application demande beaucoup de temps et vit des retours de ses utilisateurs.</string>
+  <string name="msg_feedback_contact">Vous avez des souhaits, des commentaires ou des questions ? N\'hésitez pas à me contacter !\nSinon, je serais très heureux d\'avoir une bonne critique sur le Play Store.</string>
   <string name="msg_share">Découvrez cette excellente application de fonds d\'écran animés : \nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
   <string name="msg_hide">Masquer l\'icône dans le lanceur d\'applications ?</string>
   <string name="msg_random">Tous les styles sélectionnés seront utilisés</string>

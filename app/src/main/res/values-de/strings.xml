@@ -64,6 +64,7 @@
   <string name="action_language_select">Sprache auswählen</string>
   <string name="action_set_static">Statischen Hintergrund festlegen</string>
   <string name="action_change_time">Uhrzeit ändern</string>
+  <string name="action_change_interval">Intervall ändern</string>
 
   <!-- APPEARANCE -->
 
@@ -98,6 +99,16 @@
   <string name="appearance_random_description">Auslöser auswählen</string>
   <string name="appearance_random_screen_off">Bildschirm aus</string>
   <string name="appearance_random_daily">Täglich um %1$s Uhr</string>
+  <string name="appearance_random_interval">Intervall auswählen</string>
+  <string name="appearance_random_interval_minutes">Alle %1$d Minuten</string>
+  <plurals name="appearance_random_interval_hours">
+    <item quantity="one">Jede Stunde</item>
+    <item quantity="other">Alle %1$d Stunden</item>
+  </plurals>
+  <plurals name="appearance_random_interval_days">
+    <item quantity="one">Jeden Tag</item>
+    <item quantity="other">Alle %1$d Tage</item>
+  </plurals>
 
   <!-- PARALLAX -->
 

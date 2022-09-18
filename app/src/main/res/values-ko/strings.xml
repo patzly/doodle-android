@@ -21,6 +21,9 @@
 
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
+  <string name="wallpaper_description">자동으로 적용되는 다크 모드와 효율적인 애니메이션으로 배터리 친화적인 다채로운 색생의 라이브 배경화면. 취향에 맞게 꾸며보세요!</string>
+  <string name="wallpaper_description_picker">홈 화면에서 스크롤하거나 기기의 잠금을 해제할 때, 부드러운 회전과 확대 효과와 함께 다양한 색상의 모양들을 발견해보세요. \n취향에 맞게 배경화면을 꾸며보세요!</string>
+
   <!-- TITLES -->
 
   <string name="title_info">정보</string>
@@ -33,6 +36,10 @@
   <string name="label_ms">%1$sms</string>
   <string name="label_degrees">%1$s도</string>
 
+  <!-- ACTIONS -->
+
+  <string name="action_cancel">취소</string>
+  <string name="action_select">선택</string>
   <string name="action_close">닫기</string>
   <string name="action_back">뒤로 이동</string>
   <string name="action_open_link">외부 웹사이트 열기</string>
@@ -43,6 +50,8 @@
   <string name="action_continue">계속</string>
   <string name="action_open_app_info">앱 정보 화면 열기</string>
   <string name="action_set">배경화면 설정</string>
+  <string name="action_learn_more">더 알아보기</string>
+  <string name="action_help">도움말</string>
   <string name="action_send_feedback">피드백 보내기</string>
   <string name="action_share">공유</string>
   <string name="action_share_description">Doodle에 대해 주변인들에게 알려주세요</string>
@@ -53,6 +62,8 @@
   <string name="action_github">Doodle Android on GitHub</string>
   <string name="action_github_description">새로운 문제 보고</string>
   <string name="action_language_select">언어 선택</string>
+  <string name="action_set_static">고정된 배경화면 설정</string>
+  <string name="action_change_time">시간 변경</string>
   <!-- APPEARANCE -->
 
   <string name="appearance_title">모양새</string>
@@ -63,12 +74,18 @@
   <string name="appearance_variant">옵션</string>
   <string name="appearance_night_mode">다크 모드</string>
   <string name="appearance_night_mode_description">어두운 색상들만</string>
+  <string name="appearance_night_mode_on">켜짐</string>
+  <string name="appearance_night_mode_off">꺼짐</string>
+  <string name="appearance_light_text">항상 흰색 텍스트 사용하기</string>
+  <string name="appearance_dark_text">어두운 색생의 텍스트 사용</string>
   <string name="appearance_colors">추출된 색상</string>
   <string name="appearance_colors_description">텍스트 대비를 계산하기 위해 사용됨</string>
   <string name="appearance_colors_description_dynamic">시스템의 테마 엔진을 사용함</string>
+  <string name="appearance_colors_description_one_ui">위에서 언급된 바와 같이, 라이브 배경화면에서 제공되는 색상들은 One UI 에서 무시됩니다.</string>
   <string name="appearance_colors_primary">주 색상 선택</string>
-  <string name="appearance_colors_secondary">보조 색상(두 번째) 선택</string>
-  <string name="appearance_colors_tertiary">보조 색상(세 번째) 선택</string>
+  <string name="appearance_colors_secondary">두 번째 색상 선택</string>
+  <string name="appearance_colors_tertiary">세 번째 색상 선택</string>
+  <string name="appearance_colors_custom">기타 색상 선택</string>
   <string name="appearance_colors_info">다이내믹 색상 기능이 지원되지 않는 기기들에서는(안드로이드 11 이하) 주 색상만이 런처 텍스트 색상 대비 계산과 최근 앱 화면의 배경 틴트에 사용됩니다.</string>
   <string name="appearance_colors_info_dynamic">다이내믹 색상 지원이 가능하고 안드로이드 12 이상인 기기들에서는 선택된 세가지 색상들이 시스템 전체에 적용되는 테마를 생성하기 위해 사용됩니다.</string>
   <string name="appearance_random">배경화면 디자인을 무작위로 적용</string>
@@ -76,8 +93,6 @@
 
   <string name="parallax_title">기울임 효과</string>
   <string name="parallax_description">스와이프 &amp; 기울임 효과</string>
-  <string name="parallax_touch_wiz">배경화면 스크롤을 지원하지 않는 삼성 TouchWiz 런처를 이용중인 것 같습니다. 기울임 센서 옵션이 활성화되어 있지 않다면 기울임 효과를 활성화하기 위해 다른 런처를 사용해주세요. \n다른 런처를 기본으로 설정했다면 이 경고를 무시하셔도 됩니다.</string>
-  <string name="parallax_intensity">기울임 효과 강도</string>
-  <string name="parallax_none">없음</string>
+  <string name="parallax_swipe_power_save">절전 모드 설정 따름</string>
   <string name="other_language_system">시스템 색상 적용</string>
   </resources>

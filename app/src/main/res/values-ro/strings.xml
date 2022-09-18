@@ -85,17 +85,9 @@
 
   <string name="parallax_title">Parallax</string>
   <string name="parallax_description">Glisare și efect tilt</string>
-  <string name="parallax_touch_wiz">Se pare că launcher-ul tău curent este Samsung TouchWiz, care nu suportă scrolarea background-ului. Te rugam să încerci alt launcher pentru a permite efectul parallax daca nu ai opțiunea de tilt pornită.\n Poți igonora această avertizare dacă ai alt launcher prestablilit.</string>
-  <string name="parallax_intensity">Puterea efectului parallax</string>
-  <string name="parallax_intensity_description">Offset orizontal la glisarea paginii și intensitatea efectului de înclinare</string>
-  <string name="parallax_none">Nimic</string>
   <string name="parallax_swipe_power_save">Respectă economisitul de baterie</string>
-  <string name="parallax_swipe_power_save_description">Întrerupeți animația de glisare a paginii când economisirea bateriei este activată</string>
-  <string name="parallax_category_tilt">Efect tilt</string>
-  <string name="parallax_tilt">Mișcare la înclinarea device-ului</string>
-  <string name="parallax_tilt_description">Consumă mai multă baterie</string>
+  <string name="parallax_tilt">Efect tilt</string>
   <string name="parallax_refresh_rate">Rata de refresh a senzorului de înclinare</string>
-  <string name="parallax_refresh_rate_description">Întrârzierile scurte pot face animația să decaleze</string>
   <string name="parallax_damping">Amortizarea mișcării</string>
   <string name="parallax_damping_description">Scade pentru o fluiditate mai mare</string>
   <string name="parallax_threshold">Pragul de mișcare</string>
@@ -120,10 +112,6 @@
   <string name="size_zoom_launcher_description">Ar putea fi indisponibil pe unele dispozitive</string>
   <string name="size_zoom_damping">Amortizarea animației</string>
   <string name="size_zoom_damping_description">Activează și scade penru un zoom persistent</string>
-  <string name="size_zoom_system">Folosește efectul de zoom al sistemului</string>
-  <string name="size_zoom_system_description">S-ar putea să remedieze animația cu zoom sacadat când efectul de înclinare este activat, disponibil numai pe unele dispozitive</string>
-  <string name="size_zoom_unlock">Zoom out în ecranul de pornire</string>
-  <string name="size_zoom_unlock_description">Poate fi sacadat dacă efectul de înclinare este activat</string>
   <string name="size_zoom_duration">Deblochează durata zoom-ului</string>
   <string name="size_zoom_duration_description">Scade pentru o animație mai rapidă</string>
 
@@ -161,9 +149,6 @@
   <string name="about_privacy">Politica de Confidențialitate</string>
   <string name="about_privacy_description">Cum sunt prelucrate datele dvs.?</string>
 
-  <!-- MESSAGES -->
-
-  <string name="msg_feedback">O aplicație grozavă are nevoie de mult timp si feedback de la utilizatori.\n\nAveți vreun gând, comentariu sau întrebare pentru noi? Contactați-ne!\nÎn acest caz vom fi fericiți să vedem niște review-uri super în Magazinul Google Play.</string>
   <string name="msg_share">Vedeți aici această aplicație de wallpapere: \nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
   <string name="msg_hide">Ascundeți iconița din launcher?</string>
   <string name="msg_random">Toate design-urile selectate vor fi folosite</string>

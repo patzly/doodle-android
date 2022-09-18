@@ -86,17 +86,9 @@ Personalizza lo sfondo in base al tuo stile!</string>
 
   <string name="parallax_title">Parallax</string>
   <string name="parallax_description">Scorrimento &amp; effetto inclinazione</string>
-  <string name="parallax_touch_wiz">Sembra che il tuo lanucher corrente sia Samsung TouchWiz, che non supporta lo scorrimento dello sfondo. Prova un altro launcher per abilitare l\'effetto parallax se non hai l\'opzione sensore inclinazione attivata.\nPuoi ignorare questo messaggio se hai un altro launcher come default. </string>
-  <string name="parallax_intensity">Forza parallax</string>
-  <string name="parallax_intensity_description">Intensità dell\'offset orizzontale sullo scorrimento della pagina e sull\'effetto inclinazione</string>
-  <string name="parallax_none">Nessuno</string>
   <string name="parallax_swipe_power_save">Rispetta risparmio energetico</string>
-  <string name="parallax_swipe_power_save_description">Metti in pausa le animazioni di scorrimento quando il risparmio energetico è attivo</string>
-  <string name="parallax_category_tilt">Effetto inclinazione</string>
-  <string name="parallax_tilt">Muovi quando il dispositivo viene inclinato</string>
-  <string name="parallax_tilt_description">Utilizza più batteria</string>
+  <string name="parallax_tilt">Effetto inclinazione</string>
   <string name="parallax_refresh_rate">Frequenza di aggiornamento del sensore inclinazione</string>
-  <string name="parallax_refresh_rate_description">Ritardi troppo corti possono rendere lo zoom meno fluido</string>
   <string name="parallax_damping">Riduzione movimento</string>
   <string name="parallax_damping_description">Diminuisci per più fluidità</string>
   <string name="parallax_threshold">Soglia di movimento</string>
@@ -121,10 +113,6 @@ Personalizza lo sfondo in base al tuo stile!</string>
   <string name="size_zoom_launcher_description">Potrebbe non essere disponibile su alcuni dispositivi</string>
   <string name="size_zoom_damping">Smorzamento animazione</string>
   <string name="size_zoom_damping_description">Attiva e diminuisci per un ingrandimento più fluido</string>
-  <string name="size_zoom_system">Usa lo zoom provvisto dal sistema</string>
-  <string name="size_zoom_system_description">Potrebbe correggere animazione di ingrandimento scattosa quando l\'effetto di inclinazione è attivo, disponibile solo su alcuni dispositivi</string>
-  <string name="size_zoom_unlock">Ingrandisci nella schermata di blocco</string>
-  <string name="size_zoom_unlock_description">Potrebbe scattare se l\'effetto tilt è attivo</string>
   <string name="size_zoom_duration">Sblocca durata zoom</string>
   <string name="size_zoom_duration_description">Abbassa per animazioni piú veloci</string>
 
@@ -162,12 +150,6 @@ Personalizza lo sfondo in base al tuo stile!</string>
   <string name="about_privacy">Informativa privacy</string>
   <string name="about_privacy_description">Come vengono processati i tuoi dati?</string>
 
-  <!-- MESSAGES -->
-
-  <string name="msg_feedback">Una bella app richiede molto tempo e vive delle opinioni dei suoi utenti.
-
-Hai qualche desiderio, commento o domanda? Contattami!
-In alternativa, sarei molto felice di ricevere una recensione positiva sul Play Store.</string>
   <string name="msg_share">Scopri questa fantastica app di sfondi animati: 
 https://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
   <string name="msg_hide">Nascondere l\'icona nel launcher?</string>

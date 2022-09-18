@@ -77,17 +77,9 @@
 
   <string name="parallax_title">Parallax efekt</string>
   <string name="parallax_description">Swipe &amp; a efekt při naklánění</string>
-  <string name="parallax_touch_wiz">Zdá se, že váš současný launcher je Samsung TouchWiz, který nepodporuje scrollování na pozadí. Pokud nemáte povolenou možnost gyroskopu, zkuste použít jiný launcher, abyste zapnuli efekt parallaxu.\nToto upozornění můžete ignorovat, pokud jste jako výchozí nastavili jiný launcher.</string>
-  <string name="parallax_intensity">Síla efektu parallax</string>
-  <string name="parallax_intensity_description">Vodorovný posun při přejetí stránky a intenzita efektu naklonění</string>
-  <string name="parallax_none">Žádný</string>
   <string name="parallax_swipe_power_save">Respektovat spořič baterie</string>
-  <string name="parallax_swipe_power_save_description">Přerušit animaci swipnutí mezi stránkami, pokud je zapnut spořič baterie</string>
-  <string name="parallax_category_tilt">Efekt při naklonění</string>
-  <string name="parallax_tilt">Pohyb při naklápění zařízení</string>
-  <string name="parallax_tilt_description">Spotřebovává víc baterie</string>
+  <string name="parallax_tilt">Efekt při naklonění</string>
   <string name="parallax_refresh_rate">Obnovovací frekvence snímače náklonu</string>
-  <string name="parallax_refresh_rate_description">Příliš krátké prodlevy mohou způsobit zpoždění animací zoomu.</string>
   <string name="parallax_damping">Tlumení pohybu</string>
   <string name="parallax_damping_description">Snížit pro větší hladkost</string>
   <string name="parallax_threshold">Práh detekce pohybu</string>
@@ -112,10 +104,6 @@
   <string name="size_zoom_launcher_description">Nemusí být dostupné na všech zařízeních</string>
   <string name="size_zoom_damping">Tlumení animace</string>
   <string name="size_zoom_damping_description">Aktivujte a snížte pro plynulejší zoomování</string>
-  <string name="size_zoom_system">Použij efekt přiblížení poskytovaný systémem</string>
-  <string name="size_zoom_system_description">Možná oprava trhavé animace zoomu při zapnutém efektu náklonu, dostupná pouze na některých zařízeních.</string>
-  <string name="size_zoom_unlock">Oddálení na zamykací obrazovce</string>
-  <string name="size_zoom_unlock_description">Pokud je zapnutý efekt náklonu, může být trhavé.</string>
   <string name="size_zoom_duration">Odemknout trvání zoomu</string>
   <string name="size_zoom_duration_description">Snižte pro rychlejší animace</string>
 
@@ -150,9 +138,6 @@
   <string name="about_vending_description">Více aplikací od vývojáře</string>
   <string name="about_github_description">Zdrojový kód</string>
   <string name="about_translation_description">Pomozte přeložit Doodle</string>
-  <!-- MESSAGES -->
-
-  <string name="msg_feedback">Skvělá aplikace vyžaduje spoustu času a žije zpětnou vazbou od svých uživatelů.\n\nMáte nějaká přání, připomínky nebo dotazy? Kontaktujte mě!\nJinak bych byl moc rád za pěknou recenzi v Obchodě Google Play.</string>
   <string name="msg_share">Podívejte se na tuhle cool aplikaci na živé tapety: \nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
   <string name="msg_hide">Skrýt ikonu v launcheru?</string>
   <string name="msg_random">Všechny vybrané návrhy budou použity</string>

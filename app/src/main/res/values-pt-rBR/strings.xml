@@ -83,17 +83,10 @@
 
   <string name="parallax_title">Paralaxe</string>
   <string name="parallax_description">Efeito de inclinação &amp; arrasto</string>
-  <string name="parallax_touch_wiz">Parece que o seu inicializador atual é o Samsung TouchWiz, que não oferece suporte à rolagem em segundo plano. Tente um inicializador diferente para habilitar o efeito de paralaxe.\nVocê pode ignorar este aviso caso tenha definido outro inicializador como padrão.</string>
-  <string name="parallax_intensity">Force Parallax</string>
-  <string name="parallax_intensity_description">Deslocamento horizontal ao arrastar paginas e intensidade do efeito de inclinação</string>
-  <string name="parallax_none">Nenhum</string>
+  <string name="parallax_swipe_description">Deslocamento horizontal ao deslizar a página</string>
   <string name="parallax_swipe_power_save">Respeite o economizador de bateria</string>
-  <string name="parallax_swipe_power_save_description">Pausar a animação de deslizar a página quando a economia de bateria estiver ativada</string>
-  <string name="parallax_category_tilt">Efeito de inclinação</string>
-  <string name="parallax_tilt">Movimentar quando o dispositivo for inclinado</string>
-  <string name="parallax_tilt_description">Consume mais bateria</string>
+  <string name="parallax_tilt">Efeito de inclinação</string>
   <string name="parallax_refresh_rate">Taxa de atualização do sensor de inclinação</string>
-  <string name="parallax_refresh_rate_description">Intervalos muito curtos podem tornar animações de zoom travadas</string>
   <string name="parallax_damping">Amortecimento de movimento</string>
   <string name="parallax_damping_description">Diminua para mais suavidade</string>
   <string name="parallax_threshold">Movimento mínimo</string>
@@ -118,10 +111,6 @@
   <string name="size_zoom_launcher_description">Pode estar indisponível em certos dispositivos</string>
   <string name="size_zoom_damping">Amortecimento de animações</string>
   <string name="size_zoom_damping_description">Ative e diminua para zoom mais suave</string>
-  <string name="size_zoom_system">Usar efeito de zoom do sistema</string>
-  <string name="size_zoom_system_description">Pode corrigir animação travada quando o efeito de inclinação está ligado, disponível apenas em alguns dispostivos</string>
-  <string name="size_zoom_unlock">Diminuir o zoom na tela de bloqueio</string>
-  <string name="size_zoom_unlock_description">Pode ser travado se efeito de inclinação estiver ligado</string>
   <string name="size_zoom_duration">Destravar duração do zoom</string>
   <string name="size_zoom_duration_description">Diminua para animações mais rápidas</string>
 
@@ -159,9 +148,6 @@
   <string name="about_privacy">Política de Privacidade</string>
   <string name="about_privacy_description">Como seus dados são processados?</string>
 
-  <!-- MESSAGES -->
-
-  <string name="msg_feedback">Um ótimo aplicativo requer muito tempo e vive dos comentários de seus usuários.\n\nVocê tem algum desejo, comentário ou pergunta? Contacte-me!\nCaso contrário, ficaria muito satisfeito com uma boa crítica na Play Store.</string>
   <string name="msg_share">Confira este aplicativo legal de papel de parede ao vivo: \nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
   <string name="msg_hide">Esconder ícone em inicializador?</string>
   <string name="msg_random">Todos os designs selecionados serão utilizados</string>

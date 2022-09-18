@@ -59,14 +59,8 @@
 
   <string name="parallax_title">پاراللاكس </string>
   <string name="parallax_description">سىيرىلما ۋە يانتۇ ئۈنۈمى </string>
-  <string name="parallax_touch_wiz">سىزنىڭ ھازىرقى قوزغاتقۇچىڭىز  سامسۇڭ TouchWiz، ئۇ ئارقا سەھنىنىڭ دومىلىشىنى قوللىمايدۇ. ئەگەر يانتۇ سېنزور يوق بولسا ،باشقا ئۈستەل يۈزى قوزغاتقۇچنى ئىشلىتىپ ئۈنۈمنى سىناپ بېقىڭ </string>
-  <string name="parallax_intensity">پاراللاكس كۈچىنىشى  </string>
-  <string name="parallax_none">قۇرۇق</string>
-  <string name="parallax_category_tilt">يانتۇلۇق ئۈنۈمى  </string>
-  <string name="parallax_tilt">ئۈسكۈنە يانتۇ بولغاندا نەقىشلەر يۆتكىلىدۇ </string>
-  <string name="parallax_tilt_description">تېخىمۇ توك خورىتىدۇ </string>
+  <string name="parallax_tilt">يانتۇلۇق ئۈنۈمى  </string>
   <string name="parallax_refresh_rate">يانتۇلۇق سەزگۈچىنى يېڭىلاش</string>
-  <string name="parallax_refresh_rate_description">كىچىكلىتىش كارتونىدا كېچىكىش كۆرۈلىدۇ.</string>
   <string name="parallax_damping">ھەرىكەت توسقۇنلۇقى چوڭ-كىچىكلىكى  </string>
   <string name="parallax_damping_description">تېخىمۇ راۋان سىيرىلىش ئۈنۈمىنى ئازايتىدۇ</string>
   <string name="parallax_threshold">ھەرىكەت ئاتلاش قىممىتى</string>

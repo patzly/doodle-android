@@ -75,16 +75,8 @@
 
   <string name="parallax_title">פרלקסה</string>
   <string name="parallax_description">החלקה ואפקט הטיה</string>
-  <string name="parallax_touch_wiz">זה נראה שהלאנצ\'ר הנוכחי שלכם הוא  Samsung TouchWiz,שלא תומך בגלילת רקע. בבקשה נסו לאנצ\'ר שונה כדי להחיל את את אפקט הפרלקסה אם אין לכם את אפשרות חיישן הטיה מופעלת
-אתם יכולים להתעלם מההזהרה הזאת אם בחרתם לאנצ\'ר אחר כברירת מחדל.</string>
-  <string name="parallax_intensity">חוזק  הפרלקסה</string>
-  <string name="parallax_intensity_description">היסט אופקי בגלילת עמוד וחוזק אפקט ההטיה</string>
-  <string name="parallax_none">ללא</string>
-  <string name="parallax_category_tilt">אפקט הטיה</string>
-  <string name="parallax_tilt">להזיז כשהמכשיר מוטה לצדדים</string>
-  <string name="parallax_tilt_description">צורך יותר בטריה</string>
+  <string name="parallax_tilt">אפקט הטיה</string>
   <string name="parallax_refresh_rate">קצב ריענון של חיישן ההטיה</string>
-  <string name="parallax_refresh_rate_description">השעייה לזמנים קצרים עלולה לגרום לאנימציות לא חלקות</string>
   <string name="parallax_damping">שיכוך התזוזה</string>
   <string name="parallax_damping_description">הנמיכו בשביל תוצאה חלקה יותר</string>
   <string name="parallax_threshold">גבול התזוזה</string>
@@ -101,9 +93,6 @@
   <string name="size_zoom_rotation">סיבוב חלק מהצורות בזמן הזום</string>
   <string name="size_zoom_rotation_description">הטייה מירבית במעלות</string>
   <string name="size_zoom_launcher">זום החוצה כשפותחים הגדרות מהירות או את מגירת האפליקציות</string>
-  <string name="size_zoom_system">שימוש באפקט הזום שמסופק על ידי המערכת</string>
-  <string name="size_zoom_unlock">זום החוצה במסך נעילה</string>
-  <string name="size_zoom_unlock_description">אולי יהיה מעוות במקצת אם אפקט ההטיה פועל</string>
   <string name="size_zoom_duration">פתיחת משך הזום</string>
   <string name="size_zoom_duration_description">הנמיכו בשביל אנימציות מהירות</string>
 
@@ -139,12 +128,6 @@
   <string name="about_vending_description">עוד אפליקציות מהמפתחים</string>
   <string name="about_github_description">קוד המקור</string>
   <string name="about_translation_description">עזרו לתרגם את דודל</string>
-  <!-- MESSAGES -->
-
-  <string name="msg_feedback">אפליקציה טובה דורשת זמן רב.וחיה מהמשוב של משתמשיה 
-
-יש לכם אילו משאלות,תגובות או שאלות? צרו עימי קשר!
-אם לא..אני מאד אשמח אם תשאירו ביקורת נחמדה בחנות האפליקציות</string>
   <string name="msg_share">קבלו איזו אפליקצית רקעים מגניבה:play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
   <string name="msg_hide">לחביא את האייקון בלאנצ\'ר?</string>
   <string name="msg_random_warning">עיצוב רקע רנדומלי עדיין פועל!</string>

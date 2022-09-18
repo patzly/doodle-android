@@ -85,17 +85,9 @@
 
   <string name="parallax_title">Сдвиг</string>
   <string name="parallax_description">Эффекты пролистывания и наклона</string>
-  <string name="parallax_touch_wiz">Похоже, что ваш текущий рабочий стол – Samsung TouchWiz, который не поддерживает прокрутку обоев. Попробуйте сменить рабочий стол на другой для включения эффекта сдвига, если вам недоступна опция датчика наклона.\nВы можете игнорировать это предупреждение, если по умолчанию установлен другой рабочий стол.</string>
-  <string name="parallax_intensity">Сила сдвига</string>
-  <string name="parallax_intensity_description">Горизонтальный сдвиг при пролистывании страницы и интенсивность эффекта наклона</string>
-  <string name="parallax_none">Ничего</string>
   <string name="parallax_swipe_power_save">Учитывать режим энергосбережения</string>
-  <string name="parallax_swipe_power_save_description">Приостановить анимацию пролистывания страницы в режиме энергосбережения</string>
-  <string name="parallax_category_tilt">Эффект наклона</string>
-  <string name="parallax_tilt">Двигать фигуры при наклоне устройства</string>
-  <string name="parallax_tilt_description">Потребляет больше энергии</string>
+  <string name="parallax_tilt">Эффект наклона</string>
   <string name="parallax_refresh_rate">Частота опроса датчика наклона</string>
-  <string name="parallax_refresh_rate_description">Слишком малые промежутки могут сделать анимации масштабирования прерывистыми</string>
   <string name="parallax_damping">Гашение движений</string>
   <string name="parallax_damping_description">Понизьте для большей плавности</string>
   <string name="parallax_threshold">Порог движения</string>
@@ -120,10 +112,6 @@
   <string name="size_zoom_launcher_description">Может не поддерживаться некоторыми устройствами</string>
   <string name="size_zoom_damping">Затухание анимации</string>
   <string name="size_zoom_damping_description">Активируйте и уменьшайте параметр для более плавного эффекта</string>
-  <string name="size_zoom_system">Использовать системный эффект приближения</string>
-  <string name="size_zoom_system_description">Может исправить дёрганую анимацию приближения с включенным эффектом наклона, доступно только на некоторых устройствах</string>
-  <string name="size_zoom_unlock">Отдалять камеру на экране блокировки</string>
-  <string name="size_zoom_unlock_description">С включенным эффектом наклона может сопровождаться подёргиванием</string>
   <string name="size_zoom_duration">Длительность эффекта приближения после разблокировки</string>
   <string name="size_zoom_duration_description">Сократите для ускорения анимации</string>
 
@@ -161,9 +149,6 @@
   <string name="about_privacy">Конфиденциальность</string>
   <string name="about_privacy_description">Как обрабатываются ваши данные?</string>
 
-  <!-- MESSAGES -->
-
-  <string name="msg_feedback">Хорошее приложение отнимает много времени и существует благодаря своим пользователям.\n\nУ вас есть какие-нибудь пожелания, комментарии или вопросы? Свяжитесь со мной!\nТакже я был бы признателен за положительный отзыв в Play Маркете.</string>
   <string name="msg_share">Зацени эти крутые живые обои: \nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
   <string name="msg_hide">Скрыть значок с рабочего стола?</string>
   <string name="msg_random">Будут использованы все выбранные дизайны</string>

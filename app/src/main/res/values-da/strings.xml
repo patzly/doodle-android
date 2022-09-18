@@ -73,12 +73,8 @@
 
   <string name="parallax_title">Parallakse</string>
   <string name="parallax_description">Swipe &amp; hældningseffekt</string>
-  <string name="parallax_none">Ingen</string>
-  <string name="parallax_category_tilt">Hældningseffekt</string>
-  <string name="parallax_tilt">Bevægelse når enheden vippes</string>
-  <string name="parallax_tilt_description">Bruger mere batteri</string>
+  <string name="parallax_tilt">Hældningseffekt</string>
   <string name="parallax_refresh_rate">Opdateringshastighed for hældningssensoren</string>
-  <string name="parallax_refresh_rate_description">For korte forsinkelser kan gøre zoom-animationer forsinkede</string>
   <string name="parallax_damping">Dæmpning af bevægelse</string>
   <string name="parallax_damping_description">Nedsæt for mere jævnhed</string>
   <!-- SIZE -->
@@ -89,9 +85,6 @@
   <string name="size_zoom_description">Når den øges, zoomer kameraet mere ud</string>
   <string name="size_zoom_rotation">Rotér nogle figurer, mens der zoomes</string>
   <string name="size_zoom_rotation_description">Maksimal rotation i grader</string>
-  <string name="size_zoom_system">Brug systemets zoom-effekt</string>
-  <string name="size_zoom_unlock">Zoom ud på låseskærmen</string>
-  <string name="size_zoom_unlock_description">Kan være rykkende, hvis hældningseffekten er slået til</string>
   <string name="size_zoom_duration_description">Nedsæt for hurtigere animation</string>
 
   <!-- OTHER -->
@@ -120,9 +113,6 @@
   <string name="about_vending_description">Flere apps fra udvikleren</string>
   <string name="about_github_description">Kildekode</string>
   <string name="about_translation_description">Hjælp med at oversætte Doodle</string>
-  <!-- MESSAGES -->
-
-  <string name="msg_feedback">En god app kræver en masse tid og lever af brugernes feedback.\n\nHar du ønsker, kommentarer eller spørgsmål? Kontakt mig!\nEllers ville jeg være meget glad for en god anmeldelse i Play Store.</string>
   <string name="msg_share">Se denne smarte live baggrund-app: \nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
   <string name="msg_random_warning">Tilfældigt baggrundsdesign er stadig aktivt!</string>
   <string name="msg_reset">Nulstill alle indstillinger?</string>

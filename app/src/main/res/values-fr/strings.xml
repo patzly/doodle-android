@@ -85,17 +85,9 @@
 
   <string name="parallax_title">Parallaxe</string>
   <string name="parallax_description">Effet de balayage et d\'inclinaison</string>
-  <string name="parallax_touch_wiz">Il semblerait que votre lanceur d\'applications actuel soit Samsung TouchWiz qui ne prend pas en charge le défilement en arrière-plan. Veuillez essayer un autre lanceur d\'applications pour activer l\'effet de parallaxe dans le cas où l\'option du capteur d\'inclinaison n\'est pas activée.\nVous pouvez ignorer cet avertissement si vous définissez un autre lanceur par défaut.</string>
-  <string name="parallax_intensity">Intensité de parallaxe</string>
-  <string name="parallax_intensity_description">Décalage horizontal lors du balayage et intensité de l\'effet d\'inclinaison</string>
-  <string name="parallax_none">Aucun</string>
   <string name="parallax_swipe_power_save">Respecter l\'économiseur de batterie</string>
-  <string name="parallax_swipe_power_save_description">Mettre en pause l\'animation de balayage quand l\'économiseur de batterie est activé</string>
-  <string name="parallax_category_tilt">Effet d\'inclinaison</string>
-  <string name="parallax_tilt">Bouger lors de l\'inclinaison de l\'appareil</string>
-  <string name="parallax_tilt_description">Consomme davantage de batterie</string>
+  <string name="parallax_tilt">Effet d\'inclinaison</string>
   <string name="parallax_refresh_rate">Taux de rafraîchissement du capteur d\'inclinaison</string>
-  <string name="parallax_refresh_rate_description">Un délai trop court peut ralentir les animations de zoom</string>
   <string name="parallax_damping">Amortissement du mouvement</string>
   <string name="parallax_damping_description">Diminuer pour plus de fluidité</string>
   <string name="parallax_threshold">Seuil de mouvement</string>
@@ -120,10 +112,6 @@
   <string name="size_zoom_launcher_description">Peut être indisponible sur certains appareils</string>
   <string name="size_zoom_damping">Atténuation de l\'animation</string>
   <string name="size_zoom_damping_description">Activer et diminuer pour zoomer de manière plus fluide</string>
-  <string name="size_zoom_system">Utiliser l\'effet de zoom fourni par le système</string>
-  <string name="size_zoom_system_description">Peut corriger les saccades de l\'animation de zoom quand l\'effet d\'inclinaison est actif, disponible uniquement sur certains appareils</string>
-  <string name="size_zoom_unlock">Zoom arrière sur l\'écran de verrouillage</string>
-  <string name="size_zoom_unlock_description">Peut être saccadé si l\'effet d\'inclinaison est activé</string>
   <string name="size_zoom_duration">Durée du zoom au déverrouillage</string>
   <string name="size_zoom_duration_description">Diminuer pour une animation plus rapide</string>
 
@@ -158,9 +146,6 @@
   <string name="about_vending_description">Plus d\'applications du même développeur</string>
   <string name="about_github_description">Code source</string>
   <string name="about_translation_description">Aider à traduire Doodle</string>
-  <!-- MESSAGES -->
-
-  <string name="msg_feedback">Une bonne application demande beaucoup de temps et vit des retours de ses utilisateurs.\n\nAvez-vous des souhaits, des commentaires ou des questions ? Contactez-moi !\nSinon, je serais très heureux d\'avoir une bonne critique sur le Play Store.</string>
   <string name="msg_share">Découvrez cette excellente application de fonds d\'écran animés : \nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
   <string name="msg_hide">Masquer l\'icône dans le lanceur d\'applications ?</string>
   <string name="msg_random">Tous les styles sélectionnés seront utilisés</string>

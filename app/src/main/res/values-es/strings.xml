@@ -36,6 +36,10 @@
   <string name="label_ms">%1$sms</string>
   <string name="label_degrees">%1$s grados</string>
 
+  <!-- ACTIONS -->
+
+  <string name="action_cancel">Cancelar </string>
+  <string name="action_select">Seleccionar </string>
   <string name="action_close">Cerrar</string>
   <string name="action_back">Atrás</string>
   <string name="action_open_link">Abrir sitio web externo </string>
@@ -58,6 +62,8 @@
   <string name="action_github">Doodle Android en GitHub</string>
   <string name="action_github_description">Abrir un nuevo problema</string>
   <string name="action_language_select">Seleccionar idioma</string>
+  <string name="action_set_static">Establecer fondo estático </string>
+  <string name="action_change_time">Cambiar el tiempo </string>
   <!-- APPEARANCE -->
 
   <string name="appearance_title">Apariencia</string>
@@ -78,6 +84,7 @@
   <string name="appearance_colors_primary">Elegir color primario</string>
   <string name="appearance_colors_secondary">Elegir color secundario </string>
   <string name="appearance_colors_tertiary">Elegir color terciario</string>
+  <string name="appearance_colors_custom">Seleccionar color personalizado </string>
   <string name="appearance_colors_info">En dispositivos sin soporte de color dinámico (Android 11 o inferior), solo se usa el color primario para calcular el contraste del texto del lanzador y teñir el fondo de la pantalla de aplicaciones recientes.</string>
   <string name="appearance_colors_info_dynamic">En dispositivos con Android 12 o superior y compatibilidad con colores dinámicos, los tres colores seleccionados se utilizan para crear automáticamente un tema de color en todo el sistema.</string>
   <string name="appearance_random">Diseño aleatorio de fondo de pantalla</string>
@@ -85,17 +92,11 @@
 
   <string name="parallax_title">Paralaje</string>
   <string name="parallax_description">Efecto de deslizamiento e inclinación</string>
-  <string name="parallax_touch_wiz">Parece que su lanzador actual es Samsung TouchWiz, que no admite el desplazamiento en segundo plano. Prueba con un lanzador diferente para habilitar el efecto de paralaje si no tienes habilitada la opción del sensor de inclinación.\nPuedes ignorar esta advertencia si configuras otro lanzador como predeterminado.</string>
-  <string name="parallax_intensity">Fuerza de paralaje</string>
-  <string name="parallax_intensity_description">Compensación horizontal del deslizamiento entre páginas e intensidad del efecto de inclinación</string>
-  <string name="parallax_none">Ninguno</string>
+  <string name="parallax_swipe_description">Desplazamiento horizontal al deslizar la página</string>
   <string name="parallax_swipe_power_save">Respetar el modo ahorro de energía</string>
-  <string name="parallax_swipe_power_save_description">Pausar la animación de deslizamiento de página cuando el modo ahorro de energía está activado</string>
-  <string name="parallax_category_tilt">Efecto de inclinación</string>
-  <string name="parallax_tilt">Mover al inclinar el dispositivo</string>
-  <string name="parallax_tilt_description">Consume mas batería</string>
+  <string name="parallax_tilt">Efecto de inclinación</string>
+  <string name="parallax_tilt_warning">Mayor consumo de batería</string>
   <string name="parallax_refresh_rate">Frecuencia de actualización del sensor de inclinación</string>
-  <string name="parallax_refresh_rate_description">Los retrasos demasiado cortos pueden hacer que las animaciones de zoom se retrasen</string>
   <string name="parallax_damping">Suavizado de movimiento</string>
   <string name="parallax_damping_description">Disminuir para una mayor suavidad</string>
   <string name="parallax_threshold">Umbral de movimiento</string>
@@ -120,10 +121,7 @@
   <string name="size_zoom_launcher_description">Podría no estar disponible en algunos dispositivos</string>
   <string name="size_zoom_damping">Suavizado de animación</string>
   <string name="size_zoom_damping_description">Activar y disminuir para obtener un zoom más suave</string>
-  <string name="size_zoom_system">Usar el efecto de zoom proporcionado por el sistema</string>
-  <string name="size_zoom_system_description">Podría arreglar cortes en la animación del zoom cuando el efecto de inclinación está activado, disponible solo en algunos dispositivos</string>
-  <string name="size_zoom_unlock">Alejar en la pantalla de bloqueo</string>
-  <string name="size_zoom_unlock_description">Podría entrecortarse si el efecto de inclinación está activado</string>
+  <string name="size_zoom_unlock_description">Seleccionar dirección </string>
   <string name="size_zoom_duration">Duración del zoom al desbloquear</string>
   <string name="size_zoom_duration_description">Disminuir para una animación más rápida</string>
 
@@ -151,7 +149,7 @@
 
   <string name="about_title">Acerca de</string>
   <string name="about_description">Información del desarrollador y más</string>
-  <string name="about_version">versión</string>
+  <string name="about_version">Versión</string>
   <string name="about_changelog">Notas de versión</string>
   <string name="about_changelog_description">¿Qué hay de nuevo?</string>
   <string name="about_developer">Desarrollador</string>
@@ -161,9 +159,6 @@
   <string name="about_privacy">Política de privacidad</string>
   <string name="about_privacy_description">¿Cómo son procesados sus datos?</string>
 
-  <!-- MESSAGES -->
-
-  <string name="msg_feedback">Una gran aplicación requiere mucho tiempo y vive de los comentarios de sus usuarios.\n\n¿Tienes algún deseo, comentario o pregunta? ¡Contáctame!\nDe lo contrario, estaría muy feliz con una buena reseña en Play Store.</string>
   <string name="msg_share">Echa un vistazo a esta fantástica aplicación de fondos de pantalla animados: \nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
   <string name="msg_hide">¿Ocultar icono en el lanzador?</string>
   <string name="msg_random">Todos los diseños seleccionados serán usados</string>

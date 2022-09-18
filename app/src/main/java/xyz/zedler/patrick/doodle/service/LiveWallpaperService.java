@@ -64,6 +64,7 @@ import xyz.zedler.patrick.doodle.Constants.USER_PRESENCE;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.drawable.SvgDrawable;
 import xyz.zedler.patrick.doodle.util.PrefsUtil;
+import xyz.zedler.patrick.doodle.util.TimerUtil;
 import xyz.zedler.patrick.doodle.wallpaper.BaseWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.BaseWallpaper.WallpaperVariant;
 
@@ -98,7 +99,6 @@ public class LiveWallpaperService extends WallpaperService {
 
     void onRefreshTheme(boolean designMightHaveChanged);
     void onRefreshSettings();
-    void onRefreshDaily();
   }
 
   @Override
@@ -147,11 +147,6 @@ public class LiveWallpaperService extends WallpaperService {
               refreshListener.onRefreshSettings();
             }
             break;
-          case ACTION.NEW_DAILY:
-            if (refreshListener != null) {
-              refreshListener.onRefreshDaily();
-            }
-            break;
         }
       }
     };
@@ -165,7 +160,6 @@ public class LiveWallpaperService extends WallpaperService {
       filter.addAction(ACTION.THEME_AND_DESIGN_CHANGED);
       filter.addAction(ACTION.THEME_CHANGED);
       filter.addAction(ACTION.SETTINGS_CHANGED);
-      filter.addAction(ACTION.NEW_DAILY);
       try {
         registerReceiver(receiver, filter);
         isReceiverRegistered = true;
@@ -274,7 +268,10 @@ public class LiveWallpaperService extends WallpaperService {
     private boolean isNightMode;
     private boolean useDarkText, forceLightText;
     private String randomMode;
-    private boolean isNewDailyPending;
+    private boolean isNewRandomPending;
+    private TimerUtil timerUtil;
+    private String dailyTime;
+    private long randomInterval;
 
     // Parallax
     private boolean isSwipeEnabled, isTiltEnabled;
@@ -365,6 +362,27 @@ public class LiveWallpaperService extends WallpaperService {
       fps = display.getRefreshRate();
       screenRotation = display.getRotation();
 
+      timerUtil = new TimerUtil(() -> {
+        // refresh random
+        if (!randomMode.equals(RANDOM.DAILY) && !randomMode.equals(RANDOM.INTERVAL)) {
+          return;
+        }
+        String userPresence = LiveWallpaperService.this.userPresence;
+        if (Objects.equals(userPresence, USER_PRESENCE.OFF)) {
+          sharedPrefs.edit().remove(PREF.RANDOM_CURRENT).apply();
+          loadThemeAndDesign(true);
+          isNewRandomPending = false;
+          if (isZoomUnlockEnabled && animZoom()) {
+            zoomUnlock = shouldZoomInWhenLocked ? -1 : 1;
+            zoomLauncher = 0; // 1 or 0?
+          }
+          drawFrame(true, null);
+          System.gc();
+        } else {
+          isNewRandomPending = true;
+        }
+      });
+
       // Load this only once on creation, else it would cause a crash caused by OpenGL
       useGpu = sharedPrefs.getBoolean(PREF.GPU, DEF.GPU);
 
@@ -397,6 +415,10 @@ public class LiveWallpaperService extends WallpaperService {
       if (sensorManager != null && isSensorListenerRegistered) {
         sensorManager.unregisterListener(sensorListener);
         isSensorListenerRegistered = false;
+      }
+      if (timerUtil != null) {
+        timerUtil.cancel();
+        timerUtil = null;
       }
     }
 
@@ -517,11 +539,12 @@ public class LiveWallpaperService extends WallpaperService {
     public void onPresenceChange(String presence) {
       switch (presence) {
         case USER_PRESENCE.OFF:
-          if (randomMode.equals(RANDOM.SCREEN_OFF) ||
-              (randomMode.equals(RANDOM.DAILY) && isNewDailyPending)) {
+          if (randomMode.equals(RANDOM.SCREEN_OFF)
+              || (randomMode.equals(RANDOM.DAILY) && isNewRandomPending)
+              || (randomMode.equals(RANDOM.INTERVAL) && isNewRandomPending)) {
             sharedPrefs.edit().remove(PREF.RANDOM_CURRENT).apply();
             loadThemeAndDesign(true);
-            isNewDailyPending = false;
+            isNewRandomPending = false;
           }
           if (isZoomUnlockEnabled && animZoom()) {
             zoomUnlock = shouldZoomInWhenLocked ? -1 : 1;
@@ -565,34 +588,41 @@ public class LiveWallpaperService extends WallpaperService {
       loadSettings();
     }
 
-    @Override
-    public void onRefreshDaily() {
-      if (randomMode.equals(RANDOM.DAILY)) {
-        String presence = LiveWallpaperService.this.userPresence;
-        if (Objects.equals(presence, USER_PRESENCE.OFF)) {
-          sharedPrefs.edit().remove(PREF.RANDOM_CURRENT).apply();
-          loadThemeAndDesign(true);
-          isNewDailyPending = false; // just to make it sure
-          if (isZoomUnlockEnabled && animZoom()) {
-            zoomUnlock = shouldZoomInWhenLocked ? -1 : 1;
-            zoomLauncher = 0; // 1 or 0?
-          }
-          drawFrame(true, null);
-          System.gc();
-        } else {
-          isNewDailyPending = true;
-        }
-      }
-    }
-
     /**
      * Loads all required preferences for the variables of the engine, except theme components.
      */
     private void loadSettings() {
 
       // APPEARANCE
+      boolean dailyTimeChanged = false;
+      String dailyTimeNew = sharedPrefs.getString(PREF.DAILY_TIME, DEF.DAILY_TIME);
+      if (!Objects.equals(dailyTime, dailyTimeNew)) {
+        dailyTime = dailyTimeNew;
+        dailyTimeChanged = true;
+      }
 
-      randomMode = sharedPrefs.getString(PREF.RANDOM, DEF.RANDOM);
+      boolean randomIntervalChanged = false;
+      long randomIntervalNew = sharedPrefs.getLong(PREF.RANDOM_INTERVAL, DEF.RANDOM_INTERVAL);
+      if (!Objects.equals(randomInterval, randomIntervalNew)) {
+        randomInterval = randomIntervalNew;
+        randomIntervalChanged = true;
+      }
+
+      String randomModeNew = sharedPrefs.getString(PREF.RANDOM, DEF.RANDOM);
+      if (!Objects.equals(randomMode, randomModeNew)) {
+        randomMode = randomModeNew;
+        if (randomMode.equals(RANDOM.DAILY)) {
+          timerUtil.scheduleDaily(dailyTime);
+        } else if (randomMode.equals(RANDOM.INTERVAL)) {
+          timerUtil.scheduleInterval(randomInterval);
+        } else {
+          timerUtil.cancel();
+        }
+      } else if (randomMode.equals(RANDOM.DAILY) && dailyTimeChanged) {
+        timerUtil.scheduleDaily(dailyTime);
+      } else if (randomMode.equals(RANDOM.INTERVAL) && randomIntervalChanged) {
+        timerUtil.scheduleInterval(randomInterval);
+      }
 
       // PARALLAX
       isSwipeEnabled = sharedPrefs.getBoolean(PREF.SWIPE, DEF.SWIPE);

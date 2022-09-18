@@ -75,6 +75,7 @@
   <string name="action_language_select">Select language</string>
   <string name="action_set_static">Set static wallpaper</string>
   <string name="action_change_time">Change time</string>
+  <string name="action_change_interval">Change interval</string>
 
   <!-- APPEARANCE -->
 
@@ -109,6 +110,16 @@
   <string name="appearance_random_description">Select the trigger below</string>
   <string name="appearance_random_screen_off">Screen off</string>
   <string name="appearance_random_daily">Daily at %1$s</string>
+  <string name="appearance_random_interval">Select interval</string>
+  <string name="appearance_random_interval_minutes">Every %1$d minutes</string>
+  <plurals name="appearance_random_interval_hours">
+    <item quantity="one">Every hour</item>
+    <item quantity="other">Every %1$d hours</item>
+  </plurals>
+  <plurals name="appearance_random_interval_days">
+    <item quantity="one">Every day</item>
+    <item quantity="other">Every %1$d days</item>
+  </plurals>
 
   <!-- PARALLAX -->
 

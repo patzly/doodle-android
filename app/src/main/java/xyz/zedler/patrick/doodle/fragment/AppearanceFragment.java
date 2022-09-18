@@ -20,6 +20,7 @@
 package xyz.zedler.patrick.doodle.fragment;
 
 import android.animation.ValueAnimator;
+import android.app.AlarmManager;
 import android.app.WallpaperManager;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
@@ -42,11 +43,13 @@ import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
 import com.google.android.material.button.MaterialButtonToggleGroup;
 import com.google.android.material.button.MaterialButtonToggleGroup.OnButtonCheckedListener;
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.color.DynamicColors;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.timepicker.MaterialTimePicker;
 import com.google.android.material.timepicker.TimeFormat;
@@ -60,8 +63,10 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Locale;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 import xyz.zedler.patrick.doodle.Constants;
 import xyz.zedler.patrick.doodle.Constants.DEF;
+import xyz.zedler.patrick.doodle.Constants.EXTRA;
 import xyz.zedler.patrick.doodle.Constants.NIGHT_MODE;
 import xyz.zedler.patrick.doodle.Constants.PREF;
 import xyz.zedler.patrick.doodle.Constants.RANDOM;
@@ -73,7 +78,6 @@ import xyz.zedler.patrick.doodle.behavior.SystemBarBehavior;
 import xyz.zedler.patrick.doodle.databinding.FragmentAppearanceBinding;
 import xyz.zedler.patrick.doodle.drawable.SvgDrawable;
 import xyz.zedler.patrick.doodle.service.LiveWallpaperService;
-import xyz.zedler.patrick.doodle.util.DailyUtil;
 import xyz.zedler.patrick.doodle.util.ResUtil;
 import xyz.zedler.patrick.doodle.util.UiUtil;
 import xyz.zedler.patrick.doodle.util.ViewUtil;
@@ -100,6 +104,8 @@ public class AppearanceFragment extends BaseFragment
 
   private static final String TAG = AppearanceFragment.class.getSimpleName();
 
+  private static final String INTERVAL_PICKER_SHOWING = "interval_picker_showing";
+
   private FragmentAppearanceBinding binding;
   private MainActivity activity;
   private BaseWallpaper currentWallpaper;
@@ -109,8 +115,9 @@ public class AppearanceFragment extends BaseFragment
   private String randomMode;
   private Set<String> randomList = new HashSet<>();
   private final HashMap<String, SelectionCardView> designSelections = new HashMap<>();
-  private DailyUtil dailyUtil;
   private java.text.DateFormat dateFormatPref, dateFormatDisplay;
+  private AlertDialog dialogIntervals;
+  private int selectedIntervalIndex;
 
   @Override
   public View onCreateView(
@@ -140,7 +147,6 @@ public class AppearanceFragment extends BaseFragment
         binding.appBarAppearance, binding.scrollAppearance, true
     );
 
-    dailyUtil = new DailyUtil(activity);
     dateFormatPref = new SimpleDateFormat("HH:mm", Locale.GERMAN);
     dateFormatDisplay = DateFormat.getTimeFormat(activity);
 
@@ -255,6 +261,11 @@ public class AppearanceFragment extends BaseFragment
     switch (randomMode) {
       case RANDOM.DAILY:
         idRandomMode = R.id.button_appearance_random_daily;
+        binding.buttonAppearanceRandomTime.setText(R.string.action_change_time);
+        break;
+      case RANDOM.INTERVAL:
+        idRandomMode = R.id.button_appearance_random_interval;
+        binding.buttonAppearanceRandomTime.setText(R.string.action_change_interval);
         break;
       case RANDOM.SCREEN_OFF:
         idRandomMode = R.id.button_appearance_random_screen_off;
@@ -276,7 +287,14 @@ public class AppearanceFragment extends BaseFragment
       Log.e(TAG, "onViewCreated: " + e);
     }
     binding.buttonAppearanceRandomDaily.setText(getString(R.string.appearance_random_daily, time));
-    binding.buttonAppearanceRandomTime.setEnabled(randomMode.equals(RANDOM.DAILY));
+
+    binding.buttonAppearanceRandomInterval.setText(
+        getRandomPeriodString(getSharedPrefs().getLong(PREF.RANDOM_INTERVAL, DEF.RANDOM_INTERVAL))
+    );
+
+    binding.buttonAppearanceRandomTime.setEnabled(
+        randomMode.equals(RANDOM.DAILY) || randomMode.equals(RANDOM.INTERVAL)
+    );
 
     setUpDesignSelections();
     randomList = getSharedPrefs().getStringSet(PREF.RANDOM_LIST, DEF.RANDOM_LIST);
@@ -319,6 +337,24 @@ public class AppearanceFragment extends BaseFragment
         binding.switchAppearanceDarkText,
         binding.switchAppearanceLightText
     );
+
+    if (savedInstanceState != null) {
+      if (savedInstanceState.getBoolean(INTERVAL_PICKER_SHOWING)) {
+        new Handler(Looper.getMainLooper()).postDelayed(
+            () -> openIntervalPicker(savedInstanceState.getInt(EXTRA.SELECTION_INDEX)), 1
+        );
+      }
+    }
+  }
+
+  @Override
+  public void onSaveInstanceState(@NonNull Bundle outState) {
+    super.onSaveInstanceState(outState);
+    boolean isShowing = dialogIntervals != null && dialogIntervals.isShowing();
+    outState.putBoolean(INTERVAL_PICKER_SHOWING, isShowing);
+    if (isShowing) {
+      outState.putInt(EXTRA.SELECTION_INDEX, selectedIntervalIndex);
+    }
   }
 
   @Override
@@ -333,8 +369,12 @@ public class AppearanceFragment extends BaseFragment
           !binding.switchAppearanceLightText.isChecked()
       );
     } else if (id == R.id.button_appearance_random_time) {
-      openTimePicker();
       performHapticClick();
+      if (randomMode.equals(RANDOM.DAILY)) {
+        openTimePicker();
+      } else if (randomMode.equals(RANDOM.INTERVAL)) {
+        openIntervalPicker(-1);
+      }
     }
   }
 
@@ -389,8 +429,13 @@ public class AppearanceFragment extends BaseFragment
         isWallpaperNightMode = isNewWallpaperNightMode;
       }
     } else if (group.getId() == R.id.toggle_appearance_random) {
+      String randomModeOld = randomMode;
       if (checkedId == R.id.button_appearance_random_daily) {
         randomMode = RANDOM.DAILY;
+        binding.buttonAppearanceRandomTime.setText(R.string.action_change_time);
+      } else if (checkedId == R.id.button_appearance_random_interval) {
+        randomMode = RANDOM.INTERVAL;
+        binding.buttonAppearanceRandomTime.setText(R.string.action_change_interval);
       } else if (checkedId == R.id.button_appearance_random_screen_off) {
         randomMode = RANDOM.SCREEN_OFF;
       } else {
@@ -398,7 +443,6 @@ public class AppearanceFragment extends BaseFragment
       }
       getSharedPrefs().edit().putString(PREF.RANDOM, randomMode).apply();
 
-      dailyUtil.setDailyEnabled(randomMode.equals(RANDOM.DAILY));
       activity.requestSettingsRefresh();
       activity.requestThemeRefresh(true);
 
@@ -409,8 +453,13 @@ public class AppearanceFragment extends BaseFragment
           binding.linearAppearanceVariant,
           binding.linearAppearanceColors
       );
-      binding.buttonAppearanceRandomTime.setEnabled(randomMode.equals(RANDOM.DAILY));
+      binding.buttonAppearanceRandomTime.setEnabled(
+          randomMode.equals(RANDOM.DAILY) || randomMode.equals(RANDOM.INTERVAL)
+      );
       if (!randomMode.equals(RANDOM.OFF)) {
+        if (!randomModeOld.equals(RANDOM.OFF)) {
+          return; // Don't show the warning again that only selected wallpapers are used
+        }
         Snackbar snackbar = activity.getSnackbar(R.string.msg_random, Snackbar.LENGTH_LONG);
         if (randomList.size() < Constants.getAllWallpapers().length) {
           snackbar.setAction(
@@ -831,7 +880,7 @@ public class AppearanceFragment extends BaseFragment
         .setInputMode(MaterialTimePicker.INPUT_MODE_CLOCK)
         .setTheme(R.style.ThemeOverlay_Doodle_TimePicker)
         .build();
-    picker.show(activity.getSupportFragmentManager(), "time");
+    picker.show(activity.getSupportFragmentManager(), picker.toString());
     picker.addOnPositiveButtonClickListener(view -> {
       activity.performHapticClick();
       calendar.setTimeInMillis(System.currentTimeMillis());
@@ -840,7 +889,7 @@ public class AppearanceFragment extends BaseFragment
       calendar.set(Calendar.SECOND, 0);
       String timeNew = dateFormatPref.format(calendar.getTime());
       getSharedPrefs().edit().putString(PREF.DAILY_TIME, timeNew).apply();
-      dailyUtil.scheduleReminder(timeNew);
+      activity.requestSettingsRefresh();
       if (binding != null) {
         binding.buttonAppearanceRandomDaily.setText(
             getString(
@@ -853,6 +902,41 @@ public class AppearanceFragment extends BaseFragment
     picker.addOnNegativeButtonClickListener(view -> activity.performHapticClick());
   }
 
+  private void openIntervalPicker(int selectedIndex) {
+    long selected = getSharedPrefs().getLong(PREF.RANDOM_INTERVAL, DEF.RANDOM_INTERVAL);
+    if (selectedIndex == -1) {
+      selectedIntervalIndex = 0;
+      long[] intervals = getIntervals();
+      for (int i = 0; i < getIntervals().length; i++) {
+        if (intervals[i] == selected) {
+          selectedIntervalIndex = i;
+          break;
+        }
+      }
+    } else {
+      selectedIntervalIndex = selectedIndex;
+    }
+
+    dialogIntervals = new MaterialAlertDialogBuilder(activity)
+        .setTitle(R.string.appearance_random_interval)
+        .setPositiveButton(R.string.action_select, (dialog, which) -> {
+          activity.performHapticClick();
+          long interval = getIntervals()[selectedIntervalIndex];
+          getSharedPrefs().edit().putLong(PREF.RANDOM_INTERVAL, interval).apply();
+          activity.requestSettingsRefresh();
+          if (binding != null) {
+            binding.buttonAppearanceRandomInterval.setText(getRandomPeriodString(interval));
+            ViewUtil.startIcon(binding.imageAppearanceRandom);
+          }
+        }).setNegativeButton(R.string.action_cancel, (dialog, which) -> performHapticClick())
+        .setOnCancelListener(dialog -> performHapticClick())
+        .setSingleChoiceItems(getIntervalItems(), selectedIntervalIndex, (dialog, which) -> {
+          performHapticClick();
+          selectedIntervalIndex = which;
+        }).create();
+    dialogIntervals.show();
+  }
+
   private boolean isWallpaperNightMode() {
     int nightMode = getSharedPrefs().getInt(PREF.NIGHT_MODE, DEF.NIGHT_MODE);
     if (nightMode == NIGHT_MODE.ON) {
@@ -860,5 +944,43 @@ public class AppearanceFragment extends BaseFragment
     }
     int flags = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
     return nightMode == NIGHT_MODE.AUTO && flags == Configuration.UI_MODE_NIGHT_YES;
+  }
+
+  private String getRandomPeriodString(long period) {
+    if (period < AlarmManager.INTERVAL_HOUR) {
+      int minutes = (int) TimeUnit.MILLISECONDS.toMinutes(period);
+      return getString(R.string.appearance_random_interval_minutes, minutes);
+    } else if (period < AlarmManager.INTERVAL_DAY) {
+      int hours = (int) TimeUnit.MILLISECONDS.toHours(period);
+      return getResources().getQuantityString(
+          R.plurals.appearance_random_interval_hours, hours, hours
+      );
+    } else {
+      int days = (int) TimeUnit.MILLISECONDS.toDays(period);
+      return getResources().getQuantityString(
+          R.plurals.appearance_random_interval_days, days, days
+      );
+    }
+  }
+
+  private String[] getIntervalItems() {
+    String[] items = new String[getIntervals().length];
+    for (int i = 0; i < items.length; i++) {
+      items[i] = getRandomPeriodString(getIntervals()[i]);
+    }
+    return items;
+  }
+  
+  private long[] getIntervals() {
+    return new long[] {
+        AlarmManager.INTERVAL_FIFTEEN_MINUTES,
+        AlarmManager.INTERVAL_HALF_HOUR,
+        AlarmManager.INTERVAL_HOUR,
+        AlarmManager.INTERVAL_HOUR * 3,
+        AlarmManager.INTERVAL_HOUR * 6,
+        AlarmManager.INTERVAL_HALF_DAY,
+        AlarmManager.INTERVAL_DAY,
+        AlarmManager.INTERVAL_DAY * 3
+    };
   }
 }

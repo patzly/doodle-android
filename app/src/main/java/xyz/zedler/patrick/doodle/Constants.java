@@ -19,6 +19,7 @@
 
 package xyz.zedler.patrick.doodle;
 
+import android.app.AlarmManager;
 import android.util.Log;
 import androidx.appcompat.app.AppCompatDelegate;
 import java.util.Arrays;
@@ -73,6 +74,7 @@ public final class Constants {
     public static final String RANDOM_LIST = "random_list";
     public static final String RANDOM_CURRENT = "random_current_wallpaper";
     public static final String DAILY_TIME = "daily_time";
+    public static final String RANDOM_INTERVAL = "random_interval";
 
     // Parallax
 
@@ -122,6 +124,7 @@ public final class Constants {
         Arrays.asList(Constants.getAllWallpapers())
     );
     public static final String DAILY_TIME = "3:00";
+    public static final long RANDOM_INTERVAL = AlarmManager.INTERVAL_HOUR;
 
     public static final boolean SWIPE = true;
     public static final int SWIPE_INTENSITY = 2;
@@ -268,6 +271,7 @@ public final class Constants {
 
     public static final String OFF = "off";
     public static final String DAILY = "daily";
+    public static final String INTERVAL = "interval";
     public static final String SCREEN_OFF = "screen_off";
   }
 
@@ -298,7 +302,6 @@ public final class Constants {
     public static final String THEME_AND_DESIGN_CHANGED = "action_theme_and_design_changed";
     public static final String THEME_CHANGED = "action_theme_changed";
     public static final String SETTINGS_CHANGED = "action_settings_changed";
-    public static final String NEW_DAILY = "action_new_daily";
   }
 
   public static final class EXTRA {
@@ -307,7 +310,7 @@ public final class Constants {
     public static final String INSTANCE_STATE = "instance_state";
     public static final String SHOW_FORCE_STOP_REQUEST = "show_force_stop_request";
     public static final String SCROLL_POSITION = "scroll_position";
-    public static final String PICKER_SHOWING = "is_picker_showing";
+    public static final String SELECTION_INDEX = "selection_index";
     public static final String COLOR = "color";
   }
 

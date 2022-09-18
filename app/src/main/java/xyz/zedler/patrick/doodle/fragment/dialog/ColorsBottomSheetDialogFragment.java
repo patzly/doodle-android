@@ -51,10 +51,12 @@ public class ColorsBottomSheetDialogFragment extends BaseBottomSheetDialogFragme
 
   private static final String TAG = "ColorsBottomSheet";
 
+  private static final String PICKER_SHOWING = "is_picker_showing";
+
   private FragmentBottomsheetColorsBinding binding;
   private MainActivity activity;
   private ColorsBottomSheetDialogFragmentArgs args;
-  private AlertDialog dialog;
+  private AlertDialog dialogCustomColor;
   private ColorPickerView colorPicker;
   private int colorCustom;
 
@@ -145,9 +147,9 @@ public class ColorsBottomSheetDialogFragment extends BaseBottomSheetDialogFragme
   @Override
   public void onDestroy() {
     super.onDestroy();
-    if (dialog != null) {
+    if (dialogCustomColor != null) {
       // Else it throws an leak exception because the context is somehow from the activity
-      dialog.dismiss();
+      dialogCustomColor.dismiss();
     }
     binding = null;
   }
@@ -155,7 +157,7 @@ public class ColorsBottomSheetDialogFragment extends BaseBottomSheetDialogFragme
   @Override
   public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
     if (savedInstanceState != null) {
-      if (savedInstanceState.getBoolean(EXTRA.PICKER_SHOWING)) {
+      if (savedInstanceState.getBoolean(PICKER_SHOWING)) {
         int colorNew = savedInstanceState.getInt(EXTRA.COLOR);
         new Handler(Looper.getMainLooper()).postDelayed(
             () -> openColorPickerDialog(true, colorNew), 1
@@ -167,8 +169,8 @@ public class ColorsBottomSheetDialogFragment extends BaseBottomSheetDialogFragme
   @Override
   public void onSaveInstanceState(@NonNull Bundle outState) {
     super.onSaveInstanceState(outState);
-    boolean isShowing = dialog != null && dialog.isShowing();
-    outState.putBoolean(EXTRA.PICKER_SHOWING, isShowing);
+    boolean isShowing = dialogCustomColor != null && dialogCustomColor.isShowing();
+    outState.putBoolean(PICKER_SHOWING, isShowing);
     if (isShowing) {
       outState.putInt(EXTRA.COLOR, colorPicker.getColor());
     }
@@ -181,7 +183,7 @@ public class ColorsBottomSheetDialogFragment extends BaseBottomSheetDialogFragme
     } else {
       colorPicker.setColor(colorCustom);
     }
-    dialog = new MaterialAlertDialogBuilder(activity)
+    dialogCustomColor = new MaterialAlertDialogBuilder(activity)
         .setTitle(R.string.appearance_colors_custom)
         .setPositiveButton(R.string.action_select, (dialog, which) -> {
           if (binding == null) {
@@ -209,7 +211,7 @@ public class ColorsBottomSheetDialogFragment extends BaseBottomSheetDialogFragme
         .setOnCancelListener(dialog -> performHapticClick())
         .setView(colorPicker)
         .create();
-    dialog.show();
+    dialogCustomColor.show();
   }
 
   @Override

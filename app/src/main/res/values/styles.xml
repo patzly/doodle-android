@@ -32,6 +32,7 @@
     <item name="android:backgroundDimAmount">0.7</item>
     <item name="buttonBarPositiveButtonStyle">@style/Widget.Doodle.Button.TextButton.Dialog</item>
     <item name="buttonBarNegativeButtonStyle">@style/Widget.Doodle.Button.TextButton.Dialog</item>
+    <item name="android:scrollbarThumbVertical">@drawable/shape_scrollbar_rounded</item>
   </style>
 
   <!-- Toolbar -->
@@ -420,8 +421,6 @@
     name="Widget.Doodle.TextView.Paragraph.BodyMedium"
     parent="Widget.Doodle.TextView.Paragraph">
     <item name="android:textAppearance">?attr/textAppearanceBodyMedium</item>
-    <item name="lineHeight">24sp</item>
-    <item name="android:lineHeight" tools:targetApi="p">24sp</item>
   </style>
 
   <!-- Base style -->

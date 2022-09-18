@@ -77,15 +77,8 @@
 
   <string name="parallax_title">Parallax</string>
   <string name="parallax_description">Swipe at tilt effect</string>
-  <string name="parallax_touch_wiz">Mukhang ang iyong kasalukuyang launcher ay Samsung TouchWiz, na hindi sinusuportahan ang pag-scroll ng background. Mangyaring sumubok ng ibang launcher upang paganahin ang parallax effect kung hindi mo pinagana ang opsyon ng tilt sensor. Maaari mong balewalain ang babalang ito kung nagtakda ka na ng isa pang launcher bilang default.</string>
-  <string name="parallax_intensity">Lakas ng parallax</string>
-  <string name="parallax_intensity_description">Pahalang na offset sa page swipe at intensidad ng tilt effect </string>
-  <string name="parallax_none">Wala</string>
-  <string name="parallax_category_tilt">Epekto ng pag-tilt</string>
-  <string name="parallax_tilt">Gumalaw kapag itini-tilt ang device</string>
-  <string name="parallax_tilt_description">Kumukunsumo ng mas maraming baterya</string>
+  <string name="parallax_tilt">Epekto ng pag-tilt</string>
   <string name="parallax_refresh_rate">Refresh rate ng tilt sensor</string>
-  <string name="parallax_refresh_rate_description">Ang masyadong maikling delays ay maaaring magdulot ng lag sa animasyon ng zoom</string>
   <string name="parallax_damping">Damping ng motion</string>
   <string name="parallax_damping_description">Bawasan para sa mas maraming smoothness</string>
   <string name="parallax_threshold">Threshold ng paggalaw</string>
@@ -107,10 +100,6 @@
   <string name="size_zoom_launcher_description">Maaaring hindi available sa ilang mga device</string>
   <string name="size_zoom_damping">Damping ng animasyon</string>
   <string name="size_zoom_damping_description">I-activate at bawasan para sa mas smooth na pag-zoom</string>
-  <string name="size_zoom_system">Gamitin ang system-provided na epekto ng zoom</string>
-  <string name="size_zoom_system_description">Maaaring ayusin ang jerky na animasyon ng zoom kapag ang tilt effect ay naka-on, available lamang sa ilang mga devices</string>
-  <string name="size_zoom_unlock">Mag-zoom out sa lockscreen</string>
-  <string name="size_zoom_unlock_description">Maaaring maging jerky kung ang epekto ng tilt ay naka-on</string>
   <string name="size_zoom_duration">I-unlock ang tagal ng zoom</string>
   <string name="size_zoom_duration_description">Bawasan para sa mas mabilis na animasyon</string>
 
@@ -145,9 +134,6 @@
   <string name="about_vending_description">Higit pang mga app ng nag-develop</string>
   <string name="about_github_description">Source code</string>
   <string name="about_translation_description">Tulungang i-translate ang Doodle</string>
-  <!-- MESSAGES -->
-
-  <string name="msg_feedback">Ang isang mahusay na app ay nangangailangan ng maraming oras at buhay mula sa feedback ng mga gumagamit nito. Mayroon ka bang anumang mga nais, komento o tanong? Makipag-ugnayan sa akin! Kung hindi, matutuwa ako tungkol sa isang magandang pagsusuri sa Play Store.</string>
   <string name="msg_share">Tingnan ang cool na live wallpaper app na ito: \nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
   <string name="msg_hide">Itago ang icon sa launcher?</string>
   <string name="msg_random">Gagamitin ang lahat ng napiling disenyo</string>

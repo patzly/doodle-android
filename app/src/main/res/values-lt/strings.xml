@@ -64,7 +64,6 @@
   <string name="action_language_select">Pasirink kalbą </string>
   <string name="action_set_static">Nustatyti statinį paveikslą</string>
   <string name="action_change_time">Keisti laiką</string>
-
   <!-- APPEARANCE -->
 
   <string name="appearance_title">Pritaikymas</string>
@@ -98,22 +97,13 @@
   <string name="appearance_random_description">Pasirinkite trigerį apačioje </string>
   <string name="appearance_random_screen_off">Ekranas išjungtas</string>
   <string name="appearance_random_daily">Kasdien %1$s</string>
-
   <!-- PARALLAX -->
 
   <string name="parallax_title">Paralaksas</string>
   <string name="parallax_description">Braukti &amp; pakreipimų efektas</string>
-  <string name="parallax_touch_wiz">Turbūt tavo namų programa yra Samsung TouchWiz, kuris nepalaiko fono braukimo. Naudok kita namų programa kad veiktų paralakso efektai jei nesi įsijungęs pasvirimo sensoriaus. Tu gali ignoruoti šį pranešimą jei esi nusistatęs kitą namų programa kaip numatytą.</string>
-  <string name="parallax_intensity">Paralakso stiprumas</string>
-  <string name="parallax_intensity_description">Puslapio braukimo ir pakreipimo intensyvumo horizontalus poslinkis</string>
-  <string name="parallax_none">Joks</string>
   <string name="parallax_swipe_power_save">Gerbti baterijos taupymą</string>
-  <string name="parallax_swipe_power_save_description">Sustabdyti puslapio paslinkimą kai baterijos taupymas įjungtas</string>
-  <string name="parallax_category_tilt">Pakreipimo efektas</string>
-  <string name="parallax_tilt">Judėti kai pakreiptas įrenginys </string>
-  <string name="parallax_tilt_description">Naudoti daugiau baterijos</string>
+  <string name="parallax_tilt">Pakreipimo efektas</string>
   <string name="parallax_refresh_rate">Pakreipimo sensoriaus atnaujinimo dažnis</string>
-  <string name="parallax_refresh_rate_description">Per maži vėlavimai gali strigti priartinimo efektus  </string>
   <string name="parallax_damping">Judėsio slopinimas</string>
   <string name="parallax_damping_description">Sumažinti kad būtų daugiau švelnu</string>
   <string name="parallax_threshold">Judėjimo slenkstis</string>
@@ -138,10 +128,6 @@
   <string name="size_zoom_launcher_description">Galimai nepasiekiama kai kuriems įrenginiams</string>
   <string name="size_zoom_damping">Animacijos slopinimas</string>
   <string name="size_zoom_damping_description">Aktyvuoti ir slopinti vien del švelnaus priartinimo</string>
-  <string name="size_zoom_system">Naudoti paskirta sistemos priartinimo efektą</string>
-  <string name="size_zoom_system_description">Gali sutvarkyti trūkčiojanti priartinimo animacija kai poslinkio efektas yra įjungtas, pasiekiama kai kuriose įrenginiuose</string>
-  <string name="size_zoom_unlock">Priartinti toliau užrakinimo ekrane</string>
-  <string name="size_zoom_unlock_description">Gali trūkčioti kai poslinkio efektas yra įjungtas</string>
   <string name="size_zoom_duration">Atrakinimo ekrano trukmė</string>
   <string name="size_zoom_duration_description">Sumažinti dėl greitos animacijos</string>
 
@@ -183,9 +169,6 @@
   <string name="about_privacy">Privatumo politika</string>
   <string name="about_privacy_description">Kaip tavo duomenys yra tvarkomi? </string>
 
-  <!-- MESSAGES -->
-
-  <string name="msg_feedback">Gerai programai reikia daug laiko ir gyvybes iš apžvalgų nuo pačių naudotojų.; Ar turi norų, komentarų ar klausimų? Parašyk man! Arba, Man būtų malonų jei parašytum gražų aprašymą „Play Store“ .</string>
   <string name="msg_share">Peržiūrėk šį nuostabų judančio paveikslo programa: </string>
   <string name="msg_hide">Paslėpti piktograma namų programoje?</string>
   <string name="msg_random">Visi pasirinkti dizainai bus naudojami</string>

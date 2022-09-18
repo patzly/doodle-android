@@ -79,15 +79,8 @@
 
   <string name="parallax_title">Paralaks</string>
   <string name="parallax_description">Geser &amp; Efek Tilt</string>
-  <string name="parallax_touch_wiz">Tampaknya peluncur Anda saat ini adalah Samsung TouchWiz, yang tidak mendukung pengguliran latar belakang. Silakan coba peluncur yang berbeda untuk mengaktifkan efek paralaks jika Anda tidak memiliki opsi sensor tilt diaktifkan.\nAnda dapat mengabaikan peringatan ini jika Anda mengatur peluncur lain sebagai default.</string>
-  <string name="parallax_intensity">Intensitas Paralaks</string>
-  <string name="parallax_intensity_description">Offset horizontal pada halaman geser dan intensitas efek tilt</string>
-  <string name="parallax_none">Tidak ada</string>
-  <string name="parallax_category_tilt">Efek Tilt</string>
-  <string name="parallax_tilt">Bergerak saat memiringkan perangkat</string>
-  <string name="parallax_tilt_description">Mengonsumsi lebih banyak baterai</string>
+  <string name="parallax_tilt">Efek Tilt</string>
   <string name="parallax_refresh_rate">Tingkat segarkan sensor kemiringan</string>
-  <string name="parallax_refresh_rate_description">Terletak terlalu pendek dapat membuat animasi zoom lag</string>
   <string name="parallax_damping">Peredaman gerak</string>
   <string name="parallax_damping_description">Turunkan untuk lebih mulus</string>
   <string name="parallax_threshold">Ambang batas gerakan</string>
@@ -107,9 +100,6 @@
   <string name="size_zoom_rotation_description">Rotasi maksimum dalam degree</string>
   <string name="size_zoom_launcher">Perkecil saat membuka pengaturan cepat atau laci aplikasi</string>
   <string name="size_zoom_launcher_description">Mungkin tidak tersedia di beberapa perangkat</string>
-  <string name="size_zoom_system">Gunakan efek zoom yang disediakan sistem</string>
-  <string name="size_zoom_unlock">Perkecil di lockscreen</string>
-  <string name="size_zoom_unlock_description">Mungkin jerky jika efek tilt dihidupkan</string>
   <string name="size_zoom_duration">Durasi zoom buka-kunci</string>
   <string name="size_zoom_duration_description">Kurangi untuk animasi lebih cepat</string>
 
@@ -144,9 +134,6 @@
   <string name="about_vending_description">Lebih banyak aplikasi dari pengembang</string>
   <string name="about_github_description">Kode sumber</string>
   <string name="about_translation_description">Bantu terjemahkan Doodle</string>
-  <!-- MESSAGES -->
-
-  <string name="msg_feedback">Aplikasi hebat membutuhkan banyak waktu dan hidup dari umpan balik dari penggunanya.\n\nApakah Anda memiliki keinginan, komentar atau pertanyaan? Hubungi saya!\nKalau tidak, saya akan sangat senang tentang ulasan yang bagus di Play Store.</string>
   <string name="msg_share">Lihat aplikasi wallpaper hidup keren ini: \nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
   <string name="msg_hide">Sembunyikan ikon di peluncur?</string>
   <string name="msg_reset">Atur-ulang semua setelan?</string>

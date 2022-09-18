@@ -85,17 +85,9 @@
 
   <string name="parallax_title">المنظر</string>
   <string name="parallax_description">تأثير السحب و تأثير الأماله</string>
-  <string name="parallax_touch_wiz">يبدو أن المشغل الحالي لديك هو Samsung TouchWiz ، والذي لا يدعم التمرير في الخلفية.  الرجاء تجربة مشغل آخر لتمكين تأثير المنظر إذا لم يكن لديك خيار مستشعر الإمالة ممكّنًا. او يمكنك تجاهل هذا التحذير إذا قمت بتعيين مشغل آخر كإعداد افتراضي.</string>
-  <string name="parallax_intensity">قوة المنظر</string>
-  <string name="parallax_intensity_description">إزاحة أفقية عند تمرير الصفحة وشدة تأثير الإمالة</string>
-  <string name="parallax_none">لا أحد</string>
   <string name="parallax_swipe_power_save">احترام موفر البطارية</string>
-  <string name="parallax_swipe_power_save_description">إيقاف الرسوم المتحركة لسحب الصفحة مؤقتًا عند تمكين توفير شحن البطارية</string>
-  <string name="parallax_category_tilt">تأثير الميل</string>
-  <string name="parallax_tilt">تحرك عند إمالة الجهاز</string>
-  <string name="parallax_tilt_description">يستهلك المزيد من البطارية</string>
+  <string name="parallax_tilt">تأثير الميل</string>
   <string name="parallax_refresh_rate">معدل تحديث مستشعر الاماله</string>
-  <string name="parallax_refresh_rate_description">يمكن أن تؤدي التأخيرات القصيرة جدًا إلى تأخر حركات التكبير و التصغير</string>
   <string name="parallax_damping">التخميد بل الحركه</string>
   <string name="parallax_damping_description">تقليل لمزيد من النعومة</string>
   <string name="parallax_threshold">معالجه الصور او قيمه العتبه</string>
@@ -120,10 +112,6 @@
   <string name="size_zoom_launcher_description">قد تكون غير متوفرة على بعض الأجهزة</string>
   <string name="size_zoom_damping">الرسوم المتحركة للتخميد</string>
   <string name="size_zoom_damping_description">قم بالتفعيل والتقليل من أجل تكبير أكثر سلاسة</string>
-  <string name="size_zoom_system">استخدم تأثير التكبير الذي يوفره النظام</string>
-  <string name="size_zoom_system_description">قد يتم إصلاح حركة التكبير و التصغير المتقطعة عند تشغيل تأثير الإمالة ، وهو متاح فقط في بعض الأجهزة</string>
-  <string name="size_zoom_unlock">التصغير على شاشة القفل</string>
-  <string name="size_zoom_unlock_description">قد يكون متشنجًا إذا تم تشغيل تأثير الإمالة</string>
   <string name="size_zoom_duration">فتح مدة التكبير</string>
   <string name="size_zoom_duration_description">قلل لحركه اسرع</string>
 
@@ -161,9 +149,6 @@
   <string name="about_privacy">سياسة الخصوصية</string>
   <string name="about_privacy_description">كيف تتم معالجة بياناتي؟</string>
 
-  <!-- MESSAGES -->
-
-  <string name="msg_feedback">يتطلب التطبيق الرائع الكثير من الوقت والحيوية من تعليقات المستخدمين هل لديك أي رغبات أو تعليقات أو أسئلة؟  اتصل بي!  سأكون سعيدًا جدًا بمراجعة لطيفة في متجر Play.</string>
   <string name="msg_share">جرب هذا التطبيق الرائع nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
   <string name="msg_hide">إخفاء الرمز في المشغل</string>
   <string name="msg_random">سيتم استخدام جميع التصاميم المختارة</string>

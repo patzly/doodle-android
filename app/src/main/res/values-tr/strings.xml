@@ -85,17 +85,9 @@
 
   <string name="parallax_title">Paralaks</string>
   <string name="parallax_description">Kaydırma ve eğme efekti</string>
-  <string name="parallax_touch_wiz">Kullandığınız başlatıcı Samsung TouchWiz olarak görünüyor. TouchWiz arkaplan kaydırma özelliğini desteklemez. Eğer eğim sensörü seçeneği kullanılabilir değilse, paralaks efektini tekrardan aktif hale getirmek için lütfen farklı bir başlatıcı deneyin.\nEğer farklı bir başlatıcıyı varsayılan olarak kullanıyorsanız bu uyarıyı görmezden gelebilirsiniz.</string>
-  <string name="parallax_intensity">Paralaks gücü</string>
-  <string name="parallax_intensity_description">Sayfa kaydırmada yatay uzaklık ve eğim efekti yoğunluğu </string>
-  <string name="parallax_none">Hiçbiri</string>
   <string name="parallax_swipe_power_save">Güç tasarruf modunu önceliğe al</string>
-  <string name="parallax_swipe_power_save_description">Güç tasarruf modu etkinken sayfa kaydırma animasyonunu duraklat</string>
-  <string name="parallax_category_tilt">Eğim efekti</string>
-  <string name="parallax_tilt">Cihazı eğdiğinde hareket eder</string>
-  <string name="parallax_tilt_description">Daha fazla pil harcar</string>
+  <string name="parallax_tilt">Eğim efekti</string>
   <string name="parallax_refresh_rate">Eğim sensörü yenileme hızı</string>
-  <string name="parallax_refresh_rate_description">Çok kısa gecikmeler yakınlaştırma animasyonlarını duraksamalı gösterebilir</string>
   <string name="parallax_damping">Hareket zayıflatma</string>
   <string name="parallax_damping_description">Daha fazla pürüzsüzlük için azaltın</string>
   <string name="parallax_threshold">Hareket sınırı</string>
@@ -120,10 +112,6 @@
   <string name="size_zoom_launcher_description">Bazı cihazlarda mevcut olmayabilir</string>
   <string name="size_zoom_damping">Animasyon yumuşatma</string>
   <string name="size_zoom_damping_description">Daha yumuşak yakınlaştırma efekti için aktif edip azaltın</string>
-  <string name="size_zoom_system">Sistem tarafından sağlanan yakınlaştırma efektini kullan</string>
-  <string name="size_zoom_system_description">Eğim efekti etkinken sarsıntılı yakınlaştırma efektini düzeltebilir, sadece bazı cihazlarda kullanılabilir</string>
-  <string name="size_zoom_unlock">Kilit ekranında uzaklaş</string>
-  <string name="size_zoom_unlock_description">Eğim efekti açıldığında sarsıntılı sonuç verebilir</string>
   <string name="size_zoom_duration">Yakınlaştırma süresinin kilidini aç </string>
   <string name="size_zoom_duration_description">Daha hızlı animasyonlar için azaltın </string>
 
@@ -161,9 +149,6 @@
   <string name="about_privacy">Gizlilik politikası </string>
   <string name="about_privacy_description">Verileriniz nasıl işleniyor?</string>
 
-  <!-- MESSAGES -->
-
-  <string name="msg_feedback">Başarılı bir uygulama çok zaman gerektirir ve kullanıcılarının geri bildirimlerine dayanır.\n\nHerhangi bir dileğiniz, yorumunuz ya da sorunuz var mı? Benimle iletişime geçin!\nAksi takdirde Play Store\'da güzel bir inceleme için çok mutlu olurdum. </string>
   <string name="msg_share">Bu harika canlı duvar kağıdı uygulamasına göz atın:\nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
   <string name="msg_hide">Başlatıcıdaki simge gizlensin mi?</string>
   <string name="msg_random">Seçili tüm tasarımlar kullanılacak</string>

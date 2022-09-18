@@ -85,17 +85,9 @@
 
   <string name="parallax_title">パララックス（視差効果）</string>
   <string name="parallax_description">スワイプやチルト（傾き）に反応します</string>
-  <string name="parallax_touch_wiz">Samsung の TouchWiz をデフォルトのホームアプリとしてお使いでしょうか。TouchWiz は背景のスクロールに対応していないため、パララックスが機能しません。この機能を使うには別のランチャーを導入し、チルトセンサーが無効になっている場合は有効に切り替えてみてください_n違うランチャーをお使いであれば、この説明は無視してかまいません</string>
-  <string name="parallax_intensity">パララックス効果の大きさ</string>
-  <string name="parallax_intensity_description">ページのスワイプやチルトの強さに対する水平方向へのオフセット量</string>
-  <string name="parallax_none">なし</string>
   <string name="parallax_swipe_power_save">バッテリーセーバーを優先する</string>
-  <string name="parallax_swipe_power_save_description">バッテリーセーバー発動時にスワイプに対するアニメーションを停止します</string>
-  <string name="parallax_category_tilt">チルトイフェクト</string>
-  <string name="parallax_tilt">デバイスを傾けた時に図形を動かす</string>
-  <string name="parallax_tilt_description">バッテリー消費が増えます</string>
+  <string name="parallax_tilt">チルトイフェクト</string>
   <string name="parallax_refresh_rate">チルトセンサーをリフレッシュする間隔</string>
-  <string name="parallax_refresh_rate_description">間隔を短くしすぎるとズームのアニメーションのラグが気になるかもしれません</string>
   <string name="parallax_damping">モーションの減衰量</string>
   <string name="parallax_damping_description">値が小さいほどモーションが滑らかになります</string>
   <string name="parallax_threshold">動作の閾値</string>
@@ -120,10 +112,6 @@
   <string name="size_zoom_launcher_description">デバイスによっては機能しないかもしれません</string>
   <string name="size_zoom_damping">アニメーションの減衰量</string>
   <string name="size_zoom_damping_description">ズーム動作をもっと滑らかにしたい場合は、この設定を有効にして値を小さくしてください</string>
-  <string name="size_zoom_system">システム内蔵のズーム効果を利用する</string>
-  <string name="size_zoom_system_description">チルト効果を有効にするとズームアニメーションがカクつく場合にそれを改善できるかもしれません。ただし、利用できるデバイスは限られています</string>
-  <string name="size_zoom_unlock">ロック画面でズームアウトする</string>
-  <string name="size_zoom_unlock_description">チルト効果を有効にするとアニメーションがカクつくかもしれません</string>
   <string name="size_zoom_duration">ロック解除時のズーム時間の長さ</string>
   <string name="size_zoom_duration_description">値を小さくすると早いアニメーションになります</string>
 
@@ -161,9 +149,6 @@
   <string name="about_privacy">プライバシーポリシー</string>
   <string name="about_privacy_description">あなたのデータの取り扱いかた</string>
 
-  <!-- MESSAGES -->
-
-  <string name="msg_feedback">優れたアプリにはたくさんの時間とユーザーからのフィードバックが与えてくれるたくさんの活力が必要です\n\nこのアプリに関して要望や感想、質問などがあればご連絡ください\nPlay Store に良いレビューをいただければそれも大変うれしいです</string>
   <string name="msg_share">このよさげなライブ壁紙アプリを見てみる:\nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
   <string name="msg_hide">ホームアプリからアイコンを隠します。よろしいですか？</string>
   <string name="msg_random">選択されたすべてのデザインを使用します</string>

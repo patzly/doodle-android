@@ -64,6 +64,8 @@
   <string name="action_language_select">选择语言</string>
   <string name="action_set_static">设置静态壁纸</string>
   <string name="action_change_time">更改时间</string>
+  <string name="action_change_interval">更改间隔</string>
+
   <!-- APPEARANCE -->
 
   <string name="appearance_title">外观</string>
@@ -97,6 +99,15 @@
   <string name="appearance_random_description">选择下方触发器</string>
   <string name="appearance_random_screen_off">关闭屏幕</string>
   <string name="appearance_random_daily">每天的 %1$s</string>
+  <string name="appearance_random_interval">选择间隔</string>
+  <string name="appearance_random_interval_minutes">每 %1$d 分钟</string>
+  <plurals name="appearance_random_interval_hours">
+    <item quantity="other">每 %1$d 小时</item>
+  </plurals>
+  <plurals name="appearance_random_interval_days">
+    <item quantity="other">每 %1$d 天</item>
+  </plurals>
+
   <!-- PARALLAX -->
 
   <string name="parallax_title">视差</string>

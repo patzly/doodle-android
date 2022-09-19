@@ -2,6 +2,7 @@
 
 - New: zoom-in effect for lockscreen instead of zoom-out (can be switched in size section)
 - New: separate swipe and tilt effect intensity controls
+- New: interval selection for random wallpaper design option
 - Improved: Android 11 system zoom option removed as the integrated zoom effect is no longer jerky when tilt effect is enabled
 - Improved: workaround for Samsung's implementation of dynamic colors
 - Improved: 2-ring support for 24H clock in daily random time selection
@@ -9,6 +10,7 @@
 - Improved: app language selection
 - Improved: unified logo experience
 - Fixed: jerky zoom animation when tilt effect was turned on (finally!)
+- Fixed: occasional glitch during zoom animation after unlocking
 
 ## 5.5.1
 

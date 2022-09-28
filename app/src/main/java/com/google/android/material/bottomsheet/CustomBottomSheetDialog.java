@@ -390,9 +390,7 @@ public class CustomBottomSheetDialog extends AppCompatDialog {
         backgroundTint = ViewCompat.getBackgroundTintList(bottomSheet);
       }
 
-      isFullWidth = behavior.getMaxWidth() >= UiUtil.getDisplayWidth(
-          bottomSheet.getContext()
-      );
+      isFullWidth = behavior.getMaxWidth() >= UiUtil.getDisplayWidth(bottomSheet.getContext());
 
       if (backgroundTint != null) {
         // First check for a tint

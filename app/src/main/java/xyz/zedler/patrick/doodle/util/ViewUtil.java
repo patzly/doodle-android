@@ -22,7 +22,6 @@ package xyz.zedler.patrick.doodle.util;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.res.ColorStateList;
-import android.content.res.Resources;
 import android.graphics.drawable.Animatable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.LayerDrawable;
@@ -53,7 +52,6 @@ import com.google.android.material.elevation.SurfaceColors;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.LinkedList;
-import xyz.zedler.patrick.doodle.R;
 
 public class ViewUtil {
 
@@ -240,10 +238,7 @@ public class ViewUtil {
   // Toolbar
 
   public static void centerToolbarTitleOnLargeScreens(MaterialToolbar toolbar) {
-    Resources resources = toolbar.getContext().getResources();
-    int maxWidth = resources.getDimensionPixelSize(R.dimen.max_content_width);
-    boolean isFullWidth = maxWidth >= UiUtil.getDisplayWidth(toolbar.getContext());
-    toolbar.setTitleCentered(!isFullWidth);
+    toolbar.setTitleCentered(!UiUtil.isFullWidth(toolbar.getContext()));
   }
 
   // Ripple background for surface list items

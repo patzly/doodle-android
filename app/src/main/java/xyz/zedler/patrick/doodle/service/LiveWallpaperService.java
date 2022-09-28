@@ -64,7 +64,7 @@ import xyz.zedler.patrick.doodle.Constants.USER_PRESENCE;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.drawable.SvgDrawable;
 import xyz.zedler.patrick.doodle.util.PrefsUtil;
-import xyz.zedler.patrick.doodle.util.TimerUtil;
+import xyz.zedler.patrick.doodle.util.RandomUtil;
 import xyz.zedler.patrick.doodle.wallpaper.BaseWallpaper;
 import xyz.zedler.patrick.doodle.wallpaper.BaseWallpaper.WallpaperVariant;
 
@@ -82,13 +82,20 @@ public class LiveWallpaperService extends WallpaperService {
   private BroadcastReceiver receiver;
   private boolean isReceiverRegistered = false;
 
+  private boolean isScreenOn;
   private String userPresence;
+  private ScreenStateListener screenStateListener;
   private UserPresenceListener userPresenceListener;
   private RefreshListener refreshListener;
 
   private boolean isPowerSaveMode;
   private PowerManager powerManager;
   private KeyguardManager keyguardManager;
+
+  private interface ScreenStateListener {
+
+    void onScreenStateChange(boolean screenOn);
+  }
 
   private interface UserPresenceListener {
 
@@ -119,9 +126,11 @@ public class LiveWallpaperService extends WallpaperService {
         }
         switch (intent.getAction()) {
           case Intent.ACTION_SCREEN_OFF:
+            setScreenState(false);
             setUserPresence(USER_PRESENCE.OFF);
             break;
           case Intent.ACTION_SCREEN_ON:
+            setScreenState(true);
             setUserPresence(isKeyguardLocked() ? USER_PRESENCE.LOCKED : USER_PRESENCE.UNLOCKED);
             break;
           case Intent.ACTION_USER_PRESENT:
@@ -186,6 +195,7 @@ public class LiveWallpaperService extends WallpaperService {
 
   @Override
   public Engine onCreateEngine() {
+    setScreenState(true);
     setUserPresence(isKeyguardLocked() ? USER_PRESENCE.LOCKED : USER_PRESENCE.UNLOCKED);
     return new UserAwareEngine();
   }
@@ -203,7 +213,20 @@ public class LiveWallpaperService extends WallpaperService {
   }
 
   /**
-   * Notifies the registered listener about user presence changes
+   * Notifies the registered listener about screen state changes (only two states)
+   */
+  private void setScreenState(boolean screenOn) {
+    if (isScreenOn == screenOn) {
+      return;
+    }
+    isScreenOn = screenOn;
+    if (screenStateListener != null) {
+      screenStateListener.onScreenStateChange(screenOn);
+    }
+  }
+
+  /**
+   * Notifies the registered listener about user presence changes (more precise than screen state)
    */
   private void setUserPresence(String presence) {
     if (presence.equals(userPresence)) {
@@ -240,7 +263,8 @@ public class LiveWallpaperService extends WallpaperService {
 
   // ENGINE
 
-  private class UserAwareEngine extends Engine implements UserPresenceListener, RefreshListener {
+  private class UserAwareEngine extends Engine
+      implements UserPresenceListener, ScreenStateListener, RefreshListener {
 
     private static final int SWIPE_INTENSITY_FACTOR = 100;
     private static final int TILT_INTENSITY_FACTOR = 5;
@@ -270,7 +294,7 @@ public class LiveWallpaperService extends WallpaperService {
     private boolean useDarkText, forceLightText;
     private String randomMode;
     private boolean isNewRandomPending;
-    private TimerUtil timerUtil;
+    private RandomUtil randomUtil;
     private String dailyTime;
     private long randomInterval;
 
@@ -307,6 +331,7 @@ public class LiveWallpaperService extends WallpaperService {
     public void onCreate(SurfaceHolder surfaceHolder) {
       super.onCreate(surfaceHolder);
 
+      setScreenState(true);
       setUserPresence(isKeyguardLocked() ? USER_PRESENCE.LOCKED : USER_PRESENCE.UNLOCKED);
       isPreview = isPreview();
       if (!isPreview) {
@@ -364,24 +389,22 @@ public class LiveWallpaperService extends WallpaperService {
       screenRotation = display.getRotation();
       usedGlitchWorkaround = false;
 
-      timerUtil = new TimerUtil(() -> {
+      randomUtil = new RandomUtil(force -> {
         // refresh random
-        if (!randomMode.equals(RANDOM.DAILY) && !randomMode.equals(RANDOM.INTERVAL)) {
-          return;
-        }
-        String userPresence = LiveWallpaperService.this.userPresence;
-        if (Objects.equals(userPresence, USER_PRESENCE.OFF)) {
-          sharedPrefs.edit().remove(PREF.RANDOM_CURRENT).apply();
-          loadThemeAndDesign(true);
-          isNewRandomPending = false;
-          if (isZoomUnlockEnabled && animZoom()) {
-            zoomUnlock = shouldZoomInWhenLocked ? -1 : 1;
-            zoomLauncher = 0; // 1 or 0?
+        if (randomMode.equals(RANDOM.DAILY) || randomMode.equals(RANDOM.INTERVAL)) {
+          if (!isScreenOn || force) {
+            sharedPrefs.edit().remove(PREF.RANDOM_CURRENT).apply();
+            loadThemeAndDesign(true);
+            isNewRandomPending = false;
+            if (isZoomUnlockEnabled && animZoom()) {
+              zoomUnlock = shouldZoomInWhenLocked ? -1 : 1;
+              zoomLauncher = 0; // 1 or 0?
+            }
+            drawFrame(true, null);
+            System.gc();
+          } else {
+            isNewRandomPending = true;
           }
-          drawFrame(true, null);
-          System.gc();
-        } else {
-          isNewRandomPending = true;
         }
       });
 
@@ -397,6 +420,7 @@ public class LiveWallpaperService extends WallpaperService {
       animateZoom(0);
 
       // After all necessary variables have been set
+      screenStateListener = this;
       userPresenceListener = this;
       refreshListener = this;
 
@@ -418,9 +442,9 @@ public class LiveWallpaperService extends WallpaperService {
         sensorManager.unregisterListener(sensorListener);
         isSensorListenerRegistered = false;
       }
-      if (timerUtil != null) {
-        timerUtil.cancel();
-        timerUtil = null;
+      if (randomUtil != null) {
+        randomUtil.cancel();
+        randomUtil = null;
       }
     }
 
@@ -550,16 +574,10 @@ public class LiveWallpaperService extends WallpaperService {
 
     @Override
     public void onPresenceChange(String presence) {
+      // everything regarding unlock animation
       switch (presence) {
         case USER_PRESENCE.OFF:
           usedGlitchWorkaround = false; // new unlock anim next time
-          if (randomMode.equals(RANDOM.SCREEN_OFF)
-              || (randomMode.equals(RANDOM.DAILY) && isNewRandomPending)
-              || (randomMode.equals(RANDOM.INTERVAL) && isNewRandomPending)) {
-            sharedPrefs.edit().remove(PREF.RANDOM_CURRENT).apply();
-            loadThemeAndDesign(true);
-            isNewRandomPending = false;
-          }
           if (isZoomUnlockEnabled && animZoom()) {
             zoomUnlock = shouldZoomInWhenLocked ? -1 : 1;
             zoomLauncher = 0; // 1 or 0?
@@ -567,18 +585,14 @@ public class LiveWallpaperService extends WallpaperService {
           if (!randomMode.equals(RANDOM.OFF) || (isZoomUnlockEnabled && animZoom())) {
             drawFrame(true, null);
           }
-          setTiltListenerRegistered(false);
-          System.gc();
           break;
         case USER_PRESENCE.LOCKED:
-          setTiltListenerRegistered(true);
           if (isZoomUnlockEnabled && animZoom()) {
             zoomLauncher = 0;
             animateZoom(shouldZoomInWhenLocked ? -0.5f : 0.5f);
           }
           break;
         case USER_PRESENCE.UNLOCKED:
-          setTiltListenerRegistered(true);
           if (isVisible && animZoom()) {
             animateZoom(0);
           } else {
@@ -587,6 +601,27 @@ public class LiveWallpaperService extends WallpaperService {
           }
           break;
       }
+    }
+
+    @Override
+    public void onScreenStateChange(boolean screenOn) {
+      if (screenOn) {
+        if (randomMode.equals(RANDOM.DAILY) || randomMode.equals(RANDOM.INTERVAL)) {
+          randomUtil.changeIfRequired(true);
+        }
+      } else {
+        if (randomMode.equals(RANDOM.SCREEN_OFF)
+            || (randomMode.equals(RANDOM.DAILY) && isNewRandomPending)
+            || (randomMode.equals(RANDOM.INTERVAL) && isNewRandomPending)) {
+          sharedPrefs.edit().remove(PREF.RANDOM_CURRENT).apply();
+          loadThemeAndDesign(true);
+          isNewRandomPending = false;
+        } else if (randomMode.equals(RANDOM.DAILY) || randomMode.equals(RANDOM.INTERVAL)) {
+          randomUtil.changeIfRequired(true);
+        }
+        System.gc();
+      }
+      setTiltListenerRegistered(screenOn);
     }
 
     @Override
@@ -626,16 +661,16 @@ public class LiveWallpaperService extends WallpaperService {
       if (!Objects.equals(randomMode, randomModeNew)) {
         randomMode = randomModeNew;
         if (randomMode.equals(RANDOM.DAILY)) {
-          timerUtil.scheduleDaily(dailyTime);
+          randomUtil.scheduleDaily(dailyTime);
         } else if (randomMode.equals(RANDOM.INTERVAL)) {
-          timerUtil.scheduleInterval(randomInterval);
+          randomUtil.scheduleInterval(randomInterval);
         } else {
-          timerUtil.cancel();
+          randomUtil.cancel();
         }
       } else if (randomMode.equals(RANDOM.DAILY) && dailyTimeChanged) {
-        timerUtil.scheduleDaily(dailyTime);
+        randomUtil.scheduleDaily(dailyTime);
       } else if (randomMode.equals(RANDOM.INTERVAL) && randomIntervalChanged) {
-        timerUtil.scheduleInterval(randomInterval);
+        randomUtil.scheduleInterval(randomInterval);
       }
 
       // PARALLAX

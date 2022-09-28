@@ -337,14 +337,6 @@ public class AppearanceFragment extends BaseFragment
         binding.switchAppearanceDarkText,
         binding.switchAppearanceLightText
     );
-
-    if (savedInstanceState != null) {
-      if (savedInstanceState.getBoolean(INTERVAL_PICKER_SHOWING)) {
-        new Handler(Looper.getMainLooper()).postDelayed(
-            () -> openIntervalPicker(savedInstanceState.getInt(EXTRA.SELECTION_INDEX)), 1
-        );
-      }
-    }
   }
 
   @Override
@@ -354,6 +346,16 @@ public class AppearanceFragment extends BaseFragment
     outState.putBoolean(INTERVAL_PICKER_SHOWING, isShowing);
     if (isShowing) {
       outState.putInt(EXTRA.SELECTION_INDEX, selectedIntervalIndex);
+    }
+  }
+
+  @Override
+  public void onViewStateRestored(@Nullable Bundle savedInstanceState) {
+    super.onViewStateRestored(savedInstanceState);
+    if (savedInstanceState != null && savedInstanceState.getBoolean(INTERVAL_PICKER_SHOWING)) {
+      new Handler(Looper.getMainLooper()).postDelayed(
+          () -> openIntervalPicker(savedInstanceState.getInt(EXTRA.SELECTION_INDEX)), 1
+      );
     }
   }
 

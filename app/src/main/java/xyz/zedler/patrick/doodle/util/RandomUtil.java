@@ -20,25 +20,32 @@
 package xyz.zedler.patrick.doodle.util;
 
 import android.app.AlarmManager;
+import android.os.SystemClock;
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import java.util.Calendar;
 import java.util.Timer;
 import java.util.TimerTask;
 import xyz.zedler.patrick.doodle.Constants.DEF;
 
-public class TimerUtil {
+public class RandomUtil {
 
-  private static final String TAG = TimerUtil.class.getSimpleName();
+  private static final String TAG = RandomUtil.class.getSimpleName();
 
+  private long period;
+  private long lastChange;
+  private final Action action;
   private Timer timer;
-  private final Runnable runnable;
 
-  public TimerUtil(@NonNull Runnable runnable) {
-    this.runnable = runnable;
+  public interface Action {
+
+    void execute(boolean force);
   }
 
-  public void scheduleDaily(@Nullable String time) {
+  public RandomUtil(@NonNull Action action) {
+    this.action = action;
+  }
+
+  public void scheduleDaily(String time) {
     if (time == null) {
       time = DEF.DAILY_TIME;
     }
@@ -51,7 +58,6 @@ public class TimerUtil {
     calendar.set(Calendar.MINUTE, Integer.parseInt(parts[1]));
     calendar.set(Calendar.SECOND, 0);
     calendar.set(Calendar.MILLISECOND, 0);
-
     if (calendar.getTimeInMillis() <= System.currentTimeMillis()) {
       calendar.add(Calendar.DAY_OF_YEAR, 1);
     }
@@ -65,15 +71,23 @@ public class TimerUtil {
         new TimerTask() {
           @Override
           public void run() {
-            runnable.run();
+            changeIfRequired(false);
           }
         },
         calendar.getTime(),
         AlarmManager.INTERVAL_DAY
     );
+
+    this.period = AlarmManager.INTERVAL_DAY;
+    calendar.add(Calendar.DAY_OF_YEAR, -1);
+    long difference = System.currentTimeMillis() - calendar.getTimeInMillis();
+    lastChange = SystemClock.elapsedRealtime() - difference;
   }
 
   public void scheduleInterval(long period) {
+    this.period = period;
+    lastChange = SystemClock.elapsedRealtime();
+
     if (timer != null) {
       timer.cancel();
       timer = null;
@@ -83,12 +97,25 @@ public class TimerUtil {
         new TimerTask() {
           @Override
           public void run() {
-            runnable.run();
+            changeIfRequired(false);
           }
         },
         period,
         period
     );
+  }
+
+  public void changeIfRequired(boolean force) {
+    long currentTime = SystemClock.elapsedRealtime(); // 1h      | 1h25m |
+    long nextChange = lastChange + period;            // 0 + 15m | 1h15m | 1h30m
+
+    if (currentTime >= nextChange) {
+      action.execute(force);
+      // next change
+      long difference = currentTime - nextChange;     // 45m     | 10m
+      int multiple = (int) (difference / period);     // 3       | 0
+      lastChange += period + multiple * period;       // 1h      | 1h15m
+    }
   }
 
   public void cancel() {

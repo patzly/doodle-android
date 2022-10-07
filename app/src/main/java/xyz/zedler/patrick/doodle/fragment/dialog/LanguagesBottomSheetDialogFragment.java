@@ -28,7 +28,6 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.os.LocaleListCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.activity.MainActivity;
 import xyz.zedler.patrick.doodle.adapter.LanguageAdapter;
 import xyz.zedler.patrick.doodle.databinding.FragmentBottomsheetLanguagesBinding;
@@ -50,9 +49,6 @@ public class LanguagesBottomSheetDialogFragment extends BaseBottomSheetDialogFra
     binding = FragmentBottomsheetLanguagesBinding.inflate(inflater, container, false);
 
     MainActivity activity = (MainActivity) requireActivity();
-
-    binding.textLanguagesTitle.setText(getString(R.string.action_language_select));
-    binding.textLanguagesDescription.setText(getString(R.string.other_language_description));
 
     binding.recyclerLanguages.setLayoutManager(
         new LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)

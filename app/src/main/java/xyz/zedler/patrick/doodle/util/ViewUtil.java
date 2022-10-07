@@ -30,12 +30,14 @@ import android.graphics.drawable.ShapeDrawable;
 import android.graphics.drawable.shapes.RoundRectShape;
 import android.os.SystemClock;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver.OnGlobalLayoutListener;
 import android.view.Window;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 import androidx.annotation.ColorRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -241,6 +243,16 @@ public class ViewUtil {
     toolbar.setTitleCentered(!UiUtil.isFullWidth(toolbar.getContext()));
   }
 
+  public static void centerTextOnLargeScreens(TextView textView) {
+    if (UiUtil.isFullWidth(textView.getContext())) {
+      textView.setTextAlignment(View.TEXT_ALIGNMENT_VIEW_START);
+      textView.setGravity(Gravity.START);
+    } else {
+      textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+      textView.setGravity(Gravity.CENTER_HORIZONTAL);
+    }
+  }
+
   // Ripple background for surface list items
 
   public static Drawable getRippleBgListItemSurface(Context context) {
@@ -259,17 +271,6 @@ public class ViewUtil {
     );
     return new RippleDrawable(
         ColorStateList.valueOf(ResUtil.getColorHighlight(context)), null, layers
-    );
-  }
-
-  public static Drawable getRippleBgListItemSurfaceRecyclerItem(Context context) {
-    float[] radii = new float[8];
-    Arrays.fill(radii, UiUtil.dpToPx(context, 16));
-    RoundRectShape rect = new RoundRectShape(radii, null, null);
-    ShapeDrawable shape = new ShapeDrawable(rect);
-    shape.getPaint().setColor(SurfaceColors.SURFACE_3.getColor(context));
-    return new RippleDrawable(
-        ColorStateList.valueOf(ResUtil.getColorHighlight(context)), null, shape
     );
   }
 

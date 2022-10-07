@@ -69,8 +69,8 @@ public class LanguageAdapter extends RecyclerView.Adapter<LanguageAdapter.ViewHo
 
   @Override
   public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
-    holder.binding.frameLanguageContainer.setBackground(
-        ViewUtil.getRippleBgListItemSurfaceRecyclerItem(holder.binding.getRoot().getContext())
+    holder.binding.linearLanguageContainer.setBackground(
+        ViewUtil.getRippleBgListItemSurface(holder.binding.getRoot().getContext())
     );
 
     if (position == 0) {
@@ -80,7 +80,7 @@ public class LanguageAdapter extends RecyclerView.Adapter<LanguageAdapter.ViewHo
       holder.binding.imageLanguageSelected.setVisibility(
           selectedCode != null ? View.INVISIBLE : View.VISIBLE
       );
-      holder.binding.frameLanguageContainer.setOnClickListener(
+      holder.binding.linearLanguageContainer.setOnClickListener(
           view -> listener.onItemRowClicked(null)
       );
       return;
@@ -98,7 +98,7 @@ public class LanguageAdapter extends RecyclerView.Adapter<LanguageAdapter.ViewHo
 
     // CONTAINER
 
-    holder.binding.frameLanguageContainer.setOnClickListener(
+    holder.binding.linearLanguageContainer.setOnClickListener(
         view -> listener.onItemRowClicked(language)
     );
   }

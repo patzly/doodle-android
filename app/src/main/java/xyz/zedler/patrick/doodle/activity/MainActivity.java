@@ -105,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
 
     sharedPrefs = new PrefsUtil(this).checkForMigrations().getSharedPrefs();
 
-    // NIGHT MODE
+    // DARK MODE
 
     int modeNight = sharedPrefs.getInt(PREF.MODE, DEF.MODE);
     int uiMode = getResources().getConfiguration().uiMode;

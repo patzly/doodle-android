@@ -61,7 +61,7 @@
 
         <LinearLayout
           android:id="@+id/linear_other_language"
-          style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon.Clickable">
+          style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable">
 
           <ImageView
             android:id="@+id/image_other_language"
@@ -85,8 +85,7 @@
         </LinearLayout>
 
         <LinearLayout
-          style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon"
-          android:paddingTop="12dp"
+          style="@style/Widget.Doodle.LinearLayout.ListItem.ThreeLine"
           android:paddingBottom="0dp"
           android:paddingStart="16dp"
           android:paddingEnd="0dp">
@@ -128,7 +127,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:paddingStart="0dp"
-                android:paddingEnd="12dp" />
+                android:paddingEnd="20dp" />
 
             </HorizontalScrollView>
 
@@ -144,7 +143,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingStart="0dp"
-                android:paddingEnd="16dp"
+                android:paddingEnd="24dp"
                 app:singleSelection="true"
                 app:selectionRequired="true">
 
@@ -285,7 +284,7 @@
 
         <LinearLayout
           android:id="@+id/linear_other_reset"
-          style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon.Clickable">
+          style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable">
 
           <ImageView
             android:id="@+id/image_other_reset"

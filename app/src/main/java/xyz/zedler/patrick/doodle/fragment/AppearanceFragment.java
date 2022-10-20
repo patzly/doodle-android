@@ -150,7 +150,6 @@ public class AppearanceFragment extends BaseFragment
     dateFormatPref = new SimpleDateFormat("HH:mm", Locale.GERMAN);
     dateFormatDisplay = DateFormat.getTimeFormat(activity);
 
-    ViewUtil.centerToolbarTitleOnLargeScreens(binding.toolbarAppearance);
     binding.toolbarAppearance.setNavigationOnClickListener(getNavigationOnClickListener());
     binding.toolbarAppearance.setOnMenuItemClickListener(getOnMenuItemClickListener());
 

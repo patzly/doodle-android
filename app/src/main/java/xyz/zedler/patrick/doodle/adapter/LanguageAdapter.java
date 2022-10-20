@@ -19,6 +19,7 @@
 
 package xyz.zedler.patrick.doodle.adapter;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -69,9 +70,7 @@ public class LanguageAdapter extends RecyclerView.Adapter<LanguageAdapter.ViewHo
 
   @Override
   public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
-    holder.binding.linearLanguageContainer.setBackground(
-        ViewUtil.getRippleBgListItemSurface(holder.binding.getRoot().getContext())
-    );
+    Context context = holder.binding.getRoot().getContext();
 
     if (position == 0) {
       holder.binding.textLanguageName.setText(R.string.other_language_system);
@@ -92,9 +91,15 @@ public class LanguageAdapter extends RecyclerView.Adapter<LanguageAdapter.ViewHo
 
     // SELECTED
 
-    holder.binding.imageLanguageSelected.setVisibility(
-        language.getCode().equals(selectedCode) ? View.VISIBLE : View.INVISIBLE
-    );
+    boolean isSelected = language.getCode().equals(selectedCode);
+    holder.binding.imageLanguageSelected.setVisibility(isSelected ? View.VISIBLE : View.INVISIBLE);
+    if (isSelected) {
+      holder.binding.linearLanguageContainer.setBackground(ViewUtil.getBgListItemSelected(context));
+    } else {
+      holder.binding.linearLanguageContainer.setBackground(
+          ViewUtil.getRippleBgListItemSurface(context)
+      );
+    }
 
     // CONTAINER
 

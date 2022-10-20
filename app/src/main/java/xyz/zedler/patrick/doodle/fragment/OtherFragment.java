@@ -95,7 +95,6 @@ public class OtherFragment extends BaseFragment
         binding.appBarOther, binding.scrollOther, true
     );
 
-    ViewUtil.centerToolbarTitleOnLargeScreens(binding.toolbarOther);
     binding.toolbarOther.setNavigationOnClickListener(getNavigationOnClickListener());
     binding.toolbarOther.setOnMenuItemClickListener(getOnMenuItemClickListener());
 

@@ -25,7 +25,9 @@
   android:layout_width="match_parent"
   android:layout_height="wrap_content"
   android:orientation="horizontal"
-  android:minHeight="64dp"
+  android:minHeight="72dp"
+  android:paddingTop="8dp"
+  android:paddingBottom="8dp"
   android:gravity="center_vertical">
 
   <ImageView
@@ -33,7 +35,7 @@
     android:layout_width="24dp"
     android:layout_height="24dp"
     android:layout_marginStart="16dp"
-    android:layout_marginEnd="32dp"
+    android:layout_marginEnd="16dp"
     android:src="@drawable/ic_round_check_circle"
     android:visibility="invisible"
     app:tint="?attr/colorPrimary"
@@ -42,34 +44,17 @@
   <LinearLayout
     android:layout_width="0dp"
     android:layout_height="wrap_content"
-    android:layout_marginEnd="16dp"
-    android:layout_marginTop="16dp"
-    android:layout_marginBottom="16dp"
+    android:layout_marginEnd="24dp"
     android:orientation="vertical"
     android:layout_weight="1">
 
     <TextView
       android:id="@+id/text_language_name"
-      style="@style/Widget.Doodle.TextView.ListItem.Title"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:layout_gravity="center_vertical" />
+      style="@style/Widget.Doodle.TextView.ListItem.Title" />
 
-    <LinearLayout
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:orientation="horizontal"
-      android:minHeight="20dp"
-      android:gravity="bottom">
-
-      <TextView
-        android:id="@+id/text_language_translators"
-        style="@style/Widget.Doodle.TextView.ListItem.Description"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:maxLines="2" />
-
-    </LinearLayout>
+    <TextView
+      android:id="@+id/text_language_translators"
+      style="@style/Widget.Doodle.TextView.ListItem.Description" />
 
   </LinearLayout>
 

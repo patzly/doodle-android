@@ -106,7 +106,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginEnd="2dp"
+            android:layout_marginEnd="10dp"
             android:gravity="center_vertical">
 
             <ImageView
@@ -195,7 +195,7 @@
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
               android:orientation="horizontal"
-              android:layout_marginEnd="2dp"
+              android:layout_marginEnd="10dp"
               android:gravity="center_vertical">
 
               <ImageView

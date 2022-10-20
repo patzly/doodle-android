@@ -75,7 +75,6 @@ public class SizeFragment extends BaseFragment
         binding.appBarSize, binding.scrollSize, true
     );
 
-    ViewUtil.centerToolbarTitleOnLargeScreens(binding.toolbarSize);
     binding.toolbarSize.setNavigationOnClickListener(getNavigationOnClickListener());
     binding.toolbarSize.setOnMenuItemClickListener(getOnMenuItemClickListener());
 

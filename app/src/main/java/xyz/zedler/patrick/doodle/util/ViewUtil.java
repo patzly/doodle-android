@@ -54,6 +54,7 @@ import com.google.android.material.elevation.SurfaceColors;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.LinkedList;
+import xyz.zedler.patrick.doodle.R;
 
 public class ViewUtil {
 
@@ -272,6 +273,30 @@ public class ViewUtil {
     return new RippleDrawable(
         ColorStateList.valueOf(ResUtil.getColorHighlight(context)), null, layers
     );
+  }
+
+  public static Drawable getBgListItemSelected(Context context) {
+    return getBgListItemSelected(context, 8, 8);
+  }
+
+  public static Drawable getBgListItemSelected(
+      Context context, float paddingStart, float paddingEnd
+  ) {
+    boolean isRtl = UiUtil.isLayoutRtl(context);
+    float[] radii = new float[8];
+    Arrays.fill(radii, UiUtil.dpToPx(context, 16));
+    RoundRectShape rect = new RoundRectShape(radii, null, null);
+    ShapeDrawable shape = new ShapeDrawable(rect);
+    shape.getPaint().setColor(ResUtil.getColorAttr(context, R.attr.colorSecondaryContainer));
+    LayerDrawable layers = new LayerDrawable(new ShapeDrawable[]{shape});
+    layers.setLayerInset(
+        0,
+        UiUtil.dpToPx(context, isRtl ? paddingEnd : paddingStart),
+        UiUtil.dpToPx(context, 2),
+        UiUtil.dpToPx(context, isRtl ? paddingStart : paddingEnd),
+        UiUtil.dpToPx(context, 2)
+    );
+    return layers;
   }
 
   public static void setEnabled(boolean enabled, View... views) {

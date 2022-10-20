@@ -80,7 +80,6 @@ public class ParallaxFragment extends BaseFragment
         binding.appBarParallax, binding.scrollParallax, true
     );
 
-    ViewUtil.centerToolbarTitleOnLargeScreens(binding.toolbarParallax);
     binding.toolbarParallax.setNavigationOnClickListener(getNavigationOnClickListener());
     binding.toolbarParallax.setOnMenuItemClickListener(getOnMenuItemClickListener());
 

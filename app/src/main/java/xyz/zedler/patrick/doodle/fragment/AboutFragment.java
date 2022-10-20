@@ -70,8 +70,6 @@ public class AboutFragment extends BaseFragment implements OnClickListener {
         binding.appBarAbout, binding.scrollAbout, true
     );
 
-    ViewUtil.centerToolbarTitleOnLargeScreens(binding.toolbarAbout);
-
     binding.toolbarAbout.setNavigationOnClickListener(getNavigationOnClickListener());
     binding.toolbarAbout.setOnMenuItemClickListener(getOnMenuItemClickListener());
 

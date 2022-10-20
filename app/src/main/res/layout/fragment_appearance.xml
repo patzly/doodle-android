@@ -145,7 +145,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:paddingStart="0dp"
-                android:paddingEnd="12dp"
+                android:paddingEnd="20dp"
                 android:paddingTop="8dp"
                 android:paddingBottom="8dp" />
 
@@ -185,7 +185,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:paddingStart="0dp"
-                android:paddingEnd="12dp"
+                android:paddingEnd="20dp"
                 android:paddingTop="8dp"
                 android:paddingBottom="8dp" />
 
@@ -225,7 +225,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:paddingStart="0dp"
-                android:paddingEnd="12dp"
+                android:paddingEnd="20dp"
                 android:paddingTop="8dp"
                 android:paddingBottom="8dp" />
 
@@ -241,7 +241,7 @@
 
         <LinearLayout
           android:id="@+id/linear_appearance_variant"
-          style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon"
+          style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine"
           android:paddingTop="0dp"
           android:paddingBottom="0dp"
           android:paddingStart="16dp"
@@ -267,7 +267,7 @@
               android:layout_height="wrap_content"
               android:orientation="horizontal"
               android:paddingStart="0dp"
-              android:paddingEnd="12dp"
+              android:paddingEnd="20dp"
               android:paddingTop="8dp"
               android:paddingBottom="8dp" />
 
@@ -281,8 +281,7 @@
 
         <LinearLayout
           android:id="@+id/linear_appearance_colors"
-          style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon"
-          android:paddingTop="12dp"
+          style="@style/Widget.Doodle.LinearLayout.ListItem.ThreeLine"
           android:paddingBottom="0dp"
           android:paddingStart="16dp"
           android:paddingEnd="0dp">
@@ -299,13 +298,13 @@
               style="@style/Widget.Doodle.TextView.ListItem.Title"
               android:text="@string/appearance_colors"
               android:paddingStart="0dp"
-              android:paddingEnd="16dp"/>
+              android:paddingEnd="24dp"/>
 
             <TextView
               android:id="@+id/text_appearance_colors_description"
               style="@style/Widget.Doodle.TextView.ListItem.Description"
               android:paddingStart="0dp"
-              android:paddingEnd="16dp"/>
+              android:paddingEnd="24dp"/>
 
             <HorizontalScrollView
               android:layout_width="match_parent"
@@ -321,7 +320,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:paddingStart="0dp"
-                android:paddingEnd="12dp"
+                android:paddingEnd="20dp"
                 android:paddingTop="8dp"
                 android:paddingBottom="8dp" />
 
@@ -332,8 +331,7 @@
         </LinearLayout>
 
         <LinearLayout
-          style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Icon"
-          android:paddingTop="12dp"
+          style="@style/Widget.Doodle.LinearLayout.ListItem.ThreeLine"
           android:paddingBottom="0dp"
           android:paddingStart="16dp"
           android:paddingEnd="0dp">
@@ -349,13 +347,13 @@
               style="@style/Widget.Doodle.TextView.ListItem.Title"
               android:text="@string/appearance_night_mode"
               android:paddingStart="0dp"
-              android:paddingEnd="16dp"/>
+              android:paddingEnd="24dp"/>
 
             <TextView
               style="@style/Widget.Doodle.TextView.ListItem.Description"
               android:text="@string/appearance_night_mode_description"
               android:paddingStart="0dp"
-              android:paddingEnd="16dp"/>
+              android:paddingEnd="24dp"/>
 
             <HorizontalScrollView
               android:layout_width="match_parent"
@@ -370,7 +368,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingStart="0dp"
-                android:paddingEnd="16dp"
+                android:paddingEnd="24dp"
                 app:singleSelection="true"
                 app:selectionRequired="true">
 
@@ -467,7 +465,7 @@
           android:text="@string/other_title" />
 
         <LinearLayout
-          style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine"
+          style="@style/Widget.Doodle.LinearLayout.ListItem.ThreeLine"
           android:paddingStart="16dp"
           android:paddingEnd="0dp">
 
@@ -483,13 +481,13 @@
               style="@style/Widget.Doodle.TextView.ListItem.Title"
               android:text="@string/appearance_random"
               android:paddingStart="0dp"
-              android:paddingEnd="16dp" />
+              android:paddingEnd="24dp" />
 
             <TextView
               style="@style/Widget.Doodle.TextView.ListItem.Description"
               android:text="@string/appearance_random_description"
               android:paddingStart="0dp"
-              android:paddingEnd="16dp" />
+              android:paddingEnd="24dp" />
 
             <HorizontalScrollView
               android:layout_width="match_parent"
@@ -504,7 +502,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingStart="0dp"
-                android:paddingEnd="16dp"
+                android:paddingEnd="24dp"
                 app:singleSelection="true"
                 app:selectionRequired="true">
 

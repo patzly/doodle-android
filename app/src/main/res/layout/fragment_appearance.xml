@@ -159,7 +159,7 @@
           style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine"
           android:paddingTop="8dp"
           android:paddingBottom="0dp"
-          android:paddingStart="72dp"
+          android:paddingStart="56dp"
           android:paddingEnd="0dp"
           android:minHeight="0dp">
 
@@ -199,7 +199,7 @@
           style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine"
           android:paddingTop="8dp"
           android:paddingBottom="0dp"
-          android:paddingStart="72dp"
+          android:paddingStart="56dp"
           android:paddingEnd="0dp"
           android:minHeight="0dp">
 
@@ -250,7 +250,6 @@
           <ImageView
             android:id="@+id/image_appearance_variant"
             style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-            android:layout_marginEnd="32dp"
             android:src="@drawable/ic_round_palette_anim"
             tools:ignore="ContentDescription" />
 
@@ -291,7 +290,6 @@
           <ImageView
             android:id="@+id/image_appearance_colors"
             style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-            android:layout_marginEnd="32dp"
             android:src="@drawable/ic_round_colorize_anim"
             tools:ignore="ContentDescription" />
 
@@ -343,7 +341,6 @@
           <ImageView
             android:id="@+id/image_appearance_night_mode"
             style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-            android:layout_marginEnd="32dp"
             tools:ignore="ContentDescription" />
 
           <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">

@@ -94,7 +94,6 @@
           <ImageView
             android:id="@+id/image_other_theme"
             style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-            android:layout_marginEnd="32dp"
             android:src="@drawable/ic_round_palette_anim"
             tools:ignore="ContentDescription" />
 

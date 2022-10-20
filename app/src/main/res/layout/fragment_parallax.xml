@@ -136,7 +136,7 @@
           <com.google.android.material.slider.Slider
             android:id="@+id/slider_parallax_swipe"
             style="@style/Widget.Doodle.Slider"
-            android:layout_marginStart="43dp"
+            android:layout_marginStart="27dp"
             android:layout_marginEnd="0dp"
             android:valueFrom="1"
             android:valueTo="5"
@@ -231,7 +231,7 @@
             <com.google.android.material.slider.Slider
               android:id="@+id/slider_parallax_tilt"
               style="@style/Widget.Doodle.Slider"
-              android:layout_marginStart="43dp"
+              android:layout_marginStart="27dp"
               android:layout_marginEnd="0dp"
               android:valueFrom="1"
               android:valueTo="5"

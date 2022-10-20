@@ -276,7 +276,7 @@
           <com.google.android.material.slider.Slider
             android:id="@+id/slider_size_zoom_damping"
             style="@style/Widget.Doodle.Slider"
-            android:layout_marginStart="43dp"
+            android:layout_marginStart="27dp"
             android:layout_marginEnd="0dp"
             android:valueFrom="5"
             android:valueTo="15"

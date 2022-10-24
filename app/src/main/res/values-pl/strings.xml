@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ This file is part of Doodle Android.
+  ~
+  ~ Doodle Android is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Doodle Android is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with Doodle Android. If not, see <http://www.gnu.org/licenses/>.
+  ~
+  ~ Copyright (c) 2019-2022 by Patrick Zedler
+  -->
+
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+
+  <string name="wallpaper_description">Kolorowe, animowane tapety z automatycznym ciemnym motywem i energooszczędnymi animacjami. Dostosuj do swoich potrzeb!</string>
+  <string name="wallpaper_description_picker">Odkrywaj kolorowe kolekcje kształtów, z delikatynym efektem paralaksy oraz zbliżania kiedy korzystasz ze swojego telefonu i odblokowujesz go.\nDostosuj tapetę, aby pasował do twojego stylu!</string>
+
+  <!-- TITLES -->
+
+  <string name="title_info">Informacje</string>
+  <string name="title_apply_changes">Zastosuj zmiany</string>
+  <string name="title_feedback">Opinia</string>
+  <string name="title_licenses">Licencje otwartoźródłowych bibliotek</string>
+
+  <!-- LABELS -->
+
+  <string name="label_ms">%1$sms</string>
+  <string name="label_degrees">%1$s stopni</string>
+
+  <!-- ACTIONS -->
+
+  <string name="action_cancel">Anuluj</string>
+  <string name="action_select">Wybierz</string>
+  <string name="action_close">Zamknij</string>
+  <string name="action_back">Cofnij</string>
+  <string name="action_open_link">Otwórz zewnętrzną stronę internetową</string>
+  <string name="action_hide">Ukryj</string>
+  <string name="action_reset">Wyczyść</string>
+  <string name="action_deactivate">Wyłącz</string>
+  <string name="action_select_all">Wybierz wszystko</string>
+  <string name="action_continue">Kontynuj</string>
+  <string name="action_open_app_info">Otwórz informacje o aplikacji</string>
+  <string name="action_set">Ustaw tapetę</string>
+  <string name="action_learn_more">Dowiedz się więcej</string>
+  <string name="action_help">Pomoc</string>
+  <string name="action_send_feedback">Wyślij opinię</string>
+  <string name="action_share">Udostępnij</string>
+  <string name="action_share_description">Powiedz swoim znajomym o Doodle</string>
+  <string name="action_email">Wyślij maila</string>
+  <string name="action_email_description">Skontaktuj się z programistą</string>
+  <string name="action_rate">Oceń w Google Play</string>
+  <string name="action_rate_description">Wspieraj rowój</string>
+  <string name="action_github">Doodle Android na GitHub</string>
+  <string name="action_github_description">Otwórz nowy wątek</string>
+  <string name="action_language_select">Wybierz język</string>
+  <string name="action_set_static">Ustaw statyczną tapetę</string>
+  <string name="action_change_time">Zmień godzinę</string>
+  <string name="action_change_interval">Zmień interwał</string>
+
+  <!-- APPEARANCE -->
+
+  <string name="appearance_title">Wygląd</string>
+  <string name="appearance_description">Design i kolory</string>
+  <string name="appearance_one_ui">Samsung\'owa niekorzystna implementacja dynamicznych kolorów w One UI 4.1 zupełnie ignoruje kolory nadane przez animowane tapety jak Doodle.\nAby wybrać kolory w swoim systemie, ustaw obecny design jako statyczne tło, aby pozwolić systemowi pobrać z niego kolory, następnie ustaw ponownie animowaną tapetę.</string>
+  <string name="appearance_design">Wygląd</string>
+  <string name="appearance_design_doodle">Kolekcja Doodle z Pixel 4</string>
+  <string name="appearance_design_monet">Kolekcja Material You z Pixel 6</string>
+  <string name="appearance_design_anna">Animowane tapety od à l\'Anna Kövecses</string>
+  <string name="appearance_variant">Wariant</string>
+  <string name="appearance_night_mode">Tryb nocny</string>
+  <string name="appearance_night_mode_description">Tylko ciemne kolory</string>
+  <string name="appearance_night_mode_on">Włączony</string>
+  <string name="appearance_night_mode_off">Wyłączony</string>
+  <string name="appearance_light_text">Zawsze używaj jasnego tekstu</string>
+  <string name="appearance_light_text_description">Zamiast ciemnego tekstu na jasnym tle</string>
+  <string name="appearance_dark_text">Używaj ciemnego tekstu</string>
+  <string name="appearance_dark_text_description">Tylko gdy tło jest wystarczająco jasne</string>
+  <string name="appearance_colors_category">Kolory</string>
+  <string name="appearance_colors">Wyjętę kolory</string>
+  <string name="appearance_colors_description">Używane do obliczania kontrastu tekstu</string>
+  <string name="appearance_colors_description_dynamic">Używane przez systemowy silnik motywów</string>
+  <string name="appearance_colors_description_one_ui">Jak napisane powyżej, nadane kolory z animaowanej tapety są ignorowane przez One UI</string>
+  <string name="appearance_colors_primary">Wybierz główny kolor</string>
+  <string name="appearance_colors_secondary">Wybierz drugorzędny kolor</string>
+  <string name="appearance_colors_tertiary">Wybierz trzeciorzędny kolor</string>
+  <string name="appearance_colors_custom">Wybierz własny kolor</string>
+  <string name="appearance_colors_info">Na urządzeniach bez dynamicznych kolorów (Android 11 i starszy) tylko główny kolor jest używany do obliczania kontrastu tekstu i kolorowania ekranu ostatnich aplikacji.</string>
+  <string name="appearance_colors_info_dynamic">Na urządzeniach z Androidem 12 i nowszym oraz ze wsparciem dynamicznych kolorów wszystkie trzy kolory są używane do stworzenia ogólno-systemowego motywu.</string>
+  <string name="appearance_random">Wygląd losowej tapety</string>
+  <string name="appearance_random_description">Wybierz wyzwalacz poniżej</string>
+  <string name="appearance_random_screen_off">Wyłącze ekran</string>
+  <string name="appearance_random_daily">Codziennie o %1$s</string>
+  <string name="appearance_random_interval">Wybierz interwał</string>
+  <string name="appearance_random_interval_minutes">Co %1$d minut</string>
+  <plurals name="appearance_random_interval_hours">
+    <item quantity="one">Co godzinę</item>
+    <item quantity="few">Co godzinę</item>
+    <item quantity="many">Co godzinę</item>
+    <item quantity="other">Co %1$d godzin(y)</item>
+  </plurals>
+  <plurals name="appearance_random_interval_days">
+    <item quantity="one">Codziennie</item>
+    <item quantity="few">Codziennie</item>
+    <item quantity="many">Codziennie</item>
+    <item quantity="other">Co %1$d dni</item>
+  </plurals>
+
+  <!-- PARALLAX -->
+
+  <string name="parallax_title">Paralaksa</string>
+  <string name="parallax_description">Przesuwanie i przechylanie</string>
+  <string name="parallax_swipe_category">Przesuwanie ekranów</string>
+  <string name="parallax_swipe_touch_wiz">Wygląda na to, że korzystasz z Samsung TouchWiz lub One UI Home, które nie wspierają efektów przesuwania stron. Wypróbuj inne aplikacje stron głównych. Możesz zignorować to ostrzeżenie jeśli już dokonano zmiany.</string>
+  <string name="parallax_swipe">Efekt przesuwania stron</string>
+  <string name="parallax_swipe_description">Poziomy margines przy przesuwaniu stron</string>
+  <string name="parallax_swipe_power_save">Szanuj baterię</string>
+  <string name="parallax_swipe_power_save_description">Zatrzymaj efekt gdy oszczędzanie baterii jest włączone</string>
+  <string name="parallax_tilt_category">Przechylanie</string>
+  <string name="parallax_tilt">Efekt przechylenia</string>
+  <string name="parallax_tilt_description">Ruch gdy przechylasz urządzenie</string>
+  <string name="parallax_tilt_warning">Wyższe użycie baterii</string>
+  <string name="parallax_refresh_rate">Częstotliwość odświeżania czujnika przechyłu</string>
+  <string name="parallax_refresh_rate_description">Za małe opóźnienia może sprawić, że animacja będzię skakać</string>
+  <string name="parallax_damping">Tłumienie ruchu</string>
+  <string name="parallax_damping_description">Zmniejsz po większą płynność</string>
+  <string name="parallax_threshold">Próg ruchu</string>
+  <string name="parallax_threshold_description">Zwieksz, aby zatrzymać ciągłe renderowania pomimo małego ruchu</string>
+  <string name="parallax_tilt_power_save_description">Zatrzymaj efekt gdy oszczędzanie baterii jest włączone</string>
+
+  <!-- SIZE -->
+
+  <string name="size_title">Rozmiar kształtów</string>
+  <string name="size_description">Efekt skali i powiększenia</string>
+  <string name="size_category_zoom">Efekt powiększania</string>
+  <string name="size_category_launcher">Zwiększanie na ekranie głównym</string>
+  <string name="size_category_unlock">Zwiększanie na ekranie blokady</string>
+  <string name="size_scale">Skala</string>
+  <string name="size_scale_description">Przydatne dla wielkich ekranów lub o wysokim zagęszczeniu pikseli</string>
+  <string name="size_zoom">Intenswność powiększania</string>
+  <string name="size_zoom_description">Gdy zwiększone, elementy bardziej się oddalą</string>
+  <string name="size_zoom_rotation">Obracaj niektóre kształty podczas powiększania</string>
+  <string name="size_zoom_rotation_description">Największy obrót w stopniach</string>
+  <string name="size_zoom_power_save_description">Zatrzymaj efekt powiększania gdy oszczędzanie baterii jest włączone</string>
+  <string name="size_zoom_launcher">Oddalaj gdy otwierasz szybkie ustawienia lub listę aplikacji</string>
+  <string name="size_zoom_launcher_description">Może być niedostępne na niektórych urządzeniach</string>
+  <string name="size_zoom_damping">Tłumienie animacji</string>
+  <string name="size_zoom_damping_description">Aktywuj i zmniejsz po płynniejsze powiększanie</string>
+  <string name="size_zoom_unlock">Powiększaj na ekranie blokady</string>
+  <string name="size_zoom_unlock_description">Wybierz kierunek</string>
+  <string name="size_zoom_unlock_in">Powiększaj</string>
+  <string name="size_zoom_unlock_out">Pomniejszaj</string>
+  <string name="size_zoom_duration">Długość animacji podczas odblokowania</string>
+  <string name="size_zoom_duration_description">Zmniejsz po szybszą animację</string>
+
+  <!-- OTHER -->
+
+  <string name="other_title">Inne opcje</string>
+  <string name="other_description">Renderowanie, język i reset</string>
+  <string name="other_language">Język</string>
+  <string name="other_language_description">Wielkie dzięki wielu tłumaczom-wolontariuszom na Transifex! Proszę odwiedź GitHubową stronę aby dowiedzieć się jak sprawić, że Doodle będzie dostępny w twoim języku.</string>
+  <string name="other_language_system">Taki jak systemowy</string>
+  <string name="other_language_system_description">Angielski jeżeli tłumaczenie nie jest dostępne</string>
+  <string name="other_gpu">Akceleracja sprzętowa</string>
+  <string name="other_gpu_description">Wyłącz jeżeli tapeta spada z rowerka</string>
+  <string name="other_gpu_info">Sprzętowa akceleracja jest dostępna tylko na Androidzie w wersji 8 i nowszych. Animacje tapety mogą wyglądać trochę zlagowane.</string>
+  <string name="other_launcher">Ukryj ikkonę na liście aplikacji</string>
+  <string name="other_launcher_description">Ustawienia będą dostępne tylko na ekranie wyboru animaowanych tapet</string>
+  <string name="other_launcher_unsupported">Ta funkcja nie jest już dostępna z powodu ograniczeń systemu</string>
+  <string name="other_theme">Kolor motywu tej aplikacji</string>
+  <string name="other_theme_description">Wypróbuj nowy wygląd</string>
+  <string name="other_theme_auto">Automatyczny</string>
+  <string name="other_theme_light">Jasny</string>
+  <string name="other_theme_dark">Ciemny</string>
+  <string name="other_transition">Używaj animacji przesuwania pomiędzy stronami ustawień</string>
+  <string name="other_transition_description">Zamiast zanikania</string>
+  <string name="other_reset">Wyczyść wszystkie ustawienia</string>
+  <string name="other_reset_description">Robi więcej niż odinstalowanie by dało, ponieważ preferencje są przechowywane w specjalnym miejsciu ponieważ muszą być dostępne od razu po starcie urządzenia</string>
+
+  <!-- ABOUT -->
+
+  <string name="about_title">O aplikacji</string>
+  <string name="about_description">Informacje o progamiście i więcej</string>
+  <string name="about_version">Wersja</string>
+  <string name="about_changelog">Historia zmian</string>
+  <string name="about_changelog_description">Co nowego?</string>
+  <string name="about_developer">Programista</string>
+  <string name="about_vending_description">Więcej informacji od programisty</string>
+  <string name="about_github_description">Source code</string>
+  <string name="about_translation_description">Pomóż przetłumaczyć Doodle</string>
+  <string name="about_privacy">Polityka prywatności</string>
+  <string name="about_privacy_description">Jak twoje dane są przetwarzane?</string>
+
+  <!-- MESSAGES -->
+
+  <string name="msg_feedback">Świetna aplikacja potrzebuje dużo czasu i odzewu od użytkowników.</string>
+  <string name="msg_feedback_contact">Masz jakieś życzenia, komentarze, pytania? Skontaktuj się ze mną!\nJak nie to będę bardzo zadowolony jak zostawisz opinię w sklepie Play</string>
+  <string name="msg_share">Ogarnij tą świetną apkę do pięknych, animowanych tapet: \nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
+  <string name="msg_hide">Ukryć ikonę na liście aplikacji?</string>
+  <string name="msg_random">Wszystkie designy zostaną użyte</string>
+  <string name="msg_random_warning">Losowy design tapty jest wciąż aktywny!</string>
+  <string name="msg_reset">Wyczyścić wszystkie ustawienia?</string>
+  <string name="msg_force_stop">Wymuszono zatrzymanie aby zaaplikować zmiany</string>
+  <string name="msg_apply_colors">Zmienione kolory zostaną zaaplikowane do systemu następnym razem gdy wyłączysz ekran</string>
+  <string name="msg_apply_changes">Aby zaaplikować zmienione opcje uruchomienie ponownie tapety jest zalecane. Tego nie da się zrobić automatycznie.\nProszę wymuś zamknięcie Doodle w swoich ustawieniach systemowych a następnie ponownie ustaw Doodle jako Twoją tapetę.</string>
+  <string name="msg_preview_missing">Wystąpił błąd, proszę wybierz recznie Doodle jako tapetę</string>
+
+  </resources>

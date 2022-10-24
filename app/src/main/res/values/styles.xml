@@ -156,6 +156,32 @@
     <item name="android:fontFamily">@font/jost_medium</item>
   </style>
 
+  <style
+    name="Widget.Doodle.Button.IconButton"
+    parent="Widget.Material3.Button.IconButton">
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="iconTint">?attr/colorOnSurfaceVariant</item>
+    <item name="iconSize">24dp</item>
+  </style>
+
+  <style
+    name="Widget.Doodle.Button.IconButton.Filled"
+    parent="Widget.Material3.Button.IconButton.Filled">
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="iconSize">24dp</item>
+  </style>
+
+  <style
+    name="Widget.Doodle.Button.IconButton.Outlined"
+    parent="Widget.Material3.Button.IconButton.Outlined">
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="iconTint">?attr/colorOnSurfaceVariant</item>
+    <item name="iconSize">24dp</item>
+  </style>
+
   <!-- CardView -->
 
   <style name="Widget.Doodle.Card.Text" parent="@style/Widget.Material3.CardView.Filled">
@@ -322,10 +348,24 @@
   </style>
 
   <style
+    name="Widget.Doodle.LinearLayout.ListItem.TwoLine.More"
+    parent="Widget.Doodle.LinearLayout.ListItem.TwoLine">
+    <item name="android:paddingTop">12dp</item>
+    <item name="android:paddingBottom">12dp</item>
+  </style>
+
+  <style
     name="Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable"
     parent="Widget.Doodle.LinearLayout.ListItem.TwoLine">
     <item name="android:clickable">true</item>
     <item name="android:background">@drawable/ripple_list_item_bg</item>
+  </style>
+
+  <style
+    name="Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable.More"
+    parent="Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable">
+    <item name="android:paddingTop">12dp</item>
+    <item name="android:paddingBottom">12dp</item>
   </style>
 
   <style

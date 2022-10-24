@@ -146,7 +146,7 @@
 
         <LinearLayout
           android:id="@+id/linear_parallax_swipe_power_save"
-          style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable">
+          style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable.More">
 
           <ImageView
             android:id="@+id/image_parallax_swipe_power_save"
@@ -337,7 +337,7 @@
 
           <LinearLayout
             android:id="@+id/linear_parallax_tilt_power_save"
-            style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable">
+            style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable.More">
 
             <ImageView
               android:id="@+id/image_parallax_tilt_power_save"

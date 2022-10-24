@@ -61,7 +61,9 @@
 
         <LinearLayout
           style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine"
-          android:paddingBottom="0dp">
+          android:paddingBottom="0dp"
+          android:paddingStart="16dp"
+          android:paddingEnd="16dp">
 
           <ImageView
             android:id="@+id/image_size_scale"
@@ -81,22 +83,10 @@
 
           </LinearLayout>
 
-          <FrameLayout
-            android:id="@+id/frame_size_scale_reset"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:background="?attr/actionBarItemBackground">
-
-            <ImageView
-              android:id="@+id/image_size_scale_reset"
-              android:layout_width="24dp"
-              android:layout_height="24dp"
-              android:layout_gravity="center"
-              android:src="@drawable/ic_round_settings_backup_restore_anim"
-              app:tint="?attr/colorOnSurfaceVariant"
-              tools:ignore="ContentDescription" />
-
-          </FrameLayout>
+          <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_size_scale_reset"
+            style="@style/Widget.Doodle.Button.IconButton"
+            app:icon="@drawable/ic_round_settings_backup_restore_anim" />
 
         </LinearLayout>
 
@@ -175,7 +165,7 @@
 
         <LinearLayout
           android:id="@+id/linear_size_zoom_power_save"
-          style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable">
+          style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable.More">
 
           <ImageView
             android:id="@+id/image_size_zoom_power_save"
@@ -208,7 +198,7 @@
 
         <LinearLayout
           android:id="@+id/linear_size_zoom_launcher"
-          style="@style/Widget.Doodle.LinearLayout.ListItem.SingleLine.Clickable">
+          style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable.More">
 
           <ImageView
             android:id="@+id/image_size_zoom_launcher"
@@ -236,7 +226,7 @@
 
         <LinearLayout
           android:id="@+id/linear_size_zoom_damping"
-          style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable"
+          style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable.More"
           android:orientation="vertical"
           android:paddingStart="16dp"
           android:paddingEnd="14dp"

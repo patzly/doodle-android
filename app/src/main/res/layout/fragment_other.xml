@@ -85,10 +85,10 @@
         </LinearLayout>
 
         <LinearLayout
-          style="@style/Widget.Doodle.LinearLayout.ListItem.ThreeLine"
-          android:paddingBottom="0dp"
-          android:paddingStart="16dp"
-          android:paddingEnd="0dp">
+          style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.More"
+          android:paddingTop="12dp"
+          android:paddingBottom="4dp"
+          android:minHeight="56dp">
 
           <ImageView
             android:id="@+id/image_other_theme"
@@ -111,73 +111,75 @@
               android:paddingStart="0dp"
               android:paddingEnd="16dp"/>
 
-            <HorizontalScrollView
-              android:id="@+id/scroll_other_theme"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:scrollbars="none"
-              android:overScrollMode="ifContentScrolls"
-              android:layout_marginTop="8dp"
-              android:layout_marginBottom="8dp">
-
-              <LinearLayout
-                android:id="@+id/linear_other_theme_container"
-                style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingStart="0dp"
-                android:paddingEnd="20dp" />
-
-            </HorizontalScrollView>
-
-            <HorizontalScrollView
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:scrollbars="none"
-              android:overScrollMode="ifContentScrolls"
-              android:layout_marginBottom="8dp">
-
-              <com.google.android.material.button.MaterialButtonToggleGroup
-                android:id="@+id/toggle_other_theme"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingStart="0dp"
-                android:paddingEnd="24dp"
-                app:singleSelection="true"
-                app:selectionRequired="true">
-
-                <com.google.android.material.button.MaterialButton
-                  android:id="@+id/button_other_theme_auto"
-                  style="@style/Widget.Doodle.Button.OutlinedButton"
-                  android:layout_width="wrap_content"
-                  android:layout_height="wrap_content"
-                  android:text="@string/other_theme_auto"
-                  tools:ignore="TextContrastCheck" />
-
-                <com.google.android.material.button.MaterialButton
-                  android:id="@+id/button_other_theme_light"
-                  style="@style/Widget.Doodle.Button.OutlinedButton"
-                  android:layout_width="wrap_content"
-                  android:layout_height="wrap_content"
-                  android:text="@string/other_theme_light"
-                  tools:ignore="TextContrastCheck" />
-
-                <com.google.android.material.button.MaterialButton
-                  android:id="@+id/button_other_theme_dark"
-                  style="@style/Widget.Doodle.Button.OutlinedButton"
-                  android:layout_width="wrap_content"
-                  android:layout_height="wrap_content"
-                  android:text="@string/other_theme_dark"
-                  tools:ignore="TextContrastCheck" />
-
-              </com.google.android.material.button.MaterialButtonToggleGroup>
-
-            </HorizontalScrollView>
-
           </LinearLayout>
 
         </LinearLayout>
+
+        <HorizontalScrollView
+          android:id="@+id/scroll_other_theme"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:scrollbars="none"
+          android:overScrollMode="ifContentScrolls"
+          android:layout_marginStart="56dp"
+          android:layout_marginTop="8dp"
+          android:layout_marginBottom="8dp">
+
+          <LinearLayout
+            android:id="@+id/linear_other_theme_container"
+            style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingStart="0dp"
+            android:paddingEnd="20dp" />
+
+        </HorizontalScrollView>
+
+        <HorizontalScrollView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:scrollbars="none"
+          android:overScrollMode="ifContentScrolls"
+          android:layout_marginStart="56dp"
+          android:layout_marginBottom="8dp">
+
+          <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/toggle_other_theme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="0dp"
+            android:paddingEnd="24dp"
+            app:singleSelection="true"
+            app:selectionRequired="true">
+
+            <com.google.android.material.button.MaterialButton
+              android:id="@+id/button_other_theme_auto"
+              style="@style/Widget.Doodle.Button.OutlinedButton"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="@string/other_theme_auto"
+              tools:ignore="TextContrastCheck" />
+
+            <com.google.android.material.button.MaterialButton
+              android:id="@+id/button_other_theme_light"
+              style="@style/Widget.Doodle.Button.OutlinedButton"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="@string/other_theme_light"
+              tools:ignore="TextContrastCheck" />
+
+            <com.google.android.material.button.MaterialButton
+              android:id="@+id/button_other_theme_dark"
+              style="@style/Widget.Doodle.Button.OutlinedButton"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="@string/other_theme_dark"
+              tools:ignore="TextContrastCheck" />
+
+          </com.google.android.material.button.MaterialButtonToggleGroup>
+
+        </HorizontalScrollView>
 
       </LinearLayout>
 
@@ -223,7 +225,7 @@
 
         <LinearLayout
           android:id="@+id/linear_other_gpu"
-          style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable">
+          style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable.More">
 
           <ImageView
             android:id="@+id/image_other_gpu"
@@ -252,7 +254,7 @@
 
         <LinearLayout
           android:id="@+id/linear_other_launcher"
-          style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable">
+          style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable.More">
 
           <ImageView
             android:id="@+id/image_other_launcher"
@@ -284,7 +286,7 @@
 
         <LinearLayout
           android:id="@+id/linear_other_reset"
-          style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable">
+          style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable.More">
 
           <ImageView
             android:id="@+id/image_other_reset"

@@ -49,6 +49,9 @@ nojuscat
 nl
 Joeke
 
+pl
+JakubekWeg
+
 pt-BR
 lurig, mamutal91
 

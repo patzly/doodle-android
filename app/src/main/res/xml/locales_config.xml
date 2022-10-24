@@ -36,6 +36,7 @@
   <locale android:name="ko"/>
   <locale android:name="lt"/>
   <locale android:name="nl"/>
+  <locale android:name="pl"/>
   <locale android:name="pt-BR"/>
   <locale android:name="ro"/>
   <locale android:name="ru"/>

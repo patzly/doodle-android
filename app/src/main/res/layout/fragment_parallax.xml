@@ -242,7 +242,9 @@
           <LinearLayout
             android:id="@+id/linear_parallax_refresh_rate"
             style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine"
-            android:paddingBottom="0dp">
+            android:paddingTop="12dp"
+            android:paddingBottom="0dp"
+            android:minHeight="56dp">
 
             <ImageView
               android:id="@+id/image_parallax_refresh_rate"
@@ -274,7 +276,9 @@
           <LinearLayout
             android:id="@+id/linear_parallax_damping"
             style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine"
-            android:paddingBottom="0dp">
+            android:paddingTop="12dp"
+            android:paddingBottom="0dp"
+            android:minHeight="56dp">
 
             <ImageView
               android:id="@+id/image_parallax_damping"

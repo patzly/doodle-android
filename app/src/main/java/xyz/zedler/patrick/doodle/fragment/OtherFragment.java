@@ -155,6 +155,19 @@ public class OtherFragment extends BaseFragment
       );
     });
 
+    binding.sliderScreenOffDelay.setValue(
+        getSharedPrefs().getInt(PREF.SCREEN_OFF_DELAY, 0)
+    );
+    binding.sliderScreenOffDelay.addOnChangeListener((slider, value, fromUser) -> {
+      getSharedPrefs().edit().putInt(PREF.SCREEN_OFF_DELAY, (int) value).apply();
+      activity.requestSettingsRefresh();
+    });
+    binding.sliderScreenOffDelay.setLabelFormatter(
+        value -> getString(
+            R.string.label_ms, String.format(activity.getLocale(), "%.0f", value)
+        )
+    );
+
     binding.partialOptionTransition.linearOtherTransition.setOnClickListener(
         v -> binding.partialOptionTransition.switchOtherTransition.setChecked(
             !binding.partialOptionTransition.switchOtherTransition.isChecked()

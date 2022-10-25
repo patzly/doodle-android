@@ -39,6 +39,8 @@ import android.hardware.SensorManager;
 import android.os.Build;
 import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
+import android.os.Handler;
+import android.os.Looper;
 import android.os.PowerManager;
 import android.os.SystemClock;
 import android.service.wallpaper.WallpaperService;
@@ -279,8 +281,10 @@ public class LiveWallpaperService extends WallpaperService {
     private boolean isVisible;
     private boolean isPreview;
     private boolean usedGlitchWorkaround;
+    private boolean pendingScreenOffDelay;
     private float fps;
     private int screenRotation;
+    private int screenOffDelay;
     private long lastFrameDraw;
     private Display display;
 
@@ -388,6 +392,7 @@ public class LiveWallpaperService extends WallpaperService {
       fps = display.getRefreshRate();
       screenRotation = display.getRotation();
       usedGlitchWorkaround = false;
+      pendingScreenOffDelay = false;
 
       randomUtil = new RandomUtil(force -> {
         // refresh random
@@ -577,22 +582,30 @@ public class LiveWallpaperService extends WallpaperService {
       // everything regarding unlock animation
       switch (presence) {
         case USER_PRESENCE.OFF:
-          usedGlitchWorkaround = false; // new unlock anim next time
-          if (isZoomUnlockEnabled && animZoom()) {
-            zoomUnlock = shouldZoomInWhenLocked ? -1 : 1;
-            zoomLauncher = 0; // 1 or 0?
-          }
-          if (!randomMode.equals(RANDOM.OFF) || (isZoomUnlockEnabled && animZoom())) {
-            drawFrame(true, null);
-          }
+          pendingScreenOffDelay = true;
+          new Handler(Looper.getMainLooper()).postDelayed(() -> {
+            if (!pendingScreenOffDelay) {
+              return;
+            }
+            usedGlitchWorkaround = false; // new unlock anim next time
+            if (isZoomUnlockEnabled && animZoom()) {
+              zoomUnlock = shouldZoomInWhenLocked ? -1 : 1;
+              zoomLauncher = 0; // 1 or 0?
+            }
+            if (!randomMode.equals(RANDOM.OFF) || (isZoomUnlockEnabled && animZoom())) {
+              drawFrame(true, null);
+            }
+          }, screenOffDelay);
           break;
         case USER_PRESENCE.LOCKED:
+          pendingScreenOffDelay = false;
           if (isZoomUnlockEnabled && animZoom()) {
             zoomLauncher = 0;
             animateZoom(shouldZoomInWhenLocked ? -0.5f : 0.5f);
           }
           break;
         case USER_PRESENCE.UNLOCKED:
+          pendingScreenOffDelay = false;
           if (isVisible && animZoom()) {
             animateZoom(0);
           } else {
@@ -709,6 +722,8 @@ public class LiveWallpaperService extends WallpaperService {
       isZoomUnlockEnabled = sharedPrefs.getBoolean(PREF.ZOOM_UNLOCK, DEF.ZOOM_UNLOCK);
       shouldZoomInWhenLocked = sharedPrefs.getBoolean(PREF.ZOOM_UNLOCK_IN, DEF.ZOOM_UNLOCK_IN);
       zoomDuration = sharedPrefs.getInt(PREF.ZOOM_DURATION, DEF.ZOOM_DURATION);
+
+      screenOffDelay = sharedPrefs.getInt(PREF.SCREEN_OFF_DELAY, 0);
     }
 
     /**

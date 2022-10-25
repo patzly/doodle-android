@@ -61,7 +61,9 @@
 
         <LinearLayout
           style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine"
+          android:paddingTop="12dp"
           android:paddingBottom="0dp"
+          android:minHeight="56dp"
           android:paddingStart="16dp"
           android:paddingEnd="16dp">
 
@@ -103,7 +105,9 @@
 
         <LinearLayout
           style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine"
-          android:paddingBottom="0dp">
+          android:paddingTop="12dp"
+          android:paddingBottom="0dp"
+          android:minHeight="56dp">
 
           <ImageView
             android:id="@+id/image_size_zoom"
@@ -134,7 +138,9 @@
 
         <LinearLayout
           style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine"
-          android:paddingBottom="0dp">
+          android:paddingTop="12dp"
+          android:paddingBottom="0dp"
+          android:minHeight="56dp">
 
           <ImageView
             android:id="@+id/image_size_zoom_rotation"

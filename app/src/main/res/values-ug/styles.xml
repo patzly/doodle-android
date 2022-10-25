@@ -64,11 +64,7 @@
 
   <!-- TextView -->
 
-  <style name="Widget.Doodle.TextView.Toolbar" parent="Base.Doodle.TextView.Toolbar">
-    <item name="android:textStyle">bold</item>
-  </style>
-
-  <style name="Widget.Doodle.TextView.Category" parent="Base.Doodle.TextView.Category">
+  <style name="Widget.Doodle.TextView.Medium" parent="Widget.Doodle.TextView">
     <item name="android:textStyle">bold</item>
   </style>
 

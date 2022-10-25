@@ -86,6 +86,7 @@
     name="Widget.Doodle.Button.TextButton.Snackbar"
     parent="Widget.Material3.Button.TextButton.Snackbar">
     <item name="android:fontFamily">@font/jost_medium</item>
+    <item name="fontFamily">@font/jost_medium</item>
   </style>
 
   <!-- ImageView (icons) -->
@@ -117,6 +118,7 @@
     name="Widget.Doodle.Button.UnelevatedButton"
     parent="Base.Doodle.Button.UnelevatedButton">
     <item name="android:fontFamily">@font/jost_medium</item>
+    <item name="fontFamily">@font/jost_medium</item>
   </style>
 
   <!-- Base style -->
@@ -132,6 +134,7 @@
     name="Widget.Doodle.Button.OutlinedButton"
     parent="Base.Doodle.Button.OutlinedButton">
     <item name="android:fontFamily">@font/jost_medium</item>
+    <item name="fontFamily">@font/jost_medium</item>
   </style>
 
   <!-- Base style -->
@@ -147,6 +150,7 @@
     name="Widget.Doodle.Button.TextButton"
     parent="Base.Doodle.Button.TextButton">
     <item name="android:fontFamily">@font/jost_medium</item>
+    <item name="fontFamily">@font/jost_medium</item>
   </style>
 
   <!-- Localized style, no empty base style needed -->
@@ -154,6 +158,7 @@
     name="Widget.Doodle.Button.TextButton.Dialog"
     parent="Widget.Material3.Button.TextButton.Dialog">
     <item name="android:fontFamily">@font/jost_medium</item>
+    <item name="fontFamily">@font/jost_medium</item>
   </style>
 
   <style
@@ -248,6 +253,7 @@
     name="Widget.Doodle.ExtendedFloatingActionButton"
     parent="Widget.Material3.ExtendedFloatingActionButton.Primary">
     <item name="android:fontFamily">@font/jost_medium</item>
+    <item name="fontFamily">@font/jost_medium</item>
   </style>
 
   <!-- TimePicker -->
@@ -268,6 +274,7 @@
   <style
     name="TextAppearance.Doodle.TimePicker.Title"
     parent="TextAppearance.Material3.MaterialTimePicker.Title">
+    <item name="android:fontFamily">@font/jost_medium</item>
     <item name="fontFamily">@font/jost_medium</item>
   </style>
 
@@ -309,6 +316,7 @@
     name="Widget.Doodle.Button.TextButton.Dialog.Flush"
     parent="Widget.Material3.Button.TextButton.Dialog.Flush">
     <item name="android:fontFamily">@font/jost_medium</item>
+    <item name="fontFamily">@font/jost_medium</item>
   </style>
 
   <!-- LinearLayout (lists) -->
@@ -440,6 +448,12 @@
     <item name="android:hyphenationFrequency" tools:targetApi="m">full</item>
   </style>
 
+  <!-- Localized style, no empty base style needed -->
+  <style name="Widget.Doodle.TextView.Medium" parent="Widget.Doodle.TextView">
+    <item name="android:fontFamily">@font/jost_medium</item>
+    <item name="fontFamily">@font/jost_medium</item>
+  </style>
+
   <style name="Widget.Doodle.TextView.Paragraph" parent="Widget.Doodle.TextView">
     <item name="android:justificationMode" tools:targetApi="o">inter_word</item>
   </style>
@@ -450,23 +464,13 @@
     <item name="android:textAppearance">?attr/textAppearanceBodyMedium</item>
   </style>
 
-  <!-- Base style -->
-  <style name="Base.Doodle.TextView.Toolbar" parent="Widget.Doodle.TextView">
+  <style name="Widget.Doodle.TextView.Toolbar" parent="Widget.Doodle.TextView">
     <item name="android:textAppearance">?attr/textAppearanceTitleLarge</item>
     <item name="android:singleLine">true</item>
     <item name="android:textColor">?attr/colorOnSurface</item>
   </style>
 
-  <!-- Localized style -->
-  <style name="Widget.Doodle.TextView.Toolbar" parent="Base.Doodle.TextView.Toolbar">
-    <!-- Untranslated text like the app name doesn't need medium font if the system font is used
-    as fallback because they will already appear medium with the textStyle attribute set to bold
-    for these locales. -->
-    <item name="android:fontFamily">@font/jost_book</item>
-  </style>
-
-  <!-- Base style -->
-  <style name="Base.Doodle.TextView.Category" parent="Widget.Doodle.TextView">
+  <style name="Widget.Doodle.TextView.Category" parent="Widget.Doodle.TextView.Medium">
     <item name="android:layout_width">wrap_content</item>
     <item name="android:layout_height">wrap_content</item>
     <item name="android:layout_marginStart">56dp</item>
@@ -476,16 +480,11 @@
     <item name="android:textColor">?attr/colorSecondary</item>
   </style>
 
-  <!-- Localized style -->
-  <style name="Widget.Doodle.TextView.Category" parent="Base.Doodle.TextView.Category">
-    <item name="android:fontFamily">@font/jost_medium</item>
-  </style>
-
-  <style name="Widget.Doodle.TextView.ListItem.OverLine" parent="Widget.Doodle.TextView">
+  <style name="Widget.Doodle.TextView.ListItem.OverLine" parent="Widget.Doodle.TextView.Medium">
     <item name="android:layout_width">match_parent</item>
     <item name="android:layout_height">wrap_content</item>
     <item name="android:maxLines">2</item>
-    <item name="android:textAppearance">?attr/textAppearanceLabelSmall</item>
+    <item name="android:textAppearance">?attr/textAppearanceLabelMedium</item><!--Small-->
     <item name="android:textColor">?attr/colorOnSurfaceVariant</item>
   </style>
 
@@ -507,6 +506,7 @@
 
   <!-- Localized style, no empty base style needed -->
   <style name="TextAppearance.Doodle.LabelLarge" parent="TextAppearance.Material3.LabelLarge">
+    <item name="android:fontFamily">@font/jost_medium</item>
     <item name="fontFamily">@font/jost_medium</item>
   </style>
 

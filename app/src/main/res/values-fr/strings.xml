@@ -170,6 +170,8 @@
   <string name="other_gpu">Accélération matérielle</string>
   <string name="other_gpu_description">Désactiver si le fond d\'écran se bloque</string>
   <string name="other_gpu_info">L\'accélération matérielle n\'est disponible pour Doodle qu\'à partir d\'Android 8. Les animations de fond d\'écran pourraient donc être un peu saccadées.</string>
+  <string name="other_screen_off_delay">Délai d\'extinction de l\'écran</string>
+  <string name="other_screen_off_delay_description">Requis pour la transition Always On Display</string>
   <string name="other_launcher">Masquer l\'icône dans le lanceur d\'applications</string>
   <string name="other_launcher_description">Les paramètres ne seront accessibles que dans le sélecteur de fonds d\'écran animés de votre système</string>
   <string name="other_launcher_unsupported">Cette fonctionnalité n\'est plus prise en charge en raison de restrictions système</string>

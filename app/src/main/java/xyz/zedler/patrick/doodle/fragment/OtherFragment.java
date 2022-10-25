@@ -161,6 +161,7 @@ public class OtherFragment extends BaseFragment
     binding.sliderScreenOffDelay.addOnChangeListener((slider, value, fromUser) -> {
       getSharedPrefs().edit().putInt(PREF.SCREEN_OFF_DELAY, (int) value).apply();
       activity.requestSettingsRefresh();
+      performHapticClick();
     });
     binding.sliderScreenOffDelay.setLabelFormatter(
         value -> getString(

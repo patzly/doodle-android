@@ -91,10 +91,7 @@ public class BaseBottomSheetDialogFragment extends CustomBottomSheetDialogFragme
             sheet.setBackground(background);
 
             BottomSheetBehavior<View> behavior = BottomSheetBehavior.from(sheet);
-            behavior.setPeekHeight(
-                UiUtil.getDisplayHeight(requireContext()) / 2
-                + UiUtil.dpToPx(activity, 64) // height of bottom sheet top bar
-            );
+            behavior.setPeekHeight(UiUtil.getDisplayHeight(requireContext()) / 2);
 
             boolean isFullWidth =
                 behavior.getMaxWidth() >= UiUtil.getDisplayWidth(requireContext());

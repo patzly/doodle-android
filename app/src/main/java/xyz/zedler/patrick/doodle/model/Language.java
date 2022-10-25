@@ -33,7 +33,8 @@ public class Language implements Comparable<Language> {
     code = parts[0];
     translators = parts[1];
     Locale locale = LocaleUtil.getLocaleFromCode(code);
-    name = locale.getDisplayName(locale);
+    String displayName = locale.getDisplayName(locale);
+    name = displayName.substring(0, 1).toUpperCase() + displayName.substring(1);
   }
 
   public String getCode() {

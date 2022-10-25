@@ -44,8 +44,8 @@
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:text="@string/other_language_description"
-      android:paddingTop="4dp"
-      android:alpha="0.6" />
+      android:textColor="?attr/colorOnSurfaceVariant"
+      android:paddingTop="4dp" />
 
   </LinearLayout>
 

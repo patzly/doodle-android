@@ -185,7 +185,7 @@
 
           <LinearLayout
             android:id="@+id/linear_parallax_tilt"
-            style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable"
+            style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable.More"
             android:orientation="vertical"
             android:paddingStart="16dp"
             android:paddingEnd="14dp"

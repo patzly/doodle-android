@@ -167,7 +167,7 @@
   <string name="other_gpu_description">如壁纸崩溃则关闭</string>
   <string name="other_gpu_info">硬件加速功能只适用于 Android 8 及以上系统的 Doodle 。壁纸动画因此可能有点不稳定。</string>
   <string name="other_screen_off_delay">熄屏延迟</string>
-  <string name="other_screen_off_delay_description">对“始终亮屏”是必需的</string>
+  <string name="other_screen_off_delay_description">对“始终亮屏”过渡是必需的</string>
   <string name="other_launcher">在桌面上隐藏图标</string>
   <string name="other_launcher_description">设置只能在系统的实时壁纸选取器中访问</string>
   <string name="other_launcher_unsupported">由于系统限制，本应用不再支持此功能</string>

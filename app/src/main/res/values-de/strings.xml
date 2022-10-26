@@ -168,6 +168,8 @@
   <string name="other_gpu">Hardware-Beschleunigung</string>
   <string name="other_gpu_description">Ausschalten, wenn der Hintergrund abstürzt</string>
   <string name="other_gpu_info">Hardware-Beschleunigung ist für Doodle erst ab Android 8 verfügbar. Die Animationen könnten deshalb etwas ruckelig sein.</string>
+  <string name="other_screen_off_delay">Verzögerung beim Ausschalten des Bildschirms</string>
+  <string name="other_screen_off_delay_description">Erforderlich für den Übergang zum Always-On-Display</string>
   <string name="other_launcher">App-Icon verbergen</string>
   <string name="other_launcher_description">Einstellungen nur über Live-Hintergrund-Auswahl des Systems erreichbar</string>
   <string name="other_launcher_unsupported">Diese Funktion wird aufgrund von Systembeschränkungen nicht mehr unterstützt</string>

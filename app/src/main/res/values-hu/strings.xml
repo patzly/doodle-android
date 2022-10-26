@@ -21,6 +21,7 @@
 
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
+  <string name="wallpaper_description">Színes élő háttérkép automatikus sötét móddal és energiatakarékos animációkkal.  Szabja testre igényeinek megfelelően!</string>
   <!-- TITLES -->
 
   <string name="title_info">Információ</string>
@@ -33,6 +34,10 @@
   <string name="label_ms">%1$sms</string>
   <string name="label_degrees">%1$sfok</string>
 
+  <!-- ACTIONS -->
+
+  <string name="action_cancel">Mégsem</string>
+  <string name="action_select">Kiválasztás</string>
   <string name="action_close">Bezárás</string>
   <string name="action_back">Vissza</string>
   <string name="action_open_link">Külső weboldal megnyitása</string>
@@ -43,39 +48,76 @@
   <string name="action_continue">Tovább</string>
   <string name="action_open_app_info">Alkalmazás adatainak megnyitása</string>
   <string name="action_set">Háttérkép beállítása</string>
+  <string name="action_learn_more">Tudj meg többet</string>
+  <string name="action_help">Segítség</string>
   <string name="action_send_feedback">Visszajelzés küldése</string>
   <string name="action_share">Megosztás</string>
-  <string name="action_share_description">Mesélj a barátaidnak a Doodle-ről</string>
+  <string name="action_share_description">Mesélj barátaidnak a Doodle-ről</string>
   <string name="action_email">Email küldése</string>
   <string name="action_email_description">Lépj kapcsolatba a fejlesztővel</string>
   <string name="action_rate">Értékeld Google Play-en</string>
   <string name="action_rate_description">Támogasd a fejlesztést</string>
   <string name="action_github">Doodle Android GitHub-on</string>
+  <string name="action_github_description">Hiba jelentése</string>
   <string name="action_language_select">Nyelv kiválasztása</string>
+  <string name="action_set_static">Statikus háttérkép beállítása</string>
   <!-- APPEARANCE -->
 
   <string name="appearance_title">Megjelenés</string>
-  <string name="appearance_design">Design</string>
+  <string name="appearance_description">Dizájn &amp; szín opciók</string>
+  <string name="appearance_one_ui">A dinamikus színek Samsung általi kedvezőtlen megvalósítása a One UI 4.1-ben teljes mértékben figyelmen kívül hagyja az élő háttérkép alkalmazások, mint például a Doodle által biztosított színeket.\nA színek rendszerre való alkalmazásához állítsa be lent az aktuális dizájnt statikus háttérként, hogy a rendszer lekérje a színeket, majd  alkalmazza élő háttérképként.</string>
+  <string name="appearance_design">Dizájn</string>
   <string name="appearance_design_doodle">Pixel 4 Doodle Kollekció</string>
   <string name="appearance_design_monet">Pixel 6 Material You Kollekció</string>
   <string name="appearance_design_anna">Élő háttérképek à l\'Anna Kövecses</string>
   <string name="appearance_variant">Változat</string>
   <string name="appearance_night_mode">Sötét mód</string>
-  <string name="appearance_night_mode_description">Csakis sötét színek</string>
+  <string name="appearance_night_mode_description">Csak sötét színek</string>
+  <string name="appearance_night_mode_on">Be</string>
+  <string name="appearance_night_mode_off">Ki</string>
+  <string name="appearance_light_text">Mindig fehér szöveget használjon</string>
+  <string name="appearance_light_text_description">a fekete helyett világos háttéren</string>
+  <string name="appearance_dark_text">Sötét szöveg használata</string>
+  <string name="appearance_dark_text_description">csak akkor, ha a háttér elég világos</string>
+  <string name="appearance_colors_category">Színek</string>
   <string name="appearance_colors">Kivont színek</string>
   <string name="appearance_colors_description">Szöveg kontrasztjának kiszámítására használt</string>
   <string name="appearance_colors_description_dynamic">A rendszer tematikus motorja által használt</string>
+  <string name="appearance_colors_description_one_ui">Ahogy fentebb említettük, a One UI figyelmen kívül hagyja az élő háttérképek által megadott színeket.</string>
   <string name="appearance_colors_primary">Elsődleges szín kiválasztása</string>
   <string name="appearance_colors_secondary">Másodlagos szín kiválasztása</string>
   <string name="appearance_colors_tertiary">Harmadlagos szín kiválasztása</string>
+  <string name="appearance_colors_custom">Egyedi szín kiválasztása</string>
   <string name="appearance_colors_info">A dinamikus színtámogatással nem rendelkező eszközökön (Android 11 vagy régebbi verziók) csak az elsődleges szín használt a launcher szövegének kontrasztjának kiszámításához és a legutóbbi alkalmazások képernyőjének hátterének színezéséhez.</string>
   <string name="appearance_colors_info_dynamic">Az Android 12 vagy újabb verzióval és a dinamikus színtámogatással rendelkező eszközökön a három kiválasztott szín automatikusan rendszerszintű színtémát hoz létre.</string>
-  <string name="appearance_random">Véletlenszerű háttérkép design</string>
+  <string name="appearance_random">Véletlenszerű háttérkép dizájn</string>
   <!-- PARALLAX -->
 
   <string name="parallax_title">Parallaxis</string>
   <string name="parallax_description">Csúsztatás &amp; billenő effektus</string>
-  <string name="parallax_touch_wiz">Úgy tűnik, hogy a jelenlegi launch-ered a Samsung TouchWiz, amely nem támogatja a háttérkép görgetést. Kérünk, próbálj meg egy másik launcher-t a parallaxis effektus engedélyezéséhez, ha nincs engedélyezve a dőlésérzékelő opció.\nHa másik launcher-t állít be alapértelmezettként, figyelmen kívül hagyhatod ezt a figyelmeztetést.</string>
-  <string name="parallax_intensity">Parallaxis erőssége</string>
+  <string name="other_language">Nyelv</string>
   <string name="other_language_system">Rendszer követése</string>
+  <string name="other_language_system_description">Angol, ha fordítás nem érhető el</string>
+  <string name="other_gpu">Hardveres gyorsítás</string>
+  <string name="other_gpu_description">Kapcsold ki, ha a háttérkép összeomlik</string>
+  <string name="other_theme_auto">Auto</string>
+  <string name="other_theme_light">Világos</string>
+  <string name="other_theme_dark">Sötét</string>
+  <string name="other_reset">Minden beállítás visszaállítása</string>
+  <!-- ABOUT -->
+
+  <string name="about_title">Névjegy</string>
+  <string name="about_version">Verzió</string>
+  <string name="about_changelog">Változáslista</string>
+  <string name="about_changelog_description">Mi változott?</string>
+  <string name="about_developer">Fejlesztő</string>
+  <string name="about_vending_description">Több alkalmazás a fejlesztőtől</string>
+  <string name="about_github_description">Forráskód</string>
+  <string name="about_translation_description">Segítsen a Doodle fordításában</string>
+  <string name="about_privacy">Adatvédelmi szabályzat</string>
+  <string name="about_privacy_description">Hogyan kezeljük az adatait?</string>
+
+  <string name="msg_reset">Visszaállít minden beállítást?</string>
+  <string name="msg_preview_missing">Hiba történt. Kérjük válassza ki a Doodle Élő Háttérképet manuálisan</string>
+
   </resources>

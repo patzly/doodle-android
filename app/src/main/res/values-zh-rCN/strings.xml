@@ -100,7 +100,9 @@
   <string name="appearance_random_screen_off">关闭屏幕</string>
   <string name="appearance_random_daily">每天的 %1$s</string>
   <string name="appearance_random_interval">选择间隔</string>
-  <string name="appearance_random_interval_minutes">每 %1$d 分钟</string>
+  <plurals name="appearance_random_interval_minutes">
+    <item quantity="other">每 %1$d 分钟</item>
+  </plurals>
   <plurals name="appearance_random_interval_hours">
     <item quantity="other">每 %1$d 小时</item>
   </plurals>

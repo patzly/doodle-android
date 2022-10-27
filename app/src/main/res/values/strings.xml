@@ -111,7 +111,10 @@
   <string name="appearance_random_screen_off">Screen off</string>
   <string name="appearance_random_daily">Daily at %1$s</string>
   <string name="appearance_random_interval">Select interval</string>
-  <string name="appearance_random_interval_minutes">Every %1$d minutes</string>
+  <plurals name="appearance_random_interval_minutes">
+    <item quantity="one">Every minute</item>
+    <item quantity="other">Every %1$d minutes</item>
+  </plurals>
   <plurals name="appearance_random_interval_hours">
     <item quantity="one">Every hour</item>
     <item quantity="other">Every %1$d hours</item>

@@ -27,7 +27,7 @@
   android:orientation="vertical">
 
   <com.google.android.material.appbar.MaterialToolbar
-    style="@style/Widget.Doodle.Toolbar.Centered"
+    style="@style/Widget.Doodle.Toolbar"
     app:title="@string/title_apply_changes" />
 
   <com.google.android.material.divider.MaterialDivider

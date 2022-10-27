@@ -76,7 +76,7 @@ public class ParallaxFragment extends BaseFragment
     systemBarBehavior.setAdditionalBottomInset(activity.getFabTopEdgeDistance());
     systemBarBehavior.setUp();
 
-    new ScrollBehavior(activity).setUpScroll(
+    new ScrollBehavior().setUpScroll(
         binding.appBarParallax, binding.scrollParallax, true
     );
 

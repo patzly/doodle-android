@@ -71,7 +71,7 @@ public class OverviewFragment extends BaseFragment implements OnClickListener {
     systemBarBehavior.setAdditionalBottomInset(activity.getFabTopEdgeDistance());
     systemBarBehavior.setUp();
 
-    new ScrollBehavior(activity).setUpScroll(
+    new ScrollBehavior().setUpScroll(
         binding.appBarOverview, binding.scrollOverview, true
     );
 

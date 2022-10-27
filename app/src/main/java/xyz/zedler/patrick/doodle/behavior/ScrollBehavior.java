@@ -19,7 +19,6 @@
 
 package xyz.zedler.patrick.doodle.behavior;
 
-import android.app.Activity;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
@@ -39,7 +38,6 @@ public class ScrollBehavior {
   private static final int STATE_SCROLLED_UP = 2;
   // distance gets divided to prevent cutoff of edge effect
   private final int pufferDivider = 2;
-  private final Activity activity;
   private int currentState = STATE_SCROLLED_UP;
   // distance before top scroll when overScroll is turned off
   private int pufferSize = 0;
@@ -49,10 +47,6 @@ public class ScrollBehavior {
   private boolean noOverScroll = false;
   private AppBarLayout appBarLayout;
   private NestedScrollView scrollView;
-
-  public ScrollBehavior(@NonNull Activity activity) {
-    this.activity = activity;
-  }
 
   public void setUpScroll(@NonNull AppBarLayout appBarLayout,
       NestedScrollView scrollView,

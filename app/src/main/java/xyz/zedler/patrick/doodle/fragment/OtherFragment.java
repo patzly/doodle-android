@@ -91,9 +91,7 @@ public class OtherFragment extends BaseFragment
     systemBarBehavior.setAdditionalBottomInset(activity.getFabTopEdgeDistance());
     systemBarBehavior.setUp();
 
-    new ScrollBehavior(activity).setUpScroll(
-        binding.appBarOther, binding.scrollOther, true
-    );
+    new ScrollBehavior().setUpScroll(binding.appBarOther, binding.scrollOther, true);
 
     binding.toolbarOther.setNavigationOnClickListener(getNavigationOnClickListener());
     binding.toolbarOther.setOnMenuItemClickListener(getOnMenuItemClickListener());

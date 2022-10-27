@@ -143,7 +143,7 @@ public class AppearanceFragment extends BaseFragment
     systemBarBehavior.setAdditionalBottomInset(activity.getFabTopEdgeDistance());
     systemBarBehavior.setUp();
 
-    new ScrollBehavior(activity).setUpScroll(
+    new ScrollBehavior().setUpScroll(
         binding.appBarAppearance, binding.scrollAppearance, true
     );
 

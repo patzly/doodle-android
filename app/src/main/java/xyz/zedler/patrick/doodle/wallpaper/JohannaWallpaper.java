@@ -39,8 +39,6 @@ public class JohannaWallpaper extends BaseWallpaper {
 
   @Override
   public SvgDrawable getPreparedSvg(SvgDrawable svgDrawable, int variant, boolean isNightMode) {
-    //svgDrawable.requireObjectById("blue").isRotatable = true;
-    //svgDrawable.requireObjectById("yellow").isRotatable = true;
     svgDrawable.requireObjectById("green").isRotatable = true;
     return svgDrawable;
   }

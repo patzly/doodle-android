@@ -70,10 +70,6 @@
 
   <!-- TextAppearance -->
 
-  <style name="TextAppearance.Doodle.Toolbar.Title" parent="TextAppearance.Material3.TitleLarge">
-    <item name="android:textStyle">bold</item>
-  </style>
-
   <style name="TextAppearance.Doodle.LabelLarge" parent="TextAppearance.Material3.LabelLarge">
     <item name="android:textStyle">bold</item>
   </style>

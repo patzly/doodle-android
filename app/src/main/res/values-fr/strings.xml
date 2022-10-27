@@ -100,7 +100,11 @@
   <string name="appearance_random_screen_off">Écran éteint</string>
   <string name="appearance_random_daily">Tous les jours à %1$s</string>
   <string name="appearance_random_interval">Sélectionnez l\'intervalle</string>
-  <string name="appearance_random_interval_minutes">Toutes les %1$d minutes</string>
+  <plurals name="appearance_random_interval_minutes">
+    <item quantity="one">Toutes les minutes</item>
+    <item quantity="many">Toutes les %1$d minutes</item>
+    <item quantity="other">Toutes les %1$d minutes</item>
+  </plurals>
   <plurals name="appearance_random_interval_hours">
     <item quantity="one">Toutes les heures</item>
     <item quantity="many">Toutes les %1$d heures</item>

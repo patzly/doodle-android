@@ -71,9 +71,7 @@ public class SizeFragment extends BaseFragment
     systemBarBehavior.setAdditionalBottomInset(activity.getFabTopEdgeDistance());
     systemBarBehavior.setUp();
 
-    new ScrollBehavior(activity).setUpScroll(
-        binding.appBarSize, binding.scrollSize, true
-    );
+    new ScrollBehavior().setUpScroll(binding.appBarSize, binding.scrollSize, true);
 
     binding.toolbarSize.setNavigationOnClickListener(getNavigationOnClickListener());
     binding.toolbarSize.setOnMenuItemClickListener(getOnMenuItemClickListener());

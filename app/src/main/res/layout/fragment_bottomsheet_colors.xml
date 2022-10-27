@@ -28,7 +28,7 @@
 
   <com.google.android.material.appbar.MaterialToolbar
     android:id="@+id/toolbar_colors"
-    style="@style/Widget.Doodle.Toolbar.Centered" />
+    style="@style/Widget.Doodle.Toolbar" />
 
   <com.google.android.material.divider.MaterialDivider
     android:layout_width="match_parent"

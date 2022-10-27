@@ -143,7 +143,7 @@ public class AppearanceFragment extends BaseFragment
     systemBarBehavior.setAdditionalBottomInset(activity.getFabTopEdgeDistance());
     systemBarBehavior.setUp();
 
-    new ScrollBehavior(activity).setUpScroll(
+    new ScrollBehavior().setUpScroll(
         binding.appBarAppearance, binding.scrollAppearance, true
     );
 
@@ -950,7 +950,9 @@ public class AppearanceFragment extends BaseFragment
   private String getRandomPeriodString(long period) {
     if (period < AlarmManager.INTERVAL_HOUR) {
       int minutes = (int) TimeUnit.MILLISECONDS.toMinutes(period);
-      return getString(R.string.appearance_random_interval_minutes, minutes);
+      return getResources().getQuantityString(
+          R.plurals.appearance_random_interval_minutes, minutes, minutes
+      );
     } else if (period < AlarmManager.INTERVAL_DAY) {
       int hours = (int) TimeUnit.MILLISECONDS.toHours(period);
       return getResources().getQuantityString(

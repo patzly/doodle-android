@@ -515,29 +515,20 @@
             <com.google.android.material.button.MaterialButton
               android:id="@+id/button_appearance_random_off"
               style="@style/Widget.Doodle.Button.OutlinedButton"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
               android:text="@string/appearance_night_mode_off" />
 
             <com.google.android.material.button.MaterialButton
               android:id="@+id/button_appearance_random_daily"
               style="@style/Widget.Doodle.Button.OutlinedButton"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
               android:text="@string/appearance_random_daily" />
 
             <com.google.android.material.button.MaterialButton
               android:id="@+id/button_appearance_random_interval"
-              style="@style/Widget.Doodle.Button.OutlinedButton"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:text="@string/appearance_random_interval_minutes" />
+              style="@style/Widget.Doodle.Button.OutlinedButton" />
 
             <com.google.android.material.button.MaterialButton
               android:id="@+id/button_appearance_random_screen_off"
               style="@style/Widget.Doodle.Button.OutlinedButton"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
               android:text="@string/appearance_random_screen_off" />
 
           </com.google.android.material.button.MaterialButtonToggleGroup>

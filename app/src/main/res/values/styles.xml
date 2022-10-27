@@ -38,21 +38,11 @@
   <!-- Toolbar -->
 
   <style
-    name="Widget.Doodle.CollapsingToolbar"
-    parent="@style/Widget.Material3.CollapsingToolbar.Large">
-    <item name="android:layout_width">match_parent</item>
-    <item name="android:layout_height">?attr/collapsingToolbarLayoutLargeSize</item>
-    <item name="layout_scrollFlags">scroll|exitUntilCollapsed|snap</item>
-    <item name="collapsedTitleTextAppearance">@style/TextAppearance.Doodle.Toolbar.Title</item>
-    <item name="expandedTitleTextAppearance">@style/TextAppearance.Doodle.HeadlineMedium</item>
-  </style>
-
-  <style
     name="Widget.Doodle.Toolbar"
     parent="@style/Widget.Material3.Toolbar.OnSurface">
     <item name="android:layout_width">match_parent</item>
     <item name="android:layout_height">?attr/actionBarSize</item>
-    <item name="titleTextAppearance">@style/TextAppearance.Doodle.Toolbar.Title</item>
+    <item name="titleTextAppearance">@style/TextAppearance.Doodle.TitleLarge</item>
     <item name="titleMarginStart">0dp</item>
     <item name="titleCentered">true</item>
     <item name="android:actionOverflowMenuStyle">@style/ThemeOverlay.Doodle.OverFlow</item>
@@ -61,10 +51,6 @@
   <style name="Widget.Doodle.Toolbar.Back" parent="@style/Widget.Doodle.Toolbar">
     <item name="navigationIcon">@drawable/ic_round_arrow_back</item>
     <item name="navigationContentDescription">@string/action_back</item>
-  </style>
-
-  <style name="Widget.Doodle.Toolbar.Centered" parent="@style/Widget.Doodle.Toolbar">
-    <item name="titleCentered">true</item>
   </style>
 
   <style name="ThemeOverlay.Doodle.OverFlow" parent="Widget.AppCompat.ActionButton.Overflow">
@@ -164,23 +150,6 @@
   <style
     name="Widget.Doodle.Button.IconButton"
     parent="Widget.Material3.Button.IconButton">
-    <item name="android:layout_width">wrap_content</item>
-    <item name="android:layout_height">wrap_content</item>
-    <item name="iconTint">?attr/colorOnSurfaceVariant</item>
-    <item name="iconSize">24dp</item>
-  </style>
-
-  <style
-    name="Widget.Doodle.Button.IconButton.Filled"
-    parent="Widget.Material3.Button.IconButton.Filled">
-    <item name="android:layout_width">wrap_content</item>
-    <item name="android:layout_height">wrap_content</item>
-    <item name="iconSize">24dp</item>
-  </style>
-
-  <style
-    name="Widget.Doodle.Button.IconButton.Outlined"
-    parent="Widget.Material3.Button.IconButton.Outlined">
     <item name="android:layout_width">wrap_content</item>
     <item name="android:layout_height">wrap_content</item>
     <item name="iconTint">?attr/colorOnSurfaceVariant</item>
@@ -288,6 +257,7 @@
   <style
     name="TextAppearance.Doodle.TimePicker.DisplayLarge"
     parent="TextAppearance.Material3.DisplayLarge">
+    <item name="android:fontFamily">@font/jost_book</item>
     <item name="fontFamily">@font/jost_book</item>
   </style>
 
@@ -300,6 +270,7 @@
   <style
     name="TextAppearance.Doodle.TimePicker.HeadlineMedium"
     parent="TextAppearance.Material3.HeadlineMedium">
+    <item name="android:fontFamily">@font/jost_book</item>
     <item name="fontFamily">@font/jost_book</item>
   </style>
 
@@ -438,6 +409,7 @@
     <item name="android:textColor">?attr/colorOnBackground</item>
     <item name="android:textAlignment">viewStart</item>
     <item name="android:fontFamily">@font/jost_book</item>
+    <item name="fontFamily">@font/jost_book</item>
     <item name="android:breakStrategy" tools:targetApi="m">high_quality</item>
     <item name="android:hyphenationFrequency" tools:targetApi="m">full</item>
     <item name="android:lineBreakWordStyle" tools:targetApi="33">phrase</item>
@@ -510,21 +482,19 @@
     <item name="fontFamily">@font/jost_medium</item>
   </style>
 
-  <!-- Localized style, no empty base style needed -->
-  <style name="TextAppearance.Doodle.Toolbar.Title" parent="TextAppearance.Material3.TitleLarge">
-    <item name="fontFamily">@font/jost_book</item>
-  </style>
-
   <style name="TextAppearance.Doodle.HeadlineMedium" parent="TextAppearance.Material3.HeadlineMedium">
+    <item name="android:fontFamily">@font/jost_book</item>
     <item name="fontFamily">@font/jost_book</item>
   </style>
 
   <style name="TextAppearance.Doodle.TitleLarge" parent="TextAppearance.Material3.TitleLarge">
+    <item name="android:fontFamily">@font/jost_book</item>
     <item name="fontFamily">@font/jost_book</item>
   </style>
 
   <style name="TextAppearance.Doodle.Tooltip" parent="TextAppearance.MaterialComponents.Tooltip">
     <item name="android:textColor">?android:attr/colorBackground</item>
+    <item name="android:fontFamily">@font/jost_book</item>
     <item name="fontFamily">@font/jost_book</item>
   </style>
 

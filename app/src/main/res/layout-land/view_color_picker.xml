@@ -19,6 +19,7 @@
 <LinearLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="wrap_content"
   android:orientation="horizontal"
@@ -51,7 +52,8 @@
       android:paddingTop="4dp"
       android:paddingBottom="4dp"
       android:src="@drawable/ic_round_expand_more"
-      app:tint="?attr/colorOnSurfaceVariant" />
+      app:tint="?attr/colorOnSurfaceVariant"
+      tools:ignore="ContentDescription" />
 
     <com.google.android.material.card.MaterialCardView
       android:id="@+id/card_color_picker_color_new"
@@ -108,7 +110,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="fitXY"
-        android:src="@drawable/image_color_picker_hue" />
+        android:src="@drawable/image_color_picker_hue"
+        tools:ignore="ContentDescription" />
 
     </com.google.android.material.card.MaterialCardView>
 
@@ -117,7 +120,8 @@
       android:layout_width="32dp"
       android:layout_height="32dp"
       android:layout_marginStart="2dp"
-      android:src="@drawable/ic_round_drag_pointer" />
+      android:src="@drawable/ic_round_drag_pointer"
+      tools:ignore="ContentDescription" />
 
   </FrameLayout>
 

@@ -34,11 +34,9 @@ The app is not just a copy of the original wallpapers, it's a complete rewrite w
 ## Advantages over original Pixel 4 live wallpapers
 
 * Permanent animations (when tilting the device) are optional
-* Support for Android 12 color extraction
-* Exclusive "Material You"-inspired live wallpaper
+* Support for Material You color extraction
 * No battery-hungry 3D engine
 * Improved text contrast (dark text for light themes instead of white text with shadow)
-* Support for Android 11 zoom effect
 * Many additional customization options
 * Rendering works well even on less powerful devices (very efficient rendering engine)
 * Also suitable for larger devices like tablets (scaling option available)

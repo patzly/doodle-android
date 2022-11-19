@@ -104,7 +104,7 @@
     <item quantity="one">Co minutę</item>
     <item quantity="few">Co %1$d minuty</item>
     <item quantity="many">Co %1$d minut</item>
-    <item quantity="other">Co %1$d minut(y)</item>
+    <item quantity="other">Co %1$d minuty</item>
   </plurals>
   <plurals name="appearance_random_interval_hours">
     <item quantity="one">Co godzinę</item>

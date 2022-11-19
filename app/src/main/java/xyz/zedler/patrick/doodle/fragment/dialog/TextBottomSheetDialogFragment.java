@@ -68,9 +68,8 @@ public class TextBottomSheetDialogFragment extends BaseBottomSheetDialogFragment
           return false;
         }
       });
-    } else {
-      binding.toolbarText.setTitleCentered(true);
     }
+    binding.toolbarText.setTitleCentered(link == null);
 
     String[] highlights = args.getHighlights();
     if (highlights == null) {

@@ -38,7 +38,7 @@ android {
         versionCode 40
         versionName '5.6.0'
         resConfigs 'ar', 'cs', 'da', 'de', 'en', 'es', 'fi', 'fil', 'fr', 'hu', 'in', 'it', 'iw',
-                'ja', 'ko', 'lt', 'nl', 'pl', 'pt-rBR', 'ro', 'ru', 'tr', 'ug', 'zh-rCN'
+                'ja', 'ko', 'lt', 'nl', 'pl', 'pt-rBR', 'ro', 'ru', 'tr', 'ug', 'vi', 'zh-rCN'
     }
 
     applicationVariants.all { variant ->
@@ -76,8 +76,8 @@ android {
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.6.0-rc01'
     implementation 'androidx.preference:preference:1.2.0'
-    implementation 'androidx.navigation:navigation-fragment:2.5.2'
-    implementation 'androidx.navigation:navigation-ui:2.5.2'
+    implementation 'androidx.navigation:navigation-fragment:2.5.3'
+    implementation 'androidx.navigation:navigation-ui:2.5.3'
 
     implementation 'com.google.android.material:material:1.8.0-alpha02'
 }

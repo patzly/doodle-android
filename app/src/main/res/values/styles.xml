@@ -32,7 +32,17 @@
     <item name="android:backgroundDimAmount">0.7</item>
     <item name="buttonBarPositiveButtonStyle">@style/Widget.Doodle.Button.TextButton.Dialog</item>
     <item name="buttonBarNegativeButtonStyle">@style/Widget.Doodle.Button.TextButton.Dialog</item>
+    <item name="buttonBarNeutralButtonStyle">@style/Widget.Doodle.Button.TextButton.Dialog</item>
+    <item name="materialAlertDialogTitleTextStyle">@style/MaterialAlertDialog.Doodle.Title.Text</item>
     <item name="android:scrollbarThumbVertical">@drawable/shape_scrollbar_rounded</item>
+  </style>
+
+  <!-- Prevents title from being displayed with smaller text size when it's long -->
+  <style name="MaterialAlertDialog.Doodle.Title.Text" parent="MaterialAlertDialog.Material3.Title.Text">
+    <item name="android:textAppearance">?attr/textAppearanceHeadlineSmall</item>
+    <item name="android:capitalize">none</item>
+    <item name="android:singleLine">false</item>
+    <item name="android:maxLines">4</item>
   </style>
 
   <!-- Toolbar -->
@@ -448,7 +458,7 @@
     <item name="android:layout_marginStart">56dp</item>
     <item name="android:paddingTop">10dp</item>
     <item name="android:paddingBottom">3dp</item>
-    <item name="android:textAppearance">?attr/textAppearanceTitleMedium</item>
+    <item name="android:textAppearance">?attr/textAppearanceTitleSmall</item>
     <item name="android:textColor">?attr/colorSecondary</item>
   </style>
 

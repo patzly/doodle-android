@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ This file is part of Doodle Android.
+  ~
+  ~ Doodle Android is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Doodle Android is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with Doodle Android. If not, see <http://www.gnu.org/licenses/>.
+  ~
+  ~ Copyright (c) 2019-2022 by Patrick Zedler
+  -->
+
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+
+  <string name="wallpaper_description">Hình nền động đầy màu sắc với chế độ tối tự động và hoạt cảnh được tối ưu hóa cho pin của bạn. Tùy chỉnh nó theo nhu cầu của bạn!</string>
+  <string name="wallpaper_description_picker">Khám phá bộ sưu tập hình dạng đầy màu sắc, được tinh chỉnh với hiệu ứng thu phóng nhẹ nhàng khi bạn vuốt qua màn hình chính và mở khóa thiết bị của mình. \nTùy chỉnh  hình nền để phù hợp với phong cách của riêng bạn!</string>
+
+  <!-- TITLES -->
+
+  <string name="title_info">Thông tin</string>
+  <string name="title_apply_changes">Áp dụng các thay đổi</string>
+  <string name="title_feedback">Phản hồi</string>
+  <string name="title_licenses">Giấy phép nguồn mở</string>
+
+  <!-- LABELS -->
+
+  <string name="label_ms">%1$s ms</string>
+  <string name="label_degrees">%1$smức độ</string>
+
+  <!-- ACTIONS -->
+
+  <string name="action_cancel">Hủy</string>
+  <string name="action_select">Chọn</string>
+  <string name="action_close">Đóng</string>
+  <string name="action_back">Quay lại</string>
+  <string name="action_open_link">Mở trang web ngoài</string>
+  <string name="action_hide">Ẩn</string>
+  <string name="action_reset">Đặt dữ liệu như ban đầu</string>
+  <string name="action_deactivate">Hủy kích hoạt</string>
+  <string name="action_select_all">Chọn tất cả</string>
+  <string name="action_continue">Tiếp tục</string>
+  <string name="action_open_app_info">Mở thông tin ứng dụng</string>
+  <string name="action_set">Cài hình nền</string>
+  <string name="action_learn_more">Tìm hiểu thêm</string>
+  <string name="action_help">Trợ giúp</string>
+  <string name="action_send_feedback">Gửi phản hồi</string>
+  <string name="action_share">Chia sẻ</string>
+  <string name="action_share_description">Hãy kể cho bạn bè về Doodle nhé !</string>
+  <string name="action_email">Gửi email</string>
+  <string name="action_email_description">Liên lạc với nhà phát triển</string>
+  <string name="action_rate">Đánh giá trên Google Play</string>
+  <string name="action_rate_description">Ủng hộ nhà phát triển ứng dụng</string>
+  <string name="action_github">Doodle Android trên GitHub</string>
+  <string name="action_github_description">Mở phiếu báo cáo sự cố mới trên GitHub</string>
+  <string name="action_language_select">Chọn ngôn ngữ</string>
+  <string name="action_set_static">Đặt hình nền tĩnh</string>
+  <string name="action_change_time">Chuyển thời gian</string>
+  <string name="action_change_interval">Thay đổi khoảng thời gian</string>
+
+  <!-- APPEARANCE -->
+
+  <string name="appearance_title">Diện mạo</string>
+  <string name="appearance_description">Thiết kế &amp; tùy chọn màu sắc</string>
+  <string name="appearance_one_ui">Trên các thiết bị Samsung có hệ điều hành One UI 4.1  đã hoàn toàn bỏ qua các màu sắc được cung cấp bởi các ứng dụng hình nền động, trong đó có Doodle. \nĐể áp dụng màu cho hệ thống của bạn, hãy đặt thiết kế hiện tại làm hình nền tĩnh để hệ thống tìm kiếm màu, sau đó áp dụng hình nền làm hình nền động.</string>
+  <string name="appearance_design">Thiết kế</string>
+  <string name="appearance_design_doodle">Bộ sưu tập hình động của Pixel 4</string>
+  <string name="appearance_design_anna">Hình động à l\'Anna Kövecses</string>
+  <string name="appearance_variant">Biến thể</string>
+  <string name="appearance_night_mode">Chế độ tối</string>
+  <string name="appearance_night_mode_description">Chỉ những màu tối</string>
+  <string name="appearance_night_mode_on">Bật</string>
+  <string name="appearance_night_mode_off">Tắt</string>
+  <string name="appearance_light_text">Luôn luôn sử dụng phông chữ màu trắng</string>
+  <string name="appearance_light_text_description">Thay vì sử dụng phông chữ màu đen trên nền sáng</string>
+  <string name="appearance_dark_text">Sử dụng phông chữ màu đen</string>
+  <string name="appearance_dark_text_description">Chỉ khi nền đủ sáng</string>
+  <string name="appearance_colors_category">Màu sắc</string>
+  <string name="appearance_colors">Phân tách màu</string>
+  <string name="appearance_colors_description">Được sử dụng để tính toán độ tương phản của văn bản</string>
+  <string name="appearance_colors_description_dynamic">Được dùng bởi chủ đề của hệ thống</string>
+  <string name="appearance_colors_description_one_ui">Như đã đề cập ở trên, các màu sắc được cung cấp của hình nền động bị One UI bỏ qua</string>
+  <string name="appearance_colors_primary">Chọn màu chính</string>
+  <string name="appearance_colors_secondary">Chọn màu phụ</string>
+  <string name="appearance_colors_tertiary">Chọn màu thứ ba</string>
+  <string name="appearance_colors_custom">Lựa chọn màu sắc tùy chỉnh</string>
+  <string name="appearance_colors_info">Trên các thiết bị không hỗ trợ màu động (Android 11 trở xuống), chỉ màu chính được sử dụng để tính độ tương phản của văn bản trên trình khởi chạy và tô màu nền của màn hình ứng dụng gần đây.</string>
+  <string name="appearance_colors_info_dynamic">Trên các thiết bị chạy Android 12 trở lên và hỗ trợ màu động, ba màu đã chọn được sử dụng để tự động tạo chủ đề màu trên toàn hệ thống.</string>
+  <string name="appearance_random">Hình nền ngẫu nhiên</string>
+  <string name="appearance_random_description">Chọn trình kích hoạt bên dưới</string>
+  <string name="appearance_random_screen_off">Tắt màn hình</string>
+  <string name="appearance_random_daily">Hằng ngày vào %1$s</string>
+  <string name="appearance_random_interval">Chọn khoảng thời gian</string>
+  <plurals name="appearance_random_interval_minutes">
+    <item quantity="other">Mỗi %1$d phút</item>
+  </plurals>
+  <plurals name="appearance_random_interval_hours">
+    <item quantity="other">Mỗi %1$d giờ</item>
+  </plurals>
+  <plurals name="appearance_random_interval_days">
+    <item quantity="other">Mỗi %1$d ngày</item>
+  </plurals>
+
+  </resources>

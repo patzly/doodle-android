@@ -100,17 +100,22 @@
   <string name="appearance_random_screen_off">Wyłącze ekran</string>
   <string name="appearance_random_daily">Codziennie o %1$s</string>
   <string name="appearance_random_interval">Wybierz interwał</string>
-  <string name="appearance_random_interval_minutes">Co %1$d minut</string>
+  <plurals name="appearance_random_interval_minutes">
+    <item quantity="one">Co minutę</item>
+    <item quantity="few">Co %1$d minuty</item>
+    <item quantity="many">Co %1$d minut</item>
+    <item quantity="other">Co %1$d minut(y)</item>
+  </plurals>
   <plurals name="appearance_random_interval_hours">
     <item quantity="one">Co godzinę</item>
-    <item quantity="few">Co godzinę</item>
-    <item quantity="many">Co godzinę</item>
+    <item quantity="few">Co %1$d godziny</item>
+    <item quantity="many">Co %1$d godzin</item>
     <item quantity="other">Co %1$d godzin(y)</item>
   </plurals>
   <plurals name="appearance_random_interval_days">
     <item quantity="one">Codziennie</item>
-    <item quantity="few">Codziennie</item>
-    <item quantity="many">Codziennie</item>
+    <item quantity="few">Co %1$d dni</item>
+    <item quantity="many">Co %1$d dni</item>
     <item quantity="other">Co %1$d dni</item>
   </plurals>
 

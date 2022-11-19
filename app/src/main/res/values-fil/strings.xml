@@ -21,11 +21,14 @@
 
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
+  <string name="wallpaper_description">Mga makukulay na live wallpaper na may kusang madilim na mode at animasyon na hindi magastos sa baterya. Ayusin ito depende sa kung anong gusto mo!</string>
+  <string name="wallpaper_description_picker">Galugarin ang isang makulay na koleksyon ng mga hugis, na pinaganda pa ng isang mahinahong parallax at mga zoom effect kapag nagsa-swipe ka sa mga home screen mo at habang binubuksan mo ang device mo.\nAyusin ang wallpaper para tumugma sa estilo mo!</string>
+
   <!-- TITLES -->
 
   <string name="title_info">Impormasyon</string>
-  <string name="title_apply_changes">Ilapat ang mga pagbabago</string>
-  <string name="title_feedback">Puna</string>
+  <string name="title_apply_changes">Ilapat ang mga binago</string>
+  <string name="title_feedback">Feedback</string>
   <string name="title_licenses">Mga lisensya na open source</string>
 
   <!-- LABELS -->

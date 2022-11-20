@@ -12,6 +12,7 @@
 - Improved: unified logo experience
 - Fixed: jerky zoom animation when tilt effect was turned on (finally!)
 - Fixed: occasional glitch during zoom animation after unlocking
+- Fixed: invisible One UI workaround on some Samsung devices
 
 ## 5.5.1
 

@@ -26,11 +26,16 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.content.pm.PackageManager.NameNotFoundException;
+import android.content.pm.PackageManager.PackageInfoFlags;
 import android.content.res.ColorStateList;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Build;
+import android.os.Build.VERSION;
+import android.os.Build.VERSION_CODES;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -544,16 +549,24 @@ public class MainActivity extends AppCompatActivity {
 
   @SuppressWarnings("deprecation")
   public boolean isOneUiWithDynamicColors() {
-    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.S) {
+    if (VERSION.SDK_INT < VERSION_CODES.S) {
       return false;
     } else {
-      PackageManager localPackageManager = getPackageManager();
-      Intent intent = new Intent("android.intent.action.MAIN");
-      intent.addCategory("android.intent.category.HOME");
-      String launcher = localPackageManager.resolveActivity(
-          intent, PackageManager.MATCH_SYSTEM_ONLY
-      ).activityInfo.packageName;
-      return launcher != null && launcher.equals("com.sec.android.app.launcher");
+      final String PACKAGE_NAME = "com.sec.android.app.launcher";
+      PackageManager packageManager = getPackageManager();
+      PackageInfo info;
+      try {
+        if (VERSION.SDK_INT >= VERSION_CODES.TIRAMISU) {
+          info = packageManager.getPackageInfo(
+              PACKAGE_NAME, PackageInfoFlags.of(PackageManager.MATCH_SYSTEM_ONLY)
+          );
+        } else {
+          info = packageManager.getPackageInfo(PACKAGE_NAME, 0);
+        }
+        return info != null;
+      } catch (NameNotFoundException e) {
+        return false;
+      }
     }
   }
 

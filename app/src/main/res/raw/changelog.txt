@@ -11,6 +11,7 @@
 - Improved: app language selection
 - Improved: unified logo experience
 - Fixed: jerky zoom animation when tilt effect was turned on (finally!)
+- Fixed: hopefully a big crash cause in the rendering algorithm
 - Fixed: occasional glitch during zoom animation after unlocking
 - Fixed: invisible One UI workaround on some Samsung devices
 

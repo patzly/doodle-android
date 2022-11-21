@@ -838,19 +838,23 @@ public class LiveWallpaperService extends WallpaperService {
       final SurfaceHolder surfaceHolder = getSurfaceHolder();
       Canvas canvas = null;
       try {
-        if (VERSION.SDK_INT >= VERSION_CODES.O && useGpu) {
-          canvas = surfaceHolder.lockHardwareCanvas();
-        } else {
-          canvas = surfaceHolder.lockCanvas();
+        if(surfaceHolder.getSurface().isValid()) {
+          if (VERSION.SDK_INT >= VERSION_CODES.O && useGpu) {
+            canvas = surfaceHolder.lockHardwareCanvas();
+          } else {
+            canvas = surfaceHolder.lockCanvas();
+          }
         }
-
-        if (canvas != null) {
-          // ZOOM
-          float intensity = zoomIntensity / 10f;
-          double finalZoomLauncher = isZoomLauncherEnabled ? zoomLauncher * intensity : 0;
-          double finalZoomUnlock = isZoomUnlockEnabled ? zoomUnlock * intensity : 0;
-          svgDrawable.setZoom((float) (finalZoomLauncher + finalZoomUnlock));
-          svgDrawable.draw(canvas);
+        if(canvas != null) {
+          //noinspection SynchronizationOnLocalVariableOrMethodParameter
+          synchronized (surfaceHolder) {
+            // ZOOM
+            float intensity = zoomIntensity / 10f;
+            double finalZoomLauncher = isZoomLauncherEnabled ? zoomLauncher * intensity : 0;
+            double finalZoomUnlock = isZoomUnlockEnabled ? zoomUnlock * intensity : 0;
+            svgDrawable.setZoom((float) (finalZoomLauncher + finalZoomUnlock));
+            svgDrawable.draw(canvas);
+          }
         }
       } catch (Exception e) {
         Log.e(TAG, "drawFrame: unexpected exception", e);

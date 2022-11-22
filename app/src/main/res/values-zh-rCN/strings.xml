@@ -28,6 +28,7 @@
 
   <string name="title_info">信息</string>
   <string name="title_apply_changes">应用更改</string>
+  <string name="title_logcat">Logcat</string>
   <string name="title_feedback">反馈</string>
   <string name="title_licenses">开放源代码许可证</string>
 
@@ -48,6 +49,7 @@
   <string name="action_deactivate">取消激活</string>
   <string name="action_select_all">选择全部</string>
   <string name="action_continue">继续</string>
+  <string name="action_reload">加载</string>
   <string name="action_open_app_info">打开应用信息</string>
   <string name="action_set">设置壁纸</string>
   <string name="action_learn_more">了解更多</string>
@@ -182,6 +184,8 @@
   <string name="other_transition_description">而非淡出</string>
   <string name="other_reset">重置所有设置</string>
   <string name="other_reset_description">重置比单纯卸载要麻烦，因为首选项存储在一个特殊的地方，必须在设备启动后可直接访问</string>
+  <string name="other_log">显示 logcat</string>
+  <string name="other_log_description">出于调试目的</string>
 
   <!-- ABOUT -->
 
@@ -201,6 +205,7 @@
 
   <string name="msg_feedback">一款优秀的应用需要大量的时间并依赖用户的反馈。</string>
   <string name="msg_feedback_contact">您有什么关于应用的愿望、意见或问题吗? 请随意联系我！\n如果能在Play Store 获得好评，我也会非常高兴。</string>
+  <string name="msg_feedback_more">请不要要求更多的壁纸设计，我会在学习之余有时间的时候进行添加。</string>
   <string name="msg_share">查看此酷炫的动态壁纸应用程序:https://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
   <string name="msg_hide">在启动器中隐藏应用图标？</string>
   <string name="msg_random">将使用所有选中的设计</string>

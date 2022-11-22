@@ -106,7 +106,21 @@
       android:id="@+id/action_other_to_languages_dialog"
       app:destination="@id/languagesBottomSheetDialogFragment" />
 
+    <action
+      android:id="@+id/action_other_to_log"
+      app:destination="@id/logFragment"
+      app:enterAnim="@anim/enter_end_fade"
+      app:exitAnim="@anim/exit_start_fade"
+      app:popEnterAnim="@anim/enter_start_fade"
+      app:popExitAnim="@anim/exit_end_fade" />
+
   </fragment>
+
+  <fragment
+    android:id="@+id/logFragment"
+    android:name="xyz.zedler.patrick.doodle.fragment.LogFragment"
+    android:label="fragment_log"
+    tools:layout="@layout/fragment_log" />
 
   <fragment
     android:id="@+id/aboutFragment"

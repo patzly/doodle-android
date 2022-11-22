@@ -180,6 +180,7 @@ public class OtherFragment extends BaseFragment
         this,
         binding.linearOtherLanguage,
         binding.linearOtherLauncher,
+        binding.linearOtherLog,
         binding.linearOtherReset
     );
 
@@ -202,6 +203,8 @@ public class OtherFragment extends BaseFragment
       binding.switchOtherGpu.setChecked(!binding.switchOtherGpu.isChecked());
     } else if (id == R.id.linear_other_launcher) {
       binding.switchOtherLauncher.setChecked(!binding.switchOtherLauncher.isChecked());
+    } else if (id == R.id.linear_other_log) {
+      navigate(OtherFragmentDirections.actionOtherToLog());
     } else if (id == R.id.linear_other_reset && getViewUtil().isClickEnabled(id)) {
       performHapticClick();
       ViewUtil.startIcon(binding.imageOtherReset);

@@ -39,6 +39,7 @@
 
   <string name="title_info">Information</string>
   <string name="title_apply_changes">Apply changes</string>
+  <string name="title_logcat">Logcat</string>
   <string name="title_feedback">Feedback</string>
   <string name="title_licenses">Open source licenses</string>
 
@@ -59,6 +60,7 @@
   <string name="action_deactivate">Deactivate</string>
   <string name="action_select_all">Select all</string>
   <string name="action_continue">Continue</string>
+  <string name="action_reload">Reload</string>
   <string name="action_open_app_info">Open app info</string>
   <string name="action_set">Set wallpaper</string>
   <string name="action_learn_more">Learn more</string>
@@ -196,6 +198,8 @@
   <string name="other_transition_description">Instead of fading</string>
   <string name="other_reset">Reset all settings</string>
   <string name="other_reset_description">Does more than uninstalling would do, because the preferences are stored at a special place as they have to be accessible directly after device startup</string>
+  <string name="other_log">Display logcat</string>
+  <string name="other_log_description">For debugging purposes</string>
 
   <!-- ABOUT -->
 
@@ -218,7 +222,7 @@
 
   <string name="msg_feedback">A great app requires a lot of time and lives from the feedback of its users.</string>
   <string name="msg_feedback_contact">Do you have any wishes, comments or questions? Feel free to contact me!\nOtherwise I would be very happy about a nice review in the Play Store.</string>
-  <string name="msg_feedback_more">Please don\'t ask for more wallpaper designs, I will add them when I have time.</string>
+  <string name="msg_feedback_more">Please don\'t ask for more wallpaper designs, I will add them when I have time besides studying.</string>
   <string name="msg_share">Check out this cool live wallpaper app: \nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
   <string name="msg_hide">Hide icon in launcher?</string>
   <string name="msg_random">All selected designs will be used</string>

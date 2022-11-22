@@ -28,6 +28,7 @@
 
   <string name="title_info">Informationen</string>
   <string name="title_apply_changes">Änderungen anwenden</string>
+  <string name="title_logcat">Log-Nachrichten</string>
   <string name="title_feedback">Rückmeldung</string>
   <string name="title_licenses">Open-Source-Lizenzen</string>
 
@@ -48,6 +49,7 @@
   <string name="action_deactivate">Deaktivieren</string>
   <string name="action_select_all">Alle auswählen</string>
   <string name="action_continue">Fortfahren</string>
+  <string name="action_reload">Neuladen</string>
   <string name="action_open_app_info">App-Info öffnen</string>
   <string name="action_set">Hintergrund festlegen</string>
   <string name="action_learn_more">Mehr erfahren</string>
@@ -185,6 +187,8 @@
   <string name="other_transition_description">Anstatt auszublenden</string>
   <string name="other_reset">Alle Einstellungen zurücksetzen</string>
   <string name="other_reset_description">Bewirkt mehr als deinstallieren, da die Einstellungen an einem speziellen Ort gespeichert werden, damit sie direkt nach dem Einschalten des Geräts abrufbar sind</string>
+  <string name="other_log">Log-Nachrichten anzeigen</string>
+  <string name="other_log_description">Für Fehlerbehandlung</string>
 
   <!-- ABOUT -->
 
@@ -204,6 +208,7 @@
 
   <string name="msg_feedback">Eine tolle App benötigt viel Zeit und lebt von der Rückmeldung ihrer Nutzer.</string>
   <string name="msg_feedback_contact">Hast du Wünsche, Anmerkungen oder Fragen? Dann lass es mich wissen!\nAnsonsten freue ich mich über eine nette Bewertung im Play Store.</string>
+  <string name="msg_feedback_more">Bitte frage nicht nach mehr Hintergründen, ich füge neue hinzu, wenn ich Zeit dafür neben meinem Studium habe.</string>
   <string name="msg_share">Schau dir mal diese coole Live-Wallpaper-App an: \nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
   <string name="msg_hide">App-Icon verbergen?</string>
   <string name="msg_random">Es werden alle ausgewählten Designs benutzt</string>

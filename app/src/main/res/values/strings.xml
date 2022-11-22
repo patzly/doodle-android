@@ -218,6 +218,7 @@
 
   <string name="msg_feedback">A great app requires a lot of time and lives from the feedback of its users.</string>
   <string name="msg_feedback_contact">Do you have any wishes, comments or questions? Feel free to contact me!\nOtherwise I would be very happy about a nice review in the Play Store.</string>
+  <string name="msg_feedback_more">Please don\'t ask for more wallpaper designs, I will add them when I have time.</string>
   <string name="msg_share">Check out this cool live wallpaper app: \nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
   <string name="msg_hide">Hide icon in launcher?</string>
   <string name="msg_random">All selected designs will be used</string>

@@ -51,7 +51,7 @@
         style="@style/Widget.Doodle.TextView.Paragraph"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="12dp"
         android:text="@string/msg_feedback"
         android:paddingStart="16dp"
         android:paddingEnd="16dp" />
@@ -62,6 +62,15 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="12dp"
         android:text="@string/msg_feedback_contact"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp" />
+
+      <TextView
+        style="@style/Widget.Doodle.TextView.Paragraph"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:text="@string/msg_feedback_more"
         android:paddingStart="16dp"
         android:paddingEnd="16dp" />
 

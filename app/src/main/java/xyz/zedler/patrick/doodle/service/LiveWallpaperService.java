@@ -829,13 +829,16 @@ public class LiveWallpaperService extends WallpaperService {
       } else if (!isSurfaceAvailable || getSurfaceHolder().getSurface() == null) {
         // Cancel drawing request
         return;
+      } else if (!isSurfaceAvailable || getSurfaceHolder().getSurface() == null) {
+        // Cancel drawing request
+        return;
       } else if (!getSurfaceHolder().getSurface().isValid()) {
         // Prevents IllegalStateException when surface is not ready
         return;
       }
       lastFrameDraw = SystemClock.elapsedRealtime();
 
-      final SurfaceHolder surfaceHolder = getSurfaceHolder();
+      SurfaceHolder surfaceHolder = getSurfaceHolder();
       Canvas canvas = null;
       try {
         if(surfaceHolder.getSurface().isValid()) {
@@ -846,8 +849,7 @@ public class LiveWallpaperService extends WallpaperService {
           }
         }
         if(canvas != null) {
-          //noinspection SynchronizationOnLocalVariableOrMethodParameter
-          synchronized (surfaceHolder) {
+          synchronized (getSurfaceHolder().getSurface()) {
             // ZOOM
             float intensity = zoomIntensity / 10f;
             double finalZoomLauncher = isZoomLauncherEnabled ? zoomLauncher * intensity : 0;

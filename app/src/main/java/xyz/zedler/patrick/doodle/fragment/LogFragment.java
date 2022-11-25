@@ -71,7 +71,7 @@ public class LogFragment extends BaseFragment implements OnClickListener {
 
     SystemBarBehavior systemBarBehavior = new SystemBarBehavior(activity);
     systemBarBehavior.setAppBar(binding.appBarLog);
-    systemBarBehavior.setScroll(binding.scrollLog, binding.constraintLogContainer);
+    systemBarBehavior.setScroll(binding.scrollLog, binding.constraintLog);
     systemBarBehavior.setAdditionalBottomInset(activity.getFabTopEdgeDistance());
     systemBarBehavior.setUp();
 

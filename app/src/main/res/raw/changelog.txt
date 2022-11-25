@@ -1,9 +1,10 @@
 ## 5.6.1
 
 - Improved: maximum tilt effect intensity
+- Improved: settings layout for large screens
 - Fixed: hopefully a big crash cause in the rendering algorithm
 
-! Please report any crash! Crash log should be available at <b>Other options</b> > <b>Display logcat</b>.
+! Please report any crash so I can fix them! Crash log should be available at <b>Other options</b> > <b>Display logcat</b>.
 
 ## 5.6.0
 

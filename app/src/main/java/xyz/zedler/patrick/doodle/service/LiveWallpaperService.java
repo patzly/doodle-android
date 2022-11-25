@@ -847,12 +847,10 @@ public class LiveWallpaperService extends WallpaperService {
       SurfaceHolder surfaceHolder = getSurfaceHolder();
       Canvas canvas = null;
       try {
-        if(surfaceHolder.getSurface().isValid()) {
-          if (VERSION.SDK_INT >= VERSION_CODES.O && useGpu) {
-            canvas = surfaceHolder.lockHardwareCanvas();
-          } else {
-            canvas = surfaceHolder.lockCanvas();
-          }
+        if (VERSION.SDK_INT >= VERSION_CODES.O && useGpu) {
+          canvas = surfaceHolder.lockHardwareCanvas();
+        } else {
+          canvas = surfaceHolder.lockCanvas();
         }
         if(canvas != null) {
           synchronized (getSurfaceHolder().getSurface()) {

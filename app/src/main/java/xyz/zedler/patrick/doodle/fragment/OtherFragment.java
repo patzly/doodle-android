@@ -204,6 +204,8 @@ public class OtherFragment extends BaseFragment
     } else if (id == R.id.linear_other_launcher) {
       binding.switchOtherLauncher.setChecked(!binding.switchOtherLauncher.isChecked());
     } else if (id == R.id.linear_other_log) {
+      performHapticClick();
+      ViewUtil.startIcon(binding.imageOtherLog);
       navigate(OtherFragmentDirections.actionOtherToLog());
     } else if (id == R.id.linear_other_reset && getViewUtil().isClickEnabled(id)) {
       performHapticClick();

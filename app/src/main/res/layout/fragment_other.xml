@@ -46,13 +46,13 @@
     <androidx.constraintlayout.widget.ConstraintLayout
       android:id="@+id/constraint_other"
       android:layout_width="match_parent"
-      android:layout_height="wrap_content">
+      android:layout_height="wrap_content"
+      android:paddingTop="8dp"
+      android:paddingBottom="8dp">
 
       <LinearLayout
-        android:id="@+id/linear_other_container_items1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:paddingTop="8dp"
         android:orientation="vertical"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintWidth_max="@dimen/max_content_width"
@@ -181,23 +181,11 @@
 
         </HorizontalScrollView>
 
-      </LinearLayout>
-
-      <LinearLayout
-        android:id="@+id/linear_other_container_card"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintTop_toBottomOf="@id/linear_other_container_items1"
-        app:layout_constraintWidth_max="@dimen/max_content_width"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-
         <com.google.android.material.card.MaterialCardView
           android:id="@+id/card_other_gpu"
           style="@style/Widget.Doodle.Card.Text"
+          android:layout_marginStart="16dp"
+          android:layout_marginEnd="16dp"
           android:layout_marginTop="8dp"
           app:cardBackgroundColor="?attr/colorErrorContainer">
 
@@ -209,19 +197,6 @@
             android:text="@string/other_gpu_info" />
 
         </com.google.android.material.card.MaterialCardView>
-
-      </LinearLayout>
-
-      <LinearLayout
-        android:id="@+id/linear_other_container_items2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:paddingBottom="8dp"
-        android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@id/linear_other_container_card"
-        app:layout_constraintWidth_max="@dimen/max_content_width"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
 
         <LinearLayout
           android:id="@+id/linear_other_gpu"
@@ -327,7 +302,7 @@
             android:src="@drawable/ic_round_bug_report_anim"
             tools:ignore="ContentDescription" />
 
-          <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
+          <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">
 
             <TextView
               style="@style/Widget.Doodle.TextView.ListItem.Title"
@@ -338,6 +313,11 @@
               android:text="@string/other_log_description" />
 
           </LinearLayout>
+
+          <ImageView
+            style="@style/Widget.Doodle.ImageView.ListItem.Icon.End"
+            android:src="@drawable/ic_round_navigate_next"
+            tools:ignore="ContentDescription" />
 
         </LinearLayout>
 

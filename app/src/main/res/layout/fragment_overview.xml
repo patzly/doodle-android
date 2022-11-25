@@ -104,15 +104,13 @@
     <androidx.constraintlayout.widget.ConstraintLayout
       android:id="@+id/constraint_overview"
       android:layout_width="match_parent"
-      android:layout_height="wrap_content">
+      android:layout_height="wrap_content"
+      android:paddingTop="16dp"
+      android:paddingBottom="8dp">
 
       <LinearLayout
-        android:id="@+id/linear_overview_container_cards"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:paddingTop="16dp"
         android:orientation="vertical"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintWidth_max="@dimen/max_content_width"
@@ -121,6 +119,8 @@
 
         <com.google.android.material.card.MaterialCardView
           style="@style/Widget.Doodle.Card.Text"
+          android:layout_marginStart="16dp"
+          android:layout_marginEnd="16dp"
           app:contentPaddingBottom="8dp"
           app:contentPaddingLeft="0dp"
           app:contentPaddingRight="0dp">
@@ -163,19 +163,6 @@
           </LinearLayout>
 
         </com.google.android.material.card.MaterialCardView>
-
-      </LinearLayout>
-
-      <LinearLayout
-        android:id="@+id/linear_overview_container_items"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:paddingBottom="8dp"
-        android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@id/linear_overview_container_cards"
-        app:layout_constraintWidth_max="@dimen/max_content_width"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
 
         <LinearLayout
           android:id="@+id/linear_overview_appearance"

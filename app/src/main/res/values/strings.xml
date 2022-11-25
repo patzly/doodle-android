@@ -78,6 +78,7 @@
   <string name="action_set_static">Set static wallpaper</string>
   <string name="action_change_time">Change time</string>
   <string name="action_change_interval">Change interval</string>
+  <string name="action_copy_to_clipboard">Copy to clipboard</string>
 
   <!-- APPEARANCE -->
 
@@ -232,6 +233,8 @@
   <string name="msg_apply_colors">Changed colors will be applied to the system the next time you turn off the screen</string>
   <string name="msg_apply_changes">To apply (eventually) changed options a restart of the running wallpaper service is recommended. This cannot be done automatically.\nPlease force-stop Doodle in your system settings and then apply Doodle as your wallpaper again.</string>
   <string name="msg_preview_missing">An error occurred, please select Doodle Live Wallpaper manually</string>
+  <string name="msg_report_crash">Please report any crash with the crash log attached so I can try to fix it.</string>
+  <string name="msg_copied_to_clipboard">Copied to clipboard successfully</string>
 
   <!-- LICENSES -->
 

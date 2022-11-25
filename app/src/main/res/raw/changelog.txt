@@ -1,3 +1,10 @@
+## 5.6.1
+
+- Improved: maximum tilt effect intensity
+- Fixed: hopefully a big crash cause in the rendering algorithm
+
+! Please report any crash! Crash log should be available at <b>Other options</b> > <b>Display logcat</b>.
+
 ## 5.6.0
 
 - New: zoom-in effect for lockscreen instead of zoom-out (can be switched in size section)
@@ -12,7 +19,6 @@
 - Improved: app language selection
 - Improved: unified logo experience
 - Fixed: jerky zoom animation when tilt effect was turned on (finally!)
-- Fixed: hopefully a big crash cause in the rendering algorithm
 - Fixed: occasional glitch during zoom animation after unlocking
 - Fixed: invisible One UI workaround on some Samsung devices
 

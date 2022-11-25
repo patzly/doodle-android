@@ -826,14 +826,20 @@ public class LiveWallpaperService extends WallpaperService {
       if (!isDrawingAllowed(force, source)) {
         // Cancel drawing request
         return;
-      } else if (!isSurfaceAvailable || getSurfaceHolder().getSurface() == null) {
+      } else if (getSurfaceHolder() == null) {
+        // Cancel drawing request
+        Log.e(TAG, "drawFrame: holder is null, drawing canceled");
+        return;
+      } else if (!isSurfaceAvailable) {
         // Cancel drawing request
         return;
-      } else if (!isSurfaceAvailable || getSurfaceHolder().getSurface() == null) {
+      } else if (getSurfaceHolder().getSurface() == null) {
         // Cancel drawing request
+        Log.e(TAG, "drawFrame: surface is null, drawing canceled");
         return;
       } else if (!getSurfaceHolder().getSurface().isValid()) {
         // Prevents IllegalStateException when surface is not ready
+        Log.e(TAG, "drawFrame: surface invalid, drawing canceled");
         return;
       }
       lastFrameDraw = SystemClock.elapsedRealtime();
@@ -857,13 +863,22 @@ public class LiveWallpaperService extends WallpaperService {
             svgDrawable.setZoom((float) (finalZoomLauncher + finalZoomUnlock));
             svgDrawable.draw(canvas);
           }
+        } else {
+          Log.e(TAG, "drawFrame: canvas is null");
         }
       } catch (Exception e) {
         Log.e(TAG, "drawFrame: unexpected exception", e);
       } finally {
         try {
-          if (canvas != null && isSurfaceAvailable) {
-            surfaceHolder.unlockCanvasAndPost(canvas);
+          if (canvas != null && isSurfaceAvailable && getSurfaceHolder() != null) {
+            getSurfaceHolder().unlockCanvasAndPost(canvas);
+          }
+          if (canvas == null) {
+            Log.e(TAG, "drawFrame: canvas is null, unlocking failed");
+          } else if (getSurfaceHolder() == null) {
+            Log.e(TAG, "drawFrame: holder not available for unlocking canvas");
+          } else if (!isSurfaceAvailable) {
+            Log.e(TAG, "drawFrame: surface not available for unlocking canvas");
           }
         } catch (Exception e) {
           Log.e(TAG, "drawFrame: unlocking canvas failed", e);

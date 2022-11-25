@@ -234,7 +234,7 @@
               android:layout_marginStart="27dp"
               android:layout_marginEnd="0dp"
               android:valueFrom="1"
-              android:valueTo="5"
+              android:valueTo="8"
               android:stepSize="1" />
 
           </LinearLayout>

@@ -44,30 +44,89 @@
     android:scrollbars="vertical"
     android:scrollbarThumbVertical="@drawable/shape_scrollbar_rounded">
 
-    <HorizontalScrollView
+    <androidx.constraintlayout.widget.ConstraintLayout
+      android:id="@+id/constraint_log_container"
       android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:overScrollMode="never"
-      android:scrollbars="horizontal"
-      android:scrollbarThumbHorizontal="@drawable/shape_scrollbar_rounded">
+      android:layout_height="wrap_content">
 
-      <FrameLayout
-        android:id="@+id/frame_log_container"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+      <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingTop="16dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_max="@dimen/max_content_width"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
-        <TextView
-          android:id="@+id/text_log"
-          android:layout_width="wrap_content"
+        <com.google.android.material.card.MaterialCardView
+          style="@style/Widget.Doodle.Card.Text"
+          android:layout_marginStart="16dp"
+          android:layout_marginEnd="16dp"
+          app:contentPaddingBottom="8dp"
+          app:contentPaddingLeft="0dp"
+          app:contentPaddingRight="0dp">
+
+          <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+              style="@style/Widget.Doodle.TextView.Paragraph"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginStart="16dp"
+              android:layout_marginEnd="16dp"
+              android:layout_marginBottom="4dp"
+              android:textColor="?attr/colorOnSurfaceVariant"
+              android:text="@string/msg_report_crash" />
+
+            <LinearLayout
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:orientation="horizontal"
+              android:layout_gravity="end"
+              android:layout_marginEnd="12dp">
+
+              <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_log_copy"
+                style="@style/Widget.Doodle.Button.TextButton"
+                android:text="@string/action_copy_to_clipboard" />
+
+              <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_log_feedback"
+                style="@style/Widget.Doodle.Button.TextButton"
+                android:layout_marginStart="8dp"
+                android:text="@string/action_send_feedback" />
+
+            </LinearLayout>
+
+          </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <HorizontalScrollView
+          android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:textColor="?attr/colorOnBackground"
-          android:textAppearance="?textAppearanceBodySmall"
-          android:textIsSelectable="true"
-          android:padding="16dp" />
+          android:overScrollMode="never"
+          android:scrollbars="horizontal"
+          android:scrollbarThumbHorizontal="@drawable/shape_scrollbar_rounded">
 
-      </FrameLayout>
+          <TextView
+            android:id="@+id/text_log"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="?attr/colorOnBackground"
+            android:textAppearance="?textAppearanceBodySmall"
+            android:textIsSelectable="true"
+            android:padding="16dp" />
 
-    </HorizontalScrollView>
+        </HorizontalScrollView>
+
+      </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
   </androidx.core.widget.NestedScrollView>
 

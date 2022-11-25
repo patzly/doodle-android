@@ -35,8 +35,8 @@ android {
         applicationId 'xyz.zedler.patrick.doodle'
         minSdkVersion 21
         targetSdkVersion 33
-        versionCode 40
-        versionName '5.6.0'
+        versionCode 41
+        versionName '5.6.1'
         resConfigs 'ar', 'cs', 'da', 'de', 'en', 'es', 'fi', 'fil', 'fr', 'hu', 'in', 'it', 'iw',
                 'ja', 'ko', 'lt', 'nl', 'pl', 'pt-rBR', 'ro', 'ru', 'tr', 'ug', 'vi', 'zh-rCN'
     }

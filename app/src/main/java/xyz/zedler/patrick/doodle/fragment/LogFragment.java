@@ -19,15 +19,20 @@
 
 package xyz.zedler.patrick.doodle.fragment;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import com.google.android.material.snackbar.Snackbar;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -39,7 +44,7 @@ import xyz.zedler.patrick.doodle.databinding.FragmentLogBinding;
 import xyz.zedler.patrick.doodle.util.ResUtil;
 import xyz.zedler.patrick.doodle.util.ViewUtil;
 
-public class LogFragment extends BaseFragment {
+public class LogFragment extends BaseFragment implements OnClickListener {
 
   private final static String TAG = LogFragment.class.getSimpleName();
 
@@ -66,7 +71,7 @@ public class LogFragment extends BaseFragment {
 
     SystemBarBehavior systemBarBehavior = new SystemBarBehavior(activity);
     systemBarBehavior.setAppBar(binding.appBarLog);
-    systemBarBehavior.setScroll(binding.scrollLog, binding.frameLogContainer);
+    systemBarBehavior.setScroll(binding.scrollLog, binding.constraintLogContainer);
     systemBarBehavior.setAdditionalBottomInset(activity.getFabTopEdgeDistance());
     systemBarBehavior.setUp();
 
@@ -75,13 +80,39 @@ public class LogFragment extends BaseFragment {
     binding.toolbarLog.setNavigationOnClickListener(getNavigationOnClickListener());
     binding.toolbarLog.setOnMenuItemClickListener(this::onMenuItemClick);
 
+    ViewUtil.setOnClickListeners(
+        this,
+        binding.buttonLogCopy,
+        binding.buttonLogFeedback
+    );
+
     new Handler().postDelayed(
         () -> new LoadAsyncTask(
             getLogcatCommand(),
             log -> binding.textLog.setText(log)
         ).execute(),
-        300
+        10
     );
+  }
+
+  @Override
+  public void onClick(View v) {
+    int id = v.getId();
+    if (getViewUtil().isClickDisabled(id)) {
+      return;
+    }
+    performHapticClick();
+
+    if (id == R.id.button_log_copy) {
+      String logcat = binding.textLog.getText().toString();
+      ClipboardManager cm = (ClipboardManager) activity.getSystemService(Context.CLIPBOARD_SERVICE);
+      cm.setPrimaryClip(ClipData.newPlainText(logcat, logcat));
+      activity.showSnackbar(
+          activity.getSnackbar(R.string.msg_copied_to_clipboard, Snackbar.LENGTH_SHORT)
+      );
+    } else if (id == R.id.button_log_feedback) {
+      activity.showFeedbackBottomSheet();
+    }
   }
 
   private static class LoadAsyncTask extends AsyncTask<Void, Void, String> {
@@ -138,8 +169,6 @@ public class LogFragment extends BaseFragment {
     if (id == R.id.action_reload) {
       ViewUtil.startIcon(item.getIcon());
       new LoadAsyncTask(getLogcatCommand(), log -> binding.textLog.setText(log)).execute();
-    } else if (id == R.id.action_feedback) {
-      activity.showFeedbackBottomSheet();
     } else if (id == R.id.action_help) {
       activity.showTextBottomSheet(R.raw.help, R.string.action_help);
     } else if (id == R.id.action_share) {

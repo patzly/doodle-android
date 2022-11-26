@@ -67,7 +67,7 @@
   <string name="action_set_static">Statischen Hintergrund festlegen</string>
   <string name="action_change_time">Uhrzeit ändern</string>
   <string name="action_change_interval">Intervall ändern</string>
-  <string name="action_copy_to_clipboard">In Zwischenablage kopieren</string>
+  <string name="action_copy_to_clipboard">Kopieren</string>
 
   <!-- APPEARANCE -->
 

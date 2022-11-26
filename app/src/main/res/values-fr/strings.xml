@@ -67,6 +67,7 @@
   <string name="action_set_static">Définir un fond d\'écran statique</string>
   <string name="action_change_time">Modifier l\'heure</string>
   <string name="action_change_interval">Modifier l\'intervalle</string>
+  <string name="action_copy_to_clipboard">Copier dans le presse-papier</string>
 
   <!-- APPEARANCE -->
 
@@ -221,5 +222,7 @@
   <string name="msg_apply_colors">Les couleurs modifiées seront appliquées au système la prochaine fois que vous éteindrez l\'écran</string>
   <string name="msg_apply_changes">Pour (éventuellement) appliquer les options modifiées, un redémarrage du service de papier peint en cours d\'exécution est recommandé. Cela ne peut pas être fait automatiquement.\nVeuillez forcer l\'arrêt de Doodle dans les paramètres de votre système, puis appliquez à nouveau Doodle comme fond d\'écran.</string>
   <string name="msg_preview_missing">Une erreur s\'est produite, veuillez sélectionner manuellement le fond d\'écran animé Doodle</string>
+  <string name="msg_report_crash">Veuillez signaler tout plantage avec le journal des erreurs ci-joint afin que je puisse essayer de les corriger.</string>
+  <string name="msg_copied_to_clipboard">Copie vers le presse-papiers réussie</string>
 
   </resources>

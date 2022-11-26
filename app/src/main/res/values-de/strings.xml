@@ -67,6 +67,7 @@
   <string name="action_set_static">Statischen Hintergrund festlegen</string>
   <string name="action_change_time">Uhrzeit ändern</string>
   <string name="action_change_interval">Intervall ändern</string>
+  <string name="action_copy_to_clipboard">In Zwischenablage kopieren</string>
 
   <!-- APPEARANCE -->
 
@@ -218,5 +219,7 @@
   <string name="msg_apply_colors">Geänderte Farben werden im System beim nächsten Ausschalten des Displays übernommen</string>
   <string name="msg_apply_changes">Um (eventuelle) Änderungen anzuwenden, wird ein Neustart des laufenden Hintergrunds empfohlen. Dies kann nicht automatisch erfolgen.\nBitte beende die App in Deinen Systemeinstellungen und wende Doodle erneut als Live-Hintergrund an.</string>
   <string name="msg_preview_missing">Es trat ein Fehler auf, bitte wähle den Doodle Live-Hintergrund manuell aus</string>
+  <string name="msg_report_crash">Bitte melde jegliche Abstürze mit angehängtem Crash-Log, um mir beim Beheben der Ursache zu helfen.</string>
+  <string name="msg_copied_to_clipboard">Erfolgreich in Zwischenablage kopiert</string>
 
   </resources>

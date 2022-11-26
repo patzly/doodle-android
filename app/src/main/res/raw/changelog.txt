@@ -1,5 +1,6 @@
 ## 5.6.1
 
+- Improved: error logging feature
 - Improved: maximum tilt effect intensity
 - Improved: settings layout for large screens
 - Fixed: hopefully a big crash cause in the rendering algorithm

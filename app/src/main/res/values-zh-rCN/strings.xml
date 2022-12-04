@@ -67,6 +67,7 @@
   <string name="action_set_static">设置静态壁纸</string>
   <string name="action_change_time">更改时间</string>
   <string name="action_change_interval">更改间隔</string>
+  <string name="action_copy_to_clipboard">复制到剪贴板</string>
 
   <!-- APPEARANCE -->
 
@@ -215,5 +216,7 @@
   <string name="msg_apply_colors">更改的颜色将在你下次关闭屏幕时应用到系统</string>
   <string name="msg_apply_changes">为了(最终)应用改变的选项，建议重新启动正在运行的壁纸服务。这不能自动完成。\n请在系统设置中强制停止 Doodle，然后重新将 Doole 应用为墙纸。</string>
   <string name="msg_preview_missing">发生错误，请手动选择 Doodle Live 墙纸</string>
+  <string name="msg_report_crash">请报告任何崩溃，并附上奔溃日志，以便我可以试着修复它们。</string>
+  <string name="msg_copied_to_clipboard">成功复制到剪贴板</string>
 
   </resources>

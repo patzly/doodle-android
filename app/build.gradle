@@ -25,7 +25,7 @@ plugins {
 android {
     namespace 'xyz.zedler.patrick.doodle'
     compileSdkVersion 33
-    buildToolsVersion '33.0.0'
+    buildToolsVersion '33.0.1'
 
     buildFeatures {
         viewBinding true

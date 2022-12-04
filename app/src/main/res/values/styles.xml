@@ -107,6 +107,7 @@
     parent="Widget.Material3.Button.UnelevatedButton">
     <item name="android:layout_width">wrap_content</item>
     <item name="android:layout_height">wrap_content</item>
+    <item name="android:singleLine">true</item>
   </style>
 
   <!-- Localized style -->
@@ -123,6 +124,7 @@
     parent="Widget.Material3.Button.OutlinedButton">
     <item name="android:layout_width">wrap_content</item>
     <item name="android:layout_height">wrap_content</item>
+    <item name="android:singleLine">true</item>
   </style>
 
   <!-- Localized style -->
@@ -139,6 +141,7 @@
     parent="Widget.Material3.Button.TextButton">
     <item name="android:layout_width">wrap_content</item>
     <item name="android:layout_height">wrap_content</item>
+    <item name="android:singleLine">true</item>
   </style>
 
   <!-- Localized style -->
@@ -153,6 +156,7 @@
   <style
     name="Widget.Doodle.Button.TextButton.Dialog"
     parent="Widget.Material3.Button.TextButton.Dialog">
+    <item name="android:singleLine">true</item>
     <item name="android:fontFamily">@font/jost_medium</item>
     <item name="fontFamily">@font/jost_medium</item>
   </style>

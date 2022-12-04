@@ -145,7 +145,8 @@
               android:layout_height="wrap_content"
               android:orientation="horizontal"
               android:layout_gravity="end"
-              android:layout_marginEnd="12dp">
+              android:paddingStart="12dp"
+              android:paddingEnd="12dp">
 
               <com.google.android.material.button.MaterialButton
                 android:id="@+id/button_overview_info"

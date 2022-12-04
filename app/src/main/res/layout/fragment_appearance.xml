@@ -65,7 +65,6 @@
           android:layout_marginStart="16dp"
           android:layout_marginEnd="16dp"
           android:layout_marginBottom="10dp"
-          app:cardBackgroundColor="?attr/colorSurfaceVariant"
           app:contentPaddingBottom="12dp">
 
           <LinearLayout

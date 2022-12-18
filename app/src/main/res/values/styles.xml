@@ -168,6 +168,10 @@
     <item name="android:layout_height">wrap_content</item>
     <item name="iconTint">?attr/colorOnSurfaceVariant</item>
     <item name="iconSize">24dp</item>
+    <item name="android:paddingLeft">8dp</item>
+    <item name="android:paddingRight">8dp</item>
+    <item name="android:paddingTop">6dp</item>
+    <item name="android:paddingBottom">6dp</item>
   </style>
 
   <!-- CardView -->

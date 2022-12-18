@@ -3,9 +3,10 @@
 - Improved: error logging feature
 - Improved: maximum tilt effect intensity
 - Improved: settings layout for large screens
+- Improved: follow system accessibility animation reduction option
 - Fixed: hopefully a big crash cause in the rendering algorithm
 
-! Please report any crash so I can fix them! Crash log should be available at <b>Other options</b> > <b>Display logcat</b>.
+? Please report any crash so I can fix them! Crash log should be available at <b>Other options</b> > <b>Display logcat</b>.
 
 ## 5.6.0
 

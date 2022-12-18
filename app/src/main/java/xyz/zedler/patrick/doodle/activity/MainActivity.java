@@ -377,13 +377,19 @@ public class MainActivity extends AppCompatActivity {
       return;
     }
     try {
-      NavOptions navOptions = new NavOptions.Builder()
-          .setEnterAnim(useSliding ? R.anim.enter_end_slide : R.anim.enter_end_fade)
-          .setExitAnim(useSliding ? R.anim.exit_start_slide : R.anim.exit_start_fade)
-          .setPopEnterAnim(useSliding ? R.anim.enter_start_slide : R.anim.enter_start_fade)
-          .setPopExitAnim(useSliding ? R.anim.exit_end_slide : R.anim.exit_end_fade)
-          .build();
-      navController.navigate(directions, navOptions);
+      NavOptions.Builder builder = new NavOptions.Builder();
+      if (UiUtil.areAnimationsEnabled(this)) {
+        builder.setEnterAnim(useSliding ? R.anim.enter_end_slide : R.anim.enter_end_fade);
+        builder.setExitAnim(useSliding ? R.anim.exit_start_slide : R.anim.exit_start_fade);
+        builder.setPopEnterAnim(useSliding ? R.anim.enter_start_slide : R.anim.enter_start_fade);
+        builder.setPopExitAnim(useSliding ? R.anim.exit_end_slide : R.anim.exit_end_fade);
+      } else {
+        builder.setEnterAnim(R.anim.fade_in_a11y);
+        builder.setExitAnim(R.anim.fade_out_a11y);
+        builder.setPopEnterAnim(R.anim.fade_in_a11y);
+        builder.setPopExitAnim(R.anim.fade_out_a11y);
+      }
+      navController.navigate(directions, builder.build());
     } catch (IllegalArgumentException e) {
       Log.e(TAG, "navigate: " + directions, e);
     }
@@ -463,7 +469,11 @@ public class MainActivity extends AppCompatActivity {
       if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
         finish();
       }
-      overridePendingTransition(R.anim.fade_in_restart, R.anim.fade_out_restart);
+      if (UiUtil.areAnimationsEnabled(this)) {
+        overridePendingTransition(R.anim.fade_in_restart, R.anim.fade_out_restart);
+      } else {
+        overridePendingTransition(R.anim.fade_in_a11y, R.anim.fade_out_a11y);
+      }
     }, delay);
   }
 

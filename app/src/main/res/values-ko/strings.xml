@@ -65,7 +65,6 @@
   <string name="action_set_static">고정된 배경화면 설정</string>
   <string name="action_change_time">시간 변경</string>
   <string name="action_change_interval">간격 조정</string>
-
   <!-- APPEARANCE -->
 
   <string name="appearance_title">모양새</string>

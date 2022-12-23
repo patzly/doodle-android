@@ -25,7 +25,7 @@
 
   <string name="app_name" translatable="false">Doodle</string>
   <string name="app_developer" translatable="false">Patrick Zedler</string>
-  <string name="app_mail" translatable="false">mail@patrickzedler.com</string>
+  <string name="app_mail" translatable="false">dev@patrickzedler.com</string>
   <string name="app_website" translatable="false">https://patrickzedler.com</string>
   <string name="app_vending" translatable="false">http://play.google.com/store/apps/dev?id=8122479227040208191</string>
   <string name="app_github" translatable="false">https://github.com/patzly/doodle-android/</string>

@@ -28,6 +28,7 @@
 
   <string name="title_info">Информация </string>
   <string name="title_apply_changes">Применить изменения</string>
+  <string name="title_logcat">Логи</string>
   <string name="title_feedback">Обратная связь</string>
   <string name="title_licenses">Лицензии открытого ПО</string>
 
@@ -36,6 +37,10 @@
   <string name="label_ms">%1$s мс</string>
   <string name="label_degrees">%1$s° </string>
 
+  <!-- ACTIONS -->
+
+  <string name="action_cancel">Отменить</string>
+  <string name="action_select">Выбрать</string>
   <string name="action_close">Закрыть</string>
   <string name="action_back">Назад</string>
   <string name="action_open_link">Открыть внешнюю ссылку</string>
@@ -44,6 +49,7 @@
   <string name="action_deactivate">Деактивировать</string>
   <string name="action_select_all">Выбрать все</string>
   <string name="action_continue">Продолжить</string>
+  <string name="action_reload">Перезагрузить</string>
   <string name="action_open_app_info">Сведения о приложении</string>
   <string name="action_set">Установить как обои</string>
   <string name="action_learn_more">Подробнее</string>
@@ -134,7 +140,6 @@
   <string name="other_theme_dark">Темная</string>
   <string name="other_reset">Сбросить все настройки</string>
   <string name="other_reset_description">Опция полезнее обычного удаления приложения, поскольку настройки хранятся в особом месте, чтобы применяться сразу после запуска устройства</string>
-
   <!-- ABOUT -->
 
   <string name="about_title">О приложении</string>
@@ -158,5 +163,4 @@
   <string name="msg_apply_colors">Измененные цвета будут применены к системе при следующем выключении экрана</string>
   <string name="msg_apply_changes">Для (окончательного) применения новых параметров рекомендуется перезапустить работающую службу обоев. Этого нельзя сделать автоматически.\nПожалуйста, принудительно остановите Doodle из вашего системного приложения настроек и затем ещё раз установите Doodle в качестве обоев.</string>
   <string name="msg_preview_missing">Произошла ошибка, установите живые обои Doodle вручную</string>
-
   </resources>

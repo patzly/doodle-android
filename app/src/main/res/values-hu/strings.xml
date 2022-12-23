@@ -165,7 +165,7 @@
 
   <!-- OTHER -->
 
-  <string name="other_title">Más opciók<br></string>
+  <string name="other_title">Más opciók</string>
   <string name="other_description">Renderelés, nyelv &amp; visszaállítás</string>
   <string name="other_language">Nyelv</string>
   <string name="other_language_description">Köszönet a Transifex összes önkéntes fordítójának! Kérjük, látogasson el a projekt GitHub oldalára, ahol megtudhatja, hogyan teheti elérhetővé a Doodle élő háttérképeket az ön nyelvén.</string>

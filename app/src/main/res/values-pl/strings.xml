@@ -65,7 +65,6 @@
   <string name="action_set_static">Ustaw statyczną tapetę</string>
   <string name="action_change_time">Zmień godzinę</string>
   <string name="action_change_interval">Zmień interwał</string>
-
   <!-- APPEARANCE -->
 
   <string name="appearance_title">Wygląd</string>
@@ -189,7 +188,6 @@
   <string name="other_transition_description">Zamiast zanikania</string>
   <string name="other_reset">Wyczyść wszystkie ustawienia</string>
   <string name="other_reset_description">Robi więcej niż odinstalowanie by dało, ponieważ preferencje są przechowywane w specjalnym miejsciu ponieważ muszą być dostępne od razu po starcie urządzenia</string>
-
   <!-- ABOUT -->
 
   <string name="about_title">O aplikacji</string>
@@ -217,5 +215,4 @@
   <string name="msg_apply_colors">Zmienione kolory zostaną zaaplikowane do systemu następnym razem gdy wyłączysz ekran</string>
   <string name="msg_apply_changes">Aby zaaplikować zmienione opcje uruchomienie ponownie tapety jest zalecane. Tego nie da się zrobić automatycznie.\nProszę wymuś zamknięcie Doodle w swoich ustawieniach systemowych a następnie ponownie ustaw Doodle jako Twoją tapetę.</string>
   <string name="msg_preview_missing">Wystąpił błąd, proszę wybierz recznie Doodle jako tapetę</string>
-
   </resources>

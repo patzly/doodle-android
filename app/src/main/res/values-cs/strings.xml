@@ -126,7 +126,6 @@
   <string name="other_theme_dark">Tmavý</string>
   <string name="other_reset">Obnovit všechna nastavení</string>
   <string name="other_reset_description">Dělá víc, než by udělalo odinstalování, protože předvolby jsou uloženy na zvláštním místě, kde musí být přístupné přímo po spuštění zařízení.</string>
-
   <!-- ABOUT -->
 
   <string name="about_title">O aplikaci</string>
@@ -147,5 +146,4 @@
   <string name="msg_apply_colors">Změněné barvy se do systému aplikují při příštím vypnutí obrazovky.</string>
   <string name="msg_apply_changes">Pro použití (případně) změněných možností se doporučuje restartovat spuštěnou službu tapety. To nelze provést automaticky.\nProsím, zastavte službu Doodle v nastavení systému a poté ji znovu použijte jako tapetu</string>
   <string name="msg_preview_missing">Došlo k chybě, nastave prosím Doodle Live Wallpaper manuálně</string>
-
   </resources>

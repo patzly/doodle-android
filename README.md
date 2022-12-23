@@ -52,6 +52,7 @@ If you run into a bug or miss a feature, please [open an issue](https://github.c
 
 Doodle Android is not yet available in your language? You can help translate this project at [Transifex](https://www.transifex.com/patzly/doodle-android)!  
 Translations which reached a completion level of 80% will be included in releases.
+Please complete main locales first (e. g. Spanish `es`, Persian `fa`) and only then request specific variants of that language (e. g. Spanish (Colombia) `es_CO`, Spanish (Ecuador) `es_EC`, Spanish (Mexico) `es_MX`). I will approve the request and then you can translate the strings of the app.
 
 ## License
 

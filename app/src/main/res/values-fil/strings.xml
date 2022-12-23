@@ -125,7 +125,6 @@
   <string name="other_theme_dark">Madilim</string>
   <string name="other_reset">I-reset ang lahat ng settings</string>
   <string name="other_reset_description">Higit pa sa gagawin ng pag-uninstall, dahil ang mga kagustuhan ay nakalagay sa isang espesyal na lugar dahil dapat silang direktang ma-access pagkatapos ng pag-start ng device</string>
-
   <!-- ABOUT -->
 
   <string name="about_title">Tungkol sa...</string>
@@ -145,5 +144,4 @@
   <string name="msg_force_stop">Kailangan ng forced stop upang ilapat ang lahat ng mga pagbabago</string>
   <string name="msg_apply_changes">Upang mailapat (sa kalaunan) ang mga nabago na mga opsyon, inirerekomenda ang pag-restart ng tumatakbong wallpaper service. Hindi ito awtomatikong magagawa. Mangyaring i-force-stop ang Doodle sa iyong system settings at pagkatapos ay ilapat muli ang Doodle bilang iyong wallpaper.</string>
   <string name="msg_preview_missing">May naganap na error, mangyaring piliin nang manu-mano ang Doodle Live Wallpaper</string>
-
   </resources>

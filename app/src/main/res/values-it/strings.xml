@@ -135,7 +135,6 @@ Personalizza lo sfondo in base al tuo stile!</string>
   <string name="other_theme_dark">Scuro</string>
   <string name="other_reset">Ripristina tutte le impostazioni</string>
   <string name="other_reset_description">È più efficace della semplice disinstallazione, perché le impostazioni sono memorizzate in un posto speciale in quanto devono essere accessibili immediatamente dopo l\'avvio del dispositivo</string>
-
   <!-- ABOUT -->
 
   <string name="about_title">Informazioni</string>
@@ -161,5 +160,4 @@ https://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
   <string name="msg_apply_changes">Per applicare (eventualmente) le nuove opzioni si raccomanda un riavvio del servizio dello sfondo. Il riavvio non può essere effettuato automaticamente.
 Per favore forza la chiusura di Doodle nelle tue impostazioni di sistema e riapplica Doodle come sfondo.</string>
   <string name="msg_preview_missing">Si è verificato un errore, per favore seleziona Doodle Live Wallpaper manualmente</string>
-
   </resources>

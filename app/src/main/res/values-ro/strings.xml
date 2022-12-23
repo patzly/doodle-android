@@ -134,7 +134,6 @@
   <string name="other_theme_dark">Întunecată</string>
   <string name="other_reset">Resetează toate setările</string>
   <string name="other_reset_description">Face mai mult decât ar face dezinstalarea, deoarece preferințele sunt stocate într-un loc special, deoarece trebuie să fie accesibile direct după pornirea dispozitivului</string>
-
   <!-- ABOUT -->
 
   <string name="about_title">Despre</string>
@@ -158,5 +157,4 @@
   <string name="msg_apply_colors">Culorile schunbate vor fi aplicate următoarea dată când porniți ecranul.</string>
   <string name="msg_apply_changes">Pentru a aplica (eventual) opțiunile modificate, se recomandă repornirea serviciului de imagine de fundal.  Acest lucru nu se poate face automat.\nOpriți forțat Doodle-ul în setările sistemului și apoi aplicați Doodle-ul ca fundal din nou.</string>
   <string name="msg_preview_missing">A apărut o eroare, selectați manual wallpaper-ul Doodle Live</string>
-
   </resources>

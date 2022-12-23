@@ -134,7 +134,6 @@
   <string name="other_theme_dark">داكن</string>
   <string name="other_reset">استعاده الاعدادات</string>
   <string name="other_reset_description"> عند إلغاء التثبيت ، لأن التفضيلات مخزنة في مكان خاص حيث يجب أن تكون متاحة مباشرة بعد بدء تشغيل الجهاز</string>
-
   <!-- ABOUT -->
 
   <string name="about_title">عن</string>
@@ -158,5 +157,4 @@
   <string name="msg_apply_colors">سيتم تطبيق الألوان التي تم تغييرها على النظام في المرة التالية التي تقوم فيها بإيقاف تشغيل الشاشة</string>
   <string name="msg_apply_changes">لتطبيق الخيارات التي تم تغييرها (في النهاية) ، يوصى بإعادة تشغيل خدمة الخلفية قيد التشغيل.  لا يمكن القيام بذلك تلقائيًا. \ n الرجاء فرض إيقاف رسومات الشعار المبتكرة في إعدادات النظام ثم تطبيق رسومات الشعار المبتكرة كخلفية للشاشة مرة أخرى.</string>
   <string name="msg_preview_missing">حدث خطأ ، يرجى تحديد Doodle Live Wallpaper يدويًا</string>
-
   </resources>

@@ -213,7 +213,7 @@
   <string name="msg_share">Nézze meg ezt a fasza élő háttérkép appot: \nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
   <string name="msg_hide">Elrejti az ikont a launcherben?</string>
   <string name="msg_random">Minden kiválasztot design használva lesz</string>
-  <string name="msg_random_warning">A random háttérkép desing még mindig aktív!<br></string>
+  <string name="msg_random_warning">A random háttérkép desing még mindig aktív!</string>
   <string name="msg_reset">Visszaállít minden beállítást?</string>
   <string name="msg_force_stop">A változtatások alkalmazásához kényszerleállás szükséges</string>
   <string name="msg_apply_colors">A megváltozott színek a képernyő következő kikapcsolásakor érvényesülnek a rendszeren</string>

@@ -116,7 +116,6 @@
   <string name="other_theme_dark">כהה</string>
   <string name="other_reset">איפוס כל ההגדרות</string>
   <string name="other_reset_description">עושה יותר ממה שמחיקה תעשה,משום שהעדפות נשמרות במקום מיוחד בגלל שהן צריכות להיות נגישות מיד לאחר הפעלת המכשיר</string>
-
   <!-- ABOUT -->
 
   <string name="about_title">אודות</string>
@@ -136,5 +135,4 @@
   <string name="msg_apply_changes">כדי להחיל(בסופו של דבר)שינוי באפשרויות,מומלץ להפעיל מחדש את השירות שמריץ רקעים.זה לא יכול להעשות אוטומטית
 בבקשה הכריחו עצירה של דודל בהגדרות מערכת ואז החילו את דודל כרקע</string>
   <string name="msg_preview_missing">צצה שגיאה,בבקשה ביחרו את דודל רקע חי באופן ידני</string>
-
   </resources>

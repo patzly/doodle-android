@@ -103,7 +103,6 @@
   <string name="other_theme_dark">Mørk</string>
   <string name="other_reset">Nulstil alle indstillinger</string>
   <string name="other_reset_description">Gør mere end afinstallering ville gøre, fordi indstillingerne gemmes på et særligt sted, da de skal være tilgængelige direkte efter opstart af enheden</string>
-
   <!-- ABOUT -->
 
   <string name="about_title">Om</string>

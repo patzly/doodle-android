@@ -48,6 +48,7 @@
   <string name="action_deactivate">Desactivado</string>
   <string name="action_select_all">Seleccionar todo</string>
   <string name="action_continue">Continuar</string>
+  <string name="action_reload">Recargar</string>
   <string name="action_open_app_info">Abrir información de la app</string>
   <string name="action_set">Aplicar</string>
   <string name="action_learn_more">Saber más</string>
@@ -64,6 +65,9 @@
   <string name="action_language_select">Seleccionar idioma</string>
   <string name="action_set_static">Establecer fondo estático </string>
   <string name="action_change_time">Cambiar el tiempo </string>
+  <string name="action_change_interval">Cambiar intervalo</string>
+  <string name="action_copy_to_clipboard">Copiar al portapapeles</string>
+
   <!-- APPEARANCE -->
 
   <string name="appearance_title">Apariencia</string>
@@ -77,6 +81,7 @@
   <string name="appearance_night_mode_description">Formas completamente oscuras</string>
   <string name="appearance_night_mode_on">Encendido</string>
   <string name="appearance_night_mode_off">Apagado</string>
+  <string name="appearance_dark_text">Usar texto oscuro</string>
   <string name="appearance_colors_category">Colores</string>
   <string name="appearance_colors">Colores extraídos</string>
   <string name="appearance_colors_description">Usado para calcular el contraste del texto</string>
@@ -144,7 +149,6 @@
   <string name="other_theme_dark">Oscuro</string>
   <string name="other_reset">Restablecer todos los ajustes</string>
   <string name="other_reset_description">Hace más de lo que haría la desinstalación, porque las preferencias se almacenan en un lugar especial, ya que deben ser accesibles directamente después del inicio del dispositivo.</string>
-
   <!-- ABOUT -->
 
   <string name="about_title">Acerca de</string>
@@ -168,5 +172,4 @@
   <string name="msg_apply_colors">Los colores modificados se aplicarán al sistema la próxima vez que apague la pantalla</string>
   <string name="msg_apply_changes">Para aplicar (eventualmente) las opciones modificadas, se recomienda reiniciar el servicio de fondo de pantalla en ejecución.  Esto no se puede hacer automáticamente.  Fuerza la detención de Doodle en la configuración de tu sistema y luego vuelve a aplicar Doodle como fondo de pantalla.</string>
   <string name="msg_preview_missing">Se produjo un error, seleccione Doodle Live Wallpaper manualmente</string>
-
   </resources>

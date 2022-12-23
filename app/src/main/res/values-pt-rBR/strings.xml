@@ -133,7 +133,6 @@
   <string name="other_theme_dark">Escuro</string>
   <string name="other_reset">Redefinir todas as configurações</string>
   <string name="other_reset_description">Faz mais que somente desinstalar, já que as preferencias são guardadas em um lugar especial para serem acessíveis diretamente depois da inicialização do dispositivo</string>
-
   <!-- ABOUT -->
 
   <string name="about_title">Sobre</string>
@@ -157,5 +156,4 @@
   <string name="msg_apply_colors">Cores selecionadas serão aplicadas ao sistema na próxima vez que você desligar a tela</string>
   <string name="msg_apply_changes">Para (eventualmente) aplicar as configurações modificadas é recomendado reiniciar o  serviço de papel de parede. Isso não poe ser feito automáticamente.\nPor favor, encerre o Doodle nas configurações do seu sistema, então, aplique Doodle como seu papel de parede novamente.</string>
   <string name="msg_preview_missing">Ocorreu um erro, por favor selecione o Doodle Live Wallpaper manualmente</string>
-
   </resources>

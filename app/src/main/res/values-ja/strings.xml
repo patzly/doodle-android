@@ -138,7 +138,6 @@
   <string name="other_theme_dark">Dark</string>
   <string name="other_reset">すべての設定をリセットする</string>
   <string name="other_reset_description">あなたの設定はデバイスが起動したときにすぐにアクセスできるよう特殊な個所に保存されているため、トラブル対処のためには再インストールよりも効果的です</string>
-
   <!-- ABOUT -->
 
   <string name="about_title">このアプリについて</string>
@@ -162,5 +161,4 @@
   <string name="msg_apply_colors">次に画面をOFFにするまで色の変更はシステムには適用されません</string>
   <string name="msg_apply_changes">設定の変更を（完全に）適用するために壁紙のサービスを再起動したほうがよいでしょう。再起動は自動的には行われません\nいったんシステム設定で Doodle を強制停止し、あらためて Doodle を壁紙として設定しなおしてください</string>
   <string name="msg_preview_missing">エラーが発生しました。手動で Doodle Live Wallpaper を選択してください</string>
-
   </resources>

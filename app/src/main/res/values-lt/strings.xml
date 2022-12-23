@@ -154,7 +154,6 @@
   <string name="other_transition_description">Vietoj blukimo</string>
   <string name="other_reset">Restartuoti visus parametrus</string>
   <string name="other_reset_description">Daugiau daro nei ištrynimas daro, nes parametrai yra sudėti ypatingoje vietoje kurie pasiekiami tik tada kai įrenginys isijungia </string>
-
   <!-- ABOUT -->
 
   <string name="about_title">Apie</string>
@@ -178,5 +177,4 @@
   <string name="msg_apply_colors">Pakeistos spalvos bus pateiktos kai kitą kartą išjungsi ekraną</string>
   <string name="msg_apply_changes">Kad taikyti pakeistus parametrus (galiausiai), paleisti iš naujo veikianti paveikslo servisą yra rekomenduojama. Tai negali būti atlikta automatiškai.; Prašau priverstinai sustabdyti „Doodle“ savo sistemos parametrus ir tik tada taikyk savo „Doodle“ paveikslą dar kartą. </string>
   <string name="msg_preview_missing">Iškilo problema, nustatyk „Doodle“ judanti paveikslą rankinių būdų</string>
-
   </resources>

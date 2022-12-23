@@ -134,7 +134,6 @@
   <string name="other_theme_dark">Donker</string>
   <string name="other_reset">Reset alle instellingen</string>
   <string name="other_reset_description">Doet meer dan de-installeren zou doen, want de voorkeuren op een speciale plek worden opgeslagen omdat deze toegankelijk moeten zijn direct na opstarten apparaat</string>
-
   <!-- ABOUT -->
 
   <string name="about_title">Over</string>
@@ -158,5 +157,4 @@
   <string name="msg_apply_colors">Veranderde kleuren zullen de volgende keer je scherm uit zet worden toegepast in het systeem</string>
   <string name="msg_apply_changes">Om (eventueel) gewijzigde opties toe te passen, wordt een herstart van de lopende achtergrond service aanbevolen. Dit kan niet automatisch worden gedaan.\nGelieve Doodle geforceerd te stoppen in je systeeminstellingen en vervolgens Doodle opnieuw toe te passen als je achtergrond.</string>
   <string name="msg_preview_missing">Er ging iets mis, selecteer Doodle Live Achtergrond alsjeblieft handmatig</string>
-
   </resources>

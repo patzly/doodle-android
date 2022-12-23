@@ -65,7 +65,6 @@
   <string name="action_set_static">Đặt hình nền tĩnh</string>
   <string name="action_change_time">Chuyển thời gian</string>
   <string name="action_change_interval">Thay đổi khoảng thời gian</string>
-
   <!-- APPEARANCE -->
 
   <string name="appearance_title">Diện mạo</string>

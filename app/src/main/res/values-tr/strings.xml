@@ -122,6 +122,7 @@
   <string name="other_language">Dil</string>
   <string name="other_language_description">Transifex\'teki tüm gönüllü çevirmenlere çokça teşekkürler! Doodle Canlı Duvar Kağıtlarının kendi dilinizde kullanıma sunulmasına nasıl yardımcı olabileceğinizi öğrenmek için lütfen projenin GitHub sayfasını ziyaret edin.</string>
   <string name="other_language_system">Sisteme uy</string>
+  <string name="other_language_system_description">Çeviri bulunmuyorsa İngilizce</string>
   <string name="other_gpu">Donanım hızlandırması</string>
   <string name="other_gpu_description">Eğer duvar kağıdı çöküyorsa kapatın</string>
   <string name="other_gpu_info">Doodle\'da donanım hızlandırması sadece Android 8 ve üstünde mevcut. Duvar kağıdı animasyonları bu nedenle sarsıntılı olabilir.</string>
@@ -134,7 +135,6 @@
   <string name="other_theme_dark">Karanlık</string>
   <string name="other_reset">Tüm ayarları sıfırla </string>
   <string name="other_reset_description">Kaldırmanın yapacağından daha fazlasını yapar, çünkü uygulama ayarları cihaz açılır açılmaz direkt erişilebilir olması gerektiği için özel bir yerde saklanıyor</string>
-
   <!-- ABOUT -->
 
   <string name="about_title">Hakkında</string>
@@ -158,5 +158,4 @@
   <string name="msg_apply_colors">Ekranı sonraki sefer kapadığınızda seçili renkler sisteme uygulanacaktır</string>
   <string name="msg_apply_changes">Değiştirilen seçenekleri (eninde sonunda) uygulamak için, çalışan duvar kağıdı hizmetinin yeniden başlatılması önerilir. Bu otomatik olarak yapılamaz.\nLütfen sistem ayarlarınızda Doodle\'ı zorla durdurun ve ardından Doodle\'ı duvar kağıdınız olarak tekrar uygulayın. </string>
   <string name="msg_preview_missing">Bir hata meydana geldi, lütfen Doodle Hareketli Duvar Kağıdını manuel olarak seçin </string>
-
   </resources>

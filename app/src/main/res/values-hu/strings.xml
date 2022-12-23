@@ -188,7 +188,7 @@
   <string name="other_transition_description">Elhalványulás helyett</string>
   <string name="other_reset">Minden beállítás visszaállítása</string>
   <string name="other_reset_description">Többet tesz, mint az eltávolítás, mert a beállítások egy speciális helyen vannak tárolva, mivel közvetlenül az eszköz indítása után elérhetőnek kell lenniük.</string>
-  <string name="other_log">Logcat mutatása<br></string>
+  <string name="other_log">Logcat mutatása</string>
   <string name="other_log_description">Debuggoláshoz</string>
 
   <!-- ABOUT -->

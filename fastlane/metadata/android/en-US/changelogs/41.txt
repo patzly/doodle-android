@@ -1,4 +1,5 @@
 • Improved: error logging feature
 • Improved: maximum tilt effect intensity
 • Improved: settings layout for large screens
+• Improved: follow system accessibility animation reduction option
 • Fixed: hopefully a big crash cause in the rendering algorithm

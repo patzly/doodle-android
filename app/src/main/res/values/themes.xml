@@ -84,6 +84,7 @@
     <item name="colorOnSurfaceVariant">@color/red_neutral_variant_30</item>
 
     <item name="colorOutline">@color/red_neutral_variant_50</item>
+    <item name="colorOutlineVariant">@color/red_neutral_variant_80</item>
   </style>
 
   <style name="Theme.Doodle.Yellow" parent="Theme.Doodle">
@@ -120,6 +121,7 @@
     <item name="colorOnSurfaceVariant">@color/yellow_neutral_variant_30</item>
 
     <item name="colorOutline">@color/yellow_neutral_variant_50</item>
+    <item name="colorOutlineVariant">@color/yellow_neutral_variant_80</item>
   </style>
 
   <style name="Theme.Doodle.Lime" parent="Theme.Doodle">
@@ -156,6 +158,7 @@
     <item name="colorOnSurfaceVariant">@color/lime_neutral_variant_30</item>
 
     <item name="colorOutline">@color/lime_neutral_variant_50</item>
+    <item name="colorOutlineVariant">@color/lime_neutral_variant_80</item>
   </style>
 
   <style name="Theme.Doodle.Green" parent="Theme.Doodle">
@@ -192,6 +195,7 @@
     <item name="colorOnSurfaceVariant">@color/green_neutral_variant_30</item>
 
     <item name="colorOutline">@color/green_neutral_variant_50</item>
+    <item name="colorOutlineVariant">@color/green_neutral_variant_80</item>
   </style>
 
   <style name="Theme.Doodle.Turquoise" parent="Theme.Doodle">
@@ -228,6 +232,7 @@
     <item name="colorOnSurfaceVariant">@color/turquoise_neutral_variant_30</item>
 
     <item name="colorOutline">@color/turquoise_neutral_variant_50</item>
+    <item name="colorOutlineVariant">@color/turquoise_neutral_variant_80</item>
   </style>
 
   <style name="Theme.Doodle.Teal" parent="Theme.Doodle">
@@ -264,6 +269,7 @@
     <item name="colorOnSurfaceVariant">@color/teal_neutral_variant_30</item>
 
     <item name="colorOutline">@color/teal_neutral_variant_50</item>
+    <item name="colorOutlineVariant">@color/teal_neutral_variant_80</item>
   </style>
 
   <style name="Theme.Doodle.Blue" parent="Theme.Doodle">
@@ -300,6 +306,7 @@
     <item name="colorOnSurfaceVariant">@color/blue_neutral_variant_30</item>
 
     <item name="colorOutline">@color/blue_neutral_variant_50</item>
+    <item name="colorOutlineVariant">@color/blue_neutral_variant_80</item>
   </style>
 
   <style name="Theme.Doodle.Purple" parent="Theme.Doodle">
@@ -336,6 +343,7 @@
     <item name="colorOnSurfaceVariant">@color/purple_neutral_variant_30</item>
 
     <item name="colorOutline">@color/purple_neutral_variant_50</item>
+    <item name="colorOutlineVariant">@color/purple_neutral_variant_80</item>
   </style>
 
   <style name="Theme.Doodle.Amoled" parent="Theme.Doodle">
@@ -372,6 +380,7 @@
     <item name="colorOnSurfaceVariant">@color/blue_neutral_variant_30</item>
 
     <item name="colorOutline">@color/blue_neutral_variant_50</item>
+    <item name="colorOutlineVariant">@color/blue_neutral_variant_80</item>
   </style>
 
 </resources>

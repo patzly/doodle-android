@@ -89,7 +89,7 @@
   <string name="appearance_dark_text_description">Только когда фон достаточно яркий</string>
   <string name="appearance_colors_category">Цвета</string>
   <string name="appearance_colors">Палитра цветов</string>
-  <string name="appearance_colors_description">Используется для расчета контрастности текста</string>
+  <string name="appearance_colors_description">Используется для расчёта контрастности текста</string>
   <string name="appearance_colors_description_dynamic">Используется системным движком тем</string>
   <string name="appearance_colors_description_one_ui">Как упоминалось выше, One UI игнорирует предоставленные цвета живых обоев.</string>
   <string name="appearance_colors_primary">Выбор основного цвета</string>

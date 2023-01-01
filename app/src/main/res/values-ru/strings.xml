@@ -64,10 +64,16 @@
   <string name="action_github">Doodle Android на GitHub</string>
   <string name="action_github_description">Сообщить о проблеме</string>
   <string name="action_language_select">Выбрать язык</string>
+  <string name="action_set_static">Задать статичные обои</string>
+  <string name="action_change_time">Изменить время</string>
+  <string name="action_change_interval">Изменить интервал</string>
+  <string name="action_copy_to_clipboard">Скопировать в буфер обмена</string>
+
   <!-- APPEARANCE -->
 
   <string name="appearance_title">Внешний вид</string>
   <string name="appearance_description">Дизайн и варианты цвета</string>
+  <string name="appearance_one_ui">Неблагоприятная реализация компанией Samsung динамических цветов в One UI 4.1 полностью игнорирует цвета, предоставляемые приложениями с живыми обоями, такими как Doodle.\nЧтобы применить цвета к вашей системе, установите желаемый дизайн в качестве статических обоев, чтобы система могла адаптировать дизайн, а затем повторно примените его в качестве живых обоев.</string>
   <string name="appearance_design">Дизайн</string>
   <string name="appearance_design_doodle">Подборка дудлов из Pixel 4</string>
   <string name="appearance_design_monet">Подборка Material You из Pixel 6</string>
@@ -77,23 +83,61 @@
   <string name="appearance_night_mode_description">Только тёмные цвета</string>
   <string name="appearance_night_mode_on">Вкл.</string>
   <string name="appearance_night_mode_off">Откл.</string>
+  <string name="appearance_light_text">Всегда использовать белый текст</string>
+  <string name="appearance_light_text_description">Вместо тёмного текста на светлом фоне</string>
+  <string name="appearance_dark_text">Использовать тёмный текст</string>
+  <string name="appearance_dark_text_description">Только когда фон достаточно яркий</string>
   <string name="appearance_colors_category">Цвета</string>
   <string name="appearance_colors">Палитра цветов</string>
   <string name="appearance_colors_description">Используется для расчета контрастности текста</string>
   <string name="appearance_colors_description_dynamic">Используется системным движком тем</string>
+  <string name="appearance_colors_description_one_ui">Как упоминалось выше, One UI игнорирует предоставленные цвета живых обоев.</string>
   <string name="appearance_colors_primary">Выбор основного цвета</string>
   <string name="appearance_colors_secondary">Выбор вторичного цвета</string>
   <string name="appearance_colors_tertiary">Выбор третичного цвета</string>
+  <string name="appearance_colors_custom">Задайте собственный цвет</string>
   <string name="appearance_colors_info">На устройствах без поддержки палитры на основе цвета обоев (Android 11 и ниже) только основной цвет применяется для расчета контрастности текста на рабочем столе и покраски фона экрана недавних приложений.</string>
-  <string name="appearance_colors_info_dynamic">На устройствах с Android 12 и выше (с поддержкой палитры на основе цвета обоев) три выбранных цвета используются в формировании автоматической цветовой темы по всей системе.</string>
+  <string name="appearance_colors_info_dynamic">На устройствах с Android 12 или более поздней версии и поддержкой динамического цвета, три выбранных цвета используются для автоматического создания общесистемной цветовой темы.<br></string>
   <string name="appearance_random">Случайный дизайн обоев</string>
+  <string name="appearance_random_description">Выберите триггер ниже</string>
+  <string name="appearance_random_screen_off">Отключение экрана</string>
+  <string name="appearance_random_daily">Ежедневно в %1$s</string>
+  <string name="appearance_random_interval">Задайте интервал</string>
+  <plurals name="appearance_random_interval_minutes">
+    <item quantity="one">Каждую минуту </item>
+    <item quantity="few">Каждые %1$d минуты</item>
+    <item quantity="many">Каждые %1$d минут</item>
+    <item quantity="other">Каждые %1$d минут</item>
+  </plurals>
+  <plurals name="appearance_random_interval_hours">
+    <item quantity="one">Каждый час</item>
+    <item quantity="few">Каждые %1$d часа</item>
+    <item quantity="many">Каждые %1$d часов</item>
+    <item quantity="other">Каждые %1$d часов</item>
+  </plurals>
+  <plurals name="appearance_random_interval_days">
+    <item quantity="one">Каждый день</item>
+    <item quantity="few">Каждые %1$d дня</item>
+    <item quantity="many">Каждые %1$d дней </item>
+    <item quantity="other">Каждые %1$d дней</item>
+  </plurals>
+
   <!-- PARALLAX -->
 
   <string name="parallax_title">Сдвиг</string>
   <string name="parallax_description">Эффекты пролистывания и наклона</string>
+  <string name="parallax_swipe_category">Пролистывание </string>
+  <string name="parallax_swipe_touch_wiz">Похоже, что ваш текущий лаунчер — Samsung TouchWiz или One UI Home, не поддерживают эффект пролистывания. Пожалуйста, попробуйте другой лаунчер, чтобы включить его.\nВы можете проигнорировать это предупреждение, если вы уже установили другой лаунчер по умолчанию.</string>
+  <string name="parallax_swipe">Эффект пролистывания</string>
+  <string name="parallax_swipe_description">Горизонтальное смещение при пролистывании страницы</string>
   <string name="parallax_swipe_power_save">Учитывать режим энергосбережения</string>
+  <string name="parallax_swipe_power_save_description">Приостановить эффект пролистывания в режиме энергосбережения</string>
+  <string name="parallax_tilt_category">Наклон</string>
   <string name="parallax_tilt">Эффект наклона</string>
+  <string name="parallax_tilt_description">Движение при наклоне устройства</string>
+  <string name="parallax_tilt_warning">Более высокое энергопотребление</string>
   <string name="parallax_refresh_rate">Частота опроса датчика наклона</string>
+  <string name="parallax_refresh_rate_description">Слишком короткие задержки могут вызвать \"подтормаживания\" в анимации.</string>
   <string name="parallax_damping">Гашение движений</string>
   <string name="parallax_damping_description">Понизьте для большей плавности</string>
   <string name="parallax_threshold">Порог движения</string>
@@ -118,6 +162,10 @@
   <string name="size_zoom_launcher_description">Может не поддерживаться некоторыми устройствами</string>
   <string name="size_zoom_damping">Затухание анимации</string>
   <string name="size_zoom_damping_description">Активируйте и уменьшайте параметр для более плавного эффекта</string>
+  <string name="size_zoom_unlock">Эффект приближения на экране блокировки</string>
+  <string name="size_zoom_unlock_description">Выберите направление</string>
+  <string name="size_zoom_unlock_in">Приближать</string>
+  <string name="size_zoom_unlock_out">Отдалять</string>
   <string name="size_zoom_duration">Длительность эффекта приближения после разблокировки</string>
   <string name="size_zoom_duration_description">Сократите для ускорения анимации</string>
 
@@ -128,18 +176,27 @@
   <string name="other_language">Язык приложения</string>
   <string name="other_language_description">Большое спасибо всем переводчикам-добровольцам Transifex! Пожалуйста, посетите страницу проекта на GitHub, чтобы узнать, как вы можете помочь сделать живые обои Doodle доступными для вашего языка.</string>
   <string name="other_language_system">Как в системе</string>
+  <string name="other_language_system_description">Будет использоваться английский, если перевод отсутствует</string>
   <string name="other_gpu">Аппаратное ускорение</string>
   <string name="other_gpu_description">Выключите, если возникают сбои обоев</string>
   <string name="other_gpu_info">Аппаратное ускорение доступно для Doodle только начиная с Android 8. Поэтому анимация обоев может быть немного дёрганой.</string>
+  <string name="other_screen_off_delay">Задержка выключения экрана</string>
+  <string name="other_screen_off_delay_description">Требуется для перехода Always On Display</string>
   <string name="other_launcher">Скрыть иконку с рабочего стола</string>
   <string name="other_launcher_description">Настройки будут доступны только в системном приложении для установки обоев</string>
+  <string name="other_launcher_unsupported">Эта функция больше не поддерживается из-за системных ограничений.</string>
   <string name="other_theme">Тема приложения</string>
   <string name="other_theme_description">Опробуйте другую комбинацию</string>
   <string name="other_theme_auto">Автомат.</string>
   <string name="other_theme_light">Светлая</string>
-  <string name="other_theme_dark">Темная</string>
+  <string name="other_theme_dark">Тёмная</string>
+  <string name="other_transition">Использовать скользящий переход между страницами настроек</string>
+  <string name="other_transition_description">Вместо исчезновения</string>
   <string name="other_reset">Сбросить все настройки</string>
   <string name="other_reset_description">Опция полезнее обычного удаления приложения, поскольку настройки хранятся в особом месте, чтобы применяться сразу после запуска устройства</string>
+  <string name="other_log">Показать журнал сбоев</string>
+  <string name="other_log_description">В целях отладки</string>
+
   <!-- ABOUT -->
 
   <string name="about_title">О приложении</string>
@@ -151,9 +208,14 @@
   <string name="about_vending_description">Больше приложений от разработчика</string>
   <string name="about_github_description">Исходный код</string>
   <string name="about_translation_description">Помочь перевести Doodle</string>
-  <string name="about_privacy">Конфиденциальность</string>
+  <string name="about_privacy">Политика конфиденциальности</string>
   <string name="about_privacy_description">Как обрабатываются ваши данные?</string>
 
+  <!-- MESSAGES -->
+
+  <string name="msg_feedback">Отличное приложение требует много времени и живёт за счёт отзывов пользователей.</string>
+  <string name="msg_feedback_contact">У вас есть пожелания, комментарии или вопросы? Не стесняйтесь обращаться ко мне!\nВ противном случае, я был бы очень рад хорошему отзыву в Play Маркете.</string>
+  <string name="msg_feedback_more">Пожалуйста, не просите добавления новых дизайнов обоев. Я добавлю их, когда у меня будет время помимо учёбы.</string>
   <string name="msg_share">Зацени эти крутые живые обои: \nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
   <string name="msg_hide">Скрыть значок с рабочего стола?</string>
   <string name="msg_random">Будут использованы все выбранные дизайны</string>
@@ -163,4 +225,7 @@
   <string name="msg_apply_colors">Измененные цвета будут применены к системе при следующем выключении экрана</string>
   <string name="msg_apply_changes">Для (окончательного) применения новых параметров рекомендуется перезапустить работающую службу обоев. Этого нельзя сделать автоматически.\nПожалуйста, принудительно остановите Doodle из вашего системного приложения настроек и затем ещё раз установите Doodle в качестве обоев.</string>
   <string name="msg_preview_missing">Произошла ошибка, установите живые обои Doodle вручную</string>
+  <string name="msg_report_crash">Пожалуйста, сообщайте о любых сбоях с прикреплённым журналом сбоев, чтобы я мог попытаться их исправить.</string>
+  <string name="msg_copied_to_clipboard">Копирование в буфер обмена завершено успешно</string>
+
   </resources>

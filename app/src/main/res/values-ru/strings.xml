@@ -110,7 +110,7 @@
     <item quantity="other">Каждые %1$d минут</item>
   </plurals>
   <plurals name="appearance_random_interval_hours">
-    <item quantity="one">Каждый час</item>
+    <item quantity="one">Каждый  %1$d час</item>
     <item quantity="few">Каждые %1$d часа</item>
     <item quantity="many">Каждые %1$d часов</item>
     <item quantity="other">Каждые %1$d часов</item>

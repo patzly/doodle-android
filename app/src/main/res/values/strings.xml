@@ -115,15 +115,15 @@
   <string name="appearance_random_daily">Daily at %1$s</string>
   <string name="appearance_random_interval">Select interval</string>
   <plurals name="appearance_random_interval_minutes">
-    <item quantity="one">Every minute</item>
+    <item quantity="one">Every %1$d minute</item>
     <item quantity="other">Every %1$d minutes</item>
   </plurals>
   <plurals name="appearance_random_interval_hours">
-    <item quantity="one">Every hour</item>
+    <item quantity="one">Every %1$d hour</item>
     <item quantity="other">Every %1$d hours</item>
   </plurals>
   <plurals name="appearance_random_interval_days">
-    <item quantity="one">Every day</item>
+    <item quantity="one">Every %1$d day</item>
     <item quantity="other">Every %1$d days</item>
   </plurals>
 

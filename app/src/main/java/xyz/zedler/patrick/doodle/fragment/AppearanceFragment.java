@@ -157,6 +157,9 @@ public class AppearanceFragment extends BaseFragment
     binding.cardAppearanceOneUi.setVisibility(isOneUiWithDynamicColors ? View.VISIBLE : View.GONE);
 
     binding.buttonAppearanceSetStatic.setOnClickListener(v -> {
+      if (getViewUtil().isClickDisabled(v.getId())) {
+        return;
+      }
       WallpaperManager manager = WallpaperManager.getInstance(activity);
       SharedPreferences sharedPrefs = getSharedPrefs();
       BaseWallpaper wallpaper = Constants.getWallpaper(
@@ -401,7 +404,6 @@ public class AppearanceFragment extends BaseFragment
       return;
     }
     performHapticClick();
-    ViewUtil.startIcon(binding.imageAppearanceRandom);
     if (group.getId() == R.id.toggle_appearance_night_mode) {
       int pref;
       if (checkedId == R.id.button_appearance_night_mode_on) {
@@ -430,6 +432,7 @@ public class AppearanceFragment extends BaseFragment
         isWallpaperNightMode = isNewWallpaperNightMode;
       }
     } else if (group.getId() == R.id.toggle_appearance_random) {
+      ViewUtil.startIcon(binding.imageAppearanceRandom);
       String randomModeOld = randomMode;
       if (checkedId == R.id.button_appearance_random_daily) {
         randomMode = RANDOM.DAILY;

@@ -117,7 +117,7 @@ public final class Constants {
   public static final class DEF {
 
     public static final String WALLPAPER = Constants.WALLPAPER.PIXEL;
-    public static final int NIGHT_MODE = -1;
+    public static final int NIGHT_MODE = Constants.NIGHT_MODE.AUTO;
     public static final boolean USE_DARK_TEXT = true;
     public static final boolean FORCE_LIGHT_TEXT = false;
     public static final String RANDOM = Constants.RANDOM.OFF;

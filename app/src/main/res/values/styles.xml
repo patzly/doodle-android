@@ -454,6 +454,42 @@
     <item name="android:textAppearance">?attr/textAppearanceBodyMedium</item>
   </style>
 
+  <!-- M3 TYPOGRAPHY -->
+
+  <style name="Widget.Doodle.TextView.HeadlineSmall" parent="Widget.Doodle.TextView">
+    <item name="android:textAppearance">?attr/textAppearanceHeadlineSmall</item>
+  </style>
+
+  <style name="Widget.Doodle.TextView.TitleLarge" parent="Widget.Doodle.TextView">
+    <item name="android:textAppearance">?attr/textAppearanceTitleLarge</item>
+  </style>
+
+  <style name="Widget.Doodle.TextView.TitleMedium" parent="Widget.Doodle.TextView.Medium">
+    <item name="android:textAppearance">?attr/textAppearanceTitleMedium</item>
+  </style>
+
+  <style name="Widget.Doodle.TextView.BodyMedium" parent="Widget.Doodle.TextView">
+    <item name="android:textAppearance">?attr/textAppearanceBodyMedium</item>
+  </style>
+
+  <style name="Widget.Doodle.TextView.BodySmall" parent="Widget.Doodle.TextView">
+    <item name="android:textAppearance">?attr/textAppearanceBodySmall</item>
+  </style>
+
+  <style name="Widget.Doodle.TextView.LabelLarge" parent="Widget.Doodle.TextView.Medium">
+    <item name="android:textAppearance">?attr/textAppearanceLabelLarge</item>
+  </style>
+
+  <style name="Widget.Doodle.TextView.LabelMedium" parent="Widget.Doodle.TextView.Medium">
+    <item name="android:textAppearance">?attr/textAppearanceLabelMedium</item>
+  </style>
+
+  <style name="Widget.Doodle.TextView.LabelSmall" parent="Widget.Doodle.TextView.Medium">
+    <item name="android:textAppearance">?attr/textAppearanceLabelSmall</item>
+  </style>
+
+  <!-- Other text widget styles -->
+
   <style name="Widget.Doodle.TextView.Toolbar" parent="Widget.Doodle.TextView">
     <item name="android:textAppearance">?attr/textAppearanceTitleLarge</item>
     <item name="android:singleLine">true</item>
@@ -494,10 +530,9 @@
 
   <!-- TextAppearance -->
 
-  <!-- Localized style, no empty base style needed -->
-  <style name="TextAppearance.Doodle.LabelLarge" parent="TextAppearance.Material3.LabelLarge">
-    <item name="android:fontFamily">@font/jost_medium</item>
-    <item name="fontFamily">@font/jost_medium</item>
+  <style name="TextAppearance.Doodle.HeadlineLarge" parent="TextAppearance.Material3.HeadlineLarge">
+    <item name="android:fontFamily">@font/jost_book</item>
+    <item name="fontFamily">@font/jost_book</item>
   </style>
 
   <style name="TextAppearance.Doodle.HeadlineMedium" parent="TextAppearance.Material3.HeadlineMedium">
@@ -505,9 +540,26 @@
     <item name="fontFamily">@font/jost_book</item>
   </style>
 
+  <style name="TextAppearance.Doodle.HeadlineSmall" parent="TextAppearance.Material3.HeadlineSmall">
+    <item name="android:fontFamily">@font/jost_book</item>
+    <item name="fontFamily">@font/jost_book</item>
+  </style>
+
   <style name="TextAppearance.Doodle.TitleLarge" parent="TextAppearance.Material3.TitleLarge">
     <item name="android:fontFamily">@font/jost_book</item>
     <item name="fontFamily">@font/jost_book</item>
+  </style>
+
+  <!-- Localized style, no empty base style needed -->
+  <style name="TextAppearance.Doodle.TitleMedium" parent="TextAppearance.Material3.TitleMedium">
+    <item name="android:fontFamily">@font/jost_medium</item>
+    <item name="fontFamily">@font/jost_medium</item>
+  </style>
+
+  <!-- Localized style, no empty base style needed -->
+  <style name="TextAppearance.Doodle.LabelLarge" parent="TextAppearance.Material3.LabelLarge">
+    <item name="android:fontFamily">@font/jost_medium</item>
+    <item name="fontFamily">@font/jost_medium</item>
   </style>
 
   <style name="TextAppearance.Doodle.Tooltip" parent="TextAppearance.MaterialComponents.Tooltip">

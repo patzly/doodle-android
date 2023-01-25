@@ -45,7 +45,7 @@ public class TextBottomSheetDialogFragment extends BaseBottomSheetDialogFragment
     binding = FragmentBottomsheetTextBinding.inflate(inflater, container, false);
 
     TextBottomSheetDialogFragmentArgs args
-        = TextBottomSheetDialogFragmentArgs.fromBundle(getArguments());
+        = TextBottomSheetDialogFragmentArgs.fromBundle(requireArguments());
 
     binding.toolbarText.setTitle(getString(args.getTitle()));
 

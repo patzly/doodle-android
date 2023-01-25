@@ -26,10 +26,12 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
+import java.util.HashMap;
 import java.util.List;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.databinding.RowLanguageBinding;
 import xyz.zedler.patrick.doodle.model.Language;
+import xyz.zedler.patrick.doodle.util.LocaleUtil;
 import xyz.zedler.patrick.doodle.util.ViewUtil;
 
 public class LanguageAdapter extends RecyclerView.Adapter<LanguageAdapter.ViewHolder> {
@@ -39,6 +41,7 @@ public class LanguageAdapter extends RecyclerView.Adapter<LanguageAdapter.ViewHo
   private final List<Language> languages;
   private final String selectedCode;
   private final LanguageAdapterListener listener;
+  private final HashMap<String, Language> languageHashMap;
 
   public LanguageAdapter(
       List<Language> languages, String selectedCode, LanguageAdapterListener listener
@@ -46,6 +49,10 @@ public class LanguageAdapter extends RecyclerView.Adapter<LanguageAdapter.ViewHo
     this.languages = languages;
     this.selectedCode = selectedCode;
     this.listener = listener;
+    this.languageHashMap = new HashMap<>();
+    for (Language language : languages) {
+      languageHashMap.put(language.getCode(), language);
+    }
   }
 
   public static class ViewHolder extends RecyclerView.ViewHolder {
@@ -101,6 +108,12 @@ public class LanguageAdapter extends RecyclerView.Adapter<LanguageAdapter.ViewHo
     // SELECTED
 
     boolean isSelected = language.getCode().equals(selectedCode);
+    if (selectedCode != null && !isSelected && !languageHashMap.containsKey(selectedCode)) {
+      String lang = LocaleUtil.getLangFromLanguageCode(selectedCode);
+      if (languageHashMap.containsKey(lang)) {
+        isSelected = language.getCode().equals(lang);
+      }
+    }
     holder.binding.imageLanguageSelected.setVisibility(isSelected ? View.VISIBLE : View.INVISIBLE);
     if (isSelected) {
       holder.binding.linearLanguageContainer.setBackground(ViewUtil.getBgListItemSelected(context));

@@ -104,19 +104,19 @@
   <string name="appearance_random_daily">Ежедневно в %1$s</string>
   <string name="appearance_random_interval">Задайте интервал</string>
   <plurals name="appearance_random_interval_minutes">
-    <item quantity="one">Каждые %1$d минуты</item>
+    <item quantity="one">Каждую минуту</item>
     <item quantity="few">Каждые %1$d минуты</item>
     <item quantity="many">Каждые %1$d минут</item>
     <item quantity="other">Каждые %1$d минут</item>
   </plurals>
   <plurals name="appearance_random_interval_hours">
-    <item quantity="one">Каждый  %1$d час</item>
+    <item quantity="one">Каждый час</item>
     <item quantity="few">Каждые %1$d часа</item>
     <item quantity="many">Каждые %1$d часов</item>
     <item quantity="other">Каждые %1$d часов</item>
   </plurals>
   <plurals name="appearance_random_interval_days">
-    <item quantity="one">Каждый  %1$d день</item>
+    <item quantity="one">Каждый день</item>
     <item quantity="few">Каждые %1$d дня</item>
     <item quantity="many">Каждые %1$d дней </item>
     <item quantity="other">Каждые %1$d дней</item>

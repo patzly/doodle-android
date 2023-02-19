@@ -28,6 +28,7 @@
 
   <string name="title_info">Informatie</string>
   <string name="title_apply_changes">Pas wijzigingen toe</string>
+  <string name="title_logcat">Logcat</string>
   <string name="title_feedback">Feedback</string>
   <string name="title_licenses">Open bron licenties</string>
 
@@ -36,6 +37,10 @@
   <string name="label_ms">%1$sms</string>
   <string name="label_degrees">%1$s graden</string>
 
+  <!-- ACTIONS -->
+
+  <string name="action_cancel">Annuleer</string>
+  <string name="action_select">Selecteer</string>
   <string name="action_close">Sluit</string>
   <string name="action_back">Terug</string>
   <string name="action_open_link">Open externe website</string>
@@ -44,6 +49,7 @@
   <string name="action_deactivate">Deactiveer</string>
   <string name="action_select_all">Selecteer alles</string>
   <string name="action_continue">Doorgaan</string>
+  <string name="action_reload">Herlaad</string>
   <string name="action_open_app_info">Open app info</string>
   <string name="action_set">Stel achtergrond in</string>
   <string name="action_learn_more">Meer info</string>
@@ -58,10 +64,16 @@
   <string name="action_github">Doodle Android op GitHub</string>
   <string name="action_github_description">Open een nieuw probleem</string>
   <string name="action_language_select">Selecteer taal</string>
+  <string name="action_set_static">Stel statische achtergrond in</string>
+  <string name="action_change_time">Verander tijd</string>
+  <string name="action_change_interval">Verander interval</string>
+  <string name="action_copy_to_clipboard">Kopieer naar klembord</string>
+
   <!-- APPEARANCE -->
 
   <string name="appearance_title">Uiterlijk</string>
   <string name="appearance_description">Ontwerp &amp; kleur opties</string>
+  <string name="appearance_one_ui">Samsung\'s ongunstige implementatie van dynamische kleuren in One UI 4.1 negeert door live achtergronden-apps zoals Doodle aangeboden kleuren volledig.\nOm de kleuren toe te passen op jouw systeem, stel je het huidige ontwerp in als een statische achtergrond hieronder zodat het systeem de kleuren kan ophalen, waarna je het opnieuw toepast als live achtergrond.</string>
   <string name="appearance_design">Ontwerp</string>
   <string name="appearance_design_doodle">Pixel 4 Doodle Collectie</string>
   <string name="appearance_design_monet">Pixel 6 Material You Collectie</string>
@@ -71,23 +83,55 @@
   <string name="appearance_night_mode_description">Alleen donkere kleuren</string>
   <string name="appearance_night_mode_on">Aan</string>
   <string name="appearance_night_mode_off">Uit</string>
+  <string name="appearance_light_text">Gebruik altijd witte tekst</string>
+  <string name="appearance_light_text_description">In plaats van donkere tekst op lichte achtergond</string>
+  <string name="appearance_dark_text">Gebruik donkere tekst</string>
+  <string name="appearance_dark_text_description">Alleen wanneer achtergrond licht genoeg is</string>
   <string name="appearance_colors_category">Kleuren</string>
   <string name="appearance_colors">Geëxtraheerde kleuren</string>
   <string name="appearance_colors_description">Gebruikt voor het berekenen van tekst contrast</string>
   <string name="appearance_colors_description_dynamic">Gebruikt door het thema engine van het Systeem</string>
+  <string name="appearance_colors_description_one_ui">Zoals hierboven vermeldt, worden de gegeven kleuren van live achtergronden genegeerd door One UI</string>
   <string name="appearance_colors_primary">Kies primaire kleur</string>
   <string name="appearance_colors_secondary">Kies secundaire kleur</string>
   <string name="appearance_colors_tertiary">Kies tertiaire kleur</string>
+  <string name="appearance_colors_custom">Selecteer aangepaste kleur</string>
   <string name="appearance_colors_info">Op apparaten zonder ondersteuning voor dynamische kleuren (Android 11 of lager), wordt alleen de primaire kleur gebruikt om het contrast van startscherm tekst en de tint van de achtergrond van het recente apps scherm te berekenen.</string>
   <string name="appearance_colors_info_dynamic">Op apparaten met Android 12 of hoger en ondersteuning voor dynamische kleuren, worden de drie geselecteerde kleuren automatisch gebruikt om een systeem-breed kleur thema te creëren.</string>
   <string name="appearance_random">Willekeurig achtergrond ontwerp</string>
+  <string name="appearance_random_description">Selecteer de trigger hieronder</string>
+  <string name="appearance_random_screen_off">Scherm uit</string>
+  <string name="appearance_random_daily">Dagelijks om %1$s</string>
+  <string name="appearance_random_interval">Kies interval</string>
+  <plurals name="appearance_random_interval_minutes">
+    <item quantity="one">Elk %1$d minuut</item>
+    <item quantity="other">Elke %1$d minuten</item>
+  </plurals>
+  <plurals name="appearance_random_interval_hours">
+    <item quantity="one">Elk %1$d uur</item>
+    <item quantity="other">Elke %1$d uur</item>
+  </plurals>
+  <plurals name="appearance_random_interval_days">
+    <item quantity="one">Elke %1$d dag</item>
+    <item quantity="other">Elke %1$d dagen</item>
+  </plurals>
+
   <!-- PARALLAX -->
 
   <string name="parallax_title">Parallax</string>
   <string name="parallax_description">Veeg &amp; kantel effect</string>
+  <string name="parallax_swipe_category">Vegen</string>
+  <string name="parallax_swipe_touch_wiz">Het lijkt erop dat je huidige launcher Samsung TouchWiz of One UI Home is, welke geen veegeffect ondersteunen. Probeer een andere launcher op dit effect in te schakelen.\nJe kan deze waarschuwing negeren indien je al een andere launcher als standaard hebt ingesteld.</string>
+  <string name="parallax_swipe">Veeg effect</string>
+  <string name="parallax_swipe_description">Horizontale afwijking bij vegen</string>
   <string name="parallax_swipe_power_save">Respecteer batterijbesparing</string>
+  <string name="parallax_swipe_power_save_description">Pauzeer veegeffect wanneer batterijbesparing is ingeschakeld</string>
+  <string name="parallax_tilt_category">Kantelen</string>
   <string name="parallax_tilt">Kantel effect</string>
+  <string name="parallax_tilt_description">Beweging bij kantelen van apparaat</string>
+  <string name="parallax_tilt_warning">Hoger batterijverbruik</string>
   <string name="parallax_refresh_rate">Kantel sensor verversingssnelheid</string>
+  <string name="parallax_refresh_rate_description">Te korte vertragingen kunnen de animaties traag maken</string>
   <string name="parallax_damping">Bewegingsdemping</string>
   <string name="parallax_damping_description">Verminder voor meer zachtheid</string>
   <string name="parallax_threshold">Bewegingsdrempel</string>
@@ -112,6 +156,10 @@
   <string name="size_zoom_launcher_description">Mogelijk niet beschikbaar op sommige apparaten</string>
   <string name="size_zoom_damping">Animatiedemping</string>
   <string name="size_zoom_damping_description">Activeer en verlaag voor een zachtere zoom</string>
+  <string name="size_zoom_unlock">Zoomen op vergrendelscherm</string>
+  <string name="size_zoom_unlock_description">Kies richting</string>
+  <string name="size_zoom_unlock_in">Zoom in</string>
+  <string name="size_zoom_unlock_out">Zoom uit</string>
   <string name="size_zoom_duration">Ontgrendel zoom duur</string>
   <string name="size_zoom_duration_description">Verminder voor snellere animatie</string>
 
@@ -122,18 +170,27 @@
   <string name="other_language">Taal</string>
   <string name="other_language_description">Hartelijk dank aan alle vrijwillige vertalers bij Transifex! Bezoek de GitHub pagina van het project om te zien hoe jij kunt helpen Doodle Live Wallpapers beschikbaar te maken voor jouw taal.</string>
   <string name="other_language_system">Volg systeem</string>
+  <string name="other_language_system_description">Engels indien vertaling niet beschikbaar is</string>
   <string name="other_gpu">Hardware acceleratie</string>
   <string name="other_gpu_description">Zet uit als de achtergrond crasht</string>
   <string name="other_gpu_info">Hardware acceleratie is alleen beschikbaar voor Doodle vanaf Android 8. De achtergrond animaties kunnen daarom een beetje schokkerig zijn.</string>
+  <string name="other_screen_off_delay">Scherm-uit vertraging</string>
+  <string name="other_screen_off_delay_description">Vereist voor Always On Display-transitie</string>
   <string name="other_launcher">Verberg icoon in startscherm</string>
   <string name="other_launcher_description">Instellingen zullen alleen toegankelijk zijn in de live achtergrond kiezer van je systeem</string>
+  <string name="other_launcher_unsupported">Deze functie wordt niet langer ondersteund wegens systeemrestricties</string>
   <string name="other_theme">App kleur thema</string>
   <string name="other_theme_description">Probeer een ander uiterlijk</string>
   <string name="other_theme_auto">Auto</string>
   <string name="other_theme_light">Licht</string>
   <string name="other_theme_dark">Donker</string>
+  <string name="other_transition">Gebruik schuiftransitie tussen instellingpagina\'s</string>
+  <string name="other_transition_description">In plaats van vervaging</string>
   <string name="other_reset">Reset alle instellingen</string>
   <string name="other_reset_description">Doet meer dan de-installeren zou doen, want de voorkeuren op een speciale plek worden opgeslagen omdat deze toegankelijk moeten zijn direct na opstarten apparaat</string>
+  <string name="other_log">Toon logcat</string>
+  <string name="other_log_description">Voor foutoplossing doeleinden</string>
+
   <!-- ABOUT -->
 
   <string name="about_title">Over</string>
@@ -148,6 +205,11 @@
   <string name="about_privacy">Privacybeleid</string>
   <string name="about_privacy_description">Hoe worden je gegevens verwerkt?</string>
 
+  <!-- MESSAGES -->
+
+  <string name="msg_feedback">Een geweldige app vergt veel tijd en leeft op de feedback van haar gebruikers</string>
+  <string name="msg_feedback_contact">Heb je wensen, opmerkingen of vragen? Neem dan contact op met mij!\nAnders zou ik erg blij zijn met een mooie recensie in de Play Store.</string>
+  <string name="msg_feedback_more">Vraag alsjeblieft niet voor meer achtergrondontwerpen, ik zal deze toevoegen wanneer ik tijd heb naast het studeren</string>
   <string name="msg_share">Kijk eens naar deze coole live achtergrond app: \nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
   <string name="msg_hide">Verberg icoon in startscherm?</string>
   <string name="msg_random">Alle geselecteerde ontwerpen zullen worden gebruikt</string>
@@ -157,4 +219,7 @@
   <string name="msg_apply_colors">Veranderde kleuren zullen de volgende keer je scherm uit zet worden toegepast in het systeem</string>
   <string name="msg_apply_changes">Om (eventueel) gewijzigde opties toe te passen, wordt een herstart van de lopende achtergrond service aanbevolen. Dit kan niet automatisch worden gedaan.\nGelieve Doodle geforceerd te stoppen in je systeeminstellingen en vervolgens Doodle opnieuw toe te passen als je achtergrond.</string>
   <string name="msg_preview_missing">Er ging iets mis, selecteer Doodle Live Achtergrond alsjeblieft handmatig</string>
+  <string name="msg_report_crash">Rapporteer crashes alsjeblieft met de crash log toegevoegd zodat ik het kan proberen op te lossen.</string>
+  <string name="msg_copied_to_clipboard">Succesvol naar klembord gekopieerd</string>
+
   </resources>

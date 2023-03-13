@@ -21,7 +21,7 @@ package xyz.zedler.patrick.doodle.util;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.ColorStateList;
+import android.graphics.drawable.Drawable;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.MenuItem;
@@ -90,11 +90,14 @@ public class ResUtil {
   }
 
   public static void tintMenuItemIcon(Context context, MenuItem item) {
-    if (item == null || item.getIcon() == null) {
-      return;
+    if (item != null) {
+      tintIcon(context, item.getIcon());
     }
-    item.getIcon().setTintList(
-        ColorStateList.valueOf(ResUtil.getColorAttr(context, R.attr.colorOnSurfaceVariant))
-    );
+  }
+
+  public static void tintIcon(Context context, Drawable icon) {
+    if (icon != null) {
+      icon.setTint(ResUtil.getColorAttr(context, R.attr.colorOnSurfaceVariant));
+    }
   }
 }

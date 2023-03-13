@@ -91,7 +91,8 @@ public class BaseBottomSheetDialogFragment extends CustomBottomSheetDialogFragme
             sheet.setBackground(background);
 
             BottomSheetBehavior<View> behavior = BottomSheetBehavior.from(sheet);
-            behavior.setPeekHeight(UiUtil.getDisplayHeight(requireContext()) / 2);
+            int peekHeightHalf = UiUtil.getDisplayHeight(requireContext()) / 2;
+            behavior.setPeekHeight(peekHeightHalf);
 
             boolean isFullWidth =
                 behavior.getMaxWidth() >= UiUtil.getDisplayWidth(requireContext());
@@ -126,6 +127,23 @@ public class BaseBottomSheetDialogFragment extends CustomBottomSheetDialogFragme
                 }
               });
 
+              return insets;
+            });
+
+            ViewCompat.setOnApplyWindowInsetsListener(sheet, (view, insets) -> {
+              int insetImeBottom = insets.getInsets(Type.ime()).bottom;
+              int insetNavBottom = insets.getInsets(Type.systemBars()).bottom;
+              boolean isImeVisible = insets.isVisible(Type.ime());
+              view.setPadding(
+                  view.getPaddingLeft(),
+                  view.getPaddingTop(),
+                  view.getPaddingRight(),
+                  isImeVisible ? insetImeBottom - insetNavBottom : insetImeBottom
+              );
+              behavior.setSkipCollapsed(isImeVisible);
+              behavior.setPeekHeight(
+                  isImeVisible ? BottomSheetBehavior.PEEK_HEIGHT_AUTO : peekHeightHalf
+              );
               return insets;
             });
 

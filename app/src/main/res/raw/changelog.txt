@@ -1,5 +1,6 @@
 ## 5.6.2
 
+- Fixed: deprecated Google Play developer profile link
 - Fixed: inconsistent app screen transitions
 
 ? Please report any crash so I can fix them! Crash log should be available at <b>Other options</b> > <b>Display logcat</b>.

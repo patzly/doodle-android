@@ -28,8 +28,6 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import xyz.zedler.patrick.doodle.Constants.DEF;
-import xyz.zedler.patrick.doodle.Constants.PREF;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.activity.MainActivity;
 import xyz.zedler.patrick.doodle.behavior.ScrollBehavior;
@@ -131,17 +129,16 @@ public class OverviewFragment extends BaseFragment implements OnClickListener {
       return;
     }
 
-    boolean useSliding = getSharedPrefs().getBoolean(PREF.USE_SLIDING, DEF.USE_SLIDING);
     if (id == R.id.linear_overview_appearance) {
-      navigateToFragment(OverviewFragmentDirections.actionOverviewToAppearance(), useSliding);
+      navigateToFragment(OverviewFragmentDirections.actionOverviewToAppearance());
     } else if (id == R.id.linear_overview_parallax) {
-      navigateToFragment(OverviewFragmentDirections.actionOverviewToParallax(), useSliding);
+      navigateToFragment(OverviewFragmentDirections.actionOverviewToParallax());
     } else if (id == R.id.linear_overview_size) {
-      navigateToFragment(OverviewFragmentDirections.actionOverviewToSize(), useSliding);
+      navigateToFragment(OverviewFragmentDirections.actionOverviewToSize());
     } else if (id == R.id.linear_overview_other) {
-      navigateToFragment(OverviewFragmentDirections.actionOverviewToOther(), useSliding);
+      navigateToFragment(OverviewFragmentDirections.actionOverviewToOther());
     } else if (id == R.id.linear_overview_about) {
-      navigateToFragment(OverviewFragmentDirections.actionOverviewToAbout(), useSliding);
+      navigateToFragment(OverviewFragmentDirections.actionOverviewToAbout());
     }
   }
 }

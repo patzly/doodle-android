@@ -62,8 +62,8 @@ public class BaseFragment extends Fragment {
     activity.navigate(directions);
   }
 
-  public void navigateToFragment(NavDirections directions, boolean useSliding) {
-    activity.navigateToFragment(directions, useSliding);
+  public void navigateToFragment(NavDirections directions) {
+    activity.navigateToFragment(directions);
   }
 
   public void navigateUp() {

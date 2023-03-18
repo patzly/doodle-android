@@ -371,7 +371,7 @@ public class MainActivity extends AppCompatActivity {
     }
   }
 
-  public void navigateToFragment(NavDirections directions, boolean useSliding) {
+  public void navigateToFragment(NavDirections directions) {
     if (navController == null || directions == null) {
       Log.e(TAG, "navigate: controller or direction is null");
       return;
@@ -379,6 +379,7 @@ public class MainActivity extends AppCompatActivity {
     try {
       NavOptions.Builder builder = new NavOptions.Builder();
       if (UiUtil.areAnimationsEnabled(this)) {
+        boolean useSliding = getSharedPrefs().getBoolean(PREF.USE_SLIDING, DEF.USE_SLIDING);
         builder.setEnterAnim(useSliding ? R.anim.enter_end_slide : R.anim.enter_end_fade);
         builder.setExitAnim(useSliding ? R.anim.exit_start_slide : R.anim.exit_start_fade);
         builder.setPopEnterAnim(useSliding ? R.anim.enter_start_slide : R.anim.enter_start_fade);

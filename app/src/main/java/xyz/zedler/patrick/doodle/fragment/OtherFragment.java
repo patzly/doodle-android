@@ -206,7 +206,7 @@ public class OtherFragment extends BaseFragment
     } else if (id == R.id.linear_other_log) {
       performHapticClick();
       ViewUtil.startIcon(binding.imageOtherLog);
-      navigate(OtherFragmentDirections.actionOtherToLog());
+      navigateToFragment(OtherFragmentDirections.actionOtherToLog());
     } else if (id == R.id.linear_other_reset && getViewUtil().isClickEnabled(id)) {
       performHapticClick();
       ViewUtil.startIcon(binding.imageOtherReset);

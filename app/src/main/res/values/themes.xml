@@ -27,7 +27,7 @@
     <item name="android:colorControlActivated">?attr/colorSecondary</item>
     <item name="android:colorEdgeEffect">?attr/colorSecondary</item>
 
-    <item name="android:fontFamily">@font/jost_book</item>
+    <item name="android:fontFamily">@font/tilda_medium</item>
 
     <!-- Widget styles -->
     <item name="snackbarStyle">@style/Widget.Doodle.Snackbar</item>

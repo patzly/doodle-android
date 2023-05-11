@@ -50,13 +50,13 @@ Doodle Android requires at least Android 5.0 Lollipop on your device. The app wi
 
 If you run into a bug or miss a feature, please [open an issue](https://github.com/patzly/doodle-android/issues) in this repository.
 
-Doodle Android is not yet available in your language? You can help translate this project at [Transifex](https://www.transifex.com/patzly/doodle-android)! Translations which reached a completion level of 80% will be included in releases.
+Doodle Android is not yet available in your language? You can help translate this project at [Transifex](https://app.transifex.com/patzly/doodle-android)! Translations which reached a completion level of 80% will be included in releases.
 
 Please complete main locales first (e. g. Spanish `es`) and only then request specific variants of that language (e. g. Spanish (Colombia) `es_CO`). I will approve the request and then you can translate the strings of the app.
 
 ## License
 
-Copyright &copy; 2019-2022 Patrick Zedler. All rights reserved.
+Copyright &copy; 2019-2023 Patrick Zedler. All rights reserved.
 
 [GNU General Public License version 3](https://www.gnu.org/licenses/gpl.txt)
 

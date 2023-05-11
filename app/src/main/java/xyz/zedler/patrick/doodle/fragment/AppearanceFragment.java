@@ -240,9 +240,11 @@ public class AppearanceFragment extends BaseFragment
     binding.switchAppearanceDarkText.setChecked(
         getSharedPrefs().getBoolean(PREF.USE_DARK_TEXT, DEF.USE_DARK_TEXT)
     );
+    binding.switchAppearanceDarkText.jumpDrawablesToCurrentState();
     binding.switchAppearanceLightText.setChecked(
         getSharedPrefs().getBoolean(PREF.FORCE_LIGHT_TEXT, DEF.FORCE_LIGHT_TEXT)
     );
+    binding.switchAppearanceLightText.jumpDrawablesToCurrentState();
     if (VERSION.SDK_INT >= 31) {
       binding.linearAppearanceDarkText.setVisibility(View.VISIBLE);
       binding.linearAppearanceLightText.setVisibility(View.GONE);

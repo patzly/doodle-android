@@ -106,17 +106,20 @@ public class SizeFragment extends BaseFragment
     binding.switchSizeZoomPowerSave.setChecked(
         getSharedPrefs().getBoolean(PREF.POWER_SAVE_ZOOM, DEF.POWER_SAVE_ZOOM)
     );
+    binding.switchSizeZoomPowerSave.jumpDrawablesToCurrentState();
 
     int launcherZoom = Build.VERSION.SDK_INT >= Build.VERSION_CODES.R ? View.VISIBLE : View.GONE;
     binding.linearSizeZoomLauncher.setVisibility(launcherZoom);
     binding.switchSizeZoomLauncher.setChecked(
         getSharedPrefs().getBoolean(PREF.ZOOM_LAUNCHER, DEF.ZOOM_LAUNCHER)
     );
+    binding.switchSizeZoomLauncher.jumpDrawablesToCurrentState();
 
     boolean useZoomDamping = getSharedPrefs().getBoolean(
         PREF.USE_ZOOM_DAMPING, DEF.USE_ZOOM_DAMPING
     );
     binding.switchSizeZoomDamping.setChecked(useZoomDamping);
+    binding.switchSizeZoomDamping.jumpDrawablesToCurrentState();
     binding.sliderSizeZoomDamping.setValue(
         getSharedPrefs().getInt(PREF.DAMPING_ZOOM, DEF.DAMPING_ZOOM)
     );
@@ -132,6 +135,7 @@ public class SizeFragment extends BaseFragment
 
     boolean isZoomUnlockEnabled = getSharedPrefs().getBoolean(PREF.ZOOM_UNLOCK, DEF.ZOOM_UNLOCK);
     binding.switchSizeZoomUnlock.setChecked(isZoomUnlockEnabled);
+    binding.switchSizeZoomUnlock.jumpDrawablesToCurrentState();
     binding.buttonSizeZoomUnlockIn.setEnabled(isZoomUnlockEnabled);
     binding.buttonSizeZoomUnlockOut.setEnabled(isZoomUnlockEnabled);
 

@@ -110,6 +110,7 @@ public class FormattedTextView extends LinearLayout {
           sharedPrefs.edit().putBoolean(PREF.USE_SLIDING, isChecked).apply();
         });
         toggle.setChecked(sharedPrefs.getBoolean(PREF.USE_SLIDING, DEF.USE_SLIDING));
+        toggle.jumpDrawablesToCurrentState();
         addView(optionTransition);
       } else {
         boolean keepDistance = !partNext.startsWith("=> ");

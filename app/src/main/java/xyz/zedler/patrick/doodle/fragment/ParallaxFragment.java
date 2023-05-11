@@ -97,6 +97,7 @@ public class ParallaxFragment extends BaseFragment
     binding.switchParallaxSwipePowerSave.setChecked(
         getSharedPrefs().getBoolean(PREF.POWER_SAVE_SWIPE, DEF.POWER_SAVE_SWIPE)
     );
+    binding.switchParallaxSwipePowerSave.jumpDrawablesToCurrentState();
 
     // TILTING
 
@@ -105,6 +106,7 @@ public class ParallaxFragment extends BaseFragment
     );
     boolean isTiltEnabled = getSharedPrefs().getBoolean(PREF.TILT, DEF.TILT);
     binding.switchParallaxTilt.setChecked(isTiltEnabled);
+    binding.switchParallaxTilt.jumpDrawablesToCurrentState();
 
     ViewUtil.setEnabledAlpha(
         isTiltEnabled,
@@ -159,6 +161,7 @@ public class ParallaxFragment extends BaseFragment
     binding.switchParallaxTiltPowerSave.setChecked(
         getSharedPrefs().getBoolean(PREF.POWER_SAVE_TILT, DEF.POWER_SAVE_TILT)
     );
+    binding.switchParallaxTiltPowerSave.jumpDrawablesToCurrentState();
 
     ViewUtil.setOnClickListeners(
         this,

@@ -114,12 +114,14 @@ public class OtherFragment extends BaseFragment
     binding.switchOtherGpu.setChecked(
         gpuOptionEnabled && getSharedPrefs().getBoolean(PREF.GPU, DEF.GPU)
     );
+    binding.switchOtherGpu.jumpDrawablesToCurrentState();
 
     binding.switchOtherLauncher.setChecked(
         activity.getPackageManager().getComponentEnabledSetting(
             new ComponentName(activity, LauncherActivity.class)
         ) == PackageManager.COMPONENT_ENABLED_STATE_DISABLED
     );
+    binding.switchOtherLauncher.jumpDrawablesToCurrentState();
 
     int id;
     switch (getSharedPrefs().getInt(PREF.MODE, DEF.MODE)) {
@@ -175,6 +177,7 @@ public class OtherFragment extends BaseFragment
     binding.partialOptionTransition.switchOtherTransition.setChecked(
         getSharedPrefs().getBoolean(PREF.USE_SLIDING, DEF.USE_SLIDING)
     );
+    binding.partialOptionTransition.switchOtherTransition.jumpDrawablesToCurrentState();
 
     ViewUtil.setOnClickListeners(
         this,
@@ -200,9 +203,9 @@ public class OtherFragment extends BaseFragment
       ViewUtil.startIcon(binding.imageOtherLanguage);
       navigate(OtherFragmentDirections.actionOtherToLanguagesDialog());
     } else if (id == R.id.linear_other_gpu) {
-      binding.switchOtherGpu.setChecked(!binding.switchOtherGpu.isChecked());
+      binding.switchOtherGpu.toggle();
     } else if (id == R.id.linear_other_launcher) {
-      binding.switchOtherLauncher.setChecked(!binding.switchOtherLauncher.isChecked());
+      binding.switchOtherLauncher.toggle();
     } else if (id == R.id.linear_other_log) {
       performHapticClick();
       ViewUtil.startIcon(binding.imageOtherLog);

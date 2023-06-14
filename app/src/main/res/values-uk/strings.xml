@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ This file is part of Doodle Android.
+  ~
+  ~ Doodle Android is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Doodle Android is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with Doodle Android. If not, see <http://www.gnu.org/licenses/>.
+  ~
+  ~ Copyright (c) 2019-2023 by Patrick Zedler
+  -->
+
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+
+  <string name="wallpaper_description">Барвисті живі шпалери з автоматичним темним режимом і енергоефективною анімацією. Налаштовуйте їх відповідно до своїх потреб!</string>
+  <string name="wallpaper_description_picker">Досліджуйте барвисту колекцію форм, удосконалену м’яким ефектом паралакса та масштабуванням, коли ви гортаєте між головними екранами та розблоковуєте пристрій.\nНалаштовуйте шпалери відповідно до свого стилю!</string>
+
+  <!-- TITLES -->
+
+  <string name="title_info">Інформація</string>
+  <string name="title_apply_changes">Застосувати зміни</string>
+  <string name="title_logcat">Logcat</string>
+  <string name="title_feedback">Зворотній зв\'язок</string>
+  <string name="title_licenses">Ліцензії з відкритим кодом</string>
+
+  <!-- LABELS -->
+
+  <string name="label_ms">%1$sмс</string>
+  <string name="label_degrees">%1$s градусів</string>
+
+  <!-- ACTIONS -->
+
+  <string name="action_cancel">Скасувати</string>
+  <string name="action_select">Вибрати</string>
+  <string name="action_close">Закрити</string>
+  <string name="action_back">Назад</string>
+  <string name="action_open_link">Відкрити зовнішній веб-сайт</string>
+  <string name="action_hide">Сховати</string>
+  <string name="action_reset">Скинути</string>
+  <string name="action_deactivate">Дезактивувати</string>
+  <string name="action_select_all">Вибрати все</string>
+  <string name="action_continue">Продовжити</string>
+  <string name="action_reload">Перезавантажити</string>
+  <string name="action_open_app_info">Відкрити інформацію про програму</string>
+  <string name="action_set">Встановити шпалери</string>
+  <string name="action_learn_more">Дізнатись більше</string>
+  <string name="action_help">Довідка</string>
+  <string name="action_send_feedback">Надіслати відгук</string>
+  <string name="action_share">Поділитися</string>
+  <string name="action_share_description">Розкажіть друзям про Doodle</string>
+  <string name="action_email">Відправити email</string>
+  <string name="action_email_description">Зв\'язатись з розробником</string>
+  <string name="action_rate">Оцінити в Google Play</string>
+  <string name="action_rate_description">Підтримати розробку</string>
+  <string name="action_github">Doodle Android на GitHub</string>
+  <string name="action_github_description">Повідомити про проблему</string>
+  <string name="action_language_select">Вибрати мову</string>
+  <string name="action_set_static">Встановити статичні шпалери</string>
+  <string name="action_change_time">Змінити час</string>
+  <string name="action_change_interval">Змінити інтервал</string>
+  <string name="action_copy_to_clipboard">Копіювати в буфер обміну</string>
+
+  <!-- APPEARANCE -->
+
+  <string name="appearance_title">Зовнішній вигляд</string>
+  <string name="appearance_description">Дизайн та варіанти кольору</string>
+  <string name="appearance_one_ui">Несприятлива реалізація динамічних кольорів від Samsung в One UI 4.1 повністю ігнорує кольори, які надають такі додатки для живих шпалер, як Doodle.\nЩоб застосувати кольори до вашої системи, установіть поточний дизайн як статичний фон нижче, щоб система могла отримати кольори, а потім повторно застосувати його як живі шпалери.</string>
+  <string name="appearance_design">Дизайн</string>
+  <string name="appearance_design_doodle">Pixel 4 Doodle Колекція</string>
+  <string name="appearance_design_monet">Pixel 6 Material You Колекція</string>
+  <string name="appearance_design_anna">Живі шпалери à l\'Anna Kövecses</string>
+  <string name="appearance_variant">Варіант</string>
+  <string name="appearance_night_mode">Нічний режим</string>
+  <string name="appearance_night_mode_description">Тільки темні кольори</string>
+  <string name="appearance_night_mode_on">Увімк.</string>
+  <string name="appearance_night_mode_off">Вимкн.</string>
+  <string name="appearance_light_text">Завжди використовувати білий текст</string>
+  <string name="appearance_light_text_description">Замість темного тексту на світлому фоні</string>
+  <string name="appearance_dark_text">Використовувати темний текст</string>
+  <string name="appearance_dark_text_description">Тільки якщо фон достатньо яскравий</string>
+  <string name="appearance_colors_category">Кольори</string>
+  <string name="appearance_colors">Вилучені кольори</string>
+  <string name="appearance_colors_description">Використовується для розрахунку контрастності тексту</string>
+  <string name="appearance_colors_description_dynamic">Використовується механізмом тем оформлення системи</string>
+  <string name="appearance_colors_description_one_ui">Як згадувалося вище, надані кольори живих шпалер ігноруються One UI</string>
+  <string name="appearance_colors_primary">Вибрати основний колір</string>
+  <string name="appearance_colors_secondary">Вибрати вторинний колір</string>
+  <string name="appearance_colors_tertiary">Вибрати третинний колір</string>
+  <string name="appearance_colors_custom">Вибрати власний колір</string>
+  <string name="appearance_colors_info">На пристроях без підтримки динамічних кольорів (Android 11 або старішої версії) лише основний колір використовується для обчислення контрасту тексту панелі запуску та відтінку фону для екрана нещодавно відкритих програм.</string>
+  <string name="appearance_colors_info_dynamic">На пристроях з Android 12 або новішої версії та підтримкою динамічних кольорів три вибрані кольори використовуються для автоматичного створення загальносистемної кольорової теми.</string>
+  <string name="appearance_random">Випадковий дизайн шпалер</string>
+  <string name="appearance_random_description">Виберіть тригер нижче</string>
+  <string name="appearance_random_screen_off">Екран вимкнено</string>
+  <string name="appearance_random_daily">Щодня о %1$s</string>
+  <string name="appearance_random_interval">Вибрати інтервал</string>
+  <plurals name="appearance_random_interval_minutes">
+    <item quantity="one">Кожну %1$d хвилину</item>
+    <item quantity="few">Кожні %1$d хвилини</item>
+    <item quantity="many">Кожні %1$d хвилин</item>
+    <item quantity="other">Кожні %1$d хвилини</item>
+  </plurals>
+  <plurals name="appearance_random_interval_hours">
+    <item quantity="one">Кожну %1$d годину</item>
+    <item quantity="few">Кожні %1$d години</item>
+    <item quantity="many">Кожні %1$d годин</item>
+    <item quantity="other">Кожні %1$d години</item>
+  </plurals>
+  <plurals name="appearance_random_interval_days">
+    <item quantity="one">Кожен %1$d день</item>
+    <item quantity="few">Кожні %1$d дні</item>
+    <item quantity="many">Кожні %1$d днів</item>
+    <item quantity="other">Кожні %1$d дні</item>
+  </plurals>
+
+  <!-- PARALLAX -->
+
+  <string name="parallax_title">Паралакс</string>
+  <string name="parallax_description">Гортання та ефект нахилу</string>
+  <string name="parallax_swipe_category">Гортання</string>
+  <string name="parallax_swipe_touch_wiz">Схоже, ваша поточний лаунчер — це Samsung TouchWiz або One UI Home, які не підтримують ефект гортання. Будь ласка, спробуйте інший лаунчер, щоб увімкнути його.\nВи можете проігнорувати це попередження, якщо ви вже встановили інший лаунчер за замовчуванням.</string>
+  <string name="parallax_swipe">Ефект гортання</string>
+  <string name="parallax_swipe_description">Горизонтальний зсув під час гортання сторінки</string>
+  <string name="parallax_swipe_power_save">Поважати режим економії заряду батареї</string>
+  <string name="parallax_swipe_power_save_description">Призупинити ефект гортання, коли ввімкнено режим економії заряду батареї</string>
+  <string name="parallax_tilt_category">Нахил</string>
+  <string name="parallax_tilt">Ефект нахилу</string>
+  <string name="parallax_tilt_description">Рух при нахилі пристрою</string>
+  <string name="parallax_tilt_warning">Більше споживання батареї</string>
+  <string name="parallax_refresh_rate">Частота оновлення датчика нахилу</string>
+  <string name="parallax_refresh_rate_description">Занадто короткі затримки можуть призвести до затримки анімації</string>
+  <string name="parallax_damping">Амортизація руху</string>
+  <string name="parallax_damping_description">Зменшення призводить до більшої гладкості</string>
+  <string name="parallax_threshold">Поріг руху</string>
+  <string name="parallax_threshold_description">Збільшіть, щоб не відворювати анімацію при незначному русі</string>
+  <string name="parallax_tilt_power_save_description">Призупинити ефект нахилу, коли ввімкнено режим економії заряду батареї</string>
+
+  <!-- SIZE -->
+
+  <string name="size_title">Розмір форми</string>
+  <string name="size_description">Масштабування та ефект наближення</string>
+  <string name="size_category_zoom">Ефект наближення</string>
+  <string name="size_category_launcher">Наближення у лаунчері</string>
+  <string name="size_category_unlock">Наближення на екрані блокування</string>
+  <string name="size_scale">Масштаб</string>
+  <string name="size_scale_description">Корисно для великих екранів і щільності відображення</string>
+  <string name="size_zoom">Інтенсивність наближення</string>
+  <string name="size_zoom_description">При збільшенні камера віддаляється</string>
+  <string name="size_zoom_rotation">Обертати деякі фігури під час наближення</string>
+  <string name="size_zoom_rotation_description">Максимальне обертання в градусах</string>
+  <string name="size_zoom_power_save_description">Призупинити ефект наближення, коли ввімкнено режим економії заряду батареї</string>
+  <string name="size_zoom_launcher">Віддалення камери під час відкриття вікна швидких налаштувань або панелі програм</string>
+  <string name="size_zoom_launcher_description">Може бути недоступним на деяких пристроях</string>
+  <string name="size_zoom_damping">Амортизація анімації</string>
+  <string name="size_zoom_damping_description">Активуйте та зменшіть для більш плавного наближення</string>
+  <string name="size_zoom_unlock">Наближення на екрані блокування</string>
+  <string name="size_zoom_unlock_description">Вибрати напрямок</string>
+  <string name="size_zoom_unlock_in">Наближення</string>
+  <string name="size_zoom_unlock_out">Віддалення</string>
+  <string name="size_zoom_duration">Розблокувати тривалість наближення</string>
+  <string name="size_zoom_duration_description">Зменшіть для швидшої анімації</string>
+
+  <!-- OTHER -->
+
+  <string name="other_title">Інші опції</string>
+  <string name="other_description">Візуалізація, мова та скидання налаштувань</string>
+  <string name="other_language">Мова</string>
+  <string name="other_language_description">Велике спасибі всім перекладачам-волонтерам Transifex! Відвідайте сторінку проекту на GitHub, щоб дізнатися, як ви можете допомогти зробити Doodle Live Wallpapers доступними для вашої мови.</string>
+  <string name="other_language_system">Як встановлено системою</string>
+  <string name="other_language_system_description">Англійська мова, якщо немає перекладу</string>
+  <string name="other_gpu">Апаратне прискорення</string>
+  <string name="other_gpu_description">Вимкніть, якщо шпалери спричиняють збої</string>
+  <string name="other_gpu_info">Апаратне прискорення доступне для Doodle тільки з версії Android 8. Тому анімація шпалер може бути ривчастою.</string>
+  <string name="other_screen_off_delay">Затримка вимкнення екрана</string>
+  <string name="other_screen_off_delay_description">Необхідно для переходу у режим Always On Display</string>
+  <string name="other_launcher">Сховати значок у лаунчері</string>
+  <string name="other_launcher_description">Налаштування будуть доступні лише в системному засобі вибору живих шпалер</string>
+  <string name="other_launcher_unsupported">Ця функція більше не підтримується через системні обмеження</string>
+  <string name="other_theme">Кольорова тема програми</string>
+  <string name="other_theme_description">Спробувати інший вигляд</string>
+  <string name="other_theme_auto">Авто</string>
+  <string name="other_theme_light">Світле</string>
+  <string name="other_theme_dark">Темне</string>
+  <string name="other_transition">Використовуйте ковзаючий перехід між сторінками налаштувань</string>
+  <string name="other_transition_description">Замість згасання</string>
+  <string name="other_reset">Скинути всі налаштування</string>
+  <string name="other_reset_description">Робить більше, ніж видалення, оскільки параметри зберігаються в спеціальному місці, тумо що вони мають бути доступні безпосередньо після запуску пристрою</string>
+  <string name="other_log">Показати logcat</string>
+  <string name="other_log_description">Для процесу налагодження</string>
+
+  <!-- ABOUT -->
+
+  <string name="about_title">Про застосунок</string>
+  <string name="about_description">Інформація про розробника та інше</string>
+  <string name="about_version">Версія</string>
+  <string name="about_changelog">Журнал змін</string>
+  <string name="about_changelog_description">Що нового?</string>
+  <string name="about_developer">Розробник</string>
+  <string name="about_vending_description">Більше додатків від розробника</string>
+  <string name="about_github_description">Вихідний код</string>
+  <string name="about_translation_description">Допоможіть перекласти Doodle</string>
+  <string name="about_privacy">Політика конфіденційності</string>
+  <string name="about_privacy_description">Як обробляються ваші дані?</string>
+
+  <!-- MESSAGES -->
+
+  <string name="msg_feedback">Чудовий додаток вимагає багато часу і живе відгуками користувачів.</string>
+  <string name="msg_feedback_contact">Маєте побажання, коментарі чи запитання? Не соромтеся зв’язуватися зі мною!\nТакож я буду дуже радий гарному відгуку в Play Store.</string>
+  <string name="msg_feedback_more">Будь ласка, не просіть більше дизайнів шпалер, я додам їх, коли матиму час, крім навчання.</string>
+  <string name="msg_share">Перегляньте цей класний додаток для живих шпалер: \nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
+  <string name="msg_hide">Сховати значок у лаунчері?</string>
+  <string name="msg_random">Усі вибрані дизайни будуть використані</string>
+  <string name="msg_random_warning">Випадковий дизайн шпалер все ще активний!</string>
+  <string name="msg_reset">Скинути всі налаштування?</string>
+  <string name="msg_force_stop">Для застосування змін потрібна примусова зупинка</string>
+  <string name="msg_apply_colors">Змінені кольори буде застосовано до системи наступного разу, коли ви вимкнете екран</string>
+  <string name="msg_apply_changes">Щоб застосувати (зрештою) змінені параметри, рекомендується перезапустити запущену службу шпалер. Це неможливо зробити автоматично.\nБудь ласка, примусово зупиніть Doodle у налаштуваннях системи, а потім знову застосуйте Doodle як шпалери.</string>
+  <string name="msg_preview_missing">Сталася помилка. Виберіть Doodle Live Wallpaper вручну</string>
+  <string name="msg_report_crash">Будь ласка, повідомляйте про будь-які збої, долучивши журнал збоїв, щоб я міг спробувати їх виправити.</string>
+  <string name="msg_copied_to_clipboard">Успішно скопійовано в буфер обміну</string>
+
+  </resources>

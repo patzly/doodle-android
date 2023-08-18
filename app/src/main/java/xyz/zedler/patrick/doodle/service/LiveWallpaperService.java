@@ -174,7 +174,7 @@ public class LiveWallpaperService extends WallpaperService {
       filter.addAction(ACTION.SETTINGS_CHANGED);
       try {
         if (VERSION.SDK_INT >= VERSION_CODES.TIRAMISU) {
-          registerReceiver(receiver, filter, Context.RECEIVER_NOT_EXPORTED);
+          registerReceiver(receiver, filter, Context.RECEIVER_EXPORTED);
         } else {
           registerReceiver(receiver, filter);
         }

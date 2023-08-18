@@ -110,6 +110,7 @@ public class LiveWallpaperService extends WallpaperService {
     void onRefreshSettings();
   }
 
+  @SuppressLint("UnspecifiedRegisterReceiverFlag")
   @Override
   public void onCreate() {
     super.onCreate();
@@ -123,7 +124,7 @@ public class LiveWallpaperService extends WallpaperService {
 
     receiver = new BroadcastReceiver() {
       public void onReceive(Context context, Intent intent) {
-        if (intent == null) {
+        if (intent == null || intent.getAction() == null) {
           return;
         }
         switch (intent.getAction()) {
@@ -172,7 +173,11 @@ public class LiveWallpaperService extends WallpaperService {
       filter.addAction(ACTION.THEME_CHANGED);
       filter.addAction(ACTION.SETTINGS_CHANGED);
       try {
-        registerReceiver(receiver, filter);
+        if (VERSION.SDK_INT >= VERSION_CODES.TIRAMISU) {
+          registerReceiver(receiver, filter, Context.RECEIVER_NOT_EXPORTED);
+        } else {
+          registerReceiver(receiver, filter);
+        }
         isReceiverRegistered = true;
       } catch (Exception e) {
         Log.e(TAG, "onCreate", e);

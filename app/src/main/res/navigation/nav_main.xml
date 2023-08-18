@@ -32,43 +32,23 @@
 
     <action
       android:id="@+id/action_overview_to_appearance"
-      app:destination="@id/appearanceFragment"
-      app:enterAnim="@anim/enter_end_fade"
-      app:exitAnim="@anim/exit_start_fade"
-      app:popEnterAnim="@anim/enter_start_fade"
-      app:popExitAnim="@anim/exit_end_fade" />
+      app:destination="@id/appearanceFragment" />
 
     <action
       android:id="@+id/action_overview_to_parallax"
-      app:destination="@id/parallaxFragment"
-      app:enterAnim="@anim/enter_end_fade"
-      app:exitAnim="@anim/exit_start_fade"
-      app:popEnterAnim="@anim/enter_start_fade"
-      app:popExitAnim="@anim/exit_end_fade" />
+      app:destination="@id/parallaxFragment" />
 
     <action
       android:id="@+id/action_overview_to_size"
-      app:destination="@id/sizeFragment"
-      app:enterAnim="@anim/enter_end_fade"
-      app:exitAnim="@anim/exit_start_fade"
-      app:popEnterAnim="@anim/enter_start_fade"
-      app:popExitAnim="@anim/exit_end_fade" />
+      app:destination="@id/sizeFragment" />
 
     <action
       android:id="@+id/action_overview_to_other"
-      app:destination="@id/otherFragment"
-      app:enterAnim="@anim/enter_end_fade"
-      app:exitAnim="@anim/exit_start_fade"
-      app:popEnterAnim="@anim/enter_start_fade"
-      app:popExitAnim="@anim/exit_end_fade" />
+      app:destination="@id/otherFragment" />
 
     <action
       android:id="@+id/action_overview_to_about"
-      app:destination="@id/aboutFragment"
-      app:enterAnim="@anim/enter_end_fade"
-      app:exitAnim="@anim/exit_start_fade"
-      app:popEnterAnim="@anim/enter_start_fade"
-      app:popExitAnim="@anim/exit_end_fade" />
+      app:destination="@id/aboutFragment" />
 
   </fragment>
 
@@ -108,11 +88,7 @@
 
     <action
       android:id="@+id/action_other_to_log"
-      app:destination="@id/logFragment"
-      app:enterAnim="@anim/enter_end_fade"
-      app:exitAnim="@anim/exit_start_fade"
-      app:popEnterAnim="@anim/enter_start_fade"
-      app:popExitAnim="@anim/exit_end_fade" />
+      app:destination="@id/logFragment" />
 
   </fragment>
 

@@ -380,10 +380,18 @@ public class MainActivity extends AppCompatActivity {
       NavOptions.Builder builder = new NavOptions.Builder();
       if (UiUtil.areAnimationsEnabled(this)) {
         boolean useSliding = getSharedPrefs().getBoolean(PREF.USE_SLIDING, DEF.USE_SLIDING);
-        builder.setEnterAnim(useSliding ? R.anim.enter_end_slide : R.anim.enter_end_fade);
-        builder.setExitAnim(useSliding ? R.anim.exit_start_slide : R.anim.exit_start_fade);
-        builder.setPopEnterAnim(useSliding ? R.anim.enter_start_slide : R.anim.enter_start_fade);
-        builder.setPopExitAnim(useSliding ? R.anim.exit_end_slide : R.anim.exit_end_fade);
+        builder.setEnterAnim(
+            useSliding ? R.anim.enter_end_slide : R.animator.enter_end_fade
+        );
+        builder.setExitAnim(
+            useSliding ? R.anim.exit_start_slide : R.animator.exit_start_fade
+        );
+        builder.setPopEnterAnim(
+            useSliding ? R.anim.enter_start_slide : R.animator.enter_start_fade
+        );
+        builder.setPopExitAnim(
+            useSliding ? R.anim.exit_end_slide : R.animator.exit_end_fade
+        );
       } else {
         builder.setEnterAnim(-1).setExitAnim(-1).setPopEnterAnim(-1).setPopExitAnim(-1);
       }

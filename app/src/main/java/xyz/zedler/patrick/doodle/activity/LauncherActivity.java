@@ -33,6 +33,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.content.res.ResourcesCompat;
 import com.google.android.material.color.DynamicColors;
@@ -52,6 +53,11 @@ public class LauncherActivity extends MainActivity {
     if (Build.VERSION.SDK_INT >= 31) {
       super.onCreate(bundle);
 
+      if (Build.VERSION.SDK_INT >= 33) {
+        // SDK 33+ manages splash screen animation duration itself
+        return;
+      }
+
       getSplashScreen().setOnExitAnimationListener(view -> {
         AnimatorSet set = new AnimatorSet();
         set.playTogether(
@@ -62,7 +68,7 @@ public class LauncherActivity extends MainActivity {
         set.setStartDelay(550);
         set.addListener(new AnimatorListenerAdapter() {
           @Override
-          public void onAnimationEnd(Animator animation, boolean isReverse) {
+          public void onAnimationEnd(@NonNull Animator animation, boolean isReverse) {
             view.remove();
           }
         });
@@ -182,11 +188,6 @@ public class LauncherActivity extends MainActivity {
     config.uiMode = uiMode;
     resources.updateConfiguration(config, resources.getDisplayMetrics());
     super.attachBaseContext(base.createConfigurationContext(config));
-  }
-
-  @Override
-  public boolean shouldLogoBeVisibleOnOverviewPage() {
-    return true;
   }
 
   private void startNewMainActivity() {

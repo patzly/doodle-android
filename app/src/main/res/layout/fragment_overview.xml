@@ -173,7 +173,7 @@
           <ImageView
             android:id="@+id/image_overview_appearance"
             style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-            android:src="@drawable/ic_round_palette_anim"
+            android:src="@drawable/ic_round_looks"
             tools:ignore="ContentDescription" />
 
           <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">
@@ -202,7 +202,7 @@
           <ImageView
             android:id="@+id/image_overview_parallax"
             style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-            android:src="@drawable/ic_round_swap_horiz_anim"
+            android:src="@drawable/ic_round_sync_alt"
             tools:ignore="ContentDescription" />
 
           <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">
@@ -231,7 +231,7 @@
           <ImageView
             android:id="@+id/image_overview_size"
             style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-            android:src="@drawable/ic_round_filter_center_focus_anim"
+            android:src="@drawable/ic_round_crop"
             tools:ignore="ContentDescription" />
 
           <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">
@@ -260,7 +260,7 @@
           <ImageView
             android:id="@+id/image_overview_other"
             style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-            android:src="@drawable/ic_round_settings"
+            android:src="@drawable/ic_round_tune"
             tools:ignore="ContentDescription" />
 
           <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">

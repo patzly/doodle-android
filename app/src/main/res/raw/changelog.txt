@@ -1,6 +1,7 @@
 ## 5.6.2
 
 - New: Android 14 support
+- Improved: icons in overview
 - Improved: in-app navigation transitions
 - Fixed: broken splash screen animation on Android 14
 - Fixed: deprecated Google Play developer profile link

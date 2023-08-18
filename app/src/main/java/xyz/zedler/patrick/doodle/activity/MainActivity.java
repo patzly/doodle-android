@@ -385,10 +385,7 @@ public class MainActivity extends AppCompatActivity {
         builder.setPopEnterAnim(useSliding ? R.anim.enter_start_slide : R.anim.enter_start_fade);
         builder.setPopExitAnim(useSliding ? R.anim.exit_end_slide : R.anim.exit_end_fade);
       } else {
-        builder.setEnterAnim(R.anim.fade_in_a11y);
-        builder.setExitAnim(R.anim.fade_out_a11y);
-        builder.setPopEnterAnim(R.anim.fade_in_a11y);
-        builder.setPopExitAnim(R.anim.fade_out_a11y);
+        builder.setEnterAnim(-1).setExitAnim(-1).setPopEnterAnim(-1).setPopExitAnim(-1);
       }
       navController.navigate(directions, builder.build());
     } catch (IllegalArgumentException e) {
@@ -473,7 +470,7 @@ public class MainActivity extends AppCompatActivity {
       if (UiUtil.areAnimationsEnabled(this)) {
         overridePendingTransition(R.anim.fade_in_restart, R.anim.fade_out_restart);
       } else {
-        overridePendingTransition(R.anim.fade_in_a11y, R.anim.fade_out_a11y);
+        overridePendingTransition(-1, -1);
       }
     }, delay);
   }

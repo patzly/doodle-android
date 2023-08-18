@@ -24,8 +24,8 @@ plugins {
 
 android {
     namespace 'xyz.zedler.patrick.doodle'
-    compileSdkVersion 33
-    buildToolsVersion '33.0.2'
+    compileSdk 34
+    buildToolsVersion '34.0.0'
 
     buildFeatures {
         viewBinding true
@@ -33,15 +33,15 @@ android {
 
     defaultConfig {
         applicationId 'xyz.zedler.patrick.doodle'
-        minSdkVersion 21
-        targetSdkVersion 33
+        minSdk 21
+        targetSdk 34
         versionCode 41
         versionName '5.6.1'
         resConfigs 'ar', 'cs', 'da', 'de', 'en', 'es', 'fi', 'fil', 'fr', 'hu', 'in', 'it', 'iw',
                 'ja', 'ko', 'lt', 'nl', 'pl', 'pt-rBR', 'ro', 'ru', 'tr', 'ug', 'vi', 'zh-rCN'
     }
 
-    applicationVariants.all { variant ->
+    applicationVariants.configureEach { variant ->
         variant.resValue "string", "versionName", variant.versionName
     }
 
@@ -74,10 +74,16 @@ android {
 }
 
 dependencies {
-    implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'androidx.preference:preference:1.2.0'
-    implementation 'androidx.navigation:navigation-fragment:2.5.3'
-    implementation 'androidx.navigation:navigation-ui:2.5.3'
+    // Fix for Kotlin build error from some AndroidX dependencies
+    implementation('org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.0') {
+        because("kotlin-stdlib-jdk8 is now a part of kotlin-stdlib")
+    }
 
-    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.fragment:fragment:1.6.1'
+    implementation 'androidx.preference:preference:1.2.1'
+    implementation 'androidx.navigation:navigation-fragment:2.7.0'
+    implementation 'androidx.navigation:navigation-ui:2.7.0'
+
+    implementation 'com.google.android.material:material:1.10.0-alpha06'
 }

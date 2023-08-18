@@ -224,7 +224,7 @@ public class OtherFragment extends BaseFragment
                     100,
                     getInstanceState(),
                     LiveWallpaperService.isMainEngineRunning(),
-                    false
+                    true
                 );
               }
           )

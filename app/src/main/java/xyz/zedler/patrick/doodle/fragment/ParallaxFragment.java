@@ -83,10 +83,16 @@ public class ParallaxFragment extends BaseFragment
     binding.toolbarParallax.setNavigationOnClickListener(getNavigationOnClickListener());
     binding.toolbarParallax.setOnMenuItemClickListener(getOnMenuItemClickListener());
 
+    binding.cardParallaxTouchWiz.setVisibility(
+        activity.isLauncherTouchWiz() ? View.VISIBLE : View.GONE
+    );
+
     // SWIPING
 
     boolean isSwipeEnabled = getSharedPrefs().getBoolean(PREF.SWIPE, DEF.SWIPE);
     binding.switchParallaxSwipe.setChecked(isSwipeEnabled);
+    binding.switchParallaxSwipe.jumpDrawablesToCurrentState();
+
     binding.sliderParallaxSwipe.setEnabled(isSwipeEnabled);
     binding.sliderParallaxSwipe.setValue(
         getSharedPrefs().getInt(PREF.SWIPE_INTENSITY, DEF.SWIPE_INTENSITY)

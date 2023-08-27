@@ -234,13 +234,6 @@ public final class Constants {
     };
   }
 
-  public static final class DESIGN {
-
-    public static final String DOODLE = "doodle";
-    public static final String MONET = "monet";
-    public static final String ANNA = "anna";
-  }
-
   public static final class WALLPAPER {
 
     public static final String PIXEL = "pixel";

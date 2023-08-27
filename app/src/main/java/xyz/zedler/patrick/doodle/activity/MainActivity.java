@@ -30,6 +30,7 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.pm.PackageManager.PackageInfoFlags;
+import android.content.pm.ResolveInfo;
 import android.content.res.ColorStateList;
 import android.content.res.Configuration;
 import android.content.res.Resources;
@@ -554,16 +555,17 @@ public class MainActivity extends AppCompatActivity {
   }
 
   public boolean isLauncherTouchWiz() {
-    PackageManager localPackageManager = getPackageManager();
     Intent intent = new Intent("android.intent.action.MAIN");
     intent.addCategory("android.intent.category.HOME");
-    String launcher = localPackageManager.resolveActivity(
-        intent, PackageManager.MATCH_DEFAULT_ONLY
-    ).activityInfo.packageName;
-    return launcher != null && launcher.equals("com.sec.android.app.launcher");
+    PackageManager packageManager = getPackageManager();
+    ResolveInfo info = packageManager.resolveActivity(intent, PackageManager.MATCH_DEFAULT_ONLY);
+    if (info != null) {
+      String launcher = info.activityInfo.packageName;
+      return launcher.equals("com.sec.android.app.launcher");
+    }
+    return false;
   }
 
-  @SuppressWarnings("deprecation")
   public boolean isOneUiWithDynamicColors() {
     if (VERSION.SDK_INT < VERSION_CODES.S) {
       return false;

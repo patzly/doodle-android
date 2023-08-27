@@ -5,6 +5,8 @@
 - Improved: in-app navigation transitions
 - Fixed: unlock animation not working correctly on Android 14
 - Fixed: broken splash screen animation on Android 14
+- Fixed: jerky animations after device changed dark mode automatically with screen turned off
+- Fixed: new colors not being applied correctly in certain situations
 - Fixed: deprecated Google Play developer profile link
 - Fixed: buttons state changing during navigation transition
 - Fixed: layout not displaying correctly on parallax page

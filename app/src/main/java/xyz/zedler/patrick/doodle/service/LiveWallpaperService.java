@@ -89,6 +89,7 @@ public class LiveWallpaperService extends WallpaperService {
   private ScreenStateListener screenStateListener;
   private UserPresenceListener userPresenceListener;
   private RefreshListener refreshListener;
+  private ConfigListener configListener;
 
   private boolean isPowerSaveMode;
   private PowerManager powerManager;
@@ -108,6 +109,11 @@ public class LiveWallpaperService extends WallpaperService {
 
     void onRefreshTheme(boolean designMightHaveChanged);
     void onRefreshSettings();
+  }
+
+  private interface ConfigListener {
+
+    void onConfigChanged();
   }
 
   @SuppressLint("UnspecifiedRegisterReceiverFlag")
@@ -139,6 +145,11 @@ public class LiveWallpaperService extends WallpaperService {
           case Intent.ACTION_USER_PRESENT:
             setUserPresence(USER_PRESENCE.UNLOCKED);
             break;
+          case Intent.ACTION_CONFIGURATION_CHANGED:
+            if (configListener != null) {
+              configListener.onConfigChanged();
+            }
+            break;
           case PowerManager.ACTION_POWER_SAVE_MODE_CHANGED:
             if (powerManager != null) {
               isPowerSaveMode = powerManager.isPowerSaveMode();
@@ -168,6 +179,7 @@ public class LiveWallpaperService extends WallpaperService {
       filter.addAction(Intent.ACTION_USER_PRESENT);
       filter.addAction(Intent.ACTION_SCREEN_OFF);
       filter.addAction(Intent.ACTION_SCREEN_ON);
+      filter.addAction(Intent.ACTION_CONFIGURATION_CHANGED);
       filter.addAction(PowerManager.ACTION_POWER_SAVE_MODE_CHANGED);
       filter.addAction(ACTION.THEME_AND_DESIGN_CHANGED);
       filter.addAction(ACTION.THEME_CHANGED);
@@ -271,7 +283,7 @@ public class LiveWallpaperService extends WallpaperService {
   // ENGINE
 
   private class UserAwareEngine extends Engine
-      implements UserPresenceListener, ScreenStateListener, RefreshListener {
+      implements UserPresenceListener, ScreenStateListener, RefreshListener, ConfigListener {
 
     private static final int SWIPE_INTENSITY_FACTOR = 100;
     private static final int TILT_INTENSITY_FACTOR = 5;
@@ -299,7 +311,7 @@ public class LiveWallpaperService extends WallpaperService {
     private WallpaperVariant variant;
     private int variantIndex;
     private int nightModePref;
-    private boolean isNightMode;
+    private boolean isNightMode, isNotifyColorsChangedPending;
     private boolean useDarkText, forceLightText;
     private String randomMode;
     private boolean isNewRandomPending;
@@ -433,6 +445,7 @@ public class LiveWallpaperService extends WallpaperService {
       screenStateListener = this;
       userPresenceListener = this;
       refreshListener = this;
+      configListener = this;
 
       setTouchEventsEnabled(false);
       setOffsetNotificationsEnabled(true);
@@ -507,6 +520,8 @@ public class LiveWallpaperService extends WallpaperService {
         return;
       }
 
+      // Android 14 doesn't call onVisibilityChanged() anymore when night mode changes!
+      // Use onConfigChanged instead.
       if (isNightMode != isNightMode()) {
         loadThemeOnly();
       }
@@ -628,14 +643,18 @@ public class LiveWallpaperService extends WallpaperService {
           randomUtil.changeIfRequired(true);
         }
       } else {
-        if (randomMode.equals(RANDOM.SCREEN_OFF)
+        boolean isRandomPending = randomMode.equals(RANDOM.SCREEN_OFF)
             || (randomMode.equals(RANDOM.DAILY) && isNewRandomPending)
-            || (randomMode.equals(RANDOM.INTERVAL) && isNewRandomPending)) {
+            || (randomMode.equals(RANDOM.INTERVAL) && isNewRandomPending);
+        if (isRandomPending) {
           sharedPrefs.edit().remove(PREF.RANDOM_CURRENT).apply();
           loadThemeAndDesign(true);
           isNewRandomPending = false;
         } else if (randomMode.equals(RANDOM.DAILY) || randomMode.equals(RANDOM.INTERVAL)) {
           randomUtil.changeIfRequired(true);
+        } else if (isNotifyColorsChangedPending && VERSION.SDK_INT >= VERSION_CODES.O_MR1) {
+          isNotifyColorsChangedPending = false;
+          notifyColorsChanged();
         }
         System.gc();
       }
@@ -653,6 +672,17 @@ public class LiveWallpaperService extends WallpaperService {
     @Override
     public void onRefreshSettings() {
       loadSettings();
+    }
+
+    /**
+     * Important for automatic dark mode scheduling, when config changes and screen is off.
+     * Also for Android 14, onVisibilityChanged is no longer called when the user changes dark mode.
+     */
+    @Override
+    public void onConfigChanged() {
+      if (isNightMode != isNightMode()) {
+        loadThemeOnly();
+      }
     }
 
     /**
@@ -765,8 +795,17 @@ public class LiveWallpaperService extends WallpaperService {
         // NullPointerException on many devices!?
         try {
           notifyColorsChanged();
-          if (VERSION.SDK_INT < VERSION_CODES.S) {
+          boolean isMin14 = VERSION.SDK_INT >= VERSION_CODES.UPSIDE_DOWN_CAKE;
+          if ((VERSION.SDK_INT < VERSION_CODES.S || isMin14) && !isPreview) {
             notifyColorsChanged();
+            // Third time to be sure that the new colors are applied correctly
+            if (isMin14 && !isScreenOn) {
+              new Handler(Looper.getMainLooper()).postDelayed(
+                  this::notifyColorsChanged, 1200
+              );
+            } else if (isMin14) {
+              isNotifyColorsChangedPending = true;
+            }
           }
         } catch (Exception e) {
           Log.e(TAG, "colorsHaveChanged", e);

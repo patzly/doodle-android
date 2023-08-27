@@ -18,8 +18,8 @@
  */
 
 plugins {
-    id 'com.android.application'
-    id 'androidx.navigation.safeargs'
+    alias libs.plugins.android.application
+    alias libs.plugins.navigation.safeargs
 }
 
 android {
@@ -74,16 +74,10 @@ android {
 }
 
 dependencies {
-    // Fix for Kotlin build error from some AndroidX dependencies
-    implementation('org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.0') {
-        because("kotlin-stdlib-jdk8 is now a part of kotlin-stdlib")
-    }
-
-    implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'androidx.fragment:fragment:1.6.1'
-    implementation 'androidx.preference:preference:1.2.1'
-    implementation 'androidx.navigation:navigation-fragment:2.7.0'
-    implementation 'androidx.navigation:navigation-ui:2.7.0'
-
-    implementation 'com.google.android.material:material:1.10.0-alpha06'
+    implementation libs.appcompat
+    implementation libs.fragment
+    implementation libs.navigation.fragment
+    implementation libs.navigation.ui
+    implementation libs.preference
+    implementation libs.material
 }

@@ -16,6 +16,20 @@
  *
  * Copyright (c) 2019-2022 by Patrick Zedler
  */
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
 
-include ':app'
 rootProject.name='Doodle Android'
+include ':app'

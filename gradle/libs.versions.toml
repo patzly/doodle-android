@@ -1,0 +1,20 @@
+[versions]
+agp = "8.1.1"
+appcompat = "1.6.1"
+fragment = "1.6.1"
+navigation = "2.7.1"
+preference = "1.2.1"
+material = "1.10.0-alpha06"
+
+[libraries]
+appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+fragment = { group = "androidx.fragment", name = "fragment", version.ref = "fragment" }
+navigation-fragment = { group = "androidx.navigation", name = "navigation-fragment", version.ref = "navigation" }
+navigation-ui = { group = "androidx.navigation", name = "navigation-ui", version.ref = "navigation" }
+preference = { group = "androidx.preference", name = "preference", version.ref = "preference" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+navigation-safeargs = { id = "androidx.navigation.safeargs", version.ref = "navigation" }
+

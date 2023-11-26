@@ -48,6 +48,7 @@
   <string name="action_deactivate">Išaktyvuoti</string>
   <string name="action_select_all">Pasirinkti viską</string>
   <string name="action_continue">Tęsti</string>
+  <string name="action_reload">Perkrauti</string>
   <string name="action_open_app_info">Atverti programos informacija</string>
   <string name="action_set">Nustatyti paveikslą</string>
   <string name="action_learn_more">Sužinok daugiau</string>
@@ -128,6 +129,7 @@
   <string name="size_zoom_launcher_description">Galimai nepasiekiama kai kuriems įrenginiams</string>
   <string name="size_zoom_damping">Animacijos slopinimas</string>
   <string name="size_zoom_damping_description">Aktyvuoti ir slopinti vien del švelnaus priartinimo</string>
+  <string name="size_zoom_unlock_in">Priartinti</string>
   <string name="size_zoom_duration">Atrakinimo ekrano trukmė</string>
   <string name="size_zoom_duration_description">Sumažinti dėl greitos animacijos</string>
 
@@ -177,4 +179,6 @@
   <string name="msg_apply_colors">Pakeistos spalvos bus pateiktos kai kitą kartą išjungsi ekraną</string>
   <string name="msg_apply_changes">Kad taikyti pakeistus parametrus (galiausiai), paleisti iš naujo veikianti paveikslo servisą yra rekomenduojama. Tai negali būti atlikta automatiškai.; Prašau priverstinai sustabdyti „Doodle“ savo sistemos parametrus ir tik tada taikyk savo „Doodle“ paveikslą dar kartą. </string>
   <string name="msg_preview_missing">Iškilo problema, nustatyk „Doodle“ judanti paveikslą rankinių būdų</string>
+  <string name="msg_copied_to_clipboard">Sėkmingai nukopijuota į iškarpinė</string>
+
   </resources>

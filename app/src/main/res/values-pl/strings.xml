@@ -28,6 +28,7 @@
 
   <string name="title_info">Informacje</string>
   <string name="title_apply_changes">Zastosuj zmiany</string>
+  <string name="title_logcat">Logcat</string>
   <string name="title_feedback">Opinia</string>
   <string name="title_licenses">Licencje otwartoźródłowych bibliotek</string>
 
@@ -48,6 +49,7 @@
   <string name="action_deactivate">Wyłącz</string>
   <string name="action_select_all">Wybierz wszystko</string>
   <string name="action_continue">Kontynuj</string>
+  <string name="action_reload">Przeładuj</string>
   <string name="action_open_app_info">Otwórz informacje o aplikacji</string>
   <string name="action_set">Ustaw tapetę</string>
   <string name="action_learn_more">Dowiedz się więcej</string>
@@ -65,6 +67,8 @@
   <string name="action_set_static">Ustaw statyczną tapetę</string>
   <string name="action_change_time">Zmień godzinę</string>
   <string name="action_change_interval">Zmień interwał</string>
+  <string name="action_copy_to_clipboard">Skopiuj do schowka</string>
+
   <!-- APPEARANCE -->
 
   <string name="appearance_title">Wygląd</string>
@@ -96,28 +100,9 @@
   <string name="appearance_colors_info_dynamic">Na urządzeniach z Androidem 12 i nowszym oraz ze wsparciem dynamicznych kolorów wszystkie trzy kolory są używane do stworzenia ogólno-systemowego motywu.</string>
   <string name="appearance_random">Wygląd losowej tapety</string>
   <string name="appearance_random_description">Wybierz wyzwalacz poniżej</string>
-  <string name="appearance_random_screen_off">Wyłącze ekran</string>
+  <string name="appearance_random_screen_off">Wyłącz ekran</string>
   <string name="appearance_random_daily">Codziennie o %1$s</string>
   <string name="appearance_random_interval">Wybierz interwał</string>
-  <plurals name="appearance_random_interval_minutes">
-    <item quantity="one">Co minutę</item>
-    <item quantity="few">Co %1$d minuty</item>
-    <item quantity="many">Co %1$d minut</item>
-    <item quantity="other">Co %1$d minuty</item>
-  </plurals>
-  <plurals name="appearance_random_interval_hours">
-    <item quantity="one">Co godzinę</item>
-    <item quantity="few">Co %1$d godziny</item>
-    <item quantity="many">Co %1$d godzin</item>
-    <item quantity="other">Co %1$d godzin(y)</item>
-  </plurals>
-  <plurals name="appearance_random_interval_days">
-    <item quantity="one">Codziennie</item>
-    <item quantity="few">Co %1$d dni</item>
-    <item quantity="many">Co %1$d dni</item>
-    <item quantity="other">Co %1$d dni</item>
-  </plurals>
-
   <!-- PARALLAX -->
 
   <string name="parallax_title">Paralaksa</string>
@@ -176,7 +161,9 @@
   <string name="other_gpu">Akceleracja sprzętowa</string>
   <string name="other_gpu_description">Wyłącz jeżeli tapeta spada z rowerka</string>
   <string name="other_gpu_info">Sprzętowa akceleracja jest dostępna tylko na Androidzie w wersji 8 i nowszych. Animacje tapety mogą wyglądać trochę zlagowane.</string>
-  <string name="other_launcher">Ukryj ikkonę na liście aplikacji</string>
+  <string name="other_screen_off_delay">Opóźnienie od wyłączenia ekranu</string>
+  <string name="other_screen_off_delay_description">Wymagane do przejścia z Always On Display</string>
+  <string name="other_launcher">Ukryj ikonę na liście aplikacji</string>
   <string name="other_launcher_description">Ustawienia będą dostępne tylko na ekranie wyboru animaowanych tapet</string>
   <string name="other_launcher_unsupported">Ta funkcja nie jest już dostępna z powodu ograniczeń systemu</string>
   <string name="other_theme">Kolor motywu tej aplikacji</string>
@@ -188,10 +175,13 @@
   <string name="other_transition_description">Zamiast zanikania</string>
   <string name="other_reset">Wyczyść wszystkie ustawienia</string>
   <string name="other_reset_description">Robi więcej niż odinstalowanie by dało, ponieważ preferencje są przechowywane w specjalnym miejsciu ponieważ muszą być dostępne od razu po starcie urządzenia</string>
+  <string name="other_log">Wyświetl logcat</string>
+  <string name="other_log_description">W celu debugowania</string>
+
   <!-- ABOUT -->
 
   <string name="about_title">O aplikacji</string>
-  <string name="about_description">Informacje o progamiście i więcej</string>
+  <string name="about_description">Informacje o programiście i więcej</string>
   <string name="about_version">Wersja</string>
   <string name="about_changelog">Historia zmian</string>
   <string name="about_changelog_description">Co nowego?</string>
@@ -206,6 +196,7 @@
 
   <string name="msg_feedback">Świetna aplikacja potrzebuje dużo czasu i odzewu od użytkowników.</string>
   <string name="msg_feedback_contact">Masz jakieś życzenia, komentarze, pytania? Skontaktuj się ze mną!\nJak nie to będę bardzo zadowolony jak zostawisz opinię w sklepie Play</string>
+  <string name="msg_feedback_more">Proszę nie pytać o więcej projektów tapet, dodam je kiedy będę miał czas oprócz uczenia się.</string>
   <string name="msg_share">Ogarnij tą świetną apkę do pięknych, animowanych tapet: \nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
   <string name="msg_hide">Ukryć ikonę na liście aplikacji?</string>
   <string name="msg_random">Wszystkie designy zostaną użyte</string>
@@ -214,5 +205,8 @@
   <string name="msg_force_stop">Wymuszono zatrzymanie aby zaaplikować zmiany</string>
   <string name="msg_apply_colors">Zmienione kolory zostaną zaaplikowane do systemu następnym razem gdy wyłączysz ekran</string>
   <string name="msg_apply_changes">Aby zaaplikować zmienione opcje uruchomienie ponownie tapety jest zalecane. Tego nie da się zrobić automatycznie.\nProszę wymuś zamknięcie Doodle w swoich ustawieniach systemowych a następnie ponownie ustaw Doodle jako Twoją tapetę.</string>
-  <string name="msg_preview_missing">Wystąpił błąd, proszę wybierz recznie Doodle jako tapetę</string>
+  <string name="msg_preview_missing">Wystąpił błąd, proszę wybierz ręcznie Doodle jako tapetę</string>
+  <string name="msg_report_crash">Proszę o zgłoszenie każdego crashu wraz z crash logiem, żebym mógł naprawić daną usterkę.</string>
+  <string name="msg_copied_to_clipboard">Pomylśnie skopiowano do schowka</string>
+
   </resources>

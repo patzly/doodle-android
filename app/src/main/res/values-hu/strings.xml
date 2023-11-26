@@ -103,19 +103,6 @@
   <string name="appearance_random_screen_off">Képernyő kikapcsolva</string>
   <string name="appearance_random_daily">Naponta %1$skor</string>
   <string name="appearance_random_interval">Intervallum kiválasztása</string>
-  <plurals name="appearance_random_interval_minutes">
-    <item quantity="one">Percenként</item>
-    <item quantity="other">%1$d percenként</item>
-  </plurals>
-  <plurals name="appearance_random_interval_hours">
-    <item quantity="one">Óránként</item>
-    <item quantity="other">%1$d óránként</item>
-  </plurals>
-  <plurals name="appearance_random_interval_days">
-    <item quantity="one">Naponta</item>
-    <item quantity="other">Minden %1$d naponta</item>
-  </plurals>
-
   <!-- PARALLAX -->
 
   <string name="parallax_title">Parallaxis</string>

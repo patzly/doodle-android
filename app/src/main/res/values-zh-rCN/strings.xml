@@ -21,202 +21,202 @@
 
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
-  <string name="wallpaper_description">多彩的动态壁纸，具有自动黑暗模式和节能动画。根据你的需要定制它！</string>
-  <string name="wallpaper_description_picker">当你在主屏幕上滑动和解锁设备时，你会发现一系列色彩丰富的形状，带有柔和的视差和缩放效果。\n定制壁纸来匹配您自己的风格！</string>
+  <string name="wallpaper_description">Colorful live wallpaper with auto dark mode and power-efficient animations. Customize it to your needs!</string>
+  <string name="wallpaper_description_picker">Explore a colorful collection of shapes, refined with gentle parallax and zoom effects when you swipe through your home screens and unlock your device.\nCustomize the wallpaper to match your own style!</string>
 
   <!-- TITLES -->
 
-  <string name="title_info">信息</string>
-  <string name="title_apply_changes">应用更改</string>
+  <string name="title_info">Information</string>
+  <string name="title_apply_changes">Apply changes</string>
   <string name="title_logcat">Logcat</string>
-  <string name="title_feedback">反馈</string>
-  <string name="title_licenses">开放源代码许可证</string>
+  <string name="title_feedback">Feedback</string>
+  <string name="title_licenses">Open source licenses</string>
 
   <!-- LABELS -->
 
-  <string name="label_ms">%1$s毫秒</string>
-  <string name="label_degrees">%1$s度</string>
+  <string name="label_ms">%1$sms</string>
+  <string name="label_degrees">%1$s degrees</string>
 
   <!-- ACTIONS -->
 
-  <string name="action_cancel">取消</string>
-  <string name="action_select">选择</string>
-  <string name="action_close">关闭</string>
-  <string name="action_back">返回</string>
-  <string name="action_open_link">打开外部网站</string>
-  <string name="action_hide">隐藏</string>
-  <string name="action_reset">重置</string>
-  <string name="action_deactivate">取消激活</string>
-  <string name="action_select_all">选择全部</string>
-  <string name="action_continue">继续</string>
-  <string name="action_reload">加载</string>
-  <string name="action_open_app_info">打开应用信息</string>
-  <string name="action_set">设置壁纸</string>
-  <string name="action_learn_more">了解更多</string>
-  <string name="action_help">帮助</string>
-  <string name="action_send_feedback">发送反馈</string>
-  <string name="action_share">分享</string>
-  <string name="action_share_description">把Doodle告诉你的朋友们</string>
-  <string name="action_email">发送邮件</string>
-  <string name="action_email_description">联系开发者</string>
-  <string name="action_rate">在 Google Play 上打分</string>
-  <string name="action_rate_description">支持开发</string>
-  <string name="action_github">GitHub 上的 Doodle Android</string>
-  <string name="action_github_description">提出问题</string>
-  <string name="action_language_select">选择语言</string>
-  <string name="action_set_static">设置静态壁纸</string>
-  <string name="action_change_time">更改时间</string>
-  <string name="action_change_interval">更改间隔</string>
-  <string name="action_copy_to_clipboard">复制到剪贴板</string>
+  <string name="action_cancel">Cancel</string>
+  <string name="action_select">Select</string>
+  <string name="action_close">Close</string>
+  <string name="action_back">Back</string>
+  <string name="action_open_link">Open external website</string>
+  <string name="action_hide">Hide</string>
+  <string name="action_reset">Reset</string>
+  <string name="action_deactivate">Deactivate</string>
+  <string name="action_select_all">Select all</string>
+  <string name="action_continue">Continue</string>
+  <string name="action_reload">Reload</string>
+  <string name="action_open_app_info">Open app info</string>
+  <string name="action_set">Set wallpaper</string>
+  <string name="action_learn_more">Learn more</string>
+  <string name="action_help">Help</string>
+  <string name="action_send_feedback">Send feedback</string>
+  <string name="action_share">Share</string>
+  <string name="action_share_description">Tell your friends about Doodle</string>
+  <string name="action_email">Send email</string>
+  <string name="action_email_description">Contact the developer</string>
+  <string name="action_rate">Rate on Google Play</string>
+  <string name="action_rate_description">Support the development</string>
+  <string name="action_github">Doodle Android on GitHub</string>
+  <string name="action_github_description">Open a new issue</string>
+  <string name="action_language_select">Select language</string>
+  <string name="action_set_static">Set static wallpaper</string>
+  <string name="action_change_time">Change time</string>
+  <string name="action_change_interval">Change interval</string>
+  <string name="action_copy_to_clipboard">Copy to clipboard</string>
 
   <!-- APPEARANCE -->
 
-  <string name="appearance_title">外观</string>
-  <string name="appearance_description">设计和颜色选项</string>
-  <string name="appearance_one_ui">三星手机 One UI 4.1 版本糟糕的动态色彩实现完全忽略 Doodle 等动态壁纸应用提供的颜色。\n 要将色彩应用到你的系统，请在下方将当前设计设置为 “静态背景” 让系统获取颜色，接着重新将它应用为 “动态壁纸”</string>
-  <string name="appearance_design">设计</string>
-  <string name="appearance_design_doodle">Pixel 4 涂鸦集锦</string>
-  <string name="appearance_design_monet">Pixel 6 Material You 集锦</string>
-  <string name="appearance_design_anna">动态壁纸à l\'Anna Kövecses</string>
-  <string name="appearance_variant">其它种类</string>
-  <string name="appearance_night_mode">夜间模式</string>
-  <string name="appearance_night_mode_description">只有暗黑色彩</string>
-  <string name="appearance_night_mode_on">开</string>
-  <string name="appearance_night_mode_off">关</string>
-  <string name="appearance_light_text">在浅色背景上始终使用白色文本</string>
-  <string name="appearance_light_text_description">而不是深色文本</string>
-  <string name="appearance_dark_text">使用深色文本</string>
-  <string name="appearance_dark_text_description">（仅在背景够亮时）</string>
-  <string name="appearance_colors_category">颜色</string>
-  <string name="appearance_colors">提取的颜色</string>
-  <string name="appearance_colors_description">用于计算文本对比度</string>
-  <string name="appearance_colors_description_dynamic">被系统的主题引擎使用</string>
-  <string name="appearance_colors_description_one_ui">如上所诉，动态壁纸提供的颜色被 One UI 忽略</string>
-  <string name="appearance_colors_primary">选择主色</string>
-  <string name="appearance_colors_secondary">选择次生色</string>
-  <string name="appearance_colors_tertiary">选择第三次色</string>
-  <string name="appearance_colors_custom">选择自定义颜色</string>
-  <string name="appearance_colors_info">在没有动态颜色支持的设备上(Android 11 或更低版本)，只有主色用于计算启动器文本对比度和着色最近应用程序屏幕的背景。</string>
-  <string name="appearance_colors_info_dynamic">在装有 Android 12 或更高版本系统，并支持动态颜色的的设备上，三种选择的颜色将用于自动创建一个系统范围的颜色主题。</string>
-  <string name="appearance_random">随机的壁纸设计</string>
-  <string name="appearance_random_description">选择下方触发器</string>
-  <string name="appearance_random_screen_off">关闭屏幕</string>
-  <string name="appearance_random_daily">每天的 %1$s</string>
-  <string name="appearance_random_interval">选择间隔</string>
+  <string name="appearance_title">Appearance</string>
+  <string name="appearance_description">Design &amp; color options</string>
+  <string name="appearance_one_ui">Samsung\'s unfavorable implementation of dynamic colors in One UI 4.1 fully ignores colors provided by live wallpaper apps like Doodle.\nTo apply the colors to your system, set the current design as a static background below to let the system fetch the colors, then re-apply it as live wallpaper.</string>
+  <string name="appearance_design">Design</string>
+  <string name="appearance_design_doodle">Pixel 4 Doodle Collection</string>
+  <string name="appearance_design_monet">Pixel 6 Material You Collection</string>
+  <string name="appearance_design_anna">Live wallpapers à l\'Anna Kövecses</string>
+  <string name="appearance_variant">Variant</string>
+  <string name="appearance_night_mode">Night mode</string>
+  <string name="appearance_night_mode_description">Only dark colors</string>
+  <string name="appearance_night_mode_on">On</string>
+  <string name="appearance_night_mode_off">Off</string>
+  <string name="appearance_light_text">Always use white text</string>
+  <string name="appearance_light_text_description">Instead of dark text on bright background</string>
+  <string name="appearance_dark_text">Use dark text</string>
+  <string name="appearance_dark_text_description">Only when background is bright enough</string>
+  <string name="appearance_colors_category">Colors</string>
+  <string name="appearance_colors">Extracted colors</string>
+  <string name="appearance_colors_description">Used for calculating text contrast</string>
+  <string name="appearance_colors_description_dynamic">Used by the system\'s theming engine</string>
+  <string name="appearance_colors_description_one_ui">As mentioned above, the provided colors of live wallpapers are ignored by One UI</string>
+  <string name="appearance_colors_primary">Choose primary color</string>
+  <string name="appearance_colors_secondary">Choose secondary color</string>
+  <string name="appearance_colors_tertiary">Choose tertiary color</string>
+  <string name="appearance_colors_custom">Select custom color</string>
+  <string name="appearance_colors_info">On devices without dynamic color support (Android 11 or lower), only the primary color is used to calculate the launcher text contrast and tinting the recent apps screen\'s background.</string>
+  <string name="appearance_colors_info_dynamic">On devices with Android 12 or higher and dynamic color support, the three selected colors are used to automatically create a system-wide color theme.</string>
+  <string name="appearance_random">Random wallpaper design</string>
+  <string name="appearance_random_description">Select the trigger below</string>
+  <string name="appearance_random_screen_off">Screen off</string>
+  <string name="appearance_random_daily">Daily at %1$s</string>
+  <string name="appearance_random_interval">Select interval</string>
   <plurals name="appearance_random_interval_minutes">
-    <item quantity="other">每 %1$d 分钟</item>
+    <item quantity="other">Every %1$d minute</item>
   </plurals>
   <plurals name="appearance_random_interval_hours">
-    <item quantity="other">每 %1$d 小时</item>
+    <item quantity="other">Every %1$d hours</item>
   </plurals>
   <plurals name="appearance_random_interval_days">
-    <item quantity="other">每 %1$d 天 </item>
+    <item quantity="other">Every %1$d days</item>
   </plurals>
 
   <!-- PARALLAX -->
 
-  <string name="parallax_title">视差</string>
-  <string name="parallax_description">滑动和倾斜效果</string>
-  <string name="parallax_swipe_category">滑动</string>
-  <string name="parallax_swipe_touch_wiz">您当前的启动器似乎是三星 TouchWiz 或 One UI Home，这些启动器不支持滑动效果。请尝试其他启动器以启用该效果。\n 如果您已将另一个启动器设置为默认，可以忽略此警告。</string>
-  <string name="parallax_swipe">滑动效果</string>
-  <string name="parallax_swipe_description">页面滑动水平偏移</string>
-  <string name="parallax_swipe_power_save">遵循节电器设置</string>
-  <string name="parallax_swipe_power_save_description">启用节电时暂停滑动效果</string>
-  <string name="parallax_tilt_category">倾斜</string>
-  <string name="parallax_tilt">倾斜效果</string>
-  <string name="parallax_tilt_description">倾斜设备时图案移动</string>
-  <string name="parallax_tilt_warning">更耗电</string>
-  <string name="parallax_refresh_rate">倾斜传感器刷新率</string>
-  <string name="parallax_refresh_rate_description">延迟过短会使动画不流畅</string>
-  <string name="parallax_damping">运动阻尼</string>
-  <string name="parallax_damping_description">减少以获得更平滑的效果</string>
-  <string name="parallax_threshold">运动阈值</string>
-  <string name="parallax_threshold_description">增加以暂停连续渲染，尽管几乎没有移动</string>
-  <string name="parallax_tilt_power_save_description">当开启节电时，暂停倾斜效果</string>
+  <string name="parallax_title">Parallax</string>
+  <string name="parallax_description">Swipe &amp; tilt effect</string>
+  <string name="parallax_swipe_category">Swiping</string>
+  <string name="parallax_swipe_touch_wiz">It seems that your current launcher is Samsung TouchWiz or One UI Home, which do not support swipe effect. Please try a different launcher to enable it.\nYou can ignore this warning if you already set another launcher as default.</string>
+  <string name="parallax_swipe">Swipe effect</string>
+  <string name="parallax_swipe_description">Horizontal offset on page swipe</string>
+  <string name="parallax_swipe_power_save">Respect battery saver</string>
+  <string name="parallax_swipe_power_save_description">Pause swipe effect when battery saver is enabled</string>
+  <string name="parallax_tilt_category">Tilting</string>
+  <string name="parallax_tilt">Tilt effect</string>
+  <string name="parallax_tilt_description">Movement when tilting the device</string>
+  <string name="parallax_tilt_warning">Higher battery consumption</string>
+  <string name="parallax_refresh_rate">Tilt sensor refresh rate</string>
+  <string name="parallax_refresh_rate_description">Too short delays can make animations laggy</string>
+  <string name="parallax_damping">Motion damping</string>
+  <string name="parallax_damping_description">Decrease for more smoothness</string>
+  <string name="parallax_threshold">Movement threshold</string>
+  <string name="parallax_threshold_description">Increase to pause continuous rendering despite little movement</string>
+  <string name="parallax_tilt_power_save_description">Pause tilt effect when battery saver is enabled</string>
 
   <!-- SIZE -->
 
-  <string name="size_title">形状尺寸</string>
-  <string name="size_description">尺寸和缩放效果</string>
-  <string name="size_category_zoom">变焦效果</string>
-  <string name="size_category_launcher">启动器缩放</string>
-  <string name="size_category_unlock">锁屏缩放</string>
-  <string name="size_scale">尺寸</string>
-  <string name="size_scale_description">适用于大屏幕和密度</string>
-  <string name="size_zoom">变焦强度</string>
-  <string name="size_zoom_description">增加后，相机变焦更多</string>
-  <string name="size_zoom_rotation">缩放时旋转某些形状</string>
-  <string name="size_zoom_rotation_description">以度为单位的最大旋转</string>
-  <string name="size_zoom_power_save_description">当开启节电时，暂停缩放效果</string>
-  <string name="size_zoom_launcher">打开快速设置或应用程序抽屉时缩小</string>
-  <string name="size_zoom_launcher_description">在某些设备上可能不可用</string>
-  <string name="size_zoom_damping">动画阻尼</string>
-  <string name="size_zoom_damping_description">激活和减少更平滑的缩放</string>
-  <string name="size_zoom_unlock">锁屏缩放</string>
-  <string name="size_zoom_unlock_description">选择方向</string>
-  <string name="size_zoom_unlock_in">放大</string>
-  <string name="size_zoom_unlock_out">缩小</string>
-  <string name="size_zoom_duration">关闭锁定缩放持续时间</string>
-  <string name="size_zoom_duration_description">减少速度以获得更快的动画效果</string>
+  <string name="size_title">Shape size</string>
+  <string name="size_description">Scale &amp; zoom effect</string>
+  <string name="size_category_zoom">Zoom effect</string>
+  <string name="size_category_launcher">Launcher zoom</string>
+  <string name="size_category_unlock">Lockscreen zoom</string>
+  <string name="size_scale">Scale</string>
+  <string name="size_scale_description">Useful for big screens and densities</string>
+  <string name="size_zoom">Zoom intensity</string>
+  <string name="size_zoom_description">When increased, the camera zooms out more</string>
+  <string name="size_zoom_rotation">Rotate some shapes while zooming</string>
+  <string name="size_zoom_rotation_description">Maximum rotation in degrees</string>
+  <string name="size_zoom_power_save_description">Pause zoom effect when battery saver is enabled</string>
+  <string name="size_zoom_launcher">Zoom out when opening quick settings or app drawer</string>
+  <string name="size_zoom_launcher_description">Might be unavailable on some devices</string>
+  <string name="size_zoom_damping">Animation damping</string>
+  <string name="size_zoom_damping_description">Activate and decrease for smoother zooming</string>
+  <string name="size_zoom_unlock">Zoom on lockscreen</string>
+  <string name="size_zoom_unlock_description">Select direction</string>
+  <string name="size_zoom_unlock_in">Zoom in</string>
+  <string name="size_zoom_unlock_out">Zoom out</string>
+  <string name="size_zoom_duration">Unlock zoom duration</string>
+  <string name="size_zoom_duration_description">Decrease for faster animation</string>
 
   <!-- OTHER -->
 
-  <string name="other_title">其他设置</string>
-  <string name="other_description">渲染、语言&amp;重置</string>
-  <string name="other_language">语言</string>
-  <string name="other_language_description">非常感谢 Transifex 上所有的翻译志愿者！请访问本项目的 GitHub 页面，了解如何提供帮助使 Doodle Live Wallpapers 可用于您的语言。</string>
-  <string name="other_language_system">跟随系统</string>
-  <string name="other_language_system_description">如其他语言不可用将使用英语</string>
-  <string name="other_gpu">硬件加速</string>
-  <string name="other_gpu_description">如壁纸崩溃则关闭</string>
-  <string name="other_gpu_info">硬件加速功能只适用于 Android 8 及以上系统的 Doodle 。壁纸动画因此可能有点不稳定。</string>
-  <string name="other_screen_off_delay">熄屏延迟</string>
-  <string name="other_screen_off_delay_description">对“始终亮屏”过渡是必需的</string>
-  <string name="other_launcher">在桌面上隐藏图标</string>
-  <string name="other_launcher_description">设置只能在系统的实时壁纸选取器中访问</string>
-  <string name="other_launcher_unsupported">由于系统限制，本应用不再支持此功能</string>
-  <string name="other_theme">应用颜色主题</string>
-  <string name="other_theme_description">尝试另一种外观</string>
-  <string name="other_theme_auto">自动</string>
-  <string name="other_theme_light">浅色</string>
-  <string name="other_theme_dark">深色</string>
-  <string name="other_transition">在设置页面间使用滑动过渡</string>
-  <string name="other_transition_description">而非淡出</string>
-  <string name="other_reset">重置所有设置</string>
-  <string name="other_reset_description">重置比单纯卸载要麻烦，因为首选项存储在一个特殊的地方，必须在设备启动后可直接访问</string>
-  <string name="other_log">显示 logcat</string>
-  <string name="other_log_description">出于调试目的</string>
+  <string name="other_title">Other options</string>
+  <string name="other_description">Rendering, language &amp; reset</string>
+  <string name="other_language">Language</string>
+  <string name="other_language_description">Many thanks to all the volunteer translators at Transifex! Please visit the project\'s GitHub page to learn how you can help make Doodle Live Wallpapers available for your language.</string>
+  <string name="other_language_system">Follow system</string>
+  <string name="other_language_system_description">English if translation is not available</string>
+  <string name="other_gpu">Hardware acceleration</string>
+  <string name="other_gpu_description">Turn off if the wallpaper crashes</string>
+  <string name="other_gpu_info">Hardware acceleration is only available for Doodle starting with Android 8. The wallpaper animations might therefore be a bit jerky.</string>
+  <string name="other_screen_off_delay">Screen-off delay</string>
+  <string name="other_screen_off_delay_description">Required for Always On Display transition</string>
+  <string name="other_launcher">Hide icon in launcher</string>
+  <string name="other_launcher_description">Settings will only be accessible in your system\'s live wallpaper picker</string>
+  <string name="other_launcher_unsupported">This feature is no longer supported due to system restrictions</string>
+  <string name="other_theme">App color theme</string>
+  <string name="other_theme_description">Try another look</string>
+  <string name="other_theme_auto">Auto</string>
+  <string name="other_theme_light">Light</string>
+  <string name="other_theme_dark">Dark</string>
+  <string name="other_transition">Use sliding transition between settings pages</string>
+  <string name="other_transition_description">Instead of fading</string>
+  <string name="other_reset">Reset all settings</string>
+  <string name="other_reset_description">Does more than uninstalling would do, because the preferences are stored at a special place as they have to be accessible directly after device startup</string>
+  <string name="other_log">Display logcat</string>
+  <string name="other_log_description">For debugging purposes</string>
 
   <!-- ABOUT -->
 
-  <string name="about_title">关于</string>
-  <string name="about_description">开发者信息&amp; 更多</string>
-  <string name="about_version">版本</string>
-  <string name="about_changelog">变更日志</string>
-  <string name="about_changelog_description">更新了什么？</string>
-  <string name="about_developer">开发者</string>
-  <string name="about_vending_description">开发者的其它应用</string>
-  <string name="about_github_description">源代码</string>
-  <string name="about_translation_description">帮助翻译Doodle</string>
-  <string name="about_privacy">隐私政策</string>
-  <string name="about_privacy_description">处理您数据的方式</string>
+  <string name="about_title">About</string>
+  <string name="about_description">Developer info &amp; more</string>
+  <string name="about_version">Version</string>
+  <string name="about_changelog">Changelog</string>
+  <string name="about_changelog_description">What\'s new?</string>
+  <string name="about_developer">Developer</string>
+  <string name="about_vending_description">More apps by the developer</string>
+  <string name="about_github_description">Source code</string>
+  <string name="about_translation_description">Help translate Doodle</string>
+  <string name="about_privacy">Privacy policy</string>
+  <string name="about_privacy_description">How is your data processed?</string>
 
   <!-- MESSAGES -->
 
-  <string name="msg_feedback">一款优秀的应用需要大量的时间并依赖用户的反馈。</string>
-  <string name="msg_feedback_contact">您有什么关于应用的愿望、意见或问题吗? 请随意联系我！\n如果能在Play Store 获得好评，我也会非常高兴。</string>
-  <string name="msg_feedback_more">请不要要求更多的壁纸设计，我会在学习之余有时间的时候进行添加。</string>
-  <string name="msg_share">查看此酷炫的动态壁纸应用程序:https://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
-  <string name="msg_hide">在启动器中隐藏应用图标？</string>
-  <string name="msg_random">将使用所有选中的设计</string>
-  <string name="msg_random_warning">随机壁纸设计仍处于活动状态！</string>
-  <string name="msg_reset">重置所有设置吗？</string>
-  <string name="msg_force_stop">需强制停止才能应用更改</string>
-  <string name="msg_apply_colors">更改的颜色将在你下次关闭屏幕时应用到系统</string>
-  <string name="msg_apply_changes">为了(最终)应用改变的选项，建议重新启动正在运行的壁纸服务。这不能自动完成。\n请在系统设置中强制停止 Doodle，然后重新将 Doole 应用为墙纸。</string>
-  <string name="msg_preview_missing">发生错误，请手动选择 Doodle Live 墙纸</string>
-  <string name="msg_report_crash">请报告任何崩溃，并附上奔溃日志，以便我可以试着修复它们。</string>
-  <string name="msg_copied_to_clipboard">成功复制到剪贴板</string>
+  <string name="msg_feedback">A great app requires a lot of time and lives from the feedback of its users.</string>
+  <string name="msg_feedback_contact">Do you have any wishes, comments or questions? Feel free to contact me!\nOtherwise I would be very happy about a nice review in the Play Store.</string>
+  <string name="msg_feedback_more">Please don\'t ask for more wallpaper designs, I will add them when I have time besides studying.</string>
+  <string name="msg_share">Check out this cool live wallpaper app: \nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
+  <string name="msg_hide">Hide icon in launcher?</string>
+  <string name="msg_random">All selected designs will be used</string>
+  <string name="msg_random_warning">Random wallpaper design is still active!</string>
+  <string name="msg_reset">Reset all settings?</string>
+  <string name="msg_force_stop">Forced stop required to apply changes</string>
+  <string name="msg_apply_colors">Changed colors will be applied to the system the next time you turn off the screen</string>
+  <string name="msg_apply_changes">To apply (eventually) changed options a restart of the running wallpaper service is recommended. This cannot be done automatically.\nPlease force-stop Doodle in your system settings and then apply Doodle as your wallpaper again.</string>
+  <string name="msg_preview_missing">An error occurred, please select Doodle Live Wallpaper manually</string>
+  <string name="msg_report_crash">Please report any crash with the crash log attached so I can try to fix them.</string>
+  <string name="msg_copied_to_clipboard">Copied to clipboard successfully</string>
 
   </resources>

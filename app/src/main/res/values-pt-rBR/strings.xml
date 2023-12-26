@@ -103,6 +103,22 @@
   <string name="appearance_random_screen_off">Tela apagada</string>
   <string name="appearance_random_daily">Diariamente às %1$s</string>
   <string name="appearance_random_interval">Selecione o intervalo</string>
+  <plurals name="appearance_random_interval_minutes">
+    <item quantity="one">A cada %1$d minuto</item>
+    <item quantity="many">A cada %1$d minutos</item>
+    <item quantity="other">A cada %1$d minutos</item>
+  </plurals>
+  <plurals name="appearance_random_interval_hours">
+    <item quantity="one">A cada %1$d hora</item>
+    <item quantity="many">A cada  %1$dhoras</item>
+    <item quantity="other">A cada %1$d horas</item>
+  </plurals>
+  <plurals name="appearance_random_interval_days">
+    <item quantity="one">A cada %1$d dia</item>
+    <item quantity="many">A cada %1$d dias</item>
+    <item quantity="other">A cada %1$d dias</item>
+  </plurals>
+
   <!-- PARALLAX -->
 
   <string name="parallax_title">Paralaxe</string>

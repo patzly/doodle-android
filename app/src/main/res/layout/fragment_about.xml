@@ -230,11 +230,11 @@
           android:text="@string/title_licenses" />
 
         <LinearLayout
-          android:id="@+id/linear_about_license_jost"
+          android:id="@+id/linear_about_license_tilda"
           style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable">
 
           <ImageView
-            android:id="@+id/image_about_license_jost"
+            android:id="@+id/image_about_license_tilda"
             style="@style/Widget.Doodle.ImageView.ListItem.Icon"
             android:src="@drawable/ic_round_copyright_anim"
             tools:ignore="ContentDescription" />
@@ -243,11 +243,11 @@
 
             <TextView
               style="@style/Widget.Doodle.TextView.ListItem.Title"
-              android:text="@string/license_jost" />
+              android:text="@string/license_tilda" />
 
             <TextView
               style="@style/Widget.Doodle.TextView.ListItem.Description"
-              android:text="@string/license_jost_author" />
+              android:text="@string/license_tilda_author" />
 
           </LinearLayout>
 

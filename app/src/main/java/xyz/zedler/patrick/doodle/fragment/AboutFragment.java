@@ -79,7 +79,7 @@ public class AboutFragment extends BaseFragment implements OnClickListener {
         binding.linearAboutGithub,
         binding.linearAboutTranslation,
         binding.linearAboutPrivacy,
-        binding.linearAboutLicenseJost,
+        binding.linearAboutLicenseTilda,
         binding.linearAboutLicenseMaterialComponents,
         binding.linearAboutLicenseMaterialIcons
     );
@@ -123,10 +123,10 @@ public class AboutFragment extends BaseFragment implements OnClickListener {
               new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.app_privacy)))
           ), 300
       );
-    } else if (id == R.id.linear_about_license_jost) {
-      ViewUtil.startIcon(binding.imageAboutLicenseJost);
+    } else if (id == R.id.linear_about_license_tilda) {
+      ViewUtil.startIcon(binding.imageAboutLicenseTilda);
       activity.showTextBottomSheet(
-          R.raw.license_ofl, R.string.license_jost, R.string.license_jost_link
+          R.raw.license_ofl, R.string.license_tilda, R.string.license_tilda_link
       );
     } else if (id == R.id.linear_about_license_material_components) {
       ViewUtil.startIcon(binding.imageAboutLicenseMaterialComponents);

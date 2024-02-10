@@ -20,12 +20,12 @@
 
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-  <!-- For languages not supported by Jost*, the system font will be used as fallback.
-       If the system font is used, the medium variant of Jost* won't be replaced by a medium/bold
+  <!-- For languages not supported by Tilda Sans, the system font will be used as fallback.
+       If the system font is used, the medium variant of Tilda Sans won't be replaced by a medium/bold
        variant of the system font, so we have to configure these texts to be styled bold for these
        locales with textStyle="bold".
        Untranslated text (names or untranslated strings) with textStyle set to bold will look like
-       the medium variant of Jost*, so there is no extra attention needed for e.g. the app bar.
+       the medium variant of Tilda Sans, so there is no extra attention needed for e.g. the app bar.
        Affected languages: Arab, Chinese, Hebrew, Japanese, Uighur -->
 
   <style name="ThemeOverlay.Doodle.AlertDialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
@@ -81,8 +81,8 @@
   <style
     name="Widget.Doodle.Button.TextButton.Snackbar"
     parent="Widget.Material3.Button.TextButton.Snackbar">
-    <item name="android:fontFamily">@font/jost_medium</item>
-    <item name="fontFamily">@font/jost_medium</item>
+    <item name="android:fontFamily">@font/tilda_610medium</item>
+    <item name="fontFamily">@font/tilda_610medium</item>
   </style>
 
   <!-- ImageView (icons) -->
@@ -114,8 +114,8 @@
   <style
     name="Widget.Doodle.Button.UnelevatedButton"
     parent="Base.Doodle.Button.UnelevatedButton">
-    <item name="android:fontFamily">@font/jost_medium</item>
-    <item name="fontFamily">@font/jost_medium</item>
+    <item name="android:fontFamily">@font/tilda_610medium</item>
+    <item name="fontFamily">@font/tilda_610medium</item>
   </style>
 
   <!-- Base style -->
@@ -131,8 +131,8 @@
   <style
     name="Widget.Doodle.Button.OutlinedButton"
     parent="Base.Doodle.Button.OutlinedButton">
-    <item name="android:fontFamily">@font/jost_medium</item>
-    <item name="fontFamily">@font/jost_medium</item>
+    <item name="android:fontFamily">@font/tilda_610medium</item>
+    <item name="fontFamily">@font/tilda_610medium</item>
   </style>
 
   <!-- Base style -->
@@ -148,8 +148,8 @@
   <style
     name="Widget.Doodle.Button.TextButton"
     parent="Base.Doodle.Button.TextButton">
-    <item name="android:fontFamily">@font/jost_medium</item>
-    <item name="fontFamily">@font/jost_medium</item>
+    <item name="android:fontFamily">@font/tilda_610medium</item>
+    <item name="fontFamily">@font/tilda_610medium</item>
   </style>
 
   <!-- Localized style, no empty base style needed -->
@@ -157,8 +157,8 @@
     name="Widget.Doodle.Button.TextButton.Dialog"
     parent="Widget.Material3.Button.TextButton.Dialog">
     <item name="android:singleLine">true</item>
-    <item name="android:fontFamily">@font/jost_medium</item>
-    <item name="fontFamily">@font/jost_medium</item>
+    <item name="android:fontFamily">@font/tilda_610medium</item>
+    <item name="fontFamily">@font/tilda_610medium</item>
   </style>
 
   <style
@@ -239,8 +239,8 @@
   <style
     name="Widget.Doodle.ExtendedFloatingActionButton"
     parent="Widget.Material3.ExtendedFloatingActionButton.Primary">
-    <item name="android:fontFamily">@font/jost_medium</item>
-    <item name="fontFamily">@font/jost_medium</item>
+    <item name="android:fontFamily">@font/tilda_610medium</item>
+    <item name="fontFamily">@font/tilda_610medium</item>
   </style>
 
   <!-- TimePicker -->
@@ -261,8 +261,8 @@
   <style
     name="TextAppearance.Doodle.TimePicker.Title"
     parent="TextAppearance.Material3.MaterialTimePicker.Title">
-    <item name="android:fontFamily">@font/jost_medium</item>
-    <item name="fontFamily">@font/jost_medium</item>
+    <item name="android:fontFamily">@font/tilda_610medium</item>
+    <item name="fontFamily">@font/tilda_610medium</item>
   </style>
 
   <style
@@ -275,8 +275,8 @@
   <style
     name="TextAppearance.Doodle.TimePicker.DisplayLarge"
     parent="TextAppearance.Material3.DisplayLarge">
-    <item name="android:fontFamily">@font/jost_book</item>
-    <item name="fontFamily">@font/jost_book</item>
+    <item name="android:fontFamily">@font/tilda_480book</item>
+    <item name="fontFamily">@font/tilda_480book</item>
   </style>
 
   <style
@@ -288,8 +288,8 @@
   <style
     name="TextAppearance.Doodle.TimePicker.HeadlineMedium"
     parent="TextAppearance.Material3.HeadlineMedium">
-    <item name="android:fontFamily">@font/jost_book</item>
-    <item name="fontFamily">@font/jost_book</item>
+    <item name="android:fontFamily">@font/tilda_480book</item>
+    <item name="fontFamily">@font/tilda_480book</item>
   </style>
 
   <style
@@ -304,8 +304,8 @@
   <style
     name="Widget.Doodle.Button.TextButton.Dialog.Flush"
     parent="Widget.Material3.Button.TextButton.Dialog.Flush">
-    <item name="android:fontFamily">@font/jost_medium</item>
-    <item name="fontFamily">@font/jost_medium</item>
+    <item name="android:fontFamily">@font/tilda_610medium</item>
+    <item name="fontFamily">@font/tilda_610medium</item>
   </style>
 
   <!-- LinearLayout (lists) -->
@@ -426,8 +426,8 @@
     <item name="android:textAppearance">?attr/textAppearanceBodyLarge</item>
     <item name="android:textColor">?attr/colorOnBackground</item>
     <item name="android:textAlignment">viewStart</item>
-    <item name="android:fontFamily">@font/jost_book</item>
-    <item name="fontFamily">@font/jost_book</item>
+    <item name="android:fontFamily">@font/tilda_480book</item>
+    <item name="fontFamily">@font/tilda_480book</item>
     <item name="android:breakStrategy" tools:targetApi="m">high_quality</item>
     <item name="android:hyphenationFrequency" tools:targetApi="m">full</item>
     <item name="android:lineBreakWordStyle" tools:targetApi="33">phrase</item>
@@ -440,8 +440,8 @@
 
   <!-- Localized style, no empty base style needed -->
   <style name="Widget.Doodle.TextView.Medium" parent="Widget.Doodle.TextView">
-    <item name="android:fontFamily">@font/jost_medium</item>
-    <item name="fontFamily">@font/jost_medium</item>
+    <item name="android:fontFamily">@font/tilda_610medium</item>
+    <item name="fontFamily">@font/tilda_610medium</item>
   </style>
 
   <style name="Widget.Doodle.TextView.Paragraph" parent="Widget.Doodle.TextView">
@@ -531,41 +531,41 @@
   <!-- TextAppearance -->
 
   <style name="TextAppearance.Doodle.HeadlineLarge" parent="TextAppearance.Material3.HeadlineLarge">
-    <item name="android:fontFamily">@font/jost_book</item>
-    <item name="fontFamily">@font/jost_book</item>
+    <item name="android:fontFamily">@font/tilda_480book</item>
+    <item name="fontFamily">@font/tilda_480book</item>
   </style>
 
   <style name="TextAppearance.Doodle.HeadlineMedium" parent="TextAppearance.Material3.HeadlineMedium">
-    <item name="android:fontFamily">@font/jost_book</item>
-    <item name="fontFamily">@font/jost_book</item>
+    <item name="android:fontFamily">@font/tilda_480book</item>
+    <item name="fontFamily">@font/tilda_480book</item>
   </style>
 
   <style name="TextAppearance.Doodle.HeadlineSmall" parent="TextAppearance.Material3.HeadlineSmall">
-    <item name="android:fontFamily">@font/jost_book</item>
-    <item name="fontFamily">@font/jost_book</item>
+    <item name="android:fontFamily">@font/tilda_480book</item>
+    <item name="fontFamily">@font/tilda_480book</item>
   </style>
 
   <style name="TextAppearance.Doodle.TitleLarge" parent="TextAppearance.Material3.TitleLarge">
-    <item name="android:fontFamily">@font/jost_book</item>
-    <item name="fontFamily">@font/jost_book</item>
+    <item name="android:fontFamily">@font/tilda_480book</item>
+    <item name="fontFamily">@font/tilda_480book</item>
   </style>
 
   <!-- Localized style, no empty base style needed -->
   <style name="TextAppearance.Doodle.TitleMedium" parent="TextAppearance.Material3.TitleMedium">
-    <item name="android:fontFamily">@font/jost_medium</item>
-    <item name="fontFamily">@font/jost_medium</item>
+    <item name="android:fontFamily">@font/tilda_610medium</item>
+    <item name="fontFamily">@font/tilda_610medium</item>
   </style>
 
   <!-- Localized style, no empty base style needed -->
   <style name="TextAppearance.Doodle.LabelLarge" parent="TextAppearance.Material3.LabelLarge">
-    <item name="android:fontFamily">@font/jost_medium</item>
-    <item name="fontFamily">@font/jost_medium</item>
+    <item name="android:fontFamily">@font/tilda_610medium</item>
+    <item name="fontFamily">@font/tilda_610medium</item>
   </style>
 
   <style name="TextAppearance.Doodle.Tooltip" parent="TextAppearance.MaterialComponents.Tooltip">
     <item name="android:textColor">?android:attr/colorBackground</item>
-    <item name="android:fontFamily">@font/jost_book</item>
-    <item name="fontFamily">@font/jost_book</item>
+    <item name="android:fontFamily">@font/tilda_480book</item>
+    <item name="fontFamily">@font/tilda_480book</item>
   </style>
 
 </resources>

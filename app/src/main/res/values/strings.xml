@@ -238,9 +238,9 @@
 
   <!-- LICENSES -->
 
-  <string name="license_jost" translatable="false">Jost* Typeface</string>
-  <string name="license_jost_author" translatable="false">Owen Earl</string>
-  <string name="license_jost_link" translatable="false">https://github.com/indestructible-type/Jost</string>
+  <string name="license_tilda" translatable="false">Tilda Sans Typeface</string>
+  <string name="license_tilda_author" translatable="false">Paratype × Tilda</string>
+  <string name="license_tilda_link" translatable="false">https://tilda.cc/lp/tildasans/</string>
   <string name="license_author_google" translatable="false">Google</string>
   <string name="license_material_components" translatable="false">Material Components Android</string>
   <string name="license_material_components_link" translatable="false">https://github.com/material-components/material-components-android</string>

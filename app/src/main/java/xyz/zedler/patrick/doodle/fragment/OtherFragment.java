@@ -104,25 +104,6 @@ public class OtherFragment extends BaseFragment
 
     setUpThemeSelection();
 
-    boolean gpuOptionEnabled = Build.VERSION.SDK_INT >= Build.VERSION_CODES.O;
-    ViewUtil.setEnabledAlpha(gpuOptionEnabled, false, binding.linearOtherGpu);
-    ViewUtil.setEnabled(gpuOptionEnabled, binding.switchOtherGpu);
-    binding.cardOtherGpu.setVisibility(gpuOptionEnabled ? View.GONE : View.VISIBLE);
-    if (gpuOptionEnabled) {
-      binding.linearOtherGpu.setOnClickListener(this);
-    }
-    binding.switchOtherGpu.setChecked(
-        gpuOptionEnabled && getSharedPrefs().getBoolean(PREF.GPU, DEF.GPU)
-    );
-    binding.switchOtherGpu.jumpDrawablesToCurrentState();
-
-    binding.switchOtherLauncher.setChecked(
-        activity.getPackageManager().getComponentEnabledSetting(
-            new ComponentName(activity, LauncherActivity.class)
-        ) == PackageManager.COMPONENT_ENABLED_STATE_DISABLED
-    );
-    binding.switchOtherLauncher.jumpDrawablesToCurrentState();
-
     int id;
     switch (getSharedPrefs().getInt(PREF.MODE, DEF.MODE)) {
       case AppCompatDelegate.MODE_NIGHT_NO:
@@ -154,6 +135,25 @@ public class OtherFragment extends BaseFragment
           0, getInstanceState(), false, true
       );
     });
+
+    boolean gpuOptionEnabled = Build.VERSION.SDK_INT >= Build.VERSION_CODES.O;
+    ViewUtil.setEnabledAlpha(gpuOptionEnabled, false, binding.linearOtherGpu);
+    ViewUtil.setEnabled(gpuOptionEnabled, binding.switchOtherGpu);
+    binding.cardOtherGpu.setVisibility(gpuOptionEnabled ? View.GONE : View.VISIBLE);
+    if (gpuOptionEnabled) {
+      binding.linearOtherGpu.setOnClickListener(this);
+    }
+    binding.switchOtherGpu.setChecked(
+        gpuOptionEnabled && getSharedPrefs().getBoolean(PREF.GPU, DEF.GPU)
+    );
+    binding.switchOtherGpu.jumpDrawablesToCurrentState();
+
+    binding.switchOtherLauncher.setChecked(
+        activity.getPackageManager().getComponentEnabledSetting(
+            new ComponentName(activity, LauncherActivity.class)
+        ) == PackageManager.COMPONENT_ENABLED_STATE_DISABLED
+    );
+    binding.switchOtherLauncher.jumpDrawablesToCurrentState();
 
     binding.sliderScreenOffDelay.setValue(
         getSharedPrefs().getInt(PREF.SCREEN_OFF_DELAY, 0)

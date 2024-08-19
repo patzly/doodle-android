@@ -44,8 +44,8 @@
     android:enableOnBackInvokedCallback="true"
     android:localeConfig="@xml/locales_config"
     android:allowBackup="false"
-    android:fullBackupContent="@xml/backup_rules_full"
-    android:dataExtractionRules="@xml/backup_rules_extract"
+    android:fullBackupContent="@xml/backup_rules"
+    android:dataExtractionRules="@xml/data_extraction_rules"
     tools:targetApi="33">
 
     <activity

@@ -18,9 +18,11 @@
   ~ Copyright (c) 2020-2024 by Patrick Zedler
   -->
 
-<alpha
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  android:interpolator="@android:interpolator/accelerate_cubic"
-  android:fromAlpha="1.0"
-  android:toAlpha="0.0"
-  android:duration="400" />
+<resources>
+
+  <fraction name="sliding_start_fraction">100%p</fraction>
+  <fraction name="sliding_end_fraction">-100%p</fraction>
+  <dimen name="fading_start">32dp</dimen>
+  <dimen name="fading_end">-32dp</dimen>
+
+</resources>

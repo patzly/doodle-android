@@ -20,6 +20,9 @@
 package xyz.zedler.patrick.doodle.util;
 
 import android.app.AlarmManager;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
 import android.os.SystemClock;
 import androidx.annotation.NonNull;
 import java.util.Calendar;
@@ -31,10 +34,14 @@ public class RandomUtil {
 
   private static final String TAG = RandomUtil.class.getSimpleName();
 
+  private static final int REQUEST = 1;
+
   private long period;
   private long lastChange;
   private final Action action;
   private Timer timer;
+  //private final AlarmManager alarmManager;
+  //private final PendingIntent pendingIntent;
 
   public interface Action {
 
@@ -43,6 +50,16 @@ public class RandomUtil {
 
   public RandomUtil(@NonNull Action action) {
     this.action = action;
+
+//    alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
+//    pendingIntent = PendingIntent.getBroadcast(
+//        context,
+//        REQUEST,
+//        new Intent(context, RandomReceiver.class),
+//        VERSION.SDK_INT >= VERSION_CODES.M
+//            ? PendingIntent.FLAG_IMMUTABLE
+//            : PendingIntent.FLAG_UPDATE_CURRENT
+//    );
   }
 
   public void scheduleDaily(String time) {
@@ -58,9 +75,15 @@ public class RandomUtil {
     calendar.set(Calendar.MINUTE, Integer.parseInt(parts[1]));
     calendar.set(Calendar.SECOND, 0);
     calendar.set(Calendar.MILLISECOND, 0);
+
     if (calendar.getTimeInMillis() <= System.currentTimeMillis()) {
-      calendar.add(Calendar.DAY_OF_YEAR, 1);
+      calendar.add(Calendar.DATE, 1);
     }
+
+//    if (alarmManager != null) {
+//      alarmManager.cancel(pendingIntent);
+//      alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
+//    }
 
     if (timer != null) {
       timer.cancel();
@@ -122,6 +145,13 @@ public class RandomUtil {
     if (timer != null) {
       timer.cancel();
       timer = null;
+    }
+  }
+
+  public class RandomReceiver extends BroadcastReceiver {
+
+    public void onReceive(Context context, Intent intent) {
+      RandomUtil.this.changeIfRequired(false);
     }
   }
 }

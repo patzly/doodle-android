@@ -28,6 +28,7 @@
 
   <string name="title_info">Información</string>
   <string name="title_apply_changes">Aplicar cambios</string>
+  <string name="title_logcat">logcat</string>
   <string name="title_feedback">Feedback</string>
   <string name="title_licenses">Licencias de código abierto</string>
 
@@ -81,7 +82,10 @@
   <string name="appearance_night_mode_description">Formas completamente oscuras</string>
   <string name="appearance_night_mode_on">Encendido</string>
   <string name="appearance_night_mode_off">Apagado</string>
+  <string name="appearance_light_text">Siempre usar texto balnco</string>
+  <string name="appearance_light_text_description">en vez del texto oscuro en un fondo claro</string>
   <string name="appearance_dark_text">Usar texto oscuro</string>
+  <string name="appearance_dark_text_description">solo cuando el fondo es bastante claro</string>
   <string name="appearance_colors_category">Colores</string>
   <string name="appearance_colors">Colores extraídos</string>
   <string name="appearance_colors_description">Usado para calcular el contraste del texto</string>
@@ -93,15 +97,33 @@
   <string name="appearance_colors_info">En dispositivos sin soporte de color dinámico (Android 11 o inferior), solo se usa el color primario para calcular el contraste del texto del lanzador y teñir el fondo de la pantalla de aplicaciones recientes.</string>
   <string name="appearance_colors_info_dynamic">En dispositivos con Android 12 o superior y compatibilidad con colores dinámicos, los tres colores seleccionados se utilizan para crear automáticamente un tema de color en todo el sistema.</string>
   <string name="appearance_random">Diseño aleatorio de fondo de pantalla</string>
+  <string name="appearance_random_description">seleciona el desencadenante abajo</string>
+  <string name="appearance_random_screen_off">apaga pantalla</string>
+  <string name="appearance_random_daily">diariamente a las %1$s</string>
+  <string name="appearance_random_interval">seleccionar intervalo</string>
+  <plurals name="appearance_random_interval_minutes">
+    <item quantity="one">cada %1$d minuto</item>
+    <item quantity="many">cada %1$d minutos</item>
+    <item quantity="other">cada %1$d minuto/s</item>
+  </plurals>
+  <plurals name="appearance_random_interval_hours">
+    <item quantity="one">cada %1$d hora</item>
+    <item quantity="many">cada %1$d horas</item>
+    <item quantity="other">cada %1$d hora/s</item>
+  </plurals>
   <!-- PARALLAX -->
 
   <string name="parallax_title">Paralaje</string>
   <string name="parallax_description">Efecto de deslizamiento e inclinación</string>
+  <string name="parallax_swipe_category">deslizar</string>
   <string name="parallax_swipe_description">Desplazamiento horizontal al deslizar la página</string>
   <string name="parallax_swipe_power_save">Respetar el modo ahorro de energía</string>
+  <string name="parallax_swipe_power_save_description">Pausar la animación de deslizamiento de página cuando el modo ahorro de energía está activado</string>
   <string name="parallax_tilt">Efecto de inclinación</string>
+  <string name="parallax_tilt_description">movimiento cuando se sacude el dispositivo </string>
   <string name="parallax_tilt_warning">Mayor consumo de batería</string>
   <string name="parallax_refresh_rate">Frecuencia de actualización del sensor de inclinación</string>
+  <string name="parallax_refresh_rate_description">delays demasiados cortos puede hacer animaciones laggy</string>
   <string name="parallax_damping">Suavizado de movimiento</string>
   <string name="parallax_damping_description">Disminuir para una mayor suavidad</string>
   <string name="parallax_threshold">Umbral de movimiento</string>
@@ -147,8 +169,10 @@
   <string name="other_theme_auto">Automático</string>
   <string name="other_theme_light">Claro</string>
   <string name="other_theme_dark">Oscuro</string>
+  <string name="other_transition">usar trancisiones de deslizar en ambas paginas de configuración </string>
   <string name="other_reset">Restablecer todos los ajustes</string>
   <string name="other_reset_description">Hace más de lo que haría la desinstalación, porque las preferencias se almacenan en un lugar especial, ya que deben ser accesibles directamente después del inicio del dispositivo.</string>
+  <string name="other_log">Mostrar logcat</string>
   <!-- ABOUT -->
 
   <string name="about_title">Acerca de</string>
@@ -163,6 +187,10 @@
   <string name="about_privacy">Política de privacidad</string>
   <string name="about_privacy_description">¿Cómo son procesados sus datos?</string>
 
+  <!-- MESSAGES -->
+
+  <string name="msg_feedback">Una gran aplicación requiere mucho tiempo y vive de los comentarios de sus usuarios.</string>
+  <string name="msg_feedback_more">Por favor, no pidan más diseños de fondos de pantalla, los agregaré cuando tenga tiempo además de estudiar.</string>
   <string name="msg_share">Echa un vistazo a esta fantástica aplicación de fondos de pantalla animados: \nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
   <string name="msg_hide">¿Ocultar icono en el lanzador?</string>
   <string name="msg_random">Todos los diseños seleccionados serán usados</string>

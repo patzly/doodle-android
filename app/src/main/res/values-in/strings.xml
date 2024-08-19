@@ -21,11 +21,14 @@
 
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
-  <string name="wallpaper_description">Live Wallpaper penuh warna dengan mode gelap otomatis dan animasi yang hemat daya. kustomisasi sesuai kebutuhan</string>
+  <string name="wallpaper_description">Live wallpaper penuh warna dengan mode gelap otomatis dan animasi hemat daya. Sesuaikan dengan kebutuhan Anda!</string>
+  <string name="wallpaper_description_picker">Jelajahi koleksi bentuk yang penuh warna, disempurnakan dengan efek paralaks dan zoom yang lembut saat Anda menggeser layar beranda dan membuka kunci perangkat Anda.\nSesuaikan wallpaper agar sesuai dengan gaya Anda sendiri!</string>
+
   <!-- TITLES -->
 
   <string name="title_info">Informasi</string>
   <string name="title_apply_changes">Terapkan perubahan</string>
+  <string name="title_logcat">Logcat</string>
   <string name="title_feedback">Umpan balik</string>
   <string name="title_licenses">Lisensi sumber terbuka</string>
 
@@ -34,6 +37,10 @@
   <string name="label_ms">%1$sms</string>
   <string name="label_degrees">%1$s derajat</string>
 
+  <!-- ACTIONS -->
+
+  <string name="action_cancel">Batalkan</string>
+  <string name="action_select">Pilih</string>
   <string name="action_close">Tutup</string>
   <string name="action_back">Kembali</string>
   <string name="action_open_link">Buka situs web eksternal</string>
@@ -42,8 +49,10 @@
   <string name="action_deactivate">Menonaktifkan</string>
   <string name="action_select_all">Pilih semua</string>
   <string name="action_continue">Lanjutkan</string>
+  <string name="action_reload">Muat ulang</string>
   <string name="action_open_app_info">Buka info aplikasi</string>
   <string name="action_set">Atur wallpaper</string>
+  <string name="action_learn_more">Pelajari selengkapnya</string>
   <string name="action_help">Bantuan</string>
   <string name="action_send_feedback">Kirim masukan</string>
   <string name="action_share">Bagikan</string>
@@ -55,36 +64,77 @@
   <string name="action_github">Doodle Android di GitHub</string>
   <string name="action_github_description">Buka sebuah isu baru</string>
   <string name="action_language_select">Pilih bahasa</string>
+  <string name="action_set_static">Terapkan wallpaper statis</string>
+  <string name="action_change_time">Ubah waktu</string>
+  <string name="action_change_interval">Ubah interval</string>
+  <string name="action_copy_to_clipboard">Salin ke clipboard</string>
+
   <!-- APPEARANCE -->
 
   <string name="appearance_title">Tampilan</string>
   <string name="appearance_description">Desain &amp; pilihan warna</string>
+  <string name="appearance_one_ui">Implementasi warna dinamis yang kurang baik pada One UI 4.1 dari Samsung sepenuhnya mengabaikan warna yang disediakan oleh aplikasi live wallpaper seperti Doodle.\nUntuk menerapkan warna pada sistem Anda, tetapkan desain saat ini sebagai latar belakang statis di bawah ini agar sistem mengambil warna, lalu terapkan ulang sebagai live wallpaper.</string>
   <string name="appearance_design">Desain</string>
   <string name="appearance_design_doodle">Koleksi Doodle Pixel 4</string>
   <string name="appearance_design_monet">Koleksi Material You Pixel 6</string>
-  <string name="appearance_design_anna">Live Wallpaper Anna Kövecses</string>
+  <string name="appearance_design_anna">Live wallpaper à l\'Anna Kövecses</string>
   <string name="appearance_variant">Varian</string>
   <string name="appearance_night_mode">Mode malam</string>
   <string name="appearance_night_mode_description">Hanya warna gelap</string>
-  <string name="appearance_colors">Warna terekstrak</string>
+  <string name="appearance_night_mode_on">Nyala</string>
+  <string name="appearance_night_mode_off">Mati</string>
+  <string name="appearance_light_text">Selalu gunakan text berwarna putih</string>
+  <string name="appearance_light_text_description">Mengubah teks gelap pada latar belakang cerah</string>
+  <string name="appearance_dark_text">Gunakan text berwarna gelap</string>
+  <string name="appearance_dark_text_description">Hanya saat background cukup terang</string>
+  <string name="appearance_colors_category">Warna</string>
+  <string name="appearance_colors">Warna yang diekstrak</string>
   <string name="appearance_colors_description">Digunakan untuk menghitung kontras teks</string>
   <string name="appearance_colors_description_dynamic">Digunakan oleh mesin tema sistem</string>
-  <string name="appearance_colors_primary">Pilih warna primer</string>
-  <string name="appearance_colors_secondary">Pilih warna sekunder</string>
-  <string name="appearance_colors_tertiary">Pilih warna tersier</string>
+  <string name="appearance_colors_description_one_ui">Seperti disebutkan di atas, warna live wallpaper yang disediakan akan diabaikan oleh One UI</string>
+  <string name="appearance_colors_primary">Pilih warna utama</string>
+  <string name="appearance_colors_secondary">Pilih warna kedua</string>
+  <string name="appearance_colors_tertiary">Pilih warna ketiga</string>
+  <string name="appearance_colors_custom">Pilih warna kustom</string>
   <string name="appearance_colors_info">Pada perangkat tanpa dukungan warna dinamis (Android 11 atau lebih rendah), hanya warna primer yang digunakan untuk menghitung kontras teks peluncur dan mewarnai latar belakang layar aplikasi terbaru.</string>
-  <string name="appearance_colors_info_dynamic">Pada perangkat dengan Android 12 atau dukungan warna yang lebih tinggi dan dinamis, tiga warna yang dipilih digunakan untuk secara otomatis membuat tema warna system-wide.</string>
+  <string name="appearance_colors_info_dynamic">Pada perangkat dengan Android 12 atau lebih tinggi dan mendukung warna dinamis, tiga warna yang dipilih digunakan untuk secara otomatis membuat tema warna ke seluruh sistem.</string>
   <string name="appearance_random">Desain wallpaper acak</string>
+  <string name="appearance_random_description">Pilih pengubahnya di bawah ini</string>
+  <string name="appearance_random_screen_off">Layar mati</string>
+  <string name="appearance_random_daily">Setiap hari pada %1$s</string>
+  <string name="appearance_random_interval">Pilih interval</string>
+  <plurals name="appearance_random_interval_minutes">
+    <item quantity="other">Setiap %1$dmenit</item>
+  </plurals>
+  <plurals name="appearance_random_interval_hours">
+    <item quantity="other">Setiap %1$djam</item>
+  </plurals>
+  <plurals name="appearance_random_interval_days">
+    <item quantity="other">Setiap %1$dhari</item>
+  </plurals>
+
   <!-- PARALLAX -->
 
   <string name="parallax_title">Paralaks</string>
   <string name="parallax_description">Geser &amp; Efek Tilt</string>
+  <string name="parallax_swipe_category">Pergeseran</string>
+  <string name="parallax_swipe_touch_wiz">Tampaknya peluncur Anda saat ini adalah Samsung TouchWiz atau One UI Home, yang tidak mendukung efek gesek. Silakan coba peluncur lain untuk mengaktifkannya.\nAnda dapat mengabaikan peringatan ini jika Anda telah menetapkan peluncur lain sebagai default.</string>
+  <string name="parallax_swipe">Efek geser</string>
+  <string name="parallax_swipe_description">Penyesuaian horizontal pada gesekan halaman</string>
+  <string name="parallax_swipe_power_save">Mematuhi penghemat baterai</string>
+  <string name="parallax_swipe_power_save_description">Jeda efek gesek saat penghemat baterai diaktifkan</string>
+  <string name="parallax_tilt_category">Tilting</string>
   <string name="parallax_tilt">Efek Tilt</string>
-  <string name="parallax_refresh_rate">Tingkat segarkan sensor kemiringan</string>
+  <string name="parallax_tilt_description">Gerakan ketika perangkat dimiringkan</string>
+  <string name="parallax_tilt_warning">Konsumsi baterai lebih tinggi</string>
+  <string name="parallax_refresh_rate">Tingkat pembaruan sensor kemiringan</string>
+  <string name="parallax_refresh_rate_description">Jeda yang terlalu singkat dapat membuat animasi menjadi lambat</string>
   <string name="parallax_damping">Peredaman gerak</string>
   <string name="parallax_damping_description">Turunkan untuk lebih mulus</string>
   <string name="parallax_threshold">Ambang batas gerakan</string>
   <string name="parallax_threshold_description">Naikkan untuk jeda rendering terus-menerus meskipun sedikit gerakan</string>
+  <string name="parallax_tilt_power_save_description">Jeda efek tilt saat penghemat baterai diaktifkan</string>
+
   <!-- SIZE -->
 
   <string name="size_title">Ukuran bentuk</string>
@@ -93,13 +143,20 @@
   <string name="size_category_launcher">Peluncur diperbesar</string>
   <string name="size_category_unlock">Layar kunci diperbesar</string>
   <string name="size_scale">Skala</string>
-  <string name="size_scale_description">Berguna untuk layar besar dan kepadatan</string>
+  <string name="size_scale_description">Berguna untuk layar besar dan resolusi tinggi</string>
   <string name="size_zoom">Intensitas zoom</string>
-  <string name="size_zoom_description">Ketika dinaikkan, kamera memperbesar lebih banyak</string>
+  <string name="size_zoom_description">Saat dinaikkan, hasil zoom kamera akan lebih besar</string>
   <string name="size_zoom_rotation">Rotasi beberapa bentuk saat memperbesar</string>
-  <string name="size_zoom_rotation_description">Rotasi maksimum dalam degree</string>
+  <string name="size_zoom_rotation_description">Rotasi maksimum dalam satuan derajat</string>
+  <string name="size_zoom_power_save_description">Jeda efek zoom ketika penghemat baterai diaktifkan</string>
   <string name="size_zoom_launcher">Perkecil saat membuka pengaturan cepat atau laci aplikasi</string>
   <string name="size_zoom_launcher_description">Mungkin tidak tersedia di beberapa perangkat</string>
+  <string name="size_zoom_damping">Peredam animasi</string>
+  <string name="size_zoom_damping_description">Aktifkan dan turunkan untuk zoom yang lebih halus</string>
+  <string name="size_zoom_unlock">Zoom saat dalam layar kunci</string>
+  <string name="size_zoom_unlock_description">Pilih sudut pandang</string>
+  <string name="size_zoom_unlock_in">Perbesar</string>
+  <string name="size_zoom_unlock_out">Perkecil</string>
   <string name="size_zoom_duration">Durasi zoom buka-kunci</string>
   <string name="size_zoom_duration_description">Kurangi untuk animasi lebih cepat</string>
 
@@ -110,33 +167,56 @@
   <string name="other_language">Bahasa</string>
   <string name="other_language_description">Terima kasih banyak kepada semua penerjemah sukarelawan di Transifex! Silakan kunjungi halaman GitHub proyek untuk mempelajari bagaimana Anda dapat membantu membuat Wallpaper Live Doodle tersedia untuk bahasa Anda.</string>
   <string name="other_language_system">Ikuti sistem</string>
+  <string name="other_language_system_description">Bahasa Inggris jika terjemahan tidak tersedia</string>
   <string name="other_gpu">Akselerasi perangkat keras</string>
   <string name="other_gpu_description">Matikan jika wallpaper crash</string>
   <string name="other_gpu_info">Akselerasi perangkat keras hanya tersedia untuk Doodle dimulai dengan Android 8. Oleh karena itu animasi wallpaper mungkin agak tersentak.</string>
+  <string name="other_screen_off_delay">Penundaan layar mati</string>
+  <string name="other_screen_off_delay_description">Diperlukan untuk transisi Always On Display</string>
   <string name="other_launcher">Sembunyikan ikon di peluncur</string>
   <string name="other_launcher_description">Pengaturan hanya akan dapat diakses di pemilih wallpaper hidup sistem Anda</string>
+  <string name="other_launcher_unsupported">Fitur ini sudah tidak didukung lagi karena pembatasan sistem</string>
   <string name="other_theme">Tema warna aplikasi</string>
   <string name="other_theme_description">Coba tampilan lain</string>
   <string name="other_theme_auto">Otomatis</string>
   <string name="other_theme_light">Terang</string>
   <string name="other_theme_dark">Gelap</string>
+  <string name="other_transition">Gunakan transisi bergeser antara halaman pengaturan</string>
+  <string name="other_transition_description">Ketimbang memudar</string>
   <string name="other_reset">Atur-ulang semua setelan</string>
-  <string name="other_reset_description">Melakukan lebih dari penghapusan instalasi akan dilakukan, karena preferensi disimpan di tempat khusus karena mereka harus dapat diakses langsung setelah startup perangkat</string>
+  <string name="other_reset_description">Melakukan lebih dari sekadar mencopot pemasangan, karena pengaturan disimpan di tempat khusus karena mereka harus dapat diakses secara langsung setelah perangkat dinyalakan</string>
+  <string name="other_log">Tampilkan logcat</string>
+  <string name="other_log_description">Untuk tujuan debugging</string>
+
   <!-- ABOUT -->
 
   <string name="about_title">Tentang</string>
   <string name="about_description">Info pembuat &amp; lainnya</string>
   <string name="about_version">Versi</string>
-  <string name="about_changelog">Changelog</string>
+  <string name="about_changelog">Daftar perubahan</string>
   <string name="about_changelog_description">Apa yang baru?</string>
   <string name="about_developer">Pengembang</string>
   <string name="about_vending_description">Lebih banyak aplikasi dari pengembang</string>
   <string name="about_github_description">Kode sumber</string>
   <string name="about_translation_description">Bantu terjemahkan Doodle</string>
-  <string name="msg_share">Lihat aplikasi wallpaper hidup keren ini: \nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
+  <string name="about_privacy">Kebijakan privasi</string>
+  <string name="about_privacy_description">Bagaimana data Anda digunakan?</string>
+
+  <!-- MESSAGES -->
+
+  <string name="msg_feedback">Aplikasi yang keren memerlukan banyak waktu dan banyak masukan dari para penggunanya.</string>
+  <string name="msg_feedback_contact">Apakah Anda memiliki saran, komentar, atau pertanyaan? Jangan ragu untuk menghubungi saya!\nJika tidak, saya akan sangat senang dengan ulasan yang bagus di Play Store.</string>
+  <string name="msg_feedback_more">Tolong jangan meminta lebih banyak desain wallpaper, saya akan menambahkannya ketika saya punya waktu sambil belajar.</string>
+  <string name="msg_share">Lihat aplikasi wallpaper live keren ini: \nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
   <string name="msg_hide">Sembunyikan ikon di peluncur?</string>
+  <string name="msg_random">Semua desain yang dipilih akan digunakan</string>
+  <string name="msg_random_warning">Desain wallpaper acak masih aktif!</string>
   <string name="msg_reset">Atur-ulang semua setelan?</string>
   <string name="msg_force_stop">Paksa berhenti diminta untuk menerapkan perubahan</string>
+  <string name="msg_apply_colors">Warna yang berubah akan diterapkan ke sistem pada saat Anda mematikan layar berikutnya</string>
   <string name="msg_apply_changes">Untuk menerapkan (akhirnya) opsi yang diubah restart dari layanan wallpaper yang sedang berjalan direkomendasikan. Ini tidak dapat dilakukan secara otomatis. Silahkan paksa-berhenti Doodle di pengaturan sistem Anda dan kemudian terapkan Doodle sebagai wallpaper Anda lagi</string>
   <string name="msg_preview_missing">Terjadi kesalahan, silakan pilih Doodle Live Wallpaper secara manual</string>
+  <string name="msg_report_crash">Mohon laporkan kendala apa pun dengan melampirkan log kendala agar saya dapat mencoba memperbaikinya.</string>
+  <string name="msg_copied_to_clipboard">Berhasil disalin ke clipboard</string>
+
   </resources>

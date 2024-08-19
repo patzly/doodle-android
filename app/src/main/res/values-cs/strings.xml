@@ -21,6 +21,7 @@
 
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
+  <string name="wallpaper_description">Barevné živé tapety s automatickým tmavým režimem a energeticky úspornými animacemi.  Přizpůsobte si ho svým potřebám!</string>
   <!-- TITLES -->
 
   <string name="title_info">Informace</string>
@@ -33,6 +34,10 @@
   <string name="label_ms">%1$sms</string>
   <string name="label_degrees">%1$s stupňů</string>
 
+  <!-- ACTIONS -->
+
+  <string name="action_cancel">Zpět</string>
+  <string name="action_select">Vybrat</string>
   <string name="action_close">Zavřít</string>
   <string name="action_back">Zpět</string>
   <string name="action_open_link">Otevřít externí web</string>
@@ -41,8 +46,11 @@
   <string name="action_deactivate">Deaktivovat</string>
   <string name="action_select_all">Vybrat vše</string>
   <string name="action_continue">Pokračovat</string>
+  <string name="action_reload">Načíst znovu</string>
   <string name="action_open_app_info">Otevřít informace o aplikaci</string>
   <string name="action_set">Nastavit tapetu</string>
+  <string name="action_learn_more">Zjistit více </string>
+  <string name="action_help">Pomoc</string>
   <string name="action_send_feedback">Odeslat zpětnou vazbu</string>
   <string name="action_share">Sdílet</string>
   <string name="action_share_description">Řekněte přátelům o aplikaci Doodle</string>
@@ -53,6 +61,11 @@
   <string name="action_github">Doodle Android na GitHubu</string>
   <string name="action_github_description">Otevřít issue</string>
   <string name="action_language_select">Vyberte jazyk</string>
+  <string name="action_set_static">Nastavit statickou tapetu</string>
+  <string name="action_change_time">Změnit čas</string>
+  <string name="action_change_interval">Změnit interval</string>
+  <string name="action_copy_to_clipboard">Zkopírovat do schránky </string>
+
   <!-- APPEARANCE -->
 
   <string name="appearance_title">Vzhled</string>
@@ -64,15 +77,25 @@
   <string name="appearance_variant">Varianta</string>
   <string name="appearance_night_mode">Tmavý režim</string>
   <string name="appearance_night_mode_description">Pouze tmavé barvy</string>
+  <string name="appearance_night_mode_on">Zapnout</string>
+  <string name="appearance_night_mode_off">Vypnout</string>
+  <string name="appearance_light_text">Vždy použít bílý text</string>
+  <string name="appearance_dark_text">Použít tmavý text</string>
+  <string name="appearance_dark_text_description">Pouze pokud je pozadí dost světlé</string>
+  <string name="appearance_colors_category">Barvy </string>
   <string name="appearance_colors">Extrahované barvy</string>
   <string name="appearance_colors_description">Použité pro výpočet barevného kontrastu</string>
   <string name="appearance_colors_description_dynamic">Využívané pro nastavování barevného režimu</string>
   <string name="appearance_colors_primary">Vyberte hlavní barvu</string>
   <string name="appearance_colors_secondary">Vybrat druhotnou barvu</string>
   <string name="appearance_colors_tertiary">Vybrat doplňkovou barvu</string>
+  <string name="appearance_colors_custom">Vybrat vlastní barvu</string>
   <string name="appearance_colors_info">Na zařízeních bez možnosti využít dynamické barvy (verze Android 11 a níž), bude pro výpočet kontrastu textu a odstínu pozadí obrazovek pro aplikace využita pouze primární barva.</string>
   <string name="appearance_colors_info_dynamic">V zařízeních se systémem Android 12 nebo vyšším a podporou dynamických barev se tři vybrané barvy použijí k automatickému vytvoření celosystémového barevného motivu.</string>
   <string name="appearance_random">Náhodný design tapety</string>
+  <string name="appearance_random_description">Vyberte níže uvedenou podmínku</string>
+  <string name="appearance_random_screen_off">Obrazovka vypnutá</string>
+  <string name="appearance_random_interval">Nastavit interval </string>
   <!-- PARALLAX -->
 
   <string name="parallax_title">Parallax efekt</string>
@@ -104,6 +127,10 @@
   <string name="size_zoom_launcher_description">Nemusí být dostupné na všech zařízeních</string>
   <string name="size_zoom_damping">Tlumení animace</string>
   <string name="size_zoom_damping_description">Aktivujte a snížte pro plynulejší zoomování</string>
+  <string name="size_zoom_unlock">Přibližit na zamknuté obrazovce</string>
+  <string name="size_zoom_unlock_description">Nastavit směr</string>
+  <string name="size_zoom_unlock_in">Přiblížit</string>
+  <string name="size_zoom_unlock_out">Oddálit</string>
   <string name="size_zoom_duration">Odemknout trvání zoomu</string>
   <string name="size_zoom_duration_description">Snižte pro rychlejší animace</string>
 
@@ -117,15 +144,21 @@
   <string name="other_gpu">Hadrwarová akcelerace</string>
   <string name="other_gpu_description">Vypněte, pokud máte s tapetou problémy</string>
   <string name="other_gpu_info">Hardwarová akcelerace je pro Doodle dostupná až od systému Android 8. Animace tapet proto mohou být trochu trhané.</string>
+  <string name="other_screen_off_delay">Zpoždění vypnuté obrazovky</string>
+  <string name="other_screen_off_delay_description">Vyžadováno pro přechod Always On Display</string>
   <string name="other_launcher">Skrýt ikonu v launcheru.</string>
   <string name="other_launcher_description">Nastavení budou přístupná pouze ve výběru živé tapety v systému.</string>
+  <string name="other_launcher_unsupported">Tato funkce již není podporována z důvodu omezení funkcí systému</string>
   <string name="other_theme">Barevný režim aplikace</string>
   <string name="other_theme_description">Vyzkoušejte jiný vzhled</string>
   <string name="other_theme_auto">Automaticky</string>
   <string name="other_theme_light">Světlý</string>
   <string name="other_theme_dark">Tmavý</string>
+  <string name="other_transition">Použije posuvný přechod mezi stránkami nastavení</string>
   <string name="other_reset">Obnovit všechna nastavení</string>
   <string name="other_reset_description">Dělá víc, než by udělalo odinstalování, protože předvolby jsou uloženy na zvláštním místě, kde musí být přístupné přímo po spuštění zařízení.</string>
+  <string name="other_log_description">Pro účely ladění</string>
+
   <!-- ABOUT -->
 
   <string name="about_title">O aplikaci</string>
@@ -137,6 +170,14 @@
   <string name="about_vending_description">Více aplikací od vývojáře</string>
   <string name="about_github_description">Zdrojový kód</string>
   <string name="about_translation_description">Pomozte přeložit Doodle</string>
+  <string name="about_privacy">Zásady ochrany osobních údajů</string>
+  <string name="about_privacy_description">Jak jsou Vaše data zpracovávána? </string>
+
+  <!-- MESSAGES -->
+
+  <string name="msg_feedback">Dobrá aplikace vyžaduje spoustu času a žije ze zpětné vazby svých uživatelů.</string>
+  <string name="msg_feedback_contact">Máte nějaké přání, připomínky nebo dotazy? Nevahejte me kontaktovat! Jinak bych byl moc rád za hezkou recenzi v Obchodě Play.</string>
+  <string name="msg_feedback_more">Prosím, neptejte se na další návrhy tapet, přidám je, až budu mít kromě studia čas.</string>
   <string name="msg_share">Podívejte se na tuhle cool aplikaci na živé tapety: \nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
   <string name="msg_hide">Skrýt ikonu v launcheru?</string>
   <string name="msg_random">Všechny vybrané návrhy budou použity</string>
@@ -146,4 +187,7 @@
   <string name="msg_apply_colors">Změněné barvy se do systému aplikují při příštím vypnutí obrazovky.</string>
   <string name="msg_apply_changes">Pro použití (případně) změněných možností se doporučuje restartovat spuštěnou službu tapety. To nelze provést automaticky.\nProsím, zastavte službu Doodle v nastavení systému a poté ji znovu použijte jako tapetu</string>
   <string name="msg_preview_missing">Došlo k chybě, nastave prosím Doodle Live Wallpaper manuálně</string>
+  <string name="msg_report_crash">Prosím, nahlaste všechny pády s přiloženým záznamem o pádu, abych se je mohl pokusit opravit.</string>
+  <string name="msg_copied_to_clipboard">Úspěšně zkopírováno do schránky</string>
+
   </resources>

@@ -207,30 +207,28 @@
 
   <!-- Slider -->
 
+  <!-- Slider -->
+
   <style name="Widget.Doodle.Slider" parent="Widget.Material3.Slider">
     <item name="android:layout_width">match_parent</item>
     <item name="android:layout_height">wrap_content</item>
-    <item name="android:layout_marginStart">43dp</item>
-    <item name="android:layout_marginEnd">14dp</item>
     <item name="android:stepSize">1</item>
-    <item name="thumbElevation">1dp</item>
+    <item name="thumbElevation">0dp</item>
     <item name="labelStyle">@style/Widget.Doodle.Tooltip</item>
-    <item name="trackColorInactive">@color/selector_slider_inactive_track_color</item>
-    <item name="tickColorActive">?attr/colorSurfaceVariant</item>
+    <item name="tickRadiusActive">2dp</item>
+    <item name="tickRadiusInactive">2dp</item>
+    <item name="trackStopIndicatorSize">0dp</item>
   </style>
 
   <!-- Tooltip -->
 
   <style name="Widget.Doodle.Tooltip" parent="Widget.Material3.Tooltip">
-    <item name="android:textColor">?attr/colorOnTertiaryContainer</item>
+    <item name="android:textColor">?attr/colorOnSurfaceInverse</item>
+    <item name="backgroundTint">?attr/colorSurfaceInverse</item>
     <item name="android:textAppearance">@style/TextAppearance.Doodle.Tooltip</item>
-    <item name="shapeAppearance">@style/ShapeAppearance.Doodle.Tooltip</item>
-    <item name="backgroundTint">?attr/colorTertiaryContainer</item>
-  </style>
-
-  <style name="ShapeAppearance.Doodle.Tooltip" parent="">
-    <item name="cornerFamily">rounded</item>
-    <item name="cornerSize">8dp</item>
+    <item name="android:padding">16dp</item>
+    <item name="android:minHeight">40dp</item>
+    <item name="showMarker">false</item>
   </style>
 
   <!-- ExtendedFloatingActionButton -->
@@ -562,8 +560,8 @@
     <item name="fontFamily">@font/jost_medium</item>
   </style>
 
-  <style name="TextAppearance.Doodle.Tooltip" parent="TextAppearance.MaterialComponents.Tooltip">
-    <item name="android:textColor">?android:attr/colorBackground</item>
+  <style name="TextAppearance.Doodle.Tooltip" parent="TextAppearance.Material3.BodyLarge">
+    <item name="android:textSize">14sp</item>
     <item name="android:fontFamily">@font/jost_book</item>
     <item name="fontFamily">@font/jost_book</item>
   </style>

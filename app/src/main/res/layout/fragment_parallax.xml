@@ -120,7 +120,7 @@
 
           </LinearLayout>
 
-          <com.google.android.material.slider.Slider
+          <com.google.android.material.slider.CustomSlider
             android:id="@+id/slider_parallax_swipe"
             style="@style/Widget.Doodle.Slider"
             android:layout_marginStart="27dp"
@@ -215,7 +215,7 @@
 
             </LinearLayout>
 
-            <com.google.android.material.slider.Slider
+            <com.google.android.material.slider.CustomSlider
               android:id="@+id/slider_parallax_tilt"
               style="@style/Widget.Doodle.Slider"
               android:layout_marginStart="27dp"
@@ -253,9 +253,11 @@
 
           </LinearLayout>
 
-          <com.google.android.material.slider.Slider
+          <com.google.android.material.slider.CustomSlider
             android:id="@+id/slider_parallax_refresh_rate"
             style="@style/Widget.Doodle.Slider"
+            android:layout_marginStart="43dp"
+            android:layout_marginEnd="14dp"
             android:valueFrom="20000"
             android:valueTo="65000"
             android:stepSize="5000" />
@@ -287,9 +289,11 @@
 
           </LinearLayout>
 
-          <com.google.android.material.slider.Slider
+          <com.google.android.material.slider.CustomSlider
             android:id="@+id/slider_parallax_damping"
             style="@style/Widget.Doodle.Slider"
+            android:layout_marginStart="43dp"
+            android:layout_marginEnd="14dp"
             android:valueFrom="1"
             android:valueTo="20"
             android:stepSize="1" />
@@ -319,9 +323,11 @@
 
           </LinearLayout>
 
-          <com.google.android.material.slider.Slider
+          <com.google.android.material.slider.CustomSlider
             android:id="@+id/slider_parallax_threshold"
             style="@style/Widget.Doodle.Slider"
+            android:layout_marginStart="43dp"
+            android:layout_marginEnd="14dp"
             android:valueFrom="1"
             android:valueTo="10"
             android:stepSize="1" />

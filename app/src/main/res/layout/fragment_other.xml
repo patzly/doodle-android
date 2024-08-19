@@ -253,9 +253,11 @@
 
         </LinearLayout>
 
-        <com.google.android.material.slider.Slider
+        <com.google.android.material.slider.CustomSlider
           android:id="@+id/slider_screen_off_delay"
           style="@style/Widget.Doodle.Slider"
+          android:layout_marginStart="43dp"
+          android:layout_marginEnd="14dp"
           android:valueFrom="0"
           android:valueTo="1000"
           android:stepSize="100" />

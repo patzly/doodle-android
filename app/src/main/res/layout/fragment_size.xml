@@ -92,9 +92,11 @@
 
         </LinearLayout>
 
-        <com.google.android.material.slider.Slider
+        <com.google.android.material.slider.CustomSlider
           android:id="@+id/slider_size_scale"
           style="@style/Widget.Doodle.Slider"
+          android:layout_marginStart="43dp"
+          android:layout_marginEnd="14dp"
           android:valueFrom="8"
           android:valueTo="20"
           android:stepSize="1" />
@@ -129,9 +131,11 @@
 
         </LinearLayout>
 
-        <com.google.android.material.slider.Slider
+        <com.google.android.material.slider.CustomSlider
           android:id="@+id/slider_size_zoom"
           style="@style/Widget.Doodle.Slider"
+          android:layout_marginStart="43dp"
+          android:layout_marginEnd="14dp"
           android:valueFrom="1"
           android:valueTo="5"
           android:stepSize="1" />
@@ -162,9 +166,11 @@
 
         </LinearLayout>
 
-        <com.google.android.material.slider.Slider
+        <com.google.android.material.slider.CustomSlider
           android:id="@+id/slider_size_zoom_rotation"
           style="@style/Widget.Doodle.Slider"
+          android:layout_marginStart="43dp"
+          android:layout_marginEnd="14dp"
           android:valueFrom="0"
           android:valueTo="100"
           android:stepSize="20" />
@@ -269,7 +275,7 @@
 
           </LinearLayout>
 
-          <com.google.android.material.slider.Slider
+          <com.google.android.material.slider.CustomSlider
             android:id="@+id/slider_size_zoom_damping"
             style="@style/Widget.Doodle.Slider"
             android:layout_marginStart="27dp"
@@ -387,9 +393,11 @@
 
         </LinearLayout>
 
-        <com.google.android.material.slider.Slider
+        <com.google.android.material.slider.CustomSlider
           android:id="@+id/slider_size_zoom_duration"
           style="@style/Widget.Doodle.Slider"
+          android:layout_marginStart="43dp"
+          android:layout_marginEnd="14dp"
           android:valueFrom="500"
           android:valueTo="1500"
           android:stepSize="100" />

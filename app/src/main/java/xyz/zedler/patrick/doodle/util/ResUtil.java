@@ -21,15 +21,18 @@ package xyz.zedler.patrick.doodle.util;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.util.Log;
 import android.util.TypedValue;
+import android.view.Menu;
 import android.view.MenuItem;
 import androidx.annotation.AttrRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.RawRes;
 import androidx.annotation.StringRes;
 import androidx.core.graphics.ColorUtils;
+import com.google.android.material.color.MaterialColors;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -63,32 +66,63 @@ public class ResUtil {
     context.startActivity(Intent.createChooser(intent, null));
   }
 
+  public static int getColor(Context context, @AttrRes int resId) {
+    return MaterialColors.getColor(context, resId, Color.BLACK);
+  }
+
+  public static int getColor(Context context, @AttrRes int resId, float alpha) {
+    return ColorUtils.setAlphaComponent(getColor(context, resId), (int) (alpha * 255));
+  }
+
+  public static int getSysColor(Context context, @AttrRes int resId) {
+    TypedValue typedValue = new TypedValue();
+    context.getTheme().resolveAttribute(resId, typedValue, true);
+    return typedValue.data;
+  }
+
+  @Deprecated
   public static int getColorAttr(Context context, @AttrRes int resId) {
     TypedValue typedValue = new TypedValue();
     context.getTheme().resolveAttribute(resId, typedValue, true);
     return typedValue.data;
   }
 
+  @Deprecated
   public static int getColorAttr(Context context, @AttrRes int resId, float alpha) {
     return ColorUtils.setAlphaComponent(getColorAttr(context, resId), (int) (alpha * 255));
   }
 
+  @Deprecated
   public static int getColorBg(Context context) {
     return getColorAttr(context, android.R.attr.colorBackground);
   }
 
+  @Deprecated
   public static int getColorOutline(Context context) {
     return getColorAttr(context, R.attr.colorOutline);
   }
 
+  @Deprecated
   public static int getColorOutlineSecondary(Context context) {
     return getColorAttr(context, R.attr.colorOutline, 0.4f);
   }
 
   public static int getColorHighlight(Context context) {
-    return getColorAttr(context, R.attr.colorSecondary, 0.09f);
+    return getColor(context, R.attr.colorSecondary, 0.09f);
   }
 
+  public static void tintMenuIcons(Context context, Menu menu) {
+    if (menu != null) {
+      for (int i = 0; i < menu.size(); i++) {
+        MenuItem item = menu.getItem(i);
+        if (item != null) {
+          tintIcon(context, item.getIcon());
+        }
+      }
+    }
+  }
+
+  @Deprecated
   public static void tintMenuItemIcon(Context context, MenuItem item) {
     if (item != null) {
       tintIcon(context, item.getIcon());
@@ -97,7 +131,7 @@ public class ResUtil {
 
   public static void tintIcon(Context context, Drawable icon) {
     if (icon != null) {
-      icon.setTint(ResUtil.getColorAttr(context, R.attr.colorOnSurfaceVariant));
+      icon.setTint(ResUtil.getColor(context, R.attr.colorOnSurfaceVariant));
     }
   }
 }

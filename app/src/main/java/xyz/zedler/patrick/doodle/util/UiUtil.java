@@ -125,6 +125,11 @@ public class UiUtil {
     return Math.round(dp * r.getDisplayMetrics().density);
   }
 
+  public static int dpFromPx(@NonNull Context context, @Dimension float px) {
+    Resources r = context.getResources();
+    return (int) (px / r.getDisplayMetrics().density);
+  }
+
   public static int spToPx(@NonNull Context context, @Dimension(unit = Dimension.SP) float sp) {
     Resources r = context.getResources();
     return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, sp, r.getDisplayMetrics());

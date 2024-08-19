@@ -56,7 +56,7 @@ Please complete main locales first (e. g. Spanish `es`) and only then request sp
 
 ## License
 
-Copyright &copy; 2019-2023 Patrick Zedler. All rights reserved.
+Copyright &copy; 2019-2024 Patrick Zedler. All rights reserved.
 
 [GNU General Public License version 3](https://www.gnu.org/licenses/gpl.txt)
 

@@ -52,9 +52,7 @@ public class TextBottomSheetDialogFragment extends BaseBottomSheetDialogFragment
     String link = args.getLink() != 0 ? getString(args.getLink()) : null;
     if (link != null) {
       binding.toolbarText.inflateMenu(R.menu.menu_link);
-      ResUtil.tintMenuItemIcon(
-          requireContext(), binding.toolbarText.getMenu().findItem(R.id.action_open_link)
-      );
+      ResUtil.tintMenuIcons(requireContext(), binding.toolbarText.getMenu());
       binding.toolbarText.setOnMenuItemClickListener(item -> {
         int id = item.getItemId();
         if (id == R.id.action_open_link && getViewUtil().isClickEnabled(id)) {

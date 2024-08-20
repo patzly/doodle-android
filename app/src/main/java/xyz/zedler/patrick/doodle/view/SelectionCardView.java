@@ -29,11 +29,9 @@ import android.widget.LinearLayout;
 import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
 import androidx.core.content.res.ResourcesCompat;
-
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.color.ColorRoles;
 import com.google.android.material.color.MaterialColors;
-import com.google.android.material.elevation.SurfaceColors;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.util.ResUtil;
 import xyz.zedler.patrick.doodle.util.UiUtil;
@@ -42,13 +40,14 @@ import xyz.zedler.patrick.doodle.util.ViewUtil;
 public class SelectionCardView extends MaterialCardView {
 
   private final MaterialCardView innerCard;
+  private final int innerSize;
 
   public SelectionCardView(Context context) {
     super(context);
 
     final int outerRadius = UiUtil.dpToPx(context, 16);
     final int outerPadding = UiUtil.dpToPx(context, 16);
-    final int innerSize = UiUtil.dpToPx(context, 48);
+    innerSize = UiUtil.dpToPx(context, 48);
 
     // OUTER CARD (this)
 
@@ -65,7 +64,7 @@ public class SelectionCardView extends MaterialCardView {
     setRadius(outerRadius);
     setCardElevation(0);
     setCardForegroundColor(null);
-    super.setCardBackgroundColor(SurfaceColors.SURFACE_1.getColor(context));
+    super.setCardBackgroundColor(ResUtil.getColor(context, R.attr.colorSurfaceContainer));
     setRippleColor(ColorStateList.valueOf(ResUtil.getColorHighlight(context)));
     setStrokeWidth(0);
     setCheckable(true);
@@ -81,7 +80,7 @@ public class SelectionCardView extends MaterialCardView {
     innerCard.setLayoutParams(innerParams);
     innerCard.setRadius(innerSize / 2f);
     innerCard.setStrokeWidth(UiUtil.dpToPx(context, 1));
-    innerCard.setStrokeColor(ResUtil.getColorAttr(context, R.attr.colorOutline));
+    innerCard.setStrokeColor(ResUtil.getColor(context, R.attr.colorOutline));
     innerCard.setCheckable(false);
     addView(innerCard);
   }
@@ -115,11 +114,27 @@ public class SelectionCardView extends MaterialCardView {
             getResources(), resId, null
     );
     if (tint && drawable != null) {
-      drawable.setTint(ResUtil.getColorAttr(getContext(), R.attr.colorOutline));
+      drawable.setTint(ResUtil.getColor(getContext(), R.attr.colorOutline));
     }
     image.setImageDrawable(drawable);
     image.setImageResource(resId);
     innerCard.addView(image);
+  }
+
+  public void setNestedContext(Context context) {
+    removeAllViews();
+    ViewGroup.LayoutParams innerParams = new ViewGroup.LayoutParams(innerSize, innerSize);
+    MaterialCardView innerCard = new MaterialCardView(context);
+    innerCard.setLayoutParams(innerParams);
+    innerCard.setRadius(innerSize / 2f);
+    innerCard.setStrokeWidth(UiUtil.dpToPx(context, 1));
+    innerCard.setStrokeColor(ResUtil.getColor(context, R.attr.colorOutline));
+    innerCard.setCardBackgroundColor(ResUtil.getColor(context, R.attr.colorPrimaryContainer));
+    innerCard.setCheckable(false);
+    addView(innerCard);
+    setCheckedIconTint(
+        ColorStateList.valueOf(ResUtil.getColor(context, R.attr.colorOnPrimaryContainer))
+    );
   }
 
   public void startCheckedIcon() {
@@ -147,7 +162,7 @@ public class SelectionCardView extends MaterialCardView {
       setCheckedIconTint(ColorStateList.valueOf(roles.getOnAccentContainer()));
     } else if (!enabled) {
       setCheckedIconTint(
-          ColorStateList.valueOf(ResUtil.getColorAttr(getContext(), R.attr.colorOnPrimaryContainer))
+          ColorStateList.valueOf(ResUtil.getColor(getContext(), R.attr.colorOnPrimaryContainer))
       );
     }
   }

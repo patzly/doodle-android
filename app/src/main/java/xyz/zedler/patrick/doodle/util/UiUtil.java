@@ -20,7 +20,9 @@
 package xyz.zedler.patrick.doodle.util;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Build;
@@ -35,6 +37,15 @@ import android.view.WindowManager;
 import android.view.WindowMetrics;
 import androidx.annotation.Dimension;
 import androidx.annotation.NonNull;
+import androidx.annotation.StyleRes;
+import com.google.android.material.color.DynamicColors;
+import com.google.android.material.color.DynamicColorsOptions;
+import com.google.android.material.color.HarmonizedColors;
+import com.google.android.material.color.HarmonizedColorsOptions;
+import xyz.zedler.patrick.doodle.Constants.CONTRAST;
+import xyz.zedler.patrick.doodle.Constants.DEF;
+import xyz.zedler.patrick.doodle.Constants.PREF;
+import xyz.zedler.patrick.doodle.Constants.THEME;
 import xyz.zedler.patrick.doodle.R;
 
 public class UiUtil {
@@ -44,7 +55,7 @@ public class UiUtil {
   public static final int SCRIM_LIGHT_DIALOG = 0xFF666666;
 
   public static void layoutEdgeToEdge(Window window) {
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+    if (Build.VERSION.SDK_INT >= VERSION_CODES.R) {
       window.setDecorFitsSystemWindows(false);
     } else {
       int flags = View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION;
@@ -54,7 +65,7 @@ public class UiUtil {
   }
 
   public static void setLightNavigationBar(@NonNull View view, boolean isLight) {
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+    if (Build.VERSION.SDK_INT >= VERSION_CODES.R && view.getWindowInsetsController() != null) {
       view.getWindowInsetsController().setSystemBarsAppearance(
           isLight ? WindowInsetsController.APPEARANCE_LIGHT_NAVIGATION_BARS : 0,
           WindowInsetsController.APPEARANCE_LIGHT_NAVIGATION_BARS
@@ -71,7 +82,7 @@ public class UiUtil {
   }
 
   public static void setLightStatusBar(@NonNull View view, boolean isLight) {
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+    if (Build.VERSION.SDK_INT >= VERSION_CODES.R && view.getWindowInsetsController() != null) {
       view.getWindowInsetsController().setSystemBarsAppearance(
           isLight ? WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS : 0,
           WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS
@@ -84,6 +95,81 @@ public class UiUtil {
         flags &= ~View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR;
       }
       view.setSystemUiVisibility(flags);
+    }
+  }
+
+  public static void setTheme(@NonNull Activity activity, @NonNull SharedPreferences sharedPrefs) {
+    switch (sharedPrefs.getString(PREF.THEME, DEF.THEME)) {
+      case THEME.RED:
+        setContrastTheme(
+            activity, sharedPrefs,
+            R.style.Theme_Doodle_Red,
+            R.style.ThemeOverlay_Doodle_Red_MediumContrast,
+            R.style.ThemeOverlay_Doodle_Red_HighContrast
+        );
+        break;
+      case THEME.YELLOW:
+        setContrastTheme(
+            activity, sharedPrefs,
+            R.style.Theme_Doodle_Yellow,
+            R.style.ThemeOverlay_Doodle_Yellow_MediumContrast,
+            R.style.ThemeOverlay_Doodle_Yellow_HighContrast
+        );
+        break;
+      case THEME.GREEN:
+        setContrastTheme(
+            activity, sharedPrefs,
+            R.style.Theme_Doodle_Green,
+            R.style.ThemeOverlay_Doodle_Green_MediumContrast,
+            R.style.ThemeOverlay_Doodle_Green_HighContrast
+        );
+        break;
+      case THEME.BLUE:
+        setContrastTheme(
+            activity, sharedPrefs,
+            R.style.Theme_Doodle_Blue,
+            R.style.ThemeOverlay_Doodle_Blue_MediumContrast,
+            R.style.ThemeOverlay_Doodle_Blue_HighContrast
+        );
+        break;
+      default:
+        if (DynamicColors.isDynamicColorAvailable()) {
+          DynamicColors.applyToActivityIfAvailable(
+              activity,
+              new DynamicColorsOptions.Builder().setOnAppliedCallback(
+                  a -> HarmonizedColors.applyToContextIfAvailable(
+                      a, HarmonizedColorsOptions.createMaterialDefaults()
+                  )
+              ).build()
+          );
+        } else {
+          setContrastTheme(
+              activity, sharedPrefs,
+              R.style.Theme_Doodle_Yellow,
+              R.style.ThemeOverlay_Doodle_Yellow_MediumContrast,
+              R.style.ThemeOverlay_Doodle_Yellow_HighContrast
+          );
+        }
+        break;
+    }
+  }
+
+  private static void setContrastTheme(
+      Activity activity,
+      SharedPreferences sharedPrefs,
+      @StyleRes int resIdStandard,
+      @StyleRes int resIdMedium,
+      @StyleRes int resIdHigh
+  ) {
+    switch (sharedPrefs.getString(PREF.UI_CONTRAST, DEF.UI_CONTRAST)) {
+      case CONTRAST.MEDIUM:
+        activity.setTheme(resIdMedium);
+        break;
+      case CONTRAST.HIGH:
+        activity.setTheme(resIdHigh);
+        break;
+      default:
+        activity.setTheme(resIdStandard);
     }
   }
 

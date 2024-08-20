@@ -42,6 +42,7 @@ import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.activity.MainActivity;
 import xyz.zedler.patrick.doodle.databinding.FragmentBottomsheetColorsBinding;
 import xyz.zedler.patrick.doodle.fragment.AppearanceFragment;
+import xyz.zedler.patrick.doodle.util.ResUtil;
 import xyz.zedler.patrick.doodle.util.UiUtil;
 import xyz.zedler.patrick.doodle.util.ViewUtil;
 import xyz.zedler.patrick.doodle.view.ColorPickerView;
@@ -79,7 +80,9 @@ public class ColorsBottomSheetDialogFragment extends BaseBottomSheetDialogFragme
     for (int i = 0; i < colors.length; i++) {
       int index = i;
       SelectionCardView card = new SelectionCardView(activity);
-      card.setOuterCardBackgroundColor(SurfaceColors.SURFACE_5.getColor(activity));
+      card.setOuterCardBackgroundColor(
+          ResUtil.getColor(activity, R.attr.colorSurfaceContainerHighest)
+      );
       card.setCardBackgroundColor(Color.parseColor(colors[index]));
       card.setScrimEnabled(false, true);
       card.setOnClickListener(v -> {
@@ -122,7 +125,9 @@ public class ColorsBottomSheetDialogFragment extends BaseBottomSheetDialogFragme
     binding.linearColorsContainerColors.addView(divider);
 
     SelectionCardView card = new SelectionCardView(activity);
-    card.setOuterCardBackgroundColor(SurfaceColors.SURFACE_5.getColor(activity));
+    card.setOuterCardBackgroundColor(
+        ResUtil.getColor(activity, R.attr.colorSurfaceContainerHighest)
+    );
     Fragment current = activity.getCurrentFragment();
     if (current instanceof AppearanceFragment) {
       String colorCode = ((AppearanceFragment) current).getColor(args.getPriority(), true);

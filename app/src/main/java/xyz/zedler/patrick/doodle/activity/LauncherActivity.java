@@ -23,6 +23,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -36,24 +37,28 @@ import android.os.Looper;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.content.res.ResourcesCompat;
-import com.google.android.material.color.DynamicColors;
 import xyz.zedler.patrick.doodle.Constants.DEF;
 import xyz.zedler.patrick.doodle.Constants.EXTRA;
 import xyz.zedler.patrick.doodle.Constants.PREF;
-import xyz.zedler.patrick.doodle.Constants.THEME;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.behavior.SystemBarBehavior;
 import xyz.zedler.patrick.doodle.util.PrefsUtil;
+import xyz.zedler.patrick.doodle.util.UiUtil;
 import xyz.zedler.patrick.doodle.util.ViewUtil;
 
+@SuppressLint("CustomSplashScreen")
 public class LauncherActivity extends MainActivity {
 
   @Override
   public void onCreate(Bundle bundle) {
+    SharedPreferences sharedPrefs = new PrefsUtil(this)
+        .checkForMigrations()
+        .getSharedPrefs();
+
     if (Build.VERSION.SDK_INT >= 31) {
       super.onCreate(bundle);
 
-      if (Build.VERSION.SDK_INT >= 33) {
+      if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
         // SDK 33+ manages splash screen animation duration itself
         return;
       }
@@ -75,13 +80,9 @@ public class LauncherActivity extends MainActivity {
         set.start();
       });
     } else {
-      SharedPreferences sharedPrefs = new PrefsUtil(this)
-          .checkForMigrations()
-          .getSharedPrefs();
-
       // DARK MODE
 
-      int modeNight = sharedPrefs.getInt(PREF.MODE, DEF.MODE);
+      int modeNight = sharedPrefs.getInt(PREF.UI_MODE, DEF.UI_MODE);
       int uiMode = getResources().getConfiguration().uiMode;
       switch (modeNight) {
         case AppCompatDelegate.MODE_NIGHT_NO:
@@ -100,42 +101,7 @@ public class LauncherActivity extends MainActivity {
 
       // THEME
 
-      switch (sharedPrefs.getString(PREF.THEME, DEF.THEME)) {
-        case THEME.RED:
-          setTheme(R.style.Theme_Doodle_Red);
-          break;
-        case THEME.YELLOW:
-          setTheme(R.style.Theme_Doodle_Yellow);
-          break;
-        case THEME.LIME:
-          setTheme(R.style.Theme_Doodle_Lime);
-          break;
-        case THEME.GREEN:
-          setTheme(R.style.Theme_Doodle_Green);
-          break;
-        case THEME.TURQUOISE:
-          setTheme(R.style.Theme_Doodle_Turquoise);
-          break;
-        case THEME.TEAL:
-          setTheme(R.style.Theme_Doodle_Teal);
-          break;
-        case THEME.BLUE:
-          setTheme(R.style.Theme_Doodle_Blue);
-          break;
-        case THEME.PURPLE:
-          setTheme(R.style.Theme_Doodle_Purple);
-          break;
-        case THEME.AMOLED:
-          setTheme(R.style.Theme_Doodle_Amoled);
-          break;
-        default:
-          if (DynamicColors.isDynamicColorAvailable()) {
-            DynamicColors.applyToActivityIfAvailable(this);
-          } else {
-            setTheme(R.style.Theme_Doodle_Yellow);
-          }
-          break;
-      }
+      UiUtil.setTheme(this, sharedPrefs);
 
       if (bundle == null) {
         bundle = new Bundle();
@@ -153,7 +119,9 @@ public class LauncherActivity extends MainActivity {
         try {
           assert splashContent != null;
           ViewUtil.startIcon(splashContent.findDrawableByLayerId(R.id.splash_logo));
-          new Handler(Looper.getMainLooper()).postDelayed(this::startNewMainActivity, 900);
+          new Handler(Looper.getMainLooper()).postDelayed(
+              this::startNewMainActivity, 900
+          );
         } catch (Exception e) {
           startNewMainActivity();
         }
@@ -171,7 +139,7 @@ public class LauncherActivity extends MainActivity {
     }
     SharedPreferences sharedPrefs = new PrefsUtil(base).checkForMigrations().getSharedPrefs();
     // Night mode
-    int modeNight = sharedPrefs.getInt(PREF.MODE, DEF.MODE);
+    int modeNight = sharedPrefs.getInt(PREF.UI_MODE, DEF.UI_MODE);
     int uiMode = base.getResources().getConfiguration().uiMode;
     switch (modeNight) {
       case AppCompatDelegate.MODE_NIGHT_NO:

@@ -38,7 +38,6 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetBehavior.BottomSheetCallback;
 import com.google.android.material.bottomsheet.CustomBottomSheetDialog;
 import com.google.android.material.bottomsheet.CustomBottomSheetDialogFragment;
-import com.google.android.material.elevation.SurfaceColors;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.activity.MainActivity;
 import xyz.zedler.patrick.doodle.util.ResUtil;
@@ -47,14 +46,13 @@ import xyz.zedler.patrick.doodle.util.ViewUtil;
 
 public class BaseBottomSheetDialogFragment extends CustomBottomSheetDialogFragment {
 
-  private static final String TAG = "BaseBottomSheet";
-
   private MainActivity activity;
-  private Dialog dialog;
+  private CustomBottomSheetDialog dialog;
   private View decorView;
   private ViewUtil viewUtil;
   private boolean lightNavBar;
   private int backgroundColor;
+  private FullWidthListener fullWidthListener;
 
   @Override
   public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -68,12 +66,12 @@ public class BaseBottomSheetDialogFragment extends CustomBottomSheetDialogFragme
   @Override
   public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
     dialog = new CustomBottomSheetDialog(requireContext());
+    dialog.setDismissWithAnimation(true);
 
-    decorView = dialog.getWindow().getDecorView();
-    if (decorView == null) {
+    if (dialog.getWindow() == null) {
       return dialog;
     }
-
+    decorView = dialog.getWindow().getDecorView();
     decorView.getViewTreeObserver().addOnGlobalLayoutListener(
         new ViewTreeObserver.OnGlobalLayoutListener() {
           @Override
@@ -83,8 +81,7 @@ public class BaseBottomSheetDialogFragment extends CustomBottomSheetDialogFragme
             if (container == null || sheet == null) {
               return;
             }
-
-            backgroundColor = SurfaceColors.SURFACE_3.getColor(activity);
+            backgroundColor = ResUtil.getColor(activity, R.attr.colorSurfaceContainerLow);
             PaintDrawable background = new PaintDrawable(backgroundColor);
             int radius = UiUtil.dpToPx(requireContext(), 28);
             setCornerRadius(background, radius);
@@ -94,8 +91,11 @@ public class BaseBottomSheetDialogFragment extends CustomBottomSheetDialogFragme
             int peekHeightHalf = UiUtil.getDisplayHeight(requireContext()) / 2;
             behavior.setPeekHeight(peekHeightHalf);
 
-            boolean isFullWidth =
-                behavior.getMaxWidth() >= UiUtil.getDisplayWidth(requireContext());
+            boolean isFullWidth
+                = behavior.getMaxWidth() >= UiUtil.getDisplayWidth(requireContext());
+            if (fullWidthListener != null) {
+              fullWidthListener.onKnowIfFullWidth(isFullWidth);
+            }
 
             ViewCompat.setOnApplyWindowInsetsListener(decorView, (view, insets) -> {
               int insetTop = insets.getInsets(Type.systemBars()).top;
@@ -191,10 +191,12 @@ public class BaseBottomSheetDialogFragment extends CustomBottomSheetDialogFragme
           window.setNavigationBarColor(
               isDarkModeActive ? UiUtil.SCRIM_DARK_DIALOG : UiUtil.SCRIM_LIGHT_DIALOG
           );
-          window.setNavigationBarDividerColor(ResUtil.getColorOutlineSecondary(activity));
+          window.setNavigationBarDividerColor(
+              ResUtil.getColor(activity, R.attr.colorOutlineVariant)
+          );
         }
       }
-    } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) { // 28
+    } else if (Build.VERSION.SDK_INT == Build.VERSION_CODES.P) { // 28
       window.setStatusBarColor(Color.TRANSPARENT);
       lightNavBar = !isDarkModeActive && isOrientationPortraitOrNavAtBottom;
       if (isOrientationPortraitOrNavAtBottom) {
@@ -203,7 +205,9 @@ public class BaseBottomSheetDialogFragment extends CustomBottomSheetDialogFragme
         window.setNavigationBarColor(
             isDarkModeActive ? UiUtil.SCRIM_DARK_DIALOG : UiUtil.SCRIM_LIGHT_DIALOG
         );
-        window.setNavigationBarDividerColor(ResUtil.getColorOutlineSecondary(activity));
+        window.setNavigationBarDividerColor(
+            ResUtil.getColor(activity, R.attr.colorOutlineVariant)
+        );
       }
     } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) { // 26
       window.setStatusBarColor(Color.TRANSPARENT);
@@ -243,5 +247,13 @@ public class BaseBottomSheetDialogFragment extends CustomBottomSheetDialogFragme
   }
 
   public void applyBottomInset(int bottom) {
+  }
+
+  public void setFullWidthListener(FullWidthListener listener) {
+    fullWidthListener = listener;
+  }
+
+  public interface FullWidthListener {
+    void onKnowIfFullWidth(boolean isFullWidth);
   }
 }

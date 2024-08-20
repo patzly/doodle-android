@@ -28,7 +28,6 @@ import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.os.Build;
 import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
 import android.os.Bundle;
@@ -69,6 +68,7 @@ import xyz.zedler.patrick.doodle.util.UiUtil;
  * `paddingBottomSystemWindowInsets`, `paddingLeftSystemWindowInsets`, or
  * `paddingRightSystemWindowInsets` are set to true in the style.
  */
+@SuppressLint("RestrictedApi")
 public class CustomBottomSheetDialog extends AppCompatDialog {
 
   private BottomSheetBehavior<FrameLayout> behavior;
@@ -472,12 +472,12 @@ public class CustomBottomSheetDialog extends AppCompatDialog {
   }
 
   public static void setLightStatusBar(@NonNull View view, boolean isLight) {
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+    if (VERSION.SDK_INT >= VERSION_CODES.R && view.getWindowInsetsController() != null) {
       view.getWindowInsetsController().setSystemBarsAppearance(
           isLight ? WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS : 0,
           WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS
       );
-    } else if (Build.VERSION.SDK_INT >= VERSION_CODES.M) {
+    } else if (VERSION.SDK_INT >= VERSION_CODES.M) {
       int flags = view.getSystemUiVisibility();
       if (isLight) {
         flags |= View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR;

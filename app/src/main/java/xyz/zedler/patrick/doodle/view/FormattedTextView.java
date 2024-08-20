@@ -126,7 +126,7 @@ public class FormattedTextView extends LinearLayout {
         0
     );
     textView.setLayoutParams(getVerticalLayoutParams(16, keepDistance ? 16 : 0));
-    textView.setTextColor(ResUtil.getColorAttr(context, R.attr.colorOnBackground));
+    textView.setTextColor(ResUtil.getColor(context, R.attr.colorOnBackground));
     textView.setText(HtmlCompat.fromHtml(text, HtmlCompat.FROM_HTML_MODE_LEGACY));
     return textView;
   }
@@ -156,7 +156,7 @@ public class FormattedTextView extends LinearLayout {
         break;
     }
     TextViewCompat.setTextAppearance(textView, resId);
-    textView.setTextColor(ResUtil.getColorAttr(context, R.attr.colorOnBackground));
+    textView.setTextColor(ResUtil.getColor(context, R.attr.colorOnBackground));
     return textView;
   }
 
@@ -167,7 +167,7 @@ public class FormattedTextView extends LinearLayout {
         0
     );
     textView.setLayoutParams(getVerticalLayoutParams(16, 16));
-    textView.setTextColor(ResUtil.getColorAttr(context, R.attr.colorPrimary));
+    textView.setTextColor(ResUtil.getColor(context, R.attr.colorPrimary));
     textView.setText(text);
     textView.setOnClickListener(
         v -> context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(link)))
@@ -200,7 +200,7 @@ public class FormattedTextView extends LinearLayout {
     GradientDrawable shape = new GradientDrawable();
     shape.setShape(GradientDrawable.OVAL);
     shape.setSize(bulletSize, bulletSize);
-    shape.setColor(ResUtil.getColorAttr(context, R.attr.colorOnBackground));
+    shape.setColor(ResUtil.getColor(context, R.attr.colorOnBackground));
     viewBullet.setBackground(shape);
 
     MaterialTextView textViewHeight = new MaterialTextView(
@@ -237,7 +237,6 @@ public class FormattedTextView extends LinearLayout {
     }
     textView.setText(HtmlCompat.fromHtml(text, HtmlCompat.FROM_HTML_MODE_LEGACY));
 
-
     LinearLayout linearLayout = new LinearLayout(context);
     linearLayout.setLayoutParams(
         getVerticalLayoutParams(16, isLast ? 16 : 8)
@@ -249,10 +248,10 @@ public class FormattedTextView extends LinearLayout {
   }
 
   private MaterialCardView getMessage(String text, boolean useErrorColors) {
-    int colorSurface = ResUtil.getColorAttr(
-        context, useErrorColors ? R.attr.colorErrorContainer : R.attr.colorSurfaceVariant
+    int colorSurface = ResUtil.getColor(
+        context, useErrorColors ? R.attr.colorErrorContainer : R.attr.colorSurfaceContainerHighest
     );
-    int colorOnSurface = ResUtil.getColorAttr(
+    int colorOnSurface = ResUtil.getColor(
         context, useErrorColors ? R.attr.colorOnErrorContainer : R.attr.colorOnSurfaceVariant
     );
     MaterialCardView cardView = new MaterialCardView(context);

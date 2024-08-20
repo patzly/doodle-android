@@ -50,7 +50,6 @@ import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.google.android.material.card.MaterialCardView;
-import com.google.android.material.elevation.SurfaceColors;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -223,7 +222,7 @@ public class ViewUtil {
     valueAnimator.addUpdateListener(animation -> {
       cardView.setStrokeColor(
           ColorUtils.blendARGB(
-              ResUtil.getColorOutline(context),
+              ResUtil.getColor(context, R.attr.colorOutline),
               ContextCompat.getColor(context, resId),
               (float) valueAnimator.getAnimatedValue()
           )
@@ -261,7 +260,7 @@ public class ViewUtil {
     Arrays.fill(radii, UiUtil.dpToPx(context, 16));
     RoundRectShape rect = new RoundRectShape(radii, null, null);
     ShapeDrawable shape = new ShapeDrawable(rect);
-    shape.getPaint().setColor(SurfaceColors.SURFACE_3.getColor(context));
+    shape.getPaint().setColor(ResUtil.getColor(context, R.attr.colorSurfaceContainerLow));
     LayerDrawable layers = new LayerDrawable(new ShapeDrawable[]{shape});
     layers.setLayerInset(
         0,
@@ -287,7 +286,7 @@ public class ViewUtil {
     Arrays.fill(radii, UiUtil.dpToPx(context, 16));
     RoundRectShape rect = new RoundRectShape(radii, null, null);
     ShapeDrawable shape = new ShapeDrawable(rect);
-    shape.getPaint().setColor(ResUtil.getColorAttr(context, R.attr.colorSecondaryContainer));
+    shape.getPaint().setColor(ResUtil.getColor(context, R.attr.colorSecondaryContainer));
     LayerDrawable layers = new LayerDrawable(new ShapeDrawable[]{shape});
     layers.setLayerInset(
         0,

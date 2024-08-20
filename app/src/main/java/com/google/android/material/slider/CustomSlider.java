@@ -231,7 +231,7 @@ public class CustomSlider extends Slider {
   @Override
   protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
     super.onLayout(changed, left, top, right, bottom);
-    if (Build.VERSION.SDK_INT < 29) {
+    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.Q) {
       return;
     }
     exclusionRect.set(left, top, right, bottom);

@@ -56,10 +56,6 @@ import androidx.navigation.NavController;
 import androidx.navigation.NavDirections;
 import androidx.navigation.NavOptions;
 import androidx.navigation.fragment.NavHostFragment;
-import com.google.android.material.color.DynamicColors;
-import com.google.android.material.color.DynamicColorsOptions;
-import com.google.android.material.color.HarmonizedColors;
-import com.google.android.material.color.HarmonizedColorsOptions;
 import com.google.android.material.snackbar.Snackbar;
 import java.util.Locale;
 import xyz.zedler.patrick.doodle.BuildConfig;
@@ -67,7 +63,6 @@ import xyz.zedler.patrick.doodle.Constants.ACTION;
 import xyz.zedler.patrick.doodle.Constants.DEF;
 import xyz.zedler.patrick.doodle.Constants.EXTRA;
 import xyz.zedler.patrick.doodle.Constants.PREF;
-import xyz.zedler.patrick.doodle.Constants.THEME;
 import xyz.zedler.patrick.doodle.NavMainDirections;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.behavior.SystemBarBehavior;
@@ -113,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
 
     // DARK MODE
 
-    int modeNight = sharedPrefs.getInt(PREF.MODE, DEF.MODE);
+    int modeNight = sharedPrefs.getInt(PREF.UI_MODE, DEF.UI_MODE);
     int uiMode = getResources().getConfiguration().uiMode;
     switch (modeNight) {
       case AppCompatDelegate.MODE_NIGHT_NO:
@@ -138,49 +133,7 @@ public class MainActivity extends AppCompatActivity {
     // Don't set uiMode here, won't let FOLLOW_SYSTEM apply correctly
     resApp.updateConfiguration(configApp, getResources().getDisplayMetrics());
 
-    switch (sharedPrefs.getString(PREF.THEME, DEF.THEME)) {
-      case THEME.RED:
-        setTheme(R.style.Theme_Doodle_Red);
-        break;
-      case THEME.YELLOW:
-        setTheme(R.style.Theme_Doodle_Yellow);
-        break;
-      case THEME.LIME:
-        setTheme(R.style.Theme_Doodle_Lime);
-        break;
-      case THEME.GREEN:
-        setTheme(R.style.Theme_Doodle_Green);
-        break;
-      case THEME.TURQUOISE:
-        setTheme(R.style.Theme_Doodle_Turquoise);
-        break;
-      case THEME.TEAL:
-        setTheme(R.style.Theme_Doodle_Teal);
-        break;
-      case THEME.BLUE:
-        setTheme(R.style.Theme_Doodle_Blue);
-        break;
-      case THEME.PURPLE:
-        setTheme(R.style.Theme_Doodle_Purple);
-        break;
-      case THEME.AMOLED:
-        setTheme(R.style.Theme_Doodle_Amoled);
-        break;
-      default:
-        if (DynamicColors.isDynamicColorAvailable()) {
-          DynamicColors.applyToActivityIfAvailable(
-              this,
-              new DynamicColorsOptions.Builder().setOnAppliedCallback(
-                  activity -> HarmonizedColors.applyToContextIfAvailable(
-                      this, HarmonizedColorsOptions.createMaterialDefaults()
-                  )
-              ).build()
-          );
-        } else {
-          setTheme(R.style.Theme_Doodle_Yellow);
-        }
-        break;
-    }
+    UiUtil.setTheme(this, sharedPrefs);
 
     Bundle bundleInstanceState = getIntent().getBundleExtra(EXTRA.INSTANCE_STATE);
     super.onCreate(bundleInstanceState != null ? bundleInstanceState : savedInstanceState);
@@ -234,7 +187,7 @@ public class MainActivity extends AppCompatActivity {
 
     binding.fabMain.setRippleColor(
         ColorStateList.valueOf(
-            ResUtil.getColorAttr(this, R.attr.colorOnPrimaryContainer, 0.07f)
+            ResUtil.getColor(this, R.attr.colorOnPrimaryContainer, 0.07f)
         )
     );
 
@@ -289,7 +242,7 @@ public class MainActivity extends AppCompatActivity {
     } else {
       SharedPreferences sharedPrefs = new PrefsUtil(base).checkForMigrations().getSharedPrefs();
       // Night mode
-      int modeNight = sharedPrefs.getInt(PREF.MODE, DEF.MODE);
+      int modeNight = sharedPrefs.getInt(PREF.UI_MODE, DEF.UI_MODE);
       int uiMode = base.getResources().getConfiguration().uiMode;
       switch (modeNight) {
         case AppCompatDelegate.MODE_NIGHT_NO:

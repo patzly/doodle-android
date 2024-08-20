@@ -31,6 +31,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat.Type;
 import androidx.core.widget.NestedScrollView;
 import com.google.android.material.appbar.AppBarLayout;
+import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.util.ResUtil;
 import xyz.zedler.patrick.doodle.util.UiUtil;
 
@@ -239,7 +240,7 @@ public class SystemBarBehavior {
     boolean isOrientationPortrait = UiUtil.isOrientationPortrait(activity);
     boolean isDarkModeActive = UiUtil.isDarkModeActive(activity);
 
-    int colorScrim = ResUtil.getColorAttr(activity, android.R.attr.colorBackground, 0.7f);
+    int colorScrim = ResUtil.getColor(activity, R.attr.colorSurface, 0.7f);
 
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) { // 29
       window.setStatusBarColor(Color.TRANSPARENT);
@@ -258,8 +259,10 @@ public class SystemBarBehavior {
               isScrollable ? colorScrim : Color.parseColor("#01000000")
           );
         } else {
-          window.setNavigationBarDividerColor(ResUtil.getColorOutlineSecondary(activity));
-          window.setNavigationBarColor(ResUtil.getColorBg(activity));
+          window.setNavigationBarDividerColor(
+              ResUtil.getColor(activity, R.attr.colorOutlineVariant)
+          );
+          window.setNavigationBarColor(ResUtil.getColor(activity, R.attr.colorSurface));
         }
       }
     } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) { // 28
@@ -271,8 +274,10 @@ public class SystemBarBehavior {
       if (isOrientationPortrait) {
         window.setNavigationBarColor(isScrollable ? colorScrim : Color.TRANSPARENT);
       } else {
-        window.setNavigationBarDividerColor(ResUtil.getColorOutlineSecondary(activity));
-        window.setNavigationBarColor(ResUtil.getColorBg(activity));
+        window.setNavigationBarDividerColor(
+            ResUtil.getColor(activity, R.attr.colorOutlineVariant)
+        );
+        window.setNavigationBarColor(ResUtil.getColor(activity, R.attr.colorSurface));
       }
     } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) { // 26
       window.setStatusBarColor(Color.TRANSPARENT);

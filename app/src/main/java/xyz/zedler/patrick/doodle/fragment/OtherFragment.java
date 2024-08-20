@@ -22,6 +22,8 @@ package xyz.zedler.patrick.doodle.fragment;
 import android.content.ComponentName;
 import android.content.pm.PackageManager;
 import android.os.Build;
+import android.os.Build.VERSION;
+import android.os.Build.VERSION_CODES;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
@@ -34,6 +36,7 @@ import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.StyleRes;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.view.ContextThemeWrapper;
 import androidx.core.content.ContextCompat;
@@ -42,6 +45,7 @@ import com.google.android.material.divider.MaterialDivider;
 import com.google.android.material.snackbar.BaseTransientBottomBar.BaseCallback;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.snackbar.Snackbar.Callback;
+import xyz.zedler.patrick.doodle.Constants.CONTRAST;
 import xyz.zedler.patrick.doodle.Constants.DEF;
 import xyz.zedler.patrick.doodle.Constants.EXTRA;
 import xyz.zedler.patrick.doodle.Constants.PREF;
@@ -105,7 +109,7 @@ public class OtherFragment extends BaseFragment
     setUpThemeSelection();
 
     int id;
-    switch (getSharedPrefs().getInt(PREF.MODE, DEF.MODE)) {
+    switch (getSharedPrefs().getInt(PREF.UI_MODE, DEF.UI_MODE)) {
       case AppCompatDelegate.MODE_NIGHT_NO:
         id = R.id.button_other_theme_light;
         break;
@@ -129,7 +133,7 @@ public class OtherFragment extends BaseFragment
       } else {
         pref = AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
       }
-      getSharedPrefs().edit().putInt(PREF.MODE, pref).apply();
+      getSharedPrefs().edit().putInt(PREF.UI_MODE, pref).apply();
       performHapticClick();
       activity.restartToApply(
           0, getInstanceState(), false, true
@@ -296,8 +300,7 @@ public class OtherFragment extends BaseFragment
   private void setUpThemeSelection() {
     boolean hasDynamic = DynamicColors.isDynamicColorAvailable();
     ViewGroup container = binding.linearOtherThemeContainer;
-    int colorsCount = 8;
-    for (int i = hasDynamic ? -1 : 0; i <= colorsCount; i++) {
+    for (int i = hasDynamic ? -1 : 0; i < 4; i++) {
       String name;
       int resId;
       switch (i) {
@@ -307,65 +310,44 @@ public class OtherFragment extends BaseFragment
           break;
         case 0:
           name = THEME.RED;
-          resId = R.style.Theme_Doodle_Red;
+          resId = getContrastThemeResId(
+              R.style.Theme_Doodle_Red,
+              R.style.ThemeOverlay_Doodle_Red_MediumContrast,
+              R.style.ThemeOverlay_Doodle_Red_HighContrast
+          );
           break;
-        /*case 1:
-          name = THEME.YELLOW;
-          resId = R.style.Theme_Doodle_Yellow;
-          break;*/
         case 2:
-          name = THEME.LIME;
-          resId = R.style.Theme_Doodle_Lime;
+          name = THEME.GREEN;
+          resId = getContrastThemeResId(
+              R.style.Theme_Doodle_Green,
+              R.style.ThemeOverlay_Doodle_Green_MediumContrast,
+              R.style.ThemeOverlay_Doodle_Green_HighContrast
+          );
           break;
         case 3:
-          name = THEME.GREEN;
-          resId = R.style.Theme_Doodle_Green;
-          break;
-        case 4:
-          name = THEME.TURQUOISE;
-          resId = R.style.Theme_Doodle_Turquoise;
-          break;
-        case 5:
-          name = THEME.TEAL;
-          resId = R.style.Theme_Doodle_Teal;
-          break;
-        case 6:
           name = THEME.BLUE;
-          resId = R.style.Theme_Doodle_Blue;
-          break;
-        case 7:
-          name = THEME.PURPLE;
-          resId = R.style.Theme_Doodle_Purple;
-          break;
-        case 8:
-          name = THEME.AMOLED;
-          resId = R.style.Theme_Doodle_Amoled;
+          resId = getContrastThemeResId(
+              R.style.Theme_Doodle_Blue,
+              R.style.ThemeOverlay_Doodle_Blue_MediumContrast,
+              R.style.ThemeOverlay_Doodle_Blue_HighContrast
+          );
           break;
         default:
           name = THEME.YELLOW;
-          resId = R.style.Theme_Doodle_Yellow;
+          resId = getContrastThemeResId(
+              R.style.Theme_Doodle_Yellow,
+              R.style.ThemeOverlay_Doodle_Yellow_MediumContrast,
+              R.style.ThemeOverlay_Doodle_Yellow_HighContrast
+          );
           break;
       }
 
       SelectionCardView card = new SelectionCardView(activity);
-      card.setScrimEnabled(false, false);
-      int color;
-      if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S && i == -1) {
-        color = ContextCompat.getColor(
-            activity,
-            UiUtil.isDarkModeActive(activity)
-                ? android.R.color.system_accent1_700
-                : android.R.color.system_accent1_100
-        );
-      } else if (i == colorsCount) {
-        // Amoled theme selection card
-        color = UiUtil.isDarkModeActive(activity) ? 0x484848 : 0xe3e3e3;
-      } else {
-        color = ResUtil.getColorAttr(
-            new ContextThemeWrapper(activity, resId), R.attr.colorPrimaryContainer
-        );
-      }
-      card.setCardBackgroundColor(color);
+      card.setNestedContext(
+          i == -1 && VERSION.SDK_INT >= VERSION_CODES.S
+              ? DynamicColors.wrapContextIfAvailable(activity)
+              : new ContextThemeWrapper(activity, resId)
+      );
       card.setOnClickListener(v -> {
         if (!card.isChecked()) {
           card.startCheckedIcon();
@@ -375,7 +357,7 @@ public class OtherFragment extends BaseFragment
           card.setChecked(true);
           getSharedPrefs().edit().putString(PREF.THEME, name).apply();
           activity.restartToApply(
-              100, getInstanceState(), false, true
+              100, getInstanceState(), true, false
           );
         }
       });
@@ -413,8 +395,24 @@ public class OtherFragment extends BaseFragment
     Bundle bundleInstanceState = activity.getIntent().getBundleExtra(EXTRA.INSTANCE_STATE);
     if (bundleInstanceState != null) {
       binding.scrollOtherTheme.scrollTo(
-          bundleInstanceState.getInt(EXTRA.SCROLL_POSITION + 1, 0), 0
+          bundleInstanceState.getInt(EXTRA.SCROLL_POSITION, 0),
+          0
       );
+    }
+  }
+
+  private int getContrastThemeResId(
+      @StyleRes int resIdStandard,
+      @StyleRes int resIdMedium,
+      @StyleRes int resIdHigh
+  ) {
+    switch (getSharedPrefs().getString(PREF.UI_CONTRAST, DEF.UI_CONTRAST)) {
+      case CONTRAST.MEDIUM:
+        return resIdMedium;
+      case CONTRAST.HIGH:
+        return resIdHigh;
+      default:
+        return resIdStandard;
     }
   }
 

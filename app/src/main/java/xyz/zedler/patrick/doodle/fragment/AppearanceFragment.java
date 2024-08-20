@@ -313,7 +313,7 @@ public class AppearanceFragment extends BaseFragment
             R.string.appearance_colors_description_one_ui
         );
         binding.textAppearanceColorsDescription.setTextColor(
-            ResUtil.getColorAttr(activity, R.attr.colorError)
+            ResUtil.getColor(activity, R.attr.colorError)
         );
         binding.textAppearanceColorsDescription.setAlpha(1);
       } else {

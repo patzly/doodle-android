@@ -80,33 +80,6 @@ public class ResUtil {
     return typedValue.data;
   }
 
-  @Deprecated
-  public static int getColorAttr(Context context, @AttrRes int resId) {
-    TypedValue typedValue = new TypedValue();
-    context.getTheme().resolveAttribute(resId, typedValue, true);
-    return typedValue.data;
-  }
-
-  @Deprecated
-  public static int getColorAttr(Context context, @AttrRes int resId, float alpha) {
-    return ColorUtils.setAlphaComponent(getColorAttr(context, resId), (int) (alpha * 255));
-  }
-
-  @Deprecated
-  public static int getColorBg(Context context) {
-    return getColorAttr(context, android.R.attr.colorBackground);
-  }
-
-  @Deprecated
-  public static int getColorOutline(Context context) {
-    return getColorAttr(context, R.attr.colorOutline);
-  }
-
-  @Deprecated
-  public static int getColorOutlineSecondary(Context context) {
-    return getColorAttr(context, R.attr.colorOutline, 0.4f);
-  }
-
   public static int getColorHighlight(Context context) {
     return getColor(context, R.attr.colorSecondary, 0.09f);
   }
@@ -119,13 +92,6 @@ public class ResUtil {
           tintIcon(context, item.getIcon());
         }
       }
-    }
-  }
-
-  @Deprecated
-  public static void tintMenuItemIcon(Context context, MenuItem item) {
-    if (item != null) {
-      tintIcon(context, item.getIcon());
     }
   }
 

@@ -42,7 +42,7 @@
         <path
           android:name="path_2"
           android:pathData="M 8 7 L 16 7 C 16.265 7 16.52 7.105 16.707 7.293 C 16.895 7.48 17 7.735 17 8 L 17 16 C 17 16.265 16.895 16.52 16.707 16.707 C 16.52 16.895 16.265 17 16 17 L 8 17 C 7.735 17 7.48 16.895 7.293 16.707 C 7.105 16.52 7 16.265 7 16 L 7 8 C 7 7.735 7.105 7.48 7.293 7.293 C 7.48 7.105 7.735 7 8 7"
-          android:fillColor="?android:attr/colorBackground"
+          android:fillColor="?attr/colorSurface"
           android:strokeWidth="1" />
         <path
           android:name="path_3"

@@ -25,7 +25,7 @@
   <item
     android:id="@+id/action_open_link"
     android:title="@string/action_open_link"
-    android:icon="@drawable/ic_round_open_in_browser_anim"
+    android:icon="@drawable/ic_rounded_open_in_browser"
     app:showAsAction="always" />
 
 </menu>

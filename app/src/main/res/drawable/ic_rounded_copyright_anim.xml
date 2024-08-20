@@ -1,20 +1,20 @@
 <!--
-  ~ This file is part of Doodle Android.
+  ~ This file is part of Tack Android.
   ~
-  ~ Doodle Android is free software: you can redistribute it and/or modify
+  ~ Tack Android is free software: you can redistribute it and/or modify
   ~ it under the terms of the GNU General Public License as published by
   ~ the Free Software Foundation, either version 3 of the License, or
   ~ (at your option) any later version.
   ~
-  ~ Doodle Android is distributed in the hope that it will be useful,
+  ~ Tack Android is distributed in the hope that it will be useful,
   ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
-  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
   ~ GNU General Public License for more details.
   ~
   ~ You should have received a copy of the GNU General Public License
-  ~ along with Doodle Android. If not, see <http://www.gnu.org/licenses/>.
+  ~ along with Tack Android. If not, see http://www.gnu.org/licenses/.
   ~
-  ~ Copyright (c) 2019-2024 by Patrick Zedler
+  ~ Copyright (c) 2020-2024 by Patrick Zedler
   -->
 
 <animated-vector
@@ -25,16 +25,16 @@
       android:name="vector"
       android:width="24dp"
       android:height="24dp"
-      android:viewportWidth="24"
-      android:viewportHeight="24">
+      android:viewportWidth="960"
+      android:viewportHeight="960">
       <group
         android:name="group"
-        android:pivotX="16"
-        android:pivotY="18">
+        android:pivotX="480"
+        android:pivotY="480">
         <path
           android:name="path"
-          android:pathData="M12,2C6.49,2 2,6.49 2,12s4.49,10 10,10c1.38,0 2.5,-1.12 2.5,-2.5c0,-0.61 -0.23,-1.2 -0.64,-1.67c-0.08,-0.1 -0.13,-0.21 -0.13,-0.33c0,-0.28 0.22,-0.5 0.5,-0.5H16c3.31,0 6,-2.69 6,-6C22,6.04 17.51,2 12,2zM17.5,13c-0.83,0 -1.5,-0.67 -1.5,-1.5c0,-0.83 0.67,-1.5 1.5,-1.5s1.5,0.67 1.5,1.5C19,12.33 18.33,13 17.5,13zM14.5,9C13.67,9 13,8.33 13,7.5C13,6.67 13.67,6 14.5,6S16,6.67 16,7.5C16,8.33 15.33,9 14.5,9zM5,11.5C5,10.67 5.67,10 6.5,10S8,10.67 8,11.5C8,12.33 7.33,13 6.5,13S5,12.33 5,11.5zM11,7.5C11,8.33 10.33,9 9.5,9S8,8.33 8,7.5C8,6.67 8.67,6 9.5,6S11,6.67 11,7.5z"
-          android:fillColor="#000"
+          android:pathData="M480,880q-83,0 -156,-31.5T197,763q-54,-54 -85.5,-127T80,480q0,-83 31.5,-156T197,197q54,-54 127,-85.5T480,80q83,0 156,31.5T763,197q54,54 85.5,127T880,480q0,83 -31.5,156T763,763q-54,54 -127,85.5T480,880ZM480,800q134,0 227,-93t93,-227q0,-134 -93,-227t-227,-93q-134,0 -227,93t-93,227q0,134 93,227t227,93ZM480,480ZM400,640h160q17,0 28.5,-11.5T600,600v-40q0,-17 -11.5,-28.5T560,520q-17,0 -28.5,11.5T520,560h-80v-160h80q0,17 11.5,28.5T560,440q17,0 28.5,-11.5T600,400v-40q0,-17 -11.5,-28.5T560,320L400,320q-17,0 -28.5,11.5T360,360v240q0,17 11.5,28.5T400,640Z"
+          android:fillColor="#000000"
           android:strokeWidth="1" />
       </group>
     </vector>
@@ -46,30 +46,22 @@
           android:propertyName="rotation"
           android:duration="100"
           android:valueFrom="0"
-          android:valueTo="20"
+          android:valueTo="45"
           android:valueType="floatType"
           android:interpolator="@android:interpolator/fast_out_slow_in" />
         <objectAnimator
           android:propertyName="rotation"
           android:startOffset="100"
           android:duration="100"
-          android:valueFrom="20"
-          android:valueTo="-10"
+          android:valueFrom="45"
+          android:valueTo="-23"
           android:valueType="floatType"
           android:interpolator="@android:interpolator/fast_out_slow_in" />
         <objectAnimator
           android:propertyName="rotation"
           android:startOffset="200"
-          android:duration="50"
-          android:valueFrom="-10"
-          android:valueTo="5"
-          android:valueType="floatType"
-          android:interpolator="@android:interpolator/fast_out_slow_in" />
-        <objectAnimator
-          android:propertyName="rotation"
-          android:startOffset="250"
-          android:duration="50"
-          android:valueFrom="5"
+          android:duration="100"
+          android:valueFrom="-23"
           android:valueTo="0"
           android:valueType="floatType"
           android:interpolator="@android:interpolator/fast_out_slow_in" />

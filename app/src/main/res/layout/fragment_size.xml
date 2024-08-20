@@ -255,7 +255,7 @@
             <ImageView
               android:id="@+id/image_size_zoom_damping"
               style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-              android:src="@drawable/ic_round_animation_anim"
+              android:src="@drawable/ic_rounded_animation_anim"
               tools:ignore="ContentDescription" />
 
             <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">
@@ -377,7 +377,7 @@
           <ImageView
             android:id="@+id/image_size_zoom_duration"
             style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-            android:src="@drawable/ic_round_timer_anim"
+            android:src="@drawable/ic_rounded_timer_anim"
             tools:ignore="ContentDescription" />
 
           <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">

@@ -25,7 +25,7 @@
   <item
     android:id="@+id/action_reload"
     android:title="@string/action_reload"
-    android:icon="@drawable/ic_round_refresh_anim"
+    android:icon="@drawable/ic_rounded_refresh_anim"
     app:iconTint="?attr/colorOnSurfaceVariant"
     app:showAsAction="ifRoom" />
 

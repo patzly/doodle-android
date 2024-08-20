@@ -65,15 +65,6 @@
         android:paddingStart="16dp"
         android:paddingEnd="16dp" />
 
-      <TextView
-        style="@style/Widget.Doodle.TextView.Paragraph"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
-        android:text="@string/msg_feedback_more"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp" />
-
       <LinearLayout
         android:id="@+id/linear_feedback_rate"
         style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable">
@@ -81,7 +72,7 @@
         <ImageView
           android:id="@+id/image_feedback_rate"
           style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-          android:src="@drawable/ic_round_star_anim"
+          android:src="@drawable/ic_rounded_star"
           tools:ignore="ContentDescription" />
 
         <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
@@ -105,7 +96,7 @@
         <ImageView
           android:id="@+id/image_feedback_email"
           style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-          android:src="@drawable/ic_round_email"
+          android:src="@drawable/ic_rounded_mail"
           tools:ignore="ContentDescription" />
 
         <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
@@ -128,7 +119,7 @@
 
         <ImageView
           style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-          android:src="@drawable/ic_round_github"
+          android:src="@drawable/ic_rounded_code"
           tools:ignore="ContentDescription" />
 
         <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
@@ -151,7 +142,7 @@
 
         <ImageView
           style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-          android:src="@drawable/ic_round_share"
+          android:src="@drawable/ic_rounded_share"
           tools:ignore="ContentDescription" />
 
         <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">

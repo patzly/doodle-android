@@ -39,7 +39,6 @@ import androidx.annotation.Nullable;
 import androidx.annotation.StyleRes;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.view.ContextThemeWrapper;
-import androidx.core.content.ContextCompat;
 import com.google.android.material.color.DynamicColors;
 import com.google.android.material.divider.MaterialDivider;
 import com.google.android.material.snackbar.BaseTransientBottomBar.BaseCallback;
@@ -58,7 +57,6 @@ import xyz.zedler.patrick.doodle.behavior.SystemBarBehavior;
 import xyz.zedler.patrick.doodle.databinding.FragmentOtherBinding;
 import xyz.zedler.patrick.doodle.service.LiveWallpaperService;
 import xyz.zedler.patrick.doodle.util.LocaleUtil;
-import xyz.zedler.patrick.doodle.util.ResUtil;
 import xyz.zedler.patrick.doodle.util.UiUtil;
 import xyz.zedler.patrick.doodle.util.ViewUtil;
 import xyz.zedler.patrick.doodle.view.SelectionCardView;
@@ -140,6 +138,47 @@ public class OtherFragment extends BaseFragment
       );
     });
 
+    int idContrast;
+    switch (getSharedPrefs().getString(PREF.UI_CONTRAST, DEF.UI_CONTRAST)) {
+      case CONTRAST.MEDIUM:
+        idContrast = R.id.button_other_contrast_medium;
+        break;
+      case CONTRAST.HIGH:
+        idContrast = R.id.button_other_contrast_high;
+        break;
+      default:
+        idContrast = R.id.button_other_contrast_standard;
+        break;
+    }
+    binding.toggleOtherContrast.check(idContrast);
+    binding.toggleOtherContrast.addOnButtonCheckedListener((group, checkedId, isChecked) -> {
+      if (!isChecked) {
+        return;
+      }
+      String pref;
+      if (checkedId == R.id.button_other_contrast_medium) {
+        pref = CONTRAST.MEDIUM;
+      } else if (checkedId == R.id.button_other_contrast_high) {
+        pref = CONTRAST.HIGH;
+      } else {
+        pref = CONTRAST.STANDARD;
+      }
+      getSharedPrefs().edit().putString(PREF.UI_CONTRAST, pref).apply();
+      performHapticClick();
+      ViewUtil.startIcon(binding.imageSettingsContrast);
+      activity.restartToApply(
+          0, getInstanceState(), true, false
+      );
+    });
+    boolean enabled = !getSharedPrefs().getString(PREF.THEME, DEF.THEME).equals(THEME.DYNAMIC);
+    binding.toggleOtherContrast.setEnabled(enabled);
+    binding.textSettingsContrastDynamic.setVisibility(enabled ? View.GONE : View.VISIBLE);
+    binding.textSettingsContrastDynamic.setText(
+        VERSION.SDK_INT >= VERSION_CODES.UPSIDE_DOWN_CAKE
+            ? R.string.other_contrast_dynamic
+            : R.string.other_contrast_dynamic_unsupported
+    );
+
     boolean gpuOptionEnabled = Build.VERSION.SDK_INT >= Build.VERSION_CODES.O;
     ViewUtil.setEnabledAlpha(gpuOptionEnabled, false, binding.linearOtherGpu);
     ViewUtil.setEnabled(gpuOptionEnabled, binding.switchOtherGpu);
@@ -212,11 +251,9 @@ public class OtherFragment extends BaseFragment
       binding.switchOtherLauncher.toggle();
     } else if (id == R.id.linear_other_log) {
       performHapticClick();
-      ViewUtil.startIcon(binding.imageOtherLog);
       navigateToFragment(OtherFragmentDirections.actionOtherToLog());
     } else if (id == R.id.linear_other_reset && getViewUtil().isClickEnabled(id)) {
       performHapticClick();
-      ViewUtil.startIcon(binding.imageOtherReset);
       activity.showSnackbar(
           activity.getSnackbar(
               R.string.msg_reset, Snackbar.LENGTH_LONG

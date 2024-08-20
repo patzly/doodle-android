@@ -24,8 +24,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -106,17 +104,15 @@ public class FeedbackBottomSheetDialogFragment extends BaseBottomSheetDialogFrag
           Intent.FLAG_ACTIVITY_NEW_DOCUMENT |
           Intent.FLAG_ACTIVITY_MULTIPLE_TASK |
           Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
-      new Handler(Looper.getMainLooper()).postDelayed(() -> {
-        try {
-          startActivity(goToMarket);
-        } catch (ActivityNotFoundException e) {
-          startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(
-              "http://play.google.com/store/apps/details?id="
-                  + requireActivity().getApplicationContext().getPackageName()
-          )));
-        }
-        dismiss();
-      }, 400);
+      try {
+        startActivity(goToMarket);
+      } catch (ActivityNotFoundException e) {
+        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(
+            "http://play.google.com/store/apps/details?id="
+                + requireActivity().getApplicationContext().getPackageName()
+        )));
+      }
+      dismiss();
     } else if (id == R.id.linear_feedback_email) {
       Intent intent = new Intent(Intent.ACTION_SENDTO);
       intent.setData(

@@ -1,8 +1,10 @@
-## 5.6.2
+## 6.0.0
 
-- New: Android 14 support
-- Improved: icons in overview
-- Improved: in-app navigation transitions
+- New: Android 15 support
+- New: dynamic contrast for app themes
+- Improved: icons replaced with new Material 3 symbols
+- Improved: in-app colors and navigation transitions
+- Improved: updated settings slider appearance
 - Fixed: unlock animation not working correctly on Android 14
 - Fixed: broken splash screen animation on Android 14
 - Fixed: jerky animations after device changed dark mode automatically with screen turned off
@@ -10,8 +12,6 @@
 - Fixed: deprecated Google Play developer profile link
 - Fixed: buttons state changing during navigation transition
 - Fixed: layout not displaying correctly on parallax page
-
-? Please report any crash so I can fix them! Crash log should be available at <b>Other options</b> > <b>Display logcat</b>.
 
 ## 5.6.1
 

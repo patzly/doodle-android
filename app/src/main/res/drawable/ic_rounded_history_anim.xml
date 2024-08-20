@@ -1,20 +1,20 @@
 <!--
-  ~ This file is part of Doodle Android.
+  ~ This file is part of Tack Android.
   ~
-  ~ Doodle Android is free software: you can redistribute it and/or modify
+  ~ Tack Android is free software: you can redistribute it and/or modify
   ~ it under the terms of the GNU General Public License as published by
   ~ the Free Software Foundation, either version 3 of the License, or
   ~ (at your option) any later version.
   ~
-  ~ Doodle Android is distributed in the hope that it will be useful,
+  ~ Tack Android is distributed in the hope that it will be useful,
   ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
-  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
   ~ GNU General Public License for more details.
   ~
   ~ You should have received a copy of the GNU General Public License
-  ~ along with Doodle Android. If not, see <http://www.gnu.org/licenses/>.
+  ~ along with Tack Android. If not, see http://www.gnu.org/licenses/.
   ~
-  ~ Copyright (c) 2019-2024 by Patrick Zedler
+  ~ Copyright (c) 2020-2024 by Patrick Zedler
   -->
 
 <animated-vector
@@ -25,33 +25,29 @@
       android:name="vector"
       android:width="24dp"
       android:height="24dp"
-      android:viewportWidth="24"
-      android:viewportHeight="24">
+      android:viewportWidth="960"
+      android:viewportHeight="960">
       <path
         android:name="path"
-        android:pathData="M 13 12 L 16.464 14"
-        android:strokeColor="#000"
-        android:strokeWidth="1.5"
-        android:strokeLineCap="round" />
+        android:pathData="m621.42,621.42c-15.67,15.67 -40.9,15.67 -56.57,0L451.72,508.28c-15.67,-15.67 -15.67,-40.9 -0,-56.57 15.67,-15.67 40.9,-15.67 56.57,-0l113.14,113.14c15.67,15.67 15.67,40.9 0,56.57z"
+        android:fillColor="#000000" />
       <group
         android:name="group_arrow"
-        android:pivotX="13"
-        android:pivotY="12">
+        android:pivotX="480"
+        android:pivotY="480">
         <path
           android:name="arrow"
-          android:pathData="M 13.26 3 C 8.17 2.86 4 6.95 4 12 L 2.21 12 C 1.76 12 1.54 12.54 1.86 12.85 L 4.65 15.65 C 4.85 15.85 5.16 15.85 5.36 15.65 L 8.15 12.85 C 8.46 12.54 8.24 12 7.79 12 L 6 12 C 6 8.1 9.18 4.95 13.1 5 C 16.82 5.05 19.95 8.18 20 11.9 C 20.05 15.81 16.9 19 13 19 C 11.39 19 9.9 18.45 8.72 17.52 C 8.32 17.21 7.76 17.24 7.4 17.6 C 6.98 18.02 7.01 18.73 7.48 19.09 C 9 20.29 10.91 21 13 21 C 18.05 21 22.14 16.83 22 11.74 C 21.87 7.05 17.95 3.13 13.26 3 Z"
-          android:fillColor="#000" />
+          android:pathData="m480,840q-126,0 -223,-76.5 -97,-76.5 -126,-195.5 -4,-15 6,-27.5 10,-12.5 27,-14.5 16,-2 29,6 13,8 18,24 24,90 99,147 75,57 170,57 117,0 198.5,-81.5Q760,597 760,480 760,363 678.5,281.5 597,200 480,200q-69,0 -129,32 -60,32 -101,88h70q17,0 28.5,11.5 11.5,11.5 11.5,28.5 0,17 -11.5,28.5Q337,400 320,400L160,400q-17,0 -28.5,-11.5Q120,377 120,360v-160q0,-17 11.5,-28.5 11.5,-11.5 28.5,-11.5 17,0 28.5,11.5 11.5,11.5 11.5,28.5v54q51,-64 124.5,-99 73.5,-35 155.5,-35 75,0 140.5,28.5 65.5,28.5 114,77 48.5,48.5 77,114 28.5,65.5 28.5,140.5 0,75 -28.5,140.5 -28.5,65.5 -77,114 -48.5,48.5 -114,77Q555,840 480,840Z"
+          android:fillColor="#000000" />
       </group>
       <group
         android:name="group_pointer"
-        android:pivotX="13"
-        android:pivotY="12">
+        android:pivotX="480"
+        android:pivotY="480">
         <path
           android:name="pointer"
-          android:pathData="M 13 12 L 13 8"
-          android:strokeColor="#000"
-          android:strokeWidth="1.5"
-          android:strokeLineCap="round" />
+          android:pathData="m480,280c22.16,0 40,17.84 40,40v160c0,22.16 -17.84,40 -40,40 -22.16,0 -40,-17.84 -40,-40v-160c0,-22.16 17.84,-40 40,-40z"
+          android:fillColor="#000000" />
       </group>
     </vector>
   </aapt:attr>

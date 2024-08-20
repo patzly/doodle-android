@@ -53,7 +53,7 @@
           android:id="@+id/image_overview_close"
           style="@style/Widget.Doodle.ImageView.Icon.Navigation"
           android:importantForAccessibility="no"
-          android:src="@drawable/ic_round_close" />
+          android:src="@drawable/ic_rounded_close" />
 
       </FrameLayout>
 
@@ -290,7 +290,7 @@
           <ImageView
             android:id="@+id/image_overview_about"
             style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-            android:src="@drawable/ic_round_info_outline_anim"
+            android:src="@drawable/ic_rounded_info"
             tools:ignore="ContentDescription" />
 
           <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">

@@ -195,6 +195,16 @@
   <string name="other_theme_auto">Auto</string>
   <string name="other_theme_light">Light</string>
   <string name="other_theme_dark">Dark</string>
+  <string name="other_contrast">Contrast</string>
+  <string name="other_contrast_description">Accessibility for your vision</string>
+  <!-- This is a contrast option name: User can choose between standard, medium and high contrast. The button width should be as dense as possible. -->
+  <string name="other_contrast_standard">Standard</string>
+  <!-- This is a contrast option name: User can choose between standard, medium and high contrast -->
+  <string name="other_contrast_medium">Medium</string>
+  <!-- This is a contrast option name: User can choose between standard, medium and high contrast -->
+  <string name="other_contrast_high">High</string>
+  <string name="other_contrast_dynamic">Contrast for device theme has to be set in system settings</string>
+  <string name="other_contrast_dynamic_unsupported">Dynamic contrast for device theme is only available on Android 14+</string>
   <string name="other_transition">Use sliding transition between settings pages</string>
   <string name="other_transition_description">Instead of fading</string>
   <string name="other_reset">Reset all settings</string>
@@ -223,7 +233,6 @@
 
   <string name="msg_feedback">A great app requires a lot of time and lives from the feedback of its users.</string>
   <string name="msg_feedback_contact">Do you have any wishes, comments or questions? Feel free to contact me!\nOtherwise I would be very happy about a nice review in the Play Store.</string>
-  <string name="msg_feedback_more">Please don\'t ask for more wallpaper designs, I will add them when I have time besides studying.</string>
   <string name="msg_share">Check out this cool live wallpaper app: \nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
   <string name="msg_hide">Hide icon in launcher?</string>
   <string name="msg_random">All selected designs will be used</string>

@@ -238,7 +238,7 @@
           <ImageView
             android:id="@+id/image_appearance_variant"
             style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-            android:src="@drawable/ic_round_palette_anim"
+            android:src="@drawable/ic_rounded_palette_anim"
             tools:ignore="ContentDescription" />
 
           <HorizontalScrollView

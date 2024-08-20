@@ -407,10 +407,10 @@ public class MainActivity extends AppCompatActivity {
       if (restoreState) {
         onSaveInstanceState(bundle);
       }
-      if (Build.VERSION.SDK_INT < Build.VERSION_CODES.S) {
+      if (VERSION.SDK_INT < VERSION_CODES.S) {
         finish();
       }
-      Intent intent = new Intent(this, MainActivity.class);
+      Intent intent = new Intent(this, LauncherActivity.class);
       if (restoreState) {
         intent.putExtra(EXTRA.INSTANCE_STATE, bundle);
       }
@@ -418,13 +418,13 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra(EXTRA.SHOW_FORCE_STOP_REQUEST, true);
       }
       startActivity(intent);
-      if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+      if (VERSION.SDK_INT >= VERSION_CODES.S) {
         finish();
       }
       if (UiUtil.areAnimationsEnabled(this)) {
         overridePendingTransition(R.anim.fade_in_restart, R.anim.fade_out_restart);
       } else {
-        overridePendingTransition(-1, -1);
+        overridePendingTransition(0, 0);
       }
     }, delay);
   }

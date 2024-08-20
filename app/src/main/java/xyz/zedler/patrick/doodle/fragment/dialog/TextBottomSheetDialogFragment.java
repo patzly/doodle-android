@@ -22,8 +22,6 @@ package xyz.zedler.patrick.doodle.fragment.dialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,7 +30,6 @@ import androidx.annotation.NonNull;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.databinding.FragmentBottomsheetTextBinding;
 import xyz.zedler.patrick.doodle.util.ResUtil;
-import xyz.zedler.patrick.doodle.util.ViewUtil;
 
 public class TextBottomSheetDialogFragment extends BaseBottomSheetDialogFragment {
 
@@ -57,10 +54,7 @@ public class TextBottomSheetDialogFragment extends BaseBottomSheetDialogFragment
         int id = item.getItemId();
         if (id == R.id.action_open_link && getViewUtil().isClickEnabled(id)) {
           performHapticClick();
-          ViewUtil.startIcon(item.getIcon());
-          new Handler(Looper.getMainLooper()).postDelayed(
-              () -> startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(link))), 500
-          );
+          startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(link)));
           return true;
         } else {
           return false;

@@ -27,7 +27,7 @@
   <ImageView
     android:id="@+id/image_other_transition"
     style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-    android:src="@drawable/ic_round_swap_horiz_anim"
+    android:src="@drawable/ic_rounded_transition_slide"
     tools:ignore="ContentDescription" />
 
   <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">

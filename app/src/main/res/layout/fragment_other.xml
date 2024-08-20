@@ -67,7 +67,7 @@
           <ImageView
             android:id="@+id/image_other_language"
             style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-            android:src="@drawable/ic_round_language_anim"
+            android:src="@drawable/ic_rounded_language_anim"
             tools:ignore="ContentDescription" />
 
           <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
@@ -94,7 +94,7 @@
           <ImageView
             android:id="@+id/image_other_theme"
             style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-            android:src="@drawable/ic_round_palette_anim"
+            android:src="@drawable/ic_rounded_palette_anim"
             tools:ignore="ContentDescription" />
 
           <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">
@@ -177,6 +177,83 @@
               android:layout_height="wrap_content"
               android:text="@string/other_theme_dark"
               tools:ignore="TextContrastCheck" />
+
+          </com.google.android.material.button.MaterialButtonToggleGroup>
+
+        </HorizontalScrollView>
+
+        <LinearLayout
+          style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine"
+          android:paddingTop="12dp"
+          android:paddingBottom="0dp"
+          android:paddingStart="16dp"
+          android:paddingEnd="0dp"
+          android:minHeight="64dp">
+
+          <ImageView
+            android:id="@+id/image_settings_contrast"
+            style="@style/Widget.Doodle.ImageView.ListItem.Icon"
+            android:src="@drawable/ic_rounded_contrast_anim"
+            android:layout_gravity="center"
+            tools:ignore="ContentDescription" />
+
+          <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">
+
+            <TextView
+              style="@style/Widget.Doodle.TextView.ListItem.Title"
+              android:text="@string/other_contrast"
+              android:paddingStart="0dp"
+              android:paddingEnd="16dp"/>
+
+            <TextView
+              style="@style/Widget.Doodle.TextView.ListItem.Description"
+              android:text="@string/other_contrast_description"
+              android:paddingStart="0dp"
+              android:paddingEnd="16dp"/>
+
+            <TextView
+              android:id="@+id/text_settings_contrast_dynamic"
+              style="@style/Widget.Doodle.TextView.ListItem.Description"
+              android:text="@string/other_contrast_dynamic"
+              android:textColor="?attr/colorError"
+              android:paddingStart="0dp"
+              android:paddingEnd="16dp" />
+
+          </LinearLayout>
+
+        </LinearLayout>
+
+        <HorizontalScrollView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="4dp"
+          android:layout_marginBottom="4dp"
+          android:layout_marginStart="56dp"
+          android:scrollbars="none"
+          android:overScrollMode="ifContentScrolls">
+
+          <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/toggle_other_contrast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            app:singleSelection="true"
+            app:selectionRequired="true">
+
+            <Button
+              android:id="@+id/button_other_contrast_standard"
+              style="@style/Widget.Doodle.Button.OutlinedButton"
+              android:text="@string/other_contrast_standard" />
+
+            <Button
+              android:id="@+id/button_other_contrast_medium"
+              style="@style/Widget.Doodle.Button.OutlinedButton"
+              android:text="@string/other_contrast_medium" />
+
+            <Button
+              android:id="@+id/button_other_contrast_high"
+              style="@style/Widget.Doodle.Button.OutlinedButton"
+              android:text="@string/other_contrast_high" />
 
           </com.google.android.material.button.MaterialButtonToggleGroup>
 
@@ -300,9 +377,8 @@
           style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable.More">
 
           <ImageView
-            android:id="@+id/image_other_log"
             style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-            android:src="@drawable/ic_round_bug_report_anim"
+            android:src="@drawable/ic_rounded_bug_report"
             tools:ignore="ContentDescription" />
 
           <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">
@@ -329,9 +405,8 @@
           style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable.More">
 
           <ImageView
-            android:id="@+id/image_other_reset"
             style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-            android:src="@drawable/ic_round_settings_backup_restore_anim"
+            android:src="@drawable/ic_rounded_reset_settings"
             tools:ignore="ContentDescription" />
 
           <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">

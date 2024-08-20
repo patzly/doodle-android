@@ -22,8 +22,6 @@ package xyz.zedler.patrick.doodle.fragment;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -99,30 +97,19 @@ public class AboutFragment extends BaseFragment implements OnClickListener {
       activity.showChangelogBottomSheet();
       ViewUtil.startIcon(binding.imageAboutChangelog);
     } else if (id == R.id.linear_about_developer) {
-      ViewUtil.startIcon(binding.imageAboutDeveloper);
-      new Handler(Looper.getMainLooper()).postDelayed(
-          () -> startActivity(
-              new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.app_website)))
-          ), 300
+      startActivity(
+          new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.app_website)))
       );
     } else if (id == R.id.linear_about_vending) {
-      ViewUtil.startIcon(binding.imageAboutVending);
-      new Handler(Looper.getMainLooper()).postDelayed(
-          () -> startActivity(
-              new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.app_vending)))
-          ), 300
+      startActivity(
+          new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.app_vending)))
       );
     } else if (id == R.id.linear_about_github) {
       startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.app_github))));
     } else if (id == R.id.linear_about_translation) {
       startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.app_translate))));
     } else if (id == R.id.linear_about_privacy) {
-      ViewUtil.startIcon(binding.imageAboutPrivacy);
-      new Handler(Looper.getMainLooper()).postDelayed(
-          () -> startActivity(
-              new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.app_privacy)))
-          ), 300
-      );
+      startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.app_privacy))));
     } else if (id == R.id.linear_about_license_jost) {
       ViewUtil.startIcon(binding.imageAboutLicenseJost);
       activity.showTextBottomSheet(

@@ -36,6 +36,6 @@
   <item
     android:id="@+id/icon_selection_check"
     android:gravity="center"
-    android:drawable="@drawable/ic_round_check_anim" />
+    android:drawable="@drawable/ic_rounded_check_anim" />
 
 </layer-list>

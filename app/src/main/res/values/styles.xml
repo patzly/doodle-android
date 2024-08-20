@@ -422,7 +422,7 @@
 
   <style name="Base.Doodle.TextView" parent="Widget.MaterialComponents.TextView">
     <item name="android:textAppearance">?attr/textAppearanceBodyLarge</item>
-    <item name="android:textColor">?attr/colorOnBackground</item>
+    <item name="android:textColor">?attr/colorOnSurface</item>
     <item name="android:textAlignment">viewStart</item>
     <item name="android:fontFamily">@font/jost_book</item>
     <item name="fontFamily">@font/jost_book</item>

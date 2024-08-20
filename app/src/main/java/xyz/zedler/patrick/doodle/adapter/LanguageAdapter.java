@@ -32,6 +32,7 @@ import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.databinding.RowLanguageBinding;
 import xyz.zedler.patrick.doodle.model.Language;
 import xyz.zedler.patrick.doodle.util.LocaleUtil;
+import xyz.zedler.patrick.doodle.util.ResUtil;
 import xyz.zedler.patrick.doodle.util.ViewUtil;
 
 public class LanguageAdapter extends RecyclerView.Adapter<LanguageAdapter.ViewHolder> {
@@ -77,24 +78,11 @@ public class LanguageAdapter extends RecyclerView.Adapter<LanguageAdapter.ViewHo
 
   @Override
   public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
-    Context context = holder.binding.getRoot().getContext();
-    holder.binding.linearLanguageContainer.setBackground(
-        ViewUtil.getRippleBgListItemSurface(context)
-    );
-
     if (position == 0) {
       holder.binding.textLanguageName.setText(R.string.other_language_system);
       holder.binding.textLanguageTranslators.setText(R.string.other_language_system_description);
 
-      boolean isSelected = selectedCode == null;
-      holder.binding.imageLanguageSelected.setVisibility(
-          isSelected ? View.VISIBLE : View.INVISIBLE
-      );
-      if (isSelected) {
-        holder.binding.linearLanguageContainer.setBackground(
-            ViewUtil.getBgListItemSelected(context)
-        );
-      }
+      setSelected(holder, selectedCode == null);
       holder.binding.linearLanguageContainer.setOnClickListener(
           view -> listener.onItemRowClicked(null)
       );
@@ -105,8 +93,6 @@ public class LanguageAdapter extends RecyclerView.Adapter<LanguageAdapter.ViewHo
     holder.binding.textLanguageName.setText(language.getName());
     holder.binding.textLanguageTranslators.setText(language.getTranslators());
 
-    // SELECTED
-
     boolean isSelected = language.getCode().equals(selectedCode);
     if (selectedCode != null && !isSelected && !languageHashMap.containsKey(selectedCode)) {
       String lang = LocaleUtil.getLangFromLanguageCode(selectedCode);
@@ -114,13 +100,7 @@ public class LanguageAdapter extends RecyclerView.Adapter<LanguageAdapter.ViewHo
         isSelected = language.getCode().equals(lang);
       }
     }
-    holder.binding.imageLanguageSelected.setVisibility(isSelected ? View.VISIBLE : View.INVISIBLE);
-    if (isSelected) {
-      holder.binding.linearLanguageContainer.setBackground(ViewUtil.getBgListItemSelected(context));
-    }
-
-    // CONTAINER
-
+    setSelected(holder, isSelected);
     holder.binding.linearLanguageContainer.setOnClickListener(
         view -> listener.onItemRowClicked(language)
     );
@@ -129,6 +109,29 @@ public class LanguageAdapter extends RecyclerView.Adapter<LanguageAdapter.ViewHo
   @Override
   public int getItemCount() {
     return languages.size() + 1;
+  }
+
+  private void setSelected(ViewHolder holder, boolean selected) {
+    Context context = holder.binding.getRoot().getContext();
+    int colorSelected = ResUtil.getColor(context, R.attr.colorOnSecondaryContainer);
+    holder.binding.imageLanguageSelected.setColorFilter(colorSelected);
+    holder.binding.imageLanguageSelected.setVisibility(selected ? View.VISIBLE : View.INVISIBLE);
+    if (selected) {
+      holder.binding.linearLanguageContainer.setBackground(ViewUtil.getBgListItemSelected(context));
+    } else {
+      holder.binding.linearLanguageContainer.setBackground(
+          ViewUtil.getRippleBgListItemSurface(context)
+      );
+    }
+    holder.binding.textLanguageName.setTextColor(
+        selected ? colorSelected : ResUtil.getColor(context, R.attr.colorOnSurface)
+    );
+    holder.binding.textLanguageTranslators.setTextColor(
+        selected ? colorSelected : ResUtil.getColor(context, R.attr.colorOnSurfaceVariant)
+    );
+    holder.binding.linearLanguageContainer.setOnClickListener(
+        view -> listener.onItemRowClicked(null)
+    );
   }
 
   public interface LanguageAdapterListener {

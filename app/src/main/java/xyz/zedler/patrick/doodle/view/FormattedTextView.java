@@ -126,7 +126,7 @@ public class FormattedTextView extends LinearLayout {
         0
     );
     textView.setLayoutParams(getVerticalLayoutParams(16, keepDistance ? 16 : 0));
-    textView.setTextColor(ResUtil.getColor(context, R.attr.colorOnBackground));
+    textView.setTextColor(ResUtil.getColor(context, R.attr.colorOnSurface));
     textView.setText(HtmlCompat.fromHtml(text, HtmlCompat.FROM_HTML_MODE_LEGACY));
     return textView;
   }
@@ -156,7 +156,7 @@ public class FormattedTextView extends LinearLayout {
         break;
     }
     TextViewCompat.setTextAppearance(textView, resId);
-    textView.setTextColor(ResUtil.getColor(context, R.attr.colorOnBackground));
+    textView.setTextColor(ResUtil.getColor(context, R.attr.colorOnSurface));
     return textView;
   }
 
@@ -200,7 +200,7 @@ public class FormattedTextView extends LinearLayout {
     GradientDrawable shape = new GradientDrawable();
     shape.setShape(GradientDrawable.OVAL);
     shape.setSize(bulletSize, bulletSize);
-    shape.setColor(ResUtil.getColor(context, R.attr.colorOnBackground));
+    shape.setColor(ResUtil.getColor(context, R.attr.colorOnSurface));
     viewBullet.setBackground(shape);
 
     MaterialTextView textViewHeight = new MaterialTextView(

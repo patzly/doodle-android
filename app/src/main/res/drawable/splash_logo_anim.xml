@@ -30,7 +30,7 @@
       <path
         android:name="stroke"
         android:pathData="M 172.163 202.784 L 132.067 116.599 C 126.644 104.827 115.158 100.617 103.386 106.111 C 91.614 111.533 87.404 123.02 92.898 134.792 L 118.368 189.728 C 119.457 191.691 121.223 193.193 123.335 193.954 C 125.447 194.715 127.764 194.683 129.855 193.866 L 192.639 164.686 C 194.586 163.599 196.076 161.845 196.836 159.749 C 197.596 157.653 197.575 155.352 196.777 153.27 L 185.861 129.726"
-        android:strokeColor="?attr/colorOnBackground"
+        android:strokeColor="?attr/colorOnSurface"
         android:strokeAlpha="0"
         android:strokeWidth="6.833"
         android:trimPathEnd="0"

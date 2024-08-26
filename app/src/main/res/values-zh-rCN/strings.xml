@@ -22,6 +22,8 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
   <string name="wallpaper_description">Colorful live wallpaper with auto dark mode and power-efficient animations. Customize it to your needs!</string>
+  <string name="wallpaper_description_picker">探索丰富多彩的形状集合，当您在主屏幕上滑动并解锁设备时，通过柔和的视觉差和缩放效果进行优化。\n自定义墙纸以找到适合您自己的风格</string>
+
   <!-- TITLES -->
 
   <string name="title_info">Information</string>

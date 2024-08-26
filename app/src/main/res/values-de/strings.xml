@@ -141,6 +141,7 @@
   <!-- SIZE -->
 
   <string name="size_title">Größe der Formen</string>
+  <string name="size_description">Skalierung &amp;amp; Zoom-Effekt</string>
   <string name="size_category_zoom">Zoom-Effekt</string>
   <string name="size_category_launcher">Zoom auf Startbildschirm</string>
   <string name="size_category_unlock">Zoom auf Sperrbildschirm</string>

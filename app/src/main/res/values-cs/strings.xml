@@ -86,6 +86,7 @@
   <string name="appearance_colors">Extrahované barvy</string>
   <string name="appearance_colors_description">Použité pro výpočet barevného kontrastu</string>
   <string name="appearance_colors_description_dynamic">Využívané pro nastavování barevného režimu</string>
+  <string name="appearance_colors_description_one_ui">Jak je zmíněno výše, poskytované barvy živých tapet jsou ignorovány One UI</string>
   <string name="appearance_colors_primary">Vyberte hlavní barvu</string>
   <string name="appearance_colors_secondary">Vybrat druhotnou barvu</string>
   <string name="appearance_colors_tertiary">Vybrat doplňkovou barvu</string>

@@ -194,6 +194,7 @@
   <!-- ABOUT -->
 
   <string name="about_title">Über</string>
+  <string name="about_description">Informationen über den Entwickler &amp;amp; mehr</string>
   <string name="about_version">Version</string>
   <string name="about_changelog">Änderungen</string>
   <string name="about_changelog_description">Was ist neu\?</string>

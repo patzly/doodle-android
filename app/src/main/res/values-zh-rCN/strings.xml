@@ -73,6 +73,7 @@
 
   <string name="appearance_title">Appearance</string>
   <string name="appearance_description">设计和主题设置</string>
+  <string name="appearance_one_ui">三星手机糟糕的动态色彩实现完全忽略 Doodle 等壁纸应用提供的颜色。\n要将色彩应用到你的手机，请在下方将当前设计设置为“静态背景”让系统获取颜色，接着重新将它应用为“动态壁纸”</string>
   <string name="appearance_design">Design</string>
   <string name="appearance_design_doodle">Pixel 4 Doodle Collection</string>
   <string name="appearance_design_monet">Pixel 6 Material You Collection</string>

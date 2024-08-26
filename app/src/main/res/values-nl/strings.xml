@@ -22,8 +22,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
   <string name="wallpaper_description">Kleurrijk live achtergrond met auto donkere modus en energiezuinige animaties. Pas het aan naar uw benodigdheden!</string>
-  <string name="wallpaper_description_picker">Ontdek een kleurrijke collectie vormen, verfijnd met zachte parallax- en zoomeffecten wanneer u door uw startschermen veegt en uw apparaat ontgrendelt.\nPas de achtergrond aan je eigen stijl aan!</string>
-
   <!-- TITLES -->
 
   <string name="title_info">Informatie</string>
@@ -72,8 +70,6 @@
   <!-- APPEARANCE -->
 
   <string name="appearance_title">Uiterlijk</string>
-  <string name="appearance_description">Ontwerp &amp; kleur opties</string>
-  <string name="appearance_one_ui">Samsung\'s ongunstige implementatie van dynamische kleuren in One UI 4.1 negeert door live achtergronden-apps zoals Doodle aangeboden kleuren volledig.\nOm de kleuren toe te passen op jouw systeem, stel je het huidige ontwerp in als een statische achtergrond hieronder zodat het systeem de kleuren kan ophalen, waarna je het opnieuw toepast als live achtergrond.</string>
   <string name="appearance_design">Ontwerp</string>
   <string name="appearance_design_doodle">Pixel 4 Doodle Collectie</string>
   <string name="appearance_design_monet">Pixel 6 Material You Collectie</string>
@@ -119,9 +115,7 @@
   <!-- PARALLAX -->
 
   <string name="parallax_title">Parallax</string>
-  <string name="parallax_description">Veeg &amp; kantel effect</string>
   <string name="parallax_swipe_category">Vegen</string>
-  <string name="parallax_swipe_touch_wiz">Het lijkt erop dat je huidige launcher Samsung TouchWiz of One UI Home is, welke geen veegeffect ondersteunen. Probeer een andere launcher op dit effect in te schakelen.\nJe kan deze waarschuwing negeren indien je al een andere launcher als standaard hebt ingesteld.</string>
   <string name="parallax_swipe">Veeg effect</string>
   <string name="parallax_swipe_description">Horizontale afwijking bij vegen</string>
   <string name="parallax_swipe_power_save">Respecteer batterijbesparing</string>
@@ -141,7 +135,6 @@
   <!-- SIZE -->
 
   <string name="size_title">Vorm grootte</string>
-  <string name="size_description">Schaal &amp; zoom effect</string>
   <string name="size_category_zoom">Zoom effect</string>
   <string name="size_category_launcher">Startscherm zoom</string>
   <string name="size_category_unlock">Vergrendelscherm zoom</string>
@@ -166,7 +159,6 @@
   <!-- OTHER -->
 
   <string name="other_title">Overige opties</string>
-  <string name="other_description">Rendering, taal &amp; resetten</string>
   <string name="other_language">Taal</string>
   <string name="other_language_description">Hartelijk dank aan alle vrijwillige vertalers bij Transifex! Bezoek de GitHub pagina van het project om te zien hoe jij kunt helpen Doodle Live Wallpapers beschikbaar te maken voor jouw taal.</string>
   <string name="other_language_system">Volg systeem</string>
@@ -194,30 +186,25 @@
   <!-- ABOUT -->
 
   <string name="about_title">Over</string>
-  <string name="about_description">Ontwikkelaar info &amp; meer</string>
   <string name="about_version">Versie</string>
   <string name="about_changelog">Wijzigingslog</string>
-  <string name="about_changelog_description">Wat is nieuw?</string>
+  <string name="about_changelog_description">Wat is nieuw\?</string>
   <string name="about_developer">Ontwikkelaar</string>
   <string name="about_vending_description">Meer apps door de ontwikkelaar</string>
   <string name="about_github_description">Bron code</string>
   <string name="about_translation_description">Help Doodle te vertalen</string>
   <string name="about_privacy">Privacybeleid</string>
-  <string name="about_privacy_description">Hoe worden je gegevens verwerkt?</string>
+  <string name="about_privacy_description">Hoe worden je gegevens verwerkt\?</string>
 
   <!-- MESSAGES -->
 
   <string name="msg_feedback">Een geweldige app vergt veel tijd en leeft op de feedback van haar gebruikers</string>
-  <string name="msg_feedback_contact">Heb je wensen, opmerkingen of vragen? Neem dan contact op met mij!\nAnders zou ik erg blij zijn met een mooie recensie in de Play Store.</string>
-  <string name="msg_feedback_more">Vraag alsjeblieft niet voor meer achtergrondontwerpen, ik zal deze toevoegen wanneer ik tijd heb naast het studeren</string>
-  <string name="msg_share">Kijk eens naar deze coole live achtergrond app: \nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
-  <string name="msg_hide">Verberg icoon in startscherm?</string>
+  <string name="msg_hide">Verberg icoon in startscherm\?</string>
   <string name="msg_random">Alle geselecteerde ontwerpen zullen worden gebruikt</string>
   <string name="msg_random_warning">Willekeurig achtergrond ontwerp is nog steeds actief!</string>
-  <string name="msg_reset">Reset alle instellingen?</string>
+  <string name="msg_reset">Reset alle instellingen\?</string>
   <string name="msg_force_stop">Forceer stoppen verreist om wijzigingen toe te passen</string>
   <string name="msg_apply_colors">Veranderde kleuren zullen de volgende keer je scherm uit zet worden toegepast in het systeem</string>
-  <string name="msg_apply_changes">Om (eventueel) gewijzigde opties toe te passen, wordt een herstart van de lopende achtergrond service aanbevolen. Dit kan niet automatisch worden gedaan.\nGelieve Doodle geforceerd te stoppen in je systeeminstellingen en vervolgens Doodle opnieuw toe te passen als je achtergrond.</string>
   <string name="msg_preview_missing">Er ging iets mis, selecteer Doodle Live Achtergrond alsjeblieft handmatig</string>
   <string name="msg_report_crash">Rapporteer crashes alsjeblieft met de crash log toegevoegd zodat ik het kan proberen op te lossen.</string>
   <string name="msg_copied_to_clipboard">Succesvol naar klembord gekopieerd</string>

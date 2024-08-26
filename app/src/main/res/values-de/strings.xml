@@ -73,6 +73,7 @@
 
   <string name="appearance_title">Aussehen</string>
   <string name="appearance_description">Design &amp;amp; Farboptionen</string>
+  <string name="appearance_one_ui">Samsungs mangelhafte Implementierung dynamischer Farben in One UI 4.1 ignoriert die von Live-Hintergrund-Apps wie Doodle bereitgestellten Farben vollständig. Um die Farben auf dein System anzuwenden, lege unten das aktuelle Design als statischen Hintergrund fest, damit das System die Farben abrufen kann, und wende es dann erneut als Live-Hintergrund an.</string>
   <string name="appearance_design">Design</string>
   <string name="appearance_design_doodle">Pixel 4 Doodle-Kollektion</string>
   <string name="appearance_design_monet">Pixel 6 Material-You-Kollektion</string>

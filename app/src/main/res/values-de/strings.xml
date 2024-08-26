@@ -208,6 +208,7 @@
   <!-- MESSAGES -->
 
   <string name="msg_feedback">Eine tolle App benötigt viel Zeit und lebt von der Rückmeldung ihrer Nutzer.</string>
+  <string name="msg_feedback_contact">Hast du Wünsche, Anmerkungen oder Fragen\? Dann lass es mich wissen!\nAnsonsten freue ich mich über eine nette Bewertung im Play Store.</string>
   <string name="msg_hide">App-Icon verbergen\?</string>
   <string name="msg_random">Es werden alle ausgewählten Designs benutzt</string>
   <string name="msg_random_warning">Zufälliges Hintergrunddesign ist noch aktiviert!</string>

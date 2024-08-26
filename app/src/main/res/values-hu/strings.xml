@@ -22,6 +22,8 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
   <string name="wallpaper_description">Színes élő háttérkép automatikus sötét móddal és energiatakarékos animációkkal.  Szabja testre igényeinek megfelelően!</string>
+  <string name="wallpaper_description_picker">Fedezze fel a színes alakzatok gyűjteményét, finom parallaxis és zoom effektusokkal finomítva, amikor végigcsúsztat a kezdőképernyőn, és feloldja az eszközt.\nSzemélyreszabhatja a háttérképet saját stílusához!</string>
+
   <!-- TITLES -->
 
   <string name="title_info">Információ</string>
@@ -70,6 +72,8 @@
   <!-- APPEARANCE -->
 
   <string name="appearance_title">Megjelenés</string>
+  <string name="appearance_description">Dizájn &amp; szín opciók</string>
+  <string name="appearance_one_ui">A dinamikus színek Samsung általi kedvezőtlen megvalósítása a One UI 4.1-ben teljes mértékben figyelmen kívül hagyja az élő háttérkép alkalmazások, mint például a Doodle által biztosított színeket.\nA színek rendszerre való alkalmazásához állítsa be lent az aktuális dizájnt statikus háttérként, hogy a rendszer lekérje a színeket, majd  alkalmazza élő háttérképként.</string>
   <string name="appearance_design">Dizájn</string>
   <string name="appearance_design_doodle">Pixel 4 Doodle Kollekció</string>
   <string name="appearance_design_monet">Pixel 6 Material You Kollekció</string>
@@ -102,7 +106,9 @@
   <!-- PARALLAX -->
 
   <string name="parallax_title">Parallaxis</string>
+  <string name="parallax_description">Csúsztatás &amp; billenő effektus</string>
   <string name="parallax_swipe_category">Csúsztatás</string>
+  <string name="parallax_swipe_touch_wiz">Úgy néz ki, hogy az ön jelenlegi launcherje Samsung TouchWiz vagy One UI Home, amik nem támogattják a csúsztatási effekteket. Kérem használjon egy mások launchert az effektek használatához.\nFigyelmen kívül hagyhatja ezt az üzenetet, ha már másik launchert használ.</string>
   <string name="parallax_swipe">Csúsztatási effekt</string>
   <string name="parallax_swipe_description">Vízszintes eltolás az oldalcsúsztatással</string>
   <string name="parallax_swipe_power_save">Akkumlátorkímélő tisztelése</string>
@@ -122,6 +128,7 @@
   <!-- SIZE -->
 
   <string name="size_title">Forma méret</string>
+  <string name="size_description">Skála &amp; zoom effekt</string>
   <string name="size_category_zoom">Zoom effekt</string>
   <string name="size_category_launcher">Launcher zoom</string>
   <string name="size_category_unlock">Zároltképernyő zoom</string>
@@ -146,6 +153,7 @@
   <!-- OTHER -->
 
   <string name="other_title">Más opciók</string>
+  <string name="other_description">Renderelés, nyelv &amp; visszaállítás</string>
   <string name="other_language">Nyelv</string>
   <string name="other_language_description">Köszönet a Transifex összes önkéntes fordítójának! Kérjük, látogasson el a projekt GitHub oldalára, ahol megtudhatja, hogyan teheti elérhetővé a Doodle élő háttérképeket az ön nyelvén.</string>
   <string name="other_language_system">Rendszer követése</string>
@@ -173,25 +181,29 @@
   <!-- ABOUT -->
 
   <string name="about_title">Névjegy</string>
+  <string name="about_description">Fejlesztői infók &amp; több</string>
   <string name="about_version">Verzió</string>
   <string name="about_changelog">Változáslista</string>
-  <string name="about_changelog_description">Mi változott\?</string>
+  <string name="about_changelog_description">Mi változott?</string>
   <string name="about_developer">Fejlesztő</string>
   <string name="about_vending_description">Több alkalmazás a fejlesztőtől</string>
   <string name="about_github_description">Forráskód</string>
   <string name="about_translation_description">Segítsen a Doodle fordításában</string>
   <string name="about_privacy">Adatvédelmi szabályzat</string>
-  <string name="about_privacy_description">Hogyan kezeljük az adatait\?</string>
+  <string name="about_privacy_description">Hogyan kezeljük az adatait?</string>
 
   <!-- MESSAGES -->
 
   <string name="msg_feedback">Egy jó app sok időt igényel és a felhasználók visszajelzéséből él.</string>
-  <string name="msg_hide">Elrejti az ikont a launcherben\?</string>
+  <string name="msg_feedback_contact">Van valami kívánsága, hozzászólni valója vagy kérdése? Nyugodtan írjon nekem! Különben nagyon örülnék egy szép értékelésnek a Play Áruházban.</string>
+  <string name="msg_share">Nézze meg ezt a fasza élő háttérkép appot: \nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
+  <string name="msg_hide">Elrejti az ikont a launcherben?</string>
   <string name="msg_random">Minden kiválasztot design használva lesz</string>
   <string name="msg_random_warning">A random háttérkép desing még mindig aktív!</string>
-  <string name="msg_reset">Visszaállít minden beállítást\?</string>
+  <string name="msg_reset">Visszaállít minden beállítást?</string>
   <string name="msg_force_stop">A változtatások alkalmazásához kényszerleállás szükséges</string>
   <string name="msg_apply_colors">A megváltozott színek a képernyő következő kikapcsolásakor érvényesülnek a rendszeren</string>
+  <string name="msg_apply_changes">A (előbb-utóbb) módosított beállítások alkalmazásához az élő háttérkép szolgáltatás újraindítása javasolt. Ez nem hajtható végre automatikusan.\nKérjük, állítsa le a Doodle-t a rendszerbeállításokban, majd állítsa be újra a Doodle-t háttérképként.</string>
   <string name="msg_preview_missing">Hiba történt. Kérjük válassza ki a Doodle Élő Háttérképet manuálisan</string>
   <string name="msg_report_crash">Kérem jelentse be az összeomlásokat az összeomlási naplóval, hogy meg tudjam javítani a hibákat.</string>
   <string name="msg_copied_to_clipboard">Sikeresen vágólapra másolva</string>

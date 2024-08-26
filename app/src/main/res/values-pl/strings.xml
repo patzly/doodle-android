@@ -22,8 +22,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
   <string name="wallpaper_description">Kolorowe, animowane tapety z automatycznym ciemnym motywem i energooszczędnymi animacjami. Dostosuj do swoich potrzeb!</string>
-  <string name="wallpaper_description_picker">Odkrywaj kolorowe kolekcje kształtów, z delikatynym efektem paralaksy oraz zbliżania kiedy korzystasz ze swojego telefonu i odblokowujesz go.\nDostosuj tapetę, aby pasował do twojego stylu!</string>
-
   <!-- TITLES -->
 
   <string name="title_info">Informacje</string>
@@ -72,8 +70,6 @@
   <!-- APPEARANCE -->
 
   <string name="appearance_title">Wygląd</string>
-  <string name="appearance_description">Design i kolory</string>
-  <string name="appearance_one_ui">Samsung\'owa niekorzystna implementacja dynamicznych kolorów w One UI 4.1 zupełnie ignoruje kolory nadane przez animowane tapety jak Doodle.\nAby wybrać kolory w swoim systemie, ustaw obecny design jako statyczne tło, aby pozwolić systemowi pobrać z niego kolory, następnie ustaw ponownie animowaną tapetę.</string>
   <string name="appearance_design">Wygląd</string>
   <string name="appearance_design_doodle">Kolekcja Doodle z Pixel 4</string>
   <string name="appearance_design_monet">Kolekcja Material You z Pixel 6</string>
@@ -106,9 +102,7 @@
   <!-- PARALLAX -->
 
   <string name="parallax_title">Paralaksa</string>
-  <string name="parallax_description">Przesuwanie i przechylanie</string>
   <string name="parallax_swipe_category">Przesuwanie ekranów</string>
-  <string name="parallax_swipe_touch_wiz">Wygląda na to, że korzystasz z Samsung TouchWiz lub One UI Home, które nie wspierają efektów przesuwania stron. Wypróbuj inne aplikacje stron głównych. Możesz zignorować to ostrzeżenie jeśli już dokonano zmiany.</string>
   <string name="parallax_swipe">Efekt przesuwania stron</string>
   <string name="parallax_swipe_description">Poziomy margines przy przesuwaniu stron</string>
   <string name="parallax_swipe_power_save">Szanuj baterię</string>
@@ -128,7 +122,6 @@
   <!-- SIZE -->
 
   <string name="size_title">Rozmiar kształtów</string>
-  <string name="size_description">Efekt skali i powiększenia</string>
   <string name="size_category_zoom">Efekt powiększania</string>
   <string name="size_category_launcher">Zwiększanie na ekranie głównym</string>
   <string name="size_category_unlock">Zwiększanie na ekranie blokady</string>
@@ -153,7 +146,6 @@
   <!-- OTHER -->
 
   <string name="other_title">Inne opcje</string>
-  <string name="other_description">Renderowanie, język i reset</string>
   <string name="other_language">Język</string>
   <string name="other_language_description">Wielkie dzięki wielu tłumaczom-wolontariuszom na Transifex! Proszę odwiedź GitHubową stronę aby dowiedzieć się jak sprawić, że Doodle będzie dostępny w twoim języku.</string>
   <string name="other_language_system">Taki jak systemowy</string>
@@ -181,30 +173,25 @@
   <!-- ABOUT -->
 
   <string name="about_title">O aplikacji</string>
-  <string name="about_description">Informacje o programiście i więcej</string>
   <string name="about_version">Wersja</string>
   <string name="about_changelog">Historia zmian</string>
-  <string name="about_changelog_description">Co nowego?</string>
+  <string name="about_changelog_description">Co nowego\?</string>
   <string name="about_developer">Programista</string>
   <string name="about_vending_description">Więcej informacji od programisty</string>
   <string name="about_github_description">Source code</string>
   <string name="about_translation_description">Pomóż przetłumaczyć Doodle</string>
   <string name="about_privacy">Polityka prywatności</string>
-  <string name="about_privacy_description">Jak twoje dane są przetwarzane?</string>
+  <string name="about_privacy_description">Jak twoje dane są przetwarzane\?</string>
 
   <!-- MESSAGES -->
 
   <string name="msg_feedback">Świetna aplikacja potrzebuje dużo czasu i odzewu od użytkowników.</string>
-  <string name="msg_feedback_contact">Masz jakieś życzenia, komentarze, pytania? Skontaktuj się ze mną!\nJak nie to będę bardzo zadowolony jak zostawisz opinię w sklepie Play</string>
-  <string name="msg_feedback_more">Proszę nie pytać o więcej projektów tapet, dodam je kiedy będę miał czas oprócz uczenia się.</string>
-  <string name="msg_share">Ogarnij tą świetną apkę do pięknych, animowanych tapet: \nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
-  <string name="msg_hide">Ukryć ikonę na liście aplikacji?</string>
+  <string name="msg_hide">Ukryć ikonę na liście aplikacji\?</string>
   <string name="msg_random">Wszystkie designy zostaną użyte</string>
   <string name="msg_random_warning">Losowy design tapty jest wciąż aktywny!</string>
-  <string name="msg_reset">Wyczyścić wszystkie ustawienia?</string>
+  <string name="msg_reset">Wyczyścić wszystkie ustawienia\?</string>
   <string name="msg_force_stop">Wymuszono zatrzymanie aby zaaplikować zmiany</string>
   <string name="msg_apply_colors">Zmienione kolory zostaną zaaplikowane do systemu następnym razem gdy wyłączysz ekran</string>
-  <string name="msg_apply_changes">Aby zaaplikować zmienione opcje uruchomienie ponownie tapety jest zalecane. Tego nie da się zrobić automatycznie.\nProszę wymuś zamknięcie Doodle w swoich ustawieniach systemowych a następnie ponownie ustaw Doodle jako Twoją tapetę.</string>
   <string name="msg_preview_missing">Wystąpił błąd, proszę wybierz ręcznie Doodle jako tapetę</string>
   <string name="msg_report_crash">Proszę o zgłoszenie każdego crashu wraz z crash logiem, żebym mógł naprawić daną usterkę.</string>
   <string name="msg_copied_to_clipboard">Pomylśnie skopiowano do schowka</string>

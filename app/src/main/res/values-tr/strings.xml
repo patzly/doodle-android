@@ -22,6 +22,8 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
   <string name="wallpaper_description">Otomatik karanlık moda sahip fazla güç tüketmeyen renkli duvar kağıtları. İhtiyacınıza göre özelleştirin.</string>
+  <string name="wallpaper_description_picker">Ana ekranlarınızda gezinirken ve cihazınızın kilidini açarken hafif paralaks ve yakınlaştırma efektleriyle harmanlanmış renkli şekil koleksiyonlarını keşfedin.\nStilinize göre duvar kağıdını özelleştirin!</string>
+
   <!-- TITLES -->
 
   <string name="title_info">Bilgi</string>
@@ -70,6 +72,8 @@
   <!-- APPEARANCE -->
 
   <string name="appearance_title">Görünüm</string>
+  <string name="appearance_description">Tasarım &amp; renk seçenekleri</string>
+  <string name="appearance_one_ui">Samsung\'un One UI 4.1\'deki dinamik renk uygulaması, Doodle gibi canlı duvar kağıdı uygulamalarının sağladığı renkleri tamamen yok sayıyor.\nDinamik renkleri ayarlamak için varolan duvar kağıdını hareketsiz olarak uygulayıp sisteme renkleri tanımlatın, sonra duvar kağıdını tekrardan canlı olarak uygulayın. </string>
   <string name="appearance_design">Tasarım</string>
   <string name="appearance_design_doodle">Pixel 4 Doodle Koleksiyonu</string>
   <string name="appearance_design_monet">Pixel 6 Material You Koleksiyonu</string>
@@ -115,7 +119,9 @@
   <!-- PARALLAX -->
 
   <string name="parallax_title">Paralaks</string>
+  <string name="parallax_description">Kaydırma ve eğme efekti</string>
   <string name="parallax_swipe_category">Kaydırmak</string>
+  <string name="parallax_swipe_touch_wiz">Görünüşe göre şu an kullandığınız başlatıcı TouchWiz ya da One UI Home olduğu için kaydırma efektini desteklemiyor. Lütfen etkinleştirmek için farklı bir başlatıcı deneyin.\nHalihazırda başka bir başlatıcıyı varsayılan olarak ayarladıysanız bu uyarıyı yok sayabilirsiniz.</string>
   <string name="parallax_swipe">Kaydırma efekti</string>
   <string name="parallax_swipe_description">Sayfa kaydırmada yatay dengeleme</string>
   <string name="parallax_swipe_power_save">Güç tasarruf modunu önceliğe al</string>
@@ -135,6 +141,7 @@
   <!-- SIZE -->
 
   <string name="size_title">Şekil boyutu</string>
+  <string name="size_description">Ölçek &amp; Yakınlaştırma efekti</string>
   <string name="size_category_zoom">Yakınlaştırma efekti</string>
   <string name="size_category_launcher">Başlatıcı yakınlaştırması</string>
   <string name="size_category_unlock">Kilit ekranı yakınlaştırması</string>
@@ -159,6 +166,7 @@
   <!-- OTHER -->
 
   <string name="other_title">Diğer seçenekler</string>
+  <string name="other_description">İşleyici, dil &amp; sıfırlama</string>
   <string name="other_language">Dil</string>
   <string name="other_language_description">Transifex\'teki tüm gönüllü çevirmenlere çokça teşekkürler! Doodle Canlı Duvar Kağıtlarının kendi dilinizde kullanıma sunulmasına nasıl yardımcı olabileceğinizi öğrenmek için lütfen projenin GitHub sayfasını ziyaret edin.</string>
   <string name="other_language_system">Sisteme uy</string>
@@ -186,25 +194,29 @@
   <!-- ABOUT -->
 
   <string name="about_title">Hakkında</string>
+  <string name="about_description">Geliştirici hakkında &amp; fazlası</string>
   <string name="about_version">Sürüm</string>
   <string name="about_changelog">Değişiklik günlüğü </string>
-  <string name="about_changelog_description">Neler yeni\?</string>
+  <string name="about_changelog_description">Neler yeni?</string>
   <string name="about_developer">Geliştirici</string>
   <string name="about_vending_description">Geliştiriciden daha fazla uygulama</string>
   <string name="about_github_description">Kaynak kodu</string>
   <string name="about_translation_description">Doodle\'ı çevirmeye yardım et</string>
   <string name="about_privacy">Gizlilik politikası </string>
-  <string name="about_privacy_description">Verileriniz nasıl işleniyor\?</string>
+  <string name="about_privacy_description">Verileriniz nasıl işleniyor?</string>
 
   <!-- MESSAGES -->
 
   <string name="msg_feedback">Başarılı bir uygulama çok zaman gerektirir ve kullanıcılarının geribildirimleri sayesinde ayakta kalır. </string>
-  <string name="msg_hide">Başlatıcıdaki simge gizlensin mi\?</string>
+  <string name="msg_feedback_contact">Herhangi bir dileğiniz, yorumunuz ya da sorunuz var mı? Dilediğiniz gibi bana ulaşabilirsiniz!\nAksi takdirde Play Store’da güzel bir yorum çok mutlu eder. </string>
+  <string name="msg_share">Bu harika canlı duvar kağıdı uygulamasına göz atın:\nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
+  <string name="msg_hide">Başlatıcıdaki simge gizlensin mi?</string>
   <string name="msg_random">Seçili tüm tasarımlar kullanılacak</string>
   <string name="msg_random_warning">Rastgele duvar kağıdı tasarımı hâlâ aktif!</string>
-  <string name="msg_reset">Tüm ayarlar sıfırlansın mı\?</string>
+  <string name="msg_reset">Tüm ayarlar sıfırlansın mı?</string>
   <string name="msg_force_stop">Değişiklikleri uygulamak için zorunlu durdurma gerekli</string>
   <string name="msg_apply_colors">Ekranı sonraki sefer kapadığınızda seçili renkler sisteme uygulanacaktır</string>
+  <string name="msg_apply_changes">Değiştirilen seçenekleri (eninde sonunda) uygulamak için, çalışan duvar kağıdı hizmetinin yeniden başlatılması önerilir. Bu otomatik olarak yapılamaz.\nLütfen sistem ayarlarınızda Doodle\'ı zorla durdurun ve ardından Doodle\'ı duvar kağıdınız olarak tekrar uygulayın. </string>
   <string name="msg_preview_missing">Bir hata meydana geldi, lütfen Doodle Hareketli Duvar Kağıdını manuel olarak seçin </string>
   <string name="msg_report_crash">Düzeltmeye çalışabilmem için lütfen çökme logları eklenmiş herhangi bir çökmeyi bildirin.</string>
   <string name="msg_copied_to_clipboard">Panoya başarıyla kopyalandı</string>

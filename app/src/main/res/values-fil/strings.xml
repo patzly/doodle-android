@@ -22,8 +22,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
   <string name="wallpaper_description">Mga makukulay na live wallpaper na may kusang madilim na mode at animasyon na hindi magastos sa baterya. Ayusin ito depende sa kung anong gusto mo!</string>
-  <string name="wallpaper_description_picker">Galugarin ang isang makulay na koleksyon ng mga hugis, na pinaganda pa ng isang mahinahong parallax at mga zoom effect kapag nagsa-swipe ka sa mga home screen mo at habang binubuksan mo ang device mo.\nAyusin ang wallpaper para tumugma sa estilo mo!</string>
-
   <!-- TITLES -->
 
   <string name="title_info">Impormasyon</string>
@@ -72,8 +70,6 @@
   <!-- APPEARANCE -->
 
   <string name="appearance_title">Hitsura</string>
-  <string name="appearance_description">Disenyo at opsyon sa kulay</string>
-  <string name="appearance_one_ui">Ang hindi kanais-nais na pagpapatupad ng Samsung ng mga dynamic na kulay sa One UI 4.1 ay ganap na binabalewala ang mga kulay na ibinigay ng mga live na wallpaper app tulad ng Doodle.\nUpang ilapat ang mga kulay sa iyong system, itakda ang kasalukuyang disenyo bilang isang static na background sa ibaba upang hayaan ang system na makuha ang mga kulay, pagkatapos ay muling ilapat ito bilang live na wallpaper.</string>
   <string name="appearance_design">Disenyo</string>
   <string name="appearance_design_doodle">Koleksyon ng Pixel 4 Doodle</string>
   <string name="appearance_design_monet">Koleksyon ng Pixel 6 Material You</string>
@@ -106,9 +102,7 @@
   <!-- PARALLAX -->
 
   <string name="parallax_title">Parallax</string>
-  <string name="parallax_description">Swipe at tilt effect</string>
   <string name="parallax_swipe_category">Pag-swipe</string>
-  <string name="parallax_swipe_touch_wiz">Mukhang ang iyong kasalukuyang launcher ay Samsung TouchWiz o One UI Home, na hindi sinusuportahan ang swipe effect. Mangyaring subukang gumamit ng ibang launcher para paganahin ito.\nPwede mong balewalain ang babalang ito kapag nagtakda ka na ng isa pang launcher bilang default.</string>
   <string name="parallax_swipe">Swipe effect</string>
   <string name="parallax_swipe_description">Pahalang na offset sa page swipe</string>
   <string name="parallax_swipe_power_save">Respetuhin ang battery saver</string>
@@ -128,7 +122,6 @@
   <!-- SIZE -->
 
   <string name="size_title">Sukat ng hugis</string>
-  <string name="size_description">Sukat at epekto ng zoom</string>
   <string name="size_category_zoom">Epekto ng zoom</string>
   <string name="size_category_launcher">Zoom ng launcher</string>
   <string name="size_category_unlock">Zoom ng lockscreen</string>
@@ -153,7 +146,6 @@
   <!-- OTHER -->
 
   <string name="other_title">Iba pang mga opsyon</string>
-  <string name="other_description">Pag-render, wika, at pag-reset</string>
   <string name="other_language">Wika</string>
   <string name="other_language_description">Maraming salamat sa lahat ng mga boluntaryong tagasalin sa Transifex! Pakibisita ang page ng proyekto sa Github upang malaman kung paano ka makakatulong na gawing available ang Doodle Live Wallpapers para sa iyong wika.</string>
   <string name="other_language_system">Sundan ang system</string>
@@ -181,30 +173,25 @@
   <!-- ABOUT -->
 
   <string name="about_title">Tungkol sa...</string>
-  <string name="about_description">Impormasyon tungkol sa developer at marami pang iba</string>
   <string name="about_version">Bersyon</string>
   <string name="about_changelog">Changelog</string>
-  <string name="about_changelog_description">Anong bago?</string>
+  <string name="about_changelog_description">Anong bago\?</string>
   <string name="about_developer">Nag-develop</string>
   <string name="about_vending_description">Higit pang mga app ng nag-develop</string>
   <string name="about_github_description">Source code</string>
   <string name="about_translation_description">Tulungang i-translate ang Doodle</string>
   <string name="about_privacy">Patakaran sa privacy</string>
-  <string name="about_privacy_description">Paano pinoproseso ang iyong data?</string>
+  <string name="about_privacy_description">Paano pinoproseso ang iyong data\?</string>
 
   <!-- MESSAGES -->
 
   <string name="msg_feedback">Ang isang mahusay na app ay nangangailangan ng maraming oras at buhay galing sa feedback ng mga gumagamit nito.</string>
-  <string name="msg_feedback_contact">Mayroon ka bang anumang mga nais, komento o tanong? Huwag mag-atubiling makipag-ugnayan sa akin!\Kung hindi, masisiyahan ako sa isang magandang review sa Play Store.</string>
-  <string name="msg_feedback_more">Huwag na po kayong humingi ng mga wallpaper designs, idadagdag ko po kapag may time bukod sa pag-aaral.</string>
-  <string name="msg_share">Tingnan ang cool na live wallpaper app na ito: \nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
-  <string name="msg_hide">Itago ang icon sa launcher?</string>
+  <string name="msg_hide">Itago ang icon sa launcher\?</string>
   <string name="msg_random">Gagamitin ang lahat ng napiling disenyo</string>
   <string name="msg_random_warning">Ang random na disenyo ng wallpaper ay nanatiling aktibo!</string>
-  <string name="msg_reset">I-reset ang lahat ng settings?</string>
+  <string name="msg_reset">I-reset ang lahat ng settings\?</string>
   <string name="msg_force_stop">Kailangan ng forced stop upang ilapat ang lahat ng mga pagbabago</string>
   <string name="msg_apply_colors">Ang mga binagong kulay ay ilalapat sa system sa susunod na i-off mo ang screen</string>
-  <string name="msg_apply_changes">Upang mailapat (sa kalaunan) ang mga nabago na mga opsyon, inirerekomenda ang pag-restart ng tumatakbong wallpaper service. Hindi ito awtomatikong magagawa. Mangyaring i-force-stop ang Doodle sa iyong system settings at pagkatapos ay ilapat muli ang Doodle bilang iyong wallpaper.</string>
   <string name="msg_preview_missing">May naganap na error, mangyaring piliin nang manu-mano ang Doodle Live Wallpaper</string>
   <string name="msg_report_crash">Mangyaring iulat ang anumang pag-crash gamit ng crash log na nakalakip upang masubukan kong ayusin ang mga ito.</string>
   <string name="msg_copied_to_clipboard">Matagumpay na kinopya sa clipboard</string>

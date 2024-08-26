@@ -22,8 +22,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
   <string name="wallpaper_description">Fond d\'écran animé et coloré avec mode sombre automatique et des animations économes en énergie. Personnalisez-le selon vos besoins !</string>
-  <string name="wallpaper_description_picker">Explorez une collection colorée de formes, affinées avec de légers effets de parallaxe et de zoom lorsque vous faites défiler vos écrans d\'accueil et déverrouillez votre appareil.\nPersonnalisez le fond d\'écran pour qu\'il corresponde à votre propre style !</string>
-
   <!-- TITLES -->
 
   <string name="title_info">Informations</string>
@@ -72,8 +70,6 @@
   <!-- APPEARANCE -->
 
   <string name="appearance_title">Apparence</string>
-  <string name="appearance_description">Options de style et couleur</string>
-  <string name="appearance_one_ui">L\'implémentation défavorable des couleurs dynamiques par Samsung dans One UI 4.1 ignore complètement les couleurs fournies par les applications de fond d\'écran dynamique telles que Doodle.\nPour appliquer les couleurs à votre système, définissez ci-dessous le design actuel comme arrière-plan statique pour laisser le système récupérer les couleurs, puis appliquez-le comme fond d\'écran en direct.</string>
   <string name="appearance_design">Style</string>
   <string name="appearance_design_doodle">Collection de Doodle Pixel 4</string>
   <string name="appearance_design_monet">Collection Material You Pixel 6</string>
@@ -122,9 +118,7 @@
   <!-- PARALLAX -->
 
   <string name="parallax_title">Parallaxe</string>
-  <string name="parallax_description">Effet de balayage et d\'inclinaison</string>
   <string name="parallax_swipe_category">Balayer</string>
-  <string name="parallax_swipe_touch_wiz">Il semblerait que votre lanceur actuel soit Samsung TouchWiz ou One UI Home, qui ne prennent pas en charge l\'effet de balayage. Veuillez essayer un autre lanceur pour l\'activer.\nVous pouvez ignorer cet avertissement si vous avez déjà défini un autre lanceur par défaut.</string>
   <string name="parallax_swipe">Effet de balayage</string>
   <string name="parallax_swipe_description">Décalage horizontal lors du balayage de la page</string>
   <string name="parallax_swipe_power_save">Respecter l\'économiseur de batterie</string>
@@ -144,7 +138,6 @@
   <!-- SIZE -->
 
   <string name="size_title">Taille de la forme</string>
-  <string name="size_description">Échelle et effets de zoom</string>
   <string name="size_category_zoom">Effet de zoom</string>
   <string name="size_category_launcher">Zoom de l\'écran d\'accueil</string>
   <string name="size_category_unlock">Zoom de l\'écran de verrouillage</string>
@@ -169,7 +162,6 @@
   <!-- OTHER -->
 
   <string name="other_title">Autres options</string>
-  <string name="other_description">Rendu, langue et réinitialisation</string>
   <string name="other_language">Langue</string>
   <string name="other_language_description">Un grand merci à tous les traducteurs bénévoles de Transifex ! Veuillez visiter la page GitHub du projet pour savoir comment vous pouvez aider à rendre Doodle disponible dans votre langue.</string>
   <string name="other_language_system">Suivre le système</string>
@@ -197,30 +189,25 @@
   <!-- ABOUT -->
 
   <string name="about_title">À propos</string>
-  <string name="about_description">Infos sur le développeur et plus</string>
   <string name="about_version">Version</string>
   <string name="about_changelog">Journal des modifications</string>
-  <string name="about_changelog_description">Quoi de neuf ?</string>
+  <string name="about_changelog_description">Quoi de neuf \?</string>
   <string name="about_developer">Développeur</string>
   <string name="about_vending_description">Plus d\'applications du même développeur</string>
   <string name="about_github_description">Code source</string>
   <string name="about_translation_description">Aider à traduire Doodle</string>
   <string name="about_privacy">Politique de confidentialité</string>
-  <string name="about_privacy_description">Comment vos données sont-elles traitées ?</string>
+  <string name="about_privacy_description">Comment vos données sont-elles traitées \?</string>
 
   <!-- MESSAGES -->
 
   <string name="msg_feedback">Une bonne application demande beaucoup de temps et vit des retours de ses utilisateurs.</string>
-  <string name="msg_feedback_contact">Vous avez des souhaits, des commentaires ou des questions ? N\'hésitez pas à me contacter !\nSinon, je serais très heureux d\'avoir une bonne critique sur le Play Store.</string>
-  <string name="msg_feedback_more">Merci de ne pas demander davantage de motifs de papier peint, je suis étudiant et je les ajouterai quand j\'aurai du temps libre.</string>
-  <string name="msg_share">Découvrez cette excellente application de fonds d\'écran animés : \nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
-  <string name="msg_hide">Masquer l\'icône dans le lanceur d\'applications ?</string>
+  <string name="msg_hide">Masquer l\'icône dans le lanceur d\'applications \?</string>
   <string name="msg_random">Tous les styles sélectionnés seront utilisés</string>
   <string name="msg_random_warning">Le motif de fond d\'écran aléatoire est toujours actif !</string>
-  <string name="msg_reset">Réinitialiser tous les réglages ?</string>
+  <string name="msg_reset">Réinitialiser tous les réglages \?</string>
   <string name="msg_force_stop">Arrêt forcé requis pour appliquer les modifications</string>
   <string name="msg_apply_colors">Les couleurs modifiées seront appliquées au système la prochaine fois que vous éteindrez l\'écran</string>
-  <string name="msg_apply_changes">Pour (éventuellement) appliquer les options modifiées, un redémarrage du service de papier peint en cours d\'exécution est recommandé. Cela ne peut pas être fait automatiquement.\nVeuillez forcer l\'arrêt de Doodle dans les paramètres de votre système, puis appliquez à nouveau Doodle comme fond d\'écran.</string>
   <string name="msg_preview_missing">Une erreur s\'est produite, veuillez sélectionner manuellement le fond d\'écran animé Doodle</string>
   <string name="msg_report_crash">Veuillez signaler tout plantage avec le journal des erreurs ci-joint afin que je puisse essayer de les corriger.</string>
   <string name="msg_copied_to_clipboard">Copie vers le presse-papiers réussie</string>

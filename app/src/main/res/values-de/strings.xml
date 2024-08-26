@@ -184,6 +184,7 @@
   <string name="other_theme_auto">Auto</string>
   <string name="other_theme_light">Hell</string>
   <string name="other_theme_dark">Dunkel</string>
+  <string name="other_contrast">Kontrast</string>
   <string name="other_transition">Schieben als Seitenübergang verwenden</string>
   <string name="other_transition_description">Anstatt auszublenden</string>
   <string name="other_reset">Alle Einstellungen zurücksetzen</string>

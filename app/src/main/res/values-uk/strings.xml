@@ -22,8 +22,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
   <string name="wallpaper_description">Барвисті живі шпалери з автоматичним темним режимом і енергоефективною анімацією. Налаштовуйте їх відповідно до своїх потреб!</string>
-  <string name="wallpaper_description_picker">Досліджуйте барвисту колекцію форм, удосконалену м’яким ефектом паралакса та масштабуванням, коли ви гортаєте між головними екранами та розблоковуєте пристрій.\nНалаштовуйте шпалери відповідно до свого стилю!</string>
-
   <!-- TITLES -->
 
   <string name="title_info">Інформація</string>
@@ -72,8 +70,6 @@
   <!-- APPEARANCE -->
 
   <string name="appearance_title">Зовнішній вигляд</string>
-  <string name="appearance_description">Дизайн та варіанти кольору</string>
-  <string name="appearance_one_ui">Несприятлива реалізація динамічних кольорів від Samsung в One UI 4.1 повністю ігнорує кольори, які надають такі додатки для живих шпалер, як Doodle.\nЩоб застосувати кольори до вашої системи, установіть поточний дизайн як статичний фон нижче, щоб система могла отримати кольори, а потім повторно застосувати його як живі шпалери.</string>
   <string name="appearance_design">Дизайн</string>
   <string name="appearance_design_doodle">Pixel 4 Doodle Колекція</string>
   <string name="appearance_design_monet">Pixel 6 Material You Колекція</string>
@@ -125,9 +121,7 @@
   <!-- PARALLAX -->
 
   <string name="parallax_title">Паралакс</string>
-  <string name="parallax_description">Гортання та ефект нахилу</string>
   <string name="parallax_swipe_category">Гортання</string>
-  <string name="parallax_swipe_touch_wiz">Схоже, ваша поточний лаунчер — це Samsung TouchWiz або One UI Home, які не підтримують ефект гортання. Будь ласка, спробуйте інший лаунчер, щоб увімкнути його.\nВи можете проігнорувати це попередження, якщо ви вже встановили інший лаунчер за замовчуванням.</string>
   <string name="parallax_swipe">Ефект гортання</string>
   <string name="parallax_swipe_description">Горизонтальний зсув під час гортання сторінки</string>
   <string name="parallax_swipe_power_save">Поважати режим економії заряду батареї</string>
@@ -147,7 +141,6 @@
   <!-- SIZE -->
 
   <string name="size_title">Розмір форми</string>
-  <string name="size_description">Масштабування та ефект наближення</string>
   <string name="size_category_zoom">Ефект наближення</string>
   <string name="size_category_launcher">Наближення у лаунчері</string>
   <string name="size_category_unlock">Наближення на екрані блокування</string>
@@ -172,7 +165,6 @@
   <!-- OTHER -->
 
   <string name="other_title">Інші опції</string>
-  <string name="other_description">Візуалізація, мова та скидання налаштувань</string>
   <string name="other_language">Мова</string>
   <string name="other_language_description">Велике спасибі всім перекладачам-волонтерам Transifex! Відвідайте сторінку проекту на GitHub, щоб дізнатися, як ви можете допомогти зробити Doodle Live Wallpapers доступними для вашої мови.</string>
   <string name="other_language_system">Як встановлено системою</string>
@@ -200,30 +192,25 @@
   <!-- ABOUT -->
 
   <string name="about_title">Про застосунок</string>
-  <string name="about_description">Інформація про розробника та інше</string>
   <string name="about_version">Версія</string>
   <string name="about_changelog">Журнал змін</string>
-  <string name="about_changelog_description">Що нового?</string>
+  <string name="about_changelog_description">Що нового\?</string>
   <string name="about_developer">Розробник</string>
   <string name="about_vending_description">Більше додатків від розробника</string>
   <string name="about_github_description">Вихідний код</string>
   <string name="about_translation_description">Допоможіть перекласти Doodle</string>
   <string name="about_privacy">Політика конфіденційності</string>
-  <string name="about_privacy_description">Як обробляються ваші дані?</string>
+  <string name="about_privacy_description">Як обробляються ваші дані\?</string>
 
   <!-- MESSAGES -->
 
   <string name="msg_feedback">Чудовий додаток вимагає багато часу і живе відгуками користувачів.</string>
-  <string name="msg_feedback_contact">Маєте побажання, коментарі чи запитання? Не соромтеся зв’язуватися зі мною!\nТакож я буду дуже радий гарному відгуку в Play Store.</string>
-  <string name="msg_feedback_more">Будь ласка, не просіть більше дизайнів шпалер, я додам їх, коли матиму час, крім навчання.</string>
-  <string name="msg_share">Перегляньте цей класний додаток для живих шпалер: \nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
-  <string name="msg_hide">Сховати значок у лаунчері?</string>
+  <string name="msg_hide">Сховати значок у лаунчері\?</string>
   <string name="msg_random">Усі вибрані дизайни будуть використані</string>
   <string name="msg_random_warning">Випадковий дизайн шпалер все ще активний!</string>
-  <string name="msg_reset">Скинути всі налаштування?</string>
+  <string name="msg_reset">Скинути всі налаштування\?</string>
   <string name="msg_force_stop">Для застосування змін потрібна примусова зупинка</string>
   <string name="msg_apply_colors">Змінені кольори буде застосовано до системи наступного разу, коли ви вимкнете екран</string>
-  <string name="msg_apply_changes">Щоб застосувати (зрештою) змінені параметри, рекомендується перезапустити запущену службу шпалер. Це неможливо зробити автоматично.\nБудь ласка, примусово зупиніть Doodle у налаштуваннях системи, а потім знову застосуйте Doodle як шпалери.</string>
   <string name="msg_preview_missing">Сталася помилка. Виберіть Doodle Live Wallpaper вручну</string>
   <string name="msg_report_crash">Будь ласка, повідомляйте про будь-які збої, долучивши журнал збоїв, щоб я міг спробувати їх виправити.</string>
   <string name="msg_copied_to_clipboard">Успішно скопійовано в буфер обміну</string>

@@ -117,6 +117,7 @@
 
   <string name="parallax_title">Parallax</string>
   <string name="parallax_swipe_category">Swiping</string>
+  <string name="parallax_swipe_touch_wiz">您当前的启动器似乎是三星TouchWiz，它不支持后台滚动。如果您没有倾斜传感器，请尝试其他桌面启动器以启用视差效果。\n如果您将另一个启动器设置为默认，可以忽略此警告。</string>
   <string name="parallax_swipe">Swipe effect</string>
   <string name="parallax_swipe_description">Horizontal offset on page swipe</string>
   <string name="parallax_swipe_power_save">Respect battery saver</string>

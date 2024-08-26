@@ -22,6 +22,8 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
   <string name="wallpaper_description">Papel de parede colorido ao vivo com modo escuro automático e animações com baixo consumo de energia. Personalize-o de acordo com suas necessidades!</string>
+  <string name="wallpaper_description_picker">Explore uma coleção colorida de formas, refinadas com efeitos suaves de paralaxe e zoom ao deslizar pelas telas iniciais e desbloquear o dispositivo.\nPersonalize o papel de parede para combinar com seu próprio estilo!</string>
+
   <!-- TITLES -->
 
   <string name="title_info">Informação</string>
@@ -70,6 +72,8 @@
   <!-- APPEARANCE -->
 
   <string name="appearance_title">Aparência</string>
+  <string name="appearance_description">Projeto e  opções de cores</string>
+  <string name="appearance_one_ui">A implementação desfavorável de cores dinâmicas da Samsung no One UI 4.1 ignora completamente as cores fornecidas por aplicativos de papel de parede ao vivo como o Doodle.\nPara aplicar as cores ao seu sistema, defina o design atual como um plano de fundo estático abaixo para permitir que o sistema busque as cores e, em seguida, re-  aplique-o como papel de parede ao vivo.</string>
   <string name="appearance_design">Projeto</string>
   <string name="appearance_design_doodle">Coleção Doodle de Pixel 4</string>
   <string name="appearance_design_monet">Coleção Material You de Pixel 6</string>
@@ -118,7 +122,9 @@
   <!-- PARALLAX -->
 
   <string name="parallax_title">Paralaxe</string>
+  <string name="parallax_description">Efeito de inclinação &amp; arrasto</string>
   <string name="parallax_swipe_category">Deslizando</string>
+  <string name="parallax_swipe_touch_wiz">Parece que o seu inicializador atual é o Samsung TouchWiz ou o One UI Home, que não suporta o efeito de deslizar.  Tente um inicializador diferente para ativá-lo.\nVocê pode ignorar este aviso se já tiver definido outro inicializador como padrão.</string>
   <string name="parallax_swipe">Efeito de deslizar</string>
   <string name="parallax_swipe_description">Deslocamento horizontal ao deslizar a página</string>
   <string name="parallax_swipe_power_save">Respeite o economizador de bateria</string>
@@ -138,6 +144,7 @@
   <!-- SIZE -->
 
   <string name="size_title">Tamanho e formato</string>
+  <string name="size_description">Effeitos de zoom &amp; tamanho</string>
   <string name="size_category_zoom">Efeito de zoom</string>
   <string name="size_category_launcher">Zoom do inicializador</string>
   <string name="size_category_unlock">Zoom da tela de bloqueio</string>
@@ -162,6 +169,7 @@
   <!-- OTHER -->
 
   <string name="other_title">Outras opções</string>
+  <string name="other_description">Renderização, idioma &amp; redefinir</string>
   <string name="other_language">Idioma</string>
   <string name="other_language_description">Muitos agradecimentos a todos os tradutores voluntários de Transifex! Por favor, visite a página do GitHub do projeto para saber como ajudar a tornar o Doodle Live Wallpapers disponível no seu idioma.</string>
   <string name="other_language_system">Seguir sistema</string>
@@ -189,25 +197,29 @@
   <!-- ABOUT -->
 
   <string name="about_title">Sobre</string>
+  <string name="about_description">Informações do desenvolvedor &amp; mais</string>
   <string name="about_version">Versão</string>
   <string name="about_changelog">Changelog</string>
-  <string name="about_changelog_description">O que há de novo\?</string>
+  <string name="about_changelog_description">O que há de novo?</string>
   <string name="about_developer">Desenvolvedor</string>
   <string name="about_vending_description">Outros aplicativos do mesmo desenvolvedor</string>
   <string name="about_github_description">Código fonte</string>
   <string name="about_translation_description">Ajude a traduzir o Doodle</string>
   <string name="about_privacy">Política de Privacidade</string>
-  <string name="about_privacy_description">Como seus dados são processados\?</string>
+  <string name="about_privacy_description">Como seus dados são processados?</string>
 
   <!-- MESSAGES -->
 
   <string name="msg_feedback">Um ótimo aplicativo requer muito tempo e vive do feedback de seus usuários.</string>
-  <string name="msg_hide">Esconder ícone em inicializador\?</string>
+  <string name="msg_feedback_contact">Você tem algum desejo, comentário ou pergunta?  Sinta-se à vontade para entrar em contato comigo! Caso contrário, ficaria muito feliz com uma boa avaliação na Play Store.</string>
+  <string name="msg_share">Confira este aplicativo legal de papel de parede ao vivo: \nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
+  <string name="msg_hide">Esconder ícone em inicializador?</string>
   <string name="msg_random">Todos os designs selecionados serão utilizados</string>
   <string name="msg_random_warning">Papel de parede aleatório ainda está ativo</string>
-  <string name="msg_reset">Redefinir todas as configurações\?</string>
+  <string name="msg_reset">Redefinir todas as configurações?</string>
   <string name="msg_force_stop">Parada forçada é necessária para aplicar as mudanças</string>
   <string name="msg_apply_colors">Cores selecionadas serão aplicadas ao sistema na próxima vez que você desligar a tela</string>
+  <string name="msg_apply_changes">Para (eventualmente) aplicar as configurações modificadas é recomendado reiniciar o  serviço de papel de parede. Isso não poe ser feito automáticamente.\nPor favor, encerre o Doodle nas configurações do seu sistema, então, aplique Doodle como seu papel de parede novamente.</string>
   <string name="msg_preview_missing">Ocorreu um erro, por favor selecione o Doodle Live Wallpaper manualmente</string>
   <string name="msg_report_crash">Por favor, relate qualquer falha com o registro de falhas anexado para que eu possa tentar corrigi-los.</string>
   <string name="msg_copied_to_clipboard">Copiado para a área de transferência com sucesso</string>

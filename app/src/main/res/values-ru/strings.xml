@@ -22,6 +22,8 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
   <string name="wallpaper_description">Красочные живые обои с автоматической темной темой и экономно потребляющими батарею анимациями. Настройте их под себя!</string>
+  <string name="wallpaper_description_picker">Откройте для себя красочную подборку форм, дополненных плавными эффектами сдвига и приближения при пролистывании экранов рабочего стола и выходе из экрана блокировки.\nНастройте обои на свой вкус!</string>
+
   <!-- TITLES -->
 
   <string name="title_info">Информация </string>
@@ -70,6 +72,8 @@
   <!-- APPEARANCE -->
 
   <string name="appearance_title">Внешний вид</string>
+  <string name="appearance_description">Дизайн и варианты цвета</string>
+  <string name="appearance_one_ui">Неблагоприятная реализация компанией Samsung динамических цветов в One UI 4.1 полностью игнорирует цвета, предоставляемые приложениями с живыми обоями, такими как Doodle.\nЧтобы применить цвета к вашей системе, установите желаемый дизайн в качестве статических обоев, чтобы система могла адаптировать дизайн, а затем повторно примените его в качестве живых обоев.</string>
   <string name="appearance_design">Дизайн</string>
   <string name="appearance_design_doodle">Подборка дудлов из Pixel 4</string>
   <string name="appearance_design_monet">Подборка Material You из Pixel 6</string>
@@ -121,7 +125,9 @@
   <!-- PARALLAX -->
 
   <string name="parallax_title">Сдвиг</string>
+  <string name="parallax_description">Эффекты пролистывания и наклона</string>
   <string name="parallax_swipe_category">Пролистывание </string>
+  <string name="parallax_swipe_touch_wiz">Похоже, что ваш текущий лаунчер — Samsung TouchWiz или One UI Home, не поддерживают эффект пролистывания. Пожалуйста, попробуйте другой лаунчер, чтобы включить его.\nВы можете проигнорировать это предупреждение, если вы уже установили другой лаунчер по умолчанию.</string>
   <string name="parallax_swipe">Эффект пролистывания</string>
   <string name="parallax_swipe_description">Горизонтальное смещение при пролистывании страницы</string>
   <string name="parallax_swipe_power_save">Учитывать режим энергосбережения</string>
@@ -141,6 +147,7 @@
   <!-- SIZE -->
 
   <string name="size_title">Размер фигур</string>
+  <string name="size_description">Масштаб и эффект приближения</string>
   <string name="size_category_zoom">Эффект приближения</string>
   <string name="size_category_launcher">Приближение на рабочем столе</string>
   <string name="size_category_unlock">Приближение на экране блокировки</string>
@@ -165,6 +172,7 @@
   <!-- OTHER -->
 
   <string name="other_title">Другие настройки</string>
+  <string name="other_description">Отрисовка, язык и сброс настроек</string>
   <string name="other_language">Язык приложения</string>
   <string name="other_language_description">Большое спасибо всем переводчикам-добровольцам Transifex! Пожалуйста, посетите страницу проекта на GitHub, чтобы узнать, как вы можете помочь сделать живые обои Doodle доступными для вашего языка.</string>
   <string name="other_language_system">Как в системе</string>
@@ -192,25 +200,29 @@
   <!-- ABOUT -->
 
   <string name="about_title">О приложении</string>
+  <string name="about_description">Сведения о разработчике и остальном</string>
   <string name="about_version">Версия</string>
   <string name="about_changelog">Список изменений</string>
-  <string name="about_changelog_description">Что нового\?</string>
+  <string name="about_changelog_description">Что нового?</string>
   <string name="about_developer">Разработчик</string>
   <string name="about_vending_description">Больше приложений от разработчика</string>
   <string name="about_github_description">Исходный код</string>
   <string name="about_translation_description">Помочь перевести Doodle</string>
   <string name="about_privacy">Политика конфиденциальности</string>
-  <string name="about_privacy_description">Как обрабатываются ваши данные\?</string>
+  <string name="about_privacy_description">Как обрабатываются ваши данные?</string>
 
   <!-- MESSAGES -->
 
   <string name="msg_feedback">Отличное приложение требует много времени и живёт за счёт отзывов пользователей.</string>
-  <string name="msg_hide">Скрыть значок с рабочего стола\?</string>
+  <string name="msg_feedback_contact">У вас есть пожелания, комментарии или вопросы? Не стесняйтесь обращаться ко мне!\nВ противном случае, я был бы очень рад хорошему отзыву в Play Маркете.</string>
+  <string name="msg_share">Зацени эти крутые живые обои: \nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
+  <string name="msg_hide">Скрыть значок с рабочего стола?</string>
   <string name="msg_random">Будут использованы все выбранные дизайны</string>
   <string name="msg_random_warning">Случайный дизайн обоев все еще активен!</string>
-  <string name="msg_reset">Сбросить все настройки\?</string>
+  <string name="msg_reset">Сбросить все настройки?</string>
   <string name="msg_force_stop">Принудительная остановка, необходимая для внесения изменений</string>
   <string name="msg_apply_colors">Измененные цвета будут применены к системе при следующем выключении экрана</string>
+  <string name="msg_apply_changes">Для (окончательного) применения новых параметров рекомендуется перезапустить работающую службу обоев. Этого нельзя сделать автоматически.\nПожалуйста, принудительно остановите Doodle из вашего системного приложения настроек и затем ещё раз установите Doodle в качестве обоев.</string>
   <string name="msg_preview_missing">Произошла ошибка, установите живые обои Doodle вручную</string>
   <string name="msg_report_crash">Пожалуйста, сообщайте о любых сбоях с прикреплённым журналом сбоев, чтобы я мог попытаться их исправить.</string>
   <string name="msg_copied_to_clipboard">Копирование в буфер обмена завершено успешно</string>

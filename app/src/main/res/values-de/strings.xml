@@ -119,7 +119,9 @@
   <!-- PARALLAX -->
 
   <string name="parallax_title">Parallax-Effekt</string>
+  <string name="parallax_description">Wischen &amp;amp; Neigung</string>
   <string name="parallax_swipe_category">Swipen</string>
+  <string name="parallax_swipe_touch_wiz">Es scheint, dass dein aktueller Launcher Samsung TouchWiz oder One UI Home ist, welche den Swipe-Effekt nicht unterstützen. Probiere es mit einem anderen Launcher, um ihn zu aktivieren.\nDu kannst diese Warnung ignorieren, wenn du bereits einen anderen Launcher als Standard festgelegt hast.</string>
   <string name="parallax_swipe">Swipe-Effekt</string>
   <string name="parallax_swipe_description">Horizontaler Versatz beim Wechseln zwischen Startbildschirmen</string>
   <string name="parallax_swipe_power_save">Energiesparmodus beachten</string>

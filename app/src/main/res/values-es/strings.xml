@@ -22,12 +22,14 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
   <string name="wallpaper_description">Fondos de pantalla coloridos y animados con modo oscuro automático y animaciones de bajo consumo energético. ¡Personalice a su gusto!</string>
+  <string name="wallpaper_description_picker">Explora una colección de formas coloridas, refinadas con suaves efectos de zoom y paralaje cuando deslizas a través de la pantalla de inicio y desbloqueas tu dispositivo.\nPersonaliza el fondo de pantalla para combinarlo con tu estilo propio.</string>
+
   <!-- TITLES -->
 
   <string name="title_info">Información</string>
   <string name="title_apply_changes">Aplicar cambios</string>
   <string name="title_logcat">logcat</string>
-  <string name="title_feedback">Comentarios</string>
+  <string name="title_feedback">Feedback</string>
   <string name="title_licenses">Licencias de código abierto</string>
 
   <!-- LABELS -->
@@ -40,7 +42,7 @@
   <string name="action_cancel">Cancelar </string>
   <string name="action_select">Seleccionar </string>
   <string name="action_close">Cerrar</string>
-  <string name="action_back">Volver</string>
+  <string name="action_back">Atrás</string>
   <string name="action_open_link">Abrir sitio web externo </string>
   <string name="action_hide">Ocultar </string>
   <string name="action_reset">Restablecer</string>
@@ -70,6 +72,7 @@
   <!-- APPEARANCE -->
 
   <string name="appearance_title">Apariencia</string>
+  <string name="appearance_description">Diseño y opciones de color</string>
   <string name="appearance_design">Diseño</string>
   <string name="appearance_design_doodle">Colección del Pixel 4 Doodle</string>
   <string name="appearance_design_monet">Colección del Pixel 6 Material You</string>
@@ -111,6 +114,7 @@
   <!-- PARALLAX -->
 
   <string name="parallax_title">Paralaje</string>
+  <string name="parallax_description">Efecto de deslizamiento e inclinación</string>
   <string name="parallax_swipe_category">deslizar</string>
   <string name="parallax_swipe_description">Desplazamiento horizontal al deslizar la página</string>
   <string name="parallax_swipe_power_save">Respetar el modo ahorro de energía</string>
@@ -129,6 +133,7 @@
   <!-- SIZE -->
 
   <string name="size_title">Tamaño de las figuras</string>
+  <string name="size_description">Escala y efecto de zoom</string>
   <string name="size_category_zoom">Efectos de zoom</string>
   <string name="size_category_launcher">Zoom del lanzador</string>
   <string name="size_category_unlock">Zoom de la pantalla de bloqueo</string>
@@ -150,6 +155,7 @@
   <!-- OTHER -->
 
   <string name="other_title">Otras opciones</string>
+  <string name="other_description">Renderizado, idioma y restablecimiento</string>
   <string name="other_language">Idioma</string>
   <string name="other_language_description">¡Muchas gracias a todos los traductores voluntarios de Transifex! Visite la página de GitHub del proyecto para saber cómo puede ayudar a que Doodle Live Wallpapers esté disponible para su idioma.</string>
   <string name="other_language_system">Seguir sistema</string>
@@ -170,24 +176,27 @@
   <!-- ABOUT -->
 
   <string name="about_title">Acerca de</string>
+  <string name="about_description">Información del desarrollador y más</string>
   <string name="about_version">Versión</string>
   <string name="about_changelog">Notas de versión</string>
-  <string name="about_changelog_description">¿Qué hay de nuevo\?</string>
+  <string name="about_changelog_description">¿Qué hay de nuevo?</string>
   <string name="about_developer">Desarrollador</string>
   <string name="about_vending_description">Más aplicaciones del desarrollador</string>
   <string name="about_github_description">Código fuente</string>
   <string name="about_translation_description">Ayuda a traducir Doodle</string>
   <string name="about_privacy">Política de privacidad</string>
-  <string name="about_privacy_description">¿Cómo son procesados sus datos\?</string>
+  <string name="about_privacy_description">¿Cómo son procesados sus datos?</string>
 
   <!-- MESSAGES -->
 
   <string name="msg_feedback">Una gran aplicación requiere mucho tiempo y vive de los comentarios de sus usuarios.</string>
-  <string name="msg_hide">¿Ocultar icono en el lanzador\?</string>
+  <string name="msg_share">Echa un vistazo a esta fantástica aplicación de fondos de pantalla animados: \nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
+  <string name="msg_hide">¿Ocultar icono en el lanzador?</string>
   <string name="msg_random">Todos los diseños seleccionados serán usados</string>
   <string name="msg_random_warning">¡Todavía está activo el diseño aleatorio de fondo de pantalla!</string>
-  <string name="msg_reset">¿Restablecer todos los ajustes\?</string>
+  <string name="msg_reset">¿Restablecer todos los ajustes?</string>
   <string name="msg_force_stop">Se requiere forzar la detención para aplicar los cambios</string>
   <string name="msg_apply_colors">Los colores modificados se aplicarán al sistema la próxima vez que apague la pantalla</string>
+  <string name="msg_apply_changes">Para aplicar (eventualmente) las opciones modificadas, se recomienda reiniciar el servicio de fondo de pantalla en ejecución.  Esto no se puede hacer automáticamente.  Fuerza la detención de Doodle en la configuración de tu sistema y luego vuelve a aplicar Doodle como fondo de pantalla.</string>
   <string name="msg_preview_missing">Se produjo un error, seleccione Doodle Live Wallpaper manualmente</string>
   </resources>

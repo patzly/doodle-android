@@ -22,6 +22,8 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
   <string name="wallpaper_description">Live wallpaper penuh warna dengan mode gelap otomatis dan animasi hemat daya. Sesuaikan dengan kebutuhan Anda!</string>
+  <string name="wallpaper_description_picker">Jelajahi koleksi bentuk yang penuh warna, disempurnakan dengan efek paralaks dan zoom yang lembut saat Anda menggeser layar beranda dan membuka kunci perangkat Anda.\nSesuaikan wallpaper agar sesuai dengan gaya Anda sendiri!</string>
+
   <!-- TITLES -->
 
   <string name="title_info">Informasi</string>
@@ -70,6 +72,8 @@
   <!-- APPEARANCE -->
 
   <string name="appearance_title">Tampilan</string>
+  <string name="appearance_description">Desain &amp; pilihan warna</string>
+  <string name="appearance_one_ui">Implementasi warna dinamis yang kurang baik pada One UI 4.1 dari Samsung sepenuhnya mengabaikan warna yang disediakan oleh aplikasi live wallpaper seperti Doodle.\nUntuk menerapkan warna pada sistem Anda, tetapkan desain saat ini sebagai latar belakang statis di bawah ini agar sistem mengambil warna, lalu terapkan ulang sebagai live wallpaper.</string>
   <string name="appearance_design">Desain</string>
   <string name="appearance_design_doodle">Koleksi Doodle Pixel 4</string>
   <string name="appearance_design_monet">Koleksi Material You Pixel 6</string>
@@ -112,7 +116,9 @@
   <!-- PARALLAX -->
 
   <string name="parallax_title">Paralaks</string>
+  <string name="parallax_description">Geser &amp; Efek Tilt</string>
   <string name="parallax_swipe_category">Pergeseran</string>
+  <string name="parallax_swipe_touch_wiz">Tampaknya peluncur Anda saat ini adalah Samsung TouchWiz atau One UI Home, yang tidak mendukung efek gesek. Silakan coba peluncur lain untuk mengaktifkannya.\nAnda dapat mengabaikan peringatan ini jika Anda telah menetapkan peluncur lain sebagai default.</string>
   <string name="parallax_swipe">Efek geser</string>
   <string name="parallax_swipe_description">Penyesuaian horizontal pada gesekan halaman</string>
   <string name="parallax_swipe_power_save">Mematuhi penghemat baterai</string>
@@ -132,6 +138,7 @@
   <!-- SIZE -->
 
   <string name="size_title">Ukuran bentuk</string>
+  <string name="size_description">Skala &amp; efek zoom</string>
   <string name="size_category_zoom">Efek zoom</string>
   <string name="size_category_launcher">Peluncur diperbesar</string>
   <string name="size_category_unlock">Layar kunci diperbesar</string>
@@ -156,6 +163,7 @@
   <!-- OTHER -->
 
   <string name="other_title">Opsi lain</string>
+  <string name="other_description">Rendering, bahasa &amp; atur-ulang</string>
   <string name="other_language">Bahasa</string>
   <string name="other_language_description">Terima kasih banyak kepada semua penerjemah sukarelawan di Transifex! Silakan kunjungi halaman GitHub proyek untuk mempelajari bagaimana Anda dapat membantu membuat Wallpaper Live Doodle tersedia untuk bahasa Anda.</string>
   <string name="other_language_system">Ikuti sistem</string>
@@ -183,25 +191,29 @@
   <!-- ABOUT -->
 
   <string name="about_title">Tentang</string>
+  <string name="about_description">Info pembuat &amp; lainnya</string>
   <string name="about_version">Versi</string>
   <string name="about_changelog">Daftar perubahan</string>
-  <string name="about_changelog_description">Apa yang baru\?</string>
+  <string name="about_changelog_description">Apa yang baru?</string>
   <string name="about_developer">Pengembang</string>
   <string name="about_vending_description">Lebih banyak aplikasi dari pengembang</string>
   <string name="about_github_description">Kode sumber</string>
   <string name="about_translation_description">Bantu terjemahkan Doodle</string>
   <string name="about_privacy">Kebijakan privasi</string>
-  <string name="about_privacy_description">Bagaimana data Anda digunakan\?</string>
+  <string name="about_privacy_description">Bagaimana data Anda digunakan?</string>
 
   <!-- MESSAGES -->
 
   <string name="msg_feedback">Aplikasi yang keren memerlukan banyak waktu dan banyak masukan dari para penggunanya.</string>
-  <string name="msg_hide">Sembunyikan ikon di peluncur\?</string>
+  <string name="msg_feedback_contact">Apakah Anda memiliki saran, komentar, atau pertanyaan? Jangan ragu untuk menghubungi saya!\nJika tidak, saya akan sangat senang dengan ulasan yang bagus di Play Store.</string>
+  <string name="msg_share">Lihat aplikasi wallpaper live keren ini: \nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
+  <string name="msg_hide">Sembunyikan ikon di peluncur?</string>
   <string name="msg_random">Semua desain yang dipilih akan digunakan</string>
   <string name="msg_random_warning">Desain wallpaper acak masih aktif!</string>
-  <string name="msg_reset">Atur-ulang semua setelan\?</string>
+  <string name="msg_reset">Atur-ulang semua setelan?</string>
   <string name="msg_force_stop">Paksa berhenti diminta untuk menerapkan perubahan</string>
   <string name="msg_apply_colors">Warna yang berubah akan diterapkan ke sistem pada saat Anda mematikan layar berikutnya</string>
+  <string name="msg_apply_changes">Untuk menerapkan (akhirnya) opsi yang diubah restart dari layanan wallpaper yang sedang berjalan direkomendasikan. Ini tidak dapat dilakukan secara otomatis. Silahkan paksa-berhenti Doodle di pengaturan sistem Anda dan kemudian terapkan Doodle sebagai wallpaper Anda lagi</string>
   <string name="msg_preview_missing">Terjadi kesalahan, silakan pilih Doodle Live Wallpaper secara manual</string>
   <string name="msg_report_crash">Mohon laporkan kendala apa pun dengan melampirkan log kendala agar saya dapat mencoba memperbaikinya.</string>
   <string name="msg_copied_to_clipboard">Berhasil disalin ke clipboard</string>

@@ -22,6 +22,8 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
   <string name="wallpaper_description">自動ダークモードと省電力アニメーションを搭載したカラフルなライブ壁紙です。あなたの好みに合わせてカスタマイズできます。</string>
+  <string name="wallpaper_description_picker">いろんな形状のカラフルな図形が、ホーム画面をスワイプしたりスマホのロック解除をするたびにフワッと奥行きを感じさせるパララックスな動きをしたりズームしたりして目を愉しませてくれます。\nあなたらしい壁紙を作ってみましょう。</string>
+
   <!-- TITLES -->
 
   <string name="title_info">情報</string>
@@ -70,6 +72,8 @@
   <!-- APPEARANCE -->
 
   <string name="appearance_title">外観</string>
+  <string name="appearance_description">デザインと色の設定</string>
+  <string name="appearance_one_ui">サムスン One UI 4.1 のダイナミックカラーの仕様では Doodle のようなライブ壁紙の色はテーマに反映されません。\n反映させるには一度現在のデザインを通常の壁紙として設定し、色合いがシステムに反映されたのち改めてライブ壁紙として再設定してください</string>
   <string name="appearance_design">デザイン</string>
   <string name="appearance_design_doodle">Pixel 4 Doodle Collection</string>
   <string name="appearance_design_monet">Pixel 6 Material You Collection</string>
@@ -112,7 +116,9 @@
   <!-- PARALLAX -->
 
   <string name="parallax_title">パララックス（視差効果）</string>
+  <string name="parallax_description">スワイプやチルト（傾き）に反応します</string>
   <string name="parallax_swipe_category">スワイプ</string>
+  <string name="parallax_swipe_touch_wiz">サムスンのTouchWizかOne UI Homeをお使いですか？この２つはスワイプイフェクトに対応していません。他のランチャーアプリを試してみてください。\nすでに他ランチャーをお使いであればこの警告は無視していただいてかまいません</string>
   <string name="parallax_swipe">スワイプイフェクト</string>
   <string name="parallax_swipe_description">ページスワイプ時の水平オフセット</string>
   <string name="parallax_swipe_power_save">バッテリーセーバー優先</string>
@@ -132,6 +138,7 @@
   <!-- SIZE -->
 
   <string name="size_title">図形のサイズ</string>
+  <string name="size_description">スケーリングやズーム効果の設定</string>
   <string name="size_category_zoom">ズーム効果</string>
   <string name="size_category_launcher">ホーム画面でのズーム</string>
   <string name="size_category_unlock">ロック画面でのズーム</string>
@@ -156,6 +163,7 @@
   <!-- OTHER -->
 
   <string name="other_title">その他の設定</string>
+  <string name="other_description">レンダリングや言語の設定、リセット</string>
   <string name="other_language">使用する言語</string>
   <string name="other_language_description">Transifex で翻訳作業を行ってくれたボランティアの翻訳者のみなさん、ほんとうにありがとう！「Doodle Live Wallpapers を自分の言葉でも使えるようにしたい」という方はぜひ GitHub のこのプロジェクトのページにいらしてください。そちらで翻訳に参加する方法を説明しています</string>
   <string name="other_language_system">システム設定に従う</string>
@@ -183,6 +191,7 @@
   <!-- ABOUT -->
 
   <string name="about_title">このアプリについて</string>
+  <string name="about_description">開発者に関する情報など</string>
   <string name="about_version">バージョン</string>
   <string name="about_changelog">変更履歴</string>
   <string name="about_changelog_description">ここが新しくなりました</string>
@@ -196,12 +205,15 @@
   <!-- MESSAGES -->
 
   <string name="msg_feedback">素晴らしいアプリが生まれるには長い時間とユーザーのフィードバックがもたらす活力が欠かせません</string>
+  <string name="msg_feedback_contact">このアプリに関して希望やコメント、質問などはありますか？気兼ねなくご連絡ください\nもしくはプレイストアでよいレビューをいただければとてもうれしいです</string>
+  <string name="msg_share">このよさげなライブ壁紙アプリを見てみる:\nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
   <string name="msg_hide">ランチャーからアイコンを隠しますか？</string>
   <string name="msg_random">選択されたすべてのデザインを使用します</string>
   <string name="msg_random_warning">現在は壁紙のデザインをランダムに表示する設定になっています</string>
   <string name="msg_reset">すべての設定をリセットします。よろしいですか？</string>
   <string name="msg_force_stop">変更を適用するにはいったん動作を停止する必要があります</string>
   <string name="msg_apply_colors">次に画面をOFFにするまで色の変更はシステムには適用されません</string>
+  <string name="msg_apply_changes">設定の変更を（完全に）適用するために壁紙のサービスを再起動したほうがよいでしょう。再起動は自動的には行われません\nいったんシステム設定で Doodle を強制停止し、あらためて Doodle を壁紙として設定しなおしてください</string>
   <string name="msg_preview_missing">エラーが発生しました。手動で Doodle Live Wallpaper を選択してください</string>
   <string name="msg_report_crash">クラッシュした場合は、クラッシュログを添付して報告していただければ、修正を試みます。</string>
   <string name="msg_copied_to_clipboard">クリップボードにコピーしました</string>

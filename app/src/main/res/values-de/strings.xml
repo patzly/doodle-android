@@ -22,8 +22,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
   <string name="wallpaper_description">Ein farbenfroher Live-Hintergrund mit Nachtmodus und akku-effizienten Animationen. Passe ihn an deine Bedürfnisse an!</string>
-  <string name="wallpaper_description_picker">Entdecke eine farbenfrohe Sammlung von Formen, verfeinert mit sanften Parallax- und Zoom-Effekten beim Wechseln zwischen deinen Startbildschirmen und Entsperren deines Geräts.\nPasse den Hintergrund mit mehreren Optionen an deinen eigenen Stil an!</string>
-
   <!-- TITLES -->
 
   <string name="title_info">Informationen</string>
@@ -72,8 +70,6 @@
   <!-- APPEARANCE -->
 
   <string name="appearance_title">Aussehen</string>
-  <string name="appearance_description">Design &amp; Farboptionen</string>
-  <string name="appearance_one_ui">Samsungs mangelhafte Implementierung dynamischer Farben in One UI 4.1 ignoriert die von Live-Hintergrund-Apps wie Doodle bereitgestellten Farben vollständig. Um die Farben auf dein System anzuwenden, lege unten das aktuelle Design als statischen Hintergrund fest, damit das System die Farben abrufen kann, und wende es dann erneut als Live-Hintergrund an.</string>
   <string name="appearance_design">Design</string>
   <string name="appearance_design_doodle">Pixel 4 Doodle-Kollektion</string>
   <string name="appearance_design_monet">Pixel 6 Material-You-Kollektion</string>
@@ -119,9 +115,7 @@
   <!-- PARALLAX -->
 
   <string name="parallax_title">Parallax-Effekt</string>
-  <string name="parallax_description">Wischen &amp; Neigung</string>
   <string name="parallax_swipe_category">Swipen</string>
-  <string name="parallax_swipe_touch_wiz">Es scheint, dass dein aktueller Launcher Samsung TouchWiz oder One UI Home ist, welche den Swipe-Effekt nicht unterstützen. Probiere es mit einem anderen Launcher, um ihn zu aktivieren.\nDu kannst diese Warnung ignorieren, wenn du bereits einen anderen Launcher als Standard festgelegt hast.</string>
   <string name="parallax_swipe">Swipe-Effekt</string>
   <string name="parallax_swipe_description">Horizontaler Versatz beim Wechseln zwischen Startbildschirmen</string>
   <string name="parallax_swipe_power_save">Energiesparmodus beachten</string>
@@ -141,7 +135,6 @@
   <!-- SIZE -->
 
   <string name="size_title">Größe der Formen</string>
-  <string name="size_description">Skalierung &amp; Zoom-Effekt</string>
   <string name="size_category_zoom">Zoom-Effekt</string>
   <string name="size_category_launcher">Zoom auf Startbildschirm</string>
   <string name="size_category_unlock">Zoom auf Sperrbildschirm</string>
@@ -166,7 +159,6 @@
   <!-- OTHER -->
 
   <string name="other_title">Sonstige Optionen</string>
-  <string name="other_description">Rendering, Sprache &amp; Zurücksetzen</string>
   <string name="other_language">Sprache</string>
   <string name="other_language_description">Vielen Dank an alle freiwilligen Übersetzer*innen bei Transifex! Besuche die GitHub-Seite dieses Projekts, um zu erfahren, wie Du helfen kannst, Doodle Live Hintergründe für Deine Sprache verfügbar zu machen.</string>
   <string name="other_language_system">Systemstandard</string>
@@ -194,30 +186,25 @@
   <!-- ABOUT -->
 
   <string name="about_title">Über</string>
-  <string name="about_description">Informationen über den Entwickler &amp; mehr</string>
   <string name="about_version">Version</string>
   <string name="about_changelog">Änderungen</string>
-  <string name="about_changelog_description">Was ist neu?</string>
+  <string name="about_changelog_description">Was ist neu\?</string>
   <string name="about_developer">Entwickler</string>
   <string name="about_vending_description">Weitere Apps des Entwicklers</string>
   <string name="about_github_description">Quellcode</string>
   <string name="about_translation_description">Hilf mit, Doodle in deine Sprache zu übersetzen</string>
   <string name="about_privacy">Datenschutzerklärung</string>
-  <string name="about_privacy_description">Wie werden deine Daten verarbeitet?</string>
+  <string name="about_privacy_description">Wie werden deine Daten verarbeitet\?</string>
 
   <!-- MESSAGES -->
 
   <string name="msg_feedback">Eine tolle App benötigt viel Zeit und lebt von der Rückmeldung ihrer Nutzer.</string>
-  <string name="msg_feedback_contact">Hast du Wünsche, Anmerkungen oder Fragen? Dann lass es mich wissen!\nAnsonsten freue ich mich über eine nette Bewertung im Play Store.</string>
-  <string name="msg_feedback_more">Bitte frage nicht nach mehr Hintergründen, ich füge neue hinzu, wenn ich Zeit dafür neben meinem Studium habe.</string>
-  <string name="msg_share">Schau dir mal diese coole Live-Wallpaper-App an: \nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
-  <string name="msg_hide">App-Icon verbergen?</string>
+  <string name="msg_hide">App-Icon verbergen\?</string>
   <string name="msg_random">Es werden alle ausgewählten Designs benutzt</string>
   <string name="msg_random_warning">Zufälliges Hintergrunddesign ist noch aktiviert!</string>
-  <string name="msg_reset">Einstellungen zurücksetzen?</string>
+  <string name="msg_reset">Einstellungen zurücksetzen\?</string>
   <string name="msg_force_stop">Erzwungenes Beenden wird benötigt, um die Änderung anzuwenden</string>
   <string name="msg_apply_colors">Geänderte Farben werden im System beim nächsten Ausschalten des Displays übernommen</string>
-  <string name="msg_apply_changes">Um (eventuelle) Änderungen anzuwenden, wird ein Neustart des laufenden Hintergrunds empfohlen. Dies kann nicht automatisch erfolgen.\nBitte beende die App in Deinen Systemeinstellungen und wende Doodle erneut als Live-Hintergrund an.</string>
   <string name="msg_preview_missing">Es trat ein Fehler auf, bitte wähle den Doodle Live-Hintergrund manuell aus</string>
   <string name="msg_report_crash">Bitte melde jegliche Abstürze mit angehängtem Crash-Log, um mir beim Beheben der Ursache zu helfen.</string>
   <string name="msg_copied_to_clipboard">Erfolgreich in Zwischenablage kopiert</string>

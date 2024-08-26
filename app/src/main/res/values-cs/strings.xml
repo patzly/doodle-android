@@ -96,6 +96,7 @@
   <string name="appearance_random">Náhodný design tapety</string>
   <string name="appearance_random_description">Vyberte níže uvedenou podmínku</string>
   <string name="appearance_random_screen_off">Obrazovka vypnutá</string>
+  <string name="appearance_random_daily">denně v </string>
   <string name="appearance_random_interval">Nastavit interval </string>
   <!-- PARALLAX -->
 

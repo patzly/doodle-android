@@ -22,8 +22,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
   <string name="wallpaper_description">Colorful live wallpaper with auto dark mode and power-efficient animations. Customize it to your needs!</string>
-  <string name="wallpaper_description_picker">Explore a colorful collection of shapes, refined with gentle parallax and zoom effects when you swipe through your home screens and unlock your device.\nCustomize the wallpaper to match your own style!</string>
-
   <!-- TITLES -->
 
   <string name="title_info">Information</string>
@@ -72,8 +70,6 @@
   <!-- APPEARANCE -->
 
   <string name="appearance_title">Appearance</string>
-  <string name="appearance_description">Design &amp; color options</string>
-  <string name="appearance_one_ui">Samsung\'s unfavorable implementation of dynamic colors in One UI 4.1 fully ignores colors provided by live wallpaper apps like Doodle.\nTo apply the colors to your system, set the current design as a static background below to let the system fetch the colors, then re-apply it as live wallpaper.</string>
   <string name="appearance_design">Design</string>
   <string name="appearance_design_doodle">Pixel 4 Doodle Collection</string>
   <string name="appearance_design_monet">Pixel 6 Material You Collection</string>
@@ -116,9 +112,7 @@
   <!-- PARALLAX -->
 
   <string name="parallax_title">Parallax</string>
-  <string name="parallax_description">Swipe &amp; tilt effect</string>
   <string name="parallax_swipe_category">Swiping</string>
-  <string name="parallax_swipe_touch_wiz">It seems that your current launcher is Samsung TouchWiz or One UI Home, which do not support swipe effect. Please try a different launcher to enable it.\nYou can ignore this warning if you already set another launcher as default.</string>
   <string name="parallax_swipe">Swipe effect</string>
   <string name="parallax_swipe_description">Horizontal offset on page swipe</string>
   <string name="parallax_swipe_power_save">Respect battery saver</string>
@@ -138,7 +132,6 @@
   <!-- SIZE -->
 
   <string name="size_title">Shape size</string>
-  <string name="size_description">Scale &amp; zoom effect</string>
   <string name="size_category_zoom">Zoom effect</string>
   <string name="size_category_launcher">Launcher zoom</string>
   <string name="size_category_unlock">Lockscreen zoom</string>
@@ -163,7 +156,6 @@
   <!-- OTHER -->
 
   <string name="other_title">Other options</string>
-  <string name="other_description">Rendering, language &amp; reset</string>
   <string name="other_language">Language</string>
   <string name="other_language_description">Many thanks to all the volunteer translators at Transifex! Please visit the project\'s GitHub page to learn how you can help make Doodle Live Wallpapers available for your language.</string>
   <string name="other_language_system">Follow system</string>
@@ -191,30 +183,25 @@
   <!-- ABOUT -->
 
   <string name="about_title">About</string>
-  <string name="about_description">Developer info &amp; more</string>
   <string name="about_version">Version</string>
   <string name="about_changelog">Changelog</string>
-  <string name="about_changelog_description">What\'s new?</string>
+  <string name="about_changelog_description">What\'s new\?</string>
   <string name="about_developer">Developer</string>
   <string name="about_vending_description">More apps by the developer</string>
   <string name="about_github_description">Source code</string>
   <string name="about_translation_description">Help translate Doodle</string>
   <string name="about_privacy">Privacy policy</string>
-  <string name="about_privacy_description">How is your data processed?</string>
+  <string name="about_privacy_description">How is your data processed\?</string>
 
   <!-- MESSAGES -->
 
   <string name="msg_feedback">A great app requires a lot of time and lives from the feedback of its users.</string>
-  <string name="msg_feedback_contact">Do you have any wishes, comments or questions? Feel free to contact me!\nOtherwise I would be very happy about a nice review in the Play Store.</string>
-  <string name="msg_feedback_more">Please don\'t ask for more wallpaper designs, I will add them when I have time besides studying.</string>
-  <string name="msg_share">Check out this cool live wallpaper app: \nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
-  <string name="msg_hide">Hide icon in launcher?</string>
+  <string name="msg_hide">Hide icon in launcher\?</string>
   <string name="msg_random">All selected designs will be used</string>
   <string name="msg_random_warning">Random wallpaper design is still active!</string>
-  <string name="msg_reset">Reset all settings?</string>
+  <string name="msg_reset">Reset all settings\?</string>
   <string name="msg_force_stop">Forced stop required to apply changes</string>
   <string name="msg_apply_colors">Changed colors will be applied to the system the next time you turn off the screen</string>
-  <string name="msg_apply_changes">To apply (eventually) changed options a restart of the running wallpaper service is recommended. This cannot be done automatically.\nPlease force-stop Doodle in your system settings and then apply Doodle as your wallpaper again.</string>
   <string name="msg_preview_missing">An error occurred, please select Doodle Live Wallpaper manually</string>
   <string name="msg_report_crash">Please report any crash with the crash log attached so I can try to fix them.</string>
   <string name="msg_copied_to_clipboard">Copied to clipboard successfully</string>

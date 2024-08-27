@@ -13,6 +13,7 @@
 - Fixed: deprecated Google Play developer profile link
 - Fixed: buttons state changing during navigation transition
 - Fixed: layout not displaying correctly on parallax page
+- Fixed: invisible status bar icons on some devices with Android 11
 
 ## 5.6.1
 

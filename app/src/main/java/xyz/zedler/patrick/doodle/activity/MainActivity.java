@@ -410,7 +410,7 @@ public class MainActivity extends AppCompatActivity {
       if (VERSION.SDK_INT < VERSION_CODES.S) {
         finish();
       }
-      Intent intent = new Intent(this, LauncherActivity.class);
+      Intent intent = new Intent(this, MainActivity.class);
       if (restoreState) {
         intent.putExtra(EXTRA.INSTANCE_STATE, bundle);
       }

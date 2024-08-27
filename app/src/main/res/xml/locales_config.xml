@@ -42,6 +42,7 @@
   <locale android:name="ru"/>
   <locale android:name="tr"/>
   <locale android:name="ug"/>
+  <locale android:name="uk"/>
   <locale android:name="vi"/>
   <locale android:name="zh-CN"/>
 </locale-config>

@@ -60,7 +60,7 @@ public class LauncherActivity extends MainActivity {
       getSplashScreen().setOnExitAnimationListener(view -> {
         ObjectAnimator animator = ObjectAnimator.ofFloat(view, "alpha", 0);
         animator.setDuration(300);
-        animator.setStartDelay(300);
+        animator.setStartDelay(650);
         animator.addListener(new AnimatorListenerAdapter() {
           @Override
           public void onAnimationEnd(@NonNull Animator animation, boolean isReverse) {

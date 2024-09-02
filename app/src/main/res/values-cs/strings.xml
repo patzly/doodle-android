@@ -115,6 +115,13 @@
     <item quantity="many">Každých %1$d hodin</item>
     <item quantity="other">Každých %1$d hodin</item>
   </plurals>
+  <plurals name="appearance_random_interval_days">
+    <item quantity="one">Každý den</item>
+    <item quantity="few">Každé %1$d dny</item>
+    <item quantity="many">Každých %1$d dní</item>
+    <item quantity="other">Každých %1$d dní</item>
+  </plurals>
+
   <!-- PARALLAX -->
 
   <string name="parallax_title">Parallax efekt</string>

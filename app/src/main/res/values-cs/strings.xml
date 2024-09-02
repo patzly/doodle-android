@@ -104,7 +104,7 @@
   <string name="appearance_random_daily">denně v </string>
   <string name="appearance_random_interval">Nastavit interval </string>
   <plurals name="appearance_random_interval_minutes">
-    <item quantity="one">Každou minutu</item>
+    <item quantity="one">Každou %1$d minutu</item>
     <item quantity="few">Každé %1$d minuty</item>
     <item quantity="many">Každých %1$d minut</item>
     <item quantity="other">Každých %1$d minut</item>

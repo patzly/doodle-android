@@ -22,6 +22,8 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
   <string name="wallpaper_description">Barevné živé tapety s automatickým tmavým režimem a energeticky úspornými animacemi.  Přizpůsobte si ho svým potřebám!</string>
+  <string name="wallpaper_description_picker">Prozkoumejte barevnou sbírku tvarů, vylepšených jemnou paralaxou a efekty přiblížení při přecházení mezi obrazovkami a pri odemykání zařízení.\nPřizpůsobte si tapetu tak, aby odpovídala vašemu stylu!</string>
+
   <!-- TITLES -->
 
   <string name="title_info">Informace</string>

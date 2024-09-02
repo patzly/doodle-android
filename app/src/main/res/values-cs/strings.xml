@@ -28,6 +28,7 @@
 
   <string name="title_info">Informace</string>
   <string name="title_apply_changes">Aplikovat změny</string>
+  <string name="title_logcat">Protokol</string>
   <string name="title_feedback">Zpětná vazba</string>
   <string name="title_licenses">Licence open source</string>
 

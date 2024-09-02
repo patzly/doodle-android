@@ -84,6 +84,7 @@
   <string name="appearance_night_mode_on">Zapnout</string>
   <string name="appearance_night_mode_off">Vypnout</string>
   <string name="appearance_light_text">Vždy použít bílý text</string>
+  <string name="appearance_light_text_description">Namísto tmavého textu na světlém pozadí</string>
   <string name="appearance_dark_text">Použít tmavý text</string>
   <string name="appearance_dark_text_description">Pouze pokud je pozadí dost světlé</string>
   <string name="appearance_colors_category">Barvy </string>

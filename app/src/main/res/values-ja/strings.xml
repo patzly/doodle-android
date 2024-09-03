@@ -153,7 +153,7 @@
   <string name="size_zoom_launcher_description">デバイスによっては機能しないかもしれません</string>
   <string name="size_zoom_damping">アニメーションの減衰量</string>
   <string name="size_zoom_damping_description">ズーム動作をもっと滑らかにしたい場合は、この設定を有効にして値を小さくしてください</string>
-  <string name="size_zoom_unlock">ロック画面でのズーム</string>
+  <string name="size_zoom_unlock">ロック画面でズームする</string>
   <string name="size_zoom_unlock_description">ズーム方向</string>
   <string name="size_zoom_unlock_in">Zoom in</string>
   <string name="size_zoom_unlock_out">Zoom out</string>

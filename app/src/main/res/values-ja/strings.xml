@@ -171,7 +171,7 @@
   <string name="other_gpu">ハードウェアアクセラレーション</string>
   <string name="other_gpu_description">壁紙がクラッシュする場合はOFFにしてください</string>
   <string name="other_gpu_info">Doodle が使用するハードウェア・アクセラレーションは Android 8 から利用できるようになったものです。壁紙のアニメーションに少しカクつきが出るかもしれません</string>
-  <string name="other_screen_off_delay">画面オフを遅らせる</string>
+  <string name="other_screen_off_delay">画面オフ時の遅延</string>
   <string name="other_screen_off_delay_description">Always On Display 状態への移行に必要です</string>
   <string name="other_launcher">ホームアプリ内に Doodle のアイコンを表示しない</string>
   <string name="other_launcher_description">このアプリの設定画面へはシステムの Live Wallparer Pickerからしかアクセスできなくなります</string>

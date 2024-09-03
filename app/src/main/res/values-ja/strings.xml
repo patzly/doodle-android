@@ -116,7 +116,7 @@
   <!-- PARALLAX -->
 
   <string name="parallax_title">パララックス（視差効果）</string>
-  <string name="parallax_description">スワイプやチルト（傾き）に反応します</string>
+  <string name="parallax_description">スワイプと傾きの効果</string>
   <string name="parallax_swipe_category">スワイプ</string>
   <string name="parallax_swipe_touch_wiz">サムスンのTouchWizかOne UI Homeをお使いですか？この２つはスワイプイフェクトに対応していません。他のランチャーアプリを試してみてください。\nすでに他ランチャーをお使いであればこの警告は無視していただいてかまいません</string>
   <string name="parallax_swipe">スワイプイフェクト</string>

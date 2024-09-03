@@ -174,7 +174,7 @@
   <string name="other_screen_off_delay">画面OFF時の遅延</string>
   <string name="other_screen_off_delay_description">Always On Display 状態への移行に必要です</string>
   <string name="other_launcher">ホームアプリ内に Doodle のアイコンを表示しない</string>
-  <string name="other_launcher_description">このアプリの設定画面へはシステムの Live Wallparer Pickerからしかアクセスできなくなります</string>
+  <string name="other_launcher_description">このアプリの設定画面へはシステムの Live Wallparer Pickerからのみアクセスできるようになります</string>
   <string name="other_launcher_unsupported">この機能はシステムの制限により利用できなくなりました</string>
   <string name="other_theme">アプリのテーマカラー</string>
   <string name="other_theme_description">他の見た目を試せます</string>

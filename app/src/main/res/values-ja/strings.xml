@@ -125,7 +125,7 @@
   <string name="parallax_swipe_power_save_description">バッテリーセーバーの作動中にスワイプイフェクトを停止します</string>
   <string name="parallax_tilt_category">チルト</string>
   <string name="parallax_tilt">傾きのエフェクト</string>
-  <string name="parallax_tilt_description">デバイスを傾けた時の動作量</string>
+  <string name="parallax_tilt_description">デバイスを傾けた時の動作の量</string>
   <string name="parallax_tilt_warning">バッテリー消費量が多くなります</string>
   <string name="parallax_refresh_rate">傾きの検出頻度</string>
   <string name="parallax_refresh_rate_description">値を小さくしすぎるとアニメーションにラグが生じる可能性があります</string>

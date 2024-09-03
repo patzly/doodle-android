@@ -62,7 +62,7 @@
   <string name="action_rate">GooglePlayで評価</string>
   <string name="action_rate_description">アプリの開発をサポートする</string>
   <string name="action_github">GitHub の Doodle Android ページ</string>
-  <string name="action_github_description">GitHub に Issue を提起する</string>
+  <string name="action_github_description">新しいissueを開く</string>
   <string name="action_language_select">使用する言語を選択</string>
   <string name="action_set_static">通常の壁紙を設定</string>
   <string name="action_change_time">変更する時刻</string>

@@ -122,7 +122,7 @@
   <string name="parallax_swipe">スワイプの効果</string>
   <string name="parallax_swipe_description">ページスワイプ時の水平オフセット</string>
   <string name="parallax_swipe_power_save">バッテリーセーバーに従う</string>
-  <string name="parallax_swipe_power_save_description">バッテリーセーバーの作動中はスワイプイフェクトを停止する</string>
+  <string name="parallax_swipe_power_save_description">バッテリーセーバーの作動中にスワイプイフェクトを停止します</string>
   <string name="parallax_tilt_category">チルト</string>
   <string name="parallax_tilt">チルトイフェクト</string>
   <string name="parallax_tilt_description">デバイスを傾けた時の動作量</string>

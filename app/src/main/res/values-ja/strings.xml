@@ -219,7 +219,7 @@
   <string name="msg_share">このよさげなライブ壁紙アプリを見てみる:\nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
   <string name="msg_hide">ランチャーからアイコンを隠しますか？</string>
   <string name="msg_random">選択されたすべてのデザインを使用します</string>
-  <string name="msg_random_warning">現在は壁紙のデザインをランダムに表示する設定になっています</string>
+  <string name="msg_random_warning">壁紙のデザインをランダムに表示する設定が有効です!</string>
   <string name="msg_reset">すべての設定をリセットします。よろしいですか？</string>
   <string name="msg_force_stop">変更を適用するには一度動作を停止する必要があります</string>
   <string name="msg_apply_colors">次に画面をOFFにするまで色の変更はシステムに適用されません</string>

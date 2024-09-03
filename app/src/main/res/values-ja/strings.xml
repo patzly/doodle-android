@@ -182,6 +182,10 @@
   <string name="other_theme_light">Light</string>
   <string name="other_theme_dark">Dark</string>
   <string name="other_contrast">コントラスト</string>
+  <!-- This is a contrast option name: User can choose between standard, medium and high contrast -->
+  <string name="other_contrast_medium">中</string>
+  <!-- This is a contrast option name: User can choose between standard, medium and high contrast -->
+  <string name="other_contrast_high">高</string>
   <string name="other_contrast_dynamic">デバイスのテーマのコントラストはシステム設定で変更する必要があります</string>
   <string name="other_contrast_dynamic_unsupported">デバイスのテーマのダイナミックコントラストはAndroid 14以上で利用可能です</string>
   <string name="other_transition">設定内のページ移動をスライドアニメーションで表示</string>

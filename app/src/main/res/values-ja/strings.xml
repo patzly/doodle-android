@@ -81,7 +81,7 @@
   <string name="appearance_variant">色のバリエーション</string>
   <string name="appearance_night_mode">ナイトモード</string>
   <string name="appearance_night_mode_description">暗めの色だけを選択対象にします</string>
-  <string name="appearance_night_mode_on">On</string>
+  <string name="appearance_night_mode_on">ON</string>
   <string name="appearance_night_mode_off">OFF</string>
   <string name="appearance_light_text">常に文字を白色で表示</string>
   <string name="appearance_light_text_description">背景が明るいときでも白色で表示します</string>

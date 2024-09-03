@@ -156,7 +156,7 @@
   <string name="size_zoom_unlock">ロック画面でズームする</string>
   <string name="size_zoom_unlock_description">ズーム方向</string>
   <string name="size_zoom_unlock_in">ズームイン</string>
-  <string name="size_zoom_unlock_out">Zoom out</string>
+  <string name="size_zoom_unlock_out">ズームアウト</string>
   <string name="size_zoom_duration">ロック解除時のズーム時間の長さ</string>
   <string name="size_zoom_duration_description">値を小さくすると早いアニメーションになります</string>
 

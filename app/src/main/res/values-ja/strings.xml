@@ -178,8 +178,8 @@
   <string name="other_launcher_unsupported">この機能はシステムの制限により利用できなくなりました</string>
   <string name="other_theme">アプリのテーマカラー</string>
   <string name="other_theme_description">見た目を変えてみませんか？</string>
-  <string name="other_theme_auto">Auto</string>
-  <string name="other_theme_light">Light</string>
+  <string name="other_theme_auto">自動</string>
+  <string name="other_theme_light">ライト</string>
   <string name="other_theme_dark">Dark</string>
   <string name="other_contrast">コントラスト</string>
   <string name="other_contrast_description">視覚効果のアクセシビリティ</string>

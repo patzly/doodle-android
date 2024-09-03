@@ -223,7 +223,7 @@
   <string name="msg_reset">すべての設定をリセットします。よろしいですか？</string>
   <string name="msg_force_stop">変更を適用するにはいったん動作を停止する必要があります</string>
   <string name="msg_apply_colors">次に画面をOFFにするまで色の変更はシステムに適用されません</string>
-  <string name="msg_apply_changes">設定の変更を（完全に）適用するために壁紙のサービスを再起動したほうがよいでしょう。再起動は自動的には行われません\nいったんシステム設定で Doodle を強制停止し、あらためて Doodle を壁紙として設定しなおしてください</string>
+  <string name="msg_apply_changes">設定の変更を（完全に）適用するために壁紙のサービスを再起動することをお勧めします。再起動は自動的には行われません\nいったんシステム設定で Doodle を強制停止し、Doodle を壁紙として再設定してください。</string>
   <string name="msg_preview_missing">エラーが発生しました。手動で Doodle Live Wallpaper を選択してください</string>
   <string name="msg_report_crash">クラッシュした場合は、クラッシュログを添付して報告していただければ、修正を試みます。</string>
   <string name="msg_copied_to_clipboard">クリップボードにコピーしました</string>

@@ -182,6 +182,7 @@
   <string name="other_theme_light">Light</string>
   <string name="other_theme_dark">Dark</string>
   <string name="other_contrast">コントラスト</string>
+  <string name="other_contrast_description">視覚効果のアクセシビリティ</string>
   <!-- This is a contrast option name: User can choose between standard, medium and high contrast. The button width should be as dense as possible. -->
   <string name="other_contrast_standard">標準</string>
   <!-- This is a contrast option name: User can choose between standard, medium and high contrast -->

@@ -181,6 +181,8 @@
   <string name="other_theme_auto">Auto</string>
   <string name="other_theme_light">Light</string>
   <string name="other_theme_dark">Dark</string>
+  <string name="other_contrast">コントラスト</string>
+  <string name="other_contrast_dynamic_unsupported">デバイスのダイナミックコントラストテーマはAndroid 14以上で利用可能です</string>
   <string name="other_transition">設定内のページ移動をスライドアニメーションで表示</string>
   <string name="other_transition_description">オフの時はフェードアニメーションで表示します</string>
   <string name="other_reset">すべての設定をリセットする</string>

@@ -73,7 +73,7 @@
 
   <string name="appearance_title">外観</string>
   <string name="appearance_description">デザインと色の設定</string>
-  <string name="appearance_one_ui">サムスン One UI 4.1 のダイナミックカラーの仕様では Doodle のようなライブ壁紙の色はテーマに反映されません。\n反映させるには一度現在のデザインを通常の壁紙として設定し、色合いがシステムに反映されたのち改めてライブ壁紙として再設定してください</string>
+  <string name="appearance_one_ui">サムスン One UI 4.1 のダイナミックカラーの仕様では Doodle のようなライブ壁紙の色はテーマに反映されません。\n反映させるには、一度現在のデザインを通常の壁紙として設定し、色合いがシステムに反映された後で改めてライブ壁紙として再設定してください。</string>
   <string name="appearance_design">デザイン</string>
   <string name="appearance_design_doodle">Pixel 4 Doodle Collection</string>
   <string name="appearance_design_monet">Pixel 6 Material You Collection</string>

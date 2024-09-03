@@ -194,7 +194,7 @@
   <string name="other_transition">設定内のページ移動をスライドアニメーションで表示</string>
   <string name="other_transition_description">オフの時はフェードアニメーションで表示します</string>
   <string name="other_reset">すべての設定をリセットする</string>
-  <string name="other_reset_description">あなたの設定はデバイス起動時にすぐにアクセスできるよう特別な場所に保存されているため、Doodleをアンインストールするだけでは初期状態に戻りません。そうした設定も込みでリセットします。</string>
+  <string name="other_reset_description">設定はデバイスの起動後すぐにアクセスできるように特別な場所に保存されるため、アンインストールでは初期状態に戻りません。そのような設定も含めてリセットします。</string>
   <string name="other_log">ログを表示</string>
   <string name="other_log_description">デバッグ用です</string>
 

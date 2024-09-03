@@ -164,7 +164,7 @@
 
   <string name="other_title">その他の設定</string>
   <string name="other_description">レンダリングや言語の設定、リセット</string>
-  <string name="other_language">使用する言語</string>
+  <string name="other_language">言語</string>
   <string name="other_language_description">Transifex で翻訳作業を行ってくれたボランティアの翻訳者のみなさん、ほんとうにありがとう！「Doodle Live Wallpapers を自分の言葉でも使えるようにしたい」という方はぜひ GitHub のこのプロジェクトのページにいらしてください。そちらで翻訳に参加する方法を説明しています</string>
   <string name="other_language_system">システム設定に従う</string>
   <string name="other_language_system_description">翻訳が適用されていない箇所は英語で表示されます</string>

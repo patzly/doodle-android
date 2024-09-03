@@ -216,7 +216,7 @@
 
   <string name="msg_feedback">素晴らしいアプリが生まれるには長い時間とユーザーのフィードバックがもたらす活力が欠かせません</string>
   <string name="msg_feedback_contact">このアプリに関して希望やコメント、質問などはありますか？気兼ねなくご連絡ください\nもしくはプレイストアでよいレビューをいただければとてもうれしいです</string>
-  <string name="msg_share">このよさげなライブ壁紙アプリを見てみる:\nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
+  <string name="msg_share">このクールなライブ壁紙アプリを確認してみてください:\nhttps://play.google.com/store/apps/details\?id=xyz.zedler.patrick.doodle</string>
   <string name="msg_hide">ランチャーからアイコンを隠しますか？</string>
   <string name="msg_random">選択されたすべてのデザインを使用します</string>
   <string name="msg_random_warning">壁紙のデザインをランダムに表示する設定が有効です!</string>

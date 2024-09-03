@@ -128,7 +128,7 @@
   <string name="parallax_tilt_description">デバイスを傾けた時の動作量</string>
   <string name="parallax_tilt_warning">バッテリー消費が大きくなります</string>
   <string name="parallax_refresh_rate">チルトセンサーのリフレッシュレート</string>
-  <string name="parallax_refresh_rate_description">値を小さくしすぎるとアニメーションにラグが生じるかもしれません</string>
+  <string name="parallax_refresh_rate_description">値を小さくしすぎるとアニメーションにラグが生じる可能性があります</string>
   <string name="parallax_damping">モーションの減衰量</string>
   <string name="parallax_damping_description">値が小さいほどモーションが滑らかになります</string>
   <string name="parallax_threshold">動作量の閾値</string>

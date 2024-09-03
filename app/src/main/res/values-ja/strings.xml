@@ -121,7 +121,7 @@
   <string name="parallax_swipe_touch_wiz">サムスンのTouchWizかOne UI Homeをお使いですか？これらはスワイプイフェクトに対応していません。他のランチャーアプリを試してみてください。\nすでに他のランチャーをお使いであれば、この警告を無視していただいてかまいません。</string>
   <string name="parallax_swipe">スワイプの効果</string>
   <string name="parallax_swipe_description">ページスワイプ時の水平オフセット</string>
-  <string name="parallax_swipe_power_save">バッテリーセーバー優先</string>
+  <string name="parallax_swipe_power_save">バッテリーセーバーに従う</string>
   <string name="parallax_swipe_power_save_description">バッテリーセーバーの作動中はスワイプイフェクトを停止する</string>
   <string name="parallax_tilt_category">チルト</string>
   <string name="parallax_tilt">チルトイフェクト</string>

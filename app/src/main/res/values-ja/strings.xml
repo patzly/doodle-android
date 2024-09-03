@@ -210,7 +210,7 @@
   <string name="about_github_description">ソースコード</string>
   <string name="about_translation_description">Doodle の翻訳を手伝う</string>
   <string name="about_privacy">プライバシーポリシー</string>
-  <string name="about_privacy_description">あなたのデータの取り扱いかた</string>
+  <string name="about_privacy_description">データはどのように扱われますか？</string>
 
   <!-- MESSAGES -->
 

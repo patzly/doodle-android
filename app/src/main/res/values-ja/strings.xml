@@ -60,7 +60,7 @@
   <string name="action_email">メールを送る</string>
   <string name="action_email_description">開発者に連絡する</string>
   <string name="action_rate">GooglePlayで評価</string>
-  <string name="action_rate_description">アプリの開発を応援する</string>
+  <string name="action_rate_description">アプリの開発をサポートする</string>
   <string name="action_github">GitHub の Doodle Android のページ</string>
   <string name="action_github_description">GitHub に Issue を提起する</string>
   <string name="action_language_select">使用する言語を選択</string>

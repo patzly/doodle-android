@@ -57,7 +57,7 @@
   <string name="action_send_feedback">フィードバックを送る</string>
   <string name="action_share">共有</string>
   <string name="action_share_description">Doodleアプリを友達に広める</string>
-  <string name="action_email">メールを送る</string>
+  <string name="action_email">メールを送信</string>
   <string name="action_email_description">開発者に連絡する</string>
   <string name="action_rate">GooglePlayで評価</string>
   <string name="action_rate_description">アプリの開発をサポートする</string>

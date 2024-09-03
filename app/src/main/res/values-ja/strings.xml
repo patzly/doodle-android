@@ -204,7 +204,7 @@
   <string name="about_description">開発者に関する情報など</string>
   <string name="about_version">バージョン</string>
   <string name="about_changelog">変更履歴</string>
-  <string name="about_changelog_description">ここが新しくなりました</string>
+  <string name="about_changelog_description">新着情報</string>
   <string name="about_developer">開発者</string>
   <string name="about_vending_description">この開発者による他のアプリ</string>
   <string name="about_github_description">ソースコード</string>

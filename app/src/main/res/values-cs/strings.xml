@@ -197,7 +197,9 @@
   <!-- This is a contrast option name: User can choose between standard, medium and high contrast -->
   <string name="other_contrast_medium">Střední</string>
   <!-- This is a contrast option name: User can choose between standard, medium and high contrast -->
-  <string name="other_contrast_high">Vysoká</string>
+  <string name="other_contrast_high">Vysoký</string>
+  <string name="other_contrast_dynamic">Kontrast pro motiv zařízení musí být nastaven v nastavení zařízení</string>
+  <string name="other_contrast_dynamic_unsupported">Dynamický kontrast pro motiv zařízení je dostupný pouze v systému Android 14 a novějším</string>
   <string name="other_transition">Použije posuvný přechod mezi stránkami nastavení</string>
   <string name="other_reset">Obnovit všechna nastavení</string>
   <string name="other_reset_description">Dělá víc, než by udělalo odinstalování, protože předvolby jsou uloženy na zvláštním místě, kde musí být přístupné přímo po spuštění zařízení.</string>

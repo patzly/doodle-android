@@ -131,6 +131,7 @@
   <string name="parallax_swipe">Efekt přejetí</string>
   <string name="parallax_swipe_description">Vodorovný posun při přejetí stránky</string>
   <string name="parallax_swipe_power_save">Respektovat spořič baterie</string>
+  <string name="parallax_swipe_power_save_description">Pozastavit efekt posouvání při zapnutém spořiči baterie</string>
   <string name="parallax_tilt_category">Naklánění</string>
   <string name="parallax_tilt">Efekt při naklonění</string>
   <string name="parallax_refresh_rate">Obnovovací frekvence snímače náklonu</string>

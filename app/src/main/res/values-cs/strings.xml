@@ -137,6 +137,7 @@
   <string name="parallax_tilt_description">Pohyb při naklánění zařízení</string>
   <string name="parallax_tilt_warning">Vyšší spotřeba baterie</string>
   <string name="parallax_refresh_rate">Obnovovací frekvence snímače náklonu</string>
+  <string name="parallax_refresh_rate_description">Příliš krátké prodlevy mohou způsobit sekání animací</string>
   <string name="parallax_damping">Tlumení pohybu</string>
   <string name="parallax_damping_description">Snížit pro větší hladkost</string>
   <string name="parallax_threshold">Práh detekce pohybu</string>
@@ -175,6 +176,7 @@
   <string name="other_language">Jazyk</string>
   <string name="other_language_description">Děkujeme všem dobrovolným překladatelům na Transifexu! Navštivte prosím stránku projektu na GitHubu, kde se dozvíte, jak můžete pomoci zpřístupnit Doodle Live Wallpapers pro váš jazyk.</string>
   <string name="other_language_system">Barvy systému</string>
+  <string name="other_language_system_description">Angličtina, pokud není dostupný překlad</string>
   <string name="other_gpu">Hadrwarová akcelerace</string>
   <string name="other_gpu_description">Vypněte, pokud máte s tapetou problémy</string>
   <string name="other_gpu_info">Hardwarová akcelerace je pro Doodle dostupná až od systému Android 8. Animace tapet proto mohou být trochu trhané.</string>
@@ -188,6 +190,14 @@
   <string name="other_theme_auto">Automaticky</string>
   <string name="other_theme_light">Světlý</string>
   <string name="other_theme_dark">Tmavý</string>
+  <string name="other_contrast">Kontrast</string>
+  <string name="other_contrast_description">Přístupnost pro vaše oči</string>
+  <!-- This is a contrast option name: User can choose between standard, medium and high contrast. The button width should be as dense as possible. -->
+  <string name="other_contrast_standard">Standardní</string>
+  <!-- This is a contrast option name: User can choose between standard, medium and high contrast -->
+  <string name="other_contrast_medium">Střední</string>
+  <!-- This is a contrast option name: User can choose between standard, medium and high contrast -->
+  <string name="other_contrast_high">Vysoká</string>
   <string name="other_transition">Použije posuvný přechod mezi stránkami nastavení</string>
   <string name="other_reset">Obnovit všechna nastavení</string>
   <string name="other_reset_description">Dělá víc, než by udělalo odinstalování, protože předvolby jsou uloženy na zvláštním místě, kde musí být přístupné přímo po spuštění zařízení.</string>

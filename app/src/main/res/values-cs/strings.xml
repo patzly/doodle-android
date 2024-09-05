@@ -204,6 +204,7 @@
   <string name="other_transition_description">Namísto blednutí</string>
   <string name="other_reset">Obnovit všechna nastavení</string>
   <string name="other_reset_description">Dělá víc, než by udělalo odinstalování, protože předvolby jsou uloženy na zvláštním místě, kde musí být přístupné přímo po spuštění zařízení.</string>
+  <string name="other_log">Zobrazit logcat</string>
   <string name="other_log_description">Pro účely ladění</string>
 
   <!-- ABOUT -->

@@ -129,6 +129,7 @@
   <string name="parallax_swipe_category">Přecházení</string>
   <string name="parallax_swipe_touch_wiz">Zdá se, že váš současný launcher je Samsung TouchWiz nebo One UI Home. Tyto launchery nepodporují efekt skrolování. Pro jeho povolení prosím vyzkoušejte jiný launcher.\nPokud jste již nastavili jiný launcher jako výchozí, můžete toto varování ignorovat.</string>
   <string name="parallax_swipe">Efekt přejetí</string>
+  <string name="parallax_swipe_description">Vodorovný posun při přejetí stránky</string>
   <string name="parallax_swipe_power_save">Respektovat spořič baterie</string>
   <string name="parallax_tilt_category">Naklánění</string>
   <string name="parallax_tilt">Efekt při naklonění</string>

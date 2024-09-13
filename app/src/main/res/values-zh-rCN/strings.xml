@@ -181,6 +181,8 @@
   <string name="other_theme_auto">自动</string>
   <string name="other_theme_light">浅色</string>
   <string name="other_theme_dark">深色</string>
+  <!-- This is a contrast option name: User can choose between standard, medium and high contrast -->
+  <string name="other_contrast_high">高</string>
   <string name="other_contrast_dynamic">必须在系统设置中设定设备主题的对比度</string>
   <string name="other_contrast_dynamic_unsupported">设备主题的动态对比只在 Android 14+ 可用</string>
   <string name="other_transition">在设置页面间使用滑动过渡</string>

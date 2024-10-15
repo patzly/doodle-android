@@ -171,8 +171,6 @@
   <string name="other_theme_auto">Automatyczny</string>
   <string name="other_theme_light">Jasny</string>
   <string name="other_theme_dark">Ciemny</string>
-  <string name="other_transition">Używaj animacji przesuwania pomiędzy stronami ustawień</string>
-  <string name="other_transition_description">Zamiast zanikania</string>
   <string name="other_reset">Wyczyść wszystkie ustawienia</string>
   <string name="other_reset_description">Robi więcej niż odinstalowanie by dało, ponieważ preferencje są przechowywane w specjalnym miejsciu ponieważ muszą być dostępne od razu po starcie urządzenia</string>
   <string name="other_log">Wyświetl logcat</string>

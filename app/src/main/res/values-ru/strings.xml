@@ -190,8 +190,6 @@
   <string name="other_theme_auto">Автомат.</string>
   <string name="other_theme_light">Светлая</string>
   <string name="other_theme_dark">Тёмная</string>
-  <string name="other_transition">Использовать скользящий переход между страницами настроек</string>
-  <string name="other_transition_description">Вместо исчезновения</string>
   <string name="other_reset">Сбросить все настройки</string>
   <string name="other_reset_description">Опция полезнее обычного удаления приложения, поскольку настройки хранятся в особом месте, чтобы применяться сразу после запуска устройства</string>
   <string name="other_log">Показать журнал сбоев</string>

@@ -190,8 +190,6 @@
   <string name="other_theme_auto">Авто</string>
   <string name="other_theme_light">Світле</string>
   <string name="other_theme_dark">Темне</string>
-  <string name="other_transition">Використовуйте ковзаючий перехід між сторінками налаштувань</string>
-  <string name="other_transition_description">Замість згасання</string>
   <string name="other_reset">Скинути всі налаштування</string>
   <string name="other_reset_description">Робить більше, ніж видалення, оскільки параметри зберігаються в спеціальному місці, тумо що вони мають бути доступні безпосередньо після запуску пристрою</string>
   <string name="other_log">Показати logcat</string>

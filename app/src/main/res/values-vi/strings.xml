@@ -164,8 +164,6 @@
   <string name="other_theme_auto">Tự động</string>
   <string name="other_theme_light">Sáng</string>
   <string name="other_theme_dark">Tối</string>
-  <string name="other_transition">Sử dụng hiệu ứng chuyển cảnh Trượt giữa các trang cài đặt</string>
-  <string name="other_transition_description">Thay vì Phai</string>
   <string name="other_reset">Đặt lại các tùy chỉnh</string>
   <string name="other_reset_description">Hơn cả gỡ cài đặt, do các tùy chỉnh đã được lưu ở một chỗ đặc biệt nào đó do chúng phải được truy cập ngay sau khi khởi dộng thiết bị</string>
   <string name="other_log">Hiển thị Logcat</string>

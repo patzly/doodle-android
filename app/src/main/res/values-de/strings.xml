@@ -194,8 +194,6 @@
   <string name="other_contrast_high">Hoch</string>
   <string name="other_contrast_dynamic">Kontrast für Systemfarben muss in den Systemeinstellungen festgelegt werden</string>
   <string name="other_contrast_dynamic_unsupported">Dynamischer Kontrast bei Systemfarben ist nur für Android 14+ verfügbar</string>
-  <string name="other_transition">Schieben als Seitenübergang verwenden</string>
-  <string name="other_transition_description">Anstatt auszublenden</string>
   <string name="other_reset">Alle Einstellungen zurücksetzen</string>
   <string name="other_reset_description">Bewirkt mehr als deinstallieren, da die Einstellungen an einem speziellen Ort gespeichert werden, damit sie direkt nach dem Einschalten des Geräts abrufbar sind</string>
   <string name="other_log">Log-Nachrichten anzeigen</string>

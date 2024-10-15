@@ -187,8 +187,6 @@
   <string name="other_theme_auto">Automático</string>
   <string name="other_theme_light">Claro</string>
   <string name="other_theme_dark">Escuro</string>
-  <string name="other_transition">Use transição deslizante entre páginas de configurações</string>
-  <string name="other_transition_description">Em vez de desaparecer</string>
   <string name="other_reset">Redefinir todas as configurações</string>
   <string name="other_reset_description">Faz mais que somente desinstalar, já que as preferencias são guardadas em um lugar especial para serem acessíveis diretamente depois da inicialização do dispositivo</string>
   <string name="other_log">Exibir logcat</string>

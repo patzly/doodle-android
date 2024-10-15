@@ -171,8 +171,6 @@
   <string name="other_theme_auto">Auto</string>
   <string name="other_theme_light">Liwanag</string>
   <string name="other_theme_dark">Madilim</string>
-  <string name="other_transition">Gumamit ng sliding transition sa pagitan ng mga pahina ng mga setting</string>
-  <string name="other_transition_description">Imbes na kumukupas</string>
   <string name="other_reset">I-reset ang lahat ng settings</string>
   <string name="other_reset_description">Higit pa sa gagawin ng pag-uninstall, dahil ang mga kagustuhan ay nakalagay sa isang espesyal na lugar dahil dapat silang direktang ma-access pagkatapos ng pag-start ng device</string>
   <string name="other_log">Ipakita ang logcat</string>

@@ -181,8 +181,6 @@
   <string name="other_theme_auto">Otomatis</string>
   <string name="other_theme_light">Terang</string>
   <string name="other_theme_dark">Gelap</string>
-  <string name="other_transition">Gunakan transisi bergeser antara halaman pengaturan</string>
-  <string name="other_transition_description">Ketimbang memudar</string>
   <string name="other_reset">Atur-ulang semua setelan</string>
   <string name="other_reset_description">Melakukan lebih dari sekadar mencopot pemasangan, karena pengaturan disimpan di tempat khusus karena mereka harus dapat diakses secara langsung setelah perangkat dinyalakan</string>
   <string name="other_log">Tampilkan logcat</string>

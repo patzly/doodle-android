@@ -184,8 +184,6 @@
   <string name="other_theme_auto">Otomatik</string>
   <string name="other_theme_light">Aydınlık</string>
   <string name="other_theme_dark">Karanlık</string>
-  <string name="other_transition">Ayarlar sayfaları arasında kayma geçiş efektini kullan</string>
-  <string name="other_transition_description">Solma efekti yerine </string>
   <string name="other_reset">Tüm ayarları sıfırla </string>
   <string name="other_reset_description">Kaldırmanın yapacağından daha fazlasını yapar, çünkü uygulama ayarları cihaz açılır açılmaz direkt erişilebilir olması gerektiği için özel bir yerde saklanıyor</string>
   <string name="other_log">Logları görüntüle</string>

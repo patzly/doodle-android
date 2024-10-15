@@ -171,8 +171,6 @@
   <string name="other_theme_auto">Auto</string>
   <string name="other_theme_light">Világos</string>
   <string name="other_theme_dark">Sötét</string>
-  <string name="other_transition">Használjon csúszó átmenetet a beállítási oldalak között</string>
-  <string name="other_transition_description">Elhalványulás helyett</string>
   <string name="other_reset">Minden beállítás visszaállítása</string>
   <string name="other_reset_description">Többet tesz, mint az eltávolítás, mert a beállítások egy speciális helyen vannak tárolva, mivel közvetlenül az eszköz indítása után elérhetőnek kell lenniük.</string>
   <string name="other_log">Logcat mutatása</string>

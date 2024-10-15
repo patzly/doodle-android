@@ -184,8 +184,6 @@
   <string name="other_theme_auto">Auto</string>
   <string name="other_theme_light">Licht</string>
   <string name="other_theme_dark">Donker</string>
-  <string name="other_transition">Gebruik schuiftransitie tussen instellingpagina\'s</string>
-  <string name="other_transition_description">In plaats van vervaging</string>
   <string name="other_reset">Reset alle instellingen</string>
   <string name="other_reset_description">Doet meer dan de-installeren zou doen, want de voorkeuren op een speciale plek worden opgeslagen omdat deze toegankelijk moeten zijn direct na opstarten apparaat</string>
   <string name="other_log">Toon logcat</string>

@@ -191,8 +191,6 @@
   <string name="other_contrast_high">高</string>
   <string name="other_contrast_dynamic">デバイスのテーマのコントラストはシステム設定で変更する必要があります</string>
   <string name="other_contrast_dynamic_unsupported">デバイスのテーマのダイナミックコントラストはAndroid 14以上で利用可能です</string>
-  <string name="other_transition">設定内のページ移動をスライドアニメーションで表示</string>
-  <string name="other_transition_description">オフの時はフェードアニメーションで表示します</string>
   <string name="other_reset">すべての設定をリセットする</string>
   <string name="other_reset_description">設定はデバイスの起動後すぐにアクセスできるように特別な場所に保存されるため、アンインストールでは初期状態に戻りません。そのような設定も含めてリセットします。</string>
   <string name="other_log">ログを表示</string>

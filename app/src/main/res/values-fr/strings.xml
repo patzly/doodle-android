@@ -187,8 +187,6 @@
   <string name="other_theme_auto">Auto</string>
   <string name="other_theme_light">Clair</string>
   <string name="other_theme_dark">Sombre</string>
-  <string name="other_transition">Utiliser une transition de balayage entre les pages de paramètres</string>
-  <string name="other_transition_description">Au lieu d\'estomper</string>
   <string name="other_reset">Réinitialiser tous les réglages</string>
   <string name="other_reset_description">Fait plus que la désinstallation ne le ferait car les préférences sont stockées à un endroit spécial afin d\'être accessibles directement après le démarrage de l\'appareil</string>
   <string name="other_log">Afficher le logcat</string>

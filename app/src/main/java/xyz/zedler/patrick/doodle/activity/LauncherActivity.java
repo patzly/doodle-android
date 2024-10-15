@@ -30,12 +30,15 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.drawable.LayerDrawable;
 import android.os.Build;
+import android.os.Build.VERSION_CODES;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.content.res.ResourcesCompat;
+import java.time.Instant;
+import java.time.temporal.ChronoUnit;
 import xyz.zedler.patrick.doodle.Constants.DEF;
 import xyz.zedler.patrick.doodle.Constants.EXTRA;
 import xyz.zedler.patrick.doodle.Constants.PREF;
@@ -54,13 +57,16 @@ public class LauncherActivity extends MainActivity {
         .checkForMigrations()
         .getSharedPrefs();
 
-    if (Build.VERSION.SDK_INT >= 31) {
+    if (Build.VERSION.SDK_INT >= VERSION_CODES.S_V2) {
       super.onCreate(bundle);
 
       getSplashScreen().setOnExitAnimationListener(view -> {
+        Instant startTime = view.getIconAnimationStart();
         ObjectAnimator animator = ObjectAnimator.ofFloat(view, "alpha", 0);
         animator.setDuration(300);
-        animator.setStartDelay(650);
+        animator.setStartDelay(
+            startTime != null ? 1000 - startTime.until(Instant.now(), ChronoUnit.MILLIS) : 0
+        );
         animator.addListener(new AnimatorListenerAdapter() {
           @Override
           public void onAnimationEnd(@NonNull Animator animation, boolean isReverse) {

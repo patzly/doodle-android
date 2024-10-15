@@ -5,7 +5,7 @@
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
         <option name="delegatedBuild" value="false" />
-        <option name="testRunner" value="GRADLE" />
+        <option name="testRunner" value="CHOOSE_PER_TEST" />
         <option name="disableWrapperSourceDistributionNotification" value="true" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="gradleJvm" value="JDK" />

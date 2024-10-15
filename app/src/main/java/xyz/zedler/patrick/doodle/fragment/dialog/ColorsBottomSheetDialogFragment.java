@@ -35,7 +35,6 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.divider.MaterialDivider;
-import com.google.android.material.elevation.SurfaceColors;
 import java.util.Objects;
 import xyz.zedler.patrick.doodle.Constants.EXTRA;
 import xyz.zedler.patrick.doodle.R;
@@ -81,7 +80,7 @@ public class ColorsBottomSheetDialogFragment extends BaseBottomSheetDialogFragme
       int index = i;
       SelectionCardView card = new SelectionCardView(activity);
       card.setOuterCardBackgroundColor(
-          ResUtil.getColor(activity, R.attr.colorSurfaceContainerHighest)
+          ResUtil.getColor(activity, R.attr.colorSurfaceContainerHigh)
       );
       card.setCardBackgroundColor(Color.parseColor(colors[index]));
       card.setScrimEnabled(false, true);

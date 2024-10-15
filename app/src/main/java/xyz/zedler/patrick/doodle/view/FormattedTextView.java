@@ -21,7 +21,6 @@ package xyz.zedler.patrick.doodle.view;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.drawable.GradientDrawable;
 import android.net.Uri;
 import android.util.AttributeSet;
@@ -36,15 +35,10 @@ import androidx.core.text.HtmlCompat;
 import androidx.core.widget.TextViewCompat;
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.divider.MaterialDivider;
-import com.google.android.material.materialswitch.MaterialSwitch;
 import com.google.android.material.textview.MaterialTextView;
-import xyz.zedler.patrick.doodle.Constants.DEF;
-import xyz.zedler.patrick.doodle.Constants.PREF;
 import xyz.zedler.patrick.doodle.R;
-import xyz.zedler.patrick.doodle.util.PrefsUtil;
 import xyz.zedler.patrick.doodle.util.ResUtil;
 import xyz.zedler.patrick.doodle.util.UiUtil;
-import xyz.zedler.patrick.doodle.util.ViewUtil;
 
 public class FormattedTextView extends LinearLayout {
 
@@ -98,20 +92,6 @@ public class FormattedTextView extends LinearLayout {
         addView(link.length == 1 ? getLink(link[0], link[0]) : getLink(link[0], link[1]));
       } else if (part.startsWith("---")) {
         addView(getDivider());
-      } else if (part.startsWith("OPTION_USE_SLIDING")) {
-        View optionTransition = inflate(context, R.layout.partial_option_transition, null);
-        optionTransition.setBackground(ViewUtil.getRippleBgListItemSurface(context));
-        optionTransition.setLayoutParams(getVerticalLayoutParams(0, 16));
-        MaterialSwitch toggle = optionTransition.findViewById(R.id.switch_other_transition);
-        optionTransition.setOnClickListener(v -> toggle.setChecked(!toggle.isChecked()));
-        SharedPreferences sharedPrefs = new PrefsUtil(context).getSharedPrefs();
-        toggle.setOnCheckedChangeListener((buttonView, isChecked) -> {
-          ViewUtil.startIcon(optionTransition.findViewById(R.id.image_other_transition));
-          sharedPrefs.edit().putBoolean(PREF.USE_SLIDING, isChecked).apply();
-        });
-        toggle.setChecked(sharedPrefs.getBoolean(PREF.USE_SLIDING, DEF.USE_SLIDING));
-        toggle.jumpDrawablesToCurrentState();
-        addView(optionTransition);
       } else {
         boolean keepDistance = !partNext.startsWith("=> ");
         addView(getParagraph(part, keepDistance));

@@ -212,16 +212,6 @@ public class OtherFragment extends BaseFragment
         )
     );
 
-    binding.partialOptionTransition.linearOtherTransition.setOnClickListener(
-        v -> binding.partialOptionTransition.switchOtherTransition.setChecked(
-            !binding.partialOptionTransition.switchOtherTransition.isChecked()
-        )
-    );
-    binding.partialOptionTransition.switchOtherTransition.setChecked(
-        getSharedPrefs().getBoolean(PREF.USE_SLIDING, DEF.USE_SLIDING)
-    );
-    binding.partialOptionTransition.switchOtherTransition.jumpDrawablesToCurrentState();
-
     ViewUtil.setOnClickListeners(
         this,
         binding.linearOtherLanguage,
@@ -233,8 +223,7 @@ public class OtherFragment extends BaseFragment
     ViewUtil.setOnCheckedChangeListeners(
         this,
         binding.switchOtherGpu,
-        binding.switchOtherLauncher,
-        binding.partialOptionTransition.switchOtherTransition
+        binding.switchOtherLauncher
     );
   }
 
@@ -328,9 +317,6 @@ public class OtherFragment extends BaseFragment
             PackageManager.DONT_KILL_APP
         );
       }
-    } else if (id == R.id.switch_other_transition) {
-      ViewUtil.startIcon(binding.partialOptionTransition.imageOtherTransition);
-      getSharedPrefs().edit().putBoolean(PREF.USE_SLIDING, isChecked).apply();
     }
   }
 

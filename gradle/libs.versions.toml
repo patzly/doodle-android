@@ -1,5 +1,5 @@
 [versions]
-agp = "8.5.2"
+agp = "8.7.1"
 appcompat = "1.7.0"
 fragment = "1.8.2"
 navigation = "2.8.0-rc01"

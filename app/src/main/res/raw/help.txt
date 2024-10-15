@@ -39,12 +39,6 @@ If your device doesn't display you the option to apply it only to your home scre
 
 This feature is not supported by this app. The rendering method doesn't support dynamic changes like custom shapes, a replication of this feature would be way too time consuming.
 
-#### Blank screen is shown instead of settings in Doodle?
-
-That's a bug on a few devices out there, mostly with Android 8.1 or 9. For a workaround please activate the following option:
-
-OPTION_USE_SLIDING
-
 #### "Set" button is missing?
 
 If you tap on "Set wallpaper" and the fullscreen wallpaper preview opens, a "Set" button should be displayed by the system to apply the live wallpaper.

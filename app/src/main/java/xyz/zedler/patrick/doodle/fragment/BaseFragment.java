@@ -26,6 +26,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavDirections;
+import com.google.android.material.transition.MaterialSharedAxis;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.activity.MainActivity;
 import xyz.zedler.patrick.doodle.util.ResUtil;
@@ -42,6 +43,11 @@ public class BaseFragment extends Fragment {
 
     activity = (MainActivity) requireActivity();
     viewUtil = new ViewUtil();
+
+    setEnterTransition(new MaterialSharedAxis(MaterialSharedAxis.Z, true));
+    setReenterTransition(new MaterialSharedAxis(MaterialSharedAxis.Z, false));
+    setReturnTransition(new MaterialSharedAxis(MaterialSharedAxis.Z, false));
+    setExitTransition(new MaterialSharedAxis(MaterialSharedAxis.Z, true));
   }
 
   @Override
@@ -63,7 +69,7 @@ public class BaseFragment extends Fragment {
   }
 
   public void navigateToFragment(NavDirections directions) {
-    activity.navigateToFragment(directions);
+    activity.navigate(directions);
   }
 
   public void navigateUp() {

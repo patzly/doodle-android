@@ -54,7 +54,6 @@ import androidx.core.view.WindowInsetsCompat.Type;
 import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
 import androidx.navigation.NavController;
 import androidx.navigation.NavDirections;
-import androidx.navigation.NavOptions;
 import androidx.navigation.fragment.NavHostFragment;
 import com.google.android.material.snackbar.Snackbar;
 import java.util.Locale;
@@ -320,28 +319,6 @@ public class MainActivity extends AppCompatActivity {
     }
     try {
       navController.navigate(directions);
-    } catch (IllegalArgumentException e) {
-      Log.e(TAG, "navigate: " + directions, e);
-    }
-  }
-
-  public void navigateToFragment(NavDirections directions) {
-    if (navController == null || directions == null) {
-      Log.e(TAG, "navigate: controller or direction is null");
-      return;
-    }
-    try {
-      NavOptions.Builder builder = new NavOptions.Builder();
-      if (UiUtil.areAnimationsEnabled(this)) {
-        boolean useSliding = getSharedPrefs().getBoolean(PREF.USE_SLIDING, DEF.USE_SLIDING);
-        builder.setEnterAnim(useSliding ? R.anim.open_enter_slide : R.animator.open_enter);
-        builder.setExitAnim(useSliding ? R.anim.open_exit_slide : R.animator.open_exit);
-        builder.setPopEnterAnim(useSliding ? R.anim.close_enter_slide : R.animator.close_enter);
-        builder.setPopExitAnim(useSliding ? R.anim.close_exit_slide : R.animator.close_exit);
-      } else {
-        builder.setEnterAnim(-1).setExitAnim(-1).setPopEnterAnim(-1).setPopExitAnim(-1);
-      }
-      navController.navigate(directions, builder.build());
     } catch (IllegalArgumentException e) {
       Log.e(TAG, "navigate: " + directions, e);
     }

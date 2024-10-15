@@ -108,7 +108,6 @@ public final class Constants {
     public static final String THEME = "app_theme";
     public static final String UI_MODE = "mode";
     public static final String UI_CONTRAST = "ui_contrast";
-    public static final String USE_SLIDING = "use_sliding_transition";
     public static final String SCREEN_OFF_DELAY = "screen_off_delay";
 
     public static final String LAST_VERSION = "last_version";
@@ -153,7 +152,6 @@ public final class Constants {
     public static final String THEME = "";
     public static final int UI_MODE = AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
     public static final String UI_CONTRAST = CONTRAST.STANDARD;
-    public static final boolean USE_SLIDING = false;
   }
 
   public static BaseWallpaper getWallpaper(String wallpaper) {

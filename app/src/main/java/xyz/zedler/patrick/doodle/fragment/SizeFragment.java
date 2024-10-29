@@ -254,7 +254,7 @@ public class SizeFragment extends BaseFragment
     int id = slider.getId();
     if (id == R.id.slider_size_scale) {
       getSharedPrefs().edit().putFloat(PREF.SCALE, value / 10).apply();
-      ViewUtil.startIcon(binding.imageSizeScale);
+      //ViewUtil.startIcon(binding.imageSizeScale);
       activity.requestSettingsRefresh();
       performHapticClick();
     } else if (id == R.id.slider_size_zoom) {

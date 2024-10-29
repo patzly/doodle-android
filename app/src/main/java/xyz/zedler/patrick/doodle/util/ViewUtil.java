@@ -194,7 +194,7 @@ public class ViewUtil {
     try {
       ((Animatable) drawable).start();
     } catch (ClassCastException e) {
-      Log.e(TAG, "icon animation requires AnimVectorDrawable");
+      Log.v(TAG, "icon animation requires AnimVectorDrawable");
     }
   }
 

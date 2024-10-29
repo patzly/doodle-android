@@ -23,7 +23,8 @@
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
-  android:transitionGroup="true">
+  android:transitionGroup="true"
+  android:background="?attr/colorSurface">
 
   <com.google.android.material.appbar.AppBarLayout
     android:id="@+id/app_bar_size"
@@ -71,7 +72,7 @@
           <ImageView
             android:id="@+id/image_size_scale"
             style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-            android:src="@drawable/ic_round_filter_center_focus_anim"
+            android:src="@drawable/ic_rounded_straighten"
             tools:ignore="ContentDescription" />
 
           <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">

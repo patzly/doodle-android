@@ -140,7 +140,7 @@
           <ImageView
             android:id="@+id/image_parallax_swipe_power_save"
             style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-            android:src="@drawable/ic_round_battery_saver_anim"
+            android:src="@drawable/ic_rounded_battery_saver_anim"
             tools:ignore="ContentDescription" />
 
           <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">
@@ -274,7 +274,7 @@
             <ImageView
               android:id="@+id/image_parallax_damping"
               style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-              android:src="@drawable/ic_round_vibration_anim"
+              android:src="@drawable/ic_rounded_vibration_anim"
               tools:ignore="ContentDescription" />
 
             <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
@@ -341,7 +341,7 @@
             <ImageView
               android:id="@+id/image_parallax_tilt_power_save"
               style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-              android:src="@drawable/ic_round_battery_saver_anim"
+              android:src="@drawable/ic_rounded_battery_saver_anim"
               tools:ignore="ContentDescription" />
 
             <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">

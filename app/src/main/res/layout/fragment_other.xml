@@ -315,7 +315,7 @@
           <ImageView
             android:id="@+id/image_screen_off_delay"
             style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-            android:src="@drawable/ic_round_aod"
+            android:src="@drawable/ic_rounded_aod"
             tools:ignore="ContentDescription" />
 
           <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
@@ -348,7 +348,7 @@
           <ImageView
             android:id="@+id/image_other_launcher"
             style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-            android:src="@drawable/ic_round_visibility_off"
+            android:src="@drawable/ic_rounded_visibility_off"
             tools:ignore="ContentDescription" />
 
           <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">

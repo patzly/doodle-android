@@ -90,7 +90,7 @@
           <com.google.android.material.button.MaterialButton
             android:id="@+id/button_size_scale_reset"
             style="@style/Widget.Doodle.Button.IconButton"
-            app:icon="@drawable/ic_round_settings_backup_restore_anim" />
+            app:icon="@drawable/ic_rounded_rotate_auto_anim" />
 
         </LinearLayout>
 
@@ -151,7 +151,7 @@
           <ImageView
             android:id="@+id/image_size_zoom_rotation"
             style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-            android:src="@drawable/ic_round_autorenew_anim"
+            android:src="@drawable/ic_rounded_rotate_right_anim"
             tools:ignore="ContentDescription" />
 
           <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
@@ -184,7 +184,7 @@
           <ImageView
             android:id="@+id/image_size_zoom_power_save"
             style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-            android:src="@drawable/ic_round_battery_saver_anim"
+            android:src="@drawable/ic_rounded_battery_saver_anim"
             tools:ignore="ContentDescription" />
 
           <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">
@@ -217,7 +217,7 @@
           <ImageView
             android:id="@+id/image_size_zoom_launcher"
             style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-            android:src="@drawable/ic_round_aod"
+            android:src="@drawable/ic_rounded_aod"
             tools:ignore="ContentDescription" />
 
           <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">
@@ -310,7 +310,7 @@
             <ImageView
               android:id="@+id/image_size_zoom_unlock"
               style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-              android:src="@drawable/ic_round_screen_lock_portrait"
+              android:src="@drawable/ic_rounded_screen_lock_portrait"
               tools:ignore="ContentDescription" />
 
             <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">

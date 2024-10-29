@@ -19,24 +19,27 @@
 
 <animated-vector
   xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:aapt="http://schemas.android.com/aapt"
-  android:autoMirrored="true">
+  xmlns:aapt="http://schemas.android.com/aapt">
   <aapt:attr name="android:drawable">
     <vector
       android:name="vector"
       android:width="24dp"
       android:height="24dp"
       android:viewportWidth="24"
-      android:viewportHeight="24">
+      android:viewportHeight="24"
+      android:autoMirrored="true">
+      <path
+        android:name="battery"
+        android:pathData="M8,22Q7.575,22 7.287,21.712 7,21.425 7,21V5Q7,4.575 7.287,4.287 7.575,4 8,4h2V3Q10,2.575 10.288,2.287 10.575,2 11,2h2Q13.425,2 13.712,2.287 14,2.575 14,3v1h2Q16.425,4 16.712,4.287 17,4.575 17,5v6q0,0.425 -0.287,0.712Q16.425,12 16,12 15.575,12 15.288,11.712 15,11.425 15,11V6H9v14h2.525q0.425,0 0.712,0.287 0.287,0.287 0.287,0.712 0,0.425 -0.287,0.712Q11.95,22 11.525,22Z"
+        android:fillColor="#000000" />
       <group
         android:name="group"
-        android:pivotX="12"
-        android:pivotY="12">
+        android:pivotX="17"
+        android:pivotY="18">
         <path
-          android:name="path"
-          android:pathData="M12,6v1.79c0,0.45 0.54,0.67 0.85,0.35l2.79,-2.79c0.2,-0.2 0.2,-0.51 0,-0.71l-2.79,-2.79c-0.31,-0.31 -0.85,-0.09 -0.85,0.36L12,4c-4.42,0 -8,3.58 -8,8 0,1.04 0.2,2.04 0.57,2.95 0.27,0.67 1.13,0.85 1.64,0.34 0.27,-0.27 0.38,-0.68 0.23,-1.04C6.15,13.56 6,12.79 6,12c0,-3.31 2.69,-6 6,-6zM17.79,8.71c-0.27,0.27 -0.38,0.69 -0.23,1.04 0.28,0.7 0.44,1.46 0.44,2.25 0,3.31 -2.69,6 -6,6v-1.79c0,-0.45 -0.54,-0.67 -0.85,-0.35l-2.79,2.79c-0.2,0.2 -0.2,0.51 0,0.71l2.79,2.79c0.31,0.31 0.85,0.09 0.85,-0.35L12,20c4.42,0 8,-3.58 8,-8 0,-1.04 -0.2,-2.04 -0.57,-2.95 -0.27,-0.67 -1.13,-0.85 -1.64,-0.34z"
-          android:fillColor="#000"
-          android:strokeWidth="1" />
+          android:name="plus"
+          android:pathData="M16,19H14Q13.575,19 13.288,18.712 13,18.425 13,18 13,17.575 13.288,17.288 13.575,17 14,17h2V15Q16,14.575 16.288,14.288 16.575,14 17,14 17.425,14 17.712,14.288 18,14.575 18,15v2h2q0.425,0 0.712,0.287Q21,17.575 21,18 21,18.425 20.712,18.712 20.425,19 20,19h-2v2q0,0.425 -0.287,0.712Q17.425,22 17,22 16.575,22 16.288,21.712 16,21.425 16,21Z"
+          android:fillColor="#000000" />
       </group>
     </vector>
   </aapt:attr>

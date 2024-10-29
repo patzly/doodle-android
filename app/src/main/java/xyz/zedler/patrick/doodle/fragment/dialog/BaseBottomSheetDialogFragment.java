@@ -24,6 +24,7 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.PaintDrawable;
 import android.os.Build;
+import android.os.Build.VERSION_CODES;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -89,7 +90,10 @@ public class BaseBottomSheetDialogFragment extends CustomBottomSheetDialogFragme
 
             BottomSheetBehavior<View> behavior = BottomSheetBehavior.from(sheet);
             int peekHeightHalf = UiUtil.getDisplayHeight(requireContext()) / 2;
-            behavior.setPeekHeight(peekHeightHalf);
+            if (Build.VERSION.SDK_INT >= VERSION_CODES.M) {
+              // Animation broken on API 21
+              behavior.setPeekHeight(peekHeightHalf);
+            }
 
             boolean isFullWidth
                 = behavior.getMaxWidth() >= UiUtil.getDisplayWidth(requireContext());

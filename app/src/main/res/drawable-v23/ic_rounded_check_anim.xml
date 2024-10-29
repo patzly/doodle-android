@@ -26,7 +26,8 @@
       android:width="24dp"
       android:height="24dp"
       android:viewportWidth="24"
-      android:viewportHeight="24">
+      android:viewportHeight="24"
+      android:autoMirrored="true">
       <group
         android:name="group"
         android:pivotX="10"

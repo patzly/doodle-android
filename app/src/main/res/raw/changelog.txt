@@ -1,13 +1,13 @@
 ## 6.0.0
 
-- New: Android 15 support
+- New: support for Android 14 & 15
 - New: dynamic contrast for app themes
 - Improved: icons replaced with new Material 3 symbols
 - Improved: in-app colors and navigation transitions
 - Improved: updated settings slider appearance
 - Improved: splash screen on Android 12+
-- Fixed: unlock animation not working correctly on Android 14
-- Fixed: broken splash screen animation on Android 14
+- Fixed: unlock animation not working correctly on Android 14+
+- Fixed: broken splash screen animation on Android 14+
 - Fixed: jerky animations after device changed dark mode automatically with screen turned off
 - Fixed: new colors not being applied correctly in certain situations
 - Fixed: deprecated Google Play developer profile link

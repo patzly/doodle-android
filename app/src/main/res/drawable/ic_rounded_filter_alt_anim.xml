@@ -46,7 +46,7 @@
       <group android:name="group">
         <path
           android:name="path"
-          android:pathData="M 4.25 5.61 C 6.57 8.59 10 13 10 13 L 10 18 C 10 19.1 10.9 20 12 20 C 13.1 20 14 19.1 14 18 L 14 13 C 14 13 17.43 8.59 19.75 5.61 C 20.26 4.95 19.79 4 18.95 4 L 5.04 4 C 4.21 4 3.74 4.95 4.25 5.61 Z"
+          android:pathData="M11,20Q10.575,20 10.288,19.712 10,19.425 10,19L10,13L4.2,5.6q-0.375,-0.5 -0.113,-1.05 0.263,-0.55 0.913,-0.55L19,4q0.65,0 0.912,0.55Q20.175,5.1 19.8,5.6L14,13v6q0,0.425 -0.287,0.712Q13.425,20 13,20ZM12,12.3 L16.95,6L7.05,6ZM12,12.3z"
           android:fillColor="#000"
           android:strokeWidth="1" />
       </group>
@@ -106,26 +106,46 @@
   </target>
   <target android:name="circle_1">
     <aapt:attr name="android:animation">
-      <objectAnimator
-        android:propertyName="fillAlpha"
-        android:startOffset="50"
-        android:duration="50"
-        android:valueFrom="0"
-        android:valueTo="1"
-        android:valueType="floatType"
-        android:interpolator="@android:interpolator/fast_out_slow_in" />
+      <set>
+        <objectAnimator
+          android:propertyName="fillAlpha"
+          android:startOffset="50"
+          android:duration="50"
+          android:valueFrom="0"
+          android:valueTo="1"
+          android:valueType="floatType"
+          android:interpolator="@android:interpolator/fast_out_slow_in" />
+        <objectAnimator
+          android:propertyName="fillAlpha"
+          android:startOffset="150"
+          android:duration="50"
+          android:valueFrom="1"
+          android:valueTo="0"
+          android:valueType="floatType"
+          android:interpolator="@android:interpolator/fast_out_slow_in" />
+      </set>
     </aapt:attr>
   </target>
   <target android:name="circle_2">
     <aapt:attr name="android:animation">
-      <objectAnimator
-        android:propertyName="fillAlpha"
-        android:startOffset="150"
-        android:duration="50"
-        android:valueFrom="0"
-        android:valueTo="1"
-        android:valueType="floatType"
-        android:interpolator="@android:interpolator/fast_out_slow_in" />
+      <set>
+        <objectAnimator
+          android:propertyName="fillAlpha"
+          android:startOffset="150"
+          android:duration="50"
+          android:valueFrom="0"
+          android:valueTo="1"
+          android:valueType="floatType"
+          android:interpolator="@android:interpolator/fast_out_slow_in" />
+        <objectAnimator
+          android:propertyName="fillAlpha"
+          android:startOffset="180"
+          android:duration="50"
+          android:valueFrom="1"
+          android:valueTo="0"
+          android:valueType="floatType"
+          android:interpolator="@android:interpolator/fast_out_slow_in" />
+      </set>
     </aapt:attr>
   </target>
 </animated-vector>

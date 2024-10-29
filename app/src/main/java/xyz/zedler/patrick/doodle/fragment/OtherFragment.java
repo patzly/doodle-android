@@ -267,7 +267,7 @@ public class OtherFragment extends BaseFragment
     int id = buttonView.getId();
     performHapticClick();
     if (id == R.id.switch_other_gpu) {
-      ViewUtil.startIcon(binding.imageOtherGpu);
+      //ViewUtil.startIcon(binding.imageOtherGpu);
       getSharedPrefs().edit().putBoolean(PREF.GPU, isChecked).apply();
       activity.showForceStopRequest();
     } else if (id == R.id.switch_other_launcher) {

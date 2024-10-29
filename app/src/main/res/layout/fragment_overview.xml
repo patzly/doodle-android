@@ -175,7 +175,7 @@
           <ImageView
             android:id="@+id/image_overview_appearance"
             style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-            android:src="@drawable/ic_round_looks"
+            android:src="@drawable/ic_rounded_looks"
             tools:ignore="ContentDescription" />
 
           <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">
@@ -189,11 +189,6 @@
               android:text="@string/appearance_description" />
 
           </LinearLayout>
-
-          <ImageView
-            style="@style/Widget.Doodle.ImageView.ListItem.Icon.End"
-            android:src="@drawable/ic_round_navigate_next"
-            tools:ignore="ContentDescription" />
 
         </LinearLayout>
 
@@ -219,11 +214,6 @@
 
           </LinearLayout>
 
-          <ImageView
-            style="@style/Widget.Doodle.ImageView.ListItem.Icon.End"
-            android:src="@drawable/ic_round_navigate_next"
-            tools:ignore="ContentDescription" />
-
         </LinearLayout>
 
         <LinearLayout
@@ -247,11 +237,6 @@
               android:text="@string/size_description" />
 
           </LinearLayout>
-
-          <ImageView
-            style="@style/Widget.Doodle.ImageView.ListItem.Icon.End"
-            android:src="@drawable/ic_round_navigate_next"
-            tools:ignore="ContentDescription" />
 
         </LinearLayout>
 
@@ -277,11 +262,6 @@
 
           </LinearLayout>
 
-          <ImageView
-            style="@style/Widget.Doodle.ImageView.ListItem.Icon.End"
-            android:src="@drawable/ic_round_navigate_next"
-            tools:ignore="ContentDescription" />
-
         </LinearLayout>
 
         <LinearLayout
@@ -305,11 +285,6 @@
               android:text="@string/about_description" />
 
           </LinearLayout>
-
-          <ImageView
-            style="@style/Widget.Doodle.ImageView.ListItem.Icon.End"
-            android:src="@drawable/ic_round_navigate_next"
-            tools:ignore="ContentDescription" />
 
         </LinearLayout>
 

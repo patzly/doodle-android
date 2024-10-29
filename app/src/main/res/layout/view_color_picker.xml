@@ -118,7 +118,7 @@
       android:layout_height="wrap_content"
       android:paddingLeft="8dp"
       android:paddingRight="8dp"
-      android:src="@drawable/ic_round_navigate_next"
+      android:src="@drawable/ic_rounded_chevron_right"
       app:tint="?attr/colorOnSurfaceVariant"
       tools:ignore="ContentDescription" />
 

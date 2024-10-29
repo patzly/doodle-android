@@ -283,8 +283,8 @@
 
           <ImageView
             android:id="@+id/image_other_gpu"
-            style="@style/Widget.Doodle.ImageView.ListItem.Icon.Colored"
-            android:src="@drawable/ic_round_memory"
+            style="@style/Widget.Doodle.ImageView.ListItem.Icon"
+            android:src="@drawable/ic_rounded_memory"
             tools:ignore="ContentDescription" />
 
           <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">
@@ -389,11 +389,6 @@
               android:text="@string/other_log_description" />
 
           </LinearLayout>
-
-          <ImageView
-            style="@style/Widget.Doodle.ImageView.ListItem.Icon.End"
-            android:src="@drawable/ic_round_navigate_next"
-            tools:ignore="ContentDescription" />
 
         </LinearLayout>
 

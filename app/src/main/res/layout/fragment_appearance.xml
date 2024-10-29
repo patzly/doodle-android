@@ -401,7 +401,7 @@
           <ImageView
             android:id="@+id/image_appearance_light_text"
             style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-            android:src="@drawable/ic_round_filter_b_and_w"
+            android:src="@drawable/ic_rounded_filter_b_and_w"
             tools:ignore="ContentDescription" />
 
           <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">
@@ -429,7 +429,7 @@
           <ImageView
             android:id="@+id/image_appearance_dark_text"
             style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-            android:src="@drawable/ic_round_filter_b_and_w"
+            android:src="@drawable/ic_rounded_filter_b_and_w"
             tools:ignore="ContentDescription" />
 
           <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">

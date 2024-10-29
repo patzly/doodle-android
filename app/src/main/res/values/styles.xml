@@ -59,7 +59,7 @@
   </style>
 
   <style name="Widget.Doodle.Toolbar.Back" parent="@style/Widget.Doodle.Toolbar">
-    <item name="navigationIcon">@drawable/ic_round_arrow_back</item>
+    <item name="navigationIcon">@drawable/ic_rounded_arrow_back</item>
     <item name="navigationContentDescription">@string/action_back</item>
   </style>
 

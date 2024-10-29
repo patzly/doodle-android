@@ -118,13 +118,13 @@
   <string name="parallax_title">パララックス（視差効果）</string>
   <string name="parallax_description">スワイプと傾きの効果</string>
   <string name="parallax_swipe_category">スワイプ</string>
-  <string name="parallax_swipe_touch_wiz">サムスンのTouchWizかOne UI Homeをお使いですか？これらはスワイプイフェクトに対応していません。他のランチャーアプリを試してみてください。\nすでに他のランチャーをお使いであれば、この警告を無視していただいてかまいません。</string>
+  <string name="parallax_swipe_touch_wiz">サムスンのTouchWizかOne UI Homeをお使いですか？これらはスワイプの効果に対応していません。他のランチャーアプリを試してみてください。\nすでに他のランチャーをお使いであれば、この警告を無視していただいてかまいません。</string>
   <string name="parallax_swipe">スワイプの効果</string>
   <string name="parallax_swipe_description">ページスワイプ時の水平オフセット</string>
   <string name="parallax_swipe_power_save">バッテリーセーバーに従う</string>
   <string name="parallax_swipe_power_save_description">バッテリーセーバーの作動中にスワイプイフェクトを停止します</string>
   <string name="parallax_tilt_category">チルト</string>
-  <string name="parallax_tilt">傾きのエフェクト</string>
+  <string name="parallax_tilt">傾きの効果</string>
   <string name="parallax_tilt_description">デバイスを傾けた時の動作の量</string>
   <string name="parallax_tilt_warning">バッテリー消費量が多くなります</string>
   <string name="parallax_refresh_rate">傾きの検出頻度</string>

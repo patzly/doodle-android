@@ -74,7 +74,7 @@
           android:layout_height="32dp"
           android:layout_gravity="center"
           android:importantForAccessibility="no"
-          android:src="@drawable/ic_round_doodle_anim" />
+          android:src="@drawable/ic_rounded_doodle_anim" />
 
       </FrameLayout>
 

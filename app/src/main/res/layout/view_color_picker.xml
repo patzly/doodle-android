@@ -91,7 +91,7 @@
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:layout_marginStart="2dp"
-        android:src="@drawable/ic_round_drag_pointer"
+        android:src="@drawable/ic_rounded_drag_pointer"
         tools:ignore="ContentDescription" />
 
     </FrameLayout>

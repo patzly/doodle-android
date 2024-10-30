@@ -51,7 +51,7 @@
       android:layout_height="wrap_content"
       android:paddingTop="4dp"
       android:paddingBottom="4dp"
-      android:src="@drawable/ic_round_expand_more"
+      android:src="@drawable/ic_rounded_keyboard_arrow_down"
       app:tint="?attr/colorOnSurfaceVariant"
       tools:ignore="ContentDescription" />
 
@@ -120,7 +120,7 @@
       android:layout_width="32dp"
       android:layout_height="32dp"
       android:layout_marginStart="2dp"
-      android:src="@drawable/ic_round_drag_pointer"
+      android:src="@drawable/ic_rounded_drag_pointer"
       tools:ignore="ContentDescription" />
 
   </FrameLayout>

@@ -278,7 +278,7 @@
           <ImageView
             android:id="@+id/image_appearance_colors"
             style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-            android:src="@drawable/ic_round_colorize_anim"
+            android:src="@drawable/ic_rounded_colorize_anim"
             tools:ignore="ContentDescription" />
 
           <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">
@@ -463,7 +463,7 @@
           <ImageView
             android:id="@+id/image_appearance_random"
             style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-            android:src="@drawable/ic_round_shuffle_anim"
+            android:src="@drawable/ic_rounded_shuffle_anim"
             tools:ignore="ContentDescription" />
 
           <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">

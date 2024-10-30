@@ -190,7 +190,7 @@
               <ImageView
                 android:id="@+id/image_parallax_tilt"
                 style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-                android:src="@drawable/ic_round_all_directions_anim"
+                android:src="@drawable/ic_rounded_drag_pan_anim"
                 tools:ignore="ContentDescription" />
 
               <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">

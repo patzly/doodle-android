@@ -228,6 +228,7 @@
   <string name="msg_random">Všechny vybrané návrhy budou použity</string>
   <string name="msg_random_warning">Náhodný design tapety se zatím stále používá!</string>
   <string name="msg_reset">Obnovit všechna nastavení?</string>
+  <string name="msg_reset_description">Opravdu chcete resetovat celou aplikaci\? Tato akce je nevratná.</string>
   <string name="msg_force_stop">Vynucené zastavení nutné k provedení změn</string>
   <string name="msg_apply_colors">Změněné barvy se do systému aplikují při příštím vypnutí obrazovky.</string>
   <string name="msg_apply_changes">Pro použití (případně) změněných možností se doporučuje restartovat spuštěnou službu tapety. To nelze provést automaticky.\nProsím, zastavte službu Doodle v nastavení systému a poté ji znovu použijte jako tapetu</string>

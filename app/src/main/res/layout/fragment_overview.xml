@@ -247,7 +247,7 @@
           <ImageView
             android:id="@+id/image_overview_other"
             style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-            android:src="@drawable/ic_round_tune"
+            android:src="@drawable/ic_rounded_tune_anim"
             tools:ignore="ContentDescription" />
 
           <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch">

@@ -17,15 +17,14 @@
   ~ Copyright (c) 2020-2024 by Patrick Zedler
   -->
 
-<vector
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  android:height="24dp"
-  android:viewportHeight="960"
-  android:viewportWidth="960"
-  android:width="24dp">
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="960"
+    android:viewportHeight="960">
 
-  <path
-    android:fillColor="#000000"
-    android:pathData="m442,680 l166,-106q18,-12 18,-34t-18,-34L442,400q-20,-13 -41,-2t-21,35v214q0,24 21,35t41,-2ZM160,840q-33,0 -56.5,-23.5T80,760v-480q0,-17 11.5,-28.5T120,240h200v-80q0,-33 23.5,-56.5T400,80h160q33,0 56.5,23.5T640,160v80h200q17,0 28.5,11.5T880,280v480q0,33 -23.5,56.5T800,840L160,840ZM160,760h640v-440L160,320v440ZM400,240h160v-80L400,160v80ZM160,760v-440,440Z" />
+    <path
+        android:fillColor="#000000"
+        android:pathData="m442,680 l166,-106q18,-12 18,-34t-18,-34L442,400q-20,-13 -41,-2t-21,35v214q0,24 21,35t41,-2ZM160,840q-33,0 -56.5,-23.5T80,760v-480q0,-17 11.5,-28.5T120,240h200v-80q0,-33 23.5,-56.5T400,80h160q33,0 56.5,23.5T640,160v80h200q17,0 28.5,11.5T880,280v480q0,33 -23.5,56.5T800,840L160,840ZM160,760h640v-440L160,320v440ZM400,240h160v-80L400,160v80ZM160,760v-440,440Z" />
 
 </vector>

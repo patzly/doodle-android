@@ -18,9 +18,9 @@
   -->
 
 <data-extraction-rules>
-  <cloud-backup disableIfNoEncryptionCapabilities="false">
-    <exclude
-      domain="sharedpref"
-      path="." />
-  </cloud-backup>
+    <cloud-backup disableIfNoEncryptionCapabilities="false">
+        <exclude
+            domain="sharedpref"
+            path="." />
+    </cloud-backup>
 </data-extraction-rules>

@@ -16,16 +16,15 @@
   ~
   ~ Copyright (c) 2019-2024 by Patrick Zedler
   -->
-<vector
-  android:autoMirrored="true"
-  android:width="32dp"
-  android:height="32dp"
-  android:viewportHeight="24"
-  android:viewportWidth="24"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-  <path
-    android:fillColor="?attr/colorPrimaryContainer"
-    android:strokeColor="?attr/colorOutline"
-    android:strokeWidth="1"
-    android:pathData="m2.161,11.839c0,4.2 3.22,8 8.2,8 3.18,-0 6.92,-2.45 11.23,-7.34 0.33,-0.38 0.33,-0.95 0,-1.33C17.281,6.289 13.541,3.839 10.361,3.839 5.381,3.839 2.161,7.639 2.161,11.839Z" />
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="32dp"
+    android:height="32dp"
+    android:autoMirrored="true"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:fillColor="?attr/colorPrimaryContainer"
+        android:pathData="m2.161,11.839c0,4.2 3.22,8 8.2,8 3.18,-0 6.92,-2.45 11.23,-7.34 0.33,-0.38 0.33,-0.95 0,-1.33C17.281,6.289 13.541,3.839 10.361,3.839 5.381,3.839 2.161,7.639 2.161,11.839Z"
+        android:strokeWidth="1"
+        android:strokeColor="?attr/colorOutline" />
 </vector>

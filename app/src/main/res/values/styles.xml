@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ This file is part of Doodle Android.
   ~
   ~ Doodle Android is free software: you can redistribute it and/or modify
@@ -20,563 +19,515 @@
 
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-  <!-- For languages not supported by Jost*, the system font will be used as fallback.
-       If the system font is used, the medium variant of Jost* won't be replaced by a medium/bold
-       variant of the system font, so we have to configure these texts to be styled bold for these
-       locales with textStyle="bold".
-       Untranslated text (names or untranslated strings) with textStyle set to bold will look like
-       the medium variant of Jost*, so there is no extra attention needed for e.g. the app bar.
-       Affected languages: Arab, Chinese, Hebrew, Japanese, Uighur -->
-
-  <style name="ThemeOverlay.Doodle.AlertDialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
-    <item name="android:backgroundDimAmount">0.7</item>
-    <item name="buttonBarPositiveButtonStyle">@style/Widget.Doodle.Button.TextButton.Dialog</item>
-    <item name="buttonBarNegativeButtonStyle">@style/Widget.Doodle.Button.TextButton.Dialog</item>
-    <item name="buttonBarNeutralButtonStyle">@style/Widget.Doodle.Button.TextButton.Dialog</item>
-    <item name="materialAlertDialogTitleTextStyle">@style/MaterialAlertDialog.Doodle.Title.Text</item>
-    <item name="android:scrollbarThumbVertical">@drawable/shape_scrollbar_rounded</item>
-  </style>
-
-  <style name="ThemeOverlay.Doodle.AlertDialog.Caution" parent="ThemeOverlay.Doodle.AlertDialog">
-    <item name="buttonBarPositiveButtonStyle">@style/Widget.Doodle.Button.TextButton.Dialog.Caution</item>
-    <item name="buttonBarNegativeButtonStyle">@style/Widget.Doodle.Button.TextButton.Dialog.Caution</item>
-    <item name="buttonBarNeutralButtonStyle">@style/Widget.Doodle.Button.TextButton.Dialog</item>
-  </style>
-
-  <!-- Prevents title from being displayed with smaller text size when it's long -->
-  <style name="MaterialAlertDialog.Doodle.Title.Text" parent="MaterialAlertDialog.Material3.Title.Text">
-    <item name="android:textAppearance">?attr/textAppearanceHeadlineSmall</item>
-    <item name="android:capitalize">none</item>
-    <item name="android:singleLine">false</item>
-    <item name="android:maxLines">4</item>
-  </style>
-
-  <!-- Toolbar -->
-
-  <style
-    name="Widget.Doodle.Toolbar"
-    parent="@style/Widget.Material3.Toolbar.OnSurface">
-    <item name="android:layout_width">match_parent</item>
-    <item name="android:layout_height">?attr/actionBarSize</item>
-    <item name="titleTextAppearance">@style/TextAppearance.Doodle.TitleLarge</item>
-    <item name="titleMarginStart">0dp</item>
-    <item name="titleCentered">true</item>
-    <item name="android:actionOverflowMenuStyle">@style/ThemeOverlay.Doodle.OverFlow</item>
-  </style>
-
-  <style name="Widget.Doodle.Toolbar.Back" parent="@style/Widget.Doodle.Toolbar">
-    <item name="navigationIcon">@drawable/ic_rounded_arrow_back</item>
-    <item name="navigationContentDescription">@string/action_back</item>
-  </style>
-
-  <style name="ThemeOverlay.Doodle.OverFlow" parent="Widget.AppCompat.ActionButton.Overflow">
-    <item name="android:tint">?attr/colorOnSurfaceVariant</item>
-  </style>
-
-  <!-- Snackbar -->
-
-  <style name="Widget.Doodle.Snackbar" parent="Widget.Material3.Snackbar">
-    <item name="shapeAppearance">?attr/shapeAppearanceCornerMedium</item>
-  </style>
-
-  <style name="Widget.Doodle.Snackbar.TextView" parent="Widget.Material3.Snackbar.TextView">
-    <item name="android:textColor">?attr/colorSurfaceVariant</item>
-  </style>
-
-  <!-- Localized style, no empty base style needed -->
-  <style
-    name="Widget.Doodle.Button.TextButton.Snackbar"
-    parent="Widget.Material3.Button.TextButton.Snackbar">
-    <item name="android:fontFamily">@font/jost_medium</item>
-    <item name="fontFamily">@font/jost_medium</item>
-  </style>
-
-  <!-- ImageView (icons) -->
-
-  <style name="Widget.Doodle.ImageView.Icon" parent="">
-    <item name="android:layout_width">24dp</item>
-    <item name="android:layout_height">24dp</item>
-    <item name="tint">?attr/colorOnSurfaceVariant</item>
-    <item name="android:importantForAccessibility">no</item>
-  </style>
-
-  <style name="Widget.Doodle.ImageView.Icon.Navigation" parent="Widget.Doodle.ImageView.Icon">
-    <item name="tint">?attr/colorOnSurface</item>
-    <item name="android:layout_gravity">center</item>
-  </style>
-
-  <!-- Button -->
-
-  <!-- Base style -->
-  <style
-    name="Base.Doodle.Button.UnelevatedButton"
-    parent="Widget.Material3.Button.UnelevatedButton">
-    <item name="android:layout_width">wrap_content</item>
-    <item name="android:layout_height">wrap_content</item>
-    <item name="android:singleLine">true</item>
-  </style>
-
-  <!-- Localized style -->
-  <style
-    name="Widget.Doodle.Button.UnelevatedButton"
-    parent="Base.Doodle.Button.UnelevatedButton">
-    <item name="android:fontFamily">@font/jost_medium</item>
-    <item name="fontFamily">@font/jost_medium</item>
-  </style>
-
-  <!-- Base style -->
-  <style
-    name="Base.Doodle.Button.OutlinedButton"
-    parent="Widget.Material3.Button.OutlinedButton">
-    <item name="android:layout_width">wrap_content</item>
-    <item name="android:layout_height">wrap_content</item>
-    <item name="android:singleLine">true</item>
-  </style>
-
-  <!-- Localized style -->
-  <style
-    name="Widget.Doodle.Button.OutlinedButton"
-    parent="Base.Doodle.Button.OutlinedButton">
-    <item name="android:fontFamily">@font/jost_medium</item>
-    <item name="fontFamily">@font/jost_medium</item>
-  </style>
-
-  <!-- Base style -->
-  <style
-    name="Base.Doodle.Button.TextButton"
-    parent="Widget.Material3.Button.TextButton">
-    <item name="android:layout_width">wrap_content</item>
-    <item name="android:layout_height">wrap_content</item>
-    <item name="android:singleLine">true</item>
-  </style>
-
-  <!-- Localized style -->
-  <style
-    name="Widget.Doodle.Button.TextButton"
-    parent="Base.Doodle.Button.TextButton">
-    <item name="android:fontFamily">@font/jost_medium</item>
-    <item name="fontFamily">@font/jost_medium</item>
-  </style>
-
-  <!-- Localized style, no empty base style needed -->
-  <style
-    name="Widget.Doodle.Button.TextButton.Dialog"
-    parent="Widget.Material3.Button.TextButton.Dialog">
-    <item name="android:singleLine">true</item>
-    <item name="android:fontFamily">@font/jost_medium</item>
-    <item name="fontFamily">@font/jost_medium</item>
-  </style>
-
-  <style
-    name="Widget.Doodle.Button.TextButton.Dialog.Caution"
-    parent="Widget.Doodle.Button.TextButton.Dialog">
-    <item name="android:textColor">?attr/colorError</item>
-    <item name="rippleColor">@color/selector_highlight_error</item>
-  </style>
-
-  <style
-    name="Widget.Doodle.Button.IconButton"
-    parent="Widget.Material3.Button.IconButton">
-    <item name="android:layout_width">wrap_content</item>
-    <item name="android:layout_height">wrap_content</item>
-    <item name="iconTint">?attr/colorOnSurfaceVariant</item>
-    <item name="iconSize">24dp</item>
-    <item name="android:paddingLeft">8dp</item>
-    <item name="android:paddingRight">8dp</item>
-    <item name="android:paddingTop">6dp</item>
-    <item name="android:paddingBottom">6dp</item>
-  </style>
-
-  <!-- CardView -->
-
-  <style name="Widget.Doodle.Card.Text" parent="@style/Widget.Material3.CardView.Filled">
-    <item name="android:layout_width">match_parent</item>
-    <item name="android:layout_height">wrap_content</item>
-    <item name="android:layout_marginBottom">8dp</item>
-    <item name="contentPadding">16dp</item>
-    <item name="cardElevation">0dp</item>
-    <item name="cardCornerRadius">16dp</item>
-    <item name="rippleColor">@color/selector_highlight</item>
-  </style>
-
-  <!-- CheckBox -->
-
-  <style name="Widget.Doodle.CheckBox" parent="Widget.Material3.CompoundButton.CheckBox">
-    <item name="android:layout_width">match_parent</item>
-    <item name="android:layout_height">wrap_content</item>
-    <item name="android:textSize">16sp</item>
-    <item name="android:paddingStart">16dp</item>
-    <item name="android:minHeight">38dp</item>
-    <item name="android:textAlignment">viewStart</item>
-  </style>
-
-  <!-- Switch -->
-
-  <style name="Widget.Doodle.Switch" parent="Widget.Material3.CompoundButton.MaterialSwitch">
-    <item name="android:layout_width">wrap_content</item>
-    <item name="android:layout_height">wrap_content</item>
-    <item name="android:layout_marginStart">16dp</item>
-  </style>
-
-  <!-- Slider -->
-
-  <!-- Slider -->
-
-  <style name="Widget.Doodle.Slider" parent="Widget.Material3.Slider">
-    <item name="android:layout_width">match_parent</item>
-    <item name="android:layout_height">wrap_content</item>
-    <item name="android:stepSize">1</item>
-    <item name="thumbElevation">0dp</item>
-    <item name="labelStyle">@style/Widget.Doodle.Tooltip</item>
-    <item name="tickRadiusActive">2dp</item>
-    <item name="tickRadiusInactive">2dp</item>
-    <item name="trackStopIndicatorSize">0dp</item>
-  </style>
-
-  <!-- Tooltip -->
-
-  <style name="Widget.Doodle.Tooltip" parent="Widget.Material3.Tooltip">
-    <item name="android:textColor">?attr/colorOnSurfaceInverse</item>
-    <item name="backgroundTint">?attr/colorSurfaceInverse</item>
-    <item name="android:textAppearance">@style/TextAppearance.Doodle.Tooltip</item>
-    <item name="android:padding">16dp</item>
-    <item name="android:minHeight">40dp</item>
-    <item name="showMarker">false</item>
-  </style>
-
-  <!-- ExtendedFloatingActionButton -->
-
-  <!-- Localized style, no empty base style needed -->
-  <style
-    name="Widget.Doodle.ExtendedFloatingActionButton"
-    parent="Widget.Material3.ExtendedFloatingActionButton.Primary">
-    <item name="android:fontFamily">@font/jost_medium</item>
-    <item name="fontFamily">@font/jost_medium</item>
-  </style>
-
-  <!-- TimePicker -->
-
-  <style name="ThemeOverlay.Doodle.TimePicker" parent="ThemeOverlay.Material3.MaterialTimePicker">
-    <item name="materialTimePickerStyle">@style/Widget.Doodle.TimePicker</item>
-    <item name="chipStyle">@style/Widget.Doodle.TimePicker.Display</item>
-    <item name="textInputStyle">@style/Widget.Doodle.TimePicker.Display.TextInputLayout</item>
-    <item name="materialDisplayDividerStyle">@style/Widget.Doodle.TimePicker.Display.Divider</item>
-    <item name="materialTimePickerTitleStyle">@style/TextAppearance.Doodle.TimePicker.Title</item>
-    <item name="materialButtonStyle">@style/Widget.Doodle.Button.TextButton.Dialog.Flush</item>
-  </style>
-
-  <style name="Widget.Doodle.TimePicker" parent="Widget.Material3.MaterialTimePicker">
-    <item name="shapeAppearance">?attr/shapeAppearanceCornerLarge</item>
-  </style>
-
-  <style
-    name="TextAppearance.Doodle.TimePicker.Title"
-    parent="TextAppearance.Material3.MaterialTimePicker.Title">
-    <item name="android:fontFamily">@font/jost_medium</item>
-    <item name="fontFamily">@font/jost_medium</item>
-  </style>
-
-  <style
-    name="Widget.Doodle.TimePicker.Display"
-    parent="Widget.Material3.MaterialTimePicker.Display">
-    <item name="android:textAppearance">@style/TextAppearance.Doodle.TimePicker.DisplayLarge</item>
-    <item name="shapeAppearanceOverlay">?attr/shapeAppearanceCornerLarge</item>
-  </style>
-
-  <style
-    name="TextAppearance.Doodle.TimePicker.DisplayLarge"
-    parent="TextAppearance.Material3.DisplayLarge">
-    <item name="android:fontFamily">@font/jost_book</item>
-    <item name="fontFamily">@font/jost_book</item>
-  </style>
-
-  <style
-    name="Widget.Doodle.TimePicker.Display.Divider"
-    parent="Widget.Material3.MaterialTimePicker.Display.Divider">
-    <item name="android:textAppearance">@style/TextAppearance.Doodle.TimePicker.HeadlineMedium</item>
-  </style>
-
-  <style
-    name="TextAppearance.Doodle.TimePicker.HeadlineMedium"
-    parent="TextAppearance.Material3.HeadlineMedium">
-    <item name="android:fontFamily">@font/jost_book</item>
-    <item name="fontFamily">@font/jost_book</item>
-  </style>
-
-  <style
-    name="Widget.Doodle.TimePicker.Display.TextInputLayout"
-    parent="Widget.Material3.MaterialTimePicker.Display.TextInputLayout">
-    <item name="boxCornerRadiusTopStart">16dp</item>
-    <item name="boxCornerRadiusTopEnd">16dp</item>
-    <item name="boxCornerRadiusBottomStart">16dp</item>
-    <item name="boxCornerRadiusBottomEnd">16dp</item>
-  </style>
-
-  <style
-    name="Widget.Doodle.Button.TextButton.Dialog.Flush"
-    parent="Widget.Material3.Button.TextButton.Dialog.Flush">
-    <item name="android:fontFamily">@font/jost_medium</item>
-    <item name="fontFamily">@font/jost_medium</item>
-  </style>
-
-  <!-- LinearLayout (lists) -->
-
-  <style name="Widget.Doodle.LinearLayout.ListItem" parent="">
-    <item name="android:layout_width">match_parent</item>
-    <item name="android:layout_height">wrap_content</item>
-    <item name="android:gravity">center_vertical</item>
-    <item name="android:orientation">horizontal</item>
-  </style>
-
-  <style
-    name="Widget.Doodle.LinearLayout.ListItem.SingleLine"
-    parent="Widget.Doodle.LinearLayout.ListItem">
-    <item name="android:minHeight">56dp</item>
-    <item name="android:paddingStart">16dp</item>
-    <item name="android:paddingEnd">24dp</item>
-    <item name="android:paddingTop">8dp</item>
-    <item name="android:paddingBottom">8dp</item>
-  </style>
-
-  <style
-    name="Widget.Doodle.LinearLayout.ListItem.SingleLine.Clickable"
-    parent="Widget.Doodle.LinearLayout.ListItem.SingleLine">
-    <item name="android:clickable">true</item>
-    <item name="android:background">@drawable/ripple_list_item_bg</item>
-  </style>
-
-  <style
-    name="Widget.Doodle.LinearLayout.ListItem.TwoLine"
-    parent="Widget.Doodle.LinearLayout.ListItem">
-    <item name="android:minHeight">72dp</item>
-    <item name="android:paddingStart">16dp</item>
-    <item name="android:paddingEnd">24dp</item>
-    <item name="android:paddingTop">8dp</item>
-    <item name="android:paddingBottom">8dp</item>
-  </style>
-
-  <style
-    name="Widget.Doodle.LinearLayout.ListItem.TwoLine.More"
-    parent="Widget.Doodle.LinearLayout.ListItem.TwoLine">
-    <item name="android:paddingTop">12dp</item>
-    <item name="android:paddingBottom">12dp</item>
-  </style>
-
-  <style
-    name="Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable"
-    parent="Widget.Doodle.LinearLayout.ListItem.TwoLine">
-    <item name="android:clickable">true</item>
-    <item name="android:background">@drawable/ripple_list_item_bg</item>
-  </style>
-
-  <style
-    name="Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable.More"
-    parent="Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable">
-    <item name="android:paddingTop">12dp</item>
-    <item name="android:paddingBottom">12dp</item>
-  </style>
-
-  <style
-    name="Widget.Doodle.LinearLayout.ListItem.ThreeLine"
-    parent="Widget.Doodle.LinearLayout.ListItem">
-    <item name="android:minHeight">88dp</item>
-    <item name="android:gravity">top</item>
-    <item name="android:paddingStart">16dp</item>
-    <item name="android:paddingEnd">24dp</item>
-    <item name="android:paddingTop">12dp</item>
-    <item name="android:paddingBottom">12dp</item>
-  </style>
-
-  <style
-    name="Widget.Doodle.LinearLayout.ListItem.ThreeLine.Clickable"
-    parent="Widget.Doodle.LinearLayout.ListItem.ThreeLine">
-    <item name="android:clickable">true</item>
-    <item name="android:background">@drawable/ripple_list_item_bg</item>
-  </style>
-
-  <style name="Widget.Doodle.LinearLayout.ListItem.TextBox" parent="">
-    <item name="android:layout_width">match_parent</item>
-    <item name="android:layout_height">wrap_content</item>
-    <item name="android:orientation">vertical</item>
-  </style>
-
-  <style
-    name="Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch"
-    parent="Widget.Doodle.LinearLayout.ListItem.TextBox">
-    <item name="android:layout_width">0dp</item>
-    <item name="android:layout_weight">1</item>
-  </style>
-
-  <!-- ImageView (lists) -->
-
-  <style name="Widget.Doodle.ImageView.ListItem.Icon" parent="">
-    <item name="android:layout_width">24dp</item>
-    <item name="android:layout_height">24dp</item>
-    <item name="android:layout_marginEnd">16dp</item>
-    <item name="tint">?attr/colorOnSurfaceVariant</item>
-    <item name="android:importantForAccessibility">no</item>
-  </style>
-
-  <style
-    name="Widget.Doodle.ImageView.ListItem.Icon.Colored"
-    parent="Widget.Doodle.ImageView.ListItem.Icon">
-    <item name="tint">@null</item>
-  </style>
-
-  <style
-    name="Widget.Doodle.ImageView.ListItem.Icon.End"
-    parent="Widget.Doodle.ImageView.ListItem.Icon">
-    <item name="android:layout_gravity">end|center_vertical</item>
-    <item name="android:layout_marginStart">16dp</item>
-    <item name="android:layout_marginEnd">0dp</item>
-  </style>
-
-  <!-- TextView -->
-
-  <style name="Base.Doodle.TextView" parent="Widget.MaterialComponents.TextView">
-    <item name="android:textAppearance">?attr/textAppearanceBodyLarge</item>
-    <item name="android:textColor">?attr/colorOnSurface</item>
-    <item name="android:textAlignment">viewStart</item>
-    <item name="android:fontFamily">@font/jost_book</item>
-    <item name="fontFamily">@font/jost_book</item>
-    <item name="android:breakStrategy" tools:targetApi="m">high_quality</item>
-    <item name="android:hyphenationFrequency" tools:targetApi="m">full</item>
-    <item name="android:lineBreakWordStyle" tools:targetApi="33">phrase</item>
-  </style>
-
-  <style name="Widget.Doodle.TextView" parent="Base.Doodle.TextView">
-    <!-- Overridden in v33 with fullFast -->
-    <item name="android:hyphenationFrequency" tools:targetApi="m">full</item>
-  </style>
-
-  <!-- Localized style, no empty base style needed -->
-  <style name="Widget.Doodle.TextView.Medium" parent="Widget.Doodle.TextView">
-    <item name="android:fontFamily">@font/jost_medium</item>
-    <item name="fontFamily">@font/jost_medium</item>
-  </style>
-
-  <style name="Widget.Doodle.TextView.Paragraph" parent="Widget.Doodle.TextView">
-    <item name="android:justificationMode" tools:targetApi="o">inter_word</item>
-  </style>
-
-  <style
-    name="Widget.Doodle.TextView.Paragraph.BodyMedium"
-    parent="Widget.Doodle.TextView.Paragraph">
-    <item name="android:textAppearance">?attr/textAppearanceBodyMedium</item>
-  </style>
-
-  <!-- M3 TYPOGRAPHY -->
-
-  <style name="Widget.Doodle.TextView.HeadlineSmall" parent="Widget.Doodle.TextView">
-    <item name="android:textAppearance">?attr/textAppearanceHeadlineSmall</item>
-  </style>
-
-  <style name="Widget.Doodle.TextView.TitleLarge" parent="Widget.Doodle.TextView">
-    <item name="android:textAppearance">?attr/textAppearanceTitleLarge</item>
-  </style>
-
-  <style name="Widget.Doodle.TextView.TitleMedium" parent="Widget.Doodle.TextView.Medium">
-    <item name="android:textAppearance">?attr/textAppearanceTitleMedium</item>
-  </style>
-
-  <style name="Widget.Doodle.TextView.BodyMedium" parent="Widget.Doodle.TextView">
-    <item name="android:textAppearance">?attr/textAppearanceBodyMedium</item>
-  </style>
-
-  <style name="Widget.Doodle.TextView.BodySmall" parent="Widget.Doodle.TextView">
-    <item name="android:textAppearance">?attr/textAppearanceBodySmall</item>
-  </style>
-
-  <style name="Widget.Doodle.TextView.LabelLarge" parent="Widget.Doodle.TextView.Medium">
-    <item name="android:textAppearance">?attr/textAppearanceLabelLarge</item>
-  </style>
-
-  <style name="Widget.Doodle.TextView.LabelMedium" parent="Widget.Doodle.TextView.Medium">
-    <item name="android:textAppearance">?attr/textAppearanceLabelMedium</item>
-  </style>
-
-  <style name="Widget.Doodle.TextView.LabelSmall" parent="Widget.Doodle.TextView.Medium">
-    <item name="android:textAppearance">?attr/textAppearanceLabelSmall</item>
-  </style>
-
-  <!-- Other text widget styles -->
-
-  <style name="Widget.Doodle.TextView.Toolbar" parent="Widget.Doodle.TextView">
-    <item name="android:textAppearance">?attr/textAppearanceTitleLarge</item>
-    <item name="android:singleLine">true</item>
-    <item name="android:textColor">?attr/colorOnSurface</item>
-  </style>
-
-  <style name="Widget.Doodle.TextView.Category" parent="Widget.Doodle.TextView.Medium">
-    <item name="android:layout_width">wrap_content</item>
-    <item name="android:layout_height">wrap_content</item>
-    <item name="android:layout_marginStart">56dp</item>
-    <item name="android:paddingTop">10dp</item>
-    <item name="android:paddingBottom">3dp</item>
-    <item name="android:textAppearance">?attr/textAppearanceTitleSmall</item>
-    <item name="android:textColor">?attr/colorSecondary</item>
-  </style>
-
-  <style name="Widget.Doodle.TextView.ListItem.OverLine" parent="Widget.Doodle.TextView.Medium">
-    <item name="android:layout_width">match_parent</item>
-    <item name="android:layout_height">wrap_content</item>
-    <item name="android:maxLines">2</item>
-    <item name="android:textAppearance">?attr/textAppearanceLabelMedium</item><!--Small-->
-    <item name="android:textColor">?attr/colorOnSurfaceVariant</item>
-  </style>
-
-  <style name="Widget.Doodle.TextView.ListItem.Title" parent="Widget.Doodle.TextView">
-    <item name="android:layout_width">match_parent</item>
-    <item name="android:layout_height">wrap_content</item>
-    <item name="android:textAppearance">?attr/textAppearanceBodyLarge</item>
-    <item name="android:textColor">?attr/colorOnSurface</item>
-  </style>
-
-  <style name="Widget.Doodle.TextView.ListItem.Description" parent="Widget.Doodle.TextView">
-    <item name="android:layout_width">match_parent</item>
-    <item name="android:layout_height">wrap_content</item>
-    <item name="android:textAppearance">?attr/textAppearanceBodyMedium</item>
-    <item name="android:textColor">?attr/colorOnSurfaceVariant</item>
-  </style>
-
-  <!-- TextAppearance -->
-
-  <style name="TextAppearance.Doodle.HeadlineLarge" parent="TextAppearance.Material3.HeadlineLarge">
-    <item name="android:fontFamily">@font/jost_book</item>
-    <item name="fontFamily">@font/jost_book</item>
-  </style>
-
-  <style name="TextAppearance.Doodle.HeadlineMedium" parent="TextAppearance.Material3.HeadlineMedium">
-    <item name="android:fontFamily">@font/jost_book</item>
-    <item name="fontFamily">@font/jost_book</item>
-  </style>
-
-  <style name="TextAppearance.Doodle.HeadlineSmall" parent="TextAppearance.Material3.HeadlineSmall">
-    <item name="android:fontFamily">@font/jost_book</item>
-    <item name="fontFamily">@font/jost_book</item>
-  </style>
-
-  <style name="TextAppearance.Doodle.TitleLarge" parent="TextAppearance.Material3.TitleLarge">
-    <item name="android:fontFamily">@font/jost_book</item>
-    <item name="fontFamily">@font/jost_book</item>
-  </style>
-
-  <!-- Localized style, no empty base style needed -->
-  <style name="TextAppearance.Doodle.TitleMedium" parent="TextAppearance.Material3.TitleMedium">
-    <item name="android:fontFamily">@font/jost_medium</item>
-    <item name="fontFamily">@font/jost_medium</item>
-  </style>
-
-  <!-- Localized style, no empty base style needed -->
-  <style name="TextAppearance.Doodle.LabelLarge" parent="TextAppearance.Material3.LabelLarge">
-    <item name="android:fontFamily">@font/jost_medium</item>
-    <item name="fontFamily">@font/jost_medium</item>
-  </style>
-
-  <style name="TextAppearance.Doodle.Tooltip" parent="TextAppearance.Material3.BodyLarge">
-    <item name="android:textSize">14sp</item>
-    <item name="android:fontFamily">@font/jost_book</item>
-    <item name="fontFamily">@font/jost_book</item>
-  </style>
+    <!-- For languages not supported by Jost*, the system font will be used as fallback.
+         If the system font is used, the medium variant of Jost* won't be replaced by a medium/bold
+         variant of the system font, so we have to configure these texts to be styled bold for these
+         locales with textStyle="bold".
+         Untranslated text (names or untranslated strings) with textStyle set to bold will look like
+         the medium variant of Jost*, so there is no extra attention needed for e.g. the app bar.
+         Affected languages: Arab, Chinese, Hebrew, Japanese, Uighur -->
+
+    <style name="ThemeOverlay.Doodle.AlertDialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="android:backgroundDimAmount">0.7</item>
+        <item name="buttonBarPositiveButtonStyle">@style/Widget.Doodle.Button.TextButton.Dialog
+        </item>
+        <item name="buttonBarNegativeButtonStyle">@style/Widget.Doodle.Button.TextButton.Dialog
+        </item>
+        <item name="buttonBarNeutralButtonStyle">@style/Widget.Doodle.Button.TextButton.Dialog
+        </item>
+        <item name="materialAlertDialogTitleTextStyle">
+            @style/MaterialAlertDialog.Doodle.Title.Text
+        </item>
+        <item name="android:scrollbarThumbVertical">@drawable/shape_scrollbar_rounded</item>
+    </style>
+
+    <style name="ThemeOverlay.Doodle.AlertDialog.Caution" parent="ThemeOverlay.Doodle.AlertDialog">
+        <item name="buttonBarPositiveButtonStyle">
+            @style/Widget.Doodle.Button.TextButton.Dialog.Caution
+        </item>
+        <item name="buttonBarNegativeButtonStyle">
+            @style/Widget.Doodle.Button.TextButton.Dialog.Caution
+        </item>
+        <item name="buttonBarNeutralButtonStyle">@style/Widget.Doodle.Button.TextButton.Dialog
+        </item>
+    </style>
+
+    <!-- Prevents title from being displayed with smaller text size when it's long -->
+    <style name="MaterialAlertDialog.Doodle.Title.Text" parent="MaterialAlertDialog.Material3.Title.Text">
+        <item name="android:textAppearance">?attr/textAppearanceHeadlineSmall</item>
+        <item name="android:capitalize">none</item>
+        <item name="android:singleLine">false</item>
+        <item name="android:maxLines">4</item>
+    </style>
+
+    <!-- Toolbar -->
+
+    <style name="Widget.Doodle.Toolbar" parent="@style/Widget.Material3.Toolbar.OnSurface">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?attr/actionBarSize</item>
+        <item name="titleTextAppearance">@style/TextAppearance.Doodle.TitleLarge</item>
+        <item name="titleMarginStart">0dp</item>
+        <item name="titleCentered">true</item>
+        <item name="android:actionOverflowMenuStyle">@style/ThemeOverlay.Doodle.OverFlow</item>
+    </style>
+
+    <style name="Widget.Doodle.Toolbar.Back" parent="@style/Widget.Doodle.Toolbar">
+        <item name="navigationIcon">@drawable/ic_rounded_arrow_back</item>
+        <item name="navigationContentDescription">@string/action_back</item>
+    </style>
+
+    <style name="ThemeOverlay.Doodle.OverFlow" parent="Widget.AppCompat.ActionButton.Overflow">
+        <item name="android:tint">?attr/colorOnSurfaceVariant</item>
+    </style>
+
+    <!-- Snackbar -->
+
+    <style name="Widget.Doodle.Snackbar" parent="Widget.Material3.Snackbar">
+        <item name="shapeAppearance">?attr/shapeAppearanceCornerMedium</item>
+    </style>
+
+    <style name="Widget.Doodle.Snackbar.TextView" parent="Widget.Material3.Snackbar.TextView">
+        <item name="android:textColor">?attr/colorSurfaceVariant</item>
+    </style>
+
+    <!-- Localized style, no empty base style needed -->
+    <style name="Widget.Doodle.Button.TextButton.Snackbar" parent="Widget.Material3.Button.TextButton.Snackbar">
+        <item name="android:fontFamily">@font/jost_medium</item>
+        <item name="fontFamily">@font/jost_medium</item>
+    </style>
+
+    <!-- ImageView (icons) -->
+
+    <style name="Widget.Doodle.ImageView.Icon" parent="">
+        <item name="android:layout_width">24dp</item>
+        <item name="android:layout_height">24dp</item>
+        <item name="tint">?attr/colorOnSurfaceVariant</item>
+        <item name="android:importantForAccessibility">no</item>
+    </style>
+
+    <style name="Widget.Doodle.ImageView.Icon.Navigation" parent="Widget.Doodle.ImageView.Icon">
+        <item name="tint">?attr/colorOnSurface</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    <!-- Button -->
+
+    <!-- Base style -->
+    <style name="Base.Doodle.Button.UnelevatedButton" parent="Widget.Material3.Button.UnelevatedButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <!-- Localized style -->
+    <style name="Widget.Doodle.Button.UnelevatedButton" parent="Base.Doodle.Button.UnelevatedButton">
+        <item name="android:fontFamily">@font/jost_medium</item>
+        <item name="fontFamily">@font/jost_medium</item>
+    </style>
+
+    <!-- Base style -->
+    <style name="Base.Doodle.Button.OutlinedButton" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <!-- Localized style -->
+    <style name="Widget.Doodle.Button.OutlinedButton" parent="Base.Doodle.Button.OutlinedButton">
+        <item name="android:fontFamily">@font/jost_medium</item>
+        <item name="fontFamily">@font/jost_medium</item>
+    </style>
+
+    <!-- Base style -->
+    <style name="Base.Doodle.Button.TextButton" parent="Widget.Material3.Button.TextButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <!-- Localized style -->
+    <style name="Widget.Doodle.Button.TextButton" parent="Base.Doodle.Button.TextButton">
+        <item name="android:fontFamily">@font/jost_medium</item>
+        <item name="fontFamily">@font/jost_medium</item>
+    </style>
+
+    <!-- Localized style, no empty base style needed -->
+    <style name="Widget.Doodle.Button.TextButton.Dialog" parent="Widget.Material3.Button.TextButton.Dialog">
+        <item name="android:singleLine">true</item>
+        <item name="android:fontFamily">@font/jost_medium</item>
+        <item name="fontFamily">@font/jost_medium</item>
+    </style>
+
+    <style name="Widget.Doodle.Button.TextButton.Dialog.Caution" parent="Widget.Doodle.Button.TextButton.Dialog">
+        <item name="android:textColor">?attr/colorError</item>
+        <item name="rippleColor">@color/selector_highlight_error</item>
+    </style>
+
+    <style name="Widget.Doodle.Button.IconButton" parent="Widget.Material3.Button.IconButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="iconTint">?attr/colorOnSurfaceVariant</item>
+        <item name="iconSize">24dp</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:paddingRight">8dp</item>
+        <item name="android:paddingTop">6dp</item>
+        <item name="android:paddingBottom">6dp</item>
+    </style>
+
+    <!-- CardView -->
+
+    <style name="Widget.Doodle.Card.Text" parent="@style/Widget.Material3.CardView.Filled">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="contentPadding">16dp</item>
+        <item name="cardElevation">0dp</item>
+        <item name="cardCornerRadius">16dp</item>
+        <item name="rippleColor">@color/selector_highlight</item>
+    </style>
+
+    <!-- CheckBox -->
+
+    <style name="Widget.Doodle.CheckBox" parent="Widget.Material3.CompoundButton.CheckBox">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:minHeight">38dp</item>
+        <item name="android:textAlignment">viewStart</item>
+    </style>
+
+    <!-- Switch -->
+
+    <style name="Widget.Doodle.Switch" parent="Widget.Material3.CompoundButton.MaterialSwitch">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">16dp</item>
+    </style>
+
+    <!-- Slider -->
+
+    <!-- Slider -->
+
+    <style name="Widget.Doodle.Slider" parent="Widget.Material3.Slider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:stepSize">1</item>
+        <item name="thumbElevation">0dp</item>
+        <item name="labelStyle">@style/Widget.Doodle.Tooltip</item>
+        <item name="tickRadiusActive">2dp</item>
+        <item name="tickRadiusInactive">2dp</item>
+        <item name="trackStopIndicatorSize">0dp</item>
+    </style>
+
+    <!-- Tooltip -->
+
+    <style name="Widget.Doodle.Tooltip" parent="Widget.Material3.Tooltip">
+        <item name="android:textColor">?attr/colorOnSurfaceInverse</item>
+        <item name="backgroundTint">?attr/colorSurfaceInverse</item>
+        <item name="android:textAppearance">@style/TextAppearance.Doodle.Tooltip</item>
+        <item name="android:padding">16dp</item>
+        <item name="android:minHeight">40dp</item>
+        <item name="showMarker">false</item>
+    </style>
+
+    <!-- ExtendedFloatingActionButton -->
+
+    <!-- Localized style, no empty base style needed -->
+    <style name="Widget.Doodle.ExtendedFloatingActionButton" parent="Widget.Material3.ExtendedFloatingActionButton.Primary">
+        <item name="android:fontFamily">@font/jost_medium</item>
+        <item name="fontFamily">@font/jost_medium</item>
+    </style>
+
+    <!-- TimePicker -->
+
+    <style name="ThemeOverlay.Doodle.TimePicker" parent="ThemeOverlay.Material3.MaterialTimePicker">
+        <item name="materialTimePickerStyle">@style/Widget.Doodle.TimePicker</item>
+        <item name="chipStyle">@style/Widget.Doodle.TimePicker.Display</item>
+        <item name="textInputStyle">@style/Widget.Doodle.TimePicker.Display.TextInputLayout</item>
+        <item name="materialDisplayDividerStyle">@style/Widget.Doodle.TimePicker.Display.Divider
+        </item>
+        <item name="materialTimePickerTitleStyle">@style/TextAppearance.Doodle.TimePicker.Title
+        </item>
+        <item name="materialButtonStyle">@style/Widget.Doodle.Button.TextButton.Dialog.Flush</item>
+    </style>
+
+    <style name="Widget.Doodle.TimePicker" parent="Widget.Material3.MaterialTimePicker">
+        <item name="shapeAppearance">?attr/shapeAppearanceCornerLarge</item>
+    </style>
+
+    <style name="TextAppearance.Doodle.TimePicker.Title" parent="TextAppearance.Material3.MaterialTimePicker.Title">
+        <item name="android:fontFamily">@font/jost_medium</item>
+        <item name="fontFamily">@font/jost_medium</item>
+    </style>
+
+    <style name="Widget.Doodle.TimePicker.Display" parent="Widget.Material3.MaterialTimePicker.Display">
+        <item name="android:textAppearance">@style/TextAppearance.Doodle.TimePicker.DisplayLarge
+        </item>
+        <item name="shapeAppearanceOverlay">?attr/shapeAppearanceCornerLarge</item>
+    </style>
+
+    <style name="TextAppearance.Doodle.TimePicker.DisplayLarge" parent="TextAppearance.Material3.DisplayLarge">
+        <item name="android:fontFamily">@font/jost_book</item>
+        <item name="fontFamily">@font/jost_book</item>
+    </style>
+
+    <style name="Widget.Doodle.TimePicker.Display.Divider" parent="Widget.Material3.MaterialTimePicker.Display.Divider">
+        <item name="android:textAppearance">@style/TextAppearance.Doodle.TimePicker.HeadlineMedium
+        </item>
+    </style>
+
+    <style name="TextAppearance.Doodle.TimePicker.HeadlineMedium" parent="TextAppearance.Material3.HeadlineMedium">
+        <item name="android:fontFamily">@font/jost_book</item>
+        <item name="fontFamily">@font/jost_book</item>
+    </style>
+
+    <style name="Widget.Doodle.TimePicker.Display.TextInputLayout" parent="Widget.Material3.MaterialTimePicker.Display.TextInputLayout">
+        <item name="boxCornerRadiusTopStart">16dp</item>
+        <item name="boxCornerRadiusTopEnd">16dp</item>
+        <item name="boxCornerRadiusBottomStart">16dp</item>
+        <item name="boxCornerRadiusBottomEnd">16dp</item>
+    </style>
+
+    <style name="Widget.Doodle.Button.TextButton.Dialog.Flush" parent="Widget.Material3.Button.TextButton.Dialog.Flush">
+        <item name="android:fontFamily">@font/jost_medium</item>
+        <item name="fontFamily">@font/jost_medium</item>
+    </style>
+
+    <!-- LinearLayout (lists) -->
+
+    <style name="Widget.Doodle.LinearLayout.ListItem" parent="">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="Widget.Doodle.LinearLayout.ListItem.SingleLine" parent="Widget.Doodle.LinearLayout.ListItem">
+        <item name="android:minHeight">56dp</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">24dp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
+    </style>
+
+    <style name="Widget.Doodle.LinearLayout.ListItem.SingleLine.Clickable" parent="Widget.Doodle.LinearLayout.ListItem.SingleLine">
+        <item name="android:clickable">true</item>
+        <item name="android:background">@drawable/ripple_list_item_bg</item>
+    </style>
+
+    <style name="Widget.Doodle.LinearLayout.ListItem.TwoLine" parent="Widget.Doodle.LinearLayout.ListItem">
+        <item name="android:minHeight">72dp</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">24dp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
+    </style>
+
+    <style name="Widget.Doodle.LinearLayout.ListItem.TwoLine.More" parent="Widget.Doodle.LinearLayout.ListItem.TwoLine">
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+    </style>
+
+    <style name="Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable" parent="Widget.Doodle.LinearLayout.ListItem.TwoLine">
+        <item name="android:clickable">true</item>
+        <item name="android:background">@drawable/ripple_list_item_bg</item>
+    </style>
+
+    <style name="Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable.More" parent="Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable">
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+    </style>
+
+    <style name="Widget.Doodle.LinearLayout.ListItem.ThreeLine" parent="Widget.Doodle.LinearLayout.ListItem">
+        <item name="android:minHeight">88dp</item>
+        <item name="android:gravity">top</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">24dp</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+    </style>
+
+    <style name="Widget.Doodle.LinearLayout.ListItem.ThreeLine.Clickable" parent="Widget.Doodle.LinearLayout.ListItem.ThreeLine">
+        <item name="android:clickable">true</item>
+        <item name="android:background">@drawable/ripple_list_item_bg</item>
+    </style>
+
+    <style name="Widget.Doodle.LinearLayout.ListItem.TextBox" parent="">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="Widget.Doodle.LinearLayout.ListItem.TextBox.Stretch" parent="Widget.Doodle.LinearLayout.ListItem.TextBox">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <!-- ImageView (lists) -->
+
+    <style name="Widget.Doodle.ImageView.ListItem.Icon" parent="">
+        <item name="android:layout_width">24dp</item>
+        <item name="android:layout_height">24dp</item>
+        <item name="android:layout_marginEnd">16dp</item>
+        <item name="tint">?attr/colorOnSurfaceVariant</item>
+        <item name="android:importantForAccessibility">no</item>
+    </style>
+
+    <style name="Widget.Doodle.ImageView.ListItem.Icon.Colored" parent="Widget.Doodle.ImageView.ListItem.Icon">
+        <item name="tint">@null</item>
+    </style>
+
+    <style name="Widget.Doodle.ImageView.ListItem.Icon.End" parent="Widget.Doodle.ImageView.ListItem.Icon">
+        <item name="android:layout_gravity">end|center_vertical</item>
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:layout_marginEnd">0dp</item>
+    </style>
+
+    <!-- TextView -->
+
+    <style name="Base.Doodle.TextView" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textAppearance">?attr/textAppearanceBodyLarge</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:fontFamily">@font/jost_book</item>
+        <item name="fontFamily">@font/jost_book</item>
+        <item name="android:breakStrategy" tools:targetApi="m">high_quality</item>
+        <item name="android:hyphenationFrequency" tools:targetApi="m">full</item>
+        <item name="android:lineBreakWordStyle" tools:targetApi="33">phrase</item>
+    </style>
+
+    <style name="Widget.Doodle.TextView" parent="Base.Doodle.TextView">
+        <!-- Overridden in v33 with fullFast -->
+        <item name="android:hyphenationFrequency" tools:targetApi="m">full</item>
+    </style>
+
+    <!-- Localized style, no empty base style needed -->
+    <style name="Widget.Doodle.TextView.Medium" parent="Widget.Doodle.TextView">
+        <item name="android:fontFamily">@font/jost_medium</item>
+        <item name="fontFamily">@font/jost_medium</item>
+    </style>
+
+    <style name="Widget.Doodle.TextView.Paragraph" parent="Widget.Doodle.TextView">
+        <item name="android:justificationMode" tools:targetApi="o">inter_word</item>
+    </style>
+
+    <style name="Widget.Doodle.TextView.Paragraph.BodyMedium" parent="Widget.Doodle.TextView.Paragraph">
+        <item name="android:textAppearance">?attr/textAppearanceBodyMedium</item>
+    </style>
+
+    <!-- M3 TYPOGRAPHY -->
+
+    <style name="Widget.Doodle.TextView.HeadlineSmall" parent="Widget.Doodle.TextView">
+        <item name="android:textAppearance">?attr/textAppearanceHeadlineSmall</item>
+    </style>
+
+    <style name="Widget.Doodle.TextView.TitleLarge" parent="Widget.Doodle.TextView">
+        <item name="android:textAppearance">?attr/textAppearanceTitleLarge</item>
+    </style>
+
+    <style name="Widget.Doodle.TextView.TitleMedium" parent="Widget.Doodle.TextView.Medium">
+        <item name="android:textAppearance">?attr/textAppearanceTitleMedium</item>
+    </style>
+
+    <style name="Widget.Doodle.TextView.BodyMedium" parent="Widget.Doodle.TextView">
+        <item name="android:textAppearance">?attr/textAppearanceBodyMedium</item>
+    </style>
+
+    <style name="Widget.Doodle.TextView.BodySmall" parent="Widget.Doodle.TextView">
+        <item name="android:textAppearance">?attr/textAppearanceBodySmall</item>
+    </style>
+
+    <style name="Widget.Doodle.TextView.LabelLarge" parent="Widget.Doodle.TextView.Medium">
+        <item name="android:textAppearance">?attr/textAppearanceLabelLarge</item>
+    </style>
+
+    <style name="Widget.Doodle.TextView.LabelMedium" parent="Widget.Doodle.TextView.Medium">
+        <item name="android:textAppearance">?attr/textAppearanceLabelMedium</item>
+    </style>
+
+    <style name="Widget.Doodle.TextView.LabelSmall" parent="Widget.Doodle.TextView.Medium">
+        <item name="android:textAppearance">?attr/textAppearanceLabelSmall</item>
+    </style>
+
+    <!-- Other text widget styles -->
+
+    <style name="Widget.Doodle.TextView.Toolbar" parent="Widget.Doodle.TextView">
+        <item name="android:textAppearance">?attr/textAppearanceTitleLarge</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+    </style>
+
+    <style name="Widget.Doodle.TextView.Category" parent="Widget.Doodle.TextView.Medium">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">56dp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">3dp</item>
+        <item name="android:textAppearance">?attr/textAppearanceTitleSmall</item>
+        <item name="android:textColor">?attr/colorSecondary</item>
+    </style>
+
+    <style name="Widget.Doodle.TextView.ListItem.OverLine" parent="Widget.Doodle.TextView.Medium">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:textAppearance">?attr/textAppearanceLabelMedium</item><!--Small-->
+        <item name="android:textColor">?attr/colorOnSurfaceVariant</item>
+    </style>
+
+    <style name="Widget.Doodle.TextView.ListItem.Title" parent="Widget.Doodle.TextView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAppearance">?attr/textAppearanceBodyLarge</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+    </style>
+
+    <style name="Widget.Doodle.TextView.ListItem.Description" parent="Widget.Doodle.TextView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAppearance">?attr/textAppearanceBodyMedium</item>
+        <item name="android:textColor">?attr/colorOnSurfaceVariant</item>
+    </style>
+
+    <!-- TextAppearance -->
+
+    <style name="TextAppearance.Doodle.HeadlineLarge" parent="TextAppearance.Material3.HeadlineLarge">
+        <item name="android:fontFamily">@font/jost_book</item>
+        <item name="fontFamily">@font/jost_book</item>
+    </style>
+
+    <style name="TextAppearance.Doodle.HeadlineMedium" parent="TextAppearance.Material3.HeadlineMedium">
+        <item name="android:fontFamily">@font/jost_book</item>
+        <item name="fontFamily">@font/jost_book</item>
+    </style>
+
+    <style name="TextAppearance.Doodle.HeadlineSmall" parent="TextAppearance.Material3.HeadlineSmall">
+        <item name="android:fontFamily">@font/jost_book</item>
+        <item name="fontFamily">@font/jost_book</item>
+    </style>
+
+    <style name="TextAppearance.Doodle.TitleLarge" parent="TextAppearance.Material3.TitleLarge">
+        <item name="android:fontFamily">@font/jost_book</item>
+        <item name="fontFamily">@font/jost_book</item>
+    </style>
+
+    <!-- Localized style, no empty base style needed -->
+    <style name="TextAppearance.Doodle.TitleMedium" parent="TextAppearance.Material3.TitleMedium">
+        <item name="android:fontFamily">@font/jost_medium</item>
+        <item name="fontFamily">@font/jost_medium</item>
+    </style>
+
+    <!-- Localized style, no empty base style needed -->
+    <style name="TextAppearance.Doodle.LabelLarge" parent="TextAppearance.Material3.LabelLarge">
+        <item name="android:fontFamily">@font/jost_medium</item>
+        <item name="fontFamily">@font/jost_medium</item>
+    </style>
+
+    <style name="TextAppearance.Doodle.Tooltip" parent="TextAppearance.Material3.BodyLarge">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/jost_book</item>
+        <item name="fontFamily">@font/jost_book</item>
+    </style>
 
 </resources>

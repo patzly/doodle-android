@@ -20,62 +20,63 @@
 package xyz.zedler.patrick.doodle.wallpaper;
 
 import androidx.annotation.NonNull;
+
 import xyz.zedler.patrick.doodle.Constants.WALLPAPER;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.drawable.SvgDrawable;
 
 public class FloralWallpaper extends BaseWallpaper {
 
-  @NonNull
-  @Override
-  public String getName() {
-    return WALLPAPER.FLORAL;
-  }
+    @NonNull
+    @Override
+    public String getName() {
+        return WALLPAPER.FLORAL;
+    }
 
-  @Override
-  public int getThumbnailResId() {
-    return R.drawable.selection_floral;
-  }
+    @Override
+    public int getThumbnailResId() {
+        return R.drawable.selection_floral;
+    }
 
-  @Override
-  public SvgDrawable getPreparedSvg(SvgDrawable svgDrawable, int variant, boolean isNightMode) {
-    svgDrawable.requireObjectById("circle").isRotatable = true;
-    svgDrawable.requireObjectById("quad_top").isRotatable = true;
-    svgDrawable.requireObjectById("quad_bottom").isRotatable = true;
-    return svgDrawable;
-  }
+    @Override
+    public SvgDrawable getPreparedSvg(SvgDrawable svgDrawable, int variant, boolean isNightMode) {
+        svgDrawable.requireObjectById("circle").isRotatable = true;
+        svgDrawable.requireObjectById("quad_top").isRotatable = true;
+        svgDrawable.requireObjectById("quad_bottom").isRotatable = true;
+        return svgDrawable;
+    }
 
-  @NonNull
-  @Override
-  public WallpaperVariant[] getVariants() {
-    return new WallpaperVariant[]{
-        new WallpaperVariant(
-            R.raw.wallpaper_floral,
-            "#fce2e0",
-            "#e4254d",
-            "#ffce3a",
-            new String[]{
-                "#f69c95", "#f4453e", "#ff7c2d", "#ffdf3c", "#dad963", "#aaa025", "#2a0f10"
-            },
-            true,
-            false
-        )
-    };
-  }
+    @NonNull
+    @Override
+    public WallpaperVariant[] getVariants() {
+        return new WallpaperVariant[]{
+                new WallpaperVariant(
+                        R.raw.wallpaper_floral,
+                        "#fce2e0",
+                        "#e4254d",
+                        "#ffce3a",
+                        new String[]{
+                                "#f69c95", "#f4453e", "#ff7c2d", "#ffdf3c", "#dad963", "#aaa025", "#2a0f10"
+                        },
+                        true,
+                        false
+                )
+        };
+    }
 
-  @NonNull
-  @Override
-  public WallpaperVariant[] getDarkVariants() {
-    return new WallpaperVariant[]{
-        new WallpaperVariant(
-            R.raw.wallpaper_floral_dark,
-            "#222020",
-            "#a6262f",
-            "#b4942a",
-            new String[]{"#b4a985", "#483838", "#b3b3b3", "#938c30"},
-            false,
-            true
-        )
-    };
-  }
+    @NonNull
+    @Override
+    public WallpaperVariant[] getDarkVariants() {
+        return new WallpaperVariant[]{
+                new WallpaperVariant(
+                        R.raw.wallpaper_floral_dark,
+                        "#222020",
+                        "#a6262f",
+                        "#b4942a",
+                        new String[]{"#b4a985", "#483838", "#b3b3b3", "#938c30"},
+                        false,
+                        true
+                )
+        };
+    }
 }

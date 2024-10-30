@@ -19,12 +19,11 @@
   ~ Copyright (c) 2019-2024 by Patrick Zedler
   -->
 
-<wallpaper
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:tools="http://schemas.android.com/tools"
-  android:showMetadataInPreview="true"
-  android:thumbnail="@raw/thumbnail"
-  android:author="@string/app_developer"
-  android:description="@string/wallpaper_description_picker"
-  android:settingsActivity="xyz.zedler.patrick.doodle.activity.SettingsActivity"
-  tools:targetApi="n_mr1" />
+<wallpaper xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:author="@string/app_developer"
+    android:description="@string/wallpaper_description_picker"
+    android:settingsActivity="xyz.zedler.patrick.doodle.activity.SettingsActivity"
+    android:showMetadataInPreview="true"
+    android:thumbnail="@raw/thumbnail"
+    tools:targetApi="n_mr1" />

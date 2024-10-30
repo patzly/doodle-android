@@ -19,587 +19,744 @@
 
 <resources>
 
-  <style name="Base.Doodle" parent="Theme.Material3.DayNight.NoActionBar">
-    <item name="android:colorPrimaryDark">?attr/colorSurface</item>
-    <item name="android:navigationBarColor">?attr/colorSurface</item>
-    <item name="android:colorBackground">?attr/colorSurface</item>
-    <item name="android:colorControlNormal">?attr/colorOnSurface</item>
-    <item name="android:colorControlActivated">?attr/colorSecondary</item>
-    <item name="android:colorControlHighlight">#0f000000</item>
-    <item name="android:colorEdgeEffect">?attr/colorSecondary</item>
+    <style name="Base.Doodle" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:colorPrimaryDark">?attr/colorSurface</item>
+        <item name="android:navigationBarColor">?attr/colorSurface</item>
+        <item name="android:colorBackground">?attr/colorSurface</item>
+        <item name="android:colorControlNormal">?attr/colorOnSurface</item>
+        <item name="android:colorControlActivated">?attr/colorSecondary</item>
+        <item name="android:colorControlHighlight">#0f000000</item>
+        <item name="android:colorEdgeEffect">?attr/colorSecondary</item>
 
-    <item name="android:fontFamily">@font/jost_book</item>
+        <item name="android:fontFamily">@font/jost_book</item>
 
-    <!-- Widget styles -->
-    <item name="snackbarStyle">@style/Widget.Doodle.Snackbar</item>
-    <item name="snackbarButtonStyle">@style/Widget.Doodle.Button.TextButton.Snackbar</item>
+        <!-- Widget styles -->
+        <item name="snackbarStyle">@style/Widget.Doodle.Snackbar</item>
+        <item name="snackbarButtonStyle">@style/Widget.Doodle.Button.TextButton.Snackbar</item>
 
-    <!-- Popup Menu styles -->
-    <item name="popupMenuBackground">@drawable/shape_popup_menu</item>
-    <item name="actionOverflowButtonStyle">@style/ThemeOverlay.Doodle.OverFlow</item>
+        <!-- Popup Menu styles -->
+        <item name="popupMenuBackground">@drawable/shape_popup_menu</item>
+        <item name="actionOverflowButtonStyle">@style/ThemeOverlay.Doodle.OverFlow</item>
 
-    <!-- Dialog themes -->
-    <item name="materialAlertDialogTheme">@style/ThemeOverlay.Doodle.AlertDialog</item>
-    <item name="bottomSheetDialogTheme">@style/Theme.Doodle.BottomSheetDialog</item>
-  </style>
+        <!-- Dialog themes -->
+        <item name="materialAlertDialogTheme">@style/ThemeOverlay.Doodle.AlertDialog</item>
+        <item name="bottomSheetDialogTheme">@style/Theme.Doodle.BottomSheetDialog</item>
+    </style>
 
-  <style name="Theme.Doodle" parent="Base.Doodle" />
+    <style name="Theme.Doodle" parent="Base.Doodle" />
 
-  <style name="Theme.Doodle.BottomSheetDialog" parent="ThemeOverlay.Material3.BottomSheetDialog">
-    <item name="enableEdgeToEdge">true</item>
-    <item name="android:navigationBarColor">@color/transparent</item>
-  </style>
+    <style name="Theme.Doodle.BottomSheetDialog" parent="ThemeOverlay.Material3.BottomSheetDialog">
+        <item name="enableEdgeToEdge">true</item>
+        <item name="android:navigationBarColor">@color/transparent</item>
+    </style>
 
-  <style name="Theme.Doodle.Red" parent="Theme.Doodle">
-    <item name="colorPrimary">@color/red_theme_primary</item>
-    <item name="colorOnPrimary">@color/red_theme_onPrimary</item>
-    <item name="colorPrimaryContainer">@color/red_theme_primaryContainer</item>
-    <item name="colorOnPrimaryContainer">@color/red_theme_onPrimaryContainer</item>
-    <item name="colorSecondary">@color/red_theme_secondary</item>
-    <item name="colorOnSecondary">@color/red_theme_onSecondary</item>
-    <item name="colorSecondaryContainer">@color/red_theme_secondaryContainer</item>
-    <item name="colorOnSecondaryContainer">@color/red_theme_onSecondaryContainer</item>
-    <item name="colorTertiary">@color/red_theme_tertiary</item>
-    <item name="colorOnTertiary">@color/red_theme_onTertiary</item>
-    <item name="colorTertiaryContainer">@color/red_theme_tertiaryContainer</item>
-    <item name="colorOnTertiaryContainer">@color/red_theme_onTertiaryContainer</item>
-    <item name="colorError">@color/red_theme_error</item>
-    <item name="colorOnError">@color/red_theme_onError</item>
-    <item name="colorErrorContainer">@color/red_theme_errorContainer</item>
-    <item name="colorOnErrorContainer">@color/red_theme_onErrorContainer</item>
-    <item name="colorSurface">@color/red_theme_surface</item>
-    <item name="colorOnSurface">@color/red_theme_onSurface</item>
-    <item name="colorOnSurfaceVariant">@color/red_theme_onSurfaceVariant</item>
-    <item name="colorOutline">@color/red_theme_outline</item>
-    <item name="colorOutlineVariant">@color/red_theme_outlineVariant</item>
-    <item name="colorSurfaceInverse">@color/red_theme_inverseSurface</item>
-    <item name="colorOnSurfaceInverse">@color/red_theme_inverseOnSurface</item>
-    <item name="colorPrimaryInverse">@color/red_theme_inversePrimary</item>
-    <item name="colorPrimaryFixed">@color/red_theme_primaryFixed</item>
-    <item name="colorOnPrimaryFixed">@color/red_theme_onPrimaryFixed</item>
-    <item name="colorPrimaryFixedDim">@color/red_theme_primaryFixedDim</item>
-    <item name="colorOnPrimaryFixedVariant">@color/red_theme_onPrimaryFixedVariant</item>
-    <item name="colorSecondaryFixed">@color/red_theme_secondaryFixed</item>
-    <item name="colorOnSecondaryFixed">@color/red_theme_onSecondaryFixed</item>
-    <item name="colorSecondaryFixedDim">@color/red_theme_secondaryFixedDim</item>
-    <item name="colorOnSecondaryFixedVariant">@color/red_theme_onSecondaryFixedVariant</item>
-    <item name="colorTertiaryFixed">@color/red_theme_tertiaryFixed</item>
-    <item name="colorOnTertiaryFixed">@color/red_theme_onTertiaryFixed</item>
-    <item name="colorTertiaryFixedDim">@color/red_theme_tertiaryFixedDim</item>
-    <item name="colorOnTertiaryFixedVariant">@color/red_theme_onTertiaryFixedVariant</item>
-    <item name="colorSurfaceDim">@color/red_theme_surfaceDim</item>
-    <item name="colorSurfaceBright">@color/red_theme_surfaceBright</item>
-    <item name="colorSurfaceContainerLowest">@color/red_theme_surfaceContainerLowest</item>
-    <item name="colorSurfaceContainerLow">@color/red_theme_surfaceContainerLow</item>
-    <item name="colorSurfaceContainer">@color/red_theme_surfaceContainer</item>
-    <item name="colorSurfaceContainerHigh">@color/red_theme_surfaceContainerHigh</item>
-    <item name="colorSurfaceContainerHighest">@color/red_theme_surfaceContainerHighest</item>
-  </style>
+    <style name="Theme.Doodle.Red" parent="Theme.Doodle">
+        <item name="colorPrimary">@color/red_theme_primary</item>
+        <item name="colorOnPrimary">@color/red_theme_onPrimary</item>
+        <item name="colorPrimaryContainer">@color/red_theme_primaryContainer</item>
+        <item name="colorOnPrimaryContainer">@color/red_theme_onPrimaryContainer</item>
+        <item name="colorSecondary">@color/red_theme_secondary</item>
+        <item name="colorOnSecondary">@color/red_theme_onSecondary</item>
+        <item name="colorSecondaryContainer">@color/red_theme_secondaryContainer</item>
+        <item name="colorOnSecondaryContainer">@color/red_theme_onSecondaryContainer</item>
+        <item name="colorTertiary">@color/red_theme_tertiary</item>
+        <item name="colorOnTertiary">@color/red_theme_onTertiary</item>
+        <item name="colorTertiaryContainer">@color/red_theme_tertiaryContainer</item>
+        <item name="colorOnTertiaryContainer">@color/red_theme_onTertiaryContainer</item>
+        <item name="colorError">@color/red_theme_error</item>
+        <item name="colorOnError">@color/red_theme_onError</item>
+        <item name="colorErrorContainer">@color/red_theme_errorContainer</item>
+        <item name="colorOnErrorContainer">@color/red_theme_onErrorContainer</item>
+        <item name="colorSurface">@color/red_theme_surface</item>
+        <item name="colorOnSurface">@color/red_theme_onSurface</item>
+        <item name="colorOnSurfaceVariant">@color/red_theme_onSurfaceVariant</item>
+        <item name="colorOutline">@color/red_theme_outline</item>
+        <item name="colorOutlineVariant">@color/red_theme_outlineVariant</item>
+        <item name="colorSurfaceInverse">@color/red_theme_inverseSurface</item>
+        <item name="colorOnSurfaceInverse">@color/red_theme_inverseOnSurface</item>
+        <item name="colorPrimaryInverse">@color/red_theme_inversePrimary</item>
+        <item name="colorPrimaryFixed">@color/red_theme_primaryFixed</item>
+        <item name="colorOnPrimaryFixed">@color/red_theme_onPrimaryFixed</item>
+        <item name="colorPrimaryFixedDim">@color/red_theme_primaryFixedDim</item>
+        <item name="colorOnPrimaryFixedVariant">@color/red_theme_onPrimaryFixedVariant</item>
+        <item name="colorSecondaryFixed">@color/red_theme_secondaryFixed</item>
+        <item name="colorOnSecondaryFixed">@color/red_theme_onSecondaryFixed</item>
+        <item name="colorSecondaryFixedDim">@color/red_theme_secondaryFixedDim</item>
+        <item name="colorOnSecondaryFixedVariant">@color/red_theme_onSecondaryFixedVariant</item>
+        <item name="colorTertiaryFixed">@color/red_theme_tertiaryFixed</item>
+        <item name="colorOnTertiaryFixed">@color/red_theme_onTertiaryFixed</item>
+        <item name="colorTertiaryFixedDim">@color/red_theme_tertiaryFixedDim</item>
+        <item name="colorOnTertiaryFixedVariant">@color/red_theme_onTertiaryFixedVariant</item>
+        <item name="colorSurfaceDim">@color/red_theme_surfaceDim</item>
+        <item name="colorSurfaceBright">@color/red_theme_surfaceBright</item>
+        <item name="colorSurfaceContainerLowest">@color/red_theme_surfaceContainerLowest</item>
+        <item name="colorSurfaceContainerLow">@color/red_theme_surfaceContainerLow</item>
+        <item name="colorSurfaceContainer">@color/red_theme_surfaceContainer</item>
+        <item name="colorSurfaceContainerHigh">@color/red_theme_surfaceContainerHigh</item>
+        <item name="colorSurfaceContainerHighest">@color/red_theme_surfaceContainerHighest</item>
+    </style>
 
-  <style name="ThemeOverlay.Doodle.Red.MediumContrast" parent="Theme.Doodle.Red">
-    <item name="colorPrimary">@color/red_theme_primary_mediumContrast</item>
-    <item name="colorOnPrimary">@color/red_theme_onPrimary_mediumContrast</item>
-    <item name="colorPrimaryContainer">@color/red_theme_primaryContainer_mediumContrast</item>
-    <item name="colorOnPrimaryContainer">@color/red_theme_onPrimaryContainer_mediumContrast</item>
-    <item name="colorSecondary">@color/red_theme_secondary_mediumContrast</item>
-    <item name="colorOnSecondary">@color/red_theme_onSecondary_mediumContrast</item>
-    <item name="colorSecondaryContainer">@color/red_theme_secondaryContainer_mediumContrast</item>
-    <item name="colorOnSecondaryContainer">@color/red_theme_onSecondaryContainer_mediumContrast</item>
-    <item name="colorTertiary">@color/red_theme_tertiary_mediumContrast</item>
-    <item name="colorOnTertiary">@color/red_theme_onTertiary_mediumContrast</item>
-    <item name="colorTertiaryContainer">@color/red_theme_tertiaryContainer_mediumContrast</item>
-    <item name="colorOnTertiaryContainer">@color/red_theme_onTertiaryContainer_mediumContrast</item>
-    <item name="colorError">@color/red_theme_error_mediumContrast</item>
-    <item name="colorOnError">@color/red_theme_onError_mediumContrast</item>
-    <item name="colorErrorContainer">@color/red_theme_errorContainer_mediumContrast</item>
-    <item name="colorOnErrorContainer">@color/red_theme_onErrorContainer_mediumContrast</item>
-    <item name="colorSurface">@color/red_theme_surface_mediumContrast</item>
-    <item name="colorOnSurface">@color/red_theme_onSurface_mediumContrast</item>
-    <item name="colorOnSurfaceVariant">@color/red_theme_onSurfaceVariant_mediumContrast</item>
-    <item name="colorOutline">@color/red_theme_outline_mediumContrast</item>
-    <item name="colorOutlineVariant">@color/red_theme_outlineVariant_mediumContrast</item>
-    <item name="colorSurfaceInverse">@color/red_theme_inverseSurface_mediumContrast</item>
-    <item name="colorOnSurfaceInverse">@color/red_theme_inverseOnSurface_mediumContrast</item>
-    <item name="colorPrimaryInverse">@color/red_theme_inversePrimary_mediumContrast</item>
-    <item name="colorPrimaryFixed">@color/red_theme_primaryFixed_mediumContrast</item>
-    <item name="colorOnPrimaryFixed">@color/red_theme_onPrimaryFixed_mediumContrast</item>
-    <item name="colorPrimaryFixedDim">@color/red_theme_primaryFixedDim_mediumContrast</item>
-    <item name="colorOnPrimaryFixedVariant">@color/red_theme_onPrimaryFixedVariant_mediumContrast</item>
-    <item name="colorSecondaryFixed">@color/red_theme_secondaryFixed_mediumContrast</item>
-    <item name="colorOnSecondaryFixed">@color/red_theme_onSecondaryFixed_mediumContrast</item>
-    <item name="colorSecondaryFixedDim">@color/red_theme_secondaryFixedDim_mediumContrast</item>
-    <item name="colorOnSecondaryFixedVariant">@color/red_theme_onSecondaryFixedVariant_mediumContrast</item>
-    <item name="colorTertiaryFixed">@color/red_theme_tertiaryFixed_mediumContrast</item>
-    <item name="colorOnTertiaryFixed">@color/red_theme_onTertiaryFixed_mediumContrast</item>
-    <item name="colorTertiaryFixedDim">@color/red_theme_tertiaryFixedDim_mediumContrast</item>
-    <item name="colorOnTertiaryFixedVariant">@color/red_theme_onTertiaryFixedVariant_mediumContrast</item>
-    <item name="colorSurfaceDim">@color/red_theme_surfaceDim_mediumContrast</item>
-    <item name="colorSurfaceBright">@color/red_theme_surfaceBright_mediumContrast</item>
-    <item name="colorSurfaceContainerLowest">@color/red_theme_surfaceContainerLowest_mediumContrast</item>
-    <item name="colorSurfaceContainerLow">@color/red_theme_surfaceContainerLow_mediumContrast</item>
-    <item name="colorSurfaceContainer">@color/red_theme_surfaceContainer_mediumContrast</item>
-    <item name="colorSurfaceContainerHigh">@color/red_theme_surfaceContainerHigh_mediumContrast</item>
-    <item name="colorSurfaceContainerHighest">@color/red_theme_surfaceContainerHighest_mediumContrast</item>
-  </style>
+    <style name="ThemeOverlay.Doodle.Red.MediumContrast" parent="Theme.Doodle.Red">
+        <item name="colorPrimary">@color/red_theme_primary_mediumContrast</item>
+        <item name="colorOnPrimary">@color/red_theme_onPrimary_mediumContrast</item>
+        <item name="colorPrimaryContainer">@color/red_theme_primaryContainer_mediumContrast</item>
+        <item name="colorOnPrimaryContainer">@color/red_theme_onPrimaryContainer_mediumContrast
+        </item>
+        <item name="colorSecondary">@color/red_theme_secondary_mediumContrast</item>
+        <item name="colorOnSecondary">@color/red_theme_onSecondary_mediumContrast</item>
+        <item name="colorSecondaryContainer">@color/red_theme_secondaryContainer_mediumContrast
+        </item>
+        <item name="colorOnSecondaryContainer">
+            @color/red_theme_onSecondaryContainer_mediumContrast
+        </item>
+        <item name="colorTertiary">@color/red_theme_tertiary_mediumContrast</item>
+        <item name="colorOnTertiary">@color/red_theme_onTertiary_mediumContrast</item>
+        <item name="colorTertiaryContainer">@color/red_theme_tertiaryContainer_mediumContrast</item>
+        <item name="colorOnTertiaryContainer">@color/red_theme_onTertiaryContainer_mediumContrast
+        </item>
+        <item name="colorError">@color/red_theme_error_mediumContrast</item>
+        <item name="colorOnError">@color/red_theme_onError_mediumContrast</item>
+        <item name="colorErrorContainer">@color/red_theme_errorContainer_mediumContrast</item>
+        <item name="colorOnErrorContainer">@color/red_theme_onErrorContainer_mediumContrast</item>
+        <item name="colorSurface">@color/red_theme_surface_mediumContrast</item>
+        <item name="colorOnSurface">@color/red_theme_onSurface_mediumContrast</item>
+        <item name="colorOnSurfaceVariant">@color/red_theme_onSurfaceVariant_mediumContrast</item>
+        <item name="colorOutline">@color/red_theme_outline_mediumContrast</item>
+        <item name="colorOutlineVariant">@color/red_theme_outlineVariant_mediumContrast</item>
+        <item name="colorSurfaceInverse">@color/red_theme_inverseSurface_mediumContrast</item>
+        <item name="colorOnSurfaceInverse">@color/red_theme_inverseOnSurface_mediumContrast</item>
+        <item name="colorPrimaryInverse">@color/red_theme_inversePrimary_mediumContrast</item>
+        <item name="colorPrimaryFixed">@color/red_theme_primaryFixed_mediumContrast</item>
+        <item name="colorOnPrimaryFixed">@color/red_theme_onPrimaryFixed_mediumContrast</item>
+        <item name="colorPrimaryFixedDim">@color/red_theme_primaryFixedDim_mediumContrast</item>
+        <item name="colorOnPrimaryFixedVariant">
+            @color/red_theme_onPrimaryFixedVariant_mediumContrast
+        </item>
+        <item name="colorSecondaryFixed">@color/red_theme_secondaryFixed_mediumContrast</item>
+        <item name="colorOnSecondaryFixed">@color/red_theme_onSecondaryFixed_mediumContrast</item>
+        <item name="colorSecondaryFixedDim">@color/red_theme_secondaryFixedDim_mediumContrast</item>
+        <item name="colorOnSecondaryFixedVariant">
+            @color/red_theme_onSecondaryFixedVariant_mediumContrast
+        </item>
+        <item name="colorTertiaryFixed">@color/red_theme_tertiaryFixed_mediumContrast</item>
+        <item name="colorOnTertiaryFixed">@color/red_theme_onTertiaryFixed_mediumContrast</item>
+        <item name="colorTertiaryFixedDim">@color/red_theme_tertiaryFixedDim_mediumContrast</item>
+        <item name="colorOnTertiaryFixedVariant">
+            @color/red_theme_onTertiaryFixedVariant_mediumContrast
+        </item>
+        <item name="colorSurfaceDim">@color/red_theme_surfaceDim_mediumContrast</item>
+        <item name="colorSurfaceBright">@color/red_theme_surfaceBright_mediumContrast</item>
+        <item name="colorSurfaceContainerLowest">
+            @color/red_theme_surfaceContainerLowest_mediumContrast
+        </item>
+        <item name="colorSurfaceContainerLow">@color/red_theme_surfaceContainerLow_mediumContrast
+        </item>
+        <item name="colorSurfaceContainer">@color/red_theme_surfaceContainer_mediumContrast</item>
+        <item name="colorSurfaceContainerHigh">
+            @color/red_theme_surfaceContainerHigh_mediumContrast
+        </item>
+        <item name="colorSurfaceContainerHighest">
+            @color/red_theme_surfaceContainerHighest_mediumContrast
+        </item>
+    </style>
 
-  <style name="ThemeOverlay.Doodle.Red.HighContrast" parent="Theme.Doodle.Red">
-    <item name="colorPrimary">@color/red_theme_primary_highContrast</item>
-    <item name="colorOnPrimary">@color/red_theme_onPrimary_highContrast</item>
-    <item name="colorPrimaryContainer">@color/red_theme_primaryContainer_highContrast</item>
-    <item name="colorOnPrimaryContainer">@color/red_theme_onPrimaryContainer_highContrast</item>
-    <item name="colorSecondary">@color/red_theme_secondary_highContrast</item>
-    <item name="colorOnSecondary">@color/red_theme_onSecondary_highContrast</item>
-    <item name="colorSecondaryContainer">@color/red_theme_secondaryContainer_highContrast</item>
-    <item name="colorOnSecondaryContainer">@color/red_theme_onSecondaryContainer_highContrast</item>
-    <item name="colorTertiary">@color/red_theme_tertiary_highContrast</item>
-    <item name="colorOnTertiary">@color/red_theme_onTertiary_highContrast</item>
-    <item name="colorTertiaryContainer">@color/red_theme_tertiaryContainer_highContrast</item>
-    <item name="colorOnTertiaryContainer">@color/red_theme_onTertiaryContainer_highContrast</item>
-    <item name="colorError">@color/red_theme_error_highContrast</item>
-    <item name="colorOnError">@color/red_theme_onError_highContrast</item>
-    <item name="colorErrorContainer">@color/red_theme_errorContainer_highContrast</item>
-    <item name="colorOnErrorContainer">@color/red_theme_onErrorContainer_highContrast</item>
-    <item name="colorSurface">@color/red_theme_surface_highContrast</item>
-    <item name="colorOnSurface">@color/red_theme_onSurface_highContrast</item>
-    <item name="colorOnSurfaceVariant">@color/red_theme_onSurfaceVariant_highContrast</item>
-    <item name="colorOutline">@color/red_theme_outline_highContrast</item>
-    <item name="colorOutlineVariant">@color/red_theme_outlineVariant_highContrast</item>
-    <item name="colorSurfaceInverse">@color/red_theme_inverseSurface_highContrast</item>
-    <item name="colorOnSurfaceInverse">@color/red_theme_inverseOnSurface_highContrast</item>
-    <item name="colorPrimaryInverse">@color/red_theme_inversePrimary_highContrast</item>
-    <item name="colorPrimaryFixed">@color/red_theme_primaryFixed_highContrast</item>
-    <item name="colorOnPrimaryFixed">@color/red_theme_onPrimaryFixed_highContrast</item>
-    <item name="colorPrimaryFixedDim">@color/red_theme_primaryFixedDim_highContrast</item>
-    <item name="colorOnPrimaryFixedVariant">@color/red_theme_onPrimaryFixedVariant_highContrast</item>
-    <item name="colorSecondaryFixed">@color/red_theme_secondaryFixed_highContrast</item>
-    <item name="colorOnSecondaryFixed">@color/red_theme_onSecondaryFixed_highContrast</item>
-    <item name="colorSecondaryFixedDim">@color/red_theme_secondaryFixedDim_highContrast</item>
-    <item name="colorOnSecondaryFixedVariant">@color/red_theme_onSecondaryFixedVariant_highContrast</item>
-    <item name="colorTertiaryFixed">@color/red_theme_tertiaryFixed_highContrast</item>
-    <item name="colorOnTertiaryFixed">@color/red_theme_onTertiaryFixed_highContrast</item>
-    <item name="colorTertiaryFixedDim">@color/red_theme_tertiaryFixedDim_highContrast</item>
-    <item name="colorOnTertiaryFixedVariant">@color/red_theme_onTertiaryFixedVariant_highContrast</item>
-    <item name="colorSurfaceDim">@color/red_theme_surfaceDim_highContrast</item>
-    <item name="colorSurfaceBright">@color/red_theme_surfaceBright_highContrast</item>
-    <item name="colorSurfaceContainerLowest">@color/red_theme_surfaceContainerLowest_highContrast</item>
-    <item name="colorSurfaceContainerLow">@color/red_theme_surfaceContainerLow_highContrast</item>
-    <item name="colorSurfaceContainer">@color/red_theme_surfaceContainer_highContrast</item>
-    <item name="colorSurfaceContainerHigh">@color/red_theme_surfaceContainerHigh_highContrast</item>
-    <item name="colorSurfaceContainerHighest">@color/red_theme_surfaceContainerHighest_highContrast</item>
-  </style>
+    <style name="ThemeOverlay.Doodle.Red.HighContrast" parent="Theme.Doodle.Red">
+        <item name="colorPrimary">@color/red_theme_primary_highContrast</item>
+        <item name="colorOnPrimary">@color/red_theme_onPrimary_highContrast</item>
+        <item name="colorPrimaryContainer">@color/red_theme_primaryContainer_highContrast</item>
+        <item name="colorOnPrimaryContainer">@color/red_theme_onPrimaryContainer_highContrast</item>
+        <item name="colorSecondary">@color/red_theme_secondary_highContrast</item>
+        <item name="colorOnSecondary">@color/red_theme_onSecondary_highContrast</item>
+        <item name="colorSecondaryContainer">@color/red_theme_secondaryContainer_highContrast</item>
+        <item name="colorOnSecondaryContainer">@color/red_theme_onSecondaryContainer_highContrast
+        </item>
+        <item name="colorTertiary">@color/red_theme_tertiary_highContrast</item>
+        <item name="colorOnTertiary">@color/red_theme_onTertiary_highContrast</item>
+        <item name="colorTertiaryContainer">@color/red_theme_tertiaryContainer_highContrast</item>
+        <item name="colorOnTertiaryContainer">@color/red_theme_onTertiaryContainer_highContrast
+        </item>
+        <item name="colorError">@color/red_theme_error_highContrast</item>
+        <item name="colorOnError">@color/red_theme_onError_highContrast</item>
+        <item name="colorErrorContainer">@color/red_theme_errorContainer_highContrast</item>
+        <item name="colorOnErrorContainer">@color/red_theme_onErrorContainer_highContrast</item>
+        <item name="colorSurface">@color/red_theme_surface_highContrast</item>
+        <item name="colorOnSurface">@color/red_theme_onSurface_highContrast</item>
+        <item name="colorOnSurfaceVariant">@color/red_theme_onSurfaceVariant_highContrast</item>
+        <item name="colorOutline">@color/red_theme_outline_highContrast</item>
+        <item name="colorOutlineVariant">@color/red_theme_outlineVariant_highContrast</item>
+        <item name="colorSurfaceInverse">@color/red_theme_inverseSurface_highContrast</item>
+        <item name="colorOnSurfaceInverse">@color/red_theme_inverseOnSurface_highContrast</item>
+        <item name="colorPrimaryInverse">@color/red_theme_inversePrimary_highContrast</item>
+        <item name="colorPrimaryFixed">@color/red_theme_primaryFixed_highContrast</item>
+        <item name="colorOnPrimaryFixed">@color/red_theme_onPrimaryFixed_highContrast</item>
+        <item name="colorPrimaryFixedDim">@color/red_theme_primaryFixedDim_highContrast</item>
+        <item name="colorOnPrimaryFixedVariant">
+            @color/red_theme_onPrimaryFixedVariant_highContrast
+        </item>
+        <item name="colorSecondaryFixed">@color/red_theme_secondaryFixed_highContrast</item>
+        <item name="colorOnSecondaryFixed">@color/red_theme_onSecondaryFixed_highContrast</item>
+        <item name="colorSecondaryFixedDim">@color/red_theme_secondaryFixedDim_highContrast</item>
+        <item name="colorOnSecondaryFixedVariant">
+            @color/red_theme_onSecondaryFixedVariant_highContrast
+        </item>
+        <item name="colorTertiaryFixed">@color/red_theme_tertiaryFixed_highContrast</item>
+        <item name="colorOnTertiaryFixed">@color/red_theme_onTertiaryFixed_highContrast</item>
+        <item name="colorTertiaryFixedDim">@color/red_theme_tertiaryFixedDim_highContrast</item>
+        <item name="colorOnTertiaryFixedVariant">
+            @color/red_theme_onTertiaryFixedVariant_highContrast
+        </item>
+        <item name="colorSurfaceDim">@color/red_theme_surfaceDim_highContrast</item>
+        <item name="colorSurfaceBright">@color/red_theme_surfaceBright_highContrast</item>
+        <item name="colorSurfaceContainerLowest">
+            @color/red_theme_surfaceContainerLowest_highContrast
+        </item>
+        <item name="colorSurfaceContainerLow">@color/red_theme_surfaceContainerLow_highContrast
+        </item>
+        <item name="colorSurfaceContainer">@color/red_theme_surfaceContainer_highContrast</item>
+        <item name="colorSurfaceContainerHigh">@color/red_theme_surfaceContainerHigh_highContrast
+        </item>
+        <item name="colorSurfaceContainerHighest">
+            @color/red_theme_surfaceContainerHighest_highContrast
+        </item>
+    </style>
 
-  <style name="Theme.Doodle.Yellow" parent="Theme.Doodle">
-    <item name="colorPrimary">@color/yellow_theme_primary</item>
-    <item name="colorOnPrimary">@color/yellow_theme_onPrimary</item>
-    <item name="colorPrimaryContainer">@color/yellow_theme_primaryContainer</item>
-    <item name="colorOnPrimaryContainer">@color/yellow_theme_onPrimaryContainer</item>
-    <item name="colorSecondary">@color/yellow_theme_secondary</item>
-    <item name="colorOnSecondary">@color/yellow_theme_onSecondary</item>
-    <item name="colorSecondaryContainer">@color/yellow_theme_secondaryContainer</item>
-    <item name="colorOnSecondaryContainer">@color/yellow_theme_onSecondaryContainer</item>
-    <item name="colorTertiary">@color/yellow_theme_tertiary</item>
-    <item name="colorOnTertiary">@color/yellow_theme_onTertiary</item>
-    <item name="colorTertiaryContainer">@color/yellow_theme_tertiaryContainer</item>
-    <item name="colorOnTertiaryContainer">@color/yellow_theme_onTertiaryContainer</item>
-    <item name="colorError">@color/yellow_theme_error</item>
-    <item name="colorOnError">@color/yellow_theme_onError</item>
-    <item name="colorErrorContainer">@color/yellow_theme_errorContainer</item>
-    <item name="colorOnErrorContainer">@color/yellow_theme_onErrorContainer</item>
-    <item name="colorSurface">@color/yellow_theme_surface</item>
-    <item name="colorOnSurface">@color/yellow_theme_onSurface</item>
-    <item name="colorOnSurfaceVariant">@color/yellow_theme_onSurfaceVariant</item>
-    <item name="colorOutline">@color/yellow_theme_outline</item>
-    <item name="colorOutlineVariant">@color/yellow_theme_outlineVariant</item>
-    <item name="colorSurfaceInverse">@color/yellow_theme_inverseSurface</item>
-    <item name="colorOnSurfaceInverse">@color/yellow_theme_inverseOnSurface</item>
-    <item name="colorPrimaryInverse">@color/yellow_theme_inversePrimary</item>
-    <item name="colorPrimaryFixed">@color/yellow_theme_primaryFixed</item>
-    <item name="colorOnPrimaryFixed">@color/yellow_theme_onPrimaryFixed</item>
-    <item name="colorPrimaryFixedDim">@color/yellow_theme_primaryFixedDim</item>
-    <item name="colorOnPrimaryFixedVariant">@color/yellow_theme_onPrimaryFixedVariant</item>
-    <item name="colorSecondaryFixed">@color/yellow_theme_secondaryFixed</item>
-    <item name="colorOnSecondaryFixed">@color/yellow_theme_onSecondaryFixed</item>
-    <item name="colorSecondaryFixedDim">@color/yellow_theme_secondaryFixedDim</item>
-    <item name="colorOnSecondaryFixedVariant">@color/yellow_theme_onSecondaryFixedVariant</item>
-    <item name="colorTertiaryFixed">@color/yellow_theme_tertiaryFixed</item>
-    <item name="colorOnTertiaryFixed">@color/yellow_theme_onTertiaryFixed</item>
-    <item name="colorTertiaryFixedDim">@color/yellow_theme_tertiaryFixedDim</item>
-    <item name="colorOnTertiaryFixedVariant">@color/yellow_theme_onTertiaryFixedVariant</item>
-    <item name="colorSurfaceDim">@color/yellow_theme_surfaceDim</item>
-    <item name="colorSurfaceBright">@color/yellow_theme_surfaceBright</item>
-    <item name="colorSurfaceContainerLowest">@color/yellow_theme_surfaceContainerLowest</item>
-    <item name="colorSurfaceContainerLow">@color/yellow_theme_surfaceContainerLow</item>
-    <item name="colorSurfaceContainer">@color/yellow_theme_surfaceContainer</item>
-    <item name="colorSurfaceContainerHigh">@color/yellow_theme_surfaceContainerHigh</item>
-    <item name="colorSurfaceContainerHighest">@color/yellow_theme_surfaceContainerHighest</item>
-  </style>
+    <style name="Theme.Doodle.Yellow" parent="Theme.Doodle">
+        <item name="colorPrimary">@color/yellow_theme_primary</item>
+        <item name="colorOnPrimary">@color/yellow_theme_onPrimary</item>
+        <item name="colorPrimaryContainer">@color/yellow_theme_primaryContainer</item>
+        <item name="colorOnPrimaryContainer">@color/yellow_theme_onPrimaryContainer</item>
+        <item name="colorSecondary">@color/yellow_theme_secondary</item>
+        <item name="colorOnSecondary">@color/yellow_theme_onSecondary</item>
+        <item name="colorSecondaryContainer">@color/yellow_theme_secondaryContainer</item>
+        <item name="colorOnSecondaryContainer">@color/yellow_theme_onSecondaryContainer</item>
+        <item name="colorTertiary">@color/yellow_theme_tertiary</item>
+        <item name="colorOnTertiary">@color/yellow_theme_onTertiary</item>
+        <item name="colorTertiaryContainer">@color/yellow_theme_tertiaryContainer</item>
+        <item name="colorOnTertiaryContainer">@color/yellow_theme_onTertiaryContainer</item>
+        <item name="colorError">@color/yellow_theme_error</item>
+        <item name="colorOnError">@color/yellow_theme_onError</item>
+        <item name="colorErrorContainer">@color/yellow_theme_errorContainer</item>
+        <item name="colorOnErrorContainer">@color/yellow_theme_onErrorContainer</item>
+        <item name="colorSurface">@color/yellow_theme_surface</item>
+        <item name="colorOnSurface">@color/yellow_theme_onSurface</item>
+        <item name="colorOnSurfaceVariant">@color/yellow_theme_onSurfaceVariant</item>
+        <item name="colorOutline">@color/yellow_theme_outline</item>
+        <item name="colorOutlineVariant">@color/yellow_theme_outlineVariant</item>
+        <item name="colorSurfaceInverse">@color/yellow_theme_inverseSurface</item>
+        <item name="colorOnSurfaceInverse">@color/yellow_theme_inverseOnSurface</item>
+        <item name="colorPrimaryInverse">@color/yellow_theme_inversePrimary</item>
+        <item name="colorPrimaryFixed">@color/yellow_theme_primaryFixed</item>
+        <item name="colorOnPrimaryFixed">@color/yellow_theme_onPrimaryFixed</item>
+        <item name="colorPrimaryFixedDim">@color/yellow_theme_primaryFixedDim</item>
+        <item name="colorOnPrimaryFixedVariant">@color/yellow_theme_onPrimaryFixedVariant</item>
+        <item name="colorSecondaryFixed">@color/yellow_theme_secondaryFixed</item>
+        <item name="colorOnSecondaryFixed">@color/yellow_theme_onSecondaryFixed</item>
+        <item name="colorSecondaryFixedDim">@color/yellow_theme_secondaryFixedDim</item>
+        <item name="colorOnSecondaryFixedVariant">@color/yellow_theme_onSecondaryFixedVariant</item>
+        <item name="colorTertiaryFixed">@color/yellow_theme_tertiaryFixed</item>
+        <item name="colorOnTertiaryFixed">@color/yellow_theme_onTertiaryFixed</item>
+        <item name="colorTertiaryFixedDim">@color/yellow_theme_tertiaryFixedDim</item>
+        <item name="colorOnTertiaryFixedVariant">@color/yellow_theme_onTertiaryFixedVariant</item>
+        <item name="colorSurfaceDim">@color/yellow_theme_surfaceDim</item>
+        <item name="colorSurfaceBright">@color/yellow_theme_surfaceBright</item>
+        <item name="colorSurfaceContainerLowest">@color/yellow_theme_surfaceContainerLowest</item>
+        <item name="colorSurfaceContainerLow">@color/yellow_theme_surfaceContainerLow</item>
+        <item name="colorSurfaceContainer">@color/yellow_theme_surfaceContainer</item>
+        <item name="colorSurfaceContainerHigh">@color/yellow_theme_surfaceContainerHigh</item>
+        <item name="colorSurfaceContainerHighest">@color/yellow_theme_surfaceContainerHighest</item>
+    </style>
 
-  <style name="ThemeOverlay.Doodle.Yellow.MediumContrast" parent="Theme.Doodle.Yellow">
-    <item name="colorPrimary">@color/yellow_theme_primary_mediumContrast</item>
-    <item name="colorOnPrimary">@color/yellow_theme_onPrimary_mediumContrast</item>
-    <item name="colorPrimaryContainer">@color/yellow_theme_primaryContainer_mediumContrast</item>
-    <item name="colorOnPrimaryContainer">@color/yellow_theme_onPrimaryContainer_mediumContrast</item>
-    <item name="colorSecondary">@color/yellow_theme_secondary_mediumContrast</item>
-    <item name="colorOnSecondary">@color/yellow_theme_onSecondary_mediumContrast</item>
-    <item name="colorSecondaryContainer">@color/yellow_theme_secondaryContainer_mediumContrast</item>
-    <item name="colorOnSecondaryContainer">@color/yellow_theme_onSecondaryContainer_mediumContrast</item>
-    <item name="colorTertiary">@color/yellow_theme_tertiary_mediumContrast</item>
-    <item name="colorOnTertiary">@color/yellow_theme_onTertiary_mediumContrast</item>
-    <item name="colorTertiaryContainer">@color/yellow_theme_tertiaryContainer_mediumContrast</item>
-    <item name="colorOnTertiaryContainer">@color/yellow_theme_onTertiaryContainer_mediumContrast</item>
-    <item name="colorError">@color/yellow_theme_error_mediumContrast</item>
-    <item name="colorOnError">@color/yellow_theme_onError_mediumContrast</item>
-    <item name="colorErrorContainer">@color/yellow_theme_errorContainer_mediumContrast</item>
-    <item name="colorOnErrorContainer">@color/yellow_theme_onErrorContainer_mediumContrast</item>
-    <item name="colorSurface">@color/yellow_theme_surface_mediumContrast</item>
-    <item name="colorOnSurface">@color/yellow_theme_onSurface_mediumContrast</item>
-    <item name="colorOnSurfaceVariant">@color/yellow_theme_onSurfaceVariant_mediumContrast</item>
-    <item name="colorOutline">@color/yellow_theme_outline_mediumContrast</item>
-    <item name="colorOutlineVariant">@color/yellow_theme_outlineVariant_mediumContrast</item>
-    <item name="colorSurfaceInverse">@color/yellow_theme_inverseSurface_mediumContrast</item>
-    <item name="colorOnSurfaceInverse">@color/yellow_theme_inverseOnSurface_mediumContrast</item>
-    <item name="colorPrimaryInverse">@color/yellow_theme_inversePrimary_mediumContrast</item>
-    <item name="colorPrimaryFixed">@color/yellow_theme_primaryFixed_mediumContrast</item>
-    <item name="colorOnPrimaryFixed">@color/yellow_theme_onPrimaryFixed_mediumContrast</item>
-    <item name="colorPrimaryFixedDim">@color/yellow_theme_primaryFixedDim_mediumContrast</item>
-    <item name="colorOnPrimaryFixedVariant">@color/yellow_theme_onPrimaryFixedVariant_mediumContrast</item>
-    <item name="colorSecondaryFixed">@color/yellow_theme_secondaryFixed_mediumContrast</item>
-    <item name="colorOnSecondaryFixed">@color/yellow_theme_onSecondaryFixed_mediumContrast</item>
-    <item name="colorSecondaryFixedDim">@color/yellow_theme_secondaryFixedDim_mediumContrast</item>
-    <item name="colorOnSecondaryFixedVariant">@color/yellow_theme_onSecondaryFixedVariant_mediumContrast</item>
-    <item name="colorTertiaryFixed">@color/yellow_theme_tertiaryFixed_mediumContrast</item>
-    <item name="colorOnTertiaryFixed">@color/yellow_theme_onTertiaryFixed_mediumContrast</item>
-    <item name="colorTertiaryFixedDim">@color/yellow_theme_tertiaryFixedDim_mediumContrast</item>
-    <item name="colorOnTertiaryFixedVariant">@color/yellow_theme_onTertiaryFixedVariant_mediumContrast</item>
-    <item name="colorSurfaceDim">@color/yellow_theme_surfaceDim_mediumContrast</item>
-    <item name="colorSurfaceBright">@color/yellow_theme_surfaceBright_mediumContrast</item>
-    <item name="colorSurfaceContainerLowest">@color/yellow_theme_surfaceContainerLowest_mediumContrast</item>
-    <item name="colorSurfaceContainerLow">@color/yellow_theme_surfaceContainerLow_mediumContrast</item>
-    <item name="colorSurfaceContainer">@color/yellow_theme_surfaceContainer_mediumContrast</item>
-    <item name="colorSurfaceContainerHigh">@color/yellow_theme_surfaceContainerHigh_mediumContrast</item>
-    <item name="colorSurfaceContainerHighest">@color/yellow_theme_surfaceContainerHighest_mediumContrast</item>
-  </style>
+    <style name="ThemeOverlay.Doodle.Yellow.MediumContrast" parent="Theme.Doodle.Yellow">
+        <item name="colorPrimary">@color/yellow_theme_primary_mediumContrast</item>
+        <item name="colorOnPrimary">@color/yellow_theme_onPrimary_mediumContrast</item>
+        <item name="colorPrimaryContainer">@color/yellow_theme_primaryContainer_mediumContrast
+        </item>
+        <item name="colorOnPrimaryContainer">@color/yellow_theme_onPrimaryContainer_mediumContrast
+        </item>
+        <item name="colorSecondary">@color/yellow_theme_secondary_mediumContrast</item>
+        <item name="colorOnSecondary">@color/yellow_theme_onSecondary_mediumContrast</item>
+        <item name="colorSecondaryContainer">@color/yellow_theme_secondaryContainer_mediumContrast
+        </item>
+        <item name="colorOnSecondaryContainer">
+            @color/yellow_theme_onSecondaryContainer_mediumContrast
+        </item>
+        <item name="colorTertiary">@color/yellow_theme_tertiary_mediumContrast</item>
+        <item name="colorOnTertiary">@color/yellow_theme_onTertiary_mediumContrast</item>
+        <item name="colorTertiaryContainer">@color/yellow_theme_tertiaryContainer_mediumContrast
+        </item>
+        <item name="colorOnTertiaryContainer">
+            @color/yellow_theme_onTertiaryContainer_mediumContrast
+        </item>
+        <item name="colorError">@color/yellow_theme_error_mediumContrast</item>
+        <item name="colorOnError">@color/yellow_theme_onError_mediumContrast</item>
+        <item name="colorErrorContainer">@color/yellow_theme_errorContainer_mediumContrast</item>
+        <item name="colorOnErrorContainer">@color/yellow_theme_onErrorContainer_mediumContrast
+        </item>
+        <item name="colorSurface">@color/yellow_theme_surface_mediumContrast</item>
+        <item name="colorOnSurface">@color/yellow_theme_onSurface_mediumContrast</item>
+        <item name="colorOnSurfaceVariant">@color/yellow_theme_onSurfaceVariant_mediumContrast
+        </item>
+        <item name="colorOutline">@color/yellow_theme_outline_mediumContrast</item>
+        <item name="colorOutlineVariant">@color/yellow_theme_outlineVariant_mediumContrast</item>
+        <item name="colorSurfaceInverse">@color/yellow_theme_inverseSurface_mediumContrast</item>
+        <item name="colorOnSurfaceInverse">@color/yellow_theme_inverseOnSurface_mediumContrast
+        </item>
+        <item name="colorPrimaryInverse">@color/yellow_theme_inversePrimary_mediumContrast</item>
+        <item name="colorPrimaryFixed">@color/yellow_theme_primaryFixed_mediumContrast</item>
+        <item name="colorOnPrimaryFixed">@color/yellow_theme_onPrimaryFixed_mediumContrast</item>
+        <item name="colorPrimaryFixedDim">@color/yellow_theme_primaryFixedDim_mediumContrast</item>
+        <item name="colorOnPrimaryFixedVariant">
+            @color/yellow_theme_onPrimaryFixedVariant_mediumContrast
+        </item>
+        <item name="colorSecondaryFixed">@color/yellow_theme_secondaryFixed_mediumContrast</item>
+        <item name="colorOnSecondaryFixed">@color/yellow_theme_onSecondaryFixed_mediumContrast
+        </item>
+        <item name="colorSecondaryFixedDim">@color/yellow_theme_secondaryFixedDim_mediumContrast
+        </item>
+        <item name="colorOnSecondaryFixedVariant">
+            @color/yellow_theme_onSecondaryFixedVariant_mediumContrast
+        </item>
+        <item name="colorTertiaryFixed">@color/yellow_theme_tertiaryFixed_mediumContrast</item>
+        <item name="colorOnTertiaryFixed">@color/yellow_theme_onTertiaryFixed_mediumContrast</item>
+        <item name="colorTertiaryFixedDim">@color/yellow_theme_tertiaryFixedDim_mediumContrast
+        </item>
+        <item name="colorOnTertiaryFixedVariant">
+            @color/yellow_theme_onTertiaryFixedVariant_mediumContrast
+        </item>
+        <item name="colorSurfaceDim">@color/yellow_theme_surfaceDim_mediumContrast</item>
+        <item name="colorSurfaceBright">@color/yellow_theme_surfaceBright_mediumContrast</item>
+        <item name="colorSurfaceContainerLowest">
+            @color/yellow_theme_surfaceContainerLowest_mediumContrast
+        </item>
+        <item name="colorSurfaceContainerLow">
+            @color/yellow_theme_surfaceContainerLow_mediumContrast
+        </item>
+        <item name="colorSurfaceContainer">@color/yellow_theme_surfaceContainer_mediumContrast
+        </item>
+        <item name="colorSurfaceContainerHigh">
+            @color/yellow_theme_surfaceContainerHigh_mediumContrast
+        </item>
+        <item name="colorSurfaceContainerHighest">
+            @color/yellow_theme_surfaceContainerHighest_mediumContrast
+        </item>
+    </style>
 
-  <style name="ThemeOverlay.Doodle.Yellow.HighContrast" parent="Theme.Doodle.Yellow">
-    <item name="colorPrimary">@color/yellow_theme_primary_highContrast</item>
-    <item name="colorOnPrimary">@color/yellow_theme_onPrimary_highContrast</item>
-    <item name="colorPrimaryContainer">@color/yellow_theme_primaryContainer_highContrast</item>
-    <item name="colorOnPrimaryContainer">@color/yellow_theme_onPrimaryContainer_highContrast</item>
-    <item name="colorSecondary">@color/yellow_theme_secondary_highContrast</item>
-    <item name="colorOnSecondary">@color/yellow_theme_onSecondary_highContrast</item>
-    <item name="colorSecondaryContainer">@color/yellow_theme_secondaryContainer_highContrast</item>
-    <item name="colorOnSecondaryContainer">@color/yellow_theme_onSecondaryContainer_highContrast</item>
-    <item name="colorTertiary">@color/yellow_theme_tertiary_highContrast</item>
-    <item name="colorOnTertiary">@color/yellow_theme_onTertiary_highContrast</item>
-    <item name="colorTertiaryContainer">@color/yellow_theme_tertiaryContainer_highContrast</item>
-    <item name="colorOnTertiaryContainer">@color/yellow_theme_onTertiaryContainer_highContrast</item>
-    <item name="colorError">@color/yellow_theme_error_highContrast</item>
-    <item name="colorOnError">@color/yellow_theme_onError_highContrast</item>
-    <item name="colorErrorContainer">@color/yellow_theme_errorContainer_highContrast</item>
-    <item name="colorOnErrorContainer">@color/yellow_theme_onErrorContainer_highContrast</item>
-    <item name="colorSurface">@color/yellow_theme_surface_highContrast</item>
-    <item name="colorOnSurface">@color/yellow_theme_onSurface_highContrast</item>
-    <item name="colorOnSurfaceVariant">@color/yellow_theme_onSurfaceVariant_highContrast</item>
-    <item name="colorOutline">@color/yellow_theme_outline_highContrast</item>
-    <item name="colorOutlineVariant">@color/yellow_theme_outlineVariant_highContrast</item>
-    <item name="colorSurfaceInverse">@color/yellow_theme_inverseSurface_highContrast</item>
-    <item name="colorOnSurfaceInverse">@color/yellow_theme_inverseOnSurface_highContrast</item>
-    <item name="colorPrimaryInverse">@color/yellow_theme_inversePrimary_highContrast</item>
-    <item name="colorPrimaryFixed">@color/yellow_theme_primaryFixed_highContrast</item>
-    <item name="colorOnPrimaryFixed">@color/yellow_theme_onPrimaryFixed_highContrast</item>
-    <item name="colorPrimaryFixedDim">@color/yellow_theme_primaryFixedDim_highContrast</item>
-    <item name="colorOnPrimaryFixedVariant">@color/yellow_theme_onPrimaryFixedVariant_highContrast</item>
-    <item name="colorSecondaryFixed">@color/yellow_theme_secondaryFixed_highContrast</item>
-    <item name="colorOnSecondaryFixed">@color/yellow_theme_onSecondaryFixed_highContrast</item>
-    <item name="colorSecondaryFixedDim">@color/yellow_theme_secondaryFixedDim_highContrast</item>
-    <item name="colorOnSecondaryFixedVariant">@color/yellow_theme_onSecondaryFixedVariant_highContrast</item>
-    <item name="colorTertiaryFixed">@color/yellow_theme_tertiaryFixed_highContrast</item>
-    <item name="colorOnTertiaryFixed">@color/yellow_theme_onTertiaryFixed_highContrast</item>
-    <item name="colorTertiaryFixedDim">@color/yellow_theme_tertiaryFixedDim_highContrast</item>
-    <item name="colorOnTertiaryFixedVariant">@color/yellow_theme_onTertiaryFixedVariant_highContrast</item>
-    <item name="colorSurfaceDim">@color/yellow_theme_surfaceDim_highContrast</item>
-    <item name="colorSurfaceBright">@color/yellow_theme_surfaceBright_highContrast</item>
-    <item name="colorSurfaceContainerLowest">@color/yellow_theme_surfaceContainerLowest_highContrast</item>
-    <item name="colorSurfaceContainerLow">@color/yellow_theme_surfaceContainerLow_highContrast</item>
-    <item name="colorSurfaceContainer">@color/yellow_theme_surfaceContainer_highContrast</item>
-    <item name="colorSurfaceContainerHigh">@color/yellow_theme_surfaceContainerHigh_highContrast</item>
-    <item name="colorSurfaceContainerHighest">@color/yellow_theme_surfaceContainerHighest_highContrast</item>
-  </style>
+    <style name="ThemeOverlay.Doodle.Yellow.HighContrast" parent="Theme.Doodle.Yellow">
+        <item name="colorPrimary">@color/yellow_theme_primary_highContrast</item>
+        <item name="colorOnPrimary">@color/yellow_theme_onPrimary_highContrast</item>
+        <item name="colorPrimaryContainer">@color/yellow_theme_primaryContainer_highContrast</item>
+        <item name="colorOnPrimaryContainer">@color/yellow_theme_onPrimaryContainer_highContrast
+        </item>
+        <item name="colorSecondary">@color/yellow_theme_secondary_highContrast</item>
+        <item name="colorOnSecondary">@color/yellow_theme_onSecondary_highContrast</item>
+        <item name="colorSecondaryContainer">@color/yellow_theme_secondaryContainer_highContrast
+        </item>
+        <item name="colorOnSecondaryContainer">
+            @color/yellow_theme_onSecondaryContainer_highContrast
+        </item>
+        <item name="colorTertiary">@color/yellow_theme_tertiary_highContrast</item>
+        <item name="colorOnTertiary">@color/yellow_theme_onTertiary_highContrast</item>
+        <item name="colorTertiaryContainer">@color/yellow_theme_tertiaryContainer_highContrast
+        </item>
+        <item name="colorOnTertiaryContainer">@color/yellow_theme_onTertiaryContainer_highContrast
+        </item>
+        <item name="colorError">@color/yellow_theme_error_highContrast</item>
+        <item name="colorOnError">@color/yellow_theme_onError_highContrast</item>
+        <item name="colorErrorContainer">@color/yellow_theme_errorContainer_highContrast</item>
+        <item name="colorOnErrorContainer">@color/yellow_theme_onErrorContainer_highContrast</item>
+        <item name="colorSurface">@color/yellow_theme_surface_highContrast</item>
+        <item name="colorOnSurface">@color/yellow_theme_onSurface_highContrast</item>
+        <item name="colorOnSurfaceVariant">@color/yellow_theme_onSurfaceVariant_highContrast</item>
+        <item name="colorOutline">@color/yellow_theme_outline_highContrast</item>
+        <item name="colorOutlineVariant">@color/yellow_theme_outlineVariant_highContrast</item>
+        <item name="colorSurfaceInverse">@color/yellow_theme_inverseSurface_highContrast</item>
+        <item name="colorOnSurfaceInverse">@color/yellow_theme_inverseOnSurface_highContrast</item>
+        <item name="colorPrimaryInverse">@color/yellow_theme_inversePrimary_highContrast</item>
+        <item name="colorPrimaryFixed">@color/yellow_theme_primaryFixed_highContrast</item>
+        <item name="colorOnPrimaryFixed">@color/yellow_theme_onPrimaryFixed_highContrast</item>
+        <item name="colorPrimaryFixedDim">@color/yellow_theme_primaryFixedDim_highContrast</item>
+        <item name="colorOnPrimaryFixedVariant">
+            @color/yellow_theme_onPrimaryFixedVariant_highContrast
+        </item>
+        <item name="colorSecondaryFixed">@color/yellow_theme_secondaryFixed_highContrast</item>
+        <item name="colorOnSecondaryFixed">@color/yellow_theme_onSecondaryFixed_highContrast</item>
+        <item name="colorSecondaryFixedDim">@color/yellow_theme_secondaryFixedDim_highContrast
+        </item>
+        <item name="colorOnSecondaryFixedVariant">
+            @color/yellow_theme_onSecondaryFixedVariant_highContrast
+        </item>
+        <item name="colorTertiaryFixed">@color/yellow_theme_tertiaryFixed_highContrast</item>
+        <item name="colorOnTertiaryFixed">@color/yellow_theme_onTertiaryFixed_highContrast</item>
+        <item name="colorTertiaryFixedDim">@color/yellow_theme_tertiaryFixedDim_highContrast</item>
+        <item name="colorOnTertiaryFixedVariant">
+            @color/yellow_theme_onTertiaryFixedVariant_highContrast
+        </item>
+        <item name="colorSurfaceDim">@color/yellow_theme_surfaceDim_highContrast</item>
+        <item name="colorSurfaceBright">@color/yellow_theme_surfaceBright_highContrast</item>
+        <item name="colorSurfaceContainerLowest">
+            @color/yellow_theme_surfaceContainerLowest_highContrast
+        </item>
+        <item name="colorSurfaceContainerLow">@color/yellow_theme_surfaceContainerLow_highContrast
+        </item>
+        <item name="colorSurfaceContainer">@color/yellow_theme_surfaceContainer_highContrast</item>
+        <item name="colorSurfaceContainerHigh">
+            @color/yellow_theme_surfaceContainerHigh_highContrast
+        </item>
+        <item name="colorSurfaceContainerHighest">
+            @color/yellow_theme_surfaceContainerHighest_highContrast
+        </item>
+    </style>
 
-  <style name="Theme.Doodle.Green" parent="Theme.Doodle">
-    <item name="colorPrimary">@color/green_theme_primary</item>
-    <item name="colorOnPrimary">@color/green_theme_onPrimary</item>
-    <item name="colorPrimaryContainer">@color/green_theme_primaryContainer</item>
-    <item name="colorOnPrimaryContainer">@color/green_theme_onPrimaryContainer</item>
-    <item name="colorSecondary">@color/green_theme_secondary</item>
-    <item name="colorOnSecondary">@color/green_theme_onSecondary</item>
-    <item name="colorSecondaryContainer">@color/green_theme_secondaryContainer</item>
-    <item name="colorOnSecondaryContainer">@color/green_theme_onSecondaryContainer</item>
-    <item name="colorTertiary">@color/green_theme_tertiary</item>
-    <item name="colorOnTertiary">@color/green_theme_onTertiary</item>
-    <item name="colorTertiaryContainer">@color/green_theme_tertiaryContainer</item>
-    <item name="colorOnTertiaryContainer">@color/green_theme_onTertiaryContainer</item>
-    <item name="colorError">@color/green_theme_error</item>
-    <item name="colorOnError">@color/green_theme_onError</item>
-    <item name="colorErrorContainer">@color/green_theme_errorContainer</item>
-    <item name="colorOnErrorContainer">@color/green_theme_onErrorContainer</item>
-    <item name="colorSurface">@color/green_theme_surface</item>
-    <item name="colorOnSurface">@color/green_theme_onSurface</item>
-    <item name="colorOnSurfaceVariant">@color/green_theme_onSurfaceVariant</item>
-    <item name="colorOutline">@color/green_theme_outline</item>
-    <item name="colorOutlineVariant">@color/green_theme_outlineVariant</item>
-    <item name="colorSurfaceInverse">@color/green_theme_inverseSurface</item>
-    <item name="colorOnSurfaceInverse">@color/green_theme_inverseOnSurface</item>
-    <item name="colorPrimaryInverse">@color/green_theme_inversePrimary</item>
-    <item name="colorPrimaryFixed">@color/green_theme_primaryFixed</item>
-    <item name="colorOnPrimaryFixed">@color/green_theme_onPrimaryFixed</item>
-    <item name="colorPrimaryFixedDim">@color/green_theme_primaryFixedDim</item>
-    <item name="colorOnPrimaryFixedVariant">@color/green_theme_onPrimaryFixedVariant</item>
-    <item name="colorSecondaryFixed">@color/green_theme_secondaryFixed</item>
-    <item name="colorOnSecondaryFixed">@color/green_theme_onSecondaryFixed</item>
-    <item name="colorSecondaryFixedDim">@color/green_theme_secondaryFixedDim</item>
-    <item name="colorOnSecondaryFixedVariant">@color/green_theme_onSecondaryFixedVariant</item>
-    <item name="colorTertiaryFixed">@color/green_theme_tertiaryFixed</item>
-    <item name="colorOnTertiaryFixed">@color/green_theme_onTertiaryFixed</item>
-    <item name="colorTertiaryFixedDim">@color/green_theme_tertiaryFixedDim</item>
-    <item name="colorOnTertiaryFixedVariant">@color/green_theme_onTertiaryFixedVariant</item>
-    <item name="colorSurfaceDim">@color/green_theme_surfaceDim</item>
-    <item name="colorSurfaceBright">@color/green_theme_surfaceBright</item>
-    <item name="colorSurfaceContainerLowest">@color/green_theme_surfaceContainerLowest</item>
-    <item name="colorSurfaceContainerLow">@color/green_theme_surfaceContainerLow</item>
-    <item name="colorSurfaceContainer">@color/green_theme_surfaceContainer</item>
-    <item name="colorSurfaceContainerHigh">@color/green_theme_surfaceContainerHigh</item>
-    <item name="colorSurfaceContainerHighest">@color/green_theme_surfaceContainerHighest</item>
-  </style>
+    <style name="Theme.Doodle.Green" parent="Theme.Doodle">
+        <item name="colorPrimary">@color/green_theme_primary</item>
+        <item name="colorOnPrimary">@color/green_theme_onPrimary</item>
+        <item name="colorPrimaryContainer">@color/green_theme_primaryContainer</item>
+        <item name="colorOnPrimaryContainer">@color/green_theme_onPrimaryContainer</item>
+        <item name="colorSecondary">@color/green_theme_secondary</item>
+        <item name="colorOnSecondary">@color/green_theme_onSecondary</item>
+        <item name="colorSecondaryContainer">@color/green_theme_secondaryContainer</item>
+        <item name="colorOnSecondaryContainer">@color/green_theme_onSecondaryContainer</item>
+        <item name="colorTertiary">@color/green_theme_tertiary</item>
+        <item name="colorOnTertiary">@color/green_theme_onTertiary</item>
+        <item name="colorTertiaryContainer">@color/green_theme_tertiaryContainer</item>
+        <item name="colorOnTertiaryContainer">@color/green_theme_onTertiaryContainer</item>
+        <item name="colorError">@color/green_theme_error</item>
+        <item name="colorOnError">@color/green_theme_onError</item>
+        <item name="colorErrorContainer">@color/green_theme_errorContainer</item>
+        <item name="colorOnErrorContainer">@color/green_theme_onErrorContainer</item>
+        <item name="colorSurface">@color/green_theme_surface</item>
+        <item name="colorOnSurface">@color/green_theme_onSurface</item>
+        <item name="colorOnSurfaceVariant">@color/green_theme_onSurfaceVariant</item>
+        <item name="colorOutline">@color/green_theme_outline</item>
+        <item name="colorOutlineVariant">@color/green_theme_outlineVariant</item>
+        <item name="colorSurfaceInverse">@color/green_theme_inverseSurface</item>
+        <item name="colorOnSurfaceInverse">@color/green_theme_inverseOnSurface</item>
+        <item name="colorPrimaryInverse">@color/green_theme_inversePrimary</item>
+        <item name="colorPrimaryFixed">@color/green_theme_primaryFixed</item>
+        <item name="colorOnPrimaryFixed">@color/green_theme_onPrimaryFixed</item>
+        <item name="colorPrimaryFixedDim">@color/green_theme_primaryFixedDim</item>
+        <item name="colorOnPrimaryFixedVariant">@color/green_theme_onPrimaryFixedVariant</item>
+        <item name="colorSecondaryFixed">@color/green_theme_secondaryFixed</item>
+        <item name="colorOnSecondaryFixed">@color/green_theme_onSecondaryFixed</item>
+        <item name="colorSecondaryFixedDim">@color/green_theme_secondaryFixedDim</item>
+        <item name="colorOnSecondaryFixedVariant">@color/green_theme_onSecondaryFixedVariant</item>
+        <item name="colorTertiaryFixed">@color/green_theme_tertiaryFixed</item>
+        <item name="colorOnTertiaryFixed">@color/green_theme_onTertiaryFixed</item>
+        <item name="colorTertiaryFixedDim">@color/green_theme_tertiaryFixedDim</item>
+        <item name="colorOnTertiaryFixedVariant">@color/green_theme_onTertiaryFixedVariant</item>
+        <item name="colorSurfaceDim">@color/green_theme_surfaceDim</item>
+        <item name="colorSurfaceBright">@color/green_theme_surfaceBright</item>
+        <item name="colorSurfaceContainerLowest">@color/green_theme_surfaceContainerLowest</item>
+        <item name="colorSurfaceContainerLow">@color/green_theme_surfaceContainerLow</item>
+        <item name="colorSurfaceContainer">@color/green_theme_surfaceContainer</item>
+        <item name="colorSurfaceContainerHigh">@color/green_theme_surfaceContainerHigh</item>
+        <item name="colorSurfaceContainerHighest">@color/green_theme_surfaceContainerHighest</item>
+    </style>
 
-  <style name="ThemeOverlay.Doodle.Green.MediumContrast" parent="Theme.Doodle.Green">
-    <item name="colorPrimary">@color/green_theme_primary_mediumContrast</item>
-    <item name="colorOnPrimary">@color/green_theme_onPrimary_mediumContrast</item>
-    <item name="colorPrimaryContainer">@color/green_theme_primaryContainer_mediumContrast</item>
-    <item name="colorOnPrimaryContainer">@color/green_theme_onPrimaryContainer_mediumContrast</item>
-    <item name="colorSecondary">@color/green_theme_secondary_mediumContrast</item>
-    <item name="colorOnSecondary">@color/green_theme_onSecondary_mediumContrast</item>
-    <item name="colorSecondaryContainer">@color/green_theme_secondaryContainer_mediumContrast</item>
-    <item name="colorOnSecondaryContainer">@color/green_theme_onSecondaryContainer_mediumContrast</item>
-    <item name="colorTertiary">@color/green_theme_tertiary_mediumContrast</item>
-    <item name="colorOnTertiary">@color/green_theme_onTertiary_mediumContrast</item>
-    <item name="colorTertiaryContainer">@color/green_theme_tertiaryContainer_mediumContrast</item>
-    <item name="colorOnTertiaryContainer">@color/green_theme_onTertiaryContainer_mediumContrast</item>
-    <item name="colorError">@color/green_theme_error_mediumContrast</item>
-    <item name="colorOnError">@color/green_theme_onError_mediumContrast</item>
-    <item name="colorErrorContainer">@color/green_theme_errorContainer_mediumContrast</item>
-    <item name="colorOnErrorContainer">@color/green_theme_onErrorContainer_mediumContrast</item>
-    <item name="colorSurface">@color/green_theme_surface_mediumContrast</item>
-    <item name="colorOnSurface">@color/green_theme_onSurface_mediumContrast</item>
-    <item name="colorOnSurfaceVariant">@color/green_theme_onSurfaceVariant_mediumContrast</item>
-    <item name="colorOutline">@color/green_theme_outline_mediumContrast</item>
-    <item name="colorOutlineVariant">@color/green_theme_outlineVariant_mediumContrast</item>
-    <item name="colorSurfaceInverse">@color/green_theme_inverseSurface_mediumContrast</item>
-    <item name="colorOnSurfaceInverse">@color/green_theme_inverseOnSurface_mediumContrast</item>
-    <item name="colorPrimaryInverse">@color/green_theme_inversePrimary_mediumContrast</item>
-    <item name="colorPrimaryFixed">@color/green_theme_primaryFixed_mediumContrast</item>
-    <item name="colorOnPrimaryFixed">@color/green_theme_onPrimaryFixed_mediumContrast</item>
-    <item name="colorPrimaryFixedDim">@color/green_theme_primaryFixedDim_mediumContrast</item>
-    <item name="colorOnPrimaryFixedVariant">@color/green_theme_onPrimaryFixedVariant_mediumContrast</item>
-    <item name="colorSecondaryFixed">@color/green_theme_secondaryFixed_mediumContrast</item>
-    <item name="colorOnSecondaryFixed">@color/green_theme_onSecondaryFixed_mediumContrast</item>
-    <item name="colorSecondaryFixedDim">@color/green_theme_secondaryFixedDim_mediumContrast</item>
-    <item name="colorOnSecondaryFixedVariant">@color/green_theme_onSecondaryFixedVariant_mediumContrast</item>
-    <item name="colorTertiaryFixed">@color/green_theme_tertiaryFixed_mediumContrast</item>
-    <item name="colorOnTertiaryFixed">@color/green_theme_onTertiaryFixed_mediumContrast</item>
-    <item name="colorTertiaryFixedDim">@color/green_theme_tertiaryFixedDim_mediumContrast</item>
-    <item name="colorOnTertiaryFixedVariant">@color/green_theme_onTertiaryFixedVariant_mediumContrast</item>
-    <item name="colorSurfaceDim">@color/green_theme_surfaceDim_mediumContrast</item>
-    <item name="colorSurfaceBright">@color/green_theme_surfaceBright_mediumContrast</item>
-    <item name="colorSurfaceContainerLowest">@color/green_theme_surfaceContainerLowest_mediumContrast</item>
-    <item name="colorSurfaceContainerLow">@color/green_theme_surfaceContainerLow_mediumContrast</item>
-    <item name="colorSurfaceContainer">@color/green_theme_surfaceContainer_mediumContrast</item>
-    <item name="colorSurfaceContainerHigh">@color/green_theme_surfaceContainerHigh_mediumContrast</item>
-    <item name="colorSurfaceContainerHighest">@color/green_theme_surfaceContainerHighest_mediumContrast</item>
-  </style>
+    <style name="ThemeOverlay.Doodle.Green.MediumContrast" parent="Theme.Doodle.Green">
+        <item name="colorPrimary">@color/green_theme_primary_mediumContrast</item>
+        <item name="colorOnPrimary">@color/green_theme_onPrimary_mediumContrast</item>
+        <item name="colorPrimaryContainer">@color/green_theme_primaryContainer_mediumContrast</item>
+        <item name="colorOnPrimaryContainer">@color/green_theme_onPrimaryContainer_mediumContrast
+        </item>
+        <item name="colorSecondary">@color/green_theme_secondary_mediumContrast</item>
+        <item name="colorOnSecondary">@color/green_theme_onSecondary_mediumContrast</item>
+        <item name="colorSecondaryContainer">@color/green_theme_secondaryContainer_mediumContrast
+        </item>
+        <item name="colorOnSecondaryContainer">
+            @color/green_theme_onSecondaryContainer_mediumContrast
+        </item>
+        <item name="colorTertiary">@color/green_theme_tertiary_mediumContrast</item>
+        <item name="colorOnTertiary">@color/green_theme_onTertiary_mediumContrast</item>
+        <item name="colorTertiaryContainer">@color/green_theme_tertiaryContainer_mediumContrast
+        </item>
+        <item name="colorOnTertiaryContainer">
+            @color/green_theme_onTertiaryContainer_mediumContrast
+        </item>
+        <item name="colorError">@color/green_theme_error_mediumContrast</item>
+        <item name="colorOnError">@color/green_theme_onError_mediumContrast</item>
+        <item name="colorErrorContainer">@color/green_theme_errorContainer_mediumContrast</item>
+        <item name="colorOnErrorContainer">@color/green_theme_onErrorContainer_mediumContrast</item>
+        <item name="colorSurface">@color/green_theme_surface_mediumContrast</item>
+        <item name="colorOnSurface">@color/green_theme_onSurface_mediumContrast</item>
+        <item name="colorOnSurfaceVariant">@color/green_theme_onSurfaceVariant_mediumContrast</item>
+        <item name="colorOutline">@color/green_theme_outline_mediumContrast</item>
+        <item name="colorOutlineVariant">@color/green_theme_outlineVariant_mediumContrast</item>
+        <item name="colorSurfaceInverse">@color/green_theme_inverseSurface_mediumContrast</item>
+        <item name="colorOnSurfaceInverse">@color/green_theme_inverseOnSurface_mediumContrast</item>
+        <item name="colorPrimaryInverse">@color/green_theme_inversePrimary_mediumContrast</item>
+        <item name="colorPrimaryFixed">@color/green_theme_primaryFixed_mediumContrast</item>
+        <item name="colorOnPrimaryFixed">@color/green_theme_onPrimaryFixed_mediumContrast</item>
+        <item name="colorPrimaryFixedDim">@color/green_theme_primaryFixedDim_mediumContrast</item>
+        <item name="colorOnPrimaryFixedVariant">
+            @color/green_theme_onPrimaryFixedVariant_mediumContrast
+        </item>
+        <item name="colorSecondaryFixed">@color/green_theme_secondaryFixed_mediumContrast</item>
+        <item name="colorOnSecondaryFixed">@color/green_theme_onSecondaryFixed_mediumContrast</item>
+        <item name="colorSecondaryFixedDim">@color/green_theme_secondaryFixedDim_mediumContrast
+        </item>
+        <item name="colorOnSecondaryFixedVariant">
+            @color/green_theme_onSecondaryFixedVariant_mediumContrast
+        </item>
+        <item name="colorTertiaryFixed">@color/green_theme_tertiaryFixed_mediumContrast</item>
+        <item name="colorOnTertiaryFixed">@color/green_theme_onTertiaryFixed_mediumContrast</item>
+        <item name="colorTertiaryFixedDim">@color/green_theme_tertiaryFixedDim_mediumContrast</item>
+        <item name="colorOnTertiaryFixedVariant">
+            @color/green_theme_onTertiaryFixedVariant_mediumContrast
+        </item>
+        <item name="colorSurfaceDim">@color/green_theme_surfaceDim_mediumContrast</item>
+        <item name="colorSurfaceBright">@color/green_theme_surfaceBright_mediumContrast</item>
+        <item name="colorSurfaceContainerLowest">
+            @color/green_theme_surfaceContainerLowest_mediumContrast
+        </item>
+        <item name="colorSurfaceContainerLow">
+            @color/green_theme_surfaceContainerLow_mediumContrast
+        </item>
+        <item name="colorSurfaceContainer">@color/green_theme_surfaceContainer_mediumContrast</item>
+        <item name="colorSurfaceContainerHigh">
+            @color/green_theme_surfaceContainerHigh_mediumContrast
+        </item>
+        <item name="colorSurfaceContainerHighest">
+            @color/green_theme_surfaceContainerHighest_mediumContrast
+        </item>
+    </style>
 
-  <style name="ThemeOverlay.Doodle.Green.HighContrast" parent="Theme.Doodle.Green">
-    <item name="colorPrimary">@color/green_theme_primary_highContrast</item>
-    <item name="colorOnPrimary">@color/green_theme_onPrimary_highContrast</item>
-    <item name="colorPrimaryContainer">@color/green_theme_primaryContainer_highContrast</item>
-    <item name="colorOnPrimaryContainer">@color/green_theme_onPrimaryContainer_highContrast</item>
-    <item name="colorSecondary">@color/green_theme_secondary_highContrast</item>
-    <item name="colorOnSecondary">@color/green_theme_onSecondary_highContrast</item>
-    <item name="colorSecondaryContainer">@color/green_theme_secondaryContainer_highContrast</item>
-    <item name="colorOnSecondaryContainer">@color/green_theme_onSecondaryContainer_highContrast</item>
-    <item name="colorTertiary">@color/green_theme_tertiary_highContrast</item>
-    <item name="colorOnTertiary">@color/green_theme_onTertiary_highContrast</item>
-    <item name="colorTertiaryContainer">@color/green_theme_tertiaryContainer_highContrast</item>
-    <item name="colorOnTertiaryContainer">@color/green_theme_onTertiaryContainer_highContrast</item>
-    <item name="colorError">@color/green_theme_error_highContrast</item>
-    <item name="colorOnError">@color/green_theme_onError_highContrast</item>
-    <item name="colorErrorContainer">@color/green_theme_errorContainer_highContrast</item>
-    <item name="colorOnErrorContainer">@color/green_theme_onErrorContainer_highContrast</item>
-    <item name="colorSurface">@color/green_theme_surface_highContrast</item>
-    <item name="colorOnSurface">@color/green_theme_onSurface_highContrast</item>
-    <item name="colorOnSurfaceVariant">@color/green_theme_onSurfaceVariant_highContrast</item>
-    <item name="colorOutline">@color/green_theme_outline_highContrast</item>
-    <item name="colorOutlineVariant">@color/green_theme_outlineVariant_highContrast</item>
-    <item name="colorSurfaceInverse">@color/green_theme_inverseSurface_highContrast</item>
-    <item name="colorOnSurfaceInverse">@color/green_theme_inverseOnSurface_highContrast</item>
-    <item name="colorPrimaryInverse">@color/green_theme_inversePrimary_highContrast</item>
-    <item name="colorPrimaryFixed">@color/green_theme_primaryFixed_highContrast</item>
-    <item name="colorOnPrimaryFixed">@color/green_theme_onPrimaryFixed_highContrast</item>
-    <item name="colorPrimaryFixedDim">@color/green_theme_primaryFixedDim_highContrast</item>
-    <item name="colorOnPrimaryFixedVariant">@color/green_theme_onPrimaryFixedVariant_highContrast</item>
-    <item name="colorSecondaryFixed">@color/green_theme_secondaryFixed_highContrast</item>
-    <item name="colorOnSecondaryFixed">@color/green_theme_onSecondaryFixed_highContrast</item>
-    <item name="colorSecondaryFixedDim">@color/green_theme_secondaryFixedDim_highContrast</item>
-    <item name="colorOnSecondaryFixedVariant">@color/green_theme_onSecondaryFixedVariant_highContrast</item>
-    <item name="colorTertiaryFixed">@color/green_theme_tertiaryFixed_highContrast</item>
-    <item name="colorOnTertiaryFixed">@color/green_theme_onTertiaryFixed_highContrast</item>
-    <item name="colorTertiaryFixedDim">@color/green_theme_tertiaryFixedDim_highContrast</item>
-    <item name="colorOnTertiaryFixedVariant">@color/green_theme_onTertiaryFixedVariant_highContrast</item>
-    <item name="colorSurfaceDim">@color/green_theme_surfaceDim_highContrast</item>
-    <item name="colorSurfaceBright">@color/green_theme_surfaceBright_highContrast</item>
-    <item name="colorSurfaceContainerLowest">@color/green_theme_surfaceContainerLowest_highContrast</item>
-    <item name="colorSurfaceContainerLow">@color/green_theme_surfaceContainerLow_highContrast</item>
-    <item name="colorSurfaceContainer">@color/green_theme_surfaceContainer_highContrast</item>
-    <item name="colorSurfaceContainerHigh">@color/green_theme_surfaceContainerHigh_highContrast</item>
-    <item name="colorSurfaceContainerHighest">@color/green_theme_surfaceContainerHighest_highContrast</item>
-  </style>
+    <style name="ThemeOverlay.Doodle.Green.HighContrast" parent="Theme.Doodle.Green">
+        <item name="colorPrimary">@color/green_theme_primary_highContrast</item>
+        <item name="colorOnPrimary">@color/green_theme_onPrimary_highContrast</item>
+        <item name="colorPrimaryContainer">@color/green_theme_primaryContainer_highContrast</item>
+        <item name="colorOnPrimaryContainer">@color/green_theme_onPrimaryContainer_highContrast
+        </item>
+        <item name="colorSecondary">@color/green_theme_secondary_highContrast</item>
+        <item name="colorOnSecondary">@color/green_theme_onSecondary_highContrast</item>
+        <item name="colorSecondaryContainer">@color/green_theme_secondaryContainer_highContrast
+        </item>
+        <item name="colorOnSecondaryContainer">
+            @color/green_theme_onSecondaryContainer_highContrast
+        </item>
+        <item name="colorTertiary">@color/green_theme_tertiary_highContrast</item>
+        <item name="colorOnTertiary">@color/green_theme_onTertiary_highContrast</item>
+        <item name="colorTertiaryContainer">@color/green_theme_tertiaryContainer_highContrast</item>
+        <item name="colorOnTertiaryContainer">@color/green_theme_onTertiaryContainer_highContrast
+        </item>
+        <item name="colorError">@color/green_theme_error_highContrast</item>
+        <item name="colorOnError">@color/green_theme_onError_highContrast</item>
+        <item name="colorErrorContainer">@color/green_theme_errorContainer_highContrast</item>
+        <item name="colorOnErrorContainer">@color/green_theme_onErrorContainer_highContrast</item>
+        <item name="colorSurface">@color/green_theme_surface_highContrast</item>
+        <item name="colorOnSurface">@color/green_theme_onSurface_highContrast</item>
+        <item name="colorOnSurfaceVariant">@color/green_theme_onSurfaceVariant_highContrast</item>
+        <item name="colorOutline">@color/green_theme_outline_highContrast</item>
+        <item name="colorOutlineVariant">@color/green_theme_outlineVariant_highContrast</item>
+        <item name="colorSurfaceInverse">@color/green_theme_inverseSurface_highContrast</item>
+        <item name="colorOnSurfaceInverse">@color/green_theme_inverseOnSurface_highContrast</item>
+        <item name="colorPrimaryInverse">@color/green_theme_inversePrimary_highContrast</item>
+        <item name="colorPrimaryFixed">@color/green_theme_primaryFixed_highContrast</item>
+        <item name="colorOnPrimaryFixed">@color/green_theme_onPrimaryFixed_highContrast</item>
+        <item name="colorPrimaryFixedDim">@color/green_theme_primaryFixedDim_highContrast</item>
+        <item name="colorOnPrimaryFixedVariant">
+            @color/green_theme_onPrimaryFixedVariant_highContrast
+        </item>
+        <item name="colorSecondaryFixed">@color/green_theme_secondaryFixed_highContrast</item>
+        <item name="colorOnSecondaryFixed">@color/green_theme_onSecondaryFixed_highContrast</item>
+        <item name="colorSecondaryFixedDim">@color/green_theme_secondaryFixedDim_highContrast</item>
+        <item name="colorOnSecondaryFixedVariant">
+            @color/green_theme_onSecondaryFixedVariant_highContrast
+        </item>
+        <item name="colorTertiaryFixed">@color/green_theme_tertiaryFixed_highContrast</item>
+        <item name="colorOnTertiaryFixed">@color/green_theme_onTertiaryFixed_highContrast</item>
+        <item name="colorTertiaryFixedDim">@color/green_theme_tertiaryFixedDim_highContrast</item>
+        <item name="colorOnTertiaryFixedVariant">
+            @color/green_theme_onTertiaryFixedVariant_highContrast
+        </item>
+        <item name="colorSurfaceDim">@color/green_theme_surfaceDim_highContrast</item>
+        <item name="colorSurfaceBright">@color/green_theme_surfaceBright_highContrast</item>
+        <item name="colorSurfaceContainerLowest">
+            @color/green_theme_surfaceContainerLowest_highContrast
+        </item>
+        <item name="colorSurfaceContainerLow">@color/green_theme_surfaceContainerLow_highContrast
+        </item>
+        <item name="colorSurfaceContainer">@color/green_theme_surfaceContainer_highContrast</item>
+        <item name="colorSurfaceContainerHigh">
+            @color/green_theme_surfaceContainerHigh_highContrast
+        </item>
+        <item name="colorSurfaceContainerHighest">
+            @color/green_theme_surfaceContainerHighest_highContrast
+        </item>
+    </style>
 
-  <style name="Theme.Doodle.Blue" parent="Theme.Doodle">
-    <item name="colorPrimary">@color/blue_theme_primary</item>
-    <item name="colorOnPrimary">@color/blue_theme_onPrimary</item>
-    <item name="colorPrimaryContainer">@color/blue_theme_primaryContainer</item>
-    <item name="colorOnPrimaryContainer">@color/blue_theme_onPrimaryContainer</item>
-    <item name="colorSecondary">@color/blue_theme_secondary</item>
-    <item name="colorOnSecondary">@color/blue_theme_onSecondary</item>
-    <item name="colorSecondaryContainer">@color/blue_theme_secondaryContainer</item>
-    <item name="colorOnSecondaryContainer">@color/blue_theme_onSecondaryContainer</item>
-    <item name="colorTertiary">@color/blue_theme_tertiary</item>
-    <item name="colorOnTertiary">@color/blue_theme_onTertiary</item>
-    <item name="colorTertiaryContainer">@color/blue_theme_tertiaryContainer</item>
-    <item name="colorOnTertiaryContainer">@color/blue_theme_onTertiaryContainer</item>
-    <item name="colorError">@color/blue_theme_error</item>
-    <item name="colorOnError">@color/blue_theme_onError</item>
-    <item name="colorErrorContainer">@color/blue_theme_errorContainer</item>
-    <item name="colorOnErrorContainer">@color/blue_theme_onErrorContainer</item>
-    <item name="colorSurface">@color/blue_theme_surface</item>
-    <item name="colorOnSurface">@color/blue_theme_onSurface</item>
-    <item name="colorOnSurfaceVariant">@color/blue_theme_onSurfaceVariant</item>
-    <item name="colorOutline">@color/blue_theme_outline</item>
-    <item name="colorOutlineVariant">@color/blue_theme_outlineVariant</item>
-    <item name="colorSurfaceInverse">@color/blue_theme_inverseSurface</item>
-    <item name="colorOnSurfaceInverse">@color/blue_theme_inverseOnSurface</item>
-    <item name="colorPrimaryInverse">@color/blue_theme_inversePrimary</item>
-    <item name="colorPrimaryFixed">@color/blue_theme_primaryFixed</item>
-    <item name="colorOnPrimaryFixed">@color/blue_theme_onPrimaryFixed</item>
-    <item name="colorPrimaryFixedDim">@color/blue_theme_primaryFixedDim</item>
-    <item name="colorOnPrimaryFixedVariant">@color/blue_theme_onPrimaryFixedVariant</item>
-    <item name="colorSecondaryFixed">@color/blue_theme_secondaryFixed</item>
-    <item name="colorOnSecondaryFixed">@color/blue_theme_onSecondaryFixed</item>
-    <item name="colorSecondaryFixedDim">@color/blue_theme_secondaryFixedDim</item>
-    <item name="colorOnSecondaryFixedVariant">@color/blue_theme_onSecondaryFixedVariant</item>
-    <item name="colorTertiaryFixed">@color/blue_theme_tertiaryFixed</item>
-    <item name="colorOnTertiaryFixed">@color/blue_theme_onTertiaryFixed</item>
-    <item name="colorTertiaryFixedDim">@color/blue_theme_tertiaryFixedDim</item>
-    <item name="colorOnTertiaryFixedVariant">@color/blue_theme_onTertiaryFixedVariant</item>
-    <item name="colorSurfaceDim">@color/blue_theme_surfaceDim</item>
-    <item name="colorSurfaceBright">@color/blue_theme_surfaceBright</item>
-    <item name="colorSurfaceContainerLowest">@color/blue_theme_surfaceContainerLowest</item>
-    <item name="colorSurfaceContainerLow">@color/blue_theme_surfaceContainerLow</item>
-    <item name="colorSurfaceContainer">@color/blue_theme_surfaceContainer</item>
-    <item name="colorSurfaceContainerHigh">@color/blue_theme_surfaceContainerHigh</item>
-    <item name="colorSurfaceContainerHighest">@color/blue_theme_surfaceContainerHighest</item>
-  </style>
+    <style name="Theme.Doodle.Blue" parent="Theme.Doodle">
+        <item name="colorPrimary">@color/blue_theme_primary</item>
+        <item name="colorOnPrimary">@color/blue_theme_onPrimary</item>
+        <item name="colorPrimaryContainer">@color/blue_theme_primaryContainer</item>
+        <item name="colorOnPrimaryContainer">@color/blue_theme_onPrimaryContainer</item>
+        <item name="colorSecondary">@color/blue_theme_secondary</item>
+        <item name="colorOnSecondary">@color/blue_theme_onSecondary</item>
+        <item name="colorSecondaryContainer">@color/blue_theme_secondaryContainer</item>
+        <item name="colorOnSecondaryContainer">@color/blue_theme_onSecondaryContainer</item>
+        <item name="colorTertiary">@color/blue_theme_tertiary</item>
+        <item name="colorOnTertiary">@color/blue_theme_onTertiary</item>
+        <item name="colorTertiaryContainer">@color/blue_theme_tertiaryContainer</item>
+        <item name="colorOnTertiaryContainer">@color/blue_theme_onTertiaryContainer</item>
+        <item name="colorError">@color/blue_theme_error</item>
+        <item name="colorOnError">@color/blue_theme_onError</item>
+        <item name="colorErrorContainer">@color/blue_theme_errorContainer</item>
+        <item name="colorOnErrorContainer">@color/blue_theme_onErrorContainer</item>
+        <item name="colorSurface">@color/blue_theme_surface</item>
+        <item name="colorOnSurface">@color/blue_theme_onSurface</item>
+        <item name="colorOnSurfaceVariant">@color/blue_theme_onSurfaceVariant</item>
+        <item name="colorOutline">@color/blue_theme_outline</item>
+        <item name="colorOutlineVariant">@color/blue_theme_outlineVariant</item>
+        <item name="colorSurfaceInverse">@color/blue_theme_inverseSurface</item>
+        <item name="colorOnSurfaceInverse">@color/blue_theme_inverseOnSurface</item>
+        <item name="colorPrimaryInverse">@color/blue_theme_inversePrimary</item>
+        <item name="colorPrimaryFixed">@color/blue_theme_primaryFixed</item>
+        <item name="colorOnPrimaryFixed">@color/blue_theme_onPrimaryFixed</item>
+        <item name="colorPrimaryFixedDim">@color/blue_theme_primaryFixedDim</item>
+        <item name="colorOnPrimaryFixedVariant">@color/blue_theme_onPrimaryFixedVariant</item>
+        <item name="colorSecondaryFixed">@color/blue_theme_secondaryFixed</item>
+        <item name="colorOnSecondaryFixed">@color/blue_theme_onSecondaryFixed</item>
+        <item name="colorSecondaryFixedDim">@color/blue_theme_secondaryFixedDim</item>
+        <item name="colorOnSecondaryFixedVariant">@color/blue_theme_onSecondaryFixedVariant</item>
+        <item name="colorTertiaryFixed">@color/blue_theme_tertiaryFixed</item>
+        <item name="colorOnTertiaryFixed">@color/blue_theme_onTertiaryFixed</item>
+        <item name="colorTertiaryFixedDim">@color/blue_theme_tertiaryFixedDim</item>
+        <item name="colorOnTertiaryFixedVariant">@color/blue_theme_onTertiaryFixedVariant</item>
+        <item name="colorSurfaceDim">@color/blue_theme_surfaceDim</item>
+        <item name="colorSurfaceBright">@color/blue_theme_surfaceBright</item>
+        <item name="colorSurfaceContainerLowest">@color/blue_theme_surfaceContainerLowest</item>
+        <item name="colorSurfaceContainerLow">@color/blue_theme_surfaceContainerLow</item>
+        <item name="colorSurfaceContainer">@color/blue_theme_surfaceContainer</item>
+        <item name="colorSurfaceContainerHigh">@color/blue_theme_surfaceContainerHigh</item>
+        <item name="colorSurfaceContainerHighest">@color/blue_theme_surfaceContainerHighest</item>
+    </style>
 
-  <style name="ThemeOverlay.Doodle.Blue.MediumContrast" parent="Theme.Doodle.Blue">
-    <item name="colorPrimary">@color/blue_theme_primary_mediumContrast</item>
-    <item name="colorOnPrimary">@color/blue_theme_onPrimary_mediumContrast</item>
-    <item name="colorPrimaryContainer">@color/blue_theme_primaryContainer_mediumContrast</item>
-    <item name="colorOnPrimaryContainer">@color/blue_theme_onPrimaryContainer_mediumContrast</item>
-    <item name="colorSecondary">@color/blue_theme_secondary_mediumContrast</item>
-    <item name="colorOnSecondary">@color/blue_theme_onSecondary_mediumContrast</item>
-    <item name="colorSecondaryContainer">@color/blue_theme_secondaryContainer_mediumContrast</item>
-    <item name="colorOnSecondaryContainer">@color/blue_theme_onSecondaryContainer_mediumContrast</item>
-    <item name="colorTertiary">@color/blue_theme_tertiary_mediumContrast</item>
-    <item name="colorOnTertiary">@color/blue_theme_onTertiary_mediumContrast</item>
-    <item name="colorTertiaryContainer">@color/blue_theme_tertiaryContainer_mediumContrast</item>
-    <item name="colorOnTertiaryContainer">@color/blue_theme_onTertiaryContainer_mediumContrast</item>
-    <item name="colorError">@color/blue_theme_error_mediumContrast</item>
-    <item name="colorOnError">@color/blue_theme_onError_mediumContrast</item>
-    <item name="colorErrorContainer">@color/blue_theme_errorContainer_mediumContrast</item>
-    <item name="colorOnErrorContainer">@color/blue_theme_onErrorContainer_mediumContrast</item>
-    <item name="colorSurface">@color/blue_theme_surface_mediumContrast</item>
-    <item name="colorOnSurface">@color/blue_theme_onSurface_mediumContrast</item>
-    <item name="colorOnSurfaceVariant">@color/blue_theme_onSurfaceVariant_mediumContrast</item>
-    <item name="colorOutline">@color/blue_theme_outline_mediumContrast</item>
-    <item name="colorOutlineVariant">@color/blue_theme_outlineVariant_mediumContrast</item>
-    <item name="colorSurfaceInverse">@color/blue_theme_inverseSurface_mediumContrast</item>
-    <item name="colorOnSurfaceInverse">@color/blue_theme_inverseOnSurface_mediumContrast</item>
-    <item name="colorPrimaryInverse">@color/blue_theme_inversePrimary_mediumContrast</item>
-    <item name="colorPrimaryFixed">@color/blue_theme_primaryFixed_mediumContrast</item>
-    <item name="colorOnPrimaryFixed">@color/blue_theme_onPrimaryFixed_mediumContrast</item>
-    <item name="colorPrimaryFixedDim">@color/blue_theme_primaryFixedDim_mediumContrast</item>
-    <item name="colorOnPrimaryFixedVariant">@color/blue_theme_onPrimaryFixedVariant_mediumContrast</item>
-    <item name="colorSecondaryFixed">@color/blue_theme_secondaryFixed_mediumContrast</item>
-    <item name="colorOnSecondaryFixed">@color/blue_theme_onSecondaryFixed_mediumContrast</item>
-    <item name="colorSecondaryFixedDim">@color/blue_theme_secondaryFixedDim_mediumContrast</item>
-    <item name="colorOnSecondaryFixedVariant">@color/blue_theme_onSecondaryFixedVariant_mediumContrast</item>
-    <item name="colorTertiaryFixed">@color/blue_theme_tertiaryFixed_mediumContrast</item>
-    <item name="colorOnTertiaryFixed">@color/blue_theme_onTertiaryFixed_mediumContrast</item>
-    <item name="colorTertiaryFixedDim">@color/blue_theme_tertiaryFixedDim_mediumContrast</item>
-    <item name="colorOnTertiaryFixedVariant">@color/blue_theme_onTertiaryFixedVariant_mediumContrast</item>
-    <item name="colorSurfaceDim">@color/blue_theme_surfaceDim_mediumContrast</item>
-    <item name="colorSurfaceBright">@color/blue_theme_surfaceBright_mediumContrast</item>
-    <item name="colorSurfaceContainerLowest">@color/blue_theme_surfaceContainerLowest_mediumContrast</item>
-    <item name="colorSurfaceContainerLow">@color/blue_theme_surfaceContainerLow_mediumContrast</item>
-    <item name="colorSurfaceContainer">@color/blue_theme_surfaceContainer_mediumContrast</item>
-    <item name="colorSurfaceContainerHigh">@color/blue_theme_surfaceContainerHigh_mediumContrast</item>
-    <item name="colorSurfaceContainerHighest">@color/blue_theme_surfaceContainerHighest_mediumContrast</item>
-  </style>
+    <style name="ThemeOverlay.Doodle.Blue.MediumContrast" parent="Theme.Doodle.Blue">
+        <item name="colorPrimary">@color/blue_theme_primary_mediumContrast</item>
+        <item name="colorOnPrimary">@color/blue_theme_onPrimary_mediumContrast</item>
+        <item name="colorPrimaryContainer">@color/blue_theme_primaryContainer_mediumContrast</item>
+        <item name="colorOnPrimaryContainer">@color/blue_theme_onPrimaryContainer_mediumContrast
+        </item>
+        <item name="colorSecondary">@color/blue_theme_secondary_mediumContrast</item>
+        <item name="colorOnSecondary">@color/blue_theme_onSecondary_mediumContrast</item>
+        <item name="colorSecondaryContainer">@color/blue_theme_secondaryContainer_mediumContrast
+        </item>
+        <item name="colorOnSecondaryContainer">
+            @color/blue_theme_onSecondaryContainer_mediumContrast
+        </item>
+        <item name="colorTertiary">@color/blue_theme_tertiary_mediumContrast</item>
+        <item name="colorOnTertiary">@color/blue_theme_onTertiary_mediumContrast</item>
+        <item name="colorTertiaryContainer">@color/blue_theme_tertiaryContainer_mediumContrast
+        </item>
+        <item name="colorOnTertiaryContainer">@color/blue_theme_onTertiaryContainer_mediumContrast
+        </item>
+        <item name="colorError">@color/blue_theme_error_mediumContrast</item>
+        <item name="colorOnError">@color/blue_theme_onError_mediumContrast</item>
+        <item name="colorErrorContainer">@color/blue_theme_errorContainer_mediumContrast</item>
+        <item name="colorOnErrorContainer">@color/blue_theme_onErrorContainer_mediumContrast</item>
+        <item name="colorSurface">@color/blue_theme_surface_mediumContrast</item>
+        <item name="colorOnSurface">@color/blue_theme_onSurface_mediumContrast</item>
+        <item name="colorOnSurfaceVariant">@color/blue_theme_onSurfaceVariant_mediumContrast</item>
+        <item name="colorOutline">@color/blue_theme_outline_mediumContrast</item>
+        <item name="colorOutlineVariant">@color/blue_theme_outlineVariant_mediumContrast</item>
+        <item name="colorSurfaceInverse">@color/blue_theme_inverseSurface_mediumContrast</item>
+        <item name="colorOnSurfaceInverse">@color/blue_theme_inverseOnSurface_mediumContrast</item>
+        <item name="colorPrimaryInverse">@color/blue_theme_inversePrimary_mediumContrast</item>
+        <item name="colorPrimaryFixed">@color/blue_theme_primaryFixed_mediumContrast</item>
+        <item name="colorOnPrimaryFixed">@color/blue_theme_onPrimaryFixed_mediumContrast</item>
+        <item name="colorPrimaryFixedDim">@color/blue_theme_primaryFixedDim_mediumContrast</item>
+        <item name="colorOnPrimaryFixedVariant">
+            @color/blue_theme_onPrimaryFixedVariant_mediumContrast
+        </item>
+        <item name="colorSecondaryFixed">@color/blue_theme_secondaryFixed_mediumContrast</item>
+        <item name="colorOnSecondaryFixed">@color/blue_theme_onSecondaryFixed_mediumContrast</item>
+        <item name="colorSecondaryFixedDim">@color/blue_theme_secondaryFixedDim_mediumContrast
+        </item>
+        <item name="colorOnSecondaryFixedVariant">
+            @color/blue_theme_onSecondaryFixedVariant_mediumContrast
+        </item>
+        <item name="colorTertiaryFixed">@color/blue_theme_tertiaryFixed_mediumContrast</item>
+        <item name="colorOnTertiaryFixed">@color/blue_theme_onTertiaryFixed_mediumContrast</item>
+        <item name="colorTertiaryFixedDim">@color/blue_theme_tertiaryFixedDim_mediumContrast</item>
+        <item name="colorOnTertiaryFixedVariant">
+            @color/blue_theme_onTertiaryFixedVariant_mediumContrast
+        </item>
+        <item name="colorSurfaceDim">@color/blue_theme_surfaceDim_mediumContrast</item>
+        <item name="colorSurfaceBright">@color/blue_theme_surfaceBright_mediumContrast</item>
+        <item name="colorSurfaceContainerLowest">
+            @color/blue_theme_surfaceContainerLowest_mediumContrast
+        </item>
+        <item name="colorSurfaceContainerLow">@color/blue_theme_surfaceContainerLow_mediumContrast
+        </item>
+        <item name="colorSurfaceContainer">@color/blue_theme_surfaceContainer_mediumContrast</item>
+        <item name="colorSurfaceContainerHigh">
+            @color/blue_theme_surfaceContainerHigh_mediumContrast
+        </item>
+        <item name="colorSurfaceContainerHighest">
+            @color/blue_theme_surfaceContainerHighest_mediumContrast
+        </item>
+    </style>
 
-  <style name="ThemeOverlay.Doodle.Blue.HighContrast" parent="Theme.Doodle.Blue">
-    <item name="colorPrimary">@color/blue_theme_primary_highContrast</item>
-    <item name="colorOnPrimary">@color/blue_theme_onPrimary_highContrast</item>
-    <item name="colorPrimaryContainer">@color/blue_theme_primaryContainer_highContrast</item>
-    <item name="colorOnPrimaryContainer">@color/blue_theme_onPrimaryContainer_highContrast</item>
-    <item name="colorSecondary">@color/blue_theme_secondary_highContrast</item>
-    <item name="colorOnSecondary">@color/blue_theme_onSecondary_highContrast</item>
-    <item name="colorSecondaryContainer">@color/blue_theme_secondaryContainer_highContrast</item>
-    <item name="colorOnSecondaryContainer">@color/blue_theme_onSecondaryContainer_highContrast</item>
-    <item name="colorTertiary">@color/blue_theme_tertiary_highContrast</item>
-    <item name="colorOnTertiary">@color/blue_theme_onTertiary_highContrast</item>
-    <item name="colorTertiaryContainer">@color/blue_theme_tertiaryContainer_highContrast</item>
-    <item name="colorOnTertiaryContainer">@color/blue_theme_onTertiaryContainer_highContrast</item>
-    <item name="colorError">@color/blue_theme_error_highContrast</item>
-    <item name="colorOnError">@color/blue_theme_onError_highContrast</item>
-    <item name="colorErrorContainer">@color/blue_theme_errorContainer_highContrast</item>
-    <item name="colorOnErrorContainer">@color/blue_theme_onErrorContainer_highContrast</item>
-    <item name="colorSurface">@color/blue_theme_surface_highContrast</item>
-    <item name="colorOnSurface">@color/blue_theme_onSurface_highContrast</item>
-    <item name="colorOnSurfaceVariant">@color/blue_theme_onSurfaceVariant_highContrast</item>
-    <item name="colorOutline">@color/blue_theme_outline_highContrast</item>
-    <item name="colorOutlineVariant">@color/blue_theme_outlineVariant_highContrast</item>
-    <item name="colorSurfaceInverse">@color/blue_theme_inverseSurface_highContrast</item>
-    <item name="colorOnSurfaceInverse">@color/blue_theme_inverseOnSurface_highContrast</item>
-    <item name="colorPrimaryInverse">@color/blue_theme_inversePrimary_highContrast</item>
-    <item name="colorPrimaryFixed">@color/blue_theme_primaryFixed_highContrast</item>
-    <item name="colorOnPrimaryFixed">@color/blue_theme_onPrimaryFixed_highContrast</item>
-    <item name="colorPrimaryFixedDim">@color/blue_theme_primaryFixedDim_highContrast</item>
-    <item name="colorOnPrimaryFixedVariant">@color/blue_theme_onPrimaryFixedVariant_highContrast</item>
-    <item name="colorSecondaryFixed">@color/blue_theme_secondaryFixed_highContrast</item>
-    <item name="colorOnSecondaryFixed">@color/blue_theme_onSecondaryFixed_highContrast</item>
-    <item name="colorSecondaryFixedDim">@color/blue_theme_secondaryFixedDim_highContrast</item>
-    <item name="colorOnSecondaryFixedVariant">@color/blue_theme_onSecondaryFixedVariant_highContrast</item>
-    <item name="colorTertiaryFixed">@color/blue_theme_tertiaryFixed_highContrast</item>
-    <item name="colorOnTertiaryFixed">@color/blue_theme_onTertiaryFixed_highContrast</item>
-    <item name="colorTertiaryFixedDim">@color/blue_theme_tertiaryFixedDim_highContrast</item>
-    <item name="colorOnTertiaryFixedVariant">@color/blue_theme_onTertiaryFixedVariant_highContrast</item>
-    <item name="colorSurfaceDim">@color/blue_theme_surfaceDim_highContrast</item>
-    <item name="colorSurfaceBright">@color/blue_theme_surfaceBright_highContrast</item>
-    <item name="colorSurfaceContainerLowest">@color/blue_theme_surfaceContainerLowest_highContrast</item>
-    <item name="colorSurfaceContainerLow">@color/blue_theme_surfaceContainerLow_highContrast</item>
-    <item name="colorSurfaceContainer">@color/blue_theme_surfaceContainer_highContrast</item>
-    <item name="colorSurfaceContainerHigh">@color/blue_theme_surfaceContainerHigh_highContrast</item>
-    <item name="colorSurfaceContainerHighest">@color/blue_theme_surfaceContainerHighest_highContrast</item>
-  </style>
+    <style name="ThemeOverlay.Doodle.Blue.HighContrast" parent="Theme.Doodle.Blue">
+        <item name="colorPrimary">@color/blue_theme_primary_highContrast</item>
+        <item name="colorOnPrimary">@color/blue_theme_onPrimary_highContrast</item>
+        <item name="colorPrimaryContainer">@color/blue_theme_primaryContainer_highContrast</item>
+        <item name="colorOnPrimaryContainer">@color/blue_theme_onPrimaryContainer_highContrast
+        </item>
+        <item name="colorSecondary">@color/blue_theme_secondary_highContrast</item>
+        <item name="colorOnSecondary">@color/blue_theme_onSecondary_highContrast</item>
+        <item name="colorSecondaryContainer">@color/blue_theme_secondaryContainer_highContrast
+        </item>
+        <item name="colorOnSecondaryContainer">@color/blue_theme_onSecondaryContainer_highContrast
+        </item>
+        <item name="colorTertiary">@color/blue_theme_tertiary_highContrast</item>
+        <item name="colorOnTertiary">@color/blue_theme_onTertiary_highContrast</item>
+        <item name="colorTertiaryContainer">@color/blue_theme_tertiaryContainer_highContrast</item>
+        <item name="colorOnTertiaryContainer">@color/blue_theme_onTertiaryContainer_highContrast
+        </item>
+        <item name="colorError">@color/blue_theme_error_highContrast</item>
+        <item name="colorOnError">@color/blue_theme_onError_highContrast</item>
+        <item name="colorErrorContainer">@color/blue_theme_errorContainer_highContrast</item>
+        <item name="colorOnErrorContainer">@color/blue_theme_onErrorContainer_highContrast</item>
+        <item name="colorSurface">@color/blue_theme_surface_highContrast</item>
+        <item name="colorOnSurface">@color/blue_theme_onSurface_highContrast</item>
+        <item name="colorOnSurfaceVariant">@color/blue_theme_onSurfaceVariant_highContrast</item>
+        <item name="colorOutline">@color/blue_theme_outline_highContrast</item>
+        <item name="colorOutlineVariant">@color/blue_theme_outlineVariant_highContrast</item>
+        <item name="colorSurfaceInverse">@color/blue_theme_inverseSurface_highContrast</item>
+        <item name="colorOnSurfaceInverse">@color/blue_theme_inverseOnSurface_highContrast</item>
+        <item name="colorPrimaryInverse">@color/blue_theme_inversePrimary_highContrast</item>
+        <item name="colorPrimaryFixed">@color/blue_theme_primaryFixed_highContrast</item>
+        <item name="colorOnPrimaryFixed">@color/blue_theme_onPrimaryFixed_highContrast</item>
+        <item name="colorPrimaryFixedDim">@color/blue_theme_primaryFixedDim_highContrast</item>
+        <item name="colorOnPrimaryFixedVariant">
+            @color/blue_theme_onPrimaryFixedVariant_highContrast
+        </item>
+        <item name="colorSecondaryFixed">@color/blue_theme_secondaryFixed_highContrast</item>
+        <item name="colorOnSecondaryFixed">@color/blue_theme_onSecondaryFixed_highContrast</item>
+        <item name="colorSecondaryFixedDim">@color/blue_theme_secondaryFixedDim_highContrast</item>
+        <item name="colorOnSecondaryFixedVariant">
+            @color/blue_theme_onSecondaryFixedVariant_highContrast
+        </item>
+        <item name="colorTertiaryFixed">@color/blue_theme_tertiaryFixed_highContrast</item>
+        <item name="colorOnTertiaryFixed">@color/blue_theme_onTertiaryFixed_highContrast</item>
+        <item name="colorTertiaryFixedDim">@color/blue_theme_tertiaryFixedDim_highContrast</item>
+        <item name="colorOnTertiaryFixedVariant">
+            @color/blue_theme_onTertiaryFixedVariant_highContrast
+        </item>
+        <item name="colorSurfaceDim">@color/blue_theme_surfaceDim_highContrast</item>
+        <item name="colorSurfaceBright">@color/blue_theme_surfaceBright_highContrast</item>
+        <item name="colorSurfaceContainerLowest">
+            @color/blue_theme_surfaceContainerLowest_highContrast
+        </item>
+        <item name="colorSurfaceContainerLow">@color/blue_theme_surfaceContainerLow_highContrast
+        </item>
+        <item name="colorSurfaceContainer">@color/blue_theme_surfaceContainer_highContrast</item>
+        <item name="colorSurfaceContainerHigh">@color/blue_theme_surfaceContainerHigh_highContrast
+        </item>
+        <item name="colorSurfaceContainerHighest">
+            @color/blue_theme_surfaceContainerHighest_highContrast
+        </item>
+    </style>
 
 </resources>

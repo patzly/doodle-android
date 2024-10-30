@@ -19,31 +19,30 @@
   ~ Copyright (c) 2019-2024 by Patrick Zedler
   -->
 
-<LinearLayout
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  android:layout_width="match_parent"
-  android:layout_height="wrap_content"
-  android:orientation="vertical">
-
-  <com.google.android.material.appbar.MaterialToolbar
-    android:id="@+id/toolbar_text"
-    style="@style/Widget.Doodle.Toolbar" />
-
-  <com.google.android.material.divider.MaterialDivider
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content" />
-
-  <androidx.core.widget.NestedScrollView
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:scrollbars="none"
-    android:importantForAccessibility="no">
+    android:orientation="vertical">
 
-    <xyz.zedler.patrick.doodle.view.FormattedTextView
-      android:id="@+id/formatted_text"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content" />
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar_text"
+        style="@style/Widget.Doodle.Toolbar" />
 
-  </androidx.core.widget.NestedScrollView>
+    <com.google.android.material.divider.MaterialDivider
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:importantForAccessibility="no"
+        android:scrollbars="none">
+
+        <xyz.zedler.patrick.doodle.view.FormattedTextView
+            android:id="@+id/formatted_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </androidx.core.widget.NestedScrollView>
 
 </LinearLayout>

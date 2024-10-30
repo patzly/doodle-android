@@ -16,41 +16,40 @@
   ~
   ~ Copyright (c) 2019-2024 by Patrick Zedler
   -->
-<FrameLayout
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:tools="http://schemas.android.com/tools"
-  android:id="@+id/container"
-  android:layout_width="match_parent"
-  android:layout_height="match_parent"
-  android:fitsSystemWindows="true">
-
-  <androidx.coordinatorlayout.widget.CoordinatorLayout
-    android:id="@+id/coordinator"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
 
-    <View
-      android:id="@+id/touch_outside"
-      android:layout_width="match_parent"
-      android:layout_height="match_parent"
-      android:focusable="false"
-      android:importantForAccessibility="no"
-      android:soundEffectsEnabled="false"
-      tools:ignore="UnusedAttribute" />
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinator"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
 
-    <FrameLayout
-      android:id="@+id/design_bottom_sheet"
-      style="?attr/bottomSheetStyle"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:layout_gravity="center_horizontal|top"
-      android:maxWidth="640dp"
-      app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
-      app:behavior_saveFlags="all"
-      app:paddingBottomSystemWindowInsets="false" />
+        <View
+            android:id="@+id/touch_outside"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusable="false"
+            android:importantForAccessibility="no"
+            android:soundEffectsEnabled="false"
+            tools:ignore="UnusedAttribute" />
 
-  </androidx.coordinatorlayout.widget.CoordinatorLayout>
+        <FrameLayout
+            android:id="@+id/design_bottom_sheet"
+            style="?attr/bottomSheetStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|top"
+            android:maxWidth="640dp"
+            app:behavior_saveFlags="all"
+            app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+            app:paddingBottomSystemWindowInsets="false" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 </FrameLayout>

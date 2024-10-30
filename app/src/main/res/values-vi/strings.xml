@@ -21,177 +21,177 @@
 
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
-  <string name="wallpaper_description">Hình nền động đầy màu sắc với chế độ tối tự động và hoạt cảnh được tối ưu hóa cho pin của bạn. Tùy chỉnh nó theo nhu cầu của bạn!</string>
-  <string name="wallpaper_description_picker">Khám phá bộ sưu tập hình dạng đầy màu sắc, được tinh chỉnh với hiệu ứng thu phóng nhẹ nhàng khi bạn vuốt qua màn hình chính và mở khóa thiết bị của mình. \nTùy chỉnh  hình nền để phù hợp với phong cách của riêng bạn!</string>
+    <string name="wallpaper_description">Hình nền động đầy màu sắc với chế độ tối tự động và hoạt cảnh được tối ưu hóa cho pin của bạn. Tùy chỉnh nó theo nhu cầu của bạn!</string>
+    <string name="wallpaper_description_picker">Khám phá bộ sưu tập hình dạng đầy màu sắc, được tinh chỉnh với hiệu ứng thu phóng nhẹ nhàng khi bạn vuốt qua màn hình chính và mở khóa thiết bị của mình. \nTùy chỉnh  hình nền để phù hợp với phong cách của riêng bạn!</string>
 
-  <!-- TITLES -->
+    <!-- TITLES -->
 
-  <string name="title_info">Thông tin</string>
-  <string name="title_apply_changes">Áp dụng các thay đổi</string>
-  <string name="title_logcat">Logcat</string>
-  <string name="title_feedback">Phản hồi</string>
-  <string name="title_licenses">Giấy phép nguồn mở</string>
+    <string name="title_info">Thông tin</string>
+    <string name="title_apply_changes">Áp dụng các thay đổi</string>
+    <string name="title_logcat">Logcat</string>
+    <string name="title_feedback">Phản hồi</string>
+    <string name="title_licenses">Giấy phép nguồn mở</string>
 
-  <!-- LABELS -->
+    <!-- LABELS -->
 
-  <string name="label_ms">%1$s ms</string>
-  <string name="label_degrees">%1$smức độ</string>
+    <string name="label_ms">%1$s ms</string>
+    <string name="label_degrees">%1$smức độ</string>
 
-  <!-- ACTIONS -->
+    <!-- ACTIONS -->
 
-  <string name="action_cancel">Hủy</string>
-  <string name="action_select">Chọn</string>
-  <string name="action_close">Đóng</string>
-  <string name="action_back">Quay lại</string>
-  <string name="action_open_link">Mở trang web ngoài</string>
-  <string name="action_hide">Ẩn</string>
-  <string name="action_reset">Đặt dữ liệu như ban đầu</string>
-  <string name="action_deactivate">Hủy kích hoạt</string>
-  <string name="action_select_all">Chọn tất cả</string>
-  <string name="action_continue">Tiếp tục</string>
-  <string name="action_reload">Tải lại</string>
-  <string name="action_open_app_info">Mở thông tin ứng dụng</string>
-  <string name="action_set">Cài hình nền</string>
-  <string name="action_learn_more">Tìm hiểu thêm</string>
-  <string name="action_help">Trợ giúp</string>
-  <string name="action_send_feedback">Gửi phản hồi</string>
-  <string name="action_share">Chia sẻ</string>
-  <string name="action_share_description">Hãy kể cho bạn bè về Doodle nhé !</string>
-  <string name="action_email">Gửi email</string>
-  <string name="action_email_description">Liên lạc với nhà phát triển</string>
-  <string name="action_rate">Đánh giá trên Google Play</string>
-  <string name="action_rate_description">Ủng hộ nhà phát triển ứng dụng</string>
-  <string name="action_github">Doodle Android trên GitHub</string>
-  <string name="action_github_description">Mở phiếu báo cáo sự cố mới trên GitHub</string>
-  <string name="action_language_select">Chọn ngôn ngữ</string>
-  <string name="action_set_static">Đặt hình nền tĩnh</string>
-  <string name="action_change_time">Chuyển thời gian</string>
-  <string name="action_change_interval">Thay đổi khoảng thời gian</string>
-  <string name="action_copy_to_clipboard">Sao chép vào bảng nhớ tạm</string>
+    <string name="action_cancel">Hủy</string>
+    <string name="action_select">Chọn</string>
+    <string name="action_close">Đóng</string>
+    <string name="action_back">Quay lại</string>
+    <string name="action_open_link">Mở trang web ngoài</string>
+    <string name="action_hide">Ẩn</string>
+    <string name="action_reset">Đặt dữ liệu như ban đầu</string>
+    <string name="action_deactivate">Hủy kích hoạt</string>
+    <string name="action_select_all">Chọn tất cả</string>
+    <string name="action_continue">Tiếp tục</string>
+    <string name="action_reload">Tải lại</string>
+    <string name="action_open_app_info">Mở thông tin ứng dụng</string>
+    <string name="action_set">Cài hình nền</string>
+    <string name="action_learn_more">Tìm hiểu thêm</string>
+    <string name="action_help">Trợ giúp</string>
+    <string name="action_send_feedback">Gửi phản hồi</string>
+    <string name="action_share">Chia sẻ</string>
+    <string name="action_share_description">Hãy kể cho bạn bè về Doodle nhé !</string>
+    <string name="action_email">Gửi email</string>
+    <string name="action_email_description">Liên lạc với nhà phát triển</string>
+    <string name="action_rate">Đánh giá trên Google Play</string>
+    <string name="action_rate_description">Ủng hộ nhà phát triển ứng dụng</string>
+    <string name="action_github">Doodle Android trên GitHub</string>
+    <string name="action_github_description">Mở phiếu báo cáo sự cố mới trên GitHub</string>
+    <string name="action_language_select">Chọn ngôn ngữ</string>
+    <string name="action_set_static">Đặt hình nền tĩnh</string>
+    <string name="action_change_time">Chuyển thời gian</string>
+    <string name="action_change_interval">Thay đổi khoảng thời gian</string>
+    <string name="action_copy_to_clipboard">Sao chép vào bảng nhớ tạm</string>
 
-  <!-- APPEARANCE -->
+    <!-- APPEARANCE -->
 
-  <string name="appearance_title">Diện mạo</string>
-  <string name="appearance_description">Thiết kế &amp; tùy chọn màu sắc</string>
-  <string name="appearance_one_ui">Trên các thiết bị Samsung có hệ điều hành One UI 4.1  đã hoàn toàn bỏ qua các màu sắc được cung cấp bởi các ứng dụng hình nền động, trong đó có Doodle. \nĐể áp dụng màu cho hệ thống của bạn, hãy đặt thiết kế hiện tại làm hình nền tĩnh để hệ thống tìm kiếm màu, sau đó áp dụng hình nền làm hình nền động.</string>
-  <string name="appearance_design">Thiết kế</string>
-  <string name="appearance_design_doodle">Bộ sưu tập hình động của Pixel 4</string>
-  <string name="appearance_design_monet">Bộ sưu tập Material You - Pixel 6</string>
-  <string name="appearance_design_anna">Hình động à l\'Anna Kövecses</string>
-  <string name="appearance_variant">Biến thể</string>
-  <string name="appearance_night_mode">Chế độ tối</string>
-  <string name="appearance_night_mode_description">Chỉ những màu tối</string>
-  <string name="appearance_night_mode_on">Bật</string>
-  <string name="appearance_night_mode_off">Tắt</string>
-  <string name="appearance_light_text">Luôn luôn sử dụng phông chữ màu trắng</string>
-  <string name="appearance_light_text_description">Thay vì sử dụng phông chữ màu đen trên nền sáng</string>
-  <string name="appearance_dark_text">Sử dụng phông chữ màu đen</string>
-  <string name="appearance_dark_text_description">Chỉ khi nền đủ sáng</string>
-  <string name="appearance_colors_category">Màu sắc</string>
-  <string name="appearance_colors">Phân tách màu</string>
-  <string name="appearance_colors_description">Được sử dụng để tính toán độ tương phản của văn bản</string>
-  <string name="appearance_colors_description_dynamic">Được dùng bởi chủ đề của hệ thống</string>
-  <string name="appearance_colors_description_one_ui">Như đã đề cập ở trên, các màu sắc được cung cấp của hình nền động bị One UI bỏ qua</string>
-  <string name="appearance_colors_primary">Chọn màu chính</string>
-  <string name="appearance_colors_secondary">Chọn màu phụ</string>
-  <string name="appearance_colors_tertiary">Chọn màu thứ ba</string>
-  <string name="appearance_colors_custom">Lựa chọn màu sắc tùy chỉnh</string>
-  <string name="appearance_colors_info">Trên các thiết bị không hỗ trợ màu động (Android 11 trở xuống), chỉ màu chính được sử dụng để tính độ tương phản của văn bản trên trình khởi chạy và tô màu nền của màn hình ứng dụng gần đây.</string>
-  <string name="appearance_colors_info_dynamic">Trên các thiết bị chạy Android 12 trở lên và hỗ trợ màu động, ba màu đã chọn được sử dụng để tự động tạo chủ đề màu trên toàn hệ thống.</string>
-  <string name="appearance_random">Hình nền ngẫu nhiên</string>
-  <string name="appearance_random_description">Chọn trình kích hoạt bên dưới</string>
-  <string name="appearance_random_screen_off">Tắt màn hình</string>
-  <string name="appearance_random_daily">Hằng ngày vào %1$s</string>
-  <string name="appearance_random_interval">Chọn khoảng thời gian</string>
-  <plurals name="appearance_random_interval_minutes">
-    <item quantity="other">Mỗi %1$d phút</item>
-  </plurals>
-  <plurals name="appearance_random_interval_hours">
-    <item quantity="other">Mỗi %1$d giờ</item>
-  </plurals>
-  <plurals name="appearance_random_interval_days">
-    <item quantity="other">Mỗi %1$d ngày</item>
-  </plurals>
+    <string name="appearance_title">Diện mạo</string>
+    <string name="appearance_description">Thiết kế &amp; tùy chọn màu sắc</string>
+    <string name="appearance_one_ui">Trên các thiết bị Samsung có hệ điều hành One UI 4.1  đã hoàn toàn bỏ qua các màu sắc được cung cấp bởi các ứng dụng hình nền động, trong đó có Doodle. \nĐể áp dụng màu cho hệ thống của bạn, hãy đặt thiết kế hiện tại làm hình nền tĩnh để hệ thống tìm kiếm màu, sau đó áp dụng hình nền làm hình nền động.</string>
+    <string name="appearance_design">Thiết kế</string>
+    <string name="appearance_design_doodle">Bộ sưu tập hình động của Pixel 4</string>
+    <string name="appearance_design_monet">Bộ sưu tập Material You - Pixel 6</string>
+    <string name="appearance_design_anna">Hình động à l\'Anna Kövecses</string>
+    <string name="appearance_variant">Biến thể</string>
+    <string name="appearance_night_mode">Chế độ tối</string>
+    <string name="appearance_night_mode_description">Chỉ những màu tối</string>
+    <string name="appearance_night_mode_on">Bật</string>
+    <string name="appearance_night_mode_off">Tắt</string>
+    <string name="appearance_light_text">Luôn luôn sử dụng phông chữ màu trắng</string>
+    <string name="appearance_light_text_description">Thay vì sử dụng phông chữ màu đen trên nền sáng</string>
+    <string name="appearance_dark_text">Sử dụng phông chữ màu đen</string>
+    <string name="appearance_dark_text_description">Chỉ khi nền đủ sáng</string>
+    <string name="appearance_colors_category">Màu sắc</string>
+    <string name="appearance_colors">Phân tách màu</string>
+    <string name="appearance_colors_description">Được sử dụng để tính toán độ tương phản của văn bản</string>
+    <string name="appearance_colors_description_dynamic">Được dùng bởi chủ đề của hệ thống</string>
+    <string name="appearance_colors_description_one_ui">Như đã đề cập ở trên, các màu sắc được cung cấp của hình nền động bị One UI bỏ qua</string>
+    <string name="appearance_colors_primary">Chọn màu chính</string>
+    <string name="appearance_colors_secondary">Chọn màu phụ</string>
+    <string name="appearance_colors_tertiary">Chọn màu thứ ba</string>
+    <string name="appearance_colors_custom">Lựa chọn màu sắc tùy chỉnh</string>
+    <string name="appearance_colors_info">Trên các thiết bị không hỗ trợ màu động (Android 11 trở xuống), chỉ màu chính được sử dụng để tính độ tương phản của văn bản trên trình khởi chạy và tô màu nền của màn hình ứng dụng gần đây.</string>
+    <string name="appearance_colors_info_dynamic">Trên các thiết bị chạy Android 12 trở lên và hỗ trợ màu động, ba màu đã chọn được sử dụng để tự động tạo chủ đề màu trên toàn hệ thống.</string>
+    <string name="appearance_random">Hình nền ngẫu nhiên</string>
+    <string name="appearance_random_description">Chọn trình kích hoạt bên dưới</string>
+    <string name="appearance_random_screen_off">Tắt màn hình</string>
+    <string name="appearance_random_daily">Hằng ngày vào %1$s</string>
+    <string name="appearance_random_interval">Chọn khoảng thời gian</string>
+    <plurals name="appearance_random_interval_minutes">
+        <item quantity="other">Mỗi %1$d phút</item>
+    </plurals>
+    <plurals name="appearance_random_interval_hours">
+        <item quantity="other">Mỗi %1$d giờ</item>
+    </plurals>
+    <plurals name="appearance_random_interval_days">
+        <item quantity="other">Mỗi %1$d ngày</item>
+    </plurals>
 
-  <string name="parallax_swipe_category">Vuốt</string>
-  <string name="parallax_swipe">Hiệu ứng Vuốt</string>
-  <string name="parallax_swipe_description">Điều chỉnh độ lệch khi Vuốt trang</string>
-  <string name="parallax_swipe_power_save">Tuân theo tiết kiệm pin</string>
-  <string name="parallax_swipe_power_save_description">Tạm dừng hiệu ứng Vuốt khi Tiết kiệm pin bật</string>
-  <string name="parallax_tilt_category">Nghiêng</string>
-  <string name="parallax_tilt">Hiệu ứng Nghiêng</string>
-  <string name="parallax_tilt_description">Chuyển động khi nghiêng thiết bị</string>
-  <string name="parallax_tilt_warning">Hết pin nhanh hơn</string>
-  <string name="parallax_refresh_rate">Tần số làm mới của cảm biến nghiêng</string>
-  <string name="parallax_refresh_rate_description">Độ trẽ thấp có thể làm chuyện động bị lag</string>
-  <string name="parallax_damping">Làm mềm chuyển động</string>
-  <string name="parallax_damping_description">Giảm để làm mượt chuyển động</string>
-  <!-- SIZE -->
+    <string name="parallax_swipe_category">Vuốt</string>
+    <string name="parallax_swipe">Hiệu ứng Vuốt</string>
+    <string name="parallax_swipe_description">Điều chỉnh độ lệch khi Vuốt trang</string>
+    <string name="parallax_swipe_power_save">Tuân theo tiết kiệm pin</string>
+    <string name="parallax_swipe_power_save_description">Tạm dừng hiệu ứng Vuốt khi Tiết kiệm pin bật</string>
+    <string name="parallax_tilt_category">Nghiêng</string>
+    <string name="parallax_tilt">Hiệu ứng Nghiêng</string>
+    <string name="parallax_tilt_description">Chuyển động khi nghiêng thiết bị</string>
+    <string name="parallax_tilt_warning">Hết pin nhanh hơn</string>
+    <string name="parallax_refresh_rate">Tần số làm mới của cảm biến nghiêng</string>
+    <string name="parallax_refresh_rate_description">Độ trẽ thấp có thể làm chuyện động bị lag</string>
+    <string name="parallax_damping">Làm mềm chuyển động</string>
+    <string name="parallax_damping_description">Giảm để làm mượt chuyển động</string>
+    <!-- SIZE -->
 
-  <string name="size_title">Kích cỡ hình</string>
-  <string name="size_category_zoom">Hiệu ứng Phóng đại</string>
-  <string name="size_category_launcher">Phóng đại màn hình chính</string>
-  <string name="size_category_unlock">Phóng đại màn hình khóa</string>
-  <string name="size_scale">Tỉ lệ</string>
-  <string name="size_scale_description">Hữu ích cho màn hình hay mật độ màn hình lớn</string>
-  <string name="size_zoom">Cường độ phóng đại</string>
-  <string name="size_zoom_rotation_description">Góc quay tối đa, tính theo độ</string>
-  <string name="size_zoom_power_save_description">Tạm dừng hiệu ứng phóng to khi Tiết kiệm pin bật</string>
-  <string name="size_zoom_launcher_description">Có thể không có sẵn trên một số thiết bị</string>
-  <string name="size_zoom_damping">Làm mềm hiệu ứng</string>
-  <string name="size_zoom_damping_description">Kích hoạt và giảm để làm mượt hiệu ứng phóng đại</string>
-  <string name="size_zoom_unlock">Phóng đại trong màn hình khóa</string>
-  <string name="size_zoom_unlock_description">Chọn hướng</string>
-  <string name="size_zoom_unlock_in">Phóng to</string>
-  <string name="size_zoom_unlock_out">Thu nhỏ</string>
-  <string name="size_zoom_duration">Mở khóa thời lượng phóng đại</string>
-  <string name="size_zoom_duration_description">Giảm để làm hiệu ứng nhanh hơn</string>
+    <string name="size_title">Kích cỡ hình</string>
+    <string name="size_category_zoom">Hiệu ứng Phóng đại</string>
+    <string name="size_category_launcher">Phóng đại màn hình chính</string>
+    <string name="size_category_unlock">Phóng đại màn hình khóa</string>
+    <string name="size_scale">Tỉ lệ</string>
+    <string name="size_scale_description">Hữu ích cho màn hình hay mật độ màn hình lớn</string>
+    <string name="size_zoom">Cường độ phóng đại</string>
+    <string name="size_zoom_rotation_description">Góc quay tối đa, tính theo độ</string>
+    <string name="size_zoom_power_save_description">Tạm dừng hiệu ứng phóng to khi Tiết kiệm pin bật</string>
+    <string name="size_zoom_launcher_description">Có thể không có sẵn trên một số thiết bị</string>
+    <string name="size_zoom_damping">Làm mềm hiệu ứng</string>
+    <string name="size_zoom_damping_description">Kích hoạt và giảm để làm mượt hiệu ứng phóng đại</string>
+    <string name="size_zoom_unlock">Phóng đại trong màn hình khóa</string>
+    <string name="size_zoom_unlock_description">Chọn hướng</string>
+    <string name="size_zoom_unlock_in">Phóng to</string>
+    <string name="size_zoom_unlock_out">Thu nhỏ</string>
+    <string name="size_zoom_duration">Mở khóa thời lượng phóng đại</string>
+    <string name="size_zoom_duration_description">Giảm để làm hiệu ứng nhanh hơn</string>
 
-  <!-- OTHER -->
+    <!-- OTHER -->
 
-  <string name="other_title">Các lựa chọn khác</string>
-  <string name="other_language">Ngôn ngữ</string>
-  <string name="other_language_system">Theo Hệ thống</string>
-  <string name="other_gpu">Tăng tốc phần cứng</string>
-  <string name="other_gpu_description">Tắt nếu hình nền bị lỗi</string>
-  <string name="other_gpu_info">Tăng tốc phần cứng chỉ có sẵn với Android 8 trở lên. Hoạt ảnh hình nền có thể giật lag một chút</string>
-  <string name="other_screen_off_delay">Độ trễ tắt màn hình</string>
-  <string name="other_screen_off_delay_description">Bắt buộc cho chuyển cảnh Always On Display</string>
-  <string name="other_launcher">Ẩn biểu tượng ngoài màn hình</string>
-  <string name="other_launcher_unsupported">Tính năng này không còn được hỗ trợ do những hạn chế của hệ thống</string>
-  <string name="other_theme">Nền ứng dụng</string>
-  <string name="other_theme_description">Thử thêm những hình nền khác</string>
-  <string name="other_theme_auto">Tự động</string>
-  <string name="other_theme_light">Sáng</string>
-  <string name="other_theme_dark">Tối</string>
-  <string name="other_reset">Đặt lại các tùy chỉnh</string>
-  <string name="other_reset_description">Hơn cả gỡ cài đặt, do các tùy chỉnh đã được lưu ở một chỗ đặc biệt nào đó do chúng phải được truy cập ngay sau khi khởi dộng thiết bị</string>
-  <string name="other_log">Hiển thị Logcat</string>
-  <string name="other_log_description">Chỉ dành cho Gỡ lỗi</string>
+    <string name="other_title">Các lựa chọn khác</string>
+    <string name="other_language">Ngôn ngữ</string>
+    <string name="other_language_system">Theo Hệ thống</string>
+    <string name="other_gpu">Tăng tốc phần cứng</string>
+    <string name="other_gpu_description">Tắt nếu hình nền bị lỗi</string>
+    <string name="other_gpu_info">Tăng tốc phần cứng chỉ có sẵn với Android 8 trở lên. Hoạt ảnh hình nền có thể giật lag một chút</string>
+    <string name="other_screen_off_delay">Độ trễ tắt màn hình</string>
+    <string name="other_screen_off_delay_description">Bắt buộc cho chuyển cảnh Always On Display</string>
+    <string name="other_launcher">Ẩn biểu tượng ngoài màn hình</string>
+    <string name="other_launcher_unsupported">Tính năng này không còn được hỗ trợ do những hạn chế của hệ thống</string>
+    <string name="other_theme">Nền ứng dụng</string>
+    <string name="other_theme_description">Thử thêm những hình nền khác</string>
+    <string name="other_theme_auto">Tự động</string>
+    <string name="other_theme_light">Sáng</string>
+    <string name="other_theme_dark">Tối</string>
+    <string name="other_reset">Đặt lại các tùy chỉnh</string>
+    <string name="other_reset_description">Hơn cả gỡ cài đặt, do các tùy chỉnh đã được lưu ở một chỗ đặc biệt nào đó do chúng phải được truy cập ngay sau khi khởi dộng thiết bị</string>
+    <string name="other_log">Hiển thị Logcat</string>
+    <string name="other_log_description">Chỉ dành cho Gỡ lỗi</string>
 
-  <!-- ABOUT -->
+    <!-- ABOUT -->
 
-  <string name="about_title">Giới thiệu</string>
-  <string name="about_version">Phiên bản</string>
-  <string name="about_changelog">Nhật kí thay đổi</string>
-  <string name="about_changelog_description">Có gì mới</string>
-  <string name="about_developer">Nhà phát triển</string>
-  <string name="about_vending_description">Các ứng dụng khác từ nhà phát triển</string>
-  <string name="about_github_description">Mã nguồn</string>
-  <string name="about_translation_description">Hãy giúp tôi dịch Doodle</string>
-  <string name="about_privacy">Chính sách về quyền riêng tư</string>
-  <string name="about_privacy_description">Dữ liệu của bạn được xử lý thế nào\?</string>
+    <string name="about_title">Giới thiệu</string>
+    <string name="about_version">Phiên bản</string>
+    <string name="about_changelog">Nhật kí thay đổi</string>
+    <string name="about_changelog_description">Có gì mới</string>
+    <string name="about_developer">Nhà phát triển</string>
+    <string name="about_vending_description">Các ứng dụng khác từ nhà phát triển</string>
+    <string name="about_github_description">Mã nguồn</string>
+    <string name="about_translation_description">Hãy giúp tôi dịch Doodle</string>
+    <string name="about_privacy">Chính sách về quyền riêng tư</string>
+    <string name="about_privacy_description">Dữ liệu của bạn được xử lý thế nào\?</string>
 
-  <!-- MESSAGES -->
+    <!-- MESSAGES -->
 
-  <string name="msg_feedback">Một ứng dụng tốt cần rất nhiều thời gian và sống nhờ phản hổi của những người dùng.</string>
-  <string name="msg_hide">Ẩn icon trong Launcher\?</string>
-  <string name="msg_random">Tất cả các hình nền đã chọn sẽ được sử dụng</string>
-  <string name="msg_random_warning">Màn hình nền ngẫu nhiên vẫn đang hoạt động!</string>
-  <string name="msg_reset">Đặt lại tất cả các cài đặt\?</string>
-  <string name="msg_force_stop">Bắt buộc dừng để áp dụng các thay đổi</string>
-  <string name="msg_preview_missing">Đã có lỗi xảy ra, xin vui lòng chọn Doodle Live Wallpaper</string>
-  <string name="msg_report_crash">Vui lòng gửi crash log kèm theo báo cáo lỗi để tôi có thể tìm cách sửa chúng.</string>
-  <string name="msg_copied_to_clipboard">Sao chép vào bảng nhớ tạm thành công</string>
+    <string name="msg_feedback">Một ứng dụng tốt cần rất nhiều thời gian và sống nhờ phản hổi của những người dùng.</string>
+    <string name="msg_hide">Ẩn icon trong Launcher\?</string>
+    <string name="msg_random">Tất cả các hình nền đã chọn sẽ được sử dụng</string>
+    <string name="msg_random_warning">Màn hình nền ngẫu nhiên vẫn đang hoạt động!</string>
+    <string name="msg_reset">Đặt lại tất cả các cài đặt\?</string>
+    <string name="msg_force_stop">Bắt buộc dừng để áp dụng các thay đổi</string>
+    <string name="msg_preview_missing">Đã có lỗi xảy ra, xin vui lòng chọn Doodle Live Wallpaper</string>
+    <string name="msg_report_crash">Vui lòng gửi crash log kèm theo báo cáo lỗi để tôi có thể tìm cách sửa chúng.</string>
+    <string name="msg_copied_to_clipboard">Sao chép vào bảng nhớ tạm thành công</string>
 
-  </resources>
+</resources>

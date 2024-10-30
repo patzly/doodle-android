@@ -17,178 +17,177 @@
   ~ Copyright (c) 2019-2024 by Patrick Zedler
   -->
 
-<navigation
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:tools="http://schemas.android.com/tools"
-  android:id="@+id/nav_main"
-  app:startDestination="@id/overviewFragment">
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/overviewFragment">
 
-  <fragment
-    android:id="@+id/overviewFragment"
-    android:name="xyz.zedler.patrick.doodle.fragment.OverviewFragment"
-    android:label="fragment_overview"
-    tools:layout="@layout/fragment_overview" >
+    <fragment
+        android:id="@+id/overviewFragment"
+        android:name="xyz.zedler.patrick.doodle.fragment.OverviewFragment"
+        android:label="fragment_overview"
+        tools:layout="@layout/fragment_overview">
+
+        <action
+            android:id="@+id/action_overview_to_appearance"
+            app:destination="@id/appearanceFragment" />
+
+        <action
+            android:id="@+id/action_overview_to_parallax"
+            app:destination="@id/parallaxFragment" />
+
+        <action
+            android:id="@+id/action_overview_to_size"
+            app:destination="@id/sizeFragment" />
+
+        <action
+            android:id="@+id/action_overview_to_other"
+            app:destination="@id/otherFragment" />
+
+        <action
+            android:id="@+id/action_overview_to_about"
+            app:destination="@id/aboutFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/appearanceFragment"
+        android:name="xyz.zedler.patrick.doodle.fragment.AppearanceFragment"
+        android:label="fragment_appearance"
+        tools:layout="@layout/fragment_appearance">
+
+        <action
+            android:id="@+id/action_appearance_to_colors_dialog"
+            app:destination="@id/colorsBottomSheetDialogFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/parallaxFragment"
+        android:name="xyz.zedler.patrick.doodle.fragment.ParallaxFragment"
+        android:label="fragment_parallax"
+        tools:layout="@layout/fragment_parallax" />
+
+    <fragment
+        android:id="@+id/sizeFragment"
+        android:name="xyz.zedler.patrick.doodle.fragment.SizeFragment"
+        android:label="fragment_size"
+        tools:layout="@layout/fragment_size" />
+
+    <fragment
+        android:id="@+id/otherFragment"
+        android:name="xyz.zedler.patrick.doodle.fragment.OtherFragment"
+        android:label="fragment_other"
+        tools:layout="@layout/fragment_other">
+
+        <action
+            android:id="@+id/action_other_to_languages_dialog"
+            app:destination="@id/languagesBottomSheetDialogFragment" />
+
+        <action
+            android:id="@+id/action_other_to_log"
+            app:destination="@id/logFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/logFragment"
+        android:name="xyz.zedler.patrick.doodle.fragment.LogFragment"
+        android:label="fragment_log"
+        tools:layout="@layout/fragment_log" />
+
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="xyz.zedler.patrick.doodle.fragment.AboutFragment"
+        android:label="fragment_about"
+        tools:layout="@layout/fragment_about" />
+
+    <dialog
+        android:id="@+id/textBottomSheetDialogFragment"
+        android:name="xyz.zedler.patrick.doodle.fragment.dialog.TextBottomSheetDialogFragment"
+        android:label="dialog_text">
+
+        <argument
+            android:name="file"
+            android:defaultValue="0"
+            app:argType="reference" />
+
+        <argument
+            android:name="title"
+            android:defaultValue="0"
+            app:argType="reference" />
+
+        <argument
+            android:name="link"
+            android:defaultValue="0"
+            app:argType="reference" />
+
+        <argument
+            android:name="highlights"
+            android:defaultValue="@null"
+            app:argType="string[]"
+            app:nullable="true" />
+
+    </dialog>
+
+    <dialog
+        android:id="@+id/feedbackBottomSheetDialogFragment"
+        android:name="xyz.zedler.patrick.doodle.fragment.dialog.FeedbackBottomSheetDialogFragment"
+        android:label="dialog_feedback" />
+
+    <dialog
+        android:id="@+id/applyBottomSheetDialogFragment"
+        android:name="xyz.zedler.patrick.doodle.fragment.dialog.ApplyBottomSheetDialogFragment"
+        android:label="dialog_apply" />
+
+    <dialog
+        android:id="@+id/languagesBottomSheetDialogFragment"
+        android:name="xyz.zedler.patrick.doodle.fragment.dialog.LanguagesBottomSheetDialogFragment"
+        android:label="dialog_languages" />
+
+    <dialog
+        android:id="@+id/colorsBottomSheetDialogFragment"
+        android:name="xyz.zedler.patrick.doodle.fragment.dialog.ColorsBottomSheetDialogFragment"
+        android:label="dialog_colors">
+
+        <argument
+            android:name="title"
+            android:defaultValue="0"
+            app:argType="reference" />
+
+        <argument
+            android:name="colors"
+            android:defaultValue="#000000"
+            app:argType="string" />
+
+        <argument
+            android:name="priority"
+            android:defaultValue="0"
+            app:argType="integer" />
+
+        <argument
+            android:name="themeColorPref"
+            android:defaultValue=""
+            app:argType="string" />
+
+        <argument
+            android:name="themeColorPrefDef"
+            android:defaultValue="#000000"
+            app:argType="string" />
+
+    </dialog>
 
     <action
-      android:id="@+id/action_overview_to_appearance"
-      app:destination="@id/appearanceFragment" />
+        android:id="@+id/action_global_text_dialog"
+        app:destination="@id/textBottomSheetDialogFragment" />
 
     <action
-      android:id="@+id/action_overview_to_parallax"
-      app:destination="@id/parallaxFragment" />
+        android:id="@+id/action_global_feedback_dialog"
+        app:destination="@id/feedbackBottomSheetDialogFragment" />
 
     <action
-      android:id="@+id/action_overview_to_size"
-      app:destination="@id/sizeFragment" />
-
-    <action
-      android:id="@+id/action_overview_to_other"
-      app:destination="@id/otherFragment" />
-
-    <action
-      android:id="@+id/action_overview_to_about"
-      app:destination="@id/aboutFragment" />
-
-  </fragment>
-
-  <fragment
-    android:id="@+id/appearanceFragment"
-    android:name="xyz.zedler.patrick.doodle.fragment.AppearanceFragment"
-    android:label="fragment_appearance"
-    tools:layout="@layout/fragment_appearance">
-
-    <action
-      android:id="@+id/action_appearance_to_colors_dialog"
-      app:destination="@id/colorsBottomSheetDialogFragment" />
-
-  </fragment>
-
-  <fragment
-    android:id="@+id/parallaxFragment"
-    android:name="xyz.zedler.patrick.doodle.fragment.ParallaxFragment"
-    android:label="fragment_parallax"
-    tools:layout="@layout/fragment_parallax" />
-
-  <fragment
-    android:id="@+id/sizeFragment"
-    android:name="xyz.zedler.patrick.doodle.fragment.SizeFragment"
-    android:label="fragment_size"
-    tools:layout="@layout/fragment_size" />
-
-  <fragment
-    android:id="@+id/otherFragment"
-    android:name="xyz.zedler.patrick.doodle.fragment.OtherFragment"
-    android:label="fragment_other"
-    tools:layout="@layout/fragment_other">
-
-    <action
-      android:id="@+id/action_other_to_languages_dialog"
-      app:destination="@id/languagesBottomSheetDialogFragment" />
-
-    <action
-      android:id="@+id/action_other_to_log"
-      app:destination="@id/logFragment" />
-
-  </fragment>
-
-  <fragment
-    android:id="@+id/logFragment"
-    android:name="xyz.zedler.patrick.doodle.fragment.LogFragment"
-    android:label="fragment_log"
-    tools:layout="@layout/fragment_log" />
-
-  <fragment
-    android:id="@+id/aboutFragment"
-    android:name="xyz.zedler.patrick.doodle.fragment.AboutFragment"
-    android:label="fragment_about"
-    tools:layout="@layout/fragment_about" />
-
-  <dialog
-    android:id="@+id/textBottomSheetDialogFragment"
-    android:name="xyz.zedler.patrick.doodle.fragment.dialog.TextBottomSheetDialogFragment"
-    android:label="dialog_text">
-
-    <argument
-      android:name="file"
-      app:argType="reference"
-      android:defaultValue="0" />
-
-    <argument
-      android:name="title"
-      app:argType="reference"
-      android:defaultValue="0" />
-
-    <argument
-      android:name="link"
-      app:argType="reference"
-      android:defaultValue="0" />
-
-    <argument
-      android:name="highlights"
-      app:argType="string[]"
-      app:nullable="true"
-      android:defaultValue="@null" />
-
-  </dialog>
-
-  <dialog
-    android:id="@+id/feedbackBottomSheetDialogFragment"
-    android:name="xyz.zedler.patrick.doodle.fragment.dialog.FeedbackBottomSheetDialogFragment"
-    android:label="dialog_feedback" />
-
-  <dialog
-    android:id="@+id/applyBottomSheetDialogFragment"
-    android:name="xyz.zedler.patrick.doodle.fragment.dialog.ApplyBottomSheetDialogFragment"
-    android:label="dialog_apply" />
-
-  <dialog
-    android:id="@+id/languagesBottomSheetDialogFragment"
-    android:name="xyz.zedler.patrick.doodle.fragment.dialog.LanguagesBottomSheetDialogFragment"
-    android:label="dialog_languages" />
-
-  <dialog
-    android:id="@+id/colorsBottomSheetDialogFragment"
-    android:name="xyz.zedler.patrick.doodle.fragment.dialog.ColorsBottomSheetDialogFragment"
-    android:label="dialog_colors">
-
-    <argument
-      android:name="title"
-      app:argType="reference"
-      android:defaultValue="0" />
-
-    <argument
-      android:name="colors"
-      app:argType="string"
-      android:defaultValue="#000000" />
-
-    <argument
-      android:name="priority"
-      app:argType="integer"
-      android:defaultValue="0" />
-
-    <argument
-      android:name="themeColorPref"
-      app:argType="string"
-      android:defaultValue="" />
-
-    <argument
-      android:name="themeColorPrefDef"
-      app:argType="string"
-      android:defaultValue="#000000" />
-
-  </dialog>
-
-  <action
-    android:id="@+id/action_global_text_dialog"
-    app:destination="@id/textBottomSheetDialogFragment"/>
-
-  <action
-    android:id="@+id/action_global_feedback_dialog"
-    app:destination="@id/feedbackBottomSheetDialogFragment" />
-
-  <action
-    android:id="@+id/action_global_apply_dialog"
-    app:destination="@id/applyBottomSheetDialogFragment" />
+        android:id="@+id/action_global_apply_dialog"
+        app:destination="@id/applyBottomSheetDialogFragment" />
 
 </navigation>

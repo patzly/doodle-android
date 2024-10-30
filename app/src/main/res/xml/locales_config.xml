@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ This file is part of Doodle Android.
   ~
   ~ Doodle Android is free software: you can redistribute it and/or modify
@@ -19,30 +18,30 @@
   -->
 
 <locale-config xmlns:android="http://schemas.android.com/apk/res/android">
-  <locale android:name="ar"/>
-  <locale android:name="cs"/>
-  <locale android:name="da"/>
-  <locale android:name="de"/>
-  <locale android:name="en"/>
-  <locale android:name="es"/>
-  <locale android:name="fi"/>
-  <locale android:name="fil"/>
-  <locale android:name="fr"/>
-  <locale android:name="hu"/>
-  <locale android:name="in"/>
-  <locale android:name="it"/>
-  <locale android:name="iw"/>
-  <locale android:name="ja"/>
-  <locale android:name="ko"/>
-  <locale android:name="lt"/>
-  <locale android:name="nl"/>
-  <locale android:name="pl"/>
-  <locale android:name="pt-BR"/>
-  <locale android:name="ro"/>
-  <locale android:name="ru"/>
-  <locale android:name="tr"/>
-  <locale android:name="ug"/>
-  <locale android:name="uk"/>
-  <locale android:name="vi"/>
-  <locale android:name="zh-CN"/>
+    <locale android:name="ar" />
+    <locale android:name="cs" />
+    <locale android:name="da" />
+    <locale android:name="de" />
+    <locale android:name="en" />
+    <locale android:name="es" />
+    <locale android:name="fi" />
+    <locale android:name="fil" />
+    <locale android:name="fr" />
+    <locale android:name="hu" />
+    <locale android:name="in" />
+    <locale android:name="it" />
+    <locale android:name="iw" />
+    <locale android:name="ja" />
+    <locale android:name="ko" />
+    <locale android:name="lt" />
+    <locale android:name="nl" />
+    <locale android:name="pl" />
+    <locale android:name="pt-BR" />
+    <locale android:name="ro" />
+    <locale android:name="ru" />
+    <locale android:name="tr" />
+    <locale android:name="ug" />
+    <locale android:name="uk" />
+    <locale android:name="vi" />
+    <locale android:name="zh-CN" />
 </locale-config>

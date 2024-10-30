@@ -19,29 +19,28 @@
   ~ Copyright (c) 2019-2024 by Patrick Zedler
   -->
 
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:app="http://schemas.android.com/apk/res-auto"
-  android:id="@+id/coordinator_main"
-  android:layout_width="match_parent"
-  android:layout_height="match_parent"
-  android:background="?attr/colorSurface">
-
-  <androidx.fragment.app.FragmentContainerView
-    android:id="@+id/fragment_main_nav_host"
-    android:name="androidx.navigation.fragment.NavHostFragment"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/coordinator_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:defaultNavHost="true"
-    app:navGraph="@navigation/nav_main" />
+    android:background="?attr/colorSurface">
 
-  <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-    android:id="@+id/fab_main"
-    style="@style/Widget.Doodle.ExtendedFloatingActionButton"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="@string/action_set"
-    android:layout_marginBottom="24dp"
-    android:layout_gravity="bottom|center_horizontal" />
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragment_main_nav_host"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/nav_main" />
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/fab_main"
+        style="@style/Widget.Doodle.ExtendedFloatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="24dp"
+        android:text="@string/action_set" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

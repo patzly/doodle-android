@@ -22,28 +22,30 @@ package xyz.zedler.patrick.doodle.view;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.view.View;
+
 import androidx.annotation.RawRes;
+
 import xyz.zedler.patrick.doodle.drawable.SvgDrawable;
 
 public class SvgView extends View {
 
-  SvgDrawable drawable;
+    SvgDrawable drawable;
 
-  public SvgView(Context context) {
-    super(context);
-  }
-
-  @Override
-  protected void onDraw(Canvas canvas) {
-    if (drawable != null) {
-      drawable.draw(canvas);
+    public SvgView(Context context) {
+        super(context);
     }
-  }
 
-  public void setSvg(@RawRes int resId) {
-    drawable = new SvgDrawable(getContext(), resId);
-    drawable.setScale(SvgDrawable.getDefaultScale(getContext()));
+    @Override
+    protected void onDraw(Canvas canvas) {
+        if (drawable != null) {
+            drawable.draw(canvas);
+        }
+    }
 
-    invalidate();
-  }
+    public void setSvg(@RawRes int resId) {
+        drawable = new SvgDrawable(getContext(), resId);
+        drawable.setScale(SvgDrawable.getDefaultScale(getContext()));
+
+        invalidate();
+    }
 }

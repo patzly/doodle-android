@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ This file is part of Doodle Android.
   ~
   ~ Doodle Android is free software: you can redistribute it and/or modify
@@ -20,9 +19,9 @@
 
 <resources>
 
-  <fraction name="sliding_start_fraction">100%p</fraction>
-  <fraction name="sliding_end_fraction">-100%p</fraction>
-  <dimen name="fading_start">32dp</dimen>
-  <dimen name="fading_end">-32dp</dimen>
+    <fraction name="sliding_start_fraction">100%p</fraction>
+    <fraction name="sliding_end_fraction">-100%p</fraction>
+    <dimen name="fading_start">32dp</dimen>
+    <dimen name="fading_end">-32dp</dimen>
 
 </resources>

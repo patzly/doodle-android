@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ This file is part of Doodle Android.
   ~
   ~ Doodle Android is free software: you can redistribute it and/or modify
@@ -18,25 +17,24 @@
   ~ Copyright (c) 2019-2024 by Patrick Zedler
   -->
 
-<menu
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:app="http://schemas.android.com/apk/res-auto">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-  <item
-    android:id="@+id/action_reload"
-    android:title="@string/action_reload"
-    android:icon="@drawable/ic_rounded_refresh_anim"
-    app:iconTint="?attr/colorOnSurfaceVariant"
-    app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_reload"
+        android:icon="@drawable/ic_rounded_refresh_anim"
+        android:title="@string/action_reload"
+        app:iconTint="?attr/colorOnSurfaceVariant"
+        app:showAsAction="ifRoom" />
 
-  <item
-    android:id="@+id/action_help"
-    android:title="@string/action_help"
-    app:showAsAction="never" />
+    <item
+        android:id="@+id/action_help"
+        android:title="@string/action_help"
+        app:showAsAction="never" />
 
-  <item
-    android:id="@+id/action_share"
-    android:title="@string/action_share"
-    app:showAsAction="never" />
+    <item
+        android:id="@+id/action_share"
+        android:title="@string/action_share"
+        app:showAsAction="never" />
 
 </menu>

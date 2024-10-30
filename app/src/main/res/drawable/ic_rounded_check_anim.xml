@@ -17,20 +17,19 @@
   ~ Copyright (c) 2019-2024 by Patrick Zedler
   -->
 
-<vector
-  android:autoMirrored="true"
-  android:width="24dp"
-  android:height="24dp"
-  android:viewportHeight="24"
-  android:viewportWidth="24"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-  <group
-    android:scaleX="0.5"
-    android:scaleY="0.5"
-    android:translateX="6"
-    android:translateY="6">
-    <path
-      android:fillColor="#000000"
-      android:pathData="m9.55,15.15 l8.475,-8.475q0.3,-0.3 0.7,-0.3 0.4,0 0.7,0.3 0.3,0.3 0.3,0.712 0,0.412 -0.3,0.712l-9.175,9.2q-0.3,0.3 -0.7,0.3 -0.4,0 -0.7,-0.3L4.55,13Q4.25,12.7 4.262,12.288 4.275,11.875 4.575,11.575q0.3,-0.3 0.712,-0.3 0.412,0 0.712,0.3z" />
-  </group>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:autoMirrored="true"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <group
+        android:scaleX="0.5"
+        android:scaleY="0.5"
+        android:translateX="6"
+        android:translateY="6">
+        <path
+            android:fillColor="#000000"
+            android:pathData="m9.55,15.15 l8.475,-8.475q0.3,-0.3 0.7,-0.3 0.4,0 0.7,0.3 0.3,0.3 0.3,0.712 0,0.412 -0.3,0.712l-9.175,9.2q-0.3,0.3 -0.7,0.3 -0.4,0 -0.7,-0.3L4.55,13Q4.25,12.7 4.262,12.288 4.275,11.875 4.575,11.575q0.3,-0.3 0.712,-0.3 0.412,0 0.712,0.3z" />
+    </group>
 </vector>

@@ -19,13 +19,13 @@
 
 <resources>
 
-  <fraction name="sliding_start_fraction">-100%p</fraction>
-  <fraction name="sliding_end_fraction">100%p</fraction>
-  <dimen name="fading_start">-32dp</dimen>
-  <dimen name="fading_end">32dp</dimen>
+    <fraction name="sliding_start_fraction">-100%p</fraction>
+    <fraction name="sliding_end_fraction">100%p</fraction>
+    <dimen name="fading_start">-32dp</dimen>
+    <dimen name="fading_end">32dp</dimen>
 
-  <dimen name="max_content_width">640dp</dimen>
+    <dimen name="max_content_width">640dp</dimen>
 
-  <dimen name="color_picker_hsv_height">200dp</dimen>
+    <dimen name="color_picker_hsv_height">200dp</dimen>
 
 </resources>

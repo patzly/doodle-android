@@ -21,209 +21,209 @@
 
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
-  <string name="wallpaper_description">自動ダークモードと省電力アニメーションを搭載したカラフルなライブ壁紙です。あなたの好みに合わせてカスタマイズできます。</string>
-  <string name="wallpaper_description_picker">いろんな形状のカラフルな図形が、ホーム画面をスワイプしたりスマホのロック解除をするたびにフワッと奥行きを感じさせるパララックスな動きをしたりズームしたりして目を愉しませてくれます。\nあなたらしい壁紙を作ってみましょう。</string>
+    <string name="wallpaper_description">自動ダークモードと省電力アニメーションを搭載したカラフルなライブ壁紙です。あなたの好みに合わせてカスタマイズできます。</string>
+    <string name="wallpaper_description_picker">いろんな形状のカラフルな図形が、ホーム画面をスワイプしたりスマホのロック解除をするたびにフワッと奥行きを感じさせるパララックスな動きをしたりズームしたりして目を愉しませてくれます。\nあなたらしい壁紙を作ってみましょう。</string>
 
-  <!-- TITLES -->
+    <!-- TITLES -->
 
-  <string name="title_info">情報</string>
-  <string name="title_apply_changes">変更を適用</string>
-  <string name="title_logcat">ログ</string>
-  <string name="title_feedback">フィードバック</string>
-  <string name="title_licenses">オープンソースライセンス</string>
+    <string name="title_info">情報</string>
+    <string name="title_apply_changes">変更を適用</string>
+    <string name="title_logcat">ログ</string>
+    <string name="title_feedback">フィードバック</string>
+    <string name="title_licenses">オープンソースライセンス</string>
 
-  <!-- LABELS -->
+    <!-- LABELS -->
 
-  <string name="label_ms">%1$sms</string>
-  <string name="label_degrees">%1$s°</string>
+    <string name="label_ms">%1$sms</string>
+    <string name="label_degrees">%1$s°</string>
 
-  <!-- ACTIONS -->
+    <!-- ACTIONS -->
 
-  <string name="action_cancel">キャンセル</string>
-  <string name="action_select">選択</string>
-  <string name="action_close">閉じる</string>
-  <string name="action_back">戻る</string>
-  <string name="action_open_link">ウェブサイトを開く</string>
-  <string name="action_hide">隠す</string>
-  <string name="action_reset">リセット</string>
-  <string name="action_deactivate">無効にする</string>
-  <string name="action_select_all">すべてを選択</string>
-  <string name="action_continue">続行</string>
-  <string name="action_reload">再読み込み</string>
-  <string name="action_open_app_info">アプリの情報を見る</string>
-  <string name="action_set">壁紙として設定</string>
-  <string name="action_learn_more">詳細</string>
-  <string name="action_help">ヘルプ</string>
-  <string name="action_send_feedback">フィードバックを送信する</string>
-  <string name="action_share">共有</string>
-  <string name="action_share_description">Doodleアプリを友達に広める</string>
-  <string name="action_email">メールを送信する</string>
-  <string name="action_email_description">開発者に連絡する</string>
-  <string name="action_rate">GooglePlayで評価</string>
-  <string name="action_rate_description">アプリの開発をサポートする</string>
-  <string name="action_github">GitHub の Doodle Android ページ</string>
-  <string name="action_github_description">新しいissueを開く</string>
-  <string name="action_language_select">使用する言語を選択</string>
-  <string name="action_set_static">通常の壁紙を設定</string>
-  <string name="action_change_time">変更する時刻</string>
-  <string name="action_change_interval">変更する間隔</string>
-  <string name="action_copy_to_clipboard">クリップボードにコピー</string>
+    <string name="action_cancel">キャンセル</string>
+    <string name="action_select">選択</string>
+    <string name="action_close">閉じる</string>
+    <string name="action_back">戻る</string>
+    <string name="action_open_link">ウェブサイトを開く</string>
+    <string name="action_hide">隠す</string>
+    <string name="action_reset">リセット</string>
+    <string name="action_deactivate">無効にする</string>
+    <string name="action_select_all">すべてを選択</string>
+    <string name="action_continue">続行</string>
+    <string name="action_reload">再読み込み</string>
+    <string name="action_open_app_info">アプリの情報を見る</string>
+    <string name="action_set">壁紙として設定</string>
+    <string name="action_learn_more">詳細</string>
+    <string name="action_help">ヘルプ</string>
+    <string name="action_send_feedback">フィードバックを送信する</string>
+    <string name="action_share">共有</string>
+    <string name="action_share_description">Doodleアプリを友達に広める</string>
+    <string name="action_email">メールを送信する</string>
+    <string name="action_email_description">開発者に連絡する</string>
+    <string name="action_rate">GooglePlayで評価</string>
+    <string name="action_rate_description">アプリの開発をサポートする</string>
+    <string name="action_github">GitHub の Doodle Android ページ</string>
+    <string name="action_github_description">新しいissueを開く</string>
+    <string name="action_language_select">使用する言語を選択</string>
+    <string name="action_set_static">通常の壁紙を設定</string>
+    <string name="action_change_time">変更する時刻</string>
+    <string name="action_change_interval">変更する間隔</string>
+    <string name="action_copy_to_clipboard">クリップボードにコピー</string>
 
-  <!-- APPEARANCE -->
+    <!-- APPEARANCE -->
 
-  <string name="appearance_title">外観</string>
-  <string name="appearance_description">デザインと色の設定</string>
-  <string name="appearance_one_ui">サムスン One UI 4.1 のダイナミックカラーの仕様では Doodle のようなライブ壁紙の色はテーマに反映されません。\n反映させるには、一度現在のデザインを通常の壁紙として設定し、色合いがシステムに反映された後で改めてライブ壁紙として再設定してください。</string>
-  <string name="appearance_design">デザイン</string>
-  <string name="appearance_design_doodle">Pixel 4 Doodle Collection</string>
-  <string name="appearance_design_monet">Pixel 6 Material You Collection</string>
-  <string name="appearance_design_anna">Live wallpapers à l\'Anna Kövecses</string>
-  <string name="appearance_variant">色のバリエーション</string>
-  <string name="appearance_night_mode">ナイトモード</string>
-  <string name="appearance_night_mode_description">暗めの色だけを選択対象にします</string>
-  <string name="appearance_night_mode_on">ON</string>
-  <string name="appearance_night_mode_off">OFF</string>
-  <string name="appearance_light_text">常に文字を白色で表示</string>
-  <string name="appearance_light_text_description">背景が明るいときでも白色で表示します</string>
-  <string name="appearance_dark_text">背景に合わせて文字を黒色で表示</string>
-  <string name="appearance_dark_text_description">背景が明るいときには黒色で表示します</string>
-  <string name="appearance_colors_category">色の設定</string>
-  <string name="appearance_colors">壁紙内で使われている色</string>
-  <string name="appearance_colors_description">選択した色を元に文字のコントラストを決定します</string>
-  <string name="appearance_colors_description_dynamic">選択した色をシステムのテーマ設定に適用します</string>
-  <string name="appearance_colors_description_one_ui">前述の通り、ライブ壁紙が提供した色はOne UIでは無視されます</string>
-  <string name="appearance_colors_primary">カラー１を選ぶ</string>
-  <string name="appearance_colors_secondary">カラー２を選ぶ</string>
-  <string name="appearance_colors_tertiary">カラー３を選ぶ</string>
-  <string name="appearance_colors_custom">新しい色を選択</string>
-  <string name="appearance_colors_info">ダイナミック・カラーの機能のない（Android 11 までの）デバイスでは、カラー１のみがホームアプリ内の文字コントラストの調整と「アプリ履歴」画面の背景の色合いに使用されます。</string>
-  <string name="appearance_colors_info_dynamic">ダイナミック・カラーが機能する Android 12 以降のデバイスでは、選択した３つすべての色が使用され、自動的にシステム全体のテーマカラーとして適用されます</string>
-  <string name="appearance_random">ランダムに壁紙のデザインを変更する</string>
-  <string name="appearance_random_description">トリガーを選択します</string>
-  <string name="appearance_random_screen_off">画面OFF時</string>
-  <string name="appearance_random_daily">毎日%1$s</string>
-  <string name="appearance_random_interval">間隔を選択</string>
-  <plurals name="appearance_random_interval_minutes">
-    <item quantity="other">%1$d分ごとに</item>
-  </plurals>
-  <plurals name="appearance_random_interval_hours">
-    <item quantity="other">%1$d時間ごとに</item>
-  </plurals>
-  <plurals name="appearance_random_interval_days">
-    <item quantity="other">%1$d日ごとに</item>
-  </plurals>
+    <string name="appearance_title">外観</string>
+    <string name="appearance_description">デザインと色の設定</string>
+    <string name="appearance_one_ui">サムスン One UI 4.1 のダイナミックカラーの仕様では Doodle のようなライブ壁紙の色はテーマに反映されません。\n反映させるには、一度現在のデザインを通常の壁紙として設定し、色合いがシステムに反映された後で改めてライブ壁紙として再設定してください。</string>
+    <string name="appearance_design">デザイン</string>
+    <string name="appearance_design_doodle">Pixel 4 Doodle Collection</string>
+    <string name="appearance_design_monet">Pixel 6 Material You Collection</string>
+    <string name="appearance_design_anna">Live wallpapers à l\'Anna Kövecses</string>
+    <string name="appearance_variant">色のバリエーション</string>
+    <string name="appearance_night_mode">ナイトモード</string>
+    <string name="appearance_night_mode_description">暗めの色だけを選択対象にします</string>
+    <string name="appearance_night_mode_on">ON</string>
+    <string name="appearance_night_mode_off">OFF</string>
+    <string name="appearance_light_text">常に文字を白色で表示</string>
+    <string name="appearance_light_text_description">背景が明るいときでも白色で表示します</string>
+    <string name="appearance_dark_text">背景に合わせて文字を黒色で表示</string>
+    <string name="appearance_dark_text_description">背景が明るいときには黒色で表示します</string>
+    <string name="appearance_colors_category">色の設定</string>
+    <string name="appearance_colors">壁紙内で使われている色</string>
+    <string name="appearance_colors_description">選択した色を元に文字のコントラストを決定します</string>
+    <string name="appearance_colors_description_dynamic">選択した色をシステムのテーマ設定に適用します</string>
+    <string name="appearance_colors_description_one_ui">前述の通り、ライブ壁紙が提供した色はOne UIでは無視されます</string>
+    <string name="appearance_colors_primary">カラー１を選ぶ</string>
+    <string name="appearance_colors_secondary">カラー２を選ぶ</string>
+    <string name="appearance_colors_tertiary">カラー３を選ぶ</string>
+    <string name="appearance_colors_custom">新しい色を選択</string>
+    <string name="appearance_colors_info">ダイナミック・カラーの機能のない（Android 11 までの）デバイスでは、カラー１のみがホームアプリ内の文字コントラストの調整と「アプリ履歴」画面の背景の色合いに使用されます。</string>
+    <string name="appearance_colors_info_dynamic">ダイナミック・カラーが機能する Android 12 以降のデバイスでは、選択した３つすべての色が使用され、自動的にシステム全体のテーマカラーとして適用されます</string>
+    <string name="appearance_random">ランダムに壁紙のデザインを変更する</string>
+    <string name="appearance_random_description">トリガーを選択します</string>
+    <string name="appearance_random_screen_off">画面OFF時</string>
+    <string name="appearance_random_daily">毎日%1$s</string>
+    <string name="appearance_random_interval">間隔を選択</string>
+    <plurals name="appearance_random_interval_minutes">
+        <item quantity="other">%1$d分ごとに</item>
+    </plurals>
+    <plurals name="appearance_random_interval_hours">
+        <item quantity="other">%1$d時間ごとに</item>
+    </plurals>
+    <plurals name="appearance_random_interval_days">
+        <item quantity="other">%1$d日ごとに</item>
+    </plurals>
 
-  <!-- PARALLAX -->
+    <!-- PARALLAX -->
 
-  <string name="parallax_title">パララックス（視差効果）</string>
-  <string name="parallax_description">スワイプと傾きの効果</string>
-  <string name="parallax_swipe_category">スワイプ</string>
-  <string name="parallax_swipe_touch_wiz">サムスンのTouchWizかOne UI Homeをお使いですか？これらはスワイプの効果に対応していません。他のランチャーアプリを試してみてください。\nすでに他のランチャーをお使いであれば、この警告を無視していただいてかまいません。</string>
-  <string name="parallax_swipe">スワイプの効果</string>
-  <string name="parallax_swipe_description">ページスワイプ時の水平オフセット</string>
-  <string name="parallax_swipe_power_save">バッテリーセーバーに従う</string>
-  <string name="parallax_swipe_power_save_description">バッテリーセーバーの作動中にスワイプイフェクトを停止します</string>
-  <string name="parallax_tilt_category">チルト</string>
-  <string name="parallax_tilt">傾きの効果</string>
-  <string name="parallax_tilt_description">デバイスを傾けた時の動作の量</string>
-  <string name="parallax_tilt_warning">バッテリー消費量が多くなります</string>
-  <string name="parallax_refresh_rate">傾きの検出頻度</string>
-  <string name="parallax_refresh_rate_description">値を小さくしすぎるとアニメーションにラグが生じる可能性があります</string>
-  <string name="parallax_damping">モーションの減衰量</string>
-  <string name="parallax_damping_description">値が小さいほどモーションが滑らかになります</string>
-  <string name="parallax_threshold">動作量の閾値</string>
-  <string name="parallax_threshold_description">値が大きいほど小さな動きには反応しにくくなります</string>
-  <string name="parallax_tilt_power_save_description">バッテリーセーバー発動時にチルト効果を停止します</string>
+    <string name="parallax_title">パララックス（視差効果）</string>
+    <string name="parallax_description">スワイプと傾きの効果</string>
+    <string name="parallax_swipe_category">スワイプ</string>
+    <string name="parallax_swipe_touch_wiz">サムスンのTouchWizかOne UI Homeをお使いですか？これらはスワイプの効果に対応していません。他のランチャーアプリを試してみてください。\nすでに他のランチャーをお使いであれば、この警告を無視していただいてかまいません。</string>
+    <string name="parallax_swipe">スワイプの効果</string>
+    <string name="parallax_swipe_description">ページスワイプ時の水平オフセット</string>
+    <string name="parallax_swipe_power_save">バッテリーセーバーに従う</string>
+    <string name="parallax_swipe_power_save_description">バッテリーセーバーの作動中にスワイプイフェクトを停止します</string>
+    <string name="parallax_tilt_category">チルト</string>
+    <string name="parallax_tilt">傾きの効果</string>
+    <string name="parallax_tilt_description">デバイスを傾けた時の動作の量</string>
+    <string name="parallax_tilt_warning">バッテリー消費量が多くなります</string>
+    <string name="parallax_refresh_rate">傾きの検出頻度</string>
+    <string name="parallax_refresh_rate_description">値を小さくしすぎるとアニメーションにラグが生じる可能性があります</string>
+    <string name="parallax_damping">モーションの減衰量</string>
+    <string name="parallax_damping_description">値が小さいほどモーションが滑らかになります</string>
+    <string name="parallax_threshold">動作量の閾値</string>
+    <string name="parallax_threshold_description">値が大きいほど小さな動きには反応しにくくなります</string>
+    <string name="parallax_tilt_power_save_description">バッテリーセーバー発動時にチルト効果を停止します</string>
 
-  <!-- SIZE -->
+    <!-- SIZE -->
 
-  <string name="size_title">図形のサイズ</string>
-  <string name="size_description">スケーリングやズーム効果の設定</string>
-  <string name="size_category_zoom">ズーム効果</string>
-  <string name="size_category_launcher">ホーム画面でのズーム</string>
-  <string name="size_category_unlock">ロック画面でのズーム</string>
-  <string name="size_scale">スケーリング</string>
-  <string name="size_scale_description">大画面や画素密度が高いデバイスで役に立つでしょう</string>
-  <string name="size_zoom">ズームの大きさ</string>
-  <string name="size_zoom_description">値が大きいほど大きくズームアウトします</string>
-  <string name="size_zoom_rotation">ズームの際に図形を回転させる</string>
-  <string name="size_zoom_rotation_description">回転の最大角度を設定します</string>
-  <string name="size_zoom_power_save_description">バッテリーセーバー発動時にズーム効果を停止します</string>
-  <string name="size_zoom_launcher">クイック設定パネルやアプリドロワーを開く際にズームアウトします</string>
-  <string name="size_zoom_launcher_description">デバイスによっては機能しないかもしれません</string>
-  <string name="size_zoom_damping">アニメーションの減衰量</string>
-  <string name="size_zoom_damping_description">ズーム動作をもっと滑らかにしたい場合は、この設定を有効にして値を小さくしてください</string>
-  <string name="size_zoom_unlock">ロック画面でズームする</string>
-  <string name="size_zoom_unlock_description">ズームの方向</string>
-  <string name="size_zoom_unlock_in">ズームイン</string>
-  <string name="size_zoom_unlock_out">ズームアウト</string>
-  <string name="size_zoom_duration">ロック解除時のズーム時間の長さ</string>
-  <string name="size_zoom_duration_description">値を小さくすると早いアニメーションになります</string>
+    <string name="size_title">図形のサイズ</string>
+    <string name="size_description">スケーリングやズーム効果の設定</string>
+    <string name="size_category_zoom">ズーム効果</string>
+    <string name="size_category_launcher">ホーム画面でのズーム</string>
+    <string name="size_category_unlock">ロック画面でのズーム</string>
+    <string name="size_scale">スケーリング</string>
+    <string name="size_scale_description">大画面や画素密度が高いデバイスで役に立つでしょう</string>
+    <string name="size_zoom">ズームの大きさ</string>
+    <string name="size_zoom_description">値が大きいほど大きくズームアウトします</string>
+    <string name="size_zoom_rotation">ズームの際に図形を回転させる</string>
+    <string name="size_zoom_rotation_description">回転の最大角度を設定します</string>
+    <string name="size_zoom_power_save_description">バッテリーセーバー発動時にズーム効果を停止します</string>
+    <string name="size_zoom_launcher">クイック設定パネルやアプリドロワーを開く際にズームアウトします</string>
+    <string name="size_zoom_launcher_description">デバイスによっては機能しないかもしれません</string>
+    <string name="size_zoom_damping">アニメーションの減衰量</string>
+    <string name="size_zoom_damping_description">ズーム動作をもっと滑らかにしたい場合は、この設定を有効にして値を小さくしてください</string>
+    <string name="size_zoom_unlock">ロック画面でズームする</string>
+    <string name="size_zoom_unlock_description">ズームの方向</string>
+    <string name="size_zoom_unlock_in">ズームイン</string>
+    <string name="size_zoom_unlock_out">ズームアウト</string>
+    <string name="size_zoom_duration">ロック解除時のズーム時間の長さ</string>
+    <string name="size_zoom_duration_description">値を小さくすると早いアニメーションになります</string>
 
-  <!-- OTHER -->
+    <!-- OTHER -->
 
-  <string name="other_title">その他の設定</string>
-  <string name="other_description">レンダリングや言語の設定、リセット</string>
-  <string name="other_language">言語</string>
-  <string name="other_language_description">Transifex のボランティア翻訳者の皆様に心より感謝いたします！プロジェクトの GitHub ページにアクセスして、Doodle Live Wallpapers を自分の言語で利用できるようにするための支援方法を確認できます。</string>
-  <string name="other_language_system">システム設定に従う</string>
-  <string name="other_language_system_description">翻訳が適用されていない箇所は英語で表示されます</string>
-  <string name="other_gpu">ハードウェアアクセラレーション</string>
-  <string name="other_gpu_description">壁紙がクラッシュする場合はOFFにしてください</string>
-  <string name="other_gpu_info">Doodle が使用するハードウェア・アクセラレーションは Android 8 から利用できるようになったものです。壁紙のアニメーションに少しカクつきが出るかもしれません</string>
-  <string name="other_screen_off_delay">画面OFF時の遅延</string>
-  <string name="other_screen_off_delay_description">Always On Display 状態への移行に必要です</string>
-  <string name="other_launcher">ランチャーからアイコンを隠す</string>
-  <string name="other_launcher_description">このアプリの設定画面へはシステムの Live Wallparer Pickerからのみアクセスできるようになります</string>
-  <string name="other_launcher_unsupported">この機能はシステムの制限により利用できなくなりました</string>
-  <string name="other_theme">アプリのテーマカラー</string>
-  <string name="other_theme_description">他の見た目を試せます</string>
-  <string name="other_theme_auto">自動</string>
-  <string name="other_theme_light">ライト</string>
-  <string name="other_theme_dark">ダーク</string>
-  <string name="other_contrast">コントラスト</string>
-  <string name="other_contrast_description">視覚効果のアクセシビリティ</string>
-  <!-- This is a contrast option name: User can choose between standard, medium and high contrast. The button width should be as dense as possible. -->
-  <string name="other_contrast_standard">標準</string>
-  <!-- This is a contrast option name: User can choose between standard, medium and high contrast -->
-  <string name="other_contrast_medium">中</string>
-  <!-- This is a contrast option name: User can choose between standard, medium and high contrast -->
-  <string name="other_contrast_high">高</string>
-  <string name="other_contrast_dynamic">デバイスのテーマのコントラストはシステム設定で変更する必要があります</string>
-  <string name="other_contrast_dynamic_unsupported">デバイスのテーマのダイナミックコントラストはAndroid 14以上で利用可能です</string>
-  <string name="other_reset">すべての設定をリセットする</string>
-  <string name="other_reset_description">設定はデバイスの起動後すぐにアクセスできるように特別な場所に保存されるため、アンインストールでは初期状態に戻りません。そのような設定も含めてリセットします。</string>
-  <string name="other_log">ログを表示</string>
-  <string name="other_log_description">デバッグ用です</string>
+    <string name="other_title">その他の設定</string>
+    <string name="other_description">レンダリングや言語の設定、リセット</string>
+    <string name="other_language">言語</string>
+    <string name="other_language_description">Transifex のボランティア翻訳者の皆様に心より感謝いたします！プロジェクトの GitHub ページにアクセスして、Doodle Live Wallpapers を自分の言語で利用できるようにするための支援方法を確認できます。</string>
+    <string name="other_language_system">システム設定に従う</string>
+    <string name="other_language_system_description">翻訳が適用されていない箇所は英語で表示されます</string>
+    <string name="other_gpu">ハードウェアアクセラレーション</string>
+    <string name="other_gpu_description">壁紙がクラッシュする場合はOFFにしてください</string>
+    <string name="other_gpu_info">Doodle が使用するハードウェア・アクセラレーションは Android 8 から利用できるようになったものです。壁紙のアニメーションに少しカクつきが出るかもしれません</string>
+    <string name="other_screen_off_delay">画面OFF時の遅延</string>
+    <string name="other_screen_off_delay_description">Always On Display 状態への移行に必要です</string>
+    <string name="other_launcher">ランチャーからアイコンを隠す</string>
+    <string name="other_launcher_description">このアプリの設定画面へはシステムの Live Wallparer Pickerからのみアクセスできるようになります</string>
+    <string name="other_launcher_unsupported">この機能はシステムの制限により利用できなくなりました</string>
+    <string name="other_theme">アプリのテーマカラー</string>
+    <string name="other_theme_description">他の見た目を試せます</string>
+    <string name="other_theme_auto">自動</string>
+    <string name="other_theme_light">ライト</string>
+    <string name="other_theme_dark">ダーク</string>
+    <string name="other_contrast">コントラスト</string>
+    <string name="other_contrast_description">視覚効果のアクセシビリティ</string>
+    <!-- This is a contrast option name: User can choose between standard, medium and high contrast. The button width should be as dense as possible. -->
+    <string name="other_contrast_standard">標準</string>
+    <!-- This is a contrast option name: User can choose between standard, medium and high contrast -->
+    <string name="other_contrast_medium">中</string>
+    <!-- This is a contrast option name: User can choose between standard, medium and high contrast -->
+    <string name="other_contrast_high">高</string>
+    <string name="other_contrast_dynamic">デバイスのテーマのコントラストはシステム設定で変更する必要があります</string>
+    <string name="other_contrast_dynamic_unsupported">デバイスのテーマのダイナミックコントラストはAndroid 14以上で利用可能です</string>
+    <string name="other_reset">すべての設定をリセットする</string>
+    <string name="other_reset_description">設定はデバイスの起動後すぐにアクセスできるように特別な場所に保存されるため、アンインストールでは初期状態に戻りません。そのような設定も含めてリセットします。</string>
+    <string name="other_log">ログを表示</string>
+    <string name="other_log_description">デバッグ用です</string>
 
-  <!-- ABOUT -->
+    <!-- ABOUT -->
 
-  <string name="about_title">このアプリについて</string>
-  <string name="about_description">開発者に関する情報など</string>
-  <string name="about_version">バージョン</string>
-  <string name="about_changelog">変更履歴</string>
-  <string name="about_changelog_description">新着情報</string>
-  <string name="about_developer">開発者</string>
-  <string name="about_vending_description">この開発者による他のアプリ</string>
-  <string name="about_github_description">ソースコード</string>
-  <string name="about_translation_description">Doodle の翻訳を手伝う</string>
-  <string name="about_privacy">プライバシーポリシー</string>
-  <string name="about_privacy_description">データはどのように扱われますか？</string>
+    <string name="about_title">このアプリについて</string>
+    <string name="about_description">開発者に関する情報など</string>
+    <string name="about_version">バージョン</string>
+    <string name="about_changelog">変更履歴</string>
+    <string name="about_changelog_description">新着情報</string>
+    <string name="about_developer">開発者</string>
+    <string name="about_vending_description">この開発者による他のアプリ</string>
+    <string name="about_github_description">ソースコード</string>
+    <string name="about_translation_description">Doodle の翻訳を手伝う</string>
+    <string name="about_privacy">プライバシーポリシー</string>
+    <string name="about_privacy_description">データはどのように扱われますか？</string>
 
-  <!-- MESSAGES -->
+    <!-- MESSAGES -->
 
-  <string name="msg_feedback">素晴らしいアプリが生まれるには長い時間とユーザーのフィードバックがもたらす活力が欠かせません</string>
-  <string name="msg_feedback_contact">このアプリに関する希望やコメント、質問などはありますか？気兼ねなくご連絡ください！そうでなければ、Play Storeで素晴らしいレビューをいただければとても嬉しいです。</string>
-  <string name="msg_share">このクールなライブ壁紙アプリを確認してみてください:\nhttps://play.google.com/store/apps/details\?id=xyz.zedler.patrick.doodle</string>
-  <string name="msg_hide">ランチャーからアイコンを隠しますか？</string>
-  <string name="msg_random">選択されたすべてのデザインを使用します</string>
-  <string name="msg_random_warning">壁紙のデザインをランダムに表示する設定が有効です!</string>
-  <string name="msg_reset">すべての設定をリセットします。よろしいですか？</string>
-  <string name="msg_force_stop">変更を適用するには一度動作を停止する必要があります</string>
-  <string name="msg_apply_colors">次に画面をOFFにするまで色の変更はシステムに適用されません</string>
-  <string name="msg_apply_changes">設定の変更を（完全に）適用するために壁紙のサービスを再起動することをお勧めします。再起動は自動的には行われません\nシステム設定で Doodle を強制停止し、Doodle を壁紙として再設定してください。</string>
-  <string name="msg_preview_missing">エラーが発生しました。手動で Doodle Live Wallpaper を選択してください</string>
-  <string name="msg_report_crash">クラッシュした場合は、クラッシュログを添付して報告していただければ、修正を試みます。</string>
-  <string name="msg_copied_to_clipboard">クリップボードにコピーしました</string>
+    <string name="msg_feedback">素晴らしいアプリが生まれるには長い時間とユーザーのフィードバックがもたらす活力が欠かせません</string>
+    <string name="msg_feedback_contact">このアプリに関する希望やコメント、質問などはありますか？気兼ねなくご連絡ください！そうでなければ、Play Storeで素晴らしいレビューをいただければとても嬉しいです。</string>
+    <string name="msg_share">このクールなライブ壁紙アプリを確認してみてください:\nhttps://play.google.com/store/apps/details\?id=xyz.zedler.patrick.doodle</string>
+    <string name="msg_hide">ランチャーからアイコンを隠しますか？</string>
+    <string name="msg_random">選択されたすべてのデザインを使用します</string>
+    <string name="msg_random_warning">壁紙のデザインをランダムに表示する設定が有効です!</string>
+    <string name="msg_reset">すべての設定をリセットします。よろしいですか？</string>
+    <string name="msg_force_stop">変更を適用するには一度動作を停止する必要があります</string>
+    <string name="msg_apply_colors">次に画面をOFFにするまで色の変更はシステムに適用されません</string>
+    <string name="msg_apply_changes">設定の変更を（完全に）適用するために壁紙のサービスを再起動することをお勧めします。再起動は自動的には行われません\nシステム設定で Doodle を強制停止し、Doodle を壁紙として再設定してください。</string>
+    <string name="msg_preview_missing">エラーが発生しました。手動で Doodle Live Wallpaper を選択してください</string>
+    <string name="msg_report_crash">クラッシュした場合は、クラッシュログを添付して報告していただければ、修正を試みます。</string>
+    <string name="msg_copied_to_clipboard">クリップボードにコピーしました</string>
 
-  </resources>
+</resources>

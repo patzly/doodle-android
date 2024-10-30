@@ -21,118 +21,118 @@
 
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
-  <!-- TITLES -->
+    <!-- TITLES -->
 
-  <string name="title_info">מידע</string>
-  <string name="title_apply_changes">החלת השינויים</string>
-  <string name="title_feedback">משוב</string>
-  <string name="title_licenses">רשיון קוד פתוח</string>
+    <string name="title_info">מידע</string>
+    <string name="title_apply_changes">החלת השינויים</string>
+    <string name="title_feedback">משוב</string>
+    <string name="title_licenses">רשיון קוד פתוח</string>
 
-  <!-- LABELS -->
+    <!-- LABELS -->
 
-  <string name="label_ms">ms%1$s</string>
-  <string name="label_degrees">מעלות%1$s</string>
+    <string name="label_ms">ms%1$s</string>
+    <string name="label_degrees">מעלות%1$s</string>
 
-  <string name="action_close">סגירה</string>
-  <string name="action_back">חזרה</string>
-  <string name="action_open_link">פתיחה באתר חיצוני</string>
-  <string name="action_hide">להחביא</string>
-  <string name="action_reset">לאפס</string>
-  <string name="action_deactivate">להשבית</string>
-  <string name="action_continue">להמשיך</string>
-  <string name="action_open_app_info">פתיחת מידע על האפליקציה</string>
-  <string name="action_set">קביעה כרקע</string>
-  <string name="action_send_feedback">שליחת משוב</string>
-  <string name="action_share">שתפו</string>
-  <string name="action_share_description">ספרו לחבריכם  על דודל</string>
-  <string name="action_email">שליחת אימייל</string>
-  <string name="action_email_description">צרו קשר עם המפתחים</string>
-  <string name="action_rate">דרגו בחנות פליי</string>
-  <string name="action_rate_description">תימכו במפתחים</string>
-  <string name="action_github">דודל אנדרואיד בgithub</string>
-  <string name="action_github_description">דיווח על בעיה</string>
-  <string name="action_language_select">בחירת שפה</string>
-  <!-- APPEARANCE -->
+    <string name="action_close">סגירה</string>
+    <string name="action_back">חזרה</string>
+    <string name="action_open_link">פתיחה באתר חיצוני</string>
+    <string name="action_hide">להחביא</string>
+    <string name="action_reset">לאפס</string>
+    <string name="action_deactivate">להשבית</string>
+    <string name="action_continue">להמשיך</string>
+    <string name="action_open_app_info">פתיחת מידע על האפליקציה</string>
+    <string name="action_set">קביעה כרקע</string>
+    <string name="action_send_feedback">שליחת משוב</string>
+    <string name="action_share">שתפו</string>
+    <string name="action_share_description">ספרו לחבריכם  על דודל</string>
+    <string name="action_email">שליחת אימייל</string>
+    <string name="action_email_description">צרו קשר עם המפתחים</string>
+    <string name="action_rate">דרגו בחנות פליי</string>
+    <string name="action_rate_description">תימכו במפתחים</string>
+    <string name="action_github">דודל אנדרואיד בgithub</string>
+    <string name="action_github_description">דיווח על בעיה</string>
+    <string name="action_language_select">בחירת שפה</string>
+    <!-- APPEARANCE -->
 
-  <string name="appearance_title">מראה</string>
-  <string name="appearance_design">עיצוב</string>
-  <string name="appearance_design_doodle">פיקסל 4 קולקציית דודל </string>
-  <string name="appearance_design_monet">פיקסל 6 קולקציית מטיריאל ייחודי</string>
-  <string name="appearance_design_anna">רקעים חיים מאנה קובקסס</string>
-  <string name="appearance_variant">סוג</string>
-  <string name="appearance_night_mode">מצב לילה</string>
-  <string name="appearance_night_mode_description">רק צבעים כהים</string>
-  <string name="appearance_colors">בחירת צבעים</string>
-  <string name="appearance_colors_description">משמש לחישוב ניגודיות טקסט</string>
-  <string name="appearance_colors_description_dynamic">משומש על ידי ערכת הנושא של המערכת</string>
-  <string name="appearance_colors_primary">בחירת צבעים ראשיים</string>
-  <string name="appearance_colors_secondary">בחירת צבעים משניים</string>
-  <string name="appearance_colors_tertiary">בחירת צבעים שלישיים</string>
-  <string name="appearance_colors_info">במכשיר ללא תמיכה בצבעים דינמיים(אנדרואיד 11 ומטה), רק הצבעים הראשיים משומשים לחישוב ניגודיות הטקסט בלאנצ\'ר וצבע הרקע במסך האפליקציות האחרונות</string>
-  <string name="appearance_colors_info_dynamic">במכשיר עם אנדרואיד 12 ומעלה ותמיכה בצבעים דינמיים,שלושת הצבעים הנבחרים משומשים כדי ליצור אוטומטית ערכת נושא צבעונית לכלל המערכת</string>
-  <string name="appearance_random">עיצוב רקע רנדומלי</string>
-  <!-- PARALLAX -->
+    <string name="appearance_title">מראה</string>
+    <string name="appearance_design">עיצוב</string>
+    <string name="appearance_design_doodle">פיקסל 4 קולקציית דודל </string>
+    <string name="appearance_design_monet">פיקסל 6 קולקציית מטיריאל ייחודי</string>
+    <string name="appearance_design_anna">רקעים חיים מאנה קובקסס</string>
+    <string name="appearance_variant">סוג</string>
+    <string name="appearance_night_mode">מצב לילה</string>
+    <string name="appearance_night_mode_description">רק צבעים כהים</string>
+    <string name="appearance_colors">בחירת צבעים</string>
+    <string name="appearance_colors_description">משמש לחישוב ניגודיות טקסט</string>
+    <string name="appearance_colors_description_dynamic">משומש על ידי ערכת הנושא של המערכת</string>
+    <string name="appearance_colors_primary">בחירת צבעים ראשיים</string>
+    <string name="appearance_colors_secondary">בחירת צבעים משניים</string>
+    <string name="appearance_colors_tertiary">בחירת צבעים שלישיים</string>
+    <string name="appearance_colors_info">במכשיר ללא תמיכה בצבעים דינמיים(אנדרואיד 11 ומטה), רק הצבעים הראשיים משומשים לחישוב ניגודיות הטקסט בלאנצ\'ר וצבע הרקע במסך האפליקציות האחרונות</string>
+    <string name="appearance_colors_info_dynamic">במכשיר עם אנדרואיד 12 ומעלה ותמיכה בצבעים דינמיים,שלושת הצבעים הנבחרים משומשים כדי ליצור אוטומטית ערכת נושא צבעונית לכלל המערכת</string>
+    <string name="appearance_random">עיצוב רקע רנדומלי</string>
+    <!-- PARALLAX -->
 
-  <string name="parallax_title">פרלקסה</string>
-  <string name="parallax_description">החלקה ואפקט הטיה</string>
-  <string name="parallax_tilt">אפקט הטיה</string>
-  <string name="parallax_refresh_rate">קצב ריענון של חיישן ההטיה</string>
-  <string name="parallax_damping">שיכוך התזוזה</string>
-  <string name="parallax_damping_description">הנמיכו בשביל תוצאה חלקה יותר</string>
-  <string name="parallax_threshold">גבול התזוזה</string>
-  <string name="parallax_threshold_description">הגבירו כדי לעצור רינדור מתמשך למרות תזוזה נמוכה</string>
-  <!-- SIZE -->
+    <string name="parallax_title">פרלקסה</string>
+    <string name="parallax_description">החלקה ואפקט הטיה</string>
+    <string name="parallax_tilt">אפקט הטיה</string>
+    <string name="parallax_refresh_rate">קצב ריענון של חיישן ההטיה</string>
+    <string name="parallax_damping">שיכוך התזוזה</string>
+    <string name="parallax_damping_description">הנמיכו בשביל תוצאה חלקה יותר</string>
+    <string name="parallax_threshold">גבול התזוזה</string>
+    <string name="parallax_threshold_description">הגבירו כדי לעצור רינדור מתמשך למרות תזוזה נמוכה</string>
+    <!-- SIZE -->
 
-  <string name="size_title">גודל הצורה</string>
-  <string name="size_description">גודל ואפקט זום</string>
-  <string name="size_category_zoom">אפקט הזום</string>
-  <string name="size_scale">גודל</string>
-  <string name="size_scale_description">יעיל בשביל מסכים גדולים וצפופים</string>
-  <string name="size_zoom">חוזק הזום</string>
-  <string name="size_zoom_description">כשמוגבר,המצלמה עושה יותר זום החוצה</string>
-  <string name="size_zoom_rotation">סיבוב חלק מהצורות בזמן הזום</string>
-  <string name="size_zoom_rotation_description">הטייה מירבית במעלות</string>
-  <string name="size_zoom_launcher">זום החוצה כשפותחים הגדרות מהירות או את מגירת האפליקציות</string>
-  <string name="size_zoom_duration">פתיחת משך הזום</string>
-  <string name="size_zoom_duration_description">הנמיכו בשביל אנימציות מהירות</string>
+    <string name="size_title">גודל הצורה</string>
+    <string name="size_description">גודל ואפקט זום</string>
+    <string name="size_category_zoom">אפקט הזום</string>
+    <string name="size_scale">גודל</string>
+    <string name="size_scale_description">יעיל בשביל מסכים גדולים וצפופים</string>
+    <string name="size_zoom">חוזק הזום</string>
+    <string name="size_zoom_description">כשמוגבר,המצלמה עושה יותר זום החוצה</string>
+    <string name="size_zoom_rotation">סיבוב חלק מהצורות בזמן הזום</string>
+    <string name="size_zoom_rotation_description">הטייה מירבית במעלות</string>
+    <string name="size_zoom_launcher">זום החוצה כשפותחים הגדרות מהירות או את מגירת האפליקציות</string>
+    <string name="size_zoom_duration">פתיחת משך הזום</string>
+    <string name="size_zoom_duration_description">הנמיכו בשביל אנימציות מהירות</string>
 
-  <!-- OTHER -->
+    <!-- OTHER -->
 
-  <string name="other_title">אפשרויות אחרות</string>
-  <string name="other_description">רינדור,שפה ואיפוס</string>
-  <string name="other_language">שפה</string>
-  <string name="other_language_description">תודות רבות לכל מי שהתנדב לתרגם בTransifex!
+    <string name="other_title">אפשרויות אחרות</string>
+    <string name="other_description">רינדור,שפה ואיפוס</string>
+    <string name="other_language">שפה</string>
+    <string name="other_language_description">תודות רבות לכל מי שהתנדב לתרגם בTransifex!
 בבקשה בקרו בעמוד הGitHub של הפרוייקט כדי ללמוד כיצד אתם יכולים לעזור לתרגם את דודל לשפה שלכם</string>
-  <string name="other_language_system">לפי הגדרות המערכת</string>
-  <string name="other_gpu">האצת חומרה</string>
-  <string name="other_gpu_description">כיבוי אם הרקע קורס</string>
-  <string name="other_gpu_info">האצת חומרה זמינה רק כאשר דודל מופעל באנדרואיד 8.כתוצאה מזה אנימציות הרקע עלולות להיות מעוותות</string>
-  <string name="other_launcher">להחביא את האייקון בלאנצ\'ר</string>
-  <string name="other_launcher_description">הגדרות יהיו זמינות רק בבוחר הרקע של המערכת</string>
-  <string name="other_theme">צבע ערכת נושא של האפליציה</string>
-  <string name="other_theme_description">נסו מראה אחר</string>
-  <string name="other_theme_auto">אוטומטי</string>
-  <string name="other_theme_light">בהיר</string>
-  <string name="other_theme_dark">כהה</string>
-  <string name="other_reset">איפוס כל ההגדרות</string>
-  <string name="other_reset_description">עושה יותר ממה שמחיקה תעשה,משום שהעדפות נשמרות במקום מיוחד בגלל שהן צריכות להיות נגישות מיד לאחר הפעלת המכשיר</string>
-  <!-- ABOUT -->
+    <string name="other_language_system">לפי הגדרות המערכת</string>
+    <string name="other_gpu">האצת חומרה</string>
+    <string name="other_gpu_description">כיבוי אם הרקע קורס</string>
+    <string name="other_gpu_info">האצת חומרה זמינה רק כאשר דודל מופעל באנדרואיד 8.כתוצאה מזה אנימציות הרקע עלולות להיות מעוותות</string>
+    <string name="other_launcher">להחביא את האייקון בלאנצ\'ר</string>
+    <string name="other_launcher_description">הגדרות יהיו זמינות רק בבוחר הרקע של המערכת</string>
+    <string name="other_theme">צבע ערכת נושא של האפליציה</string>
+    <string name="other_theme_description">נסו מראה אחר</string>
+    <string name="other_theme_auto">אוטומטי</string>
+    <string name="other_theme_light">בהיר</string>
+    <string name="other_theme_dark">כהה</string>
+    <string name="other_reset">איפוס כל ההגדרות</string>
+    <string name="other_reset_description">עושה יותר ממה שמחיקה תעשה,משום שהעדפות נשמרות במקום מיוחד בגלל שהן צריכות להיות נגישות מיד לאחר הפעלת המכשיר</string>
+    <!-- ABOUT -->
 
-  <string name="about_title">אודות</string>
-  <string name="about_description">מידע על המפתחים ועוד</string>
-  <string name="about_version">גרסה</string>
-  <string name="about_changelog">יומן השינויים</string>
-  <string name="about_changelog_description">מה חדש?</string>
-  <string name="about_developer">מפתח/ת</string>
-  <string name="about_vending_description">עוד אפליקציות מהמפתחים</string>
-  <string name="about_github_description">קוד המקור</string>
-  <string name="about_translation_description">עזרו לתרגם את דודל</string>
-  <string name="msg_share">קבלו איזו אפליקצית רקעים מגניבה:play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
-  <string name="msg_hide">לחביא את האייקון בלאנצ\'ר?</string>
-  <string name="msg_random_warning">עיצוב רקע רנדומלי עדיין פועל!</string>
-  <string name="msg_reset">לאפס את כל ההגדרות?</string>
-  <string name="msg_force_stop">על מנת להכריח עצירה צריך להחיל את השינויים</string>
-  <string name="msg_apply_changes">כדי להחיל(בסופו של דבר)שינוי באפשרויות,מומלץ להפעיל מחדש את השירות שמריץ רקעים.זה לא יכול להעשות אוטומטית
+    <string name="about_title">אודות</string>
+    <string name="about_description">מידע על המפתחים ועוד</string>
+    <string name="about_version">גרסה</string>
+    <string name="about_changelog">יומן השינויים</string>
+    <string name="about_changelog_description">מה חדש?</string>
+    <string name="about_developer">מפתח/ת</string>
+    <string name="about_vending_description">עוד אפליקציות מהמפתחים</string>
+    <string name="about_github_description">קוד המקור</string>
+    <string name="about_translation_description">עזרו לתרגם את דודל</string>
+    <string name="msg_share">קבלו איזו אפליקצית רקעים מגניבה:play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
+    <string name="msg_hide">לחביא את האייקון בלאנצ\'ר?</string>
+    <string name="msg_random_warning">עיצוב רקע רנדומלי עדיין פועל!</string>
+    <string name="msg_reset">לאפס את כל ההגדרות?</string>
+    <string name="msg_force_stop">על מנת להכריח עצירה צריך להחיל את השינויים</string>
+    <string name="msg_apply_changes">כדי להחיל(בסופו של דבר)שינוי באפשרויות,מומלץ להפעיל מחדש את השירות שמריץ רקעים.זה לא יכול להעשות אוטומטית
 בבקשה הכריחו עצירה של דודל בהגדרות מערכת ואז החילו את דודל כרקע</string>
-  <string name="msg_preview_missing">צצה שגיאה,בבקשה ביחרו את דודל רקע חי באופן ידני</string>
-  </resources>
+    <string name="msg_preview_missing">צצה שגיאה,בבקשה ביחרו את דודל רקע חי באופן ידני</string>
+</resources>

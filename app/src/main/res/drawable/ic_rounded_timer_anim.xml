@@ -17,73 +17,72 @@
   ~ Copyright (c) 2020-2024 by Patrick Zedler
   -->
 
-<animated-vector
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:aapt="http://schemas.android.com/aapt">
-  <aapt:attr name="android:drawable">
-    <vector
-      android:name="vector"
-      android:width="24dp"
-      android:height="24dp"
-      android:viewportWidth="24"
-      android:viewportHeight="24"
-      android:autoMirrored="true">
-      <path
-        android:name="path"
-        android:pathData="M 10 1 C 9.446 1 9 1.446 9 2 C 9 2.554 9.446 3 10 3 L 14 3 C 14.554 3 15 2.554 15 2 C 15 1.446 14.554 1 14 1 L 10 1 Z M 12 4 C 9.614 4 7.323 4.949 5.636 6.636 C 3.949 8.323 3 10.614 3 13 C 3 15.386 3.949 17.677 5.636 19.364 C 7.323 21.051 9.614 22 12 22 C 13.58 22 15.132 21.584 16.5 20.794 C 17.868 20.004 19.004 18.868 19.794 17.5 C 20.584 16.132 21 14.58 21 13 C 21 11.42 20.584 9.868 19.794 8.5 C 19.004 7.132 17.868 5.996 16.5 5.206 C 15.132 4.416 13.58 4 12 4 Z M 12 6 C 13.229 6 14.436 6.323 15.5 6.938 C 16.564 7.552 17.448 8.436 18.062 9.5 C 18.677 10.564 19 11.771 19 13 C 19 14.229 18.677 15.436 18.062 16.5 C 17.448 17.564 16.564 18.448 15.5 19.062 C 14.436 19.677 13.229 20 12 20 C 10.144 20 8.363 19.262 7.05 17.95 C 5.738 16.637 5 14.856 5 13 C 5 11.144 5.738 9.363 7.05 8.05 C 8.363 6.738 10.144 6 12 6 Z"
-        android:fillColor="#000000"
-        android:strokeWidth="1" />
-      <path
-        android:name="button"
-        android:pathData="M 17.667 7.333 L 19.063 5.937"
-        android:strokeColor="#000000"
-        android:strokeWidth="2"
-        android:strokeLineCap="round"
-        android:strokeLineJoin="round" />
-      <group
-        android:name="group"
-        android:pivotX="12"
-        android:pivotY="13">
-        <path
-          android:name="pointer"
-          android:pathData="M 12 9 L 12 13"
-          android:strokeColor="#000000"
-          android:strokeWidth="2"
-          android:strokeLineCap="round"
-          android:strokeLineJoin="round" />
-      </group>
-    </vector>
-  </aapt:attr>
-  <target android:name="group">
-    <aapt:attr name="android:animation">
-      <objectAnimator
-        android:propertyName="rotation"
-        android:duration="300"
-        android:valueFrom="0"
-        android:valueTo="360"
-        android:valueType="floatType"
-        android:interpolator="@android:interpolator/fast_out_slow_in" />
+<animated-vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt">
+    <aapt:attr name="android:drawable">
+        <vector
+            android:name="vector"
+            android:width="24dp"
+            android:height="24dp"
+            android:autoMirrored="true"
+            android:viewportWidth="24"
+            android:viewportHeight="24">
+            <path
+                android:name="path"
+                android:fillColor="#000000"
+                android:pathData="M 10 1 C 9.446 1 9 1.446 9 2 C 9 2.554 9.446 3 10 3 L 14 3 C 14.554 3 15 2.554 15 2 C 15 1.446 14.554 1 14 1 L 10 1 Z M 12 4 C 9.614 4 7.323 4.949 5.636 6.636 C 3.949 8.323 3 10.614 3 13 C 3 15.386 3.949 17.677 5.636 19.364 C 7.323 21.051 9.614 22 12 22 C 13.58 22 15.132 21.584 16.5 20.794 C 17.868 20.004 19.004 18.868 19.794 17.5 C 20.584 16.132 21 14.58 21 13 C 21 11.42 20.584 9.868 19.794 8.5 C 19.004 7.132 17.868 5.996 16.5 5.206 C 15.132 4.416 13.58 4 12 4 Z M 12 6 C 13.229 6 14.436 6.323 15.5 6.938 C 16.564 7.552 17.448 8.436 18.062 9.5 C 18.677 10.564 19 11.771 19 13 C 19 14.229 18.677 15.436 18.062 16.5 C 17.448 17.564 16.564 18.448 15.5 19.062 C 14.436 19.677 13.229 20 12 20 C 10.144 20 8.363 19.262 7.05 17.95 C 5.738 16.637 5 14.856 5 13 C 5 11.144 5.738 9.363 7.05 8.05 C 8.363 6.738 10.144 6 12 6 Z"
+                android:strokeWidth="1" />
+            <path
+                android:name="button"
+                android:pathData="M 17.667 7.333 L 19.063 5.937"
+                android:strokeWidth="2"
+                android:strokeColor="#000000"
+                android:strokeLineCap="round"
+                android:strokeLineJoin="round" />
+            <group
+                android:name="group"
+                android:pivotX="12"
+                android:pivotY="13">
+                <path
+                    android:name="pointer"
+                    android:pathData="M 12 9 L 12 13"
+                    android:strokeWidth="2"
+                    android:strokeColor="#000000"
+                    android:strokeLineCap="round"
+                    android:strokeLineJoin="round" />
+            </group>
+        </vector>
     </aapt:attr>
-  </target>
-  <target android:name="button">
-    <aapt:attr name="android:animation">
-      <set>
-        <objectAnimator
-          android:propertyName="pathData"
-          android:duration="150"
-          android:valueFrom="M 17.667 7.333 L 19.063 5.937"
-          android:valueTo="M 17.667 7.333 L 17.667 7.333"
-          android:valueType="pathType"
-          android:interpolator="@android:interpolator/fast_out_slow_in" />
-        <objectAnimator
-          android:propertyName="pathData"
-          android:startOffset="150"
-          android:duration="150"
-          android:valueFrom="M 17.667 7.333 L 17.667 7.333"
-          android:valueTo="M 17.667 7.333 L 19.063 5.937"
-          android:valueType="pathType"
-          android:interpolator="@android:interpolator/fast_out_slow_in" />
-      </set>
-    </aapt:attr>
-  </target>
+    <target android:name="group">
+        <aapt:attr name="android:animation">
+            <objectAnimator
+                android:duration="300"
+                android:interpolator="@android:interpolator/fast_out_slow_in"
+                android:propertyName="rotation"
+                android:valueFrom="0"
+                android:valueTo="360"
+                android:valueType="floatType" />
+        </aapt:attr>
+    </target>
+    <target android:name="button">
+        <aapt:attr name="android:animation">
+            <set>
+                <objectAnimator
+                    android:duration="150"
+                    android:interpolator="@android:interpolator/fast_out_slow_in"
+                    android:propertyName="pathData"
+                    android:valueFrom="M 17.667 7.333 L 19.063 5.937"
+                    android:valueTo="M 17.667 7.333 L 17.667 7.333"
+                    android:valueType="pathType" />
+                <objectAnimator
+                    android:duration="150"
+                    android:interpolator="@android:interpolator/fast_out_slow_in"
+                    android:propertyName="pathData"
+                    android:startOffset="150"
+                    android:valueFrom="M 17.667 7.333 L 17.667 7.333"
+                    android:valueTo="M 17.667 7.333 L 19.063 5.937"
+                    android:valueType="pathType" />
+            </set>
+        </aapt:attr>
+    </target>
 </animated-vector>

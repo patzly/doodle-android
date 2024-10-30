@@ -19,8 +19,8 @@
 
 <resources>
 
-  <style name="Widget.Doodle.TextView" parent="Base.Doodle.TextView">
-    <item name="android:hyphenationFrequency">fullFast</item>
-  </style>
+    <style name="Widget.Doodle.TextView" parent="Base.Doodle.TextView">
+        <item name="android:hyphenationFrequency">fullFast</item>
+    </style>
 
 </resources>

@@ -19,19 +19,18 @@
   ~ Copyright (c) 2019-2024 by Patrick Zedler
   -->
 
-<ripple
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  android:color="?attr/colorSurfaceContainerHigh">
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="?attr/colorSurfaceContainerHigh">
 
-  <item
-    android:left="8dp"
-    android:right="8dp"
-    android:top="2dp"
-    android:bottom="2dp">
-    <shape android:shape="rectangle">
-      <corners android:radius="16dp" />
-      <solid android:color="?attr/colorSurface" />
-    </shape>
-  </item>
+    <item
+        android:bottom="2dp"
+        android:left="8dp"
+        android:right="8dp"
+        android:top="2dp">
+        <shape android:shape="rectangle">
+            <corners android:radius="16dp" />
+            <solid android:color="?attr/colorSurface" />
+        </shape>
+    </item>
 
 </ripple>

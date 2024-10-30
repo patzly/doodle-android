@@ -21,202 +21,202 @@
 
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
-  <string name="wallpaper_description">Otomatik karanlık moda sahip fazla güç tüketmeyen renkli duvar kağıtları. İhtiyacınıza göre özelleştirin.</string>
-  <string name="wallpaper_description_picker">Ana ekranlarınızda gezinirken ve cihazınızın kilidini açarken hafif paralaks ve yakınlaştırma efektleriyle harmanlanmış renkli şekil koleksiyonlarını keşfedin.\nStilinize göre duvar kağıdını özelleştirin!</string>
+    <string name="wallpaper_description">Otomatik karanlık moda sahip fazla güç tüketmeyen renkli duvar kağıtları. İhtiyacınıza göre özelleştirin.</string>
+    <string name="wallpaper_description_picker">Ana ekranlarınızda gezinirken ve cihazınızın kilidini açarken hafif paralaks ve yakınlaştırma efektleriyle harmanlanmış renkli şekil koleksiyonlarını keşfedin.\nStilinize göre duvar kağıdını özelleştirin!</string>
 
-  <!-- TITLES -->
+    <!-- TITLES -->
 
-  <string name="title_info">Bilgi</string>
-  <string name="title_apply_changes">Değişiklikleri uygula</string>
-  <string name="title_logcat">Loglar</string>
-  <string name="title_feedback">Geri bildirim</string>
-  <string name="title_licenses">Açık kaynaklı lisanslar</string>
+    <string name="title_info">Bilgi</string>
+    <string name="title_apply_changes">Değişiklikleri uygula</string>
+    <string name="title_logcat">Loglar</string>
+    <string name="title_feedback">Geri bildirim</string>
+    <string name="title_licenses">Açık kaynaklı lisanslar</string>
 
-  <!-- LABELS -->
+    <!-- LABELS -->
 
-  <string name="label_ms">%1$smilisaniye</string>
-  <string name="label_degrees">%1$s derece</string>
+    <string name="label_ms">%1$smilisaniye</string>
+    <string name="label_degrees">%1$s derece</string>
 
-  <!-- ACTIONS -->
+    <!-- ACTIONS -->
 
-  <string name="action_cancel">İptal</string>
-  <string name="action_select">Seç</string>
-  <string name="action_close">Kapat</string>
-  <string name="action_back">Geri</string>
-  <string name="action_open_link">Açık harici websitesi</string>
-  <string name="action_hide">Gizle</string>
-  <string name="action_reset">Sıfırla</string>
-  <string name="action_deactivate">Deaktif et</string>
-  <string name="action_select_all">Hepsini seçin</string>
-  <string name="action_continue">Devam et</string>
-  <string name="action_reload">Yenile</string>
-  <string name="action_open_app_info">Uygulama bilgisini aç</string>
-  <string name="action_set">Duvar kağıdı olarak ayarla</string>
-  <string name="action_learn_more">Daha fazlasını öğrenin</string>
-  <string name="action_help">Yardım</string>
-  <string name="action_send_feedback">Geri bildirim gönder</string>
-  <string name="action_share">Paylaş</string>
-  <string name="action_share_description">Doodle\'ı arkadaşlarına anlat</string>
-  <string name="action_email">E-Posta gönder</string>
-  <string name="action_email_description">Geliştirici ile iletişime geç</string>
-  <string name="action_rate">Google Play\'de oyla</string>
-  <string name="action_rate_description">Uygulama gelişimini destekle</string>
-  <string name="action_github">GitHub\'da Doodle Android</string>
-  <string name="action_github_description">Yeni bir yardım talebi oluştur</string>
-  <string name="action_language_select">Dil seç</string>
-  <string name="action_set_static">Hareketsiz duvarkağıdı uygula</string>
-  <string name="action_change_time">Zamanı değiştir</string>
-  <string name="action_change_interval">Aralığı değiştir</string>
-  <string name="action_copy_to_clipboard">Panoya kopyala</string>
+    <string name="action_cancel">İptal</string>
+    <string name="action_select">Seç</string>
+    <string name="action_close">Kapat</string>
+    <string name="action_back">Geri</string>
+    <string name="action_open_link">Açık harici websitesi</string>
+    <string name="action_hide">Gizle</string>
+    <string name="action_reset">Sıfırla</string>
+    <string name="action_deactivate">Deaktif et</string>
+    <string name="action_select_all">Hepsini seçin</string>
+    <string name="action_continue">Devam et</string>
+    <string name="action_reload">Yenile</string>
+    <string name="action_open_app_info">Uygulama bilgisini aç</string>
+    <string name="action_set">Duvar kağıdı olarak ayarla</string>
+    <string name="action_learn_more">Daha fazlasını öğrenin</string>
+    <string name="action_help">Yardım</string>
+    <string name="action_send_feedback">Geri bildirim gönder</string>
+    <string name="action_share">Paylaş</string>
+    <string name="action_share_description">Doodle\'ı arkadaşlarına anlat</string>
+    <string name="action_email">E-Posta gönder</string>
+    <string name="action_email_description">Geliştirici ile iletişime geç</string>
+    <string name="action_rate">Google Play\'de oyla</string>
+    <string name="action_rate_description">Uygulama gelişimini destekle</string>
+    <string name="action_github">GitHub\'da Doodle Android</string>
+    <string name="action_github_description">Yeni bir yardım talebi oluştur</string>
+    <string name="action_language_select">Dil seç</string>
+    <string name="action_set_static">Hareketsiz duvarkağıdı uygula</string>
+    <string name="action_change_time">Zamanı değiştir</string>
+    <string name="action_change_interval">Aralığı değiştir</string>
+    <string name="action_copy_to_clipboard">Panoya kopyala</string>
 
-  <!-- APPEARANCE -->
+    <!-- APPEARANCE -->
 
-  <string name="appearance_title">Görünüm</string>
-  <string name="appearance_description">Tasarım &amp; renk seçenekleri</string>
-  <string name="appearance_one_ui">Samsung\'un One UI 4.1\'deki dinamik renk uygulaması, Doodle gibi canlı duvar kağıdı uygulamalarının sağladığı renkleri tamamen yok sayıyor.\nDinamik renkleri ayarlamak için varolan duvar kağıdını hareketsiz olarak uygulayıp sisteme renkleri tanımlatın, sonra duvar kağıdını tekrardan canlı olarak uygulayın. </string>
-  <string name="appearance_design">Tasarım</string>
-  <string name="appearance_design_doodle">Pixel 4 Doodle Koleksiyonu</string>
-  <string name="appearance_design_monet">Pixel 6 Material You Koleksiyonu</string>
-  <string name="appearance_design_anna">à l\'Anna Kövecses\'in Hareketli Duvar Kağıtları </string>
-  <string name="appearance_variant">Biçim</string>
-  <string name="appearance_night_mode">Karanlık Modu</string>
-  <string name="appearance_night_mode_description">Sadece karanlık renkler</string>
-  <string name="appearance_night_mode_on">Açık</string>
-  <string name="appearance_night_mode_off">Kapalı</string>
-  <string name="appearance_light_text">Her zaman beyaz yazı kullan </string>
-  <string name="appearance_light_text_description">Parlak arka plan üzerinde siyah yazı yerine</string>
-  <string name="appearance_dark_text">Siyah yazı kullan </string>
-  <string name="appearance_dark_text_description">Arka plan yeterince parlaklaştığında</string>
-  <string name="appearance_colors_category">Renkler</string>
-  <string name="appearance_colors">Çıkartılmış renkler</string>
-  <string name="appearance_colors_description">Yazının kontrastını hesaplamada kullanılır</string>
-  <string name="appearance_colors_description_dynamic">Sistemin tema motoru tarafından kullanılır</string>
-  <string name="appearance_colors_description_one_ui">Yukarıda bahsedildiği gibi canlı duvar kağıtlarından alınan renkler One UI tarafından yok sayılıyor</string>
-  <string name="appearance_colors_primary">Ana rengi seç</string>
-  <string name="appearance_colors_secondary">İkincil rengi seç</string>
-  <string name="appearance_colors_tertiary">Üçüncül rengi seç</string>
-  <string name="appearance_colors_custom">Özel renk seç</string>
-  <string name="appearance_colors_info">Dinamik renk desteği bulunmayan cihazlarda (Android 11 ve altı) geçmiş uygulamalar ekranının arkaplanını renklendirmede ve başlatıcının yazı kontrastını hesaplamada sadece ana renk kullanılır.</string>
-  <string name="appearance_colors_info_dynamic">Android 12 ya da üzeri ve dinamik renk desteğine sahip cihazlarda, sistem genelinde otomatik olarak bir renk teması oluşturmak için seçilen üç renk kullanılır.</string>
-  <string name="appearance_random">Rastgele duvar kağıdı tasarımı </string>
-  <string name="appearance_random_description">Aşağıda tetikleyiciyi seç</string>
-  <string name="appearance_random_screen_off">Ekran kapalı</string>
-  <string name="appearance_random_daily">Günlük %1$s</string>
-  <string name="appearance_random_interval">Aralık seç</string>
-  <plurals name="appearance_random_interval_minutes">
-    <item quantity="one">Her %1$d dakikada</item>
-    <item quantity="other">Her %1$d dakikada</item>
-  </plurals>
-  <plurals name="appearance_random_interval_hours">
-    <item quantity="one">Her %1$d saatte</item>
-    <item quantity="other">Her %1$d saatte</item>
-  </plurals>
-  <plurals name="appearance_random_interval_days">
-    <item quantity="one">Günde %1$d</item>
-    <item quantity="other">Günde %1$d  </item>
-  </plurals>
+    <string name="appearance_title">Görünüm</string>
+    <string name="appearance_description">Tasarım &amp; renk seçenekleri</string>
+    <string name="appearance_one_ui">Samsung\'un One UI 4.1\'deki dinamik renk uygulaması, Doodle gibi canlı duvar kağıdı uygulamalarının sağladığı renkleri tamamen yok sayıyor.\nDinamik renkleri ayarlamak için varolan duvar kağıdını hareketsiz olarak uygulayıp sisteme renkleri tanımlatın, sonra duvar kağıdını tekrardan canlı olarak uygulayın. </string>
+    <string name="appearance_design">Tasarım</string>
+    <string name="appearance_design_doodle">Pixel 4 Doodle Koleksiyonu</string>
+    <string name="appearance_design_monet">Pixel 6 Material You Koleksiyonu</string>
+    <string name="appearance_design_anna">à l\'Anna Kövecses\'in Hareketli Duvar Kağıtları </string>
+    <string name="appearance_variant">Biçim</string>
+    <string name="appearance_night_mode">Karanlık Modu</string>
+    <string name="appearance_night_mode_description">Sadece karanlık renkler</string>
+    <string name="appearance_night_mode_on">Açık</string>
+    <string name="appearance_night_mode_off">Kapalı</string>
+    <string name="appearance_light_text">Her zaman beyaz yazı kullan </string>
+    <string name="appearance_light_text_description">Parlak arka plan üzerinde siyah yazı yerine</string>
+    <string name="appearance_dark_text">Siyah yazı kullan </string>
+    <string name="appearance_dark_text_description">Arka plan yeterince parlaklaştığında</string>
+    <string name="appearance_colors_category">Renkler</string>
+    <string name="appearance_colors">Çıkartılmış renkler</string>
+    <string name="appearance_colors_description">Yazının kontrastını hesaplamada kullanılır</string>
+    <string name="appearance_colors_description_dynamic">Sistemin tema motoru tarafından kullanılır</string>
+    <string name="appearance_colors_description_one_ui">Yukarıda bahsedildiği gibi canlı duvar kağıtlarından alınan renkler One UI tarafından yok sayılıyor</string>
+    <string name="appearance_colors_primary">Ana rengi seç</string>
+    <string name="appearance_colors_secondary">İkincil rengi seç</string>
+    <string name="appearance_colors_tertiary">Üçüncül rengi seç</string>
+    <string name="appearance_colors_custom">Özel renk seç</string>
+    <string name="appearance_colors_info">Dinamik renk desteği bulunmayan cihazlarda (Android 11 ve altı) geçmiş uygulamalar ekranının arkaplanını renklendirmede ve başlatıcının yazı kontrastını hesaplamada sadece ana renk kullanılır.</string>
+    <string name="appearance_colors_info_dynamic">Android 12 ya da üzeri ve dinamik renk desteğine sahip cihazlarda, sistem genelinde otomatik olarak bir renk teması oluşturmak için seçilen üç renk kullanılır.</string>
+    <string name="appearance_random">Rastgele duvar kağıdı tasarımı </string>
+    <string name="appearance_random_description">Aşağıda tetikleyiciyi seç</string>
+    <string name="appearance_random_screen_off">Ekran kapalı</string>
+    <string name="appearance_random_daily">Günlük %1$s</string>
+    <string name="appearance_random_interval">Aralık seç</string>
+    <plurals name="appearance_random_interval_minutes">
+        <item quantity="one">Her %1$d dakikada</item>
+        <item quantity="other">Her %1$d dakikada</item>
+    </plurals>
+    <plurals name="appearance_random_interval_hours">
+        <item quantity="one">Her %1$d saatte</item>
+        <item quantity="other">Her %1$d saatte</item>
+    </plurals>
+    <plurals name="appearance_random_interval_days">
+        <item quantity="one">Günde %1$d</item>
+        <item quantity="other">Günde %1$d  </item>
+    </plurals>
 
-  <!-- PARALLAX -->
+    <!-- PARALLAX -->
 
-  <string name="parallax_title">Paralaks</string>
-  <string name="parallax_description">Kaydırma ve eğme efekti</string>
-  <string name="parallax_swipe_category">Kaydırmak</string>
-  <string name="parallax_swipe_touch_wiz">Görünüşe göre şu an kullandığınız başlatıcı TouchWiz ya da One UI Home olduğu için kaydırma efektini desteklemiyor. Lütfen etkinleştirmek için farklı bir başlatıcı deneyin.\nHalihazırda başka bir başlatıcıyı varsayılan olarak ayarladıysanız bu uyarıyı yok sayabilirsiniz.</string>
-  <string name="parallax_swipe">Kaydırma efekti</string>
-  <string name="parallax_swipe_description">Sayfa kaydırmada yatay dengeleme</string>
-  <string name="parallax_swipe_power_save">Güç tasarruf modunu önceliğe al</string>
-  <string name="parallax_swipe_power_save_description">Pil tasarruf modu etkinken sayfa kaydırma efektini duraklat</string>
-  <string name="parallax_tilt_category">Eğim</string>
-  <string name="parallax_tilt">Eğim efekti</string>
-  <string name="parallax_tilt_description">Cihaz eğildiği zamanki hareket</string>
-  <string name="parallax_tilt_warning">Yüksek pil kullanımı</string>
-  <string name="parallax_refresh_rate">Eğim sensörü yenileme hızı</string>
-  <string name="parallax_refresh_rate_description">Aşırı kısa gecikmeler animasyonları bozuk gösterebilir</string>
-  <string name="parallax_damping">Hareket zayıflatma</string>
-  <string name="parallax_damping_description">Daha fazla pürüzsüzlük için azaltın</string>
-  <string name="parallax_threshold">Hareket sınırı</string>
-  <string name="parallax_threshold_description">Ufak harekete rağmen sürekli işleyişi duraklatmak için arttırın</string>
-  <string name="parallax_tilt_power_save_description">Güç tasarruf modu etkinken eğme efektini duraklat</string>
+    <string name="parallax_title">Paralaks</string>
+    <string name="parallax_description">Kaydırma ve eğme efekti</string>
+    <string name="parallax_swipe_category">Kaydırmak</string>
+    <string name="parallax_swipe_touch_wiz">Görünüşe göre şu an kullandığınız başlatıcı TouchWiz ya da One UI Home olduğu için kaydırma efektini desteklemiyor. Lütfen etkinleştirmek için farklı bir başlatıcı deneyin.\nHalihazırda başka bir başlatıcıyı varsayılan olarak ayarladıysanız bu uyarıyı yok sayabilirsiniz.</string>
+    <string name="parallax_swipe">Kaydırma efekti</string>
+    <string name="parallax_swipe_description">Sayfa kaydırmada yatay dengeleme</string>
+    <string name="parallax_swipe_power_save">Güç tasarruf modunu önceliğe al</string>
+    <string name="parallax_swipe_power_save_description">Pil tasarruf modu etkinken sayfa kaydırma efektini duraklat</string>
+    <string name="parallax_tilt_category">Eğim</string>
+    <string name="parallax_tilt">Eğim efekti</string>
+    <string name="parallax_tilt_description">Cihaz eğildiği zamanki hareket</string>
+    <string name="parallax_tilt_warning">Yüksek pil kullanımı</string>
+    <string name="parallax_refresh_rate">Eğim sensörü yenileme hızı</string>
+    <string name="parallax_refresh_rate_description">Aşırı kısa gecikmeler animasyonları bozuk gösterebilir</string>
+    <string name="parallax_damping">Hareket zayıflatma</string>
+    <string name="parallax_damping_description">Daha fazla pürüzsüzlük için azaltın</string>
+    <string name="parallax_threshold">Hareket sınırı</string>
+    <string name="parallax_threshold_description">Ufak harekete rağmen sürekli işleyişi duraklatmak için arttırın</string>
+    <string name="parallax_tilt_power_save_description">Güç tasarruf modu etkinken eğme efektini duraklat</string>
 
-  <!-- SIZE -->
+    <!-- SIZE -->
 
-  <string name="size_title">Şekil boyutu</string>
-  <string name="size_description">Ölçek &amp; Yakınlaştırma efekti</string>
-  <string name="size_category_zoom">Yakınlaştırma efekti</string>
-  <string name="size_category_launcher">Başlatıcı yakınlaştırması</string>
-  <string name="size_category_unlock">Kilit ekranı yakınlaştırması</string>
-  <string name="size_scale">Ölçek</string>
-  <string name="size_scale_description">Büyük ekranlar ve yüksek yoğunluklar için kullanışlı</string>
-  <string name="size_zoom">Yakınlaştırma yoğunluğu</string>
-  <string name="size_zoom_description">Arttırıldığında kamera daha fazla uzaklaşır</string>
-  <string name="size_zoom_rotation">Yakınlaştırma efekti sırasında bazı şekiller hareket eder</string>
-  <string name="size_zoom_rotation_description">Derece cinsinden maksimum dönüş </string>
-  <string name="size_zoom_power_save_description">Güç tasarruf modu etkinken yakınlaştırma efektini duraklat</string>
-  <string name="size_zoom_launcher">Hızlı erişim menüsü ya da uygulama çekmecesi açıldığında uzaklaştır</string>
-  <string name="size_zoom_launcher_description">Bazı cihazlarda mevcut olmayabilir</string>
-  <string name="size_zoom_damping">Animasyon yumuşatma</string>
-  <string name="size_zoom_damping_description">Daha yumuşak yakınlaştırma efekti için aktif edip azaltın</string>
-  <string name="size_zoom_unlock">Kilit ekranında yakınlaşma efekti</string>
-  <string name="size_zoom_unlock_description">Yön seç</string>
-  <string name="size_zoom_unlock_in">Yakınlaştır</string>
-  <string name="size_zoom_unlock_out">Uzaklaştır</string>
-  <string name="size_zoom_duration">Yakınlaştırma süresinin kilidini aç </string>
-  <string name="size_zoom_duration_description">Daha hızlı animasyonlar için azaltın </string>
+    <string name="size_title">Şekil boyutu</string>
+    <string name="size_description">Ölçek &amp; Yakınlaştırma efekti</string>
+    <string name="size_category_zoom">Yakınlaştırma efekti</string>
+    <string name="size_category_launcher">Başlatıcı yakınlaştırması</string>
+    <string name="size_category_unlock">Kilit ekranı yakınlaştırması</string>
+    <string name="size_scale">Ölçek</string>
+    <string name="size_scale_description">Büyük ekranlar ve yüksek yoğunluklar için kullanışlı</string>
+    <string name="size_zoom">Yakınlaştırma yoğunluğu</string>
+    <string name="size_zoom_description">Arttırıldığında kamera daha fazla uzaklaşır</string>
+    <string name="size_zoom_rotation">Yakınlaştırma efekti sırasında bazı şekiller hareket eder</string>
+    <string name="size_zoom_rotation_description">Derece cinsinden maksimum dönüş </string>
+    <string name="size_zoom_power_save_description">Güç tasarruf modu etkinken yakınlaştırma efektini duraklat</string>
+    <string name="size_zoom_launcher">Hızlı erişim menüsü ya da uygulama çekmecesi açıldığında uzaklaştır</string>
+    <string name="size_zoom_launcher_description">Bazı cihazlarda mevcut olmayabilir</string>
+    <string name="size_zoom_damping">Animasyon yumuşatma</string>
+    <string name="size_zoom_damping_description">Daha yumuşak yakınlaştırma efekti için aktif edip azaltın</string>
+    <string name="size_zoom_unlock">Kilit ekranında yakınlaşma efekti</string>
+    <string name="size_zoom_unlock_description">Yön seç</string>
+    <string name="size_zoom_unlock_in">Yakınlaştır</string>
+    <string name="size_zoom_unlock_out">Uzaklaştır</string>
+    <string name="size_zoom_duration">Yakınlaştırma süresinin kilidini aç </string>
+    <string name="size_zoom_duration_description">Daha hızlı animasyonlar için azaltın </string>
 
-  <!-- OTHER -->
+    <!-- OTHER -->
 
-  <string name="other_title">Diğer seçenekler</string>
-  <string name="other_description">İşleyici, dil &amp; sıfırlama</string>
-  <string name="other_language">Dil</string>
-  <string name="other_language_description">Transifex\'teki tüm gönüllü çevirmenlere çokça teşekkürler! Doodle Canlı Duvar Kağıtlarının kendi dilinizde kullanıma sunulmasına nasıl yardımcı olabileceğinizi öğrenmek için lütfen projenin GitHub sayfasını ziyaret edin.</string>
-  <string name="other_language_system">Sisteme uy</string>
-  <string name="other_language_system_description">Çeviri bulunmuyorsa İngilizce</string>
-  <string name="other_gpu">Donanım hızlandırması</string>
-  <string name="other_gpu_description">Eğer duvar kağıdı çöküyorsa kapatın</string>
-  <string name="other_gpu_info">Doodle\'da donanım hızlandırması sadece Android 8 ve üstünde mevcut. Duvar kağıdı animasyonları bu nedenle sarsıntılı olabilir.</string>
-  <string name="other_screen_off_delay">Ekran kapatma gecikmesi</string>
-  <string name="other_screen_off_delay_description">Always On Display geçiş efekti için gereklidir</string>
-  <string name="other_launcher">Başlatıcıda uygulama simgesini gizle</string>
-  <string name="other_launcher_description">Duvar kağıdı ayarları yalnızca cihazın canlı duvar kağıdı seçicisinde erişilebilir olacaktır</string>
-  <string name="other_launcher_unsupported">Bu özellik sistem kısıtlamaları nedeniyle daha fazla desteklenemiyor</string>
-  <string name="other_theme">Uygulama rengi teması</string>
-  <string name="other_theme_description">Başka bir görünüm dene </string>
-  <string name="other_theme_auto">Otomatik</string>
-  <string name="other_theme_light">Aydınlık</string>
-  <string name="other_theme_dark">Karanlık</string>
-  <string name="other_reset">Tüm ayarları sıfırla </string>
-  <string name="other_reset_description">Kaldırmanın yapacağından daha fazlasını yapar, çünkü uygulama ayarları cihaz açılır açılmaz direkt erişilebilir olması gerektiği için özel bir yerde saklanıyor</string>
-  <string name="other_log">Logları görüntüle</string>
-  <string name="other_log_description">Hata ayıklama amacıyla</string>
+    <string name="other_title">Diğer seçenekler</string>
+    <string name="other_description">İşleyici, dil &amp; sıfırlama</string>
+    <string name="other_language">Dil</string>
+    <string name="other_language_description">Transifex\'teki tüm gönüllü çevirmenlere çokça teşekkürler! Doodle Canlı Duvar Kağıtlarının kendi dilinizde kullanıma sunulmasına nasıl yardımcı olabileceğinizi öğrenmek için lütfen projenin GitHub sayfasını ziyaret edin.</string>
+    <string name="other_language_system">Sisteme uy</string>
+    <string name="other_language_system_description">Çeviri bulunmuyorsa İngilizce</string>
+    <string name="other_gpu">Donanım hızlandırması</string>
+    <string name="other_gpu_description">Eğer duvar kağıdı çöküyorsa kapatın</string>
+    <string name="other_gpu_info">Doodle\'da donanım hızlandırması sadece Android 8 ve üstünde mevcut. Duvar kağıdı animasyonları bu nedenle sarsıntılı olabilir.</string>
+    <string name="other_screen_off_delay">Ekran kapatma gecikmesi</string>
+    <string name="other_screen_off_delay_description">Always On Display geçiş efekti için gereklidir</string>
+    <string name="other_launcher">Başlatıcıda uygulama simgesini gizle</string>
+    <string name="other_launcher_description">Duvar kağıdı ayarları yalnızca cihazın canlı duvar kağıdı seçicisinde erişilebilir olacaktır</string>
+    <string name="other_launcher_unsupported">Bu özellik sistem kısıtlamaları nedeniyle daha fazla desteklenemiyor</string>
+    <string name="other_theme">Uygulama rengi teması</string>
+    <string name="other_theme_description">Başka bir görünüm dene </string>
+    <string name="other_theme_auto">Otomatik</string>
+    <string name="other_theme_light">Aydınlık</string>
+    <string name="other_theme_dark">Karanlık</string>
+    <string name="other_reset">Tüm ayarları sıfırla </string>
+    <string name="other_reset_description">Kaldırmanın yapacağından daha fazlasını yapar, çünkü uygulama ayarları cihaz açılır açılmaz direkt erişilebilir olması gerektiği için özel bir yerde saklanıyor</string>
+    <string name="other_log">Logları görüntüle</string>
+    <string name="other_log_description">Hata ayıklama amacıyla</string>
 
-  <!-- ABOUT -->
+    <!-- ABOUT -->
 
-  <string name="about_title">Hakkında</string>
-  <string name="about_description">Geliştirici hakkında &amp; fazlası</string>
-  <string name="about_version">Sürüm</string>
-  <string name="about_changelog">Değişiklik günlüğü </string>
-  <string name="about_changelog_description">Neler yeni?</string>
-  <string name="about_developer">Geliştirici</string>
-  <string name="about_vending_description">Geliştiriciden daha fazla uygulama</string>
-  <string name="about_github_description">Kaynak kodu</string>
-  <string name="about_translation_description">Doodle\'ı çevirmeye yardım et</string>
-  <string name="about_privacy">Gizlilik politikası </string>
-  <string name="about_privacy_description">Verileriniz nasıl işleniyor?</string>
+    <string name="about_title">Hakkında</string>
+    <string name="about_description">Geliştirici hakkında &amp; fazlası</string>
+    <string name="about_version">Sürüm</string>
+    <string name="about_changelog">Değişiklik günlüğü </string>
+    <string name="about_changelog_description">Neler yeni?</string>
+    <string name="about_developer">Geliştirici</string>
+    <string name="about_vending_description">Geliştiriciden daha fazla uygulama</string>
+    <string name="about_github_description">Kaynak kodu</string>
+    <string name="about_translation_description">Doodle\'ı çevirmeye yardım et</string>
+    <string name="about_privacy">Gizlilik politikası </string>
+    <string name="about_privacy_description">Verileriniz nasıl işleniyor?</string>
 
-  <!-- MESSAGES -->
+    <!-- MESSAGES -->
 
-  <string name="msg_feedback">Başarılı bir uygulama çok zaman gerektirir ve kullanıcılarının geribildirimleri sayesinde ayakta kalır. </string>
-  <string name="msg_feedback_contact">Herhangi bir dileğiniz, yorumunuz ya da sorunuz var mı? Dilediğiniz gibi bana ulaşabilirsiniz!\nAksi takdirde Play Store’da güzel bir yorum çok mutlu eder. </string>
-  <string name="msg_share">Bu harika canlı duvar kağıdı uygulamasına göz atın:\nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
-  <string name="msg_hide">Başlatıcıdaki simge gizlensin mi?</string>
-  <string name="msg_random">Seçili tüm tasarımlar kullanılacak</string>
-  <string name="msg_random_warning">Rastgele duvar kağıdı tasarımı hâlâ aktif!</string>
-  <string name="msg_reset">Tüm ayarlar sıfırlansın mı?</string>
-  <string name="msg_force_stop">Değişiklikleri uygulamak için zorunlu durdurma gerekli</string>
-  <string name="msg_apply_colors">Ekranı sonraki sefer kapadığınızda seçili renkler sisteme uygulanacaktır</string>
-  <string name="msg_apply_changes">Değiştirilen seçenekleri (eninde sonunda) uygulamak için, çalışan duvar kağıdı hizmetinin yeniden başlatılması önerilir. Bu otomatik olarak yapılamaz.\nLütfen sistem ayarlarınızda Doodle\'ı zorla durdurun ve ardından Doodle\'ı duvar kağıdınız olarak tekrar uygulayın. </string>
-  <string name="msg_preview_missing">Bir hata meydana geldi, lütfen Doodle Hareketli Duvar Kağıdını manuel olarak seçin </string>
-  <string name="msg_report_crash">Düzeltmeye çalışabilmem için lütfen çökme logları eklenmiş herhangi bir çökmeyi bildirin.</string>
-  <string name="msg_copied_to_clipboard">Panoya başarıyla kopyalandı</string>
+    <string name="msg_feedback">Başarılı bir uygulama çok zaman gerektirir ve kullanıcılarının geribildirimleri sayesinde ayakta kalır. </string>
+    <string name="msg_feedback_contact">Herhangi bir dileğiniz, yorumunuz ya da sorunuz var mı? Dilediğiniz gibi bana ulaşabilirsiniz!\nAksi takdirde Play Store’da güzel bir yorum çok mutlu eder. </string>
+    <string name="msg_share">Bu harika canlı duvar kağıdı uygulamasına göz atın:\nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
+    <string name="msg_hide">Başlatıcıdaki simge gizlensin mi?</string>
+    <string name="msg_random">Seçili tüm tasarımlar kullanılacak</string>
+    <string name="msg_random_warning">Rastgele duvar kağıdı tasarımı hâlâ aktif!</string>
+    <string name="msg_reset">Tüm ayarlar sıfırlansın mı?</string>
+    <string name="msg_force_stop">Değişiklikleri uygulamak için zorunlu durdurma gerekli</string>
+    <string name="msg_apply_colors">Ekranı sonraki sefer kapadığınızda seçili renkler sisteme uygulanacaktır</string>
+    <string name="msg_apply_changes">Değiştirilen seçenekleri (eninde sonunda) uygulamak için, çalışan duvar kağıdı hizmetinin yeniden başlatılması önerilir. Bu otomatik olarak yapılamaz.\nLütfen sistem ayarlarınızda Doodle\'ı zorla durdurun ve ardından Doodle\'ı duvar kağıdınız olarak tekrar uygulayın. </string>
+    <string name="msg_preview_missing">Bir hata meydana geldi, lütfen Doodle Hareketli Duvar Kağıdını manuel olarak seçin </string>
+    <string name="msg_report_crash">Düzeltmeye çalışabilmem için lütfen çökme logları eklenmiş herhangi bir çökmeyi bildirin.</string>
+    <string name="msg_copied_to_clipboard">Panoya başarıyla kopyalandı</string>
 
-  </resources>
+</resources>

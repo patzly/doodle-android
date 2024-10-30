@@ -17,75 +17,74 @@
   ~ Copyright (c) 2019-2024 by Patrick Zedler
   -->
 
-<animated-vector
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:aapt="http://schemas.android.com/aapt">
-  <aapt:attr name="android:drawable">
-    <vector
-      android:name="vector"
-      android:width="24dp"
-      android:height="24dp"
-      android:viewportWidth="24"
-      android:viewportHeight="24">
-      <group android:name="group">
-        <path
-          android:name="path"
-          android:pathData="M11,13H5.875l1.1,1.075q0.3,0.3 0.3,0.725 0,0.425 -0.3,0.725 -0.3,0.3 -0.725,0.3 -0.425,0 -0.725,-0.3L2.7,12.7Q2.55,12.55 2.487,12.375 2.425,12.2 2.425,12 2.425,11.8 2.487,11.625 2.55,11.45 2.7,11.3L5.525,8.475q0.3,-0.3 0.713,-0.3 0.412,0 0.712,0.3Q7.25,8.775 7.25,9.187q0,0.412 -0.3,0.712L5.85,11H11V5.85l-1.125,1.125q-0.3,0.3 -0.7,0.287 -0.4,-0.012 -0.7,-0.312 -0.3,-0.3 -0.3,-0.713 0,-0.412 0.3,-0.712L11.3,2.7Q11.45,2.55 11.625,2.487 11.8,2.425 12,2.425q0.2,0 0.375,0.063 0.175,0.063 0.325,0.213l2.85,2.85q0.3,0.3 0.3,0.7 0,0.4 -0.3,0.7 -0.3,0.3 -0.712,0.3 -0.412,0 -0.712,-0.3l-1.125,-1.1v5.15h5.125l-1.1,-1.075q-0.3,-0.3 -0.3,-0.725 0,-0.425 0.3,-0.725 0.3,-0.3 0.725,-0.3 0.425,0 0.725,0.3L21.3,11.3q0.15,0.15 0.213,0.325 0.063,0.175 0.063,0.375 0,0.2 -0.063,0.375Q21.45,12.55 21.3,12.7l-2.85,2.85q-0.3,0.3 -0.7,0.287Q17.35,15.825 17.05,15.525q-0.3,-0.3 -0.3,-0.712 0,-0.412 0.3,-0.712L18.15,13H13v5.125l1.075,-1.1q0.3,-0.3 0.725,-0.3 0.425,0 0.725,0.3 0.3,0.3 0.3,0.725 0,0.425 -0.3,0.725L12.7,21.3Q12.55,21.45 12.375,21.513 12.2,21.575 12,21.575q-0.2,0 -0.375,-0.063Q11.45,21.45 11.3,21.3L8.45,18.45q-0.3,-0.3 -0.288,-0.712 0.012,-0.412 0.313,-0.712 0.3,-0.3 0.712,-0.3 0.412,0 0.713,0.3L11,18.15Z"
-          android:fillColor="#000"
-          android:strokeWidth="1" />
-      </group>
-    </vector>
-  </aapt:attr>
-  <target android:name="group">
-    <aapt:attr name="android:animation">
-      <set>
-        <objectAnimator
-          android:propertyName="translateX"
-          android:duration="150"
-          android:valueFrom="0"
-          android:valueTo="-1.5"
-          android:valueType="floatType"
-          android:interpolator="@android:interpolator/fast_out_slow_in" />
-        <objectAnimator
-          android:propertyName="translateY"
-          android:duration="150"
-          android:valueFrom="0"
-          android:valueTo="-1.5"
-          android:valueType="floatType"
-          android:interpolator="@android:interpolator/fast_out_slow_in" />
-        <objectAnimator
-          android:propertyName="translateX"
-          android:startOffset="150"
-          android:duration="70"
-          android:valueFrom="-1.5"
-          android:valueTo="1"
-          android:valueType="floatType"
-          android:interpolator="@android:interpolator/fast_out_slow_in" />
-        <objectAnimator
-          android:propertyName="translateY"
-          android:startOffset="150"
-          android:duration="70"
-          android:valueFrom="-1.5"
-          android:valueTo="1"
-          android:valueType="floatType"
-          android:interpolator="@android:interpolator/fast_out_slow_in" />
-        <objectAnimator
-          android:propertyName="translateX"
-          android:startOffset="220"
-          android:duration="80"
-          android:valueFrom="1"
-          android:valueTo="0"
-          android:valueType="floatType"
-          android:interpolator="@android:interpolator/fast_out_slow_in" />
-        <objectAnimator
-          android:propertyName="translateY"
-          android:startOffset="220"
-          android:duration="80"
-          android:valueFrom="1"
-          android:valueTo="0"
-          android:valueType="floatType"
-          android:interpolator="@android:interpolator/fast_out_slow_in" />
-      </set>
+<animated-vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt">
+    <aapt:attr name="android:drawable">
+        <vector
+            android:name="vector"
+            android:width="24dp"
+            android:height="24dp"
+            android:viewportWidth="24"
+            android:viewportHeight="24">
+            <group android:name="group">
+                <path
+                    android:name="path"
+                    android:fillColor="#000"
+                    android:pathData="M11,13H5.875l1.1,1.075q0.3,0.3 0.3,0.725 0,0.425 -0.3,0.725 -0.3,0.3 -0.725,0.3 -0.425,0 -0.725,-0.3L2.7,12.7Q2.55,12.55 2.487,12.375 2.425,12.2 2.425,12 2.425,11.8 2.487,11.625 2.55,11.45 2.7,11.3L5.525,8.475q0.3,-0.3 0.713,-0.3 0.412,0 0.712,0.3Q7.25,8.775 7.25,9.187q0,0.412 -0.3,0.712L5.85,11H11V5.85l-1.125,1.125q-0.3,0.3 -0.7,0.287 -0.4,-0.012 -0.7,-0.312 -0.3,-0.3 -0.3,-0.713 0,-0.412 0.3,-0.712L11.3,2.7Q11.45,2.55 11.625,2.487 11.8,2.425 12,2.425q0.2,0 0.375,0.063 0.175,0.063 0.325,0.213l2.85,2.85q0.3,0.3 0.3,0.7 0,0.4 -0.3,0.7 -0.3,0.3 -0.712,0.3 -0.412,0 -0.712,-0.3l-1.125,-1.1v5.15h5.125l-1.1,-1.075q-0.3,-0.3 -0.3,-0.725 0,-0.425 0.3,-0.725 0.3,-0.3 0.725,-0.3 0.425,0 0.725,0.3L21.3,11.3q0.15,0.15 0.213,0.325 0.063,0.175 0.063,0.375 0,0.2 -0.063,0.375Q21.45,12.55 21.3,12.7l-2.85,2.85q-0.3,0.3 -0.7,0.287Q17.35,15.825 17.05,15.525q-0.3,-0.3 -0.3,-0.712 0,-0.412 0.3,-0.712L18.15,13H13v5.125l1.075,-1.1q0.3,-0.3 0.725,-0.3 0.425,0 0.725,0.3 0.3,0.3 0.3,0.725 0,0.425 -0.3,0.725L12.7,21.3Q12.55,21.45 12.375,21.513 12.2,21.575 12,21.575q-0.2,0 -0.375,-0.063Q11.45,21.45 11.3,21.3L8.45,18.45q-0.3,-0.3 -0.288,-0.712 0.012,-0.412 0.313,-0.712 0.3,-0.3 0.712,-0.3 0.412,0 0.713,0.3L11,18.15Z"
+                    android:strokeWidth="1" />
+            </group>
+        </vector>
     </aapt:attr>
-  </target>
+    <target android:name="group">
+        <aapt:attr name="android:animation">
+            <set>
+                <objectAnimator
+                    android:duration="150"
+                    android:interpolator="@android:interpolator/fast_out_slow_in"
+                    android:propertyName="translateX"
+                    android:valueFrom="0"
+                    android:valueTo="-1.5"
+                    android:valueType="floatType" />
+                <objectAnimator
+                    android:duration="150"
+                    android:interpolator="@android:interpolator/fast_out_slow_in"
+                    android:propertyName="translateY"
+                    android:valueFrom="0"
+                    android:valueTo="-1.5"
+                    android:valueType="floatType" />
+                <objectAnimator
+                    android:duration="70"
+                    android:interpolator="@android:interpolator/fast_out_slow_in"
+                    android:propertyName="translateX"
+                    android:startOffset="150"
+                    android:valueFrom="-1.5"
+                    android:valueTo="1"
+                    android:valueType="floatType" />
+                <objectAnimator
+                    android:duration="70"
+                    android:interpolator="@android:interpolator/fast_out_slow_in"
+                    android:propertyName="translateY"
+                    android:startOffset="150"
+                    android:valueFrom="-1.5"
+                    android:valueTo="1"
+                    android:valueType="floatType" />
+                <objectAnimator
+                    android:duration="80"
+                    android:interpolator="@android:interpolator/fast_out_slow_in"
+                    android:propertyName="translateX"
+                    android:startOffset="220"
+                    android:valueFrom="1"
+                    android:valueTo="0"
+                    android:valueType="floatType" />
+                <objectAnimator
+                    android:duration="80"
+                    android:interpolator="@android:interpolator/fast_out_slow_in"
+                    android:propertyName="translateY"
+                    android:startOffset="220"
+                    android:valueFrom="1"
+                    android:valueTo="0"
+                    android:valueType="floatType" />
+            </set>
+        </aapt:attr>
+    </target>
 </animated-vector>

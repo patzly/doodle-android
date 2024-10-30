@@ -23,32 +23,34 @@ import android.os.Bundle;
 import android.view.ViewGroup.LayoutParams;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
+
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.behavior.SystemBarBehavior;
 import xyz.zedler.patrick.doodle.view.SvgView;
 
 public class TestActivity extends AppCompatActivity {
 
-  @Override
-  protected void onCreate(@Nullable Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
-    SvgView svg = new SvgView(this);
-    svg.setLayoutParams(
-        new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT)
-    );
-    setContentView(svg);
+        SvgView svg = new SvgView(this);
+        svg.setLayoutParams(
+                new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT)
+        );
+        setContentView(svg);
 
-    SystemBarBehavior systemBarBehavior = new SystemBarBehavior(this);
-    systemBarBehavior.setUp();
+        SystemBarBehavior systemBarBehavior = new SystemBarBehavior(this);
+        systemBarBehavior.setUp();
 
-    getWindow().setFlags(
-        WindowManager.LayoutParams.FLAG_FULLSCREEN,
-        WindowManager.LayoutParams.FLAG_FULLSCREEN
-    );
+        getWindow().setFlags(
+                WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN
+        );
 
-    svg.setSvg(R.raw.wallpaper_floral);
-  }
+        svg.setSvg(R.raw.wallpaper_floral);
+    }
 }

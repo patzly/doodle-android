@@ -21,68 +21,68 @@
 
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
-  <!-- TITLES -->
+    <!-- TITLES -->
 
-  <string name="title_info">ئۇچۇر </string>
-  <string name="title_feedback">ئىنكاس </string>
-  <string name="title_licenses">ئوچۇق  كود ئىجازەتنامىسى  </string>
+    <string name="title_info">ئۇچۇر </string>
+    <string name="title_feedback">ئىنكاس </string>
+    <string name="title_licenses">ئوچۇق  كود ئىجازەتنامىسى  </string>
 
-  <!-- LABELS -->
+    <!-- LABELS -->
 
-  <string name="label_ms">%1$sمىللىسېكۇنت </string>
-  <string name="label_degrees">%1$s گىرادۇس </string>
+    <string name="label_ms">%1$sمىللىسېكۇنت </string>
+    <string name="label_degrees">%1$s گىرادۇس </string>
 
-  <string name="action_close">تاقا</string>
-  <string name="action_back">قايتىش </string>
-  <string name="action_reset">قايتا تەڭشەش </string>
-  <string name="action_set"> تەگلىك تەڭشەش</string>
-  <string name="action_send_feedback">مەسىلىسىنى يوللاش</string>
-  <string name="action_share">ھەمبەھىرلەش </string>
-  <string name="action_share_description">Doodleنى تارقىتىپ  قويۇڭلار</string>
-  <string name="action_email"> ئىلخەت يوللاش </string>
-  <string name="action_email_description"> ئەپ ئاچقۇچى بىلەن ئالاقىلىشىش </string>
-  <string name="action_rate"> گۇگۇل ئەپ بازىرىدىن تارتۇقلاڭ</string>
-  <string name="action_rate_description"> تەرەققىياتىنى قوللاش</string>
-  <string name="action_github">GitHubتىكىDoodleتۈرلىرى</string>
-  <string name="action_github_description"> بېرىپ يېڭى تۈر ئېچىش </string>
-  <!-- APPEARANCE -->
+    <string name="action_close">تاقا</string>
+    <string name="action_back">قايتىش </string>
+    <string name="action_reset">قايتا تەڭشەش </string>
+    <string name="action_set"> تەگلىك تەڭشەش</string>
+    <string name="action_send_feedback">مەسىلىسىنى يوللاش</string>
+    <string name="action_share">ھەمبەھىرلەش </string>
+    <string name="action_share_description">Doodleنى تارقىتىپ  قويۇڭلار</string>
+    <string name="action_email"> ئىلخەت يوللاش </string>
+    <string name="action_email_description"> ئەپ ئاچقۇچى بىلەن ئالاقىلىشىش </string>
+    <string name="action_rate"> گۇگۇل ئەپ بازىرىدىن تارتۇقلاڭ</string>
+    <string name="action_rate_description"> تەرەققىياتىنى قوللاش</string>
+    <string name="action_github">GitHubتىكىDoodleتۈرلىرى</string>
+    <string name="action_github_description"> بېرىپ يېڭى تۈر ئېچىش </string>
+    <!-- APPEARANCE -->
 
-  <string name="appearance_title"> سىرتقى كۆرنېشى</string>
-  <string name="appearance_design"> لاھىيىلەش </string>
-  <string name="appearance_design_doodle">Doodleيىغقان Pixel 4 تەگلىكلىرى</string>
-  <string name="appearance_design_monet">سىزمۇ Pixel 6  ماتېرىياللىرىنى ئىشلىتىپ، تەگلىك ياساڭ</string>
-  <string name="appearance_design_anna">ھەرىكەتلىك تەگلىكà l\'Anna Kövecses</string>
-  <string name="appearance_variant">باشقا تۈرلەر</string>
-  <string name="appearance_night_mode">قاراڭغۇ ھالەت </string>
-  <string name="appearance_night_mode_description">پەقەت تۇتۇق رەڭلەر </string>
-  <!-- PARALLAX -->
+    <string name="appearance_title"> سىرتقى كۆرنېشى</string>
+    <string name="appearance_design"> لاھىيىلەش </string>
+    <string name="appearance_design_doodle">Doodleيىغقان Pixel 4 تەگلىكلىرى</string>
+    <string name="appearance_design_monet">سىزمۇ Pixel 6  ماتېرىياللىرىنى ئىشلىتىپ، تەگلىك ياساڭ</string>
+    <string name="appearance_design_anna">ھەرىكەتلىك تەگلىكà l\'Anna Kövecses</string>
+    <string name="appearance_variant">باشقا تۈرلەر</string>
+    <string name="appearance_night_mode">قاراڭغۇ ھالەت </string>
+    <string name="appearance_night_mode_description">پەقەت تۇتۇق رەڭلەر </string>
+    <!-- PARALLAX -->
 
-  <string name="parallax_title">پاراللاكس </string>
-  <string name="parallax_description">سىيرىلما ۋە يانتۇ ئۈنۈمى </string>
-  <string name="parallax_tilt">يانتۇلۇق ئۈنۈمى  </string>
-  <string name="parallax_refresh_rate">يانتۇلۇق سەزگۈچىنى يېڭىلاش</string>
-  <string name="parallax_damping">ھەرىكەت توسقۇنلۇقى چوڭ-كىچىكلىكى  </string>
-  <string name="parallax_damping_description">تېخىمۇ راۋان سىيرىلىش ئۈنۈمىنى ئازايتىدۇ</string>
-  <string name="parallax_threshold">ھەرىكەت ئاتلاش قىممىتى</string>
-  <!-- OTHER -->
+    <string name="parallax_title">پاراللاكس </string>
+    <string name="parallax_description">سىيرىلما ۋە يانتۇ ئۈنۈمى </string>
+    <string name="parallax_tilt">يانتۇلۇق ئۈنۈمى  </string>
+    <string name="parallax_refresh_rate">يانتۇلۇق سەزگۈچىنى يېڭىلاش</string>
+    <string name="parallax_damping">ھەرىكەت توسقۇنلۇقى چوڭ-كىچىكلىكى  </string>
+    <string name="parallax_damping_description">تېخىمۇ راۋان سىيرىلىش ئۈنۈمىنى ئازايتىدۇ</string>
+    <string name="parallax_threshold">ھەرىكەت ئاتلاش قىممىتى</string>
+    <!-- OTHER -->
 
-  <string name="other_title">باشقا تەڭشەك </string>
-  <string name="other_language">تىللار</string>
-  <string name="other_language_system">سىستېمىغا ئەگىشىدۇ </string>
-  <string name="other_gpu">قاتتىق دېتال تېزلىتىش</string>
-  <string name="other_launcher">ئۈستەل يۈزىدە سىنبەلگەمنى كۆرسەتمە</string>
-  <string name="other_reset">بارلىق تەڭشەشنى قايتا تەڭشەش</string>
-  <!-- ABOUT -->
+    <string name="other_title">باشقا تەڭشەك </string>
+    <string name="other_language">تىللار</string>
+    <string name="other_language_system">سىستېمىغا ئەگىشىدۇ </string>
+    <string name="other_gpu">قاتتىق دېتال تېزلىتىش</string>
+    <string name="other_launcher">ئۈستەل يۈزىدە سىنبەلگەمنى كۆرسەتمە</string>
+    <string name="other_reset">بارلىق تەڭشەشنى قايتا تەڭشەش</string>
+    <!-- ABOUT -->
 
-  <string name="about_title">ھەققىدە </string>
-  <string name="about_version">نەشرى</string>
-  <string name="about_changelog">يېڭىلاش خاتىرىسى</string>
-  <string name="about_changelog_description">نېمىلەر يېڭىلاندى؟ </string>
-  <string name="about_developer">ئەپ ياسىغۈچى</string>
-  <string name="about_github_description">ئەسلى  كودى</string>
-  <string name="about_translation_description">Doodleنى تەرجىمە  قىلىش </string>
-  <string name="msg_share">دۇبلىنىڭ بۇ قارام تەگلىك  دېتالدىن  ھوزۇرلىنىڭ 序:https://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
-  <string name="msg_reset">بارلىق تەڭشەشنى قايتا تەڭشەمسىز؟</string>
-  <string name="msg_preview_missing">خاتالىق كۆرۈلدى. قول ئارقىلىق دوبلى فىلىم تەگلىكىنى تاللاڭ </string>
+    <string name="about_title">ھەققىدە </string>
+    <string name="about_version">نەشرى</string>
+    <string name="about_changelog">يېڭىلاش خاتىرىسى</string>
+    <string name="about_changelog_description">نېمىلەر يېڭىلاندى؟ </string>
+    <string name="about_developer">ئەپ ياسىغۈچى</string>
+    <string name="about_github_description">ئەسلى  كودى</string>
+    <string name="about_translation_description">Doodleنى تەرجىمە  قىلىش </string>
+    <string name="msg_share">دۇبلىنىڭ بۇ قارام تەگلىك  دېتالدىن  ھوزۇرلىنىڭ 序:https://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
+    <string name="msg_reset">بارلىق تەڭشەشنى قايتا تەڭشەمسىز؟</string>
+    <string name="msg_preview_missing">خاتالىق كۆرۈلدى. قول ئارقىلىق دوبلى فىلىم تەگلىكىنى تاللاڭ </string>
 
-  </resources>
+</resources>

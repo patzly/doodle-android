@@ -29,55 +29,57 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout.LayoutParams;
+
 import androidx.annotation.NonNull;
+
 import xyz.zedler.patrick.doodle.databinding.FragmentBottomsheetApplyBinding;
 
 public class ApplyBottomSheetDialogFragment extends BaseBottomSheetDialogFragment {
 
-  private static final String TAG = "ApplyBottomSheet";
+    private static final String TAG = "ApplyBottomSheet";
 
-  private FragmentBottomsheetApplyBinding binding;
+    private FragmentBottomsheetApplyBinding binding;
 
-  @Override
-  public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle state) {
-    binding = FragmentBottomsheetApplyBinding.inflate(inflater, container, false);
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle state) {
+        binding = FragmentBottomsheetApplyBinding.inflate(inflater, container, false);
 
-    binding.buttonApplyOpen.setOnClickListener(v -> {
-      if (getViewUtil().isClickEnabled(v.getId())) {
-        performHapticClick();
-        try {
-          Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
-          intent.setData(Uri.parse("package:" + requireContext().getPackageName()));
-          intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-          startActivity(intent);
-        } catch (ActivityNotFoundException e) {
-          Log.e(TAG, "showForceStopRequest", e);
-          Intent intent = new Intent(Settings.ACTION_MANAGE_APPLICATIONS_SETTINGS);
-          intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-          startActivity(intent);
-        }
-      }
-    });
+        binding.buttonApplyOpen.setOnClickListener(v -> {
+            if (getViewUtil().isClickEnabled(v.getId())) {
+                performHapticClick();
+                try {
+                    Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+                    intent.setData(Uri.parse("package:" + requireContext().getPackageName()));
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(intent);
+                } catch (ActivityNotFoundException e) {
+                    Log.e(TAG, "showForceStopRequest", e);
+                    Intent intent = new Intent(Settings.ACTION_MANAGE_APPLICATIONS_SETTINGS);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(intent);
+                }
+            }
+        });
 
-    return binding.getRoot();
-  }
+        return binding.getRoot();
+    }
 
-  @Override
-  public void onDestroy() {
-    super.onDestroy();
-    binding = null;
-  }
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        binding = null;
+    }
 
-  @Override
-  public void applyBottomInset(int bottom) {
-    LayoutParams params = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
-    params.setMargins(0, 0, 0, bottom);
-    binding.linearApplyContainer.setLayoutParams(params);
-  }
+    @Override
+    public void applyBottomInset(int bottom) {
+        LayoutParams params = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+        params.setMargins(0, 0, 0, bottom);
+        binding.linearApplyContainer.setLayoutParams(params);
+    }
 
-  @NonNull
-  @Override
-  public String toString() {
-    return TAG;
-  }
+    @NonNull
+    @Override
+    public String toString() {
+        return TAG;
+    }
 }

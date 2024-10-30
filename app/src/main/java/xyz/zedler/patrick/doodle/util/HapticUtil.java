@@ -33,96 +33,95 @@ import android.provider.Settings;
 
 public class HapticUtil {
 
-  private final Vibrator vibrator;
-  private boolean enabled;
+    public static final long TICK = 13;
+    public static final long CLICK = 20;
+    public static final long HEAVY = 50;
+    private final Vibrator vibrator;
+    private boolean enabled;
 
-  public static final long TICK = 13;
-  public static final long CLICK = 20;
-  public static final long HEAVY = 50;
-
-  public HapticUtil(Context context) {
-    if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.S) {
-      VibratorManager manager =
-          (VibratorManager) context.getSystemService(Context.VIBRATOR_MANAGER_SERVICE);
-      vibrator = manager.getDefaultVibrator();
-    } else {
-      vibrator = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
+    public HapticUtil(Context context) {
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.S) {
+            VibratorManager manager =
+                    (VibratorManager) context.getSystemService(Context.VIBRATOR_MANAGER_SERVICE);
+            vibrator = manager.getDefaultVibrator();
+        } else {
+            vibrator = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
+        }
+        enabled = hasVibrator();
     }
-    enabled = hasVibrator();
-  }
 
-  public void vibrate(long duration) {
-    if (!enabled) {
-      return;
+    public static boolean areSystemHapticsTurnedOn(Context context) {
+        int hapticFeedbackEnabled = Settings.System.getInt(
+                context.getContentResolver(), Settings.System.HAPTIC_FEEDBACK_ENABLED, 0
+        );
+        return hapticFeedbackEnabled != 0;
     }
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-      vibrator.vibrate(VibrationEffect.createOneShot(duration, VibrationEffect.DEFAULT_AMPLITUDE));
-    } else {
-      vibrator.vibrate(duration);
+
+    public void vibrate(long duration) {
+        if (!enabled) {
+            return;
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            vibrator.vibrate(VibrationEffect.createOneShot(duration, VibrationEffect.DEFAULT_AMPLITUDE));
+        } else {
+            vibrator.vibrate(duration);
+        }
     }
-  }
 
-  private void vibrate(int effectId) {
-    if (enabled && Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-      vibrator.vibrate(VibrationEffect.createPredefined(effectId));
+    private void vibrate(int effectId) {
+        if (enabled && Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            vibrator.vibrate(VibrationEffect.createPredefined(effectId));
+        }
     }
-  }
 
-  public void tick() {
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-      vibrate(VibrationEffect.EFFECT_TICK);
-    } else {
-      vibrate(TICK);
+    public void tick() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            vibrate(VibrationEffect.EFFECT_TICK);
+        } else {
+            vibrate(TICK);
+        }
     }
-  }
 
-  public void click() {
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-      vibrate(VibrationEffect.EFFECT_CLICK);
-    } else {
-      vibrate(CLICK);
+    public void click() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            vibrate(VibrationEffect.EFFECT_CLICK);
+        } else {
+            vibrate(CLICK);
+        }
     }
-  }
 
-  public void doubleClick() {
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-      vibrate(VibrationEffect.EFFECT_DOUBLE_CLICK);
-    } else {
-      vibrate(CLICK);
-      new Handler(Looper.getMainLooper()).postDelayed(() -> vibrate(CLICK), 100);
+    public void doubleClick() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            vibrate(VibrationEffect.EFFECT_DOUBLE_CLICK);
+        } else {
+            vibrate(CLICK);
+            new Handler(Looper.getMainLooper()).postDelayed(() -> vibrate(CLICK), 100);
+        }
     }
-  }
 
-  public void heavyClick() {
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-      vibrate(VibrationEffect.EFFECT_HEAVY_CLICK);
-    } else {
-      vibrate(HEAVY);
+    public void heavyClick() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            vibrate(VibrationEffect.EFFECT_HEAVY_CLICK);
+        } else {
+            vibrate(HEAVY);
+        }
     }
-  }
 
-  public void explode() {
-    if (enabled && VERSION.SDK_INT >= VERSION_CODES.R) {
-      vibrator.vibrate(
-          VibrationEffect.startComposition().addPrimitive(Composition.PRIMITIVE_SLOW_RISE).compose()
-      );
-    } else {
-      heavyClick();
+    public void explode() {
+        if (enabled && VERSION.SDK_INT >= VERSION_CODES.R) {
+            vibrator.vibrate(
+                    VibrationEffect.startComposition().addPrimitive(Composition.PRIMITIVE_SLOW_RISE).compose()
+            );
+        } else {
+            heavyClick();
+        }
     }
-  }
 
-  public void setEnabled(boolean enabled) {
-    this.enabled = enabled && hasVibrator();
-  }
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled && hasVibrator();
+    }
 
-  public boolean hasVibrator() {
-    return vibrator.hasVibrator();
-  }
-
-  public static boolean areSystemHapticsTurnedOn(Context context) {
-    int hapticFeedbackEnabled = Settings.System.getInt(
-        context.getContentResolver(), Settings.System.HAPTIC_FEEDBACK_ENABLED, 0
-    );
-    return hapticFeedbackEnabled != 0;
-  }
+    public boolean hasVibrator() {
+        return vibrator.hasVibrator();
+    }
 }

@@ -19,73 +19,72 @@
   ~ Copyright (c) 2019-2024 by Patrick Zedler
   -->
 
-<LinearLayout
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:tools="http://schemas.android.com/tools"
-  android:layout_width="match_parent"
-  android:layout_height="wrap_content"
-  android:orientation="vertical">
-
-  <com.google.android.material.appbar.MaterialToolbar
-    android:id="@+id/toolbar_colors"
-    style="@style/Widget.Doodle.Toolbar" />
-
-  <com.google.android.material.divider.MaterialDivider
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content" />
-
-  <androidx.core.widget.NestedScrollView
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:scrollbars="none">
+    android:orientation="vertical">
 
-    <LinearLayout
-      android:id="@+id/linear_colors_container"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:orientation="vertical">
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar_colors"
+        style="@style/Widget.Doodle.Toolbar" />
 
-      <HorizontalScrollView
+    <com.google.android.material.divider.MaterialDivider
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:scrollbars="none"
-        android:overScrollMode="ifContentScrolls"
-        tools:ignore="UselessParent"
-        android:importantForAccessibility="no">
+        android:scrollbars="none">
 
         <LinearLayout
-          android:id="@+id/linear_colors_container_colors"
-          style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:orientation="horizontal"
-          android:paddingStart="16dp"
-          android:paddingEnd="12dp"
-          android:paddingTop="16dp"
-          android:paddingBottom="16dp" />
+            android:id="@+id/linear_colors_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-      </HorizontalScrollView>
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:importantForAccessibility="no"
+                android:overScrollMode="ifContentScrolls"
+                android:scrollbars="none"
+                tools:ignore="UselessParent">
 
-      <TextView
-        style="@style/Widget.Doodle.TextView.Paragraph"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/appearance_colors_info"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:paddingBottom="16dp" />
+                <LinearLayout
+                    android:id="@+id/linear_colors_container_colors"
+                    style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingStart="16dp"
+                    android:paddingTop="16dp"
+                    android:paddingEnd="12dp"
+                    android:paddingBottom="16dp" />
 
-      <TextView
-        style="@style/Widget.Doodle.TextView.Paragraph"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/appearance_colors_info_dynamic"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:paddingBottom="16dp" />
+            </HorizontalScrollView>
 
-    </LinearLayout>
+            <TextView
+                style="@style/Widget.Doodle.TextView.Paragraph"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="16dp"
+                android:text="@string/appearance_colors_info" />
 
-  </androidx.core.widget.NestedScrollView>
+            <TextView
+                style="@style/Widget.Doodle.TextView.Paragraph"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="16dp"
+                android:text="@string/appearance_colors_info_dynamic" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
 
 </LinearLayout>

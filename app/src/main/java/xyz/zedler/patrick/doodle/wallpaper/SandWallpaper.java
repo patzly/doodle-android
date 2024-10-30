@@ -20,6 +20,7 @@
 package xyz.zedler.patrick.doodle.wallpaper;
 
 import androidx.annotation.NonNull;
+
 import xyz.zedler.patrick.doodle.Constants.WALLPAPER;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.drawable.SvgDrawable;
@@ -27,58 +28,58 @@ import xyz.zedler.patrick.doodle.drawable.SvgDrawable.SvgObject;
 
 public class SandWallpaper extends BaseWallpaper {
 
-  @NonNull
-  @Override
-  public String getName() {
-    return WALLPAPER.SAND;
-  }
+    @NonNull
+    @Override
+    public String getName() {
+        return WALLPAPER.SAND;
+    }
 
-  @Override
-  public int getThumbnailResId() {
-    return R.drawable.selection_sand;
-  }
+    @Override
+    public int getThumbnailResId() {
+        return R.drawable.selection_sand;
+    }
 
-  @Override
-  public SvgDrawable getPreparedSvg(SvgDrawable svgDrawable, int variant, boolean isNightMode) {
-    SvgObject leaves = svgDrawable.requireObjectById("leaves");
-    leaves.isRotatable = true;
-    leaves.pivotOffsetX = 600;
-    leaves.pivotOffsetY = 100;
+    @Override
+    public SvgDrawable getPreparedSvg(SvgDrawable svgDrawable, int variant, boolean isNightMode) {
+        SvgObject leaves = svgDrawable.requireObjectById("leaves");
+        leaves.isRotatable = true;
+        leaves.pivotOffsetX = 600;
+        leaves.pivotOffsetY = 100;
 
-    svgDrawable.requireObjectById("star").isRotatable = true;
-    svgDrawable.requireObjectById("quad").isRotatable = true;
-    return svgDrawable;
-  }
+        svgDrawable.requireObjectById("star").isRotatable = true;
+        svgDrawable.requireObjectById("quad").isRotatable = true;
+        return svgDrawable;
+    }
 
-  @NonNull
-  @Override
-  public WallpaperVariant[] getVariants() {
-    return new WallpaperVariant[]{
-        new WallpaperVariant(
-            R.raw.wallpaper_sand,
-            "#f4f5f4",
-            "#8e8b89",
-            "#ded7cc",
-            new String[]{"#d4d1cb", "#ebeae3"},
-            true,
-            false
-        )
-    };
-  }
+    @NonNull
+    @Override
+    public WallpaperVariant[] getVariants() {
+        return new WallpaperVariant[]{
+                new WallpaperVariant(
+                        R.raw.wallpaper_sand,
+                        "#f4f5f4",
+                        "#8e8b89",
+                        "#ded7cc",
+                        new String[]{"#d4d1cb", "#ebeae3"},
+                        true,
+                        false
+                )
+        };
+    }
 
-  @NonNull
-  @Override
-  public WallpaperVariant[] getDarkVariants() {
-    return new WallpaperVariant[]{
-        new WallpaperVariant(
-            R.raw.wallpaper_sand_dark,
-            "#212221",
-            "#cccecd",
-            "#545350",
-            new String[]{},
-            false,
-            true
-        )
-    };
-  }
+    @NonNull
+    @Override
+    public WallpaperVariant[] getDarkVariants() {
+        return new WallpaperVariant[]{
+                new WallpaperVariant(
+                        R.raw.wallpaper_sand_dark,
+                        "#212221",
+                        "#cccecd",
+                        "#545350",
+                        new String[]{},
+                        false,
+                        true
+                )
+        };
+    }
 }

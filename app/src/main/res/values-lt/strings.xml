@@ -21,164 +21,164 @@
 
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
-  <string name="wallpaper_description">Daugiaspalvis judantis paveikslas su automatišku nakties režimu, taip pat taupantys energija efektai. Derink kaip tau tinka!</string>
-  <string name="wallpaper_description_picker">Ištyrinėk spalvingų kolekcijų iš figūrų, pagerinta su švelniais paralakso ir priartinimo efektais kai tu brauksi pro savo namų ekraną ir atrakink savo įrenginį. Atsirink sau tinkama paveikslą kuris suderina tavo stilių! </string>
+    <string name="wallpaper_description">Daugiaspalvis judantis paveikslas su automatišku nakties režimu, taip pat taupantys energija efektai. Derink kaip tau tinka!</string>
+    <string name="wallpaper_description_picker">Ištyrinėk spalvingų kolekcijų iš figūrų, pagerinta su švelniais paralakso ir priartinimo efektais kai tu brauksi pro savo namų ekraną ir atrakink savo įrenginį. Atsirink sau tinkama paveikslą kuris suderina tavo stilių! </string>
 
-  <!-- TITLES -->
+    <!-- TITLES -->
 
-  <string name="title_info">Informacija</string>
-  <string name="title_apply_changes">Taikyti pakeitimus</string>
-  <string name="title_feedback">Atsiliepimas</string>
-  <string name="title_licenses">Atviro kodo licencijos </string>
+    <string name="title_info">Informacija</string>
+    <string name="title_apply_changes">Taikyti pakeitimus</string>
+    <string name="title_feedback">Atsiliepimas</string>
+    <string name="title_licenses">Atviro kodo licencijos </string>
 
-  <!-- LABELS -->
+    <!-- LABELS -->
 
-  <string name="label_ms">%1$sms</string>
-  <string name="label_degrees">1%1$s laipsnių</string>
+    <string name="label_ms">%1$sms</string>
+    <string name="label_degrees">1%1$s laipsnių</string>
 
-  <!-- ACTIONS -->
+    <!-- ACTIONS -->
 
-  <string name="action_cancel">Atšaukt</string>
-  <string name="action_select">Pasirinkti</string>
-  <string name="action_close">Uždaryti</string>
-  <string name="action_back">Grįžti</string>
-  <string name="action_open_link">Atverti išorine svetainę</string>
-  <string name="action_hide">Slėpti</string>
-  <string name="action_reset">Restartuoti</string>
-  <string name="action_deactivate">Išaktyvuoti</string>
-  <string name="action_select_all">Pasirinkti viską</string>
-  <string name="action_continue">Tęsti</string>
-  <string name="action_reload">Perkrauti</string>
-  <string name="action_open_app_info">Atverti programos informacija</string>
-  <string name="action_set">Nustatyti paveikslą</string>
-  <string name="action_learn_more">Sužinok daugiau</string>
-  <string name="action_help">Pagalba</string>
-  <string name="action_send_feedback">Siųsti atsiliepimą </string>
-  <string name="action_share">Dalintis</string>
-  <string name="action_share_description">Papasakok savo draugams apie „Doodle“</string>
-  <string name="action_email">Išsiųst el. paštą</string>
-  <string name="action_email_description">Susisiek su darytojų </string>
-  <string name="action_rate">Įvertink „Google Play“</string>
-  <string name="action_rate_description">Palaikyti kūrimą</string>
-  <string name="action_github">„Doodle“ skirta „Android“ „GitHub\'e“</string>
-  <string name="action_github_description">Atidaryti naują problemą</string>
-  <string name="action_language_select">Pasirink kalbą </string>
-  <string name="action_set_static">Nustatyti statinį paveikslą</string>
-  <string name="action_change_time">Keisti laiką</string>
-  <!-- APPEARANCE -->
+    <string name="action_cancel">Atšaukt</string>
+    <string name="action_select">Pasirinkti</string>
+    <string name="action_close">Uždaryti</string>
+    <string name="action_back">Grįžti</string>
+    <string name="action_open_link">Atverti išorine svetainę</string>
+    <string name="action_hide">Slėpti</string>
+    <string name="action_reset">Restartuoti</string>
+    <string name="action_deactivate">Išaktyvuoti</string>
+    <string name="action_select_all">Pasirinkti viską</string>
+    <string name="action_continue">Tęsti</string>
+    <string name="action_reload">Perkrauti</string>
+    <string name="action_open_app_info">Atverti programos informacija</string>
+    <string name="action_set">Nustatyti paveikslą</string>
+    <string name="action_learn_more">Sužinok daugiau</string>
+    <string name="action_help">Pagalba</string>
+    <string name="action_send_feedback">Siųsti atsiliepimą </string>
+    <string name="action_share">Dalintis</string>
+    <string name="action_share_description">Papasakok savo draugams apie „Doodle“</string>
+    <string name="action_email">Išsiųst el. paštą</string>
+    <string name="action_email_description">Susisiek su darytojų </string>
+    <string name="action_rate">Įvertink „Google Play“</string>
+    <string name="action_rate_description">Palaikyti kūrimą</string>
+    <string name="action_github">„Doodle“ skirta „Android“ „GitHub\'e“</string>
+    <string name="action_github_description">Atidaryti naują problemą</string>
+    <string name="action_language_select">Pasirink kalbą </string>
+    <string name="action_set_static">Nustatyti statinį paveikslą</string>
+    <string name="action_change_time">Keisti laiką</string>
+    <!-- APPEARANCE -->
 
-  <string name="appearance_title">Pritaikymas</string>
-  <string name="appearance_description">Dizainas ir amp; spalvų pasirinkimai</string>
-  <string name="appearance_one_ui">Sukeistas „Samsung“ dinaminių spalvų įdiegimas „One UI 4.1“ visiškai ignoruoja spalvas, kurias teikia tiesioginio ekrano fono programos, pvz., „Doodle“. Norėdami pritaikyti spalvas savo sistemai, nustatykite dabartinį dizainą kaip statinį paveikslą, kad sistema gautų tinkamas spalvas, tada vėl pritaikykite jį kaip tiesioginį ekrano foną.</string>
-  <string name="appearance_design">Dizainas</string>
-  <string name="appearance_design_doodle">Pixel 4 \"Doodle\" kolekcija</string>
-  <string name="appearance_design_monet">Pixel 6 \"Material You\" Kolekcija</string>
-  <string name="appearance_design_anna">Judantys paveikslai \"à l\'Anna Kövecses\"</string>
-  <string name="appearance_variant">Variantai</string>
-  <string name="appearance_night_mode">Nakties režimas</string>
-  <string name="appearance_night_mode_description">Tik tamsios spalvos</string>
-  <string name="appearance_night_mode_on">Įjungta</string>
-  <string name="appearance_night_mode_off">Išjungta</string>
-  <string name="appearance_light_text">Visada naudoti baltą tekstą</string>
-  <string name="appearance_light_text_description">Vietoj tamsaus teksto šviesiame fone</string>
-  <string name="appearance_dark_text">Naudoti tamsųjį tekstą</string>
-  <string name="appearance_dark_text_description">Tik kai fonas yra pakankamai šviesus</string>
-  <string name="appearance_colors_category">Spalvos</string>
-  <string name="appearance_colors">Išpakuotos spalvos</string>
-  <string name="appearance_colors_description">Naudota teksto kontrastas apskaičiuoti</string>
-  <string name="appearance_colors_description_dynamic">Naudota sistemos tema</string>
-  <string name="appearance_colors_description_one_ui">Kaip nurodyta, „One UI“ ignoruoja pateiktų tiesioginių fono paveikslėlių spalvų</string>
-  <string name="appearance_colors_primary">Pasirinkti pirmąją spalvą</string>
-  <string name="appearance_colors_secondary">Pasirinkti antrąją spalvą</string>
-  <string name="appearance_colors_tertiary">Pasirinkti trečia spalva</string>
-  <string name="appearance_colors_custom">Pasirinkti savąja spalvą</string>
-  <string name="appearance_colors_info">Įrenginiai kurie nepalaiko dinaminio spalvos palaikymo (Android 11 ir senesnes), tik pirmoji spalva yra naudojama apskaičiuoti namų programos teksto kontrastą ir spalvojamas ką tik naudojimų programų foną.</string>
-  <string name="appearance_colors_info_dynamic">Įrenginiai kurie turi Android 12 ar naujesnę, palaiko dinamikos spalvas, pasirinktos trys spalvos yra automatiškai sukuriamos plačios sistemos spalvų temą.</string>
-  <string name="appearance_random">Bet koks paveikslo dizainas</string>
-  <string name="appearance_random_description">Pasirinkite trigerį apačioje </string>
-  <string name="appearance_random_screen_off">Ekranas išjungtas</string>
-  <string name="appearance_random_daily">Kasdien %1$s</string>
-  <!-- PARALLAX -->
+    <string name="appearance_title">Pritaikymas</string>
+    <string name="appearance_description">Dizainas ir amp; spalvų pasirinkimai</string>
+    <string name="appearance_one_ui">Sukeistas „Samsung“ dinaminių spalvų įdiegimas „One UI 4.1“ visiškai ignoruoja spalvas, kurias teikia tiesioginio ekrano fono programos, pvz., „Doodle“. Norėdami pritaikyti spalvas savo sistemai, nustatykite dabartinį dizainą kaip statinį paveikslą, kad sistema gautų tinkamas spalvas, tada vėl pritaikykite jį kaip tiesioginį ekrano foną.</string>
+    <string name="appearance_design">Dizainas</string>
+    <string name="appearance_design_doodle">Pixel 4 \"Doodle\" kolekcija</string>
+    <string name="appearance_design_monet">Pixel 6 \"Material You\" Kolekcija</string>
+    <string name="appearance_design_anna">Judantys paveikslai \"à l\'Anna Kövecses\"</string>
+    <string name="appearance_variant">Variantai</string>
+    <string name="appearance_night_mode">Nakties režimas</string>
+    <string name="appearance_night_mode_description">Tik tamsios spalvos</string>
+    <string name="appearance_night_mode_on">Įjungta</string>
+    <string name="appearance_night_mode_off">Išjungta</string>
+    <string name="appearance_light_text">Visada naudoti baltą tekstą</string>
+    <string name="appearance_light_text_description">Vietoj tamsaus teksto šviesiame fone</string>
+    <string name="appearance_dark_text">Naudoti tamsųjį tekstą</string>
+    <string name="appearance_dark_text_description">Tik kai fonas yra pakankamai šviesus</string>
+    <string name="appearance_colors_category">Spalvos</string>
+    <string name="appearance_colors">Išpakuotos spalvos</string>
+    <string name="appearance_colors_description">Naudota teksto kontrastas apskaičiuoti</string>
+    <string name="appearance_colors_description_dynamic">Naudota sistemos tema</string>
+    <string name="appearance_colors_description_one_ui">Kaip nurodyta, „One UI“ ignoruoja pateiktų tiesioginių fono paveikslėlių spalvų</string>
+    <string name="appearance_colors_primary">Pasirinkti pirmąją spalvą</string>
+    <string name="appearance_colors_secondary">Pasirinkti antrąją spalvą</string>
+    <string name="appearance_colors_tertiary">Pasirinkti trečia spalva</string>
+    <string name="appearance_colors_custom">Pasirinkti savąja spalvą</string>
+    <string name="appearance_colors_info">Įrenginiai kurie nepalaiko dinaminio spalvos palaikymo (Android 11 ir senesnes), tik pirmoji spalva yra naudojama apskaičiuoti namų programos teksto kontrastą ir spalvojamas ką tik naudojimų programų foną.</string>
+    <string name="appearance_colors_info_dynamic">Įrenginiai kurie turi Android 12 ar naujesnę, palaiko dinamikos spalvas, pasirinktos trys spalvos yra automatiškai sukuriamos plačios sistemos spalvų temą.</string>
+    <string name="appearance_random">Bet koks paveikslo dizainas</string>
+    <string name="appearance_random_description">Pasirinkite trigerį apačioje </string>
+    <string name="appearance_random_screen_off">Ekranas išjungtas</string>
+    <string name="appearance_random_daily">Kasdien %1$s</string>
+    <!-- PARALLAX -->
 
-  <string name="parallax_title">Paralaksas</string>
-  <string name="parallax_description">Braukti &amp; pakreipimų efektas</string>
-  <string name="parallax_swipe_power_save">Gerbti baterijos taupymą</string>
-  <string name="parallax_tilt">Pakreipimo efektas</string>
-  <string name="parallax_refresh_rate">Pakreipimo sensoriaus atnaujinimo dažnis</string>
-  <string name="parallax_damping">Judėsio slopinimas</string>
-  <string name="parallax_damping_description">Sumažinti kad būtų daugiau švelnu</string>
-  <string name="parallax_threshold">Judėjimo slenkstis</string>
-  <string name="parallax_threshold_description">Sumažinti iki nuolatinės pauzių vaizdavimo nepaisant mažų judesių</string>
-  <string name="parallax_tilt_power_save_description">Sumažinti poslinkio efektą kai įjungtas baterijos taupymas</string>
+    <string name="parallax_title">Paralaksas</string>
+    <string name="parallax_description">Braukti &amp; pakreipimų efektas</string>
+    <string name="parallax_swipe_power_save">Gerbti baterijos taupymą</string>
+    <string name="parallax_tilt">Pakreipimo efektas</string>
+    <string name="parallax_refresh_rate">Pakreipimo sensoriaus atnaujinimo dažnis</string>
+    <string name="parallax_damping">Judėsio slopinimas</string>
+    <string name="parallax_damping_description">Sumažinti kad būtų daugiau švelnu</string>
+    <string name="parallax_threshold">Judėjimo slenkstis</string>
+    <string name="parallax_threshold_description">Sumažinti iki nuolatinės pauzių vaizdavimo nepaisant mažų judesių</string>
+    <string name="parallax_tilt_power_save_description">Sumažinti poslinkio efektą kai įjungtas baterijos taupymas</string>
 
-  <!-- SIZE -->
+    <!-- SIZE -->
 
-  <string name="size_title">Figūros dydis </string>
-  <string name="size_description">Mastelis; priartinimo efektas</string>
-  <string name="size_category_zoom">Priartinimo efektas</string>
-  <string name="size_category_launcher">Namų programos priartinimas</string>
-  <string name="size_category_unlock">Užrakinimo ekrano priartinimas</string>
-  <string name="size_scale">Mastelis</string>
-  <string name="size_scale_description">Naudinga dideliems ekranams ir tankiams</string>
-  <string name="size_zoom">Priartinimo intensyvumas </string>
-  <string name="size_zoom_description">Kai padidėja, kamera prisiartina toliau</string>
-  <string name="size_zoom_rotation">Pasukti keletą figūrų kai artinamą</string>
-  <string name="size_zoom_rotation_description">Maksimalus pasukimas laipsniais</string>
-  <string name="size_zoom_power_save_description">Sustabdyti priartinimo efektą kai baterijos taupymas įjungtas</string>
-  <string name="size_zoom_launcher">Priartinti toliau kai atidaromi greitieji nustatymai arba visų programų stalčių</string>
-  <string name="size_zoom_launcher_description">Galimai nepasiekiama kai kuriems įrenginiams</string>
-  <string name="size_zoom_damping">Animacijos slopinimas</string>
-  <string name="size_zoom_damping_description">Aktyvuoti ir slopinti vien del švelnaus priartinimo</string>
-  <string name="size_zoom_unlock_in">Priartinti</string>
-  <string name="size_zoom_duration">Atrakinimo ekrano trukmė</string>
-  <string name="size_zoom_duration_description">Sumažinti dėl greitos animacijos</string>
+    <string name="size_title">Figūros dydis </string>
+    <string name="size_description">Mastelis; priartinimo efektas</string>
+    <string name="size_category_zoom">Priartinimo efektas</string>
+    <string name="size_category_launcher">Namų programos priartinimas</string>
+    <string name="size_category_unlock">Užrakinimo ekrano priartinimas</string>
+    <string name="size_scale">Mastelis</string>
+    <string name="size_scale_description">Naudinga dideliems ekranams ir tankiams</string>
+    <string name="size_zoom">Priartinimo intensyvumas </string>
+    <string name="size_zoom_description">Kai padidėja, kamera prisiartina toliau</string>
+    <string name="size_zoom_rotation">Pasukti keletą figūrų kai artinamą</string>
+    <string name="size_zoom_rotation_description">Maksimalus pasukimas laipsniais</string>
+    <string name="size_zoom_power_save_description">Sustabdyti priartinimo efektą kai baterijos taupymas įjungtas</string>
+    <string name="size_zoom_launcher">Priartinti toliau kai atidaromi greitieji nustatymai arba visų programų stalčių</string>
+    <string name="size_zoom_launcher_description">Galimai nepasiekiama kai kuriems įrenginiams</string>
+    <string name="size_zoom_damping">Animacijos slopinimas</string>
+    <string name="size_zoom_damping_description">Aktyvuoti ir slopinti vien del švelnaus priartinimo</string>
+    <string name="size_zoom_unlock_in">Priartinti</string>
+    <string name="size_zoom_duration">Atrakinimo ekrano trukmė</string>
+    <string name="size_zoom_duration_description">Sumažinti dėl greitos animacijos</string>
 
-  <!-- OTHER -->
+    <!-- OTHER -->
 
-  <string name="other_title">Kiti pasirinkimai</string>
-  <string name="other_description">Vaizdavimas, kalba; paleidimas iš naujo</string>
-  <string name="other_language">Kalba</string>
-  <string name="other_language_description">Didelis Ačiū visiems savanorių vertėjams platformoj „Transifex“! Prašau peržiūrėk šio projekto „GitHub\'o“ puslapyje kad sužinotum kaip gali padėti „Doodle Live Wallpapers“ kad būtų pasiekiama tavo kalboj.</string>
-  <string name="other_language_system">Sekti sistemą</string>
-  <string name="other_language_system_description">Angliškai jei vertimas nepasiekiamas</string>
-  <string name="other_gpu">Įrenginio pagreitis </string>
-  <string name="other_gpu_description">Išjungti jei paveikslas užstringa</string>
-  <string name="other_gpu_info">Įrenginio pagreitis yra tik pasiekiama „Doodle“ prasidedančiu su „Android 8“  </string>
-  <string name="other_launcher">Paslėpti piktograma namų programoje</string>
-  <string name="other_launcher_description">Parametrai bus tik pasiekiami tavo sistemos judančio paveikslo pasirinkimo</string>
-  <string name="other_launcher_unsupported">Ši funkcija nėra pasiekiama dėl sistemos apribojimų</string>
-  <string name="other_theme">Programos spalvų tema</string>
-  <string name="other_theme_description">Išbandyk kitą vaizdą</string>
-  <string name="other_theme_auto">Automatinis</string>
-  <string name="other_theme_light">Šviesus</string>
-  <string name="other_theme_dark">Tamsus</string>
-  <string name="other_transition">Naudoti slankųjį perėjimą tarp nustatymų puslapių </string>
-  <string name="other_transition_description">Vietoj blukimo</string>
-  <string name="other_reset">Restartuoti visus parametrus</string>
-  <string name="other_reset_description">Daugiau daro nei ištrynimas daro, nes parametrai yra sudėti ypatingoje vietoje kurie pasiekiami tik tada kai įrenginys isijungia </string>
-  <!-- ABOUT -->
+    <string name="other_title">Kiti pasirinkimai</string>
+    <string name="other_description">Vaizdavimas, kalba; paleidimas iš naujo</string>
+    <string name="other_language">Kalba</string>
+    <string name="other_language_description">Didelis Ačiū visiems savanorių vertėjams platformoj „Transifex“! Prašau peržiūrėk šio projekto „GitHub\'o“ puslapyje kad sužinotum kaip gali padėti „Doodle Live Wallpapers“ kad būtų pasiekiama tavo kalboj.</string>
+    <string name="other_language_system">Sekti sistemą</string>
+    <string name="other_language_system_description">Angliškai jei vertimas nepasiekiamas</string>
+    <string name="other_gpu">Įrenginio pagreitis </string>
+    <string name="other_gpu_description">Išjungti jei paveikslas užstringa</string>
+    <string name="other_gpu_info">Įrenginio pagreitis yra tik pasiekiama „Doodle“ prasidedančiu su „Android 8“  </string>
+    <string name="other_launcher">Paslėpti piktograma namų programoje</string>
+    <string name="other_launcher_description">Parametrai bus tik pasiekiami tavo sistemos judančio paveikslo pasirinkimo</string>
+    <string name="other_launcher_unsupported">Ši funkcija nėra pasiekiama dėl sistemos apribojimų</string>
+    <string name="other_theme">Programos spalvų tema</string>
+    <string name="other_theme_description">Išbandyk kitą vaizdą</string>
+    <string name="other_theme_auto">Automatinis</string>
+    <string name="other_theme_light">Šviesus</string>
+    <string name="other_theme_dark">Tamsus</string>
+    <string name="other_transition">Naudoti slankųjį perėjimą tarp nustatymų puslapių </string>
+    <string name="other_transition_description">Vietoj blukimo</string>
+    <string name="other_reset">Restartuoti visus parametrus</string>
+    <string name="other_reset_description">Daugiau daro nei ištrynimas daro, nes parametrai yra sudėti ypatingoje vietoje kurie pasiekiami tik tada kai įrenginys isijungia </string>
+    <!-- ABOUT -->
 
-  <string name="about_title">Apie</string>
-  <string name="about_description">Kūrėjo informacija; daugiau </string>
-  <string name="about_version">Versija</string>
-  <string name="about_changelog">Pasikeitimų sąrašas</string>
-  <string name="about_changelog_description">Kas naujo?</string>
-  <string name="about_developer">Kūrėjas</string>
-  <string name="about_vending_description">Daugiau programų iš kurėjo</string>
-  <string name="about_github_description">Pirminis kodas</string>
-  <string name="about_translation_description">Padėk išversti „Doodle“ </string>
-  <string name="about_privacy">Privatumo politika</string>
-  <string name="about_privacy_description">Kaip tavo duomenys yra tvarkomi? </string>
+    <string name="about_title">Apie</string>
+    <string name="about_description">Kūrėjo informacija; daugiau </string>
+    <string name="about_version">Versija</string>
+    <string name="about_changelog">Pasikeitimų sąrašas</string>
+    <string name="about_changelog_description">Kas naujo?</string>
+    <string name="about_developer">Kūrėjas</string>
+    <string name="about_vending_description">Daugiau programų iš kurėjo</string>
+    <string name="about_github_description">Pirminis kodas</string>
+    <string name="about_translation_description">Padėk išversti „Doodle“ </string>
+    <string name="about_privacy">Privatumo politika</string>
+    <string name="about_privacy_description">Kaip tavo duomenys yra tvarkomi? </string>
 
-  <string name="msg_share">Peržiūrėk šį nuostabų judančio paveikslo programa: </string>
-  <string name="msg_hide">Paslėpti piktograma namų programoje?</string>
-  <string name="msg_random">Visi pasirinkti dizainai bus naudojami</string>
-  <string name="msg_random_warning">Bet kokio paveikslo dizainas jau aktyvus!</string>
-  <string name="msg_reset">Restartuoti visus nustatymus?</string>
-  <string name="msg_force_stop">Reikėjo sustabdyti kad įsigaliotu pakeitimai</string>
-  <string name="msg_apply_colors">Pakeistos spalvos bus pateiktos kai kitą kartą išjungsi ekraną</string>
-  <string name="msg_apply_changes">Kad taikyti pakeistus parametrus (galiausiai), paleisti iš naujo veikianti paveikslo servisą yra rekomenduojama. Tai negali būti atlikta automatiškai.; Prašau priverstinai sustabdyti „Doodle“ savo sistemos parametrus ir tik tada taikyk savo „Doodle“ paveikslą dar kartą. </string>
-  <string name="msg_preview_missing">Iškilo problema, nustatyk „Doodle“ judanti paveikslą rankinių būdų</string>
-  <string name="msg_copied_to_clipboard">Sėkmingai nukopijuota į iškarpinė</string>
+    <string name="msg_share">Peržiūrėk šį nuostabų judančio paveikslo programa: </string>
+    <string name="msg_hide">Paslėpti piktograma namų programoje?</string>
+    <string name="msg_random">Visi pasirinkti dizainai bus naudojami</string>
+    <string name="msg_random_warning">Bet kokio paveikslo dizainas jau aktyvus!</string>
+    <string name="msg_reset">Restartuoti visus nustatymus?</string>
+    <string name="msg_force_stop">Reikėjo sustabdyti kad įsigaliotu pakeitimai</string>
+    <string name="msg_apply_colors">Pakeistos spalvos bus pateiktos kai kitą kartą išjungsi ekraną</string>
+    <string name="msg_apply_changes">Kad taikyti pakeistus parametrus (galiausiai), paleisti iš naujo veikianti paveikslo servisą yra rekomenduojama. Tai negali būti atlikta automatiškai.; Prašau priverstinai sustabdyti „Doodle“ savo sistemos parametrus ir tik tada taikyk savo „Doodle“ paveikslą dar kartą. </string>
+    <string name="msg_preview_missing">Iškilo problema, nustatyk „Doodle“ judanti paveikslą rankinių būdų</string>
+    <string name="msg_copied_to_clipboard">Sėkmingai nukopijuota į iškarpinė</string>
 
-  </resources>
+</resources>

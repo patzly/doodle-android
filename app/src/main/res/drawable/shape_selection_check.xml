@@ -17,25 +17,24 @@
   ~ Copyright (c) 2019-2024 by Patrick Zedler
   -->
 
-<layer-list
-  xmlns:android="http://schemas.android.com/apk/res/android">
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
 
-  <item
-    android:left="1dp"
-    android:right="1dp"
-    android:top="1dp"
-    android:bottom="1dp">
-    <shape android:shape="oval">
-      <solid android:color="#00000000" />
-      <size
-        android:width="48dp"
-        android:height="48dp" />
-    </shape>
-  </item>
+    <item
+        android:bottom="1dp"
+        android:left="1dp"
+        android:right="1dp"
+        android:top="1dp">
+        <shape android:shape="oval">
+            <solid android:color="#00000000" />
+            <size
+                android:width="48dp"
+                android:height="48dp" />
+        </shape>
+    </item>
 
-  <item
-    android:id="@+id/icon_selection_check"
-    android:gravity="center"
-    android:drawable="@drawable/ic_rounded_check_anim" />
+    <item
+        android:id="@+id/icon_selection_check"
+        android:drawable="@drawable/ic_rounded_check_anim"
+        android:gravity="center" />
 
 </layer-list>

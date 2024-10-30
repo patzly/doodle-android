@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ This file is part of Doodle Android.
   ~
   ~ Doodle Android is free software: you can redistribute it and/or modify
@@ -18,77 +17,76 @@
   ~ Copyright (c) 2019-2024 by Patrick Zedler
   -->
 
-<manifest
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:tools="http://schemas.android.com/tools">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
-  <uses-feature
-    android:name="android.software.live_wallpaper"
-    android:required="true" />
+    <uses-feature
+        android:name="android.software.live_wallpaper"
+        android:required="true" />
 
-  <uses-permission android:name="android.permission.VIBRATE" />
-  <uses-permission android:name="android.permission.SET_WALLPAPER" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.SET_WALLPAPER" />
 
-  <queries>
-    <intent>
-      <action android:name="android.intent.action.MAIN" />
-      <category android:name="android.intent.category.HOME" />
-    </intent>
-  </queries>
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.HOME" />
+        </intent>
+    </queries>
 
-  <application
-    android:label="@string/app_name"
-    android:icon="@mipmap/ic_launcher"
-    android:theme="@style/Theme.Doodle"
-    android:supportsRtl="true"
-    android:enableOnBackInvokedCallback="true"
-    android:localeConfig="@xml/locales_config"
-    android:allowBackup="false"
-    android:fullBackupContent="@xml/backup_rules"
-    android:dataExtractionRules="@xml/data_extraction_rules"
-    tools:targetApi="33">
+    <application
+        android:allowBackup="false"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:enableOnBackInvokedCallback="true"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:localeConfig="@xml/locales_config"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Doodle"
+        tools:targetApi="33">
 
-    <activity
-      android:name=".activity.LauncherActivity"
-      android:exported="true">
-      <intent-filter>
-        <action android:name="android.intent.action.MAIN" />
-        <category android:name="android.intent.category.LAUNCHER" />
-      </intent-filter>
-    </activity>
+        <activity
+            android:name=".activity.LauncherActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
-    <activity android:name=".activity.MainActivity" />
+        <activity android:name=".activity.MainActivity" />
 
-    <activity
-      android:name=".activity.SettingsActivity"
-      android:exported="true" />
+        <activity
+            android:name=".activity.SettingsActivity"
+            android:exported="true" />
 
-    <activity android:name=".activity.TestActivity" />
+        <activity android:name=".activity.TestActivity" />
 
-    <service
-      android:directBootAware="true"
-      android:label="@string/app_name"
-      android:name=".service.LiveWallpaperService"
-      android:permission="android.permission.BIND_WALLPAPER"
-      android:exported="true"
-      tools:targetApi="n">
-      <intent-filter>
-        <action android:name="android.service.wallpaper.WallpaperService" />
-      </intent-filter>
-      <meta-data
-        android:name="android.service.wallpaper"
-        android:resource="@xml/wallpaper" />
-    </service>
+        <service
+            android:name=".service.LiveWallpaperService"
+            android:directBootAware="true"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:permission="android.permission.BIND_WALLPAPER"
+            tools:targetApi="n">
+            <intent-filter>
+                <action android:name="android.service.wallpaper.WallpaperService" />
+            </intent-filter>
+            <meta-data
+                android:name="android.service.wallpaper"
+                android:resource="@xml/wallpaper" />
+        </service>
 
-    <service
-      android:name="androidx.appcompat.app.AppLocalesMetadataHolderService"
-      android:enabled="false"
-      android:exported="false">
-      <meta-data
-        android:name="autoStoreLocales"
-        android:value="true" />
-    </service>
+        <service
+            android:name="androidx.appcompat.app.AppLocalesMetadataHolderService"
+            android:enabled="false"
+            android:exported="false">
+            <meta-data
+                android:name="autoStoreLocales"
+                android:value="true" />
+        </service>
 
-  </application>
+    </application>
 
 </manifest>

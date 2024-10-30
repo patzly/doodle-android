@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ This file is part of Doodle Android.
   ~
   ~ Doodle Android is free software: you can redistribute it and/or modify
@@ -18,9 +17,8 @@
   ~ Copyright (c) 2019-2024 by Patrick Zedler
   -->
 
-<adaptive-icon
-  xmlns:android="http://schemas.android.com/apk/res/android">
-  <background android:drawable="@color/white" />
-  <foreground android:drawable="@drawable/ic_launcher_foreground" />
-  <monochrome android:drawable="@drawable/ic_launcher_foreground" />
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+    <background android:drawable="@color/white" />
+    <foreground android:drawable="@drawable/ic_launcher_foreground" />
+    <monochrome android:drawable="@drawable/ic_launcher_foreground" />
 </adaptive-icon>

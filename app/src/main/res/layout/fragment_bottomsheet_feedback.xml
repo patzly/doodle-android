@@ -17,150 +17,149 @@
   ~ Copyright (c) 2019-2024 by Patrick Zedler
   -->
 
-<LinearLayout
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:tools="http://schemas.android.com/tools"
-  android:layout_width="match_parent"
-  android:layout_height="wrap_content"
-  android:orientation="vertical">
-
-  <com.google.android.material.appbar.MaterialToolbar
-    style="@style/Widget.Doodle.Toolbar"
-    app:title="@string/title_feedback" />
-
-  <com.google.android.material.divider.MaterialDivider
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content" />
-
-  <androidx.core.widget.NestedScrollView
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:scrollbars="none">
+    android:orientation="vertical">
 
-    <LinearLayout
-      android:id="@+id/linear_feedback_container"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:orientation="vertical"
-      android:paddingTop="16dp"
-      android:paddingBottom="8dp"
-      android:gravity="center_horizontal">
+    <com.google.android.material.appbar.MaterialToolbar
+        style="@style/Widget.Doodle.Toolbar"
+        app:title="@string/title_feedback" />
 
-      <TextView
-        style="@style/Widget.Doodle.TextView.Paragraph"
+    <com.google.android.material.divider.MaterialDivider
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
-        android:text="@string/msg_feedback"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp" />
+        android:scrollbars="none">
 
-      <TextView
-        style="@style/Widget.Doodle.TextView.Paragraph"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
-        android:text="@string/msg_feedback_contact"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp" />
+        <LinearLayout
+            android:id="@+id/linear_feedback_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingTop="16dp"
+            android:paddingBottom="8dp">
 
-      <LinearLayout
-        android:id="@+id/linear_feedback_rate"
-        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable">
+            <TextView
+                style="@style/Widget.Doodle.TextView.Paragraph"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:text="@string/msg_feedback" />
 
-        <ImageView
-          android:id="@+id/image_feedback_rate"
-          style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-          android:src="@drawable/ic_rounded_star"
-          tools:ignore="ContentDescription" />
+            <TextView
+                style="@style/Widget.Doodle.TextView.Paragraph"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:text="@string/msg_feedback_contact" />
 
-        <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
+            <LinearLayout
+                android:id="@+id/linear_feedback_rate"
+                style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable">
 
-          <TextView
-            style="@style/Widget.Doodle.TextView.ListItem.Title"
-            android:text="@string/action_rate" />
+                <ImageView
+                    android:id="@+id/image_feedback_rate"
+                    style="@style/Widget.Doodle.ImageView.ListItem.Icon"
+                    android:src="@drawable/ic_rounded_star"
+                    tools:ignore="ContentDescription" />
 
-          <TextView
-            style="@style/Widget.Doodle.TextView.ListItem.Description"
-            android:text="@string/action_rate_description" />
+                <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
+
+                    <TextView
+                        style="@style/Widget.Doodle.TextView.ListItem.Title"
+                        android:text="@string/action_rate" />
+
+                    <TextView
+                        style="@style/Widget.Doodle.TextView.ListItem.Description"
+                        android:text="@string/action_rate_description" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linear_feedback_email"
+                style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable">
+
+                <ImageView
+                    android:id="@+id/image_feedback_email"
+                    style="@style/Widget.Doodle.ImageView.ListItem.Icon"
+                    android:src="@drawable/ic_rounded_mail"
+                    tools:ignore="ContentDescription" />
+
+                <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
+
+                    <TextView
+                        style="@style/Widget.Doodle.TextView.ListItem.Title"
+                        android:text="@string/action_email" />
+
+                    <TextView
+                        style="@style/Widget.Doodle.TextView.ListItem.Description"
+                        android:text="@string/action_email_description" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linear_feedback_github"
+                style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable">
+
+                <ImageView
+                    style="@style/Widget.Doodle.ImageView.ListItem.Icon"
+                    android:src="@drawable/ic_rounded_code"
+                    tools:ignore="ContentDescription" />
+
+                <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
+
+                    <TextView
+                        style="@style/Widget.Doodle.TextView.ListItem.Title"
+                        android:text="@string/action_github" />
+
+                    <TextView
+                        style="@style/Widget.Doodle.TextView.ListItem.Description"
+                        android:text="@string/action_github_description" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linear_feedback_share"
+                style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable">
+
+                <ImageView
+                    style="@style/Widget.Doodle.ImageView.ListItem.Icon"
+                    android:src="@drawable/ic_rounded_share"
+                    tools:ignore="ContentDescription" />
+
+                <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
+
+                    <TextView
+                        style="@style/Widget.Doodle.TextView.ListItem.Title"
+                        android:text="@string/action_share" />
+
+                    <TextView
+                        style="@style/Widget.Doodle.TextView.ListItem.Description"
+                        android:text="@string/action_share_description" />
+
+                </LinearLayout>
+
+            </LinearLayout>
 
         </LinearLayout>
 
-      </LinearLayout>
-
-      <LinearLayout
-        android:id="@+id/linear_feedback_email"
-        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable">
-
-        <ImageView
-          android:id="@+id/image_feedback_email"
-          style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-          android:src="@drawable/ic_rounded_mail"
-          tools:ignore="ContentDescription" />
-
-        <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
-
-          <TextView
-            style="@style/Widget.Doodle.TextView.ListItem.Title"
-            android:text="@string/action_email" />
-
-          <TextView
-            style="@style/Widget.Doodle.TextView.ListItem.Description"
-            android:text="@string/action_email_description" />
-
-        </LinearLayout>
-
-      </LinearLayout>
-
-      <LinearLayout
-        android:id="@+id/linear_feedback_github"
-        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable">
-
-        <ImageView
-          style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-          android:src="@drawable/ic_rounded_code"
-          tools:ignore="ContentDescription" />
-
-        <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
-
-          <TextView
-            style="@style/Widget.Doodle.TextView.ListItem.Title"
-            android:text="@string/action_github" />
-
-          <TextView
-            style="@style/Widget.Doodle.TextView.ListItem.Description"
-            android:text="@string/action_github_description" />
-
-        </LinearLayout>
-
-      </LinearLayout>
-
-      <LinearLayout
-        android:id="@+id/linear_feedback_share"
-        style="@style/Widget.Doodle.LinearLayout.ListItem.TwoLine.Clickable">
-
-        <ImageView
-          style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-          android:src="@drawable/ic_rounded_share"
-          tools:ignore="ContentDescription" />
-
-        <LinearLayout style="@style/Widget.Doodle.LinearLayout.ListItem.TextBox">
-
-          <TextView
-            style="@style/Widget.Doodle.TextView.ListItem.Title"
-            android:text="@string/action_share" />
-
-          <TextView
-            style="@style/Widget.Doodle.TextView.ListItem.Description"
-            android:text="@string/action_share_description" />
-
-        </LinearLayout>
-
-      </LinearLayout>
-
-    </LinearLayout>
-
-  </androidx.core.widget.NestedScrollView>
+    </androidx.core.widget.NestedScrollView>
 
 </LinearLayout>

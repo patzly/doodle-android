@@ -19,9 +19,8 @@
   ~ Copyright (c) 2019-2024 by Patrick Zedler
   -->
 
-<alpha
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  android:fromAlpha="1"
-  android:toAlpha="0"
-  android:duration="400"
-  android:interpolator="@android:interpolator/fast_out_slow_in" />
+<alpha xmlns:android="http://schemas.android.com/apk/res/android"
+    android:duration="400"
+    android:fromAlpha="1"
+    android:interpolator="@android:interpolator/fast_out_slow_in"
+    android:toAlpha="0" />

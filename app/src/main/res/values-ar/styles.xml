@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ This file is part of Doodle Android.
   ~
   ~ Doodle Android is free software: you can redistribute it and/or modify
@@ -20,62 +19,50 @@
 
 <resources>
 
-  <!-- Snackbar -->
+    <!-- Snackbar -->
 
-  <style
-    name="Widget.Doodle.Button.TextButton.Snackbar"
-    parent="Widget.Material3.Button.TextButton.Snackbar">
-    <item name="android:textStyle">bold</item>
-  </style>
+    <style name="Widget.Doodle.Button.TextButton.Snackbar" parent="Widget.Material3.Button.TextButton.Snackbar">
+        <item name="android:textStyle">bold</item>
+    </style>
 
-  <!-- Button -->
+    <!-- Button -->
 
-  <style
-    name="Widget.Doodle.Button.UnelevatedButton"
-    parent="Base.Doodle.Button.UnelevatedButton">
-    <item name="android:textStyle">bold</item>
-  </style>
+    <style name="Widget.Doodle.Button.UnelevatedButton" parent="Base.Doodle.Button.UnelevatedButton">
+        <item name="android:textStyle">bold</item>
+    </style>
 
-  <style
-    name="Widget.Doodle.Button.OutlinedButton"
-    parent="Base.Doodle.Button.OutlinedButton">
-    <item name="android:textStyle">bold</item>
-  </style>
+    <style name="Widget.Doodle.Button.OutlinedButton" parent="Base.Doodle.Button.OutlinedButton">
+        <item name="android:textStyle">bold</item>
+    </style>
 
-  <style
-    name="Widget.Doodle.Button.TextButton"
-    parent="Base.Doodle.Button.TextButton">
-    <item name="android:textStyle">bold</item>
-  </style>
+    <style name="Widget.Doodle.Button.TextButton" parent="Base.Doodle.Button.TextButton">
+        <item name="android:textStyle">bold</item>
+    </style>
 
-  <style
-    name="Widget.Doodle.Button.TextButton.Dialog"
-    parent="Widget.Material3.Button.TextButton.Dialog">
-    <item name="android:textStyle">bold</item>
-  </style>
+    <style name="Widget.Doodle.Button.TextButton.Dialog" parent="Widget.Material3.Button.TextButton.Dialog">
+        <item name="android:textStyle">bold</item>
+    </style>
 
-  <!-- ExtendedFloatingActionButton -->
+    <!-- ExtendedFloatingActionButton -->
 
-  <style
-    name="Widget.Doodle.ExtendedFloatingActionButton"
-    parent="Widget.Material3.ExtendedFloatingActionButton.Primary">
-    <item name="android:textStyle">bold</item>
-  </style>
+    <style name="Widget.Doodle.ExtendedFloatingActionButton" parent="Widget.Material3.ExtendedFloatingActionButton.Primary">
+        <item name="android:textStyle">bold</item>
+    </style>
 
-  <!-- TextView -->
+    <!-- TextView -->
 
-  <style name="Widget.Doodle.TextView.Medium" parent="Widget.Doodle.TextView">
-    <item name="android:textStyle">bold</item>
-  </style>
+    <style name="Widget.Doodle.TextView.Medium" parent="Widget.Doodle.TextView">
+        <item name="android:textStyle">bold</item>
+    </style>
 
-  <!-- TextAppearance -->
+    <!-- TextAppearance -->
 
-  <style name="TextAppearance.Doodle.TitleMedium" parent="TextAppearance.Material3.TitleMedium">
-    <item name="android:textStyle">bold</item>
-  </style>
+    <style name="TextAppearance.Doodle.TitleMedium" parent="TextAppearance.Material3.TitleMedium">
+        <item name="android:textStyle">bold</item>
+    </style>
 
-  <style name="TextAppearance.Doodle.LabelLarge" parent="TextAppearance.Material3.LabelLarge">
-    <item name="android:textStyle">bold</item>
-  </style>
+    <style name="TextAppearance.Doodle.LabelLarge" parent="TextAppearance.Material3.LabelLarge">
+        <item name="android:textStyle">bold</item>
+    </style>
 
 </resources>

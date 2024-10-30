@@ -21,99 +21,99 @@
 
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
-  <!-- TITLES -->
+    <!-- TITLES -->
 
-  <string name="title_info">Information</string>
-  <string name="title_apply_changes">Anvend ændringer</string>
-  <string name="title_feedback">Feedback</string>
-  <string name="title_licenses">Open source licenser</string>
+    <string name="title_info">Information</string>
+    <string name="title_apply_changes">Anvend ændringer</string>
+    <string name="title_feedback">Feedback</string>
+    <string name="title_licenses">Open source licenser</string>
 
-  <!-- LABELS -->
+    <!-- LABELS -->
 
-  <string name="label_ms">%1$sms</string>
-  <string name="label_degrees">%1$s grader</string>
+    <string name="label_ms">%1$sms</string>
+    <string name="label_degrees">%1$s grader</string>
 
-  <string name="action_close">Luk</string>
-  <string name="action_back">Tilbage</string>
-  <string name="action_open_link">Åbn ekstern webside</string>
-  <string name="action_hide">Skjul</string>
-  <string name="action_reset">Nulstil</string>
-  <string name="action_deactivate">Deaktivér</string>
-  <string name="action_continue">Fortsæt</string>
-  <string name="action_open_app_info">Åbn appinfo</string>
-  <string name="action_set">Angiv baggrund</string>
-  <string name="action_send_feedback">Giv feedback</string>
-  <string name="action_share">Del</string>
-  <string name="action_share_description">Fortæl dine venner om Doodle</string>
-  <string name="action_email">Send e-mail</string>
-  <string name="action_email_description">Kontakt udvikleren</string>
-  <string name="action_rate">Vurdér på Google Play</string>
-  <string name="action_rate_description">Støt udviklingen</string>
-  <string name="action_github">Doodle Android på GitHub</string>
-  <string name="action_language_select">Vælg sprog</string>
-  <!-- APPEARANCE -->
+    <string name="action_close">Luk</string>
+    <string name="action_back">Tilbage</string>
+    <string name="action_open_link">Åbn ekstern webside</string>
+    <string name="action_hide">Skjul</string>
+    <string name="action_reset">Nulstil</string>
+    <string name="action_deactivate">Deaktivér</string>
+    <string name="action_continue">Fortsæt</string>
+    <string name="action_open_app_info">Åbn appinfo</string>
+    <string name="action_set">Angiv baggrund</string>
+    <string name="action_send_feedback">Giv feedback</string>
+    <string name="action_share">Del</string>
+    <string name="action_share_description">Fortæl dine venner om Doodle</string>
+    <string name="action_email">Send e-mail</string>
+    <string name="action_email_description">Kontakt udvikleren</string>
+    <string name="action_rate">Vurdér på Google Play</string>
+    <string name="action_rate_description">Støt udviklingen</string>
+    <string name="action_github">Doodle Android på GitHub</string>
+    <string name="action_language_select">Vælg sprog</string>
+    <!-- APPEARANCE -->
 
-  <string name="appearance_title">Udseende</string>
-  <string name="appearance_design">Design</string>
-  <string name="appearance_design_doodle">Pixel 4 Doodle Samling</string>
-  <string name="appearance_design_monet">Pixel 6 Material You Samling</string>
-  <string name="appearance_design_anna">Live baggrunde à l\'Anna Kövecses</string>
-  <string name="appearance_variant">Variant</string>
-  <string name="appearance_night_mode">Nattilstand</string>
-  <string name="appearance_night_mode_description">Kun mørke farver</string>
-  <string name="appearance_colors">Udtrukne farver</string>
-  <string name="appearance_colors_description">Anvendes til beregning af tekstkontrast</string>
-  <string name="appearance_colors_description_dynamic">Bruges af systemets tematiseringssystem</string>
-  <string name="appearance_colors_primary">Vælg primær farve</string>
-  <string name="appearance_colors_secondary">Vælg sekundær farve</string>
-  <string name="appearance_colors_tertiary">Vælg tertiær farve</string>
-  <string name="appearance_colors_info_dynamic">På enheder med Android 12 eller nyere og understøttelse af dynamiske farver bruges de tre valgte farver til automatisk at oprette et farvetema som dækker hele systemet.</string>
-  <string name="appearance_random">Tilfældigt baggrundsdesign</string>
-  <!-- PARALLAX -->
+    <string name="appearance_title">Udseende</string>
+    <string name="appearance_design">Design</string>
+    <string name="appearance_design_doodle">Pixel 4 Doodle Samling</string>
+    <string name="appearance_design_monet">Pixel 6 Material You Samling</string>
+    <string name="appearance_design_anna">Live baggrunde à l\'Anna Kövecses</string>
+    <string name="appearance_variant">Variant</string>
+    <string name="appearance_night_mode">Nattilstand</string>
+    <string name="appearance_night_mode_description">Kun mørke farver</string>
+    <string name="appearance_colors">Udtrukne farver</string>
+    <string name="appearance_colors_description">Anvendes til beregning af tekstkontrast</string>
+    <string name="appearance_colors_description_dynamic">Bruges af systemets tematiseringssystem</string>
+    <string name="appearance_colors_primary">Vælg primær farve</string>
+    <string name="appearance_colors_secondary">Vælg sekundær farve</string>
+    <string name="appearance_colors_tertiary">Vælg tertiær farve</string>
+    <string name="appearance_colors_info_dynamic">På enheder med Android 12 eller nyere og understøttelse af dynamiske farver bruges de tre valgte farver til automatisk at oprette et farvetema som dækker hele systemet.</string>
+    <string name="appearance_random">Tilfældigt baggrundsdesign</string>
+    <!-- PARALLAX -->
 
-  <string name="parallax_title">Parallakse</string>
-  <string name="parallax_description">Swipe &amp; hældningseffekt</string>
-  <string name="parallax_tilt">Hældningseffekt</string>
-  <string name="parallax_refresh_rate">Opdateringshastighed for hældningssensoren</string>
-  <string name="parallax_damping">Dæmpning af bevægelse</string>
-  <string name="parallax_damping_description">Nedsæt for mere jævnhed</string>
-  <!-- SIZE -->
+    <string name="parallax_title">Parallakse</string>
+    <string name="parallax_description">Swipe &amp; hældningseffekt</string>
+    <string name="parallax_tilt">Hældningseffekt</string>
+    <string name="parallax_refresh_rate">Opdateringshastighed for hældningssensoren</string>
+    <string name="parallax_damping">Dæmpning af bevægelse</string>
+    <string name="parallax_damping_description">Nedsæt for mere jævnhed</string>
+    <!-- SIZE -->
 
-  <string name="size_title">Formstørrelse</string>
-  <string name="size_category_zoom">Zoom-effekt</string>
-  <string name="size_zoom">Zoom-intensitet</string>
-  <string name="size_zoom_description">Når den øges, zoomer kameraet mere ud</string>
-  <string name="size_zoom_rotation">Rotér nogle figurer, mens der zoomes</string>
-  <string name="size_zoom_rotation_description">Maksimal rotation i grader</string>
-  <string name="size_zoom_duration_description">Nedsæt for hurtigere animation</string>
+    <string name="size_title">Formstørrelse</string>
+    <string name="size_category_zoom">Zoom-effekt</string>
+    <string name="size_zoom">Zoom-intensitet</string>
+    <string name="size_zoom_description">Når den øges, zoomer kameraet mere ud</string>
+    <string name="size_zoom_rotation">Rotér nogle figurer, mens der zoomes</string>
+    <string name="size_zoom_rotation_description">Maksimal rotation i grader</string>
+    <string name="size_zoom_duration_description">Nedsæt for hurtigere animation</string>
 
-  <!-- OTHER -->
+    <!-- OTHER -->
 
-  <string name="other_title">Andre indstillinger</string>
-  <string name="other_language">Sprog</string>
-  <string name="other_language_description">Mange tak til alle de frivillige oversættere hos Transifex! Besøg projektets GitHub-side for at se, hvordan du kan hjælpe med at gøre Doodle Live Wallpapers tilgængelig på dit sprog.</string>
-  <string name="other_language_system">Følg systemet</string>
-  <string name="other_gpu">Hardwareacceleration</string>
-  <string name="other_gpu_description">Slå fra, hvis baggrunden holdt op med at fungere</string>
-  <string name="other_gpu_info">Hardwareacceleration er kun tilgængelig for Doodle fra og med Android 8. Baggrundsanimationerne kan derfor være en smule ustabile.</string>
-  <string name="other_theme">Farvetema for appen</string>
-  <string name="other_theme_description">Prøv et andet udseende</string>
-  <string name="other_theme_auto">Automatisk</string>
-  <string name="other_theme_light">Lys</string>
-  <string name="other_theme_dark">Mørk</string>
-  <string name="other_reset">Nulstil alle indstillinger</string>
-  <string name="other_reset_description">Gør mere end afinstallering ville gøre, fordi indstillingerne gemmes på et særligt sted, da de skal være tilgængelige direkte efter opstart af enheden</string>
-  <!-- ABOUT -->
+    <string name="other_title">Andre indstillinger</string>
+    <string name="other_language">Sprog</string>
+    <string name="other_language_description">Mange tak til alle de frivillige oversættere hos Transifex! Besøg projektets GitHub-side for at se, hvordan du kan hjælpe med at gøre Doodle Live Wallpapers tilgængelig på dit sprog.</string>
+    <string name="other_language_system">Følg systemet</string>
+    <string name="other_gpu">Hardwareacceleration</string>
+    <string name="other_gpu_description">Slå fra, hvis baggrunden holdt op med at fungere</string>
+    <string name="other_gpu_info">Hardwareacceleration er kun tilgængelig for Doodle fra og med Android 8. Baggrundsanimationerne kan derfor være en smule ustabile.</string>
+    <string name="other_theme">Farvetema for appen</string>
+    <string name="other_theme_description">Prøv et andet udseende</string>
+    <string name="other_theme_auto">Automatisk</string>
+    <string name="other_theme_light">Lys</string>
+    <string name="other_theme_dark">Mørk</string>
+    <string name="other_reset">Nulstil alle indstillinger</string>
+    <string name="other_reset_description">Gør mere end afinstallering ville gøre, fordi indstillingerne gemmes på et særligt sted, da de skal være tilgængelige direkte efter opstart af enheden</string>
+    <!-- ABOUT -->
 
-  <string name="about_title">Om</string>
-  <string name="about_description">Oplysninger om udvikleren &amp; mere</string>
-  <string name="about_version">Version</string>
-  <string name="about_developer">Udvikler</string>
-  <string name="about_vending_description">Flere apps fra udvikleren</string>
-  <string name="about_github_description">Kildekode</string>
-  <string name="about_translation_description">Hjælp med at oversætte Doodle</string>
-  <string name="msg_share">Se denne smarte live baggrund-app: \nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
-  <string name="msg_random_warning">Tilfældigt baggrundsdesign er stadig aktivt!</string>
-  <string name="msg_reset">Nulstill alle indstillinger?</string>
-  <string name="msg_force_stop">Tvungen standsning af appen er nødvendig for at anvende ændringer</string>
-  </resources>
+    <string name="about_title">Om</string>
+    <string name="about_description">Oplysninger om udvikleren &amp; mere</string>
+    <string name="about_version">Version</string>
+    <string name="about_developer">Udvikler</string>
+    <string name="about_vending_description">Flere apps fra udvikleren</string>
+    <string name="about_github_description">Kildekode</string>
+    <string name="about_translation_description">Hjælp med at oversætte Doodle</string>
+    <string name="msg_share">Se denne smarte live baggrund-app: \nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
+    <string name="msg_random_warning">Tilfældigt baggrundsdesign er stadig aktivt!</string>
+    <string name="msg_reset">Nulstill alle indstillinger?</string>
+    <string name="msg_force_stop">Tvungen standsning af appen er nødvendig for at anvende ændringer</string>
+</resources>

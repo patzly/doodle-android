@@ -38,6 +38,7 @@ import android.view.Window;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import androidx.annotation.ColorRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -47,271 +48,274 @@ import androidx.core.graphics.ColorUtils;
 import androidx.core.view.WindowCompat;
 import androidx.core.view.WindowInsetsCompat.Type;
 import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
+
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.google.android.material.card.MaterialCardView;
+
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.LinkedList;
+
 import xyz.zedler.patrick.doodle.R;
 
 public class ViewUtil {
 
-  private static final String TAG = ViewUtil.class.getSimpleName();
+    private static final String TAG = ViewUtil.class.getSimpleName();
 
-  private final long idle;
-  private final LinkedList<Timestamp> timestamps;
+    private final long idle;
+    private final LinkedList<Timestamp> timestamps;
 
-  private static class Timestamp {
-
-    private final int id;
-    private long time;
-
-    public Timestamp(int id, long time) {
-      this.id = id;
-      this.time = time;
+    public ViewUtil(long minClickIdle) {
+        idle = minClickIdle;
+        timestamps = new LinkedList<>();
     }
-  }
 
-  // Prevent multiple clicks
+    // Prevent multiple clicks
 
-  public ViewUtil(long minClickIdle) {
-    idle = minClickIdle;
-    timestamps = new LinkedList<>();
-  }
+    public ViewUtil() {
+        idle = 500;
+        timestamps = new LinkedList<>();
+    }
 
-  public ViewUtil() {
-    idle = 500;
-    timestamps = new LinkedList<>();
-  }
+    public static void requestFocusAndShowKeyboard(@NonNull Window window, @NonNull View view) {
+        WindowCompat.getInsetsController(window, view).show(Type.ime());
+        view.requestFocus();
+    }
 
-  public boolean isClickDisabled(int id) {
-    for (int i = 0; i < timestamps.size(); i++) {
-      if (timestamps.get(i).id == id) {
-        if (SystemClock.elapsedRealtime() - timestamps.get(i).time < idle) {
-          return true;
+    public static void setOnClickListeners(View.OnClickListener listener, View... views) {
+        for (View view : views) {
+            view.setOnClickListener(listener);
+        }
+    }
+
+    public static void setOnCheckedChangeListeners(
+            CompoundButton.OnCheckedChangeListener listener,
+            CompoundButton... compoundButtons
+    ) {
+        for (CompoundButton view : compoundButtons) {
+            view.setOnCheckedChangeListener(listener);
+        }
+    }
+
+    public static void setChecked(boolean checked, MaterialCardView... cardViews) {
+        for (MaterialCardView cardView : cardViews) {
+            if (cardView != null) {
+                cardView.setChecked(checked);
+            }
+        }
+    }
+
+    // Show keyboard for EditText
+
+    public static void uncheckAllChildren(ViewGroup... viewGroups) {
+        for (ViewGroup viewGroup : viewGroups) {
+            for (int i = 0; i < viewGroup.getChildCount(); i++) {
+                View child = viewGroup.getChildAt(i);
+                if (child instanceof MaterialCardView) {
+                    ((MaterialCardView) child).setChecked(false);
+                }
+            }
+        }
+    }
+
+    // ClickListeners & OnCheckedChangeListeners
+
+    public static void showBottomSheet(AppCompatActivity activity, BottomSheetDialogFragment sheet) {
+        sheet.show(activity.getSupportFragmentManager(), sheet.toString());
+    }
+
+    public static void addOnGlobalLayoutListener(
+            @Nullable View view, @NonNull OnGlobalLayoutListener listener) {
+        if (view != null) {
+            view.getViewTreeObserver().addOnGlobalLayoutListener(listener);
+        }
+    }
+
+    public static void removeOnGlobalLayoutListener(
+            @Nullable View view, @NonNull OnGlobalLayoutListener victim) {
+        if (view != null) {
+            view.getViewTreeObserver().removeOnGlobalLayoutListener(victim);
+        }
+    }
+
+    public static void startIcon(ImageView imageView) {
+        if (imageView == null) {
+            return;
+        }
+        startIcon(imageView.getDrawable());
+    }
+
+    // BottomSheets
+
+    public static void startIcon(Drawable drawable) {
+        if (drawable == null) {
+            return;
+        }
+        try {
+            ((Animatable) drawable).start();
+        } catch (ClassCastException e) {
+            Log.v(TAG, "icon animation requires AnimVectorDrawable");
+        }
+    }
+
+    // OnGlobalLayoutListeners
+
+    public static void resetAnimatedIcon(ImageView imageView) {
+        if (imageView == null) {
+            return;
+        }
+        try {
+            Animatable animatable = (Animatable) imageView.getDrawable();
+            if (animatable != null) {
+                animatable.stop();
+            }
+            imageView.setImageDrawable(null);
+            imageView.setImageDrawable((Drawable) animatable);
+        } catch (ClassCastException e) {
+            Log.e(TAG, "resetting animated icon requires AnimVectorDrawable");
+        }
+    }
+
+    public static void blinkCard(MaterialCardView cardView, @ColorRes int resId, long duration) {
+        Context context = cardView.getContext();
+        ValueAnimator valueAnimator = ValueAnimator.ofFloat(0, 1);
+        valueAnimator.addUpdateListener(animation -> {
+            cardView.setStrokeColor(
+                    ColorUtils.blendARGB(
+                            ResUtil.getColor(context, R.attr.colorOutline),
+                            ContextCompat.getColor(context, resId),
+                            (float) valueAnimator.getAnimatedValue()
+                    )
+            );
+            cardView.setStrokeWidth(
+                    UiUtil.dpToPx(context, (float) valueAnimator.getAnimatedValue() + 1)
+            );
+        });
+        valueAnimator.setRepeatMode(ValueAnimator.REVERSE);
+        valueAnimator.setRepeatCount(1);
+        valueAnimator.setInterpolator(new FastOutSlowInInterpolator());
+        valueAnimator.setDuration(duration).start();
+    }
+
+    // Animated icons
+
+    public static void centerToolbarTitleOnLargeScreens(MaterialToolbar toolbar) {
+        toolbar.setTitleCentered(!UiUtil.isFullWidth(toolbar.getContext()));
+    }
+
+    public static void centerTextOnLargeScreens(TextView textView) {
+        if (UiUtil.isFullWidth(textView.getContext())) {
+            textView.setTextAlignment(View.TEXT_ALIGNMENT_VIEW_START);
+            textView.setGravity(Gravity.START);
         } else {
-          timestamps.get(i).time = SystemClock.elapsedRealtime();
-          return false;
+            textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+            textView.setGravity(Gravity.CENTER_HORIZONTAL);
         }
-      }
     }
-    timestamps.add(new Timestamp(id, SystemClock.elapsedRealtime()));
-    return false;
-  }
 
-  public boolean isClickEnabled(int id) {
-    return !isClickDisabled(id);
-  }
-
-  public void cleanUp() {
-    for (Iterator<Timestamp> iterator = timestamps.iterator(); iterator.hasNext(); ) {
-      Timestamp timestamp = iterator.next();
-      if (SystemClock.elapsedRealtime() - timestamp.time > idle) {
-        iterator.remove();
-      }
+    public static Drawable getRippleBgListItemSurface(Context context) {
+        float[] radii = new float[8];
+        Arrays.fill(radii, UiUtil.dpToPx(context, 16));
+        RoundRectShape rect = new RoundRectShape(radii, null, null);
+        ShapeDrawable shape = new ShapeDrawable(rect);
+        shape.getPaint().setColor(ResUtil.getColor(context, R.attr.colorSurfaceContainerLow));
+        LayerDrawable layers = new LayerDrawable(new ShapeDrawable[]{shape});
+        layers.setLayerInset(
+                0,
+                UiUtil.dpToPx(context, 8),
+                UiUtil.dpToPx(context, 2),
+                UiUtil.dpToPx(context, 8),
+                UiUtil.dpToPx(context, 2)
+        );
+        return new RippleDrawable(
+                ColorStateList.valueOf(ResUtil.getColorHighlight(context)), null, layers
+        );
     }
-  }
 
-  // Show keyboard for EditText
+    // Blink MaterialCardView
 
-  public static void requestFocusAndShowKeyboard(@NonNull Window window, @NonNull View view) {
-    WindowCompat.getInsetsController(window, view).show(Type.ime());
-    view.requestFocus();
-  }
-
-  // ClickListeners & OnCheckedChangeListeners
-
-  public static void setOnClickListeners(View.OnClickListener listener, View... views) {
-    for (View view : views) {
-      view.setOnClickListener(listener);
+    public static Drawable getBgListItemSelected(Context context) {
+        return getBgListItemSelected(context, 8, 8);
     }
-  }
 
-  public static void setOnCheckedChangeListeners(
-      CompoundButton.OnCheckedChangeListener listener,
-      CompoundButton... compoundButtons
-  ) {
-    for (CompoundButton view : compoundButtons) {
-      view.setOnCheckedChangeListener(listener);
+    // Toolbar
+
+    public static Drawable getBgListItemSelected(
+            Context context, float paddingStart, float paddingEnd
+    ) {
+        boolean isRtl = UiUtil.isLayoutRtl(context);
+        float[] radii = new float[8];
+        Arrays.fill(radii, UiUtil.dpToPx(context, 16));
+        RoundRectShape rect = new RoundRectShape(radii, null, null);
+        ShapeDrawable shape = new ShapeDrawable(rect);
+        shape.getPaint().setColor(ResUtil.getColor(context, R.attr.colorSecondaryContainer));
+        LayerDrawable layers = new LayerDrawable(new ShapeDrawable[]{shape});
+        layers.setLayerInset(
+                0,
+                UiUtil.dpToPx(context, isRtl ? paddingEnd : paddingStart),
+                UiUtil.dpToPx(context, 2),
+                UiUtil.dpToPx(context, isRtl ? paddingStart : paddingEnd),
+                UiUtil.dpToPx(context, 2)
+        );
+        return layers;
     }
-  }
 
-  public static void setChecked(boolean checked, MaterialCardView... cardViews) {
-    for (MaterialCardView cardView : cardViews) {
-      if (cardView != null) {
-        cardView.setChecked(checked);
-      }
-    }
-  }
-
-  public static void uncheckAllChildren(ViewGroup... viewGroups) {
-    for (ViewGroup viewGroup : viewGroups) {
-      for (int i = 0; i < viewGroup.getChildCount(); i++) {
-        View child = viewGroup.getChildAt(i);
-        if (child instanceof MaterialCardView) {
-          ((MaterialCardView) child).setChecked(false);
+    public static void setEnabled(boolean enabled, View... views) {
+        for (View view : views) {
+            view.setEnabled(enabled);
         }
-      }
     }
-  }
 
-  // BottomSheets
+    // Ripple background for surface list items
 
-  public static void showBottomSheet(AppCompatActivity activity, BottomSheetDialogFragment sheet) {
-    sheet.show(activity.getSupportFragmentManager(), sheet.toString());
-  }
-
-  // OnGlobalLayoutListeners
-
-  public static void addOnGlobalLayoutListener(
-      @Nullable View view, @NonNull OnGlobalLayoutListener listener) {
-    if (view != null) {
-      view.getViewTreeObserver().addOnGlobalLayoutListener(listener);
+    public static void setEnabledAlpha(boolean enabled, boolean animated, View... views) {
+        for (View view : views) {
+            view.setEnabled(enabled);
+            if (animated) {
+                view.animate().alpha(enabled ? 1 : 0.5f).setDuration(200).start();
+            } else {
+                view.setAlpha(enabled ? 1 : 0.5f);
+            }
+        }
     }
-  }
 
-  public static void removeOnGlobalLayoutListener(
-      @Nullable View view, @NonNull OnGlobalLayoutListener victim) {
-    if (view != null) {
-      view.getViewTreeObserver().removeOnGlobalLayoutListener(victim);
+    public boolean isClickDisabled(int id) {
+        for (int i = 0; i < timestamps.size(); i++) {
+            if (timestamps.get(i).id == id) {
+                if (SystemClock.elapsedRealtime() - timestamps.get(i).time < idle) {
+                    return true;
+                } else {
+                    timestamps.get(i).time = SystemClock.elapsedRealtime();
+                    return false;
+                }
+            }
+        }
+        timestamps.add(new Timestamp(id, SystemClock.elapsedRealtime()));
+        return false;
     }
-  }
 
-  // Animated icons
-
-  public static void startIcon(ImageView imageView) {
-    if (imageView == null) {
-      return;
+    public boolean isClickEnabled(int id) {
+        return !isClickDisabled(id);
     }
-    startIcon(imageView.getDrawable());
-  }
 
-  public static void startIcon(Drawable drawable) {
-    if (drawable == null) {
-      return;
+    public void cleanUp() {
+        for (Iterator<Timestamp> iterator = timestamps.iterator(); iterator.hasNext(); ) {
+            Timestamp timestamp = iterator.next();
+            if (SystemClock.elapsedRealtime() - timestamp.time > idle) {
+                iterator.remove();
+            }
+        }
     }
-    try {
-      ((Animatable) drawable).start();
-    } catch (ClassCastException e) {
-      Log.v(TAG, "icon animation requires AnimVectorDrawable");
+
+    private static class Timestamp {
+
+        private final int id;
+        private long time;
+
+        public Timestamp(int id, long time) {
+            this.id = id;
+            this.time = time;
+        }
     }
-  }
-
-  public static void resetAnimatedIcon(ImageView imageView) {
-    if (imageView == null) {
-      return;
-    }
-    try {
-      Animatable animatable = (Animatable) imageView.getDrawable();
-      if (animatable != null) {
-        animatable.stop();
-      }
-      imageView.setImageDrawable(null);
-      imageView.setImageDrawable((Drawable) animatable);
-    } catch (ClassCastException e) {
-      Log.e(TAG, "resetting animated icon requires AnimVectorDrawable");
-    }
-  }
-
-  // Blink MaterialCardView
-
-  public static void blinkCard(MaterialCardView cardView, @ColorRes int resId, long duration) {
-    Context context = cardView.getContext();
-    ValueAnimator valueAnimator = ValueAnimator.ofFloat(0, 1);
-    valueAnimator.addUpdateListener(animation -> {
-      cardView.setStrokeColor(
-          ColorUtils.blendARGB(
-              ResUtil.getColor(context, R.attr.colorOutline),
-              ContextCompat.getColor(context, resId),
-              (float) valueAnimator.getAnimatedValue()
-          )
-      );
-      cardView.setStrokeWidth(
-          UiUtil.dpToPx(context, (float) valueAnimator.getAnimatedValue() + 1)
-      );
-    });
-    valueAnimator.setRepeatMode(ValueAnimator.REVERSE);
-    valueAnimator.setRepeatCount(1);
-    valueAnimator.setInterpolator(new FastOutSlowInInterpolator());
-    valueAnimator.setDuration(duration).start();
-  }
-
-  // Toolbar
-
-  public static void centerToolbarTitleOnLargeScreens(MaterialToolbar toolbar) {
-    toolbar.setTitleCentered(!UiUtil.isFullWidth(toolbar.getContext()));
-  }
-
-  public static void centerTextOnLargeScreens(TextView textView) {
-    if (UiUtil.isFullWidth(textView.getContext())) {
-      textView.setTextAlignment(View.TEXT_ALIGNMENT_VIEW_START);
-      textView.setGravity(Gravity.START);
-    } else {
-      textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-      textView.setGravity(Gravity.CENTER_HORIZONTAL);
-    }
-  }
-
-  // Ripple background for surface list items
-
-  public static Drawable getRippleBgListItemSurface(Context context) {
-    float[] radii = new float[8];
-    Arrays.fill(radii, UiUtil.dpToPx(context, 16));
-    RoundRectShape rect = new RoundRectShape(radii, null, null);
-    ShapeDrawable shape = new ShapeDrawable(rect);
-    shape.getPaint().setColor(ResUtil.getColor(context, R.attr.colorSurfaceContainerLow));
-    LayerDrawable layers = new LayerDrawable(new ShapeDrawable[]{shape});
-    layers.setLayerInset(
-        0,
-        UiUtil.dpToPx(context, 8),
-        UiUtil.dpToPx(context, 2),
-        UiUtil.dpToPx(context, 8),
-        UiUtil.dpToPx(context, 2)
-    );
-    return new RippleDrawable(
-        ColorStateList.valueOf(ResUtil.getColorHighlight(context)), null, layers
-    );
-  }
-
-  public static Drawable getBgListItemSelected(Context context) {
-    return getBgListItemSelected(context, 8, 8);
-  }
-
-  public static Drawable getBgListItemSelected(
-      Context context, float paddingStart, float paddingEnd
-  ) {
-    boolean isRtl = UiUtil.isLayoutRtl(context);
-    float[] radii = new float[8];
-    Arrays.fill(radii, UiUtil.dpToPx(context, 16));
-    RoundRectShape rect = new RoundRectShape(radii, null, null);
-    ShapeDrawable shape = new ShapeDrawable(rect);
-    shape.getPaint().setColor(ResUtil.getColor(context, R.attr.colorSecondaryContainer));
-    LayerDrawable layers = new LayerDrawable(new ShapeDrawable[]{shape});
-    layers.setLayerInset(
-        0,
-        UiUtil.dpToPx(context, isRtl ? paddingEnd : paddingStart),
-        UiUtil.dpToPx(context, 2),
-        UiUtil.dpToPx(context, isRtl ? paddingStart : paddingEnd),
-        UiUtil.dpToPx(context, 2)
-    );
-    return layers;
-  }
-
-  public static void setEnabled(boolean enabled, View... views) {
-    for (View view : views) {
-      view.setEnabled(enabled);
-    }
-  }
-
-  public static void setEnabledAlpha(boolean enabled, boolean animated, View... views) {
-    for (View view : views) {
-      view.setEnabled(enabled);
-      if (animated) {
-        view.animate().alpha(enabled ? 1 : 0.5f).setDuration(200).start();
-      } else {
-        view.setAlpha(enabled ? 1 : 0.5f);
-      }
-    }
-  }
 }

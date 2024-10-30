@@ -21,11 +21,11 @@
 
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
 
-  <item android:drawable="?attr/colorSurface" />
+    <item android:drawable="?attr/colorSurface" />
 
-  <item
-    android:id="@+id/splash_logo"
-    android:gravity="center"
-    android:drawable="@drawable/splash_logo_anim" />
+    <item
+        android:id="@+id/splash_logo"
+        android:drawable="@drawable/splash_logo_anim"
+        android:gravity="center" />
 
 </layer-list>

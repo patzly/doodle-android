@@ -23,13 +23,13 @@ import android.os.Bundle;
 
 public class SettingsActivity extends MainActivity {
 
-  @Override
-  protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-  }
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
 
-  @Override
-  public boolean shouldLogoBeVisibleOnOverviewPage() {
-    return false;
-  }
+    @Override
+    public boolean shouldLogoBeVisibleOnOverviewPage() {
+        return false;
+    }
 }

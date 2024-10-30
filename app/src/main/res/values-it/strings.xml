@@ -21,143 +21,143 @@
 
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
-  <string name="wallpaper_description">Coloratissimo sfondo animato con modalità scura automatica e animazioni energeticamente efficienti. Personalizzalo in base alle tue necessità!</string>
-  <string name="wallpaper_description_picker">Esplora una coloratissima collezione di forme, accompagnate da raffinati effetti di zoom e di parallasse quando scorri attraverso le schermate della tua home e sblocchi il tuo dispositivo.
+    <string name="wallpaper_description">Coloratissimo sfondo animato con modalità scura automatica e animazioni energeticamente efficienti. Personalizzalo in base alle tue necessità!</string>
+    <string name="wallpaper_description_picker">Esplora una coloratissima collezione di forme, accompagnate da raffinati effetti di zoom e di parallasse quando scorri attraverso le schermate della tua home e sblocchi il tuo dispositivo.
 Personalizza lo sfondo in base al tuo stile!</string>
 
-  <!-- TITLES -->
+    <!-- TITLES -->
 
-  <string name="title_info">Informazioni</string>
-  <string name="title_apply_changes">Applica modifiche </string>
-  <string name="title_feedback">Feedback</string>
-  <string name="title_licenses">License open source</string>
+    <string name="title_info">Informazioni</string>
+    <string name="title_apply_changes">Applica modifiche </string>
+    <string name="title_feedback">Feedback</string>
+    <string name="title_licenses">License open source</string>
 
-  <!-- LABELS -->
+    <!-- LABELS -->
 
-  <string name="label_ms">%1$sms</string>
-  <string name="label_degrees">%1$s gradi</string>
+    <string name="label_ms">%1$sms</string>
+    <string name="label_degrees">%1$s gradi</string>
 
-  <string name="action_close">Chiudi</string>
-  <string name="action_back">Indietro</string>
-  <string name="action_open_link">Apri sito web esterno</string>
-  <string name="action_hide">Nascondi</string>
-  <string name="action_reset">Resetta</string>
-  <string name="action_deactivate">Disattiva</string>
-  <string name="action_select_all">Seleziona tutto</string>
-  <string name="action_continue">Continua</string>
-  <string name="action_open_app_info">Apri informazioni sull\'app</string>
-  <string name="action_set">Imposta sfondo</string>
-  <string name="action_learn_more">Scopri di più</string>
-  <string name="action_help">Aiuto</string>
-  <string name="action_send_feedback">Manda un feedback</string>
-  <string name="action_share">Condividi</string>
-  <string name="action_share_description">Parla ai tuoi amici di Doodle</string>
-  <string name="action_email">Manda un\'email</string>
-  <string name="action_email_description">Contatta lo sviluppatore</string>
-  <string name="action_rate">Vota su Google Play</string>
-  <string name="action_rate_description">Supporta lo sviluppo </string>
-  <string name="action_github">Doodle Android su GitHub</string>
-  <string name="action_github_description">Crea un nuovo problema</string>
-  <string name="action_language_select">Scegli la lingua</string>
-  <!-- APPEARANCE -->
+    <string name="action_close">Chiudi</string>
+    <string name="action_back">Indietro</string>
+    <string name="action_open_link">Apri sito web esterno</string>
+    <string name="action_hide">Nascondi</string>
+    <string name="action_reset">Resetta</string>
+    <string name="action_deactivate">Disattiva</string>
+    <string name="action_select_all">Seleziona tutto</string>
+    <string name="action_continue">Continua</string>
+    <string name="action_open_app_info">Apri informazioni sull\'app</string>
+    <string name="action_set">Imposta sfondo</string>
+    <string name="action_learn_more">Scopri di più</string>
+    <string name="action_help">Aiuto</string>
+    <string name="action_send_feedback">Manda un feedback</string>
+    <string name="action_share">Condividi</string>
+    <string name="action_share_description">Parla ai tuoi amici di Doodle</string>
+    <string name="action_email">Manda un\'email</string>
+    <string name="action_email_description">Contatta lo sviluppatore</string>
+    <string name="action_rate">Vota su Google Play</string>
+    <string name="action_rate_description">Supporta lo sviluppo </string>
+    <string name="action_github">Doodle Android su GitHub</string>
+    <string name="action_github_description">Crea un nuovo problema</string>
+    <string name="action_language_select">Scegli la lingua</string>
+    <!-- APPEARANCE -->
 
-  <string name="appearance_title">Apparenza</string>
-  <string name="appearance_description">Opzioni forme e colori</string>
-  <string name="appearance_design">Design</string>
-  <string name="appearance_design_doodle">Collezione Doodle Pixel 4</string>
-  <string name="appearance_design_monet">Collezione Pixel 6 Material You</string>
-  <string name="appearance_design_anna">Sfondi animati à l\'Anna Kövecses</string>
-  <string name="appearance_variant">Variante</string>
-  <string name="appearance_night_mode">Tema scuro</string>
-  <string name="appearance_night_mode_description">Solo colori scuri</string>
-  <string name="appearance_night_mode_on">On</string>
-  <string name="appearance_night_mode_off">Off</string>
-  <string name="appearance_colors_category">Colori</string>
-  <string name="appearance_colors">Colori estratti </string>
-  <string name="appearance_colors_description">Usato per calcolare il contrasto del testo</string>
-  <string name="appearance_colors_description_dynamic">Usato dal motore di tematizzazione del sistema</string>
-  <string name="appearance_colors_primary">Scegli il colore primario</string>
-  <string name="appearance_colors_secondary">Scegli il colore secondario</string>
-  <string name="appearance_colors_tertiary">Scegli il colore terziario</string>
-  <string name="appearance_colors_info">Su dispositivi che non supportano colori dimamici (Android 11 o inferiore), solo il colore primario sarà usato per calcolare il contrasto delle scritte del launcher e la tinta dello sfondo nella schermata delle app recenti</string>
-  <string name="appearance_colors_info_dynamic">Su dispositivi con Android 12 o maggiore, o che supportano i colori dinamici, i tre colori selezionati verranno usati automaticamente per creare un tema a livello di sistema</string>
-  <string name="appearance_random">Sfondo casuale</string>
-  <!-- PARALLAX -->
+    <string name="appearance_title">Apparenza</string>
+    <string name="appearance_description">Opzioni forme e colori</string>
+    <string name="appearance_design">Design</string>
+    <string name="appearance_design_doodle">Collezione Doodle Pixel 4</string>
+    <string name="appearance_design_monet">Collezione Pixel 6 Material You</string>
+    <string name="appearance_design_anna">Sfondi animati à l\'Anna Kövecses</string>
+    <string name="appearance_variant">Variante</string>
+    <string name="appearance_night_mode">Tema scuro</string>
+    <string name="appearance_night_mode_description">Solo colori scuri</string>
+    <string name="appearance_night_mode_on">On</string>
+    <string name="appearance_night_mode_off">Off</string>
+    <string name="appearance_colors_category">Colori</string>
+    <string name="appearance_colors">Colori estratti </string>
+    <string name="appearance_colors_description">Usato per calcolare il contrasto del testo</string>
+    <string name="appearance_colors_description_dynamic">Usato dal motore di tematizzazione del sistema</string>
+    <string name="appearance_colors_primary">Scegli il colore primario</string>
+    <string name="appearance_colors_secondary">Scegli il colore secondario</string>
+    <string name="appearance_colors_tertiary">Scegli il colore terziario</string>
+    <string name="appearance_colors_info">Su dispositivi che non supportano colori dimamici (Android 11 o inferiore), solo il colore primario sarà usato per calcolare il contrasto delle scritte del launcher e la tinta dello sfondo nella schermata delle app recenti</string>
+    <string name="appearance_colors_info_dynamic">Su dispositivi con Android 12 o maggiore, o che supportano i colori dinamici, i tre colori selezionati verranno usati automaticamente per creare un tema a livello di sistema</string>
+    <string name="appearance_random">Sfondo casuale</string>
+    <!-- PARALLAX -->
 
-  <string name="parallax_title">Parallax</string>
-  <string name="parallax_description">Scorrimento &amp; effetto inclinazione</string>
-  <string name="parallax_swipe_power_save">Rispetta risparmio energetico</string>
-  <string name="parallax_tilt">Effetto inclinazione</string>
-  <string name="parallax_refresh_rate">Frequenza di aggiornamento del sensore inclinazione</string>
-  <string name="parallax_damping">Riduzione movimento</string>
-  <string name="parallax_damping_description">Diminuisci per più fluidità</string>
-  <string name="parallax_threshold">Soglia di movimento</string>
-  <string name="parallax_threshold_description">Aumenta per mettere in pausa il rendering continuo su piccoli movimenti</string>
-  <string name="parallax_tilt_power_save_description">Metti in pausa l\'effetto di inclinazione quando il risparmio energetico è attivo</string>
+    <string name="parallax_title">Parallax</string>
+    <string name="parallax_description">Scorrimento &amp; effetto inclinazione</string>
+    <string name="parallax_swipe_power_save">Rispetta risparmio energetico</string>
+    <string name="parallax_tilt">Effetto inclinazione</string>
+    <string name="parallax_refresh_rate">Frequenza di aggiornamento del sensore inclinazione</string>
+    <string name="parallax_damping">Riduzione movimento</string>
+    <string name="parallax_damping_description">Diminuisci per più fluidità</string>
+    <string name="parallax_threshold">Soglia di movimento</string>
+    <string name="parallax_threshold_description">Aumenta per mettere in pausa il rendering continuo su piccoli movimenti</string>
+    <string name="parallax_tilt_power_save_description">Metti in pausa l\'effetto di inclinazione quando il risparmio energetico è attivo</string>
 
-  <!-- SIZE -->
+    <!-- SIZE -->
 
-  <string name="size_title">Dimensione figure</string>
-  <string name="size_description">Dimensioni &amp; effetto zoom</string>
-  <string name="size_category_zoom">Effetto zoom</string>
-  <string name="size_category_launcher">Ingrandimento su schermata home</string>
-  <string name="size_category_unlock">Ingrandimento su schermata di blocco</string>
-  <string name="size_scale">Dimensioni</string>
-  <string name="size_scale_description">Utile per schermi più grandi e densità maggiore</string>
-  <string name="size_zoom">Intensità zoom</string>
-  <string name="size_zoom_description">Quando aumentata, si ingrandisce di più</string>
-  <string name="size_zoom_rotation">Ruota delle figure quando ingrandisci </string>
-  <string name="size_zoom_rotation_description">Rotazione massima in gradi</string>
-  <string name="size_zoom_power_save_description">Metti in pausa l\'effetto di ingrandimento quando il risparmio energetico è attivo</string>
-  <string name="size_zoom_launcher">Ingrandisci quando apri il pannello impostazioni veloci o l\'app drawer</string>
-  <string name="size_zoom_launcher_description">Potrebbe non essere disponibile su alcuni dispositivi</string>
-  <string name="size_zoom_damping">Smorzamento animazione</string>
-  <string name="size_zoom_damping_description">Attiva e diminuisci per un ingrandimento più fluido</string>
-  <string name="size_zoom_duration">Sblocca durata zoom</string>
-  <string name="size_zoom_duration_description">Abbassa per animazioni piú veloci</string>
+    <string name="size_title">Dimensione figure</string>
+    <string name="size_description">Dimensioni &amp; effetto zoom</string>
+    <string name="size_category_zoom">Effetto zoom</string>
+    <string name="size_category_launcher">Ingrandimento su schermata home</string>
+    <string name="size_category_unlock">Ingrandimento su schermata di blocco</string>
+    <string name="size_scale">Dimensioni</string>
+    <string name="size_scale_description">Utile per schermi più grandi e densità maggiore</string>
+    <string name="size_zoom">Intensità zoom</string>
+    <string name="size_zoom_description">Quando aumentata, si ingrandisce di più</string>
+    <string name="size_zoom_rotation">Ruota delle figure quando ingrandisci </string>
+    <string name="size_zoom_rotation_description">Rotazione massima in gradi</string>
+    <string name="size_zoom_power_save_description">Metti in pausa l\'effetto di ingrandimento quando il risparmio energetico è attivo</string>
+    <string name="size_zoom_launcher">Ingrandisci quando apri il pannello impostazioni veloci o l\'app drawer</string>
+    <string name="size_zoom_launcher_description">Potrebbe non essere disponibile su alcuni dispositivi</string>
+    <string name="size_zoom_damping">Smorzamento animazione</string>
+    <string name="size_zoom_damping_description">Attiva e diminuisci per un ingrandimento più fluido</string>
+    <string name="size_zoom_duration">Sblocca durata zoom</string>
+    <string name="size_zoom_duration_description">Abbassa per animazioni piú veloci</string>
 
-  <!-- OTHER -->
+    <!-- OTHER -->
 
-  <string name="other_title">Altre opzioni</string>
-  <string name="other_description">Visualizzazione, lingua e reset</string>
-  <string name="other_language">Lingua</string>
-  <string name="other_language_description">Molte grazie a chi ha contribuito volontariamente alla traduzione dell\'app attraverso Transifex! Per favore visita la pagina GitHub del progetto per scoprire come puoi aiutare a rendere Doodle Live Wallpapers disponibile nella tua lingua.</string>
-  <string name="other_language_system">Copia il sistema</string>
-  <string name="other_gpu">Accelerazione hardware</string>
-  <string name="other_gpu_description">Disattiva se lo sfondo va in crash</string>
-  <string name="other_gpu_info">L\'accelerazione hardware è disponibile solo per Doodle a partire da Android 8. Le animazioni dello sfondo potrebbero quindi apparire scattose.</string>
-  <string name="other_launcher">Nascondi l\'icona nel launcher</string>
-  <string name="other_launcher_description">Le impostazioni saranno accessibili sono nel selettore sfondi animati di sistema</string>
-  <string name="other_theme">Colore tema app</string>
-  <string name="other_theme_description">Prova un altro look</string>
-  <string name="other_theme_auto">Auto</string>
-  <string name="other_theme_light">Chiaro</string>
-  <string name="other_theme_dark">Scuro</string>
-  <string name="other_reset">Ripristina tutte le impostazioni</string>
-  <string name="other_reset_description">È più efficace della semplice disinstallazione, perché le impostazioni sono memorizzate in un posto speciale in quanto devono essere accessibili immediatamente dopo l\'avvio del dispositivo</string>
-  <!-- ABOUT -->
+    <string name="other_title">Altre opzioni</string>
+    <string name="other_description">Visualizzazione, lingua e reset</string>
+    <string name="other_language">Lingua</string>
+    <string name="other_language_description">Molte grazie a chi ha contribuito volontariamente alla traduzione dell\'app attraverso Transifex! Per favore visita la pagina GitHub del progetto per scoprire come puoi aiutare a rendere Doodle Live Wallpapers disponibile nella tua lingua.</string>
+    <string name="other_language_system">Copia il sistema</string>
+    <string name="other_gpu">Accelerazione hardware</string>
+    <string name="other_gpu_description">Disattiva se lo sfondo va in crash</string>
+    <string name="other_gpu_info">L\'accelerazione hardware è disponibile solo per Doodle a partire da Android 8. Le animazioni dello sfondo potrebbero quindi apparire scattose.</string>
+    <string name="other_launcher">Nascondi l\'icona nel launcher</string>
+    <string name="other_launcher_description">Le impostazioni saranno accessibili sono nel selettore sfondi animati di sistema</string>
+    <string name="other_theme">Colore tema app</string>
+    <string name="other_theme_description">Prova un altro look</string>
+    <string name="other_theme_auto">Auto</string>
+    <string name="other_theme_light">Chiaro</string>
+    <string name="other_theme_dark">Scuro</string>
+    <string name="other_reset">Ripristina tutte le impostazioni</string>
+    <string name="other_reset_description">È più efficace della semplice disinstallazione, perché le impostazioni sono memorizzate in un posto speciale in quanto devono essere accessibili immediatamente dopo l\'avvio del dispositivo</string>
+    <!-- ABOUT -->
 
-  <string name="about_title">Informazioni</string>
-  <string name="about_description">Informazioni sullo sviluppatore e altro</string>
-  <string name="about_version">Versione</string>
-  <string name="about_changelog">Registro delle modifiche</string>
-  <string name="about_changelog_description">Cosa c\'è di nuovo?</string>
-  <string name="about_developer">Sviluppatore</string>
-  <string name="about_vending_description">Altre app dallo sviluppatore</string>
-  <string name="about_github_description">Codice sorgente</string>
-  <string name="about_translation_description">Aiuta a tradurre Doodle</string>
-  <string name="about_privacy">Informativa privacy</string>
-  <string name="about_privacy_description">Come vengono processati i tuoi dati?</string>
+    <string name="about_title">Informazioni</string>
+    <string name="about_description">Informazioni sullo sviluppatore e altro</string>
+    <string name="about_version">Versione</string>
+    <string name="about_changelog">Registro delle modifiche</string>
+    <string name="about_changelog_description">Cosa c\'è di nuovo?</string>
+    <string name="about_developer">Sviluppatore</string>
+    <string name="about_vending_description">Altre app dallo sviluppatore</string>
+    <string name="about_github_description">Codice sorgente</string>
+    <string name="about_translation_description">Aiuta a tradurre Doodle</string>
+    <string name="about_privacy">Informativa privacy</string>
+    <string name="about_privacy_description">Come vengono processati i tuoi dati?</string>
 
-  <string name="msg_share">Scopri questa fantastica app di sfondi animati: 
+    <string name="msg_share">Scopri questa fantastica app di sfondi animati:
 https://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
-  <string name="msg_hide">Nascondere l\'icona nel launcher?</string>
-  <string name="msg_random">Verranno utilizzati tutti gli sfondi selezionati</string>
-  <string name="msg_random_warning">Sfondo casuale è ancora attivo!</string>
-  <string name="msg_reset">Ripristinare tutte le impostazioni?</string>
-  <string name="msg_force_stop">Chiusura forzata richiesta per applicare i cambiamenti</string>
-  <string name="msg_apply_colors">I nuovi colori verranno applicati al sistema la prossima volta che spegnerai lo schermo</string>
-  <string name="msg_apply_changes">Per applicare (eventualmente) le nuove opzioni si raccomanda un riavvio del servizio dello sfondo. Il riavvio non può essere effettuato automaticamente.
+    <string name="msg_hide">Nascondere l\'icona nel launcher?</string>
+    <string name="msg_random">Verranno utilizzati tutti gli sfondi selezionati</string>
+    <string name="msg_random_warning">Sfondo casuale è ancora attivo!</string>
+    <string name="msg_reset">Ripristinare tutte le impostazioni?</string>
+    <string name="msg_force_stop">Chiusura forzata richiesta per applicare i cambiamenti</string>
+    <string name="msg_apply_colors">I nuovi colori verranno applicati al sistema la prossima volta che spegnerai lo schermo</string>
+    <string name="msg_apply_changes">Per applicare (eventualmente) le nuove opzioni si raccomanda un riavvio del servizio dello sfondo. Il riavvio non può essere effettuato automaticamente.
 Per favore forza la chiusura di Doodle nelle tue impostazioni di sistema e riapplica Doodle come sfondo.</string>
-  <string name="msg_preview_missing">Si è verificato un errore, per favore seleziona Doodle Live Wallpaper manualmente</string>
-  </resources>
+    <string name="msg_preview_missing">Si è verificato un errore, per favore seleziona Doodle Live Wallpaper manualmente</string>
+</resources>

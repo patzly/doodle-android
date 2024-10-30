@@ -17,37 +17,36 @@
   ~ Copyright (c) 2020-2024 by Patrick Zedler
   -->
 
-<animated-vector
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:aapt="http://schemas.android.com/aapt">
-  <aapt:attr name="android:drawable">
-    <vector
-      android:name="vector"
-      android:width="24dp"
-      android:height="24dp"
-      android:viewportWidth="24"
-      android:viewportHeight="24"
-      android:autoMirrored="true">
-      <group
-        android:name="group"
-        android:pivotX="12"
-        android:pivotY="12">
-        <path
-          android:name="path"
-          android:pathData="M12,20q-3.35,0 -5.67,-2.32Q4,15.35 4,12q0,-3.35 2.33,-5.67Q8.64,4 12,4q1.72,0 3.3,0.71 1.57,0.71 2.7,2.04V5q0,-0.42 0.29,-0.71T19,4q0.43,0 0.71,0.29 0.29,0.29 0.29,0.71v5q0,0.42 -0.29,0.71T19,11h-5q-0.43,0 -0.71,-0.29Q13,10.42 13,10q0,-0.43 0.29,-0.71Q13.58,9 14,9h3.2q-0.8,-1.4 -2.19,-2.2Q13.63,6 12,6 9.5,6 7.75,7.75T6,12q0,2.5 1.75,4.25T12,18q1.7,0 3.11,-0.86 1.41,-0.87 2.19,-2.32 0.2,-0.35 0.56,-0.48 0.37,-0.14 0.74,-0.02 0.4,0.13 0.57,0.53 0.18,0.4 -0.02,0.75 -1.02,2 -2.92,3.2Q14.33,20 12,20Z"
-          android:fillColor="#000" />
-      </group>
-    </vector>
-  </aapt:attr>
-  <target android:name="group">
-    <aapt:attr name="android:animation">
-      <objectAnimator
-        android:propertyName="rotation"
-        android:duration="300"
-        android:valueFrom="0"
-        android:valueTo="360"
-        android:valueType="floatType"
-        android:interpolator="@android:interpolator/fast_out_slow_in" />
+<animated-vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt">
+    <aapt:attr name="android:drawable">
+        <vector
+            android:name="vector"
+            android:width="24dp"
+            android:height="24dp"
+            android:autoMirrored="true"
+            android:viewportWidth="24"
+            android:viewportHeight="24">
+            <group
+                android:name="group"
+                android:pivotX="12"
+                android:pivotY="12">
+                <path
+                    android:name="path"
+                    android:fillColor="#000"
+                    android:pathData="M12,20q-3.35,0 -5.67,-2.32Q4,15.35 4,12q0,-3.35 2.33,-5.67Q8.64,4 12,4q1.72,0 3.3,0.71 1.57,0.71 2.7,2.04V5q0,-0.42 0.29,-0.71T19,4q0.43,0 0.71,0.29 0.29,0.29 0.29,0.71v5q0,0.42 -0.29,0.71T19,11h-5q-0.43,0 -0.71,-0.29Q13,10.42 13,10q0,-0.43 0.29,-0.71Q13.58,9 14,9h3.2q-0.8,-1.4 -2.19,-2.2Q13.63,6 12,6 9.5,6 7.75,7.75T6,12q0,2.5 1.75,4.25T12,18q1.7,0 3.11,-0.86 1.41,-0.87 2.19,-2.32 0.2,-0.35 0.56,-0.48 0.37,-0.14 0.74,-0.02 0.4,0.13 0.57,0.53 0.18,0.4 -0.02,0.75 -1.02,2 -2.92,3.2Q14.33,20 12,20Z" />
+            </group>
+        </vector>
     </aapt:attr>
-  </target>
+    <target android:name="group">
+        <aapt:attr name="android:animation">
+            <objectAnimator
+                android:duration="300"
+                android:interpolator="@android:interpolator/fast_out_slow_in"
+                android:propertyName="rotation"
+                android:valueFrom="0"
+                android:valueTo="360"
+                android:valueType="floatType" />
+        </aapt:attr>
+    </target>
 </animated-vector>

@@ -33,41 +33,41 @@ import android.view.View;
 
 public class ColorLuminanceView extends View {
 
-  private Paint paint;
-  private Shader luar;
-  private final float[] color = {1, 1, 1};
-  private boolean hasChanged = true;
+    private final float[] color = {1, 1, 1};
+    private Paint paint;
+    private Shader luar;
+    private boolean hasChanged = true;
 
-  public ColorLuminanceView(Context context) {
-    super(context);
-  }
-
-  public ColorLuminanceView(Context context, AttributeSet attrs) {
-    super(context, attrs);
-  }
-
-  @Override
-  protected void onDraw(Canvas canvas) {
-    if (paint == null) {
-      paint = new Paint();
-      luar = new LinearGradient(
-          0, 0, 0, getHeight(), 0xffffffff, 0xff000000, TileMode.CLAMP
-      );
+    public ColorLuminanceView(Context context) {
+        super(context);
     }
-    if (hasChanged) {
-      int rgb = Color.HSVToColor(color);
-      Shader dalam = new LinearGradient(
-          0, 0, getWidth(), 0, 0xffffffff, rgb, TileMode.CLAMP
-      );
-      paint.setShader(new ComposeShader(luar, dalam, PorterDuff.Mode.MULTIPLY));
-      hasChanged = false;
-    }
-    canvas.drawRect(0, 0, getWidth(), getHeight(), paint);
-  }
 
-  public void setHue(float hue) {
-    color[0] = hue;
-    hasChanged = true;
-    invalidate();
-  }
+    public ColorLuminanceView(Context context, AttributeSet attrs) {
+        super(context, attrs);
+    }
+
+    @Override
+    protected void onDraw(Canvas canvas) {
+        if (paint == null) {
+            paint = new Paint();
+            luar = new LinearGradient(
+                    0, 0, 0, getHeight(), 0xffffffff, 0xff000000, TileMode.CLAMP
+            );
+        }
+        if (hasChanged) {
+            int rgb = Color.HSVToColor(color);
+            Shader dalam = new LinearGradient(
+                    0, 0, getWidth(), 0, 0xffffffff, rgb, TileMode.CLAMP
+            );
+            paint.setShader(new ComposeShader(luar, dalam, PorterDuff.Mode.MULTIPLY));
+            hasChanged = false;
+        }
+        canvas.drawRect(0, 0, getWidth(), getHeight(), paint);
+    }
+
+    public void setHue(float hue) {
+        color[0] = hue;
+        hasChanged = true;
+        invalidate();
+    }
 }

@@ -17,41 +17,40 @@
   ~ Copyright (c) 2019-2024 by Patrick Zedler
   -->
 
-<animated-vector
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:aapt="http://schemas.android.com/aapt">
-  <aapt:attr name="android:drawable">
-    <vector
-      android:name="vector"
-      android:width="24dp"
-      android:height="24dp"
-      android:viewportWidth="24"
-      android:viewportHeight="24"
-      android:autoMirrored="true">
-      <path
-        android:name="battery"
-        android:pathData="M8,22Q7.575,22 7.287,21.712 7,21.425 7,21V5Q7,4.575 7.287,4.287 7.575,4 8,4h2V3Q10,2.575 10.288,2.287 10.575,2 11,2h2Q13.425,2 13.712,2.287 14,2.575 14,3v1h2Q16.425,4 16.712,4.287 17,4.575 17,5v6q0,0.425 -0.287,0.712Q16.425,12 16,12 15.575,12 15.288,11.712 15,11.425 15,11V6H9v14h2.525q0.425,0 0.712,0.287 0.287,0.287 0.287,0.712 0,0.425 -0.287,0.712Q11.95,22 11.525,22Z"
-        android:fillColor="#000000" />
-      <group
-        android:name="group"
-        android:pivotX="17"
-        android:pivotY="18">
-        <path
-          android:name="plus"
-          android:pathData="M16,19H14Q13.575,19 13.288,18.712 13,18.425 13,18 13,17.575 13.288,17.288 13.575,17 14,17h2V15Q16,14.575 16.288,14.288 16.575,14 17,14 17.425,14 17.712,14.288 18,14.575 18,15v2h2q0.425,0 0.712,0.287Q21,17.575 21,18 21,18.425 20.712,18.712 20.425,19 20,19h-2v2q0,0.425 -0.287,0.712Q17.425,22 17,22 16.575,22 16.288,21.712 16,21.425 16,21Z"
-          android:fillColor="#000000" />
-      </group>
-    </vector>
-  </aapt:attr>
-  <target android:name="group">
-    <aapt:attr name="android:animation">
-      <objectAnimator
-        android:propertyName="rotation"
-        android:duration="300"
-        android:valueFrom="0"
-        android:valueTo="180"
-        android:valueType="floatType"
-        android:interpolator="@android:interpolator/fast_out_slow_in" />
+<animated-vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt">
+    <aapt:attr name="android:drawable">
+        <vector
+            android:name="vector"
+            android:width="24dp"
+            android:height="24dp"
+            android:autoMirrored="true"
+            android:viewportWidth="24"
+            android:viewportHeight="24">
+            <path
+                android:name="battery"
+                android:fillColor="#000000"
+                android:pathData="M8,22Q7.575,22 7.287,21.712 7,21.425 7,21V5Q7,4.575 7.287,4.287 7.575,4 8,4h2V3Q10,2.575 10.288,2.287 10.575,2 11,2h2Q13.425,2 13.712,2.287 14,2.575 14,3v1h2Q16.425,4 16.712,4.287 17,4.575 17,5v6q0,0.425 -0.287,0.712Q16.425,12 16,12 15.575,12 15.288,11.712 15,11.425 15,11V6H9v14h2.525q0.425,0 0.712,0.287 0.287,0.287 0.287,0.712 0,0.425 -0.287,0.712Q11.95,22 11.525,22Z" />
+            <group
+                android:name="group"
+                android:pivotX="17"
+                android:pivotY="18">
+                <path
+                    android:name="plus"
+                    android:fillColor="#000000"
+                    android:pathData="M16,19H14Q13.575,19 13.288,18.712 13,18.425 13,18 13,17.575 13.288,17.288 13.575,17 14,17h2V15Q16,14.575 16.288,14.288 16.575,14 17,14 17.425,14 17.712,14.288 18,14.575 18,15v2h2q0.425,0 0.712,0.287Q21,17.575 21,18 21,18.425 20.712,18.712 20.425,19 20,19h-2v2q0,0.425 -0.287,0.712Q17.425,22 17,22 16.575,22 16.288,21.712 16,21.425 16,21Z" />
+            </group>
+        </vector>
     </aapt:attr>
-  </target>
+    <target android:name="group">
+        <aapt:attr name="android:animation">
+            <objectAnimator
+                android:duration="300"
+                android:interpolator="@android:interpolator/fast_out_slow_in"
+                android:propertyName="rotation"
+                android:valueFrom="0"
+                android:valueTo="180"
+                android:valueType="floatType" />
+        </aapt:attr>
+    </target>
 </animated-vector>

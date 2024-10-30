@@ -21,101 +21,101 @@
 
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
-  <string name="wallpaper_description">자동으로 적용되는 다크 모드와 효율적인 애니메이션으로 배터리 친화적인 다채로운 색생의 라이브 배경화면. 취향에 맞게 꾸며보세요!</string>
-  <string name="wallpaper_description_picker">홈 화면에서 스크롤하거나 기기의 잠금을 해제할 때, 부드러운 회전과 확대 효과와 함께 다양한 색상의 모양들을 발견해보세요. \n취향에 맞게 배경화면을 꾸며보세요!</string>
+    <string name="wallpaper_description">자동으로 적용되는 다크 모드와 효율적인 애니메이션으로 배터리 친화적인 다채로운 색생의 라이브 배경화면. 취향에 맞게 꾸며보세요!</string>
+    <string name="wallpaper_description_picker">홈 화면에서 스크롤하거나 기기의 잠금을 해제할 때, 부드러운 회전과 확대 효과와 함께 다양한 색상의 모양들을 발견해보세요. \n취향에 맞게 배경화면을 꾸며보세요!</string>
 
-  <!-- TITLES -->
+    <!-- TITLES -->
 
-  <string name="title_info">정보</string>
-  <string name="title_apply_changes">변경사항 적용</string>
-  <string name="title_feedback">피드백</string>
-  <string name="title_licenses">오픈소스 라이선스</string>
+    <string name="title_info">정보</string>
+    <string name="title_apply_changes">변경사항 적용</string>
+    <string name="title_feedback">피드백</string>
+    <string name="title_licenses">오픈소스 라이선스</string>
 
-  <!-- LABELS -->
+    <!-- LABELS -->
 
-  <string name="label_ms">%1$sms</string>
-  <string name="label_degrees">%1$s도</string>
+    <string name="label_ms">%1$sms</string>
+    <string name="label_degrees">%1$s도</string>
 
-  <!-- ACTIONS -->
+    <!-- ACTIONS -->
 
-  <string name="action_cancel">취소</string>
-  <string name="action_select">선택</string>
-  <string name="action_close">닫기</string>
-  <string name="action_back">뒤로 이동</string>
-  <string name="action_open_link">외부 웹사이트 열기</string>
-  <string name="action_hide">숨기기</string>
-  <string name="action_reset">초기화</string>
-  <string name="action_deactivate">비활성화</string>
-  <string name="action_select_all">모두 선택</string>
-  <string name="action_continue">계속</string>
-  <string name="action_open_app_info">앱 정보 화면 열기</string>
-  <string name="action_set">배경화면 설정</string>
-  <string name="action_learn_more">더 알아보기</string>
-  <string name="action_help">도움말</string>
-  <string name="action_send_feedback">피드백 보내기</string>
-  <string name="action_share">공유</string>
-  <string name="action_share_description">Doodle을 공유해 보세요</string>
-  <string name="action_email">이메일 보내기</string>
-  <string name="action_email_description">개발자에게 문의하기</string>
-  <string name="action_rate">Play 스토어에 평점 남기기</string>
-  <string name="action_rate_description">개발을 지원해주세요</string>
-  <string name="action_github">Doodle Android on GitHub</string>
-  <string name="action_github_description">새로운 문제 보고</string>
-  <string name="action_language_select">언어 선택</string>
-  <string name="action_set_static">고정된 배경화면 설정</string>
-  <string name="action_change_time">시간 변경</string>
-  <string name="action_change_interval">간격 조정</string>
-  <!-- APPEARANCE -->
+    <string name="action_cancel">취소</string>
+    <string name="action_select">선택</string>
+    <string name="action_close">닫기</string>
+    <string name="action_back">뒤로 이동</string>
+    <string name="action_open_link">외부 웹사이트 열기</string>
+    <string name="action_hide">숨기기</string>
+    <string name="action_reset">초기화</string>
+    <string name="action_deactivate">비활성화</string>
+    <string name="action_select_all">모두 선택</string>
+    <string name="action_continue">계속</string>
+    <string name="action_open_app_info">앱 정보 화면 열기</string>
+    <string name="action_set">배경화면 설정</string>
+    <string name="action_learn_more">더 알아보기</string>
+    <string name="action_help">도움말</string>
+    <string name="action_send_feedback">피드백 보내기</string>
+    <string name="action_share">공유</string>
+    <string name="action_share_description">Doodle을 공유해 보세요</string>
+    <string name="action_email">이메일 보내기</string>
+    <string name="action_email_description">개발자에게 문의하기</string>
+    <string name="action_rate">Play 스토어에 평점 남기기</string>
+    <string name="action_rate_description">개발을 지원해주세요</string>
+    <string name="action_github">Doodle Android on GitHub</string>
+    <string name="action_github_description">새로운 문제 보고</string>
+    <string name="action_language_select">언어 선택</string>
+    <string name="action_set_static">고정된 배경화면 설정</string>
+    <string name="action_change_time">시간 변경</string>
+    <string name="action_change_interval">간격 조정</string>
+    <!-- APPEARANCE -->
 
-  <string name="appearance_title">모양새</string>
-  <string name="appearance_description">디자인 &amp; 색상 옵션</string>
-  <string name="appearance_one_ui">삼성 One UI 4.1의 이상한 다이내믹 색상 작동 방식으로 인해 Doodle과 같은 라이브 배경화면이 제공하는 색상들을 모두 무시합니다. \n시스템에 색상을 적용하기 위해서는 먼저 고정된 배경화면을 설정하여 해당 배경화면의 색상을 시스템이 추출하도록 한 다음, 라이브 배경화면을 설정하시면 됩니다.</string>
-  <string name="appearance_design">디자인</string>
-  <string name="appearance_design_doodle">픽셀 4 Doodle 컬렉션</string>
-  <string name="appearance_design_monet">픽셀 6 Material You 컬렉션</string>
-  <string name="appearance_design_anna">Anna Kövecses가 만든 라이브 배경화면</string>
-  <string name="appearance_variant">옵션</string>
-  <string name="appearance_night_mode">다크 모드</string>
-  <string name="appearance_night_mode_description">어두운 색상들만</string>
-  <string name="appearance_night_mode_on">켜짐</string>
-  <string name="appearance_night_mode_off">꺼짐</string>
-  <string name="appearance_light_text">항상 흰색 텍스트 사용하기</string>
-  <string name="appearance_dark_text">어두운 색생의 텍스트 사용</string>
-  <string name="appearance_colors">추출된 색상</string>
-  <string name="appearance_colors_description">텍스트 대비를 계산하기 위해 사용됨</string>
-  <string name="appearance_colors_description_dynamic">시스템의 테마 엔진을 사용함</string>
-  <string name="appearance_colors_description_one_ui">위에서 언급된 바와 같이, 라이브 배경화면에서 제공되는 색상들은 One UI 에서 무시됩니다.</string>
-  <string name="appearance_colors_primary">주 색상 선택</string>
-  <string name="appearance_colors_secondary">두 번째 색상 선택</string>
-  <string name="appearance_colors_tertiary">세 번째 색상 선택</string>
-  <string name="appearance_colors_custom">기타 색상 선택</string>
-  <string name="appearance_colors_info">다이내믹 색상 기능이 지원되지 않는 기기들에서는(안드로이드 11 이하) 주 색상만이 런처 텍스트 색상 대비 계산과 최근 앱 화면의 배경 틴트에 사용됩니다.</string>
-  <string name="appearance_colors_info_dynamic">다이내믹 색상 지원이 가능하고 안드로이드 12 이상인 기기들에서는 선택된 세가지 색상들이 시스템 전체에 적용되는 테마를 생성하기 위해 사용됩니다.</string>
-  <string name="appearance_random">배경화면 디자인을 무작위로 적용</string>
-  <string name="appearance_random_description">언제 변경할지 선택</string>
-  <string name="appearance_random_screen_off">화면이 꺼졌을 때</string>
-  <string name="appearance_random_daily">매일 %1$s에</string>
-  <string name="appearance_random_interval">시간 간격 선택</string>
-  <plurals name="appearance_random_interval_minutes">
-    <item quantity="other">%1$d분 마다</item>
-  </plurals>
-  <plurals name="appearance_random_interval_hours">
-    <item quantity="other">%1$d시간 마다</item>
-  </plurals>
-  <plurals name="appearance_random_interval_days">
-    <item quantity="other">%1$d일 마다</item>
-  </plurals>
+    <string name="appearance_title">모양새</string>
+    <string name="appearance_description">디자인 &amp; 색상 옵션</string>
+    <string name="appearance_one_ui">삼성 One UI 4.1의 이상한 다이내믹 색상 작동 방식으로 인해 Doodle과 같은 라이브 배경화면이 제공하는 색상들을 모두 무시합니다. \n시스템에 색상을 적용하기 위해서는 먼저 고정된 배경화면을 설정하여 해당 배경화면의 색상을 시스템이 추출하도록 한 다음, 라이브 배경화면을 설정하시면 됩니다.</string>
+    <string name="appearance_design">디자인</string>
+    <string name="appearance_design_doodle">픽셀 4 Doodle 컬렉션</string>
+    <string name="appearance_design_monet">픽셀 6 Material You 컬렉션</string>
+    <string name="appearance_design_anna">Anna Kövecses가 만든 라이브 배경화면</string>
+    <string name="appearance_variant">옵션</string>
+    <string name="appearance_night_mode">다크 모드</string>
+    <string name="appearance_night_mode_description">어두운 색상들만</string>
+    <string name="appearance_night_mode_on">켜짐</string>
+    <string name="appearance_night_mode_off">꺼짐</string>
+    <string name="appearance_light_text">항상 흰색 텍스트 사용하기</string>
+    <string name="appearance_dark_text">어두운 색생의 텍스트 사용</string>
+    <string name="appearance_colors">추출된 색상</string>
+    <string name="appearance_colors_description">텍스트 대비를 계산하기 위해 사용됨</string>
+    <string name="appearance_colors_description_dynamic">시스템의 테마 엔진을 사용함</string>
+    <string name="appearance_colors_description_one_ui">위에서 언급된 바와 같이, 라이브 배경화면에서 제공되는 색상들은 One UI 에서 무시됩니다.</string>
+    <string name="appearance_colors_primary">주 색상 선택</string>
+    <string name="appearance_colors_secondary">두 번째 색상 선택</string>
+    <string name="appearance_colors_tertiary">세 번째 색상 선택</string>
+    <string name="appearance_colors_custom">기타 색상 선택</string>
+    <string name="appearance_colors_info">다이내믹 색상 기능이 지원되지 않는 기기들에서는(안드로이드 11 이하) 주 색상만이 런처 텍스트 색상 대비 계산과 최근 앱 화면의 배경 틴트에 사용됩니다.</string>
+    <string name="appearance_colors_info_dynamic">다이내믹 색상 지원이 가능하고 안드로이드 12 이상인 기기들에서는 선택된 세가지 색상들이 시스템 전체에 적용되는 테마를 생성하기 위해 사용됩니다.</string>
+    <string name="appearance_random">배경화면 디자인을 무작위로 적용</string>
+    <string name="appearance_random_description">언제 변경할지 선택</string>
+    <string name="appearance_random_screen_off">화면이 꺼졌을 때</string>
+    <string name="appearance_random_daily">매일 %1$s에</string>
+    <string name="appearance_random_interval">시간 간격 선택</string>
+    <plurals name="appearance_random_interval_minutes">
+        <item quantity="other">%1$d분 마다</item>
+    </plurals>
+    <plurals name="appearance_random_interval_hours">
+        <item quantity="other">%1$d시간 마다</item>
+    </plurals>
+    <plurals name="appearance_random_interval_days">
+        <item quantity="other">%1$d일 마다</item>
+    </plurals>
 
-  <!-- PARALLAX -->
+    <!-- PARALLAX -->
 
-  <string name="parallax_title">기울임 효과</string>
-  <string name="parallax_description">스와이프 &amp; 기울임 효과</string>
-  <string name="parallax_swipe_category">스와이프</string>
-  <string name="parallax_swipe">스와이프 효과</string>
-  <string name="parallax_swipe_power_save">절전 모드 설정 따름</string>
-  <string name="other_language_system">시스템 색상 적용</string>
-  <string name="other_language_system_description">번역이 존재하지 않으면 영어로</string>
-  <string name="other_gpu">하드웨어 가속</string>
-  <string name="other_theme_light">라이트</string>
-  <string name="about_changelog_description">변경사항:</string>
-  </resources>
+    <string name="parallax_title">기울임 효과</string>
+    <string name="parallax_description">스와이프 &amp; 기울임 효과</string>
+    <string name="parallax_swipe_category">스와이프</string>
+    <string name="parallax_swipe">스와이프 효과</string>
+    <string name="parallax_swipe_power_save">절전 모드 설정 따름</string>
+    <string name="other_language_system">시스템 색상 적용</string>
+    <string name="other_language_system_description">번역이 존재하지 않으면 영어로</string>
+    <string name="other_gpu">하드웨어 가속</string>
+    <string name="other_theme_light">라이트</string>
+    <string name="about_changelog_description">변경사항:</string>
+</resources>

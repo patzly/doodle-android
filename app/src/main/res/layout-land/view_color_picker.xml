@@ -16,113 +16,112 @@
   ~
   ~ Copyright (c) 2019-2024 by Patrick Zedler
   -->
-<LinearLayout
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:tools="http://schemas.android.com/tools"
-  android:layout_width="match_parent"
-  android:layout_height="wrap_content"
-  android:orientation="horizontal"
-  android:clipToPadding="false"
-  android:clipChildren="false"
-  android:paddingLeft="24dp"
-  android:paddingRight="24dp"
-  android:paddingTop="16dp"
-  android:baselineAligned="false">
-
-  <LinearLayout
-    android:layout_width="wrap_content"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:layout_gravity="center_vertical"
-    android:gravity="center"
-    android:layout_marginEnd="16dp">
+    android:baselineAligned="false"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:orientation="horizontal"
+    android:paddingLeft="24dp"
+    android:paddingTop="16dp"
+    android:paddingRight="24dp">
 
-    <com.google.android.material.card.MaterialCardView
-      android:id="@+id/card_color_picker_color_old"
-      android:layout_width="40dp"
-      android:layout_height="40dp"
-      app:cardCornerRadius="20dp"
-      app:strokeColor="?attr/colorOutline"
-      app:cardBackgroundColor="#faa" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
+        android:orientation="vertical">
 
-    <ImageView
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:paddingTop="4dp"
-      android:paddingBottom="4dp"
-      android:src="@drawable/ic_rounded_keyboard_arrow_down"
-      app:tint="?attr/colorOnSurfaceVariant"
-      tools:ignore="ContentDescription" />
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_color_picker_color_old"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:cardBackgroundColor="#faa"
+            app:cardCornerRadius="20dp"
+            app:strokeColor="?attr/colorOutline" />
 
-    <com.google.android.material.card.MaterialCardView
-      android:id="@+id/card_color_picker_color_new"
-      android:layout_width="40dp"
-      android:layout_height="40dp"
-      app:cardCornerRadius="20dp"
-      app:strokeColor="?attr/colorOutline"
-      app:cardBackgroundColor="#aaf" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:src="@drawable/ic_rounded_keyboard_arrow_down"
+            app:tint="?attr/colorOnSurfaceVariant"
+            tools:ignore="ContentDescription" />
 
-  </LinearLayout>
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_color_picker_color_new"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:cardBackgroundColor="#aaf"
+            app:cardCornerRadius="20dp"
+            app:strokeColor="?attr/colorOutline" />
 
-  <FrameLayout
-    android:layout_width="0dp"
-    android:layout_height="@dimen/color_picker_hsv_height"
-    android:layout_weight="1"
-    android:clipChildren="false">
+    </LinearLayout>
 
-    <com.google.android.material.card.MaterialCardView
-      android:layout_width="match_parent"
-      android:layout_height="match_parent"
-      app:cardCornerRadius="16dp"
-      app:strokeColor="?attr/colorOutline">
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="@dimen/color_picker_hsv_height"
+        android:layout_weight="1"
+        android:clipChildren="false">
 
-      <xyz.zedler.patrick.doodle.view.ColorLuminanceView
-        android:id="@+id/view_color_picker_luminance"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/color_picker_hsv_height" />
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:cardCornerRadius="16dp"
+            app:strokeColor="?attr/colorOutline">
 
-    </com.google.android.material.card.MaterialCardView>
+            <xyz.zedler.patrick.doodle.view.ColorLuminanceView
+                android:id="@+id/view_color_picker_luminance"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/color_picker_hsv_height" />
 
-    <com.google.android.material.card.MaterialCardView
-      android:id="@+id/card_color_picker_target"
-      android:layout_width="22dp"
-      android:layout_height="22dp"
-      app:cardCornerRadius="11dp"
-      app:strokeColor="?attr/colorOutline"
-      app:cardBackgroundColor="?attr/colorPrimaryContainer" />
+        </com.google.android.material.card.MaterialCardView>
 
-  </FrameLayout>
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_color_picker_target"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            app:cardBackgroundColor="?attr/colorPrimaryContainer"
+            app:cardCornerRadius="11dp"
+            app:strokeColor="?attr/colorOutline" />
 
-  <FrameLayout
-    android:layout_width="wrap_content"
-    android:layout_height="@dimen/color_picker_hsv_height">
+    </FrameLayout>
 
-    <com.google.android.material.card.MaterialCardView
-      android:layout_width="32dp"
-      android:layout_height="match_parent"
-      android:layout_marginStart="16dp"
-      app:cardCornerRadius="16dp"
-      app:strokeColor="?attr/colorOutline">
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/color_picker_hsv_height">
 
-      <ImageView
-        android:id="@+id/image_color_picker_hue"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="fitXY"
-        android:src="@drawable/image_color_picker_hue"
-        tools:ignore="ContentDescription" />
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="32dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="16dp"
+            app:cardCornerRadius="16dp"
+            app:strokeColor="?attr/colorOutline">
 
-    </com.google.android.material.card.MaterialCardView>
+            <ImageView
+                android:id="@+id/image_color_picker_hue"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/image_color_picker_hue"
+                tools:ignore="ContentDescription" />
 
-    <ImageView
-      android:id="@+id/image_color_picker_cursor"
-      android:layout_width="32dp"
-      android:layout_height="32dp"
-      android:layout_marginStart="2dp"
-      android:src="@drawable/ic_rounded_drag_pointer"
-      tools:ignore="ContentDescription" />
+        </com.google.android.material.card.MaterialCardView>
 
-  </FrameLayout>
+        <ImageView
+            android:id="@+id/image_color_picker_cursor"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="2dp"
+            android:src="@drawable/ic_rounded_drag_pointer"
+            tools:ignore="ContentDescription" />
+
+    </FrameLayout>
 
 </LinearLayout>

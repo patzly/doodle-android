@@ -21,213 +21,213 @@
 
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
-  <string name="wallpaper_description">Ein farbenfroher Live-Hintergrund mit Nachtmodus und akku-effizienten Animationen. Passe ihn an deine Bedürfnisse an!</string>
-  <string name="wallpaper_description_picker">Entdecke eine farbenfrohe Sammlung von Formen, verfeinert mit sanften Parallax- und Zoom-Effekten beim Wechseln zwischen deinen Startbildschirmen und Entsperren deines Geräts.\nPasse den Hintergrund mit mehreren Optionen an deinen eigenen Stil an!</string>
+    <string name="wallpaper_description">Ein farbenfroher Live-Hintergrund mit Nachtmodus und akku-effizienten Animationen. Passe ihn an deine Bedürfnisse an!</string>
+    <string name="wallpaper_description_picker">Entdecke eine farbenfrohe Sammlung von Formen, verfeinert mit sanften Parallax- und Zoom-Effekten beim Wechseln zwischen deinen Startbildschirmen und Entsperren deines Geräts.\nPasse den Hintergrund mit mehreren Optionen an deinen eigenen Stil an!</string>
 
-  <!-- TITLES -->
+    <!-- TITLES -->
 
-  <string name="title_info">Informationen</string>
-  <string name="title_apply_changes">Änderungen anwenden</string>
-  <string name="title_logcat">Log-Nachrichten</string>
-  <string name="title_feedback">Rückmeldung</string>
-  <string name="title_licenses">Open-Source-Lizenzen</string>
+    <string name="title_info">Informationen</string>
+    <string name="title_apply_changes">Änderungen anwenden</string>
+    <string name="title_logcat">Log-Nachrichten</string>
+    <string name="title_feedback">Rückmeldung</string>
+    <string name="title_licenses">Open-Source-Lizenzen</string>
 
-  <!-- LABELS -->
+    <!-- LABELS -->
 
-  <string name="label_ms">%1$sms</string>
-  <string name="label_degrees">%1$s°</string>
+    <string name="label_ms">%1$sms</string>
+    <string name="label_degrees">%1$s°</string>
 
-  <!-- ACTIONS -->
+    <!-- ACTIONS -->
 
-  <string name="action_cancel">Abbrechen</string>
-  <string name="action_select">Auswählen</string>
-  <string name="action_close">Schließen</string>
-  <string name="action_back">Zurück</string>
-  <string name="action_open_link">Externe Website öffnen</string>
-  <string name="action_hide">Verbergen</string>
-  <string name="action_reset">Zurücksetzen</string>
-  <string name="action_deactivate">Deaktivieren</string>
-  <string name="action_select_all">Alle auswählen</string>
-  <string name="action_continue">Fortfahren</string>
-  <string name="action_reload">Neuladen</string>
-  <string name="action_open_app_info">App-Info öffnen</string>
-  <string name="action_set">Hintergrund festlegen</string>
-  <string name="action_learn_more">Mehr erfahren</string>
-  <string name="action_help">Hilfe</string>
-  <string name="action_send_feedback">Feedback senden</string>
-  <string name="action_share">Teilen</string>
-  <string name="action_share_description">Freunden von Doodle erzählen</string>
-  <string name="action_email">Email senden</string>
-  <string name="action_email_description">Den Entwickler kontaktieren</string>
-  <string name="action_rate">Bei Google Play bewerten</string>
-  <string name="action_rate_description">Entwicklung unterstützen</string>
-  <string name="action_github">Doodle Android auf GitHub</string>
-  <string name="action_github_description">Neues Issue öffnen</string>
-  <string name="action_language_select">Sprache auswählen</string>
-  <string name="action_set_static">Statischen Hintergrund festlegen</string>
-  <string name="action_change_time">Uhrzeit ändern</string>
-  <string name="action_change_interval">Intervall ändern</string>
-  <string name="action_copy_to_clipboard">Kopieren</string>
+    <string name="action_cancel">Abbrechen</string>
+    <string name="action_select">Auswählen</string>
+    <string name="action_close">Schließen</string>
+    <string name="action_back">Zurück</string>
+    <string name="action_open_link">Externe Website öffnen</string>
+    <string name="action_hide">Verbergen</string>
+    <string name="action_reset">Zurücksetzen</string>
+    <string name="action_deactivate">Deaktivieren</string>
+    <string name="action_select_all">Alle auswählen</string>
+    <string name="action_continue">Fortfahren</string>
+    <string name="action_reload">Neuladen</string>
+    <string name="action_open_app_info">App-Info öffnen</string>
+    <string name="action_set">Hintergrund festlegen</string>
+    <string name="action_learn_more">Mehr erfahren</string>
+    <string name="action_help">Hilfe</string>
+    <string name="action_send_feedback">Feedback senden</string>
+    <string name="action_share">Teilen</string>
+    <string name="action_share_description">Freunden von Doodle erzählen</string>
+    <string name="action_email">Email senden</string>
+    <string name="action_email_description">Den Entwickler kontaktieren</string>
+    <string name="action_rate">Bei Google Play bewerten</string>
+    <string name="action_rate_description">Entwicklung unterstützen</string>
+    <string name="action_github">Doodle Android auf GitHub</string>
+    <string name="action_github_description">Neues Issue öffnen</string>
+    <string name="action_language_select">Sprache auswählen</string>
+    <string name="action_set_static">Statischen Hintergrund festlegen</string>
+    <string name="action_change_time">Uhrzeit ändern</string>
+    <string name="action_change_interval">Intervall ändern</string>
+    <string name="action_copy_to_clipboard">Kopieren</string>
 
-  <!-- APPEARANCE -->
+    <!-- APPEARANCE -->
 
-  <string name="appearance_title">Aussehen</string>
-  <string name="appearance_description">Design &amp;amp; Farboptionen</string>
-  <string name="appearance_one_ui">Samsungs mangelhafte Implementierung dynamischer Farben in One UI 4.1 ignoriert die von Live-Hintergrund-Apps wie Doodle bereitgestellten Farben vollständig. Um die Farben auf dein System anzuwenden, lege unten das aktuelle Design als statischen Hintergrund fest, damit das System die Farben abrufen kann, und wende es dann erneut als Live-Hintergrund an.</string>
-  <string name="appearance_design">Design</string>
-  <string name="appearance_design_doodle">Pixel 4 Doodle-Kollektion</string>
-  <string name="appearance_design_monet">Pixel 6 Material-You-Kollektion</string>
-  <string name="appearance_design_anna">Live-Hintergründe à l\'Anna Kövecses</string>
-  <string name="appearance_variant">Variation</string>
-  <string name="appearance_night_mode">Nachtmodus</string>
-  <string name="appearance_night_mode_description">Abgedunkelte Farben</string>
-  <string name="appearance_night_mode_on">Ein</string>
-  <string name="appearance_night_mode_off">Aus</string>
-  <string name="appearance_light_text">Immer hellen Text nutzen</string>
-  <string name="appearance_light_text_description">Statt dunklem Text auf hellen Hintergründen</string>
-  <string name="appearance_dark_text">Dunklen Text nutzen</string>
-  <string name="appearance_dark_text_description">Nur auf ausreichend hellen Hintergründen</string>
-  <string name="appearance_colors_category">Farben</string>
-  <string name="appearance_colors">Extrahierte Farben</string>
-  <string name="appearance_colors_description">Wird zur Berechnung des Textkontrasts verwendet</string>
-  <string name="appearance_colors_description_dynamic">Werden von dem Design-Generator des Systems genutzt</string>
-  <string name="appearance_colors_description_one_ui">Wie oben beschrieben, ignoriert One UI die von Live-Hintergründen bereitgestellten Farben</string>
-  <string name="appearance_colors_primary">Primäre Farbe auswählen</string>
-  <string name="appearance_colors_secondary">Sekundäre Farbe auswählen</string>
-  <string name="appearance_colors_tertiary">Tertiäre Farbe auswählen</string>
-  <string name="appearance_colors_custom">Eigene Farbe auswählen</string>
-  <string name="appearance_colors_info">Auf Geräten ohne Unterstützung für dynamische Farbschemas (Android 11 oder niedriger) wird nur die Primärfarbe verwendet, um den Textkontrast des Launchers zu berechnen und den Hintergrund des „Letzte Apps“-Bildschirms einzufärben.</string>
-  <string name="appearance_colors_info_dynamic">Auf Geräten mit Android 12 oder höher und Unterstützung für dynamische Farbschemas werden die drei ausgewählten Farben verwendet, um automatisch ein systemweites Farbschema zu erstellen.</string>
-  <string name="appearance_random">Zufälliges Hintergrunddesign</string>
-  <string name="appearance_random_description">Auslöser auswählen</string>
-  <string name="appearance_random_screen_off">Bildschirm aus</string>
-  <string name="appearance_random_daily">Täglich um %1$s Uhr</string>
-  <string name="appearance_random_interval">Intervall auswählen</string>
-  <plurals name="appearance_random_interval_minutes">
-    <item quantity="one">Jede Minute</item>
-    <item quantity="other">Alle %1$d Minuten</item>
-  </plurals>
-  <plurals name="appearance_random_interval_hours">
-    <item quantity="one">Jede Stunde</item>
-    <item quantity="other">Alle %1$d Stunden</item>
-  </plurals>
-  <plurals name="appearance_random_interval_days">
-    <item quantity="one">Jeden Tag</item>
-    <item quantity="other">Alle %1$d Tage</item>
-  </plurals>
+    <string name="appearance_title">Aussehen</string>
+    <string name="appearance_description">Design &amp;amp; Farboptionen</string>
+    <string name="appearance_one_ui">Samsungs mangelhafte Implementierung dynamischer Farben in One UI 4.1 ignoriert die von Live-Hintergrund-Apps wie Doodle bereitgestellten Farben vollständig. Um die Farben auf dein System anzuwenden, lege unten das aktuelle Design als statischen Hintergrund fest, damit das System die Farben abrufen kann, und wende es dann erneut als Live-Hintergrund an.</string>
+    <string name="appearance_design">Design</string>
+    <string name="appearance_design_doodle">Pixel 4 Doodle-Kollektion</string>
+    <string name="appearance_design_monet">Pixel 6 Material-You-Kollektion</string>
+    <string name="appearance_design_anna">Live-Hintergründe à l\'Anna Kövecses</string>
+    <string name="appearance_variant">Variation</string>
+    <string name="appearance_night_mode">Nachtmodus</string>
+    <string name="appearance_night_mode_description">Abgedunkelte Farben</string>
+    <string name="appearance_night_mode_on">Ein</string>
+    <string name="appearance_night_mode_off">Aus</string>
+    <string name="appearance_light_text">Immer hellen Text nutzen</string>
+    <string name="appearance_light_text_description">Statt dunklem Text auf hellen Hintergründen</string>
+    <string name="appearance_dark_text">Dunklen Text nutzen</string>
+    <string name="appearance_dark_text_description">Nur auf ausreichend hellen Hintergründen</string>
+    <string name="appearance_colors_category">Farben</string>
+    <string name="appearance_colors">Extrahierte Farben</string>
+    <string name="appearance_colors_description">Wird zur Berechnung des Textkontrasts verwendet</string>
+    <string name="appearance_colors_description_dynamic">Werden von dem Design-Generator des Systems genutzt</string>
+    <string name="appearance_colors_description_one_ui">Wie oben beschrieben, ignoriert One UI die von Live-Hintergründen bereitgestellten Farben</string>
+    <string name="appearance_colors_primary">Primäre Farbe auswählen</string>
+    <string name="appearance_colors_secondary">Sekundäre Farbe auswählen</string>
+    <string name="appearance_colors_tertiary">Tertiäre Farbe auswählen</string>
+    <string name="appearance_colors_custom">Eigene Farbe auswählen</string>
+    <string name="appearance_colors_info">Auf Geräten ohne Unterstützung für dynamische Farbschemas (Android 11 oder niedriger) wird nur die Primärfarbe verwendet, um den Textkontrast des Launchers zu berechnen und den Hintergrund des „Letzte Apps“-Bildschirms einzufärben.</string>
+    <string name="appearance_colors_info_dynamic">Auf Geräten mit Android 12 oder höher und Unterstützung für dynamische Farbschemas werden die drei ausgewählten Farben verwendet, um automatisch ein systemweites Farbschema zu erstellen.</string>
+    <string name="appearance_random">Zufälliges Hintergrunddesign</string>
+    <string name="appearance_random_description">Auslöser auswählen</string>
+    <string name="appearance_random_screen_off">Bildschirm aus</string>
+    <string name="appearance_random_daily">Täglich um %1$s Uhr</string>
+    <string name="appearance_random_interval">Intervall auswählen</string>
+    <plurals name="appearance_random_interval_minutes">
+        <item quantity="one">Jede Minute</item>
+        <item quantity="other">Alle %1$d Minuten</item>
+    </plurals>
+    <plurals name="appearance_random_interval_hours">
+        <item quantity="one">Jede Stunde</item>
+        <item quantity="other">Alle %1$d Stunden</item>
+    </plurals>
+    <plurals name="appearance_random_interval_days">
+        <item quantity="one">Jeden Tag</item>
+        <item quantity="other">Alle %1$d Tage</item>
+    </plurals>
 
-  <!-- PARALLAX -->
+    <!-- PARALLAX -->
 
-  <string name="parallax_title">Parallax-Effekt</string>
-  <string name="parallax_description">Wischen &amp;amp; Neigung</string>
-  <string name="parallax_swipe_category">Swipen</string>
-  <string name="parallax_swipe_touch_wiz">Es scheint, dass dein aktueller Launcher Samsung TouchWiz oder One UI Home ist, welche den Swipe-Effekt nicht unterstützen. Probiere es mit einem anderen Launcher, um ihn zu aktivieren.\nDu kannst diese Warnung ignorieren, wenn du bereits einen anderen Launcher als Standard festgelegt hast.</string>
-  <string name="parallax_swipe">Swipe-Effekt</string>
-  <string name="parallax_swipe_description">Horizontaler Versatz beim Wechseln zwischen Startbildschirmen</string>
-  <string name="parallax_swipe_power_save">Energiesparmodus beachten</string>
-  <string name="parallax_swipe_power_save_description">Swipe-Effekt pausieren, wenn der Energiesparmodus aktiv ist</string>
-  <string name="parallax_tilt_category">Neigen</string>
-  <string name="parallax_tilt">Neigungs-Effekt</string>
-  <string name="parallax_tilt_description">Bewegung bei Neigung des Geräts</string>
-  <string name="parallax_tilt_warning">Erhöhter Akkuverbrauch</string>
-  <string name="parallax_refresh_rate">Aktualisierungsrate des Neigungs-Sensors</string>
-  <string name="parallax_refresh_rate_description">Zu kleine Abstände können die Animationen ruckelig werden lassen</string>
-  <string name="parallax_damping">Bewegungsdämpfung</string>
-  <string name="parallax_damping_description">Verringern für weichere Bewegungen</string>
-  <string name="parallax_threshold">Bewegungsschwelle</string>
-  <string name="parallax_threshold_description">Erhöhen, um das kontinuierliche Rendern trotz kleiner Bewegungen zu pausieren</string>
-  <string name="parallax_tilt_power_save_description">Neigungs-Effekt pausieren, wenn der Energiesparmodus aktiv ist</string>
+    <string name="parallax_title">Parallax-Effekt</string>
+    <string name="parallax_description">Wischen &amp;amp; Neigung</string>
+    <string name="parallax_swipe_category">Swipen</string>
+    <string name="parallax_swipe_touch_wiz">Es scheint, dass dein aktueller Launcher Samsung TouchWiz oder One UI Home ist, welche den Swipe-Effekt nicht unterstützen. Probiere es mit einem anderen Launcher, um ihn zu aktivieren.\nDu kannst diese Warnung ignorieren, wenn du bereits einen anderen Launcher als Standard festgelegt hast.</string>
+    <string name="parallax_swipe">Swipe-Effekt</string>
+    <string name="parallax_swipe_description">Horizontaler Versatz beim Wechseln zwischen Startbildschirmen</string>
+    <string name="parallax_swipe_power_save">Energiesparmodus beachten</string>
+    <string name="parallax_swipe_power_save_description">Swipe-Effekt pausieren, wenn der Energiesparmodus aktiv ist</string>
+    <string name="parallax_tilt_category">Neigen</string>
+    <string name="parallax_tilt">Neigungs-Effekt</string>
+    <string name="parallax_tilt_description">Bewegung bei Neigung des Geräts</string>
+    <string name="parallax_tilt_warning">Erhöhter Akkuverbrauch</string>
+    <string name="parallax_refresh_rate">Aktualisierungsrate des Neigungs-Sensors</string>
+    <string name="parallax_refresh_rate_description">Zu kleine Abstände können die Animationen ruckelig werden lassen</string>
+    <string name="parallax_damping">Bewegungsdämpfung</string>
+    <string name="parallax_damping_description">Verringern für weichere Bewegungen</string>
+    <string name="parallax_threshold">Bewegungsschwelle</string>
+    <string name="parallax_threshold_description">Erhöhen, um das kontinuierliche Rendern trotz kleiner Bewegungen zu pausieren</string>
+    <string name="parallax_tilt_power_save_description">Neigungs-Effekt pausieren, wenn der Energiesparmodus aktiv ist</string>
 
-  <!-- SIZE -->
+    <!-- SIZE -->
 
-  <string name="size_title">Größe der Formen</string>
-  <string name="size_description">Skalierung &amp;amp; Zoom-Effekt</string>
-  <string name="size_category_zoom">Zoom-Effekt</string>
-  <string name="size_category_launcher">Zoom auf Startbildschirm</string>
-  <string name="size_category_unlock">Zoom auf Sperrbildschirm</string>
-  <string name="size_scale">Skalierung</string>
-  <string name="size_scale_description">Nützlich für große Displays und Auflösungen</string>
-  <string name="size_zoom">Zoomstärke</string>
-  <string name="size_zoom_description">Je höher, desto weiter wird herausgezoomt</string>
-  <string name="size_zoom_rotation">Drehen ausgewählter Formen während des Zoomens</string>
-  <string name="size_zoom_rotation_description">Maximale Drehung in Grad</string>
-  <string name="size_zoom_power_save_description">Zoom-Effekt pausieren, wenn der Energiesparmodus aktiv ist</string>
-  <string name="size_zoom_launcher">Beim Öffnen der Schnelleinstellungen oder des App-Drawers herauszoomen</string>
-  <string name="size_zoom_launcher_description">Ist auf manchen Geräten nicht verfügbar</string>
-  <string name="size_zoom_damping">Animationsglättung</string>
-  <string name="size_zoom_damping_description">Aktivieren und verringern für weicheres Zoomen</string>
-  <string name="size_zoom_unlock">Auf dem Sperrbildschirm zoomen</string>
-  <string name="size_zoom_unlock_description">Richtung auswählen</string>
-  <string name="size_zoom_unlock_in">Hineinzoomen</string>
-  <string name="size_zoom_unlock_out">Herauszoomen</string>
-  <string name="size_zoom_duration">Zoom-Dauer beim Entsperren</string>
-  <string name="size_zoom_duration_description">Verringern für schnellere Animationen</string>
+    <string name="size_title">Größe der Formen</string>
+    <string name="size_description">Skalierung &amp;amp; Zoom-Effekt</string>
+    <string name="size_category_zoom">Zoom-Effekt</string>
+    <string name="size_category_launcher">Zoom auf Startbildschirm</string>
+    <string name="size_category_unlock">Zoom auf Sperrbildschirm</string>
+    <string name="size_scale">Skalierung</string>
+    <string name="size_scale_description">Nützlich für große Displays und Auflösungen</string>
+    <string name="size_zoom">Zoomstärke</string>
+    <string name="size_zoom_description">Je höher, desto weiter wird herausgezoomt</string>
+    <string name="size_zoom_rotation">Drehen ausgewählter Formen während des Zoomens</string>
+    <string name="size_zoom_rotation_description">Maximale Drehung in Grad</string>
+    <string name="size_zoom_power_save_description">Zoom-Effekt pausieren, wenn der Energiesparmodus aktiv ist</string>
+    <string name="size_zoom_launcher">Beim Öffnen der Schnelleinstellungen oder des App-Drawers herauszoomen</string>
+    <string name="size_zoom_launcher_description">Ist auf manchen Geräten nicht verfügbar</string>
+    <string name="size_zoom_damping">Animationsglättung</string>
+    <string name="size_zoom_damping_description">Aktivieren und verringern für weicheres Zoomen</string>
+    <string name="size_zoom_unlock">Auf dem Sperrbildschirm zoomen</string>
+    <string name="size_zoom_unlock_description">Richtung auswählen</string>
+    <string name="size_zoom_unlock_in">Hineinzoomen</string>
+    <string name="size_zoom_unlock_out">Herauszoomen</string>
+    <string name="size_zoom_duration">Zoom-Dauer beim Entsperren</string>
+    <string name="size_zoom_duration_description">Verringern für schnellere Animationen</string>
 
-  <!-- OTHER -->
+    <!-- OTHER -->
 
-  <string name="other_title">Sonstige Optionen</string>
-  <string name="other_description">Rendering, Sprache &amp;amp; Zurücksetzen</string>
-  <string name="other_language">Sprache</string>
-  <string name="other_language_description">Vielen Dank an alle freiwilligen Übersetzer*innen bei Transifex! Besuche die GitHub-Seite dieses Projekts, um zu erfahren, wie Du helfen kannst, Doodle Live Hintergründe für Deine Sprache verfügbar zu machen.</string>
-  <string name="other_language_system">Systemstandard</string>
-  <string name="other_language_system_description">Englisch, wenn Übersetzung nicht verfügbar</string>
-  <string name="other_gpu">Hardware-Beschleunigung</string>
-  <string name="other_gpu_description">Ausschalten, wenn der Hintergrund abstürzt</string>
-  <string name="other_gpu_info">Hardware-Beschleunigung ist für Doodle erst ab Android 8 verfügbar. Die Animationen könnten deshalb etwas ruckelig sein.</string>
-  <string name="other_screen_off_delay">Verzögerung beim Ausschalten des Bildschirms</string>
-  <string name="other_screen_off_delay_description">Erforderlich für den Übergang zum Always-On-Display</string>
-  <string name="other_launcher">App-Icon verbergen</string>
-  <string name="other_launcher_description">Einstellungen nur über Live-Hintergrund-Auswahl des Systems erreichbar</string>
-  <string name="other_launcher_unsupported">Diese Funktion wird aufgrund von Systembeschränkungen nicht mehr unterstützt</string>
-  <string name="other_theme">Farbschema</string>
-  <string name="other_theme_description">Probiere einen anderen Look aus!</string>
-  <string name="other_theme_auto">Auto</string>
-  <string name="other_theme_light">Hell</string>
-  <string name="other_theme_dark">Dunkel</string>
-  <string name="other_contrast">Kontrast</string>
-  <string name="other_contrast_description">Barrierefreiheit für dein Sehvermögen</string>
-  <!-- This is a contrast option name: User can choose between standard, medium and high contrast. The button width should be as dense as possible. -->
-  <string name="other_contrast_standard">Standard</string>
-  <!-- This is a contrast option name: User can choose between standard, medium and high contrast -->
-  <string name="other_contrast_medium">Mittel</string>
-  <!-- This is a contrast option name: User can choose between standard, medium and high contrast -->
-  <string name="other_contrast_high">Hoch</string>
-  <string name="other_contrast_dynamic">Kontrast für Systemfarben muss in den Systemeinstellungen festgelegt werden</string>
-  <string name="other_contrast_dynamic_unsupported">Dynamischer Kontrast bei Systemfarben ist nur für Android 14+ verfügbar</string>
-  <string name="other_reset">Alle Einstellungen zurücksetzen</string>
-  <string name="other_reset_description">Bewirkt mehr als deinstallieren, da die Einstellungen an einem speziellen Ort gespeichert werden, damit sie direkt nach dem Einschalten des Geräts abrufbar sind</string>
-  <string name="other_log">Log-Nachrichten anzeigen</string>
-  <string name="other_log_description">Für Fehlerbehandlung</string>
+    <string name="other_title">Sonstige Optionen</string>
+    <string name="other_description">Rendering, Sprache &amp;amp; Zurücksetzen</string>
+    <string name="other_language">Sprache</string>
+    <string name="other_language_description">Vielen Dank an alle freiwilligen Übersetzer*innen bei Transifex! Besuche die GitHub-Seite dieses Projekts, um zu erfahren, wie Du helfen kannst, Doodle Live Hintergründe für Deine Sprache verfügbar zu machen.</string>
+    <string name="other_language_system">Systemstandard</string>
+    <string name="other_language_system_description">Englisch, wenn Übersetzung nicht verfügbar</string>
+    <string name="other_gpu">Hardware-Beschleunigung</string>
+    <string name="other_gpu_description">Ausschalten, wenn der Hintergrund abstürzt</string>
+    <string name="other_gpu_info">Hardware-Beschleunigung ist für Doodle erst ab Android 8 verfügbar. Die Animationen könnten deshalb etwas ruckelig sein.</string>
+    <string name="other_screen_off_delay">Verzögerung beim Ausschalten des Bildschirms</string>
+    <string name="other_screen_off_delay_description">Erforderlich für den Übergang zum Always-On-Display</string>
+    <string name="other_launcher">App-Icon verbergen</string>
+    <string name="other_launcher_description">Einstellungen nur über Live-Hintergrund-Auswahl des Systems erreichbar</string>
+    <string name="other_launcher_unsupported">Diese Funktion wird aufgrund von Systembeschränkungen nicht mehr unterstützt</string>
+    <string name="other_theme">Farbschema</string>
+    <string name="other_theme_description">Probiere einen anderen Look aus!</string>
+    <string name="other_theme_auto">Auto</string>
+    <string name="other_theme_light">Hell</string>
+    <string name="other_theme_dark">Dunkel</string>
+    <string name="other_contrast">Kontrast</string>
+    <string name="other_contrast_description">Barrierefreiheit für dein Sehvermögen</string>
+    <!-- This is a contrast option name: User can choose between standard, medium and high contrast. The button width should be as dense as possible. -->
+    <string name="other_contrast_standard">Standard</string>
+    <!-- This is a contrast option name: User can choose between standard, medium and high contrast -->
+    <string name="other_contrast_medium">Mittel</string>
+    <!-- This is a contrast option name: User can choose between standard, medium and high contrast -->
+    <string name="other_contrast_high">Hoch</string>
+    <string name="other_contrast_dynamic">Kontrast für Systemfarben muss in den Systemeinstellungen festgelegt werden</string>
+    <string name="other_contrast_dynamic_unsupported">Dynamischer Kontrast bei Systemfarben ist nur für Android 14+ verfügbar</string>
+    <string name="other_reset">Alle Einstellungen zurücksetzen</string>
+    <string name="other_reset_description">Bewirkt mehr als deinstallieren, da die Einstellungen an einem speziellen Ort gespeichert werden, damit sie direkt nach dem Einschalten des Geräts abrufbar sind</string>
+    <string name="other_log">Log-Nachrichten anzeigen</string>
+    <string name="other_log_description">Für Fehlerbehandlung</string>
 
-  <!-- ABOUT -->
+    <!-- ABOUT -->
 
-  <string name="about_title">Über</string>
-  <string name="about_description">Informationen über den Entwickler &amp;amp; mehr</string>
-  <string name="about_version">Version</string>
-  <string name="about_changelog">Änderungen</string>
-  <string name="about_changelog_description">Was ist neu\?</string>
-  <string name="about_developer">Entwickler</string>
-  <string name="about_vending_description">Weitere Apps des Entwicklers</string>
-  <string name="about_github_description">Quellcode</string>
-  <string name="about_translation_description">Hilf mit, Doodle in deine Sprache zu übersetzen</string>
-  <string name="about_privacy">Datenschutzerklärung</string>
-  <string name="about_privacy_description">Wie werden deine Daten verarbeitet\?</string>
+    <string name="about_title">Über</string>
+    <string name="about_description">Informationen über den Entwickler &amp;amp; mehr</string>
+    <string name="about_version">Version</string>
+    <string name="about_changelog">Änderungen</string>
+    <string name="about_changelog_description">Was ist neu\?</string>
+    <string name="about_developer">Entwickler</string>
+    <string name="about_vending_description">Weitere Apps des Entwicklers</string>
+    <string name="about_github_description">Quellcode</string>
+    <string name="about_translation_description">Hilf mit, Doodle in deine Sprache zu übersetzen</string>
+    <string name="about_privacy">Datenschutzerklärung</string>
+    <string name="about_privacy_description">Wie werden deine Daten verarbeitet\?</string>
 
-  <!-- MESSAGES -->
+    <!-- MESSAGES -->
 
-  <string name="msg_feedback">Eine tolle App benötigt viel Zeit und lebt von der Rückmeldung ihrer Nutzer.</string>
-  <string name="msg_feedback_contact">Hast du Wünsche, Anmerkungen oder Fragen\? Dann lass es mich wissen!\nAnsonsten freue ich mich über eine nette Bewertung im Play Store.</string>
-  <string name="msg_share">Schau dir mal diese coole Live-Wallpaper-App an: \nhttps://play.google.com/store/apps/details\?id=xyz.zedler.patrick.doodle</string>
-  <string name="msg_hide">App-Icon verbergen\?</string>
-  <string name="msg_random">Es werden alle ausgewählten Designs benutzt</string>
-  <string name="msg_random_warning">Zufälliges Hintergrunddesign ist noch aktiviert!</string>
-  <string name="msg_reset">Einstellungen zurücksetzen\?</string>
-  <string name="msg_reset_description">Willst du wirklich die gesamte App zurücksetzen\? Dies kann nicht rückgängig gemacht werden.</string>
-  <string name="msg_force_stop">Erzwungenes Beenden wird benötigt, um die Änderung anzuwenden</string>
-  <string name="msg_apply_colors">Geänderte Farben werden im System beim nächsten Ausschalten des Displays übernommen</string>
-  <string name="msg_apply_changes">Um (eventuelle) Änderungen anzuwenden, wird ein Neustart des laufenden Hintergrunds empfohlen. Dies kann nicht automatisch erfolgen.\nBitte beende die App in Deinen Systemeinstellungen und wende Doodle erneut als Live-Hintergrund an.</string>
-  <string name="msg_preview_missing">Es trat ein Fehler auf, bitte wähle den Doodle Live-Hintergrund manuell aus</string>
-  <string name="msg_report_crash">Bitte melde jegliche Abstürze mit angehängtem Crash-Log, um mir beim Beheben der Ursache zu helfen.</string>
-  <string name="msg_copied_to_clipboard">Erfolgreich in Zwischenablage kopiert</string>
+    <string name="msg_feedback">Eine tolle App benötigt viel Zeit und lebt von der Rückmeldung ihrer Nutzer.</string>
+    <string name="msg_feedback_contact">Hast du Wünsche, Anmerkungen oder Fragen\? Dann lass es mich wissen!\nAnsonsten freue ich mich über eine nette Bewertung im Play Store.</string>
+    <string name="msg_share">Schau dir mal diese coole Live-Wallpaper-App an: \nhttps://play.google.com/store/apps/details\?id=xyz.zedler.patrick.doodle</string>
+    <string name="msg_hide">App-Icon verbergen\?</string>
+    <string name="msg_random">Es werden alle ausgewählten Designs benutzt</string>
+    <string name="msg_random_warning">Zufälliges Hintergrunddesign ist noch aktiviert!</string>
+    <string name="msg_reset">Einstellungen zurücksetzen\?</string>
+    <string name="msg_reset_description">Willst du wirklich die gesamte App zurücksetzen\? Dies kann nicht rückgängig gemacht werden.</string>
+    <string name="msg_force_stop">Erzwungenes Beenden wird benötigt, um die Änderung anzuwenden</string>
+    <string name="msg_apply_colors">Geänderte Farben werden im System beim nächsten Ausschalten des Displays übernommen</string>
+    <string name="msg_apply_changes">Um (eventuelle) Änderungen anzuwenden, wird ein Neustart des laufenden Hintergrunds empfohlen. Dies kann nicht automatisch erfolgen.\nBitte beende die App in Deinen Systemeinstellungen und wende Doodle erneut als Live-Hintergrund an.</string>
+    <string name="msg_preview_missing">Es trat ein Fehler auf, bitte wähle den Doodle Live-Hintergrund manuell aus</string>
+    <string name="msg_report_crash">Bitte melde jegliche Abstürze mit angehängtem Crash-Log, um mir beim Beheben der Ursache zu helfen.</string>
+    <string name="msg_copied_to_clipboard">Erfolgreich in Zwischenablage kopiert</string>
 
-  </resources>
+</resources>

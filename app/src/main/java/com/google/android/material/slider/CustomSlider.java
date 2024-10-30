@@ -39,6 +39,8 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
+import android.os.Build.VERSION;
+import android.os.Build.VERSION_CODES;
 import android.os.Parcelable;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -97,7 +99,7 @@ public class CustomSlider extends Slider {
   private int thumbWidth, thumbWidthAnim, thumbTrackGapSize, minTickSpacing, continuousTicksCount;
   private float normalizedValueAnim;
   private float[] ticksCoordinates;
-  private boolean dirtyConfig, touchTrackingJustStarted;
+  private boolean dirtyConfig, touchTrackingJustStarted, thisAndAncestorsVisible;
   // Whether the labels are showing or in the process of animating in.
   private boolean labelsAreAnimatedIn = false;
   @NonNull
@@ -170,6 +172,9 @@ public class CustomSlider extends Slider {
 
     stopIndicatorPaint.setStyle(Style.FILL);
     stopIndicatorPaint.setStrokeCap(Cap.ROUND);
+
+    // Initialize with just this view's visibility.
+    thisAndAncestorsVisible = isShown();
 
     updateThumbWidth(false, false);
     addOnSliderTouchListener(new OnSliderTouchListener() {
@@ -259,6 +264,10 @@ public class CustomSlider extends Slider {
   @Override
   protected void onAttachedToWindow() {
     super.onAttachedToWindow();
+
+    // Update factoring in the visibility of all ancestors.
+    thisAndAncestorsVisible = isShown();
+
     getViewTreeObserver().addOnScrollChangedListener(onScrollChangedListener);
     // The label is attached on the Overlay relative to the content.
     for (TooltipDrawable label : labels) {
@@ -950,6 +959,24 @@ public class CustomSlider extends Slider {
     }
 
     return defaultValue;
+  }
+
+  private boolean isSliderVisibleOnScreen() {
+    final Rect contentViewBounds = new Rect();
+    getContentView().getHitRect(contentViewBounds);
+    return getLocalVisibleRect(contentViewBounds) && isThisAndAncestorsVisible();
+  }
+
+  private boolean isThisAndAncestorsVisible() {
+    // onVisibilityAggregated is only available on N+ devices, so on pre-N devices we check if this
+    // view and its ancestors are visible each time, in case one of the visibilities has changed.
+    return (VERSION.SDK_INT >= VERSION_CODES.N) ? thisAndAncestorsVisible : isShown();
+  }
+
+  @Override
+  public void onVisibilityAggregated(boolean isVisible) {
+    super.onVisibilityAggregated(isVisible);
+    thisAndAncestorsVisible = isVisible;
   }
 
   private void ensureLabelsRemoved() {

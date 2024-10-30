@@ -236,6 +236,7 @@
   <string name="msg_random">All selected designs will be used</string>
   <string name="msg_random_warning">Random wallpaper design is still active!</string>
   <string name="msg_reset">Reset all settings?</string>
+  <string name="msg_reset_description">Do you really want to reset the entire app? This cannot be undone.</string>
   <string name="msg_force_stop">Forced stop required to apply changes</string>
   <string name="msg_apply_colors">Changed colors will be applied to the system the next time you turn off the screen</string>
   <string name="msg_apply_changes">To apply (eventually) changed options a restart of the running wallpaper service is recommended. This cannot be done automatically.\nPlease force-stop Doodle in your system settings and then apply Doodle as your wallpaper again.</string>

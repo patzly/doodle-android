@@ -56,6 +56,7 @@ import xyz.zedler.patrick.doodle.behavior.ScrollBehavior;
 import xyz.zedler.patrick.doodle.behavior.SystemBarBehavior;
 import xyz.zedler.patrick.doodle.databinding.FragmentOtherBinding;
 import xyz.zedler.patrick.doodle.service.LiveWallpaperService;
+import xyz.zedler.patrick.doodle.util.DialogUtil;
 import xyz.zedler.patrick.doodle.util.LocaleUtil;
 import xyz.zedler.patrick.doodle.util.UiUtil;
 import xyz.zedler.patrick.doodle.util.ViewUtil;
@@ -68,6 +69,7 @@ public class OtherFragment extends BaseFragment
 
   private FragmentOtherBinding binding;
   private MainActivity activity;
+  private DialogUtil dialogUtilReset;
 
   @Override
   public View onCreateView(
@@ -81,6 +83,7 @@ public class OtherFragment extends BaseFragment
   public void onDestroyView() {
     super.onDestroyView();
     binding = null;
+    dialogUtilReset.dismiss();
   }
 
   @Override
@@ -212,6 +215,23 @@ public class OtherFragment extends BaseFragment
         )
     );
 
+    dialogUtilReset = new DialogUtil(activity, "reset");
+    dialogUtilReset.createCaution(
+        R.string.msg_reset,
+        R.string.msg_reset_description,
+        R.string.action_reset,
+        () -> {
+          performHapticHeavyClick();
+          activity.reset();
+          activity.restartToApply(
+              100,
+              getInstanceState(),
+              LiveWallpaperService.isMainEngineRunning(),
+              true
+          );
+        });
+    dialogUtilReset.showIfWasShown(savedInstanceState);
+
     ViewUtil.setOnClickListeners(
         this,
         binding.linearOtherLanguage,
@@ -225,6 +245,14 @@ public class OtherFragment extends BaseFragment
         binding.switchOtherGpu,
         binding.switchOtherLauncher
     );
+  }
+
+  @Override
+  public void onSaveInstanceState(@NonNull Bundle outState) {
+    super.onSaveInstanceState(outState);
+    if (dialogUtilReset != null) {
+      dialogUtilReset.saveState(outState);
+    }
   }
 
   @Override
@@ -243,22 +271,7 @@ public class OtherFragment extends BaseFragment
       navigateToFragment(OtherFragmentDirections.actionOtherToLog());
     } else if (id == R.id.linear_other_reset && getViewUtil().isClickEnabled(id)) {
       performHapticClick();
-      activity.showSnackbar(
-          activity.getSnackbar(
-              R.string.msg_reset, Snackbar.LENGTH_LONG
-          ).setAction(
-              getString(R.string.action_reset), view -> {
-                performHapticHeavyClick();
-                activity.reset();
-                activity.restartToApply(
-                    100,
-                    getInstanceState(),
-                    LiveWallpaperService.isMainEngineRunning(),
-                    true
-                );
-              }
-          )
-      );
+      dialogUtilReset.show();
     }
   }
 

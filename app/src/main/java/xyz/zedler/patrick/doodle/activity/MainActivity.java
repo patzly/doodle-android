@@ -510,6 +510,10 @@ public class MainActivity extends AppCompatActivity {
     }
   }
 
+  public void performHapticTick() {
+    hapticUtil.tick();
+  }
+
   public void performHapticClick() {
     hapticUtil.click();
   }

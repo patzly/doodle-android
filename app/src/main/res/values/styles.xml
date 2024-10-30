@@ -37,6 +37,12 @@
     <item name="android:scrollbarThumbVertical">@drawable/shape_scrollbar_rounded</item>
   </style>
 
+  <style name="ThemeOverlay.Doodle.AlertDialog.Caution" parent="ThemeOverlay.Doodle.AlertDialog">
+    <item name="buttonBarPositiveButtonStyle">@style/Widget.Doodle.Button.TextButton.Dialog.Caution</item>
+    <item name="buttonBarNegativeButtonStyle">@style/Widget.Doodle.Button.TextButton.Dialog.Caution</item>
+    <item name="buttonBarNeutralButtonStyle">@style/Widget.Doodle.Button.TextButton.Dialog</item>
+  </style>
+
   <!-- Prevents title from being displayed with smaller text size when it's long -->
   <style name="MaterialAlertDialog.Doodle.Title.Text" parent="MaterialAlertDialog.Material3.Title.Text">
     <item name="android:textAppearance">?attr/textAppearanceHeadlineSmall</item>
@@ -159,6 +165,13 @@
     <item name="android:singleLine">true</item>
     <item name="android:fontFamily">@font/jost_medium</item>
     <item name="fontFamily">@font/jost_medium</item>
+  </style>
+
+  <style
+    name="Widget.Doodle.Button.TextButton.Dialog.Caution"
+    parent="Widget.Doodle.Button.TextButton.Dialog">
+    <item name="android:textColor">?attr/colorError</item>
+    <item name="rippleColor">@color/selector_highlight_error</item>
   </style>
 
   <style

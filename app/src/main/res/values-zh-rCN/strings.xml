@@ -219,6 +219,7 @@
   <string name="msg_random">将使用所有选中的设计</string>
   <string name="msg_random_warning">随机壁纸设计仍处于活动状态！</string>
   <string name="msg_reset">重置所有设置吗？</string>
+  <string name="msg_reset_description">你真想重置整个应用吗？此操作无法撤销。</string>
   <string name="msg_force_stop">需强制停止才能应用更改</string>
   <string name="msg_apply_colors">更改的颜色将在你下次关闭屏幕时应用到系统</string>
   <string name="msg_apply_changes">为了(最终)应用改变的选项，建议重新启动正在运行的壁纸服务。这不能自动完成。\n请在系统设置中强制停止 Doodle，然后重新将 Doole 应用为墙纸。</string>

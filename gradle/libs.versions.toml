@@ -1,7 +1,7 @@
 [versions]
 agp = "8.7.1"
 appcompat = "1.7.0"
-fragment = "1.8.4"
+fragment = "1.8.5"
 navigation = "2.8.3"
 preference = "1.2.1"
 material = "1.13.0-alpha07"

@@ -108,7 +108,7 @@
           <ImageView
             android:id="@+id/image_appearance_wallpaper"
             style="@style/Widget.Doodle.ImageView.ListItem.Icon"
-            android:src="@drawable/ic_round_wallpaper_anim"
+            android:src="@drawable/ic_rounded_wallpaper_anim"
             android:layout_marginTop="12dp"
             tools:ignore="ContentDescription" />
 

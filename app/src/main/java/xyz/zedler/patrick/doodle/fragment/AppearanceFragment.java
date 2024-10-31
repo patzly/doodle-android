@@ -233,8 +233,8 @@ public class AppearanceFragment extends BaseFragment
     isWallpaperNightMode = isWallpaperNightMode();
     binding.imageAppearanceNightMode.setImageResource(
         isWallpaperNightMode
-            ? R.drawable.ic_round_dark_mode_to_light_mode_anim
-            : R.drawable.ic_round_light_mode_to_dark_mode_anim
+            ? R.drawable.ic_rounded_dark_mode_to_light_mode_anim
+            : R.drawable.ic_rounded_light_mode_to_dark_mode_anim
     );
 
     binding.switchAppearanceDarkText.setChecked(
@@ -426,8 +426,8 @@ public class AppearanceFragment extends BaseFragment
         new Handler(Looper.getMainLooper()).postDelayed(
             () -> binding.imageAppearanceNightMode.setImageResource(
                 isNewWallpaperNightMode
-                    ? R.drawable.ic_round_dark_mode_to_light_mode_anim
-                    : R.drawable.ic_round_light_mode_to_dark_mode_anim
+                    ? R.drawable.ic_rounded_dark_mode_to_light_mode_anim
+                    : R.drawable.ic_rounded_light_mode_to_dark_mode_anim
             ),
             300
         );

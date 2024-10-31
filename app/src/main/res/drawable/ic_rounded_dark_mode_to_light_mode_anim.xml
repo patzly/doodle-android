@@ -31,68 +31,84 @@
       <group
         android:name="group"
         android:pivotX="12"
-        android:pivotY="12"
-        android:rotation="-180">
+        android:pivotY="12">
         <path
           android:name="circle"
-          android:pathData="M 12 7 C 9.24 7 7 9.24 7 12 C 7 14.76 9.24 17 12 17 C 14.76 17 17 14.76 17 12 C 17 9.24 14.76 7 12 7 Z"
-          android:fillColor="#000"
-          android:strokeWidth="1" />
+          android:pathData="M 4 12.029 C 4.002 10.078 4.712 8.193 5.997 6.729 C 7.282 5.265 9.056 4.32 10.984 4.072 L 10.984 4.072 C 10.984 4.072 10.984 4.072 10.984 4.072 C 10.343 5.101 10.002 6.288 10 7.5 C 10 9.223 10.685 10.878 11.904 12.096 C 13.122 13.315 14.777 14 16.5 14 C 17.713 13.998 18.901 13.657 19.93 13.016 C 19.762 14.371 19.255 15.652 18.467 16.742 C 18.126 17.214 17.733 17.651 17.292 18.042 C 15.832 19.339 13.949 20.056 12 20.059 C 10.596 20.059 9.216 19.688 8 18.983 C 6.784 18.278 5.774 17.264 5.072 16.044 C 4.37 14.823 4 13.439 4 12.029"
+          android:strokeWidth="2"
+          android:strokeColor="#000"
+          android:strokeLineJoin="round" />
         <path
           android:name="stroke1"
           android:pathData="M 22 12 L 12 12"
           android:strokeColor="#000"
+          android:strokeAlpha="0"
           android:strokeWidth="2"
           android:trimPathEnd="0.2"
+          android:trimPathOffset="0.6"
           android:strokeLineCap="round" />
         <path
           android:name="stroke2"
           android:pathData="M 19.071 4.929 L 12 12"
           android:strokeColor="#000"
+          android:strokeAlpha="0"
           android:strokeWidth="2"
           android:trimPathEnd="0.2"
+          android:trimPathOffset="0.6"
           android:strokeLineCap="round" />
         <path
           android:name="stroke3"
           android:pathData="M 12 2 L 12 12"
           android:strokeColor="#000"
+          android:strokeAlpha="0"
           android:strokeWidth="2"
           android:trimPathEnd="0.2"
+          android:trimPathOffset="0.6"
           android:strokeLineCap="round" />
         <path
           android:name="stroke4"
           android:pathData="M 4.929 4.929 L 12 12"
           android:strokeColor="#000"
+          android:strokeAlpha="0"
           android:strokeWidth="2"
           android:trimPathEnd="0.2"
+          android:trimPathOffset="0.6"
           android:strokeLineCap="round" />
         <path
           android:name="stroke5"
           android:pathData="M 2 12 L 12 12"
           android:strokeColor="#000"
+          android:strokeAlpha="0"
           android:strokeWidth="2"
           android:trimPathEnd="0.2"
+          android:trimPathOffset="0.6"
           android:strokeLineCap="round" />
         <path
           android:name="stroke6"
           android:pathData="M 4.929 19.071 L 12 12"
           android:strokeColor="#000"
+          android:strokeAlpha="0"
           android:strokeWidth="2"
           android:trimPathEnd="0.2"
+          android:trimPathOffset="0.6"
           android:strokeLineCap="round" />
         <path
           android:name="stroke7"
           android:pathData="M 12 22 L 12 12"
           android:strokeColor="#000"
+          android:strokeAlpha="0"
           android:strokeWidth="2"
           android:trimPathEnd="0.2"
+          android:trimPathOffset="0.6"
           android:strokeLineCap="round" />
         <path
           android:name="stroke8"
           android:pathData="M 19.071 19.071 L 12 12"
           android:strokeColor="#000"
+          android:strokeAlpha="0"
           android:strokeWidth="2"
           android:trimPathEnd="0.2"
+          android:trimPathOffset="0.6"
           android:strokeLineCap="round" />
       </group>
     </vector>
@@ -101,10 +117,9 @@
     <aapt:attr name="android:animation">
       <objectAnimator
         android:propertyName="pathData"
-        android:startOffset="100"
-        android:duration="200"
-        android:valueFrom="M 12 7 C 9.24 7 7 9.24 7 12 C 7 14.76 9.24 17 12 17 C 14.76 17 17 14.76 17 12 C 17 11.456 16.913 10.933 16.752 10.443 C 16.611 10.01 16.412 9.604 16.164 9.233 C 15.968 8.939 15.743 8.667 15.491 8.421 C 15.248 8.185 14.982 7.973 14.696 7.789 C 14.309 7.541 13.886 7.344 13.436 7.21 C 12.981 7.073 12.499 7 12 7 Z"
-        android:valueTo="M 11.01 3.05 C 6.51 3.54 3 7.36 3 12 C 3 16.97 7.03 21 12 21 C 16.63 21 20.45 17.5 20.95 13 C 21.04 12.21 20.17 11.58 19.41 12.05 C 18.57 12.59 17.57 12.9 16.5 12.9 C 15.01 12.9 13.66 12.295 12.682 11.318 C 11.705 10.34 11.1 8.99 11.1 7.5 C 11.1 6.44 11.41 5.44 11.94 4.61 C 12.39 3.94 11.9 2.98 11.01 3.05 Z"
+        android:duration="140"
+        android:valueFrom="M 4 12.029 C 4.002 10.078 4.712 8.193 5.997 6.729 C 7.282 5.265 9.056 4.32 10.984 4.072 L 10.984 4.072 C 10.984 4.072 10.984 4.072 10.984 4.072 C 10.343 5.101 10.002 6.288 10 7.5 C 10 9.223 10.685 10.878 11.904 12.096 C 13.122 13.315 14.777 14 16.5 14 C 17.713 13.998 18.901 13.657 19.93 13.016 C 19.762 14.371 19.255 15.652 18.467 16.742 C 18.126 17.214 17.733 17.651 17.292 18.042 C 15.832 19.339 13.949 20.056 12 20.059 C 10.596 20.059 9.216 19.688 8 18.983 C 6.784 18.278 5.774 17.264 5.072 16.044 C 4.37 14.823 4 13.439 4 12.029"
+        android:valueTo="M 8 12 C 8 11.183 8.245 10.424 8.665 9.791 C 9.381 8.712 10.608 8 12 8 L 12 8 C 13.025 8.001 14.011 8.396 14.753 9.102 C 14.764 9.113 14.776 9.124 14.787 9.135 C 14.778 9.145 14.805 9.147 14.805 9.16 C 14.821 9.175 14.845 9.191 14.852 9.203 C 14.873 9.195 14.855 9.222 14.865 9.213 C 15.592 9.959 15.999 10.959 16 12 C 16 13.089 15.565 14.076 14.859 14.797 C 14.133 15.539 13.12 16 12 16 C 11.293 16 10.628 15.816 10.052 15.494 C 9.555 15.217 9.124 14.836 8.787 14.382 C 8.292 13.717 8 12.893 8 12"
         android:valueType="pathType"
         android:interpolator="@android:interpolator/fast_out_slow_in" />
     </aapt:attr>
@@ -114,8 +129,8 @@
       <objectAnimator
         android:propertyName="rotation"
         android:duration="300"
-        android:valueFrom="-180"
-        android:valueTo="-360"
+        android:valueFrom="0"
+        android:valueTo="-270"
         android:valueType="floatType"
         android:interpolator="@android:interpolator/fast_out_slow_in" />
     </aapt:attr>
@@ -125,17 +140,18 @@
       <set>
         <objectAnimator
           android:propertyName="trimPathOffset"
+          android:startOffset="130"
           android:duration="100"
-          android:valueFrom="0"
-          android:valueTo="0.6"
+          android:valueFrom="0.6"
+          android:valueTo="0"
           android:valueType="floatType"
           android:interpolator="@android:interpolator/fast_out_slow_in" />
         <objectAnimator
           android:propertyName="strokeAlpha"
-          android:startOffset="100"
+          android:startOffset="150"
           android:duration="10"
-          android:valueFrom="1"
-          android:valueTo="0"
+          android:valueFrom="0"
+          android:valueTo="1"
           android:valueType="floatType"
           android:interpolator="@android:interpolator/fast_out_slow_in" />
       </set>
@@ -146,18 +162,18 @@
       <set>
         <objectAnimator
           android:propertyName="trimPathOffset"
-          android:startOffset="10"
+          android:startOffset="140"
           android:duration="100"
-          android:valueFrom="0"
-          android:valueTo="0.6"
+          android:valueFrom="0.6"
+          android:valueTo="0"
           android:valueType="floatType"
           android:interpolator="@android:interpolator/fast_out_slow_in" />
         <objectAnimator
           android:propertyName="strokeAlpha"
-          android:startOffset="110"
+          android:startOffset="160"
           android:duration="10"
-          android:valueFrom="1"
-          android:valueTo="0"
+          android:valueFrom="0"
+          android:valueTo="1"
           android:valueType="floatType"
           android:interpolator="@android:interpolator/fast_out_slow_in" />
       </set>
@@ -168,18 +184,18 @@
       <set>
         <objectAnimator
           android:propertyName="trimPathOffset"
-          android:startOffset="20"
+          android:startOffset="150"
           android:duration="100"
-          android:valueFrom="0"
-          android:valueTo="0.6"
+          android:valueFrom="0.6"
+          android:valueTo="0"
           android:valueType="floatType"
           android:interpolator="@android:interpolator/fast_out_slow_in" />
         <objectAnimator
           android:propertyName="strokeAlpha"
-          android:startOffset="120"
+          android:startOffset="170"
           android:duration="10"
-          android:valueFrom="1"
-          android:valueTo="0"
+          android:valueFrom="0"
+          android:valueTo="1"
           android:valueType="floatType"
           android:interpolator="@android:interpolator/fast_out_slow_in" />
       </set>
@@ -190,18 +206,18 @@
       <set>
         <objectAnimator
           android:propertyName="trimPathOffset"
-          android:startOffset="30"
+          android:startOffset="160"
           android:duration="100"
-          android:valueFrom="0"
-          android:valueTo="0.6"
+          android:valueFrom="0.6"
+          android:valueTo="0"
           android:valueType="floatType"
           android:interpolator="@android:interpolator/fast_out_slow_in" />
         <objectAnimator
           android:propertyName="strokeAlpha"
-          android:startOffset="130"
+          android:startOffset="180"
           android:duration="10"
-          android:valueFrom="1"
-          android:valueTo="0"
+          android:valueFrom="0"
+          android:valueTo="1"
           android:valueType="floatType"
           android:interpolator="@android:interpolator/fast_out_slow_in" />
       </set>
@@ -212,18 +228,18 @@
       <set>
         <objectAnimator
           android:propertyName="trimPathOffset"
-          android:startOffset="40"
+          android:startOffset="170"
           android:duration="100"
-          android:valueFrom="0"
-          android:valueTo="0.6"
+          android:valueFrom="0.6"
+          android:valueTo="0"
           android:valueType="floatType"
           android:interpolator="@android:interpolator/fast_out_slow_in" />
         <objectAnimator
           android:propertyName="strokeAlpha"
-          android:startOffset="140"
+          android:startOffset="190"
           android:duration="10"
-          android:valueFrom="1"
-          android:valueTo="0"
+          android:valueFrom="0"
+          android:valueTo="1"
           android:valueType="floatType"
           android:interpolator="@android:interpolator/fast_out_slow_in" />
       </set>
@@ -234,18 +250,18 @@
       <set>
         <objectAnimator
           android:propertyName="trimPathOffset"
-          android:startOffset="50"
+          android:startOffset="180"
           android:duration="100"
-          android:valueFrom="0"
-          android:valueTo="0.6"
+          android:valueFrom="0.6"
+          android:valueTo="0"
           android:valueType="floatType"
           android:interpolator="@android:interpolator/fast_out_slow_in" />
         <objectAnimator
           android:propertyName="strokeAlpha"
-          android:startOffset="150"
+          android:startOffset="200"
           android:duration="10"
-          android:valueFrom="1"
-          android:valueTo="0"
+          android:valueFrom="0"
+          android:valueTo="1"
           android:valueType="floatType"
           android:interpolator="@android:interpolator/fast_out_slow_in" />
       </set>
@@ -256,18 +272,18 @@
       <set>
         <objectAnimator
           android:propertyName="trimPathOffset"
-          android:startOffset="60"
-          android:duration="100"
-          android:valueFrom="0"
-          android:valueTo="0.6"
+          android:startOffset="190"
+          android:duration="110"
+          android:valueFrom="0.6"
+          android:valueTo="0"
           android:valueType="floatType"
           android:interpolator="@android:interpolator/fast_out_slow_in" />
         <objectAnimator
           android:propertyName="strokeAlpha"
-          android:startOffset="160"
+          android:startOffset="210"
           android:duration="10"
-          android:valueFrom="1"
-          android:valueTo="0"
+          android:valueFrom="0"
+          android:valueTo="1"
           android:valueType="floatType"
           android:interpolator="@android:interpolator/fast_out_slow_in" />
       </set>
@@ -278,18 +294,18 @@
       <set>
         <objectAnimator
           android:propertyName="trimPathOffset"
-          android:startOffset="70"
+          android:startOffset="200"
           android:duration="100"
-          android:valueFrom="0"
-          android:valueTo="0.6"
+          android:valueFrom="0.6"
+          android:valueTo="0"
           android:valueType="floatType"
           android:interpolator="@android:interpolator/fast_out_slow_in" />
         <objectAnimator
           android:propertyName="strokeAlpha"
-          android:startOffset="170"
+          android:startOffset="220"
           android:duration="10"
-          android:valueFrom="1"
-          android:valueTo="0"
+          android:valueFrom="0"
+          android:valueTo="1"
           android:valueType="floatType"
           android:interpolator="@android:interpolator/fast_out_slow_in" />
       </set>

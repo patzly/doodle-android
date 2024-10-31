@@ -170,7 +170,7 @@ public class OtherFragment extends BaseFragment
       performHapticClick();
       ViewUtil.startIcon(binding.imageSettingsContrast);
       activity.restartToApply(
-          0, getInstanceState(), true, false
+          0, getInstanceState(), false, true
       );
     });
     boolean enabled = !getSharedPrefs().getString(PREF.THEME, DEF.THEME).equals(THEME.DYNAMIC);
@@ -393,7 +393,7 @@ public class OtherFragment extends BaseFragment
           card.setChecked(true);
           getSharedPrefs().edit().putString(PREF.THEME, name).apply();
           activity.restartToApply(
-              100, getInstanceState(), true, false
+              100, getInstanceState(), false, true
           );
         }
       });

@@ -56,7 +56,7 @@
   <string name="action_help">帮助</string>
   <string name="action_send_feedback">发送反馈</string>
   <string name="action_share">分享</string>
-  <string name="action_share_description">把Doodle告诉你的朋友们</string>
+  <string name="action_share_description">把 Doodle 告诉你的朋友们</string>
   <string name="action_email">发送邮件</string>
   <string name="action_email_description">联系开发者</string>
   <string name="action_rate">在 Google Play 上打分</string>

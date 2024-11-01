@@ -199,7 +199,7 @@
   <!-- ABOUT -->
 
   <string name="about_title">关于</string>
-  <string name="about_description">开发者信息&amp; 更多</string>
+  <string name="about_description">开发者信息 &amp; 更多</string>
   <string name="about_version">版本</string>
   <string name="about_changelog">变更日志</string>
   <string name="about_changelog_description">更新了什么？</string>

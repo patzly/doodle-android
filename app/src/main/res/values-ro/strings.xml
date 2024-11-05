@@ -172,6 +172,7 @@
   <string name="other_language">Limbă</string>
   <string name="other_language_description">Multe mulțumiri către toți voluntarii de pe Transifex! Vă rog vizitați proiectul pe GitHub pentru a vedea cum să ajutați aplicația Doodle Live Wallpaper pentru limba dumneavoastră.</string>
   <string name="other_language_system">Urmărește tema sistemului</string>
+  <string name="other_language_system_description">Engleză, dacă traducerea nu este valabilă</string>
   <string name="other_gpu">Accelerare hardware</string>
   <string name="other_gpu_description">Oprește dacă wallpaper-ul dă crash</string>
   <string name="other_gpu_info">Accelerația hardware este disponibilă pentru Doodle începând cu Android 8. Prin urmare, animațiile de fundal ar putea fi puțin sacadate</string>

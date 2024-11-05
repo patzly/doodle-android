@@ -180,6 +180,7 @@
   <string name="other_screen_off_delay_description">Necesar pentru tranziția la ecranul mereu activ</string>
   <string name="other_launcher">Ascunde iconița din launcher</string>
   <string name="other_launcher_description">Setările vor fi accesibile în wallpaper picker-ul sistemului</string>
+  <string name="other_launcher_unsupported">Această funcție nu mai este acceptată din cauza restricțiilor de sistem</string>
   <string name="other_theme">Aplică culoarea temei</string>
   <string name="other_theme_description">Încearcă alt look</string>
   <string name="other_theme_auto">Automată</string>

@@ -126,6 +126,7 @@
   <string name="parallax_swipe_category">Pentru glisare</string>
   <string name="parallax_swipe_touch_wiz">Se pare că lansatorul tău principal este Samsung TouchWiz sau One UI Home, care nu suportă efectul de glisare. Te rugăm să încerci alt lansator pentru a-l activa.\nPoți ignora acest avertisment dacă deja ai alt lansator principal.</string>
   <string name="parallax_swipe">Efect de glisare</string>
+  <string name="parallax_swipe_description">Decalaj orizontal la glisarea între pagini</string>
   <string name="parallax_swipe_power_save">Respectă economisitul de baterie</string>
   <string name="parallax_tilt">Efect tilt</string>
   <string name="parallax_refresh_rate">Rata de refresh a senzorului de înclinare</string>

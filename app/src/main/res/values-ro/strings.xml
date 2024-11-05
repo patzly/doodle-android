@@ -132,6 +132,7 @@
   <string name="parallax_tilt_category">La înclinare</string>
   <string name="parallax_tilt">Efect tilt</string>
   <string name="parallax_tilt_description">Mișcare în timpul înclinării dispozitivului</string>
+  <string name="parallax_tilt_warning">Consum mai mare de baterie</string>
   <string name="parallax_refresh_rate">Rata de refresh a senzorului de înclinare</string>
   <string name="parallax_damping">Amortizarea mișcării</string>
   <string name="parallax_damping_description">Scade pentru o fluiditate mai mare</string>

@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ This file is part of Doodle Android.
+  ~
+  ~ Doodle Android is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Doodle Android is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with Doodle Android. If not, see <http://www.gnu.org/licenses/>.
+  ~
+  ~ Copyright (c) 2019-2024 by Patrick Zedler
+  -->
+
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+
+  <!-- TITLES -->
+
+  <string name="title_info">دۉسمندی</string>
+  <string name="title_apply_changes">آلشت کاریان ائمال کوݩ</string>
+  <string name="title_logcat">Logcat</string>
+  <string name="title_feedback">منشڌ</string>
+  <string name="title_licenses">لایسنسا بونچک واز</string>
+
+  <!-- LABELS -->
+
+  <string name="label_ms">%1$sمیلی سانیه</string>
+  <string name="label_degrees">%1$s درجه</string>
+
+  <!-- ACTIONS -->
+
+  <string name="action_cancel">رڌ</string>
+  <string name="action_select">پسند</string>
+  <string name="action_close">بستن</string>
+  <string name="action_back">وورگشتن</string>
+  <string name="action_open_link">گۊشیڌن وبسایت دری</string>
+  <string name="action_hide">بؽڌار</string>
+  <string name="action_reset">وورگندن</string>
+  <string name="action_deactivate">ز کار وندن</string>
+  <string name="action_select_all">پسند پوی</string>
+  <string name="action_continue">رو وا پؽش</string>
+  <string name="action_reload">بارونی دوواره</string>
+  <string name="action_open_app_info">گۊشیڌن دۉوسمندیا برنومه</string>
+  <string name="action_set">سامۉ کاقز دیواری</string>
+  <string name="action_learn_more">بیشتر دۉوسته بۊ</string>
+  <string name="action_help">هیاری</string>
+  <string name="action_send_feedback">فشناڌن منشڌ</string>
+  <string name="action_share">یک رسۊوی</string>
+  <string name="action_share_description">و رفؽقۉوت زبار Doodle بوگو</string>
+  <string name="action_email">فشناڌن ایمیل</string>
+  <string name="action_email_description">و برنومه نویس زنگ بزݩ</string>
+  <string name="action_rate">من گۊگل پلی و ایما امتیاز بڌه</string>
+  <string name="action_rate_description">ز برنومه نویس لادراری کوݩ</string>
+  <string name="action_github">Doodle Android من GitHub</string>
+  <string name="action_github_description">ی موشکل نۊ ن بوگوش</string>
+  <string name="action_language_select">زۉ ن پسند کوݩ</string>
+  <string name="action_set_static">سامۉ کاقز دیواری سابت</string>
+  <string name="action_change_time">آلشت زمۉݩ</string>
+  <string name="action_change_interval">آلشت فاسله</string>
+  <string name="action_copy_to_clipboard">لف گیری من ویرگه</string>
+
+  <!-- APPEARANCE -->
+
+  <string name="appearance_title">شؽوات</string>
+  <string name="appearance_description">گۊزینیل تراهی وو رنگ</string>
+  <string name="appearance_design">تئر</string>
+  <string name="appearance_design_doodle">مجمۊعه Pixel 4 Doodle</string>
+  <string name="appearance_design_monet">مجمۊعه Material You Pixel 6</string>
+  <string name="appearance_design_anna">شؽوات پس زمینه زنده من Anna Kövecses</string>
+  <string name="appearance_variant">گۊنه</string>
+  <string name="appearance_night_mode">هالت شو</string>
+  <string name="appearance_night_mode_description">تینا رنگا ری ب شه</string>
+  <string name="appearance_night_mode_on">رۊشن</string>
+  <string name="appearance_night_mode_off">کۊر</string>
+  <string name="appearance_light_text">همیشه هؽل اسبؽڌن ب کار بگر</string>
+  <string name="appearance_light_text_description">ب جا هؽل تاریک من پس زمینه رۊشن</string>
+  <string name="appearance_dark_text">هؽل تاریکن ب کار بگر</string>
+  <string name="appearance_dark_text_description">تینا همسو که، پس زمینه ب هندا کافی رۊشن بۊ</string>
+  <string name="appearance_colors_category">رنگا</string>
+  <string name="appearance_colors">رنگا دراوورده بیڌه</string>
+  <string name="appearance_colors_description">سی هساو کردن کونتراست هؽل، و کار اروه</string>
+  <string name="appearance_colors_description_dynamic">و دست موتور قالوو بندی سیستوم ب کار اره</string>
+  <string name="appearance_colors_description_one_ui">همجۊر ک وارو گوڌه وابی، رنگا و کار رئڌه منه پس زمینه زنده، منه One UI و کار نؽرون</string>
+  <string name="appearance_colors_primary">رنگ اسلین پسند کوݩ</string>
+  <string name="appearance_colors_secondary">رنگ دۊوۊمین پسند کوݩ</string>
+  <string name="appearance_colors_tertiary">رنگ سوۊمین پسند کوݩ</string>
+  <string name="appearance_colors_custom">رنگؽ ک اخۊی پسند کوݩ</string>
+  <string name="appearance_random">تئر پس زمینه تساڌۊفی</string>
+  <string name="appearance_random_description">جۊر زؽرین پسند کوݩ</string>
+  <string name="appearance_random_screen_off">بلگه خامۊش</string>
+  <string name="appearance_random_daily">هر رۊ من ‍%1$s</string>
+  <string name="appearance_random_interval">فاسلن پسند کوݩ</string>
+  <plurals name="appearance_random_interval_minutes">
+    <item quantity="one">هر %1$d دؽقه</item>
+    <item quantity="other">هر %1$d دؽقه</item>
+  </plurals>
+  <plurals name="appearance_random_interval_hours">
+    <item quantity="one">هر %1$d ساعت</item>
+    <item quantity="other">هر %1$d ساعت</item>
+  </plurals>
+  <plurals name="appearance_random_interval_days">
+    <item quantity="one">هر %1$d رۊ</item>
+    <item quantity="other">هر %1$d رۊ</item>
+  </plurals>
+
+  <!-- PARALLAX -->
+
+  <string name="parallax_title">اختلاف منزر</string>
+  <string name="parallax_description">افکت کش رئڌن وو شؽو</string>
+  <string name="parallax_swipe_category">کشیڌن کلک</string>
+  <string name="parallax_swipe">افکت کش رئڌن</string>
+  <string name="parallax_swipe_description">افکت اوفوقی من کشیڌن بلگ</string>
+  <string name="parallax_swipe_power_save">ائترام و سرفه جۊیی منه قوبه</string>
+  <string name="parallax_swipe_power_save_description">هر سا ک سرفه جۊیی من قوبه فعال هڌ، افکت زی کشیڌنن واڌارن</string>
+  <string name="parallax_tilt_category">خل کردن</string>
+  <string name="parallax_tilt">افکت شؽو</string>
+  <string name="parallax_tilt_description">جاگورویی مجال خل کردن دسگا</string>
+  <string name="parallax_tilt_warning">مسرف قوبه بیشتر</string>
+  <string name="parallax_refresh_rate">نرخ نۊسازی سنسور شؽو</string>
+  <string name="parallax_refresh_rate_description">تاخیر قلوه کۊتال، تره نیمیشنا ن کوند کونه</string>
+  <string name="parallax_damping">میرایی هرکت</string>
+  <string name="parallax_damping_description">سی سافی بیشتر، کم ترس کوݩ</string>
+  <string name="parallax_threshold">آستووه جاگورویی</string>
+  <!-- SIZE -->
+
+  <string name="size_title">هندا شکل</string>
+  <string name="size_description">افکت مقیاس وو زۊم</string>
+  <string name="size_category_zoom">افکت زۊم</string>
+  <string name="size_category_launcher">گپ کردن لانچر</string>
+  <string name="size_category_unlock">گپ کردن بلگ چفت</string>
+  <string name="size_scale">مقیاس</string>
+  <string name="size_scale_description">مۊفیڌ سی بلگ نمایشا گپ وو تراکوم</string>
+  <string name="size_zoom">شدت گپ کردن</string>
+  <string name="size_zoom_description">وا بیشتر کردن، شؽوات گر بیشتر زۊم اکونه</string>
+  <string name="size_zoom_rotation">ی قرد ز ٱشکالن مجال گپ کردن لر بڌین</string>
+  <string name="size_zoom_rotation_description">هداکسر لر خردن و ری درجه</string>
+  <string name="size_zoom_damping">میرایی ٱنیمیشن</string>
+  <string name="size_zoom_unlock">بلگ چفتن گپ کوݩ</string>
+  <string name="size_zoom_unlock_description">جهتن پسند کوݩ</string>
+  <string name="size_zoom_unlock_in">گپ کردن</string>
+  <string name="size_zoom_unlock_out">کۊچیر کردن</string>
+  <string name="size_zoom_duration">گۊشیڌن چفت موڌت زمۉ گپ کردن</string>
+  <string name="size_zoom_duration_description">کم تر سی ٱنیمیشن زل تر</string>
+
+  <!-- OTHER -->
+
+  <string name="other_title">گۊزینیل دیری</string>
+  <string name="other_language">زۉݩ</string>
+  <string name="other_language_system">سیستومن و دین کوݩ</string>
+  <string name="other_language_system_description">اینگیلیسی ار ولرنیڌنی من دسرس نبۊ</string>
+  <string name="other_gpu">شتاو سخت افزاری</string>
+  <string name="other_gpu_description">ٱر پس زمینه خراو وابی، کۊرس کوݩ</string>
+  <string name="other_screen_off_delay">تاخیر من خامۊش وابیڌن بلگ نمایش</string>
+  <string name="other_launcher">بؽڌار کردن آیکون من لانچر</string>
+  <string name="other_launcher_unsupported">ای ویژیی سی دل مئدۊدیتا سیستوم، دی لادراری نؽبۊ</string>
+  <string name="other_theme">تم رنگی برنومه</string>
+  <string name="other_theme_description">ی سیل دیری ن امتهان کوݩ</string>
+  <string name="other_theme_auto">خوتکار</string>
+  <string name="other_theme_light">رۊشنا</string>
+  <string name="other_theme_dark">تاریک</string>
+  <string name="other_contrast">کونتراست</string>
+  <string name="other_contrast_description">دسرسی سی نیشتن ایسا</string>
+  <!-- This is a contrast option name: User can choose between standard, medium and high contrast. The button width should be as dense as possible. -->
+  <string name="other_contrast_standard">استاندارد</string>
+  <!-- This is a contrast option name: User can choose between standard, medium and high contrast -->
+  <string name="other_contrast_medium">منجقا</string>
+  <string name="other_reset">وورنشۊوی دوواره پوی سامووا</string>
+  <string name="other_log">نشۉݩ داڌن logcat</string>
+  <string name="other_log_description">سی ٱئداف اشکال زودایی</string>
+
+  <!-- ABOUT -->
+
+  <string name="about_title">زبار</string>
+  <string name="about_version">نوسخه</string>
+  <string name="about_changelog">آلشت کاریا</string>
+  <string name="about_changelog_description">چ خور؟</string>
+  <string name="about_developer">برنومه نویس</string>
+  <string name="about_vending_description">برنومیل بیشتر ز برنومه نویس</string>
+  <string name="about_github_description">کود بونچک</string>
+  <string name="about_translation_description">من ولرنیڌن Doodle هیاریمۉݩ کوݩ</string>
+  <string name="about_privacy">سیاست زفت هریم سیخومی</string>
+  <string name="about_privacy_description">دادیل ایسا چتور پردازش ابۊن؟</string>
+
+  <string name="msg_hide">آیکون ز من لانچر بؽڌار بۊ؟</string>
+  <string name="msg_random">ز پوی تئرا ک پسند وابیڌن، و کار اره</string>
+  <string name="msg_reset">پوی سامووا وورگرتن؟</string>
+  </resources>

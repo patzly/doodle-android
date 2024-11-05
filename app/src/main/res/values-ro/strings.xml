@@ -229,4 +229,5 @@
   <string name="msg_apply_colors">Culorile schunbate vor fi aplicate următoarea dată când porniți ecranul.</string>
   <string name="msg_apply_changes">Pentru a aplica (eventual) opțiunile schimbare, o repornire a serviciului de fundal este recomandată. Aceasta nu se poate face automat. \nTe rugăm să oprești forțat Doodle din setările de sistem și să aplici din nou Doodle ca imagine de fundal.</string>
   <string name="msg_preview_missing">A apărut o eroare, selectați manual wallpaper-ul Doodle Live</string>
+  <string name="msg_report_crash">Te rugăm să raportezi orice eroare cu jurnalul de eroare atașat pentru a le putea rezolva.</string>
   </resources>

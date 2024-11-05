@@ -199,6 +199,8 @@
   <string name="other_reset">Resetează toate setările</string>
   <string name="other_reset_description">Face mai mult decât ar face dezinstalarea, deoarece preferințele sunt stocate într-un loc special, deoarece trebuie să fie accesibile direct după pornirea dispozitivului</string>
   <string name="other_log">Afișează jurnalul</string>
+  <string name="other_log_description">Pentru depanare</string>
+
   <!-- ABOUT -->
 
   <string name="about_title">Despre</string>

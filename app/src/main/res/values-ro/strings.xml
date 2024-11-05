@@ -144,6 +144,7 @@
   <!-- SIZE -->
 
   <string name="size_title">Mărime forme</string>
+  <string name="size_description">Efect de scalare și zoom</string>
   <string name="size_category_zoom">Efect zoom</string>
   <string name="size_category_launcher">Zoom în launcher</string>
   <string name="size_category_unlock">Zoom în ecranul de blocare</string>

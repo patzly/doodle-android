@@ -194,6 +194,7 @@
   <string name="other_contrast_medium">Mediu</string>
   <!-- This is a contrast option name: User can choose between standard, medium and high contrast -->
   <string name="other_contrast_high">Ridicat</string>
+  <string name="other_contrast_dynamic">Contrastul pentru tema diapozitivului trebuie ales din setările de sistem</string>
   <string name="other_reset">Resetează toate setările</string>
   <string name="other_reset_description">Face mai mult decât ar face dezinstalarea, deoarece preferințele sunt stocate într-un loc special, deoarece trebuie să fie accesibile direct după pornirea dispozitivului</string>
   <!-- ABOUT -->

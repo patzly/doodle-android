@@ -227,5 +227,6 @@
   <string name="msg_reset_description">Sigur vrei să resetezi aplicația\? Această operațiune nu poate fi anulată.</string>
   <string name="msg_force_stop">Oprirea forțată este necesară pentru a aplica modificările</string>
   <string name="msg_apply_colors">Culorile schunbate vor fi aplicate următoarea dată când porniți ecranul.</string>
+  <string name="msg_apply_changes">Pentru a aplica (eventual) opțiunile schimbare, o repornire a serviciului de fundal este recomandată. Aceasta nu se poate face automat. \nTe rugăm să oprești forțat Doodle din setările de sistem și să aplici din nou Doodle ca imagine de fundal.</string>
   <string name="msg_preview_missing">A apărut o eroare, selectați manual wallpaper-ul Doodle Live</string>
   </resources>

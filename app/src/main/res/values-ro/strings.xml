@@ -169,6 +169,7 @@
   <!-- OTHER -->
 
   <string name="other_title">Alte opțiuni</string>
+  <string name="other_description">Afișare, limbă și resetare </string>
   <string name="other_language">Limbă</string>
   <string name="other_language_description">Multe mulțumiri către toți voluntarii de pe Transifex! Vă rog vizitați proiectul pe GitHub pentru a vedea cum să ajutați aplicația Doodle Live Wallpaper pentru limba dumneavoastră.</string>
   <string name="other_language_system">Urmărește tema sistemului</string>

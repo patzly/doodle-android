@@ -22,12 +22,13 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
   <string name="wallpaper_description">Imagini de fundal colorate cu mod întunecat automat și animații eficiente. Personalizați-le cum doriți!</string>
-  <string name="wallpaper_description_picker">Explorați o colecție colorată de forme, rafinată cu efecte blânde de paralax și zoom atunci când treceți prin ecranele de acasă și deblocați dispozitivul.\n Customizați wallpaperul în funcție de stilul dvs.</string>
+  <string name="wallpaper_description_picker">Explorează o colecție diversă de forme, rafinată cu efecte de paralax blânde și zoom atunci când treci prin ecranele principale și când deblochezi dispozitivul.\nPersonalizează fundalul pentru a se potrivi cu stilul tău!</string>
 
   <!-- TITLES -->
 
   <string name="title_info">Informații</string>
   <string name="title_apply_changes">Aplică modificările</string>
+  <string name="title_logcat">Jurnal de erori</string>
   <string name="title_feedback">Păreri</string>
   <string name="title_licenses">Licențe open source</string>
 
@@ -36,6 +37,10 @@
   <string name="label_ms">%1$sms</string>
   <string name="label_degrees">%1$s grade</string>
 
+  <!-- ACTIONS -->
+
+  <string name="action_cancel">Anulează</string>
+  <string name="action_select">Alege</string>
   <string name="action_close">Închide</string>
   <string name="action_back">Înapoi</string>
   <string name="action_open_link">Deschide în website</string>
@@ -44,6 +49,7 @@
   <string name="action_deactivate">Dezactivează</string>
   <string name="action_select_all">Selectează tot.</string>
   <string name="action_continue">Continuă</string>
+  <string name="action_reload">Reîncarcă</string>
   <string name="action_open_app_info">Deschide informații despre aplicație</string>
   <string name="action_set">Setează wallpaper-ul</string>
   <string name="action_learn_more">Află mai multe</string>
@@ -58,10 +64,16 @@
   <string name="action_github">Doodle Android pe GitHub</string>
   <string name="action_github_description">Deschide o problemă nouă</string>
   <string name="action_language_select">Selectează limba</string>
+  <string name="action_set_static">Alege fundal static</string>
+  <string name="action_change_time">Schimbă timpul</string>
+  <string name="action_change_interval">Schimbă intervalul</string>
+  <string name="action_copy_to_clipboard">Copiază în clipboard</string>
+
   <!-- APPEARANCE -->
 
   <string name="appearance_title">Aspect</string>
-  <string name="appearance_description">Design și opțiuni de culoare</string>
+  <string name="appearance_description">Opțiuni de design și culori</string>
+  <string name="appearance_one_ui">Implementarea nefavorabilă Samsung a culorilor dinamice din One UI 4.1 ignoră complet culorile produse de aplicații cu fundaluri live, precum Doodle. \nPentru a aplica culorile în sistem, alege design-ul curent ca un fundal static mai jos pentru a permite sistemul să preia culorile, apoi reaplică-l ca fundal live.</string>
   <string name="appearance_design">Design</string>
   <string name="appearance_design_doodle">Colecția Pixel 4 Doodle</string>
   <string name="appearance_design_monet">Colecția Pixel 6 Doodle</string>
@@ -71,20 +83,49 @@
   <string name="appearance_night_mode_description">Doar culori întunecate</string>
   <string name="appearance_night_mode_on">Pornit</string>
   <string name="appearance_night_mode_off">Oprit</string>
+  <string name="appearance_light_text">Folosește mereu text alb</string>
+  <string name="appearance_light_text_description">În locul textului negru pe fundal luminos</string>
+  <string name="appearance_dark_text">Folosește text negru</string>
+  <string name="appearance_dark_text_description">Doar când fundalul este suficient de luminos</string>
   <string name="appearance_colors_category">Culori</string>
   <string name="appearance_colors">Culori extrase</string>
   <string name="appearance_colors_description">Folosit pentru calcularea contrastului textului</string>
   <string name="appearance_colors_description_dynamic">Folosit de motorul de tematică al sistemului</string>
+  <string name="appearance_colors_description_one_ui">Cum a fost menționat mai sus, culorile produse de fundalurile live sunt ignorate de One UI</string>
   <string name="appearance_colors_primary">Alege culoarea primară</string>
   <string name="appearance_colors_secondary">Alege culoarea secundară</string>
   <string name="appearance_colors_tertiary">Alegeți culoarea terțiară</string>
+  <string name="appearance_colors_custom">Alege culoare personalizată</string>
   <string name="appearance_colors_info">Pentru device-urile fără suport de culori dinamice (Android 11 sau mai mic), numai culoarea primară este utilizată pentru a calcula contrastul textului din launcher și a tentei din fundalul aplicațiilor recente.</string>
   <string name="appearance_colors_info_dynamic">Pentru device-urile cu Android 12 sau mai mare cu suport pentru culori dinamice, sunt trei culori selectate automat create de system-ide color theme.</string>
   <string name="appearance_random">Design wallpaper la întâmplare</string>
+  <string name="appearance_random_description">Alege declanșatorul mai jos</string>
+  <string name="appearance_random_screen_off">Oprirea ecranului</string>
+  <string name="appearance_random_daily">Zilnic la %1$s</string>
+  <string name="appearance_random_interval">Alege intervalul</string>
+  <plurals name="appearance_random_interval_minutes">
+    <item quantity="one">La fiecare %1$d minut</item>
+    <item quantity="few">La fiecare %1$d minute</item>
+    <item quantity="other">La fiecare %1$d de minute</item>
+  </plurals>
+  <plurals name="appearance_random_interval_hours">
+    <item quantity="one">La fiecare %1$d oră</item>
+    <item quantity="few">La fiecare %1$d ore</item>
+    <item quantity="other">La fiecare %1$d de ore</item>
+  </plurals>
+  <plurals name="appearance_random_interval_days">
+    <item quantity="one">La fiecare %1$d zi</item>
+    <item quantity="few">La fiecare %1$d zile</item>
+    <item quantity="other">La fiecare %1$d de zile</item>
+  </plurals>
+
   <!-- PARALLAX -->
 
   <string name="parallax_title">Parallax</string>
-  <string name="parallax_description">Glisare și efect tilt</string>
+  <string name="parallax_description">Efect de glisare și înclinare</string>
+  <string name="parallax_swipe_category">Pentru glisare</string>
+  <string name="parallax_swipe_touch_wiz">Se pare că lansatorul tău principal este Samsung TouchWiz sau One UI Home, care nu suportă efectul de glisare. Te rugăm să încerci alt lansator pentru a-l activa.\nPoți ignora acest avertisment dacă deja ai alt lansator principal.</string>
+  <string name="parallax_swipe">Efect de glisare</string>
   <string name="parallax_swipe_power_save">Respectă economisitul de baterie</string>
   <string name="parallax_tilt">Efect tilt</string>
   <string name="parallax_refresh_rate">Rata de refresh a senzorului de înclinare</string>
@@ -97,7 +138,6 @@
   <!-- SIZE -->
 
   <string name="size_title">Mărime forme</string>
-  <string name="size_description">Scală efect zoom</string>
   <string name="size_category_zoom">Efect zoom</string>
   <string name="size_category_launcher">Zoom în launcher</string>
   <string name="size_category_unlock">Zoom în ecranul de blocare</string>
@@ -118,7 +158,6 @@
   <!-- OTHER -->
 
   <string name="other_title">Alte opțiuni</string>
-  <string name="other_description">Randare, limbă și resetare</string>
   <string name="other_language">Limbă</string>
   <string name="other_language_description">Multe mulțumiri către toți voluntarii de pe Transifex! Vă rog vizitați proiectul pe GitHub pentru a vedea cum să ajutați aplicația Doodle Live Wallpaper pentru limba dumneavoastră.</string>
   <string name="other_language_system">Urmărește tema sistemului</string>
@@ -137,24 +176,21 @@
   <!-- ABOUT -->
 
   <string name="about_title">Despre</string>
-  <string name="about_description">Informații dezvoltator și mai multe</string>
   <string name="about_version">Versiune</string>
   <string name="about_changelog">Lista cu noutăți</string>
-  <string name="about_changelog_description">Ce este nou?</string>
+  <string name="about_changelog_description">Ce este nou\?</string>
   <string name="about_developer">Dezvoltator</string>
   <string name="about_vending_description">Mai multe aplicații de la dezvoltator</string>
   <string name="about_github_description">Codul sursă</string>
   <string name="about_translation_description">Ajută la traducerea Doodle</string>
   <string name="about_privacy">Politica de Confidențialitate</string>
-  <string name="about_privacy_description">Cum sunt prelucrate datele dvs.?</string>
+  <string name="about_privacy_description">Cum sunt prelucrate datele dvs.\?</string>
 
-  <string name="msg_share">Vedeți aici această aplicație de wallpapere: \nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
-  <string name="msg_hide">Ascundeți iconița din launcher?</string>
+  <string name="msg_hide">Ascundeți iconița din launcher\?</string>
   <string name="msg_random">Toate design-urile selectate vor fi folosite</string>
   <string name="msg_random_warning">Designul de fundal aleatoriu este încă activ!</string>
-  <string name="msg_reset">Resetați toate setările?</string>
+  <string name="msg_reset">Resetați toate setările\?</string>
   <string name="msg_force_stop">Oprirea forțată este necesară pentru a aplica modificările</string>
   <string name="msg_apply_colors">Culorile schunbate vor fi aplicate următoarea dată când porniți ecranul.</string>
-  <string name="msg_apply_changes">Pentru a aplica (eventual) opțiunile modificate, se recomandă repornirea serviciului de imagine de fundal.  Acest lucru nu se poate face automat.\nOpriți forțat Doodle-ul în setările sistemului și apoi aplicați Doodle-ul ca fundal din nou.</string>
   <string name="msg_preview_missing">A apărut o eroare, selectați manual wallpaper-ul Doodle Live</string>
   </resources>

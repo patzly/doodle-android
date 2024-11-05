@@ -218,6 +218,7 @@
   <!-- MESSAGES -->
 
   <string name="msg_feedback">O aplicație grozavă necesită mult timp, și trăiește din părerile utilizatorilor acesteia.</string>
+  <string name="msg_feedback_contact">Ai vreo dorință, comentariu sau întrebare\? Nu exita să mă contactezi!\nDacă nu, o părere pozitivă în Magazinul Play m-ar bucura mult. </string>
   <string name="msg_hide">Ascundeți iconița din launcher\?</string>
   <string name="msg_random">Toate design-urile selectate vor fi folosite</string>
   <string name="msg_random_warning">Designul de fundal aleatoriu este încă activ!</string>

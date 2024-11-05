@@ -159,6 +159,7 @@
   <string name="size_zoom_launcher_description">Ar putea fi indisponibil pe unele dispozitive</string>
   <string name="size_zoom_damping">Amortizarea animației</string>
   <string name="size_zoom_damping_description">Activează și scade penru un zoom persistent</string>
+  <string name="size_zoom_unlock">Zoom pe ecranul de blocare</string>
   <string name="size_zoom_duration">Deblochează durata zoom-ului</string>
   <string name="size_zoom_duration_description">Scade pentru o animație mai rapidă</string>
 

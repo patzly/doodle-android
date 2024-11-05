@@ -171,6 +171,8 @@
   <string name="other_contrast_standard">استاندارد</string>
   <!-- This is a contrast option name: User can choose between standard, medium and high contrast -->
   <string name="other_contrast_medium">منجقا</string>
+  <!-- This is a contrast option name: User can choose between standard, medium and high contrast -->
+  <string name="other_contrast_high">وارو</string>
   <string name="other_reset">وورنشۊوی دوواره پوی سامووا</string>
   <string name="other_log">نشۉݩ داڌن logcat</string>
   <string name="other_log_description">سی ٱئداف اشکال زودایی</string>

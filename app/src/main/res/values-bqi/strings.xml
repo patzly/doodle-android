@@ -180,6 +180,7 @@
   <!-- ABOUT -->
 
   <string name="about_title">زبار</string>
+  <string name="about_description">دۉسمندیا برنومه نویس وو چیا دیری</string>
   <string name="about_version">نوسخه</string>
   <string name="about_changelog">آلشت کاریا</string>
   <string name="about_changelog_description">چ خور؟</string>

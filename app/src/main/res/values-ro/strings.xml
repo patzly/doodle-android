@@ -219,10 +219,12 @@
 
   <string name="msg_feedback">O aplicație grozavă necesită mult timp, și trăiește din părerile utilizatorilor acesteia.</string>
   <string name="msg_feedback_contact">Ai vreo dorință, comentariu sau întrebare\? Nu exita să mă contactezi!\nDacă nu, o părere pozitivă în Magazinul Play m-ar bucura mult. </string>
+  <string name="msg_share">Încearcă această aplicație tare de fundal live: \nhttps://play.google.com/store/apps/details\?id=xyz.zedler.patrick.doodle</string>
   <string name="msg_hide">Ascundeți iconița din launcher\?</string>
   <string name="msg_random">Toate design-urile selectate vor fi folosite</string>
   <string name="msg_random_warning">Designul de fundal aleatoriu este încă activ!</string>
   <string name="msg_reset">Resetați toate setările\?</string>
+  <string name="msg_reset_description">Sigur vrei să resetezi aplicația\? Această operațiune nu poate fi anulată.</string>
   <string name="msg_force_stop">Oprirea forțată este necesară pentru a aplica modificările</string>
   <string name="msg_apply_colors">Culorile schunbate vor fi aplicate următoarea dată când porniți ecranul.</string>
   <string name="msg_preview_missing">A apărut o eroare, selectați manual wallpaper-ul Doodle Live</string>

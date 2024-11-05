@@ -129,6 +129,7 @@
   <string name="parallax_swipe_description">Decalaj orizontal la glisarea între pagini</string>
   <string name="parallax_swipe_power_save">Respectă economisitul de baterie</string>
   <string name="parallax_swipe_power_save_description">Pune pe pauză efectul atunci când economisirea bateriei este activată</string>
+  <string name="parallax_tilt_category">La înclinare</string>
   <string name="parallax_tilt">Efect tilt</string>
   <string name="parallax_refresh_rate">Rata de refresh a senzorului de înclinare</string>
   <string name="parallax_damping">Amortizarea mișcării</string>

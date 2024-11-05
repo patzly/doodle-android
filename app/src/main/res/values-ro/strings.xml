@@ -204,6 +204,7 @@
   <!-- ABOUT -->
 
   <string name="about_title">Despre</string>
+  <string name="about_description">Informații dezvoltator și altele</string>
   <string name="about_version">Versiune</string>
   <string name="about_changelog">Lista cu noutăți</string>
   <string name="about_changelog_description">Ce este nou\?</string>

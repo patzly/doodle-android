@@ -186,6 +186,7 @@
   <string name="other_theme_auto">Automată</string>
   <string name="other_theme_light">Luminoasă</string>
   <string name="other_theme_dark">Întunecată</string>
+  <string name="other_contrast">Contrast</string>
   <string name="other_reset">Resetează toate setările</string>
   <string name="other_reset_description">Face mai mult decât ar face dezinstalarea, deoarece preferințele sunt stocate într-un loc special, deoarece trebuie să fie accesibile direct după pornirea dispozitivului</string>
   <!-- ABOUT -->

@@ -215,6 +215,9 @@
   <string name="about_privacy">Politica de Confidențialitate</string>
   <string name="about_privacy_description">Cum sunt prelucrate datele dvs.\?</string>
 
+  <!-- MESSAGES -->
+
+  <string name="msg_feedback">O aplicație grozavă necesită mult timp, și trăiește din părerile utilizatorilor acesteia.</string>
   <string name="msg_hide">Ascundeți iconița din launcher\?</string>
   <string name="msg_random">Toate design-urile selectate vor fi folosite</string>
   <string name="msg_random_warning">Designul de fundal aleatoriu este încă activ!</string>

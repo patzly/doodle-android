@@ -198,6 +198,7 @@
   <string name="other_contrast_dynamic_unsupported">Contrastul dinamic pentru tema de sistem este disponibilă doar pe Android 14+</string>
   <string name="other_reset">Resetează toate setările</string>
   <string name="other_reset_description">Face mai mult decât ar face dezinstalarea, deoarece preferințele sunt stocate într-un loc special, deoarece trebuie să fie accesibile direct după pornirea dispozitivului</string>
+  <string name="other_log">Afișează jurnalul</string>
   <!-- ABOUT -->
 
   <string name="about_title">Despre</string>

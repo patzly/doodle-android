@@ -176,7 +176,7 @@
   <string name="other_gpu">Accelerare hardware</string>
   <string name="other_gpu_description">Oprește dacă wallpaper-ul dă crash</string>
   <string name="other_gpu_info">Accelerația hardware este disponibilă pentru Doodle începând cu Android 8. Prin urmare, animațiile de fundal ar putea fi puțin sacadate</string>
-  <string name="other_screen_off_delay">Decalaj la oprirea ecranului</string>
+  <string name="other_screen_off_delay">Decalaj la închiderea ecranului</string>
   <string name="other_launcher">Ascunde iconița din launcher</string>
   <string name="other_launcher_description">Setările vor fi accesibile în wallpaper picker-ul sistemului</string>
   <string name="other_theme">Aplică culoarea temei</string>

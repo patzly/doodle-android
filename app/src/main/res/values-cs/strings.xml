@@ -225,7 +225,7 @@
   <string name="msg_feedback_contact">Máte nějaké přání, připomínky nebo dotazy? Nevahejte me kontaktovat! Jinak bych byl moc rád za hezkou recenzi v Obchodě Play.</string>
   <string name="msg_share">Podívejte se na tuhle cool aplikaci na živé tapety: \nhttps://play.google.com/store/apps/details?id=xyz.zedler.patrick.doodle</string>
   <string name="msg_hide">Skrýt ikonu v launcheru?</string>
-  <string name="msg_random">Všechny vybrané vzhledy budou použity</string>
+  <string name="msg_random">Budou použity všechny vybrané vzhledy</string>
   <string name="msg_random_warning">Náhodný vzhled tapety se zatím stále používá!</string>
   <string name="msg_reset">Obnovit všechna nastavení?</string>
   <string name="msg_reset_description">Opravdu chcete resetovat celou aplikaci\? Tato akce je nevratná.</string>

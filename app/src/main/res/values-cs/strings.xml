@@ -172,7 +172,7 @@
   <!-- OTHER -->
 
   <string name="other_title">Další možnosti</string>
-  <string name="other_description">Vykreslování, jazyk &amp; obnovení</string>
+  <string name="other_description">Vykreslování, jazyk a obnovení</string>
   <string name="other_language">Jazyk</string>
   <string name="other_language_description">Děkujeme všem dobrovolným překladatelům na Transifexu! Navštivte prosím stránku projektu na GitHubu, kde se dozvíte, jak můžete pomoci zpřístupnit Doodle Live Wallpapers pro váš jazyk.</string>
   <string name="other_language_system">Barvy systému</string>

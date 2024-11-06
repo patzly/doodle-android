@@ -72,7 +72,7 @@
   <!-- APPEARANCE -->
 
   <string name="appearance_title">Vzhled</string>
-  <string name="appearance_description">Design &amp; barvy</string>
+  <string name="appearance_description">Design a barvy</string>
   <string name="appearance_one_ui">Nepříliš dobrá implementace dynamických barev v uživatelském rozhraní One UI 4.1 od společnosti Samsung zcela ignoruje barvy poskytované aplikacemi živých tapet, jako je Doodle.\nChcete-li použít barvy v systému, nastavte níže aktuální návrh jako statické pozadí, aby systém načetl barvy, a poté jej znovu použijte jako živou tapetu.</string>
   <string name="appearance_design">Design</string>
   <string name="appearance_design_doodle">Kolekce inspirovaná Pixelem 4</string>

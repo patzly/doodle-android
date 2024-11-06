@@ -101,7 +101,7 @@
   <string name="appearance_random">Náhodný vzhled tapety</string>
   <string name="appearance_random_description">Vyberte níže uvedenou podmínku</string>
   <string name="appearance_random_screen_off">Obrazovka vypnutá</string>
-  <string name="appearance_random_daily">denně v </string>
+  <string name="appearance_random_daily">Denně v %1$s</string>
   <string name="appearance_random_interval">Nastavit interval </string>
   <plurals name="appearance_random_interval_minutes">
     <item quantity="one">Každou minutu</item>

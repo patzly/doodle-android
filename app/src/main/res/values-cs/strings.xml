@@ -147,7 +147,7 @@
   <!-- SIZE -->
 
   <string name="size_title">Velikost tvarů</string>
-  <string name="size_description">Rozměry &amp; zoom efekt</string>
+  <string name="size_description">Efekt přiblížení</string>
   <string name="size_category_zoom">Zoom efekt</string>
   <string name="size_category_launcher">Zoom launcheru</string>
   <string name="size_category_unlock">Zoom na zamykací obrazovce</string>

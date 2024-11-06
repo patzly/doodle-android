@@ -98,7 +98,7 @@
   <string name="appearance_colors_custom">Vybrat vlastní barvu</string>
   <string name="appearance_colors_info">Na zařízeních bez možnosti využít dynamické barvy (verze Android 11 a níž), bude pro výpočet kontrastu textu a odstínu pozadí obrazovek pro aplikace využita pouze primární barva.</string>
   <string name="appearance_colors_info_dynamic">V zařízeních se systémem Android 12 nebo vyšším a podporou dynamických barev se tři vybrané barvy použijí k automatickému vytvoření celosystémového barevného motivu.</string>
-  <string name="appearance_random">Náhodný design tapety</string>
+  <string name="appearance_random">Náhodný vzhled tapety</string>
   <string name="appearance_random_description">Vyberte níže uvedenou podmínku</string>
   <string name="appearance_random_screen_off">Obrazovka vypnutá</string>
   <string name="appearance_random_daily">denně v </string>

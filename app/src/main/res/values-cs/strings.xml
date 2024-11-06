@@ -208,7 +208,7 @@
   <!-- ABOUT -->
 
   <string name="about_title">O aplikaci</string>
-  <string name="about_description">Informace o vývojáři &amp; další</string>
+  <string name="about_description">Informace o vývojáři a další</string>
   <string name="about_version">Verze</string>
   <string name="about_changelog">Seznam změn</string>
   <string name="about_changelog_description">Změny a novinky v aplikaci.</string>

@@ -124,7 +124,7 @@
 
   <!-- PARALLAX -->
 
-  <string name="parallax_title">Parallax efekt</string>
+  <string name="parallax_title">Pohyb</string>
   <string name="parallax_description">Swipe &amp; a efekt při naklánění</string>
   <string name="parallax_swipe_category">Přecházení</string>
   <string name="parallax_swipe_touch_wiz">Zdá se, že váš současný launcher je Samsung TouchWiz nebo One UI Home. Tyto launchery nepodporují efekt skrolování. Pro jeho povolení prosím vyzkoušejte jiný launcher.\nPokud jste již nastavili jiný launcher jako výchozí, můžete toto varování ignorovat.</string>

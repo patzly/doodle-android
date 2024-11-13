@@ -22,6 +22,8 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
   <string name="wallpaper_description">شؽوات زمینه زنده رنگا رنگ وا هالت خوتکار وو ٱنیمیشنا کم مسرف. یون وا نیازا خوتۉ سفارشی کۊنین!</string>
+  <string name="wallpaper_description_picker">مجمۊعه رنگارنگی ز شلگا ن بجۊرین ک وا منزر مولایم وو افکتا گپ کردن، مجالی ک ری بلگ ٱسلی خوتۉݩ زی کلک اکشین ۉ چفت دسگا ن اگۊشین، پالنیڌه وابینه.\nکاقز دیوارین سی ی جۊر وابیڌن وا سبک خوتۉݩ سفارشی کۊنین!</string>
+
   <!-- TITLES -->
 
   <string name="title_info">دۉسمندی</string>

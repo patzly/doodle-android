@@ -104,7 +104,7 @@
   <string name="appearance_random_daily">Täglich um %1$s Uhr</string>
   <string name="appearance_random_interval">Intervall auswählen</string>
   <plurals name="appearance_random_interval_minutes">
-    <item quantity="one">Jede Minute</item>
+    <item quantity="one">Jede %1$d Minute</item>
     <item quantity="other">Alle %1$d Minuten</item>
   </plurals>
   <plurals name="appearance_random_interval_hours">

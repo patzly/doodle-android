@@ -32,9 +32,9 @@ android {
         targetSdk 35
         versionCode 42
         versionName '6.0.0'
-        resourceConfigurations += ['ar', 'cs', 'da', 'de', 'en', 'es', 'fi', 'fil', 'fr', 'hu',
-                                   'in', 'it', 'iw', 'ja', 'ko', 'lt', 'nl', 'pl', 'pt-rBR', 'ro',
-                                   'ru', 'tr', 'ug', 'uk', 'vi', 'zh-rCN']
+        resourceConfigurations += ['ar', 'bqi', 'cs', 'da', 'de', 'en', 'es', 'fi', 'fil', 'fr',
+                                   'hu', 'in', 'it', 'iw', 'ja', 'ko', 'lt', 'nl', 'pl', 'pt-rBR',
+                                   'ro', 'ru', 'tr', 'ug', 'uk', 'vi', 'zh-rCN']
     }
 
     applicationVariants.configureEach { variant ->

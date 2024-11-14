@@ -1,5 +1,6 @@
 ## 6.0.1
 
+- New: Luri (Bakhtiari) translation
 - Fixed: text paragraph appearance
 
 ## 6.0.0

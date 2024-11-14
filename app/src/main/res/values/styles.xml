@@ -456,7 +456,7 @@
   </style>
 
   <style name="Widget.Doodle.TextView.Paragraph" parent="Widget.Doodle.TextView">
-    <item name="android:justificationMode" tools:targetApi="o">inter_word</item>
+    <!--item name="android:justificationMode" tools:targetApi="o">inter_word</item-->
   </style>
 
   <style

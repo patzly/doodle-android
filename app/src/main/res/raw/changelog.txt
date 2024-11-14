@@ -1,3 +1,7 @@
+## 6.0.1
+
+- Fixed: text paragraph appearance
+
 ## 6.0.0
 
 - New: support for Android 14 & 15

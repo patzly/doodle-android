@@ -22,6 +22,7 @@ package xyz.zedler.patrick.doodle.view;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.view.View;
+import androidx.annotation.NonNull;
 import androidx.annotation.RawRes;
 import xyz.zedler.patrick.doodle.drawable.SvgDrawable;
 
@@ -34,7 +35,7 @@ public class SvgView extends View {
   }
 
   @Override
-  protected void onDraw(Canvas canvas) {
+  protected void onDraw(@NonNull Canvas canvas) {
     if (drawable != null) {
       drawable.draw(canvas);
     }

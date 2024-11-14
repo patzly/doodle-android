@@ -22,26 +22,27 @@ package xyz.zedler.patrick.doodle.fragment;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.util.Consumer;
 import com.google.android.material.snackbar.Snackbar;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
 import xyz.zedler.patrick.doodle.R;
 import xyz.zedler.patrick.doodle.activity.MainActivity;
 import xyz.zedler.patrick.doodle.behavior.ScrollBehavior;
 import xyz.zedler.patrick.doodle.behavior.SystemBarBehavior;
 import xyz.zedler.patrick.doodle.databinding.FragmentLogBinding;
-import xyz.zedler.patrick.doodle.util.ResUtil;
 import xyz.zedler.patrick.doodle.util.ViewUtil;
 
 public class LogFragment extends BaseFragment implements OnClickListener {
@@ -50,6 +51,7 @@ public class LogFragment extends BaseFragment implements OnClickListener {
 
   private FragmentLogBinding binding;
   private MainActivity activity;
+  private final Executor backgroundExecutor = Executors.newSingleThreadExecutor();
 
   @Override
   public View onCreateView(
@@ -78,7 +80,18 @@ public class LogFragment extends BaseFragment implements OnClickListener {
     new ScrollBehavior().setUpScroll(binding.appBarLog, binding.scrollLog, true);
 
     binding.toolbarLog.setNavigationOnClickListener(getNavigationOnClickListener());
-    binding.toolbarLog.setOnMenuItemClickListener(this::onMenuItemClick);
+    binding.toolbarLog.setOnMenuItemClickListener(item -> {
+      int id = item.getItemId();
+      if (getViewUtil().isClickDisabled(id)) {
+        return false;
+      }
+      performHapticClick();
+      if (id == R.id.action_reload) {
+        ViewUtil.startIcon(item.getIcon());
+        loadLogcat(log -> binding.textLog.setText(log));
+      }
+      return true;
+    });
 
     ViewUtil.setOnClickListeners(
         this,
@@ -86,12 +99,8 @@ public class LogFragment extends BaseFragment implements OnClickListener {
         binding.buttonLogFeedback
     );
 
-    new Handler().postDelayed(
-        () -> new LoadAsyncTask(
-            getLogcatCommand(),
-            log -> binding.textLog.setText(log)
-        ).execute(),
-        10
+    new Handler(Looper.getMainLooper()).postDelayed(
+        () -> loadLogcat(log -> binding.textLog.setText(log)), 10
     );
   }
 
@@ -115,65 +124,22 @@ public class LogFragment extends BaseFragment implements OnClickListener {
     }
   }
 
-  private static class LoadAsyncTask extends AsyncTask<Void, Void, String> {
-
-    private final String logcatCommand;
-    private final LogLoadedListener listener;
-
-    LoadAsyncTask(String logcatCommand, LogLoadedListener listener) {
-      this.logcatCommand = logcatCommand;
-      this.listener = listener;
-    }
-
-    @Override
-    protected final String doInBackground(Void... params) {
+  private void loadLogcat(Consumer<String> onLogLoaded) {
+    backgroundExecutor.execute(() -> {
       StringBuilder log = new StringBuilder();
       try {
-        Process process = Runtime.getRuntime().exec(logcatCommand);
-        BufferedReader bufferedReader = new BufferedReader(
-            new InputStreamReader(process.getInputStream())
-        );
-        String line;
-        while ((line = bufferedReader.readLine()) != null) {
-          log.append(line).append('\n');
+        Process process = Runtime.getRuntime().exec("logcat -d *:E -t 300 ");
+        try (BufferedReader bufferedReader = new BufferedReader(
+            new InputStreamReader(process.getInputStream()))) {
+          String line;
+          while ((line = bufferedReader.readLine()) != null) {
+            log.append(line).append('\n');
+          }
+        } finally {
+          process.destroy();
         }
-        if (log.length() > 0) log.deleteCharAt(log.length() - 1);
-      } catch (IOException ignored) {
-      }
-      return log.toString();
-    }
-
-    @Override
-    protected void onPostExecute(String log) {
-      if (listener != null) {
-        listener.onLogLoaded(log);
-      }
-    }
-
-    private interface LogLoadedListener {
-
-      void onLogLoaded(String log);
-    }
-  }
-
-  private String getLogcatCommand() {
-    return "logcat -d *:E -t 300 ";
-  }
-
-  private boolean onMenuItemClick(MenuItem item) {
-    int id = item.getItemId();
-    if (getViewUtil().isClickDisabled(id)) {
-      return false;
-    }
-    performHapticClick();
-    if (id == R.id.action_reload) {
-      ViewUtil.startIcon(item.getIcon());
-      new LoadAsyncTask(getLogcatCommand(), log -> binding.textLog.setText(log)).execute();
-    } else if (id == R.id.action_help) {
-      activity.showTextBottomSheet(R.raw.help, R.string.action_help);
-    } else if (id == R.id.action_share) {
-      ResUtil.share(activity, R.string.msg_share);
-    }
-    return true;
+      } catch (IOException ignored) {}
+      activity.runOnUiThread(() -> onLogLoaded.accept(log.toString()));
+    });
   }
 }

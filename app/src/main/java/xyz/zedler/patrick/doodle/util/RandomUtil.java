@@ -80,11 +80,6 @@ public class RandomUtil {
       calendar.add(Calendar.DATE, 1);
     }
 
-//    if (alarmManager != null) {
-//      alarmManager.cancel(pendingIntent);
-//      alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
-//    }
-
     if (timer != null) {
       timer.cancel();
       timer = null;

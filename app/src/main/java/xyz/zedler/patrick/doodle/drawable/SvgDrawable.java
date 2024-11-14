@@ -464,9 +464,6 @@ public class SvgDrawable {
       if (d != null && !d.isEmpty()) {
         try {
           object.path = androidx.core.graphics.PathParser.createPathFromPathData(d);
-          if (object.path == null) {
-            return;
-          }
         } catch (RuntimeException e) {
           Log.w(TAG, "readPath: error with legacy parser, trying with alternative...");
           object.path = PathParser.getPath(d);
@@ -892,7 +889,7 @@ public class SvgDrawable {
     if (transformation == null || transformation.isEmpty()) {
       return;
     }
-    String[] transform = transformation.split("[ ](?=[^)]*?(?:\\(|$))");
+    String[] transform = transformation.split(" (?=[^)]*?(?:\\(|$))");
     for (String action : transform) {
       String value = action.substring(action.indexOf("(") + 1, action.indexOf(")"));
       if (action.contains("rotate")) {
@@ -1224,7 +1221,7 @@ public class SvgDrawable {
     return paintDebug;
   }
 
-  private static class PathIntersection {
+  public static class PathIntersection {
     final String id;
     final int color;
 

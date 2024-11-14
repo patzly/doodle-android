@@ -30,6 +30,7 @@ import android.graphics.Shader;
 import android.graphics.Shader.TileMode;
 import android.util.AttributeSet;
 import android.view.View;
+import androidx.annotation.NonNull;
 
 public class ColorLuminanceView extends View {
 
@@ -47,7 +48,7 @@ public class ColorLuminanceView extends View {
   }
 
   @Override
-  protected void onDraw(Canvas canvas) {
+  protected void onDraw(@NonNull Canvas canvas) {
     if (paint == null) {
       paint = new Paint();
       luar = new LinearGradient(

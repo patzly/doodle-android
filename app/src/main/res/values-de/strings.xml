@@ -108,7 +108,7 @@
     <item quantity="other">Alle %1$d Minuten</item>
   </plurals>
   <plurals name="appearance_random_interval_hours">
-    <item quantity="one">Jede Stunde</item>
+    <item quantity="one">Jede %1$d Stunde</item>
     <item quantity="other">Alle %1$d Stunden</item>
   </plurals>
   <plurals name="appearance_random_interval_days">

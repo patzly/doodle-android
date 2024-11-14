@@ -112,7 +112,7 @@
     <item quantity="other">Alle %1$d Stunden</item>
   </plurals>
   <plurals name="appearance_random_interval_days">
-    <item quantity="one">Jeden Tag</item>
+    <item quantity="one">Jeden %1$d Tag</item>
     <item quantity="other">Alle %1$d Tage</item>
   </plurals>
 

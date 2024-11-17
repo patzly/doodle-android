@@ -135,6 +135,7 @@
   <string name="parallax_damping">میرایی هرکت</string>
   <string name="parallax_damping_description">سی سافی بیشتر، کم ترس کوݩ</string>
   <string name="parallax_threshold">آستووه جاگورویی</string>
+  <string name="parallax_threshold_description">قلوه کردن تا واڌاشتن رندر ب یک دیسنیڌه وا هرکت کم</string>
   <string name="parallax_tilt_power_save_description">هر سا ک سرفه جۊیی من قوبه فعال هڌ، افکت شؽو ن واڌارن</string>
 
   <!-- SIZE -->

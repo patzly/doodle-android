@@ -121,6 +121,7 @@
   <string name="parallax_title">اختلاف منزر</string>
   <string name="parallax_description">افکت کش رئڌن وو شؽو</string>
   <string name="parallax_swipe_category">کشیڌن کلک</string>
+  <string name="parallax_swipe_touch_wiz">بمنشڌ ایا که لانچر سکویی ایسا Samsung TouchWiz یا One UI Home هڌ ک ز افکت کش رئڌن لادراری نضکونه. ی ره ون دیرین امتهان کینین تا هو ن فعال کینین. \nاز وستر ره وم دیرین و عونوان پؽش فرز ساموو کردینه، ترین ز ای هوشدار گوڌرتین.</string>
   <string name="parallax_swipe">افکت کش رئڌن</string>
   <string name="parallax_swipe_description">افکت اوفوقی من کشیڌن بلگ</string>
   <string name="parallax_swipe_power_save">ائترام و سرفه جۊیی منه قوبه</string>

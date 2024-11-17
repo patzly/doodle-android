@@ -213,6 +213,9 @@
   <string name="about_privacy">سیاست زفت هریم سیخومی</string>
   <string name="about_privacy_description">دادیل ایسا چتور پردازش ابۊن؟</string>
 
+  <!-- MESSAGES -->
+
+  <string name="msg_feedback">ی برنومه خوڌا خۊو کرده زمۉݩ قلوه ای اخو وو وا منشڌا منتوراس هڌ ک زنده امئنه.</string>
   <string name="msg_hide">آیکون ز من لانچر بؽڌار بۊ؟</string>
   <string name="msg_random">ز پوی تئرا ک پسند وابیڌن، و کار اره</string>
   <string name="msg_reset">پوی سامووا وورگرتن؟</string>

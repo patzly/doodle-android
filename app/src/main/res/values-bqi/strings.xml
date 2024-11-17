@@ -195,6 +195,7 @@
   <string name="other_contrast_dynamic">کونتراست سی تم دسگا وا من سامووا سیستوم ساموو بۊ</string>
   <string name="other_contrast_dynamic_unsupported">کونتراست پۊیا سی تئر زمینه دسگا تینا من Android 14 وو وارو تر من دسرس هڌ</string>
   <string name="other_reset">وورنشۊوی دوواره پوی سامووا</string>
+  <string name="other_reset_description">ای کار بیشتر ز پاک کردن پۊرنیڌن برنومه ٱنجوم ابۊ، چینا ک سامووا پسند بیڌه من ی جاگه خاس زفت ابۊن سی دل یو ک وا موستقیمن دیندا ره ونی دسگا من دسرس بۊن.</string>
   <string name="other_log">نشۉݩ داڌن logcat</string>
   <string name="other_log_description">سی ٱئداف اشکال زودایی</string>
 

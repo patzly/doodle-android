@@ -220,5 +220,6 @@
   <string name="msg_share">ای برنومه شؽوات زمینه زنده جالو ن واجۊری کۊنین:\nhttps://play.google.com/store/apps/details\?id=xyz.zedler.patrick.doodle</string>
   <string name="msg_hide">آیکون ز من لانچر بؽڌار بۊ؟</string>
   <string name="msg_random">ز پوی تئرا ک پسند وابیڌن، و کار اره</string>
+  <string name="msg_random_warning">تراهی کاقز دیواری تساڌۊفی هنی فعال هڌ!</string>
   <string name="msg_reset">پوی سامووا وورگرتن؟</string>
   </resources>

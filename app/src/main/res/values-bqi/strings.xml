@@ -228,4 +228,6 @@
   <string name="msg_apply_changes">سی ائمال (دیندا کار) گۊزینیل آلشت بیڌه، دووارته ره وندن سرویس شؽوات زمینه ک هونی اجرا ابۊ پؽشنهاڌ ابۊ. یو نؽبۊ و تۉر خوتکار ٱنجوم بۊ.\nDoodle ن زۊر ب زۊر من سامووا سیستوم خوتۉݩ واڌارنین ۉ ز نۊ Doodle ن و عونوان شؽوات زمینه خوتۉݩ ائمال کۊنین.</string>
   <string name="msg_preview_missing">ختایی پؽش ٱووڌ، Doodle Live Wallpaper ن جۊر هالت دستی پسند کۊنین</string>
   <string name="msg_report_crash">هر خراوی ک پؽش ٱووڌ وا پیوست داسۉݩ خراوی، و مو داسۉݩ کۊنین تا ترسته بۊم هلس کونوم.</string>
+  <string name="msg_copied_to_clipboard">لف گیری من کیلیپ بورد و خۊوی ٱنجوم وابی</string>
+
   </resources>

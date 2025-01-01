@@ -1,10 +1,10 @@
 [versions]
-agp = "8.7.2"
+agp = "8.7.3"
 appcompat = "1.7.0"
 fragment = "1.8.5"
-navigation = "2.8.4"
+navigation = "2.8.5"
 preference = "1.2.1"
-material = "1.13.0-alpha07"
+material = "1.13.0-alpha09"
 
 [libraries]
 appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }

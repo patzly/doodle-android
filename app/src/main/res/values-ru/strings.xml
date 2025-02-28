@@ -191,6 +191,7 @@
   <string name="other_theme_light">Светлая</string>
   <string name="other_theme_dark">Тёмная</string>
   <string name="other_contrast">Контрастность </string>
+  <string name="other_contrast_description">Доступность для вашего видения</string>
   <string name="other_reset">Сбросить все настройки</string>
   <string name="other_reset_description">Опция полезнее обычного удаления приложения, поскольку настройки хранятся в особом месте, чтобы применяться сразу после запуска устройства</string>
   <string name="other_log">Показать журнал сбоев</string>
